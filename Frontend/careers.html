@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FuturePilot Careers</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<style>
+
+body{
+    background:#07111F;
+    color:white;
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    padding:60px 0;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.title h1{
+
+    font-size:4rem;
+
+    background:linear-gradient(
+        90deg,
+        #00D4FF,
+        #00FFB3
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.title p{
+
+    color:#B8C4D4;
+    margin-top:10px;
+}
+
+.search-box{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    margin-bottom:40px;
+}
+
+.career-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+}
+
+.career-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    transition:.3s;
+}
+
+.career-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#00FFB3;
+}
+
+.career-card h3{
+
+    margin-bottom:15px;
+}
+
+.career-card p{
+
+    color:#B8C4D4;
+}
+
+.build-btn{
+
+    margin-top:20px;
+
+    width:100%;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    color:#07111F;
+
+    background:linear-gradient(
+        90deg,
+        #00D4FF,
+        #00FFB3
+    );
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">
+
+<h1>Explore Careers</h1>
+
+<p>
+Choose a destination and build your Flight Plan.
+</p>
+
+</div>
+
+<input
+type="text"
+class="search-box"
+placeholder="Search careers..."
+id="searchInput">
+
+<div class="career-grid" id="careerGrid">
+
+</div>
+
+</div>
+
+<script>
+
+const careerMap = {
+
+    TECH: [
+        "Software Engineering",
+        "Artificial Intelligence",
+        "Data Science",
+        "Cybersecurity",
+        "Computer Science",
+        "UX/UI Design",
+        "Game Development",
+        "Cloud Engineering"
+    ],
+
+    HEALTH: [
+        "Medicine",
+        "Nursing",
+        "Dentistry",
+        "Psychology",
+        "Veterinary Medicine",
+        "Physiotherapy"
+    ],
+
+    SOCIAL: [
+        "Law",
+        "Political Science",
+        "International Relations",
+        "Journalism",
+        "Education"
+    ],
+
+    BUSINESS: [
+        "Business Administration",
+        "Finance",
+        "Economics",
+        "Marketing",
+        "Accounting"
+    ],
+
+    SCIENCE: [
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "Mathematics",
+        "Astronomy"
+    ],
+
+    ARTS: [
+        "Graphic Design",
+        "Industrial Design",
+        "Music",
+        "Literature",
+        "History"
+    ],
+
+    ENVIRONMENT: [
+        "Environmental Engineering",
+        "Agronomy",
+        "Agroindustry"
+    ]
+
+};
+
+const grid = document.getElementById("careerGrid");
+
+function renderCareers(list){
+
+grid.innerHTML="";
+
+list.forEach(career=>{
+
+grid.innerHTML += `
+
+<div class="career-card">
+
+<h3>${career}</h3>
+
+<p>
+Explore requirements, skills and roadmap.
+</p>
+
+<button
+class="build-btn"
+onclick="openCareer('${career}')">
+
+Build My Flight Plan
+
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+function openCareer(career){
+
+localStorage.setItem(
+"selectedCareer",
+career
+);
+
+window.location.href=
+"/flightplan";
+
+}
+
+renderCareers(careers);
+
+document
+.getElementById("searchInput")
+.addEventListener("input",e=>{
+
+const search =
+e.target.value.toLowerCase();
+
+const filtered =
+careers.filter(career=>
+
+career.toLowerCase()
+.includes(search)
+
+);
+
+renderCareers(filtered);
+
+});
+
+</script>
+
+</body>
+</html>

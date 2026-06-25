@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FuturePilot | Flight Plan</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    background:#07111F;
+    color:white;
+    min-height:100vh;
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    padding:50px 0;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.header h1{
+    font-size:4rem;
+
+    background:linear-gradient(
+        90deg,
+        #00D4FF,
+        #00FFB3
+    );
+
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    color:#B8C4D4;
+    margin-top:10px;
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:24px;
+
+    padding:25px;
+}
+
+.card-title{
+    color:#00FFB3;
+    font-size:1.1rem;
+    margin-bottom:15px;
+}
+
+.card-value{
+    font-size:1.7rem;
+    font-weight:700;
+}
+
+.progress-bar{
+    width:100%;
+    height:12px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:15px;
+}
+
+.progress-fill{
+    width:18%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #00D4FF,
+        #00FFB3
+    );
+}
+
+.section{
+    margin-top:50px;
+}
+
+.section h2{
+    margin-bottom:25px;
+}
+
+.mission-card{
+
+    background:rgba(255,255,255,.05);
+
+    border-left:4px solid #00FFB3;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    margin-bottom:18px;
+}
+
+.mission-title{
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.mission-description{
+    color:#B8C4D4;
+    margin-bottom:12px;
+}
+
+.resource{
+
+    display:inline-block;
+
+    margin:6px;
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    background:rgba(0,212,255,.15);
+
+    color:#00D4FF;
+}
+
+.locked{
+
+    opacity:.5;
+
+    border-left:4px solid #00D4FF;
+}
+
+.ai-box{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(0,255,179,.2);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    margin-top:50px;
+}
+
+.ai-box h2{
+    color:#00FFB3;
+    margin-bottom:15px;
+}
+
+.back-btn{
+
+    display:inline-block;
+
+    margin-bottom:30px;
+
+    text-decoration:none;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    padding:12px 20px;
+
+    border-radius:12px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="/careers" class="back-btn">
+← Careers
+</a>
+
+<div class="header">
+
+<h1>AI Flight Plan</h1>
+
+<p class="subtitle">
+Your personalized journey starts here.
+</p>
+
+</div>
+
+<div class="dashboard">
+
+<div class="card">
+<div class="card-title">
+Career
+</div>
+
+<div
+class="card-value"
+id="careerName">
+Loading...
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">
+Top University Matches
+</div>
+
+<div
+class="card-value"
+id="universities">
+Loading...
+</div>
+
+</div>
+
+<div class="card">
+<div class="card-title">
+Academic Profile
+</div>
+
+<div
+class="card-value"
+id="academicLevel">
+Loading...
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">
+Progress
+</div>
+
+<div class="card-value">
+18%
+</div>
+
+<div class="progress-bar">
+<div class="progress-fill"></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🎯 Current Mission</h2>
+
+<div class="mission-card">
+
+<div class="mission-title">
+Foundation Assessment
+</div>
+
+<div class="mission-description">
+
+Complete your FuturePilot Assessment so the AI can understand:
+
+• Strengths
+
+• Learning Style
+
+• Current Skills
+
+• Career Fit
+
+</div>
+
+<div class="resource">
+Assessment
+</div>
+
+<div class="resource">
+Career Match
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🚀 Upcoming Missions</h2>
+
+<div class="mission-card locked">
+
+<div class="mission-title">
+Personalized Skill Development
+</div>
+
+<div class="mission-description">
+
+FuturePilot AI will unlock this mission after analyzing your profile.
+
+</div>
+
+</div>
+
+<div class="mission-card locked">
+
+<div class="mission-title">
+Portfolio Building
+</div>
+
+<div class="mission-description">
+
+Projects will be generated according to your chosen career.
+
+</div>
+
+</div>
+
+<div class="mission-card locked">
+
+<div class="mission-title">
+University Profile Development
+</div>
+
+<div class="mission-description">
+
+Leadership, volunteering and achievements aligned with your goals.
+
+</div>
+
+</div>
+
+</div>
+<div class="ai-box">
+
+    <h2>🤖 FuturePilot AI Recommendation</h2>
+
+    <p id="aiRecommendation">
+        Loading AI recommendation...
+    </p>
+
+</div>
+<div class="card">
+
+    <div class="card-title">
+        Best Countries Match
+    </div>
+
+    <div
+    class="card-value"
+    id="countries">
+        Loading...
+    </div>
+
+</div>
+<div class="ai-box">
+
+    <h2>🤖 FuturePilot AI Analysis</h2>
+
+    <p id="aiRecommendation">
+        Loading AI Analysis...
+    </p>
+
+</div>
+<br><br>
+
+<button
+id="startJourneyBtn">
+
+Start My Journey →
+
+</button>
+<script>
+
+const career =
+localStorage.getItem(
+"selectedCareer"
+)       
+;
+
+document.getElementById(
+"careerName"
+).innerText =
+career || "No Career Selected";
+
+const universityFits = {
+
+    "Software Engineering":[
+        "MIT",
+        "Stanford",
+        "Carnegie Mellon",
+        "UC Berkeley",
+        "Georgia Tech"
+    ],
+
+    "Artificial Intelligence":[
+        "MIT",
+        "Stanford",
+        "Carnegie Mellon",
+        "Oxford",
+        "Cambridge"
+    ],
+
+    "Medicine":[
+        "Harvard",
+        "Johns Hopkins",
+        "UCLA",
+        "Yale",
+        "Columbia"
+    ],
+
+    "Business":[
+        "Wharton",
+        "Harvard",
+        "Stanford",
+        "MIT Sloan",
+        "Chicago Booth"
+    ]
+};
+    
+const universities = universityFits[career] || ["No University Matches Found"];
+document.getElementById("universities").innerText = universities.join(", ");
+
+document.getElementById(
+"universities"
+).innerHTML =
+universities.join("<br>");
+const results =
+JSON.parse(
+    localStorage.getItem(
+        "futurePilotResults"
+    )
+);
+
+if(results){
+
+    document.getElementById(
+        "academicLevel"
+    ).innerHTML = `
+
+        Math: ${results.mathLevel}<br>
+        English: ${results.englishLevel}<br>
+        Learning Style: ${results.learningStyle}
+
+    `;
+
+}
+const aiRecommendations = {
+
+    "Artificial Intelligence":
+    "Start learning Python, Machine Learning fundamentals and build your first AI project within 30 days.",
+
+    "Software Engineering":
+    "Focus on JavaScript, Git and full-stack development. Build 3 projects before applying to universities.",
+
+    "Medicine":
+    "Develop strong biology foundations, research experience and volunteering activities.",
+
+    "Business":
+    "Build leadership skills, participate in entrepreneurship programs and strengthen analytical thinking."
+
+};
+
+document.getElementById(
+    "aiRecommendation"
+).innerText =
+aiRecommendations[career] ||
+"FuturePilot AI is generating your personalized roadmap.";
+
+const countryMatches = {
+
+    "Artificial Intelligence":[
+        "🇺🇸 USA — 95%",
+        "🇬🇧 UK — 92%",
+        "🇨🇦 Canada — 90%",
+        "🇸🇬 Singapore — 88%",
+        "🇳🇱 Netherlands — 85%"
+    ],
+
+    "Software Engineering":[
+        "🇺🇸 USA — 95%",
+        "🇨🇦 Canada — 91%",
+        "🇩🇪 Germany — 90%",
+        "🇳🇱 Netherlands — 88%",
+        "🇸🇬 Singapore — 86%"
+    ],
+
+    "Medicine":[
+        "🇬🇧 UK — 94%",
+        "🇺🇸 USA — 93%",
+        "🇨🇦 Canada — 90%",
+        "🇦🇺 Australia — 88%",
+        "🇳🇿 New Zealand — 85%"
+    ]
+
+};
+const countries =
+countryMatches[career] ||
+["No Country Matches"];
+
+document.getElementById(
+"countries"
+).innerHTML =
+countries.join("<br>");
+
+let recommendation = "";
+
+if(career === "Artificial Intelligence"){
+
+    recommendation =
+    `
+    Your profile shows strong alignment with AI and emerging technologies.
+
+    Recommended next steps:
+
+    • Learn Python Fundamentals
+
+    • Complete an AI Project
+
+    • Improve English to Advanced level
+
+    • Explore MIT, Stanford and Carnegie Mellon programs
+
+    • Participate in Hackathons and Research Opportunities
+    `;
+}
+
+else if(career === "Medicine"){
+
+    recommendation =
+    `
+    Your profile aligns with Medicine and Health Sciences.
+
+    Recommended next steps:
+
+    • Strengthen Biology and Chemistry
+
+    • Join Volunteering Programs
+
+    • Develop Leadership Experiences
+
+    • Explore Harvard, Johns Hopkins and Yale
+
+    • Build a Competitive University Profile
+    `;
+}
+
+else if(career === "Business"){
+
+    recommendation =
+    `
+    Your profile aligns with Business and Entrepreneurship.
+
+    Recommended next steps:
+
+    • Develop Leadership Skills
+
+    • Learn Financial Literacy
+
+    • Join Student Organizations
+
+    • Explore Harvard, Wharton and Stanford
+
+    • Create Real-World Projects
+    `;
+}
+
+document.getElementById(
+    "aiRecommendation"
+).innerText =
+recommendation;
+document
+.getElementById("startJourneyBtn")
+.addEventListener("click",()=>{
+
+    window.location.href =
+    "/journey";
+
+});
+</script>
+</body>
+</html>

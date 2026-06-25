@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FuturePilot Journey</title>
+
+<link rel="stylesheet" href="/Frontend/journey.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        FP <span>FuturePilot</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/careers">Careers</a>
+        <a href="/assessment">Assessment</a>
+        <a href="/roadmap">Roadmaps</a>
+    </div>
+
+</nav>
+
+<div class="journey-page">
+
+    <aside class="sidebar">
+
+        <h3>Your Path</h3>
+
+        <h1 id="careerTitle">
+            Artificial Intelligence
+        </h1>
+
+        <p>
+            Build the future. One step at a time.
+        </p>
+
+        <div class="progress-box">
+
+            <h4>Overall Progress</h4>
+
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+
+            <span>35%</span>
+
+        </div>
+
+    </aside>
+
+    <main class="roadmap">
+
+        <div class="path-line"></div>
+
+        <!-- STEP 1 -->
+
+        <div class="step step1">
+
+            <div class="pin">
+
+                <svg viewBox="0 0 24 24" fill="none">
+
+                    <path
+                    d="M12 22C12 22 20 15 20 9 A8 8 0 1 0 4 9 C4 15 12 22 12 22Z"
+                    stroke="white"
+                    stroke-width="2"/>
+
+                    <circle
+                    cx="12"
+                    cy="9"
+                    r="3"
+                    fill="white"/>
+
+                </svg>
+
+            </div>
+
+        <div class="card">
+
+    <h3>1. Learn Python</h3>
+
+    <label><input type="checkbox"> Basics</label>
+
+    <div class="resources">
+
+        <a href="#" target="_blank">
+            ▶ Video
+        </a>
+
+        <a href="#" target="_blank">
+            📄 Notes
+        </a>
+
+        <a href="#" target="_blank">
+            💻 Exercise
+        </a>
+
+    </div>
+
+    <label><input type="checkbox"> Variables</label>
+
+    <div class="resources">
+
+        <a href="#" target="_blank">
+            ▶ Video
+        </a>
+
+        <a href="#" target="_blank">
+            📄 Notes
+        </a>
+
+        <a href="#" target="_blank">
+            💻 Exercise
+        </a>
+
+    </div>
+
+</div>
+
+        </div>
+
+        <!-- STEP 2 -->
+
+        <div class="step step2">
+
+            <div class="pin">
+
+                <svg viewBox="0 0 24 24" fill="none">
+
+                    <path
+                    d="M12 22C12 22 20 15 20 9 A8 8 0 1 0 4 9 C4 15 12 22 12 22Z"
+                    stroke="white"
+                    stroke-width="2"/>
+
+                    <circle
+                    cx="12"
+                    cy="9"
+                    r="3"
+                    fill="white"/>
+
+                </svg>
+
+            </div>
+
+            <div class="card">
+
+                <h3>2. Mathematics</h3>
+
+                <label><input type="checkbox"> Algebra</label>
+                <label><input type="checkbox"> Logic</label>
+                <label><input type="checkbox"> Statistics</label>
+
+            </div>
+
+        </div>
+
+        <!-- STEP 3 -->
+
+        <div class="step step3">
+
+            <div class="pin">
+
+                <svg viewBox="0 0 24 24" fill="none">
+
+                    <path
+                    d="M12 22C12 22 20 15 20 9 A8 8 0 1 0 4 9 C4 15 12 22 12 22Z"
+                    stroke="white"
+                    stroke-width="2"/>
+
+                    <circle
+                    cx="12"
+                    cy="9"
+                    r="3"
+                    fill="white"/>
+
+                </svg>
+
+            </div>
+
+            <div class="card">
+
+                <h3>3. Build Projects</h3>
+
+                <label><input type="checkbox"> Portfolio</label>
+                <label><input type="checkbox"> Calculator App</label>
+                <label><input type="checkbox"> Website</label>
+
+            </div>
+
+        </div>
+
+        <!-- STEP 4 -->
+
+        <div class="step step4">
+
+            <div class="pin">
+
+                <svg viewBox="0 0 24 24" fill="none">
+
+                    <path
+                    d="M12 22C12 22 20 15 20 9 A8 8 0 1 0 4 9 C4 15 12 22 12 22Z"
+                    stroke="white"
+                    stroke-width="2"/>
+
+                    <circle
+                    cx="12"
+                    cy="9"
+                    r="3"
+                    fill="white"/>
+
+                </svg>
+
+            </div>
+
+            <div class="card">
+
+                <h3>4. Machine Learning</h3>
+
+                <label><input type="checkbox"> Models</label>
+                <label><input type="checkbox"> Training</label>
+                <label><input type="checkbox"> Datasets</label>
+
+            </div>
+
+        </div>
+
+        <div class="goal">
+
+            YOUR FUTURE
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+
+const career =
+localStorage.getItem("selectedCareer");
+
+if(career){
+
+    document.getElementById(
+        "careerTitle"
+    ).innerText = career;
+
+}
+
+const roadmaps = {
+
+    "Artificial Intelligence":[
+        "Python Fundamentals",
+        "Mathematics for AI",
+        "Build AI Projects",
+        "Machine Learning"
+    ],
+
+    "Software Engineering":[
+        "Programming Fundamentals",
+        "Data Structures",
+        "Web Development",
+        "Software Projects"
+    ],
+
+    "Medicine":[
+        "Biology Foundations",
+        "Human Anatomy",
+        "Clinical Skills",
+        "Medical Research"
+    ],
+
+    "Business Administration":[
+        "Business Fundamentals",
+        "Marketing & Sales",
+        "Finance Basics",
+        "Leadership Projects"
+    ],
+
+    "Psychology":[
+        "Introduction to Psychology",
+        "Human Behavior",
+        "Research Methods",
+        "Applied Psychology"
+    ],
+
+    "Cybersecurity":[
+        "Computer Networks",
+        "System Security",
+        "Ethical Hacking",
+        "Security Projects"
+    ],
+
+    "Data Science":[
+        "Python & Statistics",
+        "Data Analysis",
+        "Visualization",
+        "Machine Learning"
+    ],
+
+    "Law":[
+        "Legal Foundations",
+        "Constitutional Law",
+        "Case Analysis",
+        "Legal Practice"
+    ]
+
+};
+
+const roadmapTitles =
+roadmaps[career] || [
+
+    "Foundation Skills",
+    "Core Knowledge",
+    "Projects",
+    "Advanced Development"
+
+];
+
+const cards =
+document.querySelectorAll(".card");
+
+cards[0].querySelector("h3").innerText =
+"1. " + roadmapTitles[0];
+
+cards[1].querySelector("h3").innerText =
+"2. " + roadmapTitles[1];
+
+cards[2].querySelector("h3").innerText =
+"3. " + roadmapTitles[2];
+
+cards[3].querySelector("h3").innerText =
+"4. " + roadmapTitles[3];
+
+const pins =
+document.querySelectorAll(".pin");
+
+pins.forEach(pin => {
+
+    pin.addEventListener("click", () => {
+
+        const card =
+        pin.parentElement.querySelector(".card");
+
+        card.classList.toggle("active");
+
+    });
+
+});
+const labels =
+document.querySelectorAll(".card label");
+
+labels.forEach(label => {
+
+    const resources =
+    document.createElement("div");
+
+    resources.className =
+    "resources";
+
+    resources.innerHTML = `
+
+        <a href="#">
+            ▶ Video
+        </a>
+
+        <a href="#">
+            📄 Notes
+        </a>
+
+        <a href="#">
+            💻 Exercise
+        </a>
+
+    `;
+
+    label.insertAdjacentElement(
+        "afterend",
+        resources
+    );
+
+});
+</script>
+
+</body>
+</html>
