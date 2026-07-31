@@ -28,7 +28,10 @@ import json
 import math
 from datetime import datetime
 from dataclasses import dataclass, field, asdict
+from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
+
+DEFAULT_MEMORY_DIR = str(Path(__file__).resolve().parent / "data" / "users")
 
 
 # =============================================================================
@@ -93,8 +96,12 @@ class StudentMemorySystem:
     """
     Módulo de Memoria Persistente de Corto y Largo Plazo.
     """
-    def __init__(self, storage_dir: str = "data/users"):
-        self.storage_dir = storage_dir
+    def __init__(self, storage_dir: str = None):
+        # Ruta absoluta por defecto: antes era relativa ("data/users") y
+        # dependia silenciosamente del cwd del proceso que lanzaba uvicorn,
+        # lo que podia escribir la memoria del estudiante en una carpeta
+        # distinta a la esperada segun desde donde se arrancara el server.
+        self.storage_dir = storage_dir or DEFAULT_MEMORY_DIR
         if not os.path.exists(self.storage_dir):
             os.makedirs(self.storage_dir, exist_ok=True)
 
@@ -359,6 +366,86 @@ class ResponseBuilder:
         )
 
 
+class MentorEngine:
+    """
+    Módulo de Mentoría Conversacional. Responde preguntas del estudiante
+    apoyándose en su memoria persistente (último diagnóstico, roadmap,
+    vector de habilidades) y en el catálogo de carreras. Sigue el mismo
+    enfoque rule-based/templated que el resto del cerebro: sin llamadas a
+    un LLM externo.
+    """
+
+    INTENT_KEYWORDS = {
+        "roadmap": ["roadmap", "pasos", "plan", "ruta", "checkpoint", "siguiente"],
+        "career": ["carrera", "career", "profesion", "profesión", "trabajo"],
+        "university": ["universidad", "university", "estudiar", "hub", "pais", "país", "destino"],
+        "skills": ["habilidad", "skill", "fortaleza", "debilidad", "gap", "mejorar"],
+        "motivation": ["animo", "ánimo", "motivacion", "motivación", "duda", "nervios", "miedo", "inseguro"],
+    }
+
+    def __init__(self, memory_system: StudentMemorySystem, careers_db: List[Dict[str, Any]]):
+        self.memory_system = memory_system
+        self.careers_db = careers_db
+
+    def _detect_intent(self, message: str) -> str:
+        lowered = message.lower()
+        for intent, keywords in self.INTENT_KEYWORDS.items():
+            if any(keyword in lowered for keyword in keywords):
+                return intent
+        return "general"
+
+    def chat(self, user_message: str, context: Optional[Dict[str, Any]] = None) -> str:
+        context = context or {}
+        user_id = context.get("user_id", "default_student")
+        memory = self.memory_system.load_memory(user_id)
+        history = memory.get("assessment_history", [])
+
+        if not history:
+            return (
+                "Todavía no tengo un diagnóstico tuyo. Completa el test de orientación "
+                "vocacional primero y con gusto te ayudo a interpretar tus resultados."
+            )
+
+        last = history[-1]
+        top_choice = last.get("top_choice") or "tu perfil vocacional"
+        intent = self._detect_intent(user_message)
+
+        if intent == "roadmap":
+            return (
+                f"Tu ruta hacia {top_choice} tiene 4 checkpoints: fundamentos y conceptos "
+                f"clave, nivelación de habilidades, un proyecto integrador para portafolio, "
+                f"y certificación/aplicación profesional. Puedes verlos en detalle en Journey."
+            )
+        if intent == "career":
+            return (
+                f"Según tu último diagnóstico, tu mejor match es {top_choice}. Puedes "
+                f"comparar otras opciones compatibles en la pantalla de Careers."
+            )
+        if intent == "university":
+            return (
+                f"Revisa los hubs globales recomendados para {top_choice} en tu Flight "
+                f"Plan: ahí encontrarás países y universidades alineados a tu perfil."
+            )
+        if intent == "skills":
+            vector = last.get("vector")
+            return (
+                f"Tu vector de habilidades más reciente fue {vector}. Enfócate en las "
+                f"áreas con menor puntaje para cerrar brechas hacia {top_choice}."
+            )
+        if intent == "motivation":
+            return (
+                "Es normal tener dudas al elegir un camino. Tu diagnóstico se basa en tus "
+                f"propias respuestas, y {top_choice} refleja fortalezas reales tuyas — "
+                "avanza un checkpoint a la vez."
+            )
+
+        return (
+            f"Puedo ayudarte con tu roadmap, tu carrera recomendada ({top_choice}), "
+            "universidades/hubs, tus habilidades o si necesitas ánimo. ¿Sobre cuál "
+            "quieres hablar?"
+        )
+
+
 # =============================================================================
 # CEREBRO PRINCIPAL: FUTUREPILOT BRAIN (ORCHESTRATOR)
 # =============================================================================
@@ -464,6 +551,7 @@ class FuturePilotAIEcosystem:
     """
     def __init__(self, careers_data: List[Dict[str, Any]], questions_data: List[Dict[str, Any]]):
         self.brain = FuturePilotBrain(careers_data, questions_data)
+        self.mentor = MentorEngine(self.brain.memory_system, careers_data)
 
     def process_user_test(self, user_answers: List[Dict[str, Any]], user_id: str = "default_student") -> Dict[str, Any]:
         response: BrainResponse = self.brain.run_cognitive_cycle(user_answers, user_id)

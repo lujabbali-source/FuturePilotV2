@@ -1,47 +1,74 @@
 """
 ===============================================================================
-FUTUREPILOT API SERVER (FASTAPI)
+FUTUREPILOT API SERVER (FASTAPI) - Backend unificado
 ===============================================================================
-Servidor web principal para la carpeta futurepilot_ia.
-Expone los endpoints HTTP necesarios para comunicar el frontend web (HTML/JS)
-con el motor de Inteligencia Artificial (ai_engine.py).
+Punto de entrada único del backend de FuturePilot. Absorbe lo que antes
+eran dos servidores FastAPI separados (backend/main.py y este archivo):
+
+  - Sirve Frontend/ como sitio estático (HTML/CSS/JS vanilla).
+  - Expone la API de evaluación vocacional respaldada por el motor de IA
+    rule-based (ai_engine.py): preguntas, carreras, assess, mentor chat.
+  - Expone el catálogo de universidades WHED (backend/whed_catalog.py).
+
+backend/ dejó de correr su propio servidor: main.py se retiró porque su
+funcionalidad (estáticos, páginas HTML, catálogo) quedó absorbida aquí.
+La carpeta backend/ se conserva como librería de datos (whed_catalog.py,
+import_whed.py, data/).
 ===============================================================================
 """
 
-import os
 import json
-from fastapi import FastAPI, HTTPException, status
+import sys
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
+from fastapi import FastAPI, HTTPException, Query, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
-from typing import Dict, Any, List, Optional
 
-# Importar el motor principal de la IA
-from ai_engine import FuturePilotAIEcosystem
+# --------------------------------------------------------------------------
+# Resolución de rutas e imports entre paquetes hermanos
+# --------------------------------------------------------------------------
+# "futurepilot-IA" tiene un guion en el nombre y no puede importarse como
+# paquete Python normal (import futurepilot-IA fallaría). Por eso se agregan
+# explícitamente al sys.path tanto la raíz del repo (para poder hacer
+# `from backend.whed_catalog import WhedCatalog`) como esta misma carpeta
+# (para `import ai_engine`), sin importar desde qué cwd se lance uvicorn.
+BASE_DIR = Path(__file__).resolve().parent
+REPO_ROOT = BASE_DIR.parent
+for _path in (REPO_ROOT, BASE_DIR):
+    if str(_path) not in sys.path:
+        sys.path.insert(0, str(_path))
 
-# Inicializacion de FastAPI
+from ai_engine import FuturePilotAIEcosystem  # noqa: E402
+from backend.whed_catalog import WhedCatalog  # noqa: E402
+
+FRONTEND_DIR = REPO_ROOT / "Frontend"
+
 app = FastAPI(
-    title="FuturePilot AI API",
-    description="Servidor de Inteligencia Artificial para Orientación Vocacional y Educativa",
-    version="1.0.0"
+    title="FuturePilot API",
+    description="Backend unificado: evaluación vocacional (IA rule-based) + catálogo de universidades WHED",
+    version="2.0.0",
 )
 
-# Configuracion de CORS (permite solicitudes desde el frontend web)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=False,
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
-# Cargar archivos de datos de la carpeta data/
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-
+# --------------------------------------------------------------------------
+# Datos y motores
+# --------------------------------------------------------------------------
 def load_json_file(relative_path: str) -> List[Dict[str, Any]]:
     """Carga de manera segura un archivo JSON desde la ruta relativa dada."""
-    file_path = os.path.join(BASE_DIR, relative_path)
-    if not os.path.exists(file_path):
+    file_path = BASE_DIR / relative_path
+    if not file_path.exists():
         print(f"Advertencia: No se encontro el archivo en {file_path}")
         return []
     try:
@@ -52,20 +79,96 @@ def load_json_file(relative_path: str) -> List[Dict[str, Any]]:
         return []
 
 
-# Carga de bases de datos locales
 careers_db = load_json_file("data/careers.json")
 questions_db = load_json_file("data/questions.json")
 
-# Inicializar el motor unificado de IA
-ai_system = FuturePilotAIEcosystem(
-    careers_data=careers_db,
-    questions_data=questions_db
-)
+ai_system = FuturePilotAIEcosystem(careers_data=careers_db, questions_data=questions_db)
+
+whed_catalog = WhedCatalog(REPO_ROOT / "backend" / "data" / "whed.sqlite3")
 
 
-# =============================================================================
-# MODELOS DE DATOS (PYDANTIC SCHEMAS)
-# =============================================================================
+# --------------------------------------------------------------------------
+# Estáticos y páginas HTML (antes en backend/main.py)
+# --------------------------------------------------------------------------
+app.mount("/Frontend", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
+
+
+@app.get("/style.css")
+def style_css():
+    return FileResponse(str(FRONTEND_DIR / "style.css"))
+
+
+@app.get("/futurepilot-logo.png")
+def logo():
+    return FileResponse(str(FRONTEND_DIR / "futurepilot-logo.png"))
+
+
+@app.get("/")
+def home():
+    return FileResponse(str(FRONTEND_DIR / "index.html"))
+
+
+@app.get("/assessment")
+def assessment_page():
+    return FileResponse(str(FRONTEND_DIR / "assessment.html"))
+
+
+@app.get("/careers")
+def careers_page():
+    return FileResponse(str(FRONTEND_DIR / "careers.html"))
+
+
+@app.get("/roadmap")
+def roadmap_page():
+    return FileResponse(str(FRONTEND_DIR / "roadmap.html"))
+
+
+@app.get("/journey")
+def journey_page():
+    return FileResponse(str(FRONTEND_DIR / "journey.html"))
+
+
+@app.get("/flightplan")
+def flightplan_page():
+    return FileResponse(str(FRONTEND_DIR / "flightplan.html"))
+
+
+# --------------------------------------------------------------------------
+# Catálogo WHED (antes en backend/main.py)
+# --------------------------------------------------------------------------
+@app.get("/api/catalog/metadata")
+def catalog_metadata():
+    return whed_catalog.metadata()
+
+
+@app.get("/api/universities")
+def list_universities(
+    country: str | None = None,
+    city: str | None = None,
+    search: str | None = None,
+    limit: int = Query(default=50, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+):
+    return whed_catalog.search(
+        country=country,
+        city=city,
+        search=search,
+        limit=limit,
+        offset=offset,
+    )
+
+
+@app.get("/api/universities/{whed_id}")
+def get_university(whed_id: str):
+    university = whed_catalog.get(whed_id)
+    if university is None:
+        raise HTTPException(status_code=404, detail="WHED institution not found")
+    return university
+
+
+# --------------------------------------------------------------------------
+# Modelos de datos - Evaluación vocacional
+# --------------------------------------------------------------------------
 class UserAnswerItem(BaseModel):
     question_index: int = Field(..., description="Indice de la pregunta respondida")
     answer_index: int = Field(..., description="Indice de la opcion seleccionada por el estudiante")
@@ -77,20 +180,23 @@ class TestSubmissionRequest(BaseModel):
 
 class MentorChatRequest(BaseModel):
     message: str = Field(..., description="Mensaje enviado por el usuario al AI Mentor")
-    user_context: Optional[Dict[str, Any]] = Field(default=None, description="Contexto del perfil del estudiante")
+    user_context: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description="Contexto del perfil del estudiante (puede incluir user_id para recuperar su memoria)",
+    )
 
 
-# =============================================================================
-# ENDPOINTS DE LA API
-# =============================================================================
-@app.get("/", status_code=status.HTTP_200_OK)
+# --------------------------------------------------------------------------
+# API - Evaluación vocacional / IA
+# --------------------------------------------------------------------------
+@app.get("/api/v1/status", status_code=status.HTTP_200_OK)
 def get_system_status():
     """Endpoint de comprobacion de estado de la API."""
     return {
         "system": "FuturePilot AI Engine",
         "status": "Online",
         "questions_loaded": len(questions_db),
-        "careers_loaded": len(careers_db)
+        "careers_loaded": len(careers_db),
     }
 
 
@@ -100,7 +206,17 @@ def get_all_questions():
     return {
         "success": True,
         "total": len(questions_db),
-        "questions": questions_db
+        "questions": questions_db,
+    }
+
+
+@app.get("/api/v1/careers", status_code=status.HTTP_200_OK)
+def get_all_careers():
+    """Obtiene el catálogo completo de carreras (fuente única de verdad)."""
+    return {
+        "success": True,
+        "total": len(careers_db),
+        "careers": careers_db,
     }
 
 
@@ -113,7 +229,7 @@ def process_test_assessment(payload: TestSubmissionRequest):
     if not payload.answers:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Debe proporcionar al menos una respuesta para procesar la evaluacion."
+            detail="Debe proporcionar al menos una respuesta para procesar la evaluacion.",
         )
 
     try:
@@ -121,45 +237,48 @@ def process_test_assessment(payload: TestSubmissionRequest):
         results = ai_system.process_user_test(formatted_answers)
         return {
             "success": True,
-            "data": results
+            "data": results,
         }
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Error procesando el test de orientacion: {str(e)}"
+            detail=f"Error procesando el test de orientacion: {str(e)}",
         )
 
 
 @app.post("/api/v1/mentor/chat", status_code=status.HTTP_200_OK)
 def chat_with_mentor(payload: MentorChatRequest):
     """
-    Permite chatear con el AI Mentor Educativo dinamico impulsado por la API de Gemini.
+    Chatea con el AI Mentor. Usa MentorEngine (ai_engine.py), un motor
+    rule-based que se apoya en la memoria persistente del estudiante y en
+    el catálogo de carreras — sin depender de ninguna API externa de LLM.
     """
     if not payload.message.strip():
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="El mensaje del usuario no puede estar vacio."
+            detail="El mensaje del usuario no puede estar vacio.",
         )
 
     try:
         response_text = ai_system.mentor.chat(
             user_message=payload.message,
-            context=payload.user_context
+            context=payload.user_context,
         )
         return {
             "success": True,
-            "response": response_text
+            "response": response_text,
         }
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Error al comunicar con el AI Mentor: {str(e)}"
+            detail=f"Error al comunicar con el AI Mentor: {str(e)}",
         )
 
 
-# =============================================================================
-# EJECUCION DIRECTA CON UVICORN
-# =============================================================================
+# --------------------------------------------------------------------------
+# Ejecucion directa con uvicorn
+# --------------------------------------------------------------------------
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)

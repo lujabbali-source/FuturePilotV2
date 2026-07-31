@@ -2,6 +2,8 @@
 
 FuturePilot stores the official institution catalog in SQLite and reads it through the backend API. The frontend never ships a manually maintained university list.
 
+> This folder is a data library (`whed_catalog.py`, `import_whed.py`, `data/`), not a standalone server. `backend/main.py` was retired — its static-file serving and catalog routes were absorbed into `futurepilot-IA/app.py`, the single unified backend entry point. Run the app from there: see the root `README.md`.
+
 WHED does not expose a public API in the portal. Its terms also prohibit copying all or a substantial part of the portal without prior consent. The importer therefore accepts only a CSV or JSON export that FuturePilot is authorized to receive from IAU/MyWHED.
 
 ## Import an authorized export
