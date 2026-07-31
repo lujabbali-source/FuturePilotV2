@@ -1,3 +1,26 @@
 database/data/*.sqlite
 database/data/*.sqlite-shm
 database/data/*.sqlite-wal
+
+# Secrets
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+backend/data/*.sqlite3
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+
+# FuturePilot IA runtime data
+futurepilot-IA/data/users/*.json
+
+# OS / editor noise
+desktop.ini
+*.lnk
