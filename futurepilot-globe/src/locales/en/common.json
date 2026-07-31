@@ -1,0 +1,23 @@
+{
+  "brand": {
+    "name": "FuturePilot",
+    "tagline": "Your next chapter, mapped"
+  },
+  "language": {
+    "label": "Language",
+    "english": "English",
+    "spanish": "Español",
+    "switchTo": "Switch language"
+  },
+  "actions": {
+    "close": "Close",
+    "open": "Open",
+    "retry": "Try again"
+  },
+  "status": {
+    "loading": "Loading...",
+    "notConnected": "Not connected yet",
+    "noRecords": "No connected records yet",
+    "loadingCity": "Loading city data..."
+  }
+}

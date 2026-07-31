@@ -1,0 +1,201 @@
+import { defineCity, defineCountry, defineUniversity } from "../schema";
+
+const countryId = "guatemala";
+const countryName = "Guatemala";
+
+const cities = [
+  defineCity({
+    id: "guatemala-ciudad-de-guatemala",
+    name: "Ciudad de Guatemala",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "guatemala-ciudad-de-guatemala-universidad-de-san-carlos-de-guatemala-usac",
+        "name": "Universidad de San Carlos de Guatemala (USAC)",
+        "cityId": "guatemala-ciudad-de-guatemala",
+        "website": "https://www.usac.edu.gt",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "guatemala-ciudad-de-guatemala-universidad-del-valle-de-guatemala-uvg",
+        "name": "Universidad del Valle de Guatemala (UVG)",
+        "cityId": "guatemala-ciudad-de-guatemala",
+        "website": "https://www.uvg.edu.gt",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "guatemala-ciudad-de-guatemala-universidad-francisco-marroquin-ufm",
+        "name": "Universidad Francisco Marroquín (UFM)",
+        "cityId": "guatemala-ciudad-de-guatemala",
+        "website": "https://www.ufm.edu",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "guatemala-ciudad-de-guatemala-universidad-rafael-landivar-url-campus-central",
+        "name": "Universidad Rafael Landívar (URL - Campus Central)",
+        "cityId": "guatemala-ciudad-de-guatemala",
+        "website": "https://principal.url.edu.gt",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "guatemala-ciudad-de-guatemala-universidad-galileo",
+        "name": "Universidad Galileo",
+        "cityId": "guatemala-ciudad-de-guatemala",
+        "website": "https://www.galileo.edu",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "guatemala-ciudad-de-guatemala-universidad-del-istmo-unis",
+        "name": "Universidad del Istmo (UNIS)",
+        "cityId": "guatemala-ciudad-de-guatemala",
+        "website": "https://unis.edu.gt",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "guatemala-ciudad-de-guatemala-universidad-mariano-galvez-de-guatemala-umg",
+        "name": "Universidad Mariano Gálvez de Guatemala (UMG)",
+        "cityId": "guatemala-ciudad-de-guatemala",
+        "website": "https://umg.edu.gt",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "guatemala-ciudad-de-guatemala-universidad-panamericana-upana",
+        "name": "Universidad Panamericana (UPANA)",
+        "cityId": "guatemala-ciudad-de-guatemala",
+        "website": "https://www.upana.edu.gt",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "guatemala-ciudad-de-guatemala-universidad-da-vinci-de-guatemala-udv",
+        "name": "Universidad Da Vinci de Guatemala (UDV)",
+        "cityId": "guatemala-ciudad-de-guatemala",
+        "website": "https://udv.edu.gt",
+        "type": "private"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "guatemala-quetzaltenango",
+    name: "Quetzaltenango",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "guatemala-quetzaltenango-centro-universitario-de-occidente-usac-cunoc",
+        "name": "Centro Universitario de Occidente - USAC (CUNOC)",
+        "cityId": "guatemala-quetzaltenango",
+        "website": "https://cunoc.edu.gt",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "guatemala-quetzaltenango-universidad-rafael-landivar-campus-san-alberto-hurtado-s-j-quetzaltenango",
+        "name": "Universidad Rafael Landívar (Campus San Alberto Hurtado, S.J. - Quetzaltenango)",
+        "cityId": "guatemala-quetzaltenango",
+        "website": "https://principal.url.edu.gt",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "guatemala-quetzaltenango-universidad-mesoamericana-campus-quetzaltenango",
+        "name": "Universidad Mesoamericana (Campus Quetzaltenango)",
+        "cityId": "guatemala-quetzaltenango",
+        "website": "https://www.mesoamericana.edu.gt",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "guatemala-quetzaltenango-universidad-del-valle-de-guatemala-campus-altiplano-solola",
+        "name": "Universidad del Valle de Guatemala (Campus Altiplano - Sololá)",
+        "cityId": "guatemala-quetzaltenango",
+        "website": "https://www.uvg.edu.gt/campuses/altiplano/",
+        "type": "private"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "guatemala-coban",
+    name: "Cobán",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "guatemala-coban-centro-universitario-del-norte-usac-cunor-coban",
+        "name": "Centro Universitario del Norte - USAC (CUNOR - Cobán)",
+        "cityId": "guatemala-coban",
+        "website": "https://cunor.usac.edu.gt",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "guatemala-coban-universidad-rafael-landivar-campus-san-pedro-claver-s-j-san-juan-chamelco-coban",
+        "name": "Universidad Rafael Landívar (Campus San Pedro Claver, S.J. - San Juan Chamelco / Cobán)",
+        "cityId": "guatemala-coban",
+        "website": "https://principal.url.edu.gt",
+        "type": "private"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "guatemala-escuintla",
+    name: "Escuintla",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "guatemala-escuintla-universidad-del-valle-de-guatemala-campus-sur-santa-lucia-cotzumalguapa",
+        "name": "Universidad del Valle de Guatemala (Campus Sur - Santa Lucía Cotzumalguapa)",
+        "cityId": "guatemala-escuintla",
+        "website": "https://www.uvg.edu.gt/campuses/sur/",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "guatemala-escuintla-centro-universitario-del-sur-usac-cunsur-escuintla",
+        "name": "Centro Universitario del Sur - USAC (CUNSUR - Escuintla)",
+        "cityId": "guatemala-escuintla",
+        "website": "https://cunsur.usac.edu.gt",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "guatemala-zacapa",
+    name: "Zacapa",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "guatemala-zacapa-centro-universitario-de-chiquimula-usac-cunori",
+        "name": "Centro Universitario de Chiquimula - USAC (CUNORI)",
+        "cityId": "guatemala-zacapa",
+        "website": "https://cunori.edu.gt",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "guatemala-zacapa-universidad-rafael-landivar-campus-san-luis-gonzaga-s-j-zacapa",
+        "name": "Universidad Rafael Landívar (Campus San Luis Gonzaga, S.J. - Zacapa)",
+        "cityId": "guatemala-zacapa",
+        "website": "https://principal.url.edu.gt",
+        "type": "private"
+      }),
+    ],
+  }),
+];
+
+export default defineCountry({
+  id: countryId,
+  name: countryName,
+  capital: null,
+  currency: null,
+  language: null,
+  continent: "America",
+  cities,
+  nationalUniversities: [],
+});

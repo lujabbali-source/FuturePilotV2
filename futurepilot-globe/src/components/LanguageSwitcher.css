@@ -1,0 +1,19 @@
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 5px 8px 5px 10px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 12px;
+  background: rgba(7, 17, 31, .64);
+  color: rgba(245, 251, 255, .78);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+  font-size: .72rem;
+}
+
+.language-switcher__icon { font-size: 1rem; }
+.language-switcher__label { color: rgba(245, 251, 255, .62); }
+.language-switcher select { border: 0; outline: 0; background: transparent; color: #f5fbff; cursor: pointer; font: inherit; font-weight: 700; }
+.language-switcher option { color: #07111f; background: #f5fbff; }

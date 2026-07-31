@@ -1,0 +1,38 @@
+{
+  "user_id": "usuario_test_vscode",
+  "created_at": "2026-07-30T10:32:47.211872",
+  "assessments_count": 2,
+  "assessment_history": [
+    {
+      "timestamp": "2026-07-30T10:32:47.211872",
+      "vector": {
+        "ANALYTICAL": 10.0,
+        "CREATIVE": 7.5,
+        "SOCIAL": 5.0,
+        "LEADERSHIP": 5.0,
+        "TECHNICAL": 10.0,
+        "SCIENTIFIC": 5.0,
+        "PRACTICAL": 5.0,
+        "ENTREPRENEURIAL": 10.0
+      },
+      "top_choice": "Software Engineering"
+    },
+    {
+      "timestamp": "2026-07-30T10:32:59.977135",
+      "vector": {
+        "ANALYTICAL": 10.0,
+        "CREATIVE": 7.5,
+        "SOCIAL": 5.0,
+        "LEADERSHIP": 5.0,
+        "TECHNICAL": 10.0,
+        "SCIENTIFIC": 5.0,
+        "PRACTICAL": 5.0,
+        "ENTREPRENEURIAL": 10.0
+      },
+      "top_choice": "Software Engineering"
+    }
+  ],
+  "explored_careers": [],
+  "completed_checkpoints": [],
+  "hypotheses_log": []
+}

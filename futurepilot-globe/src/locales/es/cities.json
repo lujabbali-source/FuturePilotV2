@@ -1,0 +1,60 @@
+{
+  "panel": {
+    "ariaLabel": "Panel de información de la ciudad",
+    "profile": "Perfil de la ciudad",
+    "unknownCity": "Cargando ciudad",
+    "countryFallback": "Colombia",
+    "loadingProfile": "Cargando perfil actualizado",
+    "close": "Cerrar panel de ciudad",
+    "detailsError": "No se pudieron cargar los detalles de la ciudad.",
+    "sections": {
+      "cost": "Costo de vida",
+      "universities": "Universidades",
+      "scholarships": "Becas",
+      "jobs": "Empleo",
+      "statistics": "Estadísticas",
+      "living": "Vida diaria"
+    },
+    "fields": {
+      "monthlyEstimate": "Estimado mensual",
+      "rent": "Arriendo",
+      "food": "Alimentación",
+      "transportation": "Transporte",
+      "utilities": "Servicios",
+      "studentBudget": "Presupuesto estudiantil",
+      "officialWebsite": "Sitio web oficial",
+      "city": "Ciudad",
+      "country": "País",
+      "source": "Fuente",
+      "requirements": "Requisitos",
+      "coverage": "Cobertura",
+      "deadline": "Fecha límite",
+      "averageSalary": "Salario promedio",
+      "mainIndustries": "Industrias principales",
+      "studentJobs": "Empleos estudiantiles",
+      "remoteOpportunities": "Oportunidades remotas",
+      "internships": "Prácticas",
+      "employmentRate": "Tasa de empleo",
+      "population": "Población",
+      "safety": "Seguridad",
+      "weather": "Clima",
+      "language": "Idioma",
+      "currency": "Moneda",
+      "internetSpeed": "Velocidad de internet",
+      "qualityOfLife": "Calidad de vida",
+      "studentSatisfaction": "Satisfacción estudiantil",
+      "bestNeighborhoods": "Mejores barrios",
+      "healthcare": "Salud",
+      "nightlife": "Vida nocturna",
+      "culture": "Cultura",
+      "tourism": "Turismo"
+    },
+    "records": {
+      "loadingUniversities": "Cargando instituciones WHED",
+      "catalogUnavailable": "Catálogo WHED no disponible",
+      "noInstitutions": "No se encontraron instituciones WHED",
+      "officialWebsiteLink": "Sitio web oficial ↗",
+      "nationalRanking": "Ranking nacional"
+    }
+  }
+}

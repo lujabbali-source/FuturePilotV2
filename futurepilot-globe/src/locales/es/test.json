@@ -1,0 +1,7 @@
+{
+  "title": "Descubre tu camino",
+  "question": "Pregunta {{current}} de {{total}}",
+  "next": "Siguiente",
+  "previous": "Anterior",
+  "finish": "Ver mi perfil"
+}

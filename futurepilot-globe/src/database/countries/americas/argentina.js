@@ -1,0 +1,535 @@
+import { defineCity, defineCountry, defineUniversity } from "../schema";
+
+const countryId = "argentina";
+const countryName = "Argentina";
+
+const cities = [
+  defineCity({
+    id: "argentina-ciudad-autonoma-de-buenos-aires",
+    name: "Ciudad Autónoma de Buenos Aires",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-ciudad-autonoma-de-buenos-aires-universidad-de-buenos-aires-uba",
+        "name": "Universidad de Buenos Aires (UBA)",
+        "cityId": "argentina-ciudad-autonoma-de-buenos-aires",
+        "website": "https://www.uba.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-ciudad-autonoma-de-buenos-aires-pontificia-universidad-catolica-argentina-uca",
+        "name": "Pontificia Universidad Católica Argentina (UCA)",
+        "cityId": "argentina-ciudad-autonoma-de-buenos-aires",
+        "website": "https://uca.edu.ar",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "argentina-ciudad-autonoma-de-buenos-aires-universidad-austral",
+        "name": "Universidad Austral",
+        "cityId": "argentina-ciudad-autonoma-de-buenos-aires",
+        "website": "https://www.austral.edu.ar",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "argentina-ciudad-autonoma-de-buenos-aires-universidad-torcuato-di-tella-utdt",
+        "name": "Universidad Torcuato Di Tella (UTDT)",
+        "cityId": "argentina-ciudad-autonoma-de-buenos-aires",
+        "website": "https://www.utdt.edu",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "argentina-ciudad-autonoma-de-buenos-aires-universidad-de-san-andres-udesa",
+        "name": "Universidad de San Andrés (UdeSA)",
+        "cityId": "argentina-ciudad-autonoma-de-buenos-aires",
+        "website": "https://www.udesa.edu.ar",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "argentina-ciudad-autonoma-de-buenos-aires-universidad-de-belgrano-ub",
+        "name": "Universidad de Belgrano (UB)",
+        "cityId": "argentina-ciudad-autonoma-de-buenos-aires",
+        "website": "https://www.ub.edu.ar",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "argentina-ciudad-autonoma-de-buenos-aires-universidad-de-palermo-up",
+        "name": "Universidad de Palermo (UP)",
+        "cityId": "argentina-ciudad-autonoma-de-buenos-aires",
+        "website": "https://www.palermo.edu",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "argentina-ciudad-autonoma-de-buenos-aires-universidad-nacional-de-general-san-martin-unsam",
+        "name": "Universidad Nacional de General San Martín (UNSAM)",
+        "cityId": "argentina-ciudad-autonoma-de-buenos-aires",
+        "website": "https://www.unsam.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-ciudad-autonoma-de-buenos-aires-universidad-nacional-de-quilmes-unq",
+        "name": "Universidad Nacional de Quilmes (UNQ)",
+        "cityId": "argentina-ciudad-autonoma-de-buenos-aires",
+        "website": "https://www.unq.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-ciudad-autonoma-de-buenos-aires-universidad-argentina-de-la-empresa-uade",
+        "name": "Universidad Argentina de la Empresa (UADE)",
+        "cityId": "argentina-ciudad-autonoma-de-buenos-aires",
+        "website": "https://www.uade.edu.ar",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "argentina-ciudad-autonoma-de-buenos-aires-instituto-tecnologico-de-buenos-aires-itba",
+        "name": "Instituto Tecnológico de Buenos Aires (ITBA)",
+        "cityId": "argentina-ciudad-autonoma-de-buenos-aires",
+        "website": "https://www.itba.edu.ar",
+        "type": "private"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-caba",
+    name: "CABA",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-caba-universidad-tecnologica-nacional-utn-rectorado-y-sedes-caba-avellaneda",
+        "name": "Universidad Tecnológica Nacional (UTN) (Rectorado y Sedes CABA/Avellaneda)",
+        "cityId": "argentina-caba",
+        "website": "https://www.utn.edu.ar",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-la-plata",
+    name: "La Plata",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-la-plata-universidad-nacional-de-la-plata-unlp",
+        "name": "Universidad Nacional de La Plata (UNLP)",
+        "cityId": "argentina-la-plata",
+        "website": "https://unlp.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-la-plata-universidad-nacional-del-sur-uns-bahia-blanca",
+        "name": "Universidad Nacional del Sur (UNS) (Bahía Blanca)",
+        "cityId": "argentina-la-plata",
+        "website": "https://www.uns.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-la-plata-universidad-nacional-del-mar-del-plata-unmdp-mar-del-plata",
+        "name": "Universidad Nacional del Mar del Plata (UNMDP) (Mar del Plata)",
+        "cityId": "argentina-la-plata",
+        "website": "https://www.mdp.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-la-plata-universidad-nacional-del-centro-de-la-provincia-de-buenos-aires-unicen-tandil",
+        "name": "Universidad Nacional del Centro de la Provincia de Buenos Aires (UNICEN) (Tandil)",
+        "cityId": "argentina-la-plata",
+        "website": "https://www.unicen.edu.ar",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-cordoba",
+    name: "Córdoba",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-cordoba-universidad-nacional-de-cordoba-unc",
+        "name": "Universidad Nacional de Córdoba (UNC)",
+        "cityId": "argentina-cordoba",
+        "website": "https://www.unc.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-cordoba-universidad-catolica-de-cordoba-ucc",
+        "name": "Universidad Católica de Córdoba (UCC)",
+        "cityId": "argentina-cordoba",
+        "website": "https://www.ucc.edu.ar",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "argentina-cordoba-universidad-siglo-21",
+        "name": "Universidad Siglo 21",
+        "cityId": "argentina-cordoba",
+        "website": "https://21.edu.ar",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "argentina-cordoba-universidad-nacional-de-rio-cuarto-unrc-rio-cuarto",
+        "name": "Universidad Nacional de Río Cuarto (UNRC) (Río Cuarto)",
+        "cityId": "argentina-cordoba",
+        "website": "https://www.unrc.edu.ar",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-rosario",
+    name: "Rosario",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-rosario-rosario-santa-fe",
+        "name": "Rosario (Santa Fe)",
+        "cityId": "argentina-rosario",
+        "website": "https://unr.edu.ar",
+        "type": null
+      }),
+      defineUniversity({
+        "id": "argentina-rosario-universidad-nacional-de-rosario-unr",
+        "name": "Universidad Nacional de Rosario (UNR)",
+        "cityId": "argentina-rosario",
+        "website": "https://unr.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-rosario-universidad-del-centro-educativo-latinoamericano-ucel",
+        "name": "Universidad del Centro Educativo Latinoamericano (UCEL)",
+        "cityId": "argentina-rosario",
+        "website": "https://www.ucel.edu.ar",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "argentina-rosario-universidad-nacional-del-litoral-unl",
+        "name": "Universidad Nacional del Litoral (UNL)",
+        "cityId": "argentina-rosario",
+        "website": "https://www.unl.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-rosario-universidad-nacional-de-entre-rios-uner",
+        "name": "Universidad Nacional de Entre Ríos (UNER)",
+        "cityId": "argentina-rosario",
+        "website": "https://www.uner.edu.ar",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-santa-fe",
+    name: "Santa Fe",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-santa-fe-santa-fe-capital",
+        "name": "Santa Fe Capital",
+        "cityId": "argentina-santa-fe",
+        "website": "https://www.unl.edu.ar",
+        "type": null
+      }),
+      defineUniversity({
+        "id": "argentina-santa-fe-universidad-catolica-de-santa-fe-ucsf",
+        "name": "Universidad Católica de Santa Fe (UCSF)",
+        "cityId": "argentina-santa-fe",
+        "website": "https://www.ucsf.edu.ar",
+        "type": "private"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-parana",
+    name: "Paraná",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-parana-parana-entre-rios",
+        "name": "Paraná (Entre Ríos)",
+        "cityId": "argentina-parana",
+        "website": "https://www.uner.edu.ar",
+        "type": null
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-mendoza",
+    name: "Mendoza",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-mendoza-mendoza",
+        "name": "Mendoza",
+        "cityId": "argentina-mendoza",
+        "website": "https://www.uncuyo.edu.ar",
+        "type": null
+      }),
+      defineUniversity({
+        "id": "argentina-mendoza-universidad-nacional-de-cuyo-uncuyo",
+        "name": "Universidad Nacional de Cuyo (UNCUYO)",
+        "cityId": "argentina-mendoza",
+        "website": "https://www.uncuyo.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-mendoza-universidad-del-aconcagua-uda",
+        "name": "Universidad del Aconcagua (UDA)",
+        "cityId": "argentina-mendoza",
+        "website": "https://www.uda.edu.ar",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "argentina-mendoza-universidad-de-mendoza-um",
+        "name": "Universidad de Mendoza (UM)",
+        "cityId": "argentina-mendoza",
+        "website": "https://um.edu.ar",
+        "type": "private"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-san-juan",
+    name: "San Juan",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-san-juan-san-juan",
+        "name": "San Juan",
+        "cityId": "argentina-san-juan",
+        "website": "https://www.unsj.edu.ar",
+        "type": null
+      }),
+      defineUniversity({
+        "id": "argentina-san-juan-universidad-nacional-de-san-juan-unsj",
+        "name": "Universidad Nacional de San Juan (UNSJ)",
+        "cityId": "argentina-san-juan",
+        "website": "https://www.unsj.edu.ar",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-san-luis",
+    name: "San Luis",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-san-luis-san-luis",
+        "name": "San Luis",
+        "cityId": "argentina-san-luis",
+        "website": "https://www.unsl.edu.ar",
+        "type": null
+      }),
+      defineUniversity({
+        "id": "argentina-san-luis-universidad-nacional-de-san-luis-unsl",
+        "name": "Universidad Nacional de San Luis (UNSL)",
+        "cityId": "argentina-san-luis",
+        "website": "https://www.unsl.edu.ar",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-san-miguel-de-tucuman",
+    name: "San Miguel de Tucumán",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-san-miguel-de-tucuman-san-miguel-de-tucuman",
+        "name": "San Miguel de Tucumán",
+        "cityId": "argentina-san-miguel-de-tucuman",
+        "website": "https://www.unt.edu.ar",
+        "type": null
+      }),
+      defineUniversity({
+        "id": "argentina-san-miguel-de-tucuman-universidad-nacional-de-tucuman-unt",
+        "name": "Universidad Nacional de Tucumán (UNT)",
+        "cityId": "argentina-san-miguel-de-tucuman",
+        "website": "https://www.unt.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-san-miguel-de-tucuman-universidad-del-norte-santo-tomas-de-aquino-unsta",
+        "name": "Universidad del Norte Santo Tomás de Aquino (UNSTA)",
+        "cityId": "argentina-san-miguel-de-tucuman",
+        "website": "https://www.unsta.edu.ar",
+        "type": "private"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-salta",
+    name: "Salta",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-salta-salta",
+        "name": "Salta",
+        "cityId": "argentina-salta",
+        "website": "https://www.unsa.edu.ar",
+        "type": null
+      }),
+      defineUniversity({
+        "id": "argentina-salta-universidad-nacional-de-salta-unsa",
+        "name": "Universidad Nacional de Salta (UNSa)",
+        "cityId": "argentina-salta",
+        "website": "https://www.unsa.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-salta-universidad-catolica-de-salta-ucasal",
+        "name": "Universidad Católica de Salta (UCASAL)",
+        "cityId": "argentina-salta",
+        "website": "https://www.ucasal.edu.ar",
+        "type": "private"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-jujuy",
+    name: "Jujuy",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-jujuy-san-salvador-de-jujuy",
+        "name": "San Salvador de Jujuy",
+        "cityId": "argentina-jujuy",
+        "website": "https://www.unju.edu.ar",
+        "type": null
+      }),
+      defineUniversity({
+        "id": "argentina-jujuy-universidad-nacional-de-jujuy-unju",
+        "name": "Universidad Nacional de Jujuy (UNJu)",
+        "cityId": "argentina-jujuy",
+        "website": "https://www.unju.edu.ar",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-bariloche",
+    name: "Bariloche",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-bariloche-san-carlos-de-bariloche-neuquen",
+        "name": "San Carlos de Bariloche / Neuquén",
+        "cityId": "argentina-bariloche",
+        "website": "https://www.ib.edu.ar",
+        "type": null
+      }),
+      defineUniversity({
+        "id": "argentina-bariloche-instituto-balseiro-bariloche-centro-de-referencia-en-fisica-e-ingenieria-nuclear",
+        "name": "Instituto Balseiro (Bariloche - Centro de referencia en física e ingeniería nuclear)",
+        "cityId": "argentina-bariloche",
+        "website": "https://www.ib.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-bariloche-universidad-nacional-de-rio-negro-unrn-bariloche-general-roca",
+        "name": "Universidad Nacional de Río Negro (UNRN) (Bariloche/General Roca)",
+        "cityId": "argentina-bariloche",
+        "website": "https://www.unrn.edu.ar",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "argentina-bariloche-chubut-y-tierra-del-fuego",
+        "name": "Chubut y Tierra del Fuego",
+        "cityId": "argentina-bariloche",
+        "website": "http://www.unp.edu.ar",
+        "type": null
+      }),
+      defineUniversity({
+        "id": "argentina-bariloche-universidad-nacional-de-tierra-del-fuego-untdf-ushuaia-rio-grande",
+        "name": "Universidad Nacional de Tierra del Fuego (UNTDF) (Ushuaia/Río Grande)",
+        "cityId": "argentina-bariloche",
+        "website": "https://www.untdf.edu.ar",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-neuquen",
+    name: "Neuquén",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-neuquen-universidad-nacional-del-comahue-unco-neuquen-y-rio-negro",
+        "name": "Universidad Nacional del Comahue (UNCo) (Neuquén y Río Negro)",
+        "cityId": "argentina-neuquen",
+        "website": "https://www.uncoma.edu.ar",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-comodoro-rivadavia",
+    name: "Comodoro Rivadavia",
+    coordinates: null,
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-comodoro-rivadavia-universidad-nacional-de-la-patagonia-san-juan-bosco-unpsjb-comodoro-rivadavia",
+        "name": "Universidad Nacional de la Patagonia San Juan Bosco (UNPSJB) (Comodoro Rivadavia)",
+        "cityId": "argentina-comodoro-rivadavia",
+        "website": "http://www.unp.edu.ar",
+        "type": "public"
+      }),
+    ],
+  }),
+];
+
+export default defineCountry({
+  id: countryId,
+  name: countryName,
+  capital: null,
+  currency: null,
+  language: null,
+  continent: "America",
+  cities,
+  nationalUniversities: [],
+});

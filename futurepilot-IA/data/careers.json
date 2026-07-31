@@ -1,0 +1,162 @@
+[
+  {
+    "id": "c1",
+    "title": "Software Engineering",
+    "category": "Technology",
+    "description": "Diseña, construye y optimiza sistemas de software, aplicaciones y arquitecturas digitales escalables.",
+    "requirements": {
+      "TECHNICAL": 9.5,
+      "ANALYTICAL": 9.0,
+      "PRACTICAL": 8.0,
+      "CREATIVE": 7.0,
+      "LEADERSHIP": 6.0,
+      "SOCIAL": 5.0,
+      "SCIENTIFIC": 6.5,
+      "ENTREPRENEURIAL": 7.0
+    }
+  },
+  {
+    "id": "c2",
+    "title": "Artificial Intelligence Specialist",
+    "category": "Technology",
+    "description": "Desarrolla modelos de aprendizaje automático, redes neuronales y sistemas de inteligencia artificial avanzada.",
+    "requirements": {
+      "TECHNICAL": 9.5,
+      "ANALYTICAL": 9.5,
+      "SCIENTIFIC": 9.0,
+      "CREATIVE": 7.5,
+      "LEADERSHIP": 6.0,
+      "SOCIAL": 4.5,
+      "PRACTICAL": 7.0,
+      "ENTREPRENEURIAL": 7.5
+    }
+  },
+  {
+    "id": "c3",
+    "title": "UX/UI Design",
+    "category": "Design",
+    "description": "Crea experiencias digitales e interfaces visuales atractivas, accesibles e intuitivas para los usuarios.",
+    "requirements": {
+      "CREATIVE": 9.5,
+      "SOCIAL": 8.5,
+      "ANALYTICAL": 7.0,
+      "TECHNICAL": 6.5,
+      "PRACTICAL": 6.0,
+      "LEADERSHIP": 6.0,
+      "ENTREPRENEURIAL": 7.0,
+      "SCIENTIFIC": 4.0
+    }
+  },
+  {
+    "id": "c4",
+    "title": "Data Science",
+    "category": "Technology",
+    "description": "Descubre patrones y tendencias en grandes volúmenes de datos para la toma de decisiones estratégicas.",
+    "requirements": {
+      "ANALYTICAL": 9.5,
+      "SCIENTIFIC": 8.5,
+      "TECHNICAL": 9.0,
+      "CREATIVE": 6.0,
+      "LEADERSHIP": 5.5,
+      "SOCIAL": 5.0,
+      "ENTREPRENEURIAL": 7.0,
+      "PRACTICAL": 6.0
+    }
+  },
+  {
+    "id": "c5",
+    "title": "Cybersecurity Specialist",
+    "category": "Technology",
+    "description": "Protege infraestructuras digitales, redes y datos críticos contra vulnerabilidades y ciberataques.",
+    "requirements": {
+      "TECHNICAL": 9.0,
+      "ANALYTICAL": 9.5,
+      "PRACTICAL": 8.5,
+      "CREATIVE": 7.0,
+      "LEADERSHIP": 6.0,
+      "SOCIAL": 4.5,
+      "ENTREPRENEURIAL": 6.0,
+      "SCIENTIFIC": 6.0
+    }
+  },
+  {
+    "id": "c6",
+    "title": "Business & Entrepreneurship",
+    "category": "Business",
+    "description": "Lidera proyectos de emprendimiento, identifica oportunidades de mercado y gestiona modelos de negocio.",
+    "requirements": {
+      "ENTREPRENEURIAL": 9.5,
+      "LEADERSHIP": 9.0,
+      "SOCIAL": 8.5,
+      "ANALYTICAL": 7.5,
+      "CREATIVE": 7.5,
+      "TECHNICAL": 5.0,
+      "PRACTICAL": 6.0,
+      "SCIENTIFIC": 4.0
+    }
+  },
+  {
+    "id": "c7",
+    "title": "Medicine & Healthcare",
+    "category": "Health",
+    "description": "Diagnostica, trata y cuida de la salud de las personas aplicando principios biológicos y médicos.",
+    "requirements": {
+      "SOCIAL": 9.5,
+      "SCIENTIFIC": 9.5,
+      "ANALYTICAL": 9.0,
+      "PRACTICAL": 8.5,
+      "LEADERSHIP": 7.5,
+      "TECHNICAL": 6.5,
+      "CREATIVE": 5.0,
+      "ENTREPRENEURIAL": 5.0
+    }
+  },
+  {
+    "id": "c8",
+    "title": "Psychology",
+    "category": "Social Sciences",
+    "description": "Estudia el comportamiento humano, los procesos mentales y acompaña el bienestar emocional.",
+    "requirements": {
+      "SOCIAL": 9.5,
+      "ANALYTICAL": 8.5,
+      "SCIENTIFIC": 8.0,
+      "LEADERSHIP": 7.0,
+      "CREATIVE": 6.5,
+      "TECHNICAL": 4.0,
+      "PRACTICAL": 5.0,
+      "ENTREPRENEURIAL": 5.5
+    }
+  },
+  {
+    "id": "c9",
+    "title": "Biotechnology",
+    "category": "Science",
+    "description": "Aplica la ciencia biológica y la tecnología para desarrollar productos médicos, agrícolas e industriales.",
+    "requirements": {
+      "SCIENTIFIC": 9.5,
+      "ANALYTICAL": 9.0,
+      "TECHNICAL": 8.0,
+      "PRACTICAL": 8.0,
+      "CREATIVE": 7.0,
+      "LEADERSHIP": 5.5,
+      "SOCIAL": 5.5,
+      "ENTREPRENEURIAL": 6.5
+    }
+  },
+  {
+    "id": "c10",
+    "title": "Robotics & Automation",
+    "category": "Engineering",
+    "description": "Crea y programa robots y sistemas automatizados para optimizar procesos industriales e interactivos.",
+    "requirements": {
+      "PRACTICAL": 9.5,
+      "TECHNICAL": 9.5,
+      "ANALYTICAL": 9.0,
+      "CREATIVE": 7.5,
+      "SCIENTIFIC": 7.5,
+      "LEADERSHIP": 5.5,
+      "ENTREPRENEURIAL": 6.0,
+      "SOCIAL": 4.0
+    }
+  }
+]

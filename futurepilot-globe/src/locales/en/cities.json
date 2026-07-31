@@ -1,0 +1,60 @@
+{
+  "panel": {
+    "ariaLabel": "City information panel",
+    "profile": "City profile",
+    "unknownCity": "Loading city",
+    "countryFallback": "Colombia",
+    "loadingProfile": "Loading live-ready profile",
+    "close": "Close city panel",
+    "detailsError": "City details could not be loaded.",
+    "sections": {
+      "cost": "Cost of living",
+      "universities": "Universities",
+      "scholarships": "Scholarships",
+      "jobs": "Jobs",
+      "statistics": "Statistics",
+      "living": "Living"
+    },
+    "fields": {
+      "monthlyEstimate": "Monthly estimate",
+      "rent": "Rent",
+      "food": "Food",
+      "transportation": "Transportation",
+      "utilities": "Utilities",
+      "studentBudget": "Student budget",
+      "officialWebsite": "Official website",
+      "city": "City",
+      "country": "Country",
+      "source": "Source",
+      "requirements": "Requirements",
+      "coverage": "Coverage",
+      "deadline": "Deadline",
+      "averageSalary": "Average salary",
+      "mainIndustries": "Main industries",
+      "studentJobs": "Student jobs",
+      "remoteOpportunities": "Remote opportunities",
+      "internships": "Internships",
+      "employmentRate": "Employment rate",
+      "population": "Population",
+      "safety": "Safety",
+      "weather": "Weather",
+      "language": "Language",
+      "currency": "Currency",
+      "internetSpeed": "Internet speed",
+      "qualityOfLife": "Quality of life",
+      "studentSatisfaction": "Student satisfaction",
+      "bestNeighborhoods": "Best neighborhoods",
+      "healthcare": "Healthcare",
+      "nightlife": "Nightlife",
+      "culture": "Culture",
+      "tourism": "Tourism"
+    },
+    "records": {
+      "loadingUniversities": "Loading WHED institutions",
+      "catalogUnavailable": "WHED catalog unavailable",
+      "noInstitutions": "No WHED institutions found",
+      "officialWebsiteLink": "Official website ↗",
+      "nationalRanking": "National ranking"
+    }
+  }
+}

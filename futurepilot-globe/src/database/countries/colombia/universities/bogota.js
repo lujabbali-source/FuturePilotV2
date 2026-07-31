@@ -1,0 +1,27 @@
+import { defineUniversity } from "./universitySchema";
+
+export default [
+    defineUniversity({ id: "unal-bogota", name: "Universidad Nacional de Colombia (UNAL)", cityId: "bogota", website: "https://unal.edu.co", type: "public" }),
+    defineUniversity({ id: "uniandes-bogota", name: "Universidad de los Andes (Uniandes)", cityId: "bogota", website: "https://uniandes.edu.co", type: "private" }),
+    defineUniversity({ id: "unisabana-bogota", name: "Universidad de La Sabana (Sede Chía)", cityId: "bogota", website: "https://www.unisabana.edu.co", type: "private" }),
+    defineUniversity({ id: "javeriana-bogota", name: "Pontificia Universidad Javeriana", cityId: "bogota", website: "https://www.javeriana.edu.co", type: "private" }),
+    defineUniversity({ id: "rosario-bogota", name: "Colegio Mayor de Nuestra Señora del Rosario (Universidad del Rosario)", cityId: "bogota", website: "https://urosario.edu.co", type: "private" }),
+    defineUniversity({ id: "externado-bogota", name: "Universidad Externado de Colombia", cityId: "bogota", website: "https://www.uexternado.edu.co", type: "private" }),
+    defineUniversity({ id: "udistrital-bogota", name: "Universidad Distrital Francisco José de Caldas", cityId: "bogota", website: "https://www.udistrital.edu.co", type: "public" }),
+    defineUniversity({ id: "umng-bogota", name: "Universidad Militar Nueva Granada (UMNG) (Sedes Bogotá y Cajicá)", cityId: "bogota", website: "https://www.umng.edu.co", type: "public" }),
+    defineUniversity({ id: "lasalle-bogota", name: "Universidad de La Salle", cityId: "bogota", website: "https://www.lasalle.edu.co", type: "private" }),
+    defineUniversity({ id: "sergio-arboleda-bogota", name: "Universidad Sergio Arboleda", cityId: "bogota", website: "https://www.usergioarboleda.edu.co", type: "private" }),
+    defineUniversity({ id: "el-bosque-bogota", name: "Universidad El Bosque", cityId: "bogota", website: "https://www.unbosque.edu.co", type: "private" }),
+    defineUniversity({ id: "america-bogota", name: "Universidad de América", cityId: "bogota", website: "https://www.uamerica.edu.co", type: "private" }),
+    defineUniversity({ id: "ucentral-bogota", name: "Universidad Central", cityId: "bogota", website: "https://www.ucentral.edu.co", type: "private" }),
+    defineUniversity({ id: "ucatolica-bogota", name: "Universidad Católica de Colombia", cityId: "bogota", website: "https://www.ucatolica.edu.co", type: "private" }),
+    defineUniversity({ id: "ean-bogota", name: "Universidad EAN (Escuela de Administración de Negocios)", cityId: "bogota", website: "https://universidadean.edu.co", type: "private" }),
+    defineUniversity({ id: "escuelaing-bogota", name: "Escuela Colombiana de Ingeniería Julio Garavito", cityId: "bogota", website: "https://www.escuelaing.edu.co", type: "private" }),
+    defineUniversity({ id: "usta-bogota", name: "Universidad Santo Tomás (Sede Principal)", cityId: "bogota", website: "https://www.usta.edu.co", type: "private" }),
+    defineUniversity({ id: "upn-bogota", name: "Universidad Pedagógica Nacional", cityId: "bogota", website: "http://www.pedagogica.edu.co", type: "public" }),
+    defineUniversity({ id: "utadeo-bogota", name: "Universidad Jorge Tadeo Lozano (Utadeo)", cityId: "bogota", website: "https://www.utadeo.edu.co", type: "private" }),
+    defineUniversity({ id: "uan-bogota", name: "Universidad Antonio Nariño", cityId: "bogota", website: "https://www.uan.edu.co", type: "private" }),
+    defineUniversity({ id: "ugc-bogota", name: "Universidad La Gran Colombia", cityId: "bogota", website: "https://www.ugc.edu.co", type: "private" }),
+    defineUniversity({ id: "unicolmayor-bogota", name: "Universidad Colegio Mayor de Cundinamarca", cityId: "bogota", website: "https://www.unicolmayor.edu.co", type: "public" }),
+    defineUniversity({ id: "unipiloto-bogota", name: "Universidad Piloto de Colombia", cityId: "bogota", website: "https://www.unipiloto.edu.co", type: "private" }),
+];

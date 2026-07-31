@@ -1,0 +1,23 @@
+{
+  "brand": {
+    "name": "FuturePilot",
+    "tagline": "Tu próximo capítulo, trazado"
+  },
+  "language": {
+    "label": "Idioma",
+    "english": "English",
+    "spanish": "Español",
+    "switchTo": "Cambiar idioma"
+  },
+  "actions": {
+    "close": "Cerrar",
+    "open": "Abrir",
+    "retry": "Intentar de nuevo"
+  },
+  "status": {
+    "loading": "Cargando...",
+    "notConnected": "Aún no conectado",
+    "noRecords": "Aún no hay registros conectados",
+    "loadingCity": "Cargando datos de la ciudad..."
+  }
+}
