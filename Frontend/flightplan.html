@@ -403,48 +403,12 @@ document.getElementById(
 ).innerText =
 career || "No Career Selected";
 
-const universityFits = {
+// El catalogo real de universidades (WHED, backend/whed_catalog.py) aun
+// no tiene datos importados, asi que en vez de un listado hardcodeado
+// con nombres de carrera que no coinciden con el catalogo real, dejamos
+// un estado honesto hasta que haya datos importados.
+document.getElementById("universities").innerText = "Proximamente";
 
-    "Software Engineering":[
-        "MIT",
-        "Stanford",
-        "Carnegie Mellon",
-        "UC Berkeley",
-        "Georgia Tech"
-    ],
-
-    "Artificial Intelligence":[
-        "MIT",
-        "Stanford",
-        "Carnegie Mellon",
-        "Oxford",
-        "Cambridge"
-    ],
-
-    "Medicine":[
-        "Harvard",
-        "Johns Hopkins",
-        "UCLA",
-        "Yale",
-        "Columbia"
-    ],
-
-    "Business":[
-        "Wharton",
-        "Harvard",
-        "Stanford",
-        "MIT Sloan",
-        "Chicago Booth"
-    ]
-};
-    
-const universities = universityFits[career] || ["No University Matches Found"];
-document.getElementById("universities").innerText = universities.join(", ");
-
-document.getElementById(
-"universities"
-).innerHTML =
-universities.join("<br>");
 const results =
 JSON.parse(
     localStorage.getItem(
@@ -465,130 +429,11 @@ if(results){
     `;
 
 }
-const aiRecommendations = {
+// #aiRecommendation y #countries se completan con datos reales desde
+// futurepilot-connector.js (justification / recommended_hubs de la
+// respuesta de /api/v1/assess) - no se hardcodean aqui para evitar una
+// segunda fuente de verdad que pueda desalinearse del catalogo real.
 
-    "Artificial Intelligence":
-    "Start learning Python, Machine Learning fundamentals and build your first AI project within 30 days.",
-
-    "Software Engineering":
-    "Focus on JavaScript, Git and full-stack development. Build 3 projects before applying to universities.",
-
-    "Medicine":
-    "Develop strong biology foundations, research experience and volunteering activities.",
-
-    "Business":
-    "Build leadership skills, participate in entrepreneurship programs and strengthen analytical thinking."
-
-};
-
-document.getElementById(
-    "aiRecommendation"
-).innerText =
-aiRecommendations[career] ||
-"FuturePilot AI is generating your personalized roadmap.";
-
-const countryMatches = {
-
-    "Artificial Intelligence":[
-        "🇺🇸 USA — 95%",
-        "🇬🇧 UK — 92%",
-        "🇨🇦 Canada — 90%",
-        "🇸🇬 Singapore — 88%",
-        "🇳🇱 Netherlands — 85%"
-    ],
-
-    "Software Engineering":[
-        "🇺🇸 USA — 95%",
-        "🇨🇦 Canada — 91%",
-        "🇩🇪 Germany — 90%",
-        "🇳🇱 Netherlands — 88%",
-        "🇸🇬 Singapore — 86%"
-    ],
-
-    "Medicine":[
-        "🇬🇧 UK — 94%",
-        "🇺🇸 USA — 93%",
-        "🇨🇦 Canada — 90%",
-        "🇦🇺 Australia — 88%",
-        "🇳🇿 New Zealand — 85%"
-    ]
-
-};
-const countries =
-countryMatches[career] ||
-["No Country Matches"];
-
-document.getElementById(
-"countries"
-).innerHTML =
-countries.join("<br>");
-
-let recommendation = "";
-
-if(career === "Artificial Intelligence"){
-
-    recommendation =
-    `
-    Your profile shows strong alignment with AI and emerging technologies.
-
-    Recommended next steps:
-
-    • Learn Python Fundamentals
-
-    • Complete an AI Project
-
-    • Improve English to Advanced level
-
-    • Explore MIT, Stanford and Carnegie Mellon programs
-
-    • Participate in Hackathons and Research Opportunities
-    `;
-}
-
-else if(career === "Medicine"){
-
-    recommendation =
-    `
-    Your profile aligns with Medicine and Health Sciences.
-
-    Recommended next steps:
-
-    • Strengthen Biology and Chemistry
-
-    • Join Volunteering Programs
-
-    • Develop Leadership Experiences
-
-    • Explore Harvard, Johns Hopkins and Yale
-
-    • Build a Competitive University Profile
-    `;
-}
-
-else if(career === "Business"){
-
-    recommendation =
-    `
-    Your profile aligns with Business and Entrepreneurship.
-
-    Recommended next steps:
-
-    • Develop Leadership Skills
-
-    • Learn Financial Literacy
-
-    • Join Student Organizations
-
-    • Explore Harvard, Wharton and Stanford
-
-    • Create Real-World Projects
-    `;
-}
-
-document.getElementById(
-    "aiRecommendation"
-).innerText =
-recommendation;
 document
 .getElementById("startJourneyBtn")
 .addEventListener("click",()=>{
@@ -598,6 +443,10 @@ document
 
 });
 </script>
-<script src="./futurepilot-connector.js"></script>
+<script>
+  // Ruta relativa solo funciona para vista file://; servido por el backend
+  // en /flightplan, hace falta la ruta absoluta bajo /Frontend/.
+  document.write('<script src="' + (location.protocol === "file:" ? "./futurepilot-connector.js" : "/Frontend/futurepilot-connector.js") + '"><\/script>');
+</script>
 </body>
 </html>

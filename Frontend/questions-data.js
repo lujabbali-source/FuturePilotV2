@@ -1,4 +1,8 @@
-// Embedded copy used only for direct file:// previews. The server version still reads questions.json.
+// Archivo generado automaticamente por scripts/sync_frontend_data.py
+// a partir de futurepilot-IA/data/questions.json. No editar a mano.
+// Se usa unicamente como fallback cuando assessment.html se abre
+// directamente via file:// (sin servidor). Cuando el sitio se sirve
+// por HTTP, assessment.js pide /api/v1/questions en su lugar.
 window.FUTUREPILOT_QUESTIONS = [
   {
     "type": "personality",
@@ -6,19 +10,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 0
       }
     ]
   },
@@ -28,19 +36,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "CREATIVE"
+        "cluster": "CREATIVE",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "CREATIVE"
+        "cluster": "CREATIVE",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "CREATIVE"
+        "cluster": "CREATIVE",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "CREATIVE"
+        "cluster": "CREATIVE",
+        "points": 0
       }
     ]
   },
@@ -50,19 +62,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "SOCIAL"
+        "cluster": "SOCIAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "SOCIAL"
+        "cluster": "SOCIAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "SOCIAL"
+        "cluster": "SOCIAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "SOCIAL"
+        "cluster": "SOCIAL",
+        "points": 0
       }
     ]
   },
@@ -72,19 +88,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "LEADERSHIP"
+        "cluster": "LEADERSHIP",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "LEADERSHIP"
+        "cluster": "LEADERSHIP",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "LEADERSHIP"
+        "cluster": "LEADERSHIP",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "LEADERSHIP"
+        "cluster": "LEADERSHIP",
+        "points": 0
       }
     ]
   },
@@ -94,19 +114,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "TECHNICAL"
+        "cluster": "TECHNICAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "TECHNICAL"
+        "cluster": "TECHNICAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "TECHNICAL"
+        "cluster": "TECHNICAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "TECHNICAL"
+        "cluster": "TECHNICAL",
+        "points": 0
       }
     ]
   },
@@ -116,19 +140,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "SCIENTIFIC"
+        "cluster": "SCIENTIFIC",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "SCIENTIFIC"
+        "cluster": "SCIENTIFIC",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "SCIENTIFIC"
+        "cluster": "SCIENTIFIC",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "SCIENTIFIC"
+        "cluster": "SCIENTIFIC",
+        "points": 0
       }
     ]
   },
@@ -138,19 +166,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "PRACTICAL"
+        "cluster": "PRACTICAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "PRACTICAL"
+        "cluster": "PRACTICAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "PRACTICAL"
+        "cluster": "PRACTICAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "PRACTICAL"
+        "cluster": "PRACTICAL",
+        "points": 0
       }
     ]
   },
@@ -160,19 +192,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0
       }
     ]
   },
@@ -182,19 +218,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 0
       }
     ]
   },
@@ -204,19 +244,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0
       }
     ]
   },
@@ -226,19 +270,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 0
       }
     ]
   },
@@ -248,19 +296,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "CREATIVE"
+        "cluster": "CREATIVE",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "CREATIVE"
+        "cluster": "CREATIVE",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "CREATIVE"
+        "cluster": "CREATIVE",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "CREATIVE"
+        "cluster": "CREATIVE",
+        "points": 0
       }
     ]
   },
@@ -270,19 +322,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "SOCIAL"
+        "cluster": "SOCIAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "SOCIAL"
+        "cluster": "SOCIAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "SOCIAL"
+        "cluster": "SOCIAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "SOCIAL"
+        "cluster": "SOCIAL",
+        "points": 0
       }
     ]
   },
@@ -292,19 +348,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "LEADERSHIP"
+        "cluster": "LEADERSHIP",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "LEADERSHIP"
+        "cluster": "LEADERSHIP",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "LEADERSHIP"
+        "cluster": "LEADERSHIP",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "LEADERSHIP"
+        "cluster": "LEADERSHIP",
+        "points": 0
       }
     ]
   },
@@ -314,19 +374,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "TECHNICAL"
+        "cluster": "TECHNICAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "TECHNICAL"
+        "cluster": "TECHNICAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "TECHNICAL"
+        "cluster": "TECHNICAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "TECHNICAL"
+        "cluster": "TECHNICAL",
+        "points": 0
       }
     ]
   },
@@ -336,19 +400,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "SCIENTIFIC"
+        "cluster": "SCIENTIFIC",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "SCIENTIFIC"
+        "cluster": "SCIENTIFIC",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "SCIENTIFIC"
+        "cluster": "SCIENTIFIC",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "SCIENTIFIC"
+        "cluster": "SCIENTIFIC",
+        "points": 0
       }
     ]
   },
@@ -358,19 +426,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "PRACTICAL"
+        "cluster": "PRACTICAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "PRACTICAL"
+        "cluster": "PRACTICAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "PRACTICAL"
+        "cluster": "PRACTICAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "PRACTICAL"
+        "cluster": "PRACTICAL",
+        "points": 0
       }
     ]
   },
@@ -380,19 +452,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0
       }
     ]
   },
@@ -402,19 +478,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL"
+        "cluster": "ANALYTICAL",
+        "points": 0
       }
     ]
   },
@@ -424,19 +504,23 @@ window.FUTUREPILOT_QUESTIONS = [
     "answers": [
       {
         "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4
       },
       {
         "text": "Agree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3
       },
       {
         "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1
       },
       {
         "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL"
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0
       }
     ]
   },

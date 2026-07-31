@@ -218,11 +218,24 @@ app.addEventListener("click", (event) => {
 });
 
 async function init() {
-  if (Array.isArray(window.FUTUREPILOT_QUESTIONS)) {
+  // Fuente unica de verdad: futurepilot-IA/data/questions.json, servido via
+  // /api/v1/questions por el backend unificado. window.FUTUREPILOT_QUESTIONS
+  // (questions-data.js) queda solo como fallback para cuando el HTML se abre
+  // directo con file:// (sin servidor), y se regenera con
+  // scripts/sync_frontend_data.py - no se edita a mano.
+  if (location.protocol !== "file:") {
+    try {
+      const response = await fetch("/api/v1/questions");
+      const data = await response.json();
+      questions = data.questions;
+    } catch (error) {
+      if (!Array.isArray(window.FUTUREPILOT_QUESTIONS)) throw error;
+      questions = window.FUTUREPILOT_QUESTIONS;
+    }
+  } else if (Array.isArray(window.FUTUREPILOT_QUESTIONS)) {
     questions = window.FUTUREPILOT_QUESTIONS;
   } else {
-    const response = await fetch("./questions.json");
-    questions = await response.json();
+    throw new Error("No hay fuente de preguntas disponible para la vista file://.");
   }
   const saved = savedAssessment();
   if (saved) {

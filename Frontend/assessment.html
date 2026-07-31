@@ -5,17 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07111F">
   <title>Descubre tu perfil · FuturePilot</title>
-  <link rel="stylesheet" href="./assessment.css">
+  <script>
+    // Cuando el backend sirve esta pagina en /assessment, las rutas
+    // relativas (./assessment.css, ./assessment.js, ...) resuelven contra
+    // la raiz del sitio en vez de contra Frontend/, y devuelven 404. Cuando
+    // el archivo se abre directo con file://, en cambio, solo las rutas
+    // relativas funcionan. Se resuelve la base una sola vez segun el modo.
+    document.write(
+      '<link rel="stylesheet" href="' +
+      (location.protocol === "file:" ? "./assessment.css" : "/Frontend/assessment.css") +
+      '">'
+    );
+  </script>
 </head>
 <body>
   <div class="ambient ambient--one"></div>
   <div class="ambient ambient--two"></div>
   <div id="assessment-app" aria-live="polite"></div>
-  <!-- Classic scripts keep the assessment usable when opened directly with file://. -->
-  <script src="./questions-data.js"></script>
-  <script src="./assessment-engine.js"></script>
-  <script src="./question-types.js"></script>
-  <script src="./assessment.js"></script>
-  <script src="./futurepilot-connector.js"></script>
+  <script>
+    (function () {
+      var base = location.protocol === "file:" ? "./" : "/Frontend/";
+      [
+        "questions-data.js",
+        "assessment-engine.js",
+        "question-types.js",
+        "assessment.js",
+        "futurepilot-connector.js",
+      ].forEach(function (file) {
+        document.write('<script src="' + base + file + '"><\/script>');
+      });
+    })();
+  </script>
 </body>
 </html>

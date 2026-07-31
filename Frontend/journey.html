@@ -253,90 +253,10 @@ if(career){
 
 }
 
-const roadmaps = {
-
-    "Artificial Intelligence":[
-        "Python Fundamentals",
-        "Mathematics for AI",
-        "Build AI Projects",
-        "Machine Learning"
-    ],
-
-    "Software Engineering":[
-        "Programming Fundamentals",
-        "Data Structures",
-        "Web Development",
-        "Software Projects"
-    ],
-
-    "Medicine":[
-        "Biology Foundations",
-        "Human Anatomy",
-        "Clinical Skills",
-        "Medical Research"
-    ],
-
-    "Business Administration":[
-        "Business Fundamentals",
-        "Marketing & Sales",
-        "Finance Basics",
-        "Leadership Projects"
-    ],
-
-    "Psychology":[
-        "Introduction to Psychology",
-        "Human Behavior",
-        "Research Methods",
-        "Applied Psychology"
-    ],
-
-    "Cybersecurity":[
-        "Computer Networks",
-        "System Security",
-        "Ethical Hacking",
-        "Security Projects"
-    ],
-
-    "Data Science":[
-        "Python & Statistics",
-        "Data Analysis",
-        "Visualization",
-        "Machine Learning"
-    ],
-
-    "Law":[
-        "Legal Foundations",
-        "Constitutional Law",
-        "Case Analysis",
-        "Legal Practice"
-    ]
-
-};
-
-const roadmapTitles =
-roadmaps[career] || [
-
-    "Foundation Skills",
-    "Core Knowledge",
-    "Projects",
-    "Advanced Development"
-
-];
-
-const cards =
-document.querySelectorAll(".card");
-
-cards[0].querySelector("h3").innerText =
-"1. " + roadmapTitles[0];
-
-cards[1].querySelector("h3").innerText =
-"2. " + roadmapTitles[1];
-
-cards[2].querySelector("h3").innerText =
-"3. " + roadmapTitles[2];
-
-cards[3].querySelector("h3").innerText =
-"4. " + roadmapTitles[3];
+// Los titulos de cada checkpoint (h3 de cada .card) se completan con
+// datos reales desde futurepilot-connector.js (roadmap.checkpoints de
+// la respuesta de /api/v1/assess). Los titulos por defecto del HTML
+// quedan como fallback honesto mientras esos datos llegan.
 
 const pins =
 document.querySelectorAll(".pin");
@@ -387,6 +307,10 @@ labels.forEach(label => {
 
 });
 </script>
-<script src="./futurepilot-connector.js"></script>
+<script>
+  // Ruta relativa solo funciona para vista file://; servido por el backend
+  // en /journey, hace falta la ruta absoluta bajo /Frontend/.
+  document.write('<script src="' + (location.protocol === "file:" ? "./futurepilot-connector.js" : "/Frontend/futurepilot-connector.js") + '"><\/script>');
+</script>
 </body>
 </html>

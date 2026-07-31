@@ -163,69 +163,13 @@ id="searchInput">
 
 <script>
 
-const careerMap = {
-
-    TECH: [
-        "Software Engineering",
-        "Artificial Intelligence",
-        "Data Science",
-        "Cybersecurity",
-        "Computer Science",
-        "UX/UI Design",
-        "Game Development",
-        "Cloud Engineering"
-    ],
-
-    HEALTH: [
-        "Medicine",
-        "Nursing",
-        "Dentistry",
-        "Psychology",
-        "Veterinary Medicine",
-        "Physiotherapy"
-    ],
-
-    SOCIAL: [
-        "Law",
-        "Political Science",
-        "International Relations",
-        "Journalism",
-        "Education"
-    ],
-
-    BUSINESS: [
-        "Business Administration",
-        "Finance",
-        "Economics",
-        "Marketing",
-        "Accounting"
-    ],
-
-    SCIENCE: [
-        "Biology",
-        "Chemistry",
-        "Physics",
-        "Mathematics",
-        "Astronomy"
-    ],
-
-    ARTS: [
-        "Graphic Design",
-        "Industrial Design",
-        "Music",
-        "Literature",
-        "History"
-    ],
-
-    ENVIRONMENT: [
-        "Environmental Engineering",
-        "Agronomy",
-        "Agroindustry"
-    ]
-
-};
-
-const careers = Object.values(careerMap).flat();
+// Fuente unica de verdad: el catalogo de carreras vive en
+// futurepilot-IA/data/careers.json y se sirve via /api/v1/careers.
+// Antes esta pagina tenia su propio careerMap hardcodeado (con nombres
+// que no coincidian con el catalogo real que usa la IA para el matching),
+// lo que ademas causaba un ReferenceError porque 'careers' nunca se
+// definia.
+let careers = [];
 
 const grid = document.getElementById("careerGrid");
 
@@ -239,15 +183,17 @@ grid.innerHTML += `
 
 <div class="career-card">
 
-<h3>${career}</h3>
+<span style="color:#00FFB3;font-size:.8rem;text-transform:uppercase;">${career.category}</span>
+
+<h3>${career.title}</h3>
 
 <p>
-Explore requirements, skills and roadmap.
+${career.description}
 </p>
 
 <button
 class="build-btn"
-onclick="openCareer('${career}')">
+onclick="openCareer('${career.id}')">
 
 Build My Flight Plan
 
@@ -261,11 +207,14 @@ Build My Flight Plan
 
 }
 
-function openCareer(career){
+function openCareer(careerId){
+
+const career = careers.find(c => c.id === careerId);
+if(!career) return;
 
 localStorage.setItem(
 "selectedCareer",
-career
+career.title
 );
 
 window.location.href=
@@ -273,7 +222,18 @@ window.location.href=
 
 }
 
-renderCareers(careers);
+async function loadCareers(){
+
+try {
+    const response = await fetch("/api/v1/careers");
+    const data = await response.json();
+    careers = data.careers || [];
+    renderCareers(careers);
+} catch (error) {
+    grid.innerHTML = "<p>No pudimos cargar el catalogo de carreras. Intenta recargar la pagina.</p>";
+}
+
+}
 
 document
 .getElementById("searchInput")
@@ -285,14 +245,16 @@ e.target.value.toLowerCase();
 const filtered =
 careers.filter(career=>
 
-career.toLowerCase()
-.includes(search)
+career.title.toLowerCase().includes(search) ||
+career.category.toLowerCase().includes(search)
 
 );
 
 renderCareers(filtered);
 
 });
+
+loadCareers();
 
 </script>
 
