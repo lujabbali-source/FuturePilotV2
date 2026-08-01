@@ -13,6 +13,12 @@ let answers = [];
 let results = assessmentEngine.createInitialResults();
 let screen = "welcome";
 
+let authMode = "register";
+let authError = "";
+let authSubmitting = false;
+let aiResult = null;
+let aiError = "";
+
 const phaseNames = ["Tu punto de partida", "Tus intereses", "Tus fortalezas", "Tu perfil", "Tu siguiente destino"];
 
 function escapeHtml(value) {
@@ -47,6 +53,9 @@ function render() {
   if (screen === "question") return renderQuestion();
   if (screen === "analysis") return renderAnalysis();
   if (screen === "partial") return renderPartialResults();
+  if (screen === "unlock") return renderUnlock();
+  if (screen === "auth") return renderAuth();
+  if (screen === "results") return renderFullResults();
   return renderUnlock();
 }
 
@@ -145,12 +154,24 @@ function renderAnalysis() {
   const lines = [...app.querySelectorAll(".analysis-lines p")];
   lines.forEach((line, index) => setTimeout(() => line.classList.add("is-active"), index * 650));
 
-  // --- LLAMADA AL CONECTOR DE IA ---
-  if (window.FuturePilotAIConnector) {
-    window.FuturePilotAIConnector.sendAssessmentToPythonAI(answers);
-  }
+  // Antes esto era "fire and forget": se llamaba al conector sin esperar
+  // la respuesta y se avanzaba a "partial" con un setTimeout fijo,
+  // confiando en que 3.4s alcanzaran. La pantalla de resultados completos
+  // (renderFullResults) depende de tener aiResult de verdad, asi que ahora
+  // se espera la promesa real y se guarda el resultado (o el error) antes
+  // de avanzar. minDelay conserva la animacion aunque la respuesta llegue
+  // rapido.
+  const minDelay = new Promise((resolve) => setTimeout(resolve, 3400));
+  const aiCall = window.FuturePilotAIConnector
+    ? window.FuturePilotAIConnector.sendAssessmentToPythonAI(answers)
+    : Promise.resolve(null);
 
-  setTimeout(() => { screen = "partial"; render(); }, 3400);
+  Promise.all([minDelay, aiCall]).then(([, data]) => {
+    aiResult = data;
+    aiError = data ? "" : "No pudimos conectar con la IA para tu analisis completo. Tus resultados parciales igual quedaron guardados.";
+    screen = "partial";
+    render();
+  });
 }
 function renderPartialResults() {
   const assessmentResult = assessmentEngine.buildAssessmentResult(results);
@@ -163,6 +184,120 @@ function renderPartialResults() {
 
 function renderUnlock() {
   app.innerHTML = `<main class="unlock-screen screen-enter"><div class="unlock-glow"></div><span class="unlock-icon">✦</span><p class="eyebrow"><span class="eyebrow-dot"></span> TU PERFIL YA ESTÁ LISTO</p><h1>Ahora sí, vamos a<br><span>despegar.</span></h1><p class="unlock-copy">Crea una cuenta gratuita para guardar tu perfil y descubrir todo lo que FuturePilot preparó para ti.</p><section class="unlock-list"><div><b>✓</b> Universidades compatibles</div><div><b>✓</b> Becas y oportunidades</div><div><b>✓</b> Costos de vida</div><div><b>✓</b> Comparador de ciudades</div><div><b>✓</b> Roadmap personalizado</div><div><b>✓</b> Seguimiento de progreso</div></section><div class="auth-actions"><button type="button" class="primary-action" data-auth="register">Crear cuenta gratis <span>→</span></button><button type="button" class="secondary-action secondary-action--large" data-auth="login">Ya tengo una cuenta</button></div><p class="auth-note">Sin tarjeta de crédito · Tus resultados siempre son tuyos</p></main>`;
+}
+
+function renderAuth(mode) {
+  if (mode) authMode = mode;
+  const isRegister = authMode === "register";
+  app.innerHTML = `<main class="unlock-screen screen-enter">
+    <div class="unlock-glow"></div>
+    <span class="unlock-icon">✦</span>
+    <p class="eyebrow"><span class="eyebrow-dot"></span> ${isRegister ? "CREAR CUENTA" : "INICIAR SESIÓN"}</p>
+    <h1>${isRegister ? "Guarda tu perfil" : "Bienvenido de nuevo"}<br><span>${isRegister ? "y desbloquéalo todo." : "continuemos."}</span></h1>
+    <form class="auth-form" data-form="auth" novalidate>
+      ${isRegister ? `<label class="auth-field"><span>Nombre</span><input type="text" name="name" autocomplete="name" placeholder="Tu nombre"></label>` : ""}
+      <label class="auth-field"><span>Email</span><input type="email" name="email" autocomplete="email" required placeholder="tu@email.com"></label>
+      <label class="auth-field"><span>Contraseña</span><input type="password" name="password" autocomplete="${isRegister ? "new-password" : "current-password"}" required minlength="8" placeholder="Mínimo 8 caracteres"></label>
+      ${authError ? `<p class="auth-error">${escapeHtml(authError)}</p>` : ""}
+      <button type="submit" class="primary-action primary-action--wide" ${authSubmitting ? "disabled" : ""}>${authSubmitting ? "Un momento..." : isRegister ? "Crear cuenta gratis" : "Iniciar sesión"} <span>→</span></button>
+    </form>
+    <button type="button" class="text-action" data-action="auth-switch">${isRegister ? "Ya tengo una cuenta" : "Crear una cuenta nueva"}</button>
+    <button type="button" class="text-action" data-action="back-to-unlock">← Volver</button>
+  </main>`;
+  app.querySelector('[data-form="auth"]').addEventListener("submit", handleAuthSubmit);
+}
+
+async function handleAuthSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  const email = form.email.value.trim();
+  const password = form.password.value;
+  const name = form.name ? form.name.value.trim() : "";
+
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+    authError = "Ingresa un email válido.";
+    renderAuth();
+    return;
+  }
+  if (password.length < 8) {
+    authError = "La contraseña debe tener al menos 8 caracteres.";
+    renderAuth();
+    return;
+  }
+
+  authError = "";
+  authSubmitting = true;
+  renderAuth();
+
+  const endpoint = authMode === "register" ? "/api/v1/auth/register" : "/api/v1/auth/login";
+  const body = authMode === "register" ? { email, password, name: name || undefined } : { email, password };
+
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      authSubmitting = false;
+      authError = data.detail || "No pudimos procesar tu solicitud. Intenta de nuevo.";
+      renderAuth();
+      return;
+    }
+
+    localStorage.setItem("futurePilotAuthToken", data.token);
+    localStorage.setItem("futurePilotUser", JSON.stringify(data.user));
+    authSubmitting = false;
+    authError = "";
+    screen = "results";
+    render();
+  } catch (error) {
+    authSubmitting = false;
+    authError = "No pudimos conectar con el servidor. Verifica tu conexión e intenta de nuevo.";
+    renderAuth();
+  }
+}
+
+function renderFullResults() {
+  if (!aiResult) {
+    app.innerHTML = `<main class="results-screen screen-enter">
+      <section class="results-intro">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> ALGO SALIÓ MAL</p>
+        <h1>No pudimos cargar<br><span>tu análisis completo.</span></h1>
+        <p>${escapeHtml(aiError || "Intenta de nuevo en unos segundos.")}</p>
+        <button type="button" class="primary-action primary-action--wide" data-action="retry-analysis">Reintentar <span>→</span></button>
+      </section>
+    </main>`;
+    return;
+  }
+
+  const user = JSON.parse(localStorage.getItem("futurePilotUser") || "null");
+  const careers = aiResult.recommended_careers || [];
+  const strengths = aiResult.strengths || [];
+  const weaknesses = aiResult.weaknesses || [];
+
+  app.innerHTML = `<main class="results-screen screen-enter">
+    <div class="results-topline"><span class="brand"><span class="brand-mark">✦</span> Future<span>Pilot</span></span><span class="result-chip">CUENTA ACTIVA <b>✓</b></span></div>
+    <section class="results-intro">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> TU PERFIL COMPLETO</p>
+      <h1>${user && user.name ? escapeHtml(user.name) + "," : ""} esto es<br><span>lo que encontramos.</span></h1>
+      <p>Arquetipo: <strong>${escapeHtml(aiResult.personality || "")}</strong> · Estilo de aprendizaje: <strong>${escapeHtml(aiResult.learning_style || "")}</strong> · Confianza del análisis: <strong>${Math.round((aiResult.confidence || 0) * 100)}%</strong></p>
+    </section>
+    <section class="strengths-section">
+      <div class="section-label"><span>FORTALEZAS</span></div>
+      <div class="chip-row">${strengths.length ? strengths.map((s) => `<span class="chip chip--strength">${escapeHtml(s)}</span>`).join("") : `<span class="chip chip--strength">Perfil equilibrado</span>`}</div>
+      <div class="section-label"><span>ÁREAS DE OPORTUNIDAD</span></div>
+      <div class="chip-row">${weaknesses.length ? weaknesses.map((s) => `<span class="chip chip--gap">${escapeHtml(s)}</span>`).join("") : `<span class="chip chip--gap">Sin brechas notables</span>`}</div>
+    </section>
+    <section class="career-reveal">
+      <div class="section-label"><span>CARRERAS RECOMENDADAS</span><span>COINCIDENCIA</span></div>
+      ${careers.map((career, index) => `<div class="career-result career-result--full"><span class="career-rank">${String(index + 1).padStart(2, "0")}</span><div class="career-copy"><span class="career-name">${escapeHtml(career.title)}</span><p class="career-justification">${escapeHtml(career.justification)}</p></div><span class="career-score"><strong>${career.match_percentage}%</strong><span class="mini-bar"><i style="width:${career.match_percentage}%"></i></span></span></div>`).join("")}
+    </section>
+    <button type="button" class="primary-action primary-action--wide" data-action="explore-globe">Explorar el Globo <span>→</span></button>
+    <p class="results-footnote">Tu perfil queda guardado en tu cuenta. Explora el globo para conectar tu carrera con países, universidades y oportunidades reales.</p>
+  </main>`;
 }
 
 function goNext() {
@@ -208,13 +343,13 @@ app.addEventListener("click", (event) => {
   if (action === "back" && currentQuestion > 0) { currentQuestion -= 1; render(); }
   if (action === "exit") { screen = "welcome"; render(); }
   if (action === "unlock") { screen = "unlock"; render(); }
+  if (action === "auth-switch") { authError = ""; renderAuth(authMode === "register" ? "login" : "register"); }
+  if (action === "back-to-unlock") { authError = ""; screen = "unlock"; render(); }
+  if (action === "retry-analysis") { screen = "analysis"; render(); }
+  if (action === "explore-globe") { window.location.href = "/globe"; }
+
   const auth = event.target.closest("[data-auth]")?.dataset.auth;
-  if (auth) {
-    localStorage.setItem("futurePilotAuthIntent", auth);
-    event.target.closest("[data-auth]").classList.add("is-confirmed");
-    event.target.closest("[data-auth]").innerHTML = auth === "register" ? "Preparando tu cuenta... ✓" : "Preparando tu acceso... ✓";
-    setTimeout(() => { window.location.href = `/?auth=${auth}`; }, 500);
-  }
+  if (auth) { authError = ""; screen = "auth"; renderAuth(auth); }
 });
 
 async function init() {
