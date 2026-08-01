@@ -553,31 +553,64 @@ class FuturePilotAIEcosystem:
         self.brain = FuturePilotBrain(careers_data, questions_data)
         self.mentor = MentorEngine(self.brain.memory_system, careers_data)
 
+    @staticmethod
+    def _build_career_justification(match: Dict[str, Any], personality: str) -> str:
+        """Genera una justificacion propia por carrera (fortalezas/gaps de esa
+        carrera especifica) en vez de reutilizar el mismo texto de razonamiento
+        general para las cinco carreras recomendadas."""
+        strengths = match.get("strengths") or []
+        gaps = match.get("skill_gaps") or []
+        pct = match.get("match_percentage", 0)
+        strengths_text = ", ".join(strengths) if strengths else "tu perfil general"
+
+        if gaps:
+            return (
+                f"Con un {pct}% de compatibilidad, tu perfil ({personality}) se alinea "
+                f"especialmente en {strengths_text}. Para acercarte aun mas a "
+                f"{match.get('title')}, conviene reforzar: {', '.join(gaps)}."
+            )
+        return (
+            f"Con un {pct}% de compatibilidad, tu perfil ({personality}) encaja "
+            f"fuertemente con {match.get('title')} gracias a {strengths_text}."
+        )
+
     def process_user_test(self, user_answers: List[Dict[str, Any]], user_id: str = "default_student") -> Dict[str, Any]:
         response: BrainResponse = self.brain.run_cognitive_cycle(user_answers, user_id)
-        
-        # Formato esperado por el API anterior
+
+        recommended_careers = [
+            {
+                "career_id": m["career_id"],
+                "title": m["title"],
+                "category": m["category"],
+                "match_percentage": m["match_percentage"],
+                "strengths": m["strengths"],
+                "skill_gaps": m["skill_gaps"],
+                "justification": self._build_career_justification(m, response.personality),
+                "description": m["description"]
+            }
+            for m in response.top_matches
+        ]
+
+        # Formato esperado por el API anterior, mas los campos que ya calcula
+        # FuturePilotBrain (personality, learning_style, strengths/weaknesses,
+        # confidence, recommended_hubs, future_predictions) y que antes se
+        # descartaban aqui - necesarios para la vista de resultados completos.
         return {
             "user_id": user_id,
             "user_vector": self.brain.profile_engine.calculate_vector(
                 self.brain.perception.parse_test_inputs(user_answers, self.brain.questions_db)
             ),
-            "recommended_careers": [
-                {
-                    "career_id": m["career_id"],
-                    "title": m["title"],
-                    "category": m["category"],
-                    "match_percentage": m["match_percentage"],
-                    "strengths": m["strengths"],
-                    "skill_gaps": m["skill_gaps"],
-                    "justification": response.reasoning,
-                    "description": m["description"]
-                }
-                for m in response.top_matches
-            ],
+            "personality": response.personality,
+            "learning_style": response.learning_style,
+            "strengths": response.strengths,
+            "weaknesses": response.weaknesses,
+            "confidence": response.confidence,
+            "recommended_hubs": response.recommended_hubs,
+            "future_predictions": response.future_predictions,
+            "recommended_careers": recommended_careers,
             "top_choice": {
                 **(response.top_career if response.top_career else {}),
-                "justification": response.reasoning
+                "justification": recommended_careers[0]["justification"] if recommended_careers else response.reasoning,
             },
             "roadmap": response.roadmap
         }
