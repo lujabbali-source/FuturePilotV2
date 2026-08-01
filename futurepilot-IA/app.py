@@ -102,6 +102,20 @@ users_store = UsersStore(REPO_ROOT / "backend" / "data" / "users.sqlite3")
 # --------------------------------------------------------------------------
 app.mount("/Frontend", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
 
+# FuturePilot Globe (futurepilot-globe/) sigue siendo su propio modulo React
+# + Vite, con su propio build - aqui solo se sirve el resultado de
+# `npm run build`. Requiere que vite.config.js tenga base:"/globe/" (si no,
+# los assets del index.html pedirian /assets/... a la raiz del dominio en
+# vez de /globe/assets/..., y la pagina cargaria en blanco).
+GLOBE_DIST_DIR = REPO_ROOT / "futurepilot-globe" / "dist"
+if GLOBE_DIST_DIR.exists():
+    app.mount("/globe", StaticFiles(directory=str(GLOBE_DIST_DIR), html=True), name="globe")
+else:
+    print(
+        f"Advertencia: {GLOBE_DIST_DIR} no existe todavia - corre "
+        "'npm run build' en futurepilot-globe/ para habilitar /globe."
+    )
+
 
 @app.get("/style.css")
 def style_css():
