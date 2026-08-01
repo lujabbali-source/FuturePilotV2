@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Atmosphere from "./components/Atmosphere";
 import CityMarkers from "./components/CityMarkers";
@@ -22,7 +22,9 @@ export default function App() {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
   const [cameraTarget, setCameraTarget] = useState(null);
+  const [hoveredCountry, setHoveredCountry] = useState(null);
   const controlsRef = useRef(null);
+  const hoverClearTimeoutRef = useRef(null);
   const selectedCountryId = getCountryIdFromName(selectedCountry?.properties?.name);
   const selectedCountryCities = useMemo(
     () => getCities(selectedCountryId || "colombia"),
@@ -32,12 +34,29 @@ export default function App() {
   const handleCountrySelect = useCallback((country) => {
     setSelectedCountry(country);
     setSelectedCity(null);
+    // Antes solo Colombia volaba la camara a su centro al seleccionarla;
+    // se generaliza a cualquier pais para que la navegacion se sienta
+    // igual en todo el continente.
+    setCameraTarget(country ? getCountryCenter(country) : null);
+  }, []);
 
-    if (country?.properties?.name === "Colombia") {
-      setCameraTarget(getCountryCenter(country));
-    } else {
-      setCameraTarget(null);
+  // El "clear" del hover se demora un poco (no el "enter", que es
+  // inmediato) para que mover el mouse rapido entre paises chicos no
+  // produzca parpadeo del texto animado.
+  const handleCountryHover = useCallback((country) => {
+    if (hoverClearTimeoutRef.current) {
+      clearTimeout(hoverClearTimeoutRef.current);
+      hoverClearTimeoutRef.current = null;
     }
+    if (country) {
+      setHoveredCountry(country);
+    } else {
+      hoverClearTimeoutRef.current = setTimeout(() => setHoveredCountry(null), 80);
+    }
+  }, []);
+
+  useEffect(() => () => {
+    if (hoverClearTimeoutRef.current) clearTimeout(hoverClearTimeoutRef.current);
   }, []);
 
   return (
@@ -64,6 +83,14 @@ export default function App() {
         {t("cta.createMap")} <span aria-hidden="true">→</span>
       </a>
 
+      <div className={`country-hover-label ${hoveredCountry ? "is-visible" : ""}`} aria-hidden="true">
+        {hoveredCountry && (
+          <span key={hoveredCountry.properties.name} className="country-hover-label__text">
+            {hoveredCountry.properties.name}
+          </span>
+        )}
+      </div>
+
       <Canvas camera={{ position: [0, 0, 3], fov: 45 }}>
         <color attach="background" args={[globePalette.background]} />
 
@@ -89,10 +116,12 @@ export default function App() {
           autoRotate={!selectedCountry}
           autoRotateSpeed={0.3}
         />
-        <GlobeBorders selectedCountry={selectedCountry} />
+        <GlobeBorders selectedCountry={selectedCountry} hoveredCountry={hoveredCountry} />
         <CountryMeshes
           selectedCountry={selectedCountry}
           onSelect={handleCountrySelect}
+          hoveredCountry={hoveredCountry}
+          onHover={handleCountryHover}
         />
         <CityMarkers
           cities={selectedCountryId ? selectedCountryCities : []}

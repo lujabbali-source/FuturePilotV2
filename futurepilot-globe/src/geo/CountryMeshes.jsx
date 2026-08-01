@@ -4,7 +4,9 @@ import CountryMesh from "./CountryMesh";
 export default function CountryMeshes({
 
     selectedCountry,
-    onSelect
+    onSelect,
+    hoveredCountry,
+    onHover
 
 }) {
 
@@ -25,6 +27,10 @@ export default function CountryMeshes({
                     selectedCountry={selectedCountry}
 
                     onSelect={onSelect}
+
+                    hoveredCountry={hoveredCountry}
+
+                    onHover={onHover}
 
                 />
 

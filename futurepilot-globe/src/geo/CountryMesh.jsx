@@ -7,29 +7,28 @@ import { isVisiblePoint } from "../utils/isVisiblePoint";
 
 const COUNTRY_COLOR = new THREE.Color(globePalette.country);
 const SELECTED_COUNTRY_COLOR = new THREE.Color(globePalette.selectedCountry);
+const HOVER_COUNTRY_COLOR = new THREE.Color(globePalette.mapLine);
 
 export default function CountryMesh({
     country,
     selectedCountry,
-    onSelect
+    onSelect,
+    hoveredCountry,
+    onHover
 }) {
     const geometry = useMemo(() => buildCountryGeometry(country), [country]);
     const materialRef = useRef();
     const isSelected = selectedCountry?.properties.name === country.properties.name;
+    const isHovered = !isSelected && hoveredCountry?.properties.name === country.properties.name;
 
     useFrame((_, delta) => {
         if (!materialRef.current) return;
 
-        materialRef.current.color.lerp(
-            isSelected ? SELECTED_COUNTRY_COLOR : COUNTRY_COLOR,
-            1 - Math.exp(-10 * delta)
-        );
-        materialRef.current.opacity = THREE.MathUtils.damp(
-            materialRef.current.opacity,
-            isSelected ? 0.72 : 0.58,
-            8,
-            delta
-        );
+        const targetColor = isSelected ? SELECTED_COUNTRY_COLOR : isHovered ? HOVER_COUNTRY_COLOR : COUNTRY_COLOR;
+        const targetOpacity = isSelected ? 0.72 : isHovered ? 0.66 : 0.58;
+
+        materialRef.current.color.lerp(targetColor, 1 - Math.exp(-10 * delta));
+        materialRef.current.opacity = THREE.MathUtils.damp(materialRef.current.opacity, targetOpacity, 8, delta);
     });
 
     if (!geometry) return null;
@@ -43,12 +42,22 @@ export default function CountryMesh({
                 event.stopPropagation();
                 onSelect?.(country);
             }}
+            onPointerOver={(event) => {
+                if (!isVisiblePoint(event.point, event.camera)) return;
+
+                event.stopPropagation();
+                onHover?.(country);
+            }}
+            onPointerOut={(event) => {
+                event.stopPropagation();
+                onHover?.(null);
+            }}
         >
             <meshStandardMaterial
                 ref={materialRef}
-                color={isSelected ? globePalette.selectedCountry : globePalette.country}
+                color={isSelected ? globePalette.selectedCountry : isHovered ? globePalette.mapLine : globePalette.country}
                 transparent
-                opacity={isSelected ? 0.72 : 0.58}
+                opacity={isSelected ? 0.72 : isHovered ? 0.66 : 0.58}
                 side={THREE.DoubleSide}
                 roughness={0.92}
                 metalness={0.02}
