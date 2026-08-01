@@ -106,22 +106,18 @@ canvas {
 
 /*
  * Nombre del pais al pasar el cursor: no es un tooltip pegado al mouse -
- * aparece centrado en pantalla, sobre el globo, como una capa de HUD.
- * El contenedor solo controla la transicion de opacidad; el <span> interno
- * se remonta (key={nombre}) cada vez que cambia el pais para que el efecto
- * de entrada se repita en cada uno, no solo la primera vez.
+ * flota centrado sobre el territorio del pais senalado (CountryHoverLabel.jsx
+ * lo posiciona en 3D via drei's <Html>, siguiendo la rotacion del globo en
+ * tiempo real). El wrapper solo controla la transicion de opacidad, que se
+ * actualiza por ref en cada frame (sin re-render de React); el <span>
+ * interno se remonta (key={nombre}) cada vez que cambia el pais para que el
+ * efecto de entrada se repita en cada uno, no solo la primera vez.
  */
 .country-hover-label {
-  position: fixed;
-  z-index: 7;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   pointer-events: none;
   opacity: 0;
   transition: opacity .35s ease;
 }
-.country-hover-label.is-visible { opacity: 1; }
 .country-hover-label__text {
   display: inline-block;
   padding: 10px 28px;

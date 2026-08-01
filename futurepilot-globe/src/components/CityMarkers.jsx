@@ -10,58 +10,32 @@ const CAPITAL_COLOR = new THREE.Color(globePalette.orbit);
 const SELECTED_COLOR = new THREE.Color(globePalette.hud);
 const CITY_MARKER_RADIUS = 1.025;
 
-function createStarTexture() {
+function createGlowPointTexture() {
+    // Punto de luz minimalista: nucleo solido pequeno + halo radial suave,
+    // sin rayos - reemplaza el sprite de "estrella" anterior. El color real
+    // se aplica por instancia via spriteMaterial.color (ver CityMarker), asi
+    // que aqui se dibuja en blanco puro para que el tint no se apague.
     const canvas = document.createElement("canvas");
-    canvas.width = 256;
-    canvas.height = 256;
+    canvas.width = 128;
+    canvas.height = 128;
 
     const context = canvas.getContext("2d");
-    context.translate(128, 128);
+    context.translate(64, 64);
     context.globalCompositeOperation = "lighter";
 
-    const glow = context.createRadialGradient(0, 0, 2, 0, 0, 112);
-    glow.addColorStop(0, globePalette.hud);
-    glow.addColorStop(0.08, globePalette.hud);
-    glow.addColorStop(0.28, "rgba(223,175,255,.42)");
-    glow.addColorStop(0.62, "rgba(0,240,181,.14)");
-    glow.addColorStop(1, "rgba(0,240,181,0)");
-    context.fillStyle = glow;
+    const halo = context.createRadialGradient(0, 0, 0, 0, 0, 56);
+    halo.addColorStop(0, "rgba(255,255,255,.9)");
+    halo.addColorStop(0.16, "rgba(255,255,255,.55)");
+    halo.addColorStop(0.45, "rgba(255,255,255,.16)");
+    halo.addColorStop(1, "rgba(255,255,255,0)");
+    context.fillStyle = halo;
     context.beginPath();
-    context.arc(0, 0, 112, 0, Math.PI * 2);
+    context.arc(0, 0, 56, 0, Math.PI * 2);
     context.fill();
 
-    const rays = [
-        [0, 112, 2.2],
-        [Math.PI / 2, 112, 2.2],
-        [Math.PI, 112, 2.2],
-        [Math.PI * 1.5, 112, 2.2],
-        [Math.PI / 4, 68, 1.2],
-        [Math.PI * 0.75, 68, 1.2],
-        [Math.PI * 1.25, 68, 1.2],
-        [Math.PI * 1.75, 68, 1.2]
-    ];
-
-    rays.forEach(([angle, length, width]) => {
-        context.save();
-        context.rotate(angle);
-        const ray = context.createLinearGradient(0, 0, length, 0);
-        ray.addColorStop(0, globePalette.hud);
-        ray.addColorStop(0.12, globePalette.hud);
-        ray.addColorStop(0.62, "rgba(223,175,255,.3)");
-        ray.addColorStop(1, "rgba(0,240,181,0)");
-        context.strokeStyle = ray;
-        context.lineWidth = width;
-        context.lineCap = "round";
-        context.beginPath();
-        context.moveTo(0, 0);
-        context.lineTo(length, 0);
-        context.stroke();
-        context.restore();
-    });
-
-    context.fillStyle = globePalette.hud;
+    context.fillStyle = "#ffffff";
     context.beginPath();
-    context.arc(0, 0, 4, 0, Math.PI * 2);
+    context.arc(0, 0, 9, 0, Math.PI * 2);
     context.fill();
 
     const texture = new THREE.CanvasTexture(canvas);
@@ -92,9 +66,11 @@ function CityMarker({ city, selected, onSelect, texture, hitGeometry }) {
 
         const distance = camera.position.distanceTo(position);
         const zoomScale = THREE.MathUtils.clamp(2.8 / distance, 1, 1.25);
-        const pulse = 1 + Math.sin(state.clock.elapsedTime * 4 + city.id.length) * 0.05;
-        const emphasis = selected ? 1.18 : hovered ? 1.12 : 1;
-        const baseScale = city.isCapital ? 0.032 : 0.022;
+        // Pulso mas suave y lento que el de la estrella original - un punto
+        // de luz "respira", no parpadea.
+        const pulse = 1 + Math.sin(state.clock.elapsedTime * 2.4 + city.id.length) * 0.08;
+        const emphasis = selected ? 1.25 : hovered ? 1.15 : 1;
+        const baseScale = city.isCapital ? 0.02 : 0.014;
         const targetScale = baseScale * zoomScale * pulse * emphasis;
 
         scaleRef.current.set(targetScale, targetScale, targetScale);
@@ -153,7 +129,7 @@ function CityMarker({ city, selected, onSelect, texture, hitGeometry }) {
 }
 
 export default function CityMarkers({ cities, selectedCity, onSelect }) {
-    const texture = useMemo(() => createStarTexture(), []);
+    const texture = useMemo(() => createGlowPointTexture(), []);
     const hitGeometry = useMemo(() => new THREE.SphereGeometry(0.04, 12, 8), []);
     const mappableCities = cities.filter((city) => city.coordinates?.lat != null && city.coordinates?.lng != null);
 

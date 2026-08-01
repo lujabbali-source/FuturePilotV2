@@ -15,6 +15,7 @@ import { getCities } from "./services/cityService";
 import { getCountryIdFromName } from "./services/countryService";
 import globePalette from "./globePalette";
 import TopNav from "./components/TopNav";
+import CountryHoverLabel from "./components/CountryHoverLabel";
 import "./App.css";
 
 export default function App() {
@@ -83,14 +84,6 @@ export default function App() {
         {t("cta.createMap")} <span aria-hidden="true">→</span>
       </a>
 
-      <div className={`country-hover-label ${hoveredCountry ? "is-visible" : ""}`} aria-hidden="true">
-        {hoveredCountry && (
-          <span key={hoveredCountry.properties.name} className="country-hover-label__text">
-            {hoveredCountry.properties.name}
-          </span>
-        )}
-      </div>
-
       <Canvas camera={{ position: [0, 0, 3], fov: 45 }}>
         <color attach="background" args={[globePalette.background]} />
 
@@ -123,6 +116,7 @@ export default function App() {
           hoveredCountry={hoveredCountry}
           onHover={handleCountryHover}
         />
+        <CountryHoverLabel hoveredCountry={hoveredCountry} />
         <CityMarkers
           cities={selectedCountryId ? selectedCountryCities : []}
           selectedCity={selectedCity}
