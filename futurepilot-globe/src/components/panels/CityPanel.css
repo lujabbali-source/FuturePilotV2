@@ -1,9 +1,13 @@
 :root {
-    --fp-night: #07111f;
+    /* Sincronizado a mano con src/globePalette.js (background/mapLine/glow) -
+       ese modulo lo consume Three.js directamente y no puede importarse en
+       CSS puro, asi que estos valores deben actualizarse juntos si cambia
+       la paleta oficial del globo. */
+    --fp-night: #071827;
     --fp-deep-teal: #0b2632;
     --fp-panel: #103845;
-    --fp-cyan: #00d9d0;
-    --fp-green: #00ff87;
+    --fp-cyan: #1de9ff;
+    --fp-green: #00f0b5;
     --fp-white: #ecfff7;
     --fp-muted: #b6c8d2;
 }

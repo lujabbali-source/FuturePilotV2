@@ -4,5 +4,15 @@
   "globalView": "Global view",
   "cityMarkers": "City markers",
   "selectCountry": "Select a country",
-  "selectCity": "Select a city"
+  "selectCity": "Select a city",
+  "nav": {
+    "backToResults": "Back to results"
+  },
+  "hint": {
+    "title": "Start with a country",
+    "body": "Spin the globe and tap a country to see its cities. Colombia has the richest catalog for now."
+  },
+  "cta": {
+    "createMap": "Create my personalized map"
+  }
 }

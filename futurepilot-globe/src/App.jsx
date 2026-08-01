@@ -14,7 +14,7 @@ import Doctor from "./debug/Doctor";
 import { getCities } from "./services/cityService";
 import { getCountryIdFromName } from "./services/countryService";
 import globePalette from "./globePalette";
-import LanguageSwitcher from "./components/LanguageSwitcher";
+import TopNav from "./components/TopNav";
 import "./App.css";
 
 export default function App() {
@@ -42,16 +42,28 @@ export default function App() {
 
   return (
     <>
-      <div className="app-overlay" aria-label={t("explore")}>
-        <div className="app-brand-lockup">
-          <span className="app-brand-mark">✦</span>
+      <TopNav />
+
+      <section className={`globe-hero ${selectedCountry ? "globe-hero--compact" : ""}`}>
+        <p className="globe-hero__eyebrow">{t("explore")}</p>
+        <h1 className="globe-hero__title">{t("explore")}</h1>
+        <p className="globe-hero__subtitle">{t("subtitle")}</p>
+      </section>
+
+      {!selectedCountry && (
+        <aside className="globe-hint">
+          <span className="globe-hint__dot" />
           <div>
-            <strong>{t("brand.name", { ns: "common" })}</strong>
-            <span>{t("globalView")}</span>
+            <strong>{t("hint.title")}</strong>
+            <p>{t("hint.body")}</p>
           </div>
-        </div>
-        <LanguageSwitcher />
-      </div>
+        </aside>
+      )}
+
+      <a className="globe-cta" href="/journey">
+        {t("cta.createMap")} <span aria-hidden="true">→</span>
+      </a>
+
       <Canvas camera={{ position: [0, 0, 3], fov: 45 }}>
         <color attach="background" args={[globePalette.background]} />
 

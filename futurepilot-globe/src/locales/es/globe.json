@@ -4,5 +4,15 @@
   "globalView": "Vista global",
   "cityMarkers": "Marcadores de ciudades",
   "selectCountry": "Selecciona un país",
-  "selectCity": "Selecciona una ciudad"
+  "selectCity": "Selecciona una ciudad",
+  "nav": {
+    "backToResults": "Volver a resultados"
+  },
+  "hint": {
+    "title": "Empieza por un país",
+    "body": "Gira el globo y toca un país para ver sus ciudades. Colombia tiene el catálogo más completo por ahora."
+  },
+  "cta": {
+    "createMap": "Crear mi mapa personalizado"
+  }
 }

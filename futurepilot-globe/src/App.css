@@ -5,31 +5,107 @@ body,
   height: 100%;
   margin: 0;
   overflow: hidden;
+  background: #02050b;
+  font-family: 'Manrope', Arial, sans-serif;
 }
 
 canvas {
   display: block;
 }
- .app-overlay {
+
+/*
+ * Chrome premium alrededor del globo. El globo (Canvas y todo su arbol en
+ * App.jsx) y su logica de seleccion no cambian: esto es unicamente la capa
+ * de UI que lo envuelve, con transiciones suaves para no competir con el
+ * protagonismo del globo.
+ */
+
+.globe-hero {
   position: fixed;
-  z-index: 10;
-  top: 20px;
+  z-index: 8;
+  top: 100px;
   left: 24px;
-  right: 24px;
+  max-width: 420px;
+  pointer-events: none;
+  transition: opacity .5s ease, transform .5s ease;
+}
+.globe-hero--compact { opacity: 0; transform: translateY(-12px); }
+.globe-hero__eyebrow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  pointer-events: none;
+  gap: 8px;
+  margin: 0 0 10px;
+  color: #00f0b5;
+  font-family: 'DM Mono', monospace;
+  font-size: .64rem;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.globe-hero__eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #00f0b5; box-shadow: 0 0 12px #00f0b5; }
+.globe-hero__title {
+  margin: 0 0 10px;
+  color: #f5fbff;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.08;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, .55);
+}
+.globe-hero__subtitle {
+  margin: 0;
+  max-width: 360px;
+  color: rgba(245, 251, 255, .68);
+  font-size: .88rem;
+  line-height: 1.6;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .5);
 }
 
-.app-overlay > * { pointer-events: auto; }
-.app-brand-lockup { display: flex; align-items: center; gap: 10px; color: #f5fbff; text-shadow: 0 2px 14px rgba(0, 0, 0, .45); }
-.app-brand-lockup > div { display: grid; gap: 2px; }
-.app-brand-lockup strong { font-size: 1rem; letter-spacing: -.04em; }
-.app-brand-lockup span:last-child { color: rgba(245, 251, 255, .62); font-size: .62rem; }
-.app-brand-mark { display: grid; place-items: center; width: 31px; height: 31px; border: 1px solid #00ffb3; border-radius: 10px; color: #00ffb3; background: rgba(7, 17, 31, .64); box-shadow: 0 0 18px rgba(0, 255, 179, .24); }
+.globe-hint {
+  position: fixed;
+  z-index: 8;
+  left: 24px;
+  bottom: 28px;
+  display: flex;
+  gap: 11px;
+  max-width: 320px;
+  padding: 15px 17px;
+  border: 1px solid rgba(29, 233, 255, .22);
+  border-radius: 16px;
+  background: rgba(7, 24, 39, .58);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .35);
+  animation: globe-hint-in .6s cubic-bezier(.2, .8, .2, 1) both;
+  animation-delay: .3s;
+}
+.globe-hint__dot { flex: 0 0 auto; width: 8px; height: 8px; margin-top: 6px; border-radius: 50%; background: #1de9ff; box-shadow: 0 0 14px #1de9ff; }
+.globe-hint strong { display: block; margin-bottom: 4px; color: #f5fbff; font-size: .82rem; }
+.globe-hint p { margin: 0; color: rgba(245, 251, 255, .62); font-size: .74rem; line-height: 1.55; }
+@keyframes globe-hint-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
-@media (max-width: 600px) {
-  .app-overlay { top: 12px; left: 12px; right: 12px; }
-  .language-switcher__label { display: none; }
+.globe-cta {
+  position: fixed;
+  z-index: 9;
+  right: 24px;
+  bottom: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 24px;
+  border-radius: 14px;
+  color: #061421;
+  background: linear-gradient(110deg, #1de9ff, #00f0b5);
+  box-shadow: 0 14px 38px rgba(0, 240, 181, .28);
+  font-weight: 800;
+  font-size: .86rem;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.globe-cta span { font-size: 1.1rem; line-height: 0; transition: transform .25s; }
+.globe-cta:hover { transform: translateY(-2px); box-shadow: 0 18px 46px rgba(0, 240, 181, .4); }
+.globe-cta:hover span { transform: translateX(4px); }
+
+@media (max-width: 640px) {
+  .globe-hero { top: 84px; left: 14px; right: 14px; max-width: none; }
+  .globe-hint { left: 14px; right: 14px; max-width: none; bottom: 96px; }
+  .globe-cta { left: 14px; right: 14px; justify-content: center; bottom: 16px; }
 }
