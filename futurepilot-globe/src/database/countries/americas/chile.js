@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "chile-santiago",
     name: "Santiago",
-    coordinates: null,
-    isCapital: false,
+    region: "Santiago y Región Metropolitana",
+    coordinates: {"lat": -33.4489, "lng": -70.6693},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -94,7 +95,8 @@ const cities = [
   defineCity({
     id: "chile-valparaiso",
     name: "Valparaíso",
-    coordinates: null,
+    region: "Valparaíso y Viña del Mar (Región de Valparaíso)",
+    coordinates: {"lat": -33.0472, "lng": -71.6127},
     isCapital: false,
     countryId,
     countryName,
@@ -132,7 +134,8 @@ const cities = [
   defineCity({
     id: "chile-concepcion",
     name: "Concepción",
-    coordinates: null,
+    region: "Concepción y Región del Biobío",
+    coordinates: {"lat": -36.8201, "lng": -73.0444},
     isCapital: false,
     countryId,
     countryName,
@@ -163,7 +166,8 @@ const cities = [
   defineCity({
     id: "chile-valdivia",
     name: "Valdivia",
-    coordinates: null,
+    region: "Valdivia y Región de Los Ríos",
+    coordinates: {"lat": -39.8142, "lng": -73.2459},
     isCapital: false,
     countryId,
     countryName,
@@ -180,7 +184,8 @@ const cities = [
   defineCity({
     id: "chile-temuco",
     name: "Temuco",
-    coordinates: null,
+    region: "Temuco (Región de La Araucanía)",
+    coordinates: {"lat": -38.7359, "lng": -72.5904},
     isCapital: false,
     countryId,
     countryName,
@@ -204,18 +209,12 @@ const cities = [
   defineCity({
     id: "chile-antofagasta",
     name: "Antofagasta",
-    coordinates: null,
+    region: "Antofagasta y Zona Norte (Arica, Iquique, La Serena)",
+    coordinates: {"lat": -23.6509, "lng": -70.3975},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "chile-antofagasta-antofagasta",
-        "name": "Antofagasta",
-        "cityId": "chile-antofagasta",
-        "website": "https://www.uantof.cl",
-        "type": null
-      }),
       defineUniversity({
         "id": "chile-antofagasta-universidad-de-antofagasta-ua",
         "name": "Universidad de Antofagasta (UA)",
@@ -230,68 +229,46 @@ const cities = [
         "website": "https://www.ucn.cl",
         "type": "private"
       }),
-      defineUniversity({
-        "id": "chile-antofagasta-universidad-de-tarapaca-uta",
-        "name": "Universidad de Tarapacá (UTA)",
-        "cityId": "chile-antofagasta",
-        "website": "https://www.uta.cl",
-        "type": "public"
-      }),
-      defineUniversity({
-        "id": "chile-antofagasta-universidad-arturo-prat-unap",
-        "name": "Universidad Arturo Prat (UNAP)",
-        "cityId": "chile-antofagasta",
-        "website": "https://www.unap.cl",
-        "type": "public"
-      }),
     ],
   }),
   defineCity({
     id: "chile-arica",
     name: "Arica",
-    coordinates: null,
+    region: "Antofagasta y Zona Norte (Arica, Iquique, La Serena)",
+    coordinates: {"lat": -18.4783, "lng": -70.3126},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "chile-arica-arica",
-        "name": "Arica",
+        "id": "chile-arica-universidad-de-tarapaca-uta",
+        "name": "Universidad de Tarapacá (UTA)",
         "cityId": "chile-arica",
         "website": "https://www.uta.cl",
-        "type": null
+        "type": "public"
       }),
     ],
   }),
   defineCity({
     id: "chile-iquique",
     name: "Iquique",
-    coordinates: null,
+    region: "Antofagasta y Zona Norte (Arica, Iquique, La Serena)",
+    coordinates: {"lat": -20.2141, "lng": -70.1522},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "chile-iquique-iquique",
-        "name": "Iquique",
+        "id": "chile-iquique-universidad-arturo-prat-unap",
+        "name": "Universidad Arturo Prat (UNAP)",
         "cityId": "chile-iquique",
         "website": "https://www.unap.cl",
-        "type": null
+        "type": "public"
       }),
-    ],
-  }),
-  defineCity({
-    id: "chile-la-serena",
-    name: "La Serena",
-    coordinates: null,
-    isCapital: false,
-    countryId,
-    countryName,
-    universities: [
       defineUniversity({
-        "id": "chile-la-serena-universidad-de-la-serena-uls",
+        "id": "chile-iquique-universidad-de-la-serena-uls",
         "name": "Universidad de La Serena (ULS)",
-        "cityId": "chile-la-serena",
+        "cityId": "chile-iquique",
         "website": "https://www.userena.cl",
         "type": "public"
       }),
@@ -300,18 +277,12 @@ const cities = [
   defineCity({
     id: "chile-puerto-montt",
     name: "Puerto Montt",
-    coordinates: null,
+    region: "Zona Sur Austral (Puerto Montt, Punta Arenas)",
+    coordinates: {"lat": -41.4693, "lng": -72.9424},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "chile-puerto-montt-puerto-montt",
-        "name": "Puerto Montt",
-        "cityId": "chile-puerto-montt",
-        "website": "https://www.pm.uach.cl",
-        "type": null
-      }),
       defineUniversity({
         "id": "chile-puerto-montt-universidad-austral-de-chile-sede-puerto-montt",
         "name": "Universidad Austral de Chile (Sede Puerto Montt)",
@@ -326,29 +297,23 @@ const cities = [
         "website": "https://www.ulagos.cl",
         "type": "public"
       }),
-      defineUniversity({
-        "id": "chile-puerto-montt-universidad-de-magallanes-umag",
-        "name": "Universidad de Magallanes (UMAG)",
-        "cityId": "chile-puerto-montt",
-        "website": "http://www.umag.cl",
-        "type": "public"
-      }),
     ],
   }),
   defineCity({
-    id: "chile-punta-arenas",
-    name: "Punta Arenas",
-    coordinates: null,
+    id: "chile-magallanes",
+    name: "Magallanes",
+    region: "Zona Sur Austral (Puerto Montt, Punta Arenas)",
+    coordinates: {"lat": -53.1638, "lng": -70.9171},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "chile-punta-arenas-punta-arenas-magallanes",
-        "name": "Punta Arenas (Magallanes)",
-        "cityId": "chile-punta-arenas",
+        "id": "chile-magallanes-universidad-de-magallanes-umag",
+        "name": "Universidad de Magallanes (UMAG)",
+        "cityId": "chile-magallanes",
         "website": "http://www.umag.cl",
-        "type": null
+        "type": "public"
       }),
     ],
   }),

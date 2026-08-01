@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "ecuador-quito",
     name: "Quito",
-    coordinates: null,
-    isCapital: false,
+    region: "Quito y Pichincha",
+    coordinates: {"lat": -0.1807, "lng": -78.4678},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -87,7 +88,8 @@ const cities = [
   defineCity({
     id: "ecuador-guayaquil",
     name: "Guayaquil",
-    coordinates: null,
+    region: "Guayaquil y Guayas",
+    coordinates: {"lat": -2.1894, "lng": -79.8891},
     isCapital: false,
     countryId,
     countryName,
@@ -146,7 +148,8 @@ const cities = [
   defineCity({
     id: "ecuador-cuenca",
     name: "Cuenca",
-    coordinates: null,
+    region: "Cuenca y Azuay",
+    coordinates: {"lat": -2.9006, "lng": -79.0045},
     isCapital: false,
     countryId,
     countryName,
@@ -182,66 +185,68 @@ const cities = [
     ],
   }),
   defineCity({
-    id: "ecuador-ambato-riobamba",
-    name: "Ambato, Riobamba",
-    coordinates: null,
+    id: "ecuador-ambato",
+    name: "Ambato",
+    region: "Ambato, Riobamba y Latacunga (Sierra Centro)",
+    coordinates: {"lat": -1.2417, "lng": -78.6197},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "ecuador-ambato-riobamba-ambato-tungurahua",
-        "name": "Ambato (Tungurahua)",
-        "cityId": "ecuador-ambato-riobamba",
-        "website": "https://www.uta.edu.ec",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "ecuador-ambato-riobamba-universidad-tecnica-de-ambato-uta",
+        "id": "ecuador-ambato-universidad-tecnica-de-ambato-uta",
         "name": "Universidad Técnica de Ambato (UTA)",
-        "cityId": "ecuador-ambato-riobamba",
+        "cityId": "ecuador-ambato",
         "website": "https://www.uta.edu.ec",
         "type": "public"
       }),
       defineUniversity({
-        "id": "ecuador-ambato-riobamba-pontificia-universidad-catolica-del-ecuador-puce-sede-ambato",
+        "id": "ecuador-ambato-pontificia-universidad-catolica-del-ecuador-puce-sede-ambato",
         "name": "Pontificia Universidad Católica del Ecuador (PUCE - Sede Ambato)",
-        "cityId": "ecuador-ambato-riobamba",
+        "cityId": "ecuador-ambato",
         "website": "https://pucesa.edu.ec",
         "type": "private"
       }),
+    ],
+  }),
+  defineCity({
+    id: "ecuador-chimborazo",
+    name: "Chimborazo",
+    region: "Ambato, Riobamba y Latacunga (Sierra Centro)",
+    coordinates: {"lat": -1.6635, "lng": -78.6547},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "ecuador-ambato-riobamba-riobamba-chimborazo",
-        "name": "Riobamba (Chimborazo)",
-        "cityId": "ecuador-ambato-riobamba",
-        "website": "https://www.espoch.edu.ec",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "ecuador-ambato-riobamba-escuela-superior-politecnica-de-chimborazo-espoch",
+        "id": "ecuador-chimborazo-escuela-superior-politecnica-de-chimborazo-espoch",
         "name": "Escuela Superior Politécnica de Chimborazo (ESPOCH)",
-        "cityId": "ecuador-ambato-riobamba",
+        "cityId": "ecuador-chimborazo",
         "website": "https://www.espoch.edu.ec",
         "type": "public"
       }),
       defineUniversity({
-        "id": "ecuador-ambato-riobamba-universidad-nacional-de-chimborazo-unach",
+        "id": "ecuador-chimborazo-universidad-nacional-de-chimborazo-unach",
         "name": "Universidad Nacional de Chimborazo (UNACH)",
-        "cityId": "ecuador-ambato-riobamba",
+        "cityId": "ecuador-chimborazo",
         "website": "https://www.unach.edu.ec",
         "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "ecuador-cotopaxi",
+    name: "Cotopaxi",
+    region: "Ambato, Riobamba y Latacunga (Sierra Centro)",
+    coordinates: {"lat": -0.9331, "lng": -78.6157},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "ecuador-ambato-riobamba-latacunga-cotopaxi",
-        "name": "Latacunga (Cotopaxi)",
-        "cityId": "ecuador-ambato-riobamba",
-        "website": "https://www.utc.edu.ec",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "ecuador-ambato-riobamba-universidad-tecnica-de-cotopaxi-utc",
+        "id": "ecuador-cotopaxi-universidad-tecnica-de-cotopaxi-utc",
         "name": "Universidad Técnica de Cotopaxi (UTC)",
-        "cityId": "ecuador-ambato-riobamba",
+        "cityId": "ecuador-cotopaxi",
         "website": "https://www.utc.edu.ec",
         "type": "public"
       }),
@@ -250,18 +255,12 @@ const cities = [
   defineCity({
     id: "ecuador-loja",
     name: "Loja",
-    coordinates: null,
+    region: "Loja y Machala (Zona Sur)",
+    coordinates: {"lat": -3.9931, "lng": -79.2042},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "ecuador-loja-loja",
-        "name": "Loja",
-        "cityId": "ecuador-loja",
-        "website": "https://www.utpl.edu.ec",
-        "type": null
-      }),
       defineUniversity({
         "id": "ecuador-loja-universidad-tecnica-particular-de-loja-utpl",
         "name": "Universidad Técnica Particular de Loja (UTPL)",
@@ -276,17 +275,21 @@ const cities = [
         "website": "https://unl.edu.ec",
         "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "ecuador-machala",
+    name: "Machala",
+    region: "Loja y Machala (Zona Sur)",
+    coordinates: {"lat": -3.2581, "lng": -79.9553},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "ecuador-loja-machala-el-oro",
-        "name": "Machala (El Oro)",
-        "cityId": "ecuador-loja",
-        "website": "https://www.utmachala.edu.ec",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "ecuador-loja-universidad-tecnica-de-machala-utmach",
+        "id": "ecuador-machala-universidad-tecnica-de-machala-utmach",
         "name": "Universidad Técnica de Machala (UTMACH)",
-        "cityId": "ecuador-loja",
+        "cityId": "ecuador-machala",
         "website": "https://www.utmachala.edu.ec",
         "type": "public"
       }),
@@ -295,23 +298,24 @@ const cities = [
   defineCity({
     id: "ecuador-portoviejo",
     name: "Portoviejo",
-    coordinates: null,
+    region: "Manabí (Portoviejo, Manta) y Costa Norte (Santa Elena, Esmeraldas)",
+    coordinates: {"lat": -1.0546, "lng": -80.453},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "ecuador-portoviejo-portoviejo-y-manta-manabi",
-        "name": "Portoviejo y Manta (Manabí)",
-        "cityId": "ecuador-portoviejo",
-        "website": "https://www.utm.edu.ec",
-        "type": null
-      }),
-      defineUniversity({
         "id": "ecuador-portoviejo-universidad-tecnica-de-manabi-utm-portoviejo",
         "name": "Universidad Técnica de Manabí (UTM) (Portoviejo)",
         "cityId": "ecuador-portoviejo",
         "website": "https://www.utm.edu.ec",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "ecuador-portoviejo-universidad-laica-eloy-alfaro-de-manabi-uleam-manta",
+        "name": "Universidad Laica Eloy Alfaro de Manabí (ULEAM) (Manta)",
+        "cityId": "ecuador-portoviejo",
+        "website": "https://www.uleam.edu.ec",
         "type": "public"
       }),
       defineUniversity({
@@ -324,37 +328,14 @@ const cities = [
     ],
   }),
   defineCity({
-    id: "ecuador-manta",
-    name: "Manta",
-    coordinates: null,
-    isCapital: false,
-    countryId,
-    countryName,
-    universities: [
-      defineUniversity({
-        "id": "ecuador-manta-universidad-laica-eloy-alfaro-de-manabi-uleam-manta",
-        "name": "Universidad Laica Eloy Alfaro de Manabí (ULEAM) (Manta)",
-        "cityId": "ecuador-manta",
-        "website": "https://www.uleam.edu.ec",
-        "type": "public"
-      }),
-    ],
-  }),
-  defineCity({
     id: "ecuador-santa-elena",
     name: "Santa Elena",
-    coordinates: null,
+    region: "Manabí (Portoviejo, Manta) y Costa Norte (Santa Elena, Esmeraldas)",
+    coordinates: {"lat": -2.227, "lng": -80.858},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "ecuador-santa-elena-santa-elena",
-        "name": "Santa Elena",
-        "cityId": "ecuador-santa-elena",
-        "website": "https://www.upse.edu.ec",
-        "type": null
-      }),
       defineUniversity({
         "id": "ecuador-santa-elena-universidad-estatal-peninsula-de-santa-elena-upse",
         "name": "Universidad Estatal Península de Santa Elena (UPSE)",
@@ -367,18 +348,12 @@ const cities = [
   defineCity({
     id: "ecuador-esmeraldas",
     name: "Esmeraldas",
-    coordinates: null,
+    region: "Manabí (Portoviejo, Manta) y Costa Norte (Santa Elena, Esmeraldas)",
+    coordinates: {"lat": 0.9682, "lng": -79.6517},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "ecuador-esmeraldas-esmeraldas",
-        "name": "Esmeraldas",
-        "cityId": "ecuador-esmeraldas",
-        "website": "https://www.utelvt.edu.ec",
-        "type": null
-      }),
       defineUniversity({
         "id": "ecuador-esmeraldas-universidad-tecnica-luis-vargas-torres-de-esmeraldas-utelvt",
         "name": "Universidad Técnica Luis Vargas Torres de Esmeraldas (UTELVT)",
@@ -391,7 +366,8 @@ const cities = [
   defineCity({
     id: "ecuador-ibarra",
     name: "Ibarra",
-    coordinates: null,
+    region: "Ibarra y la Sierra Norte (Imbabura, Carchi, Urcuquí)",
+    coordinates: {"lat": 0.3517, "lng": -78.1223},
     isCapital: false,
     countryId,
     countryName,
@@ -415,7 +391,8 @@ const cities = [
   defineCity({
     id: "ecuador-urcuqui",
     name: "Urcuquí",
-    coordinates: null,
+    region: "Ibarra y la Sierra Norte (Imbabura, Carchi, Urcuquí)",
+    coordinates: {"lat": 0.3833, "lng": -78.1917},
     isCapital: false,
     countryId,
     countryName,
@@ -432,7 +409,8 @@ const cities = [
   defineCity({
     id: "ecuador-puyo",
     name: "Puyo",
-    coordinates: null,
+    region: "Región Amazónica (Puyo, Tena)",
+    coordinates: {"lat": -1.4924, "lng": -78.0022},
     isCapital: false,
     countryId,
     countryName,
@@ -449,7 +427,8 @@ const cities = [
   defineCity({
     id: "ecuador-tena",
     name: "Tena",
-    coordinates: null,
+    region: "Región Amazónica (Puyo, Tena)",
+    coordinates: {"lat": -0.9938, "lng": -77.8131},
     isCapital: false,
     countryId,
     countryName,

@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "argentina-ciudad-autonoma-de-buenos-aires",
     name: "Ciudad Autónoma de Buenos Aires",
-    coordinates: null,
-    isCapital: false,
+    region: "Ciudad Autónoma de Buenos Aires (CABA) y Gran Buenos Aires",
+    coordinates: {"lat": -34.6037, "lng": -58.3816},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -94,7 +95,8 @@ const cities = [
   defineCity({
     id: "argentina-caba",
     name: "CABA",
-    coordinates: null,
+    region: "Ciudad Autónoma de Buenos Aires (CABA) y Gran Buenos Aires",
+    coordinates: {"lat": -34.6037, "lng": -58.3816},
     isCapital: false,
     countryId,
     countryName,
@@ -111,7 +113,8 @@ const cities = [
   defineCity({
     id: "argentina-la-plata",
     name: "La Plata",
-    coordinates: null,
+    region: "La Plata y Provincia de Buenos Aires",
+    coordinates: {"lat": -34.9215, "lng": -57.9545},
     isCapital: false,
     countryId,
     countryName,
@@ -149,7 +152,8 @@ const cities = [
   defineCity({
     id: "argentina-cordoba",
     name: "Córdoba",
-    coordinates: null,
+    region: "Córdoba",
+    coordinates: {"lat": -31.4201, "lng": -64.1888},
     isCapital: false,
     countryId,
     countryName,
@@ -187,18 +191,12 @@ const cities = [
   defineCity({
     id: "argentina-rosario",
     name: "Rosario",
-    coordinates: null,
+    region: "Rosario y Región Litoral (Santa Fe, Paraná)",
+    coordinates: {"lat": -32.9442, "lng": -60.6505},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "argentina-rosario-rosario-santa-fe",
-        "name": "Rosario (Santa Fe)",
-        "cityId": "argentina-rosario",
-        "website": "https://unr.edu.ar",
-        "type": null
-      }),
       defineUniversity({
         "id": "argentina-rosario-universidad-nacional-de-rosario-unr",
         "name": "Universidad Nacional de Rosario (UNR)",
@@ -220,30 +218,17 @@ const cities = [
         "website": "https://www.unl.edu.ar",
         "type": "public"
       }),
-      defineUniversity({
-        "id": "argentina-rosario-universidad-nacional-de-entre-rios-uner",
-        "name": "Universidad Nacional de Entre Ríos (UNER)",
-        "cityId": "argentina-rosario",
-        "website": "https://www.uner.edu.ar",
-        "type": "public"
-      }),
     ],
   }),
   defineCity({
     id: "argentina-santa-fe",
     name: "Santa Fe",
-    coordinates: null,
+    region: "Rosario y Región Litoral (Santa Fe, Paraná)",
+    coordinates: {"lat": -31.6333, "lng": -60.7},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "argentina-santa-fe-santa-fe-capital",
-        "name": "Santa Fe Capital",
-        "cityId": "argentina-santa-fe",
-        "website": "https://www.unl.edu.ar",
-        "type": null
-      }),
       defineUniversity({
         "id": "argentina-santa-fe-universidad-catolica-de-santa-fe-ucsf",
         "name": "Universidad Católica de Santa Fe (UCSF)",
@@ -254,37 +239,32 @@ const cities = [
     ],
   }),
   defineCity({
-    id: "argentina-parana",
-    name: "Paraná",
-    coordinates: null,
+    id: "argentina-entre-rios",
+    name: "Entre Ríos",
+    region: "Rosario y Región Litoral (Santa Fe, Paraná)",
+    coordinates: {"lat": -31.7333, "lng": -60.5238},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "argentina-parana-parana-entre-rios",
-        "name": "Paraná (Entre Ríos)",
-        "cityId": "argentina-parana",
+        "id": "argentina-entre-rios-universidad-nacional-de-entre-rios-uner",
+        "name": "Universidad Nacional de Entre Ríos (UNER)",
+        "cityId": "argentina-entre-rios",
         "website": "https://www.uner.edu.ar",
-        "type": null
+        "type": "public"
       }),
     ],
   }),
   defineCity({
     id: "argentina-mendoza",
     name: "Mendoza",
-    coordinates: null,
+    region: "Mendoza y Región Cuyo (San Juan, San Luis)",
+    coordinates: {"lat": -32.8895, "lng": -68.8458},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "argentina-mendoza-mendoza",
-        "name": "Mendoza",
-        "cityId": "argentina-mendoza",
-        "website": "https://www.uncuyo.edu.ar",
-        "type": null
-      }),
       defineUniversity({
         "id": "argentina-mendoza-universidad-nacional-de-cuyo-uncuyo",
         "name": "Universidad Nacional de Cuyo (UNCUYO)",
@@ -311,18 +291,12 @@ const cities = [
   defineCity({
     id: "argentina-san-juan",
     name: "San Juan",
-    coordinates: null,
+    region: "Mendoza y Región Cuyo (San Juan, San Luis)",
+    coordinates: {"lat": -31.5375, "lng": -68.5364},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "argentina-san-juan-san-juan",
-        "name": "San Juan",
-        "cityId": "argentina-san-juan",
-        "website": "https://www.unsj.edu.ar",
-        "type": null
-      }),
       defineUniversity({
         "id": "argentina-san-juan-universidad-nacional-de-san-juan-unsj",
         "name": "Universidad Nacional de San Juan (UNSJ)",
@@ -335,18 +309,12 @@ const cities = [
   defineCity({
     id: "argentina-san-luis",
     name: "San Luis",
-    coordinates: null,
+    region: "Mendoza y Región Cuyo (San Juan, San Luis)",
+    coordinates: {"lat": -33.3017, "lng": -66.3378},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "argentina-san-luis-san-luis",
-        "name": "San Luis",
-        "cityId": "argentina-san-luis",
-        "website": "https://www.unsl.edu.ar",
-        "type": null
-      }),
       defineUniversity({
         "id": "argentina-san-luis-universidad-nacional-de-san-luis-unsl",
         "name": "Universidad Nacional de San Luis (UNSL)",
@@ -359,18 +327,12 @@ const cities = [
   defineCity({
     id: "argentina-san-miguel-de-tucuman",
     name: "San Miguel de Tucumán",
-    coordinates: null,
+    region: "San Miguel de Tucumán y Norte Argentino (Salta, Jujuy, Santiago del Estero)",
+    coordinates: {"lat": -26.8083, "lng": -65.2176},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "argentina-san-miguel-de-tucuman-san-miguel-de-tucuman",
-        "name": "San Miguel de Tucumán",
-        "cityId": "argentina-san-miguel-de-tucuman",
-        "website": "https://www.unt.edu.ar",
-        "type": null
-      }),
       defineUniversity({
         "id": "argentina-san-miguel-de-tucuman-universidad-nacional-de-tucuman-unt",
         "name": "Universidad Nacional de Tucumán (UNT)",
@@ -390,18 +352,12 @@ const cities = [
   defineCity({
     id: "argentina-salta",
     name: "Salta",
-    coordinates: null,
+    region: "San Miguel de Tucumán y Norte Argentino (Salta, Jujuy, Santiago del Estero)",
+    coordinates: {"lat": -24.7859, "lng": -65.4117},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "argentina-salta-salta",
-        "name": "Salta",
-        "cityId": "argentina-salta",
-        "website": "https://www.unsa.edu.ar",
-        "type": null
-      }),
       defineUniversity({
         "id": "argentina-salta-universidad-nacional-de-salta-unsa",
         "name": "Universidad Nacional de Salta (UNSa)",
@@ -419,70 +375,44 @@ const cities = [
     ],
   }),
   defineCity({
-    id: "argentina-jujuy",
-    name: "Jujuy",
-    coordinates: null,
+    id: "argentina-san-salvador-de-jujuy",
+    name: "San Salvador de Jujuy",
+    region: "San Miguel de Tucumán y Norte Argentino (Salta, Jujuy, Santiago del Estero)",
+    coordinates: {"lat": -24.1858, "lng": -65.2995},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "argentina-jujuy-san-salvador-de-jujuy",
-        "name": "San Salvador de Jujuy",
-        "cityId": "argentina-jujuy",
-        "website": "https://www.unju.edu.ar",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "argentina-jujuy-universidad-nacional-de-jujuy-unju",
+        "id": "argentina-san-salvador-de-jujuy-universidad-nacional-de-jujuy-unju",
         "name": "Universidad Nacional de Jujuy (UNJu)",
-        "cityId": "argentina-jujuy",
+        "cityId": "argentina-san-salvador-de-jujuy",
         "website": "https://www.unju.edu.ar",
         "type": "public"
       }),
     ],
   }),
   defineCity({
-    id: "argentina-bariloche",
-    name: "Bariloche",
-    coordinates: null,
+    id: "argentina-san-carlos-de-bariloche",
+    name: "San Carlos de Bariloche",
+    region: "Patagonia Argentina (Bariloche, Neuquén, Comodoro Rivadavia)",
+    coordinates: {"lat": -41.1335, "lng": -71.3103},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "argentina-bariloche-san-carlos-de-bariloche-neuquen",
-        "name": "San Carlos de Bariloche / Neuquén",
-        "cityId": "argentina-bariloche",
-        "website": "https://www.ib.edu.ar",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "argentina-bariloche-instituto-balseiro-bariloche-centro-de-referencia-en-fisica-e-ingenieria-nuclear",
+        "id": "argentina-san-carlos-de-bariloche-instituto-balseiro-bariloche-centro-de-referencia-en-fisica-e-ingenieria-nuclear",
         "name": "Instituto Balseiro (Bariloche - Centro de referencia en física e ingeniería nuclear)",
-        "cityId": "argentina-bariloche",
+        "cityId": "argentina-san-carlos-de-bariloche",
         "website": "https://www.ib.edu.ar",
         "type": "public"
       }),
       defineUniversity({
-        "id": "argentina-bariloche-universidad-nacional-de-rio-negro-unrn-bariloche-general-roca",
+        "id": "argentina-san-carlos-de-bariloche-universidad-nacional-de-rio-negro-unrn-bariloche-general-roca",
         "name": "Universidad Nacional de Río Negro (UNRN) (Bariloche/General Roca)",
-        "cityId": "argentina-bariloche",
+        "cityId": "argentina-san-carlos-de-bariloche",
         "website": "https://www.unrn.edu.ar",
-        "type": "public"
-      }),
-      defineUniversity({
-        "id": "argentina-bariloche-chubut-y-tierra-del-fuego",
-        "name": "Chubut y Tierra del Fuego",
-        "cityId": "argentina-bariloche",
-        "website": "http://www.unp.edu.ar",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "argentina-bariloche-universidad-nacional-de-tierra-del-fuego-untdf-ushuaia-rio-grande",
-        "name": "Universidad Nacional de Tierra del Fuego (UNTDF) (Ushuaia/Río Grande)",
-        "cityId": "argentina-bariloche",
-        "website": "https://www.untdf.edu.ar",
         "type": "public"
       }),
     ],
@@ -490,7 +420,8 @@ const cities = [
   defineCity({
     id: "argentina-neuquen",
     name: "Neuquén",
-    coordinates: null,
+    region: "Patagonia Argentina (Bariloche, Neuquén, Comodoro Rivadavia)",
+    coordinates: {"lat": -38.9516, "lng": -68.0591},
     isCapital: false,
     countryId,
     countryName,
@@ -505,18 +436,37 @@ const cities = [
     ],
   }),
   defineCity({
-    id: "argentina-comodoro-rivadavia",
-    name: "Comodoro Rivadavia",
-    coordinates: null,
+    id: "argentina-chubut",
+    name: "Chubut",
+    region: "Patagonia Argentina (Bariloche, Neuquén, Comodoro Rivadavia)",
+    coordinates: {"lat": -45.8647, "lng": -67.4966},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "argentina-comodoro-rivadavia-universidad-nacional-de-la-patagonia-san-juan-bosco-unpsjb-comodoro-rivadavia",
+        "id": "argentina-chubut-universidad-nacional-de-la-patagonia-san-juan-bosco-unpsjb-comodoro-rivadavia",
         "name": "Universidad Nacional de la Patagonia San Juan Bosco (UNPSJB) (Comodoro Rivadavia)",
-        "cityId": "argentina-comodoro-rivadavia",
+        "cityId": "argentina-chubut",
         "website": "http://www.unp.edu.ar",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "argentina-tierra-del-fuego",
+    name: "Tierra del Fuego",
+    region: "Patagonia Argentina (Bariloche, Neuquén, Comodoro Rivadavia)",
+    coordinates: {"lat": -54.8019, "lng": -68.303},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "argentina-tierra-del-fuego-universidad-nacional-de-tierra-del-fuego-untdf-ushuaia-rio-grande",
+        "name": "Universidad Nacional de Tierra del Fuego (UNTDF) (Ushuaia/Río Grande)",
+        "cityId": "argentina-tierra-del-fuego",
+        "website": "https://www.untdf.edu.ar",
         "type": "public"
       }),
     ],

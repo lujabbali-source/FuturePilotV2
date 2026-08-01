@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "mexico-ciudad-de-mexico",
     name: "Ciudad de México",
-    coordinates: null,
-    isCapital: false,
+    region: "Ciudad de México y Zona Metropolitana (CDMX y Estado de México)",
+    coordinates: {"lat": 19.4326, "lng": -99.1332},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -62,6 +63,13 @@ const cities = [
         "type": "private"
       }),
       defineUniversity({
+        "id": "mexico-ciudad-de-mexico-el-colegio-de-mexico-colmex",
+        "name": "El Colegio de México (COLMEX)",
+        "cityId": "mexico-ciudad-de-mexico",
+        "website": "https://www.colmex.mx",
+        "type": "public"
+      }),
+      defineUniversity({
         "id": "mexico-ciudad-de-mexico-universidad-panamericana-up",
         "name": "Universidad Panamericana (UP)",
         "cityId": "mexico-ciudad-de-mexico",
@@ -80,7 +88,8 @@ const cities = [
   defineCity({
     id: "mexico-monterrey",
     name: "Monterrey",
-    coordinates: null,
+    region: "Monterrey y Nuevo León (Norte de México)",
+    coordinates: {"lat": 25.6866, "lng": -100.3161},
     isCapital: false,
     countryId,
     countryName,
@@ -118,7 +127,8 @@ const cities = [
   defineCity({
     id: "mexico-guadalajara",
     name: "Guadalajara",
-    coordinates: null,
+    region: "Guadalajara y Jalisco (Occidente)",
+    coordinates: {"lat": 20.6597, "lng": -103.3496},
     isCapital: false,
     countryId,
     countryName,
@@ -163,7 +173,8 @@ const cities = [
   defineCity({
     id: "mexico-puebla",
     name: "Puebla",
-    coordinates: null,
+    region: "Puebla (Zona Centro)",
+    coordinates: {"lat": 19.0414, "lng": -98.2063},
     isCapital: false,
     countryId,
     countryName,
@@ -201,18 +212,12 @@ const cities = [
   defineCity({
     id: "mexico-queretaro",
     name: "Querétaro",
-    coordinates: null,
+    region: "Querétaro y Guanajuato (El Bajío)",
+    coordinates: {"lat": 20.5888, "lng": -100.3899},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "mexico-queretaro-queretaro",
-        "name": "Querétaro",
-        "cityId": "mexico-queretaro",
-        "website": "https://www.uaq.mx",
-        "type": null
-      }),
       defineUniversity({
         "id": "mexico-queretaro-universidad-autonoma-de-queretaro-uaq",
         "name": "Universidad Autónoma de Querétaro (UAQ)",
@@ -234,17 +239,21 @@ const cities = [
         "website": "https://tec.mx",
         "type": "private"
       }),
+    ],
+  }),
+  defineCity({
+    id: "mexico-guanajuato",
+    name: "Guanajuato",
+    region: "Querétaro y Guanajuato (El Bajío)",
+    coordinates: {"lat": 21.019, "lng": -101.2574},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "mexico-queretaro-guanajuato-leon-guanajuato-capital",
-        "name": "Guanajuato (León / Guanajuato Capital)",
-        "cityId": "mexico-queretaro",
-        "website": "https://www.ugto.mx",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "mexico-queretaro-universidad-de-guanajuato-ugto",
+        "id": "mexico-guanajuato-universidad-de-guanajuato-ugto",
         "name": "Universidad de Guanajuato (UGTO)",
-        "cityId": "mexico-queretaro",
+        "cityId": "mexico-guanajuato",
         "website": "https://www.ugto.mx",
         "type": "public"
       }),
@@ -253,7 +262,8 @@ const cities = [
   defineCity({
     id: "mexico-merida",
     name: "Mérida",
-    coordinates: null,
+    region: "Mérida y Yucatán (Península del Sureste)",
+    coordinates: {"lat": 20.9674, "lng": -89.5926},
     isCapital: false,
     countryId,
     countryName,
@@ -284,7 +294,8 @@ const cities = [
   defineCity({
     id: "mexico-tijuana",
     name: "Tijuana",
-    coordinates: null,
+    region: "Tijuana y Baja California (Noroeste)",
+    coordinates: {"lat": 32.5149, "lng": -117.0382},
     isCapital: false,
     countryId,
     countryName,

@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "haiti-puerto-principe",
     name: "Puerto Príncipe",
-    coordinates: null,
-    isCapital: false,
+    region: "Puerto Príncipe y Área Metropolitana (Departamento del Oeste)",
+    coordinates: {"lat": 18.5944, "lng": -72.3074},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -59,7 +60,8 @@ const cities = [
   defineCity({
     id: "haiti-cap-haitien",
     name: "Cap-Haïtien",
-    coordinates: null,
+    region: "Cap-Haïtien y Limonade (Departamento del Norte)",
+    coordinates: {"lat": 19.7592, "lng": -72.2014},
     isCapital: false,
     countryId,
     countryName,
@@ -90,7 +92,8 @@ const cities = [
   defineCity({
     id: "haiti-les-cayes",
     name: "Les Cayes",
-    coordinates: null,
+    region: "Les Cayes (Departamento del Sur)",
+    coordinates: {"lat": 18.2, "lng": -73.75},
     isCapital: false,
     countryId,
     countryName,
@@ -121,7 +124,8 @@ const cities = [
   defineCity({
     id: "haiti-jacmel",
     name: "Jacmel",
-    coordinates: null,
+    region: "Jacmel (Departamento del Sudeste)",
+    coordinates: {"lat": 18.234, "lng": -72.535},
     isCapital: false,
     countryId,
     countryName,
@@ -145,7 +149,8 @@ const cities = [
   defineCity({
     id: "haiti-gonaives",
     name: "Gonaïves",
-    coordinates: null,
+    region: "Gonaïves y Saint-Marc (Departamento de Artibonite)",
+    coordinates: {"lat": 19.45, "lng": -72.6833},
     isCapital: false,
     countryId,
     countryName,
@@ -155,13 +160,6 @@ const cities = [
         "name": "Université Publique de l'Artibonite aux Gonaïves (UPAG)",
         "cityId": "haiti-gonaives",
         "website": "https://upag.edu.ht",
-        "type": "public"
-      }),
-      defineUniversity({
-        "id": "haiti-gonaives-ecole-de-droit-et-des-sciences-economiques-des-gonaives-edseg",
-        "name": "École de Droit et des Sciences Économiques des Gonaïves (EDSEG)",
-        "cityId": "haiti-gonaives",
-        "website": null,
         "type": "public"
       }),
     ],

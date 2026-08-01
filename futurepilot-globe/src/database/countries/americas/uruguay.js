@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "uruguay-montevideo",
     name: "Montevideo",
-    coordinates: null,
-    isCapital: false,
+    region: "Montevideo (Capital)",
+    coordinates: {"lat": -34.9011, "lng": -56.1645},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -66,11 +67,19 @@ const cities = [
   defineCity({
     id: "uruguay-maldonado",
     name: "Maldonado",
-    coordinates: null,
+    region: "Maldonado y Punta del Este (Región Este)",
+    coordinates: {"lat": -34.9036, "lng": -54.9548},
     isCapital: false,
     countryId,
     countryName,
     universities: [
+      defineUniversity({
+        "id": "uruguay-maldonado-universidad-de-la-republica-cure-centro-universitario-regional-este-maldonado-rocha-treinta-y-tres",
+        "name": "Universidad de la República (CURE - Centro Universitario Regional Este) (Maldonado / Rocha / Treinta y Tres)",
+        "cityId": "uruguay-maldonado",
+        "website": "https://cure.edu.uy",
+        "type": "public"
+      }),
       defineUniversity({
         "id": "uruguay-maldonado-universidad-catolica-del-uruguay-sede-punta-del-este",
         "name": "Universidad Católica del Uruguay (Sede Punta del Este)",
@@ -90,7 +99,8 @@ const cities = [
   defineCity({
     id: "uruguay-salto",
     name: "Salto",
-    coordinates: null,
+    region: "Salto y Paysandú (Región Litoral Norte)",
+    coordinates: {"lat": -31.3833, "lng": -57.9667},
     isCapital: false,
     countryId,
     countryName,
@@ -121,7 +131,8 @@ const cities = [
   defineCity({
     id: "uruguay-rivera",
     name: "Rivera",
-    coordinates: null,
+    region: "Rivera y Tacuarembó (Región Noreste / Centro)",
+    coordinates: {"lat": -30.9053, "lng": -55.5508},
     isCapital: false,
     countryId,
     countryName,

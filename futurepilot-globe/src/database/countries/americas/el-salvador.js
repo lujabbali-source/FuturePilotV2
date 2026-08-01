@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "el-salvador-san-salvador",
     name: "San Salvador",
-    coordinates: null,
-    isCapital: false,
+    region: "San Salvador y Área Metropolitana (Departamento de San Salvador, Antiguo Cuscatlán / La Libertad)",
+    coordinates: {"lat": 13.6929, "lng": -89.2182},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -73,7 +74,8 @@ const cities = [
   defineCity({
     id: "el-salvador-antiguo-cuscatlan",
     name: "Antiguo Cuscatlán",
-    coordinates: null,
+    region: "San Salvador y Área Metropolitana (Departamento de San Salvador, Antiguo Cuscatlán / La Libertad)",
+    coordinates: {"lat": 13.6725, "lng": -89.2464},
     isCapital: false,
     countryId,
     countryName,
@@ -97,7 +99,8 @@ const cities = [
   defineCity({
     id: "el-salvador-santa-ana",
     name: "Santa Ana",
-    coordinates: null,
+    region: "Santa Ana y Zona Occidental (Ahuachapán, Sonsonate)",
+    coordinates: {"lat": 13.9942, "lng": -89.5597},
     isCapital: false,
     countryId,
     countryName,
@@ -135,7 +138,8 @@ const cities = [
   defineCity({
     id: "el-salvador-san-miguel",
     name: "San Miguel",
-    coordinates: null,
+    region: "San Miguel y Zona Oriental (Usulután, La Unión, Morazán)",
+    coordinates: {"lat": 13.4833, "lng": -88.1833},
     isCapital: false,
     countryId,
     countryName,
@@ -166,7 +170,8 @@ const cities = [
   defineCity({
     id: "el-salvador-usulutan",
     name: "Usulután",
-    coordinates: null,
+    region: "San Miguel y Zona Oriental (Usulután, La Unión, Morazán)",
+    coordinates: {"lat": 13.35, "lng": -88.45},
     isCapital: false,
     countryId,
     countryName,
@@ -183,7 +188,8 @@ const cities = [
   defineCity({
     id: "el-salvador-san-vicente",
     name: "San Vicente",
-    coordinates: null,
+    region: "San Vicente y Paracentral (Cabañas, La Paz, Cuscatlán)",
+    coordinates: {"lat": 13.6411, "lng": -88.7844},
     isCapital: false,
     countryId,
     countryName,

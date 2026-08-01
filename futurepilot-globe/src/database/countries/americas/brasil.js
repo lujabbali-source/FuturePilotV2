@@ -7,7 +7,8 @@ const cities = [
   defineCity({
     id: "brasil-sao-paulo",
     name: "São Paulo",
-    coordinates: null,
+    region: "São Paulo y Estado de São Paulo (Campinas, São José dos Campos)",
+    coordinates: {"lat": -23.5505, "lng": -46.6333},
     isCapital: false,
     countryId,
     countryName,
@@ -66,7 +67,8 @@ const cities = [
   defineCity({
     id: "brasil-campinas",
     name: "Campinas",
-    coordinates: null,
+    region: "São Paulo y Estado de São Paulo (Campinas, São José dos Campos)",
+    coordinates: {"lat": -22.9099, "lng": -47.0626},
     isCapital: false,
     countryId,
     countryName,
@@ -83,7 +85,8 @@ const cities = [
   defineCity({
     id: "brasil-sao-jose-dos-campos",
     name: "São José dos Campos",
-    coordinates: null,
+    region: "São Paulo y Estado de São Paulo (Campinas, São José dos Campos)",
+    coordinates: {"lat": -23.2237, "lng": -45.9009},
     isCapital: false,
     countryId,
     countryName,
@@ -100,7 +103,8 @@ const cities = [
   defineCity({
     id: "brasil-rio-de-janeiro",
     name: "Rio de Janeiro",
-    coordinates: null,
+    region: "Rio de Janeiro y Niterói",
+    coordinates: {"lat": -22.9068, "lng": -43.1729},
     isCapital: false,
     countryId,
     countryName,
@@ -145,7 +149,8 @@ const cities = [
   defineCity({
     id: "brasil-niteroi",
     name: "Niterói",
-    coordinates: null,
+    region: "Rio de Janeiro y Niterói",
+    coordinates: {"lat": -22.8833, "lng": -43.1036},
     isCapital: false,
     countryId,
     countryName,
@@ -162,18 +167,12 @@ const cities = [
   defineCity({
     id: "brasil-brasilia",
     name: "Brasília",
-    coordinates: null,
-    isCapital: false,
+    region: "Brasília y Región Centro-Oeste (Goiânia, Campo Grande, Cuiabá)",
+    coordinates: {"lat": -15.7939, "lng": -47.8828},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "brasil-brasilia-brasilia-distrito-federal",
-        "name": "Brasília (Distrito Federal)",
-        "cityId": "brasil-brasilia",
-        "website": "https://www.unb.br",
-        "type": null
-      }),
       defineUniversity({
         "id": "brasil-brasilia-universidade-de-brasilia-unb",
         "name": "Universidade de Brasília (UnB)",
@@ -188,95 +187,71 @@ const cities = [
         "website": "https://ucb.catolica.edu.br",
         "type": "private"
       }),
+    ],
+  }),
+  defineCity({
+    id: "brasil-goias",
+    name: "Goiás",
+    region: "Brasília y Región Centro-Oeste (Goiânia, Campo Grande, Cuiabá)",
+    coordinates: {"lat": -16.6869, "lng": -49.2648},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "brasil-brasilia-universidade-federal-de-goias-ufg",
+        "id": "brasil-goias-universidade-federal-de-goias-ufg",
         "name": "Universidade Federal de Goiás (UFG)",
-        "cityId": "brasil-brasilia",
+        "cityId": "brasil-goias",
         "website": "https://www.ufg.br",
         "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "brasil-mato-grosso-do-sul",
+    name: "Mato Grosso do Sul",
+    region: "Brasília y Región Centro-Oeste (Goiânia, Campo Grande, Cuiabá)",
+    coordinates: {"lat": -20.4697, "lng": -54.6201},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "brasil-brasilia-universidade-federal-de-mato-grosso-do-sul-ufms",
+        "id": "brasil-mato-grosso-do-sul-universidade-federal-de-mato-grosso-do-sul-ufms",
         "name": "Universidade Federal de Mato Grosso do Sul (UFMS)",
-        "cityId": "brasil-brasilia",
+        "cityId": "brasil-mato-grosso-do-sul",
         "website": "https://www.ufms.br",
         "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "brasil-mato-grosso",
+    name: "Mato Grosso",
+    region: "Brasília y Región Centro-Oeste (Goiânia, Campo Grande, Cuiabá)",
+    coordinates: {"lat": -15.6014, "lng": -56.0979},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "brasil-brasilia-universidade-federal-de-mato-grosso-ufmt",
+        "id": "brasil-mato-grosso-universidade-federal-de-mato-grosso-ufmt",
         "name": "Universidade Federal de Mato Grosso (UFMT)",
-        "cityId": "brasil-brasilia",
+        "cityId": "brasil-mato-grosso",
         "website": "https://www.ufmt.br",
         "type": "public"
-      }),
-    ],
-  }),
-  defineCity({
-    id: "brasil-goiania",
-    name: "Goiânia",
-    coordinates: null,
-    isCapital: false,
-    countryId,
-    countryName,
-    universities: [
-      defineUniversity({
-        "id": "brasil-goiania-goiania-goias",
-        "name": "Goiânia (Goiás)",
-        "cityId": "brasil-goiania",
-        "website": "https://www.ufg.br",
-        "type": null
-      }),
-    ],
-  }),
-  defineCity({
-    id: "brasil-campo-grande",
-    name: "Campo Grande",
-    coordinates: null,
-    isCapital: false,
-    countryId,
-    countryName,
-    universities: [
-      defineUniversity({
-        "id": "brasil-campo-grande-campo-grande-mato-grosso-do-sul",
-        "name": "Campo Grande (Mato Grosso do Sul)",
-        "cityId": "brasil-campo-grande",
-        "website": "https://www.ufms.br",
-        "type": null
-      }),
-    ],
-  }),
-  defineCity({
-    id: "brasil-cuiaba",
-    name: "Cuiabá",
-    coordinates: null,
-    isCapital: false,
-    countryId,
-    countryName,
-    universities: [
-      defineUniversity({
-        "id": "brasil-cuiaba-cuiaba-mato-grosso",
-        "name": "Cuiabá (Mato Grosso)",
-        "cityId": "brasil-cuiaba",
-        "website": "https://www.ufmt.br",
-        "type": null
       }),
     ],
   }),
   defineCity({
     id: "brasil-belo-horizonte",
     name: "Belo Horizonte",
-    coordinates: null,
+    region: "Minas Gerais (Belo Horizonte, Viçosa, Juiz de Fora, Uberlândia)",
+    coordinates: {"lat": -19.9167, "lng": -43.9345},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "brasil-belo-horizonte-belo-horizonte",
-        "name": "Belo Horizonte",
-        "cityId": "brasil-belo-horizonte",
-        "website": "https://www.ufmg.br",
-        "type": null
-      }),
       defineUniversity({
         "id": "brasil-belo-horizonte-universidade-federal-de-minas-gerais-ufmg",
         "name": "Universidade Federal de Minas Gerais (UFMG)",
@@ -296,18 +271,12 @@ const cities = [
   defineCity({
     id: "brasil-vicosa",
     name: "Viçosa",
-    coordinates: null,
+    region: "Minas Gerais (Belo Horizonte, Viçosa, Juiz de Fora, Uberlândia)",
+    coordinates: {"lat": -20.7546, "lng": -42.8825},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "brasil-vicosa-vicosa",
-        "name": "Viçosa",
-        "cityId": "brasil-vicosa",
-        "website": "https://www.ufv.br",
-        "type": null
-      }),
       defineUniversity({
         "id": "brasil-vicosa-universidade-federal-de-vicosa-ufv",
         "name": "Universidade Federal de Viçosa (UFV)",
@@ -320,18 +289,12 @@ const cities = [
   defineCity({
     id: "brasil-juiz-de-fora",
     name: "Juiz de Fora",
-    coordinates: null,
+    region: "Minas Gerais (Belo Horizonte, Viçosa, Juiz de Fora, Uberlândia)",
+    coordinates: {"lat": -21.7642, "lng": -43.3467},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "brasil-juiz-de-fora-juiz-de-fora",
-        "name": "Juiz de Fora",
-        "cityId": "brasil-juiz-de-fora",
-        "website": "https://www.ufjf.br",
-        "type": null
-      }),
       defineUniversity({
         "id": "brasil-juiz-de-fora-universidade-federal-de-juiz-de-fora-ufjf",
         "name": "Universidade Federal de Juiz de Fora (UFJF)",
@@ -344,18 +307,12 @@ const cities = [
   defineCity({
     id: "brasil-uberlandia",
     name: "Uberlândia",
-    coordinates: null,
+    region: "Minas Gerais (Belo Horizonte, Viçosa, Juiz de Fora, Uberlândia)",
+    coordinates: {"lat": -18.9186, "lng": -48.2772},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "brasil-uberlandia-uberlandia",
-        "name": "Uberlândia",
-        "cityId": "brasil-uberlandia",
-        "website": "https://www.ufu.br",
-        "type": null
-      }),
       defineUniversity({
         "id": "brasil-uberlandia-universidade-federal-de-uberlandia-ufu",
         "name": "Universidade Federal de Uberlândia (UFU)",
@@ -366,34 +323,39 @@ const cities = [
     ],
   }),
   defineCity({
-    id: "brasil-porto-alegre",
-    name: "Porto Alegre",
-    coordinates: null,
+    id: "brasil-rio-grande-do-sul",
+    name: "Rio Grande do Sul",
+    region: "Región Sur (Porto Alegre, Curitiba, Florianópolis)",
+    coordinates: {"lat": -30.0346, "lng": -51.2177},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "brasil-porto-alegre-porto-alegre-rio-grande-do-sul",
-        "name": "Porto Alegre (Rio Grande do Sul)",
-        "cityId": "brasil-porto-alegre",
-        "website": "https://www.ufrgs.br",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "brasil-porto-alegre-universidade-federal-do-rio-grande-do-sul-ufrgs",
+        "id": "brasil-rio-grande-do-sul-universidade-federal-do-rio-grande-do-sul-ufrgs",
         "name": "Universidade Federal do Rio Grande do Sul (UFRGS)",
-        "cityId": "brasil-porto-alegre",
+        "cityId": "brasil-rio-grande-do-sul",
         "website": "https://www.ufrgs.br",
         "type": "public"
       }),
       defineUniversity({
-        "id": "brasil-porto-alegre-pontificia-universidade-catolica-do-rio-grande-do-sul-pucrs",
+        "id": "brasil-rio-grande-do-sul-pontificia-universidade-catolica-do-rio-grande-do-sul-pucrs",
         "name": "Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS)",
-        "cityId": "brasil-porto-alegre",
+        "cityId": "brasil-rio-grande-do-sul",
         "website": "https://www.pucrs.br",
         "type": "private"
       }),
+    ],
+  }),
+  defineCity({
+    id: "brasil-porto-alegre",
+    name: "Porto Alegre",
+    region: "Región Sur (Porto Alegre, Curitiba, Florianópolis)",
+    coordinates: {"lat": -30.0346, "lng": -51.2177},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
         "id": "brasil-porto-alegre-universidade-do-vale-do-rio-dos-sinos-unisinos-sede-sao-leopoldo-porto-alegre",
         "name": "Universidade do Vale do Rio dos Sinos (UNISINOS) (Sede São Leopoldo/Porto Alegre)",
@@ -401,168 +363,142 @@ const cities = [
         "website": "https://www.unisinos.br",
         "type": "private"
       }),
+    ],
+  }),
+  defineCity({
+    id: "brasil-parana",
+    name: "Paraná",
+    region: "Región Sur (Porto Alegre, Curitiba, Florianópolis)",
+    coordinates: {"lat": -25.4284, "lng": -49.2733},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "brasil-porto-alegre-universidade-federal-do-parana-ufpr",
+        "id": "brasil-parana-universidade-federal-do-parana-ufpr",
         "name": "Universidade Federal do Paraná (UFPR)",
-        "cityId": "brasil-porto-alegre",
+        "cityId": "brasil-parana",
         "website": "https://www.ufpr.br",
         "type": "public"
       }),
       defineUniversity({
-        "id": "brasil-porto-alegre-pontificia-universidade-catolica-do-parana-pucpr",
+        "id": "brasil-parana-pontificia-universidade-catolica-do-parana-pucpr",
         "name": "Pontifícia Universidade Católica do Paraná (PUCPR)",
-        "cityId": "brasil-porto-alegre",
+        "cityId": "brasil-parana",
         "website": "https://www.pucpr.br",
         "type": "private"
       }),
       defineUniversity({
-        "id": "brasil-porto-alegre-universidade-tecnologica-federal-do-parana-utfpr",
+        "id": "brasil-parana-universidade-tecnologica-federal-do-parana-utfpr",
         "name": "Universidade Tecnológica Federal do Paraná (UTFPR)",
-        "cityId": "brasil-porto-alegre",
+        "cityId": "brasil-parana",
         "website": "https://www.utfpr.edu.br",
         "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "brasil-santa-catarina",
+    name: "Santa Catarina",
+    region: "Región Sur (Porto Alegre, Curitiba, Florianópolis)",
+    coordinates: {"lat": -27.5954, "lng": -48.548},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "brasil-porto-alegre-universidade-federal-de-santa-catarina-ufsc",
+        "id": "brasil-santa-catarina-universidade-federal-de-santa-catarina-ufsc",
         "name": "Universidade Federal de Santa Catarina (UFSC)",
-        "cityId": "brasil-porto-alegre",
+        "cityId": "brasil-santa-catarina",
         "website": "https://www.ufsc.br",
         "type": "public"
       }),
       defineUniversity({
-        "id": "brasil-porto-alegre-universidade-do-estado-de-santa-catarina-udesc",
+        "id": "brasil-santa-catarina-universidade-do-estado-de-santa-catarina-udesc",
         "name": "Universidade do Estado de Santa Catarina (UDESC)",
-        "cityId": "brasil-porto-alegre",
+        "cityId": "brasil-santa-catarina",
         "website": "https://www.udesc.br",
         "type": "public"
       }),
     ],
   }),
   defineCity({
-    id: "brasil-curitiba",
-    name: "Curitiba",
-    coordinates: null,
+    id: "brasil-bahia",
+    name: "Bahia",
+    region: "Región Nordeste (Salvador, Recife, Fortaleza, Natal)",
+    coordinates: {"lat": -12.9777, "lng": -38.5016},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "brasil-curitiba-curitiba-parana",
-        "name": "Curitiba (Paraná)",
-        "cityId": "brasil-curitiba",
-        "website": "https://www.ufpr.br",
-        "type": null
-      }),
-    ],
-  }),
-  defineCity({
-    id: "brasil-florianopolis",
-    name: "Florianópolis",
-    coordinates: null,
-    isCapital: false,
-    countryId,
-    countryName,
-    universities: [
-      defineUniversity({
-        "id": "brasil-florianopolis-florianopolis-santa-catarina",
-        "name": "Florianópolis (Santa Catarina)",
-        "cityId": "brasil-florianopolis",
-        "website": "https://www.ufsc.br",
-        "type": null
-      }),
-    ],
-  }),
-  defineCity({
-    id: "brasil-salvador",
-    name: "Salvador",
-    coordinates: null,
-    isCapital: false,
-    countryId,
-    countryName,
-    universities: [
-      defineUniversity({
-        "id": "brasil-salvador-salvador-bahia",
-        "name": "Salvador (Bahia)",
-        "cityId": "brasil-salvador",
-        "website": "https://www.ufba.br",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "brasil-salvador-universidade-federal-da-bahia-ufba",
+        "id": "brasil-bahia-universidade-federal-da-bahia-ufba",
         "name": "Universidade Federal da Bahia (UFBA)",
-        "cityId": "brasil-salvador",
+        "cityId": "brasil-bahia",
         "website": "https://www.ufba.br",
         "type": "public"
       }),
       defineUniversity({
-        "id": "brasil-salvador-universidade-do-estado-da-bahia-uneb",
+        "id": "brasil-bahia-universidade-do-estado-da-bahia-uneb",
         "name": "Universidade do Estado da Bahia (UNEB)",
-        "cityId": "brasil-salvador",
+        "cityId": "brasil-bahia",
         "website": "https://portal.uneb.br",
         "type": "public"
       }),
-      defineUniversity({
-        "id": "brasil-salvador-universidade-federal-de-pernambuco-ufpe",
-        "name": "Universidade Federal de Pernambuco (UFPE)",
-        "cityId": "brasil-salvador",
-        "website": "https://www.ufpe.br",
-        "type": "public"
-      }),
-      defineUniversity({
-        "id": "brasil-salvador-universidade-de-pernambuco-upe",
-        "name": "Universidade de Pernambuco (UPE)",
-        "cityId": "brasil-salvador",
-        "website": "https://www.upe.br",
-        "type": "public"
-      }),
-      defineUniversity({
-        "id": "brasil-salvador-universidade-federal-do-ceara-ufc",
-        "name": "Universidade Federal do Ceará (UFC)",
-        "cityId": "brasil-salvador",
-        "website": "https://www.ufc.br",
-        "type": "public"
-      }),
-      defineUniversity({
-        "id": "brasil-salvador-universidade-federal-do-rio-grande-do-norte-ufrn",
-        "name": "Universidade Federal do Rio Grande do Norte (UFRN)",
-        "cityId": "brasil-salvador",
-        "website": "https://www.ufrn.br",
-        "type": "public"
-      }),
     ],
   }),
   defineCity({
-    id: "brasil-recife",
-    name: "Recife",
-    coordinates: null,
+    id: "brasil-pernambuco",
+    name: "Pernambuco",
+    region: "Región Nordeste (Salvador, Recife, Fortaleza, Natal)",
+    coordinates: {"lat": -8.0476, "lng": -34.877},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "brasil-recife-recife-pernambuco",
-        "name": "Recife (Pernambuco)",
-        "cityId": "brasil-recife",
+        "id": "brasil-pernambuco-universidade-federal-de-pernambuco-ufpe",
+        "name": "Universidade Federal de Pernambuco (UFPE)",
+        "cityId": "brasil-pernambuco",
         "website": "https://www.ufpe.br",
-        "type": null
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "brasil-pernambuco-universidade-de-pernambuco-upe",
+        "name": "Universidade de Pernambuco (UPE)",
+        "cityId": "brasil-pernambuco",
+        "website": "https://www.upe.br",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "brasil-ceara",
+    name: "Ceará",
+    region: "Región Nordeste (Salvador, Recife, Fortaleza, Natal)",
+    coordinates: {"lat": -3.7172, "lng": -38.5433},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "brasil-ceara-universidade-federal-do-ceara-ufc",
+        "name": "Universidade Federal do Ceará (UFC)",
+        "cityId": "brasil-ceara",
+        "website": "https://www.ufc.br",
+        "type": "public"
       }),
     ],
   }),
   defineCity({
     id: "brasil-fortaleza",
     name: "Fortaleza",
-    coordinates: null,
+    region: "Región Nordeste (Salvador, Recife, Fortaleza, Natal)",
+    coordinates: {"lat": -3.7172, "lng": -38.5433},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "brasil-fortaleza-fortaleza-ceara",
-        "name": "Fortaleza (Ceará)",
-        "cityId": "brasil-fortaleza",
-        "website": "https://www.ufc.br",
-        "type": null
-      }),
       defineUniversity({
         "id": "brasil-fortaleza-universidade-de-fortaleza-unifor",
         "name": "Universidade de Fortaleza (UNIFOR)",
@@ -575,79 +511,68 @@ const cities = [
   defineCity({
     id: "brasil-natal",
     name: "Natal",
-    coordinates: null,
+    region: "Región Nordeste (Salvador, Recife, Fortaleza, Natal)",
+    coordinates: {"lat": -5.7945, "lng": -35.211},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "brasil-natal-natal-rio-grande-do-norte",
-        "name": "Natal (Rio Grande do Norte)",
+        "id": "brasil-natal-universidade-federal-do-rio-grande-do-norte-ufrn",
+        "name": "Universidade Federal do Rio Grande do Norte (UFRN)",
         "cityId": "brasil-natal",
         "website": "https://www.ufrn.br",
-        "type": null
+        "type": "public"
       }),
     ],
   }),
   defineCity({
-    id: "brasil-manaus",
-    name: "Manaus",
-    coordinates: null,
+    id: "brasil-amazonas",
+    name: "Amazonas",
+    region: "Región Norte (Manaus, Belém)",
+    coordinates: {"lat": -3.119, "lng": -60.0217},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "brasil-manaus-manaus-amazonas",
-        "name": "Manaus (Amazonas)",
-        "cityId": "brasil-manaus",
-        "website": "https://www.ufam.edu.br",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "brasil-manaus-universidade-federal-do-amazonas-ufam",
+        "id": "brasil-amazonas-universidade-federal-do-amazonas-ufam",
         "name": "Universidade Federal do Amazonas (UFAM)",
-        "cityId": "brasil-manaus",
+        "cityId": "brasil-amazonas",
         "website": "https://www.ufam.edu.br",
         "type": "public"
       }),
       defineUniversity({
-        "id": "brasil-manaus-universidade-do-estado-do-amazonas-uea",
+        "id": "brasil-amazonas-universidade-do-estado-do-amazonas-uea",
         "name": "Universidade do Estado do Amazonas (UEA)",
-        "cityId": "brasil-manaus",
+        "cityId": "brasil-amazonas",
         "website": "https://www.uea.edu.br",
         "type": "public"
       }),
-      defineUniversity({
-        "id": "brasil-manaus-universidade-federal-do-para-ufpa",
-        "name": "Universidade Federal do Pará (UFPA)",
-        "cityId": "brasil-manaus",
-        "website": "https://www.ufpa.br",
-        "type": "public"
-      }),
-      defineUniversity({
-        "id": "brasil-manaus-universidade-do-estado-do-para-uepa",
-        "name": "Universidade do Estado do Pará (UEPA)",
-        "cityId": "brasil-manaus",
-        "website": "https://www.uepa.br",
-        "type": "public"
-      }),
     ],
   }),
   defineCity({
-    id: "brasil-belem",
-    name: "Belém",
-    coordinates: null,
+    id: "brasil-para",
+    name: "Pará",
+    region: "Región Norte (Manaus, Belém)",
+    coordinates: {"lat": -1.4558, "lng": -48.5039},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "brasil-belem-belem-para",
-        "name": "Belém (Pará)",
-        "cityId": "brasil-belem",
+        "id": "brasil-para-universidade-federal-do-para-ufpa",
+        "name": "Universidade Federal do Pará (UFPA)",
+        "cityId": "brasil-para",
         "website": "https://www.ufpa.br",
-        "type": null
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "brasil-para-universidade-do-estado-do-para-uepa",
+        "name": "Universidade do Estado do Pará (UEPA)",
+        "cityId": "brasil-para",
+        "website": "https://www.uepa.br",
+        "type": "public"
       }),
     ],
   }),

@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "cuba-la-habana",
     name: "La Habana",
-    coordinates: null,
-    isCapital: false,
+    region: "La Habana y Mayabeque (Capital y Occidente)",
+    coordinates: {"lat": 23.1136, "lng": -82.3666},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -59,18 +60,12 @@ const cities = [
   defineCity({
     id: "cuba-santa-clara",
     name: "Santa Clara",
-    coordinates: null,
+    region: "Santa Clara y Cienfuegos (Región Central / Villa Clara)",
+    coordinates: {"lat": 22.4069, "lng": -79.9647},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "cuba-santa-clara-santa-clara-villa-clara",
-        "name": "Santa Clara (Villa Clara)",
-        "cityId": "cuba-santa-clara",
-        "website": "https://www.uclv.edu.cu",
-        "type": null
-      }),
       defineUniversity({
         "id": "cuba-santa-clara-universidad-central-marta-abreu-de-las-villas-uclv",
         "name": "Universidad Central \"Marta Abreu\" de Las Villas (UCLV)",
@@ -78,26 +73,13 @@ const cities = [
         "website": "https://www.uclv.edu.cu",
         "type": "public"
       }),
-      defineUniversity({
-        "id": "cuba-santa-clara-cienfuegos",
-        "name": "Cienfuegos",
-        "cityId": "cuba-santa-clara",
-        "website": "https://www.ucf.edu.cu",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "cuba-santa-clara-universidad-de-cienfuegos-carlos-rafael-rodriguez-ucf",
-        "name": "Universidad de Cienfuegos Carlos Rafael Rodríguez (UCF)",
-        "cityId": "cuba-santa-clara",
-        "website": "https://www.ucf.edu.cu",
-        "type": "public"
-      }),
     ],
   }),
   defineCity({
     id: "cuba-villa-clara",
     name: "Villa Clara",
-    coordinates: null,
+    region: "Santa Clara y Cienfuegos (Región Central / Villa Clara)",
+    coordinates: {"lat": 22.4069, "lng": -79.9647},
     isCapital: false,
     countryId,
     countryName,
@@ -112,9 +94,28 @@ const cities = [
     ],
   }),
   defineCity({
+    id: "cuba-cienfuegos",
+    name: "Cienfuegos",
+    region: "Santa Clara y Cienfuegos (Región Central / Villa Clara)",
+    coordinates: {"lat": 22.1461, "lng": -80.4361},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "cuba-cienfuegos-universidad-de-cienfuegos-carlos-rafael-rodriguez-ucf",
+        "name": "Universidad de Cienfuegos Carlos Rafael Rodríguez (UCF)",
+        "cityId": "cuba-cienfuegos",
+        "website": "https://www.ucf.edu.cu",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
     id: "cuba-santiago-de-cuba",
     name: "Santiago de Cuba",
-    coordinates: null,
+    region: "Santiago de Cuba (Región Oriental)",
+    coordinates: {"lat": 20.0247, "lng": -75.8219},
     isCapital: false,
     countryId,
     countryName,
@@ -138,18 +139,12 @@ const cities = [
   defineCity({
     id: "cuba-camaguey",
     name: "Camagüey",
-    coordinates: null,
+    region: "Camagüey y Holguín (Centro-Oriente)",
+    coordinates: {"lat": 21.3808, "lng": -77.9169},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "cuba-camaguey-camaguey",
-        "name": "Camagüey",
-        "cityId": "cuba-camaguey",
-        "website": "https://www.reduc.edu.cu",
-        "type": null
-      }),
       defineUniversity({
         "id": "cuba-camaguey-universidad-de-camaguey-ignacio-agramonte-loynaz-uc",
         "name": "Universidad de Camagüey Ignacio Agramonte Loynaz (UC)",
@@ -157,17 +152,21 @@ const cities = [
         "website": "https://www.reduc.edu.cu",
         "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "cuba-holguin",
+    name: "Holguín",
+    region: "Camagüey y Holguín (Centro-Oriente)",
+    coordinates: {"lat": 20.8872, "lng": -76.2631},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "cuba-camaguey-holguin",
-        "name": "Holguín",
-        "cityId": "cuba-camaguey",
-        "website": "https://www.uho.edu.cu",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "cuba-camaguey-universidad-de-holguin-uho",
+        "id": "cuba-holguin-universidad-de-holguin-uho",
         "name": "Universidad de Holguín (UHo)",
-        "cityId": "cuba-camaguey",
+        "cityId": "cuba-holguin",
         "website": "https://www.uho.edu.cu",
         "type": "public"
       }),
@@ -176,18 +175,12 @@ const cities = [
   defineCity({
     id: "cuba-pinar-del-rio",
     name: "Pinar del Río",
-    coordinates: null,
+    region: "Pinar del Río y Matanzas (Occidente)",
+    coordinates: {"lat": 22.4175, "lng": -83.6981},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "cuba-pinar-del-rio-pinar-del-rio",
-        "name": "Pinar del Río",
-        "cityId": "cuba-pinar-del-rio",
-        "website": "https://www.upr.edu.cu",
-        "type": null
-      }),
       defineUniversity({
         "id": "cuba-pinar-del-rio-universidad-de-pinar-del-rio-hermanos-saiz-montes-de-oca-upr",
         "name": "Universidad de Pinar del Río Hermanos Saíz Montes de Oca (UPR)",
@@ -195,17 +188,21 @@ const cities = [
         "website": "https://www.upr.edu.cu",
         "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "cuba-matanzas",
+    name: "Matanzas",
+    region: "Pinar del Río y Matanzas (Occidente)",
+    coordinates: {"lat": 23.0411, "lng": -81.5775},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "cuba-pinar-del-rio-matanzas-varadero",
-        "name": "Matanzas / Varadero",
-        "cityId": "cuba-pinar-del-rio",
-        "website": "https://www.umcc.cu",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "cuba-pinar-del-rio-universidad-de-matanzas-camilo-cienfuegos-um",
+        "id": "cuba-matanzas-universidad-de-matanzas-camilo-cienfuegos-um",
         "name": "Universidad de Matanzas Camilo Cienfuegos (UM)",
-        "cityId": "cuba-pinar-del-rio",
+        "cityId": "cuba-matanzas",
         "website": "https://www.umcc.cu",
         "type": "public"
       }),

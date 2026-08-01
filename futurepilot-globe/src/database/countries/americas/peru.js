@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "peru-lima",
     name: "Lima",
-    coordinates: null,
-    isCapital: false,
+    region: "Lima y Callao (Capital y Área Metropolitana)",
+    coordinates: {"lat": -12.0464, "lng": -77.0428},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -108,7 +109,8 @@ const cities = [
   defineCity({
     id: "peru-arequipa",
     name: "Arequipa",
-    coordinates: null,
+    region: "Arequipa (Región Sur)",
+    coordinates: {"lat": -16.409, "lng": -71.5375},
     isCapital: false,
     countryId,
     countryName,
@@ -146,18 +148,12 @@ const cities = [
   defineCity({
     id: "peru-trujillo",
     name: "Trujillo",
-    coordinates: null,
+    region: "Trujillo y Chiclayo (Costa Norte)",
+    coordinates: {"lat": -8.1116, "lng": -79.029},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "peru-trujillo-trujillo-la-libertad",
-        "name": "Trujillo (La Libertad)",
-        "cityId": "peru-trujillo",
-        "website": "https://www.unitru.edu.pe",
-        "type": null
-      }),
       defineUniversity({
         "id": "peru-trujillo-universidad-nacional-de-trujillo-unt",
         "name": "Universidad Nacional de Trujillo (UNT)",
@@ -179,24 +175,28 @@ const cities = [
         "website": "https://www.ucv.edu.pe",
         "type": "private"
       }),
+    ],
+  }),
+  defineCity({
+    id: "peru-chiclayo",
+    name: "Chiclayo",
+    region: "Trujillo y Chiclayo (Costa Norte)",
+    coordinates: {"lat": -6.7714, "lng": -79.8409},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "peru-trujillo-chiclayo-lambayeque",
-        "name": "Chiclayo (Lambayeque)",
-        "cityId": "peru-trujillo",
-        "website": "https://www.unprg.edu.pe",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "peru-trujillo-universidad-nacional-pedro-ruiz-gallo-unprg",
+        "id": "peru-chiclayo-universidad-nacional-pedro-ruiz-gallo-unprg",
         "name": "Universidad Nacional Pedro Ruiz Gallo (UNPRG)",
-        "cityId": "peru-trujillo",
+        "cityId": "peru-chiclayo",
         "website": "https://www.unprg.edu.pe",
         "type": "public"
       }),
       defineUniversity({
-        "id": "peru-trujillo-universidad-catolica-santo-toribio-de-mogrovejo-usat",
+        "id": "peru-chiclayo-universidad-catolica-santo-toribio-de-mogrovejo-usat",
         "name": "Universidad Católica Santo Toribio de Mogrovejo (USAT)",
-        "cityId": "peru-trujillo",
+        "cityId": "peru-chiclayo",
         "website": "https://www.usat.edu.pe",
         "type": "private"
       }),
@@ -205,7 +205,8 @@ const cities = [
   defineCity({
     id: "peru-piura",
     name: "Piura",
-    coordinates: null,
+    region: "Piura (Extremo Norte)",
+    coordinates: {"lat": -5.1945, "lng": -80.6328},
     isCapital: false,
     countryId,
     countryName,
@@ -229,18 +230,12 @@ const cities = [
   defineCity({
     id: "peru-cusco",
     name: "Cusco",
-    coordinates: null,
+    region: "Cusco y Puno (Sierra Sur)",
+    coordinates: {"lat": -13.532, "lng": -71.9675},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "peru-cusco-cusco",
-        "name": "Cusco",
-        "cityId": "peru-cusco",
-        "website": "https://www.unsaac.edu.pe",
-        "type": null
-      }),
       defineUniversity({
         "id": "peru-cusco-universidad-nacional-de-san-antonio-abad-del-cusco-unsaac",
         "name": "Universidad Nacional de San Antonio Abad del Cusco (UNSAAC)",
@@ -255,17 +250,21 @@ const cities = [
         "website": "https://www.uandina.edu.pe",
         "type": "private"
       }),
+    ],
+  }),
+  defineCity({
+    id: "peru-puno",
+    name: "Puno",
+    region: "Cusco y Puno (Sierra Sur)",
+    coordinates: {"lat": -15.8402, "lng": -70.0219},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "peru-cusco-puno",
-        "name": "Puno",
-        "cityId": "peru-cusco",
-        "website": "https://portal.unap.edu.pe",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "peru-cusco-universidad-nacional-del-altiplano-unap",
+        "id": "peru-puno-universidad-nacional-del-altiplano-unap",
         "name": "Universidad Nacional del Altiplano (UNAP)",
-        "cityId": "peru-cusco",
+        "cityId": "peru-puno",
         "website": "https://portal.unap.edu.pe",
         "type": "public"
       }),
@@ -274,18 +273,12 @@ const cities = [
   defineCity({
     id: "peru-huancayo",
     name: "Huancayo",
-    coordinates: null,
+    region: "Huancayo y la Sierra Central (Junín, Ayacucho)",
+    coordinates: {"lat": -12.0654, "lng": -75.2049},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "peru-huancayo-huancayo-junin",
-        "name": "Huancayo (Junín)",
-        "cityId": "peru-huancayo",
-        "website": "https://uncp.edu.pe",
-        "type": null
-      }),
       defineUniversity({
         "id": "peru-huancayo-universidad-nacional-del-centro-del-peru-uncp",
         "name": "Universidad Nacional del Centro del Perú (UNCP)",
@@ -300,47 +293,35 @@ const cities = [
         "website": "https://ucontinental.edu.pe",
         "type": "private"
       }),
+    ],
+  }),
+  defineCity({
+    id: "peru-ayacucho",
+    name: "Ayacucho",
+    region: "Huancayo y la Sierra Central (Junín, Ayacucho)",
+    coordinates: {"lat": -13.1588, "lng": -74.2232},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "peru-huancayo-universidad-nacional-de-san-cristobal-de-huamanga-unsch",
+        "id": "peru-ayacucho-universidad-nacional-de-san-cristobal-de-huamanga-unsch",
         "name": "Universidad Nacional de San Cristóbal de Huamanga (UNSCH)",
-        "cityId": "peru-huancayo",
+        "cityId": "peru-ayacucho",
         "website": "https://www.unsch.edu.pe",
         "type": "public"
       }),
     ],
   }),
   defineCity({
-    id: "peru-ayacucho",
-    name: "Ayacucho",
-    coordinates: null,
-    isCapital: false,
-    countryId,
-    countryName,
-    universities: [
-      defineUniversity({
-        "id": "peru-ayacucho-ayacucho",
-        "name": "Ayacucho",
-        "cityId": "peru-ayacucho",
-        "website": "https://www.unsch.edu.pe",
-        "type": null
-      }),
-    ],
-  }),
-  defineCity({
     id: "peru-iquitos",
     name: "Iquitos",
-    coordinates: null,
+    region: "Iquitos y Pucallpa (Amazonía Peruana)",
+    coordinates: {"lat": -3.7437, "lng": -73.2516},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "peru-iquitos-iquitos-loreto",
-        "name": "Iquitos (Loreto)",
-        "cityId": "peru-iquitos",
-        "website": "https://www.unapiquitos.edu.pe",
-        "type": null
-      }),
       defineUniversity({
         "id": "peru-iquitos-universidad-nacional-de-la-amazonia-peruana-unap",
         "name": "Universidad Nacional de la Amazonía Peruana (UNAP)",
@@ -348,17 +329,21 @@ const cities = [
         "website": "https://www.unapiquitos.edu.pe",
         "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "peru-ucayali",
+    name: "Ucayali",
+    region: "Iquitos y Pucallpa (Amazonía Peruana)",
+    coordinates: {"lat": -8.3791, "lng": -74.5539},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "peru-iquitos-pucallpa-ucayali",
-        "name": "Pucallpa (Ucayali)",
-        "cityId": "peru-iquitos",
-        "website": "https://www.unu.edu.pe",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "peru-iquitos-universidad-nacional-de-ucayali-unu",
+        "id": "peru-ucayali-universidad-nacional-de-ucayali-unu",
         "name": "Universidad Nacional de Ucayali (UNU)",
-        "cityId": "peru-iquitos",
+        "cityId": "peru-ucayali",
         "website": "https://www.unu.edu.pe",
         "type": "public"
       }),

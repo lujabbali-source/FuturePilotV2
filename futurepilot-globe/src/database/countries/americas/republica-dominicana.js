@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "republica-dominicana-santo-domingo",
     name: "Santo Domingo",
-    coordinates: null,
-    isCapital: false,
+    region: "Santo Domingo (Distrito Nacional y Gran Santo Domingo)",
+    coordinates: {"lat": 18.4861, "lng": -69.9312},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -73,7 +74,8 @@ const cities = [
   defineCity({
     id: "republica-dominicana-santiago-de-los-caballeros",
     name: "Santiago de los Caballeros",
-    coordinates: null,
+    region: "Santiago de los Caballeros (Región Cibao Norte)",
+    coordinates: {"lat": 19.4517, "lng": -70.697},
     isCapital: false,
     countryId,
     countryName,
@@ -111,18 +113,12 @@ const cities = [
   defineCity({
     id: "republica-dominicana-san-pedro-de-macoris",
     name: "San Pedro de Macorís",
-    coordinates: null,
+    region: "San Pedro de Macorís y La Romana (Región Este)",
+    coordinates: {"lat": 18.4539, "lng": -69.2975},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "republica-dominicana-san-pedro-de-macoris-san-pedro-de-macoris",
-        "name": "San Pedro de Macorís",
-        "cityId": "republica-dominicana-san-pedro-de-macoris",
-        "website": "https://www.uce.edu.do",
-        "type": null
-      }),
       defineUniversity({
         "id": "republica-dominicana-san-pedro-de-macoris-universidad-central-del-este-uce",
         "name": "Universidad Central del Este (UCE)",
@@ -149,7 +145,8 @@ const cities = [
   defineCity({
     id: "republica-dominicana-la-vega-moca",
     name: "La Vega, Moca",
-    coordinates: null,
+    region: "La Vega, Moca y San Francisco de Macorís (Cibao Central)",
+    coordinates: {"lat": 19.2223, "lng": -70.5292},
     isCapital: false,
     countryId,
     countryName,
@@ -161,24 +158,28 @@ const cities = [
         "website": "https://ucateci.edu.do",
         "type": "private"
       }),
+    ],
+  }),
+  defineCity({
+    id: "republica-dominicana-san-francisco-de-macoris",
+    name: "San Francisco de Macorís",
+    region: "La Vega, Moca y San Francisco de Macorís (Cibao Central)",
+    coordinates: {"lat": 19.3008, "lng": -70.2531},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "republica-dominicana-la-vega-moca-san-francisco-de-macoris-duarte",
-        "name": "San Francisco de Macorís (Duarte)",
-        "cityId": "republica-dominicana-la-vega-moca",
-        "website": "https://www.ucne.edu",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "republica-dominicana-la-vega-moca-universidad-catolica-nordestana-ucne",
+        "id": "republica-dominicana-san-francisco-de-macoris-universidad-catolica-nordestana-ucne",
         "name": "Universidad Católica Nordestana (UCNE)",
-        "cityId": "republica-dominicana-la-vega-moca",
+        "cityId": "republica-dominicana-san-francisco-de-macoris",
         "website": "https://www.ucne.edu",
         "type": "private"
       }),
       defineUniversity({
-        "id": "republica-dominicana-la-vega-moca-universidad-autonoma-de-santo-domingo-uasd-recinto-san-francisco",
+        "id": "republica-dominicana-san-francisco-de-macoris-universidad-autonoma-de-santo-domingo-uasd-recinto-san-francisco",
         "name": "Universidad Autónoma de Santo Domingo (UASD - Recinto San Francisco)",
-        "cityId": "republica-dominicana-la-vega-moca",
+        "cityId": "republica-dominicana-san-francisco-de-macoris",
         "website": "https://uasd.edu.do",
         "type": "public"
       }),
@@ -187,18 +188,12 @@ const cities = [
   defineCity({
     id: "republica-dominicana-san-cristobal",
     name: "San Cristóbal",
-    coordinates: null,
+    region: "San Cristóbal y Barahona (Región Sur)",
+    coordinates: {"lat": 18.4167, "lng": -70.1},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "republica-dominicana-san-cristobal-san-cristobal",
-        "name": "San Cristóbal",
-        "cityId": "republica-dominicana-san-cristobal",
-        "website": "https://www.ipl.edu.do",
-        "type": null
-      }),
       defineUniversity({
         "id": "republica-dominicana-san-cristobal-instituto-politecnico-loyola-ipl",
         "name": "Instituto Politécnico Loyola (IPL)",
@@ -206,17 +201,21 @@ const cities = [
         "website": "https://www.ipl.edu.do",
         "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "republica-dominicana-barahona",
+    name: "Barahona",
+    region: "San Cristóbal y Barahona (Región Sur)",
+    coordinates: {"lat": 18.2085, "lng": -71.1},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "republica-dominicana-san-cristobal-barahona",
-        "name": "Barahona",
-        "cityId": "republica-dominicana-san-cristobal",
-        "website": "https://uasd.edu.do",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "republica-dominicana-san-cristobal-universidad-autonoma-de-santo-domingo-uasd-centro-barahona-curso",
+        "id": "republica-dominicana-barahona-universidad-autonoma-de-santo-domingo-uasd-centro-barahona-curso",
         "name": "Universidad Autónoma de Santo Domingo (UASD - Centro Barahona / CURSO)",
-        "cityId": "republica-dominicana-san-cristobal",
+        "cityId": "republica-dominicana-barahona",
         "website": "https://uasd.edu.do",
         "type": "public"
       }),

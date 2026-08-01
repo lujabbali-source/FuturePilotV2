@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "honduras-tegucigalpa",
     name: "Tegucigalpa",
-    coordinates: null,
-    isCapital: false,
+    region: "Tegucigalpa y Distrito Central (Departamento de Francisco Morazán)",
+    coordinates: {"lat": 14.0723, "lng": -87.1921},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -32,6 +33,13 @@ const cities = [
         "cityId": "honduras-tegucigalpa",
         "website": "https://www.upnfm.edu.hn",
         "type": "public"
+      }),
+      defineUniversity({
+        "id": "honduras-tegucigalpa-universidad-catolica-de-honduras-nuestra-senora-reina-de-la-paz-unicah-campus-sagrado-corazon-de-jesus",
+        "name": "Universidad Católica de Honduras \"Nuestra Señora Reina de la Paz\" (UNICAH - Campus Sagrado Corazón de Jesús)",
+        "cityId": "honduras-tegucigalpa",
+        "website": "https://www.unicah.edu",
+        "type": "private"
       }),
       defineUniversity({
         "id": "honduras-tegucigalpa-universidad-jose-cecilio-del-valle-ujcv",
@@ -59,7 +67,8 @@ const cities = [
   defineCity({
     id: "honduras-san-pedro-sula",
     name: "San Pedro Sula",
-    coordinates: null,
+    region: "San Pedro Sula y Valle de Sula (Departamento de Cortés)",
+    coordinates: {"lat": 15.5044, "lng": -88.025},
     isCapital: false,
     countryId,
     countryName,
@@ -97,7 +106,8 @@ const cities = [
   defineCity({
     id: "honduras-la-ceiba",
     name: "La Ceiba",
-    coordinates: null,
+    region: "La Ceiba y Costa Norte (Departamento de Atlántida)",
+    coordinates: {"lat": 15.7597, "lng": -86.7822},
     isCapital: false,
     countryId,
     countryName,
@@ -128,7 +138,8 @@ const cities = [
   defineCity({
     id: "honduras-comayagua",
     name: "Comayagua",
-    coordinates: null,
+    region: "Comayagua y Región Central (Departamento de Comayagua)",
+    coordinates: {"lat": 14.4522, "lng": -87.6392},
     isCapital: false,
     countryId,
     countryName,
@@ -152,7 +163,8 @@ const cities = [
   defineCity({
     id: "honduras-santa-rosa-de-copan",
     name: "Santa Rosa de Copán",
-    coordinates: null,
+    region: "Santa Rosa de Copán (Región Occidental)",
+    coordinates: {"lat": 14.7667, "lng": -88.7833},
     isCapital: false,
     countryId,
     countryName,
@@ -176,7 +188,8 @@ const cities = [
   defineCity({
     id: "honduras-choluteca",
     name: "Choluteca",
-    coordinates: null,
+    region: "Choluteca y Región Sur (Departamento de Choluteca)",
+    coordinates: {"lat": 13.3, "lng": -87.1833},
     isCapital: false,
     countryId,
     countryName,

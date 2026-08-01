@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "puerto-rico-san-juan",
     name: "San Juan",
-    coordinates: null,
-    isCapital: false,
+    region: "San Juan y Área Metropolitana (Bayamón, Carolina, Guaynabo)",
+    coordinates: {"lat": 18.4655, "lng": -66.1057},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -52,7 +53,8 @@ const cities = [
   defineCity({
     id: "puerto-rico-carolina",
     name: "Carolina",
-    coordinates: null,
+    region: "San Juan y Área Metropolitana (Bayamón, Carolina, Guaynabo)",
+    coordinates: {"lat": 18.3808, "lng": -65.9573},
     isCapital: false,
     countryId,
     countryName,
@@ -76,7 +78,8 @@ const cities = [
   defineCity({
     id: "puerto-rico-bayamon",
     name: "Bayamón",
-    coordinates: null,
+    region: "San Juan y Área Metropolitana (Bayamón, Carolina, Guaynabo)",
+    coordinates: {"lat": 18.3986, "lng": -66.1614},
     isCapital: false,
     countryId,
     countryName,
@@ -93,7 +96,8 @@ const cities = [
   defineCity({
     id: "puerto-rico-mayaguez",
     name: "Mayagüez",
-    coordinates: null,
+    region: "Mayagüez y la Costa Oeste (Porta del Sol - Aguadilla)",
+    coordinates: {"lat": 18.2013, "lng": -67.1397},
     isCapital: false,
     countryId,
     countryName,
@@ -131,7 +135,8 @@ const cities = [
   defineCity({
     id: "puerto-rico-ponce",
     name: "Ponce",
-    coordinates: null,
+    region: "Ponce y la Región Sur (Porta Caribe)",
+    coordinates: {"lat": 18.0111, "lng": -66.6141},
     isCapital: false,
     countryId,
     countryName,
@@ -169,7 +174,8 @@ const cities = [
   defineCity({
     id: "puerto-rico-arecibo",
     name: "Arecibo",
-    coordinates: null,
+    region: "Arecibo y la Región Norte (Utuado)",
+    coordinates: {"lat": 18.4744, "lng": -66.7156},
     isCapital: false,
     countryId,
     countryName,
@@ -193,7 +199,8 @@ const cities = [
   defineCity({
     id: "puerto-rico-utuado",
     name: "Utuado",
-    coordinates: null,
+    region: "Arecibo y la Región Norte (Utuado)",
+    coordinates: {"lat": 18.2664, "lng": -66.7005},
     isCapital: false,
     countryId,
     countryName,
@@ -210,7 +217,8 @@ const cities = [
   defineCity({
     id: "puerto-rico-humacao-cayey",
     name: "Humacao, Cayey",
-    coordinates: null,
+    region: "Humacao, Cayey y el Este (Fajardo)",
+    coordinates: {"lat": 18.1497, "lng": -65.8275},
     isCapital: false,
     countryId,
     countryName,
@@ -234,7 +242,8 @@ const cities = [
   defineCity({
     id: "puerto-rico-fajardo",
     name: "Fajardo",
-    coordinates: null,
+    region: "Humacao, Cayey y el Este (Fajardo)",
+    coordinates: {"lat": 18.3258, "lng": -65.6524},
     isCapital: false,
     countryId,
     countryName,

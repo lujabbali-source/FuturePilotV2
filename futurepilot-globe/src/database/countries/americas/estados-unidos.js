@@ -5,74 +5,40 @@ const countryName = "Estados Unidos (USA)";
 
 const cities = [
   defineCity({
-    id: "estados-unidos-boston",
-    name: "Boston",
-    coordinates: null,
+    id: "estados-unidos-massachusetts",
+    name: "Massachusetts",
+    region: "Noreste y Nueva Inglaterra (Boston, Cambridge, Nueva York, Filadelfia)",
+    coordinates: {"lat": 42.3601, "lng": -71.0589},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "estados-unidos-boston-massachusetts-boston-cambridge",
-        "name": "Massachusetts (Boston & Cambridge)",
-        "cityId": "estados-unidos-boston",
-        "website": "https://www.harvard.edu",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "estados-unidos-boston-harvard-university",
+        "id": "estados-unidos-massachusetts-harvard-university",
         "name": "Harvard University",
-        "cityId": "estados-unidos-boston",
+        "cityId": "estados-unidos-massachusetts",
         "website": "https://www.harvard.edu",
         "type": "private"
       }),
       defineUniversity({
-        "id": "estados-unidos-boston-massachusetts-institute-of-technology-mit",
+        "id": "estados-unidos-massachusetts-massachusetts-institute-of-technology-mit",
         "name": "Massachusetts Institute of Technology (MIT)",
-        "cityId": "estados-unidos-boston",
+        "cityId": "estados-unidos-massachusetts",
         "website": "https://www.mit.edu",
         "type": "private"
       }),
       defineUniversity({
-        "id": "estados-unidos-boston-boston-university-bu",
+        "id": "estados-unidos-massachusetts-boston-university-bu",
         "name": "Boston University (BU)",
-        "cityId": "estados-unidos-boston",
+        "cityId": "estados-unidos-massachusetts",
         "website": "https://www.bu.edu",
         "type": "private"
       }),
       defineUniversity({
-        "id": "estados-unidos-boston-northeastern-university",
+        "id": "estados-unidos-massachusetts-northeastern-university",
         "name": "Northeastern University",
-        "cityId": "estados-unidos-boston",
+        "cityId": "estados-unidos-massachusetts",
         "website": "https://www.northeastern.edu",
-        "type": "private"
-      }),
-      defineUniversity({
-        "id": "estados-unidos-boston-cornell-university-ithaca",
-        "name": "Cornell University (Ithaca)",
-        "cityId": "estados-unidos-boston",
-        "website": "https://www.cornell.edu",
-        "type": "private"
-      }),
-      defineUniversity({
-        "id": "estados-unidos-boston-nueva-jersey-pensilvania-y-connecticut",
-        "name": "Nueva Jersey, Pensilvania y Connecticut",
-        "cityId": "estados-unidos-boston",
-        "website": "https://www.princeton.edu",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "estados-unidos-boston-princeton-university-nueva-jersey",
-        "name": "Princeton University (Nueva Jersey)",
-        "cityId": "estados-unidos-boston",
-        "website": "https://www.princeton.edu",
-        "type": "private"
-      }),
-      defineUniversity({
-        "id": "estados-unidos-boston-yale-university-new-haven-connecticut",
-        "name": "Yale University (New Haven, Connecticut)",
-        "cityId": "estados-unidos-boston",
-        "website": "https://www.yale.edu",
         "type": "private"
       }),
     ],
@@ -80,18 +46,12 @@ const cities = [
   defineCity({
     id: "estados-unidos-nueva-york",
     name: "Nueva York",
-    coordinates: null,
+    region: "Noreste y Nueva Inglaterra (Boston, Cambridge, Nueva York, Filadelfia)",
+    coordinates: {"lat": 40.7128, "lng": -74.006},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "estados-unidos-nueva-york-nueva-york",
-        "name": "Nueva York",
-        "cityId": "estados-unidos-nueva-york",
-        "website": "https://www.columbia.edu",
-        "type": null
-      }),
       defineUniversity({
         "id": "estados-unidos-nueva-york-columbia-university-ciudad-de-nueva-york",
         "name": "Columbia University (Ciudad de Nueva York)",
@@ -106,21 +66,65 @@ const cities = [
         "website": "https://www.nyu.edu",
         "type": "private"
       }),
+      defineUniversity({
+        "id": "estados-unidos-nueva-york-cornell-university-ithaca",
+        "name": "Cornell University (Ithaca)",
+        "cityId": "estados-unidos-nueva-york",
+        "website": "https://www.cornell.edu",
+        "type": "private"
+      }),
     ],
   }),
   defineCity({
-    id: "estados-unidos-filadelfia",
-    name: "Filadelfia",
-    coordinates: null,
+    id: "estados-unidos-nueva-jersey",
+    name: "Nueva Jersey",
+    region: "Noreste y Nueva Inglaterra (Boston, Cambridge, Nueva York, Filadelfia)",
+    coordinates: {"lat": 40.3573, "lng": -74.6672},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "estados-unidos-filadelfia-university-of-pennsylvania-upenn-filadelfia-pensilvania",
+        "id": "estados-unidos-nueva-jersey-princeton-university-nueva-jersey",
+        "name": "Princeton University (Nueva Jersey)",
+        "cityId": "estados-unidos-nueva-jersey",
+        "website": "https://www.princeton.edu",
+        "type": "private"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "estados-unidos-pensilvania",
+    name: "Pensilvania",
+    region: "Noreste y Nueva Inglaterra (Boston, Cambridge, Nueva York, Filadelfia)",
+    coordinates: {"lat": 39.9526, "lng": -75.1652},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "estados-unidos-pensilvania-university-of-pennsylvania-upenn-filadelfia-pensilvania",
         "name": "University of Pennsylvania (UPenn) (Filadelfia, Pensilvania)",
-        "cityId": "estados-unidos-filadelfia",
+        "cityId": "estados-unidos-pensilvania",
         "website": "https://www.upenn.edu",
+        "type": "private"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "estados-unidos-connecticut",
+    name: "Connecticut",
+    region: "Noreste y Nueva Inglaterra (Boston, Cambridge, Nueva York, Filadelfia)",
+    coordinates: {"lat": 41.3083, "lng": -72.9279},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "estados-unidos-connecticut-yale-university-new-haven-connecticut",
+        "name": "Yale University (New Haven, Connecticut)",
+        "cityId": "estados-unidos-connecticut",
+        "website": "https://www.yale.edu",
         "type": "private"
       }),
     ],
@@ -128,18 +132,12 @@ const cities = [
   defineCity({
     id: "estados-unidos-silicon-valley",
     name: "Silicon Valley",
-    coordinates: null,
+    region: "Costa Oeste - California (Silicon Valley, Los Ángeles, San Francisco)",
+    coordinates: {"lat": 37.4419, "lng": -122.143},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "estados-unidos-silicon-valley-area-de-la-bahia-silicon-valley",
-        "name": "Área de la Bahía / Silicon Valley",
-        "cityId": "estados-unidos-silicon-valley",
-        "website": "https://www.stanford.edu",
-        "type": null
-      }),
       defineUniversity({
         "id": "estados-unidos-silicon-valley-stanford-university-stanford-palo-alto",
         "name": "Stanford University (Stanford/Palo Alto)",
@@ -185,26 +183,10 @@ const cities = [
     ],
   }),
   defineCity({
-    id: "estados-unidos-los-angeles",
-    name: "Los Ángeles",
-    coordinates: null,
-    isCapital: false,
-    countryId,
-    countryName,
-    universities: [
-      defineUniversity({
-        "id": "estados-unidos-los-angeles-area-de-los-angeles-y-sur-de-california",
-        "name": "Área de Los Ángeles y Sur de California",
-        "cityId": "estados-unidos-los-angeles",
-        "website": "https://www.ucla.edu",
-        "type": null
-      }),
-    ],
-  }),
-  defineCity({
     id: "estados-unidos-austin",
     name: "Austin",
-    coordinates: null,
+    region: "Texas (Austin, Houston, Dallas)",
+    coordinates: {"lat": 30.2672, "lng": -97.7431},
     isCapital: false,
     countryId,
     countryName,
@@ -228,7 +210,8 @@ const cities = [
   defineCity({
     id: "estados-unidos-houston",
     name: "Houston",
-    coordinates: null,
+    region: "Texas (Austin, Houston, Dallas)",
+    coordinates: {"lat": 29.7604, "lng": -95.3698},
     isCapital: false,
     countryId,
     countryName,
@@ -245,7 +228,8 @@ const cities = [
   defineCity({
     id: "estados-unidos-dallas",
     name: "Dallas",
-    coordinates: null,
+    region: "Texas (Austin, Houston, Dallas)",
+    coordinates: {"lat": 32.7767, "lng": -96.797},
     isCapital: false,
     countryId,
     countryName,
@@ -262,18 +246,12 @@ const cities = [
   defineCity({
     id: "estados-unidos-chicago",
     name: "Chicago",
-    coordinates: null,
+    region: "Medio Oeste (Chicago, Illinois, Míchigan, Indiana)",
+    coordinates: {"lat": 41.8781, "lng": -87.6298},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "estados-unidos-chicago-illinois-chicago",
-        "name": "Illinois (Chicago)",
-        "cityId": "estados-unidos-chicago",
-        "website": "https://www.uchicago.edu",
-        "type": null
-      }),
       defineUniversity({
         "id": "estados-unidos-chicago-university-of-chicago",
         "name": "University of Chicago",
@@ -295,78 +273,45 @@ const cities = [
         "website": "https://illinois.edu",
         "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "estados-unidos-michigan-e-indiana",
+    name: "Míchigan e Indiana",
+    region: "Medio Oeste (Chicago, Illinois, Míchigan, Indiana)",
+    coordinates: {"lat": 42.2808, "lng": -83.743},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "estados-unidos-chicago-michigan-e-indiana",
-        "name": "Míchigan e Indiana",
-        "cityId": "estados-unidos-chicago",
-        "website": "https://umich.edu",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "estados-unidos-chicago-university-of-michigan-ann-arbor",
+        "id": "estados-unidos-michigan-e-indiana-university-of-michigan-ann-arbor",
         "name": "University of Michigan (Ann Arbor)",
-        "cityId": "estados-unidos-chicago",
+        "cityId": "estados-unidos-michigan-e-indiana",
         "website": "https://umich.edu",
         "type": "public"
       }),
       defineUniversity({
-        "id": "estados-unidos-chicago-purdue-university-indiana",
+        "id": "estados-unidos-michigan-e-indiana-purdue-university-indiana",
         "name": "Purdue University (Indiana)",
-        "cityId": "estados-unidos-chicago",
+        "cityId": "estados-unidos-michigan-e-indiana",
         "website": "https://www.purdue.edu",
         "type": "public"
       }),
       defineUniversity({
-        "id": "estados-unidos-chicago-university-of-notre-dame-indiana",
+        "id": "estados-unidos-michigan-e-indiana-university-of-notre-dame-indiana",
         "name": "University of Notre Dame (Indiana)",
-        "cityId": "estados-unidos-chicago",
+        "cityId": "estados-unidos-michigan-e-indiana",
         "website": "https://www.nd.edu",
         "type": "private"
       }),
     ],
   }),
   defineCity({
-    id: "estados-unidos-miami",
-    name: "Miami",
-    coordinates: null,
-    isCapital: false,
-    countryId,
-    countryName,
-    universities: [
-      defineUniversity({
-        "id": "estados-unidos-miami-florida",
-        "name": "Florida",
-        "cityId": "estados-unidos-miami",
-        "website": "https://www.ufl.edu",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "estados-unidos-miami-university-of-miami-um-coral-gables-miami",
-        "name": "University of Miami (UM) (Coral Gables/Miami)",
-        "cityId": "estados-unidos-miami",
-        "website": "https://welcome.miami.edu",
-        "type": "private"
-      }),
-      defineUniversity({
-        "id": "estados-unidos-miami-florida-international-university-fiu-miami",
-        "name": "Florida International University (FIU) (Miami)",
-        "cityId": "estados-unidos-miami",
-        "website": "https://www.fiu.edu",
-        "type": "public"
-      }),
-      defineUniversity({
-        "id": "estados-unidos-miami-georgia",
-        "name": "Georgia",
-        "cityId": "estados-unidos-miami",
-        "website": "https://www.gatech.edu",
-        "type": null
-      }),
-    ],
-  }),
-  defineCity({
     id: "estados-unidos-gainesville",
     name: "Gainesville",
-    coordinates: null,
+    region: "Florida y el Sureste (Miami, Gainesville, Atlanta)",
+    coordinates: {"lat": 29.6516, "lng": -82.3248},
     isCapital: false,
     countryId,
     countryName,
@@ -381,24 +326,50 @@ const cities = [
     ],
   }),
   defineCity({
-    id: "estados-unidos-atlanta",
-    name: "Atlanta",
-    coordinates: null,
+    id: "estados-unidos-miami",
+    name: "Miami",
+    region: "Florida y el Sureste (Miami, Gainesville, Atlanta)",
+    coordinates: {"lat": 25.7617, "lng": -80.1918},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "estados-unidos-atlanta-georgia-institute-of-technology-georgia-tech-atlanta",
+        "id": "estados-unidos-miami-university-of-miami-um-coral-gables-miami",
+        "name": "University of Miami (UM) (Coral Gables/Miami)",
+        "cityId": "estados-unidos-miami",
+        "website": "https://welcome.miami.edu",
+        "type": "private"
+      }),
+      defineUniversity({
+        "id": "estados-unidos-miami-florida-international-university-fiu-miami",
+        "name": "Florida International University (FIU) (Miami)",
+        "cityId": "estados-unidos-miami",
+        "website": "https://www.fiu.edu",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "estados-unidos-georgia",
+    name: "Georgia",
+    region: "Florida y el Sureste (Miami, Gainesville, Atlanta)",
+    coordinates: {"lat": 33.749, "lng": -84.388},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "estados-unidos-georgia-georgia-institute-of-technology-georgia-tech-atlanta",
         "name": "Georgia Institute of Technology (Georgia Tech) (Atlanta)",
-        "cityId": "estados-unidos-atlanta",
+        "cityId": "estados-unidos-georgia",
         "website": "https://www.gatech.edu",
         "type": "public"
       }),
       defineUniversity({
-        "id": "estados-unidos-atlanta-emory-university-atlanta",
+        "id": "estados-unidos-georgia-emory-university-atlanta",
         "name": "Emory University (Atlanta)",
-        "cityId": "estados-unidos-atlanta",
+        "cityId": "estados-unidos-georgia",
         "website": "https://www.emory.edu",
         "type": "private"
       }),
@@ -407,7 +378,8 @@ const cities = [
   defineCity({
     id: "estados-unidos-seattle",
     name: "Seattle",
-    coordinates: null,
+    region: "Noroeste del Pacífico y Montañas (Seattle, San Francisco)",
+    coordinates: {"lat": 47.6062, "lng": -122.3321},
     isCapital: false,
     countryId,
     countryName,

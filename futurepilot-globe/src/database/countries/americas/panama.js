@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "panama-ciudad-de-panama",
     name: "Ciudad de Panamá",
-    coordinates: null,
-    isCapital: false,
+    region: "Ciudad de Panamá y Área Metropolitana (Provincia de Panamá y Panamá Oeste)",
+    coordinates: {"lat": 8.9824, "lng": -79.5199},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -80,7 +81,8 @@ const cities = [
   defineCity({
     id: "panama-david",
     name: "David",
-    coordinates: null,
+    region: "David y provincia de Chiriquí (Occidente)",
+    coordinates: {"lat": 8.4333, "lng": -82.4333},
     isCapital: false,
     countryId,
     countryName,
@@ -111,7 +113,8 @@ const cities = [
   defineCity({
     id: "panama-colon",
     name: "Colón",
-    coordinates: null,
+    region: "Colón (Atlántico / Zona Libre)",
+    coordinates: {"lat": 9.3547, "lng": -79.9014},
     isCapital: false,
     countryId,
     countryName,
@@ -133,39 +136,19 @@ const cities = [
     ],
   }),
   defineCity({
-    id: "panama-santiago-de-veraguas",
-    name: "Santiago de Veraguas",
-    coordinates: null,
+    id: "panama-veraguas",
+    name: "Veraguas",
+    region: "Provincias Centrales (Santiago de Veraguas, Chitré, Penonomé)",
+    coordinates: {"lat": 8.1, "lng": -80.9833},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "panama-santiago-de-veraguas-santiago-veraguas",
-        "name": "Santiago (Veraguas)",
-        "cityId": "panama-santiago-de-veraguas",
-        "website": "https://www.up.ac.pa",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "panama-santiago-de-veraguas-universidad-de-panama-centro-regional-universitario-de-veraguas-cruv",
+        "id": "panama-veraguas-universidad-de-panama-centro-regional-universitario-de-veraguas-cruv",
         "name": "Universidad de Panamá (Centro Regional Universitario de Veraguas - CRUV)",
-        "cityId": "panama-santiago-de-veraguas",
+        "cityId": "panama-veraguas",
         "website": "https://www.up.ac.pa",
-        "type": "public"
-      }),
-      defineUniversity({
-        "id": "panama-santiago-de-veraguas-escuela-normal-superior-juan-demostenes-arosemena",
-        "name": "Escuela Normal Superior Juan Demóstenes Arosemena",
-        "cityId": "panama-santiago-de-veraguas",
-        "website": null,
-        "type": "public"
-      }),
-      defineUniversity({
-        "id": "panama-santiago-de-veraguas-universidad-tecnologica-de-panama-centro-regional-de-cocle",
-        "name": "Universidad Tecnológica de Panamá (Centro Regional de Coclé)",
-        "cityId": "panama-santiago-de-veraguas",
-        "website": "https://utp.ac.pa",
         "type": "public"
       }),
     ],
@@ -173,18 +156,12 @@ const cities = [
   defineCity({
     id: "panama-chitre",
     name: "Chitré",
-    coordinates: null,
+    region: "Provincias Centrales (Santiago de Veraguas, Chitré, Penonomé)",
+    coordinates: {"lat": 7.9667, "lng": -80.4333},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "panama-chitre-chitre-herrera-las-tablas-los-santos",
-        "name": "Chitré (Herrera) / Las Tablas (Los Santos)",
-        "cityId": "panama-chitre",
-        "website": "https://www.up.ac.pa",
-        "type": null
-      }),
       defineUniversity({
         "id": "panama-chitre-universidad-de-panama-cru-de-azuero-chitre",
         "name": "Universidad de Panamá (CRU de Azuero / Chitré)",
@@ -195,19 +172,20 @@ const cities = [
     ],
   }),
   defineCity({
-    id: "panama-penonome",
-    name: "Penonomé",
-    coordinates: null,
+    id: "panama-cocle",
+    name: "Coclé",
+    region: "Provincias Centrales (Santiago de Veraguas, Chitré, Penonomé)",
+    coordinates: {"lat": 8.5167, "lng": -80.3583},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "panama-penonome-penonome-cocle",
-        "name": "Penonomé (Coclé)",
-        "cityId": "panama-penonome",
+        "id": "panama-cocle-universidad-tecnologica-de-panama-centro-regional-de-cocle",
+        "name": "Universidad Tecnológica de Panamá (Centro Regional de Coclé)",
+        "cityId": "panama-cocle",
         "website": "https://utp.ac.pa",
-        "type": null
+        "type": "public"
       }),
     ],
   }),

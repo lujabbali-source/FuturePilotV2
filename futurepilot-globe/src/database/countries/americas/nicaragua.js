@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "nicaragua-managua",
     name: "Managua",
-    coordinates: null,
-    isCapital: false,
+    region: "Managua (Capital y Departamento de Managua)",
+    coordinates: {"lat": 12.115, "lng": -86.2362},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -66,7 +67,8 @@ const cities = [
   defineCity({
     id: "nicaragua-leon",
     name: "León",
-    coordinates: null,
+    region: "León (Ciudad Universitaria)",
+    coordinates: {"lat": 12.434, "lng": -86.878},
     isCapital: false,
     countryId,
     countryName,
@@ -88,83 +90,79 @@ const cities = [
     ],
   }),
   defineCity({
-    id: "nicaragua-esteli-matagalpa",
-    name: "Estelí, Matagalpa",
-    coordinates: null,
+    id: "nicaragua-esteli",
+    name: "Estelí",
+    region: "Estelí, Matagalpa y Jinotega (Región Norte)",
+    coordinates: {"lat": 13.09, "lng": -86.3536},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "nicaragua-esteli-matagalpa-esteli",
-        "name": "Estelí",
-        "cityId": "nicaragua-esteli-matagalpa",
-        "website": "https://www.farem.unan.edu.ni",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "nicaragua-esteli-matagalpa-farem-esteli-unan-managua-facultad-regional-multidisciplinaria",
+        "id": "nicaragua-esteli-farem-esteli-unan-managua-facultad-regional-multidisciplinaria",
         "name": "FAREM-Estelí (UNAN-Managua / Facultad Regional Multidisciplinaria)",
-        "cityId": "nicaragua-esteli-matagalpa",
+        "cityId": "nicaragua-esteli",
         "website": "https://www.farem.unan.edu.ni",
         "type": "public"
       }),
       defineUniversity({
-        "id": "nicaragua-esteli-matagalpa-universidad-catolica-del-tropico-seco-ucatse",
+        "id": "nicaragua-esteli-universidad-catolica-del-tropico-seco-ucatse",
         "name": "Universidad Católica del Tropico Seco (UCATSE)",
-        "cityId": "nicaragua-esteli-matagalpa",
+        "cityId": "nicaragua-esteli",
         "website": "https://www.ucatse.edu.ni",
         "type": "private"
       }),
+    ],
+  }),
+  defineCity({
+    id: "nicaragua-matagalpa",
+    name: "Matagalpa",
+    region: "Estelí, Matagalpa y Jinotega (Región Norte)",
+    coordinates: {"lat": 12.925, "lng": -85.9167},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "nicaragua-esteli-matagalpa-matagalpa",
-        "name": "Matagalpa",
-        "cityId": "nicaragua-esteli-matagalpa",
-        "website": "https://www.unan.edu.ni",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "nicaragua-esteli-matagalpa-farem-matagalpa-unan-managua",
+        "id": "nicaragua-matagalpa-farem-matagalpa-unan-managua",
         "name": "FAREM-Matagalpa (UNAN-Managua)",
-        "cityId": "nicaragua-esteli-matagalpa",
+        "cityId": "nicaragua-matagalpa",
         "website": "https://www.unan.edu.ni",
         "type": "public"
       }),
     ],
   }),
   defineCity({
-    id: "nicaragua-granada-rivas",
-    name: "Granada, Rivas",
-    coordinates: null,
+    id: "nicaragua-granada",
+    name: "Granada",
+    region: "Granada, Rivas y Carazo (Región Pacífico Sur)",
+    coordinates: {"lat": 11.9297, "lng": -85.9564},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "nicaragua-granada-rivas-granada",
-        "name": "Granada",
-        "cityId": "nicaragua-granada-rivas",
-        "website": "https://www.unival.edu.ni",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "nicaragua-granada-rivas-universidad-internacional-de-la-integracion-de-america-latina-unival",
+        "id": "nicaragua-granada-universidad-internacional-de-la-integracion-de-america-latina-unival",
         "name": "Universidad Internacional de la Integración de América Latina (UNIVAL)",
-        "cityId": "nicaragua-granada-rivas",
+        "cityId": "nicaragua-granada",
         "website": "https://www.unival.edu.ni",
         "type": "private"
       }),
+    ],
+  }),
+  defineCity({
+    id: "nicaragua-carazo",
+    name: "Carazo",
+    region: "Granada, Rivas y Carazo (Región Pacífico Sur)",
+    coordinates: {"lat": 11.85, "lng": -86.1958},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "nicaragua-granada-rivas-carazo-jinotepe",
-        "name": "Carazo (Jinotepe)",
-        "cityId": "nicaragua-granada-rivas",
-        "website": "https://www.unan.edu.ni",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "nicaragua-granada-rivas-farem-carazo-unan-managua",
+        "id": "nicaragua-carazo-farem-carazo-unan-managua",
         "name": "FAREM-Carazo (UNAN-Managua)",
-        "cityId": "nicaragua-granada-rivas",
+        "cityId": "nicaragua-carazo",
         "website": "https://www.unan.edu.ni",
         "type": "public"
       }),
@@ -173,7 +171,8 @@ const cities = [
   defineCity({
     id: "nicaragua-bluefields",
     name: "Bluefields",
-    coordinates: null,
+    region: "Costa Caribe (Bluefields y Puerto Cabezas / Bilwi)",
+    coordinates: {"lat": 12.0083, "lng": -83.7614},
     isCapital: false,
     countryId,
     countryName,
@@ -183,6 +182,13 @@ const cities = [
         "name": "Bluefields Indian & Caribbean University (BICU) (Bluefields)",
         "cityId": "nicaragua-bluefields",
         "website": "https://www.bicu.edu.ni",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "nicaragua-bluefields-universidad-de-las-regiones-autonomas-de-la-costa-caribe-nicaraguense-uraccan-puerto-cabezas-siuna-bluefields",
+        "name": "Universidad de las Regiones Autónomas de la Costa Caribe Nicaragüense (URACCAN) (Puerto Cabezas / Siuna / Bluefields)",
+        "cityId": "nicaragua-bluefields",
+        "website": "https://www.uraccan.edu.ni",
         "type": "public"
       }),
     ],

@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "costa-rica-san-jose",
     name: "San José",
-    coordinates: null,
-    isCapital: false,
+    region: "San José y Gran Área Metropolitana (GAM)",
+    coordinates: {"lat": 9.9281, "lng": -84.0907},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -73,7 +74,8 @@ const cities = [
   defineCity({
     id: "costa-rica-heredia",
     name: "Heredia",
-    coordinates: null,
+    region: "Heredia (La Ciudad de las Flores)",
+    coordinates: {"lat": 9.9989, "lng": -84.117},
     isCapital: false,
     countryId,
     countryName,
@@ -104,7 +106,8 @@ const cities = [
   defineCity({
     id: "costa-rica-cartago",
     name: "Cartago",
-    coordinates: null,
+    region: "Cartago (Valle del Guarco)",
+    coordinates: {"lat": 9.8644, "lng": -83.9194},
     isCapital: false,
     countryId,
     countryName,
@@ -128,7 +131,8 @@ const cities = [
   defineCity({
     id: "costa-rica-alajuela",
     name: "Alajuela",
-    coordinates: null,
+    region: "Alajuela",
+    coordinates: {"lat": 10.0162, "lng": -84.2116},
     isCapital: false,
     countryId,
     countryName,
@@ -156,6 +160,56 @@ const cities = [
       }),
     ],
   }),
+  defineCity({
+    id: "costa-rica-liberia-santa-cruz",
+    name: "Liberia / Santa Cruz",
+    region: "Guanacaste y Puntarenas (Región Pacífico)",
+    coordinates: {"lat": 10.6346, "lng": -85.437},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "costa-rica-liberia-santa-cruz-universidad-de-costa-rica-sede-de-guanacaste",
+        "name": "Universidad de Costa Rica (Sede de Guanacaste)",
+        "cityId": "costa-rica-liberia-santa-cruz",
+        "website": "https://www.ucr.ac.cr",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "costa-rica-liberia-santa-cruz-universidad-earth-campus-la-flor-liberia",
+        "name": "Universidad EARTH (Campus La Flor - Liberia)",
+        "cityId": "costa-rica-liberia-santa-cruz",
+        "website": "https://www.earth.ac.cr",
+        "type": "private"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "costa-rica-puntarenas",
+    name: "Puntarenas",
+    region: "Guanacaste y Puntarenas (Región Pacífico)",
+    coordinates: {"lat": 9.9763, "lng": -84.8384},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "costa-rica-puntarenas-universidad-de-costa-rica-sede-del-pacifico-puntarenas",
+        "name": "Universidad de Costa Rica (Sede del Pacífico - Puntarenas)",
+        "cityId": "costa-rica-puntarenas",
+        "website": "https://sp.ucr.ac.cr",
+        "type": "public"
+      }),
+      defineUniversity({
+        "id": "costa-rica-puntarenas-universidad-tecnica-nacional-sede-del-pacifico",
+        "name": "Universidad Técnica Nacional (Sede del Pacífico)",
+        "cityId": "costa-rica-puntarenas",
+        "website": "https://www.utn.ac.cr",
+        "type": "public"
+      }),
+    ],
+  }),
 ];
 
 export default defineCountry({
@@ -166,36 +220,5 @@ export default defineCountry({
   language: null,
   continent: "America",
   cities,
-  nationalUniversities: [
-  {
-    "name": "Liberia / Santa Cruz (Guanacaste)",
-    "website": "https://www.ucr.ac.cr",
-    "type": null
-  },
-  {
-    "name": "Universidad de Costa Rica (Sede de Guanacaste)",
-    "website": "https://www.ucr.ac.cr",
-    "type": "public"
-  },
-  {
-    "name": "Universidad EARTH (Campus La Flor - Liberia)",
-    "website": "https://www.earth.ac.cr",
-    "type": "private"
-  },
-  {
-    "name": "Puntarenas",
-    "website": "https://sp.ucr.ac.cr",
-    "type": null
-  },
-  {
-    "name": "Universidad de Costa Rica (Sede del Pacífico - Puntarenas)",
-    "website": "https://sp.ucr.ac.cr",
-    "type": "public"
-  },
-  {
-    "name": "Universidad Técnica Nacional (Sede del Pacífico)",
-    "website": "https://www.utn.ac.cr",
-    "type": "public"
-  }
-],
+  nationalUniversities: [],
 });

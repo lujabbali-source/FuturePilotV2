@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "guatemala-ciudad-de-guatemala",
     name: "Ciudad de Guatemala",
-    coordinates: null,
-    isCapital: false,
+    region: "Ciudad de Guatemala y Área Metropolitana (Departamento de Guatemala, Fraijanes, Santa Catarina Pinula)",
+    coordinates: {"lat": 14.6349, "lng": -90.5069},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -80,7 +81,8 @@ const cities = [
   defineCity({
     id: "guatemala-quetzaltenango",
     name: "Quetzaltenango",
-    coordinates: null,
+    region: "Quetzaltenango (Xela) y Occidente",
+    coordinates: {"lat": 14.8347, "lng": -91.5181},
     isCapital: false,
     countryId,
     countryName,
@@ -118,7 +120,8 @@ const cities = [
   defineCity({
     id: "guatemala-coban",
     name: "Cobán",
-    coordinates: null,
+    region: "Alta Verapaz (Cobán) y Región Norte",
+    coordinates: {"lat": 15.4667, "lng": -90.3667},
     isCapital: false,
     countryId,
     countryName,
@@ -142,7 +145,8 @@ const cities = [
   defineCity({
     id: "guatemala-escuintla",
     name: "Escuintla",
-    coordinates: null,
+    region: "Escuintla y Costa Sur",
+    coordinates: {"lat": 14.305, "lng": -90.785},
     isCapital: false,
     countryId,
     countryName,
@@ -166,7 +170,8 @@ const cities = [
   defineCity({
     id: "guatemala-zacapa",
     name: "Zacapa",
-    coordinates: null,
+    region: "Zacapa y Chiquimula (Región Oriente)",
+    coordinates: {"lat": 14.9722, "lng": -89.5306},
     isCapital: false,
     countryId,
     countryName,

@@ -7,18 +7,12 @@ const cities = [
   defineCity({
     id: "canada-toronto",
     name: "Toronto",
-    coordinates: null,
+    region: "Ontario (Toronto, Ottawa, Waterloo, Hamilton, London)",
+    coordinates: {"lat": 43.6532, "lng": -79.3832},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "canada-toronto-toronto-y-area-metropolitana-gta",
-        "name": "Toronto y Área Metropolitana (GTA)",
-        "cityId": "canada-toronto",
-        "website": "https://www.utoronto.ca",
-        "type": null
-      }),
       defineUniversity({
         "id": "canada-toronto-university-of-toronto-u-of-t",
         "name": "University of Toronto (U of T)",
@@ -40,37 +34,17 @@ const cities = [
         "website": "https://www.torontomu.ca",
         "type": "public"
       }),
-      defineUniversity({
-        "id": "canada-toronto-carleton-university",
-        "name": "Carleton University",
-        "cityId": "canada-toronto",
-        "website": "https://carleton.ca",
-        "type": "public"
-      }),
-      defineUniversity({
-        "id": "canada-toronto-queen-s-university-kingston",
-        "name": "Queen's University (Kingston)",
-        "cityId": "canada-toronto",
-        "website": "https://www.queensu.ca",
-        "type": "public"
-      }),
     ],
   }),
   defineCity({
     id: "canada-ottawa",
     name: "Ottawa",
-    coordinates: null,
-    isCapital: false,
+    region: "Ontario (Toronto, Ottawa, Waterloo, Hamilton, London)",
+    coordinates: {"lat": 45.4215, "lng": -75.6972},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "canada-ottawa-ottawa-capital-nacional",
-        "name": "Ottawa (Capital Nacional)",
-        "cityId": "canada-ottawa",
-        "website": "https://www.uottawa.ca",
-        "type": null
-      }),
       defineUniversity({
         "id": "canada-ottawa-university-of-ottawa-uottawa",
         "name": "University of Ottawa (uOttawa)",
@@ -78,23 +52,24 @@ const cities = [
         "website": "https://www.uottawa.ca",
         "type": "public"
       }),
+      defineUniversity({
+        "id": "canada-ottawa-carleton-university",
+        "name": "Carleton University",
+        "cityId": "canada-ottawa",
+        "website": "https://carleton.ca",
+        "type": "public"
+      }),
     ],
   }),
   defineCity({
     id: "canada-waterloo",
     name: "Waterloo",
-    coordinates: null,
+    region: "Ontario (Toronto, Ottawa, Waterloo, Hamilton, London)",
+    coordinates: {"lat": 43.4643, "lng": -80.5204},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "canada-waterloo-waterloo-hamilton-london-y-kingston",
-        "name": "Waterloo, Hamilton, London y Kingston",
-        "cityId": "canada-waterloo",
-        "website": "https://uwaterloo.ca",
-        "type": null
-      }),
       defineUniversity({
         "id": "canada-waterloo-university-of-waterloo-waterloo",
         "name": "University of Waterloo (Waterloo)",
@@ -107,7 +82,8 @@ const cities = [
   defineCity({
     id: "canada-hamilton",
     name: "Hamilton",
-    coordinates: null,
+    region: "Ontario (Toronto, Ottawa, Waterloo, Hamilton, London)",
+    coordinates: {"lat": 43.2557, "lng": -79.8711},
     isCapital: false,
     countryId,
     countryName,
@@ -124,7 +100,8 @@ const cities = [
   defineCity({
     id: "canada-london",
     name: "London",
-    coordinates: null,
+    region: "Ontario (Toronto, Ottawa, Waterloo, Hamilton, London)",
+    coordinates: {"lat": 42.9849, "lng": -81.2453},
     isCapital: false,
     countryId,
     countryName,
@@ -139,20 +116,32 @@ const cities = [
     ],
   }),
   defineCity({
-    id: "canada-montreal",
-    name: "Montreal",
-    coordinates: null,
+    id: "canada-kingston",
+    name: "Kingston",
+    region: "Ontario (Toronto, Ottawa, Waterloo, Hamilton, London)",
+    coordinates: {"lat": 44.2312, "lng": -76.486},
     isCapital: false,
     countryId,
     countryName,
     universities: [
       defineUniversity({
-        "id": "canada-montreal-montreal",
-        "name": "Montreal",
-        "cityId": "canada-montreal",
-        "website": "https://www.mcgill.ca",
-        "type": null
+        "id": "canada-kingston-queen-s-university-kingston",
+        "name": "Queen's University (Kingston)",
+        "cityId": "canada-kingston",
+        "website": "https://www.queensu.ca",
+        "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "canada-montreal",
+    name: "Montreal",
+    region: "Quebec (Montreal, Ciudad de Quebec)",
+    coordinates: {"lat": 45.5019, "lng": -73.5674},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
         "id": "canada-montreal-mcgill-university",
         "name": "McGill University",
@@ -181,47 +170,35 @@ const cities = [
         "website": "https://uqam.ca",
         "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "canada-ciudad-de-quebec",
+    name: "Ciudad de Quebec",
+    region: "Quebec (Montreal, Ciudad de Quebec)",
+    coordinates: {"lat": 46.8139, "lng": -71.208},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "canada-montreal-universite-laval",
+        "id": "canada-ciudad-de-quebec-universite-laval",
         "name": "Université Laval",
-        "cityId": "canada-montreal",
+        "cityId": "canada-ciudad-de-quebec",
         "website": "https://www.ulaval.ca",
         "type": "public"
       }),
     ],
   }),
   defineCity({
-    id: "canada-ciudad-de-quebec",
-    name: "Ciudad de Quebec",
-    coordinates: null,
-    isCapital: false,
-    countryId,
-    countryName,
-    universities: [
-      defineUniversity({
-        "id": "canada-ciudad-de-quebec-ciudad-de-quebec",
-        "name": "Ciudad de Quebec",
-        "cityId": "canada-ciudad-de-quebec",
-        "website": "https://www.ulaval.ca",
-        "type": null
-      }),
-    ],
-  }),
-  defineCity({
     id: "canada-vancouver",
     name: "Vancouver",
-    coordinates: null,
+    region: "Columbia Británica / British Columbia (Vancouver, Victoria)",
+    coordinates: {"lat": 49.2827, "lng": -123.1207},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "canada-vancouver-vancouver-y-area-metropolitana",
-        "name": "Vancouver y Área Metropolitana",
-        "cityId": "canada-vancouver",
-        "website": "https://www.ubc.ca",
-        "type": null
-      }),
       defineUniversity({
         "id": "canada-vancouver-university-of-british-columbia-ubc",
         "name": "University of British Columbia (UBC)",
@@ -236,19 +213,13 @@ const cities = [
         "website": "https://www.sfu.ca",
         "type": "public"
       }),
-      defineUniversity({
-        "id": "canada-vancouver-victoria-isla-de-vancouver",
-        "name": "Victoria (Isla de Vancouver)",
-        "cityId": "canada-vancouver",
-        "website": "https://www.uvic.ca",
-        "type": null
-      }),
     ],
   }),
   defineCity({
     id: "canada-victoria",
     name: "Victoria",
-    coordinates: null,
+    region: "Columbia Británica / British Columbia (Vancouver, Victoria)",
+    coordinates: {"lat": 48.4284, "lng": -123.3656},
     isCapital: false,
     countryId,
     countryName,
@@ -265,7 +236,8 @@ const cities = [
   defineCity({
     id: "canada-edmonton",
     name: "Edmonton",
-    coordinates: null,
+    region: "Alberta (Calgary, Edmonton)",
+    coordinates: {"lat": 53.5461, "lng": -113.4938},
     isCapital: false,
     countryId,
     countryName,
@@ -282,7 +254,8 @@ const cities = [
   defineCity({
     id: "canada-calgary",
     name: "Calgary",
-    coordinates: null,
+    region: "Alberta (Calgary, Edmonton)",
+    coordinates: {"lat": 51.0447, "lng": -114.0719},
     isCapital: false,
     countryId,
     countryName,
@@ -297,9 +270,46 @@ const cities = [
     ],
   }),
   defineCity({
+    id: "canada-winnipeg",
+    name: "Winnipeg",
+    region: "Provincias de las Praderas (Manitoba y Saskatchewan)",
+    coordinates: {"lat": 49.8951, "lng": -97.1384},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "canada-winnipeg-university-of-manitoba",
+        "name": "University of Manitoba",
+        "cityId": "canada-winnipeg",
+        "website": "https://umanitoba.ca",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "canada-saskatoon",
+    name: "Saskatoon",
+    region: "Provincias de las Praderas (Manitoba y Saskatchewan)",
+    coordinates: {"lat": 52.1332, "lng": -106.67},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "canada-saskatoon-university-of-saskatchewan-usask",
+        "name": "University of Saskatchewan (USask)",
+        "cityId": "canada-saskatoon",
+        "website": "https://www.usask.ca",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
     id: "canada-halifax",
     name: "Halifax",
-    coordinates: null,
+    region: "Provincias del Atlántico (Halifax, San Juan)",
+    coordinates: {"lat": 44.6488, "lng": -63.5752},
     isCapital: false,
     countryId,
     countryName,
@@ -316,7 +326,8 @@ const cities = [
   defineCity({
     id: "canada-san-juan",
     name: "San Juan",
-    coordinates: null,
+    region: "Provincias del Atlántico (Halifax, San Juan)",
+    coordinates: {"lat": 47.5615, "lng": -52.7126},
     isCapital: false,
     countryId,
     countryName,
@@ -340,26 +351,5 @@ export default defineCountry({
   language: null,
   continent: "America",
   cities,
-  nationalUniversities: [
-  {
-    "name": "Manitoba (Winnipeg)",
-    "website": "https://umanitoba.ca",
-    "type": null
-  },
-  {
-    "name": "University of Manitoba",
-    "website": "https://umanitoba.ca",
-    "type": "public"
-  },
-  {
-    "name": "Saskatchewan (Saskatoon)",
-    "website": "https://www.usask.ca",
-    "type": null
-  },
-  {
-    "name": "University of Saskatchewan (USask)",
-    "website": "https://www.usask.ca",
-    "type": "public"
-  }
-],
+  nationalUniversities: [],
 });

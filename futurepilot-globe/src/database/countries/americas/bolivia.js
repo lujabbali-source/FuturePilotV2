@@ -7,8 +7,9 @@ const cities = [
   defineCity({
     id: "bolivia-la-paz",
     name: "La Paz",
-    coordinates: null,
-    isCapital: false,
+    region: "La Paz y El Alto (Sede de Gobierno)",
+    coordinates: {"lat": -16.5, "lng": -68.15},
+    isCapital: true,
     countryId,
     countryName,
     universities: [
@@ -59,7 +60,8 @@ const cities = [
   defineCity({
     id: "bolivia-cochabamba",
     name: "Cochabamba",
-    coordinates: null,
+    region: "Cochabamba (Valle Central)",
+    coordinates: {"lat": -17.3895, "lng": -66.1568},
     isCapital: false,
     countryId,
     countryName,
@@ -104,7 +106,8 @@ const cities = [
   defineCity({
     id: "bolivia-sucre",
     name: "Sucre",
-    coordinates: null,
+    region: "Sucre (Capital Constitucional / Chuquisaca)",
+    coordinates: {"lat": -19.0333, "lng": -65.2627},
     isCapital: false,
     countryId,
     countryName,
@@ -128,18 +131,12 @@ const cities = [
   defineCity({
     id: "bolivia-oruro",
     name: "Oruro",
-    coordinates: null,
+    region: "Oruro y Potosí (Zona Andina)",
+    coordinates: {"lat": -17.9833, "lng": -67.15},
     isCapital: false,
     countryId,
     countryName,
     universities: [
-      defineUniversity({
-        "id": "bolivia-oruro-oruro",
-        "name": "Oruro",
-        "cityId": "bolivia-oruro",
-        "website": "https://www.uto.edu.bo",
-        "type": null
-      }),
       defineUniversity({
         "id": "bolivia-oruro-universidad-tecnica-de-oruro-uto",
         "name": "Universidad Técnica de Oruro (UTO)",
@@ -147,18 +144,58 @@ const cities = [
         "website": "https://www.uto.edu.bo",
         "type": "public"
       }),
+    ],
+  }),
+  defineCity({
+    id: "bolivia-potosi",
+    name: "Potosí",
+    region: "Oruro y Potosí (Zona Andina)",
+    coordinates: {"lat": -19.5836, "lng": -65.7531},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
       defineUniversity({
-        "id": "bolivia-oruro-potosi",
-        "name": "Potosí",
-        "cityId": "bolivia-oruro",
-        "website": "https://www.uatf.edu.bo",
-        "type": null
-      }),
-      defineUniversity({
-        "id": "bolivia-oruro-universidad-autonoma-tomas-frias-uatf",
+        "id": "bolivia-potosi-universidad-autonoma-tomas-frias-uatf",
         "name": "Universidad Autónoma Tomás Frías (UATF)",
-        "cityId": "bolivia-oruro",
+        "cityId": "bolivia-potosi",
         "website": "https://www.uatf.edu.bo",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "bolivia-trinidad",
+    name: "Trinidad",
+    region: "Beni y Pando (Amazonía Boliviana)",
+    coordinates: {"lat": -14.8333, "lng": -64.9},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "bolivia-trinidad-universidad-autonoma-del-beni-jose-ballivian-uabjb",
+        "name": "Universidad Autónoma del Beni José Ballivián (UABJB)",
+        "cityId": "bolivia-trinidad",
+        "website": "https://www.uabjb.edu.bo",
+        "type": "public"
+      }),
+    ],
+  }),
+  defineCity({
+    id: "bolivia-pando",
+    name: "Pando",
+    region: "Beni y Pando (Amazonía Boliviana)",
+    coordinates: {"lat": -11.0267, "lng": -68.7692},
+    isCapital: false,
+    countryId,
+    countryName,
+    universities: [
+      defineUniversity({
+        "id": "bolivia-pando-universidad-amazonica-de-pando-uap",
+        "name": "Universidad Amazónica de Pando (UAP)",
+        "cityId": "bolivia-pando",
+        "website": "https://www.uap.edu.bo",
         "type": "public"
       }),
     ],
@@ -174,65 +211,61 @@ export default defineCountry({
   continent: "America",
   cities,
   nationalUniversities: [
-  {
-    "name": "Universidad Autónoma Gabriel René Moreno (UAGRM)",
-    "website": "https://www.uagrm.edu.bo",
-    "type": "public"
-  },
-  {
-    "name": "Universidad Privada de Santa Cruz de la Sierra (UPSA)",
-    "website": "https://www.upsa.edu.bo",
-    "type": "private"
-  },
-  {
-    "name": "Universidad Católica Boliviana \"San Pablo\" (UCB - Sede Santa Cruz)",
-    "website": "https://www.scz.ucb.edu.bo",
-    "type": "private"
-  },
-  {
-    "name": "Universidad de Aquino Bolivia (UDABOL)",
-    "website": "https://www.udabol.edu.bo",
-    "type": "private"
-  },
-  {
-    "name": "Universidad Tecnológica Privada de Santa Cruz (UTEPSA)",
-    "website": "https://www.utepsa.edu",
-    "type": "private"
-  },
-  {
-    "name": "Universidad Nur",
-    "website": "https://www.nur.edu",
-    "type": "private"
-  },
-  {
-    "name": "Universidad Autónoma Juan Misael Saracho (UAJMS)",
-    "website": "https://www.uajms.edu.bo",
-    "type": "public"
-  },
-  {
-    "name": "Universidad Católica Boliviana \"San Pablo\" (UCB - Sede Tarija)",
-    "website": "https://www.tja.ucb.edu.bo",
-    "type": "private"
-  },
-  {
-    "name": "Trinidad (Beni)",
-    "website": "https://www.uabjb.edu.bo",
-    "type": null
-  },
-  {
-    "name": "Universidad Autónoma del Beni José Ballivián (UABJB)",
-    "website": "https://www.uabjb.edu.bo",
-    "type": "public"
-  },
-  {
-    "name": "Cobija (Pando)",
-    "website": "https://www.uap.edu.bo",
-    "type": null
-  },
-  {
-    "name": "Universidad Amazónica de Pando (UAP)",
-    "website": "https://www.uap.edu.bo",
-    "type": "public"
-  }
-],
+    defineUniversity({
+      "name": "Universidad Autónoma Gabriel René Moreno (UAGRM)",
+      "website": "https://www.uagrm.edu.bo",
+      "type": "public",
+      "id": "bolivia-national-universidad-autonoma-gabriel-rene-moreno-uagrm",
+      "cityId": "national"
+    }),
+    defineUniversity({
+      "name": "Universidad Privada de Santa Cruz de la Sierra (UPSA)",
+      "website": "https://www.upsa.edu.bo",
+      "type": "private",
+      "id": "bolivia-national-universidad-privada-de-santa-cruz-de-la-sierra-upsa",
+      "cityId": "national"
+    }),
+    defineUniversity({
+      "name": "Universidad Católica Boliviana \"San Pablo\" (UCB - Sede Santa Cruz)",
+      "website": "https://www.scz.ucb.edu.bo",
+      "type": "private",
+      "id": "bolivia-national-universidad-catolica-boliviana-san-pablo-ucb-sede-santa-cruz",
+      "cityId": "national"
+    }),
+    defineUniversity({
+      "name": "Universidad de Aquino Bolivia (UDABOL)",
+      "website": "https://www.udabol.edu.bo",
+      "type": "private",
+      "id": "bolivia-national-universidad-de-aquino-bolivia-udabol",
+      "cityId": "national"
+    }),
+    defineUniversity({
+      "name": "Universidad Tecnológica Privada de Santa Cruz (UTEPSA)",
+      "website": "https://www.utepsa.edu",
+      "type": "private",
+      "id": "bolivia-national-universidad-tecnologica-privada-de-santa-cruz-utepsa",
+      "cityId": "national"
+    }),
+    defineUniversity({
+      "name": "Universidad Nur",
+      "website": "https://www.nur.edu",
+      "type": "private",
+      "id": "bolivia-national-universidad-nur",
+      "cityId": "national"
+    }),
+    defineUniversity({
+      "name": "Universidad Autónoma Juan Misael Saracho (UAJMS)",
+      "website": "https://www.uajms.edu.bo",
+      "type": "public",
+      "id": "bolivia-national-universidad-autonoma-juan-misael-saracho-uajms",
+      "cityId": "national"
+    }),
+    defineUniversity({
+      "name": "Universidad Católica Boliviana \"San Pablo\" (UCB - Sede Tarija)",
+      "website": "https://www.tja.ucb.edu.bo",
+      "type": "private",
+      "id": "bolivia-national-universidad-catolica-boliviana-san-pablo-ucb-sede-tarija",
+      "cityId": "national"
+    }),
+  ],
 });
