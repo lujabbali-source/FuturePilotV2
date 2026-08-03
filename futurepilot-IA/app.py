@@ -137,6 +137,11 @@ def assessment_page():
     return FileResponse(str(FRONTEND_DIR / "assessment.html"))
 
 
+@app.get("/login")
+def login_page():
+    return FileResponse(str(FRONTEND_DIR / "login.html"))
+
+
 @app.get("/careers")
 def careers_page():
     return FileResponse(str(FRONTEND_DIR / "careers.html"))
