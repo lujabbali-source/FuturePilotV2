@@ -113,6 +113,54 @@ svg { display: block; }
   35%      { transform: translate(-5vw, -4vh) rotate(1deg) scaleY(1.07); border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%; }
   65%      { transform: translate(4vw, 3vh) rotate(11deg) scaleY(0.95); border-radius: 55% 45% 55% 45% / 45% 50% 50% 55%; }
 }
+/* Vetas: hilos de luz finos y brillantes, con muy poco desenfoque, que
+   atraviesan las bandas difusas para darles definicion - la base sigue
+   difuminada como atmosfera, pero estas lineas se ven nitidas encima.
+   Reusan las mismas curvas de movimiento que su banda correspondiente
+   (misma familia de keyframes aurora-sway) para sentirse parte del mismo
+   flujo, mas una segunda animacion de brillo pulsante independiente. */
+.aurora-streak {
+  position: absolute;
+  top: -28%;
+  width: 5px;
+  height: 160%;
+  filter: blur(5px);
+  mix-blend-mode: screen;
+  border-radius: 50%;
+  will-change: transform, opacity;
+}
+.aurora-streak--1 {
+  left: 5%;
+  background: linear-gradient(180deg, transparent 0%, rgba(190,255,230,.92) 16%, rgba(0,255,179,1) 36%, rgba(160,255,235,.88) 56%, rgba(0,212,255,.78) 76%, transparent 96%);
+  box-shadow: 0 0 34px 7px rgba(0,255,179,.5);
+  animation: aurora-sway-1 24s ease-in-out infinite, streak-shimmer 4.5s ease-in-out infinite;
+}
+.aurora-streak--2 {
+  left: 27%;
+  background: linear-gradient(180deg, transparent 0%, rgba(160,255,255,.92) 18%, rgba(0,212,255,1) 38%, rgba(190,255,235,.88) 58%, rgba(0,255,179,.78) 76%, transparent 96%);
+  box-shadow: 0 0 34px 7px rgba(0,212,255,.5);
+  animation: aurora-sway-2 30s ease-in-out infinite, streak-shimmer 5.5s ease-in-out infinite;
+  animation-delay: -8s, -1.5s;
+}
+.aurora-streak--3 {
+  left: 53%;
+  background: linear-gradient(180deg, transparent 0%, rgba(175,255,235,.92) 16%, rgba(0,200,150,1) 36%, rgba(160,255,225,.88) 58%, rgba(0,255,179,.78) 76%, transparent 96%);
+  box-shadow: 0 0 34px 7px rgba(0,200,150,.5);
+  animation: aurora-sway-3 27s ease-in-out infinite, streak-shimmer 4s ease-in-out infinite;
+  animation-delay: -16s, -2.5s;
+}
+.aurora-streak--4 {
+  left: 75%;
+  background: linear-gradient(180deg, transparent 0%, rgba(165,255,255,.92) 18%, rgba(0,212,255,1) 38%, rgba(160,255,225,.88) 58%, rgba(0,255,179,.82) 76%, transparent 96%);
+  box-shadow: 0 0 34px 7px rgba(0,212,255,.5);
+  animation: aurora-sway-4 33s ease-in-out infinite, streak-shimmer 6s ease-in-out infinite;
+  animation-delay: -22s, -3.2s;
+}
+@keyframes streak-shimmer {
+  0%, 100% { opacity: .5; }
+  50% { opacity: 1; }
+}
+
 .aurora-stars {
   position: absolute;
   inset: -10%;
@@ -136,7 +184,7 @@ svg { display: block; }
   50% { opacity: .7; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .aurora-band, .aurora-glow, .aurora-stars { animation: none; }
+  .aurora-band, .aurora-streak, .aurora-glow, .aurora-stars { animation: none; }
 }
 
 /* ==========================================================================
