@@ -25,57 +25,98 @@ button { cursor: pointer; }
 svg { display: block; }
 
 /* ==========================================================================
-   Fondo: nebulosa verde con movimiento extremadamente sutil - corrientes de
-   energia que se sienten vivas sin llamar la atencion. Tres capas radiales
-   grandes, desenfocadas, que derivan muy lentamente (70-130s por ciclo) con
-   fases distintas para que nunca se sientan sincronizadas/mecanicas.
+   Fondo: cortinas de aurora boreal. Cuatro bandas verticales alargadas
+   (gradiente lineal, no radial, para que se lean como "cortinas" de luz y
+   no como manchas) con bordes organicos que ondulan; cada una gira/se
+   desplaza/se estira en su propio ciclo (24-33s, desfasados) para que el
+   conjunto nunca se sienta sincronizado ni mecanico. Mas definidas y
+   visibles que una nebulosa difusa: menos blur, mas opacidad, movimiento
+   perceptible en segundos en vez de minutos - como una aurora real.
    ========================================================================== */
-.nebula-bg {
+.aurora-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  background: radial-gradient(ellipse at 50% 40%, #050f0c 0%, #040a08 55%, #020504 100%);
+  background: linear-gradient(180deg, #03100b 0%, #02100c 45%, #010604 100%);
 }
-.nebula-layer {
+.aurora-glow {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
+  top: -32%;
+  left: 50%;
+  width: 95vw;
+  height: 65vh;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(0,255,179,.22), transparent 68%);
+  filter: blur(50px);
+  animation: aurora-glow-pulse 12s ease-in-out infinite;
+}
+@keyframes aurora-glow-pulse {
+  0%, 100% { opacity: .55; }
+  50% { opacity: 1; }
+}
+.aurora-band {
+  position: absolute;
+  top: -30%;
+  width: 40vw;
+  height: 165%;
+  filter: blur(46px);
   mix-blend-mode: screen;
-  opacity: .5;
-  will-change: transform;
-  animation: nebula-drift 100s ease-in-out infinite;
+  opacity: .8;
+  will-change: transform, border-radius;
 }
-.nebula-layer--1 {
-  width: 68vw; height: 68vw;
-  top: -22%; left: -14%;
-  background: radial-gradient(circle, rgba(0,255,179,.9), transparent 62%);
-  animation-duration: 95s;
+.aurora-band--1 {
+  left: -10%;
+  background: linear-gradient(198deg, transparent 2%, rgba(0,255,179,.95) 28%, rgba(0,212,255,.6) 52%, transparent 80%);
+  border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
+  animation: aurora-sway-1 24s ease-in-out infinite;
 }
-.nebula-layer--2 {
-  width: 58vw; height: 58vw;
-  bottom: -26%; right: -12%;
-  background: radial-gradient(circle, rgba(0,212,255,.75), transparent 62%);
-  animation-duration: 120s;
-  animation-delay: -30s;
+.aurora-band--2 {
+  left: 14%;
+  background: linear-gradient(212deg, transparent 3%, rgba(0,212,255,.85) 32%, rgba(0,255,179,.55) 58%, transparent 82%);
+  border-radius: 55% 45% 40% 60% / 45% 60% 40% 55%;
+  animation: aurora-sway-2 30s ease-in-out infinite;
+  animation-delay: -8s;
 }
-.nebula-layer--3 {
-  width: 46vw; height: 46vw;
-  top: 28%; left: 38%;
-  background: radial-gradient(circle, rgba(0,200,150,.65), transparent 65%);
-  animation-duration: 140s;
-  animation-delay: -70s;
+.aurora-band--3 {
+  left: 42%;
+  background: linear-gradient(190deg, transparent 2%, rgba(0,200,150,.9) 30%, rgba(0,255,179,.55) 56%, transparent 80%);
+  border-radius: 50% 50% 55% 45% / 60% 40% 60% 45%;
+  animation: aurora-sway-3 27s ease-in-out infinite;
+  animation-delay: -16s;
 }
-@keyframes nebula-drift {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  25% { transform: translate3d(2.5%, 1.5%, 0) scale(1.04); }
-  50% { transform: translate3d(-1.5%, 3%, 0) scale(0.98); }
-  75% { transform: translate3d(-2.5%, -1.5%, 0) scale(1.02); }
+.aurora-band--4 {
+  left: 66%;
+  background: linear-gradient(205deg, transparent 3%, rgba(0,212,255,.75) 30%, rgba(0,255,179,.8) 60%, transparent 84%);
+  border-radius: 40% 60% 50% 50% / 50% 55% 45% 60%;
+  animation: aurora-sway-4 33s ease-in-out infinite;
+  animation-delay: -22s;
 }
-.nebula-stars {
+@keyframes aurora-sway-1 {
+  0%, 100% { transform: translate(0, 0) rotate(-7deg) scaleY(1); border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%; }
+  25%      { transform: translate(5vw, -3vh) rotate(-2deg) scaleY(1.1); border-radius: 55% 45% 50% 50% / 45% 55% 45% 60%; }
+  50%      { transform: translate(-3vw, 4vh) rotate(-11deg) scaleY(0.94); border-radius: 40% 60% 45% 55% / 60% 40% 55% 45%; }
+  75%      { transform: translate(4vw, 1vh) rotate(-4deg) scaleY(1.05); border-radius: 50% 50% 55% 45% / 50% 50% 45% 55%; }
+}
+@keyframes aurora-sway-2 {
+  0%, 100% { transform: translate(0, 0) rotate(5deg) scaleY(1); border-radius: 55% 45% 40% 60% / 45% 60% 40% 55%; }
+  30%      { transform: translate(-6vw, 3vh) rotate(10deg) scaleY(1.08); border-radius: 45% 55% 55% 45% / 55% 45% 55% 45%; }
+  60%      { transform: translate(4vw, -4vh) rotate(1deg) scaleY(0.92); border-radius: 60% 40% 45% 55% / 40% 55% 45% 60%; }
+}
+@keyframes aurora-sway-3 {
+  0%, 100% { transform: translate(0, 0) rotate(-4deg) scaleY(1); border-radius: 50% 50% 55% 45% / 60% 40% 60% 45%; }
+  40%      { transform: translate(5vw, 4vh) rotate(3deg) scaleY(1.12); border-radius: 40% 60% 45% 55% / 50% 55% 40% 55%; }
+  70%      { transform: translate(-4vw, -3vh) rotate(-9deg) scaleY(0.93); border-radius: 55% 45% 60% 40% / 45% 60% 50% 50%; }
+}
+@keyframes aurora-sway-4 {
+  0%, 100% { transform: translate(0, 0) rotate(6deg) scaleY(1); border-radius: 40% 60% 50% 50% / 50% 55% 45% 60%; }
+  35%      { transform: translate(-5vw, -4vh) rotate(1deg) scaleY(1.07); border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%; }
+  65%      { transform: translate(4vw, 3vh) rotate(11deg) scaleY(0.95); border-radius: 55% 45% 55% 45% / 45% 50% 50% 55%; }
+}
+.aurora-stars {
   position: absolute;
   inset: -10%;
-  opacity: .5;
+  opacity: .55;
   background-image:
     radial-gradient(1.5px 1.5px at 8% 22%, #fff, transparent),
     radial-gradient(1px 1px at 18% 68%, #fff, transparent),
@@ -91,11 +132,11 @@ svg { display: block; }
   animation: stars-twinkle 9s ease-in-out infinite;
 }
 @keyframes stars-twinkle {
-  0%, 100% { opacity: .35; }
-  50% { opacity: .6; }
+  0%, 100% { opacity: .4; }
+  50% { opacity: .7; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .nebula-layer, .nebula-stars { animation: none; }
+  .aurora-band, .aurora-glow, .aurora-stars { animation: none; }
 }
 
 /* ==========================================================================
