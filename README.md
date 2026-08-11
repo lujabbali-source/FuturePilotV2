@@ -16,13 +16,13 @@ pip install -r requirements-dev.txt
 ```
 
 ```bash
-npm --prefix futurepilot-globe install
+npm --prefix web install
 ```
 
 Compila el globo (el backend lo sirve bajo `/globe`; sin este paso esa ruta no existe):
 
 ```bash
-npm --prefix futurepilot-globe run build
+npm --prefix web run build
 ```
 
 Arranca el servidor — sirve la API **y** todo el sitio:
@@ -34,12 +34,12 @@ python -m uvicorn --app-dir futurepilot-IA app:app --reload --port 8000
 El sitio queda en <http://127.0.0.1:8000>. La documentación interactiva de la API, en `/docs`.
 
 > Con VS Code o Claude Code, `.claude/launch.json` ya trae las configuraciones
-> `futurepilot-backend` y `futurepilot-globe`.
+> `futurepilot-backend` y `web`.
 
 ### Trabajar sobre el globo con hot reload
 
 ```bash
-npm --prefix futurepilot-globe run dev
+npm --prefix web run dev
 ```
 
 Corre en el puerto 5173 y reenvía `/api` al backend del 8000 vía el proxy de `vite.config.js`.
@@ -91,7 +91,7 @@ backend/                 Librería de datos, no arranca ningún servidor propio
 Frontend/                Sitio del estudiante: HTML/CSS/JS vanilla
   admin/                   panel de administración
 
-futurepilot-globe/       Globo 3D (React 19 + Vite + three.js), se sirve en /globe
+web/       Globo 3D (React 19 + Vite + three.js), se sirve en /globe
   src/database/countries/  datos de países y ciudades curados a mano
 
 scripts/                 Utilidades
@@ -115,8 +115,8 @@ docs/                    Documentación y notas
 - **La identidad se resuelve siempre en el servidor**, desde el token bearer o desde un `anon_id`
   validado con regex estricta. Nunca desde el payload del cliente.
 
-- **Reconstruye el globo** (`npm --prefix futurepilot-globe run build`) después de tocar
-  `futurepilot-globe/src/`: el backend sirve `dist/`, no el código fuente.
+- **Reconstruye el globo** (`npm --prefix web run build`) después de tocar
+  `web/src/`: el backend sirve `dist/`, no el código fuente.
 
 ---
 

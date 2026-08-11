@@ -49,7 +49,7 @@ consolidar el frontend sobre el Vite que ya existe, de forma incremental.
 |---|---:|---:|---|
 | Backend Python (`futurepilot-IA/`, `backend/`, `tests/`) | 12 | 3.547 | Sólido |
 | Frontend vanilla (`Frontend/` JS+HTML+CSS) | 43 | 9.665 | Frágil |
-| Globo React (`futurepilot-globe/src/`) | 139 | ~1.150 (código) + 303 KB (datos) | Funcional, aislado |
+| Globo React (`web/src/`) | 139 | ~1.150 (código) + 303 KB (datos) | Funcional, aislado |
 | Módulo Node huérfano (`database/`) | 29 | 1.236 | **Código muerto** |
 
 ---
@@ -67,14 +67,14 @@ consolidar el frontend sobre el Vite que ya existe, de forma incremental.
 | `backend/rate_limiter.py`, `mailer.py`, `config_store.py` | Rate limiting en memoria, SMTP opcional, config JSON para Theme Lab y feature flags | stdlib |
 | `Frontend/` | Sitio del estudiante: landing, test, carreras, journey, flightplan, pasaporte, login, legales | HTML/CSS/JS vanilla |
 | `Frontend/admin/` | Panel de administración: dashboard, login, Theme Lab, System Health | HTML/CSS/JS vanilla |
-| `futurepilot-globe/` | Globo 3D interactivo montado en `/globe` | React 19 + Vite 8 + three.js |
+| `web/` | Globo 3D interactivo montado en `/globe` | React 19 + Vite 8 + three.js |
 | `tests/` | 38 tests de integración sobre la API (auth, admin, assessment, mentor, pasaporte) | pytest |
 | `scripts/sync_frontend_data.py` | Regenera `Frontend/questions-data.js` desde el JSON canónico | Python |
 
 ### 2.2 Bases de datos
 
 - `backend/data/users.sqlite3` — **la base real** (usuarios, sesiones, resultados, pasaporte). 8 tablas.
-- `futurepilot-globe/src/database/countries/**/*.js` — 72 archivos JS, 303 KB. Colombia (22 ciudades
+- `web/src/database/countries/**/*.js` — 72 archivos JS, 303 KB. Colombia (22 ciudades
   con detalle completo) + 21 países de América (solo resumen). Datos curados a mano desde un
   documento Word. **Se importan como módulos JS, no es una base de datos.**
 - `database/data/futurepilot.sqlite` — base SQLite de un módulo Node que **nadie usa** (ver §5.3).
@@ -168,7 +168,7 @@ estudiante (JSON + file lock) y personalización con nombre y metas del Pasaport
 **Limitación honesta:** con solo **10 carreras** en `careers.json`, el ranking por coseno siempre
 devuelve las mismas 3-5. La landing promete "100+ Career Paths".
 
-### 4.2 Globo 3D (`futurepilot-globe/`)
+### 4.2 Globo 3D (`web/`)
 
 React 19 + `@react-three/fiber` + three.js. Renderiza la Tierra con topología GeoJSON, mallas por
 país, marcadores de ciudad, cámara animada al seleccionar y panel lateral con costos de vida,
@@ -196,7 +196,7 @@ Todas las acciones quedan en `admin_audit_log`.
 #### 🔴 B1 — Dos URLs de API hardcodeadas a `127.0.0.1:8000`
 
 **Archivos:** [`Frontend/futurepilot-connector.js:12`](Frontend/futurepilot-connector.js:12),
-[`futurepilot-globe/src/services/passportService.js:7`](futurepilot-globe/src/services/passportService.js:7)
+[`web/src/services/passportService.js:7`](web/src/services/passportService.js:7)
 
 ```js
 const API_URL = "http://127.0.0.1:8000";                                  // conector
@@ -294,7 +294,7 @@ los mantiene sincronizados.
 
 #### 🟠 I2 — El componente de debug del globo se ejecuta en producción
 
-**Archivo:** [`futurepilot-globe/src/debug/Doctor.jsx:5`](futurepilot-globe/src/debug/Doctor.jsx:5)
+**Archivo:** [`web/src/debug/Doctor.jsx:5`](web/src/debug/Doctor.jsx:5)
 
 ```js
 const ENABLE_DOCTOR = false;   // ← declarado y NUNCA leído en las 176 líneas restantes
@@ -307,7 +307,7 @@ geometría por consola en cada carga, para cualquier visitante.
 
 #### 🟠 I3 — Texto duplicado en la cabecera del globo
 
-**Archivo:** [`futurepilot-globe/src/App.jsx:81-83`](futurepilot-globe/src/App.jsx:81)
+**Archivo:** [`web/src/App.jsx:81-83`](web/src/App.jsx:81)
 
 ```jsx
 <p  className="globe-hero__eyebrow">{t("explore")}</p>
@@ -370,13 +370,13 @@ que ya no aplica: hay un servidor unificado y un `.claude/launch.json` que lo ar
 | Elemento | Peso | Diagnóstico | Acción |
 |---|---:|---|---|
 | **`database/`** (raíz) | 29 archivos, 1.236 líneas | Capa Node+SQLite completa (connection, 8 repositorios, 8 queries, servicio, seed, schema, tests). **Verificado: ningún archivo fuera de `database/` la importa.** Los `package.json` scripts `db:init`/`db:seed`/`db:test` son sus únicos consumidores. El globo lee módulos JS directamente; el backend usa `backend/data/users.sqlite3`. | **Borrar** el directorio y los 3 scripts de `package.json` (queda vacío → borrar también `package.json` raíz) |
-| `futurepilot-globe/temp_topology.json` | 37 KB | Archivo temporal, **versionado en git** | Borrar |
-| `futurepilot-globe/validate_topology.py` | 392 B | Script de un solo uso que valida el temp anterior | Borrar |
-| `futurepilot-globe/dev-escalated.log` | 647 B | Volcado de una sesión de `vite dev` | Borrar |
-| `futurepilot-globe/src/services/database/` | 12 líneas + dirs vacíos | `databaseService.js` solo re-exporta `cityService`; contiene `Countries/Colombia/` **vacíos** | Borrar; usar `cityService`/`countryService` directamente |
-| `futurepilot-globe/src/locales/{en,es}/{test,results,roadmap,login}.json` | 4 archivos ×2 | Namespaces registrados en `i18n.js:36` pero **ningún componente del globo los usa** (`useTranslation` solo pide `globe`, `common`, `cities`). Son traducciones de páginas que viven en `Frontend/` | Mover a la unificación de i18n (§7 Fase 2), no borrar el contenido |
+| `web/temp_topology.json` | 37 KB | Archivo temporal, **versionado en git** | Borrar |
+| `web/validate_topology.py` | 392 B | Script de un solo uso que valida el temp anterior | Borrar |
+| `web/dev-escalated.log` | 647 B | Volcado de una sesión de `vite dev` | Borrar |
+| `web/src/services/database/` | 12 líneas + dirs vacíos | `databaseService.js` solo re-exporta `cityService`; contiene `Countries/Colombia/` **vacíos** | Borrar; usar `cityService`/`countryService` directamente |
+| `web/src/locales/{en,es}/{test,results,roadmap,login}.json` | 4 archivos ×2 | Namespaces registrados en `i18n.js:36` pero **ningún componente del globo los usa** (`useTranslation` solo pide `globe`, `common`, `cities`). Son traducciones de páginas que viven en `Frontend/` | Mover a la unificación de i18n (§7 Fase 2), no borrar el contenido |
 | `desktop.ini` × 2 | — | Ruido de OneDrive, **versionado** pese a estar en `.gitignore` | `git rm --cached` |
-| `futurepilot-globe/README.md` | — | Boilerplate literal de `create-vite`, no dice nada del proyecto | Reescribir |
+| `web/README.md` | — | Boilerplate literal de `create-vite`, no dice nada del proyecto | Reescribir |
 | `backend/data/whed.sqlite3` | 32 KB | Resto del catálogo WHED abandonado (ver `docs/INFORME_REORGANIZACION.md`) | Borrar |
 | `terminal_cheatsheet.md` | 5,6 KB | Notas personales de terminal, versionadas en la raíz del proyecto | Mover a `docs/` o fuera del repo |
 | `.pytest_cache/`, `__pycache__/` | — | No versionados pero presentes en disco | Limpiar |
@@ -494,7 +494,7 @@ inconsistencia I4. Se eliminaron ambas y se unificaron `careers.html` y `flightp
 | `futurepilot-logo.png` borrado junto con su ruta en `app.py` | ✅ |
 | `README.md` raíz creado (arranque, configuración, estructura, notas) | ✅ |
 | `terminal_cheatsheet.md` e `INFORME_REORGANIZACION.md` movidos a `docs/` | ✅ |
-| `futurepilot-globe/README.md` reescrito (era el boilerplate literal de Vite) | ✅ |
+| `web/README.md` reescrito (era el boilerplate literal de Vite) | ✅ |
 | `requirements-dev.txt` creado con `pytest` + `httpx` | ✅ |
 | `.gitignore`: `+.pytest_cache/`, `+*.log`, `−database/data/*` (ya no existe) | ✅ |
 

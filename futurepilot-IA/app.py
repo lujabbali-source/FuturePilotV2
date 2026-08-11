@@ -18,8 +18,8 @@ backend/ se conserva como librería de datos (users_store.py, data/).
 
 Las universidades de America ya no vienen de un catalogo externo (WHED):
 la fuente oficial es el documento de Word curado a mano, volcado a
-futurepilot-globe/src/database/countries/**/*.js via
-futurepilot-globe/scripts/parse_universities_docx.py +
+web/src/database/countries/**/*.js via
+web/scripts/parse_universities_docx.py +
 import_americas_docx.py. El backend no expone rutas de universidades -
 el globo lee esos archivos directamente.
 ===============================================================================
@@ -92,7 +92,7 @@ password_reset_rate_limiter = RateLimiter(max_requests=5, window_seconds=300)
 # Origenes permitidos por CORS: configurables via env (coma-separada) para
 # no tener que tocar codigo por cada entorno (dev/staging/produccion). Los
 # puertos de Vite quedan como default solo para que `npm run dev` en
-# futurepilot-globe/ siga funcionando sin configuracion extra - el sitio
+# web/ siga funcionando sin configuracion extra - el sitio
 # servido por este mismo backend (todo same-origin) no necesita CORS.
 _default_cors_origins = "http://localhost:5173,http://127.0.0.1:5173"
 CORS_ORIGINS = [
@@ -213,7 +213,7 @@ DEFAULT_FEATURE_FLAGS = {
 }
 
 # Bandera por pais para los sellos del Pasaporte - mismos ids que
-# futurepilot-globe/src/database/countries/ (colombia + los 21 de
+# web/src/database/countries/ (colombia + los 21 de
 # americas/index.js). "🌍" es el fallback si algun dia se agrega un pais
 # sin bandera todavia mapeada aqui.
 PASSPORT_COUNTRY_FLAGS = {
@@ -283,24 +283,54 @@ def get_active_flags():
 # --------------------------------------------------------------------------
 app.mount("/Frontend", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
 
-# FuturePilot Globe (futurepilot-globe/) sigue siendo su propio modulo React
-# + Vite, con su propio build - aqui solo se sirve el resultado de
-# `npm run build`. Requiere que vite.config.js tenga base:"/globe/" (si no,
-# los assets del index.html pedirian /assets/... a la raiz del dominio en
-# vez de /globe/assets/..., y la pagina cargaria en blanco).
-GLOBE_DIST_DIR = REPO_ROOT / "futurepilot-globe" / "dist"
-if GLOBE_DIST_DIR.exists():
-    app.mount("/globe", StaticFiles(directory=str(GLOBE_DIST_DIR), html=True), name="globe")
+# Build de web/ (Vite). Empezo siendo solo el globo 3D y va absorbiendo el
+# resto del sitio pagina a pagina - cada pagina migrada es una entrada mas
+# en web/vite.config.js. Las que aun no lo estan se siguen sirviendo desde
+# Frontend/, sin interferir.
+#
+# Todo el dist se monta bajo /app porque vite.config.js declara
+# base:"/app/". El prefijo existe para no chocar con lo que ya sirve este
+# backend en la raiz. Las URLs publicas no cambian: cada pagina tiene su
+# propia ruta mas abajo, que devuelve el HTML compilado correspondiente.
+WEB_DIST_DIR = REPO_ROOT / "web" / "dist"
+WEB_BUILD_AVAILABLE = WEB_DIST_DIR.exists()
+
+if WEB_BUILD_AVAILABLE:
+    app.mount("/app", StaticFiles(directory=str(WEB_DIST_DIR)), name="web")
 else:
     print(
-        f"Advertencia: {GLOBE_DIST_DIR} no existe todavia - corre "
-        "'npm run build' en futurepilot-globe/ para habilitar /globe."
+        f"Advertencia: {WEB_DIST_DIR} no existe todavia - corre "
+        "'npm --prefix web run build' para habilitar las paginas compiladas."
+    )
+
+
+def _web_page(filename: str, fallback: Optional[Path] = None) -> FileResponse:
+    """Sirve una pagina del build de web/. Si el build no existe todavia y
+    la pagina tiene una version sin compilar en Frontend/, se usa esa - asi
+    un checkout limpio sin `npm run build` sigue arrancando en vez de dar
+    500 en media web."""
+    built = WEB_DIST_DIR / filename
+    if built.exists():
+        return FileResponse(str(built))
+    if fallback and fallback.exists():
+        return FileResponse(str(fallback))
+    raise HTTPException(
+        status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+        detail=f"Falta {filename}. Corre 'npm --prefix web run build'.",
     )
 
 
 @app.get("/")
 def home():
     return FileResponse(str(FRONTEND_DIR / "index.html"))
+
+
+@app.get("/globe")
+def globe_page():
+    """El globo se servia con un mount (StaticFiles html=True) bajo /globe.
+    Ahora que web/ construye varias paginas, cada una tiene su ruta y el
+    dist entero se monta una sola vez bajo /app."""
+    return _web_page("globe.html")
 
 
 @app.get("/assessment")
@@ -868,11 +898,11 @@ def _check_ai() -> Dict[str, Any]:
 
 
 def _check_globe() -> Dict[str, Any]:
-    if GLOBE_DIST_DIR.exists():
-        return {"status": "ok", "detail": "futurepilot-globe/dist presente y montado en /globe."}
+    if (WEB_DIST_DIR / "globe.html").exists():
+        return {"status": "ok", "detail": "web/dist presente y montado en /app."}
     return {
         "status": "warning",
-        "detail": "futurepilot-globe/dist no existe todavia - corre 'npm run build' en futurepilot-globe/.",
+        "detail": "web/dist no existe todavia - corre 'npm --prefix web run build'.",
     }
 
 

@@ -1,5 +1,5 @@
 // Motor de traduccion minimo para el sitio vanilla (Frontend/). Comparte la
-// misma clave de localStorage que el globo (futurepilot-globe/src/i18n.js
+// misma clave de localStorage que el globo (web/src/i18n.js
 // usa "futurepilotLanguage" via i18next-browser-languagedetector), asi que
 // cambiar el idioma en cualquiera de los dos lados queda sincronizado con
 // el otro. Solo cubre EN/ES y las claves que de verdad tienen texto
