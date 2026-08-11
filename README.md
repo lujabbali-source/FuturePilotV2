@@ -51,7 +51,7 @@ El backend debe estar levantado en paralelo.
 python -m pytest
 ```
 
-41 tests de integración sobre la API real (auth, admin, assessment, mentor, pasaporte). Usan una
+49 tests de integración sobre la API real (auth, admin, assessment, mentor, pasaporte). Usan una
 base SQLite temporal: **nunca tocan `backend/data/users.sqlite3`**.
 
 ---
@@ -79,7 +79,7 @@ desarrollo. Las que importan:
 futurepilot-IA/          Backend. app.py es el ÚNICO servidor (FastAPI, 45 endpoints):
   app.py                   expone la API y sirve Frontend/ y el build del globo
   ai_engine.py             motor cognitivo rule-based + AI Mentor + memoria por estudiante
-  data/                    FUENTE ÚNICA DE VERDAD: questions.json (50), careers.json
+  data/                    FUENTE ÚNICA DE VERDAD: questions.json (50), careers.json (73)
 
 backend/                 Librería de datos, no arranca ningún servidor propio
   users_store.py           SQLite: usuarios, sesiones, resultados, pasaporte, auditoría

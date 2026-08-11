@@ -5,158 +5,1166 @@
     "category": "Technology",
     "description": "Diseña, construye y optimiza sistemas de software, aplicaciones y arquitecturas digitales escalables.",
     "requirements": {
-      "TECHNICAL": 9.5,
       "ANALYTICAL": 9.0,
-      "PRACTICAL": 8.0,
       "CREATIVE": 7.0,
-      "LEADERSHIP": 6.0,
-      "SOCIAL": 5.0,
-      "SCIENTIFIC": 6.5,
-      "ENTREPRENEURIAL": 7.0
+      "SOCIAL": 4.0,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 9.5,
+      "SCIENTIFIC": 6.0,
+      "PRACTICAL": 8.0,
+      "ENTREPRENEURIAL": 6.0
     }
   },
   {
     "id": "c2",
     "title": "Artificial Intelligence Specialist",
     "category": "Technology",
-    "description": "Desarrolla modelos de aprendizaje automático, redes neuronales y sistemas de inteligencia artificial avanzada.",
+    "description": "Entrena y despliega modelos de aprendizaje automático para resolver problemas que no tienen una regla fija.",
     "requirements": {
-      "TECHNICAL": 9.5,
       "ANALYTICAL": 9.5,
+      "CREATIVE": 6.5,
+      "SOCIAL": 3.5,
+      "LEADERSHIP": 5.0,
+      "TECHNICAL": 9.5,
       "SCIENTIFIC": 9.0,
-      "CREATIVE": 7.5,
-      "LEADERSHIP": 6.0,
-      "SOCIAL": 4.5,
-      "PRACTICAL": 7.0,
-      "ENTREPRENEURIAL": 7.5
+      "PRACTICAL": 6.5,
+      "ENTREPRENEURIAL": 5.5
     }
   },
   {
     "id": "c3",
     "title": "UX/UI Design",
     "category": "Design",
-    "description": "Crea experiencias digitales e interfaces visuales atractivas, accesibles e intuitivas para los usuarios.",
+    "description": "Investiga cómo usan las personas un producto digital y traduce esos hallazgos en interfaces claras.",
     "requirements": {
+      "ANALYTICAL": 6.5,
       "CREATIVE": 9.5,
       "SOCIAL": 8.5,
-      "ANALYTICAL": 7.0,
-      "TECHNICAL": 6.5,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 6.0,
+      "SCIENTIFIC": 3.0,
       "PRACTICAL": 6.0,
-      "LEADERSHIP": 6.0,
-      "ENTREPRENEURIAL": 7.0,
-      "SCIENTIFIC": 4.0
+      "ENTREPRENEURIAL": 6.0
     }
   },
   {
     "id": "c4",
     "title": "Data Science",
     "category": "Technology",
-    "description": "Descubre patrones y tendencias en grandes volúmenes de datos para la toma de decisiones estratégicas.",
+    "description": "Extrae patrones de grandes volúmenes de datos y los convierte en decisiones medibles.",
     "requirements": {
       "ANALYTICAL": 9.5,
-      "SCIENTIFIC": 8.5,
+      "CREATIVE": 5.5,
+      "SOCIAL": 4.0,
+      "LEADERSHIP": 5.0,
       "TECHNICAL": 9.0,
-      "CREATIVE": 6.0,
-      "LEADERSHIP": 5.5,
-      "SOCIAL": 5.0,
-      "ENTREPRENEURIAL": 7.0,
-      "PRACTICAL": 6.0
+      "SCIENTIFIC": 8.5,
+      "PRACTICAL": 6.0,
+      "ENTREPRENEURIAL": 5.5
     }
   },
   {
     "id": "c5",
     "title": "Cybersecurity Specialist",
     "category": "Technology",
-    "description": "Protege infraestructuras digitales, redes y datos críticos contra vulnerabilidades y ciberataques.",
+    "description": "Protege sistemas e información frente a ataques, y responde cuando la defensa falla.",
     "requirements": {
-      "TECHNICAL": 9.0,
       "ANALYTICAL": 9.5,
+      "CREATIVE": 5.0,
+      "SOCIAL": 3.5,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 9.5,
+      "SCIENTIFIC": 6.0,
       "PRACTICAL": 8.5,
-      "CREATIVE": 7.0,
-      "LEADERSHIP": 6.0,
-      "SOCIAL": 4.5,
-      "ENTREPRENEURIAL": 6.0,
-      "SCIENTIFIC": 6.0
+      "ENTREPRENEURIAL": 4.5
     }
   },
   {
     "id": "c6",
     "title": "Business & Entrepreneurship",
     "category": "Business",
-    "description": "Lidera proyectos de emprendimiento, identifica oportunidades de mercado y gestiona modelos de negocio.",
+    "description": "Detecta oportunidades de mercado y construye organizaciones capaces de aprovecharlas.",
     "requirements": {
-      "ENTREPRENEURIAL": 9.5,
-      "LEADERSHIP": 9.0,
+      "ANALYTICAL": 6.5,
+      "CREATIVE": 7.0,
       "SOCIAL": 8.5,
-      "ANALYTICAL": 7.5,
-      "CREATIVE": 7.5,
-      "TECHNICAL": 5.0,
-      "PRACTICAL": 6.0,
-      "SCIENTIFIC": 4.0
+      "LEADERSHIP": 9.5,
+      "TECHNICAL": 4.0,
+      "SCIENTIFIC": 3.0,
+      "PRACTICAL": 6.5,
+      "ENTREPRENEURIAL": 9.5
     }
   },
   {
     "id": "c7",
     "title": "Medicine & Healthcare",
     "category": "Health",
-    "description": "Diagnostica, trata y cuida de la salud de las personas aplicando principios biológicos y médicos.",
+    "description": "Diagnostica y trata a pacientes combinando criterio clínico, ciencia y trato humano.",
     "requirements": {
+      "ANALYTICAL": 8.5,
+      "CREATIVE": 4.0,
       "SOCIAL": 9.5,
+      "LEADERSHIP": 6.5,
+      "TECHNICAL": 5.0,
       "SCIENTIFIC": 9.5,
-      "ANALYTICAL": 9.0,
-      "PRACTICAL": 8.5,
-      "LEADERSHIP": 7.5,
-      "TECHNICAL": 6.5,
-      "CREATIVE": 5.0,
-      "ENTREPRENEURIAL": 5.0
+      "PRACTICAL": 8.0,
+      "ENTREPRENEURIAL": 3.5
     }
   },
   {
     "id": "c8",
     "title": "Psychology",
     "category": "Social Sciences",
-    "description": "Estudia el comportamiento humano, los procesos mentales y acompaña el bienestar emocional.",
+    "description": "Estudia el comportamiento y los procesos mentales para acompañar a personas y organizaciones.",
     "requirements": {
+      "ANALYTICAL": 8.0,
+      "CREATIVE": 6.0,
       "SOCIAL": 9.5,
-      "ANALYTICAL": 8.5,
-      "SCIENTIFIC": 8.0,
-      "LEADERSHIP": 7.0,
-      "CREATIVE": 6.5,
-      "TECHNICAL": 4.0,
-      "PRACTICAL": 5.0,
-      "ENTREPRENEURIAL": 5.5
+      "LEADERSHIP": 6.0,
+      "TECHNICAL": 3.0,
+      "SCIENTIFIC": 7.5,
+      "PRACTICAL": 4.5,
+      "ENTREPRENEURIAL": 4.0
     }
   },
   {
     "id": "c9",
     "title": "Biotechnology",
     "category": "Science",
-    "description": "Aplica la ciencia biológica y la tecnología para desarrollar productos médicos, agrícolas e industriales.",
+    "description": "Aplica organismos y procesos biológicos al desarrollo de fármacos, alimentos y materiales.",
     "requirements": {
-      "SCIENTIFIC": 9.5,
       "ANALYTICAL": 9.0,
+      "CREATIVE": 5.5,
+      "SOCIAL": 4.0,
+      "LEADERSHIP": 5.0,
       "TECHNICAL": 8.0,
-      "PRACTICAL": 8.0,
-      "CREATIVE": 7.0,
-      "LEADERSHIP": 5.5,
-      "SOCIAL": 5.5,
-      "ENTREPRENEURIAL": 6.5
+      "SCIENTIFIC": 9.5,
+      "PRACTICAL": 7.5,
+      "ENTREPRENEURIAL": 5.0
     }
   },
   {
     "id": "c10",
     "title": "Robotics & Automation",
     "category": "Engineering",
-    "description": "Crea y programa robots y sistemas automatizados para optimizar procesos industriales e interactivos.",
+    "description": "Diseña máquinas que perciben su entorno y ejecutan tareas físicas sin supervisión constante.",
     "requirements": {
-      "PRACTICAL": 9.5,
+      "ANALYTICAL": 9.0,
+      "CREATIVE": 6.5,
+      "SOCIAL": 3.5,
+      "LEADERSHIP": 5.0,
       "TECHNICAL": 9.5,
+      "SCIENTIFIC": 8.0,
+      "PRACTICAL": 9.5,
+      "ENTREPRENEURIAL": 5.0
+    }
+  },
+  {
+    "id": "c11",
+    "title": "Economics",
+    "category": "Business",
+    "description": "Analiza cómo se asignan los recursos escasos y modela el efecto de políticas y decisiones.",
+    "requirements": {
+      "ANALYTICAL": 9.5,
+      "CREATIVE": 4.5,
+      "SOCIAL": 6.5,
+      "LEADERSHIP": 7.0,
+      "TECHNICAL": 5.5,
+      "SCIENTIFIC": 6.5,
+      "PRACTICAL": 5.0,
+      "ENTREPRENEURIAL": 6.5
+    }
+  },
+  {
+    "id": "c12",
+    "title": "Mathematics",
+    "category": "Science",
+    "description": "Construye y demuestra estructuras abstractas que sostienen a casi todas las demás ciencias.",
+    "requirements": {
+      "ANALYTICAL": 9.5,
+      "CREATIVE": 6.0,
+      "SOCIAL": 3.0,
+      "LEADERSHIP": 3.5,
+      "TECHNICAL": 7.0,
+      "SCIENTIFIC": 8.5,
+      "PRACTICAL": 4.0,
+      "ENTREPRENEURIAL": 3.0
+    }
+  },
+  {
+    "id": "c13",
+    "title": "Physics",
+    "category": "Science",
+    "description": "Investiga las leyes que rigen la materia y la energía, de lo subatómico a lo cosmológico.",
+    "requirements": {
+      "ANALYTICAL": 9.5,
+      "CREATIVE": 6.5,
+      "SOCIAL": 3.0,
+      "LEADERSHIP": 4.0,
+      "TECHNICAL": 7.5,
+      "SCIENTIFIC": 9.5,
+      "PRACTICAL": 6.5,
+      "ENTREPRENEURIAL": 3.0
+    }
+  },
+  {
+    "id": "c14",
+    "title": "Actuarial Science",
+    "category": "Mathematics & Finance",
+    "description": "Cuantifica el riesgo futuro de eventos inciertos para seguros, pensiones y finanzas.",
+    "requirements": {
+      "ANALYTICAL": 9.5,
+      "CREATIVE": 3.5,
+      "SOCIAL": 4.5,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 7.0,
+      "SCIENTIFIC": 7.0,
+      "PRACTICAL": 5.0,
+      "ENTREPRENEURIAL": 4.5
+    }
+  },
+  {
+    "id": "c15",
+    "title": "Statistics",
+    "category": "Mathematics & Finance",
+    "description": "Diseña cómo recoger datos y qué se puede afirmar honestamente a partir de ellos.",
+    "requirements": {
+      "ANALYTICAL": 9.5,
+      "CREATIVE": 4.0,
+      "SOCIAL": 4.0,
+      "LEADERSHIP": 4.5,
+      "TECHNICAL": 7.5,
+      "SCIENTIFIC": 8.0,
+      "PRACTICAL": 5.0,
+      "ENTREPRENEURIAL": 4.0
+    }
+  },
+  {
+    "id": "c16",
+    "title": "Biochemistry",
+    "category": "Science",
+    "description": "Estudia las reacciones químicas que sostienen la vida a escala molecular.",
+    "requirements": {
+      "ANALYTICAL": 9.0,
+      "CREATIVE": 4.5,
+      "SOCIAL": 4.0,
+      "LEADERSHIP": 4.0,
+      "TECHNICAL": 7.0,
+      "SCIENTIFIC": 9.5,
+      "PRACTICAL": 7.0,
+      "ENTREPRENEURIAL": 3.5
+    }
+  },
+  {
+    "id": "c17",
+    "title": "Chemistry",
+    "category": "Science",
+    "description": "Analiza y sintetiza sustancias, y controla las reacciones que las transforman.",
+    "requirements": {
+      "ANALYTICAL": 8.5,
+      "CREATIVE": 5.0,
+      "SOCIAL": 4.0,
+      "LEADERSHIP": 4.5,
+      "TECHNICAL": 7.0,
+      "SCIENTIFIC": 9.5,
+      "PRACTICAL": 7.5,
+      "ENTREPRENEURIAL": 4.0
+    }
+  },
+  {
+    "id": "c18",
+    "title": "Biomedical Engineering",
+    "category": "Engineering",
+    "description": "Lleva la ingeniería al cuerpo humano: prótesis, imagen médica y dispositivos clínicos.",
+    "requirements": {
+      "ANALYTICAL": 9.0,
+      "CREATIVE": 6.5,
+      "SOCIAL": 6.0,
+      "LEADERSHIP": 5.0,
+      "TECHNICAL": 9.0,
+      "SCIENTIFIC": 9.0,
+      "PRACTICAL": 8.0,
+      "ENTREPRENEURIAL": 5.5
+    }
+  },
+  {
+    "id": "c19",
+    "title": "Environmental Science",
+    "category": "Environment",
+    "description": "Mide el impacto humano sobre los ecosistemas y diseña formas de reducirlo.",
+    "requirements": {
+      "ANALYTICAL": 8.5,
+      "CREATIVE": 5.5,
+      "SOCIAL": 7.0,
+      "LEADERSHIP": 6.0,
+      "TECHNICAL": 6.0,
+      "SCIENTIFIC": 9.0,
+      "PRACTICAL": 7.5,
+      "ENTREPRENEURIAL": 5.0
+    }
+  },
+  {
+    "id": "c20",
+    "title": "Marine Biology",
+    "category": "Science",
+    "description": "Investiga la vida en océanos y costas, y cómo la alteran el clima y la pesca.",
+    "requirements": {
+      "ANALYTICAL": 8.0,
+      "CREATIVE": 5.0,
+      "SOCIAL": 5.0,
+      "LEADERSHIP": 4.5,
+      "TECHNICAL": 5.5,
+      "SCIENTIFIC": 9.5,
+      "PRACTICAL": 8.0,
+      "ENTREPRENEURIAL": 3.5
+    }
+  },
+  {
+    "id": "c21",
+    "title": "Astronomy & Astrophysics",
+    "category": "Science",
+    "description": "Observa y modela estrellas, galaxias y la estructura del universo.",
+    "requirements": {
+      "ANALYTICAL": 9.5,
+      "CREATIVE": 6.0,
+      "SOCIAL": 3.0,
+      "LEADERSHIP": 4.0,
+      "TECHNICAL": 8.0,
+      "SCIENTIFIC": 9.5,
+      "PRACTICAL": 5.5,
+      "ENTREPRENEURIAL": 3.0
+    }
+  },
+  {
+    "id": "c22",
+    "title": "Pharmacy",
+    "category": "Health",
+    "description": "Domina cómo actúan los medicamentos y garantiza que se usen de forma segura.",
+    "requirements": {
+      "ANALYTICAL": 8.5,
+      "CREATIVE": 3.5,
+      "SOCIAL": 7.5,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 5.5,
+      "SCIENTIFIC": 9.5,
+      "PRACTICAL": 7.0,
+      "ENTREPRENEURIAL": 4.5
+    }
+  },
+  {
+    "id": "c23",
+    "title": "Veterinary Medicine",
+    "category": "Health",
+    "description": "Diagnostica y trata animales, desde mascotas hasta producción ganadera y fauna silvestre.",
+    "requirements": {
+      "ANALYTICAL": 8.0,
+      "CREATIVE": 4.0,
+      "SOCIAL": 8.5,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 4.5,
+      "SCIENTIFIC": 9.5,
+      "PRACTICAL": 8.5,
+      "ENTREPRENEURIAL": 4.5
+    }
+  },
+  {
+    "id": "c24",
+    "title": "Nursing",
+    "category": "Health",
+    "description": "Sostiene el cuidado directo del paciente y detecta antes que nadie cuando algo empeora.",
+    "requirements": {
+      "ANALYTICAL": 7.0,
+      "CREATIVE": 4.0,
+      "SOCIAL": 9.5,
+      "LEADERSHIP": 6.5,
+      "TECHNICAL": 4.5,
+      "SCIENTIFIC": 8.0,
+      "PRACTICAL": 9.0,
+      "ENTREPRENEURIAL": 3.5
+    }
+  },
+  {
+    "id": "c25",
+    "title": "Nutrition & Dietetics",
+    "category": "Health",
+    "description": "Traduce la ciencia de la alimentación en planes que la gente pueda sostener.",
+    "requirements": {
+      "ANALYTICAL": 7.5,
+      "CREATIVE": 5.0,
+      "SOCIAL": 9.0,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 4.0,
+      "SCIENTIFIC": 8.5,
+      "PRACTICAL": 7.0,
+      "ENTREPRENEURIAL": 5.0
+    }
+  },
+  {
+    "id": "c26",
+    "title": "Physical Therapy",
+    "category": "Health",
+    "description": "Recupera la movilidad tras lesiones o cirugías mediante ejercicio terapéutico.",
+    "requirements": {
+      "ANALYTICAL": 6.5,
+      "CREATIVE": 4.5,
+      "SOCIAL": 9.5,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 3.5,
+      "SCIENTIFIC": 8.0,
+      "PRACTICAL": 9.0,
+      "ENTREPRENEURIAL": 4.0
+    }
+  },
+  {
+    "id": "c27",
+    "title": "Dentistry",
+    "category": "Health",
+    "description": "Previene y trata problemas bucodentales con un trabajo manual de altísima precisión.",
+    "requirements": {
+      "ANALYTICAL": 7.5,
+      "CREATIVE": 5.5,
+      "SOCIAL": 8.5,
+      "LEADERSHIP": 6.0,
+      "TECHNICAL": 5.5,
+      "SCIENTIFIC": 9.0,
+      "PRACTICAL": 9.5,
+      "ENTREPRENEURIAL": 5.5
+    }
+  },
+  {
+    "id": "c28",
+    "title": "Computer Science",
+    "category": "Technology",
+    "description": "Estudia la computación en sí: algoritmos, complejidad y los límites de lo calculable.",
+    "requirements": {
+      "ANALYTICAL": 9.5,
+      "CREATIVE": 6.0,
+      "SOCIAL": 3.0,
+      "LEADERSHIP": 4.0,
+      "TECHNICAL": 9.5,
+      "SCIENTIFIC": 8.0,
+      "PRACTICAL": 6.0,
+      "ENTREPRENEURIAL": 4.5
+    }
+  },
+  {
+    "id": "c29",
+    "title": "Cloud & DevOps Engineering",
+    "category": "Technology",
+    "description": "Automatiza el despliegue y mantiene en pie la infraestructura donde corre el software.",
+    "requirements": {
+      "ANALYTICAL": 8.5,
+      "CREATIVE": 5.0,
+      "SOCIAL": 5.0,
+      "LEADERSHIP": 6.0,
+      "TECHNICAL": 9.5,
+      "SCIENTIFIC": 5.0,
+      "PRACTICAL": 9.0,
+      "ENTREPRENEURIAL": 5.0
+    }
+  },
+  {
+    "id": "c30",
+    "title": "Game Development",
+    "category": "Technology",
+    "description": "Programa mundos interactivos donde la técnica y la narrativa pesan por igual.",
+    "requirements": {
+      "ANALYTICAL": 8.0,
+      "CREATIVE": 9.0,
+      "SOCIAL": 5.0,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 9.5,
+      "SCIENTIFIC": 5.5,
+      "PRACTICAL": 7.5,
+      "ENTREPRENEURIAL": 6.0
+    }
+  },
+  {
+    "id": "c31",
+    "title": "Mobile App Development",
+    "category": "Technology",
+    "description": "Construye aplicaciones para móvil cuidando rendimiento y experiencia en pantalla pequeña.",
+    "requirements": {
+      "ANALYTICAL": 8.0,
+      "CREATIVE": 7.5,
+      "SOCIAL": 5.0,
+      "LEADERSHIP": 5.0,
+      "TECHNICAL": 9.5,
+      "SCIENTIFIC": 5.0,
+      "PRACTICAL": 8.0,
+      "ENTREPRENEURIAL": 6.5
+    }
+  },
+  {
+    "id": "c32",
+    "title": "Network & Systems Administration",
+    "category": "Technology",
+    "description": "Mantiene funcionando redes y servidores, y responde cuando algo se cae.",
+    "requirements": {
+      "ANALYTICAL": 7.5,
+      "CREATIVE": 4.0,
+      "SOCIAL": 5.0,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 9.0,
+      "SCIENTIFIC": 4.5,
+      "PRACTICAL": 9.5,
+      "ENTREPRENEURIAL": 4.0
+    }
+  },
+  {
+    "id": "c33",
+    "title": "Electrical Engineering",
+    "category": "Engineering",
+    "description": "Diseña circuitos y sistemas eléctricos, del microchip a la red de distribución.",
+    "requirements": {
+      "ANALYTICAL": 9.0,
+      "CREATIVE": 5.5,
+      "SOCIAL": 4.0,
+      "LEADERSHIP": 5.0,
+      "TECHNICAL": 9.5,
+      "SCIENTIFIC": 8.5,
+      "PRACTICAL": 9.0,
+      "ENTREPRENEURIAL": 4.5
+    }
+  },
+  {
+    "id": "c34",
+    "title": "Mechatronics Engineering",
+    "category": "Engineering",
+    "description": "Integra mecánica, electrónica y software en máquinas que funcionan como una sola pieza.",
+    "requirements": {
+      "ANALYTICAL": 8.5,
+      "CREATIVE": 6.5,
+      "SOCIAL": 4.0,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 9.5,
+      "SCIENTIFIC": 7.5,
+      "PRACTICAL": 9.5,
+      "ENTREPRENEURIAL": 5.0
+    }
+  },
+  {
+    "id": "c35",
+    "title": "Graphic Design",
+    "category": "Design",
+    "description": "Comunica ideas mediante composición, tipografía y color.",
+    "requirements": {
+      "ANALYTICAL": 5.5,
+      "CREATIVE": 9.5,
+      "SOCIAL": 7.0,
+      "LEADERSHIP": 5.0,
+      "TECHNICAL": 6.0,
+      "SCIENTIFIC": 2.5,
+      "PRACTICAL": 6.5,
+      "ENTREPRENEURIAL": 6.5
+    }
+  },
+  {
+    "id": "c36",
+    "title": "Architecture",
+    "category": "Design",
+    "description": "Proyecta edificios donde la estética, la estructura y el uso real tienen que convivir.",
+    "requirements": {
+      "ANALYTICAL": 8.0,
+      "CREATIVE": 9.5,
+      "SOCIAL": 7.0,
+      "LEADERSHIP": 6.5,
+      "TECHNICAL": 7.0,
+      "SCIENTIFIC": 6.0,
+      "PRACTICAL": 8.5,
+      "ENTREPRENEURIAL": 6.0
+    }
+  },
+  {
+    "id": "c37",
+    "title": "Animation & Motion Graphics",
+    "category": "Arts",
+    "description": "Da movimiento y intención a personajes y gráficos, cuadro a cuadro.",
+    "requirements": {
+      "ANALYTICAL": 6.0,
+      "CREATIVE": 9.5,
+      "SOCIAL": 5.5,
+      "LEADERSHIP": 4.5,
+      "TECHNICAL": 7.5,
+      "SCIENTIFIC": 3.0,
+      "PRACTICAL": 7.0,
+      "ENTREPRENEURIAL": 5.5
+    }
+  },
+  {
+    "id": "c38",
+    "title": "Digital Media Production",
+    "category": "Communication",
+    "description": "Produce contenido audiovisual pensado para las plataformas donde va a vivir.",
+    "requirements": {
+      "ANALYTICAL": 5.5,
+      "CREATIVE": 9.0,
+      "SOCIAL": 7.5,
+      "LEADERSHIP": 6.0,
+      "TECHNICAL": 6.5,
+      "SCIENTIFIC": 2.5,
+      "PRACTICAL": 7.5,
+      "ENTREPRENEURIAL": 7.5
+    }
+  },
+  {
+    "id": "c39",
+    "title": "Music Production",
+    "category": "Arts",
+    "description": "Compone, graba y mezcla, con oído tan afinado como el manejo técnico del estudio.",
+    "requirements": {
+      "ANALYTICAL": 5.5,
+      "CREATIVE": 9.5,
+      "SOCIAL": 6.0,
+      "LEADERSHIP": 5.0,
+      "TECHNICAL": 7.0,
+      "SCIENTIFIC": 3.5,
+      "PRACTICAL": 7.5,
+      "ENTREPRENEURIAL": 6.5
+    }
+  },
+  {
+    "id": "c40",
+    "title": "Film & Audiovisual Direction",
+    "category": "Arts",
+    "description": "Dirige una historia y al equipo que la lleva a la pantalla.",
+    "requirements": {
+      "ANALYTICAL": 6.0,
+      "CREATIVE": 9.5,
+      "SOCIAL": 8.0,
+      "LEADERSHIP": 8.5,
+      "TECHNICAL": 6.0,
+      "SCIENTIFIC": 2.5,
+      "PRACTICAL": 7.0,
+      "ENTREPRENEURIAL": 6.5
+    }
+  },
+  {
+    "id": "c41",
+    "title": "Fashion Design",
+    "category": "Design",
+    "description": "Diseña prendas donde el concepto tiene que resolverse en patrón y tejido.",
+    "requirements": {
+      "ANALYTICAL": 5.0,
+      "CREATIVE": 9.5,
+      "SOCIAL": 6.5,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 4.5,
+      "SCIENTIFIC": 3.0,
+      "PRACTICAL": 8.0,
+      "ENTREPRENEURIAL": 7.5
+    }
+  },
+  {
+    "id": "c42",
+    "title": "Industrial & Product Design",
+    "category": "Design",
+    "description": "Diseña objetos que se fabrican en serie y deben ser usables, bellos y viables.",
+    "requirements": {
+      "ANALYTICAL": 7.5,
+      "CREATIVE": 9.5,
+      "SOCIAL": 6.5,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 7.5,
+      "SCIENTIFIC": 5.0,
+      "PRACTICAL": 8.5,
+      "ENTREPRENEURIAL": 7.0
+    }
+  },
+  {
+    "id": "c43",
+    "title": "Creative Writing",
+    "category": "Arts",
+    "description": "Construye narrativas y da forma al lenguaje como material de trabajo.",
+    "requirements": {
+      "ANALYTICAL": 6.0,
+      "CREATIVE": 9.5,
+      "SOCIAL": 7.0,
+      "LEADERSHIP": 4.0,
+      "TECHNICAL": 3.0,
+      "SCIENTIFIC": 3.0,
+      "PRACTICAL": 4.0,
+      "ENTREPRENEURIAL": 5.0
+    }
+  },
+  {
+    "id": "c44",
+    "title": "Photography",
+    "category": "Arts",
+    "description": "Captura y compone imágenes, dominando la luz y el instante.",
+    "requirements": {
+      "ANALYTICAL": 5.0,
+      "CREATIVE": 9.5,
+      "SOCIAL": 6.5,
+      "LEADERSHIP": 4.5,
+      "TECHNICAL": 6.0,
+      "SCIENTIFIC": 3.0,
+      "PRACTICAL": 7.5,
+      "ENTREPRENEURIAL": 6.5
+    }
+  },
+  {
+    "id": "c45",
+    "title": "Education & Teaching",
+    "category": "Education",
+    "description": "Diseña experiencias de aprendizaje y acompaña el proceso de cada estudiante.",
+    "requirements": {
+      "ANALYTICAL": 7.0,
+      "CREATIVE": 7.5,
+      "SOCIAL": 9.5,
+      "LEADERSHIP": 7.5,
+      "TECHNICAL": 4.0,
+      "SCIENTIFIC": 5.5,
+      "PRACTICAL": 6.0,
+      "ENTREPRENEURIAL": 4.5
+    }
+  },
+  {
+    "id": "c46",
+    "title": "Law",
+    "category": "Law & Politics",
+    "description": "Interpreta y aplica normas, y defiende posiciones con argumentación rigurosa.",
+    "requirements": {
+      "ANALYTICAL": 9.0,
+      "CREATIVE": 5.5,
+      "SOCIAL": 8.5,
+      "LEADERSHIP": 7.5,
+      "TECHNICAL": 3.5,
+      "SCIENTIFIC": 4.5,
+      "PRACTICAL": 5.0,
+      "ENTREPRENEURIAL": 5.5
+    }
+  },
+  {
+    "id": "c47",
+    "title": "International Relations",
+    "category": "Law & Politics",
+    "description": "Analiza la dinámica entre estados y organismos, y negocia entre culturas distintas.",
+    "requirements": {
+      "ANALYTICAL": 8.5,
+      "CREATIVE": 5.5,
+      "SOCIAL": 9.0,
+      "LEADERSHIP": 8.0,
+      "TECHNICAL": 3.5,
+      "SCIENTIFIC": 5.0,
+      "PRACTICAL": 4.5,
+      "ENTREPRENEURIAL": 6.0
+    }
+  },
+  {
+    "id": "c48",
+    "title": "Journalism",
+    "category": "Communication",
+    "description": "Investiga, verifica y cuenta lo que ocurre con claridad y bajo presión de tiempo.",
+    "requirements": {
+      "ANALYTICAL": 8.0,
+      "CREATIVE": 8.0,
+      "SOCIAL": 9.0,
+      "LEADERSHIP": 6.0,
+      "TECHNICAL": 4.0,
+      "SCIENTIFIC": 5.0,
+      "PRACTICAL": 6.0,
+      "ENTREPRENEURIAL": 5.5
+    }
+  },
+  {
+    "id": "c49",
+    "title": "Social Work",
+    "category": "Social Sciences",
+    "description": "Interviene en situaciones de vulnerabilidad conectando personas con recursos reales.",
+    "requirements": {
+      "ANALYTICAL": 6.5,
+      "CREATIVE": 5.5,
+      "SOCIAL": 9.5,
+      "LEADERSHIP": 7.0,
+      "TECHNICAL": 3.0,
+      "SCIENTIFIC": 5.5,
+      "PRACTICAL": 6.5,
+      "ENTREPRENEURIAL": 4.0
+    }
+  },
+  {
+    "id": "c50",
+    "title": "Sociology",
+    "category": "Social Sciences",
+    "description": "Estudia cómo se organizan las sociedades y por qué cambian.",
+    "requirements": {
+      "ANALYTICAL": 8.5,
+      "CREATIVE": 6.0,
+      "SOCIAL": 9.0,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 4.0,
+      "SCIENTIFIC": 7.0,
+      "PRACTICAL": 4.0,
+      "ENTREPRENEURIAL": 4.0
+    }
+  },
+  {
+    "id": "c51",
+    "title": "Anthropology",
+    "category": "Social Sciences",
+    "description": "Investiga culturas y prácticas humanas mediante trabajo de campo prolongado.",
+    "requirements": {
+      "ANALYTICAL": 8.0,
+      "CREATIVE": 6.5,
+      "SOCIAL": 9.0,
+      "LEADERSHIP": 5.0,
+      "TECHNICAL": 3.5,
+      "SCIENTIFIC": 7.5,
+      "PRACTICAL": 5.5,
+      "ENTREPRENEURIAL": 3.5
+    }
+  },
+  {
+    "id": "c52",
+    "title": "Political Science",
+    "category": "Law & Politics",
+    "description": "Analiza el poder, las instituciones y el diseño de políticas públicas.",
+    "requirements": {
+      "ANALYTICAL": 8.5,
+      "CREATIVE": 5.5,
+      "SOCIAL": 8.5,
+      "LEADERSHIP": 8.0,
+      "TECHNICAL": 4.0,
+      "SCIENTIFIC": 6.0,
+      "PRACTICAL": 4.5,
+      "ENTREPRENEURIAL": 5.5
+    }
+  },
+  {
+    "id": "c53",
+    "title": "Speech Therapy",
+    "category": "Health",
+    "description": "Evalúa y trata dificultades del habla, el lenguaje y la deglución.",
+    "requirements": {
+      "ANALYTICAL": 7.0,
+      "CREATIVE": 6.0,
+      "SOCIAL": 9.5,
+      "LEADERSHIP": 5.0,
+      "TECHNICAL": 3.5,
+      "SCIENTIFIC": 7.5,
+      "PRACTICAL": 7.5,
+      "ENTREPRENEURIAL": 3.5
+    }
+  },
+  {
+    "id": "c54",
+    "title": "Human Resources Management",
+    "category": "Business",
+    "description": "Cuida cómo se contrata, desarrolla y retiene a las personas de una organización.",
+    "requirements": {
+      "ANALYTICAL": 6.5,
+      "CREATIVE": 5.5,
+      "SOCIAL": 9.5,
+      "LEADERSHIP": 8.0,
+      "TECHNICAL": 4.0,
+      "SCIENTIFIC": 4.0,
+      "PRACTICAL": 5.5,
+      "ENTREPRENEURIAL": 6.0
+    }
+  },
+  {
+    "id": "c55",
+    "title": "Business Administration",
+    "category": "Business",
+    "description": "Coordina las áreas de una organización para que funcionen como un sistema.",
+    "requirements": {
+      "ANALYTICAL": 7.5,
+      "CREATIVE": 5.5,
+      "SOCIAL": 8.0,
+      "LEADERSHIP": 9.5,
+      "TECHNICAL": 4.5,
+      "SCIENTIFIC": 3.5,
+      "PRACTICAL": 6.5,
+      "ENTREPRENEURIAL": 8.0
+    }
+  },
+  {
+    "id": "c56",
+    "title": "Finance & Investment",
+    "category": "Mathematics & Finance",
+    "description": "Valora activos y decide dónde poner el capital asumiendo riesgo calculado.",
+    "requirements": {
+      "ANALYTICAL": 9.5,
+      "CREATIVE": 4.0,
+      "SOCIAL": 6.0,
+      "LEADERSHIP": 8.0,
+      "TECHNICAL": 6.0,
+      "SCIENTIFIC": 4.5,
+      "PRACTICAL": 5.0,
+      "ENTREPRENEURIAL": 8.0
+    }
+  },
+  {
+    "id": "c57",
+    "title": "Marketing",
+    "category": "Business",
+    "description": "Entiende a una audiencia y diseña cómo llegar a ella de forma medible.",
+    "requirements": {
+      "ANALYTICAL": 7.5,
+      "CREATIVE": 8.5,
+      "SOCIAL": 8.5,
+      "LEADERSHIP": 7.5,
+      "TECHNICAL": 5.0,
+      "SCIENTIFIC": 3.5,
+      "PRACTICAL": 6.0,
+      "ENTREPRENEURIAL": 8.5
+    }
+  },
+  {
+    "id": "c58",
+    "title": "Project Management",
+    "category": "Business",
+    "description": "Lleva proyectos complejos a término coordinando alcance, plazos y personas.",
+    "requirements": {
+      "ANALYTICAL": 7.5,
+      "CREATIVE": 5.0,
+      "SOCIAL": 8.0,
+      "LEADERSHIP": 9.5,
+      "TECHNICAL": 5.5,
+      "SCIENTIFIC": 3.5,
+      "PRACTICAL": 8.0,
+      "ENTREPRENEURIAL": 6.5
+    }
+  },
+  {
+    "id": "c59",
+    "title": "Supply Chain & Logistics",
+    "category": "Business",
+    "description": "Optimiza el flujo de materiales e información desde el origen hasta el cliente.",
+    "requirements": {
+      "ANALYTICAL": 8.5,
+      "CREATIVE": 4.0,
+      "SOCIAL": 6.0,
+      "LEADERSHIP": 7.5,
+      "TECHNICAL": 6.0,
+      "SCIENTIFIC": 4.0,
+      "PRACTICAL": 9.0,
+      "ENTREPRENEURIAL": 6.0
+    }
+  },
+  {
+    "id": "c60",
+    "title": "Hospitality & Tourism Management",
+    "category": "Business",
+    "description": "Dirige operaciones de servicio donde la experiencia del huésped es el producto.",
+    "requirements": {
+      "ANALYTICAL": 6.0,
+      "CREATIVE": 6.5,
+      "SOCIAL": 9.0,
+      "LEADERSHIP": 8.5,
+      "TECHNICAL": 3.5,
+      "SCIENTIFIC": 3.0,
+      "PRACTICAL": 8.0,
+      "ENTREPRENEURIAL": 7.5
+    }
+  },
+  {
+    "id": "c61",
+    "title": "Mechanical Engineering",
+    "category": "Engineering",
+    "description": "Diseña y valida sistemas mecánicos, de motores a líneas de producción.",
+    "requirements": {
+      "ANALYTICAL": 9.0,
+      "CREATIVE": 6.0,
+      "SOCIAL": 4.0,
+      "LEADERSHIP": 5.5,
+      "TECHNICAL": 8.5,
+      "SCIENTIFIC": 8.5,
+      "PRACTICAL": 9.5,
+      "ENTREPRENEURIAL": 5.0
+    }
+  },
+  {
+    "id": "c62",
+    "title": "Civil Engineering",
+    "category": "Engineering",
+    "description": "Proyecta y construye infraestructura que debe resistir décadas de uso.",
+    "requirements": {
+      "ANALYTICAL": 9.0,
+      "CREATIVE": 5.5,
+      "SOCIAL": 5.5,
+      "LEADERSHIP": 7.0,
+      "TECHNICAL": 8.0,
+      "SCIENTIFIC": 8.0,
+      "PRACTICAL": 9.5,
+      "ENTREPRENEURIAL": 5.0
+    }
+  },
+  {
+    "id": "c63",
+    "title": "Construction Management",
+    "category": "Engineering",
+    "description": "Coordina obra, plazos y presupuesto donde cada retraso cuesta dinero real.",
+    "requirements": {
+      "ANALYTICAL": 7.5,
+      "CREATIVE": 4.5,
+      "SOCIAL": 7.0,
+      "LEADERSHIP": 9.0,
+      "TECHNICAL": 6.5,
+      "SCIENTIFIC": 5.0,
+      "PRACTICAL": 9.5,
+      "ENTREPRENEURIAL": 6.5
+    }
+  },
+  {
+    "id": "c64",
+    "title": "Industrial Engineering",
+    "category": "Engineering",
+    "description": "Rediseña procesos y sistemas de trabajo para producir más con menos desperdicio.",
+    "requirements": {
+      "ANALYTICAL": 9.0,
+      "CREATIVE": 5.5,
+      "SOCIAL": 6.5,
+      "LEADERSHIP": 7.5,
+      "TECHNICAL": 7.5,
+      "SCIENTIFIC": 6.5,
+      "PRACTICAL": 9.0,
+      "ENTREPRENEURIAL": 6.5
+    }
+  },
+  {
+    "id": "c65",
+    "title": "Aviation Maintenance",
+    "category": "Skilled Trades",
+    "description": "Inspecciona y repara aeronaves bajo normativa donde no existe el margen de error.",
+    "requirements": {
+      "ANALYTICAL": 7.5,
+      "CREATIVE": 3.5,
+      "SOCIAL": 4.5,
+      "LEADERSHIP": 5.0,
+      "TECHNICAL": 8.5,
+      "SCIENTIFIC": 6.0,
+      "PRACTICAL": 9.5,
+      "ENTREPRENEURIAL": 3.5
+    }
+  },
+  {
+    "id": "c66",
+    "title": "Commercial Piloting",
+    "category": "Skilled Trades",
+    "description": "Opera aeronaves tomando decisiones rápidas con procedimientos estrictos.",
+    "requirements": {
+      "ANALYTICAL": 8.0,
+      "CREATIVE": 4.0,
+      "SOCIAL": 6.5,
+      "LEADERSHIP": 8.0,
+      "TECHNICAL": 7.5,
+      "SCIENTIFIC": 6.0,
+      "PRACTICAL": 9.5,
+      "ENTREPRENEURIAL": 4.0
+    }
+  },
+  {
+    "id": "c67",
+    "title": "Agricultural Engineering",
+    "category": "Environment",
+    "description": "Aplica ingeniería y biología a producir alimentos de forma sostenible.",
+    "requirements": {
+      "ANALYTICAL": 8.0,
+      "CREATIVE": 5.0,
+      "SOCIAL": 6.0,
+      "LEADERSHIP": 6.5,
+      "TECHNICAL": 7.5,
+      "SCIENTIFIC": 8.5,
+      "PRACTICAL": 9.5,
+      "ENTREPRENEURIAL": 6.0
+    }
+  },
+  {
+    "id": "c68",
+    "title": "Culinary Arts",
+    "category": "Skilled Trades",
+    "description": "Crea y ejecuta propuestas gastronómicas bajo la presión del servicio.",
+    "requirements": {
+      "ANALYTICAL": 5.5,
+      "CREATIVE": 9.0,
+      "SOCIAL": 7.5,
+      "LEADERSHIP": 7.0,
+      "TECHNICAL": 4.5,
+      "SCIENTIFIC": 5.0,
+      "PRACTICAL": 9.5,
+      "ENTREPRENEURIAL": 7.5
+    }
+  },
+  {
+    "id": "c69",
+    "title": "Renewable Energy Technology",
+    "category": "Environment",
+    "description": "Instala y optimiza sistemas de generación limpia, de la solar a la eólica.",
+    "requirements": {
+      "ANALYTICAL": 8.5,
+      "CREATIVE": 5.0,
+      "SOCIAL": 5.5,
+      "LEADERSHIP": 6.0,
+      "TECHNICAL": 9.0,
+      "SCIENTIFIC": 8.0,
+      "PRACTICAL": 9.5,
+      "ENTREPRENEURIAL": 6.0
+    }
+  },
+  {
+    "id": "c70",
+    "title": "Product Management",
+    "category": "Business",
+    "description": "Decide qué construir y por qué, entre lo que quiere el usuario y lo que puede el equipo.",
+    "requirements": {
+      "ANALYTICAL": 8.5,
+      "CREATIVE": 7.5,
+      "SOCIAL": 8.0,
+      "LEADERSHIP": 9.0,
+      "TECHNICAL": 7.0,
+      "SCIENTIFIC": 4.0,
+      "PRACTICAL": 6.5,
+      "ENTREPRENEURIAL": 9.0
+    }
+  },
+  {
+    "id": "c71",
+    "title": "E-Commerce & Digital Business",
+    "category": "Business",
+    "description": "Monta y hace crecer negocios digitales optimizando cada paso de la conversión.",
+    "requirements": {
+      "ANALYTICAL": 8.0,
+      "CREATIVE": 7.0,
+      "SOCIAL": 6.5,
+      "LEADERSHIP": 7.5,
+      "TECHNICAL": 7.0,
+      "SCIENTIFIC": 3.0,
+      "PRACTICAL": 7.0,
+      "ENTREPRENEURIAL": 9.5
+    }
+  },
+  {
+    "id": "c72",
+    "title": "Business Innovation & Consulting",
+    "category": "Business",
+    "description": "Diagnostica problemas de negocio ajenos y diseña la forma de resolverlos.",
+    "requirements": {
       "ANALYTICAL": 9.0,
       "CREATIVE": 7.5,
-      "SCIENTIFIC": 7.5,
-      "LEADERSHIP": 5.5,
-      "ENTREPRENEURIAL": 6.0,
-      "SOCIAL": 4.0
+      "SOCIAL": 8.0,
+      "LEADERSHIP": 8.5,
+      "TECHNICAL": 5.5,
+      "SCIENTIFIC": 4.5,
+      "PRACTICAL": 6.0,
+      "ENTREPRENEURIAL": 9.0
+    }
+  },
+  {
+    "id": "c73",
+    "title": "Advertising & Brand Strategy",
+    "category": "Communication",
+    "description": "Construye el significado de una marca y las campañas que lo sostienen.",
+    "requirements": {
+      "ANALYTICAL": 7.0,
+      "CREATIVE": 9.0,
+      "SOCIAL": 8.5,
+      "LEADERSHIP": 7.5,
+      "TECHNICAL": 4.5,
+      "SCIENTIFIC": 3.0,
+      "PRACTICAL": 6.0,
+      "ENTREPRENEURIAL": 8.5
     }
   }
 ]

@@ -175,11 +175,28 @@ function renderAnalysis() {
 }
 function renderPartialResults() {
   const assessmentResult = assessmentEngine.buildAssessmentResult(results);
-  const careers = assessmentResult.topThree.map(([cluster], index) => ({ name: assessmentEngine.careerMap[cluster]?.[0] || assessmentResult.recommendedCareers[index] || "Career path", percentage: assessmentResult.clusterPercentages[cluster] || 0, cluster }));
   localStorage.setItem(RESULTS_KEY, JSON.stringify(assessmentResult));
-  localStorage.setItem("selectedCareer", assessmentResult.topCareer);
   localStorage.setItem("academicLevel", `${assessmentResult.mathLevel} / ${assessmentResult.englishLevel}`);
-  app.innerHTML = `<main class="results-screen screen-enter"><div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span><span class="result-chip">ANÁLISIS COMPLETADO <b>✓</b></span></div><section class="results-intro"><p class="eyebrow"><span class="eyebrow-dot"></span> TU PRIMERA SEÑAL</p><h1>Hay algo especial<br><span>en tu combinación.</span></h1><p>Estas son las primeras rutas que aparecen al mirar tu perfil. Lo mejor todavía está por desbloquearse.</p></section><section class="career-reveal"><div class="section-label"><span>TUS 3 CARRERAS PRINCIPALES</span><span>COINCIDENCIA</span></div>${careers.map((career, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(career.name)}</span><span class="career-score"><strong>${career.percentage}%</strong><span class="mini-bar"><i style="width:${career.percentage}%"></i></span></span></div>`).join("")}<div class="curiosity-line"><span>✦</span> Tu perfil tiene más matices de los que caben aquí.</div></section><section class="found-section"><h2>Tu perfil ya está trabajando por ti.</h2><div class="found-grid"><div>✓ <span>Encontramos universidades compatibles</span></div><div>✓ <span>Encontramos posibles becas</span></div><div>✓ <span>Generamos un roadmap personalizado</span></div><div>✓ <span>Creamos un plan académico</span></div></div></section><button type="button" class="primary-action primary-action--wide" data-action="unlock">Descubrir mi plan completo <span>→</span></button><p class="results-footnote">Tus resultados parciales quedan guardados. El acceso completo es gratuito.</p></main>`;
+
+  // Las carreras salen del MISMO resultado que veran al desbloquear: esta
+  // pantalla es una vista recortada de aiResult, no un segundo calculo.
+  // Registrarse revela mas profundidad (justificaciones, roadmap, brechas,
+  // universidades), nunca un veredicto distinto.
+  if (!aiResult) return renderPartialUnavailable(assessmentResult);
+
+  const careers = (aiResult.recommended_careers || []).slice(0, 3).map((career) => ({
+    name: career.title,
+    percentage: Math.round(career.match_percentage),
+  }));
+  if (!careers.length) return renderPartialUnavailable(assessmentResult);
+
+  // Lo consumen /journey y /flightplan. Debe ser la carrera real, no la
+  // que adivinaba el motor local.
+  localStorage.setItem("selectedCareer", careers[0].name);
+  // El copy no promete que el resultado vaya a cambiar al registrarse -
+  // porque no cambia. Lo que se desbloquea es profundidad sobre ESTAS
+  // mismas carreras, y eso es lo que enumera la lista de abajo.
+  app.innerHTML = `<main class="results-screen screen-enter"><div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span><span class="result-chip">ANÁLISIS COMPLETADO <b>✓</b></span></div><section class="results-intro"><p class="eyebrow"><span class="eyebrow-dot"></span> TU RESULTADO</p><h1>Hay algo especial<br><span>en tu combinación.</span></h1><p>Estas son tus carreras más compatibles. Son las definitivas: crear tu cuenta no las cambia, te muestra por qué salieron y qué hacer con ellas.</p></section><section class="career-reveal"><div class="section-label"><span>TUS 3 CARRERAS PRINCIPALES</span><span>COINCIDENCIA</span></div>${careers.map((career, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(career.name)}</span><span class="career-score"><strong>${career.percentage}%</strong><span class="mini-bar"><i style="width:${career.percentage}%"></i></span></span></div>`).join("")}<div class="curiosity-line"><span>✦</span> Tu perfil tiene más matices de los que caben aquí.</div></section><section class="found-section"><h2>Lo que te falta por ver.</h2><div class="found-grid"><div>🔒 <span>Por qué encaja cada carrera contigo</span></div><div>🔒 <span>Tus fortalezas y brechas por carrera</span></div><div>🔒 <span>Tu roadmap paso a paso</span></div><div>🔒 <span>Universidades y destinos compatibles</span></div></div></section><button type="button" class="primary-action primary-action--wide" data-action="unlock">Desbloquear mi análisis completo <span>→</span></button><p class="results-footnote">Tu resultado queda guardado. El acceso completo es gratuito.</p></main>`;
 }
 
 async function handleUnlock() {
@@ -213,6 +230,40 @@ function renderUnlock() {
   // localStorage) se reclama del lado de login.js apenas termina el
   // registro/login, antes de volver aca.
   app.innerHTML = `<main class="unlock-screen screen-enter"><div class="unlock-glow"></div><span class="unlock-icon">✦</span><p class="eyebrow"><span class="eyebrow-dot"></span> TU PERFIL YA ESTÁ LISTO</p><h1>Ahora sí, vamos a<br><span>despegar.</span></h1><p class="unlock-copy">Crea una cuenta gratuita para guardar tu perfil y descubrir todo lo que FuturePilot preparó para ti.</p><section class="unlock-list"><div><b>✓</b> Universidades compatibles</div><div><b>✓</b> Becas y oportunidades</div><div><b>✓</b> Costos de vida</div><div><b>✓</b> Comparador de ciudades</div><div><b>✓</b> Roadmap personalizado</div><div><b>✓</b> Seguimiento de progreso</div></section><div class="auth-actions"><button type="button" class="primary-action" data-action="go-to-login" data-mode="register">Crear cuenta gratis <span>→</span></button><button type="button" class="secondary-action secondary-action--large" data-action="go-to-login" data-mode="login">Ya tengo una cuenta</button></div><p class="auth-note">Sin tarjeta de crédito · Tus resultados siempre son tuyos</p></main>`;
+}
+
+// Etiquetas legibles de los 8 clusters de ProfileEngine. Se usan cuando
+// solo podemos hablar del perfil, no de carreras concretas.
+const CLUSTER_LABELS = {
+  ANALYTICAL: "Analítico", SCIENTIFIC: "Científico", TECHNICAL: "Técnico",
+  CREATIVE: "Creativo", SOCIAL: "Social", LEADERSHIP: "Liderazgo",
+  PRACTICAL: "Práctico", ENTREPRENEURIAL: "Emprendedor",
+};
+
+/** El analisis del servidor no llego. Antes esta pantalla caia en el motor
+ *  local y enseñaba carreras inventadas por un catalogo paralelo - que es
+ *  justo lo que se elimino. Ahora se muestra lo unico que si sabemos con
+ *  certeza (que dimensiones dominan su perfil, calculadas con los mismos
+ *  ocho clusters del backend) y se ofrece reintentar. Preferimos decir
+ *  menos a decir algo que luego se contradice. */
+function renderPartialUnavailable(assessmentResult) {
+  const dims = assessmentResult.topThree
+    .map(([cluster]) => ({ label: CLUSTER_LABELS[cluster] || cluster, pct: assessmentResult.clusterPercentages[cluster] || 0 }));
+
+  app.innerHTML = `<main class="results-screen screen-enter">
+    <div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span></div>
+    <section class="results-intro">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> TU PERFIL, DE MOMENTO</p>
+      <h1>Ya vemos tu forma,<br><span>nos falta el detalle.</span></h1>
+      <p>Estas son las dimensiones que más pesan en tus respuestas. Para cruzarlas con carreras concretas necesitamos completar el análisis.</p>
+    </section>
+    <section class="career-reveal">
+      <div class="section-label"><span>TUS DIMENSIONES DOMINANTES</span><span>PESO</span></div>
+      ${dims.map((dim, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(dim.label)}</span><span class="career-score"><strong>${dim.pct}%</strong><span class="mini-bar"><i style="width:${dim.pct}%"></i></span></span></div>`).join("")}
+    </section>
+    <p>${escapeHtml(aiError || "No pudimos completar el análisis. Tus respuestas siguen guardadas.")}</p>
+    <button type="button" class="primary-action primary-action--wide" data-action="retry-analysis">Completar mi análisis <span>→</span></button>
+  </main>`;
 }
 
 function renderFullResults() {

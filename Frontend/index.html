@@ -76,8 +76,13 @@ Explore the Globe
 </div>
 <div class="hero-stats">
 
+    <!-- El numero sale del catalogo real (/api/v1/careers), no de una
+         cifra escrita a mano: decia "100+" cuando careers.json tenia 10
+         carreras. Cualquier valor fijo aqui vuelve a quedar desfasado en
+         cuanto el catalogo cambie. El contenido del <h3> es solo el
+         fallback si la API no responde. -->
     <div class="stat">
-        <h3>100+</h3>
+        <h3 id="careerCountStat">70+</h3>
         <p data-i18n="hero.stat1">Career Paths</p>
     </div>
 

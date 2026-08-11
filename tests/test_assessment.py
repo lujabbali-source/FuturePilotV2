@@ -2,6 +2,120 @@
 aislamiento entre sesiones anonimas."""
 
 
+CLUSTERS = [
+    "ANALYTICAL", "CREATIVE", "SOCIAL", "LEADERSHIP",
+    "TECHNICAL", "SCIENTIFIC", "PRACTICAL", "ENTREPRENEURIAL",
+]
+
+
+def test_career_catalog_is_well_formed(client):
+    """El catalogo es la unica autoridad sobre que carreras existen (antes
+    el frontend tenia su propia lista de 39 nombres, de los que solo 4
+    coincidian). Si una carrera llega con el vector incompleto, el coseno
+    la puntua con un 5.0 por defecto y queda comparandose contra algo que
+    nadie escribio."""
+    careers = client.get("/api/v1/careers").json()["careers"]
+    assert len(careers) >= 40, f"catalogo demasiado pequeño para discriminar: {len(careers)}"
+
+    ids = [career["id"] for career in careers]
+    titles = [career["title"] for career in careers]
+    assert len(ids) == len(set(ids)), "hay ids duplicados"
+    assert len(titles) == len(set(titles)), "hay titulos duplicados"
+
+    for career in careers:
+        assert career["title"] and career["category"] and career["description"]
+        requirements = career["requirements"]
+        assert set(requirements) == set(CLUSTERS), f"{career['title']}: clusters {set(requirements)}"
+        assert all(1.0 <= value <= 10.0 for value in requirements.values()), career["title"]
+
+
+def test_original_career_ids_are_preserved(client):
+    """test_results.top_career_id guarda estos ids. Renumerar el catalogo
+    dejaria los resultados historicos apuntando a carreras que ya no son
+    las mismas."""
+    careers = {career["id"]: career["title"] for career in client.get("/api/v1/careers").json()["careers"]}
+    assert careers.get("c1") == "Software Engineering"
+    assert careers.get("c7") == "Medicine & Healthcare"
+    assert careers.get("c10") == "Robotics & Automation"
+
+
+def _answers_favouring(questions: list, clusters: set) -> list:
+    """Construye un set de respuestas que marca fuerte los clusters dados y
+    flojo el resto.
+
+    Cada pregunta de questions.json es un item Likert de UN solo cluster:
+    el indice 0 es "Strongly Agree" (4 puntos) y el ultimo "Strongly
+    Disagree" (0). Responder el mismo indice a todo NO produce un perfil
+    inclinado - produce uno plano, porque cada pregunta apunta a un cluster
+    distinto. Hay que elegir el indice segun el cluster de cada pregunta.
+    """
+    answers = []
+    for index, question in enumerate(questions):
+        options = question.get("answers") or []
+        if not options:
+            continue
+        cluster = (options[0].get("cluster") or "").upper()
+        answers.append({
+            "question_index": index,
+            "answer_index": 0 if cluster in clusters else len(options) - 1,
+        })
+    return answers
+
+
+def test_different_profiles_get_different_top_careers(client):
+    """Con 10 carreras el ranking devolvia practicamente la misma lista
+    para cualquier perfil. El catalogo ampliado tiene que discriminar: un
+    perfil tecnico y uno social no pueden terminar en la misma carrera."""
+    questions = client.get("/api/v1/questions").json()["questions"]
+
+    tecnico = _answers_favouring(questions, {"TECHNICAL", "ANALYTICAL"})
+    social = _answers_favouring(questions, {"SOCIAL", "CREATIVE"})
+
+    result_a = client.post("/api/v1/assess", json={"answers": tecnico, "anon_id": "prof-a"}).json()
+    result_b = client.post("/api/v1/assess", json={"answers": social, "anon_id": "prof-b"}).json()
+
+    top_a = result_a["data"]["recommended_careers"][0]["title"]
+    top_b = result_b["data"]["recommended_careers"][0]["title"]
+    assert top_a != top_b, f"perfiles opuestos reciben la misma carrera: {top_a}"
+
+    # Y no solo la primera: las recomendaciones apenas deben solaparse.
+    careers_a = {c["title"] for c in result_a["data"]["recommended_careers"]}
+    careers_b = {c["title"] for c in result_b["data"]["recommended_careers"]}
+    solapamiento = careers_a & careers_b
+    assert len(solapamiento) <= 1, f"perfiles opuestos comparten {len(solapamiento)} carreras: {solapamiento}"
+
+
+def test_assess_returns_a_shortlist_not_the_whole_catalog(client, sample_answers):
+    """rank_careers puntua las 73 carreras del catalogo, pero la respuesta
+    solo debe traer las mejores. Devolverlas todas metia 73 fichas con su
+    justificacion en cada respuesta, en results_json y en la pantalla de
+    resultados - invisible con 10 carreras, no con 73."""
+    from ai_engine import TOP_MATCHES_RETURNED
+
+    catalog_size = len(client.get("/api/v1/careers").json()["careers"])
+    careers = client.post(
+        "/api/v1/assess", json={"answers": sample_answers, "anon_id": "shortlist"}
+    ).json()["data"]["recommended_careers"]
+
+    assert len(careers) == TOP_MATCHES_RETURNED
+    assert len(careers) < catalog_size
+
+    # Y vienen ordenadas de mejor a peor.
+    scores = [career["match_percentage"] for career in careers]
+    assert scores == sorted(scores, reverse=True)
+
+
+def test_recommended_careers_come_from_the_catalog(client, sample_answers):
+    """Nada de lo que se le enseña al estudiante puede salir de fuera del
+    catalogo - es lo que garantiza que la pantalla parcial y la completa
+    hablen de las mismas carreras."""
+    catalog = {career["title"] for career in client.get("/api/v1/careers").json()["careers"]}
+    result = client.post("/api/v1/assess", json={"answers": sample_answers, "anon_id": "cat"}).json()
+
+    for career in result["data"]["recommended_careers"]:
+        assert career["title"] in catalog, f"'{career['title']}' no existe en careers.json"
+
+
 def test_assess_requires_at_least_one_answer(client):
     r = client.post("/api/v1/assess", json={"answers": []})
     assert r.status_code == 400

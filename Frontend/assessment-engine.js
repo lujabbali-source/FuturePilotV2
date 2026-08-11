@@ -1,18 +1,23 @@
 (() => {
-// The assessment engine stays intentionally close to the original MVP logic.
-// The new UI only supplies answer indexes; scoring and recommendations remain here.
-const careerMap = {
-  ANALYTICAL: ["Data Science", "Economics", "Mathematics", "Physics", "Actuarial Science"],
-  SCIENTIFIC: ["Medicine", "Biotechnology", "Biochemistry", "Chemistry", "Biomedical Engineering"],
-  TECHNICAL: ["Software Engineering", "Computer Science", "Cybersecurity", "Artificial Intelligence", "Robotics"],
-  CREATIVE: ["Graphic Design", "Architecture", "Animation", "Digital Media", "Music Production"],
-  SOCIAL: ["Psychology", "Education", "Law", "International Relations", "Journalism"],
-  LEADERSHIP: ["Business Administration", "Finance", "Marketing", "Management", "Entrepreneurship"],
-  PRACTICAL: ["Mechanical Engineering", "Civil Engineering", "Construction", "Industrial Engineering", "Aviation Maintenance"],
-  ENTREPRENEURIAL: ["Entrepreneurship", "Business Innovation", "E-Commerce", "Startups", "Product Management"],
-};
-
-const clusterNames = Object.keys(careerMap);
+// Motor LOCAL del test. Calcula el perfil por clusters mientras el
+// estudiante responde: progreso, nivel academico y estilo de aprendizaje.
+//
+// Lo que este archivo ya NO hace es decidir que carrera le corresponde.
+// Antes tenia un careerMap propio con 39 nombres hardcodeados, del que
+// solo 4 existian en el catalogo real del backend
+// (futurepilot-IA/data/careers.json). El resultado era que la pantalla de
+// resultados parciales prometia una carrera y la de resultados completos,
+// calculada por el motor real, mostraba otra distinta. Dos veredictos
+// incompatibles sobre el futuro del estudiante con minutos de diferencia.
+//
+// La unica autoridad sobre que carrera encaja es el backend
+// (DecisionEngine, coseno contra los requisitos de cada carrera). Los
+// clusters que se calculan aqui son los MISMOS ocho que usa el servidor,
+// asi que son complementarios, no una segunda opinion.
+const clusterNames = [
+  "ANALYTICAL", "SCIENTIFIC", "TECHNICAL", "CREATIVE",
+  "SOCIAL", "LEADERSHIP", "PRACTICAL", "ENTREPRENEURIAL",
+];
 
 function createInitialResults() {
   return {
@@ -74,14 +79,14 @@ function buildAssessmentResult(results) {
     clusterPercentages[cluster] = max === 0 ? 0 : Math.round((results.clusters[cluster] / max) * 100);
   }
 
-  const recommendedCareers = careerMap[strongestCluster];
   const mathLevel = results.mathScore >= 5 ? "Advanced" : results.mathScore >= 4 ? "Intermediate" : "Beginner";
   const englishLevel = results.englishScore >= 5 ? "Advanced" : results.englishScore >= 3 ? "Intermediate" : "Beginner";
 
+  // Sin topCareer ni recommendedCareers: los nombres de carrera vienen del
+  // backend. Aqui solo se describe el PERFIL (que clusters dominan y con
+  // que fuerza relativa), que es lo que este motor puede afirmar de verdad.
   return {
-    topCareer: recommendedCareers[0],
     cluster: strongestCluster,
-    recommendedCareers,
     topThree: sortedClusters.slice(0, 3),
     clusterPercentages,
     allClusterScores: results.clusters,
@@ -93,7 +98,7 @@ function buildAssessmentResult(results) {
 }
 
 window.FuturePilotAssessmentEngine = {
-  careerMap,
+  clusterNames,
   applyAnswer,
   buildAssessmentResult,
   calculateResults,

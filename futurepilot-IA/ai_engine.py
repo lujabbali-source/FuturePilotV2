@@ -302,6 +302,15 @@ class ReasoningEngine:
         return hypotheses
 
 
+# Cuantas carreras del ranking se devuelven al cliente y se guardan en la
+# memoria del estudiante. rank_careers puntua el catalogo ENTERO (hoy 73
+# carreras), pero devolverlo entero significa mandar 73 fichas con su
+# justificacion generada en cada /api/v1/assess, guardarlas en
+# results_json y pintarlas todas en la pantalla de resultados. Con las 10
+# carreras iniciales la diferencia no se notaba; ya no es el caso.
+TOP_MATCHES_RETURNED = 8
+
+
 class DecisionEngine:
     """
     Módulo de Toma de Decisiones y Coincidencia Vectorial.
@@ -729,7 +738,7 @@ class FuturePilotBrain:
             "timestamp": datetime.now().isoformat(),
             "vector": user_vector,
             "top_choice": top_match["title"] if top_match else None,
-            "top_matches": ranked_matches[:5],
+            "top_matches": ranked_matches[:TOP_MATCHES_RETURNED],
             "roadmap": roadmap,
             "personality": personality,
             "learning_style": learning_style,
@@ -742,7 +751,7 @@ class FuturePilotBrain:
         # Paso 9: Construir Respuesta Unificada
         return self.builder.assemble(
             top_career=top_match,
-            top_matches=ranked_matches,
+            top_matches=ranked_matches[:TOP_MATCHES_RETURNED],
             roadmap=roadmap,
             reasoning=reasoning_text,
             confidence=confidence,

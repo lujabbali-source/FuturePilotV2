@@ -10,9 +10,10 @@
 > - ✅ **Fase 1 — Limpieza: COMPLETADA.** ~1.300 líneas de código muerto eliminadas, docs creadas.
 > - ✅ **Integridad del resultado: COMPLETADA.** El resultado del test ya no puede perderse en el
 >   punto de conversión. Ver §7.1.
-> - ⬜ Unificación del veredicto (un solo motor de scoring) y siguientes fases, pendientes.
+> - ✅ **Un solo veredicto (B4) + catálogo de 73 carreras: COMPLETADO.** Ver §Fase 2.
+> - ⬜ Resto de la Fase 2 y fases 3-4, pendientes.
 >
-> **Suite de tests: 44 pasan** (38 originales + 6 de regresión añadidos).
+> **Suite de tests: 49 pasan** (38 originales + 11 de regresión añadidos).
 > El análisis de las secciones §1-§6 describe el estado **previo** a estas correcciones y se
 > conserva como registro de la auditoría.
 
@@ -59,7 +60,7 @@ consolidar el frontend sobre el Vite que ya existe, de forma incremental.
 |---|---|---|
 | `futurepilot-IA/app.py` | **Único servidor.** 45 endpoints + sirve todo el sitio estático | FastAPI + Uvicorn |
 | `futurepilot-IA/ai_engine.py` | Motor cognitivo rule-based: percepción → perfil → razonamiento → decisión → roadmap. Incluye `MentorEngine` (chat) y memoria persistente por estudiante en JSON con file-locking | Python stdlib |
-| `futurepilot-IA/data/` | **Fuente única de verdad**: `questions.json` (50), `careers.json` (10) | JSON |
+| `futurepilot-IA/data/` | **Fuente única de verdad**: `questions.json` (50), `careers.json` (73) | JSON |
 | `backend/users_store.py` | Capa de datos SQLite: usuarios, sesiones, resets, resultados, pasaporte, auditoría admin | sqlite3 stdlib |
 | `backend/rate_limiter.py`, `mailer.py`, `config_store.py` | Rate limiting en memoria, SMTP opcional, config JSON para Theme Lab y feature flags | stdlib |
 | `Frontend/` | Sitio del estudiante: landing, test, carreras, journey, flightplan, pasaporte, login, legales | HTML/CSS/JS vanilla |
@@ -534,23 +535,60 @@ asociado sin pasar por el claim.
 
 ---
 
-### 🎯 Fase 2 — Coherencia de producto (2-3 días)
+### 🎯 Fase 2 — Coherencia de producto
 
-Los bugs importantes que el usuario sí percibe.
+#### ✅ B4 — Un solo veredicto — COMPLETADO
 
-1. **Unificar el scoring (B4).** Que la pantalla de resultados parciales se derive del mismo
-   catálogo que la completa. La vía más limpia: adelantar la llamada a `/api/v1/assess` y construir
-   los parciales a partir de `user_vector` + `recommended_careers` reales. Esto permite **borrar
-   `assessment-engine.js` entero** (103 líneas de lógica duplicada).
-2. **Ampliar `careers.json`.** Con 10 carreras, el motor de coseno no puede discriminar. Un mínimo
-   realista son 30-40 para que el ranking signifique algo — y alinear la cifra que promete la
-   landing con la realidad.
-3. **Arreglar el `Doctor` del globo (I2):** honrar `ENABLE_DOCTOR` o borrar el componente.
-4. **Arreglar el título duplicado del globo (I3):** clave i18n propia para el eyebrow.
-5. **Unificar las rutas de CSS (I4):** todas a `/Frontend/…`; borrar las rutas one-off de `app.py`.
-6. **`QUESTION_COUNT` derivado de `questions.length`**, no hardcodeado.
-7. **`journey.html` y `flightplan.html`** deben leer de `/api/v1/me/results` cuando hay sesión, con
+El estudiante recibía dos respuestas incompatibles con minutos de diferencia: la pantalla parcial
+salía de un `careerMap` hardcodeado en el navegador y la completa del motor real. De las 39
+carreras del frontend y las 10 del backend, **solo 4 coincidían**.
+
+| Cambio | Detalle |
+|---|---|
+| `careerMap` eliminado de `assessment-engine.js` | El motor local conserva lo que sí puede afirmar (clusters, nivel académico, estilo de aprendizaje) y deja de nombrar carreras |
+| La pantalla parcial lee `aiResult` | Es una vista recortada del **mismo** resultado, no un segundo cálculo. `renderAnalysis` ya esperaba la respuesta real; simplemente se ignoraba |
+| `selectedCareer` en `localStorage` | Guarda la carrera real (lo consumen `/journey` y `/flightplan`) |
+| Copy reescrito | Ya no promete que el resultado cambiará: enumera lo que se **desbloquea** (justificaciones, brechas, roadmap, universidades) |
+| Sin analisis del servidor, no se inventan carreras | Se muestran las dimensiones dominantes del perfil y un botón de reintento. Antes caía al catálogo paralelo |
+
+#### ✅ Catálogo ampliado — COMPLETADO
+
+**De 10 a 73 carreras**, en 14 categorías, con vectores de requisitos escritos con contraste real
+(rango 2,5–9,5 en vez de 5,0–9,5). Los ids `c1`–`c10` se conservan intactos porque
+`test_results.top_career_id` ya los referencia.
+
+El catálogo absorbe las 39 carreras que solo existían en el frontend, así que ninguna de las que el
+estudiante podía ver antes desapareció.
+
+Antes el coseno devolvía casi la misma lista para cualquier perfil. Ahora discrimina:
+
+| Perfil | Top-3 | Rango del ranking |
+|---|---|---|
+| Técnico / analítico | Computer Science · Cybersecurity · Statistics | 70,6 % → 31,0 % |
+| Social / creativo | Creative Writing · UX/UI Design · Graphic Design | 73,8 % → 32,5 % |
+
+**Hallazgo al ampliar:** `run_cognitive_cycle` devolvía `ranked_matches` **entero**. Con 10 carreras
+pasaba desapercibido; con 73 significaba mandar las 73 fichas con su justificación generada en cada
+`/api/v1/assess`, guardarlas en `results_json` y pintarlas todas en la pantalla de resultados. Se
+recorta en el origen con `TOP_MATCHES_RETURNED = 8`.
+
+**La cifra de la landing ya no se escribe a mano.** Decía «100+» con 10 carreras en el catálogo;
+ahora sale de `/api/v1/careers`, así que no puede volver a desfasarse.
+
+**5 tests nuevos:** integridad del catálogo, ids originales preservados, perfiles opuestos con
+recomendaciones distintas, recomendaciones siempre dentro del catálogo, y respuesta recortada.
+
+#### ⬜ Pendiente en esta fase
+
+1. **Arreglar el `Doctor` del globo (I2):** honrar `ENABLE_DOCTOR` o borrar el componente.
+2. **Arreglar el título duplicado del globo (I3):** clave i18n propia para el eyebrow.
+3. ~~Unificar las rutas de CSS (I4)~~ — hecho en la Fase 0.
+4. **`QUESTION_COUNT` derivado de `questions.length`**, no hardcodeado.
+5. **`journey.html` y `flightplan.html`** deben leer de `/api/v1/me/results` cuando hay sesión, con
    `localStorage` solo como caché.
+6. **Los porcentajes siguen comprimidos.** El coseno sobre vectores todo-positivos da 98 %, 98 %,
+   97 % para el top-3: correcto en orden, pero poco informativo para el estudiante. Merece una
+   normalización de la escala mostrada.
 
 ---
 
