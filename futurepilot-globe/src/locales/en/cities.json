@@ -55,6 +55,7 @@
       "noInstitutions": "No universities found",
       "officialWebsiteLink": "Official website ↗",
       "nationalRanking": "National ranking"
-    }
+    },
+    "regionalNote": "Estimated regional-level data: {{region}}"
   }
 }

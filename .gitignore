@@ -1,7 +1,3 @@
-database/data/*.sqlite
-database/data/*.sqlite-shm
-database/data/*.sqlite-wal
-
 # Secrets
 .env
 *.env.local
@@ -11,6 +7,7 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+.pytest_cache/
 backend/data/*.sqlite3
 backend/data/*.sqlite3-wal
 backend/data/*.sqlite3-shm
@@ -32,3 +29,4 @@ futurepilot-IA/data/users/*.json
 # OS / editor noise
 desktop.ini
 *.lnk
+*.log

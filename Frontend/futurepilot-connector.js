@@ -9,7 +9,12 @@
  */
 
 (() => {
-  const API_URL = "http://127.0.0.1:8000";
+  // Rutas relativas, nunca un host absoluto: el backend unificado
+  // (futurepilot-IA/app.py) sirve estas paginas y la API desde el mismo
+  // origen, asi que "/api/v1/..." funciona en local y en cualquier dominio
+  // real. Un "http://127.0.0.1:8000" hardcodeado aqui hacia que el sitio
+  // desplegado le hablara a la maquina del propio visitante - y la CSP
+  // (connect-src 'self', ver app.py) bloqueaba la peticion de todas formas.
   const AI_STORAGE_KEY = "futurePilotAIResponse";
   const USER_ANSWERS_KEY = "futurePilotAssessment";
   const RESULT_ID_KEY = "futurePilotResultId";
@@ -40,15 +45,28 @@
       return null;
     }
 
-    // Formatear payload para app.py (question_index y answer_index)
-    const formattedAnswers = rawAnswers.map((ans, idx) => ({
-      question_index: idx,
-      answer_index: ans && ans.answerIndex !== undefined && ans.answerIndex !== null ? ans.answerIndex : 0
-    }));
+    // Formatear payload para app.py (question_index y answer_index).
+    //
+    // Las preguntas saltadas ("Aun no lo se", ver skipQuestion en
+    // assessment.js) quedan con answerIndex null y se OMITEN del payload.
+    // Antes se mandaban como answer_index: 0, que en questions.json es
+    // "Strongly Agree" (4 puntos, el maximo): saltar una pregunta sumaba
+    // en silencio la respuesta mas fuerte posible y corrompia el perfil.
+    // question_index se toma del indice real en el array, no de la
+    // posicion tras filtrar, para que siga apuntando a la pregunta
+    // correcta en questions_db.
+    const formattedAnswers = rawAnswers
+      .map((ans, idx) => ({ question_index: idx, answer_index: ans?.answerIndex }))
+      .filter((item) => item.answer_index !== undefined && item.answer_index !== null);
+
+    if (!formattedAnswers.length) {
+      console.warn("[FuturePilot AI] Todas las preguntas quedaron sin responder.");
+      return null;
+    }
 
     try {
-      console.log("[FuturePilot AI] Enviando respuestas al servidor FastAPI en " + API_URL + "/api/v1/assess ...");
-      const response = await fetch(`${API_URL}/api/v1/assess`, {
+      console.log("[FuturePilot AI] Enviando " + formattedAnswers.length + " respuestas a /api/v1/assess ...");
+      const response = await fetch("/api/v1/assess", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ answers: formattedAnswers, anon_id: getAnonId() })

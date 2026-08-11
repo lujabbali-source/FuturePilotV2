@@ -76,18 +76,22 @@ function renderQuestion() {
   const { format, html } = questionTypes.renderQuestionOptions(question, currentQuestion, state);
   const progress = ((currentQuestion + 1) / questions.length) * 100;
   const progressMessage = questionTypes.getProgressMessage(currentQuestion);
-  const phase = phaseNames[Math.min(Math.floor(currentQuestion / 10), phaseNames.length - 1)];
+  const phaseIndex = Math.min(Math.floor(currentQuestion / 10), phaseNames.length - 1);
+  const phase = phaseNames[phaseIndex];
+  const phaseTrack = phaseNames.map((name, index) => `<span class="phase-dot ${index < phaseIndex ? "is-done" : ""} ${index === phaseIndex ? "is-current" : ""}" title="${escapeHtml(name)}"></span>`).join("");
 
   app.innerHTML = `<main class="test-shell screen-enter">
     <header class="test-header">
-      <a class="brand" href="/"><span class="brand-mark">✦</span> Future<span>Pilot</span></a>
+      <a class="brand" href="/"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></a>
       <div class="save-indicator"><span></span> Guardado automáticamente</div>
       <button type="button" class="exit-action" data-action="exit">Salir</button>
     </header>
     <section class="progress-section" aria-label="Progreso del test">
+      <p class="progress-eyebrow">Tu recorrido</p>
       <div class="progress-meta"><span class="progress-message">${progressMessage.label}</span><span><strong>${String(currentQuestion + 1).padStart(2, "0")}</strong> / ${QUESTION_COUNT}</span></div>
       <div class="progress-bar"><span style="width:${progress}%"></span></div>
       <div class="progress-submeta"><span>${progressMessage.detail}</span><span>${phase}</span></div>
+      <div class="phase-track">${phaseTrack}</div>
     </section>
     <section class="question-stage" data-format="${format}">
       <div class="question-kicker"><span class="kicker-number">${String(currentQuestion + 1).padStart(2, "0")}</span><span>${question.type === "personality" ? "Personalidad" : "Intereses"} · ${formatLabel(format)}</span></div>
@@ -175,7 +179,7 @@ function renderPartialResults() {
   localStorage.setItem(RESULTS_KEY, JSON.stringify(assessmentResult));
   localStorage.setItem("selectedCareer", assessmentResult.topCareer);
   localStorage.setItem("academicLevel", `${assessmentResult.mathLevel} / ${assessmentResult.englishLevel}`);
-  app.innerHTML = `<main class="results-screen screen-enter"><div class="results-topline"><span class="brand"><span class="brand-mark">✦</span> Future<span>Pilot</span></span><span class="result-chip">ANÁLISIS COMPLETADO <b>✓</b></span></div><section class="results-intro"><p class="eyebrow"><span class="eyebrow-dot"></span> TU PRIMERA SEÑAL</p><h1>Hay algo especial<br><span>en tu combinación.</span></h1><p>Estas son las primeras rutas que aparecen al mirar tu perfil. Lo mejor todavía está por desbloquearse.</p></section><section class="career-reveal"><div class="section-label"><span>TUS 3 CARRERAS PRINCIPALES</span><span>COINCIDENCIA</span></div>${careers.map((career, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(career.name)}</span><span class="career-score"><strong>${career.percentage}%</strong><span class="mini-bar"><i style="width:${career.percentage}%"></i></span></span></div>`).join("")}<div class="curiosity-line"><span>✦</span> Tu perfil tiene más matices de los que caben aquí.</div></section><section class="found-section"><h2>Tu perfil ya está trabajando por ti.</h2><div class="found-grid"><div>✓ <span>Encontramos universidades compatibles</span></div><div>✓ <span>Encontramos posibles becas</span></div><div>✓ <span>Generamos un roadmap personalizado</span></div><div>✓ <span>Creamos un plan académico</span></div></div></section><button type="button" class="primary-action primary-action--wide" data-action="unlock">Descubrir mi plan completo <span>→</span></button><p class="results-footnote">Tus resultados parciales quedan guardados. El acceso completo es gratuito.</p></main>`;
+  app.innerHTML = `<main class="results-screen screen-enter"><div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span><span class="result-chip">ANÁLISIS COMPLETADO <b>✓</b></span></div><section class="results-intro"><p class="eyebrow"><span class="eyebrow-dot"></span> TU PRIMERA SEÑAL</p><h1>Hay algo especial<br><span>en tu combinación.</span></h1><p>Estas son las primeras rutas que aparecen al mirar tu perfil. Lo mejor todavía está por desbloquearse.</p></section><section class="career-reveal"><div class="section-label"><span>TUS 3 CARRERAS PRINCIPALES</span><span>COINCIDENCIA</span></div>${careers.map((career, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(career.name)}</span><span class="career-score"><strong>${career.percentage}%</strong><span class="mini-bar"><i style="width:${career.percentage}%"></i></span></span></div>`).join("")}<div class="curiosity-line"><span>✦</span> Tu perfil tiene más matices de los que caben aquí.</div></section><section class="found-section"><h2>Tu perfil ya está trabajando por ti.</h2><div class="found-grid"><div>✓ <span>Encontramos universidades compatibles</span></div><div>✓ <span>Encontramos posibles becas</span></div><div>✓ <span>Generamos un roadmap personalizado</span></div><div>✓ <span>Creamos un plan académico</span></div></div></section><button type="button" class="primary-action primary-action--wide" data-action="unlock">Descubrir mi plan completo <span>→</span></button><p class="results-footnote">Tus resultados parciales quedan guardados. El acceso completo es gratuito.</p></main>`;
 }
 
 async function handleUnlock() {
@@ -239,7 +243,7 @@ function renderFullResults() {
   const weaknesses = aiResult.weaknesses || [];
 
   app.innerHTML = `<main class="results-screen screen-enter">
-    <div class="results-topline"><span class="brand"><span class="brand-mark">✦</span> Future<span>Pilot</span></span><span class="result-chip">CUENTA ACTIVA <b>✓</b></span></div>
+    <div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span><span class="result-chip">CUENTA ACTIVA <b>✓</b></span></div>
     <section class="results-intro">
       <p class="eyebrow"><span class="eyebrow-dot"></span> TU PERFIL COMPLETO</p>
       <h1>${user && user.name ? escapeHtml(user.name) + "," : ""} esto es<br><span>lo que encontramos.</span></h1>
@@ -361,8 +365,17 @@ async function init() {
         headers: { Authorization: `Bearer ${authToken}` },
       });
       if (response.status === 401) {
+        // Antes esto se limpiaba en silencio y el usuario caia de vuelta a
+        // la pantalla de inicio del test - visto desde "Mi cuenta" (que
+        // enlaza directo aca), eso se sentia como si la app te empujara a
+        // repetir el test de la nada, sin ninguna pista de que la sesion
+        // ya no era valida. Ahora se manda a /login para que pueda volver a
+        // entrar y, si tiene un resultado guardado, login.js ya lo trae de
+        // vuelta a /assessment con la sesion fresca.
         localStorage.removeItem("futurePilotAuthToken");
         localStorage.removeItem("futurePilotUser");
+        window.location.href = "/login?mode=login";
+        return;
       } else if (response.ok) {
         const data = await response.json();
         if (data.results) {

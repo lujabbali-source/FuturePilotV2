@@ -71,7 +71,7 @@ h1, h2 { margin: 0; }
   font-weight: 800;
   letter-spacing: -.02em;
 }
-.admin-sidebar__brand img { width: 28px; height: 28px; }
+.admin-sidebar__brand img { width: 28px; height: 28px; filter: drop-shadow(0 0 8px rgba(0,255,179,.3)); }
 .admin-sidebar__brand .accent { color: var(--fp-green); }
 .admin-sidebar__brand em {
   margin-left: 4px;

@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "uvicorn", "--app-dir", "futurepilot-IA", "app:app", "--host", "127.0.0.1", "--port", "8000"],
       "port": 8000
+    },
+    {
+      "name": "futurepilot-globe",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "futurepilot-globe", "run", "dev", "--", "--port", "5173"],
+      "port": 5173
     }
   ]
 }

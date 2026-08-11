@@ -63,6 +63,43 @@ def test_anonymous_sessions_do_not_share_memory(client):
     assert "Todavía no tengo un diagnóstico" not in chat_b["response"]
 
 
+def test_skipped_questions_are_omitted_not_scored_as_max(client):
+    """Regresion del bug de "Aun no lo se": futurepilot-connector.js
+    convertia answerIndex null en answer_index 0, y el indice 0 de cada
+    pregunta en questions.json es "Strongly Agree" (4 puntos, el maximo).
+    Saltar preguntas sumaba en silencio la respuesta mas fuerte posible.
+
+    El contrato del que depende el arreglo del cliente es este: omitir una
+    pregunta del payload NO es lo mismo que mandarla con answer_index 0.
+    Este test fija ese contrato en el servidor."""
+    # 10 respuestas reales; las otras 40 se omiten (el estudiante las salto).
+    partial = [{"question_index": i, "answer_index": 3} for i in range(10)]
+    # Lo que enviaba el codigo con el bug: las 40 saltadas como indice 0.
+    inflated = partial + [{"question_index": i, "answer_index": 0} for i in range(10, 50)]
+
+    r_partial = client.post("/api/v1/assess", json={"answers": partial, "anon_id": "skip-partial"})
+    r_inflated = client.post("/api/v1/assess", json={"answers": inflated, "anon_id": "skip-inflated"})
+    assert r_partial.status_code == 200
+    assert r_inflated.status_code == 200
+
+    vector_partial = r_partial.json()["data"]["user_vector"]
+    vector_inflated = r_inflated.json()["data"]["user_vector"]
+
+    # Si ambos perfiles fueran iguales, rellenar con indice 0 no tendria
+    # efecto y el bug seria inofensivo. No lo es: distorsiona el vector.
+    assert vector_partial != vector_inflated
+
+
+def test_out_of_range_answer_index_is_ignored_not_fatal(client):
+    """El cliente ahora filtra las respuestas nulas antes de enviarlas,
+    pero el servidor no debe romperse si llega un indice invalido de todas
+    formas (ver PerceptionEngine.parse_test_inputs)."""
+    answers = [{"question_index": 0, "answer_index": 0}, {"question_index": 1, "answer_index": 99}]
+    r = client.post("/api/v1/assess", json={"answers": answers, "anon_id": "out-of-range"})
+    assert r.status_code == 200
+    assert r.json()["data"]["recommended_careers"]
+
+
 def test_malicious_anon_id_does_not_escape_storage_dir(client, app_module):
     r = client.post(
         "/api/v1/assess",

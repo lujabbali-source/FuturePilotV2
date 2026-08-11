@@ -55,6 +55,7 @@
       "noInstitutions": "No se encontraron universidades",
       "officialWebsiteLink": "Sitio web oficial ↗",
       "nationalRanking": "Ranking nacional"
-    }
+    },
+    "regionalNote": "Datos estimados a nivel regional: {{region}}"
   }
 }

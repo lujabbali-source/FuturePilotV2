@@ -4,7 +4,12 @@
 // puente de autenticacion adicional. Si no hay sesion, no hace nada -
 // explorar el globo sin cuenta sigue funcionando exactamente igual que
 // siempre, sin pedir login.
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
+// Ruta relativa, nunca un host absoluto: en produccion este build se sirve
+// bajo /globe desde el mismo backend que expone la API, y en desarrollo el
+// proxy de vite.config.js redirige /api al backend en el puerto 8000. Un
+// "http://127.0.0.1:8000" hardcodeado hacia que el globo desplegado le
+// hablara a la maquina del propio visitante, y la CSP (connect-src 'self')
+// bloqueaba la peticion igualmente.
 const AUTH_TOKEN_KEY = "futurePilotAuthToken";
 
 // Evita reportar el mismo pais/ciudad/universidad mil veces en la misma
@@ -20,7 +25,7 @@ export function recordPassportEvent(eventType, subjectId, subjectLabel) {
   if (reportedThisSession.has(dedupeKey)) return;
   reportedThisSession.add(dedupeKey);
 
-  fetch(`${API_BASE_URL}/api/v1/passport/events`, {
+  fetch("/api/v1/passport/events", {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
     body: JSON.stringify({ event_type: eventType, subject_id: subjectId, subject_label: subjectLabel }),

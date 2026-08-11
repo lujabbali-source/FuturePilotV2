@@ -86,6 +86,23 @@ def test_system_health_reports_real_status(client, admin_headers):
         assert body["checks"][key]["status"] in ("ok", "warning", "error")
 
 
+def test_system_health_checks_only_reference_existing_pages(client, admin_headers):
+    """Regresion: _check_frontend_pages exigia roadmap.html, que se elimino
+    cuando /roadmap paso a ser un redirect a /journey. El chequeo devolvia
+    "error" siempre y, como el estado global es el minimo de todos, el panel
+    mostraba el sistema entero en rojo de forma permanente - tapando
+    cualquier fallo real. El test anterior no lo detectaba porque aceptaba
+    "error" como valor valido. Este exige que los chequeos que dependen de
+    archivos del repo esten sanos en un checkout completo."""
+    body = client.get("/api/v1/admin/health", headers=admin_headers).json()
+
+    for key in ("frontend", "login", "static_assets"):
+        assert body["checks"][key]["status"] == "ok", (
+            f"El chequeo '{key}' referencia un archivo que ya no existe: "
+            f"{body['checks'][key]['detail']}"
+        )
+
+
 def test_repair_reload_data_works(client, admin_headers):
     r = client.post("/api/v1/admin/repair/reload-data", headers=admin_headers)
     assert r.status_code == 200

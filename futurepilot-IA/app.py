@@ -298,16 +298,6 @@ else:
     )
 
 
-@app.get("/style.css")
-def style_css():
-    return FileResponse(str(FRONTEND_DIR / "style.css"))
-
-
-@app.get("/futurepilot-logo.png")
-def logo():
-    return FileResponse(str(FRONTEND_DIR / "futurepilot-logo.png"))
-
-
 @app.get("/")
 def home():
     return FileResponse(str(FRONTEND_DIR / "index.html"))
@@ -899,7 +889,15 @@ def _check_apis() -> Dict[str, Any]:
 
 
 def _check_frontend_pages() -> Dict[str, Any]:
-    required = ["index.html", "assessment.html", "careers.html", "roadmap.html"]
+    # roadmap.html ya no existe: /roadmap es un redirect a /journey (ver
+    # roadmap_page mas arriba). Mientras estuvo en esta lista, el chequeo
+    # daba "error" siempre y arrastraba el estado global a rojo, tapando
+    # cualquier fallo de verdad. La lista debe reflejar las paginas que el
+    # sitio sirve HOY.
+    required = [
+        "index.html", "assessment.html", "careers.html",
+        "journey.html", "flightplan.html", "passport.html", "login.html",
+    ]
     missing = [name for name in required if not (FRONTEND_DIR / name).exists()]
     if missing:
         return {"status": "error", "detail": f"Faltan paginas: {', '.join(missing)}"}
@@ -907,7 +905,10 @@ def _check_frontend_pages() -> Dict[str, Any]:
 
 
 def _check_static_assets() -> Dict[str, Any]:
-    required = ["style.css", "futurepilot-logo.png", "i18n.js", "language-toggle.js", "site.js"]
+    required = [
+        "style.css", "futurepilot-logo-transparent.png",
+        "i18n.js", "language-toggle.js", "site.js",
+    ]
     missing = [name for name in required if not (FRONTEND_DIR / name).exists()]
     if missing:
         return {"status": "warning", "detail": f"Faltan: {', '.join(missing)}"}

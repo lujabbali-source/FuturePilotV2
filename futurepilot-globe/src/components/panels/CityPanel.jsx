@@ -152,7 +152,13 @@ function StatisticsSection({ city }) {
     const { t } = useTranslation("cities");
     const statistics = city.statistics || {};
     const fields = [["population", statistics.population], ["safety", statistics.safety], ["weather", statistics.weather], ["language", statistics.language], ["currency", statistics.currency], ["internetSpeed", statistics.internetSpeed], ["qualityOfLife", statistics.qualityOfLife], ["studentSatisfaction", statistics.studentSatisfaction]];
-    return <section className="panel-section"><h2>📊 {t("panel.sections.statistics")}</h2><div className="city-field-grid">{fields.map(([key, value]) => <Field key={key} label={t(`panel.fields.${key}`)} value={value} />)}</div></section>;
+    return (
+        <section className="panel-section">
+            <h2>📊 {t("panel.sections.statistics")}</h2>
+            {city.region && <p className="statistics-region-note">{t("panel.regionalNote", { region: city.region })}</p>}
+            <div className="city-field-grid">{fields.map(([key, value]) => <Field key={key} label={t(`panel.fields.${key}`)} value={value} />)}</div>
+        </section>
+    );
 }
 
 function LivingSection({ city }) {

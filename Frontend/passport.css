@@ -75,7 +75,7 @@ h1,h2{ margin:0; }
   font-size:1.15rem;
   font-weight:800;
 }
-.passport-topnav__brand img{ width:32px; height:32px; }
+.passport-topnav__brand img{ width:32px; height:32px; filter:drop-shadow(0 0 10px rgba(0,255,179,.35)); }
 .passport-topnav__brand .accent{ color:var(--fp-green); }
 .passport-topnav__link{
   color:var(--fp-muted);
