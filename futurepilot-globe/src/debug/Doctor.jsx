@@ -2,12 +2,20 @@ import { useEffect } from "react";
 import { world } from "../geo/world";
 import GeoJsonGeometry from "three-geojson-geometry";
 
+// Herramienta de diagnostico de la geometria del globo. Ponlo en true solo
+// para depurar en local.
 const ENABLE_DOCTOR = false;
+
 export default function Doctor() {
 
     useEffect(() => {
-
-        // console.clear();
+        // Esta bandera se declaraba y NUNCA se leia. Como <Doctor /> esta
+        // montado en el arbol de render de App.jsx, el diagnostico completo
+        // se volcaba por consola en cada carga de /globe, para cualquier
+        // visitante. Se comprueba tambien import.meta.env.DEV para que un
+        // build de produccion no pueda ejecutarlo aunque alguien deje la
+        // bandera encendida por descuido.
+        if (!ENABLE_DOCTOR || !import.meta.env.DEV) return;
 
         console.log("=====================================");
         console.log("🩺 FUTUREPILOT GLOBE DOCTOR");

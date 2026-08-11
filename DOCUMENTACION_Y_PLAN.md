@@ -10,10 +10,12 @@
 > - ✅ **Fase 1 — Limpieza: COMPLETADA.** ~1.300 líneas de código muerto eliminadas, docs creadas.
 > - ✅ **Integridad del resultado: COMPLETADA.** El resultado del test ya no puede perderse en el
 >   punto de conversión. Ver §7.1.
-> - ✅ **Un solo veredicto (B4) + catálogo de 73 carreras: COMPLETADO.** Ver §Fase 2.
-> - ⬜ Resto de la Fase 2 y fases 3-4, pendientes.
+> - ✅ **Fase 2 — Coherencia de producto: COMPLETADA.** Un solo veredicto (B4), catálogo de 73
+>   carreras, escala de compatibilidad corregida, I2, I3, `QUESTION_COUNT` y las páginas que
+>   dependían del dispositivo.
+> - ⬜ Fases 3 y 4, pendientes.
 >
-> **Suite de tests: 49 pasan** (38 originales + 11 de regresión añadidos).
+> **Suite de tests: 53 pasan** (38 originales + 15 de regresión añadidos).
 > El análisis de las secciones §1-§6 describe el estado **previo** a estas correcciones y se
 > conserva como registro de la auditoría.
 
@@ -578,17 +580,49 @@ ahora sale de `/api/v1/careers`, así que no puede volver a desfasarse.
 **5 tests nuevos:** integridad del catálogo, ids originales preservados, perfiles opuestos con
 recomendaciones distintas, recomendaciones siempre dentro del catálogo, y respuesta recortada.
 
-#### ⬜ Pendiente en esta fase
+#### ✅ Escala de compatibilidad corregida — COMPLETADO
 
-1. **Arreglar el `Doctor` del globo (I2):** honrar `ENABLE_DOCTOR` o borrar el componente.
-2. **Arreglar el título duplicado del globo (I3):** clave i18n propia para el eyebrow.
-3. ~~Unificar las rutas de CSS (I4)~~ — hecho en la Fase 0.
-4. **`QUESTION_COUNT` derivado de `questions.length`**, no hardcodeado.
-5. **`journey.html` y `flightplan.html`** deben leer de `/api/v1/me/results` cuando hay sesión, con
-   `localStorage` solo como caché.
-6. **Los porcentajes siguen comprimidos.** El coseno sobre vectores todo-positivos da 98 %, 98 %,
-   97 % para el top-3: correcto en orden, pero poco informativo para el estudiante. Merece una
-   normalización de la escala mostrada.
+El coseno sin centrar no solo comprimía: estaba **invertido**.
+
+| Perfil del estudiante | Antes (coseno) | Ahora (coseno centrado) |
+|---|---|---|
+| **Plano** — responde igual a todo, sin ninguna inclinación | 98,7 % con una carrera arbitraria | 50,0 % (= sin relación) |
+| **Muy definido** — dos clusters al máximo | 70,6 % como mucho | 89,7 % |
+
+Cuanto más claro era el estudiante, peor puntuaba; y a quien no había mostrado ninguna preferencia
+se le presentaba una carrera cualquiera como un 98 % de compatibilidad. Restar la media de cada
+vector antes del coseno (correlación de Pearson) mide si los picos y valles **coinciden**, que es
+lo que se quería medir desde el principio. La escala mostrada mapea `[-1, 1] → [0, 100]`: 100 es
+coincidencia de forma, 50 es sin relación, 0 es opuesto.
+
+**La confianza también estaba mal:** solo medía cuántas preguntas se habían respondido, así que un
+perfil plano con las 50 contestadas declaraba un 95 % de confianza. Ahora pesa también cuánta señal
+trae el perfil (`ProfileEngine.profile_definition`): 70 % para un perfil plano, 96 % para uno
+definido.
+
+#### ✅ Resto de la fase — COMPLETADO
+
+| Ítem | Qué se hizo |
+|---|---|
+| **I2 · `Doctor` del globo** | `ENABLE_DOCTOR` se declaraba y nunca se leía; el diagnóstico completo se volcaba por consola en cada carga de `/globe`. Ahora se honra la bandera **y** se exige `import.meta.env.DEV`, para que un build de producción no pueda ejecutarlo. Verificado: cero logs en consola |
+| **I3 · Título duplicado** | El eyebrow usaba `t("explore")`, la misma clave que el título. Clave `eyebrow` propia en EN y ES |
+| **`QUESTION_COUNT`** | Sustituido por `questionCount()` = `questions.length`. No era solo la barra de progreso: **decidía cuándo termina el test**. Con 45 preguntas no habría terminado nunca; con 60 se habría cortado en la 50. También se derivan las 5 fases y el «50 preguntas» de la bienvenida |
+| **journey y flightplan** | El conector refresca desde `/api/v1/me/results` antes de hidratar. Pinta primero lo local (sin esperar red) y repinta con lo de la cuenta. Verificado con `localStorage` vacío y solo el token: ambas páginas se rellenan |
+
+**Tres bugs encontrados al verificar, no previstos en la auditoría:**
+
+1. **`#countries` en `/flightplan` se quedaba en «Loading...» para siempre.** El conector leía
+   `topChoice.recommended_hubs`, pero `recommended_hubs` cuelga de la raíz de la respuesta.
+2. **`skill_gaps` devolvía todas las brechas.** Para un perfil marcado son 6 de los 8 clusters, y la
+   justificación acababa con media lista de carencias. Recortado a las 3 mayores.
+3. **`get_recommended_hubs` recomendaba Silicon Valley para Creative Writing.** Cubría 3 categorías
+   de las 14 del catálogo y para el resto caía a los tres primeros hubs de la lista. Ampliado a las
+   14 categorías y eliminado el fallback engañoso; un test detecta cualquier categoría sin hub.
+
+**Nota sobre `mathLevel` / `englishLevel`:** los calcula el motor local y nunca llegan al servidor,
+así que en otro dispositivo no existen. `/flightplan` muestra el estilo de aprendizaje (que sí está
+en la cuenta) en vez de dejar el «Loading...» colgado. Persistirlos requeriría añadirlos al payload
+de `/api/v1/assess`.
 
 ---
 

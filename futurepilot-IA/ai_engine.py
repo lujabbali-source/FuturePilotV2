@@ -257,6 +257,26 @@ class ProfileEngine:
                 vector[c] = 5.0
         return vector
 
+    @staticmethod
+    def profile_definition(vector: Dict[str, float]) -> float:
+        """Cuanta señal trae el perfil, de 0 a 1.
+
+        0 = todos los clusters valen lo mismo: el estudiante no mostro
+        ninguna inclinacion y cualquier recomendacion seria arbitraria.
+        1 = maxima dispersion posible entre clusters.
+
+        Se usa para la confianza del analisis: no es lo mismo recomendar
+        sobre un perfil marcado que sobre uno plano, aunque en los dos
+        casos se hayan contestado las 50 preguntas.
+        """
+        values = list(vector.values())
+        if len(values) < 2:
+            return 0.0
+        mean = sum(values) / len(values)
+        deviation = math.sqrt(sum((v - mean) ** 2 for v in values) / len(values))
+        # La desviacion maxima con valores en [0, 10] y media 5 es 5.0.
+        return min(1.0, deviation / 5.0)
+
 
 class ReasoningEngine:
     """
@@ -324,6 +344,43 @@ class DecisionEngine:
             return 0.0
         return dot / (n1 * n2)
 
+    @classmethod
+    def profile_similarity(cls, v1: List[float], v2: List[float]) -> float:
+        """Coseno CENTRADO (correlacion de Pearson): compara la FORMA de los
+        dos perfiles, no su magnitud.
+
+        El coseno a secas sobre vectores que solo tienen valores positivos
+        -como estos, donde ningun cluster puede ser negativo- esta acotado
+        muy arriba: todo se parece a todo. Y lo hacia al reves de lo que
+        deberia. Con el catalogo actual:
+
+          - Un perfil PLANO (el estudiante responde parecido a todo, o sea
+            sin señal alguna) daba 98.7% con la primera carrera de la lista.
+          - Un perfil MUY definido (10 en dos clusters, 0 en el resto) daba
+            como maximo 70.6%.
+
+        Es decir: cuanto mas claro era el estudiante, peor puntuaba, y a
+        quien no habia mostrado ninguna inclinacion se le presentaba una
+        carrera arbitraria como un 98% de compatibilidad.
+
+        Al restar la media de cada vector antes del coseno se mide si los
+        picos y valles coinciden. Un perfil plano queda en 0 (correlacion
+        nula) contra todo, que es la respuesta honesta, y uno definido
+        separa con claridad las carreras que encajan de las que no.
+
+        Devuelve el valor crudo en [-1, 1]; ver match_percentage para como
+        se presenta.
+        """
+        mean1 = sum(v1) / len(v1) if v1 else 0.0
+        mean2 = sum(v2) / len(v2) if v2 else 0.0
+        return cls.cosine_similarity([a - mean1 for a in v1], [b - mean2 for b in v2])
+
+    @staticmethod
+    def to_match_percentage(similarity: float) -> float:
+        """[-1, 1] -> [0, 100]. 100 = la forma del perfil coincide con lo que
+        pide la carrera; 50 = no hay relacion; 0 = son opuestos."""
+        return round((similarity + 1.0) / 2.0 * 100, 1)
+
     def rank_careers(self, user_vector: Dict[str, float], careers_db: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         clusters = list(user_vector.keys())
         u_vals = [user_vector[c] for c in clusters]
@@ -333,11 +390,23 @@ class DecisionEngine:
             reqs = career.get("requirements", {})
             c_vals = [reqs.get(c, 5.0) for c in clusters]
             
-            sim = self.cosine_similarity(u_vals, c_vals)
-            pct = round(sim * 100, 1)
+            sim = self.profile_similarity(u_vals, c_vals)
+            pct = self.to_match_percentage(sim)
 
             strengths = [c for c in clusters if user_vector[c] >= reqs.get(c, 5.0)]
-            gaps = [c for c in clusters if reqs.get(c, 5.0) - user_vector[c] > 2.0]
+
+            # Solo las 3 brechas mas grandes, de mayor a menor. Antes se
+            # devolvian TODAS las que superaran el umbral: para un perfil
+            # muy marcado eso son 6 de los 8 clusters, y la justificacion
+            # acababa diciendo "conviene reforzar" seguido de media lista,
+            # que no le sirve de nada al estudiante.
+            deficits = [
+                (c, reqs.get(c, 5.0) - user_vector[c])
+                for c in clusters
+                if reqs.get(c, 5.0) - user_vector[c] > 2.0
+            ]
+            deficits.sort(key=lambda item: item[1], reverse=True)
+            gaps = [cluster for cluster, _ in deficits[:3]]
 
             matches.append({
                 "career_id": career.get("id"),
@@ -358,19 +427,45 @@ class CareerEngine:
     """
     Módulo de Hubs Globales y Oportunidades del Mercado.
     """
+    # Un hub se empareja por la categoria de la carrera recomendada. Habia
+    # solo 3 categorias cubiertas (Technology, Engineering, Business); con
+    # las 14 del catalogo actual el fallback saltaba casi siempre y acababa
+    # proponiendo Silicon Valley a quien le habia salido Creative Writing.
     GLOBAL_HUBS = [
         {"name": "Silicon Valley (EE. UU.)", "category": "Technology", "desc": "Hub global de tecnología e inteligencia artificial."},
-        {"name": "Zúrich (Suiza)", "category": "Engineering", "desc": "Líder en ingeniería de precisión y biotecnología."},
-        {"name": "Tokio (Japón)", "category": "Technology", "desc": "Pioneros en robótica y automatización."},
-        {"name": "Londres (Reino Unido)", "category": "Business", "desc": "Centro internacional de ciencia de datos y finanzas."},
-        {"name": "Bogotá (Colombia)", "category": "Technology", "desc": "Ecosistema emergente de desarrollo de software en LatAm."}
+        {"name": "Bangalore (India)", "category": "Technology", "desc": "Mayor concentración de ingeniería de software de Asia."},
+        {"name": "Bogotá (Colombia)", "category": "Technology", "desc": "Ecosistema emergente de desarrollo de software en LatAm."},
+        {"name": "Zúrich (Suiza)", "category": "Engineering", "desc": "Líder en ingeniería de precisión y sistemas industriales."},
+        {"name": "Múnich (Alemania)", "category": "Engineering", "desc": "Automoción, mecatrónica y manufactura avanzada."},
+        {"name": "Londres (Reino Unido)", "category": "Business", "desc": "Centro internacional de negocios y consultoría."},
+        {"name": "Singapur", "category": "Business", "desc": "Puerta de entrada al comercio y la logística de Asia."},
+        {"name": "Nueva York (EE. UU.)", "category": "Mathematics & Finance", "desc": "Capital mundial de los mercados financieros."},
+        {"name": "Boston (EE. UU.)", "category": "Health", "desc": "Concentración de hospitales universitarios e investigación clínica."},
+        {"name": "Basilea (Suiza)", "category": "Health", "desc": "Polo farmacéutico y de ciencias de la vida."},
+        {"name": "Cambridge (Reino Unido)", "category": "Science", "desc": "Investigación básica y biotecnología de referencia."},
+        {"name": "Ginebra (Suiza)", "category": "Science", "desc": "Física de partículas y organismos científicos internacionales."},
+        {"name": "Milán (Italia)", "category": "Design", "desc": "Referente mundial en diseño industrial y de producto."},
+        {"name": "Copenhague (Dinamarca)", "category": "Design", "desc": "Diseño escandinavo y arquitectura sostenible."},
+        {"name": "París (Francia)", "category": "Arts", "desc": "Escena artística, editorial y audiovisual histórica."},
+        {"name": "Los Ángeles (EE. UU.)", "category": "Arts", "desc": "Industria del cine, la música y la animación."},
+        {"name": "Nueva York (EE. UU.)", "category": "Communication", "desc": "Sede de los grandes medios y agencias globales."},
+        {"name": "Doha (Catar)", "category": "Communication", "desc": "Centro de medios internacionales para Oriente Medio."},
+        {"name": "La Haya (Países Bajos)", "category": "Law & Politics", "desc": "Sede de las principales cortes internacionales."},
+        {"name": "Bruselas (Bélgica)", "category": "Law & Politics", "desc": "Corazón institucional y diplomático de Europa."},
+        {"name": "Helsinki (Finlandia)", "category": "Education", "desc": "Sistema educativo de referencia internacional."},
+        {"name": "Estocolmo (Suecia)", "category": "Social Sciences", "desc": "Investigación social y políticas de bienestar."},
+        {"name": "Costa Rica", "category": "Environment", "desc": "Modelo de conservación y energía renovable."},
+        {"name": "Wageningen (Países Bajos)", "category": "Environment", "desc": "Referencia mundial en ciencias agrarias y alimentación."},
+        {"name": "Toulouse (Francia)", "category": "Skilled Trades", "desc": "Capital europea de la industria aeronáutica."},
+        {"name": "Lyon (Francia)", "category": "Skilled Trades", "desc": "Tradición gastronómica y formación culinaria de élite."},
     ]
 
     def get_recommended_hubs(self, top_category: str) -> List[Dict[str, Any]]:
-        recommended = [h for h in self.GLOBAL_HUBS if h["category"] == top_category]
-        if not recommended:
-            recommended = self.GLOBAL_HUBS[:3]
-        return recommended
+        """Solo hubs de la categoria de la carrera. Si no hay ninguno se
+        devuelve una lista vacia: antes se caia a los tres primeros de la
+        lista, que es como acabar recomendando un hub tecnologico a un
+        perfil artistico. La UI ya sabe que hacer cuando no hay hubs."""
+        return [hub for hub in self.GLOBAL_HUBS if hub["category"] == top_category]
 
 
 class RoadmapPlanner:
@@ -699,9 +794,16 @@ class FuturePilotBrain:
         personality, learning_style = self.reasoning.infer_archetype(user_vector)
         hypotheses = self.reasoning.generate_hypotheses(user_vector, user_memory)
 
-        # Paso 4: Evaluación de Confianza Cognitiva (Simulada)
+        # Paso 4: Evaluación de Confianza Cognitiva
+        #
+        # Antes solo miraba cuantas preguntas se habian respondido, asi que
+        # un estudiante que contestara las 50 igual (perfil plano, sin
+        # ninguna inclinacion) recibia un 95% de confianza sobre una
+        # recomendacion que en realidad no distinguia nada. Ahora pesan las
+        # dos cosas: cuanto contesto Y cuanta señal hay en lo que contesto.
         answered_ratio = min(1.0, percept_data["total_answered"] / max(1, len(self.questions_db)))
-        confidence = round(0.5 + (answered_ratio * 0.45), 2)
+        definition = self.profile_engine.profile_definition(user_vector)
+        confidence = round(0.4 + (answered_ratio * 0.3) + (definition * 0.3), 2)
 
         # Paso 5: Toma de Decisiones (Coincidencia Vectorial)
         ranked_matches = self.decision.rank_careers(user_vector, self.careers_db)

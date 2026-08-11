@@ -85,6 +85,49 @@ def test_different_profiles_get_different_top_careers(client):
     assert len(solapamiento) <= 1, f"perfiles opuestos comparten {len(solapamiento)} carreras: {solapamiento}"
 
 
+def test_match_percentage_rewards_a_defined_profile(client):
+    """El coseno sin centrar estaba invertido: un perfil PLANO (sin ninguna
+    inclinacion) sacaba 98.7% con una carrera arbitraria, y uno muy
+    definido no pasaba del 70.6%. Cuanto mas claro era el estudiante, peor
+    puntuaba. Con el coseno centrado la relacion es la correcta."""
+    questions = client.get("/api/v1/questions").json()["questions"]
+
+    plano = [{"question_index": i, "answer_index": 1} for i in range(len(questions))]
+    definido = _answers_favouring(questions, {"TECHNICAL", "ANALYTICAL"})
+
+    r_plano = client.post("/api/v1/assess", json={"answers": plano, "anon_id": "esc-plano"}).json()["data"]
+    r_definido = client.post("/api/v1/assess", json={"answers": definido, "anon_id": "esc-def"}).json()["data"]
+
+    mejor_plano = r_plano["recommended_careers"][0]["match_percentage"]
+    mejor_definido = r_definido["recommended_careers"][0]["match_percentage"]
+
+    assert mejor_definido > mejor_plano, (
+        f"un perfil definido ({mejor_definido}%) deberia puntuar por encima "
+        f"de uno sin señal ({mejor_plano}%)"
+    )
+    # Un perfil sin inclinacion no puede presentarse como una gran
+    # compatibilidad: 50 es "no hay relacion" en esta escala.
+    assert mejor_plano == 50.0
+
+    # Y la confianza tiene que reflejarlo, no solo cuantas preguntas se
+    # respondieron - en ambos casos se respondieron todas.
+    assert r_definido["confidence"] > r_plano["confidence"]
+
+
+def test_match_percentage_spreads_across_the_shortlist(client):
+    """Mostrar 99%, 99%, 98% no le dice nada al estudiante. Las
+    recomendaciones de un perfil definido tienen que separarse."""
+    questions = client.get("/api/v1/questions").json()["questions"]
+    answers = _answers_favouring(questions, {"SOCIAL", "CREATIVE"})
+    careers = client.post(
+        "/api/v1/assess", json={"answers": answers, "anon_id": "esc-spread"}
+    ).json()["data"]["recommended_careers"]
+
+    scores = [career["match_percentage"] for career in careers]
+    assert max(scores) - min(scores) >= 5.0, f"las 8 recomendaciones casi no se distinguen: {scores}"
+    assert all(0.0 <= score <= 100.0 for score in scores)
+
+
 def test_assess_returns_a_shortlist_not_the_whole_catalog(client, sample_answers):
     """rank_careers puntua las 73 carreras del catalogo, pero la respuesta
     solo debe traer las mejores. Devolverlas todas metia 73 fichas con su
@@ -114,6 +157,34 @@ def test_recommended_careers_come_from_the_catalog(client, sample_answers):
 
     for career in result["data"]["recommended_careers"]:
         assert career["title"] in catalog, f"'{career['title']}' no existe en careers.json"
+
+
+def test_every_category_has_a_matching_hub(client):
+    """get_recommended_hubs empareja por categoria. Cubria 3 de las 14 del
+    catalogo y para el resto caia a los tres primeros hubs de la lista, que
+    es como recomendar Silicon Valley a quien le salio Creative Writing.
+    Ahora no hay fallback, asi que una categoria sin hub se queda sin
+    destinos: este test lo detecta al añadir carreras nuevas."""
+    from ai_engine import CareerEngine
+
+    engine = CareerEngine()
+    categories = {career["category"] for career in client.get("/api/v1/careers").json()["careers"]}
+    sin_hub = sorted(c for c in categories if not engine.get_recommended_hubs(c))
+    assert not sin_hub, f"categorias sin ningun hub asignado: {sin_hub}"
+
+
+def test_skill_gaps_stay_actionable(client):
+    """Se devolvian TODAS las brechas por encima del umbral: para un perfil
+    marcado son 6 de 8 clusters, y la justificacion acababa con media lista
+    de carencias que no le sirve de nada al estudiante."""
+    questions = client.get("/api/v1/questions").json()["questions"]
+    answers = _answers_favouring(questions, {"CREATIVE", "SOCIAL"})
+    careers = client.post(
+        "/api/v1/assess", json={"answers": answers, "anon_id": "gaps"}
+    ).json()["data"]["recommended_careers"]
+
+    for career in careers:
+        assert len(career["skill_gaps"]) <= 3, f"{career['title']}: {career['skill_gaps']}"
 
 
 def test_assess_requires_at_least_one_answer(client):

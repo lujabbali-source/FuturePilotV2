@@ -105,6 +105,42 @@
   }
 
   // =============================================================================
+  // 1b. TRAER EL RESULTADO GUARDADO EN LA CUENTA
+  // =============================================================================
+  /**
+   * /journey y /flightplan se pintaban SOLO desde localStorage, asi que un
+   * estudiante que hiciera el test en el movil y entrara despues desde el
+   * portatil con su cuenta veia las dos paginas vacias, pese a tener el
+   * resultado guardado en el servidor. El resultado vive en la cuenta, no
+   * en el dispositivo.
+   *
+   * Se refresca AI_STORAGE_KEY desde /api/v1/me/results antes de hidratar.
+   * Sin sesion, o si la peticion falla, se conserva lo que hubiera en
+   * localStorage: el flujo anonimo (test -> resultados sin registrarse)
+   * sigue funcionando igual.
+   */
+  async function refreshResultsFromServer() {
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    if (!token) return false;
+
+    try {
+      const response = await fetch("/api/v1/me/results", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (!response.ok) return false;
+
+      const data = await response.json();
+      if (!data.results) return false;
+
+      localStorage.setItem(AI_STORAGE_KEY, JSON.stringify(data.results));
+      return true;
+    } catch (error) {
+      console.warn("[FuturePilot] No se pudo traer el resultado de la cuenta:", error);
+      return false;
+    }
+  }
+
+  // =============================================================================
   // 2. ACTUALIZAR DINÁMICAMENTE LA PANTALLA FLIGHTPLAN.HTML
   // =============================================================================
   function updateFlightPlanUI() {
@@ -131,16 +167,35 @@
         }
       });
 
-      // 3. Actualizar Paises y Hubs Recomendados
+      // 3. Actualizar Paises y Hubs Recomendados.
+      // recommended_hubs cuelga de la RAIZ de la respuesta, no de la
+      // carrera: se leia topChoice.recommended_hubs, siempre undefined, y
+      // el bloque se quedaba en "Loading..." para siempre.
       const countriesElement = document.getElementById("countries");
-      if (countriesElement && topChoice.recommended_hubs) {
-        const hubList = topChoice.recommended_hubs.map(h => `🌐 ${h.name} — ${h.desc}`);
-        countriesElement.innerHTML = hubList.join("<br>");
+      const hubs = aiData.recommended_hubs || [];
+      if (countriesElement) {
+        countriesElement.innerHTML = hubs.length
+          ? hubs.map(hub => `🌐 ${hub.name} — ${hub.desc}`).join("<br>")
+          : "Explora el globo para descubrir destinos.";
       }
 
       // 4. Guardar carrera seleccionada en la memoria local
       if (topChoice.title) {
         localStorage.setItem("selectedCareer", topChoice.title);
+      }
+
+      // 5. Nivel academico. mathLevel/englishLevel los calcula el motor
+      // local y nunca llegan al servidor, asi que en otro dispositivo no
+      // existen: se rellena con lo que si sabe la cuenta (el estilo de
+      // aprendizaje) en vez de dejar el "Loading..." del HTML colgado.
+      const academicElement = document.getElementById("academicLevel");
+      const localLevels = (() => {
+        try { return JSON.parse(localStorage.getItem("futurePilotResults")); } catch { return null; }
+      })();
+      if (academicElement && !localLevels) {
+        academicElement.innerHTML = aiData.learning_style
+          ? `Estilo de aprendizaje: ${aiData.learning_style}`
+          : "Repite el test en este dispositivo para ver tu nivel académico.";
       }
     } catch (err) {
       console.error("[FuturePilot AI Error] Error actualizando FlightPlan UI:", err);
@@ -184,19 +239,29 @@
   // =============================================================================
   // DETECCIÓN DE PÁGINA E INICIALIZACIÓN
   // =============================================================================
-  window.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("DOMContentLoaded", async () => {
     const path = window.location.pathname;
+    const isFlightPlan = path.includes("flightplan");
+    const isJourney = path.includes("journey");
+    if (!isFlightPlan && !isJourney) return;
 
-    if (path.includes("flightplan")) {
-      updateFlightPlanUI();
-    } else if (path.includes("journey")) {
-      updateJourneyUI();
+    // Primero lo que ya haya en local (pintado inmediato, sin esperar a la
+    // red), y despues se repinta con lo que diga la cuenta - que es la
+    // fuente de verdad y puede traer un resultado mas reciente hecho en
+    // otro dispositivo.
+    if (isFlightPlan) updateFlightPlanUI();
+    else updateJourneyUI();
+
+    if (await refreshResultsFromServer()) {
+      if (isFlightPlan) updateFlightPlanUI();
+      else updateJourneyUI();
     }
   });
 
   // Exponer conector globalmente para ser invocado desde assessment.js
   window.FuturePilotAIConnector = {
     sendAssessmentToPythonAI,
+    refreshResultsFromServer,
     updateFlightPlanUI,
     updateJourneyUI,
     getAnonId

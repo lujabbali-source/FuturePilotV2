@@ -78,7 +78,9 @@ export default function App() {
       <TopNav />
 
       <section className={`globe-hero ${selectedCountry ? "globe-hero--compact" : ""}`}>
-        <p className="globe-hero__eyebrow">{t("explore")}</p>
+        {/* El eyebrow tiene su propia clave: usaba t("explore"), la misma
+            que el titulo, asi que la cabecera repetia la frase dos veces. */}
+        <p className="globe-hero__eyebrow">{t("eyebrow")}</p>
         <h1 className="globe-hero__title">{t("explore")}</h1>
         <p className="globe-hero__subtitle">{t("subtitle")}</p>
       </section>

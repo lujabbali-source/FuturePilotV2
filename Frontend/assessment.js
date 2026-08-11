@@ -4,10 +4,18 @@ const questionTypes = window.FuturePilotQuestionTypes;
 
 const STORAGE_KEY = "futurePilotAssessment";
 const RESULTS_KEY = "futurePilotResults";
-const QUESTION_COUNT = 50;
 
 const app = document.querySelector("#assessment-app");
 let questions = [];
+
+// Cuantas preguntas tiene el test. Era la constante QUESTION_COUNT = 50,
+// pero las preguntas llegan de /api/v1/questions: no solo pintaba mal la
+// barra de progreso si el JSON cambiaba de tamaño, es que decide cuando
+// TERMINA el test (ver goNext y skipQuestion). Con 45 preguntas el test no
+// habria terminado nunca; con 60, se habria cortado en la 50.
+function questionCount() {
+  return questions.length;
+}
 let currentQuestion = 0;
 let answers = [];
 let results = assessmentEngine.createInitialResults();
@@ -57,13 +65,13 @@ function render() {
 
 function renderWelcome() {
   const saved = savedAssessment();
-  const hasSavedProgress = saved && saved.currentQuestion > 0 && saved.currentQuestion < QUESTION_COUNT;
+  const hasSavedProgress = saved && saved.currentQuestion > 0 && saved.currentQuestion < questionCount();
   app.innerHTML = `<main class="welcome-screen screen-enter">
     <div class="welcome-orbit"><span class="orbit-core">✦</span><span class="orbit-ring orbit-ring--one"></span><span class="orbit-ring orbit-ring--two"></span></div>
     <div class="eyebrow"><span class="eyebrow-dot"></span> FUTUREPILOT / PERSONAL DISCOVERY</div>
     <h1>Tu próximo capítulo<br><span>empieza contigo.</span></h1>
     <p class="welcome-copy">Un test breve y dinámico para conectar tus intereses, fortalezas y personalidad con caminos que realmente podrían encajar contigo.</p>
-    <div class="welcome-stats"><span><strong>50</strong> preguntas</span><i></i><span><strong>10</strong> min aprox.</span><i></i><span><strong>1</strong> perfil único</span></div>
+    <div class="welcome-stats"><span><strong>${questionCount() || 50}</strong> preguntas</span><i></i><span><strong>${Math.max(5, Math.round(questionCount() / 5)) || 10}</strong> min aprox.</span><i></i><span><strong>1</strong> perfil único</span></div>
     <button type="button" class="primary-action primary-action--wide" data-action="start">${hasSavedProgress ? "Continuar mi exploración" : "Comenzar mi exploración"}<span>→</span></button>
     ${hasSavedProgress ? `<button type="button" class="text-action" data-action="restart">Empezar de nuevo</button><p class="resume-note">Guardamos tu progreso en la pregunta ${saved.currentQuestion + 1}. Puedes retomarlo cuando quieras.</p>` : `<p class="privacy-note"><span>◉</span> Tus respuestas se guardan automáticamente en este dispositivo.</p>`}
     <div class="welcome-footer"><span>Sin respuestas correctas o incorrectas</span><span>Diseñado para descubrir, no para examinarte</span></div>
@@ -76,7 +84,10 @@ function renderQuestion() {
   const { format, html } = questionTypes.renderQuestionOptions(question, currentQuestion, state);
   const progress = ((currentQuestion + 1) / questions.length) * 100;
   const progressMessage = questionTypes.getProgressMessage(currentQuestion);
-  const phaseIndex = Math.min(Math.floor(currentQuestion / 10), phaseNames.length - 1);
+  // Las 5 fases se reparten el test proporcionalmente. Estaba fijo en
+  // bloques de 10, que solo cuadra si el test tiene exactamente 50.
+  const perPhase = Math.max(1, Math.ceil(questionCount() / phaseNames.length));
+  const phaseIndex = Math.min(Math.floor(currentQuestion / perPhase), phaseNames.length - 1);
   const phase = phaseNames[phaseIndex];
   const phaseTrack = phaseNames.map((name, index) => `<span class="phase-dot ${index < phaseIndex ? "is-done" : ""} ${index === phaseIndex ? "is-current" : ""}" title="${escapeHtml(name)}"></span>`).join("");
 
@@ -88,7 +99,7 @@ function renderQuestion() {
     </header>
     <section class="progress-section" aria-label="Progreso del test">
       <p class="progress-eyebrow">Tu recorrido</p>
-      <div class="progress-meta"><span class="progress-message">${progressMessage.label}</span><span><strong>${String(currentQuestion + 1).padStart(2, "0")}</strong> / ${QUESTION_COUNT}</span></div>
+      <div class="progress-meta"><span class="progress-message">${progressMessage.label}</span><span><strong>${String(currentQuestion + 1).padStart(2, "0")}</strong> / ${questionCount()}</span></div>
       <div class="progress-bar"><span style="width:${progress}%"></span></div>
       <div class="progress-submeta"><span>${progressMessage.detail}</span><span>${phase}</span></div>
       <div class="phase-track">${phaseTrack}</div>
@@ -101,7 +112,7 @@ function renderQuestion() {
     <footer class="question-footer">
       <button type="button" class="secondary-action" data-action="back" ${currentQuestion === 0 ? "disabled" : ""}>← <span>Anterior</span></button>
       <div class="footer-center"><button type="button" class="skip-action" data-action="skip">Aún no lo sé</button></div>
-      <button type="button" class="primary-action" data-action="next" ${hasCurrentAnswer() ? "" : "disabled"}>${currentQuestion === QUESTION_COUNT - 1 ? "Ver mi perfil" : "Siguiente"}<span>→</span></button>
+      <button type="button" class="primary-action" data-action="next" ${hasCurrentAnswer() ? "" : "disabled"}>${currentQuestion === questionCount() - 1 ? "Ver mi perfil" : "Siguiente"}<span>→</span></button>
     </footer>
   </main>`;
   bindQuestionEvents(format);
@@ -310,7 +321,7 @@ function renderFullResults() {
 
 function goNext() {
   if (!hasCurrentAnswer()) return;
-  if (currentQuestion === QUESTION_COUNT - 1) {
+  if (currentQuestion === questionCount() - 1) {
     results = assessmentEngine.calculateResults(questions, answers, results);
     localStorage.removeItem(STORAGE_KEY);
     screen = "analysis";
@@ -324,7 +335,7 @@ function goNext() {
 
 function skipQuestion() {
   setAnswer(null);
-  if (currentQuestion === QUESTION_COUNT - 1) {
+  if (currentQuestion === questionCount() - 1) {
     localStorage.removeItem(STORAGE_KEY);
     screen = "analysis";
   } else currentQuestion += 1;
