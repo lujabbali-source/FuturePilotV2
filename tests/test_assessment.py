@@ -31,6 +31,58 @@ def test_claim_result_links_it_to_account(client, register_and_login, sample_ans
     assert after["results"]["recommended_careers"]
 
 
+def test_claim_result_is_idempotent_for_the_same_account(client, register_and_login, sample_answers):
+    """Regresion: claim_test_result hacia UPDATE ... WHERE user_id IS NULL y
+    devolvia False en cuanto la fila ya tenia dueño - incluido el caso de
+    que el dueño fuera quien reintenta. Si el UPDATE se confirmaba pero la
+    respuesta HTTP se perdia, el cliente reintentaba y recibia 404 para
+    siempre sobre un resultado que SI era suyo. Reintentar tiene que dar
+    exito, porque el trabajo ya esta hecho."""
+    _, headers = register_and_login()
+    assess = client.post("/api/v1/assess", json={"answers": sample_answers}).json()
+
+    first = client.post("/api/v1/me/claim-result", headers=headers, json={"result_id": assess["result_id"]})
+    assert first.status_code == 200
+
+    retry = client.post("/api/v1/me/claim-result", headers=headers, json={"result_id": assess["result_id"]})
+    assert retry.status_code == 200, "reintentar un claim propio debe ser exito, no 404"
+    # No hay sellos nuevos la segunda vez: ya se otorgaron en la primera.
+    assert retry.json()["new_stamps"] == []
+
+
+def test_claim_retry_does_not_duplicate_passport_activity(client, register_and_login, sample_answers):
+    """Los sellos son idempotentes por el UNIQUE de la tabla, pero los
+    eventos no: sin el guard de has_passport_event, cada reintento añadia
+    otra linea de "Terminó el test" a la actividad reciente."""
+    _, headers = register_and_login()
+    assess = client.post("/api/v1/assess", json={"answers": sample_answers}).json()
+
+    for _ in range(3):
+        client.post("/api/v1/me/claim-result", headers=headers, json={"result_id": assess["result_id"]})
+
+    activity = client.get("/api/v1/passport", headers=headers).json()["recent_activity"]
+    for event_type in ("test_completed", "roadmap_created"):
+        occurrences = [event for event in activity if event["event_type"] == event_type]
+        assert len(occurrences) == 1, f"'{event_type}' aparece {len(occurrences)} veces tras 3 claims"
+
+
+def test_assess_with_token_owns_the_result_immediately(client, register_and_login, sample_answers):
+    """Con sesion activa el test ya no nace anonimo: /api/v1/assess acepta
+    el bearer (get_current_user_optional) y graba el resultado asociado a
+    la cuenta. Asi el resultado no puede quedar huerfano aunque el claim
+    posterior falle - el frontend no mandaba la cabecera y desaprovechaba
+    esto por completo."""
+    _, headers = register_and_login()
+
+    assess = client.post("/api/v1/assess", headers=headers, json={"answers": sample_answers})
+    assert assess.status_code == 200
+
+    # Sin haber llamado a claim-result en ningun momento.
+    stored = client.get("/api/v1/me/results", headers=headers).json()
+    assert stored["results"] is not None
+    assert stored["results"]["recommended_careers"]
+
+
 def test_claim_result_cannot_be_reused_by_another_account(client, register_and_login, sample_answers):
     assess = client.post("/api/v1/assess", json={"answers": sample_answers}).json()
     _, headers_a = register_and_login()

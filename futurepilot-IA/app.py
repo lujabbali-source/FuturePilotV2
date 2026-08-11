@@ -580,9 +580,15 @@ def claim_my_result(
     """El test se completa antes de iniciar sesion (queda como fila anonima
     en test_results). Justo despues de un login/registro exitoso el
     frontend llama esto para asociar ese resultado ya calculado a la cuenta
-    - nunca se recalcula ni se reenvia el resultado completo."""
-    claimed = users_store.claim_test_result(payload.result_id, current_user["id"])
-    if not claimed:
+    - nunca se recalcula ni se reenvia el resultado completo.
+
+    Es idempotente a proposito. Si el UPDATE se confirmo pero la respuesta
+    se perdio por el camino, el cliente reintenta y tiene que recibir exito:
+    el resultado SI quedo vinculado. Devolver 404 ahi dejaria al frontend
+    reintentando indefinidamente sobre un resultado que ya es suyo (ver
+    users_store.claim_test_result para los cuatro casos)."""
+    outcome = users_store.claim_test_result(payload.result_id, current_user["id"])
+    if outcome in ("not_found", "owned_by_other"):
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Resultado no encontrado o ya asociado a otra cuenta.",
@@ -601,8 +607,17 @@ def claim_my_result(
     # parte del mismo calculo del test (ver ai_engine.process_user_test),
     # asi que ambos se vuelven ciertos para la cuenta a la vez, aca, no en
     # el frontend.
-    users_store.record_passport_event(current_user["id"], "test_completed")
-    users_store.record_passport_event(current_user["id"], "roadmap_created")
+    #
+    # Los sellos ya son idempotentes (UNIQUE en la tabla), pero los eventos
+    # no: sin este guard, cada reintento anadiria otra linea de "Terminó el
+    # test" a la actividad reciente. Se comprueba en vez de asumir que
+    # outcome == "already_owned" implica que el evento existe, porque un
+    # fallo justo entre el UPDATE y estas lineas deja lo primero hecho y lo
+    # segundo no - el reintento debe poder completar lo que falte.
+    for event_type in ("test_completed", "roadmap_created"):
+        if not users_store.has_passport_event(current_user["id"], event_type):
+            users_store.record_passport_event(current_user["id"], event_type)
+
     new_stamps = (
         _award_passport_stamps(current_user["id"], "test_completed", None, None)
         + _award_passport_stamps(current_user["id"], "roadmap_created", None, None)

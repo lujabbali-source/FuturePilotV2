@@ -8,9 +8,11 @@
 > - ✅ **Fase 0 — Desbloquear producción: COMPLETADA.** Los 4 bloqueantes (B1-B4 parcial) corregidos
 >   y verificados en navegador real. Ver §7.
 > - ✅ **Fase 1 — Limpieza: COMPLETADA.** ~1.300 líneas de código muerto eliminadas, docs creadas.
-> - ⬜ Fases 2-4 pendientes.
+> - ✅ **Integridad del resultado: COMPLETADA.** El resultado del test ya no puede perderse en el
+>   punto de conversión. Ver §7.1.
+> - ⬜ Unificación del veredicto (un solo motor de scoring) y siguientes fases, pendientes.
 >
-> **Suite de tests: 41 pasan** (38 originales + 3 de regresión añadidos).
+> **Suite de tests: 44 pasan** (38 originales + 6 de regresión añadidos).
 > El análisis de las secciones §1-§6 describe el estado **previo** a estas correcciones y se
 > conserva como registro de la auditoría.
 
@@ -494,6 +496,41 @@ inconsistencia I4. Se eliminaron ambas y se unificaron `careers.html` y `flightp
 | `.gitignore`: `+.pytest_cache/`, `+*.log`, `−database/data/*` (ya no existe) | ✅ |
 
 *Criterio de aceptación cumplido: 41 tests verdes, sitio y globo cargan y funcionan igual.*
+
+---
+
+### ✅ 7.1 Integridad del resultado — COMPLETADA
+
+El resultado del test se calcula **antes** de que exista una cuenta y `result_id`, en
+`localStorage`, era el único puntero hacia él. Las dos llamadas que lo reclamaban borraban ese
+puntero fuera del `try/catch` y sin comprobar `response.ok`: cualquier fallo de red dejaba el
+resultado huérfano en la base de datos y devolvía al estudiante a la pantalla de bienvenida del
+test que acababa de terminar.
+
+| Cambio | Archivo |
+|---|---|
+| `claim_test_result` distingue cuatro casos (`claimed` / `already_owned` / `owned_by_other` / `not_found`) en lugar de un booleano, dentro de una sola transacción | [`users_store.py:384`](backend/users_store.py:384) |
+| El endpoint trata `already_owned` como **éxito**: reintentar un claim que sí funcionó ya no devuelve 404 | [`app.py:575`](futurepilot-IA/app.py:575) |
+| Los eventos del Pasaporte se guardan con `has_passport_event`, así el reintento no duplica la actividad reciente | [`app.py:604`](futurepilot-IA/app.py:604) |
+| **Una sola** implementación del claim, compartida por `login.js` y `assessment.js`. El puntero solo se suelta con un 2xx confirmado | [`result-claim.js`](Frontend/result-claim.js) |
+| UI de reintento en `/login` en lugar de fallo silencioso, con copy distinto según registro o inicio de sesión | [`login.js`](Frontend/login.js) |
+| Red de seguridad: `/assessment` reintenta al cargar cualquier vinculación pendiente | [`assessment.js`](Frontend/assessment.js) |
+| `/api/v1/assess` recibe el bearer si hay sesión, así el resultado **nace** con dueño y no hay nada que perder | [`futurepilot-connector.js`](Frontend/futurepilot-connector.js) |
+
+**El error que evitó este diseño.** La corrección obvia —conservar `result_id` cuando el claim
+falla y reintentar— habría creado un bucle infinito. `claim_test_result` filtraba por
+`WHERE user_id IS NULL`, así que si el `UPDATE` se confirmaba pero la respuesta se perdía, el
+reintento recibía 404 permanentemente sobre un resultado que **sí** estaba correctamente
+vinculado. Hacer el claim idempotente era requisito previo de cualquier lógica de reintento.
+
+**Verificado en navegador**, no solo con tests: fallo de red y 500 conservan el puntero; el
+reintento lo vincula y solo entonces lo libera; la respuesta perdida devuelve éxito sin duplicar
+la actividad; un resultado ajeno se descarta sin bucle; con sesión activa el resultado nace ya
+asociado sin pasar por el claim.
+
+**3 tests nuevos:** `test_claim_result_is_idempotent_for_the_same_account`,
+`test_claim_retry_does_not_duplicate_passport_activity`,
+`test_assess_with_token_owns_the_result_immediately`.
 
 ---
 

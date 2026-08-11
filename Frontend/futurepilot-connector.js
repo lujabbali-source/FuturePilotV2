@@ -19,6 +19,7 @@
   const USER_ANSWERS_KEY = "futurePilotAssessment";
   const RESULT_ID_KEY = "futurePilotResultId";
   const ANON_ID_KEY = "futurePilotAnonId";
+  const AUTH_TOKEN_KEY = "futurePilotAuthToken";
 
   // Antes de iniciar sesion, cada navegador tenia su test/chat guardado
   // bajo un balde compartido ("default_student") en la memoria de la IA -
@@ -64,11 +65,22 @@
       return null;
     }
 
+    // Si ya hay sesion, el token viaja con el test: el backend
+    // (get_current_user_optional en /api/v1/assess) graba el resultado ya
+    // asociado a la cuenta en vez de como fila anonima. Eso hace que el
+    // resultado NUNCA quede huerfano para un usuario logueado - el claim
+    // posterior pasa a ser solo el registro en el Pasaporte, y es
+    // idempotente. Sin token la peticion sigue siendo anonima, que es el
+    // caso normal: el test se hace antes de registrarse.
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    const headers = { "Content-Type": "application/json" };
+    if (token) headers.Authorization = `Bearer ${token}`;
+
     try {
       console.log("[FuturePilot AI] Enviando " + formattedAnswers.length + " respuestas a /api/v1/assess ...");
       const response = await fetch("/api/v1/assess", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify({ answers: formattedAnswers, anon_id: getAnonId() })
       });
 

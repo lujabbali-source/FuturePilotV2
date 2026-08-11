@@ -189,22 +189,13 @@ async function handleUnlock() {
   // el token que ya existe y vamos directo a resultados completos - el
   // Pasaporte se actualiza solo, sin que el usuario tenga que re-loguearse.
   const existingToken = localStorage.getItem("futurePilotAuthToken");
-  const resultId = localStorage.getItem("futurePilotResultId");
 
-  if (existingToken && resultId) {
-    try {
-      const response = await fetch("/api/v1/me/claim-result", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${existingToken}` },
-        body: JSON.stringify({ result_id: Number(resultId) }),
-      });
-      const data = await response.json().catch(() => ({}));
-      window.FuturePilotStampToast?.show(data.new_stamps);
-    } catch (error) {
-      // Silencioso: aiResult ya esta en memoria y se muestra igual: solo
-      // se pierde la actualizacion del pasaporte para esta vuelta.
-    }
-    localStorage.removeItem("futurePilotResultId");
+  if (existingToken && window.FuturePilotResultClaim.pendingResultId()) {
+    // Una sola implementacion del claim, compartida con login.js (ver
+    // result-claim.js). Si falla, el result_id se CONSERVA y se reintenta
+    // solo la proxima vez que cargue esta pagina - antes se borraba pase
+    // lo que pase, y el resultado quedaba huerfano en la base de datos.
+    await window.FuturePilotResultClaim.claimPendingAndCelebrate(existingToken);
     screen = "results";
     render();
     return;
@@ -359,6 +350,17 @@ async function init() {
   // "Repetir el test" (voluntario, boton en resultados) funcione sin
   // pedirlo de nuevo.
   const authToken = localStorage.getItem("futurePilotAuthToken");
+
+  // Red de seguridad: si quedo un resultado sin vincular de un intento
+  // anterior (el claim fallo por red, o el usuario eligio "continuar sin
+  // vincular" en /login), se reintenta aca en silencio antes de preguntar
+  // por los resultados. Es idempotente, asi que no hay riesgo en llamarlo
+  // de mas, y evita que un fallo transitorio deje el resultado huerfano
+  // para siempre.
+  if (authToken && location.protocol !== "file:" && window.FuturePilotResultClaim?.pendingResultId()) {
+    await window.FuturePilotResultClaim.claimPendingAndCelebrate(authToken);
+  }
+
   if (authToken && location.protocol !== "file:") {
     try {
       const response = await fetch("/api/v1/me/results", {

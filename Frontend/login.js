@@ -95,6 +95,27 @@
     infoBox.textContent = "";
   }
 
+  /** El registro/login funciono, pero no pudimos confirmar la vinculacion
+   *  del resultado del test. Las respuestas NO se han perdido (el
+   *  result_id sigue en localStorage, ver result-claim.js), asi que se le
+   *  dice eso y se le ofrece reintentar en el sitio - mandarlo a
+   *  /assessment aqui le mostraria la pantalla de bienvenida del test que
+   *  acaba de terminar, que es exactamente la impresion contraria. */
+  function showRetryClaim() {
+    // El mensaje depende de por donde entro: decirle "tu cuenta quedó
+    // creada" a quien acaba de INICIAR SESION en una cuenta que ya tenia
+    // es sencillamente falso.
+    const entrada = mode === "register" ? "Tu cuenta quedó creada" : "Ya iniciaste sesión";
+    infoBox.hidden = true;
+    errorBox.hidden = false;
+    errorBox.innerHTML = `
+      <span>${entrada}, pero no pudimos vincular tu resultado todavía.
+      No te preocupes: tus respuestas siguen guardadas.</span>
+      <button type="button" class="text-action" data-action="retry-claim">Intentar de nuevo</button>
+      <button type="button" class="text-action" data-action="skip-claim">Continuar sin vincular</button>
+    `;
+  }
+
   function setSubmitting(isSubmitting) {
     submitButton.disabled = isSubmitting;
     submitLabel.textContent = isSubmitting ? "Un momento..." : COPY[mode].submit;
@@ -126,6 +147,29 @@
     if (action === "back-to-login") {
       mode = "login";
       applyMode();
+    }
+
+    if (action === "retry-claim") {
+      actionButton.disabled = true;
+      actionButton.textContent = "Vinculando...";
+      window.FuturePilotResultClaim.claimPendingAndCelebrate().then((claim) => {
+        // Reintentar es seguro incluso si el claim original si funciono:
+        // el endpoint es idempotente y devuelve exito, no 404 (ver
+        // claim_test_result en users_store.py).
+        if (claim.status === "failed") {
+          actionButton.disabled = false;
+          actionButton.textContent = "Intentar de nuevo";
+          return;
+        }
+        window.location.href = "/assessment";
+      });
+    }
+
+    if (action === "skip-claim") {
+      // Salida voluntaria. El result_id se conserva: /assessment vuelve a
+      // intentar la vinculacion al cargar, asi que sigue siendo
+      // recuperable sin que el usuario tenga que hacer nada.
+      window.location.href = "/assessment";
     }
   });
 
@@ -190,26 +234,24 @@
       localStorage.setItem("futurePilotUser", JSON.stringify(data.user));
 
       // Si venimos de "desbloquear resultados" tras el test, hay un
-      // resultado anonimo esperando a asociarse a esta cuenta - se
-      // reclama aca, antes de ir a /assessment, para que la pantalla de
-      // resultados completos ya lo tenga listo (ver assessment.js init(),
-      // que hace fetch a /api/v1/me/results apenas carga).
-      const resultId = localStorage.getItem("futurePilotResultId");
-      if (resultId) {
-        try {
-          const claimResponse = await fetch("/api/v1/me/claim-result", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", Authorization: `Bearer ${data.token}` },
-            body: JSON.stringify({ result_id: Number(resultId) }),
-          });
-          const claimData = await claimResponse.json().catch(() => ({}));
-          window.FuturePilotStampToast?.show(claimData.new_stamps);
-        } catch (error) {
-          // Silencioso a proposito: si falla, el usuario sigue a
-          // /assessment igual, solo se pierde el "recordar" resultados
-          // para la proxima visita - no es motivo para bloquearlo aca.
-        }
-        localStorage.removeItem("futurePilotResultId");
+      // resultado esperando a asociarse a esta cuenta - se reclama aca,
+      // antes de ir a /assessment, para que la pantalla de resultados
+      // completos ya lo tenga listo (ver assessment.js init(), que hace
+      // fetch a /api/v1/me/results apenas carga).
+      //
+      // Se pasa data.token explicito: acaba de llegar en esta respuesta y
+      // localStorage podria no haberlo propagado todavia.
+      const claim = await window.FuturePilotResultClaim.claimPendingAndCelebrate(data.token);
+
+      if (claim.status === "failed") {
+        // El resultado NO se perdio: result-claim.js conserva el
+        // result_id. Pero mandarlo a /assessment ahora significaria
+        // enseñarle la pantalla de bienvenida del test que acaba de
+        // hacer, asi que se le dice la verdad y se le deja reintentar
+        // sin salir de aqui.
+        setSubmitting(false);
+        showRetryClaim();
+        return;
       }
 
       // /assessment decide que mostrar: resultados recien reclamados (o ya

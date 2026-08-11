@@ -381,17 +381,45 @@ class UsersStore:
             )
             return cursor.lastrowid
 
-    def claim_test_result(self, result_id: int, user_id: int) -> bool:
+    def claim_test_result(self, result_id: int, user_id: int) -> str:
         """Asocia un resultado calculado antes del login/registro (todavia
         anonimo) a la cuenta recien autenticada. Solo reclama filas que
         sigan sin dueno - no permite adueñarse del resultado de otra cuenta
-        adivinando su id."""
+        adivinando su id.
+
+        Devuelve cual de los cuatro casos ocurrio, en vez de un bool:
+
+          "claimed"        - el resultado era anonimo y ahora es de user_id.
+          "already_owned"  - ya era de user_id. Es EXITO, no error: pasa
+                             cuando el UPDATE se confirmo pero la respuesta
+                             HTTP se perdio (timeout, red caida) y el
+                             cliente reintenta. Sin distinguir este caso, el
+                             reintento recibiria 404 para siempre sobre un
+                             resultado que si esta correctamente vinculado.
+          "owned_by_other" - es de otra cuenta. No se toca.
+          "not_found"      - no existe ninguna fila con ese id.
+
+        El UPDATE y el SELECT comparten conexion y transaccion para que
+        entre ambos no pueda colarse otro claim y devolver un caso que ya
+        dejo de ser cierto.
+        """
         with self.connect() as connection:
             cursor = connection.execute(
                 "UPDATE test_results SET user_id = ? WHERE id = ? AND user_id IS NULL",
                 (user_id, result_id),
             )
-            return cursor.rowcount > 0
+            if cursor.rowcount > 0:
+                return "claimed"
+
+            row = connection.execute(
+                "SELECT user_id FROM test_results WHERE id = ?", (result_id,)
+            ).fetchone()
+
+        if row is None:
+            return "not_found"
+        if row["user_id"] == user_id:
+            return "already_owned"
+        return "owned_by_other"
 
     def latest_result_for_user(self, user_id: int) -> Optional[dict]:
         with self.connect() as connection:
