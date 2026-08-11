@@ -1,6 +1,16 @@
-(() => {
-const assessmentEngine = window.FuturePilotAssessmentEngine;
-const questionTypes = window.FuturePilotQuestionTypes;
+// Pantalla del test vocacional.
+//
+// Los dos modulos que solo usa esta pagina (el motor de clusters y el
+// renderizado de cada tipo de pregunta) se importan de verdad, en vez de
+// leerse de window esperando que otro <script> los haya definido antes.
+//
+// Lo que sigue viniendo de window son los modulos compartidos con paginas
+// que todavia no se han migrado (el conector de la API, el claim del
+// resultado, el toast de sellos): main.js los importa por su efecto
+// secundario y ellos se registran solos en window. Cuando esas paginas
+// migren, pasaran a ser imports normales tambien.
+import * as assessmentEngine from "./engine.js";
+import * as questionTypes from "./questionTypes.js";
 
 const STORAGE_KEY = "futurePilotAssessment";
 const RESULTS_KEY = "futurePilotResults";
@@ -386,24 +396,17 @@ app.addEventListener("click", (event) => {
 
 async function init() {
   // Fuente unica de verdad: futurepilot-IA/data/questions.json, servido via
-  // /api/v1/questions por el backend unificado. window.FUTUREPILOT_QUESTIONS
-  // (questions-data.js) queda solo como fallback para cuando el HTML se abre
-  // directo con file:// (sin servidor), y se regenera con
-  // scripts/sync_frontend_data.py - no se edita a mano.
-  if (location.protocol !== "file:") {
-    try {
-      const response = await fetch("/api/v1/questions");
-      const data = await response.json();
-      questions = data.questions;
-    } catch (error) {
-      if (!Array.isArray(window.FUTUREPILOT_QUESTIONS)) throw error;
-      questions = window.FUTUREPILOT_QUESTIONS;
-    }
-  } else if (Array.isArray(window.FUTUREPILOT_QUESTIONS)) {
-    questions = window.FUTUREPILOT_QUESTIONS;
-  } else {
-    throw new Error("No hay fuente de preguntas disponible para la vista file://.");
-  }
+  // /api/v1/questions por el backend unificado.
+  //
+  // Antes habia un segundo camino: window.FUTUREPILOT_QUESTIONS, una copia
+  // de las 50 preguntas generada en Frontend/questions-data.js por
+  // scripts/sync_frontend_data.py, para poder abrir la pagina con file://
+  // sin servidor. Esta pagina ahora se compila y solo se sirve por HTTP,
+  // asi que ese camino desaparecio - y con el, la copia de los datos y el
+  // script que habia que acordarse de correr para mantenerla al dia.
+  const response = await fetch("/api/v1/questions");
+  const data = await response.json();
+  questions = data.questions;
 
   // Resume automatico: si hay una sesion valida con un resultado ya
   // guardado para esa cuenta, se salta directo a la pantalla de resultados
@@ -419,11 +422,11 @@ async function init() {
   // por los resultados. Es idempotente, asi que no hay riesgo en llamarlo
   // de mas, y evita que un fallo transitorio deje el resultado huerfano
   // para siempre.
-  if (authToken && location.protocol !== "file:" && window.FuturePilotResultClaim?.pendingResultId()) {
+  if (authToken && window.FuturePilotResultClaim?.pendingResultId()) {
     await window.FuturePilotResultClaim.claimPendingAndCelebrate(authToken);
   }
 
-  if (authToken && location.protocol !== "file:") {
+  if (authToken) {
     try {
       const response = await fetch("/api/v1/me/results", {
         headers: { Authorization: `Bearer ${authToken}` },
@@ -466,4 +469,3 @@ async function init() {
 }
 
 init().catch(() => { app.innerHTML = `<main class="error-screen"><h1>No pudimos cargar tu exploración.</h1><p>Recarga la página para intentarlo de nuevo.</p></main>`; });
-})();

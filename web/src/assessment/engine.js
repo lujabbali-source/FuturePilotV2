@@ -1,4 +1,3 @@
-(() => {
 // Motor LOCAL del test. Calcula el perfil por clusters mientras el
 // estudiante responde: progreso, nivel academico y estilo de aprendizaje.
 //
@@ -97,7 +96,7 @@ function buildAssessmentResult(results) {
   };
 }
 
-window.FuturePilotAssessmentEngine = {
+export {
   clusterNames,
   applyAnswer,
   buildAssessmentResult,
@@ -105,4 +104,3 @@ window.FuturePilotAssessmentEngine = {
   createInitialResults,
   getTopClusters,
 };
-})();

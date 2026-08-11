@@ -24,6 +24,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         globe: resolve(import.meta.dirname, 'globe.html'),
+        assessment: resolve(import.meta.dirname, 'assessment.html'),
       },
     },
   },

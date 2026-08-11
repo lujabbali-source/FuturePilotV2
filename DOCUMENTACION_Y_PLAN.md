@@ -13,9 +13,11 @@
 > - ✅ **Fase 2 — Coherencia de producto: COMPLETADA.** Un solo veredicto (B4), catálogo de 73
 >   carreras, escala de compatibilidad corregida, I2, I3, `QUESTION_COUNT` y las páginas que
 >   dependían del dispositivo.
-> - ⬜ Fases 3 y 4, pendientes.
+> - 🏗️ **Fase 3 — Consolidación sobre Vite: EN CURSO.** Terreno preparado (`web/`, build
+>   multi-página) y `assessment` migrada, ya con CSP estricta. Faltan las demás páginas.
+> - ⬜ Fase 4, pendiente.
 >
-> **Suite de tests: 53 pasan** (38 originales + 15 de regresión añadidos).
+> **Suite de tests: 55 pasan** (38 originales + 17 de regresión añadidos).
 > El análisis de las secciones §1-§6 describe el estado **previo** a estas correcciones y se
 > conserva como registro de la auditoría.
 
@@ -69,7 +71,6 @@ consolidar el frontend sobre el Vite que ya existe, de forma incremental.
 | `Frontend/admin/` | Panel de administración: dashboard, login, Theme Lab, System Health | HTML/CSS/JS vanilla |
 | `web/` | Globo 3D interactivo montado en `/globe` | React 19 + Vite 8 + three.js |
 | `tests/` | 38 tests de integración sobre la API (auth, admin, assessment, mentor, pasaporte) | pytest |
-| `scripts/sync_frontend_data.py` | Regenera `Frontend/questions-data.js` desde el JSON canónico | Python |
 
 ### 2.2 Bases de datos
 
@@ -631,29 +632,62 @@ de `/api/v1/assess`.
 Esta es la fase que resuelve el problema estructural. **Se hace página por página y se puede
 detener en cualquier punto sin dejar el proyecto roto.**
 
-**3.1 — Preparar el terreno (1 día)**
-- Mover el `vite.config.js` del globo a la raíz, configurado como multi-página.
-- Declarar como entradas las páginas actuales de `Frontend/` más el globo.
-- Ajustar `app.py` para servir un único `dist/`.
-- Verificar que todo sigue funcionando **antes de migrar una sola página**.
+#### ✅ 3.1 — Preparar el terreno — COMPLETADO
 
-**3.2 — Migrar página por página (orden sugerido)**
+- `futurepilot-globe/` pasa a ser **`web/`**: va a alojar páginas que no tienen nada que ver con el
+  globo, y el nombre viejo haría que cada paso siguiente se leyera mal.
+- `index.html` pasa a `globe.html`. En un build multi-página el hueco de `index.html` le corresponde
+  a la landing cuando migre, no a una funcionalidad concreta.
+- `base` pasa de `/globe/` a **`/app/`**, con las entradas declaradas en `rollupOptions.input`. Un
+  prefijo compartido mantiene todo el build bajo **un solo mount** y no puede chocar con lo que el
+  backend ya sirve en la raíz.
+- `app.py` monta el `dist` entero en `/app` una vez y sirve cada página desde su propia ruta.
+  **Las URLs públicas no cambian.**
+- `_web_page` cae a la copia sin compilar de `Frontend/` si falta la construida, para que un
+  checkout limpio arranque en vez de dar 503 en media web.
+
+#### ✅ 3.2 — `assessment`, primera página migrada — COMPLETADO
+
+| Antes | Ahora |
+|---|---|
+| 2 bloques `document.write` inline | 0 scripts inline |
+| 13 `<script>` por orden de carga | 1 módulo (48 KB) |
+| `window.FuturePilotAssessmentEngine`, `window.FuturePilotQuestionTypes` | `import` reales |
+| `Frontend/questions-data.js` (28 KB, copia generada de las preguntas) | eliminado |
+| `scripts/sync_frontend_data.py` | eliminado |
+
+Los tres módulos que solo usa el test (`engine.js`, `questionTypes.js`, `app.js`) se movieron con
+`git mv` a `web/src/assessment/` y se convirtieron a módulos ES. Los compartidos con páginas aún sin
+migrar (`result-claim`, `futurepilot-connector`, `passport-stamp-toast`, i18n, tema) se **importan
+por su efecto secundario**: siguen registrándose en `window`, así que funcionan igual para quien los
+carga con `<script>` y entran en el bundle sin duplicar código. Cuando esas páginas migren, pasarán
+a ser imports normales.
+
+**La copia de las preguntas desapareció por completo.** Existía como fallback para abrir la página
+con `file://`; una página compilada siempre se sirve por HTTP, así que se fue el artefacto generado
+y el script que había que acordarse de correr para mantenerlo al día.
+
+#### ✅ 3.3 — Cerrar la CSP — EN CURSO, ya con efecto real
+
+No hacía falta esperar a migrarlo todo. La CSP se elige por ruta: las páginas migradas
+(`/assessment`, `/globe`) reciben `script-src 'self'`, sin `'unsafe-inline'`; las que aún cargan su
+JS con `document.write` conservan la política permisiva. La lista crece con cada página migrada y
+desaparece cuando estén todas.
+
+`style-src` mantiene `'unsafe-inline'` en ambos casos: las pantallas calculan anchos de barra con
+`style="width:N%"`. Moverlo a custom properties es una tarea aparte. La directiva que de verdad
+frena la inyección es `script-src`.
+
+#### ⬜ 3.2 (resto) — orden sugerido
 
 | Orden | Página | Por qué en este orden |
 |---|---|---|
-| 1 | `assessment` | La más compleja; ya está modularizada, así que valida el enfoque |
-| 2 | `login` / `reset-password` | Comparten CSS y lógica de sesión |
+| ~~1~~ | ~~`assessment`~~ | ✅ hecho |
+| 2 | `login` / `reset-password` | Comparten CSS y lógica de sesión; `result-claim` deja de ser global |
 | 3 | `passport` | Consume la API, poco HTML estático |
-| 4 | `journey` / `flightplan` | Tienen JS inline pesado que hay que extraer igualmente |
+| 4 | `journey` / `flightplan` | JS inline pesado que hay que extraer igualmente; libera `futurepilot-connector` |
 | 5 | `index` / `careers` / legales | Casi estáticas, las más fáciles |
 | 6 | `admin/*` | Aisladas, sin prisa |
-
-Cada página migrada: `<script type="module" src="...">` en lugar de `document.write`, imports ES en
-lugar de globales `window.*`.
-
-**3.3 — Cerrar la CSP**
-Cuando no quede ningún script inline: quitar `'unsafe-inline'` de `script-src` en `app.py:124`.
-Este es el entregable de seguridad más valioso de todo el plan.
 
 **3.4 — Un solo i18n**
 i18next para todo. Los namespaces `test`, `results`, `roadmap`, `login` que hoy están huérfanos en

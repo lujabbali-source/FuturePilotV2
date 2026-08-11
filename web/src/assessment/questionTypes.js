@@ -1,4 +1,3 @@
-(() => {
 const icons = ["◈", "✦", "◎", "⌁"];
 
 const progressMessages = [
@@ -89,10 +88,9 @@ function getProgressMessage(index) {
   return progressMessages.reduce((current, message) => index >= message.at ? message : current, progressMessages[0]);
 }
 
-window.FuturePilotQuestionTypes = {
+export {
   getProgressMessage,
   getQuestionFormat,
   progressMessages,
   renderQuestionOptions,
 };
-})();

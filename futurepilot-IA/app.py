@@ -119,19 +119,40 @@ app.add_middleware(
 # DENY) porque el Theme Lab del admin embebe la propia landing page en un
 # <iframe> para la vista previa en vivo.
 # --------------------------------------------------------------------------
-_CSP = (
-    "default-src 'self'; "
-    "script-src 'self' 'unsafe-inline'; "
-    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
-    "font-src 'self' https://fonts.gstatic.com; "
-    "img-src 'self' data:; "
-    "connect-src 'self'; "
-    "frame-src 'self'; "
-    "frame-ancestors 'self'; "
-    "object-src 'none'; "
-    "base-uri 'self'; "
-    "form-action 'self'"
-)
+def _build_csp(*, allow_inline_scripts: bool) -> str:
+    # style-src conserva 'unsafe-inline' en los dos casos: las pantallas
+    # calculan anchos de barras de progreso con atributos style="width:N%".
+    # Quitarlo exige mover esos valores a custom properties, que es otra
+    # tarea. La directiva que de verdad importa contra inyeccion es
+    # script-src.
+    script_src = "'self' 'unsafe-inline'" if allow_inline_scripts else "'self'"
+    return (
+        "default-src 'self'; "
+        f"script-src {script_src}; "
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+        "font-src 'self' https://fonts.gstatic.com; "
+        "img-src 'self' data:; "
+        "connect-src 'self'; "
+        "frame-src 'self'; "
+        "frame-ancestors 'self'; "
+        "object-src 'none'; "
+        "base-uri 'self'; "
+        "form-action 'self'"
+    )
+
+
+# Las paginas sin migrar cargan su JS con un bootstrap inline
+# (document.write) en el propio HTML, asi que necesitan 'unsafe-inline'
+# para funcionar. Las migradas al build de web/ no tienen ni un script
+# inline y reciben la politica estricta.
+#
+# Es una lista de rutas ya migradas, no de excepciones: crece con cada
+# pagina que pasa a web/, y cuando esten todas, _build_csp se llama con
+# allow_inline_scripts=False siempre y este mapa desaparece.
+_STRICT_CSP_PATHS = {"/assessment", "/globe"}
+
+_CSP_PERMISSIVE = _build_csp(allow_inline_scripts=True)
+_CSP_STRICT = _build_csp(allow_inline_scripts=False)
 
 
 @app.middleware("http")
@@ -140,7 +161,8 @@ async def security_headers_middleware(request: Request, call_next):
     response.headers["X-Content-Type-Options"] = "nosniff"
     response.headers["X-Frame-Options"] = "SAMEORIGIN"
     response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
-    response.headers["Content-Security-Policy"] = _CSP
+    strict = request.url.path.rstrip("/") in _STRICT_CSP_PATHS
+    response.headers["Content-Security-Policy"] = _CSP_STRICT if strict else _CSP_PERMISSIVE
     if request.url.scheme == "https":
         response.headers["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains"
     return response
@@ -335,7 +357,10 @@ def globe_page():
 
 @app.get("/assessment")
 def assessment_page():
-    return FileResponse(str(FRONTEND_DIR / "assessment.html"))
+    # Primera pagina migrada al build de web/ (Fase 3). Ya no existe copia
+    # sin compilar en Frontend/, asi que requiere `npm --prefix web run
+    # build`; _web_page devuelve un 503 explicandolo si falta.
+    return _web_page("assessment.html")
 
 
 @app.get("/login")
@@ -934,19 +959,35 @@ def _check_apis() -> Dict[str, Any]:
 
 
 def _check_frontend_pages() -> Dict[str, Any]:
-    # roadmap.html ya no existe: /roadmap es un redirect a /journey (ver
-    # roadmap_page mas arriba). Mientras estuvo en esta lista, el chequeo
-    # daba "error" siempre y arrastraba el estado global a rojo, tapando
-    # cualquier fallo de verdad. La lista debe reflejar las paginas que el
-    # sitio sirve HOY.
-    required = [
-        "index.html", "assessment.html", "careers.html",
-        "journey.html", "flightplan.html", "passport.html", "login.html",
+    # La lista debe reflejar las paginas que el sitio sirve HOY, y de donde
+    # sale cada una. Cuando incluia roadmap.html - borrado al convertir
+    # /roadmap en un redirect a /journey - el chequeo daba "error" siempre y
+    # arrastraba el estado global a rojo, tapando cualquier fallo real.
+    #
+    # Ahora hay dos origenes: las paginas sin migrar viven en Frontend/ y
+    # las migradas salen del build de web/ (Fase 3). Una pagina migrada que
+    # falte significa que nadie corrio `npm --prefix web run build`, que es
+    # un problema distinto y merece su propio mensaje.
+    legacy = [
+        "index.html", "careers.html", "journey.html",
+        "flightplan.html", "passport.html", "login.html",
     ]
-    missing = [name for name in required if not (FRONTEND_DIR / name).exists()]
-    if missing:
-        return {"status": "error", "detail": f"Faltan paginas: {', '.join(missing)}"}
-    return {"status": "ok", "detail": "Paginas principales del sitio presentes."}
+    built = ["assessment.html", "globe.html"]
+
+    missing_legacy = [name for name in legacy if not (FRONTEND_DIR / name).exists()]
+    missing_built = [name for name in built if not (WEB_DIST_DIR / name).exists()]
+
+    if missing_legacy:
+        return {"status": "error", "detail": f"Faltan paginas en Frontend/: {', '.join(missing_legacy)}"}
+    if missing_built:
+        return {
+            "status": "error",
+            "detail": (
+                f"Faltan paginas compiladas ({', '.join(missing_built)}). "
+                "Corre 'npm --prefix web run build'."
+            ),
+        }
+    return {"status": "ok", "detail": "Paginas del sitio presentes (Frontend/ y build de web/)."}
 
 
 def _check_static_assets() -> Dict[str, Any]:

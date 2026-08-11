@@ -123,3 +123,27 @@ def test_admin_actions_are_audited(client, admin_headers):
     actions = [entry["action"] for entry in r.json()["entries"]]
     assert "theme.save" in actions
     assert "theme.reset" in actions
+
+
+def test_migrated_pages_get_a_csp_without_unsafe_inline(client):
+    """El pago de migrar una pagina al build de web/ (Fase 3): sin scripts
+    inline, deja de necesitar 'unsafe-inline' en script-src. Las que aun
+    cargan su JS con document.write lo siguen necesitando. Cuando se migre
+    la ultima, la politica permisiva desaparece."""
+    for path in ("/assessment", "/globe"):
+        csp = client.get(path).headers["content-security-policy"]
+        assert "script-src 'self';" in csp, f"{path} no recibe la CSP estricta"
+        assert "'unsafe-inline'" not in csp.split("style-src")[0], path
+
+    # Una pagina sin migrar: sigue con la politica permisiva, a proposito.
+    csp = client.get("/careers").headers["content-security-policy"]
+    assert "script-src 'self' 'unsafe-inline'" in csp
+
+
+def test_migrated_pages_are_served_from_the_build(client):
+    """/assessment ya no tiene copia en Frontend/: sale del build de web/.
+    Si el HTML servido trae un document.write, es que se esta sirviendo la
+    version vieja desde algun sitio."""
+    html = client.get("/assessment").text
+    assert "document.write" not in html
+    assert "/app/assets/" in html, "no parece el HTML compilado por Vite"

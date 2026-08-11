@@ -19,7 +19,7 @@ pip install -r requirements-dev.txt
 npm --prefix web install
 ```
 
-Compila el globo (el backend lo sirve bajo `/globe`; sin este paso esa ruta no existe):
+Compila el frontend (el backend sirve el resultado; sin este paso `/assessment` y `/globe` no existen):
 
 ```bash
 npm --prefix web run build
@@ -34,9 +34,9 @@ python -m uvicorn --app-dir futurepilot-IA app:app --reload --port 8000
 El sitio queda en <http://127.0.0.1:8000>. La documentación interactiva de la API, en `/docs`.
 
 > Con VS Code o Claude Code, `.claude/launch.json` ya trae las configuraciones
-> `futurepilot-backend` y `web`.
+> `futurepilot-backend` y `futurepilot-web`.
 
-### Trabajar sobre el globo con hot reload
+### Trabajar sobre el frontend con hot reload
 
 ```bash
 npm --prefix web run dev
@@ -51,7 +51,7 @@ El backend debe estar levantado en paralelo.
 python -m pytest
 ```
 
-53 tests de integración sobre la API real (auth, admin, assessment, mentor, pasaporte). Usan una
+55 tests de integración sobre la API real (auth, admin, assessment, mentor, pasaporte). Usan una
 base SQLite temporal: **nunca tocan `backend/data/users.sqlite3`**.
 
 ---
@@ -77,7 +77,7 @@ desarrollo. Las que importan:
 
 ```
 futurepilot-IA/          Backend. app.py es el ÚNICO servidor (FastAPI, 45 endpoints):
-  app.py                   expone la API y sirve Frontend/ y el build del globo
+  app.py                   expone la API y sirve Frontend/ y el build de web/
   ai_engine.py             motor cognitivo rule-based + AI Mentor + memoria por estudiante
   data/                    FUENTE ÚNICA DE VERDAD: questions.json (50), careers.json (73)
 
@@ -88,26 +88,30 @@ backend/                 Librería de datos, no arranca ningún servidor propio
   config_store.py          config JSON del Theme Lab y los feature flags
   data/users.sqlite3       la base real (ignorada por git)
 
-Frontend/                Sitio del estudiante: HTML/CSS/JS vanilla
-  admin/                   panel de administración
-
-web/       Globo 3D (React 19 + Vite + three.js), se sirve en /globe
+web/                     Frontend compilado (Vite). Una entrada por página:
+  globe.html               globo 3D (React + three.js), servido en /globe
+  assessment.html          test vocacional, servido en /assessment
+  src/assessment/          módulos ES del test
   src/database/countries/  datos de países y ciudades curados a mano
 
-scripts/                 Utilidades
-  sync_frontend_data.py    regenera Frontend/questions-data.js desde el JSON canónico
+Frontend/                Páginas aún sin migrar: HTML/CSS/JS vanilla
+  admin/                   panel de administración
 
 tests/                   Suite de pytest
 docs/                    Documentación y notas
 ```
 
+> **Migración en curso (Fase 3).** `web/` va absorbiendo `Frontend/` página a página. Las dos
+> conviven: cada página migrada se declara como una entrada en `web/vite.config.js` y su ruta en
+> `app.py` sirve el HTML compilado; las demás se siguen sirviendo tal cual desde `Frontend/`.
+> Después de tocar `web/`, reconstruye — el backend sirve `dist/`, no el código fuente.
+
 ---
 
 ## Notas de desarrollo
 
-- **Los datos del test tienen una sola fuente.** `futurepilot-IA/data/questions.json` es canónico.
-  `Frontend/questions-data.js` es un artefacto generado (fallback para abrir el sitio con `file://`)
-  y **no se edita a mano**: se regenera con `python scripts/sync_frontend_data.py`.
+- **Los datos del test tienen una sola fuente.** `futurepilot-IA/data/questions.json` es canónico y
+  llega al navegador por `/api/v1/questions`. Ya no existe ninguna copia generada en el frontend.
 
 - **El frontend nunca hardcodea el host de la API.** Siempre rutas relativas (`/api/v1/...`).
   El backend sirve el sitio y la API desde el mismo origen, y la CSP declara `connect-src 'self'`.
@@ -115,8 +119,8 @@ docs/                    Documentación y notas
 - **La identidad se resuelve siempre en el servidor**, desde el token bearer o desde un `anon_id`
   validado con regex estricta. Nunca desde el payload del cliente.
 
-- **Reconstruye el globo** (`npm --prefix web run build`) después de tocar
-  `web/src/`: el backend sirve `dist/`, no el código fuente.
+- **Reconstruye** (`npm --prefix web run build`) después de tocar `web/`: el backend sirve
+  `dist/`, no el código fuente.
 
 ---
 

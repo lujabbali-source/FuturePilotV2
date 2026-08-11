@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111F" />
+    <title>Descubre tu perfil · FuturePilot</title>
+    <!-- Hoja compartida con las paginas que aun no se han migrado, servida
+         por FastAPI desde /Frontend. Se deja como <link> absoluto en vez de
+         importarla en el bundle para que siga siendo UNA sola copia
+         mientras dure la migracion; pasara al bundle cuando ya no la
+         necesite ninguna pagina sin compilar. -->
+    <link rel="stylesheet" href="/Frontend/assessment.css" />
+  </head>
+  <body>
+    <div class="ambient ambient--one"></div>
+    <div class="ambient ambient--two"></div>
+    <div id="assessment-app" aria-live="polite"></div>
+    <script type="module" src="/src/assessment/main.js"></script>
+  </body>
+</html>
