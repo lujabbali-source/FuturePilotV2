@@ -33,11 +33,13 @@
 </div>
 
 <div class="nav-links">
-<a href="/">Home</a>
-<a href="/careers">Careers</a>
-<a href="/assessment">Assessment</a>
-<a href="/roadmap">Roadmaps</a>
-<a href="/login">Sign In</a>
+<a href="/" data-i18n="nav.home">Home</a>
+<a href="/careers" data-i18n="nav.careers">Careers</a>
+<a href="/assessment" data-i18n="nav.assessment">Assessment</a>
+<a href="/globe" data-i18n="nav.globe">Explore the Globe</a>
+<a href="/roadmap" data-i18n="nav.roadmaps">Roadmaps</a>
+<a href="/passport" id="navPassportLink" data-i18n="nav.passport" hidden>Passport</a>
+<a href="/login" id="navAuthLink" data-i18n="nav.signin">Sign In</a>
 </div>
 
 </nav>
@@ -46,16 +48,16 @@
 
 <div class="hero-content">
 
-<div class="badge">
+<div class="badge" data-i18n="hero.badge">
 🚀 Your Future Starts Here
 </div>
 
-<h1>
+<h1 data-i18n-html="hero.title">
 Navigate Your Future.<br>
 Build Your Destination.
-</h1> 
+</h1>
 
-<p>
+<p data-i18n="hero.subtitle">
 Stop guessing your next step. Discover career paths,
 personalized roadmaps, and opportunities designed
 for ambitious students.
@@ -63,12 +65,12 @@ for ambitious students.
 
 <div class="buttons">
 
-<a href="/assessment" class="primary-btn">
+<a href="/assessment" class="primary-btn" data-i18n="hero.ctaPrimary">
 Build My Flight Plan
 </a>
 
-<a href="/assessment" class="secondary-btn">
-Discover My Path
+<a href="/globe" class="secondary-btn" data-i18n="hero.ctaSecondary">
+Explore the Globe
 </a>
 
 </div>
@@ -76,58 +78,65 @@ Discover My Path
 
     <div class="stat">
         <h3>100+</h3>
-        <p>Career Paths</p>
+        <p data-i18n="hero.stat1">Career Paths</p>
     </div>
 
     <div class="stat">
         <h3>500+</h3>
-        <p>Learning Resources</p>
+        <p data-i18n="hero.stat2">Learning Resources</p>
     </div>
 
     <div class="stat">
         <h3>∞</h3>
-        <p>Possibilities</p>
+        <p data-i18n="hero.stat3">Possibilities</p>
     </div>
 
 </div>
 </div>
-<div class="preview-card">
 
-    <div class="card-header">
-        ✈️ Future Flight Plan
-    </div>
+</section>
 
-    <div class="milestone completed">
-        ✓ Python Fundamentals
+<section class="features">
 
-        <div class="progress-bar">
-            <div class="progress-fill fill-100"></div>
-        </div>
-    </div>
+<h2 data-i18n="features.heading">What's Inside FuturePilot</h2>
 
-    <div class="milestone progress">
-        🚀 Build Portfolio Website
+<div class="cards">
 
-        <div class="progress-bar">
-            <div class="progress-fill fill-70"></div>
-        </div>
-    </div>
+<div class="career-card">
+🧠
+<h3 data-i18n="features.ai.title">Personalized AI</h3>
+<p data-i18n="features.ai.desc">An engine that analyzes your unique profile and matches you with careers that actually fit.</p>
+</div>
 
-    <div class="milestone">
-        🤖 Learn AI Basics
+<div class="career-card">
+🌐
+<h3 data-i18n="features.globe.title">Interactive Globe</h3>
+<p data-i18n="features.globe.desc">Explore universities and opportunities across the continent on a 3D interactive globe.</p>
+</div>
 
-        <div class="progress-bar">
-            <div class="progress-fill fill-25"></div>
-        </div>
-    </div>
+<div class="career-card">
+🎓
+<h3 data-i18n="features.universities.title">Universities &amp; Countries</h3>
+<p data-i18n="features.universities.desc">Compare real costs, programs and cities to make the decision that fits you best.</p>
+</div>
 
-    <div class="milestone">
-        🏆 Join Hackathon
+<div class="career-card">
+🗺️
+<h3 data-i18n="features.roadmap.title">Personalized Roadmap</h3>
+<p data-i18n="features.roadmap.desc">A step-by-step plan generated from your profile to get where you want to be.</p>
+</div>
 
-        <div class="progress-bar">
-            <div class="progress-fill fill-10"></div>
-        </div>
-    </div>
+<div class="career-card">
+✨
+<h3 data-i18n="features.recommendations.title">Smart Recommendations</h3>
+<p data-i18n="features.recommendations.desc">Suggestions that evolve with your progress and interests over time.</p>
+</div>
+
+<div class="career-card">
+📈
+<h3 data-i18n="features.academic.title">Academic Development Plan</h3>
+<p data-i18n="features.academic.desc">A clear path from where you are today to your ideal career.</p>
+</div>
 
 </div>
 
@@ -135,44 +144,44 @@ Discover My Path
 
 <section class="destinations">
 
-<h2>Where Do You Want To Go?</h2>
+<h2 data-i18n="destinations.heading">Where Do You Want To Go?</h2>
 
 <div class="cards">
 
 <div class="career-card">
 🤖
-<h3>AI & Technology</h3>
-<p>Artificial Intelligence, Software Engineering and Data Science.</p>
+<h3 data-i18n="destinations.ai.title">AI & Technology</h3>
+<p data-i18n="destinations.ai.desc">Artificial Intelligence, Software Engineering and Data Science.</p>
 </div>
 
 <div class="career-card">
 🩺
-<h3>Medicine & Health</h3>
-<p>Medicine, Nursing and Healthcare careers.</p>
+<h3 data-i18n="destinations.medicine.title">Medicine & Health</h3>
+<p data-i18n="destinations.medicine.desc">Medicine, Nursing and Healthcare careers.</p>
 </div>
 
 <div class="career-card">
 ⚖️
-<h3>Law & Social Sciences</h3>
-<p>Law, Psychology and International Relations.</p>
+<h3 data-i18n="destinations.law.title">Law & Social Sciences</h3>
+<p data-i18n="destinations.law.desc">Law, Psychology and International Relations.</p>
 </div>
 
 <div class="career-card">
 📈
-<h3>Business</h3>
-<p>Business, Finance and Entrepreneurship.</p>
+<h3 data-i18n="destinations.business.title">Business</h3>
+<p data-i18n="destinations.business.desc">Business, Finance and Entrepreneurship.</p>
 </div>
 
 <div class="career-card">
 🎨
-<h3>Creative Arts</h3>
-<p>Design, Media and Content Creation.</p>
+<h3 data-i18n="destinations.creative.title">Creative Arts</h3>
+<p data-i18n="destinations.creative.desc">Design, Media and Content Creation.</p>
 </div>
 
 <div class="career-card">
 🔬
-<h3>Science & Research</h3>
-<p>Biology, Chemistry and Scientific Research.</p>
+<h3 data-i18n="destinations.science.title">Science & Research</h3>
+<p data-i18n="destinations.science.desc">Biology, Chemistry and Scientific Research.</p>
 </div>
 
 </div>
@@ -181,42 +190,76 @@ Discover My Path
 
 <section class="how-it-works">
 
-<h2>How FuturePilot Works</h2>
+<h2 data-i18n="howitworks.heading">How FuturePilot Works</h2>
 
 <div class="steps">
 
 <div class="step">
 🧭
-<h3>Discover</h3>
-<p>Take the Future Assessment and discover careers that fit you.</p>
+<h3 data-i18n="howitworks.discover.title">Discover</h3>
+<p data-i18n="howitworks.discover.desc">Take the Future Assessment and discover careers that fit you.</p>
 </div>
 
 <div class="step">
 ✈️
-<h3>Plan</h3>
-<p>Receive a personalized Flight Plan built around your goals.</p>
+<h3 data-i18n="howitworks.plan.title">Plan</h3>
+<p data-i18n="howitworks.plan.desc">Receive a personalized Flight Plan built around your goals.</p>
 </div>
 
 <div class="step">
 🚀
-<h3>Achieve</h3>
-<p>Learn, build projects and track your progress.</p>
+<h3 data-i18n="howitworks.achieve.title">Achieve</h3>
+<p data-i18n="howitworks.achieve.desc">Learn, build projects and track your progress.</p>
 </div>
 
 </div>
 
 </section>
 
-<footer>
+<footer class="site-footer">
 
-<h3>FuturePilot</h3>
+<div class="footer-top">
 
-<p>
-© 2025 FuturePilot. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>    
-Be able to achieve your dreams with a clear path forward. FuturePilot is here to guide you every step of the way.
-</p>
+  <div class="footer-brand">
+    <span class="footer-logo">FuturePilot</span>
+    <p data-i18n="footer.tagline">A clear path forward, from where you are today to your ideal career. FuturePilot guides you every step of the way.</p>
+  </div>
+
+  <div class="footer-col">
+    <h4 data-i18n="footer.platform">Platform</h4>
+    <a href="/assessment" data-i18n="nav.assessment">Assessment</a>
+    <a href="/globe" data-i18n="nav.globe">Explore the Globe</a>
+    <a href="/roadmap" data-i18n="nav.roadmaps">Roadmaps</a>
+  </div>
+
+  <div class="footer-col">
+    <h4 data-i18n="footer.legal">Legal</h4>
+    <a href="/terms" data-i18n="footer.terms">Terms &amp; Conditions</a>
+    <a href="/privacy" data-i18n="footer.privacy">Privacy Policy</a>
+  </div>
+
+  <div class="footer-col">
+    <h4 data-i18n="footer.support">Support</h4>
+    <p class="footer-note" data-i18n="footer.supportNote">Questions, suggestions or feedback:</p>
+    <!-- TODO: reemplazar por el email real de soporte del proyecto -->
+    <a href="mailto:soporte@futurepilot.com">soporte@futurepilot.com</a>
+  </div>
+
+</div>
+
+<div class="footer-bottom">
+  <p>&copy; <span id="footerYear">2026</span> FuturePilot. <span data-i18n="footer.rights">All rights reserved.</span></p>
+</div>
 
 </footer>
 
+<script>
+  (function () {
+    var base = location.protocol === "file:" ? "./" : "/Frontend/";
+    ["theme-loader.js", "i18n.js", "language-toggle.js", "passport-stamp-toast.js", "mentor-chat.js", "dev-config.js", "dev-tools.js", "site.js"].forEach(function (file) {
+      document.write('<script src="' + base + file + '"><\/script>');
+    });
+  })();
+</script>
 </body>
 </html>

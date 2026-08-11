@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Conditions · FuturePilot</title>
+<link rel="stylesheet" href="/Frontend/style.css">
+<style>
+  .legal-shell{max-width:760px;margin:0 auto;padding:100px 24px 120px;}
+  .legal-shell a.back{color:#00FFB3;text-decoration:none;font-size:.9rem;}
+  .legal-shell h1{font-size:2.4rem;margin:24px 0 8px;}
+  .legal-shell .legal-note{color:#B8C4D4;font-size:.95rem;line-height:1.8;padding:18px 20px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.03);margin:24px 0 40px;}
+  .legal-shell h2{font-size:1.3rem;margin:36px 0 12px;color:#00FFB3;}
+  .legal-shell p{color:#B8C4D4;line-height:1.8;margin-bottom:14px;}
+</style>
+</head>
+<body>
+<div class="background-glow"></div>
+<nav>
+  <div class="logo">
+    <img src="/Frontend/futurepilot-logo.png" alt="FuturePilot Logo">
+    <span>FuturePilot</span>
+  </div>
+  <div class="nav-links">
+    <a href="/">Home</a>
+  </div>
+</nav>
+
+<main class="legal-shell">
+  <a class="back" href="/">← Back to FuturePilot</a>
+  <h1>Terms &amp; Conditions</h1>
+  <p class="legal-note">This page is a placeholder. FuturePilot is under active development and these terms have not yet been finalized or reviewed by legal counsel. Do not treat this as a binding agreement.</p>
+
+  <h2>Using FuturePilot</h2>
+  <p>FuturePilot is a vocational guidance platform: it helps you explore careers, universities and personalized roadmaps based on an assessment you complete voluntarily.</p>
+
+  <h2>Your account</h2>
+  <p>You're responsible for keeping your login credentials private. Don't share your account, and let us know if you believe it's been compromised.</p>
+
+  <h2>Your content</h2>
+  <p>Your test answers and generated results belong to you. We use them only to power your experience on the platform.</p>
+
+  <h2>Questions</h2>
+  <p>Reach out at <a href="mailto:soporte@futurepilot.com">soporte@futurepilot.com</a> with any questions about these terms.</p>
+</main>
+<script>
+  (function () {
+    var base = location.protocol === "file:" ? "./" : "/Frontend/";
+    ["theme-loader.js", "i18n.js", "language-toggle.js", "passport-stamp-toast.js", "mentor-chat.js"].forEach(function (file) {
+      document.write('<script src="' + base + file + '"><\/script>');
+    });
+  })();
+</script>
+</body>
+</html>

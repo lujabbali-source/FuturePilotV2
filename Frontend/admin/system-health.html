@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#040a08">
+  <meta name="robots" content="noindex, nofollow">
+  <title>System Health · Admin FuturePilot</title>
+  <link rel="stylesheet" href="/Frontend/admin/admin-dashboard.css">
+  <link rel="stylesheet" href="/Frontend/admin/system-health.css">
+</head>
+<body>
+
+  <div class="admin-gate" id="adminGate">
+    <div class="admin-gate__spinner" aria-hidden="true"></div>
+    <p>Verificando acceso…</p>
+  </div>
+
+  <div class="admin-app" id="adminApp" hidden>
+
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__brand">
+        <img src="/Frontend/futurepilot-logo.png" alt="FuturePilot">
+        <span>Future<span class="accent">Pilot</span> <em>Admin</em></span>
+      </div>
+
+      <nav class="admin-nav">
+        <a href="/admin" class="admin-nav__item">
+          <span class="admin-nav__dot"></span> Dashboard general
+        </a>
+        <a href="/admin/theme-lab" class="admin-nav__item">
+          <span class="admin-nav__dot"></span> Theme Lab
+        </a>
+        <a href="/admin/system-health" class="admin-nav__item is-active">
+          <span class="admin-nav__dot"></span> System Health
+        </a>
+      </nav>
+
+      <a href="/" class="admin-sidebar__exit">← Volver al sitio</a>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <p class="admin-topbar__eyebrow"><span></span> DIAGNÓSTICO DEL SISTEMA</p>
+          <h1>System Health</h1>
+        </div>
+        <div class="admin-topbar__user">
+          <span id="adminUserEmail"></span>
+          <button type="button" id="adminLogoutBtn" class="admin-logout-btn">Cerrar sesión</button>
+        </div>
+      </header>
+
+      <div class="health-overall" id="healthOverall">
+        <span class="health-dot" id="overallDot"></span>
+        <span id="overallLabel">Verificando…</span>
+        <button type="button" id="refreshBtn" class="health-refresh-btn">Actualizar estado</button>
+      </div>
+
+      <section class="health-grid" id="healthGrid">
+        <!-- Las tarjetas se generan por JS desde /api/v1/admin/health -->
+      </section>
+    </div>
+  </div>
+
+  <script>
+    document.write('<script src="' + (location.protocol === "file:" ? "./system-health.js" : "/Frontend/admin/system-health.js") + '"><\/script>');
+  </script>
+</body>
+</html>

@@ -1,7 +1,4 @@
 export function defineCity({ id, name, coordinates, isCapital = false, ...overrides }) {
-    const cityOverrides = { ...overrides };
-    delete cityOverrides.universities;
-
     return {
         id,
         name,
@@ -49,6 +46,6 @@ export function defineCity({ id, name, coordinates, isCapital = false, ...overri
             food: [],
             tourism: []
         },
-        ...cityOverrides
+        ...overrides
     };
 }

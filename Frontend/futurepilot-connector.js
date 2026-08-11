@@ -12,6 +12,24 @@
   const API_URL = "http://127.0.0.1:8000";
   const AI_STORAGE_KEY = "futurePilotAIResponse";
   const USER_ANSWERS_KEY = "futurePilotAssessment";
+  const RESULT_ID_KEY = "futurePilotResultId";
+  const ANON_ID_KEY = "futurePilotAnonId";
+
+  // Antes de iniciar sesion, cada navegador tenia su test/chat guardado
+  // bajo un balde compartido ("default_student") en la memoria de la IA -
+  // cualquier visitante anonimo podia ver rastros de otro. Este id, unico
+  // por navegador y persistido en localStorage, le da a cada sesion
+  // anonima su propio espacio (ver resolve_anon_memory_id en app.py).
+  function getAnonId() {
+    let id = localStorage.getItem(ANON_ID_KEY);
+    if (!id) {
+      id = window.crypto?.randomUUID
+        ? window.crypto.randomUUID()
+        : `anon-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+      localStorage.setItem(ANON_ID_KEY, id);
+    }
+    return id;
+  }
 
   // =============================================================================
   // 1. ENVIAR RESPUESTAS DEL TEST A LA API EN PYTHON
@@ -33,7 +51,7 @@
       const response = await fetch(`${API_URL}/api/v1/assess`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ answers: formattedAnswers })
+        body: JSON.stringify({ answers: formattedAnswers, anon_id: getAnonId() })
       });
 
       if (!response.ok) {
@@ -44,6 +62,10 @@
       if (result.success && result.data) {
         console.log("[FuturePilot AI] Diagnostico recibido con exito desde Python:", result.data);
         localStorage.setItem(AI_STORAGE_KEY, JSON.stringify(result.data));
+        // Guardado aparte (no dentro del blob de resultados) para que
+        // assessment.js pueda reclamarlo tras el login sin tener que
+        // parsear/tocar AI_STORAGE_KEY.
+        if (result.result_id) localStorage.setItem(RESULT_ID_KEY, String(result.result_id));
         return result.data;
       }
     } catch (error) {
@@ -146,6 +168,7 @@
   window.FuturePilotAIConnector = {
     sendAssessmentToPythonAI,
     updateFlightPlanUI,
-    updateJourneyUI
+    updateJourneyUI,
+    getAnonId
   };
 })();

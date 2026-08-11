@@ -10,16 +10,66 @@
 <body>
 
   <div class="aurora-bg" aria-hidden="true">
-    <span class="aurora-band aurora-band--1"></span>
-    <span class="aurora-band aurora-band--2"></span>
-    <span class="aurora-band aurora-band--3"></span>
-    <span class="aurora-band aurora-band--4"></span>
-    <span class="aurora-streak aurora-streak--1"></span>
-    <span class="aurora-streak aurora-streak--2"></span>
-    <span class="aurora-streak aurora-streak--3"></span>
-    <span class="aurora-streak aurora-streak--4"></span>
-    <span class="aurora-glow"></span>
     <span class="aurora-stars"></span>
+
+    <svg class="aurora-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <filter id="auroraTurb1" x="-60%" y="-60%" width="220%" height="220%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.006 0.014" numOctaves="2" seed="5" result="n1"/>
+          <feDisplacementMap in="SourceGraphic" in2="n1" scale="170" xChannelSelector="R" yChannelSelector="G"/>
+          <feGaussianBlur stdDeviation="24"/>
+        </filter>
+        <filter id="auroraTurb2" x="-60%" y="-60%" width="220%" height="220%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="2" seed="11" result="n2"/>
+          <feDisplacementMap in="SourceGraphic" in2="n2" scale="130" xChannelSelector="R" yChannelSelector="G"/>
+          <feGaussianBlur stdDeviation="36"/>
+        </filter>
+        <filter id="auroraTurb3" x="-60%" y="-60%" width="220%" height="220%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.026" numOctaves="2" seed="19" result="n3"/>
+          <feDisplacementMap in="SourceGraphic" in2="n3" scale="95" xChannelSelector="R" yChannelSelector="G"/>
+          <feGaussianBlur stdDeviation="14"/>
+        </filter>
+        <filter id="auroraTurbFaint" x="-60%" y="-60%" width="220%" height="220%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.007 0.016" numOctaves="2" seed="27" result="n4"/>
+          <feDisplacementMap in="SourceGraphic" in2="n4" scale="140" xChannelSelector="R" yChannelSelector="G"/>
+          <feGaussianBlur stdDeviation="28"/>
+        </filter>
+        <radialGradient id="auroraCore" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#00ffb3" stop-opacity=".38"/>
+          <stop offset="45%" stop-color="#00c896" stop-opacity=".2"/>
+          <stop offset="100%" stop-color="#00c896" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="auroraMid" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#00d4ff" stop-opacity=".26"/>
+          <stop offset="50%" stop-color="#00d4ff" stop-opacity=".12"/>
+          <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="auroraOuter" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#baffe8" stop-opacity=".2"/>
+          <stop offset="100%" stop-color="#baffe8" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="auroraFaint" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#00c896" stop-opacity=".14"/>
+          <stop offset="100%" stop-color="#00c896" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Zona principal: concentrada arriba a la derecha, detras/alrededor
+           de la tarjeta. Varias capas semitransparentes superpuestas (cada
+           una con su propia distorsion de ruido) crean profundidad en vez
+           de una sola forma nitida. -->
+      <g class="aurora-zone aurora-zone--main">
+        <ellipse class="aurora-cloud aurora-cloud--a" cx="1120" cy="300" rx="480" ry="260" fill="url(#auroraOuter)" filter="url(#auroraTurb1)"/>
+        <ellipse class="aurora-cloud aurora-cloud--b" cx="1200" cy="260" rx="340" ry="200" fill="url(#auroraMid)" filter="url(#auroraTurb2)"/>
+        <ellipse class="aurora-cloud aurora-cloud--c" cx="1040" cy="340" rx="260" ry="150" fill="url(#auroraCore)" filter="url(#auroraTurb3)"/>
+      </g>
+
+      <!-- Segunda zona, mucho mas tenue: un unico acento abajo a la
+           izquierda para dar profundidad sin competir con la principal. -->
+      <g class="aurora-zone aurora-zone--secondary">
+        <ellipse class="aurora-cloud aurora-cloud--d" cx="280" cy="650" rx="320" ry="180" fill="url(#auroraFaint)" filter="url(#auroraTurbFaint)"/>
+      </g>
+    </svg>
   </div>
 
   <main class="login-shell">
@@ -57,11 +107,11 @@
           <input type="email" name="email" autocomplete="email" required placeholder="tu@email.com">
         </label>
 
-        <label class="login-field">
+        <label class="login-field" id="passwordField">
           <span class="login-field__icon">
             <svg viewBox="0 0 24 24" fill="none"><rect x="4.5" y="10.5" width="15" height="9.5" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 10.5V8a4 4 0 1 1 8 0v2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </span>
-          <input type="password" name="password" autocomplete="current-password" required minlength="8" placeholder="Mínimo 8 caracteres">
+          <input type="password" name="password" autocomplete="current-password" minlength="8" placeholder="Mínimo 8 caracteres">
           <button type="button" class="login-field__toggle" data-action="toggle-password" aria-label="Mostrar contraseña">
             <svg viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.75" stroke="currentColor" stroke-width="1.6"/></svg>
           </button>
@@ -75,27 +125,16 @@
           <button type="button" class="login-link" data-action="forgot">¿Olvidaste tu contraseña?</button>
         </div>
 
+        <button type="button" class="login-link" data-action="back-to-login" id="backToLoginLink" hidden>← Volver a iniciar sesión</button>
+
         <p class="login-error" id="loginError" hidden></p>
+        <p class="login-info" id="loginInfo" hidden></p>
 
         <button type="submit" class="login-submit" id="loginSubmit">
           <span id="submitLabel">Iniciar sesión</span>
           <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </form>
-
-      <div class="login-divider"><span>o continúa con</span></div>
-
-      <div class="login-social">
-        <button type="button" class="login-social__btn" data-provider="google">
-          <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l6-6C34.5 5.5 29.6 3.5 24 3.5 12.7 3.5 3.5 12.7 3.5 24S12.7 44.5 24 44.5 44.5 35.3 44.5 24c0-1.2-.1-2.4-.3-3.5Z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.6 15.9 18.9 13 24 13c3.1 0 5.8 1.1 8 3l6-6C34.5 5.5 29.6 3.5 24 3.5c-7.9 0-14.7 4.5-18.1 11.2Z"/><path fill="#4CAF50" d="M24 44.5c5.5 0 10.4-1.9 14.1-5.1l-6.5-5.5c-2.1 1.4-4.7 2.3-7.6 2.3-5.3 0-9.7-3.3-11.3-8l-6.6 5.1c3.3 6.8 10.1 11.2 17.9 11.2Z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.2 4.2-4 5.6l6.5 5.5c-.5.4 7-5.1 7-16.6 0-1.2-.1-2.4-.3-3.5Z"/></svg>
-          Continuar con Google
-        </button>
-        <button type="button" class="login-social__btn" data-provider="microsoft">
-          <svg viewBox="0 0 23 23"><path fill="#F35325" d="M1 1h10v10H1z"/><path fill="#81BC06" d="M12 1h10v10H12z"/><path fill="#05A6F0" d="M1 12h10v10H1z"/><path fill="#FFBA08" d="M12 12h10v10H12z"/></svg>
-          Continuar con Microsoft
-        </button>
-        <p class="login-social__note" id="socialNote" hidden>Disponible próximamente.</p>
-      </div>
 
       <p class="login-switch">
         <span id="switchPrompt">¿No tienes una cuenta?</span>
@@ -106,9 +145,12 @@
   </main>
 
   <script>
-    // Ruta relativa solo funciona para vista file://; servido por el
-    // backend en /login, hace falta la ruta absoluta bajo /Frontend/.
-    document.write('<script src="' + (location.protocol === "file:" ? "./login.js" : "/Frontend/login.js") + '"><\/script>');
+    (function () {
+      var base = location.protocol === "file:" ? "./" : "/Frontend/";
+      ["theme-loader.js", "i18n.js", "language-toggle.js", "passport-stamp-toast.js", "mentor-chat.js", "login.js"].forEach(function (file) {
+        document.write('<script src="' + base + file + '"><\/script>');
+      });
+    })();
   </script>
 </body>
 </html>

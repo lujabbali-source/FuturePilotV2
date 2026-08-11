@@ -50,9 +50,9 @@
       "tourism": "Turismo"
     },
     "records": {
-      "loadingUniversities": "Cargando instituciones WHED",
-      "catalogUnavailable": "Catálogo WHED no disponible",
-      "noInstitutions": "No se encontraron instituciones WHED",
+      "loadingUniversities": "Cargando universidades",
+      "catalogUnavailable": "Catálogo no disponible",
+      "noInstitutions": "No se encontraron universidades",
       "officialWebsiteLink": "Sitio web oficial ↗",
       "nationalRanking": "Ranking nacional"
     }

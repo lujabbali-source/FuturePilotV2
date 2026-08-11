@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#040a08">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin · FuturePilot</title>
+  <link rel="stylesheet" href="/Frontend/admin/admin-login.css">
+</head>
+<body>
+
+  <div class="admin-login-bg" aria-hidden="true"></div>
+
+  <main class="admin-login-shell">
+    <section class="admin-login-card">
+      <div class="admin-login-brand">
+        <img src="/Frontend/futurepilot-logo.png" alt="FuturePilot">
+        <span>Future<span class="accent">Pilot</span></span>
+      </div>
+      <p class="admin-login-eyebrow"><span></span> ACCESO RESTRINGIDO</p>
+      <h1 class="admin-login-title">Panel de administración</h1>
+      <p class="admin-login-subtitle">Esta área es exclusiva para el administrador del sistema.</p>
+
+      <form id="adminLoginForm" class="admin-login-form" novalidate>
+        <label class="admin-login-field">
+          <span class="admin-login-field__label">Email</span>
+          <input type="email" name="email" autocomplete="username" required placeholder="admin@futurepilot.com">
+        </label>
+
+        <label class="admin-login-field">
+          <span class="admin-login-field__label">Contraseña</span>
+          <input type="password" name="password" autocomplete="current-password" required placeholder="••••••••••">
+        </label>
+
+        <p class="admin-login-error" id="adminLoginError" hidden></p>
+
+        <button type="submit" class="admin-login-submit" id="adminLoginSubmit">
+          <span id="adminSubmitLabel">Entrar al panel</span>
+        </button>
+      </form>
+
+      <p class="admin-login-footnote">¿Eres estudiante? <a href="/login">Inicia sesión aquí</a></p>
+    </section>
+  </main>
+
+  <script>
+    document.write('<script src="' + (location.protocol === "file:" ? "./admin-login.js" : "/Frontend/admin/admin-login.js") + '"><\/script>');
+  </script>
+</body>
+</html>

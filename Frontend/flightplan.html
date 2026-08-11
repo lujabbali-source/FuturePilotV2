@@ -403,10 +403,11 @@ document.getElementById(
 ).innerText =
 career || "No Career Selected";
 
-// El catalogo real de universidades (WHED, backend/whed_catalog.py) aun
-// no tiene datos importados, asi que en vez de un listado hardcodeado
-// con nombres de carrera que no coinciden con el catalogo real, dejamos
-// un estado honesto hasta que haya datos importados.
+// Esta pagina estatica no tiene una ciudad seleccionada, asi que no hay
+// forma de saber que universidades mostrar (la fuente real de datos es
+// futurepilot-globe/src/database/countries/**, indexada por ciudad). En
+// vez de un listado hardcodeado que no coincide con datos reales, dejamos
+// un estado honesto.
 document.getElementById("universities").innerText = "Proximamente";
 
 const results =
@@ -444,9 +445,12 @@ document
 });
 </script>
 <script>
-  // Ruta relativa solo funciona para vista file://; servido por el backend
-  // en /flightplan, hace falta la ruta absoluta bajo /Frontend/.
-  document.write('<script src="' + (location.protocol === "file:" ? "./futurepilot-connector.js" : "/Frontend/futurepilot-connector.js") + '"><\/script>');
+  (function () {
+    var base = location.protocol === "file:" ? "./" : "/Frontend/";
+    ["theme-loader.js", "i18n.js", "language-toggle.js", "passport-stamp-toast.js", "mentor-chat.js", "futurepilot-connector.js"].forEach(function (file) {
+      document.write('<script src="' + base + file + '"><\/script>');
+    });
+  })();
 </script>
 </body>
 </html>

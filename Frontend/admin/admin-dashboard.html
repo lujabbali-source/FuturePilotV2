@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#040a08">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Dashboard · Admin FuturePilot</title>
+  <link rel="stylesheet" href="/Frontend/admin/admin-dashboard.css">
+</head>
+<body>
+
+  <!-- Se muestra hasta que admin-dashboard.js confirme contra
+       /api/v1/admin/me que el token guardado pertenece a un admin real.
+       Ningun dato del panel se pinta antes de esa confirmacion. -->
+  <div class="admin-gate" id="adminGate">
+    <div class="admin-gate__spinner" aria-hidden="true"></div>
+    <p>Verificando acceso…</p>
+  </div>
+
+  <div class="admin-app" id="adminApp" hidden>
+
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__brand">
+        <img src="/Frontend/futurepilot-logo.png" alt="FuturePilot">
+        <span>Future<span class="accent">Pilot</span> <em>Admin</em></span>
+      </div>
+
+      <nav class="admin-nav">
+        <a href="/admin" class="admin-nav__item is-active" data-section="dashboard">
+          <span class="admin-nav__dot"></span> Dashboard general
+        </a>
+        <a href="/admin/theme-lab" class="admin-nav__item">
+          <span class="admin-nav__dot"></span> Theme Lab
+        </a>
+        <a href="/admin/system-health" class="admin-nav__item">
+          <span class="admin-nav__dot"></span> System Health
+        </a>
+        <a href="/globe" target="_blank" rel="noopener" class="admin-nav__item">
+          <span class="admin-nav__dot"></span> Abrir Globo ↗
+        </a>
+
+        <p class="admin-nav__group-label">Secciones en construcción</p>
+        <span class="admin-nav__item is-disabled" data-flag-item="admin_users">Usuarios registrados <em>Próximamente</em></span>
+        <span class="admin-nav__item is-disabled" data-flag-item="admin_stats">Estadísticas <em>Próximamente</em></span>
+        <span class="admin-nav__item is-disabled" data-flag-item="admin_test_results">Resultados de los test <em>Próximamente</em></span>
+        <span class="admin-nav__item is-disabled" data-flag-item="admin_universities">Gestión de universidades <em>Próximamente</em></span>
+        <span class="admin-nav__item is-disabled" data-flag-item="admin_countries">Países y ciudades <em>Próximamente</em></span>
+        <span class="admin-nav__item is-disabled" data-flag-item="admin_knowledge_base">Base de conocimiento <em>Próximamente</em></span>
+        <span class="admin-nav__item is-disabled" data-flag-item="admin_ai_config">Configuración de la IA <em>Próximamente</em></span>
+        <span class="admin-nav__item is-disabled" data-flag-item="admin_system_config">Configuración del sistema <em>Próximamente</em></span>
+        <span class="admin-nav__item is-disabled" data-flag-item="admin_surveys">Encuestas y retroalimentación <em>Próximamente</em></span>
+        <span class="admin-nav__item is-disabled" data-flag-item="admin_logs">Logs del sistema <em>Próximamente</em></span>
+        <span class="admin-nav__item is-disabled" data-flag-item="admin_settings">Configuración del administrador <em>Próximamente</em></span>
+      </nav>
+
+      <a href="/" class="admin-sidebar__exit">← Volver al sitio</a>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <p class="admin-topbar__eyebrow"><span></span> PANEL DE ADMINISTRACIÓN</p>
+          <h1>Dashboard general</h1>
+        </div>
+        <div class="admin-topbar__user">
+          <span id="adminUserEmail"></span>
+          <button type="button" id="adminLogoutBtn" class="admin-logout-btn">Cerrar sesión</button>
+        </div>
+      </header>
+
+      <section class="admin-cards" id="adminCards">
+        <article class="admin-card">
+          <p class="admin-card__label">Usuarios registrados</p>
+          <p class="admin-card__value" id="metricTotalUsers">—</p>
+        </article>
+        <article class="admin-card">
+          <p class="admin-card__label">Usuarios activos</p>
+          <p class="admin-card__value" id="metricActiveUsers">—</p>
+          <p class="admin-card__hint">Sesiones vigentes</p>
+        </article>
+        <article class="admin-card">
+          <p class="admin-card__label">Tests completados</p>
+          <p class="admin-card__value" id="metricTests">—</p>
+        </article>
+        <article class="admin-card">
+          <p class="admin-card__label">Nuevos registros</p>
+          <p class="admin-card__value" id="metricNewUsers">—</p>
+          <p class="admin-card__hint">Últimos 7 días</p>
+        </article>
+        <article class="admin-card">
+          <p class="admin-card__label">Tests · últimos 7 días</p>
+          <p class="admin-card__value" id="metricTests7d">—</p>
+        </article>
+      </section>
+
+      <section class="admin-panels">
+        <article class="admin-panel">
+          <h2>Carreras más recomendadas</h2>
+          <ul class="admin-list" id="topCareersList">
+            <li class="admin-list__empty">Sin datos todavía.</li>
+          </ul>
+        </article>
+
+        <article class="admin-panel">
+          <h2>Actividad reciente</h2>
+          <ul class="admin-list" id="recentActivityList">
+            <li class="admin-list__empty">Sin datos todavía.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="admin-panel admin-panel--wide">
+        <h2>Países más consultados</h2>
+        <ul class="admin-list" id="topCountriesList">
+          <li class="admin-list__empty">Cargando...</li>
+        </ul>
+      </section>
+
+      <section class="admin-panel admin-panel--wide">
+        <h2>Funciones experimentales</h2>
+        <p class="admin-flags__intro">Activa una sección reservada del sidebar para probarla durante el desarrollo. Esto no crea la funcionalidad por sí solo — solo cambia cómo se presenta mientras se construye.</p>
+        <ul class="admin-flags" id="featureFlagsList">
+          <li class="admin-list__empty">Cargando…</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    document.write('<script src="' + (location.protocol === "file:" ? "./admin-dashboard.js" : "/Frontend/admin/admin-dashboard.js") + '"><\/script>');
+  </script>
+</body>
+</html>

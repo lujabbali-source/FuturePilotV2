@@ -13,9 +13,6 @@ let answers = [];
 let results = assessmentEngine.createInitialResults();
 let screen = "welcome";
 
-let authMode = "register";
-let authError = "";
-let authSubmitting = false;
 let aiResult = null;
 let aiError = "";
 
@@ -54,7 +51,6 @@ function render() {
   if (screen === "analysis") return renderAnalysis();
   if (screen === "partial") return renderPartialResults();
   if (screen === "unlock") return renderUnlock();
-  if (screen === "auth") return renderAuth();
   if (screen === "results") return renderFullResults();
   return renderUnlock();
 }
@@ -182,82 +178,46 @@ function renderPartialResults() {
   app.innerHTML = `<main class="results-screen screen-enter"><div class="results-topline"><span class="brand"><span class="brand-mark">✦</span> Future<span>Pilot</span></span><span class="result-chip">ANÁLISIS COMPLETADO <b>✓</b></span></div><section class="results-intro"><p class="eyebrow"><span class="eyebrow-dot"></span> TU PRIMERA SEÑAL</p><h1>Hay algo especial<br><span>en tu combinación.</span></h1><p>Estas son las primeras rutas que aparecen al mirar tu perfil. Lo mejor todavía está por desbloquearse.</p></section><section class="career-reveal"><div class="section-label"><span>TUS 3 CARRERAS PRINCIPALES</span><span>COINCIDENCIA</span></div>${careers.map((career, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(career.name)}</span><span class="career-score"><strong>${career.percentage}%</strong><span class="mini-bar"><i style="width:${career.percentage}%"></i></span></span></div>`).join("")}<div class="curiosity-line"><span>✦</span> Tu perfil tiene más matices de los que caben aquí.</div></section><section class="found-section"><h2>Tu perfil ya está trabajando por ti.</h2><div class="found-grid"><div>✓ <span>Encontramos universidades compatibles</span></div><div>✓ <span>Encontramos posibles becas</span></div><div>✓ <span>Generamos un roadmap personalizado</span></div><div>✓ <span>Creamos un plan académico</span></div></div></section><button type="button" class="primary-action primary-action--wide" data-action="unlock">Descubrir mi plan completo <span>→</span></button><p class="results-footnote">Tus resultados parciales quedan guardados. El acceso completo es gratuito.</p></main>`;
 }
 
-function renderUnlock() {
-  app.innerHTML = `<main class="unlock-screen screen-enter"><div class="unlock-glow"></div><span class="unlock-icon">✦</span><p class="eyebrow"><span class="eyebrow-dot"></span> TU PERFIL YA ESTÁ LISTO</p><h1>Ahora sí, vamos a<br><span>despegar.</span></h1><p class="unlock-copy">Crea una cuenta gratuita para guardar tu perfil y descubrir todo lo que FuturePilot preparó para ti.</p><section class="unlock-list"><div><b>✓</b> Universidades compatibles</div><div><b>✓</b> Becas y oportunidades</div><div><b>✓</b> Costos de vida</div><div><b>✓</b> Comparador de ciudades</div><div><b>✓</b> Roadmap personalizado</div><div><b>✓</b> Seguimiento de progreso</div></section><div class="auth-actions"><button type="button" class="primary-action" data-auth="register">Crear cuenta gratis <span>→</span></button><button type="button" class="secondary-action secondary-action--large" data-auth="login">Ya tengo una cuenta</button></div><p class="auth-note">Sin tarjeta de crédito · Tus resultados siempre son tuyos</p></main>`;
-}
+async function handleUnlock() {
+  // Si ya hay sesion (tipico al repetir el test estando logueado), pedir
+  // registrarse/iniciar sesion de nuevo seria un callejon sin salida
+  // identico al reportado con "Sign In". Reclamamos el resultado nuevo con
+  // el token que ya existe y vamos directo a resultados completos - el
+  // Pasaporte se actualiza solo, sin que el usuario tenga que re-loguearse.
+  const existingToken = localStorage.getItem("futurePilotAuthToken");
+  const resultId = localStorage.getItem("futurePilotResultId");
 
-function renderAuth(mode) {
-  if (mode) authMode = mode;
-  const isRegister = authMode === "register";
-  app.innerHTML = `<main class="unlock-screen screen-enter">
-    <div class="unlock-glow"></div>
-    <span class="unlock-icon">✦</span>
-    <p class="eyebrow"><span class="eyebrow-dot"></span> ${isRegister ? "CREAR CUENTA" : "INICIAR SESIÓN"}</p>
-    <h1>${isRegister ? "Guarda tu perfil" : "Bienvenido de nuevo"}<br><span>${isRegister ? "y desbloquéalo todo." : "continuemos."}</span></h1>
-    <form class="auth-form" data-form="auth" novalidate>
-      ${isRegister ? `<label class="auth-field"><span>Nombre</span><input type="text" name="name" autocomplete="name" placeholder="Tu nombre"></label>` : ""}
-      <label class="auth-field"><span>Email</span><input type="email" name="email" autocomplete="email" required placeholder="tu@email.com"></label>
-      <label class="auth-field"><span>Contraseña</span><input type="password" name="password" autocomplete="${isRegister ? "new-password" : "current-password"}" required minlength="8" placeholder="Mínimo 8 caracteres"></label>
-      ${authError ? `<p class="auth-error">${escapeHtml(authError)}</p>` : ""}
-      <button type="submit" class="primary-action primary-action--wide" ${authSubmitting ? "disabled" : ""}>${authSubmitting ? "Un momento..." : isRegister ? "Crear cuenta gratis" : "Iniciar sesión"} <span>→</span></button>
-    </form>
-    <button type="button" class="text-action" data-action="auth-switch">${isRegister ? "Ya tengo una cuenta" : "Crear una cuenta nueva"}</button>
-    <button type="button" class="text-action" data-action="back-to-unlock">← Volver</button>
-  </main>`;
-  app.querySelector('[data-form="auth"]').addEventListener("submit", handleAuthSubmit);
-}
-
-async function handleAuthSubmit(event) {
-  event.preventDefault();
-  const form = event.target;
-  const email = form.email.value.trim();
-  const password = form.password.value;
-  const name = form.name ? form.name.value.trim() : "";
-
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-    authError = "Ingresa un email válido.";
-    renderAuth();
-    return;
-  }
-  if (password.length < 8) {
-    authError = "La contraseña debe tener al menos 8 caracteres.";
-    renderAuth();
-    return;
-  }
-
-  authError = "";
-  authSubmitting = true;
-  renderAuth();
-
-  const endpoint = authMode === "register" ? "/api/v1/auth/register" : "/api/v1/auth/login";
-  const body = authMode === "register" ? { email, password, name: name || undefined } : { email, password };
-
-  try {
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
-    const data = await response.json().catch(() => ({}));
-
-    if (!response.ok) {
-      authSubmitting = false;
-      authError = data.detail || "No pudimos procesar tu solicitud. Intenta de nuevo.";
-      renderAuth();
-      return;
+  if (existingToken && resultId) {
+    try {
+      const response = await fetch("/api/v1/me/claim-result", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${existingToken}` },
+        body: JSON.stringify({ result_id: Number(resultId) }),
+      });
+      const data = await response.json().catch(() => ({}));
+      window.FuturePilotStampToast?.show(data.new_stamps);
+    } catch (error) {
+      // Silencioso: aiResult ya esta en memoria y se muestra igual: solo
+      // se pierde la actualizacion del pasaporte para esta vuelta.
     }
-
-    localStorage.setItem("futurePilotAuthToken", data.token);
-    localStorage.setItem("futurePilotUser", JSON.stringify(data.user));
-    authSubmitting = false;
-    authError = "";
+    localStorage.removeItem("futurePilotResultId");
     screen = "results";
     render();
-  } catch (error) {
-    authSubmitting = false;
-    authError = "No pudimos conectar con el servidor. Verifica tu conexión e intenta de nuevo.";
-    renderAuth();
+    return;
   }
+
+  screen = "unlock";
+  render();
+}
+
+function renderUnlock() {
+  // Antes de aca habia un formulario de login/registro propio (renderAuth/
+  // handleAuthSubmit), un segundo diseño de auth distinto al de /login.
+  // Ahora estos dos botones son navegacion real a la unica pagina de login
+  // de FuturePilot - el resultado anonimo (futurePilotResultId, ya en
+  // localStorage) se reclama del lado de login.js apenas termina el
+  // registro/login, antes de volver aca.
+  app.innerHTML = `<main class="unlock-screen screen-enter"><div class="unlock-glow"></div><span class="unlock-icon">✦</span><p class="eyebrow"><span class="eyebrow-dot"></span> TU PERFIL YA ESTÁ LISTO</p><h1>Ahora sí, vamos a<br><span>despegar.</span></h1><p class="unlock-copy">Crea una cuenta gratuita para guardar tu perfil y descubrir todo lo que FuturePilot preparó para ti.</p><section class="unlock-list"><div><b>✓</b> Universidades compatibles</div><div><b>✓</b> Becas y oportunidades</div><div><b>✓</b> Costos de vida</div><div><b>✓</b> Comparador de ciudades</div><div><b>✓</b> Roadmap personalizado</div><div><b>✓</b> Seguimiento de progreso</div></section><div class="auth-actions"><button type="button" class="primary-action" data-action="go-to-login" data-mode="register">Crear cuenta gratis <span>→</span></button><button type="button" class="secondary-action secondary-action--large" data-action="go-to-login" data-mode="login">Ya tengo una cuenta</button></div><p class="auth-note">Sin tarjeta de crédito · Tus resultados siempre son tuyos</p></main>`;
 }
 
 function renderFullResults() {
@@ -296,7 +256,9 @@ function renderFullResults() {
       ${careers.map((career, index) => `<div class="career-result career-result--full"><span class="career-rank">${String(index + 1).padStart(2, "0")}</span><div class="career-copy"><span class="career-name">${escapeHtml(career.title)}</span><p class="career-justification">${escapeHtml(career.justification)}</p></div><span class="career-score"><strong>${career.match_percentage}%</strong><span class="mini-bar"><i style="width:${career.match_percentage}%"></i></span></span></div>`).join("")}
     </section>
     <button type="button" class="primary-action primary-action--wide" data-action="explore-globe">Explorar el Globo <span>→</span></button>
+    <button type="button" class="secondary-action secondary-action--large" data-action="view-passport">Ver mi Pasaporte <span>→</span></button>
     <p class="results-footnote">Tu perfil queda guardado en tu cuenta. Explora el globo para conectar tu carrera con países, universidades y oportunidades reales.</p>
+    <button type="button" class="text-action" data-action="retake-test">¿Cambió algo? Repetir el test</button>
   </main>`;
 }
 
@@ -342,14 +304,27 @@ app.addEventListener("click", (event) => {
   if (action === "skip") skipQuestion();
   if (action === "back" && currentQuestion > 0) { currentQuestion -= 1; render(); }
   if (action === "exit") { screen = "welcome"; render(); }
-  if (action === "unlock") { screen = "unlock"; render(); }
-  if (action === "auth-switch") { authError = ""; renderAuth(authMode === "register" ? "login" : "register"); }
-  if (action === "back-to-unlock") { authError = ""; screen = "unlock"; render(); }
+  if (action === "unlock") { handleUnlock(); }
+  if (action === "go-to-login") {
+    const mode = event.target.closest("[data-action]")?.dataset.mode || "register";
+    window.location.href = "/login?mode=" + mode;
+  }
   if (action === "retry-analysis") { screen = "analysis"; render(); }
   if (action === "explore-globe") { window.location.href = "/globe"; }
-
-  const auth = event.target.closest("[data-auth]")?.dataset.auth;
-  if (auth) { authError = ""; screen = "auth"; renderAuth(auth); }
+  if (action === "view-passport") { window.location.href = "/passport"; }
+  if (action === "retake-test") {
+    // Voluntario y explicito: solo se dispara desde el boton en la
+    // pantalla de resultados, nunca automatico. questions ya esta cargado
+    // desde init(), asi que no hace falta volver a pedirlo.
+    currentQuestion = 0;
+    answers = [];
+    results = assessmentEngine.createInitialResults();
+    aiResult = null;
+    aiError = "";
+    localStorage.removeItem(STORAGE_KEY);
+    screen = "question";
+    render();
+  }
 });
 
 async function init() {
@@ -372,6 +347,38 @@ async function init() {
   } else {
     throw new Error("No hay fuente de preguntas disponible para la vista file://.");
   }
+
+  // Resume automatico: si hay una sesion valida con un resultado ya
+  // guardado para esa cuenta, se salta directo a la pantalla de resultados
+  // completos - nadie debe repetir el test solo por volver a iniciar
+  // sesion. questions ya quedo cargado arriba de todos modos, para que
+  // "Repetir el test" (voluntario, boton en resultados) funcione sin
+  // pedirlo de nuevo.
+  const authToken = localStorage.getItem("futurePilotAuthToken");
+  if (authToken && location.protocol !== "file:") {
+    try {
+      const response = await fetch("/api/v1/me/results", {
+        headers: { Authorization: `Bearer ${authToken}` },
+      });
+      if (response.status === 401) {
+        localStorage.removeItem("futurePilotAuthToken");
+        localStorage.removeItem("futurePilotUser");
+      } else if (response.ok) {
+        const data = await response.json();
+        if (data.results) {
+          aiResult = data.results;
+          aiError = "";
+          screen = "results";
+          render();
+          return;
+        }
+      }
+    } catch (error) {
+      // Sin conexion o backend caido: seguimos con el flujo normal abajo
+      // en vez de dejar al usuario atascado.
+    }
+  }
+
   const saved = savedAssessment();
   if (saved) {
     currentQuestion = Math.min(saved.currentQuestion || 0, questions.length - 1);

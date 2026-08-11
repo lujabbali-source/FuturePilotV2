@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#040a08">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Theme Lab · Admin FuturePilot</title>
+  <link rel="stylesheet" href="/Frontend/admin/admin-dashboard.css">
+  <link rel="stylesheet" href="/Frontend/admin/theme-lab.css">
+</head>
+<body>
+
+  <div class="admin-gate" id="adminGate">
+    <div class="admin-gate__spinner" aria-hidden="true"></div>
+    <p>Verificando acceso…</p>
+  </div>
+
+  <div class="admin-app" id="adminApp" hidden>
+
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__brand">
+        <img src="/Frontend/futurepilot-logo.png" alt="FuturePilot">
+        <span>Future<span class="accent">Pilot</span> <em>Admin</em></span>
+      </div>
+
+      <nav class="admin-nav">
+        <a href="/admin" class="admin-nav__item">
+          <span class="admin-nav__dot"></span> Dashboard general
+        </a>
+        <a href="/admin/theme-lab" class="admin-nav__item is-active">
+          <span class="admin-nav__dot"></span> Theme Lab
+        </a>
+        <a href="/admin/system-health" class="admin-nav__item">
+          <span class="admin-nav__dot"></span> System Health
+        </a>
+      </nav>
+
+      <a href="/" class="admin-sidebar__exit">← Volver al sitio</a>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <p class="admin-topbar__eyebrow"><span></span> HERRAMIENTA DE DISEÑO</p>
+          <h1>Theme Lab</h1>
+        </div>
+        <div class="admin-topbar__user">
+          <span id="adminUserEmail"></span>
+          <button type="button" id="adminLogoutBtn" class="admin-logout-btn">Cerrar sesión</button>
+        </div>
+      </header>
+
+      <p class="theme-lab__intro">Los cambios se ven al instante en la vista previa de abajo, pero <strong>no afectan el sitio real</strong> hasta que pulses «Guardar tema». Nadie más los ve mientras tanto.</p>
+
+      <div class="theme-lab__layout">
+        <section class="theme-lab__controls">
+          <div class="theme-field">
+            <label for="colorBg">Color de fondo</label>
+            <input type="color" id="colorBg">
+          </div>
+          <div class="theme-field">
+            <label for="colorPrimary">Color principal</label>
+            <input type="color" id="colorPrimary">
+          </div>
+          <div class="theme-field">
+            <label for="colorSecondary">Color secundario</label>
+            <input type="color" id="colorSecondary">
+          </div>
+          <div class="theme-field">
+            <label for="colorAccent">Color de acento</label>
+            <input type="color" id="colorAccent">
+          </div>
+          <div class="theme-field">
+            <label for="colorButton">Color de botones</label>
+            <input type="color" id="colorButton">
+          </div>
+          <div class="theme-field">
+            <label for="colorGlow">Color de efectos glow</label>
+            <input type="color" id="colorGlow">
+          </div>
+          <div class="theme-field">
+            <label for="colorText">Color del texto</label>
+            <input type="color" id="colorText">
+          </div>
+          <div class="theme-field">
+            <label for="colorTextMuted">Color del texto secundario</label>
+            <input type="color" id="colorTextMuted">
+          </div>
+          <div class="theme-field theme-field--wide">
+            <label for="colorCardBg">Color de las tarjetas <span>(admite rgba, ej. rgba(255,255,255,.05))</span></label>
+            <input type="text" id="colorCardBg" placeholder="rgba(255,255,255,.05)">
+          </div>
+
+          <div class="theme-lab__actions">
+            <button type="button" id="applyBtn" class="theme-btn theme-btn--primary">Aplicar cambios</button>
+            <button type="button" id="restoreBtn" class="theme-btn">Restaurar valores originales</button>
+          </div>
+
+          <div class="theme-lab__save">
+            <button type="button" id="saveBtn" class="theme-btn theme-btn--save">Guardar tema para todos</button>
+            <button type="button" id="clearSavedBtn" class="theme-btn theme-btn--danger" hidden>Quitar tema guardado del sitio</button>
+            <p class="theme-lab__status" id="themeStatus"></p>
+          </div>
+        </section>
+
+        <section class="theme-lab__preview">
+          <p class="theme-lab__preview-label">Vista previa en vivo — /</p>
+          <iframe id="previewFrame" src="/" title="Vista previa del sitio"></iframe>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.write('<script src="' + (location.protocol === "file:" ? "./theme-lab.js" : "/Frontend/admin/theme-lab.js") + '"><\/script>');
+  </script>
+</body>
+</html>

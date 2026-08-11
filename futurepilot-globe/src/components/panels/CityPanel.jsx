@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getCostOfLiving } from "../../services/costService";
+import { recordPassportEvent } from "../../services/passportService";
 import { getScholarships } from "../../services/scholarshipService";
 import { getUniversities } from "../../services/universityService";
 import useCity from "../../hooks/useCity";
@@ -74,7 +75,13 @@ function UniversitiesSection({ city }) {
     useEffect(() => {
         let isCurrent = true;
         getUniversities(city)
-            .then((items) => { if (isCurrent) setResult({ cityId: city.id, universities: items, error: null }); })
+            .then((items) => {
+                if (!isCurrent) return;
+                setResult({ cityId: city.id, universities: items, error: null });
+                if (items.length > 0) {
+                    recordPassportEvent("university_viewed", items[0].id || city.id, items[0].name);
+                }
+            })
             .catch((requestError) => { if (isCurrent) setResult({ cityId: city.id, universities: [], error: requestError }); });
         return () => { isCurrent = false; };
     }, [city]);

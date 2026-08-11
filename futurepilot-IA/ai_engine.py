@@ -26,12 +26,20 @@ Módulos coordinados:
 import os
 import json
 import math
+import random
+import re
+import time
 from datetime import datetime
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 
-DEFAULT_MEMORY_DIR = str(Path(__file__).resolve().parent / "data" / "users")
+# Configurable via env var: para tests aislados (ver tests/conftest.py) y
+# para deployments reales donde este directorio deberia vivir en un disco
+# persistente separado, no junto al codigo de la app.
+DEFAULT_MEMORY_DIR = os.environ.get("FUTUREPILOT_MEMORY_DIR") or str(
+    Path(__file__).resolve().parent / "data" / "users"
+)
 
 
 # =============================================================================
@@ -92,6 +100,47 @@ class BrainResponse:
 # MÓDULOS DE COMPONENTE INDEPENDIENTES
 # =============================================================================
 
+class _FileLock:
+    """Lock inter-proceso minimo basado en creacion atomica de archivo
+    (O_CREAT|O_EXCL, atomica tanto en Windows como en POSIX) - sin
+    dependencias nuevas. Protege el ciclo completo load->modificar->save de
+    la memoria de un estudiante: dos requests concurrentes para el mismo
+    user_id (ej. dos mensajes de chat seguidos, o un test terminando justo
+    cuando el mentor esta respondiendo) ya no pueden pisarse el resultado
+    del otro (el clasico "lost update" de leer-modificar-escribir)."""
+
+    def __init__(self, target_path: str, timeout: float = 5.0, poll_interval: float = 0.05):
+        self.lock_path = f"{target_path}.lock"
+        self.timeout = timeout
+        self.poll_interval = poll_interval
+        self._fd = None
+
+    def __enter__(self):
+        start = time.monotonic()
+        while True:
+            try:
+                self._fd = os.open(self.lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+                return self
+            except FileExistsError:
+                if time.monotonic() - start > self.timeout:
+                    # Un lock huerfano (proceso murio sin liberarlo) no
+                    # debe bloquear para siempre.
+                    try:
+                        os.remove(self.lock_path)
+                    except OSError:
+                        pass
+                    continue
+                time.sleep(self.poll_interval)
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if self._fd is not None:
+            os.close(self._fd)
+        try:
+            os.remove(self.lock_path)
+        except OSError:
+            pass
+
+
 class StudentMemorySystem:
     """
     Módulo de Memoria Persistente de Corto y Largo Plazo.
@@ -107,6 +156,11 @@ class StudentMemorySystem:
 
     def _get_path(self, user_id: str) -> str:
         return os.path.join(self.storage_dir, f"{user_id}_memory.json")
+
+    def lock(self, user_id: str) -> _FileLock:
+        """Envolver el ciclo load+modificar+save de un mismo user_id con
+        `with memory_system.lock(user_id):` para que quede atomico."""
+        return _FileLock(self._get_path(user_id))
 
     def load_memory(self, user_id: str) -> Dict[str, Any]:
         path = self._get_path(user_id)
@@ -127,12 +181,22 @@ class StudentMemorySystem:
         }
 
     def save_memory(self, user_id: str, memory_data: Dict[str, Any]) -> None:
+        # Escritura atomica: se escribe a un archivo temporal y se
+        # reemplaza con os.replace (atomico en Windows y POSIX) para que
+        # ningun lector pueda ver un JSON a medio escribir, incluso si el
+        # proceso se interrumpe a mitad de la escritura.
         path = self._get_path(user_id)
+        tmp_path = f"{path}.tmp-{os.getpid()}"
         try:
-            with open(path, "w", encoding="utf-8") as f:
+            with open(tmp_path, "w", encoding="utf-8") as f:
                 json.dump(memory_data, f, ensure_ascii=False, indent=2)
+            os.replace(tmp_path, path)
         except Exception as e:
             print(f"[MemorySystem Error] No se pudo guardar la memoria: {e}")
+            try:
+                os.remove(tmp_path)
+            except OSError:
+                pass
 
 
 class PerceptionEngine:
@@ -369,15 +433,24 @@ class ResponseBuilder:
 class MentorEngine:
     """
     Módulo de Mentoría Conversacional. Responde preguntas del estudiante
-    apoyándose en su memoria persistente (último diagnóstico, roadmap,
-    vector de habilidades) y en el catálogo de carreras. Sigue el mismo
-    enfoque rule-based/templated que el resto del cerebro: sin llamadas a
-    un LLM externo.
+    apoyándose en su memoria persistente (último diagnóstico completo:
+    roadmap real, lista de carreras compatibles, personalidad, fortalezas,
+    hubs recomendados) y en el catálogo de carreras. Sigue el mismo enfoque
+    rule-based/templated que el resto del cerebro: sin llamadas a un LLM
+    externo, pero razonando sobre datos reales en vez de texto fijo -
+    reconoce carreras mencionadas por nombre, varía sus frases para no
+    sonar repetitivo, y recuerda brevemente la conversación (chat_history
+    en la memoria del estudiante) para no responder siempre lo mismo.
     """
+
+    GREETING_KEYWORDS = ["hola", "buenas", "hey", "qué tal", "que tal", "hi ", "hello"]
+    FAREWELL_KEYWORDS = ["adios", "adiós", "chao", "nos vemos", "bye", "hasta luego"]
+    THANKS_KEYWORDS = ["gracias", "thank"]
+    HELP_KEYWORDS = ["ayuda", "que puedes hacer", "qué puedes hacer", "en que me ayudas", "en qué me ayudas", "opciones"]
 
     INTENT_KEYWORDS = {
         "roadmap": ["roadmap", "pasos", "plan", "ruta", "checkpoint", "siguiente"],
-        "career": ["carrera", "career", "profesion", "profesión", "trabajo"],
+        "career": ["carrera", "career", "profesion", "profesión", "trabajo", "opciones"],
         "university": ["universidad", "university", "estudiar", "hub", "pais", "país", "destino"],
         "skills": ["habilidad", "skill", "fortaleza", "debilidad", "gap", "mejorar"],
         "motivation": ["animo", "ánimo", "motivacion", "motivación", "duda", "nervios", "miedo", "inseguro"],
@@ -387,63 +460,186 @@ class MentorEngine:
         self.memory_system = memory_system
         self.careers_db = careers_db
 
+    def _detect_named_career(self, message: str) -> Optional[Dict[str, Any]]:
+        """Si el mensaje menciona el nombre de una carrera real del
+        catalogo (con limite de palabra, para no confundir un titulo corto
+        con una palabra suelta), esa mencion tiene prioridad sobre la
+        deteccion de intent generica - es la forma mas concreta de
+        "razonar" sobre lo que el estudiante pregunto."""
+        lowered = message.lower()
+        for career in self.careers_db:
+            title = (career.get("title") or "").strip().lower()
+            if title and re.search(r"\b" + re.escape(title) + r"\b", lowered):
+                return career
+        return None
+
     def _detect_intent(self, message: str) -> str:
         lowered = message.lower()
+        if any(keyword in lowered for keyword in self.GREETING_KEYWORDS):
+            return "greeting"
+        if any(keyword in lowered for keyword in self.FAREWELL_KEYWORDS):
+            return "farewell"
+        if any(keyword in lowered for keyword in self.THANKS_KEYWORDS):
+            return "thanks"
+        if any(keyword in lowered for keyword in self.HELP_KEYWORDS):
+            return "help"
         for intent, keywords in self.INTENT_KEYWORDS.items():
             if any(keyword in lowered for keyword in keywords):
                 return intent
         return "general"
 
+    def _log_turn(self, memory: Dict[str, Any], user_id: str, user_message: str, intent: str) -> None:
+        chat_history = memory.setdefault("chat_history", [])
+        chat_history.append({
+            "timestamp": datetime.now().isoformat(),
+            "message": user_message[:500],
+            "intent": intent,
+        })
+        memory["chat_history"] = chat_history[-20:]
+        self.memory_system.save_memory(user_id, memory)
+
     def chat(self, user_message: str, context: Optional[Dict[str, Any]] = None) -> str:
         context = context or {}
         user_id = context.get("user_id", "default_student")
+        # Todo el ciclo load->responder->save queda bajo un solo lock por
+        # user_id: dos mensajes de chat concurrentes para el mismo
+        # estudiante (o un chat justo cuando termina un test) no deben
+        # poder pisarse la memoria guardada entre ellos.
+        with self.memory_system.lock(user_id):
+            return self._chat_locked(user_message, context, user_id)
+
+    def _chat_locked(self, user_message: str, context: Dict[str, Any], user_id: str) -> str:
+        name = (context.get("name") or "").strip()
+        greeting_name = f", {name}" if name else ""
+        goals = context.get("passport_goals") or {}
+
         memory = self.memory_system.load_memory(user_id)
         history = memory.get("assessment_history", [])
 
+        named_career = self._detect_named_career(user_message)
+        intent = "career_lookup" if named_career else self._detect_intent(user_message)
+
         if not history:
-            return (
-                "Todavía no tengo un diagnóstico tuyo. Completa el test de orientación "
-                "vocacional primero y con gusto te ayudo a interpretar tus resultados."
-            )
+            if intent == "greeting":
+                response = random.choice([
+                    f"¡Hola{greeting_name}! Soy tu AI Mentor. Todavía no tengo un diagnóstico tuyo — completa el test vocacional y con gusto te ayudo a interpretarlo.",
+                    f"¡Qué bueno verte{greeting_name}! Para poder orientarte necesito que hagas primero el test de FuturePilot.",
+                ])
+            elif intent in ("farewell", "thanks"):
+                response = "¡Cuando quieras! Aquí estaré."
+            else:
+                response = (
+                    "Todavía no tengo un diagnóstico tuyo. Completa el test de orientación "
+                    "vocacional primero y con gusto te ayudo a interpretar tus resultados."
+                )
+            self._log_turn(memory, user_id, user_message, intent)
+            return response
 
         last = history[-1]
         top_choice = last.get("top_choice") or "tu perfil vocacional"
-        intent = self._detect_intent(user_message)
+        top_matches = last.get("top_matches") or []
+        roadmap = last.get("roadmap")
+        personality = last.get("personality")
+        strengths = last.get("strengths") or []
+        weaknesses = last.get("weaknesses") or []
+        hubs = last.get("recommended_hubs") or []
 
-        if intent == "roadmap":
-            return (
-                f"Tu ruta hacia {top_choice} tiene 4 checkpoints: fundamentos y conceptos "
-                f"clave, nivelación de habilidades, un proyecto integrador para portafolio, "
-                f"y certificación/aplicación profesional. Puedes verlos en detalle en Journey."
-            )
-        if intent == "career":
-            return (
-                f"Según tu último diagnóstico, tu mejor match es {top_choice}. Puedes "
-                f"comparar otras opciones compatibles en la pantalla de Careers."
-            )
-        if intent == "university":
-            return (
-                f"Revisa los hubs globales recomendados para {top_choice} en tu Flight "
-                f"Plan: ahí encontrarás países y universidades alineados a tu perfil."
-            )
-        if intent == "skills":
-            vector = last.get("vector")
-            return (
-                f"Tu vector de habilidades más reciente fue {vector}. Enfócate en las "
-                f"áreas con menor puntaje para cerrar brechas hacia {top_choice}."
-            )
-        if intent == "motivation":
-            return (
-                "Es normal tener dudas al elegir un camino. Tu diagnóstico se basa en tus "
-                f"propias respuestas, y {top_choice} refleja fortalezas reales tuyas — "
-                "avanza un checkpoint a la vez."
+        if intent == "greeting":
+            response = random.choice([
+                f"¡Hola{greeting_name}! ¿En qué te ayudo hoy: tu roadmap, tu carrera, universidades o tus habilidades?",
+                f"¡Hey{greeting_name}! Tu perfil ({personality or 'ya analizado'}) apunta fuerte hacia {top_choice}. ¿Sobre qué quieres hablar?",
+            ])
+
+        elif intent == "farewell":
+            response = random.choice([
+                "¡Nos vemos! Sigue avanzando en tu roadmap.",
+                f"¡Éxitos con {top_choice}! Vuelve cuando quieras.",
+            ])
+
+        elif intent == "thanks":
+            response = random.choice([
+                "¡Con gusto! Para eso estoy.",
+                "¡De nada! Aquí sigo si necesitas algo más.",
+            ])
+
+        elif intent == "help":
+            response = (
+                "Puedo ayudarte con: tu roadmap paso a paso, tu carrera recomendada y otras opciones "
+                "compatibles, universidades/hubs, tus fortalezas y áreas de mejora, o si necesitas ánimo. "
+                "También puedes preguntarme directamente por cualquier carrera del catálogo por su nombre."
             )
 
-        return (
-            f"Puedo ayudarte con tu roadmap, tu carrera recomendada ({top_choice}), "
-            "universidades/hubs, tus habilidades o si necesitas ánimo. ¿Sobre cuál "
-            "quieres hablar?"
-        )
+        elif intent == "career_lookup" and named_career:
+            match = next((m for m in top_matches if m.get("title") == named_career.get("title")), None)
+            if match:
+                response = (
+                    f"{named_career['title']}: tienes un {match['match_percentage']}% de compatibilidad "
+                    f"según tu diagnóstico. {named_career.get('description', '')}"
+                ).strip()
+            else:
+                response = (
+                    f"{named_career['title']} no quedó entre tus mejores matches, pero aquí tienes de qué se trata: "
+                    f"{named_career.get('description') or 'no tengo más detalles todavía.'}"
+                )
+
+        elif intent == "roadmap":
+            if roadmap and roadmap.get("checkpoints"):
+                steps = "; ".join(f"{cp['step']}. {cp['title']}" for cp in roadmap["checkpoints"])
+                response = (
+                    f"Tu ruta hacia {roadmap.get('career_title', top_choice)} "
+                    f"(~{roadmap.get('estimated_months', 8)} meses): {steps}. Puedes verla en detalle en Journey."
+                )
+            else:
+                response = f"Todavía no tengo un roadmap detallado para {top_choice}. Repite el test para generarlo."
+
+        elif intent == "career":
+            if len(top_matches) > 1:
+                others = ", ".join(f"{m['title']} ({m['match_percentage']}%)" for m in top_matches[1:4])
+                response = (
+                    f"Tu mejor match es {top_choice} ({top_matches[0]['match_percentage']}%). "
+                    f"También compatibles: {others}."
+                )
+            else:
+                response = f"Según tu último diagnóstico, tu mejor match es {top_choice}."
+
+        elif intent == "university":
+            if hubs:
+                hub_list = "; ".join(f"{hub['name']} ({hub.get('desc', '')})" for hub in hubs)
+                response = f"Para {top_choice}, estos hubs encajan con tu perfil: {hub_list}."
+            else:
+                response = f"Revisa los hubs globales recomendados para {top_choice} en tu Flight Plan."
+            if goals.get("target_country"):
+                response += (
+                    f" Vi en tu Pasaporte que tu meta es estudiar en {goals['target_country']} — "
+                    "vale la pena comparar esos hubs con esa opción."
+                )
+
+        elif intent == "skills":
+            parts = []
+            if strengths:
+                parts.append(f"tus fortalezas ({', '.join(strengths)})")
+            if weaknesses:
+                parts.append(f"áreas de oportunidad ({', '.join(weaknesses)})")
+            body = " y ".join(parts) if parts else "un perfil balanceado, sin brechas grandes"
+            response = f"Con base en tu diagnóstico tienes {body}. Enfócate en cerrar brechas hacia {top_choice}."
+
+        elif intent == "motivation":
+            response = random.choice([
+                f"Es normal tener dudas al elegir un camino. Tu diagnóstico se basa en tus propias respuestas, "
+                f"y {top_choice} refleja fortalezas reales tuyas — avanza un checkpoint a la vez.",
+                f"Nadie tiene todo resuelto desde el primer día. {top_choice} no es una sentencia final, "
+                "es un punto de partida que ya sabemos que encaja contigo.",
+            ])
+
+        else:
+            response = (
+                f"Puedo ayudarte con tu roadmap, tu carrera recomendada ({top_choice}), universidades/hubs, "
+                "tus habilidades, o si necesitas ánimo. También puedes preguntarme por cualquier carrera "
+                "del catálogo. ¿Sobre qué quieres hablar?"
+            )
+
+        self._log_turn(memory, user_id, user_message, intent)
+        return response
 
 
 # =============================================================================
@@ -472,6 +668,12 @@ class FuturePilotBrain:
         self.builder = ResponseBuilder()
 
     def run_cognitive_cycle(self, raw_answers: List[Dict[str, Any]], user_id: str = "default_user") -> BrainResponse:
+        """Envoltorio delgado: todo el ciclo (lee memoria, calcula, guarda
+        memoria) queda bajo un solo lock por user_id - ver StudentMemorySystem.lock."""
+        with self.memory_system.lock(user_id):
+            return self._run_cognitive_cycle_locked(raw_answers, user_id)
+
+    def _run_cognitive_cycle_locked(self, raw_answers: List[Dict[str, Any]], user_id: str) -> BrainResponse:
         """
         Ciclo Cognitivo Interno:
         1. Perceive -> 2. Update Memory -> 3. Analyze & Hypothesize ->
@@ -515,12 +717,25 @@ class FuturePilotBrain:
         # Paso 8: Predicciones de Crecimiento
         predictions = self.learning.predict_growth(user_vector, top_match["title"] if top_match else "")
 
-        # Actualizar la Memoria del Usuario
+        # Actualizar la Memoria del Usuario. Antes esta entrada solo
+        # guardaba {timestamp, vector, top_choice} - el MentorEngine no
+        # tenia forma de referenciar el roadmap real, la lista completa de
+        # carreras compatibles, la personalidad o los hubs recomendados
+        # porque esos datos se calculaban y se devolvian a la API pero
+        # nunca se persistian. Ahora se guarda todo lo que el mentor podria
+        # necesitar para responder con datos reales en vez de texto fijo.
         user_memory["assessments_count"] += 1
         user_memory["assessment_history"].append({
             "timestamp": datetime.now().isoformat(),
             "vector": user_vector,
-            "top_choice": top_match["title"] if top_match else None
+            "top_choice": top_match["title"] if top_match else None,
+            "top_matches": ranked_matches[:5],
+            "roadmap": roadmap,
+            "personality": personality,
+            "learning_style": learning_style,
+            "strengths": strengths,
+            "weaknesses": gaps,
+            "recommended_hubs": recommended_hubs,
         })
         self.memory_system.save_memory(user_id, user_memory)
 
@@ -552,6 +767,37 @@ class FuturePilotAIEcosystem:
     def __init__(self, careers_data: List[Dict[str, Any]], questions_data: List[Dict[str, Any]]):
         self.brain = FuturePilotBrain(careers_data, questions_data)
         self.mentor = MentorEngine(self.brain.memory_system, careers_data)
+
+    def sync_memory_from_results(self, user_id: str, results: Dict[str, Any]) -> None:
+        """El test casi siempre se completa antes de iniciar sesion, con
+        user_id="default_student" (ver process_user_test) - la memoria del
+        cerebro quedaba entonces en un balde COMPARTIDO entre todos los
+        estudiantes anonimos, nunca bajo el id real de la cuenta. El
+        MentorEngine no podia ver el diagnostico de nadie que hubiera
+        iniciado sesion. Esto copia el resultado ya calculado (el mismo que
+        se guardo en test_results al reclamarlo) a la memoria del usuario
+        real, con la misma forma que run_cognitive_cycle - sin recalcular
+        nada."""
+        top_choice = (results.get("top_choice") or {}).get("title")
+        with self.brain.memory_system.lock(user_id):
+            self._sync_memory_locked(user_id, top_choice, results)
+
+    def _sync_memory_locked(self, user_id: str, top_choice: Optional[str], results: Dict[str, Any]) -> None:
+        memory = self.brain.memory_system.load_memory(user_id)
+        memory["assessments_count"] = memory.get("assessments_count", 0) + 1
+        memory.setdefault("assessment_history", []).append({
+            "timestamp": datetime.now().isoformat(),
+            "vector": results.get("user_vector"),
+            "top_choice": top_choice,
+            "top_matches": results.get("recommended_careers") or [],
+            "roadmap": results.get("roadmap"),
+            "personality": results.get("personality"),
+            "learning_style": results.get("learning_style"),
+            "strengths": results.get("strengths") or [],
+            "weaknesses": results.get("weaknesses") or [],
+            "recommended_hubs": results.get("recommended_hubs") or [],
+        })
+        self.brain.memory_system.save_memory(user_id, memory)
 
     @staticmethod
     def _build_career_justification(match: Dict[str, Any], personality: str) -> str:

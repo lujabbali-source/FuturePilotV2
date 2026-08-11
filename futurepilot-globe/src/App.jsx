@@ -13,6 +13,7 @@ import getCountryCenter from "./geo/getCountryCenter";
 import Doctor from "./debug/Doctor";
 import { getCities } from "./services/cityService";
 import { getCountryIdFromName } from "./services/countryService";
+import { recordPassportEvent } from "./services/passportService";
 import globePalette from "./globePalette";
 import TopNav from "./components/TopNav";
 import CountryHoverLabel from "./components/CountryHoverLabel";
@@ -39,6 +40,18 @@ export default function App() {
     // se generaliza a cualquier pais para que la navegacion se sienta
     // igual en todo el continente.
     setCameraTarget(country ? getCountryCenter(country) : null);
+
+    if (country) {
+      const countryId = getCountryIdFromName(country.properties?.name);
+      recordPassportEvent("country_explored", countryId, country.properties?.name);
+    }
+  }, []);
+
+  const handleCitySelect = useCallback((city) => {
+    setSelectedCity(city);
+    if (city) {
+      recordPassportEvent("city_explored", city.id, city.name);
+    }
   }, []);
 
   // El "clear" del hover se demora un poco (no el "enter", que es
@@ -120,7 +133,7 @@ export default function App() {
         <CityMarkers
           cities={selectedCountryId ? selectedCountryCities : []}
           selectedCity={selectedCity}
-          onSelect={setSelectedCity}
+          onSelect={handleCitySelect}
         />
         <CameraController
           target={cameraTarget}
