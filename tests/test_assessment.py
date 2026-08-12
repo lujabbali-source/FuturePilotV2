@@ -361,3 +361,35 @@ def test_retake_creates_new_result_without_deleting_old(client, register_and_log
 
     latest = client.get("/api/v1/me/results", headers=headers).json()
     assert latest["results"] is not None
+
+
+def test_strengths_stay_actionable(client):
+    """Se devolvia todo cluster que llegara al requisito de la carrera. Para
+    una carrera poco exigente eso son los 8, y la pantalla de resultados
+    listaba los ocho bajo "FORTALEZAS". Decir que destacas en todo es no
+    decir nada - mismo caso que las brechas."""
+    questions = client.get("/api/v1/questions").json()["questions"]
+    answers = _answers_favouring(questions, {"CREATIVE", "SOCIAL"})
+    careers = client.post(
+        "/api/v1/assess", json={"answers": answers, "anon_id": "fortalezas"}
+    ).json()["data"]["recommended_careers"]
+
+    for career in careers:
+        assert len(career["strengths"]) <= 3, f"{career['title']}: {career['strengths']}"
+
+
+def test_question_bank_only_declares_metadata_the_engine_uses(client):
+    """El motor local leia `math`, `english` y `learningStyle` de cada
+    respuesta. Ninguna de las 200 los trae, asi que los contadores se
+    quedaban a cero y de ahi salia un "Math: Beginner / English: Beginner /
+    Learning Style: null" identico para todos los estudiantes. Se eliminaron
+    del cliente; este test evita que reaparezcan a medias - si alguien los
+    añade al banco, hay que volver a construir la parte que los consume."""
+    fantasma = {"math", "english", "learningStyle", "universityGoal"}
+    for question in client.get("/api/v1/questions").json()["questions"]:
+        for answer in question["answers"]:
+            presentes = fantasma & set(answer)
+            assert not presentes, (
+                f"'{question['question'][:40]}' declara {sorted(presentes)}, "
+                "que ya no consume nadie: hay que reconstruir esa parte del perfil"
+            )

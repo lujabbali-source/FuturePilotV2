@@ -1,0 +1,100 @@
+/* Cabecera comun a todas las paginas. Antes cada una traia la suya: la
+   landing una, journey otra, el pasaporte otra, el globo la de React,
+   flightplan solo un "volver", y careers / login / reset-password ninguna.
+   El estudiante perdia la navegacion justo donde mas desorientado esta. */
+
+.fp-header {
+  position: sticky;
+  top: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px clamp(16px, 4vw, 40px);
+  background: rgba(4, 10, 16, .72);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  backdrop-filter: blur(14px);
+  font-family: Manrope, Inter, Arial, sans-serif;
+}
+
+.fp-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 800;
+  font-size: 1.02rem;
+  color: #f5fbff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.fp-header__brand img { height: 26px; width: auto; }
+.fp-header__brand span { color: #00FFB3; }
+
+.fp-header__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-inline-start: auto;
+  flex-wrap: wrap;
+}
+
+.fp-header__links a {
+  padding: 8px 13px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, .68);
+  font: 600 .84rem/1 Manrope, Inter, Arial, sans-serif;
+  text-decoration: none;
+  transition: background .18s ease, color .18s ease;
+}
+
+.fp-header__links a:hover { background: rgba(255, 255, 255, .07); color: #f5fbff; }
+
+/* La pagina en la que estas, marcada. Es la mitad del valor de tener una
+   barra: saber donde estas, no solo a donde puedes ir. */
+.fp-header__links a[aria-current="page"] {
+  background: rgba(0, 255, 179, .14);
+  color: #00FFB3;
+}
+
+.fp-header__cta {
+  padding: 8px 16px !important;
+  background: #00FFB3;
+  color: #04150f !important;
+  font-weight: 800 !important;
+}
+
+.fp-header__cta:hover { background: #4dffc9; }
+
+/* El selector de idioma se integra aqui en vez de flotar suelto sobre el
+   contenido en una esquina. */
+.fp-header__lang {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .06);
+}
+
+.fp-header__lang button {
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, .6);
+  font: 700 .72rem/1 Manrope, Inter, Arial, sans-serif;
+  cursor: pointer;
+  transition: background .18s ease, color .18s ease;
+}
+
+.fp-header__lang button.is-active { background: #00FFB3; color: #04150f; }
+
+/* En movil los enlaces secundarios estorban mas de lo que ayudan: se
+   quedan la marca, la accion principal y el idioma. */
+@media (max-width: 720px) {
+  .fp-header__links a:not(.fp-header__cta):not([aria-current="page"]) { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fp-header__links a, .fp-header__lang button { transition: none; }
+}

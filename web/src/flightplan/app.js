@@ -1,55 +1,33 @@
 // JS propio de /flightplan, extraido del <script> incrustado en
-// Frontend/flightplan.html. Vive aqui para poder compilarse con el
-// resto y para que la pagina deje de necesitar scripts inline.
+// Frontend/flightplan.html. Vive aqui para poder compilarse con el resto y
+// para que la pagina deje de necesitar scripts inline.
+//
+// Casi todo el contenido de la pagina lo rellena shared/apiConnector.js a
+// partir del resultado real (nombre de carrera, justificacion, hubs, perfil
+// cognitivo). Aqui solo queda el estado inicial y el boton de salida.
 
-const career =
-localStorage.getItem(
-"selectedCareer"
-)       
-;
+// Estado de partida mientras llega el resultado. El conector lo sustituye
+// en cuanto lo tiene; si no hay ninguno, este texto es lo que se queda.
+const NO_RESULT = "Todavía no has hecho el test";
 
-document.getElementById(
-"careerName"
-).innerText =
-career || "No Career Selected";
+document.getElementById("careerName").innerText =
+  localStorage.getItem("selectedCareer") || NO_RESULT;
 
-// Esta pagina estatica no tiene una ciudad seleccionada, asi que no hay
-// forma de saber que universidades mostrar (la fuente real de datos es
-// web/src/database/countries/**, indexada por ciudad). En
-// vez de un listado hardcodeado que no coincide con datos reales, dejamos
-// un estado honesto.
-document.getElementById("universities").innerText = "Proximamente";
+// Esta pagina no tiene una ciudad seleccionada, asi que no hay forma de
+// saber que universidades mostrar (la fuente real es
+// web/src/database/countries/**, indexada por ciudad). En vez de un listado
+// hardcodeado que no coincide con datos reales, un estado honesto.
+document.getElementById("universities").innerText = "Próximamente";
 
-const results =
-JSON.parse(
-    localStorage.getItem(
-        "futurePilotResults"
-    )
-);
+// El "Academic Profile" mostraba Math/English/Learning Style sacados del
+// motor local. Ninguna pregunta del banco alimenta esos tres campos, asi
+// que TODOS los estudiantes veian exactamente "Math: Beginner / English:
+// Beginner / Learning Style: null" - dos niveles falsos con pinta de
+// personalizados y un null literal. Ahora lo rellena el conector con el
+// arquetipo y el estilo de aprendizaje que calcula el backend, que si son
+// distintos para cada perfil.
+document.getElementById("academicLevel").innerText = NO_RESULT;
 
-if(results){
-
-    document.getElementById(
-        "academicLevel"
-    ).innerHTML = `
-
-        Math: ${results.mathLevel}<br>
-        English: ${results.englishLevel}<br>
-        Learning Style: ${results.learningStyle}
-
-    `;
-
-}
-// #aiRecommendation y #countries se completan con datos reales desde
-// futurepilot-connector.js (justification / recommended_hubs de la
-// respuesta de /api/v1/assess) - no se hardcodean aqui para evitar una
-// segunda fuente de verdad que pueda desalinearse del catalogo real.
-
-document
-.getElementById("startJourneyBtn")
-.addEventListener("click",()=>{
-
-    window.location.href =
-    "/journey";
-
+document.getElementById("startJourneyBtn").addEventListener("click", () => {
+  window.location.href = "/journey";
 });

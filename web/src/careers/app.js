@@ -1,95 +1,76 @@
 // JS propio de la pagina, extraido del <script> incrustado en
 // Frontend/careers.html.
+//
+// Fuente unica de verdad: el catalogo vive en futurepilot-IA/data/careers.json
+// y se sirve via /api/v1/careers. Antes esta pagina tenia su propio
+// careerMap hardcodeado, con nombres que no coincidian con el catalogo real
+// que usa la IA para el matching.
 
-// Fuente unica de verdad: el catalogo de carreras vive en
-// futurepilot-IA/data/careers.json y se sirve via /api/v1/careers.
-// Antes esta pagina tenia su propio careerMap hardcodeado (con nombres
-// que no coincidian con el catalogo real que usa la IA para el matching),
-// lo que ademas causaba un ReferenceError porque 'careers' nunca se
-// definia.
+import "./page.css";
+
 let careers = [];
 
 const grid = document.getElementById("careerGrid");
 
-function renderCareers(list){
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;").replaceAll("'", "&#039;");
+}
 
-grid.innerHTML="";
+function renderCareers(list) {
+  // Se arma la lista entera y se asigna una vez, en vez de concatenar sobre
+  // innerHTML dentro del bucle: con 73 carreras, aquello reparseaba el HTML
+  // acumulado en cada vuelta.
+  grid.innerHTML = list
+    .map(
+      (career) => `
+      <div class="career-card">
+        <span class="career-card__category">${escapeHtml(career.category)}</span>
+        <h3>${escapeHtml(career.title)}</h3>
+        <p>${escapeHtml(career.description)}</p>
+        <button type="button" class="build-btn" data-career-id="${escapeHtml(career.id)}">
+          Build My Flight Plan
+        </button>
+      </div>`
+    )
+    .join("");
+}
 
-list.forEach(career=>{
+// Delegacion en vez de onclick="" en cada boton. Un manejador inline es
+// script inline: la CSP del sitio declara script-src 'self' y lo bloquea,
+// asi que el boton no hacia nada al pulsarlo.
+grid.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-career-id]");
+  if (!button) return;
 
-grid.innerHTML += `
+  const career = careers.find((item) => item.id === button.dataset.careerId);
+  if (!career) return;
 
-<div class="career-card">
-
-<span style="color:#00FFB3;font-size:.8rem;text-transform:uppercase;">${career.category}</span>
-
-<h3>${career.title}</h3>
-
-<p>
-${career.description}
-</p>
-
-<button
-class="build-btn"
-onclick="openCareer('${career.id}')">
-
-Build My Flight Plan
-
-</button>
-
-</div>
-
-`;
-
+  localStorage.setItem("selectedCareer", career.title);
+  window.location.href = "/flightplan";
 });
 
-}
+document.getElementById("searchInput").addEventListener("input", (event) => {
+  const search = event.target.value.toLowerCase();
+  renderCareers(
+    careers.filter(
+      (career) =>
+        career.title.toLowerCase().includes(search) ||
+        career.category.toLowerCase().includes(search)
+    )
+  );
+});
 
-function openCareer(careerId){
-
-const career = careers.find(c => c.id === careerId);
-if(!career) return;
-
-localStorage.setItem(
-"selectedCareer",
-career.title
-);
-
-window.location.href=
-"/flightplan";
-
-}
-
-async function loadCareers(){
-
-try {
+async function loadCareers() {
+  try {
     const response = await fetch("/api/v1/careers");
     const data = await response.json();
     careers = data.careers || [];
     renderCareers(careers);
-} catch (error) {
-    grid.innerHTML = "<p>No pudimos cargar el catalogo de carreras. Intenta recargar la pagina.</p>";
+  } catch (error) {
+    grid.innerHTML = "<p>No pudimos cargar el catálogo de carreras. Intenta recargar la página.</p>";
+  }
 }
-
-}
-
-document
-.getElementById("searchInput")
-.addEventListener("input",e=>{
-
-const search =
-e.target.value.toLowerCase();
-
-const filtered =
-careers.filter(career=>
-
-career.title.toLowerCase().includes(search) ||
-career.category.toLowerCase().includes(search)
-
-);
-
-renderCareers(filtered);
-
-});
 
 loadCareers();

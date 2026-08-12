@@ -393,7 +393,18 @@ class DecisionEngine:
             sim = self.profile_similarity(u_vals, c_vals)
             pct = self.to_match_percentage(sim)
 
-            strengths = [c for c in clusters if user_vector[c] >= reqs.get(c, 5.0)]
+            # Las 3 ventajas mas grandes, de mayor a menor. Antes se
+            # devolvia TODO cluster que llegara al requisito: para una
+            # carrera poco exigente eso son los 8, y la pantalla de
+            # resultados listaba los ocho como "fortalezas". Decir que
+            # destacas en todo es no decir nada.
+            surpluses = [
+                (c, user_vector[c] - reqs.get(c, 5.0))
+                for c in clusters
+                if user_vector[c] >= reqs.get(c, 5.0)
+            ]
+            surpluses.sort(key=lambda item: item[1], reverse=True)
+            strengths = [cluster for cluster, _ in surpluses[:3]]
 
             # Solo las 3 brechas mas grandes, de mayor a menor. Antes se
             # devolvian TODAS las que superaran el umbral: para un perfil

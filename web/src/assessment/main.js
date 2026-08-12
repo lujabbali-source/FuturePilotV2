@@ -10,8 +10,8 @@
 // del resultado y el conector de la API ya son imports normales, y app.js
 // los pide directamente.
 import "../shared/theme-loader.js";
+import "../shared/site-header.js";
 import "../shared/i18next.js";
-import "../shared/language-toggle.js";
 import "../shared/passport-stamp-toast.js";
 import "../shared/mentor-chat.js";
 import "../shared/dev-config.js";

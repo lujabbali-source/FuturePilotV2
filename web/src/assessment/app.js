@@ -123,8 +123,10 @@ function renderQuestion() {
   const phaseTrack = Array.from({ length: PHASE_COUNT }, (_, i) => phaseName(i)).map((name, index) => `<span class="phase-dot ${index < phaseIndex ? "is-done" : ""} ${index === phaseIndex ? "is-current" : ""}" title="${escapeHtml(name)}"></span>`).join("");
 
   app.innerHTML = `<main class="test-shell screen-enter">
-    <header class="test-header">
-      <a class="brand" href="/"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></a>
+    <!-- Sin marca: la cabecera compartida ya la pone justo encima, y dos
+         logos seguidos en la pantalla mas larga del recorrido solo roban
+         espacio. Aqui queda lo que es propio del test. -->
+    <header class="test-header test-header--bare">
       <div class="save-indicator"><span></span> ${t("nav.autosaved")}</div>
       <button type="button" class="exit-action" data-action="exit">${t("nav.exit")}</button>
     </header>
@@ -217,7 +219,6 @@ function renderAnalysis() {
 function renderPartialResults() {
   const assessmentResult = assessmentEngine.buildAssessmentResult(results);
   localStorage.setItem(RESULTS_KEY, JSON.stringify(assessmentResult));
-  localStorage.setItem("academicLevel", `${assessmentResult.mathLevel} / ${assessmentResult.englishLevel}`);
 
   // Las carreras salen del MISMO resultado que veran al desbloquear: esta
   // pantalla es una vista recortada de aiResult, no un segundo calculo.

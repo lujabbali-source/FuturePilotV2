@@ -367,3 +367,12 @@ h1 span, .results-intro h1 span, .unlock-screen h1 span { color: var(--fp-green)
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* La marca salio del encabezado del test (la pone la cabecera compartida),
+   asi que ya no hay un elemento a la izquierda que empuje al resto: sin
+   esto, el indicador de guardado y el boton de salir quedarian pegados al
+   borde izquierdo en vez de a la derecha. */
+.test-header--bare {
+    justify-content: flex-end;
+    gap: 16px;
+}

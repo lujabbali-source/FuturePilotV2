@@ -18,33 +18,27 @@ const clusterNames = [
   "SOCIAL", "LEADERSHIP", "PRACTICAL", "ENTREPRENEURIAL",
 ];
 
+// Solo clusters. Habia tambien mathScore, englishScore, learningStyle y
+// universityGoal, alimentados por campos `math`/`english`/`learningStyle`
+// en las respuestas de questions.json. Esos campos NO EXISTEN en el banco
+// - ninguna de las 200 respuestas los trae - asi que los contadores se
+// quedaban en cero y de ahi salian un "Math: Beginner / English: Beginner"
+// identico para todos y un "Learning Style: null" literal en pantalla.
+// Se eliminaron en vez de dejarlos: un dato inventado que parece personal
+// es peor que no mostrar nada, y el estilo de aprendizaje de verdad ya lo
+// calcula el backend (ReasoningEngine.infer_archetype).
 function createInitialResults() {
   return {
     clusters: Object.fromEntries(clusterNames.map((cluster) => [cluster, 0])),
-    learningStyle: null,
-    mathScore: 0,
-    englishScore: 0,
-    teamwork: 0,
-    creativity: 0,
-    problemSolving: 0,
-    universityGoal: null,
   };
 }
 
-// This is the same answer application used by the previous assessment.js.
 function applyAnswer(results, answer) {
-  if (!answer) return;
-
-  if (answer.cluster) {
-    const cluster = answer.cluster.toUpperCase();
-    const points = answer.points || 0;
-    if (results.clusters[cluster] !== undefined) results.clusters[cluster] += points;
+  if (!answer || !answer.cluster) return;
+  const cluster = answer.cluster.toUpperCase();
+  if (results.clusters[cluster] !== undefined) {
+    results.clusters[cluster] += answer.points || 0;
   }
-
-  if (answer.learningStyle) results.learningStyle = answer.learningStyle;
-  if (answer.math) results.mathScore += answer.math;
-  if (answer.english) results.englishScore += answer.english;
-  if (answer.universityGoal) results.universityGoal = answer.universityGoal;
 }
 
 function calculateResults(questions, answers, savedResults = null) {
@@ -78,9 +72,6 @@ function buildAssessmentResult(results) {
     clusterPercentages[cluster] = max === 0 ? 0 : Math.round((results.clusters[cluster] / max) * 100);
   }
 
-  const mathLevel = results.mathScore >= 5 ? "Advanced" : results.mathScore >= 4 ? "Intermediate" : "Beginner";
-  const englishLevel = results.englishScore >= 5 ? "Advanced" : results.englishScore >= 3 ? "Intermediate" : "Beginner";
-
   // Sin topCareer ni recommendedCareers: los nombres de carrera vienen del
   // backend. Aqui solo se describe el PERFIL (que clusters dominan y con
   // que fuerza relativa), que es lo que este motor puede afirmar de verdad.
@@ -89,10 +80,6 @@ function buildAssessmentResult(results) {
     topThree: sortedClusters.slice(0, 3),
     clusterPercentages,
     allClusterScores: results.clusters,
-    learningStyle: results.learningStyle,
-    mathLevel,
-    englishLevel,
-    universityGoal: results.universityGoal,
   };
 }
 

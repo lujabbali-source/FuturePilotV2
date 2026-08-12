@@ -117,3 +117,11 @@ body{
         #00FFB3
     );
 }
+
+/* Estaba como atributo style= en cada tarjeta generada desde JS, que la CSP
+   bloquea (style-src-attr): la categoria salia sin color ni mayusculas. */
+.career-card__category {
+    color: #00FFB3;
+    font-size: .8rem;
+    text-transform: uppercase;
+}

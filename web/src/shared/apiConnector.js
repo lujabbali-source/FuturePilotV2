@@ -18,6 +18,16 @@ const AI_STORAGE_KEY = "futurePilotAIResponse";
 const USER_ANSWERS_KEY = "futurePilotAssessment";
 const RESULT_ID_KEY = "futurePilotResultId";
 const ANON_ID_KEY = "futurePilotAnonId";
+/** Escapa antes de meter texto en innerHTML. Estos valores vienen del
+ *  propio backend, pero escapar es la postura por defecto: si algun dia el
+ *  arquetipo o el estilo de aprendizaje pasan a ser configurables, el
+ *  escape ya esta puesto. */
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;").replaceAll("'", "&#039;");
+}
+
 const AUTH_TOKEN_KEY = "futurePilotAuthToken";
 
 // Antes de iniciar sesion, cada navegador tenia su test/chat guardado
@@ -183,18 +193,23 @@ function updateFlightPlanUI() {
       localStorage.setItem("selectedCareer", topChoice.title);
     }
 
-    // 5. Nivel academico. mathLevel/englishLevel los calcula el motor
-    // local y nunca llegan al servidor, asi que en otro dispositivo no
-    // existen: se rellena con lo que si sabe la cuenta (el estilo de
-    // aprendizaje) en vez de dejar el "Loading..." del HTML colgado.
+    // 5. Perfil cognitivo. Antes esta tarjeta mostraba Math/English/Learning
+    // Style del motor local, tres campos que ninguna pregunta alimenta: el
+    // resultado era "Math: Beginner / English: Beginner / Learning Style:
+    // null" identico para todo el mundo. Ahora sale del resultado real, que
+    // si distingue un perfil de otro, y ademas viaja con la cuenta en vez de
+    // depender del dispositivo.
     const academicElement = document.getElementById("academicLevel");
-    const localLevels = (() => {
-      try { return JSON.parse(localStorage.getItem("futurePilotResults")); } catch { return null; }
-    })();
-    if (academicElement && !localLevels) {
-      academicElement.innerHTML = aiData.learning_style
-        ? `Estilo de aprendizaje: ${aiData.learning_style}`
-        : "Repite el test en este dispositivo para ver tu nivel académico.";
+    if (academicElement) {
+      const rows = [
+        ["Arquetipo", aiData.personality],
+        ["Estilo de aprendizaje", aiData.learning_style],
+        ["Confianza del análisis", aiData.confidence ? `${Math.round(aiData.confidence * 100)}%` : null],
+      ].filter(([, value]) => value);
+
+      academicElement.innerHTML = rows.length
+        ? rows.map(([label, value]) => `${label}: ${escapeHtml(String(value))}`).join("<br>")
+        : "Todavía no has hecho el test";
     }
   } catch (err) {
     console.error("[FuturePilot AI Error] Error actualizando FlightPlan UI:", err);

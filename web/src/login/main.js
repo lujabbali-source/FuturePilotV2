@@ -8,8 +8,8 @@
 // registran en window. Convertirlos a exports es el ultimo paso pendiente
 // de la consolidacion.
 import "../shared/theme-loader.js";
+import "../shared/site-header.js";
 import "../shared/i18next.js";
-import "../shared/language-toggle.js";
 import "../shared/passport-stamp-toast.js";
 import "../shared/mentor-chat.js";
 

@@ -178,3 +178,25 @@ def test_frontend_dir_has_no_html_left(client):
 
     stray = sorted(p.name for p in Path(fp_app.FRONTEND_DIR).rglob("*.html"))
     assert not stray, f"quedan paginas sin migrar en Frontend/: {stray}"
+
+
+def test_no_page_ships_inline_handlers(client):
+    """script-src 'self' bloquea los manejadores inline igual que los
+    <script> inline. El boton de cada tarjeta de /careers llevaba
+    onclick="openCareer(...)" generado desde JS: no daba error visible, el
+    boton simplemente no hacia nada al pulsarlo. El HTML servido no basta
+    para detectarlo (el markup lo genera el bundle), asi que se revisa
+    tambien el JS compilado."""
+    import re
+    from pathlib import Path
+
+    import app as fp_app
+
+    handlers = re.compile(r'\son(?:click|change|submit|input|load|error)\s*=\s*["\']')
+
+    for page in ("/", "/careers", "/assessment", "/passport", "/journey", "/flightplan"):
+        assert not handlers.search(client.get(page).text), f"{page} sirve un manejador inline"
+
+    for bundle in (Path(fp_app.WEB_DIST_DIR) / "assets").glob("*.js"):
+        found = handlers.findall(bundle.read_text(encoding="utf-8", errors="ignore"))
+        assert not found, f"{bundle.name} genera markup con manejador inline: {found[:3]}"
