@@ -1,4 +1,11 @@
-(() => {
+import { claimPendingAndCelebrate } from "../shared/resultClaim.js";
+
+// El cuerpo va dentro de una funcion con nombre porque necesita cortar
+// pronto (`return`) cuando la pagina no tiene nada que montar. Un `return`
+// suelto era valido dentro del IIFE que envolvia este archivo, pero en un
+// modulo ES es un error de sintaxis.
+function main() {
+
   // Si ya hay una sesion guardada, mostrar el formulario de login de nuevo
   // es un callejon sin salida para el usuario (el "loop" reportado al
   // hacer clic en "Sign In" estando ya logueado). /assessment decide que
@@ -152,7 +159,7 @@
     if (action === "retry-claim") {
       actionButton.disabled = true;
       actionButton.textContent = "Vinculando...";
-      window.FuturePilotResultClaim.claimPendingAndCelebrate().then((claim) => {
+      claimPendingAndCelebrate().then((claim) => {
         // Reintentar es seguro incluso si el claim original si funciono:
         // el endpoint es idempotente y devuelve exito, no 404 (ver
         // claim_test_result en users_store.py).
@@ -241,7 +248,7 @@
       //
       // Se pasa data.token explicito: acaba de llegar en esta respuesta y
       // localStorage podria no haberlo propagado todavia.
-      const claim = await window.FuturePilotResultClaim.claimPendingAndCelebrate(data.token);
+      const claim = await claimPendingAndCelebrate(data.token);
 
       if (claim.status === "failed") {
         // El resultado NO se perdio: result-claim.js conserva el
@@ -264,4 +271,6 @@
   });
 
   applyMode();
-})();
+}
+
+main();

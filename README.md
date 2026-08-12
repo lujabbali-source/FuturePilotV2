@@ -89,9 +89,13 @@ backend/                 Librería de datos, no arranca ningún servidor propio
   data/users.sqlite3       la base real (ignorada por git)
 
 web/                     Frontend compilado (Vite). Una entrada por página:
-  globe.html               globo 3D (React + three.js), servido en /globe
-  assessment.html          test vocacional, servido en /assessment
+  globe.html               globo 3D (React + three.js)      -> /globe
+  assessment.html          test vocacional                  -> /assessment
+  login.html               login y registro                 -> /login
+  reset-password.html      nueva contraseña                 -> /reset-password
   src/assessment/          módulos ES del test
+  src/login/               módulos ES del login
+  src/shared/              módulos compartidos entre páginas
   src/database/countries/  datos de países y ciudades curados a mano
 
 Frontend/                Páginas aún sin migrar: HTML/CSS/JS vanilla

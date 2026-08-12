@@ -144,13 +144,6 @@
 
   </main>
 
-  <script>
-    (function () {
-      var base = location.protocol === "file:" ? "./" : "/Frontend/";
-      ["theme-loader.js", "i18n.js", "language-toggle.js", "passport-stamp-toast.js", "result-claim.js", "mentor-chat.js", "login.js"].forEach(function (file) {
-        document.write('<script src="' + base + file + '"><\/script>');
-      });
-    })();
-  </script>
+  <script type="module" src="/src/login/main.js"></script>
 </body>
 </html>

@@ -10,20 +10,21 @@
 // Los imports de abajo son de dos clases distintas y conviene no
 // confundirlas:
 //
-//   - ./app.js importa sus dependencias de verdad (engine, questionTypes).
+//   - ./app.js importa sus dependencias de verdad (engine, questionTypes,
+//     y desde src/shared/ el claim del resultado, que antes era un global
+//     compartido con /login y dejo de serlo al migrar esa pagina).
 //   - Los de Frontend/ son modulos heredados que todavia comparten con
-//     paginas sin migrar (login, journey, flightplan, passport). Se
+//     paginas sin migrar (journey, flightplan, passport, careers). Se
 //     importan por su EFECTO SECUNDARIO: cada uno es un IIFE que se
 //     registra solo en window. Asi el bundle los incluye sin duplicar el
 //     codigo ni romper a quien los sigue cargando con <script>. A medida
 //     que esas paginas migren, dejaran de ser efectos secundarios y
-//     pasaran a exportar como cualquier otro modulo.
+//     pasaran a src/shared/ como modulos normales.
 
 import "../../../Frontend/theme-loader.js";
 import "../../../Frontend/i18n.js";
 import "../../../Frontend/language-toggle.js";
 import "../../../Frontend/passport-stamp-toast.js";
-import "../../../Frontend/result-claim.js";
 import "../../../Frontend/mentor-chat.js";
 import "../../../Frontend/futurepilot-connector.js";
 import "../../../Frontend/dev-config.js";

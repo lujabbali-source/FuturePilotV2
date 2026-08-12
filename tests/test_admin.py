@@ -130,7 +130,7 @@ def test_migrated_pages_get_a_csp_without_unsafe_inline(client):
     inline, deja de necesitar 'unsafe-inline' en script-src. Las que aun
     cargan su JS con document.write lo siguen necesitando. Cuando se migre
     la ultima, la politica permisiva desaparece."""
-    for path in ("/assessment", "/globe"):
+    for path in ("/assessment", "/globe", "/login", "/reset-password"):
         csp = client.get(path).headers["content-security-policy"]
         assert "script-src 'self';" in csp, f"{path} no recibe la CSP estricta"
         assert "'unsafe-inline'" not in csp.split("style-src")[0], path
@@ -141,9 +141,10 @@ def test_migrated_pages_get_a_csp_without_unsafe_inline(client):
 
 
 def test_migrated_pages_are_served_from_the_build(client):
-    """/assessment ya no tiene copia en Frontend/: sale del build de web/.
-    Si el HTML servido trae un document.write, es que se esta sirviendo la
-    version vieja desde algun sitio."""
-    html = client.get("/assessment").text
-    assert "document.write" not in html
-    assert "/app/assets/" in html, "no parece el HTML compilado por Vite"
+    """Las paginas migradas ya no tienen copia en Frontend/: salen del build
+    de web/. Si el HTML servido trae un document.write, es que se esta
+    sirviendo la version vieja desde algun sitio."""
+    for path in ("/assessment", "/login", "/reset-password"):
+        html = client.get(path).text
+        assert "document.write" not in html, path
+        assert "/app/assets/" in html, f"{path} no parece el HTML compilado por Vite"

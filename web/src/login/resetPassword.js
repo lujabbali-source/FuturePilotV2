@@ -1,4 +1,8 @@
-(() => {
+// El cuerpo va dentro de una funcion con nombre porque necesita cortar
+// pronto (`return`) cuando la pagina no tiene nada que montar. Un `return`
+// suelto era valido dentro del IIFE que envolvia este archivo, pero en un
+// modulo ES es un error de sintaxis.
+function main() {
   const form = document.getElementById("resetForm");
   const errorBox = document.getElementById("resetError");
   const infoBox = document.getElementById("resetInfo");
@@ -70,4 +74,6 @@
       showError("No pudimos conectar con el servidor. Verifica tu conexión e intenta de nuevo.");
     }
   });
-})();
+}
+
+main();

@@ -25,6 +25,8 @@ export default defineConfig({
       input: {
         globe: resolve(import.meta.dirname, 'globe.html'),
         assessment: resolve(import.meta.dirname, 'assessment.html'),
+        login: resolve(import.meta.dirname, 'login.html'),
+        'reset-password': resolve(import.meta.dirname, 'reset-password.html'),
       },
     },
   },

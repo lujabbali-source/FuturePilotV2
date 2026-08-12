@@ -149,7 +149,7 @@ def _build_csp(*, allow_inline_scripts: bool) -> str:
 # Es una lista de rutas ya migradas, no de excepciones: crece con cada
 # pagina que pasa a web/, y cuando esten todas, _build_csp se llama con
 # allow_inline_scripts=False siempre y este mapa desaparece.
-_STRICT_CSP_PATHS = {"/assessment", "/globe"}
+_STRICT_CSP_PATHS = {"/assessment", "/globe", "/login", "/reset-password"}
 
 _CSP_PERMISSIVE = _build_csp(allow_inline_scripts=True)
 _CSP_STRICT = _build_csp(allow_inline_scripts=False)
@@ -365,12 +365,12 @@ def assessment_page():
 
 @app.get("/login")
 def login_page():
-    return FileResponse(str(FRONTEND_DIR / "login.html"))
+    return _web_page("login.html")
 
 
 @app.get("/reset-password")
 def reset_password_page():
-    return FileResponse(str(FRONTEND_DIR / "reset-password.html"))
+    return _web_page("reset-password.html")
 
 
 @app.get("/careers")
@@ -932,8 +932,13 @@ def _check_globe() -> Dict[str, Any]:
 
 
 def _check_login_pages() -> Dict[str, Any]:
-    required = ["login.html", "admin/admin-login.html"]
-    missing = [name for name in required if not (FRONTEND_DIR / name).exists()]
+    # El login del estudiante salio de Frontend/ al migrarse al build de
+    # web/ (Fase 3); el del admin sigue sin migrar.
+    missing = []
+    if not (WEB_DIST_DIR / "login.html").exists():
+        missing.append("login.html (build de web/)")
+    if not (FRONTEND_DIR / "admin" / "admin-login.html").exists():
+        missing.append("admin/admin-login.html")
     if missing:
         return {"status": "error", "detail": f"Faltan paginas de login: {', '.join(missing)}"}
     return {"status": "ok", "detail": "Paginas de login de estudiante y admin presentes."}
@@ -970,9 +975,9 @@ def _check_frontend_pages() -> Dict[str, Any]:
     # un problema distinto y merece su propio mensaje.
     legacy = [
         "index.html", "careers.html", "journey.html",
-        "flightplan.html", "passport.html", "login.html",
+        "flightplan.html", "passport.html",
     ]
-    built = ["assessment.html", "globe.html"]
+    built = ["assessment.html", "globe.html", "login.html", "reset-password.html"]
 
     missing_legacy = [name for name in legacy if not (FRONTEND_DIR / name).exists()]
     missing_built = [name for name in built if not (WEB_DIST_DIR / name).exists()]

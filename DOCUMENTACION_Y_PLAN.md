@@ -14,7 +14,9 @@
 >   carreras, escala de compatibilidad corregida, I2, I3, `QUESTION_COUNT` y las páginas que
 >   dependían del dispositivo.
 > - 🏗️ **Fase 3 — Consolidación sobre Vite: EN CURSO.** Terreno preparado (`web/`, build
->   multi-página) y `assessment` migrada, ya con CSP estricta. Faltan las demás páginas.
+>   multi-página). Migradas: `assessment`, `login`, `reset-password` (+ el globo), las cuatro
+>   ya con CSP estricta. Faltan `passport`, `journey`, `flightplan`, `index`, `careers`,
+>   legales y `admin/*`.
 > - ⬜ Fase 4, pendiente.
 >
 > **Suite de tests: 55 pasan** (38 originales + 17 de regresión añadidos).
@@ -680,14 +682,34 @@ frena la inyección es `script-src`.
 
 #### ⬜ 3.2 (resto) — orden sugerido
 
-| Orden | Página | Por qué en este orden |
+| Orden | Página | Estado |
 |---|---|---|
 | ~~1~~ | ~~`assessment`~~ | ✅ hecho |
-| 2 | `login` / `reset-password` | Comparten CSS y lógica de sesión; `result-claim` deja de ser global |
+| ~~2~~ | ~~`login` / `reset-password`~~ | ✅ hecho — `result-claim` dejó de ser global |
 | 3 | `passport` | Consume la API, poco HTML estático |
 | 4 | `journey` / `flightplan` | JS inline pesado que hay que extraer igualmente; libera `futurepilot-connector` |
 | 5 | `index` / `careers` / legales | Casi estáticas, las más fáciles |
 | 6 | `admin/*` | Aisladas, sin prisa |
+
+#### ✅ `login` y `reset-password` migradas
+
+Primera vez que la migración **elimina un global** en vez de solo moverlo. `result-claim.js` lo
+compartían el test y el login; con las dos páginas dentro del build pasó a
+`web/src/shared/resultClaim.js` como módulo ES normal, y `window.FuturePilotResultClaim` ya no
+existe. Quedan tres globales heredados (`FuturePilotAIConnector`, `FuturePilotStampToast`,
+`FuturePilotI18n`), cada uno atado a las páginas que aún no se han migrado.
+
+**Vite ya extrae chunks compartidos**: `resultClaim` y `mentor-chat` son ficheros propios que
+comparten varias entradas, en vez de repetirse en cada bundle.
+
+**Un detalle que solo aparece al compilar:** ambos archivos empezaban con un `return` de alto nivel
+para cortar temprano (sesión ya iniciada; link sin token). Es válido dentro de un IIFE y es un
+**error de sintaxis** en un módulo ES. El cuerpo de cada uno pasó a una función `main()`, que
+conserva exactamente ese control de flujo. `node --check` lo detectó antes de llegar al navegador.
+
+Verificado en el navegador: registro real desde el formulario → claim → resultados; el camino de
+fallo del claim conserva el `result_id`, muestra el aviso honesto y **se recupera al reintentar**;
+`/reset-password` sin token y con token inválido responden bien.
 
 **3.4 — Un solo i18n**
 i18next para todo. Los namespaces `test`, `results`, `roadmap`, `login` que hoy están huérfanos en

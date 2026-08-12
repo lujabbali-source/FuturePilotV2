@@ -11,6 +11,7 @@
 // migren, pasaran a ser imports normales tambien.
 import * as assessmentEngine from "./engine.js";
 import * as questionTypes from "./questionTypes.js";
+import { claimPendingAndCelebrate, pendingResultId } from "../shared/resultClaim.js";
 
 const STORAGE_KEY = "futurePilotAssessment";
 const RESULTS_KEY = "futurePilotResults";
@@ -228,12 +229,12 @@ async function handleUnlock() {
   // Pasaporte se actualiza solo, sin que el usuario tenga que re-loguearse.
   const existingToken = localStorage.getItem("futurePilotAuthToken");
 
-  if (existingToken && window.FuturePilotResultClaim.pendingResultId()) {
+  if (existingToken && pendingResultId()) {
     // Una sola implementacion del claim, compartida con login.js (ver
     // result-claim.js). Si falla, el result_id se CONSERVA y se reintenta
     // solo la proxima vez que cargue esta pagina - antes se borraba pase
     // lo que pase, y el resultado quedaba huerfano en la base de datos.
-    await window.FuturePilotResultClaim.claimPendingAndCelebrate(existingToken);
+    await claimPendingAndCelebrate(existingToken);
     screen = "results";
     render();
     return;
@@ -422,8 +423,8 @@ async function init() {
   // por los resultados. Es idempotente, asi que no hay riesgo en llamarlo
   // de mas, y evita que un fallo transitorio deje el resultado huerfano
   // para siempre.
-  if (authToken && window.FuturePilotResultClaim?.pendingResultId()) {
-    await window.FuturePilotResultClaim.claimPendingAndCelebrate(authToken);
+  if (authToken && pendingResultId()) {
+    await claimPendingAndCelebrate(authToken);
   }
 
   if (authToken) {
