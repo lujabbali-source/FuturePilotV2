@@ -17,8 +17,10 @@
 >   un único build. **`script-src` ya no necesita `'unsafe-inline'` en ninguna ruta.**
 > - ✅ **Fase 4 — Preparación para producción: COMPLETADA.** `FUTUREPILOT_ENV`, chequeo de
 >   arranque, cabeceras de caché, `/healthz` y el token de recuperación fuera de los logs.
+> - ✅ **Fase 5 — Cerrar la consolidación: COMPLETADA.** Un solo i18n, cero globales `window.*`,
+>   y la CSP cerrada del todo: **ni `script-src` ni `style-src` admiten `'unsafe-inline'`**.
 >
-> **Suite de tests: 67 pasan** (38 originales + 29 añadidos).
+> **Suite de tests: 77 pasan** (38 originales + 39 añadidos).
 > El análisis de las secciones §1-§6 describe el estado **previo** a estas correcciones y se
 > conserva como registro de la auditoría.
 
@@ -788,3 +790,48 @@ falsa del proyecto:
 - **Los comentarios del código explican el *porqué*, no el *qué*.** Es el mejor activo del
   repositorio: cada decisión no obvia tiene su justificación escrita al lado.
 - **38 tests de integración verdes** cubriendo auth, admin, assessment, mentor y pasaporte.
+
+
+---
+
+### ✅ Fase 5 — Cerrar la consolidación
+
+El plan original terminaba en la Fase 4. Esta se añadió para rematar lo que las anteriores dejaron
+a medias: piezas que funcionaban pero seguían duplicadas o acopladas por `window`.
+
+#### Un solo motor de i18n
+
+Convivían dos: i18next en el globo y un motor hecho a mano de 198 líneas
+(`shared/i18n.js`) con su propio diccionario, su propio almacenamiento y su propio recorrido del
+DOM. Sus **57 claves** pasaron al namespace `site` de i18next y el motor se borró. El selector de
+idioma y `site.js` hablan ahora con i18next.
+
+Las páginas vanilla usan una instancia propia creada con `createInstance()`: importar la del globo
+habría arrastrado React a bundles que no lo tienen. Lo que sí comparten es lo que importa — los
+mismos archivos de locales y la misma clave de `localStorage`.
+
+#### Cero globales `window.*`
+
+| Global | Destino |
+|---|---|
+| `FuturePilotI18n` | desaparece con el motor heredado |
+| `FuturePilotStampToast` | `export { show }` en `shared/passport-stamp-toast.js` |
+
+Con esto no queda **ningún** objeto compartido por `window` entre módulos. Todo son imports.
+
+#### CSP cerrada del todo
+
+`style-src` seguía necesitando `'unsafe-inline'` por tres motivos, y los tres se resolvieron:
+
+| Qué lo obligaba | Solución |
+|---|---|
+| `style="width:${n}%"` en las barras | Se marca `data-fill` y se aplica con `element.style.width` — CSSOM, que la CSP no gobierna |
+| 4 bloques `<style>` en el HTML | Extraídos a `.css` que importa cada entrada; Vite los empaqueta y minifica |
+| 6 módulos inyectando `<style>` desde JS | Los estáticos, a archivos `.css`; los dinámicos (tema, Theme Lab), a `setProperty` sobre `:root` |
+
+**Verificado en el navegador con el par de aserciones que importa:** `setProperty` sobre el
+`documentElement` de un iframe funciona, y un `<style>` inyectado en ese mismo iframe **lo bloquea
+la CSP**. Es decir: la política está de verdad activa, y la vista previa del Theme Lab habría
+dejado de funcionar si no se hubiera convertido.
+
+El documento sirve ahora **0 etiquetas `<style>`** y 0 atributos `style=`.

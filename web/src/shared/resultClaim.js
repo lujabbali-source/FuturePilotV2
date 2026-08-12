@@ -1,3 +1,4 @@
+import { show as showStamps } from "./passport-stamp-toast.js";
 // Vinculación del resultado del test a la cuenta del estudiante.
 //
 // Existe UN solo sitio donde se reclama un resultado, y es este. Antes la
@@ -84,7 +85,7 @@ async function claimPending(authToken) {
 async function claimPendingAndCelebrate(authToken) {
   const outcome = await claimPending(authToken);
   if (outcome.newStamps.length) {
-    window.FuturePilotStampToast?.show(outcome.newStamps);
+    showStamps(outcome.newStamps);
   }
   return outcome;
 }

@@ -144,16 +144,19 @@ app.add_middleware(
 # <iframe> para la vista previa en vivo.
 # --------------------------------------------------------------------------
 def _build_csp(*, allow_inline_scripts: bool) -> str:
-    # style-src conserva 'unsafe-inline' en los dos casos: las pantallas
-    # calculan anchos de barras de progreso con atributos style="width:N%".
-    # Quitarlo exige mover esos valores a custom properties, que es otra
-    # tarea. La directiva que de verdad importa contra inyeccion es
-    # script-src.
+    # Ni script-src ni style-src necesitan ya 'unsafe-inline'. El sitio no
+    # tiene un solo <script> ni un solo <style> inline: todo se sirve
+    # compilado desde web/. Lo que sigue siendo dinamico - el ancho de las
+    # barras, los colores del Theme Lab - se aplica con CSSOM
+    # (element.style / setProperty), que la CSP no gobierna.
+    #
+    # El parametro se conserva porque los tests construyen las dos
+    # politicas para comprobar que la permisiva ya no se usa en ninguna ruta.
     script_src = "'self' 'unsafe-inline'" if allow_inline_scripts else "'self'"
     return (
         "default-src 'self'; "
         f"script-src {script_src}; "
-        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+        "style-src 'self' https://fonts.googleapis.com; "
         "font-src 'self' https://fonts.gstatic.com; "
         "img-src 'self' data:; "
         "connect-src 'self'; "

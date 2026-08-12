@@ -51,7 +51,7 @@ El backend debe estar levantado en paralelo.
 python -m pytest
 ```
 
-76 tests de integración sobre la API real (auth, admin, assessment, mentor, pasaporte). Usan una
+77 tests de integración sobre la API real (auth, admin, assessment, mentor, pasaporte). Usan una
 base SQLite temporal: **nunca tocan `backend/data/users.sqlite3`**.
 
 ---

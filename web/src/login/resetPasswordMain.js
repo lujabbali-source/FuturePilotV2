@@ -2,7 +2,7 @@
 // heredados con /login, pero es una pagina distinta: su propia entrada en
 // el build, sin arrastrar la logica del formulario de login.
 import "../shared/theme-loader.js";
-import "../shared/i18n.js";
+import "../shared/i18next.js";
 import "../shared/language-toggle.js";
 import "../shared/passport-stamp-toast.js";
 import "../shared/mentor-chat.js";

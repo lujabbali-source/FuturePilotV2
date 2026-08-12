@@ -1,3 +1,4 @@
+import { show as showStamps } from "../shared/passport-stamp-toast.js";
 // Reporta exploracion del globo al Pasaporte FuturePilot. localStorage se
 // comparte con el sitio vanilla (mismo origen), asi que si el usuario
 // inicio sesion en /login, ese token ya esta disponible aca sin ningun
@@ -32,8 +33,8 @@ export function recordPassportEvent(eventType, subjectId, subjectLabel) {
   })
     .then((response) => (response.ok ? response.json() : null))
     .then((data) => {
-      if (data?.new_stamps?.length && window.FuturePilotStampToast) {
-        window.FuturePilotStampToast.show(data.new_stamps);
+      if (data?.new_stamps?.length) {
+        showStamps(data.new_stamps);
       }
     })
     .catch(() => {

@@ -70,6 +70,20 @@ function hasCurrentAnswer() {
   return answer.answerIndex !== null && answer.answerIndex !== undefined;
 }
 
+/** Aplica los anchos marcados con data-fill.
+ *
+ *  Las barras de progreso y de compatibilidad se pintaban con
+ *  style="width:N%" en el HTML. Un atributo style inline es justo lo que
+ *  'unsafe-inline' en style-src permite, y era lo unico que impedia cerrar
+ *  esa directiva. Asignar element.style desde JavaScript es CSSOM y la CSP
+ *  no lo bloquea, asi que el resultado visual es identico sin la concesion.
+ */
+function applyFills() {
+  app.querySelectorAll("[data-fill]").forEach((element) => {
+    element.style.width = `${element.dataset.fill}%`;
+  });
+}
+
 function render() {
   if (screen === "welcome") return renderWelcome();
   if (screen === "question") return renderQuestion();
@@ -117,7 +131,7 @@ function renderQuestion() {
     <section class="progress-section" aria-label="${t("progress.eyebrow")}">
       <p class="progress-eyebrow">${t("progress.eyebrow")}</p>
       <div class="progress-meta"><span class="progress-message">${progressMessage.label}</span><span><strong>${String(currentQuestion + 1).padStart(2, "0")}</strong> / ${questionCount()}</span></div>
-      <div class="progress-bar"><span style="width:${progress}%"></span></div>
+      <div class="progress-bar"><span data-fill="${progress}"></span></div>
       <div class="progress-submeta"><span>${progressMessage.detail}</span><span>${phase}</span></div>
       <div class="phase-track">${phaseTrack}</div>
     </section>
@@ -132,6 +146,7 @@ function renderQuestion() {
       <button type="button" class="primary-action" data-action="next" ${hasCurrentAnswer() ? "" : "disabled"}>${currentQuestion === questionCount() - 1 ? t("nav.finish") : t("nav.next")}<span>→</span></button>
     </footer>
   </main>`;
+  applyFills();
   bindQuestionEvents(format);
 }
 
@@ -222,7 +237,8 @@ function renderPartialResults() {
   // El copy no promete que el resultado vaya a cambiar al registrarse -
   // porque no cambia. Lo que se desbloquea es profundidad sobre ESTAS
   // mismas carreras, y eso es lo que enumera la lista de abajo.
-  app.innerHTML = `<main class="results-screen screen-enter"><div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span><span class="result-chip">${t("partial.chip")} <b>✓</b></span></div><section class="results-intro"><p class="eyebrow"><span class="eyebrow-dot"></span> ${t("partial.eyebrow")}</p><h1>${t("partial.title")}<br><span>${t("partial.titleAccent")}</span></h1><p>${t("partial.copy")}</p></section><section class="career-reveal"><div class="section-label"><span>${t("partial.listLabel")}</span><span>${t("partial.listScore")}</span></div>${careers.map((career, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(career.name)}</span><span class="career-score"><strong>${career.percentage}%</strong><span class="mini-bar"><i style="width:${career.percentage}%"></i></span></span></div>`).join("")}<div class="curiosity-line"><span>✦</span> ${t("partial.curiosity")}</div></section><section class="found-section"><h2>${t("partial.lockedTitle")}</h2><div class="found-grid">${LOCKED_PERKS.map((key) => `<div>🔒 <span>${t(key)}</span></div>`).join("")}</div></section><button type="button" class="primary-action primary-action--wide" data-action="unlock">${t("partial.cta")} <span>→</span></button><p class="results-footnote">${t("partial.footnote")}</p></main>`;
+  app.innerHTML = `<main class="results-screen screen-enter"><div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span><span class="result-chip">${t("partial.chip")} <b>✓</b></span></div><section class="results-intro"><p class="eyebrow"><span class="eyebrow-dot"></span> ${t("partial.eyebrow")}</p><h1>${t("partial.title")}<br><span>${t("partial.titleAccent")}</span></h1><p>${t("partial.copy")}</p></section><section class="career-reveal"><div class="section-label"><span>${t("partial.listLabel")}</span><span>${t("partial.listScore")}</span></div>${careers.map((career, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(career.name)}</span><span class="career-score"><strong>${career.percentage}%</strong><span class="mini-bar"><i data-fill="${career.percentage}"></i></span></span></div>`).join("")}<div class="curiosity-line"><span>✦</span> ${t("partial.curiosity")}</div></section><section class="found-section"><h2>${t("partial.lockedTitle")}</h2><div class="found-grid">${LOCKED_PERKS.map((key) => `<div>🔒 <span>${t(key)}</span></div>`).join("")}</div></section><button type="button" class="primary-action primary-action--wide" data-action="unlock">${t("partial.cta")} <span>→</span></button><p class="results-footnote">${t("partial.footnote")}</p></main>`;
+  applyFills();
 }
 
 async function handleUnlock() {
@@ -277,11 +293,12 @@ function renderPartialUnavailable(assessmentResult) {
     </section>
     <section class="career-reveal">
       <div class="section-label"><span>${t("unavailable.listLabel")}</span><span>${t("unavailable.listScore")}</span></div>
-      ${dims.map((dim, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(dim.label)}</span><span class="career-score"><strong>${dim.pct}%</strong><span class="mini-bar"><i style="width:${dim.pct}%"></i></span></span></div>`).join("")}
+      ${dims.map((dim, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(dim.label)}</span><span class="career-score"><strong>${dim.pct}%</strong><span class="mini-bar"><i data-fill="${dim.pct}"></i></span></span></div>`).join("")}
     </section>
     <p>${escapeHtml(aiError || t("unavailable.fallbackError"))}</p>
     <button type="button" class="primary-action primary-action--wide" data-action="retry-analysis">${t("unavailable.retry")} <span>→</span></button>
   </main>`;
+  applyFills();
 }
 
 function renderFullResults() {
@@ -317,13 +334,14 @@ function renderFullResults() {
     </section>
     <section class="career-reveal">
       <div class="section-label"><span>${t("full.careers")}</span><span>${t("full.score")}</span></div>
-      ${careers.map((career, index) => `<div class="career-result career-result--full"><span class="career-rank">${String(index + 1).padStart(2, "0")}</span><div class="career-copy"><span class="career-name">${escapeHtml(career.title)}</span><p class="career-justification">${escapeHtml(career.justification)}</p></div><span class="career-score"><strong>${career.match_percentage}%</strong><span class="mini-bar"><i style="width:${career.match_percentage}%"></i></span></span></div>`).join("")}
+      ${careers.map((career, index) => `<div class="career-result career-result--full"><span class="career-rank">${String(index + 1).padStart(2, "0")}</span><div class="career-copy"><span class="career-name">${escapeHtml(career.title)}</span><p class="career-justification">${escapeHtml(career.justification)}</p></div><span class="career-score"><strong>${career.match_percentage}%</strong><span class="mini-bar"><i data-fill="${career.match_percentage}"></i></span></span></div>`).join("")}
     </section>
     <button type="button" class="primary-action primary-action--wide" data-action="explore-globe">${t("full.exploreGlobe")} <span>→</span></button>
     <button type="button" class="secondary-action secondary-action--large" data-action="view-passport">${t("full.viewPassport")} <span>→</span></button>
     <p class="results-footnote">${t("full.footnote")}</p>
     <button type="button" class="text-action" data-action="retake-test">${t("full.retake")}</button>
   </main>`;
+  applyFills();
 }
 
 function goNext() {

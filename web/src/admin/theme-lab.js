@@ -83,16 +83,14 @@ function main() {
   function applyToPreview() {
     if (!previewReady) return;
     try {
-      const doc = previewFrame.contentDocument;
-      let style = doc.getElementById("fpThemeLabPreview");
-      if (!style) {
-        style = doc.createElement("style");
-        style.id = "fpThemeLabPreview";
-        doc.head.appendChild(style);
-      }
+      // setProperty sobre el <html> del iframe en vez de inyectarle un
+      // <style>: la vista previa carga la landing real, que responde con la
+      // CSP del sitio, y esa CSP ya no admite estilos inline.
+      const root = previewFrame.contentDocument.documentElement;
       const colors = currentColors();
-      const declarations = Object.keys(colors).map((key) => `--fp-${key}:${colors[key]};`).join("");
-      style.textContent = `:root{${declarations}}`;
+      Object.keys(colors).forEach((key) => {
+        root.style.setProperty(`--fp-${key}`, colors[key]);
+      });
     } catch (error) {
       // Iframe cross-origin o todavia no cargo del todo - no hay nada que
       // hacer, el siguiente cambio de color lo reintenta.

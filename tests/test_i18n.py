@@ -64,7 +64,7 @@ def test_ui_namespaces_have_the_same_keys_in_both_languages():
             keys |= flatten(value, f"{path}.") if isinstance(value, dict) else {path}
         return keys
 
-    for namespace in ("test.json", "common.json"):
+    for namespace in ("test.json", "common.json", "site.json"):
         es = flatten(json.loads((LOCALES / "es" / namespace).read_text(encoding="utf-8")))
         en = flatten(json.loads((LOCALES / "en" / namespace).read_text(encoding="utf-8")))
         assert es == en, f"{namespace}: solo-es={sorted(es - en)} solo-en={sorted(en - es)}"

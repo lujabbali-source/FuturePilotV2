@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Home",
+    "careers": "Careers",
+    "assessment": "Assessment",
+    "globe": "Explore the Globe",
+    "roadmaps": "Roadmaps",
+    "passport": "My Passport",
+    "signin": "Sign In",
+    "myAccount": "My Account"
+  },
+  "hero": {
+    "badge": "🚀 Your Future Starts Here",
+    "title": "Navigate Your Future.<br>Build Your Destination.",
+    "subtitle": "Stop guessing your next step. Discover career paths, personalized roadmaps, and opportunities designed for ambitious students.",
+    "ctaPrimary": "Build My Flight Plan",
+    "ctaSecondary": "Explore the Globe",
+    "stat1": "Career Paths",
+    "stat2": "Learning Resources",
+    "stat3": "Possibilities"
+  },
+  "features": {
+    "heading": "What's Inside FuturePilot",
+    "ai": {
+      "title": "Personalized AI",
+      "desc": "An engine that analyzes your unique profile and matches you with careers that actually fit."
+    },
+    "globe": {
+      "title": "Interactive Globe",
+      "desc": "Explore universities and opportunities across the continent on a 3D interactive globe."
+    },
+    "universities": {
+      "title": "Universities & Countries",
+      "desc": "Compare real costs, programs and cities to make the decision that fits you best."
+    },
+    "roadmap": {
+      "title": "Personalized Roadmap",
+      "desc": "A step-by-step plan generated from your profile to get where you want to be."
+    },
+    "recommendations": {
+      "title": "Smart Recommendations",
+      "desc": "Suggestions that evolve with your progress and interests over time."
+    },
+    "academic": {
+      "title": "Academic Development Plan",
+      "desc": "A clear path from where you are today to your ideal career."
+    }
+  },
+  "destinations": {
+    "heading": "Where Do You Want To Go?",
+    "ai": {
+      "title": "AI & Technology",
+      "desc": "Artificial Intelligence, Software Engineering and Data Science."
+    },
+    "medicine": {
+      "title": "Medicine & Health",
+      "desc": "Medicine, Nursing and Healthcare careers."
+    },
+    "law": {
+      "title": "Law & Social Sciences",
+      "desc": "Law, Psychology and International Relations."
+    },
+    "business": {
+      "title": "Business",
+      "desc": "Business, Finance and Entrepreneurship."
+    },
+    "creative": {
+      "title": "Creative Arts",
+      "desc": "Design, Media and Content Creation."
+    },
+    "science": {
+      "title": "Science & Research",
+      "desc": "Biology, Chemistry and Scientific Research."
+    }
+  },
+  "howitworks": {
+    "heading": "How FuturePilot Works",
+    "discover": {
+      "title": "Discover",
+      "desc": "Take the Future Assessment and discover careers that fit you."
+    },
+    "plan": {
+      "title": "Plan",
+      "desc": "Receive a personalized Flight Plan built around your goals."
+    },
+    "achieve": {
+      "title": "Achieve",
+      "desc": "Learn, build projects and track your progress."
+    }
+  },
+  "footer": {
+    "tagline": "A clear path forward, from where you are today to your ideal career. FuturePilot guides you every step of the way.",
+    "platform": "Platform",
+    "legal": "Legal",
+    "support": "Support",
+    "supportNote": "Questions, suggestions or feedback:",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "rights": "All rights reserved."
+  }
+}

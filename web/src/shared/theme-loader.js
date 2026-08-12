@@ -28,16 +28,16 @@
       const keys = Object.keys(colors);
       if (keys.length === 0) return;
 
-      const declarations = keys.map((key) => `--fp-${key}:${colors[key]};`);
+      // Las variables se fijan con setProperty, no inyectando un <style>.
+      // Un <style> creado desde JS lo bloquea la CSP igual que uno escrito
+      // en el HTML; setProperty es CSSOM y no. El efecto es el mismo:
+      // sobreescribir las custom properties de :root.
+      const root = document.documentElement;
       keys.forEach((key) => {
+        root.style.setProperty(`--fp-${key}`, colors[key]);
         const legacyName = LEGACY_ALIASES[key];
-        if (legacyName) declarations.push(`--fp-${legacyName}:${colors[key]};`);
+        if (legacyName) root.style.setProperty(`--fp-${legacyName}`, colors[key]);
       });
-
-      const style = document.createElement("style");
-      style.id = "fpThemeOverride";
-      style.textContent = `:root{${declarations.join("")}}`;
-      document.head.appendChild(style);
     })
     .catch(() => {
       // Sin tema guardado o sin conexion: se queda con los valores por

@@ -132,17 +132,31 @@ ALL_PAGES = [
 ]
 
 
-def test_no_page_needs_unsafe_inline_scripts(client):
-    """El entregable de seguridad de la Fase 3. Mientras las paginas
-    cargaban su JS con document.write, script-src necesitaba
-    'unsafe-inline' en todo el sitio. Ya no queda ninguna: la politica
-    estricta aplica a TODAS las rutas, sin excepciones ni lista de
-    migradas."""
+def test_no_page_needs_unsafe_inline(client):
+    """El entregable de seguridad del plan. Mientras las paginas cargaban su
+    JS con document.write, script-src necesitaba 'unsafe-inline'; mientras
+    pintaban anchos con style="width:N%" y se inyectaban <style> desde JS,
+    lo necesitaba style-src. Ninguna de las dos cosas queda: la politica
+    estricta aplica a TODAS las rutas, sin excepciones."""
     for path in ALL_PAGES:
         csp = client.get(path).headers["content-security-policy"]
-        script_src = csp.split("script-src")[1].split(";")[0]
-        assert "'unsafe-inline'" not in script_src, f"{path}: script-src{script_src}"
-        assert "'unsafe-eval'" not in script_src, f"{path}: script-src{script_src}"
+        for directive in ("script-src", "style-src"):
+            value = csp.split(directive)[1].split(";")[0]
+            assert "'unsafe-inline'" not in value, f"{path}: {directive}{value}"
+            assert "'unsafe-eval'" not in value, f"{path}: {directive}{value}"
+
+
+def test_no_page_ships_inline_styles_or_scripts(client):
+    """Lo que hace cumplible la politica de arriba. Un <style> en el HTML o
+    un atributo style= reaparecerian como texto sin estilo en produccion,
+    no como un fallo ruidoso - por eso se comprueba aqui y no a ojo."""
+    import re
+
+    for path in ALL_PAGES:
+        html = client.get(path).text
+        assert "<style" not in html, f"{path}: trae un bloque <style>"
+        assert not re.search(r"<[^>]+\sstyle=", html), f"{path}: trae un atributo style="
+        assert "document.write" not in html, path
 
 
 def test_every_page_is_served_from_the_build(client):
@@ -156,9 +170,8 @@ def test_every_page_is_served_from_the_build(client):
 
 
 def test_frontend_dir_has_no_html_left(client):
-    """Frontend/ se quedo solo con CSS, imagenes y los modulos heredados que
-    aun no se han movido a web/src/shared/. Si reaparece un .html ahi, es
-    una copia paralela de una pagina que ya vive en el build."""
+    """Frontend/ se quedo solo con CSS e imagenes. Si reaparece un .html
+    ahi, es una copia paralela de una pagina que ya vive en el build."""
     from pathlib import Path
 
     import app as fp_app

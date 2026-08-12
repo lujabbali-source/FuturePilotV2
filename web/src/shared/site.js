@@ -1,3 +1,5 @@
+import { t } from "./i18next.js";
+
 (() => {
   // Año dinámico en el footer - se actualiza solo cada año, sin tocar el HTML.
   const yearEl = document.getElementById("footerYear");
@@ -32,7 +34,7 @@
     if (passportLink) passportLink.hidden = !isAuthed;
 
     if (!authLink || !isAuthed) return;
-    authLink.textContent = window.FuturePilotI18n ? window.FuturePilotI18n.t("nav.myAccount") : "My Account";
+    authLink.textContent = t("nav.myAccount", { ns: "site" });
     authLink.href = "/assessment";
   }
 

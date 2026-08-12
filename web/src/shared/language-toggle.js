@@ -1,62 +1,47 @@
-(() => {
-  if (!window.FuturePilotI18n) return;
+// Los estilos viven en language-toggle.css: un <style> inyectado desde JS lo
+// bloquea la CSP igual que uno escrito en el HTML, y asi ademas los
+// empaqueta y minifica Vite.
+import "./language-toggle.css";
+// Selector de idioma flotante, presente en todas las paginas.
+//
+// Antes hablaba con window.FuturePilotI18n, el motor de traduccion hecho a
+// mano. Ahora usa i18next directamente; el comportamiento visible es el
+// mismo y el estado sigue viviendo en la misma clave de localStorage, asi
+// que la eleccion se respeta tambien en el globo (que usa su propia
+// instancia de i18next sobre los mismos archivos de locales).
 
-  const style = document.createElement("style");
-  style.textContent = `
-    #fpLanguageToggle {
-      position: fixed;
-      top: 18px;
-      right: 18px;
-      z-index: 9998;
-      display: inline-flex;
-      align-items: center;
-      gap: 2px;
-      padding: 4px;
-      border-radius: 999px;
-      background: rgba(4, 10, 8, .55);
-      border: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(10px);
-      font: 600 .74rem/1 Inter, Arial, sans-serif;
-    }
-    #fpLanguageToggle button {
-      padding: 7px 12px;
-      border: 0;
-      border-radius: 999px;
-      background: transparent;
-      color: rgba(255,255,255,.6);
-      cursor: pointer;
-      transition: background .2s ease, color .2s ease;
-    }
-    #fpLanguageToggle button.is-active {
-      background: #00FFB3;
-      color: #04150f;
-    }
-  `;
+import { currentLanguage, setLanguage, supportedLanguages } from "./i18next.js";
 
-  const panel = document.createElement("div");
-  panel.id = "fpLanguageToggle";
-  panel.setAttribute("aria-label", "Language / Idioma");
+const LABELS = { en: "EN", es: "ES" };
 
-  const languages = window.FuturePilotI18n.supportedLanguages;
-  const labels = { en: "EN", es: "ES" };
+const panel = document.createElement("div");
+panel.id = "fpLanguageToggle";
+panel.setAttribute("aria-label", "Language / Idioma");
 
-  function render() {
-    const current = window.FuturePilotI18n.getLanguage();
-    panel.innerHTML = "";
-    languages.forEach((language) => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.textContent = labels[language] || language.toUpperCase();
-      button.className = language === current ? "is-active" : "";
-      button.addEventListener("click", () => {
-        window.FuturePilotI18n.setLanguage(language);
-        render();
-      });
-      panel.appendChild(button);
+function render() {
+  const current = currentLanguage();
+  panel.innerHTML = "";
+  supportedLanguages.forEach((language) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = LABELS[language] || language.toUpperCase();
+    button.className = language === current ? "is-active" : "";
+    button.setAttribute("aria-pressed", String(language === current));
+    button.addEventListener("click", async () => {
+      await setLanguage(language);
+      render();
     });
-  }
+    panel.appendChild(button);
+  });
+}
 
+function mount() {
   render();
-  document.head.appendChild(style);
   document.body.appendChild(panel);
-})();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", mount);
+} else {
+  mount();
+}

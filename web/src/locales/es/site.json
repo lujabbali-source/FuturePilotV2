@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "careers": "Carreras",
+    "assessment": "Test",
+    "globe": "Explorar el Globo",
+    "roadmaps": "Roadmaps",
+    "passport": "Mi Pasaporte",
+    "signin": "Iniciar sesión",
+    "myAccount": "Mi cuenta"
+  },
+  "hero": {
+    "badge": "🚀 Tu futuro empieza aquí",
+    "title": "Navega tu futuro.<br>Construye tu destino.",
+    "subtitle": "Deja de adivinar tu siguiente paso. Descubre caminos de carrera, roadmaps personalizados y oportunidades diseñadas para estudiantes ambiciosos.",
+    "ctaPrimary": "Crear mi plan de vuelo",
+    "ctaSecondary": "Explorar el Globo",
+    "stat1": "Caminos de carrera",
+    "stat2": "Recursos de aprendizaje",
+    "stat3": "Posibilidades"
+  },
+  "features": {
+    "heading": "Qué encuentras en FuturePilot",
+    "ai": {
+      "title": "IA personalizada",
+      "desc": "Un motor que analiza tu perfil único y encuentra las carreras que realmente encajan contigo."
+    },
+    "globe": {
+      "title": "Globo interactivo",
+      "desc": "Explora universidades y oportunidades en todo el continente sobre un globo 3D interactivo."
+    },
+    "universities": {
+      "title": "Universidades y países",
+      "desc": "Compara costos, programas y ciudades reales para tomar la mejor decisión."
+    },
+    "roadmap": {
+      "title": "Roadmap personalizado",
+      "desc": "Un plan paso a paso generado desde tu perfil para llegar a donde quieres estar."
+    },
+    "recommendations": {
+      "title": "Recomendaciones inteligentes",
+      "desc": "Sugerencias que evolucionan con tu progreso e intereses con el tiempo."
+    },
+    "academic": {
+      "title": "Plan de desarrollo académico",
+      "desc": "Un camino claro desde donde estás hoy hasta tu carrera ideal."
+    }
+  },
+  "destinations": {
+    "heading": "¿A dónde quieres llegar?",
+    "ai": {
+      "title": "IA y Tecnología",
+      "desc": "Inteligencia Artificial, Ingeniería de Software y Ciencia de Datos."
+    },
+    "medicine": {
+      "title": "Medicina y Salud",
+      "desc": "Medicina, Enfermería y carreras de la salud."
+    },
+    "law": {
+      "title": "Derecho y Ciencias Sociales",
+      "desc": "Derecho, Psicología y Relaciones Internacionales."
+    },
+    "business": {
+      "title": "Negocios",
+      "desc": "Negocios, Finanzas y Emprendimiento."
+    },
+    "creative": {
+      "title": "Artes Creativas",
+      "desc": "Diseño, Medios y Creación de Contenido."
+    },
+    "science": {
+      "title": "Ciencia e Investigación",
+      "desc": "Biología, Química e Investigación Científica."
+    }
+  },
+  "howitworks": {
+    "heading": "Cómo funciona FuturePilot",
+    "discover": {
+      "title": "Descubre",
+      "desc": "Toma el Future Assessment y descubre carreras que encajan contigo."
+    },
+    "plan": {
+      "title": "Planea",
+      "desc": "Recibe un Flight Plan personalizado construido alrededor de tus metas."
+    },
+    "achieve": {
+      "title": "Logra",
+      "desc": "Aprende, construye proyectos y sigue tu progreso."
+    }
+  },
+  "footer": {
+    "tagline": "Un camino claro hacia adelante, desde donde estás hoy hasta tu carrera ideal. FuturePilot te guía en cada paso.",
+    "platform": "Plataforma",
+    "legal": "Legal",
+    "support": "Soporte",
+    "supportNote": "Dudas, sugerencias o comentarios:",
+    "terms": "Términos y Condiciones",
+    "privacy": "Política de Privacidad",
+    "rights": "Todos los derechos reservados."
+  }
+}
