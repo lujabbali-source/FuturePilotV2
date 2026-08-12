@@ -393,3 +393,42 @@ def test_question_bank_only_declares_metadata_the_engine_uses(client):
                 f"'{question['question'][:40]}' declara {sorted(presentes)}, "
                 "que ya no consume nadie: hay que reconstruir esa parte del perfil"
             )
+
+
+def test_hubs_prefer_the_ones_known_for_that_specific_career(client):
+    """La categoria sola es demasiado gruesa: "Skilled Trades" agrupa
+    Toulouse (aeronautica) y Lyon (gastronomia), asi que a quien le salia
+    Culinary Arts se le proponia Toulouse primero. Cada hub declara por que
+    carreras es conocido de verdad y esas van delante."""
+    from ai_engine import CareerEngine
+
+    engine = CareerEngine()
+    catalogo = {c["id"]: c for c in client.get("/api/v1/careers").json()["careers"]}
+
+    esperado = {
+        "c68": "Lyon",        # Culinary Arts
+        "c65": "Toulouse",    # Aviation Maintenance
+        "c40": "Los Ángeles", # Film & Audiovisual Direction
+        "c43": "París",       # Creative Writing
+        "c22": "Basilea",     # Pharmacy
+        "c13": "Ginebra",     # Physics
+        "c67": "Wageningen",  # Agricultural Engineering
+    }
+    for career_id, primero in esperado.items():
+        career = catalogo[career_id]
+        hubs = engine.get_recommended_hubs(career["category"], career_id)
+        assert hubs, f"{career['title']} se quedo sin destinos"
+        assert hubs[0]["name"].startswith(primero), (
+            f"{career['title']}: se esperaba {primero} primero, salio {hubs[0]['name']}"
+        )
+
+
+def test_hub_career_tags_point_at_real_careers(client):
+    """Un id mal escrito en la lista `careers` de un hub no rompe nada: el
+    hub simplemente nunca se prioriza. Este test lo detecta."""
+    from ai_engine import CareerEngine
+
+    ids = {c["id"] for c in client.get("/api/v1/careers").json()["careers"]}
+    for hub in CareerEngine.GLOBAL_HUBS:
+        desconocidos = set(hub.get("careers") or []) - ids
+        assert not desconocidos, f"{hub['name']} apunta a carreras inexistentes: {desconocidos}"

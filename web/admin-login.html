@@ -40,6 +40,26 @@
         </button>
       </form>
 
+      <!-- Antes esta pagina era un callejon sin salida en una instalacion
+           nueva: no hay ningun "crear cuenta de administrador", porque el
+           acceso se concede por coincidencia con ADMIN_EMAIL. Quien llegaba
+           aqui sin saberlo no tenia forma de averiguarlo.
+
+           El texto es fijo a proposito: NO consulta si la cuenta admin ya
+           existe. Decirlo seria avisar de que la plaza esta libre, y el
+           registro no verifica el correo (ver sync_admin_email). -->
+      <details class="admin-login-help">
+        <summary>¿Primera vez? Cómo se crea el acceso de administrador</summary>
+        <ol>
+          <li>Define <code>ADMIN_EMAIL</code> en el <code>.env</code> del servidor.</li>
+          <li>Regístrate como estudiante en <a href="/login?mode=register">/login</a> usando
+              <strong>ese mismo email</strong> y la contraseña que quieras.</li>
+          <li>Vuelve aquí e inicia sesión: esa cuenta ya es la administradora.</li>
+        </ol>
+        <p>Hazlo como primer paso del despliegue. Mientras la cuenta no exista,
+           cualquiera que se registre con ese email obtendría el panel.</p>
+      </details>
+
       <p class="admin-login-footnote">¿Eres estudiante? <a href="/login">Inicia sesión aquí</a></p>
     </section>
   </main>

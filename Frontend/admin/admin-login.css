@@ -152,3 +152,49 @@ button { cursor: pointer; }
 }
 .admin-login-footnote a { color: var(--fp-cyan); text-decoration: none; }
 .admin-login-footnote a:hover { color: var(--fp-green); }
+
+/* Guia de primer arranque. En una instalacion nueva no hay ningun boton de
+   "crear administrador" - el acceso se concede por coincidencia con
+   ADMIN_EMAIL - asi que sin esto la pagina era un callejon sin salida. */
+.admin-login-help {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .03);
+    text-align: left;
+}
+
+.admin-login-help summary {
+    cursor: pointer;
+    font: 600 .82rem/1.4 Manrope, Inter, Arial, sans-serif;
+    color: rgba(255, 255, 255, .72);
+}
+
+.admin-login-help summary:hover { color: #f5fbff; }
+
+.admin-login-help ol {
+    margin: 12px 0 0;
+    padding-inline-start: 20px;
+    color: rgba(255, 255, 255, .62);
+    font: 400 .8rem/1.65 Manrope, Inter, Arial, sans-serif;
+}
+
+.admin-login-help li { margin-bottom: 6px; }
+
+.admin-login-help p {
+    margin: 10px 0 0;
+    color: rgba(255, 200, 120, .8);
+    font: 400 .76rem/1.55 Manrope, Inter, Arial, sans-serif;
+}
+
+.admin-login-help code {
+    padding: 1px 5px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .35);
+    font-family: 'DM Mono', monospace;
+    font-size: .74rem;
+    color: #00FFB3;
+}
+
+.admin-login-help a { color: #00D4FF; }

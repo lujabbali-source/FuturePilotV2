@@ -447,36 +447,56 @@ class CareerEngine:
         {"name": "Bangalore (India)", "category": "Technology", "desc": "Mayor concentración de ingeniería de software de Asia."},
         {"name": "Bogotá (Colombia)", "category": "Technology", "desc": "Ecosistema emergente de desarrollo de software en LatAm."},
         {"name": "Zúrich (Suiza)", "category": "Engineering", "desc": "Líder en ingeniería de precisión y sistemas industriales."},
-        {"name": "Múnich (Alemania)", "category": "Engineering", "desc": "Automoción, mecatrónica y manufactura avanzada."},
-        {"name": "Londres (Reino Unido)", "category": "Business", "desc": "Centro internacional de negocios y consultoría."},
-        {"name": "Singapur", "category": "Business", "desc": "Puerta de entrada al comercio y la logística de Asia."},
+        {"name": "Múnich (Alemania)", "category": "Engineering", "desc": "Automoción, mecatrónica y manufactura avanzada.", "careers": ["c10", "c34", "c61"]},
+        {"name": "Londres (Reino Unido)", "category": "Business", "desc": "Centro internacional de negocios y consultoría.", "careers": ["c72", "c11"]},
+        {"name": "Singapur", "category": "Business", "desc": "Puerta de entrada al comercio y la logística de Asia.", "careers": ["c59", "c60"]},
         {"name": "Nueva York (EE. UU.)", "category": "Mathematics & Finance", "desc": "Capital mundial de los mercados financieros."},
-        {"name": "Boston (EE. UU.)", "category": "Health", "desc": "Concentración de hospitales universitarios e investigación clínica."},
-        {"name": "Basilea (Suiza)", "category": "Health", "desc": "Polo farmacéutico y de ciencias de la vida."},
-        {"name": "Cambridge (Reino Unido)", "category": "Science", "desc": "Investigación básica y biotecnología de referencia."},
-        {"name": "Ginebra (Suiza)", "category": "Science", "desc": "Física de partículas y organismos científicos internacionales."},
-        {"name": "Milán (Italia)", "category": "Design", "desc": "Referente mundial en diseño industrial y de producto."},
-        {"name": "Copenhague (Dinamarca)", "category": "Design", "desc": "Diseño escandinavo y arquitectura sostenible."},
-        {"name": "París (Francia)", "category": "Arts", "desc": "Escena artística, editorial y audiovisual histórica."},
-        {"name": "Los Ángeles (EE. UU.)", "category": "Arts", "desc": "Industria del cine, la música y la animación."},
-        {"name": "Nueva York (EE. UU.)", "category": "Communication", "desc": "Sede de los grandes medios y agencias globales."},
-        {"name": "Doha (Catar)", "category": "Communication", "desc": "Centro de medios internacionales para Oriente Medio."},
-        {"name": "La Haya (Países Bajos)", "category": "Law & Politics", "desc": "Sede de las principales cortes internacionales."},
-        {"name": "Bruselas (Bélgica)", "category": "Law & Politics", "desc": "Corazón institucional y diplomático de Europa."},
-        {"name": "Helsinki (Finlandia)", "category": "Education", "desc": "Sistema educativo de referencia internacional."},
-        {"name": "Estocolmo (Suecia)", "category": "Social Sciences", "desc": "Investigación social y políticas de bienestar."},
-        {"name": "Costa Rica", "category": "Environment", "desc": "Modelo de conservación y energía renovable."},
-        {"name": "Wageningen (Países Bajos)", "category": "Environment", "desc": "Referencia mundial en ciencias agrarias y alimentación."},
-        {"name": "Toulouse (Francia)", "category": "Skilled Trades", "desc": "Capital europea de la industria aeronáutica."},
-        {"name": "Lyon (Francia)", "category": "Skilled Trades", "desc": "Tradición gastronómica y formación culinaria de élite."},
+        {"name": "Boston (EE. UU.)", "category": "Health", "desc": "Concentración de hospitales universitarios e investigación clínica.", "careers": ["c7", "c24", "c27"]},
+        {"name": "Basilea (Suiza)", "category": "Health", "desc": "Polo farmacéutico y de ciencias de la vida.", "careers": ["c22", "c9", "c16"]},
+        {"name": "Cambridge (Reino Unido)", "category": "Science", "desc": "Investigación básica y biotecnología de referencia.", "careers": ["c9", "c12", "c16"]},
+        {"name": "Ginebra (Suiza)", "category": "Science", "desc": "Física de partículas y organismos científicos internacionales.", "careers": ["c13", "c21"]},
+        {"name": "Milán (Italia)", "category": "Design", "desc": "Referente mundial en diseño industrial y de producto.", "careers": ["c41", "c42"]},
+        {"name": "Copenhague (Dinamarca)", "category": "Design", "desc": "Diseño escandinavo y arquitectura sostenible.", "careers": ["c36"]},
+        {"name": "París (Francia)", "category": "Arts", "desc": "Escena artística, editorial y audiovisual histórica.", "careers": ["c43", "c44"]},
+        {"name": "Los Ángeles (EE. UU.)", "category": "Arts", "desc": "Industria del cine, la música y la animación.", "careers": ["c37", "c39", "c40"]},
+        {"name": "Nueva York (EE. UU.)", "category": "Communication", "desc": "Sede de los grandes medios y agencias globales.", "careers": ["c48", "c73"]},
+        {"name": "Doha (Catar)", "category": "Communication", "desc": "Centro de medios internacionales para Oriente Medio.", "careers": ["c38"]},
+        {"name": "La Haya (Países Bajos)", "category": "Law & Politics", "desc": "Sede de las principales cortes internacionales.", "careers": ["c46"]},
+        {"name": "Bruselas (Bélgica)", "category": "Law & Politics", "desc": "Corazón institucional y diplomático de Europa.", "careers": ["c47", "c52"]},
+        {"name": "Helsinki (Finlandia)", "category": "Education", "desc": "Sistema educativo de referencia internacional.", "careers": ["c45"]},
+        {"name": "Estocolmo (Suecia)", "category": "Social Sciences", "desc": "Investigación social y políticas de bienestar.", "careers": ["c49", "c50", "c51"]},
+        {"name": "Costa Rica", "category": "Environment", "desc": "Modelo de conservación y energía renovable.", "careers": ["c19", "c69", "c20"]},
+        {"name": "Wageningen (Países Bajos)", "category": "Environment", "desc": "Referencia mundial en ciencias agrarias y alimentación.", "careers": ["c67", "c25"]},
+        {"name": "Toulouse (Francia)", "category": "Skilled Trades", "desc": "Capital europea de la industria aeronáutica.", "careers": ["c65", "c66"]},
+        {"name": "Lyon (Francia)", "category": "Skilled Trades", "desc": "Tradición gastronómica y formación culinaria de élite.", "careers": ["c68"]},
     ]
 
-    def get_recommended_hubs(self, top_category: str) -> List[Dict[str, Any]]:
-        """Solo hubs de la categoria de la carrera. Si no hay ninguno se
-        devuelve una lista vacia: antes se caia a los tres primeros de la
-        lista, que es como acabar recomendando un hub tecnologico a un
-        perfil artistico. La UI ya sabe que hacer cuando no hay hubs."""
-        return [hub for hub in self.GLOBAL_HUBS if hub["category"] == top_category]
+    def get_recommended_hubs(
+        self, top_category: str, career_id: Optional[str] = None
+    ) -> List[Dict[str, Any]]:
+        """Hubs de la categoria de la carrera, con los que sirven a ESA
+        carrera en concreto primero.
+
+        La categoria sola es demasiado gruesa. "Skilled Trades" agrupa
+        Toulouse (aeronautica) y Lyon (gastronomia): sin afinar, a quien le
+        salia Culinary Arts se le proponia Toulouse en primer lugar. Cada
+        hub declara opcionalmente por que carreras es conocido de verdad
+        (campo `careers`), y esas van delante.
+
+        Si no hay ningun hub de la categoria se devuelve lista vacia. Antes
+        se caia a los tres primeros de GLOBAL_HUBS, que es como recomendarle
+        Silicon Valley a un perfil artistico; la UI ya sabe que decir cuando
+        no hay destinos.
+        """
+        de_la_categoria = [hub for hub in self.GLOBAL_HUBS if hub["category"] == top_category]
+        if not career_id:
+            return de_la_categoria
+
+        # Estable: dentro de cada grupo se conserva el orden de la lista.
+        return sorted(
+            de_la_categoria,
+            key=lambda hub: 0 if career_id in (hub.get("careers") or []) else 1,
+        )
 
 
 class RoadmapPlanner:
@@ -825,7 +845,9 @@ class FuturePilotBrain:
         recommended_hubs = []
         if top_match:
             roadmap = self.planner.build_roadmap(top_match["title"], top_match["skill_gaps"])
-            recommended_hubs = self.career_engine.get_recommended_hubs(top_match.get("category", ""))
+            recommended_hubs = self.career_engine.get_recommended_hubs(
+                top_match.get("category", ""), top_match.get("career_id")
+            )
 
         # Paso 7: Generar Justificación Razonada
         strengths = top_match.get("strengths", []) if top_match else []

@@ -84,9 +84,15 @@ def test_config_check_flags_a_bad_production_setup(app_module, monkeypatch):
     assert "localhost" in problemas
 
 
-def test_config_check_is_quiet_when_things_are_fine(app_module, monkeypatch):
+def test_config_check_is_quiet_when_things_are_fine(app_module, client, monkeypatch):
+    # La cuenta admin tiene que existir de verdad: uno de los chequeos avisa
+    # justamente de cuando NO existe. Se registra aqui en vez de confiar en
+    # que otro test la haya creado antes.
+    correo = "admin-config-ok@example.com"
+    client.post("/api/v1/auth/register", json={"email": correo, "password": "password123"})
+
     monkeypatch.setattr(app_module, "IS_PRODUCTION", True)
-    monkeypatch.setattr(app_module, "ADMIN_EMAIL", "admin@futurepilot.app")
+    monkeypatch.setattr(app_module, "ADMIN_EMAIL", correo)
     monkeypatch.setattr(app_module, "CORS_ORIGINS", [])
     monkeypatch.setattr(app_module, "USERS_DB_PATH", "/var/data/users.sqlite3")
     monkeypatch.setenv("SMTP_HOST", "smtp.example.com")
@@ -108,3 +114,39 @@ def test_environment_defaults_to_development(app_module):
     descuido seria peor que lo contrario."""
     assert os.environ.get("FUTUREPILOT_ENV") in (None, "", "development")
     assert app_module.IS_PRODUCTION is False
+
+
+def test_admin_login_page_explains_setup_without_leaking_state(client):
+    """En una instalacion nueva /admin/login era un callejon sin salida: no
+    existe ningun "crear administrador" porque el acceso se concede por
+    coincidencia con ADMIN_EMAIL, y la pagina no lo decia.
+
+    La guia es texto fijo A PROPOSITO. Si consultara si la cuenta admin ya
+    existe estaria anunciando que la plaza esta libre, y como el registro no
+    verifica el correo, quien se registre con ese email se lleva el panel."""
+    html = client.get("/admin/login").text
+
+    assert "ADMIN_EMAIL" in html, "no explica de donde sale el acceso"
+    assert "/login?mode=register" in html, "no dice donde registrarse"
+
+    # Ni el email configurado ni si la cuenta existe pueden salir de aqui.
+    assert "admin@test.local" not in html
+
+
+def test_startup_check_flags_an_unclaimed_admin_account(app_module, client, monkeypatch):
+    """Mientras la cuenta admin no exista, cualquiera que se registre con ese
+    email obtiene el panel. El arranque tiene que decirlo: es una ventana
+    real y los emails de admin suelen ser adivinables."""
+    monkeypatch.setattr(app_module, "IS_PRODUCTION", True)
+    monkeypatch.setattr(app_module, "ADMIN_EMAIL", "nadie-registro-esto@example.com")
+    monkeypatch.setenv("SMTP_HOST", "smtp.example.com")
+    monkeypatch.setattr(app_module, "USERS_DB_PATH", "/var/data/users.sqlite3")
+
+    problemas = " | ".join(app_module.check_production_config())
+    assert "todavia no existe" in problemas
+
+    # Con la cuenta ya registrada, deja de avisar.
+    correo = "admin-ya-registrado@example.com"
+    client.post("/api/v1/auth/register", json={"email": correo, "password": "password123"})
+    monkeypatch.setattr(app_module, "ADMIN_EMAIL", correo)
+    assert "todavia no existe" not in " | ".join(app_module.check_production_config())

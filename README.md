@@ -51,7 +51,7 @@ El backend debe estar levantado en paralelo.
 python -m pytest
 ```
 
-77 tests de integración sobre la API real (auth, admin, assessment, mentor, pasaporte). Usan una
+84 tests de integración sobre la API real (auth, admin, assessment, mentor, pasaporte). Usan una
 base SQLite temporal: **nunca tocan `backend/data/users.sqlite3`**.
 
 ---
@@ -147,6 +147,19 @@ Declarar `FUTUREPILOT_ENV=production` cambia cuatro cosas:
 **Lo que hay que configurar sí o sí:** `ADMIN_EMAIL`, `SMTP_*` y un `USERS_DB_PATH` **fuera del
 repositorio**. En muchos PaaS el disco del contenedor es efímero y cada despliegue se llevaría por
 delante todas las cuentas.
+
+> ### ⚠️ Registra la cuenta de administrador como primer paso
+>
+> El acceso a `/admin` se concede a la cuenta cuyo email coincide con `ADMIN_EMAIL`, y **el registro
+> no verifica el correo**. Mientras esa cuenta no exista, cualquiera que se registre con ese email
+> se convierte en administrador — y los emails de admin suelen ser adivinables.
+>
+> Nada más levantar el servidor: entra en `/login`, regístrate con el email de `ADMIN_EMAIL`, y
+> entra una vez en `/admin` para confirmarlo. El servidor avisa al arrancar mientras la cuenta esté
+> libre.
+>
+> Cerrar la ventana del todo requiere verificación de email en el registro, o un secreto fuera de
+> banda que haya que presentar para reclamar la cuenta admin. Ninguna de las dos está implementada.
 
 **Sobre `--workers`:** el limitador de peticiones guarda su estado en memoria del proceso, así que
 con varios workers cada uno lleva su propia cuenta y el límite efectivo se multiplica. Con más de

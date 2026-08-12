@@ -1379,6 +1379,16 @@ def check_production_config() -> List[str]:
 
     if not ADMIN_EMAIL:
         problems.append("ADMIN_EMAIL vacio: nadie podra entrar a /admin.")
+    elif users_store.find_user_id_by_email(ADMIN_EMAIL) is None:
+        # La promocion a admin es por coincidencia de email y el registro no
+        # verifica el correo (ver sync_admin_email): mientras esa cuenta no
+        # exista, QUIEN LA REGISTRE PRIMERO se lleva el panel. Los emails de
+        # admin suelen ser adivinables, asi que la ventana importa.
+        problems.append(
+            f"La cuenta admin ({ADMIN_EMAIL}) todavia no existe. Hasta que la "
+            "registres en /login, cualquiera que use ese email se convierte en "
+            "administrador. Registrala como primer paso del despliegue."
+        )
 
     if not mailer.is_configured():
         problems.append(
