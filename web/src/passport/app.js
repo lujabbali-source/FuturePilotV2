@@ -1,4 +1,8 @@
-(() => {
+// El cuerpo va dentro de una funcion con nombre porque necesita cortar
+// pronto (`return`) en algun camino. Un `return` suelto era valido dentro
+// del IIFE que envolvia este archivo; en un modulo ES es un error de
+// sintaxis.
+function main() {
   const gate = document.getElementById("passportGate");
   const shell = document.getElementById("passportShell");
 
@@ -272,4 +276,6 @@
   }
 
   init();
-})();
+}
+
+main();

@@ -1,4 +1,7 @@
-(() => {
+// El cuerpo va dentro de una funcion con nombre porque necesita
+// cortar pronto (`return`). Valido dentro del IIFE que envolvia
+// este archivo; error de sintaxis en un modulo ES.
+function main() {
   const gate = document.getElementById("adminGate");
   const app = document.getElementById("adminApp");
 
@@ -132,4 +135,6 @@
   });
 
   verifyAdminAccess();
-})();
+}
+
+main();

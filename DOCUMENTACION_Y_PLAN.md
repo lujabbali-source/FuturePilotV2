@@ -13,13 +13,11 @@
 > - ✅ **Fase 2 — Coherencia de producto: COMPLETADA.** Un solo veredicto (B4), catálogo de 73
 >   carreras, escala de compatibilidad corregida, I2, I3, `QUESTION_COUNT` y las páginas que
 >   dependían del dispositivo.
-> - 🏗️ **Fase 3 — Consolidación sobre Vite: EN CURSO.** Terreno preparado (`web/`, build
->   multi-página). Migradas: `assessment`, `login`, `reset-password` (+ el globo), las cuatro
->   ya con CSP estricta. Faltan `passport`, `journey`, `flightplan`, `index`, `careers`,
->   legales y `admin/*`.
+> - ✅ **Fase 3 — Consolidación sobre Vite: COMPLETADA.** Las 15 páginas del sitio se sirven desde
+>   un único build. **`script-src` ya no necesita `'unsafe-inline'` en ninguna ruta.**
 > - ⬜ Fase 4, pendiente.
 >
-> **Suite de tests: 55 pasan** (38 originales + 17 de regresión añadidos).
+> **Suite de tests: 56 pasan** (38 originales + 18 de regresión añadidos).
 > El análisis de las secciones §1-§6 describe el estado **previo** a estas correcciones y se
 > conserva como registro de la auditoría.
 
@@ -669,27 +667,30 @@ a ser imports normales.
 con `file://`; una página compilada siempre se sirve por HTTP, así que se fue el artefacto generado
 y el script que había que acordarse de correr para mantenerlo al día.
 
-#### ✅ 3.3 — Cerrar la CSP — EN CURSO, ya con efecto real
+#### ✅ 3.3 — CSP cerrada — COMPLETADO
 
-No hacía falta esperar a migrarlo todo. La CSP se elige por ruta: las páginas migradas
-(`/assessment`, `/globe`) reciben `script-src 'self'`, sin `'unsafe-inline'`; las que aún cargan su
-JS con `document.write` conservan la política permisiva. La lista crece con cada página migrada y
-desaparece cuando estén todas.
+**El entregable de seguridad más valioso del plan.** Durante la migración la política se eligió por
+ruta, para cobrar el beneficio página a página sin esperar al final. Con la última migrada, la
+política permisiva y la lista de rutas desaparecieron: `script-src 'self'` aplica a **todo el
+sitio**, sin excepciones.
 
 `style-src` mantiene `'unsafe-inline'` en ambos casos: las pantallas calculan anchos de barra con
 `style="width:N%"`. Moverlo a custom properties es una tarea aparte. La directiva que de verdad
 frena la inyección es `script-src`.
 
-#### ⬜ 3.2 (resto) — orden sugerido
+#### ✅ 3.2 — Todas las páginas migradas
 
-| Orden | Página | Estado |
+| Página | Origen del JS antes | Ahora |
 |---|---|---|
-| ~~1~~ | ~~`assessment`~~ | ✅ hecho |
-| ~~2~~ | ~~`login` / `reset-password`~~ | ✅ hecho — `result-claim` dejó de ser global |
-| 3 | `passport` | Consume la API, poco HTML estático |
-| 4 | `journey` / `flightplan` | JS inline pesado que hay que extraer igualmente; libera `futurepilot-connector` |
-| 5 | `index` / `careers` / legales | Casi estáticas, las más fáciles |
-| 6 | `admin/*` | Aisladas, sin prisa |
+| `assessment` | 13 `<script>` + `document.write` | 1 módulo |
+| `login`, `reset-password` | 6 `<script>` cada una | 1 módulo cada una |
+| `passport` | 6 `<script>` | 1 módulo |
+| `journey`, `flightplan` | 2 bloques inline + bootstrap | 1 módulo |
+| `index`, `careers`, `terms`, `privacy` | bootstrap (+ JS inline en careers) | 1 módulo |
+| `admin/*` (4 páginas) | `document.write` por página | 1 módulo cada una |
+
+`Frontend/` se quedó **solo con CSS e imágenes**. Todo el JS vive en `web/src/`.
+
 
 #### ✅ `login` y `reset-password` migradas
 

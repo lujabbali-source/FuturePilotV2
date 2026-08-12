@@ -111,11 +111,9 @@ app.add_middleware(
 
 
 # --------------------------------------------------------------------------
-# Cabeceras de seguridad en cada respuesta. CSP permite 'unsafe-inline' en
-# script-src porque el sitio usa un bootstrap inline (document.write) en
-# cada pagina HTML para resolver rutas relativas/absolutas segun como se
-# sirve - quitarlo requeriria reescribir ese patron en todas las paginas,
-# no solo agregar la cabecera. frame-ancestors/frame-src usan 'self' (no
+# Cabeceras de seguridad en cada respuesta. script-src ya NO necesita
+# 'unsafe-inline': todas las paginas se sirven compiladas desde web/ y
+# ninguna trae scripts inline. frame-ancestors/frame-src usan 'self' (no
 # DENY) porque el Theme Lab del admin embebe la propia landing page en un
 # <iframe> para la vista previa en vivo.
 # --------------------------------------------------------------------------
@@ -141,18 +139,10 @@ def _build_csp(*, allow_inline_scripts: bool) -> str:
     )
 
 
-# Las paginas sin migrar cargan su JS con un bootstrap inline
-# (document.write) en el propio HTML, asi que necesitan 'unsafe-inline'
-# para funcionar. Las migradas al build de web/ no tienen ni un script
-# inline y reciben la politica estricta.
-#
-# Es una lista de rutas ya migradas, no de excepciones: crece con cada
-# pagina que pasa a web/, y cuando esten todas, _build_csp se llama con
-# allow_inline_scripts=False siempre y este mapa desaparece.
-_STRICT_CSP_PATHS = {"/assessment", "/globe", "/login", "/reset-password"}
-
-_CSP_PERMISSIVE = _build_csp(allow_inline_scripts=True)
-_CSP_STRICT = _build_csp(allow_inline_scripts=False)
+# Ya no queda ninguna pagina con scripts inline: todas se sirven desde el
+# build de web/ (Fase 3 completa). La politica permisiva y la lista de
+# rutas migradas que convivio con ella durante la migracion desaparecieron.
+_CSP = _build_csp(allow_inline_scripts=False)
 
 
 @app.middleware("http")
@@ -161,8 +151,7 @@ async def security_headers_middleware(request: Request, call_next):
     response.headers["X-Content-Type-Options"] = "nosniff"
     response.headers["X-Frame-Options"] = "SAMEORIGIN"
     response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
-    strict = request.url.path.rstrip("/") in _STRICT_CSP_PATHS
-    response.headers["Content-Security-Policy"] = _CSP_STRICT if strict else _CSP_PERMISSIVE
+    response.headers["Content-Security-Policy"] = _CSP
     if request.url.scheme == "https":
         response.headers["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains"
     return response
@@ -344,7 +333,7 @@ def _web_page(filename: str, fallback: Optional[Path] = None) -> FileResponse:
 
 @app.get("/")
 def home():
-    return FileResponse(str(FRONTEND_DIR / "index.html"))
+    return _web_page("index.html")
 
 
 @app.get("/globe")
@@ -375,7 +364,7 @@ def reset_password_page():
 
 @app.get("/careers")
 def careers_page():
-    return FileResponse(str(FRONTEND_DIR / "careers.html"))
+    return _web_page("careers.html")
 
 
 @app.get("/roadmap")
@@ -390,27 +379,27 @@ def roadmap_page():
 
 @app.get("/journey")
 def journey_page():
-    return FileResponse(str(FRONTEND_DIR / "journey.html"))
+    return _web_page("journey.html")
 
 
 @app.get("/flightplan")
 def flightplan_page():
-    return FileResponse(str(FRONTEND_DIR / "flightplan.html"))
+    return _web_page("flightplan.html")
 
 
 @app.get("/passport")
 def passport_page():
-    return FileResponse(str(FRONTEND_DIR / "passport.html"))
+    return _web_page("passport.html")
 
 
 @app.get("/terms")
 def terms_page():
-    return FileResponse(str(FRONTEND_DIR / "terms.html"))
+    return _web_page("terms.html")
 
 
 @app.get("/privacy")
 def privacy_page():
-    return FileResponse(str(FRONTEND_DIR / "privacy.html"))
+    return _web_page("privacy.html")
 
 
 # El panel de administracion es una carpeta separada (Frontend/admin/),
@@ -420,22 +409,22 @@ def privacy_page():
 # reales solo salen por la API, que si esta protegida en el servidor.
 @app.get("/admin")
 def admin_dashboard_page():
-    return FileResponse(str(FRONTEND_DIR / "admin" / "admin-dashboard.html"))
+    return _web_page("admin-dashboard.html")
 
 
 @app.get("/admin/login")
 def admin_login_page():
-    return FileResponse(str(FRONTEND_DIR / "admin" / "admin-login.html"))
+    return _web_page("admin-login.html")
 
 
 @app.get("/admin/theme-lab")
 def admin_theme_lab_page():
-    return FileResponse(str(FRONTEND_DIR / "admin" / "theme-lab.html"))
+    return _web_page("theme-lab.html")
 
 
 @app.get("/admin/system-health")
 def admin_system_health_page():
-    return FileResponse(str(FRONTEND_DIR / "admin" / "system-health.html"))
+    return _web_page("system-health.html")
 
 
 # --------------------------------------------------------------------------
@@ -932,13 +921,10 @@ def _check_globe() -> Dict[str, Any]:
 
 
 def _check_login_pages() -> Dict[str, Any]:
-    # El login del estudiante salio de Frontend/ al migrarse al build de
-    # web/ (Fase 3); el del admin sigue sin migrar.
-    missing = []
-    if not (WEB_DIST_DIR / "login.html").exists():
-        missing.append("login.html (build de web/)")
-    if not (FRONTEND_DIR / "admin" / "admin-login.html").exists():
-        missing.append("admin/admin-login.html")
+    missing = [
+        name for name in ("login.html", "admin-login.html")
+        if not (WEB_DIST_DIR / name).exists()
+    ]
     if missing:
         return {"status": "error", "detail": f"Faltan paginas de login: {', '.join(missing)}"}
     return {"status": "ok", "detail": "Paginas de login de estudiante y admin presentes."}
@@ -964,46 +950,34 @@ def _check_apis() -> Dict[str, Any]:
 
 
 def _check_frontend_pages() -> Dict[str, Any]:
-    # La lista debe reflejar las paginas que el sitio sirve HOY, y de donde
-    # sale cada una. Cuando incluia roadmap.html - borrado al convertir
-    # /roadmap en un redirect a /journey - el chequeo daba "error" siempre y
-    # arrastraba el estado global a rojo, tapando cualquier fallo real.
-    #
-    # Ahora hay dos origenes: las paginas sin migrar viven en Frontend/ y
-    # las migradas salen del build de web/ (Fase 3). Una pagina migrada que
-    # falte significa que nadie corrio `npm --prefix web run build`, que es
-    # un problema distinto y merece su propio mensaje.
-    legacy = [
-        "index.html", "careers.html", "journey.html",
-        "flightplan.html", "passport.html",
+    # Todas las paginas salen ya del build de web/. Si falta alguna es que
+    # nadie corrio `npm --prefix web run build`.
+    required = [
+        "index.html", "assessment.html", "careers.html", "journey.html",
+        "flightplan.html", "passport.html", "login.html", "reset-password.html",
+        "terms.html", "privacy.html", "globe.html",
     ]
-    built = ["assessment.html", "globe.html", "login.html", "reset-password.html"]
-
-    missing_legacy = [name for name in legacy if not (FRONTEND_DIR / name).exists()]
-    missing_built = [name for name in built if not (WEB_DIST_DIR / name).exists()]
-
-    if missing_legacy:
-        return {"status": "error", "detail": f"Faltan paginas en Frontend/: {', '.join(missing_legacy)}"}
-    if missing_built:
+    missing = [name for name in required if not (WEB_DIST_DIR / name).exists()]
+    if missing:
         return {
             "status": "error",
-            "detail": (
-                f"Faltan paginas compiladas ({', '.join(missing_built)}). "
-                "Corre 'npm --prefix web run build'."
-            ),
+            "detail": f"Faltan paginas compiladas ({', '.join(missing)}). Corre 'npm --prefix web run build'.",
         }
-    return {"status": "ok", "detail": "Paginas del sitio presentes (Frontend/ y build de web/)."}
+    return {"status": "ok", "detail": f"{len(required)} paginas compiladas presentes."}
 
 
 def _check_static_assets() -> Dict[str, Any]:
+    # Frontend/ ya solo guarda CSS e imagenes: todo el JS se movio a
+    # web/src/ y viaja dentro del bundle, asi que buscar ficheros .js
+    # sueltos aqui daria "warning" para siempre.
     required = [
-        "style.css", "futurepilot-logo-transparent.png",
-        "i18n.js", "language-toggle.js", "site.js",
+        "style.css", "assessment.css", "login.css", "passport.css",
+        "journey.css", "futurepilot-logo-transparent.png",
     ]
     missing = [name for name in required if not (FRONTEND_DIR / name).exists()]
     if missing:
         return {"status": "warning", "detail": f"Faltan: {', '.join(missing)}"}
-    return {"status": "ok", "detail": "CSS, JS compartido y logo presentes."}
+    return {"status": "ok", "detail": "Hojas de estilo e imagenes compartidas presentes."}
 
 
 _STATUS_SEVERITY = {"error": 0, "warning": 1, "ok": 2}

@@ -125,26 +125,43 @@ def test_admin_actions_are_audited(client, admin_headers):
     assert "theme.reset" in actions
 
 
-def test_migrated_pages_get_a_csp_without_unsafe_inline(client):
-    """El pago de migrar una pagina al build de web/ (Fase 3): sin scripts
-    inline, deja de necesitar 'unsafe-inline' en script-src. Las que aun
-    cargan su JS con document.write lo siguen necesitando. Cuando se migre
-    la ultima, la politica permisiva desaparece."""
-    for path in ("/assessment", "/globe", "/login", "/reset-password"):
+ALL_PAGES = [
+    "/", "/assessment", "/globe", "/login", "/reset-password", "/passport",
+    "/journey", "/flightplan", "/careers", "/terms", "/privacy",
+    "/admin", "/admin/login", "/admin/theme-lab", "/admin/system-health",
+]
+
+
+def test_no_page_needs_unsafe_inline_scripts(client):
+    """El entregable de seguridad de la Fase 3. Mientras las paginas
+    cargaban su JS con document.write, script-src necesitaba
+    'unsafe-inline' en todo el sitio. Ya no queda ninguna: la politica
+    estricta aplica a TODAS las rutas, sin excepciones ni lista de
+    migradas."""
+    for path in ALL_PAGES:
         csp = client.get(path).headers["content-security-policy"]
-        assert "script-src 'self';" in csp, f"{path} no recibe la CSP estricta"
-        assert "'unsafe-inline'" not in csp.split("style-src")[0], path
-
-    # Una pagina sin migrar: sigue con la politica permisiva, a proposito.
-    csp = client.get("/careers").headers["content-security-policy"]
-    assert "script-src 'self' 'unsafe-inline'" in csp
+        script_src = csp.split("script-src")[1].split(";")[0]
+        assert "'unsafe-inline'" not in script_src, f"{path}: script-src{script_src}"
+        assert "'unsafe-eval'" not in script_src, f"{path}: script-src{script_src}"
 
 
-def test_migrated_pages_are_served_from_the_build(client):
-    """Las paginas migradas ya no tienen copia en Frontend/: salen del build
-    de web/. Si el HTML servido trae un document.write, es que se esta
-    sirviendo la version vieja desde algun sitio."""
-    for path in ("/assessment", "/login", "/reset-password"):
+def test_every_page_is_served_from_the_build(client):
+    """Ninguna pagina tiene ya copia en Frontend/: todas salen del build de
+    web/. Un document.write en la respuesta significa que se esta sirviendo
+    una version vieja desde algun sitio."""
+    for path in ALL_PAGES:
         html = client.get(path).text
         assert "document.write" not in html, path
         assert "/app/assets/" in html, f"{path} no parece el HTML compilado por Vite"
+
+
+def test_frontend_dir_has_no_html_left(client):
+    """Frontend/ se quedo solo con CSS, imagenes y los modulos heredados que
+    aun no se han movido a web/src/shared/. Si reaparece un .html ahi, es
+    una copia paralela de una pagina que ya vive en el build."""
+    from pathlib import Path
+
+    import app as fp_app
+
+    stray = sorted(p.name for p in Path(fp_app.FRONTEND_DIR).rglob("*.html"))
+    assert not stray, f"quedan paginas sin migrar en Frontend/: {stray}"

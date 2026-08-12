@@ -43,13 +43,6 @@
   <h2>Questions</h2>
   <p>Reach out at <a href="mailto:soporte@futurepilot.com">soporte@futurepilot.com</a> with any questions about these terms.</p>
 </main>
-<script>
-  (function () {
-    var base = location.protocol === "file:" ? "./" : "/Frontend/";
-    ["theme-loader.js", "i18n.js", "language-toggle.js", "passport-stamp-toast.js", "mentor-chat.js"].forEach(function (file) {
-      document.write('<script src="' + base + file + '"><\/script>');
-    });
-  })();
-</script>
+<script type="module" src="/src/terms/main.js"></script>
 </body>
 </html>

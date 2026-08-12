@@ -4,14 +4,14 @@
 // renderizado de cada tipo de pregunta) se importan de verdad, en vez de
 // leerse de window esperando que otro <script> los haya definido antes.
 //
-// Lo que sigue viniendo de window son los modulos compartidos con paginas
-// que todavia no se han migrado (el conector de la API, el claim del
-// resultado, el toast de sellos): main.js los importa por su efecto
-// secundario y ellos se registran solos en window. Cuando esas paginas
-// migren, pasaran a ser imports normales tambien.
+// Todo lo que esta pagina necesita se importa: los dos modulos propios y,
+// desde src/shared/, el claim del resultado y el conector de la API - los
+// dos eran globales de window mientras los compartia con paginas sin
+// migrar, y dejaron de serlo al migrarlas.
 import * as assessmentEngine from "./engine.js";
 import * as questionTypes from "./questionTypes.js";
 import { claimPendingAndCelebrate, pendingResultId } from "../shared/resultClaim.js";
+import { sendAssessmentToPythonAI } from "../shared/apiConnector.js";
 
 const STORAGE_KEY = "futurePilotAssessment";
 const RESULTS_KEY = "futurePilotResults";
@@ -184,9 +184,7 @@ function renderAnalysis() {
   // de avanzar. minDelay conserva la animacion aunque la respuesta llegue
   // rapido.
   const minDelay = new Promise((resolve) => setTimeout(resolve, 3400));
-  const aiCall = window.FuturePilotAIConnector
-    ? window.FuturePilotAIConnector.sendAssessmentToPythonAI(answers)
-    : Promise.resolve(null);
+  const aiCall = sendAssessmentToPythonAI(answers);
 
   Promise.all([minDelay, aiCall]).then(([, data]) => {
     aiResult = data;
