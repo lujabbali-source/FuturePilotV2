@@ -76,10 +76,30 @@ FRONTEND_DIR = REPO_ROOT / "Frontend"
 # admin. Ver .env.example para instrucciones.
 ADMIN_EMAIL = (os.environ.get("ADMIN_EMAIL") or "").strip()
 
+# --------------------------------------------------------------------------
+# Entorno de ejecucion. Por defecto "development" a proposito: un despliegue
+# real tiene que declararse explicitamente, no heredarse por descuido. Lo
+# que cambia con FUTUREPILOT_ENV=production:
+#
+#   - /docs, /redoc y /openapi.json dejan de publicarse.
+#   - El correo de recuperacion no cae al fallback de imprimir el link en
+#     consola (ver backend/mailer.py): un link de reset en los logs es un
+#     token de robo de cuenta esperando a que alguien lea el log.
+#   - check_production_config() avisa de todo lo que este mal configurado.
+# --------------------------------------------------------------------------
+ENVIRONMENT = (os.environ.get("FUTUREPILOT_ENV") or "development").strip().lower()
+IS_PRODUCTION = ENVIRONMENT == "production"
+
 app = FastAPI(
     title="FuturePilot API",
     description="Backend unificado: evaluación vocacional (IA rule-based) + autenticación",
     version="2.0.0",
+    # La documentacion interactiva describe cada endpoint y su payload. En
+    # desarrollo es util; en produccion es un mapa gratis de la superficie
+    # de la API para cualquiera que pase por ahi.
+    docs_url=None if IS_PRODUCTION else "/docs",
+    redoc_url=None if IS_PRODUCTION else "/redoc",
+    openapi_url=None if IS_PRODUCTION else "/openapi.json",
 )
 
 # Limitadores de fuerza bruta / spam en las rutas de autenticacion. Ver
@@ -94,7 +114,13 @@ password_reset_rate_limiter = RateLimiter(max_requests=5, window_seconds=300)
 # puertos de Vite quedan como default solo para que `npm run dev` en
 # web/ siga funcionando sin configuracion extra - el sitio
 # servido por este mismo backend (todo same-origin) no necesita CORS.
-_default_cors_origins = "http://localhost:5173,http://127.0.0.1:5173"
+#
+# En produccion el default de desarrollo no aplica: si nadie declara
+# CORS_ORIGINS, la lista queda vacia (nadie de fuera puede llamar a la API),
+# que es lo correcto para un sitio same-origin. Heredar "localhost:5173" en
+# un servidor real no rompe nada visible, y por eso mismo se quedaria ahi
+# para siempre.
+_default_cors_origins = "" if IS_PRODUCTION else "http://localhost:5173,http://127.0.0.1:5173"
 CORS_ORIGINS = [
     origin.strip()
     for origin in os.environ.get("CORS_ORIGINS", _default_cors_origins).split(",")
@@ -145,6 +171,27 @@ def _build_csp(*, allow_inline_scripts: bool) -> str:
 _CSP = _build_csp(allow_inline_scripts=False)
 
 
+def _cache_control_for(path: str, content_type: str) -> str:
+    """Politica de cache segun lo que se sirve.
+
+    Los assets de /app/assets/ llevan un hash del contenido en el nombre
+    (Vite): si el contenido cambia, cambia la URL, asi que se pueden cachear
+    para siempre sin miedo a servir algo viejo.
+
+    El HTML es justo lo contrario: su URL es fija y es quien apunta al
+    asset con hash de turno. Si el navegador lo cachea, sigue pidiendo el
+    bundle anterior y un despliegue no llega nunca al usuario.
+
+    El resto (CSS e imagenes de /Frontend, que no llevan hash) se revalida
+    en cada carga: barato via 304, y no se queda pegado.
+    """
+    if path.startswith("/app/assets/"):
+        return "public, max-age=31536000, immutable"
+    if "text/html" in content_type:
+        return "no-store"
+    return "no-cache"
+
+
 @app.middleware("http")
 async def security_headers_middleware(request: Request, call_next):
     response = await call_next(request)
@@ -154,6 +201,15 @@ async def security_headers_middleware(request: Request, call_next):
     response.headers["Content-Security-Policy"] = _CSP
     if request.url.scheme == "https":
         response.headers["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains"
+
+    # Las respuestas de la API no se cachean: cada una depende del token de
+    # quien pregunta y de datos que cambian.
+    if request.url.path.startswith("/api/"):
+        response.headers["Cache-Control"] = "no-store"
+    else:
+        response.headers["Cache-Control"] = _cache_control_for(
+            request.url.path, response.headers.get("content-type", "")
+        )
     return response
 
 
@@ -1098,6 +1154,22 @@ class MentorChatRequest(BaseModel):
 # --------------------------------------------------------------------------
 # API - Evaluación vocacional / IA
 # --------------------------------------------------------------------------
+@app.get("/healthz", status_code=status.HTTP_200_OK)
+def liveness_probe():
+    """Sonda para el balanceador / orquestador. Deliberadamente publica y
+    deliberadamente muda: solo dice que el proceso responde y sabe hablar
+    con su base de datos. Todo el detalle real (que chequeo falla y por
+    que) vive en /api/v1/admin/health, que exige sesion de admin - una
+    sonda no autenticada no tiene por que revelar el estado interno."""
+    try:
+        users_store.count_users()
+    except Exception:  # noqa: BLE001 - la sonda no debe filtrar el motivo
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail="unavailable"
+        )
+    return {"status": "ok"}
+
+
 @app.get("/api/v1/status", status_code=status.HTTP_200_OK)
 def get_system_status():
     """Endpoint de comprobacion de estado de la API."""
@@ -1236,6 +1308,80 @@ def chat_with_mentor(
 
 # --------------------------------------------------------------------------
 # Ejecucion directa con uvicorn
+# --------------------------------------------------------------------------
+def check_production_config() -> List[str]:
+    """Revisa la configuracion y devuelve los problemas encontrados.
+
+    Se ejecuta al arrancar y solo IMPRIME: no aborta. Un despliegue que se
+    niega a levantar por una advertencia de configuracion es peor que uno
+    que arranca avisando a gritos - sobre todo cuando el fallo aparece a
+    las 3 de la mañana en un reinicio automatico.
+
+    Devuelve la lista para poder probarla sin capturar stdout.
+    """
+    problems: List[str] = []
+
+    if not WEB_BUILD_AVAILABLE:
+        problems.append(
+            "No existe web/dist: el sitio entero devolvera 503. "
+            "Corre 'npm --prefix web run build' antes de arrancar."
+        )
+
+    if not IS_PRODUCTION:
+        return problems
+
+    if not ADMIN_EMAIL:
+        problems.append("ADMIN_EMAIL vacio: nadie podra entrar a /admin.")
+
+    if not mailer.is_configured():
+        problems.append(
+            "SMTP sin configurar: la recuperacion de contraseña no funcionara. "
+            "En produccion el link NO se imprime en consola a proposito."
+        )
+
+    # En muchos PaaS el disco del contenedor es efimero: la base dentro del
+    # repo se pierde en cada despliegue, y con ella todas las cuentas.
+    try:
+        db_inside_repo = Path(USERS_DB_PATH).resolve().is_relative_to(REPO_ROOT)
+    except (OSError, ValueError):
+        db_inside_repo = False
+    if db_inside_repo:
+        problems.append(
+            f"La base de usuarios vive dentro del repo ({USERS_DB_PATH}). "
+            "Apunta USERS_DB_PATH a un disco persistente."
+        )
+
+    insecure_origins = [o for o in CORS_ORIGINS if "localhost" in o or "127.0.0.1" in o]
+    if insecure_origins:
+        problems.append(f"CORS_ORIGINS incluye origenes de desarrollo: {', '.join(insecure_origins)}")
+
+    return problems
+
+
+def report_production_config() -> None:
+    problems = check_production_config()
+    if not problems:
+        print(f"[FuturePilot] Configuracion OK (entorno: {ENVIRONMENT}).")
+        return
+    print(f"[FuturePilot] {len(problems)} problema(s) de configuracion (entorno: {ENVIRONMENT}):")
+    for problem in problems:
+        print(f"  - {problem}")
+
+
+report_production_config()
+
+
+# --------------------------------------------------------------------------
+# Ejecucion directa - SOLO desarrollo.
+#
+# En produccion se arranca con un gestor de procesos, no con este bloque:
+#
+#   python -m uvicorn --app-dir futurepilot-IA app:app --host 0.0.0.0 --port 8000
+#
+# Ojo con --workers > 1: el rate limiter guarda su estado en memoria del
+# proceso (ver backend/rate_limiter.py), asi que cada worker llevaria su
+# propia cuenta y el limite efectivo se multiplicaria por el numero de
+# workers. Con varios workers hace falta mover el limitador a Redis.
 # --------------------------------------------------------------------------
 if __name__ == "__main__":
     import uvicorn

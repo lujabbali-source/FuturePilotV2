@@ -15,9 +15,10 @@
 >   dependían del dispositivo.
 > - ✅ **Fase 3 — Consolidación sobre Vite: COMPLETADA.** Las 15 páginas del sitio se sirven desde
 >   un único build. **`script-src` ya no necesita `'unsafe-inline'` en ninguna ruta.**
-> - ⬜ Fase 4, pendiente.
+> - ✅ **Fase 4 — Preparación para producción: COMPLETADA.** `FUTUREPILOT_ENV`, chequeo de
+>   arranque, cabeceras de caché, `/healthz` y el token de recuperación fuera de los logs.
 >
-> **Suite de tests: 56 pasan** (38 originales + 18 de regresión añadidos).
+> **Suite de tests: 67 pasan** (38 originales + 29 añadidos).
 > El análisis de las secciones §1-§6 describe el estado **previo** a estas correcciones y se
 > conserva como registro de la auditoría.
 
@@ -719,16 +720,35 @@ Borrar `Frontend/i18n.js` (198 líneas).
 
 ---
 
-### 🚀 Fase 4 — Preparación para producción real (según despliegue)
+### ✅ Fase 4 — Preparación para producción
 
-- Configurar SMTP real (`mailer.py` ya está listo, solo faltan las variables).
-- Reemplazar el rate limiter en memoria por Redis si hay más de un worker.
-- Fijar `CORS_ORIGINS` al dominio real.
-- Decidir sobre el token: mantener `localStorage` (aceptable una vez cerrada la CSP) o pasar a
-  cookie `HttpOnly` + CSRF.
-- Mover `users.sqlite3` a un disco persistente vía `USERS_DB_PATH` (la variable ya existe).
-- Evaluar PostgreSQL solo si la concurrencia lo exige.
-- Completar los datos de ciudades para los 21 países de América que hoy solo tienen resumen.
+La app ya se podía configurar por variables de entorno; lo que faltaba era que **la configuración
+insegura se notara**. Ahora `FUTUREPILOT_ENV=production` es una declaración explícita con
+consecuencias reales.
+
+| Cambio | Por qué |
+|---|---|
+| `/docs`, `/redoc`, `/openapi.json` desaparecen en producción | Publicaban el mapa completo de la API a cualquiera |
+| **El correo sin SMTP deja de imprimirse** | El cuerpo del correo de recuperación lleva un token válido. Imprimirlo en un servidor real lo mete en los logs, y quien lea los logs (agregadores, backups, soporte) puede entrar en la cuenta ajena. En producción se registra el fallo, no el contenido |
+| `CORS_ORIGINS` no hereda los puertos de Vite | Un `localhost:5173` heredado en producción no rompe nada visible, y por eso se quedaría ahí para siempre |
+| `check_production_config()` al arrancar | Lista admin sin configurar, SMTP ausente, base dentro del repo y orígenes de desarrollo. **Avisa, no aborta**: un servidor que se niega a levantar por una advertencia es peor a las 3 de la mañana |
+| `GET /healthz` público y mudo | Un balanceador necesita preguntar «¿vives?» sin credenciales. El diagnóstico real sigue en `/api/v1/admin/health`, con sesión de admin |
+| Cabeceras de caché | Los assets llevan hash de contenido → `immutable` a un año. El HTML → `no-store`, o un despliegue nuevo nunca llega al usuario. La API → `no-store`. *(Este problema me mordió durante el propio desarrollo: el navegador servía JS viejo.)* |
+
+**La base de datos dentro del repo** es el aviso que más importa: en muchos PaaS el disco del
+contenedor es efímero y cada despliegue se llevaría por delante todas las cuentas.
+
+**7 tests nuevos**, incluido uno que verifica que el token de recuperación **no** aparece en los
+logs en producción y sí en desarrollo.
+
+#### ⬜ Lo que queda, y por qué no lo hice
+
+| Pendiente | Por qué requiere tu decisión |
+|---|---|
+| **Rate limiter → Redis** | Añade una dependencia y un servicio que desplegar. Solo hace falta con `--workers > 1`; hoy el límite se multiplicaría por el número de workers. La interfaz de `rate_limiter.py` no cambia |
+| **Token en cookie `HttpOnly` vs `localStorage`** | Con la CSP ya cerrada, `localStorage` es defendible. Cambiar a cookie obliga a añadir protección CSRF en todas las rutas de escritura: es un rediseño de la sesión, no un ajuste |
+| **PostgreSQL** | SQLite con WAL aguanta el tráfico actual de sobra. Migrar antes de necesitarlo es trabajo sin beneficio |
+| **Datos de ciudades de los 21 países** | Trabajo de contenido curado a mano, no de código |
 
 ---
 
