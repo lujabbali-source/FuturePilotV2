@@ -12,6 +12,7 @@ import * as assessmentEngine from "./engine.js";
 import * as questionTypes from "./questionTypes.js";
 import { claimPendingAndCelebrate, pendingResultId } from "../shared/resultClaim.js";
 import { sendAssessmentToPythonAI } from "../shared/apiConnector.js";
+import { t, currentLanguage, onLanguageChange } from "../shared/i18next.js";
 
 const STORAGE_KEY = "futurePilotAssessment";
 const RESULTS_KEY = "futurePilotResults";
@@ -35,7 +36,12 @@ let screen = "welcome";
 let aiResult = null;
 let aiError = "";
 
-const phaseNames = ["Tu punto de partida", "Tus intereses", "Tus fortalezas", "Tu perfil", "Tu siguiente destino"];
+// Se resuelven en cada render, no una vez al cargar: si no, quedarian
+// congeladas en el idioma inicial al cambiar de idioma a mitad del test.
+const LOCKED_PERKS = ["partial.locked1", "partial.locked2", "partial.locked3", "partial.locked4"];
+const UNLOCK_PERKS = ["unlock.perk1", "unlock.perk2", "unlock.perk3", "unlock.perk4", "unlock.perk5", "unlock.perk6"];
+const PHASE_COUNT = 5;
+const phaseName = (index) => t(`progress.phase${index + 1}`);
 
 function escapeHtml(value) {
   return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
@@ -79,13 +85,13 @@ function renderWelcome() {
   const hasSavedProgress = saved && saved.currentQuestion > 0 && saved.currentQuestion < questionCount();
   app.innerHTML = `<main class="welcome-screen screen-enter">
     <div class="welcome-orbit"><span class="orbit-core">✦</span><span class="orbit-ring orbit-ring--one"></span><span class="orbit-ring orbit-ring--two"></span></div>
-    <div class="eyebrow"><span class="eyebrow-dot"></span> FUTUREPILOT / PERSONAL DISCOVERY</div>
-    <h1>Tu próximo capítulo<br><span>empieza contigo.</span></h1>
-    <p class="welcome-copy">Un test breve y dinámico para conectar tus intereses, fortalezas y personalidad con caminos que realmente podrían encajar contigo.</p>
-    <div class="welcome-stats"><span><strong>${questionCount() || 50}</strong> preguntas</span><i></i><span><strong>${Math.max(5, Math.round(questionCount() / 5)) || 10}</strong> min aprox.</span><i></i><span><strong>1</strong> perfil único</span></div>
-    <button type="button" class="primary-action primary-action--wide" data-action="start">${hasSavedProgress ? "Continuar mi exploración" : "Comenzar mi exploración"}<span>→</span></button>
-    ${hasSavedProgress ? `<button type="button" class="text-action" data-action="restart">Empezar de nuevo</button><p class="resume-note">Guardamos tu progreso en la pregunta ${saved.currentQuestion + 1}. Puedes retomarlo cuando quieras.</p>` : `<p class="privacy-note"><span>◉</span> Tus respuestas se guardan automáticamente en este dispositivo.</p>`}
-    <div class="welcome-footer"><span>Sin respuestas correctas o incorrectas</span><span>Diseñado para descubrir, no para examinarte</span></div>
+    <div class="eyebrow"><span class="eyebrow-dot"></span> ${t("welcome.eyebrow")}</div>
+    <h1>${t("welcome.title")}<br><span>${t("welcome.titleAccent")}</span></h1>
+    <p class="welcome-copy">${t("welcome.copy")}</p>
+    <div class="welcome-stats"><span><strong>${questionCount() || 50}</strong> ${t("welcome.statQuestions")}</span><i></i><span><strong>${Math.max(5, Math.round(questionCount() / 5)) || 10}</strong> ${t("welcome.statMinutes")}</span><i></i><span><strong>1</strong> ${t("welcome.statProfile")}</span></div>
+    <button type="button" class="primary-action primary-action--wide" data-action="start">${hasSavedProgress ? t("welcome.resume") : t("welcome.start")}<span>→</span></button>
+    ${hasSavedProgress ? `<button type="button" class="text-action" data-action="restart">${t("welcome.restart")}</button><p class="resume-note">${t("welcome.resumeNote", { question: saved.currentQuestion + 1 })}</p>` : `<p class="privacy-note"><span>◉</span> ${t("welcome.privacyNote")}</p>`}
+    <div class="welcome-footer"><span>${t("welcome.footerLeft")}</span><span>${t("welcome.footerRight")}</span></div>
   </main>`;
 }
 
@@ -97,40 +103,40 @@ function renderQuestion() {
   const progressMessage = questionTypes.getProgressMessage(currentQuestion);
   // Las 5 fases se reparten el test proporcionalmente. Estaba fijo en
   // bloques de 10, que solo cuadra si el test tiene exactamente 50.
-  const perPhase = Math.max(1, Math.ceil(questionCount() / phaseNames.length));
-  const phaseIndex = Math.min(Math.floor(currentQuestion / perPhase), phaseNames.length - 1);
-  const phase = phaseNames[phaseIndex];
-  const phaseTrack = phaseNames.map((name, index) => `<span class="phase-dot ${index < phaseIndex ? "is-done" : ""} ${index === phaseIndex ? "is-current" : ""}" title="${escapeHtml(name)}"></span>`).join("");
+  const perPhase = Math.max(1, Math.ceil(questionCount() / PHASE_COUNT));
+  const phaseIndex = Math.min(Math.floor(currentQuestion / perPhase), PHASE_COUNT - 1);
+  const phase = phaseName(phaseIndex);
+  const phaseTrack = Array.from({ length: PHASE_COUNT }, (_, i) => phaseName(i)).map((name, index) => `<span class="phase-dot ${index < phaseIndex ? "is-done" : ""} ${index === phaseIndex ? "is-current" : ""}" title="${escapeHtml(name)}"></span>`).join("");
 
   app.innerHTML = `<main class="test-shell screen-enter">
     <header class="test-header">
       <a class="brand" href="/"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></a>
-      <div class="save-indicator"><span></span> Guardado automáticamente</div>
-      <button type="button" class="exit-action" data-action="exit">Salir</button>
+      <div class="save-indicator"><span></span> ${t("nav.autosaved")}</div>
+      <button type="button" class="exit-action" data-action="exit">${t("nav.exit")}</button>
     </header>
-    <section class="progress-section" aria-label="Progreso del test">
-      <p class="progress-eyebrow">Tu recorrido</p>
+    <section class="progress-section" aria-label="${t("progress.eyebrow")}">
+      <p class="progress-eyebrow">${t("progress.eyebrow")}</p>
       <div class="progress-meta"><span class="progress-message">${progressMessage.label}</span><span><strong>${String(currentQuestion + 1).padStart(2, "0")}</strong> / ${questionCount()}</span></div>
       <div class="progress-bar"><span style="width:${progress}%"></span></div>
       <div class="progress-submeta"><span>${progressMessage.detail}</span><span>${phase}</span></div>
       <div class="phase-track">${phaseTrack}</div>
     </section>
     <section class="question-stage" data-format="${format}">
-      <div class="question-kicker"><span class="kicker-number">${String(currentQuestion + 1).padStart(2, "0")}</span><span>${question.type === "personality" ? "Personalidad" : "Intereses"} · ${formatLabel(format)}</span></div>
+      <div class="question-kicker"><span class="kicker-number">${String(currentQuestion + 1).padStart(2, "0")}</span><span>${question.type === "personality" ? t("kind.personality") : t("kind.interest")} · ${formatLabel(format)}</span></div>
       <h2>${escapeHtml(question.question)}</h2>
       <div class="question-options">${html}</div>
     </section>
     <footer class="question-footer">
-      <button type="button" class="secondary-action" data-action="back" ${currentQuestion === 0 ? "disabled" : ""}>← <span>Anterior</span></button>
-      <div class="footer-center"><button type="button" class="skip-action" data-action="skip">Aún no lo sé</button></div>
-      <button type="button" class="primary-action" data-action="next" ${hasCurrentAnswer() ? "" : "disabled"}>${currentQuestion === questionCount() - 1 ? "Ver mi perfil" : "Siguiente"}<span>→</span></button>
+      <button type="button" class="secondary-action" data-action="back" ${currentQuestion === 0 ? "disabled" : ""}>← <span>${t("nav.back")}</span></button>
+      <div class="footer-center"><button type="button" class="skip-action" data-action="skip">${t("nav.skip")}</button></div>
+      <button type="button" class="primary-action" data-action="next" ${hasCurrentAnswer() ? "" : "disabled"}>${currentQuestion === questionCount() - 1 ? t("nav.finish") : t("nav.next")}<span>→</span></button>
     </footer>
   </main>`;
   bindQuestionEvents(format);
 }
 
 function formatLabel(format) {
-  return { single: "Elección rápida", multi: "Varias señales", ranking: "Ordena tus preferencias", slider: "Nivel de intensidad", scenario: "Situación real", icons: "Tu forma de pensar", image: "Elige lo que te atrae", versus: "A o B" }[format];
+  return t(`format.${format}`);
 }
 
 function bindQuestionEvents(format) {
@@ -156,7 +162,7 @@ function bindQuestionEvents(format) {
   if (slider) slider.addEventListener("input", (event) => {
     const value = Number(event.target.value);
     setAnswer(value);
-    const label = ["Nada", "Un poco", "Bastante", "Muchísimo"][value];
+    const label = t(`slider.level${value}`);
     app.querySelector("#slider-value").textContent = label;
     app.querySelectorAll(".slider-dot").forEach((dot, index) => dot.classList.toggle("is-active", index === value));
     app.querySelector('[data-action="next"]').disabled = false;
@@ -172,7 +178,7 @@ function bindQuestionEvents(format) {
   }));
 }
 function renderAnalysis() {
-  app.innerHTML = `<main class="analysis-screen screen-enter"><div class="analysis-card"><div class="analysis-mark"><span></span><span></span><span></span></div><p class="eyebrow">FUTUREPILOT ANALYSIS</p><h1>Estamos conectando<br><span>las piezas.</span></h1><div class="analysis-lines"><p class="is-active">Analizando tus respuestas <span>✓</span></p><p>Comparando perfiles compatibles <span>✓</span></p><p>Buscando universidades y oportunidades <span>✓</span></p><p>Generando tu roadmap personalizado <span>✓</span></p></div><div class="analysis-loader"><span></span></div><small>Tu resultado estará listo en un momento.</small></div></main>`;
+  app.innerHTML = `<main class="analysis-screen screen-enter"><div class="analysis-card"><div class="analysis-mark"><span></span><span></span><span></span></div><p class="eyebrow">${t("analysis.eyebrow")}</p><h1>${t("analysis.title")}<br><span>${t("analysis.titleAccent")}</span></h1><div class="analysis-lines"><p class="is-active">${t("analysis.line1")} <span>✓</span></p><p>${t("analysis.line2")} <span>✓</span></p><p>${t("analysis.line3")} <span>✓</span></p><p>${t("analysis.line4")} <span>✓</span></p></div><div class="analysis-loader"><span></span></div><small>${t("analysis.wait")}</small></div></main>`;
   const lines = [...app.querySelectorAll(".analysis-lines p")];
   lines.forEach((line, index) => setTimeout(() => line.classList.add("is-active"), index * 650));
 
@@ -188,7 +194,7 @@ function renderAnalysis() {
 
   Promise.all([minDelay, aiCall]).then(([, data]) => {
     aiResult = data;
-    aiError = data ? "" : "No pudimos conectar con la IA para tu analisis completo. Tus resultados parciales igual quedaron guardados.";
+    aiError = data ? "" : t("unavailable.fallbackError");
     screen = "partial";
     render();
   });
@@ -216,7 +222,7 @@ function renderPartialResults() {
   // El copy no promete que el resultado vaya a cambiar al registrarse -
   // porque no cambia. Lo que se desbloquea es profundidad sobre ESTAS
   // mismas carreras, y eso es lo que enumera la lista de abajo.
-  app.innerHTML = `<main class="results-screen screen-enter"><div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span><span class="result-chip">ANÁLISIS COMPLETADO <b>✓</b></span></div><section class="results-intro"><p class="eyebrow"><span class="eyebrow-dot"></span> TU RESULTADO</p><h1>Hay algo especial<br><span>en tu combinación.</span></h1><p>Estas son tus carreras más compatibles. Son las definitivas: crear tu cuenta no las cambia, te muestra por qué salieron y qué hacer con ellas.</p></section><section class="career-reveal"><div class="section-label"><span>TUS 3 CARRERAS PRINCIPALES</span><span>COINCIDENCIA</span></div>${careers.map((career, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(career.name)}</span><span class="career-score"><strong>${career.percentage}%</strong><span class="mini-bar"><i style="width:${career.percentage}%"></i></span></span></div>`).join("")}<div class="curiosity-line"><span>✦</span> Tu perfil tiene más matices de los que caben aquí.</div></section><section class="found-section"><h2>Lo que te falta por ver.</h2><div class="found-grid"><div>🔒 <span>Por qué encaja cada carrera contigo</span></div><div>🔒 <span>Tus fortalezas y brechas por carrera</span></div><div>🔒 <span>Tu roadmap paso a paso</span></div><div>🔒 <span>Universidades y destinos compatibles</span></div></div></section><button type="button" class="primary-action primary-action--wide" data-action="unlock">Desbloquear mi análisis completo <span>→</span></button><p class="results-footnote">Tu resultado queda guardado. El acceso completo es gratuito.</p></main>`;
+  app.innerHTML = `<main class="results-screen screen-enter"><div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span><span class="result-chip">${t("partial.chip")} <b>✓</b></span></div><section class="results-intro"><p class="eyebrow"><span class="eyebrow-dot"></span> ${t("partial.eyebrow")}</p><h1>${t("partial.title")}<br><span>${t("partial.titleAccent")}</span></h1><p>${t("partial.copy")}</p></section><section class="career-reveal"><div class="section-label"><span>${t("partial.listLabel")}</span><span>${t("partial.listScore")}</span></div>${careers.map((career, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(career.name)}</span><span class="career-score"><strong>${career.percentage}%</strong><span class="mini-bar"><i style="width:${career.percentage}%"></i></span></span></div>`).join("")}<div class="curiosity-line"><span>✦</span> ${t("partial.curiosity")}</div></section><section class="found-section"><h2>${t("partial.lockedTitle")}</h2><div class="found-grid">${LOCKED_PERKS.map((key) => `<div>🔒 <span>${t(key)}</span></div>`).join("")}</div></section><button type="button" class="primary-action primary-action--wide" data-action="unlock">${t("partial.cta")} <span>→</span></button><p class="results-footnote">${t("partial.footnote")}</p></main>`;
 }
 
 async function handleUnlock() {
@@ -249,16 +255,8 @@ function renderUnlock() {
   // de FuturePilot - el resultado anonimo (futurePilotResultId, ya en
   // localStorage) se reclama del lado de login.js apenas termina el
   // registro/login, antes de volver aca.
-  app.innerHTML = `<main class="unlock-screen screen-enter"><div class="unlock-glow"></div><span class="unlock-icon">✦</span><p class="eyebrow"><span class="eyebrow-dot"></span> TU PERFIL YA ESTÁ LISTO</p><h1>Ahora sí, vamos a<br><span>despegar.</span></h1><p class="unlock-copy">Crea una cuenta gratuita para guardar tu perfil y descubrir todo lo que FuturePilot preparó para ti.</p><section class="unlock-list"><div><b>✓</b> Universidades compatibles</div><div><b>✓</b> Becas y oportunidades</div><div><b>✓</b> Costos de vida</div><div><b>✓</b> Comparador de ciudades</div><div><b>✓</b> Roadmap personalizado</div><div><b>✓</b> Seguimiento de progreso</div></section><div class="auth-actions"><button type="button" class="primary-action" data-action="go-to-login" data-mode="register">Crear cuenta gratis <span>→</span></button><button type="button" class="secondary-action secondary-action--large" data-action="go-to-login" data-mode="login">Ya tengo una cuenta</button></div><p class="auth-note">Sin tarjeta de crédito · Tus resultados siempre son tuyos</p></main>`;
+  app.innerHTML = `<main class="unlock-screen screen-enter"><div class="unlock-glow"></div><span class="unlock-icon">✦</span><p class="eyebrow"><span class="eyebrow-dot"></span> ${t("unlock.eyebrow")}</p><h1>${t("unlock.title")}<br><span>${t("unlock.titleAccent")}</span></h1><p class="unlock-copy">${t("unlock.copy")}</p><section class="unlock-list">${UNLOCK_PERKS.map((key) => `<div><b>✓</b> ${t(key)}</div>`).join("")}</section><div class="auth-actions"><button type="button" class="primary-action" data-action="go-to-login" data-mode="register">${t("unlock.register")} <span>→</span></button><button type="button" class="secondary-action secondary-action--large" data-action="go-to-login" data-mode="login">${t("unlock.haveAccount")}</button></div><p class="auth-note">${t("unlock.note")}</p></main>`;
 }
-
-// Etiquetas legibles de los 8 clusters de ProfileEngine. Se usan cuando
-// solo podemos hablar del perfil, no de carreras concretas.
-const CLUSTER_LABELS = {
-  ANALYTICAL: "Analítico", SCIENTIFIC: "Científico", TECHNICAL: "Técnico",
-  CREATIVE: "Creativo", SOCIAL: "Social", LEADERSHIP: "Liderazgo",
-  PRACTICAL: "Práctico", ENTREPRENEURIAL: "Emprendedor",
-};
 
 /** El analisis del servidor no llego. Antes esta pantalla caia en el motor
  *  local y enseñaba carreras inventadas por un catalogo paralelo - que es
@@ -268,21 +266,21 @@ const CLUSTER_LABELS = {
  *  menos a decir algo que luego se contradice. */
 function renderPartialUnavailable(assessmentResult) {
   const dims = assessmentResult.topThree
-    .map(([cluster]) => ({ label: CLUSTER_LABELS[cluster] || cluster, pct: assessmentResult.clusterPercentages[cluster] || 0 }));
+    .map(([cluster]) => ({ label: t(`cluster.${cluster}`, { defaultValue: cluster }), pct: assessmentResult.clusterPercentages[cluster] || 0 }));
 
   app.innerHTML = `<main class="results-screen screen-enter">
     <div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span></div>
     <section class="results-intro">
-      <p class="eyebrow"><span class="eyebrow-dot"></span> TU PERFIL, DE MOMENTO</p>
-      <h1>Ya vemos tu forma,<br><span>nos falta el detalle.</span></h1>
-      <p>Estas son las dimensiones que más pesan en tus respuestas. Para cruzarlas con carreras concretas necesitamos completar el análisis.</p>
+      <p class="eyebrow"><span class="eyebrow-dot"></span> ${t("unavailable.eyebrow")}</p>
+      <h1>${t("unavailable.title")}<br><span>${t("unavailable.titleAccent")}</span></h1>
+      <p>${t("unavailable.copy")}</p>
     </section>
     <section class="career-reveal">
-      <div class="section-label"><span>TUS DIMENSIONES DOMINANTES</span><span>PESO</span></div>
+      <div class="section-label"><span>${t("unavailable.listLabel")}</span><span>${t("unavailable.listScore")}</span></div>
       ${dims.map((dim, index) => `<div class="career-result"><span class="career-rank">0${index + 1}</span><span class="career-name">${escapeHtml(dim.label)}</span><span class="career-score"><strong>${dim.pct}%</strong><span class="mini-bar"><i style="width:${dim.pct}%"></i></span></span></div>`).join("")}
     </section>
-    <p>${escapeHtml(aiError || "No pudimos completar el análisis. Tus respuestas siguen guardadas.")}</p>
-    <button type="button" class="primary-action primary-action--wide" data-action="retry-analysis">Completar mi análisis <span>→</span></button>
+    <p>${escapeHtml(aiError || t("unavailable.fallbackError"))}</p>
+    <button type="button" class="primary-action primary-action--wide" data-action="retry-analysis">${t("unavailable.retry")} <span>→</span></button>
   </main>`;
 }
 
@@ -290,10 +288,10 @@ function renderFullResults() {
   if (!aiResult) {
     app.innerHTML = `<main class="results-screen screen-enter">
       <section class="results-intro">
-        <p class="eyebrow"><span class="eyebrow-dot"></span> ALGO SALIÓ MAL</p>
-        <h1>No pudimos cargar<br><span>tu análisis completo.</span></h1>
-        <p>${escapeHtml(aiError || "Intenta de nuevo en unos segundos.")}</p>
-        <button type="button" class="primary-action primary-action--wide" data-action="retry-analysis">Reintentar <span>→</span></button>
+        <p class="eyebrow"><span class="eyebrow-dot"></span> ${t("error.resultsEyebrow")}</p>
+        <h1>${t("error.resultsTitle")}<br><span>${t("error.resultsTitleAccent")}</span></h1>
+        <p>${escapeHtml(aiError || t("error.resultsFallback"))}</p>
+        <button type="button" class="primary-action primary-action--wide" data-action="retry-analysis">${t("error.retry")} <span>→</span></button>
       </section>
     </main>`;
     return;
@@ -305,26 +303,26 @@ function renderFullResults() {
   const weaknesses = aiResult.weaknesses || [];
 
   app.innerHTML = `<main class="results-screen screen-enter">
-    <div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span><span class="result-chip">CUENTA ACTIVA <b>✓</b></span></div>
+    <div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span><span class="result-chip">${t("full.chip")} <b>✓</b></span></div>
     <section class="results-intro">
-      <p class="eyebrow"><span class="eyebrow-dot"></span> TU PERFIL COMPLETO</p>
-      <h1>${user && user.name ? escapeHtml(user.name) + "," : ""} esto es<br><span>lo que encontramos.</span></h1>
-      <p>Arquetipo: <strong>${escapeHtml(aiResult.personality || "")}</strong> · Estilo de aprendizaje: <strong>${escapeHtml(aiResult.learning_style || "")}</strong> · Confianza del análisis: <strong>${Math.round((aiResult.confidence || 0) * 100)}%</strong></p>
+      <p class="eyebrow"><span class="eyebrow-dot"></span> ${t("full.eyebrow")}</p>
+      <h1>${user && user.name ? escapeHtml(user.name) + "," : ""} ${t("full.title")}<br><span>${t("full.titleAccent")}</span></h1>
+      <p>${t("full.archetype")}: <strong>${escapeHtml(aiResult.personality || "")}</strong> · ${t("full.learningStyle")}: <strong>${escapeHtml(aiResult.learning_style || "")}</strong> · ${t("full.confidence")}: <strong>${Math.round((aiResult.confidence || 0) * 100)}%</strong></p>
     </section>
     <section class="strengths-section">
-      <div class="section-label"><span>FORTALEZAS</span></div>
-      <div class="chip-row">${strengths.length ? strengths.map((s) => `<span class="chip chip--strength">${escapeHtml(s)}</span>`).join("") : `<span class="chip chip--strength">Perfil equilibrado</span>`}</div>
-      <div class="section-label"><span>ÁREAS DE OPORTUNIDAD</span></div>
-      <div class="chip-row">${weaknesses.length ? weaknesses.map((s) => `<span class="chip chip--gap">${escapeHtml(s)}</span>`).join("") : `<span class="chip chip--gap">Sin brechas notables</span>`}</div>
+      <div class="section-label"><span>${t("full.strengths")}</span></div>
+      <div class="chip-row">${strengths.length ? strengths.map((s) => `<span class="chip chip--strength">${escapeHtml(s)}</span>`).join("") : `<span class="chip chip--strength">${t("full.noStrengths")}</span>`}</div>
+      <div class="section-label"><span>${t("full.gaps")}</span></div>
+      <div class="chip-row">${weaknesses.length ? weaknesses.map((s) => `<span class="chip chip--gap">${escapeHtml(s)}</span>`).join("") : `<span class="chip chip--gap">${t("full.noGaps")}</span>`}</div>
     </section>
     <section class="career-reveal">
-      <div class="section-label"><span>CARRERAS RECOMENDADAS</span><span>COINCIDENCIA</span></div>
+      <div class="section-label"><span>${t("full.careers")}</span><span>${t("full.score")}</span></div>
       ${careers.map((career, index) => `<div class="career-result career-result--full"><span class="career-rank">${String(index + 1).padStart(2, "0")}</span><div class="career-copy"><span class="career-name">${escapeHtml(career.title)}</span><p class="career-justification">${escapeHtml(career.justification)}</p></div><span class="career-score"><strong>${career.match_percentage}%</strong><span class="mini-bar"><i style="width:${career.match_percentage}%"></i></span></span></div>`).join("")}
     </section>
-    <button type="button" class="primary-action primary-action--wide" data-action="explore-globe">Explorar el Globo <span>→</span></button>
-    <button type="button" class="secondary-action secondary-action--large" data-action="view-passport">Ver mi Pasaporte <span>→</span></button>
-    <p class="results-footnote">Tu perfil queda guardado en tu cuenta. Explora el globo para conectar tu carrera con países, universidades y oportunidades reales.</p>
-    <button type="button" class="text-action" data-action="retake-test">¿Cambió algo? Repetir el test</button>
+    <button type="button" class="primary-action primary-action--wide" data-action="explore-globe">${t("full.exploreGlobe")} <span>→</span></button>
+    <button type="button" class="secondary-action secondary-action--large" data-action="view-passport">${t("full.viewPassport")} <span>→</span></button>
+    <p class="results-footnote">${t("full.footnote")}</p>
+    <button type="button" class="text-action" data-action="retake-test">${t("full.retake")}</button>
   </main>`;
 }
 
@@ -393,6 +391,19 @@ app.addEventListener("click", (event) => {
   }
 });
 
+/** Trae el banco de preguntas ya traducido por el servidor.
+ *
+ *  El texto de las 50 preguntas vive en questions.json junto a sus
+ *  metadatos de puntuacion, y /api/v1/questions lo resuelve al idioma
+ *  pedido. Se pide por ?lang= en vez de traducirlo en el cliente porque
+ *  duplicar 50 preguntas en el bundle solo para elegir una mitad seria
+ *  cargar el doble y arriesgarse a que las dos copias diverjan. */
+async function loadQuestions() {
+  const response = await fetch(`/api/v1/questions?lang=${currentLanguage()}`);
+  const data = await response.json();
+  questions = data.questions;
+}
+
 async function init() {
   // Fuente unica de verdad: futurepilot-IA/data/questions.json, servido via
   // /api/v1/questions por el backend unificado.
@@ -403,9 +414,7 @@ async function init() {
   // sin servidor. Esta pagina ahora se compila y solo se sirve por HTTP,
   // asi que ese camino desaparecio - y con el, la copia de los datos y el
   // script que habia que acordarse de correr para mantenerla al dia.
-  const response = await fetch("/api/v1/questions");
-  const data = await response.json();
-  questions = data.questions;
+  await loadQuestions();
 
   // Resume automatico: si hay una sesion valida con un resultado ya
   // guardado para esa cuenta, se salta directo a la pantalla de resultados
@@ -467,4 +476,21 @@ async function init() {
   render();
 }
 
-init().catch(() => { app.innerHTML = `<main class="error-screen"><h1>No pudimos cargar tu exploración.</h1><p>Recarga la página para intentarlo de nuevo.</p></main>`; });
+// Cambiar de idioma tiene que rehacer las dos mitades de la pantalla: el
+// texto de la interfaz (que sale de i18next, ya actualizado) y el de las
+// preguntas (que hay que volver a pedirle al servidor en el idioma nuevo).
+// Las respuestas ya dadas no se tocan: viven en `answers` por indice, y los
+// indices no cambian con el idioma.
+onLanguageChange(async () => {
+  if (questions.length) {
+    try {
+      await loadQuestions();
+    } catch {
+      // Si la recarga falla nos quedamos con las preguntas que ya estaban:
+      // media pantalla en otro idioma es mejor que una pantalla vacia.
+    }
+  }
+  render();
+});
+
+init().catch(() => { app.innerHTML = `<main class="error-screen"><h1>${t("error.loadTitle")}</h1><p>${t("error.loadBody")}</p></main>`; });

@@ -1,7 +1,192 @@
 {
-  "title": "Discover your path",
-  "question": "Question {{current}} of {{total}}",
-  "next": "Next",
-  "previous": "Previous",
-  "finish": "See my profile"
+  "welcome": {
+    "eyebrow": "FUTUREPILOT / PERSONAL DISCOVERY",
+    "title": "Your next chapter",
+    "titleAccent": "starts with you.",
+    "copy": "A short, dynamic test that connects your interests, strengths and personality with paths that could genuinely fit you.",
+    "statQuestions": "questions",
+    "statMinutes": "min approx.",
+    "statProfile": "unique profile",
+    "start": "Start exploring",
+    "resume": "Continue exploring",
+    "restart": "Start over",
+    "resumeNote": "We saved your progress at question {{question}}. Pick it up whenever you like.",
+    "privacyNote": "Your answers are saved automatically on this device.",
+    "footerLeft": "No right or wrong answers",
+    "footerRight": "Built to discover, not to examine you"
+  },
+  "nav": {
+    "exit": "Exit",
+    "back": "Previous",
+    "next": "Next",
+    "finish": "See my profile",
+    "skip": "Not sure yet",
+    "autosaved": "Saved automatically"
+  },
+  "progress": {
+    "eyebrow": "Your journey",
+    "phase1": "Your starting point",
+    "phase2": "Your interests",
+    "phase3": "Your strengths",
+    "phase4": "Your profile",
+    "phase5": "Your next destination",
+    "m1": {
+      "label": "Getting to know your interests...",
+      "detail": "We start with what naturally draws your attention."
+    },
+    "m2": {
+      "label": "Uncovering your strengths...",
+      "detail": "Every answer helps sketch your profile."
+    },
+    "m3": {
+      "label": "Analysing your personality...",
+      "detail": "We're finding your motivation patterns."
+    },
+    "m4": {
+      "label": "Looking for matching careers...",
+      "detail": "Connecting what you enjoy with real possibilities."
+    },
+    "m5": {
+      "label": "Preparing your results...",
+      "detail": "Your personal map is taking shape."
+    }
+  },
+  "kind": {
+    "personality": "Personality",
+    "interest": "Interests"
+  },
+  "format": {
+    "single": "Quick choice",
+    "multi": "Several signals",
+    "ranking": "Rank your preferences",
+    "slider": "Intensity level",
+    "scenario": "Real situation",
+    "icons": "How you think",
+    "image": "Pick what draws you",
+    "versus": "A or B"
+  },
+  "option": {
+    "match0": "Sounds a lot like you",
+    "match1": "Has quite a bit to do with you",
+    "match2": "Not usually your thing",
+    "match3": "Almost never describes you",
+    "choose": "Choose this option",
+    "icon0": "Explore",
+    "icon1": "Build",
+    "icon2": "Support",
+    "icon3": "Lead"
+  },
+  "multi": {
+    "badge": "Multiple choice",
+    "hint": "Pick up to 2 signals that sound most like you."
+  },
+  "ranking": {
+    "badge": "Ranking",
+    "hint": "Order from most to least like you."
+  },
+  "scenario": {
+    "badge": "SCENARIO",
+    "hint": "Imagine this situation comes up in your next project."
+  },
+  "slider": {
+    "prompt": "How much does this describe you?",
+    "aria": "Answer intensity",
+    "level0": "Not at all",
+    "level1": "A little",
+    "level2": "Quite a bit",
+    "level3": "A lot"
+  },
+  "versus": {
+    "divider": "VS"
+  },
+  "analysis": {
+    "eyebrow": "FUTUREPILOT ANALYSIS",
+    "title": "We're connecting",
+    "titleAccent": "the pieces.",
+    "line1": "Analysing your answers",
+    "line2": "Comparing matching profiles",
+    "line3": "Looking for universities and opportunities",
+    "line4": "Generating your personalised roadmap",
+    "wait": "Your result will be ready in a moment."
+  },
+  "partial": {
+    "chip": "ANALYSIS COMPLETE",
+    "eyebrow": "YOUR RESULT",
+    "title": "There's something special",
+    "titleAccent": "in your combination.",
+    "copy": "These are your best-matching careers. They're final: creating an account doesn't change them, it shows you why they came up and what to do with them.",
+    "listLabel": "YOUR TOP 3 CAREERS",
+    "listScore": "MATCH",
+    "curiosity": "Your profile has more nuance than fits here.",
+    "lockedTitle": "What you haven't seen yet.",
+    "locked1": "Why each career fits you",
+    "locked2": "Your strengths and gaps per career",
+    "locked3": "Your step-by-step roadmap",
+    "locked4": "Matching universities and destinations",
+    "cta": "Unlock my full analysis",
+    "footnote": "Your result is saved. Full access is free."
+  },
+  "unavailable": {
+    "eyebrow": "YOUR PROFILE, SO FAR",
+    "title": "We can see your shape,",
+    "titleAccent": "the detail is missing.",
+    "copy": "These are the dimensions that weigh most in your answers. To cross them with specific careers we need to finish the analysis.",
+    "listLabel": "YOUR DOMINANT DIMENSIONS",
+    "listScore": "WEIGHT",
+    "fallbackError": "We couldn't finish the analysis. Your answers are still saved.",
+    "retry": "Finish my analysis"
+  },
+  "unlock": {
+    "eyebrow": "YOUR PROFILE IS READY",
+    "title": "Now let's really",
+    "titleAccent": "take off.",
+    "copy": "Create a free account to save your profile and discover everything FuturePilot prepared for you.",
+    "perk1": "Matching universities",
+    "perk2": "Scholarships and opportunities",
+    "perk3": "Cost of living",
+    "perk4": "City comparison",
+    "perk5": "Personalised roadmap",
+    "perk6": "Progress tracking",
+    "register": "Create a free account",
+    "haveAccount": "I already have an account",
+    "note": "No credit card · Your results are always yours"
+  },
+  "cluster": {
+    "ANALYTICAL": "Analytical",
+    "SCIENTIFIC": "Scientific",
+    "TECHNICAL": "Technical",
+    "CREATIVE": "Creative",
+    "SOCIAL": "Social",
+    "LEADERSHIP": "Leadership",
+    "PRACTICAL": "Practical",
+    "ENTREPRENEURIAL": "Entrepreneurial"
+  },
+  "error": {
+    "loadTitle": "We couldn't load your exploration.",
+    "loadBody": "Reload the page to try again.",
+    "resultsEyebrow": "SOMETHING WENT WRONG",
+    "resultsTitle": "We couldn't load",
+    "resultsTitleAccent": "your full analysis.",
+    "resultsFallback": "Try again in a few seconds.",
+    "retry": "Retry"
+  },
+  "full": {
+    "chip": "ACCOUNT ACTIVE",
+    "eyebrow": "YOUR FULL PROFILE",
+    "title": "this is",
+    "titleAccent": "what we found.",
+    "archetype": "Archetype",
+    "learningStyle": "Learning style",
+    "confidence": "Analysis confidence",
+    "strengths": "STRENGTHS",
+    "gaps": "AREAS OF OPPORTUNITY",
+    "noStrengths": "Balanced profile",
+    "noGaps": "No notable gaps",
+    "careers": "RECOMMENDED CAREERS",
+    "score": "MATCH",
+    "exploreGlobe": "Explore the Globe",
+    "viewPassport": "View my Passport",
+    "footnote": "Your profile is saved to your account. Explore the globe to connect your career with real countries, universities and opportunities.",
+    "retake": "Something changed? Retake the test"
+  }
 }

@@ -1,7 +1,192 @@
 {
-  "title": "Descubre tu camino",
-  "question": "Pregunta {{current}} de {{total}}",
-  "next": "Siguiente",
-  "previous": "Anterior",
-  "finish": "Ver mi perfil"
+  "welcome": {
+    "eyebrow": "FUTUREPILOT / DESCUBRIMIENTO PERSONAL",
+    "title": "Tu próximo capítulo",
+    "titleAccent": "empieza contigo.",
+    "copy": "Un test breve y dinámico para conectar tus intereses, fortalezas y personalidad con caminos que realmente podrían encajar contigo.",
+    "statQuestions": "preguntas",
+    "statMinutes": "min aprox.",
+    "statProfile": "perfil único",
+    "start": "Comenzar mi exploración",
+    "resume": "Continuar mi exploración",
+    "restart": "Empezar de nuevo",
+    "resumeNote": "Guardamos tu progreso en la pregunta {{question}}. Puedes retomarlo cuando quieras.",
+    "privacyNote": "Tus respuestas se guardan automáticamente en este dispositivo.",
+    "footerLeft": "Sin respuestas correctas o incorrectas",
+    "footerRight": "Diseñado para descubrir, no para examinarte"
+  },
+  "nav": {
+    "exit": "Salir",
+    "back": "Anterior",
+    "next": "Siguiente",
+    "finish": "Ver mi perfil",
+    "skip": "Aún no lo sé",
+    "autosaved": "Guardado automáticamente"
+  },
+  "progress": {
+    "eyebrow": "Tu recorrido",
+    "phase1": "Tu punto de partida",
+    "phase2": "Tus intereses",
+    "phase3": "Tus fortalezas",
+    "phase4": "Tu perfil",
+    "phase5": "Tu siguiente destino",
+    "m1": {
+      "label": "Conociendo tus intereses...",
+      "detail": "Empezamos por lo que naturalmente te llama la atención."
+    },
+    "m2": {
+      "label": "Descubriendo tus fortalezas...",
+      "detail": "Cada respuesta ayuda a dibujar tu perfil."
+    },
+    "m3": {
+      "label": "Analizando tu personalidad...",
+      "detail": "Estamos encontrando tus patrones de motivación."
+    },
+    "m4": {
+      "label": "Buscando carreras compatibles...",
+      "detail": "Conectando lo que te gusta con posibilidades reales."
+    },
+    "m5": {
+      "label": "Preparando tus resultados...",
+      "detail": "Tu mapa personal está tomando forma."
+    }
+  },
+  "kind": {
+    "personality": "Personalidad",
+    "interest": "Intereses"
+  },
+  "format": {
+    "single": "Elección rápida",
+    "multi": "Varias señales",
+    "ranking": "Ordena tus preferencias",
+    "slider": "Nivel de intensidad",
+    "scenario": "Situación real",
+    "icons": "Tu forma de pensar",
+    "image": "Elige lo que te atrae",
+    "versus": "A o B"
+  },
+  "option": {
+    "match0": "Se parece mucho a ti",
+    "match1": "Tiene bastante que ver contigo",
+    "match2": "No es lo habitual en ti",
+    "match3": "Casi nunca te representa",
+    "choose": "Elegir esta opción",
+    "icon0": "Explorar",
+    "icon1": "Construir",
+    "icon2": "Acompañar",
+    "icon3": "Liderar"
+  },
+  "multi": {
+    "badge": "Selección múltiple",
+    "hint": "Elige hasta 2 señales que más se parezcan a ti."
+  },
+  "ranking": {
+    "badge": "Ranking",
+    "hint": "Ordena de más a menos parecido a ti."
+  },
+  "scenario": {
+    "badge": "ESCENARIO",
+    "hint": "Imagina que esta situación aparece en tu próximo proyecto."
+  },
+  "slider": {
+    "prompt": "¿Qué tanto te representa?",
+    "aria": "Intensidad de la respuesta",
+    "level0": "Nada",
+    "level1": "Un poco",
+    "level2": "Bastante",
+    "level3": "Muchísimo"
+  },
+  "versus": {
+    "divider": "VS"
+  },
+  "analysis": {
+    "eyebrow": "ANÁLISIS FUTUREPILOT",
+    "title": "Estamos conectando",
+    "titleAccent": "las piezas.",
+    "line1": "Analizando tus respuestas",
+    "line2": "Comparando perfiles compatibles",
+    "line3": "Buscando universidades y oportunidades",
+    "line4": "Generando tu roadmap personalizado",
+    "wait": "Tu resultado estará listo en un momento."
+  },
+  "partial": {
+    "chip": "ANÁLISIS COMPLETADO",
+    "eyebrow": "TU RESULTADO",
+    "title": "Hay algo especial",
+    "titleAccent": "en tu combinación.",
+    "copy": "Estas son tus carreras más compatibles. Son las definitivas: crear tu cuenta no las cambia, te muestra por qué salieron y qué hacer con ellas.",
+    "listLabel": "TUS 3 CARRERAS PRINCIPALES",
+    "listScore": "COINCIDENCIA",
+    "curiosity": "Tu perfil tiene más matices de los que caben aquí.",
+    "lockedTitle": "Lo que te falta por ver.",
+    "locked1": "Por qué encaja cada carrera contigo",
+    "locked2": "Tus fortalezas y brechas por carrera",
+    "locked3": "Tu roadmap paso a paso",
+    "locked4": "Universidades y destinos compatibles",
+    "cta": "Desbloquear mi análisis completo",
+    "footnote": "Tu resultado queda guardado. El acceso completo es gratuito."
+  },
+  "unavailable": {
+    "eyebrow": "TU PERFIL, DE MOMENTO",
+    "title": "Ya vemos tu forma,",
+    "titleAccent": "nos falta el detalle.",
+    "copy": "Estas son las dimensiones que más pesan en tus respuestas. Para cruzarlas con carreras concretas necesitamos completar el análisis.",
+    "listLabel": "TUS DIMENSIONES DOMINANTES",
+    "listScore": "PESO",
+    "fallbackError": "No pudimos completar el análisis. Tus respuestas siguen guardadas.",
+    "retry": "Completar mi análisis"
+  },
+  "unlock": {
+    "eyebrow": "TU PERFIL YA ESTÁ LISTO",
+    "title": "Ahora sí, vamos a",
+    "titleAccent": "despegar.",
+    "copy": "Crea una cuenta gratuita para guardar tu perfil y descubrir todo lo que FuturePilot preparó para ti.",
+    "perk1": "Universidades compatibles",
+    "perk2": "Becas y oportunidades",
+    "perk3": "Costos de vida",
+    "perk4": "Comparador de ciudades",
+    "perk5": "Roadmap personalizado",
+    "perk6": "Seguimiento de progreso",
+    "register": "Crear cuenta gratis",
+    "haveAccount": "Ya tengo una cuenta",
+    "note": "Sin tarjeta de crédito · Tus resultados siempre son tuyos"
+  },
+  "cluster": {
+    "ANALYTICAL": "Analítico",
+    "SCIENTIFIC": "Científico",
+    "TECHNICAL": "Técnico",
+    "CREATIVE": "Creativo",
+    "SOCIAL": "Social",
+    "LEADERSHIP": "Liderazgo",
+    "PRACTICAL": "Práctico",
+    "ENTREPRENEURIAL": "Emprendedor"
+  },
+  "error": {
+    "loadTitle": "No pudimos cargar tu exploración.",
+    "loadBody": "Recarga la página para intentarlo de nuevo.",
+    "resultsEyebrow": "ALGO SALIÓ MAL",
+    "resultsTitle": "No pudimos cargar",
+    "resultsTitleAccent": "tu análisis completo.",
+    "resultsFallback": "Intenta de nuevo en unos segundos.",
+    "retry": "Reintentar"
+  },
+  "full": {
+    "chip": "CUENTA ACTIVA",
+    "eyebrow": "TU PERFIL COMPLETO",
+    "title": "esto es",
+    "titleAccent": "lo que encontramos.",
+    "archetype": "Arquetipo",
+    "learningStyle": "Estilo de aprendizaje",
+    "confidence": "Confianza del análisis",
+    "strengths": "FORTALEZAS",
+    "gaps": "ÁREAS DE OPORTUNIDAD",
+    "noStrengths": "Perfil equilibrado",
+    "noGaps": "Sin brechas notables",
+    "careers": "CARRERAS RECOMENDADAS",
+    "score": "COINCIDENCIA",
+    "exploreGlobe": "Explorar el Globo",
+    "viewPassport": "Ver mi Pasaporte",
+    "footnote": "Tu perfil queda guardado en tu cuenta. Explora el globo para conectar tu carrera con países, universidades y oportunidades reales.",
+    "retake": "¿Cambió algo? Repetir el test"
+  }
 }

@@ -1154,6 +1154,39 @@ class MentorChatRequest(BaseModel):
 # --------------------------------------------------------------------------
 # API - Evaluación vocacional / IA
 # --------------------------------------------------------------------------
+SUPPORTED_LANGS = ("en", "es")
+
+
+def _resolve_lang(lang: Optional[str]) -> str:
+    """Un idioma no soportado cae al ingles en vez de dar error: el idioma
+    es una preferencia de presentacion, no algo por lo que rechazar una
+    peticion."""
+    normalized = (lang or "").strip().lower()[:2]
+    return normalized if normalized in SUPPORTED_LANGS else "en"
+
+
+def _localize_question(question: Dict[str, Any], lang: str) -> Dict[str, Any]:
+    """Aplana un registro con traducciones a la forma que espera el cliente.
+
+    Si falta una traduccion se usa el ingles, nunca una cadena vacia: es
+    preferible una pregunta sin traducir a una pregunta en blanco."""
+    suffix = "" if _resolve_lang(lang) == "en" else f"_{_resolve_lang(lang)}"
+    localized = {
+        key: value for key, value in question.items()
+        if key != "answers" and not key.endswith(tuple(f"_{code}" for code in SUPPORTED_LANGS))
+    }
+    localized["question"] = question.get(f"question{suffix}") or question["question"]
+    localized["answers"] = [
+        {
+            **{k: v for k, v in answer.items()
+               if not k.endswith(tuple(f"_{code}" for code in SUPPORTED_LANGS))},
+            "text": answer.get(f"text{suffix}") or answer["text"],
+        }
+        for answer in question.get("answers", [])
+    ]
+    return localized
+
+
 @app.get("/healthz", status_code=status.HTTP_200_OK)
 def liveness_probe():
     """Sonda para el balanceador / orquestador. Deliberadamente publica y
@@ -1182,12 +1215,23 @@ def get_system_status():
 
 
 @app.get("/api/v1/questions", status_code=status.HTTP_200_OK)
-def get_all_questions():
-    """Obtiene el banco completo de preguntas para el frontend."""
+def get_all_questions(lang: str = "en"):
+    """Banco completo de preguntas, ya resuelto al idioma pedido.
+
+    questions.json guarda cada texto en ingles (`question`, `text`) y su
+    traduccion al lado (`question_es`, `text_es`), en el MISMO registro:
+    los metadatos de puntuacion (cluster, points) son identicos en los dos
+    idiomas y tenerlos una sola vez es lo que impide que diverjan. Partir
+    el banco en un archivo por idioma habria duplicado esa parte.
+
+    El cliente recibe la forma de siempre - `question` y `text` como
+    cadenas - sin tener que saber que existen sufijos por idioma."""
+    localized = [_localize_question(question, lang) for question in questions_db]
     return {
         "success": True,
-        "total": len(questions_db),
-        "questions": questions_db,
+        "total": len(localized),
+        "lang": _resolve_lang(lang),
+        "questions": localized,
     }
 
 

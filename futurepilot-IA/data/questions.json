@@ -3,500 +3,1550 @@
     "type": "personality",
     "question": "I enjoy finding logical solutions to difficult problems.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ANALYTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "ANALYTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ANALYTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ANALYTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ANALYTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ANALYTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto encontrando soluciones lógicas a problemas difíciles."
   },
   {
     "type": "personality",
     "question": "I like expressing my ideas through art, writing, music or design.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "CREATIVE", "points": 4 },
-      { "text": "Agree", "cluster": "CREATIVE", "points": 3 },
-      { "text": "Disagree", "cluster": "CREATIVE", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "CREATIVE", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "CREATIVE",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "CREATIVE",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "CREATIVE",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "CREATIVE",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Me gusta expresar mis ideas a través del arte, la escritura, la música o el diseño."
   },
   {
     "type": "personality",
     "question": "Helping other people gives me satisfaction.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "SOCIAL", "points": 4 },
-      { "text": "Agree", "cluster": "SOCIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "SOCIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "SOCIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "SOCIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "SOCIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "SOCIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "SOCIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Ayudar a otras personas me produce satisfacción."
   },
   {
     "type": "personality",
     "question": "I naturally take the lead when working in a group.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "LEADERSHIP", "points": 4 },
-      { "text": "Agree", "cluster": "LEADERSHIP", "points": 3 },
-      { "text": "Disagree", "cluster": "LEADERSHIP", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "LEADERSHIP", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "LEADERSHIP",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "LEADERSHIP",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "LEADERSHIP",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "LEADERSHIP",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Cuando trabajo en grupo, tiendo a tomar la iniciativa."
   },
   {
     "type": "personality",
     "question": "I enjoy learning how technology works.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "TECHNICAL", "points": 4 },
-      { "text": "Agree", "cluster": "TECHNICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "TECHNICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "TECHNICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "TECHNICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "TECHNICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "TECHNICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "TECHNICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto aprendiendo cómo funciona la tecnología."
   },
   {
     "type": "personality",
     "question": "I enjoy discovering how nature and science explain the world.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "SCIENTIFIC", "points": 4 },
-      { "text": "Agree", "cluster": "SCIENTIFIC", "points": 3 },
-      { "text": "Disagree", "cluster": "SCIENTIFIC", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "SCIENTIFIC", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "SCIENTIFIC",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "SCIENTIFIC",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "SCIENTIFIC",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "SCIENTIFIC",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto descubriendo cómo la naturaleza y la ciencia explican el mundo."
   },
   {
     "type": "personality",
     "question": "I prefer building or repairing things instead of only talking about them.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "PRACTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "PRACTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "PRACTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "PRACTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "PRACTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "PRACTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "PRACTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "PRACTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Prefiero construir o reparar cosas antes que solo hablar de ellas."
   },
   {
     "type": "personality",
     "question": "I often think about creating my own business or project.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ENTREPRENEURIAL", "points": 4 },
-      { "text": "Agree", "cluster": "ENTREPRENEURIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ENTREPRENEURIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ENTREPRENEURIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "A menudo pienso en crear mi propio negocio o proyecto."
   },
   {
     "type": "personality",
     "question": "Before making a decision, I like to carefully analyze the available information.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ANALYTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "ANALYTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ANALYTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ANALYTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ANALYTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ANALYTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Antes de decidir, me gusta analizar con cuidado la información disponible."
   },
   {
     "type": "personality",
     "question": "I enjoy turning new ideas into real projects.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ENTREPRENEURIAL", "points": 4 },
-      { "text": "Agree", "cluster": "ENTREPRENEURIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ENTREPRENEURIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ENTREPRENEURIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto convirtiendo ideas nuevas en proyectos reales."
   },
   {
     "type": "interest",
     "question": "I enjoy finding patterns in data, puzzles, or complex information.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ANALYTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "ANALYTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ANALYTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ANALYTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ANALYTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ANALYTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto encontrando patrones en datos, acertijos o información compleja."
   },
   {
     "type": "interest",
     "question": "I enjoy creating original ideas that others would not think of.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "CREATIVE", "points": 4 },
-      { "text": "Agree", "cluster": "CREATIVE", "points": 3 },
-      { "text": "Disagree", "cluster": "CREATIVE", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "CREATIVE", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "CREATIVE",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "CREATIVE",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "CREATIVE",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "CREATIVE",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto creando ideas originales que a otros no se les ocurrirían."
   },
   {
     "type": "interest",
     "question": "I enjoy listening to people's problems and helping them find solutions.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "SOCIAL", "points": 4 },
-      { "text": "Agree", "cluster": "SOCIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "SOCIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "SOCIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "SOCIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "SOCIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "SOCIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "SOCIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto escuchando los problemas de la gente y ayudándoles a encontrar soluciones."
   },
   {
     "type": "interest",
     "question": "I feel comfortable making decisions for a group.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "LEADERSHIP", "points": 4 },
-      { "text": "Agree", "cluster": "LEADERSHIP", "points": 3 },
-      { "text": "Disagree", "cluster": "LEADERSHIP", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "LEADERSHIP", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "LEADERSHIP",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "LEADERSHIP",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "LEADERSHIP",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "LEADERSHIP",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Me siento cómodo tomando decisiones para un grupo."
   },
   {
     "type": "interest",
     "question": "I enjoy exploring new software, apps, or digital tools.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "TECHNICAL", "points": 4 },
-      { "text": "Agree", "cluster": "TECHNICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "TECHNICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "TECHNICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "TECHNICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "TECHNICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "TECHNICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "TECHNICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto explorando software, aplicaciones o herramientas digitales nuevas."
   },
   {
     "type": "interest",
     "question": "I enjoy conducting experiments to discover how things work.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "SCIENTIFIC", "points": 4 },
-      { "text": "Agree", "cluster": "SCIENTIFIC", "points": 3 },
-      { "text": "Disagree", "cluster": "SCIENTIFIC", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "SCIENTIFIC", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "SCIENTIFIC",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "SCIENTIFIC",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "SCIENTIFIC",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "SCIENTIFIC",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto haciendo experimentos para descubrir cómo funcionan las cosas."
   },
   {
     "type": "interest",
     "question": "I prefer hands-on activities over theoretical discussions.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "PRACTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "PRACTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "PRACTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "PRACTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "PRACTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "PRACTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "PRACTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "PRACTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Prefiero las actividades prácticas a las discusiones teóricas."
   },
   {
     "type": "interest",
     "question": "I enjoy identifying opportunities that others might overlook.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ENTREPRENEURIAL", "points": 4 },
-      { "text": "Agree", "cluster": "ENTREPRENEURIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ENTREPRENEURIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ENTREPRENEURIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto detectando oportunidades que a otros se les pasan por alto."
   },
   {
     "type": "interest",
     "question": "I enjoy breaking large problems into smaller steps.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ANALYTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "ANALYTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ANALYTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ANALYTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ANALYTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ANALYTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto dividiendo problemas grandes en pasos más pequeños."
   },
   {
     "type": "interest",
     "question": "I enjoy launching new ideas and seeing them become reality.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ENTREPRENEURIAL", "points": 4 },
-      { "text": "Agree", "cluster": "ENTREPRENEURIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ENTREPRENEURIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ENTREPRENEURIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto lanzando ideas nuevas y viéndolas hacerse realidad."
   },
   {
     "type": "personality",
     "question": "I enjoy comparing different ideas before making a decision.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ANALYTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "ANALYTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ANALYTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ANALYTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ANALYTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ANALYTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto comparando distintas ideas antes de tomar una decisión."
   },
   {
     "type": "personality",
     "question": "I enjoy imagining new products, stories, or designs.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "CREATIVE", "points": 4 },
-      { "text": "Agree", "cluster": "CREATIVE", "points": 3 },
-      { "text": "Disagree", "cluster": "CREATIVE", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "CREATIVE", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "CREATIVE",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "CREATIVE",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "CREATIVE",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "CREATIVE",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto imaginando productos, historias o diseños nuevos."
   },
   {
     "type": "personality",
     "question": "I feel energized when I can support someone who needs help.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "SOCIAL", "points": 4 },
-      { "text": "Agree", "cluster": "SOCIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "SOCIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "SOCIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "SOCIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "SOCIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "SOCIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "SOCIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Me llena de energía poder apoyar a alguien que necesita ayuda."
   },
   {
     "type": "personality",
     "question": "People often trust me to organize projects or activities.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "LEADERSHIP", "points": 4 },
-      { "text": "Agree", "cluster": "LEADERSHIP", "points": 3 },
-      { "text": "Disagree", "cluster": "LEADERSHIP", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "LEADERSHIP", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "LEADERSHIP",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "LEADERSHIP",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "LEADERSHIP",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "LEADERSHIP",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "La gente suele confiar en mí para organizar proyectos o actividades."
   },
   {
     "type": "personality",
     "question": "I like discovering how computers and devices work.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "TECHNICAL", "points": 4 },
-      { "text": "Agree", "cluster": "TECHNICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "TECHNICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "TECHNICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "TECHNICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "TECHNICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "TECHNICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "TECHNICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Me gusta descubrir cómo funcionan los ordenadores y los dispositivos."
   },
   {
     "type": "personality",
     "question": "I enjoy reading or watching content about scientific discoveries.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "SCIENTIFIC", "points": 4 },
-      { "text": "Agree", "cluster": "SCIENTIFIC", "points": 3 },
-      { "text": "Disagree", "cluster": "SCIENTIFIC", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "SCIENTIFIC", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "SCIENTIFIC",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "SCIENTIFIC",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "SCIENTIFIC",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "SCIENTIFIC",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto leyendo o viendo contenido sobre descubrimientos científicos."
   },
   {
     "type": "personality",
     "question": "I enjoy assembling, fixing, or building things.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "PRACTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "PRACTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "PRACTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "PRACTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "PRACTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "PRACTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "PRACTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "PRACTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto montando, arreglando o construyendo cosas."
   },
   {
     "type": "personality",
     "question": "I like finding ways to improve products or services.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ENTREPRENEURIAL", "points": 4 },
-      { "text": "Agree", "cluster": "ENTREPRENEURIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ENTREPRENEURIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ENTREPRENEURIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Me gusta encontrar formas de mejorar productos o servicios."
   },
   {
     "type": "personality",
     "question": "I enjoy solving challenges that require careful thinking.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ANALYTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "ANALYTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ANALYTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ANALYTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ANALYTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ANALYTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto resolviendo retos que exigen pensar con calma."
   },
   {
     "type": "personality",
     "question": "I enjoy turning ideas into projects that create value for others.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ENTREPRENEURIAL", "points": 4 },
-      { "text": "Agree", "cluster": "ENTREPRENEURIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ENTREPRENEURIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ENTREPRENEURIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto convirtiendo ideas en proyectos que aportan valor a otros."
   },
   {
     "type": "personality",
     "question": "I enjoy identifying mistakes that others often overlook.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ANALYTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "ANALYTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ANALYTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ANALYTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ANALYTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ANALYTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto detectando errores que a otros se les suelen escapar."
   },
   {
     "type": "personality",
     "question": "I enjoy expressing myself through creative projects.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "CREATIVE", "points": 4 },
-      { "text": "Agree", "cluster": "CREATIVE", "points": 3 },
-      { "text": "Disagree", "cluster": "CREATIVE", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "CREATIVE", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "CREATIVE",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "CREATIVE",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "CREATIVE",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "CREATIVE",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto expresándome a través de proyectos creativos."
   },
   {
     "type": "personality",
     "question": "I enjoy working with people from different backgrounds.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "SOCIAL", "points": 4 },
-      { "text": "Agree", "cluster": "SOCIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "SOCIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "SOCIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "SOCIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "SOCIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "SOCIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "SOCIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto trabajando con personas de orígenes distintos al mío."
   },
   {
     "type": "personality",
     "question": "I enjoy motivating people to achieve a common goal.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "LEADERSHIP", "points": 4 },
-      { "text": "Agree", "cluster": "LEADERSHIP", "points": 3 },
-      { "text": "Disagree", "cluster": "LEADERSHIP", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "LEADERSHIP", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "LEADERSHIP",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "LEADERSHIP",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "LEADERSHIP",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "LEADERSHIP",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto motivando a la gente para alcanzar un objetivo común."
   },
   {
     "type": "personality",
     "question": "I enjoy learning about new technologies before most people.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "TECHNICAL", "points": 4 },
-      { "text": "Agree", "cluster": "TECHNICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "TECHNICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "TECHNICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "TECHNICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "TECHNICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "TECHNICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "TECHNICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto conociendo tecnologías nuevas antes que la mayoría."
   },
   {
     "type": "personality",
     "question": "I enjoy asking questions about why things happen.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "SCIENTIFIC", "points": 4 },
-      { "text": "Agree", "cluster": "SCIENTIFIC", "points": 3 },
-      { "text": "Disagree", "cluster": "SCIENTIFIC", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "SCIENTIFIC", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "SCIENTIFIC",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "SCIENTIFIC",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "SCIENTIFIC",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "SCIENTIFIC",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto preguntándome por qué ocurren las cosas."
   },
   {
     "type": "personality",
     "question": "I prefer learning by doing instead of just reading.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "PRACTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "PRACTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "PRACTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "PRACTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "PRACTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "PRACTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "PRACTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "PRACTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Prefiero aprender haciendo en vez de solo leyendo."
   },
   {
     "type": "personality",
     "question": "I enjoy taking calculated risks to achieve my goals.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ENTREPRENEURIAL", "points": 4 },
-      { "text": "Agree", "cluster": "ENTREPRENEURIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ENTREPRENEURIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ENTREPRENEURIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto asumiendo riesgos calculados para alcanzar mis metas."
   },
   {
     "type": "personality",
     "question": "I enjoy organizing information before starting a task.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ANALYTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "ANALYTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ANALYTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ANALYTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ANALYTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ANALYTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto organizando la información antes de empezar una tarea."
   },
   {
     "type": "personality",
     "question": "I enjoy convincing others to support a new idea.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ENTREPRENEURIAL", "points": 4 },
-      { "text": "Agree", "cluster": "ENTREPRENEURIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ENTREPRENEURIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ENTREPRENEURIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto convenciendo a otros para que apoyen una idea nueva."
   },
   {
     "type": "personality",
     "question": "I enjoy evaluating different solutions before choosing the best one.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ANALYTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "ANALYTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ANALYTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ANALYTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ANALYTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ANALYTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto evaluando distintas soluciones antes de elegir la mejor."
   },
   {
     "type": "personality",
     "question": "I enjoy coming up with unique solutions to everyday problems.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "CREATIVE", "points": 4 },
-      { "text": "Agree", "cluster": "CREATIVE", "points": 3 },
-      { "text": "Disagree", "cluster": "CREATIVE", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "CREATIVE", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "CREATIVE",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "CREATIVE",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "CREATIVE",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "CREATIVE",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto ideando soluciones originales a problemas cotidianos."
   },
   {
     "type": "personality",
     "question": "I enjoy encouraging others to reach their full potential.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "SOCIAL", "points": 4 },
-      { "text": "Agree", "cluster": "SOCIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "SOCIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "SOCIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "SOCIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "SOCIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "SOCIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "SOCIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto animando a otros a desarrollar todo su potencial."
   },
   {
     "type": "personality",
     "question": "I feel confident making important decisions under pressure.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "LEADERSHIP", "points": 4 },
-      { "text": "Agree", "cluster": "LEADERSHIP", "points": 3 },
-      { "text": "Disagree", "cluster": "LEADERSHIP", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "LEADERSHIP", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "LEADERSHIP",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "LEADERSHIP",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "LEADERSHIP",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "LEADERSHIP",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Me siento seguro tomando decisiones importantes bajo presión."
   },
   {
     "type": "personality",
     "question": "I enjoy solving technical problems with computers or devices.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "TECHNICAL", "points": 4 },
-      { "text": "Agree", "cluster": "TECHNICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "TECHNICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "TECHNICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "TECHNICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "TECHNICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "TECHNICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "TECHNICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto resolviendo problemas técnicos con ordenadores o dispositivos."
   },
   {
     "type": "personality",
     "question": "I enjoy learning through observation and experimentation.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "SCIENTIFIC", "points": 4 },
-      { "text": "Agree", "cluster": "SCIENTIFIC", "points": 3 },
-      { "text": "Disagree", "cluster": "SCIENTIFIC", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "SCIENTIFIC", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "SCIENTIFIC",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "SCIENTIFIC",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "SCIENTIFIC",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "SCIENTIFIC",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto aprendiendo mediante la observación y la experimentación."
   },
   {
     "type": "personality",
     "question": "I enjoy working with tools, machines, or physical materials.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "PRACTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "PRACTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "PRACTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "PRACTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "PRACTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "PRACTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "PRACTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "PRACTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto trabajando con herramientas, máquinas o materiales físicos."
   },
   {
     "type": "personality",
     "question": "I enjoy finding new ways to create value from an idea.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ENTREPRENEURIAL", "points": 4 },
-      { "text": "Agree", "cluster": "ENTREPRENEURIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ENTREPRENEURIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ENTREPRENEURIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto encontrando formas nuevas de sacarle valor a una idea."
   },
   {
     "type": "personality",
     "question": "I enjoy making plans based on facts rather than assumptions.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ANALYTICAL", "points": 4 },
-      { "text": "Agree", "cluster": "ANALYTICAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ANALYTICAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ANALYTICAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ANALYTICAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ANALYTICAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ANALYTICAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto haciendo planes basados en hechos y no en suposiciones."
   },
   {
     "type": "personality",
     "question": "I enjoy starting projects without waiting for someone to tell me what to do.",
     "answers": [
-      { "text": "Strongly Agree", "cluster": "ENTREPRENEURIAL", "points": 4 },
-      { "text": "Agree", "cluster": "ENTREPRENEURIAL", "points": 3 },
-      { "text": "Disagree", "cluster": "ENTREPRENEURIAL", "points": 1 },
-      { "text": "Strongly Disagree", "cluster": "ENTREPRENEURIAL", "points": 0 }
-    ]
+      {
+        "text": "Strongly Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 4,
+        "text_es": "Muy de acuerdo"
+      },
+      {
+        "text": "Agree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 3,
+        "text_es": "De acuerdo"
+      },
+      {
+        "text": "Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 1,
+        "text_es": "En desacuerdo"
+      },
+      {
+        "text": "Strongly Disagree",
+        "cluster": "ENTREPRENEURIAL",
+        "points": 0,
+        "text_es": "Muy en desacuerdo"
+      }
+    ],
+    "question_es": "Disfruto empezando proyectos sin esperar a que alguien me diga qué hacer."
   }
 ]
