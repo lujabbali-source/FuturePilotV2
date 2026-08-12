@@ -51,7 +51,7 @@ El backend debe estar levantado en paralelo.
 python -m pytest
 ```
 
-84 tests de integración sobre la API real (auth, admin, assessment, mentor, pasaporte). Usan una
+91 tests de integración sobre la API real (auth, admin, assessment, mentor, pasaporte). Usan una
 base SQLite temporal: **nunca tocan `backend/data/users.sqlite3`**.
 
 ---
@@ -64,7 +64,8 @@ desarrollo. Las que importan:
 | Variable | Para qué |
 |---|---|
 | `FUTUREPILOT_ENV` | `development` (por defecto) o `production`. Ver la sección de despliegue |
-| `ADMIN_EMAIL` | Email de la **única** cuenta con acceso a `/admin`. Regístrate primero como estudiante normal con ese email; la cuenta pasa a ser admin en el siguiente login. Vacío = nadie tiene acceso |
+| `ADMIN_EMAIL` | Email de la **única** cuenta con acceso a `/admin`. Reclamarla requiere el token de primer arranque (ver despliegue). Vacío = nadie tiene acceso |
+| `ADMIN_SETUP_TOKEN` | Fija el token de reclamación en vez de dejar que el servidor lo genere. Solo para despliegues automatizados |
 | `CORS_ORIGINS` | Orígenes extra permitidos, separados por coma. El sitio servido por este mismo backend no lo necesita (mismo origen) |
 | `SMTP_*` | Envío real del correo de recuperación de contraseña. Sin configurar, el link se imprime en la consola del servidor |
 | `USERS_DB_PATH` | Ruta de la base SQLite. Útil para apuntar a un disco persistente en producción |
@@ -148,18 +149,30 @@ Declarar `FUTUREPILOT_ENV=production` cambia cuatro cosas:
 repositorio**. En muchos PaaS el disco del contenedor es efímero y cada despliegue se llevaría por
 delante todas las cuentas.
 
-> ### ⚠️ Registra la cuenta de administrador como primer paso
->
-> El acceso a `/admin` se concede a la cuenta cuyo email coincide con `ADMIN_EMAIL`, y **el registro
-> no verifica el correo**. Mientras esa cuenta no exista, cualquiera que se registre con ese email
-> se convierte en administrador — y los emails de admin suelen ser adivinables.
->
-> Nada más levantar el servidor: entra en `/login`, regístrate con el email de `ADMIN_EMAIL`, y
-> entra una vez en `/admin` para confirmarlo. El servidor avisa al arrancar mientras la cuenta esté
-> libre.
->
-> Cerrar la ventana del todo requiere verificación de email en el registro, o un secreto fuera de
-> banda que haya que presentar para reclamar la cuenta admin. Ninguna de las dos está implementada.
+### Reclamar la cuenta de administrador
+
+El acceso a `/admin` se concede a la cuenta cuyo email coincide con `ADMIN_EMAIL`, y el registro no
+verifica el correo. Para que eso no signifique que **quien registre ese email primero se lleva el
+panel**, ese registro concreto exige un token de un solo uso que el servidor imprime al arrancar:
+
+```
+====================================================================
+  RECLAMA LA CUENTA DE ADMINISTRADOR
+  Registra jefe@futurepilot.app en /login usando este token:
+
+      tGvGBr3HEMAiTQby5ruBMWfUuGCjVbzn
+
+  Hasta entonces, ese email no se puede registrar sin el.
+====================================================================
+```
+
+Entra en `/login`, regístrate con ese email, y cuando el formulario diga que hace falta el token
+aparecerá el campo donde pegarlo. Hecho eso, el token se descarta y no vuelve a pedirse.
+
+El token **solo sale por la consola del servidor**, nunca por HTTP: ese es el canal que un atacante
+remoto no tiene. Se guarda en `backend/data/admin_setup.json` (ignorado por git) para que sobreviva
+a un reinicio, y se regenera si cambias `ADMIN_EMAIL`. Para despliegues automatizados donde nadie
+lee la consola, fíjalo con `ADMIN_SETUP_TOKEN`.
 
 **Sobre `--workers`:** el limitador de peticiones guarda su estado en memoria del proceso, así que
 con varios workers cada uno lleva su propia cuenta y el límite efectivo se multiplica. Con más de

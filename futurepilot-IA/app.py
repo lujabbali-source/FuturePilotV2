@@ -253,6 +253,62 @@ users_store.sync_admin_email(ADMIN_EMAIL or None)
 # --------------------------------------------------------------------------
 THEME_CONFIG_PATH = REPO_ROOT / "backend" / "data" / "theme.json"
 FLAGS_CONFIG_PATH = REPO_ROOT / "backend" / "data" / "feature_flags.json"
+ADMIN_SETUP_PATH = REPO_ROOT / "backend" / "data" / "admin_setup.json"
+
+
+# --------------------------------------------------------------------------
+# Reclamacion de la cuenta de administrador
+# --------------------------------------------------------------------------
+# El acceso a /admin se concede a la cuenta cuyo email coincide con
+# ADMIN_EMAIL (ver sync_admin_email) y el registro NO verifica el correo.
+# Sin nada mas, quien se registrara primero con ese email se llevaba el
+# panel, y los emails de admin suelen ser adivinables.
+#
+# Ahora ese registro concreto exige un token de un solo uso. El token se
+# genera solo en el primer arranque y se imprime en la consola del
+# servidor: quien despliega ya esta mirando ahi, y es un canal que un
+# atacante remoto no tiene. Mismo patron que el primer login de Jenkins o
+# GitLab. ADMIN_SETUP_TOKEN permite fijarlo desde el entorno para
+# despliegues automatizados.
+#
+# En cuanto la cuenta existe el token deja de hacer falta: el email ya
+# esta tomado y registrarlo otra vez choca con el UNIQUE de la tabla.
+def admin_seat_is_claimed() -> bool:
+    """True si ya hay una cuenta con el email de administrador."""
+    return bool(ADMIN_EMAIL) and users_store.find_user_id_by_email(ADMIN_EMAIL) is not None
+
+
+def admin_setup_token() -> Optional[str]:
+    """Token vigente para reclamar la cuenta admin, o None si no hace falta.
+
+    Se persiste en disco para que sobreviva a un reinicio: si se generara
+    uno nuevo en cada arranque, un reinicio a mitad del despliegue
+    invalidaria el que el operador acaba de copiar de la consola.
+    """
+    if not ADMIN_EMAIL or admin_seat_is_claimed():
+        return None
+
+    from_env = (os.environ.get("ADMIN_SETUP_TOKEN") or "").strip()
+    if from_env:
+        return from_env
+
+    # El fichero guarda para que email se emitio: si ADMIN_EMAIL cambia, el
+    # token anterior deja de valer y se emite uno nuevo. Reutilizarlo
+    # significaria que quien vio el token del email antiguo puede reclamar
+    # tambien el nuevo.
+    stored = read_json(ADMIN_SETUP_PATH, {})
+    if stored.get("token") and stored.get("email") == ADMIN_EMAIL:
+        return stored["token"]
+
+    token = secrets.token_urlsafe(24)
+    write_json(ADMIN_SETUP_PATH, {"token": token, "email": ADMIN_EMAIL})
+    return token
+
+
+def clear_admin_setup_token() -> None:
+    """Se llama cuando la cuenta queda reclamada: el token ya no sirve para
+    nada y no tiene por que seguir en disco."""
+    delete_json(ADMIN_SETUP_PATH)
 
 # Las 8 categorias de color que el Theme Lab puede sobreescribir, mapeadas
 # 1:1 a las variables CSS de Frontend/style.css (ver :root ahi). Sirven
@@ -496,6 +552,14 @@ class RegisterRequest(BaseModel):
     email: str = Field(..., description="Email del estudiante")
     password: str = Field(..., min_length=8, description="Contrasena, minimo 8 caracteres")
     name: Optional[str] = Field(default=None, description="Nombre para mostrar (opcional)")
+    admin_setup_token: Optional[str] = Field(
+        default=None,
+        description=(
+            "Solo para reclamar la cuenta de administrador la primera vez. "
+            "El servidor lo imprime en su consola al arrancar. Para el resto "
+            "de registros se ignora."
+        ),
+    )
 
     @field_validator("email")
     @classmethod
@@ -561,6 +625,23 @@ def get_current_admin_required(authorization: Optional[str] = Header(default=Non
 @app.post("/api/v1/auth/register", status_code=status.HTTP_201_CREATED)
 def register(payload: RegisterRequest, request: Request):
     register_rate_limiter.check(client_ip(request))
+
+    # Reclamar la cuenta de administrador exige el token de primer arranque.
+    # Se compara con compare_digest para no filtrar por tiempo cuanto prefijo
+    # del token se acerto.
+    if ADMIN_EMAIL and payload.email.strip().lower() == ADMIN_EMAIL.lower():
+        expected = admin_setup_token()
+        provided = (payload.admin_setup_token or "").strip()
+        if expected and not secrets.compare_digest(provided, expected):
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail=(
+                    "Este email esta reservado para la cuenta de administrador. "
+                    "Para reclamarla hace falta el token de configuracion que el "
+                    "servidor imprime en su consola al arrancar."
+                ),
+            )
+
     try:
         user = users_store.register(payload.email, payload.password, payload.name)
     except DuplicateEmailError:
@@ -573,6 +654,9 @@ def register(payload: RegisterRequest, request: Request):
     # usuario despues del sync para que la respuesta refleje is_admin al dia.
     users_store.sync_admin_email(ADMIN_EMAIL or None)
     user = users_store.get_user_by_id(user["id"])
+    if user.get("is_admin"):
+        # Asiento ocupado: el token de reclamacion ya no sirve para nada.
+        clear_admin_setup_token()
     token = users_store.create_session(user["id"])
     return {"success": True, "token": token, "user": user}
 
@@ -1379,15 +1463,11 @@ def check_production_config() -> List[str]:
 
     if not ADMIN_EMAIL:
         problems.append("ADMIN_EMAIL vacio: nadie podra entrar a /admin.")
-    elif users_store.find_user_id_by_email(ADMIN_EMAIL) is None:
-        # La promocion a admin es por coincidencia de email y el registro no
-        # verifica el correo (ver sync_admin_email): mientras esa cuenta no
-        # exista, QUIEN LA REGISTRE PRIMERO se lleva el panel. Los emails de
-        # admin suelen ser adivinables, asi que la ventana importa.
+    elif not admin_seat_is_claimed():
         problems.append(
-            f"La cuenta admin ({ADMIN_EMAIL}) todavia no existe. Hasta que la "
-            "registres en /login, cualquiera que use ese email se convierte en "
-            "administrador. Registrala como primer paso del despliegue."
+            f"La cuenta admin ({ADMIN_EMAIL}) todavia no existe. Reclamala en "
+            "/login con el token que aparece arriba, como primer paso del "
+            "despliegue."
         )
 
     if not mailer.is_configured():
@@ -1415,7 +1495,28 @@ def check_production_config() -> List[str]:
     return problems
 
 
+def report_admin_setup_token() -> None:
+    """Imprime el token de reclamacion mientras la cuenta admin este libre.
+
+    La consola del servidor es el canal fuera de banda: quien despliega la
+    esta mirando, y un atacante remoto no. Por eso el token va aqui y no en
+    ninguna respuesta HTTP.
+    """
+    token = admin_setup_token()
+    if not token:
+        return
+    borde = "=" * 68
+    print(f"\n{borde}")
+    print("  RECLAMA LA CUENTA DE ADMINISTRADOR")
+    print(f"  Registra {ADMIN_EMAIL} en /login usando este token:")
+    print(f"\n      {token}\n")
+    print("  Hasta entonces, ese email no se puede registrar sin el.")
+    print(f"{borde}\n")
+
+
 def report_production_config() -> None:
+    report_admin_setup_token()
+
     problems = check_production_config()
     if not problems:
         print(f"[FuturePilot] Configuracion OK (entorno: {ENVIRONMENT}).")

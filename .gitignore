@@ -13,6 +13,9 @@ backend/data/*.sqlite3-wal
 backend/data/*.sqlite3-shm
 backend/data/theme.json
 backend/data/feature_flags.json
+# Token de reclamacion de la cuenta admin: es un secreto y ademas
+# es propio de cada instalacion.
+backend/data/admin_setup.json
 
 # Locks temporales de escritura en la memoria de IA (ver ai_engine.py
 # StudentMemorySystem.lock) - se autolimpian, pero por si queda uno huerfano.

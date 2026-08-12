@@ -18,6 +18,7 @@ function main() {
 
   const form = document.getElementById("loginForm");
   const nameField = document.getElementById("nameField");
+  const adminTokenField = document.getElementById("adminTokenField");
   const passwordField = document.getElementById("passwordField");
   const cardTitle = document.getElementById("cardTitle");
   const cardSubtitle = document.getElementById("cardSubtitle");
@@ -68,6 +69,7 @@ function main() {
 
     const isForgot = mode === "forgot";
     nameField.hidden = mode !== "register";
+    adminTokenField.hidden = true;
     passwordField.hidden = isForgot;
     form.password.required = !isForgot;
     loginOptions.style.display = isForgot || mode === "register" ? "none" : "flex";
@@ -221,7 +223,10 @@ function main() {
     }
 
     const endpoint = mode === "register" ? "/api/v1/auth/register" : "/api/v1/auth/login";
-    const body = mode === "register" ? { email, password, name: name || undefined } : { email, password };
+    const adminSetupToken = form.adminSetupToken?.value.trim();
+    const body = mode === "register"
+      ? { email, password, name: name || undefined, admin_setup_token: adminSetupToken || undefined }
+      : { email, password };
 
     try {
       const response = await fetch(endpoint, {
@@ -233,6 +238,15 @@ function main() {
 
       if (!response.ok) {
         setSubmitting(false);
+        // El unico 403 que puede dar el registro es el del email reservado
+        // para la cuenta de administrador. Se revela el campo del token en
+        // ese momento, en vez de enseñarselo a cada estudiante que se
+        // registra: quien despliega ya tiene el token delante, en la consola
+        // del servidor.
+        if (mode === "register" && response.status === 403) {
+          adminTokenField.hidden = false;
+          form.adminSetupToken?.focus();
+        }
         showError(data.detail || "No pudimos procesar tu solicitud. Intenta de nuevo.");
         return;
       }

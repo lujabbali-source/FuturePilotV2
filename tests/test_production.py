@@ -150,3 +150,102 @@ def test_startup_check_flags_an_unclaimed_admin_account(app_module, client, monk
     client.post("/api/v1/auth/register", json={"email": correo, "password": "password123"})
     monkeypatch.setattr(app_module, "ADMIN_EMAIL", correo)
     assert "todavia no existe" not in " | ".join(app_module.check_production_config())
+
+
+def _fresh_admin_env(app_module, monkeypatch, tmp_path, email):
+    """Deja el sistema como una instalacion nueva: email admin configurado,
+    sin cuenta que lo reclame y con el token en un fichero temporal."""
+    monkeypatch.setattr(app_module, "ADMIN_EMAIL", email)
+    monkeypatch.setattr(app_module, "ADMIN_SETUP_PATH", tmp_path / "admin_setup.json")
+    monkeypatch.delenv("ADMIN_SETUP_TOKEN", raising=False)
+
+
+def test_admin_email_cannot_be_registered_without_the_setup_token(
+    client, app_module, monkeypatch, tmp_path
+):
+    """El agujero que esto cierra: la promocion a admin es por coincidencia
+    de email y el registro no verifica el correo, asi que quien registrara
+    ese email primero se llevaba el panel. Los emails de admin suelen ser
+    adivinables."""
+    correo = "jefe@futurepilot.app"
+    _fresh_admin_env(app_module, monkeypatch, tmp_path, correo)
+
+    sin_token = client.post("/api/v1/auth/register", json={"email": correo, "password": "password123"})
+    assert sin_token.status_code == 403
+    assert "token" in sin_token.json()["detail"].lower()
+
+    malo = client.post("/api/v1/auth/register", json={
+        "email": correo, "password": "password123", "admin_setup_token": "no-es-el-token",
+    })
+    assert malo.status_code == 403
+
+    # Y no dejo la cuenta a medio crear.
+    assert app_module.users_store.find_user_id_by_email(correo) is None
+
+
+def test_the_setup_token_claims_the_seat_once(client, app_module, monkeypatch, tmp_path):
+    correo = "jefa@futurepilot.app"
+    _fresh_admin_env(app_module, monkeypatch, tmp_path, correo)
+
+    token = app_module.admin_setup_token()
+    assert token, "sin cuenta admin deberia haber token"
+
+    creada = client.post("/api/v1/auth/register", json={
+        "email": correo, "password": "password123", "admin_setup_token": token,
+    })
+    assert creada.status_code == 201
+    assert creada.json()["user"]["is_admin"] is True
+
+    # Reclamado el asiento, el token se retira: ya no hay nada que reclamar.
+    assert app_module.admin_seat_is_claimed()
+    assert app_module.admin_setup_token() is None
+
+
+def test_the_token_survives_a_restart(app_module, monkeypatch, tmp_path):
+    """Se persiste a proposito. Si se generara uno nuevo en cada arranque,
+    un reinicio a mitad del despliegue invalidaria el que el operador acaba
+    de copiar de la consola."""
+    _fresh_admin_env(app_module, monkeypatch, tmp_path, "otro@futurepilot.app")
+    assert app_module.admin_setup_token() == app_module.admin_setup_token()
+
+
+def test_the_token_can_come_from_the_environment(app_module, monkeypatch, tmp_path):
+    """Para despliegues automatizados, donde nadie lee la consola."""
+    _fresh_admin_env(app_module, monkeypatch, tmp_path, "cicd@futurepilot.app")
+    monkeypatch.setenv("ADMIN_SETUP_TOKEN", "token-del-orquestador")
+    assert app_module.admin_setup_token() == "token-del-orquestador"
+
+
+def test_the_token_never_leaves_the_server(client, app_module, monkeypatch, tmp_path):
+    """La consola es el canal fuera de banda. Si el token saliera por HTTP
+    el mecanismo no protegeria de nada."""
+    correo = "secreto@futurepilot.app"
+    _fresh_admin_env(app_module, monkeypatch, tmp_path, correo)
+    token = app_module.admin_setup_token()
+
+    for path in ("/admin/login", "/login", "/api/v1/status", "/healthz"):
+        assert token not in client.get(path).text, f"{path} filtra el token"
+
+
+def test_other_accounts_register_normally(client, app_module, monkeypatch, tmp_path):
+    """El candado es solo para el email de administrador; el registro normal
+    de estudiantes no cambia."""
+    _fresh_admin_env(app_module, monkeypatch, tmp_path, "jefe2@futurepilot.app")
+    r = client.post("/api/v1/auth/register", json={
+        "email": "estudiante-normal@example.com", "password": "password123",
+    })
+    assert r.status_code == 201
+    assert r.json()["user"]["is_admin"] is False
+
+
+def test_changing_the_admin_email_invalidates_the_old_token(app_module, monkeypatch, tmp_path):
+    """El token se emite PARA un email concreto. Si ADMIN_EMAIL cambia y se
+    reutilizara, quien vio el token del email antiguo podria reclamar
+    tambien la cuenta nueva."""
+    _fresh_admin_env(app_module, monkeypatch, tmp_path, "primero@futurepilot.app")
+    primero = app_module.admin_setup_token()
+
+    monkeypatch.setattr(app_module, "ADMIN_EMAIL", "segundo@futurepilot.app")
+    segundo = app_module.admin_setup_token()
+
+    assert segundo and segundo != primero

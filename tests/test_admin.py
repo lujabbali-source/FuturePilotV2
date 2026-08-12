@@ -7,8 +7,16 @@ ADMIN_EMAIL = "admin@test.local"  # debe coincidir con conftest.py
 
 
 @pytest.fixture()
-def admin_headers(client):
-    client.post("/api/v1/auth/register", json={"email": ADMIN_EMAIL, "password": "AdminPass123", "name": "Admin"})
+def admin_headers(client, app_module):
+    # Reclamar la cuenta admin exige el token de primer arranque (ver
+    # admin_setup_token en app.py). Se pide igual que lo haria el operador
+    # leyendolo de la consola del servidor.
+    client.post("/api/v1/auth/register", json={
+        "email": ADMIN_EMAIL,
+        "password": "AdminPass123",
+        "name": "Admin",
+        "admin_setup_token": app_module.admin_setup_token(),
+    })
     login = client.post("/api/v1/auth/login", json={"email": ADMIN_EMAIL, "password": "AdminPass123"})
     data = login.json()
     assert data["user"]["is_admin"] is True
