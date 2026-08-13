@@ -19,84 +19,6 @@ function main() {
 
   const authHeaders = { Authorization: `Bearer ${token}` };
 
-  const FLAG_LABELS = {
-    admin_users: "Usuarios registrados",
-    admin_stats: "Estadísticas",
-    admin_test_results: "Resultados de los test",
-    admin_universities: "Gestión de universidades",
-    admin_countries: "Países y ciudades",
-    admin_knowledge_base: "Base de conocimiento",
-    admin_ai_config: "Configuración de la IA",
-    admin_system_config: "Configuración del sistema",
-    admin_surveys: "Encuestas y retroalimentación",
-    admin_logs: "Logs del sistema",
-    admin_settings: "Configuración del administrador",
-  };
-
-  function syncSidebarFlags(flags) {
-    document.querySelectorAll("[data-flag-item]").forEach((item) => {
-      const key = item.dataset.flagItem;
-      const enabled = !!flags[key];
-      item.classList.toggle("is-flag-enabled", enabled);
-      const badge = item.querySelector("em");
-      if (badge) badge.textContent = enabled ? "Activo (beta)" : "Próximamente";
-    });
-  }
-
-  function renderFlags(flags) {
-    const list = document.getElementById("featureFlagsList");
-    list.innerHTML = Object.keys(FLAG_LABELS)
-      .map((key) => {
-        const checked = flags[key] ? "checked" : "";
-        return `
-        <li>
-          <span class="admin-flag__name">${FLAG_LABELS[key]}</span>
-          <label class="admin-flag__switch">
-            <input type="checkbox" data-flag-key="${key}" ${checked}>
-            <span></span>
-          </label>
-        </li>`;
-      })
-      .join("");
-
-    list.querySelectorAll("[data-flag-key]").forEach((checkbox) => {
-      checkbox.addEventListener("change", async () => {
-        const key = checkbox.dataset.flagKey;
-        checkbox.disabled = true;
-        try {
-          const response = await fetch(`/api/v1/admin/flags/${key}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json", ...authHeaders },
-            body: JSON.stringify({ enabled: checkbox.checked }),
-          });
-          if (response.ok) {
-            const data = await response.json();
-            syncSidebarFlags(data.flags);
-          } else {
-            checkbox.checked = !checkbox.checked;
-          }
-        } catch (error) {
-          checkbox.checked = !checkbox.checked;
-        } finally {
-          checkbox.disabled = false;
-        }
-      });
-    });
-  }
-
-  async function loadFlags() {
-    try {
-      const response = await fetch("/api/flags", { cache: "no-store" });
-      if (!response.ok) return;
-      const data = await response.json();
-      renderFlags(data.flags || {});
-      syncSidebarFlags(data.flags || {});
-    } catch (error) {
-      // La lista se queda en "Cargando..." si falla - no es un problema
-      // de autorizacion, /api/flags es publico.
-    }
-  }
-
   function formatDate(iso) {
     if (!iso) return "";
     const date = new Date(iso.endsWith("Z") || iso.includes("+") ? iso : `${iso}Z`);
@@ -193,7 +115,6 @@ function main() {
       gate.hidden = true;
       app.hidden = false;
       loadDashboard();
-      loadFlags();
     } catch (error) {
       goToAdminLogin();
     }

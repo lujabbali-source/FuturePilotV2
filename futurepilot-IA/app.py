@@ -249,12 +249,10 @@ users_store = UsersStore(USERS_DB_PATH)
 users_store.sync_admin_email(ADMIN_EMAIL or None)
 
 # --------------------------------------------------------------------------
-# Configuracion editable desde el panel de administrador (feature flags) -
-# JSON simple en backend/data/, leido del disco en cada peticion (ver
-# backend/config_store.py). Ausencia de archivo = valores por defecto,
-# nunca un error.
+# Configuracion en JSON simple bajo backend/data/, leida del disco en cada
+# uso (ver backend/config_store.py). Ausencia de archivo = valores por
+# defecto, nunca un error.
 # --------------------------------------------------------------------------
-FLAGS_CONFIG_PATH = REPO_ROOT / "backend" / "data" / "feature_flags.json"
 ADMIN_SETUP_PATH = REPO_ROOT / "backend" / "data" / "admin_setup.json"
 
 
@@ -313,25 +311,6 @@ def clear_admin_setup_token() -> None:
     delete_json(ADMIN_SETUP_PATH)
 
 
-# Secciones reservadas del sidebar del admin (ver admin-dashboard.html) que
-# todavia no tienen una herramienta real detras - el admin puede activarlas
-# para probarlas mientras se construyen, sin esperar a que "el sistema las
-# considere terminadas". Activar un flag no crea funcionalidad que no
-# existe: solo cambia como se presenta esa seccion en el dashboard.
-DEFAULT_FEATURE_FLAGS = {
-    "admin_users": False,
-    "admin_stats": False,
-    "admin_test_results": False,
-    "admin_universities": False,
-    "admin_countries": False,
-    "admin_knowledge_base": False,
-    "admin_ai_config": False,
-    "admin_system_config": False,
-    "admin_surveys": False,
-    "admin_logs": False,
-    "admin_settings": False,
-}
-
 # Bandera por pais para los sellos del Pasaporte - mismos ids que
 # web/src/database/countries/ (colombia + los 21 de
 # americas/index.js). "🌍" es el fallback si algun dia se agrega un pais
@@ -381,18 +360,6 @@ def _award_passport_stamps(
         try_award(f"country_{subject_id}", f"{flag} Exploró {subject_label or subject_id.title()}")
 
     return newly_awarded
-
-
-# --------------------------------------------------------------------------
-# Feature flags - lectura publica (afectan a como se presenta el panel),
-# escritura protegida mas abajo bajo /api/v1/admin/*.
-# --------------------------------------------------------------------------
-
-
-@app.get("/api/flags", status_code=status.HTTP_200_OK)
-def get_active_flags():
-    flags = {**DEFAULT_FEATURE_FLAGS, **read_json(FLAGS_CONFIG_PATH, {})}
-    return {"success": True, "flags": flags}
 
 
 # --------------------------------------------------------------------------
@@ -709,6 +676,11 @@ def reset_password(payload: ResetPasswordRequest, request: Request):
 
 @app.get("/api/v1/auth/me", status_code=status.HTTP_200_OK)
 def get_me(current_user: dict = Depends(get_current_user_required)):
+    """Espejo de /api/v1/admin/me para la sesion de estudiante: responde 401
+    si el token ya no vale. Hoy ninguna pagina lo llama - el test consulta
+    /api/v1/me/results, que ademas trae datos - pero es la forma canonica de
+    preguntar "¿sigue viva mi sesion?" sin pedir nada mas, y es como los
+    tests comprueban que el logout de verdad la invalida."""
     return {"success": True, "user": current_user}
 
 
@@ -943,35 +915,6 @@ def admin_dashboard(current_admin: dict = Depends(get_current_admin_required)):
 
 
 # --------------------------------------------------------------------------
-# Feature flags - secciones del admin todavia en construccion que se
-# pueden activar para probarlas. GET /api/flags (publico, mas arriba) es
-# lo que consulta Frontend/admin/admin-dashboard.js para decidir como
-# pintar el sidebar.
-# --------------------------------------------------------------------------
-class FlagUpdateRequest(BaseModel):
-    enabled: bool
-
-
-@app.put("/api/v1/admin/flags/{flag_key}", status_code=status.HTTP_200_OK)
-def update_flag(
-    flag_key: str,
-    payload: FlagUpdateRequest,
-    current_admin: dict = Depends(get_current_admin_required),
-):
-    if flag_key not in DEFAULT_FEATURE_FLAGS:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Feature flag desconocido: {flag_key}",
-        )
-    flags = {**DEFAULT_FEATURE_FLAGS, **read_json(FLAGS_CONFIG_PATH, {})}
-    flags[flag_key] = payload.enabled
-    write_json(FLAGS_CONFIG_PATH, flags)
-    users_store.record_admin_action(
-        current_admin["id"], "flag.update", {"flag_key": flag_key, "enabled": payload.enabled}
-    )
-    return {"success": True, "flags": flags}
-
-
 # --------------------------------------------------------------------------
 # System Health - cada check corre una condicion real (consulta a la base
 # de datos, existencia de archivos, autotest de hashing, etc.), nunca un
@@ -1132,9 +1075,9 @@ def admin_repair(action: str, current_admin: dict = Depends(get_current_admin_re
 
 @app.get("/api/v1/admin/audit-log", status_code=status.HTTP_200_OK)
 def admin_audit_log(current_admin: dict = Depends(get_current_admin_required)):
-    """Quien cambio que desde el panel (tema, feature flags, reparaciones)
-    y cuando. Sin pagina propia todavia - la seccion 'Logs del sistema' del
-    sidebar ya esta reservada para esto (ver DEFAULT_FEATURE_FLAGS)."""
+    """Quien hizo que desde el panel y cuando. No tiene pagina propia: se
+    conserva porque el registro en si vale para reconstruir que paso, y
+    este endpoint es la unica forma de leerlo sin abrir el SQLite a mano."""
     return {"success": True, "entries": users_store.list_admin_audit_log(limit=50)}
 
 
@@ -1238,17 +1181,6 @@ def liveness_probe():
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail="unavailable"
         )
     return {"status": "ok"}
-
-
-@app.get("/api/v1/status", status_code=status.HTTP_200_OK)
-def get_system_status():
-    """Endpoint de comprobacion de estado de la API."""
-    return {
-        "system": "FuturePilot AI Engine",
-        "status": "Online",
-        "questions_loaded": len(questions_db),
-        "careers_loaded": len(careers_db),
-    }
 
 
 @app.get("/api/v1/questions", status_code=status.HTTP_200_OK)

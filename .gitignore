@@ -11,7 +11,6 @@ venv/
 backend/data/*.sqlite3
 backend/data/*.sqlite3-wal
 backend/data/*.sqlite3-shm
-backend/data/feature_flags.json
 # Token de reclamacion de la cuenta admin: es un secreto y ademas
 # es propio de cada instalacion.
 backend/data/admin_setup.json

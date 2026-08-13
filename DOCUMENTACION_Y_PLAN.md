@@ -129,10 +129,9 @@ consolidar el frontend sobre el Vite que ya existe, de forma incremental.
   ▼
   /admin ──── GET /api/v1/admin/me (403 si no es admin) ──► desbloquea el shell
   │      ──── GET /api/v1/admin/dashboard ──► métricas, top carreras/países
-  ├──► /admin/system-health ──► GET /api/v1/admin/health (9 chequeos reales)
-  │    (el Theme Lab se retiró: ver §Retirados)
-  │                          ──► POST /api/v1/admin/repair/{reload-data|resync-admin}
-  └──► feature flags        ──► PUT /api/v1/admin/flags/{key}
+  └──► /admin/system-health ──► GET /api/v1/admin/health (9 chequeos reales)
+                             ──► POST /api/v1/admin/repair/{reload-data|resync-admin}
+       (el Theme Lab y los feature flags se retiraron: ver §Retirados)
 ```
 
 ### 3.3 Modelo de identidad
@@ -860,3 +859,36 @@ Al retirarlo, `frame-src` y `frame-ancestors` pasaron a `'none'`: sin ningún
 iframe en el sitio, el clickjacking queda cerrado del todo en vez de permitido
 desde el mismo origen. Los colores siguen viviendo donde siempre estuvieron de
 verdad, en las variables `:root` de `Frontend/style.css`.
+
+### Feature flags
+
+Once banderas que el administrador podía activar desde el panel, con endpoint
+público (`GET /api/flags`), endpoint de escritura, fichero de configuración,
+entradas en la auditoría y tests. ¿Qué conseguía activar una?
+
+```js
+badge.textContent = enabled ? "Activo (beta)" : "Próximamente";
+```
+
+Cambiaba una palabra. Y los elementos que relabelaba eran `<span class="is-disabled">`,
+ni siquiera enlaces: **no había página detrás de ninguna de las once**. Activar
+«Usuarios registrados» no llevaba a ningún sitio.
+
+Con ellos se fueron los once ítems «Próximamente» del sidebar. Un menú lleno de
+funcionalidad prometida envejece mal: quien abre el panel dentro de un año no
+distingue lo que se está construyendo de lo que se abandonó. El sidebar quedó con
+lo que existe de verdad — Dashboard, System Health y el Globo.
+
+### Endpoints sin consumidores
+
+- `GET /api/v1/status` — `/healthz` hace lo mismo y es la sonda que espera un
+  balanceador.
+- `futurepilot-IA/test_brain.py` — script manual de diagnóstico de antes de que
+  existiera la suite. Sus 121 líneas las cubren los 90 tests de pytest.
+- `.agents/` — carpeta vacía.
+
+**`GET /api/v1/auth/me` se quitó y se volvió a poner.** No lo llama ninguna página,
+pero es el espejo de `/api/v1/admin/me` (que sí se usa) y la forma canónica de
+preguntar «¿sigue viva mi sesión?». Al borrarlo falló `test_logout_invalidates_session`,
+que lo usaba justamente para comprobar que el logout invalida el token. Que nadie
+lo llame hoy no significa que no tenga función.

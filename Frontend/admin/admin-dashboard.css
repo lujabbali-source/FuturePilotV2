@@ -103,44 +103,13 @@ h1, h2 { margin: 0; }
   border-radius: 50%;
   background: currentColor;
 }
-.admin-nav__item:not(.is-disabled):not(.is-active):hover {
+.admin-nav__item:not(.is-active):hover {
   color: var(--fp-white);
   background: rgba(255,255,255,.04);
 }
 .admin-nav__item.is-active {
   color: var(--fp-green);
   background: rgba(0,255,179,.08);
-}
-.admin-nav__group-label {
-  margin: 16px 0 4px;
-  padding: 0 12px;
-  color: #3a4d47;
-  font-size: .64rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.admin-nav__item.is-flag-enabled {
-  color: var(--fp-cyan);
-  cursor: default;
-}
-.admin-nav__item.is-flag-enabled em {
-  color: #04150f;
-  background: var(--fp-cyan);
-}
-.admin-nav__item.is-disabled {
-  justify-content: space-between;
-  color: #4c635b;
-  cursor: default;
-}
-.admin-nav__item.is-disabled em {
-  font-style: normal;
-  font-size: .6rem;
-  letter-spacing: .04em;
-  color: #3a4d47;
-  background: rgba(255,255,255,.04);
-  padding: 3px 7px;
-  border-radius: 6px;
 }
 
 .admin-sidebar__exit {
@@ -275,52 +244,6 @@ h1, h2 { margin: 0; }
   color: #5d7269;
   font-size: .82rem;
 }
-
-.admin-flags__intro {
-  margin: 0 0 14px;
-  color: #9fb3ac;
-  font-size: .82rem;
-  line-height: 1.6;
-}
-.admin-flags { list-style: none; margin: 0; padding: 0; }
-.admin-flags li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 11px 0;
-  border-top: 1px solid rgba(255,255,255,.06);
-  font-size: .85rem;
-}
-.admin-flags li:first-child { border-top: 0; }
-.admin-flag__name { color: var(--fp-white); }
-
-.admin-flag__switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 22px;
-  flex: 0 0 auto;
-}
-.admin-flag__switch input { position: absolute; opacity: 0; width: 0; height: 0; }
-.admin-flag__switch span {
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  background: rgba(255,255,255,.12);
-  transition: background .2s ease;
-}
-.admin-flag__switch span::before {
-  content: '';
-  position: absolute;
-  left: 3px; top: 3px;
-  width: 16px; height: 16px;
-  border-radius: 50%;
-  background: var(--fp-white);
-  transition: transform .2s ease;
-}
-.admin-flag__switch input:checked + span { background: var(--fp-green); }
-.admin-flag__switch input:checked + span::before { transform: translateX(18px); background: #04150f; }
 
 @media (max-width: 860px) {
   .admin-app { grid-template-columns: 1fr; }

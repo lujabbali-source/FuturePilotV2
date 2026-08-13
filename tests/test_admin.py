@@ -1,5 +1,5 @@
-"""Autorizacion del panel de administrador y sus herramientas (Theme Lab,
-feature flags, System Health, reparaciones, audit log)."""
+"""Autorizacion del panel de administrador y sus herramientas (System
+Health, reparaciones, audit log), y lo que se retiro de el."""
 
 import pytest
 
@@ -71,18 +71,23 @@ def test_no_page_can_be_framed(client):
     assert "frame-src 'none'" in csp
 
 
-def test_flag_toggle_round_trip(client, admin_headers):
-    r = client.put("/api/v1/admin/flags/admin_logs", headers=admin_headers, json={"enabled": True})
-    assert r.status_code == 200
-    assert client.get("/api/flags").json()["flags"]["admin_logs"] is True
+def test_the_feature_flags_are_gone(client, admin_headers):
+    """Los feature flags se retiraron. Once banderas, un endpoint publico,
+    otro de admin y un fichero de configuracion, y lo unico que conseguia
+    activar una era cambiar la etiqueta de un <span> del sidebar de
+    "Proximamente" a "Activo (beta)". No habia pagina detras de ninguna."""
+    assert client.get("/api/flags").status_code == 404
+    assert client.put(
+        "/api/v1/admin/flags/admin_logs", headers=admin_headers, json={"enabled": True}
+    ).status_code == 404
 
-    client.put("/api/v1/admin/flags/admin_logs", headers=admin_headers, json={"enabled": False})
-    assert client.get("/api/flags").json()["flags"]["admin_logs"] is False
 
-
-def test_flag_toggle_rejects_unknown_key(client, admin_headers):
-    r = client.put("/api/v1/admin/flags/not_a_real_flag", headers=admin_headers, json={"enabled": True})
-    assert r.status_code == 404
+def test_the_admin_sidebar_only_lists_pages_that_exist(client):
+    """Con los flags se fueron los once items "Proximamente": eran <span>
+    sin enlace ni pagina detras. Un menu lleno de promesas envejece mal."""
+    html = client.get("/admin").text
+    assert "Próximamente" not in html
+    assert "data-flag-item" not in html
 
 
 def test_system_health_reports_real_status(client, admin_headers):
@@ -124,16 +129,16 @@ def test_repair_unknown_action_404s(client, admin_headers):
 
 
 def test_admin_actions_are_audited(client, admin_headers):
-    # Antes se auditaba con theme.save/theme.reset; al retirarse el Theme
-    # Lab, las acciones que quedan son los flags y las reparaciones.
-    client.put("/api/v1/admin/flags/admin_logs", headers=admin_headers, json={"enabled": True})
+    # Se auditaba con theme.save y flag.update; retirados el Theme Lab y los
+    # feature flags, las unicas acciones que quedan son las reparaciones.
     client.post("/api/v1/admin/repair/resync-admin", headers=admin_headers)
+    client.post("/api/v1/admin/repair/reload-data", headers=admin_headers)
 
     r = client.get("/api/v1/admin/audit-log", headers=admin_headers)
     assert r.status_code == 200
     actions = [entry["action"] for entry in r.json()["entries"]]
-    assert "flag.update" in actions
     assert "repair.resync-admin" in actions
+    assert "repair.reload-data" in actions
 
 
 ALL_PAGES = [
