@@ -333,31 +333,90 @@ PASSPORT_COUNTRY_FLAGS = {
 PASSPORT_CLIENT_EVENT_TYPES = {"university_viewed", "country_explored", "city_explored"}
 
 
+# Cuantos paises distintos hay que explorar para ganarse el sello de
+# continente. Con 22 paises en el catalogo, 8 es suficiente recorrido para
+# que signifique algo y bastante poco para ser alcanzable.
+CONTINENT_STAMP_THRESHOLD = 8
+
+
 def _award_passport_stamps(
     user_id: int, event_type: str, subject_id: Optional[str], subject_label: Optional[str]
-) -> List[Dict[str, str]]:
-    """Reglas fijas evento -> sello. award_passport_stamp ya es idempotente
-    (UNIQUE en la tabla), asi que esta funcion solo devuelve los sellos
-    otorgados de verdad AHORA - lo que el frontend usa para decidir que
-    sello animar "estampandose", sin repetir la animacion en visitas
-    posteriores al mismo pais/accion."""
-    newly_awarded: List[Dict[str, str]] = []
+) -> List[Dict[str, Any]]:
+    """Reglas fijas evento -> sello.
 
-    def try_award(key: str, label: str) -> None:
-        if users_store.award_passport_stamp(user_id, key, label):
-            newly_awarded.append({"key": key, "label": label})
+    Cada sello lleva su TIPO y su SUJETO, no solo una etiqueta: el pasaporte
+    dibuja un diseño distinto para una ciudad, una universidad, un pais o un
+    hito, y necesita saber cual es cual. La rareza ordena la coleccion sin
+    convertirla en un juego: lo comun es lo que se hace a diario (visitar una
+    ciudad), lo raro es lo que exige recorrido (un continente).
+
+    award_passport_stamp es idempotente (UNIQUE en la tabla), asi que esta
+    funcion solo devuelve los sellos otorgados de verdad AHORA - lo que el
+    frontend usa para decidir cual animar "estampandose", sin repetir la
+    animacion en visitas posteriores al mismo sitio.
+    """
+    newly_awarded: List[Dict[str, Any]] = []
+
+    def try_award(key: str, label: str, **kwargs) -> None:
+        if users_store.award_passport_stamp(user_id, key, label, **kwargs):
+            newly_awarded.append({"key": key, "label": label, **kwargs})
+
+    nombre = subject_label or (subject_id or "").replace("-", " ").title()
 
     if event_type == "test_completed":
-        try_award("test_completed", "📚 Terminó el test")
+        try_award(
+            "test_completed", "Perfil vocacional",
+            stamp_type="assessment", rarity="milestone",
+        )
     elif event_type == "roadmap_created":
-        try_award("roadmap_created", "🗺️ Creó su roadmap")
+        try_award(
+            "roadmap_created", "Roadmap creado",
+            stamp_type="roadmap", rarity="milestone",
+        )
     elif event_type == "ai_conversation":
-        try_award("ai_chat", "🤖 Habló con la IA")
-    elif event_type == "university_viewed":
-        try_award("university_visited", "🎓 Visitó una universidad")
+        try_award(
+            "ai_chat", "Primera conversación",
+            stamp_type="mentor", rarity="common",
+        )
+    elif event_type == "university_viewed" and subject_id:
+        # Un sello POR universidad, no uno generico. Antes existia
+        # "university_visited" a secas: daba igual descubrir una o treinta.
+        try_award(
+            f"univ_{subject_id}", nombre,
+            stamp_type="university", subject_id=subject_id, subject_label=nombre,
+            rarity="common",
+        )
+    elif event_type == "city_explored" and subject_id:
+        # city_explored ya se registraba como evento pero no daba ningun
+        # sello: el recorrido por ciudades no dejaba huella en el pasaporte.
+        try_award(
+            f"city_{subject_id}", nombre,
+            stamp_type="city", subject_id=subject_id, subject_label=nombre,
+            rarity="common",
+        )
     elif event_type == "country_explored" and subject_id:
-        flag = PASSPORT_COUNTRY_FLAGS.get(subject_id, "🌍")
-        try_award(f"country_{subject_id}", f"{flag} Exploró {subject_label or subject_id.title()}")
+        try_award(
+            f"country_{subject_id}", nombre,
+            stamp_type="country", subject_id=subject_id, subject_label=nombre,
+            rarity="special",
+            metadata={"flag": PASSPORT_COUNTRY_FLAGS.get(subject_id, "🌍")},
+        )
+        # El sello de continente no tiene evento propio: se gana al cruzar
+        # un umbral de paises, asi que se comprueba justo despues de sumar
+        # uno nuevo.
+        explorados = users_store.passport_progress(user_id)["countries_explored"]
+        if explorados >= CONTINENT_STAMP_THRESHOLD:
+            try_award(
+                "continent_americas", "Américas",
+                stamp_type="continent", subject_id="americas", subject_label="Américas",
+                rarity="rare", metadata={"countries": explorados},
+            )
+    elif event_type == "academic_goal_set" and subject_label:
+        try_award(
+            "academic_goal", subject_label,
+            stamp_type="academic_goal", subject_id=subject_id,
+            subject_label=subject_label, rarity="milestone",
+        )
 
     return newly_awarded
 
@@ -835,6 +894,11 @@ def get_passport(current_user: dict = Depends(get_current_user_required)):
             "name": current_user.get("name"),
             "email": current_user["email"],
             "member_since": current_user["created_at"],
+            # Identificador visible del pasaporte. Se deriva del id real de
+            # la cuenta en vez de generarse en el cliente para que sea el
+            # mismo en cualquier dispositivo, y va con formato de documento
+            # porque es lo que se imprime en la cubierta.
+            "passport_id": f"FP-{current_user['id']:06d}",
         },
         "profile": profile,
         "vocational": vocational,
@@ -865,7 +929,23 @@ def update_passport_goals_route(
     current_user: dict = Depends(get_current_user_required),
 ):
     profile = users_store.update_passport_goals(current_user["id"], payload.goals)
-    return {"success": True, "profile": profile}
+
+    # El sello de meta academica se gana al fijar una universidad objetivo,
+    # y se emite AQUI - no desde el cliente - porque solo el servidor sabe
+    # que la meta quedo guardada de verdad. Marcar una meta es una decision
+    # real del estudiante, no una pantalla que abrio.
+    new_stamps: List[Dict[str, Any]] = []
+    universidad = (payload.goals.get("dream_university") or "").strip()
+    if universidad:
+        if not users_store.has_passport_event(current_user["id"], "academic_goal_set"):
+            users_store.record_passport_event(
+                current_user["id"], "academic_goal_set", None, universidad
+            )
+        new_stamps = _award_passport_stamps(
+            current_user["id"], "academic_goal_set", None, universidad
+        )
+
+    return {"success": True, "profile": profile, "new_stamps": new_stamps}
 
 
 @app.post("/api/v1/passport/events", status_code=status.HTTP_200_OK)

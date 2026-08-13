@@ -101,6 +101,17 @@ CREATE TABLE IF NOT EXISTS passport_stamps (
     user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     stamp_key TEXT NOT NULL,
     stamp_label TEXT NOT NULL,
+    -- Que CLASE de sello es (city, university, country, continent, roadmap,
+    -- academic_goal, milestone...). El pasaporte dibuja un diseño distinto
+    -- por tipo, asi que no basta con la etiqueta: "Bogotá" y "MIT" son dos
+    -- sellos con forma, marco e iconografia diferentes.
+    stamp_type TEXT NOT NULL DEFAULT 'milestone',
+    -- A que se refiere: id de ciudad, de pais, de universidad. Permite
+    -- volver al sujeto (enlazar al globo) y evita depender del texto.
+    subject_id TEXT,
+    subject_label TEXT,
+    rarity TEXT NOT NULL DEFAULT 'common',
+    metadata_json TEXT,
     earned_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(user_id, stamp_key)
 );
@@ -180,6 +191,7 @@ class UsersStore:
             connection.executescript(SCHEMA)
             self._ensure_admin_column(connection)
             self._ensure_results_json_column(connection)
+            self._ensure_stamp_columns(connection)
 
     @staticmethod
     def _ensure_admin_column(connection: sqlite3.Connection) -> None:
@@ -195,6 +207,37 @@ class UsersStore:
         columns = {row["name"] for row in connection.execute("PRAGMA table_info(test_results)")}
         if "results_json" not in columns:
             connection.execute("ALTER TABLE test_results ADD COLUMN results_json TEXT")
+
+    @staticmethod
+    def _ensure_stamp_columns(connection: sqlite3.Connection) -> None:
+        """Los sellos empezaron siendo solo clave + etiqueta. El pasaporte
+        necesita saber ademas de que tipo es cada uno, a que se refiere y
+        que rareza tiene, para poder dibujarlos distintos. Se migra en vez
+        de recrear la tabla: los sellos ya ganados no se pierden."""
+        columns = {row["name"] for row in connection.execute("PRAGMA table_info(passport_stamps)")}
+        nuevas = {
+            "stamp_type": "TEXT NOT NULL DEFAULT 'milestone'",
+            "subject_id": "TEXT",
+            "subject_label": "TEXT",
+            "rarity": "TEXT NOT NULL DEFAULT 'common'",
+            "metadata_json": "TEXT",
+        }
+        for nombre, definicion in nuevas.items():
+            if nombre not in columns:
+                connection.execute(f"ALTER TABLE passport_stamps ADD COLUMN {nombre} {definicion}")
+
+        # Los sellos anteriores a la migracion quedaron con el tipo por
+        # defecto. Se deduce de la clave, que ya codificaba la intencion.
+        if "stamp_type" not in columns:
+            connection.execute("""
+                UPDATE passport_stamps SET stamp_type = CASE
+                    WHEN stamp_key LIKE 'country_%'   THEN 'country'
+                    WHEN stamp_key LIKE 'city_%'      THEN 'city'
+                    WHEN stamp_key LIKE 'univ_%'      THEN 'university'
+                    WHEN stamp_key = 'roadmap_created' THEN 'roadmap'
+                    ELSE 'milestone'
+                END
+            """)
 
     def register(self, email: str, password: str, name: str | None = None) -> dict:
         normalized_email = email.strip().lower()
@@ -620,26 +663,70 @@ class UsersStore:
         with self.connect() as connection:
             return connection.execute(query + " LIMIT 1", params).fetchone() is not None
 
-    def award_passport_stamp(self, user_id: int, stamp_key: str, stamp_label: str) -> bool:
+    def award_passport_stamp(
+        self,
+        user_id: int,
+        stamp_key: str,
+        stamp_label: str,
+        *,
+        stamp_type: str = "milestone",
+        subject_id: str | None = None,
+        subject_label: str | None = None,
+        rarity: str = "common",
+        metadata: dict | None = None,
+    ) -> bool:
         """True solo si el sello se otorga por primera vez ahora - la UI usa
-        esto para decidir si anima el "sello estampandose" o no."""
+        esto para decidir si anima el "sello estampandose" o no.
+
+        stamp_type y rarity determinan como se DIBUJA el sello en el
+        pasaporte (forma, marco, iconografia), no solo que texto lleva.
+        subject_id conserva a que ciudad/pais/universidad se refiere, para
+        poder volver a ese sujeto sin adivinarlo desde la etiqueta.
+        """
         with self.connect() as connection:
             try:
                 connection.execute(
-                    "INSERT INTO passport_stamps (user_id, stamp_key, stamp_label) VALUES (?, ?, ?)",
-                    (user_id, stamp_key, stamp_label),
+                    """
+                    INSERT INTO passport_stamps
+                        (user_id, stamp_key, stamp_label, stamp_type,
+                         subject_id, subject_label, rarity, metadata_json)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        user_id, stamp_key, stamp_label, stamp_type,
+                        subject_id, subject_label, rarity,
+                        json.dumps(metadata) if metadata else None,
+                    ),
                 )
                 return True
             except sqlite3.IntegrityError:
                 return False
 
     def list_passport_stamps(self, user_id: int) -> list[dict]:
+        """Del mas antiguo al mas reciente: un pasaporte se llena por orden
+        de viaje, y las paginas se leen igual."""
         with self.connect() as connection:
             rows = connection.execute(
-                "SELECT stamp_key, stamp_label, earned_at FROM passport_stamps WHERE user_id = ? ORDER BY earned_at DESC",
+                """
+                SELECT stamp_key, stamp_label, stamp_type, subject_id,
+                       subject_label, rarity, metadata_json, earned_at
+                FROM passport_stamps WHERE user_id = ? ORDER BY earned_at ASC, id ASC
+                """,
                 (user_id,),
             ).fetchall()
-        return [{"key": row["stamp_key"], "label": row["stamp_label"], "earned_at": row["earned_at"]} for row in rows]
+        return [
+            {
+                "key": row["stamp_key"],
+                "label": row["stamp_label"],
+                "type": row["stamp_type"] or "milestone",
+                "subject_id": row["subject_id"],
+                "subject_label": row["subject_label"],
+                "rarity": row["rarity"] or "common",
+                "metadata": json.loads(row["metadata_json"]) if row["metadata_json"] else {},
+                "earned_at": row["earned_at"],
+            }
+            for row in rows
+        ]
 
     def list_passport_events(self, user_id: int, limit: int = 20) -> list[dict]:
         with self.connect() as connection:

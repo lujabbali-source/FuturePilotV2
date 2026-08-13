@@ -9,118 +9,74 @@
 </head>
 <body>
 
-  <div class="passport-bg" aria-hidden="true"></div>
+  <div class="fp-bg" aria-hidden="true"></div>
 
-  <div class="passport-gate" id="passportGate">
-    <div class="passport-gate__spinner" aria-hidden="true"></div>
+  <div class="fp-gate" id="passportGate">
+    <div class="fp-gate__spinner" aria-hidden="true"></div>
     <p>Abriendo tu pasaporte…</p>
   </div>
 
-  <main class="passport-shell" id="passportShell" hidden>
+  <main class="fp-passport" id="passportShell" hidden>
 
-    
-    <!-- Portada -->
-    <section class="passport-cover">
-      <div class="passport-cover__glow" aria-hidden="true"></div>
-      <p class="passport-eyebrow"><span></span> PASAPORTE FUTUREPILOT</p>
-      <div class="passport-cover__identity">
-        <div class="passport-photo" id="passportPhoto">
-          <span id="passportPhotoInitial">?</span>
-          <img id="passportPhotoImg" alt="" hidden>
-          <label class="passport-photo__edit">
-            <input type="file" id="photoInput" accept="image/*" hidden>
-            <span>Cambiar foto</span>
-          </label>
+    <!-- El escenario aporta la perspectiva: sin ella el giro de la cubierta
+         seria un simple encogimiento horizontal, no una tapa abriendose. -->
+    <div class="fp-stage">
+      <div class="fp-book" id="book" data-state="closed">
+
+        <!-- PORTADA. Gira sobre su canto izquierdo para descubrir el
+             interior. El reverso (fp-cover__inner) es la guarda que queda a
+             la vista con el libro abierto. -->
+        <button type="button" class="fp-cover" id="cover" aria-expanded="false"
+                aria-controls="spread" aria-label="Abrir el pasaporte">
+          <span class="fp-cover__face fp-cover__face--front">
+            <span class="fp-cover__weave" aria-hidden="true"></span>
+            <span class="fp-cover__circuit" aria-hidden="true"></span>
+
+            <span class="fp-cover__crest" aria-hidden="true">
+              <img src="/Frontend/futurepilot-logo-transparent.png" alt="">
+            </span>
+
+            <span class="fp-cover__wordmark">
+              <em>FUTUREPILOT</em>
+              <i>PASSPORT</i>
+            </span>
+
+            <span class="fp-cover__holder">
+              <b id="coverName">—</b>
+              <span class="fp-cover__ids">
+                <span><small>ID</small><code id="coverId">—</code></span>
+                <span><small>EMITIDO</small><code id="coverIssued">—</code></span>
+              </span>
+            </span>
+
+            <span class="fp-cover__hint" id="coverHint">Toca para abrir</span>
+          </span>
+
+          <span class="fp-cover__face fp-cover__face--inner" aria-hidden="true">
+            <span class="fp-cover__guard"></span>
+          </span>
+        </button>
+
+        <!-- INTERIOR. Dos paginas en escritorio, una en movil. -->
+        <div class="fp-spread" id="spread">
+          <section class="fp-page fp-page--left" id="pageLeft" aria-live="polite"></section>
+          <section class="fp-page fp-page--right" id="pageRight" aria-live="polite"></section>
+          <div class="fp-spread__gutter" aria-hidden="true"></div>
         </div>
-        <div>
-          <h1 id="passportName">Explorador FuturePilot</h1>
-          <p class="passport-cover__meta" id="passportMeta">Miembro desde —</p>
-          <p class="passport-cover__stamps" id="passportStampCount">0 sellos coleccionados</p>
-        </div>
+
       </div>
-      <p class="passport-quote">"Cada decisión que tomas hoy escribe una nueva página de tu futuro."</p>
-    </section>
-
-    <!-- Info personal + Objetivos -->
-    <div class="passport-grid">
-      <section class="passport-card" id="cardProfile">
-        <div class="passport-card__head">
-          <h2>Información personal</h2>
-          <button type="button" class="passport-edit-btn" data-edit="profile">Editar</button>
-        </div>
-        <div class="passport-card__view" id="profileView">
-          <div class="passport-field"><span>País</span><strong id="viewCountry">—</strong></div>
-          <div class="passport-field"><span>Ciudad</span><strong id="viewCity">—</strong></div>
-          <div class="passport-field"><span>Idiomas</span><strong id="viewLanguages">—</strong></div>
-        </div>
-        <form class="passport-card__form" id="profileForm" hidden>
-          <label>País <input type="text" name="country" placeholder="Colombia"></label>
-          <label>Ciudad <input type="text" name="city" placeholder="Bogotá"></label>
-          <label>Idiomas <span class="passport-hint">separados por coma</span> <input type="text" name="languages" placeholder="Español, Inglés"></label>
-          <div class="passport-card__actions">
-            <button type="submit" class="passport-save-btn">Guardar</button>
-            <button type="button" class="passport-cancel-btn" data-cancel="profile">Cancelar</button>
-          </div>
-        </form>
-      </section>
-
-      <section class="passport-card" id="cardGoals">
-        <div class="passport-card__head">
-          <h2>Objetivos</h2>
-          <button type="button" class="passport-edit-btn" data-edit="goals">Editar</button>
-        </div>
-        <div class="passport-card__view" id="goalsView">
-          <div class="passport-field"><span>Universidad soñada</span><strong id="viewDreamUniversity">—</strong></div>
-          <div class="passport-field"><span>Carrera deseada</span><strong id="viewDesiredCareer">—</strong></div>
-          <div class="passport-field"><span>País para estudiar</span><strong id="viewTargetCountry">—</strong></div>
-          <div class="passport-field"><span>Idiomas por aprender</span><strong id="viewLanguagesToLearn">—</strong></div>
-          <div class="passport-field passport-field--wide"><span>Metas personales</span><strong id="viewPersonalGoals">—</strong></div>
-        </div>
-        <form class="passport-card__form" id="goalsForm" hidden>
-          <label>Universidad soñada <input type="text" name="dream_university" placeholder="MIT"></label>
-          <label>Carrera deseada <input type="text" name="desired_career" placeholder="Ingeniería de Software"></label>
-          <label>País para estudiar <input type="text" name="target_country" placeholder="Canadá"></label>
-          <label>Idiomas por aprender <input type="text" name="languages_to_learn" placeholder="Francés, Japonés"></label>
-          <label>Metas personales <textarea name="personal_goals" rows="3" placeholder="Lo que quieres lograr..."></textarea></label>
-          <div class="passport-card__actions">
-            <button type="submit" class="passport-save-btn">Guardar</button>
-            <button type="button" class="passport-cancel-btn" data-cancel="goals">Cancelar</button>
-          </div>
-        </form>
-      </section>
     </div>
 
-    <!-- Perfil vocacional -->
-    <section class="passport-card passport-card--wide" id="cardVocational">
-      <div class="passport-card__head">
-        <h2>Perfil vocacional</h2>
-      </div>
-      <div id="vocationalContent">
-        <p class="passport-empty">Todavía no completaste el test. Hazlo para que tu pasaporte guarde tu perfil.</p>
-        <a href="/assessment" class="passport-save-btn passport-cta-btn">Hacer el test ahora <span>→</span></a>
-      </div>
-    </section>
+    <!-- Navegacion y salida. Siempre visibles con el libro abierto: nadie
+         debe quedarse atrapado dentro de la experiencia. -->
+    <nav class="fp-controls" id="controls" hidden>
+      <button type="button" class="fp-controls__btn" id="prevPage" aria-label="Página anterior">←</button>
+      <span class="fp-controls__meta" id="pageIndicator">—</span>
+      <button type="button" class="fp-controls__btn" id="nextPage" aria-label="Página siguiente">→</button>
+      <button type="button" class="fp-controls__close" id="closeBook">Cerrar pasaporte</button>
+    </nav>
 
-    <!-- Progreso -->
-    <section class="passport-progress">
-      <h2>Tu recorrido hasta ahora</h2>
-      <div class="passport-stats" id="passportStats">
-        <div class="passport-stat"><strong id="statTests">0</strong><span>Tests realizados</span></div>
-        <div class="passport-stat"><strong id="statRoadmaps">0</strong><span>Roadmaps creados</span></div>
-        <div class="passport-stat"><strong id="statUniversities">0</strong><span>Universidades exploradas</span></div>
-        <div class="passport-stat"><strong id="statCountries">0</strong><span>Países visitados</span></div>
-        <div class="passport-stat"><strong id="statCities">0</strong><span>Ciudades exploradas</span></div>
-        <div class="passport-stat"><strong id="statConversations">0</strong><span>Conversaciones con la IA</span></div>
-      </div>
-    </section>
-
-    <!-- Sellos -->
-    <section class="passport-stamps-section">
-      <h2>Sellos del pasaporte</h2>
-      <p class="passport-stamps-intro">Cada sello marca un paso real en tu viaje. Sigue explorando para completar la colección.</p>
-      <div class="passport-stamps-grid" id="stampsGrid"></div>
-    </section>
-
+    <a class="fp-exit" href="/">← Volver al sitio</a>
   </main>
 
   <script type="module" src="/src/passport/main.js"></script>
