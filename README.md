@@ -51,7 +51,7 @@ El backend debe estar levantado en paralelo.
 python -m pytest
 ```
 
-91 tests de integración sobre la API real (auth, admin, assessment, mentor, pasaporte). Usan una
+90 tests de integración sobre la API real (auth, admin, assessment, mentor, pasaporte). Usan una
 base SQLite temporal: **nunca tocan `backend/data/users.sqlite3`**.
 
 ---
@@ -93,7 +93,7 @@ backend/                 Librería de datos, no arranca ningún servidor propio
 web/                     TODO el frontend (Vite). Un .html por página = una entrada:
   index · assessment · login · reset-password · passport · journey
   flightplan · careers · terms · privacy · globe
-  admin-dashboard · admin-login · theme-lab · system-health
+  admin-dashboard · admin-login · system-health
   src/<página>/            módulos ES de cada página
   src/shared/              módulos compartidos (i18n, tema, conector API, claim…)
   src/database/countries/  datos de países y ciudades curados a mano

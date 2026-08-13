@@ -20,7 +20,7 @@
 > - ✅ **Fase 5 — Cerrar la consolidación: COMPLETADA.** Un solo i18n, cero globales `window.*`,
 >   y la CSP cerrada del todo: **ni `script-src` ni `style-src` admiten `'unsafe-inline'`**.
 >
-> **Suite de tests: 77 pasan** (38 originales + 39 añadidos).
+> **Suite de tests: 90 pasan** (38 originales + 52 añadidos).
 > El análisis de las secciones §1-§6 describe el estado **previo** a estas correcciones y se
 > conserva como registro de la auditoría.
 
@@ -69,9 +69,9 @@ consolidar el frontend sobre el Vite que ya existe, de forma incremental.
 | `futurepilot-IA/ai_engine.py` | Motor cognitivo rule-based: percepción → perfil → razonamiento → decisión → roadmap. Incluye `MentorEngine` (chat) y memoria persistente por estudiante en JSON con file-locking | Python stdlib |
 | `futurepilot-IA/data/` | **Fuente única de verdad**: `questions.json` (50), `careers.json` (73) | JSON |
 | `backend/users_store.py` | Capa de datos SQLite: usuarios, sesiones, resets, resultados, pasaporte, auditoría admin | sqlite3 stdlib |
-| `backend/rate_limiter.py`, `mailer.py`, `config_store.py` | Rate limiting en memoria, SMTP opcional, config JSON para Theme Lab y feature flags | stdlib |
+| `backend/rate_limiter.py`, `mailer.py`, `config_store.py` | Rate limiting en memoria, SMTP opcional, config JSON para los feature flags | stdlib |
 | `Frontend/` | Sitio del estudiante: landing, test, carreras, journey, flightplan, pasaporte, login, legales | HTML/CSS/JS vanilla |
-| `Frontend/admin/` | Panel de administración: dashboard, login, Theme Lab, System Health | HTML/CSS/JS vanilla |
+| `Frontend/admin/` | Panel de administración: dashboard, login, System Health | HTML/CSS/JS vanilla |
 | `web/` | Globo 3D interactivo montado en `/globe` | React 19 + Vite 8 + three.js |
 | `tests/` | 38 tests de integración sobre la API (auth, admin, assessment, mentor, pasaporte) | pytest |
 
@@ -129,8 +129,8 @@ consolidar el frontend sobre el Vite que ya existe, de forma incremental.
   ▼
   /admin ──── GET /api/v1/admin/me (403 si no es admin) ──► desbloquea el shell
   │      ──── GET /api/v1/admin/dashboard ──► métricas, top carreras/países
-  ├──► /admin/theme-lab    ──► PUT/DELETE /api/v1/admin/theme (8 categorías de color)
   ├──► /admin/system-health ──► GET /api/v1/admin/health (9 chequeos reales)
+  │    (el Theme Lab se retiró: ver §Retirados)
   │                          ──► POST /api/v1/admin/repair/{reload-data|resync-admin}
   └──► feature flags        ──► PUT /api/v1/admin/flags/{key}
 ```
@@ -835,3 +835,28 @@ la CSP**. Es decir: la política está de verdad activa, y la vista previa del T
 dejado de funcionar si no se hubiera convertido.
 
 El documento sirve ahora **0 etiquetas `<style>`** y 0 atributos `style=`.
+
+---
+
+## Retirados
+
+Cosas que llegaron a funcionar y se quitaron igualmente, porque el coste de
+mantenerlas superaba lo que aportaban.
+
+### Theme Lab
+
+Un editor en el panel de administración para repintar los colores del sitio, con
+vista previa en vivo sobre un `<iframe>` de la propia landing. Funcionaba. El
+problema es que **no acercaba a ningún estudiante a elegir carrera**, y a cambio:
+
+- metía una petición pública (`GET /api/theme`) en **cada carga de cada página**,
+  para un tema que nadie había guardado;
+- obligaba a la CSP a permitir `frame-src`/`frame-ancestors` desde el mismo
+  origen, solo por esa vista previa;
+- arrastraba dos endpoints de escritura, un fichero de configuración, un
+  cargador en el bundle compartido y su propia página, CSS y tests.
+
+Al retirarlo, `frame-src` y `frame-ancestors` pasaron a `'none'`: sin ningún
+iframe en el sitio, el clickjacking queda cerrado del todo en vez de permitido
+desde el mismo origen. Los colores siguen viviendo donde siempre estuvieron de
+verdad, en las variables `:root` de `Frontend/style.css`.

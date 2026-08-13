@@ -1,5 +1,4 @@
 // Punto de entrada de /journey.
-import "../shared/theme-loader.js";
 import "../shared/site-header.js";
 import "../shared/i18next.js";
 import "../shared/passport-stamp-toast.js";

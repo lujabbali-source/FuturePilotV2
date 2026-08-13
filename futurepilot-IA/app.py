@@ -139,16 +139,19 @@ app.add_middleware(
 # --------------------------------------------------------------------------
 # Cabeceras de seguridad en cada respuesta. script-src ya NO necesita
 # 'unsafe-inline': todas las paginas se sirven compiladas desde web/ y
-# ninguna trae scripts inline. frame-ancestors/frame-src usan 'self' (no
-# DENY) porque el Theme Lab del admin embebe la propia landing page en un
-# <iframe> para la vista previa en vivo.
+# ninguna trae scripts inline.
+#
+# frame-src y frame-ancestors pasaron de 'self' a 'none' al retirarse el
+# Theme Lab, que era lo unico que embebia una pagina propia en un <iframe>
+# (la vista previa del tema). Sin ningun iframe en el sitio, 'none' cierra
+# el clickjacking del todo en vez de permitirlo desde el mismo origen.
 # --------------------------------------------------------------------------
 def _build_csp(*, allow_inline_scripts: bool) -> str:
     # Ni script-src ni style-src necesitan ya 'unsafe-inline'. El sitio no
     # tiene un solo <script> ni un solo <style> inline: todo se sirve
     # compilado desde web/. Lo que sigue siendo dinamico - el ancho de las
-    # barras, los colores del Theme Lab - se aplica con CSSOM
-    # (element.style / setProperty), que la CSP no gobierna.
+    # barras de progreso - se aplica con CSSOM (element.style /
+    # setProperty), que la CSP no gobierna.
     #
     # El parametro se conserva porque los tests construyen las dos
     # politicas para comprobar que la permisiva ya no se usa en ninguna ruta.
@@ -160,8 +163,8 @@ def _build_csp(*, allow_inline_scripts: bool) -> str:
         "font-src 'self' https://fonts.gstatic.com; "
         "img-src 'self' data:; "
         "connect-src 'self'; "
-        "frame-src 'self'; "
-        "frame-ancestors 'self'; "
+        "frame-src 'none'; "
+        "frame-ancestors 'none'; "
         "object-src 'none'; "
         "base-uri 'self'; "
         "form-action 'self'"
@@ -246,12 +249,11 @@ users_store = UsersStore(USERS_DB_PATH)
 users_store.sync_admin_email(ADMIN_EMAIL or None)
 
 # --------------------------------------------------------------------------
-# Configuracion editable desde el panel de administrador (Theme Lab, feature
-# flags) - JSON simple en backend/data/, leido del disco en cada peticion
-# (ver backend/config_store.py). Ausencia de archivo = valores por defecto,
+# Configuracion editable desde el panel de administrador (feature flags) -
+# JSON simple en backend/data/, leido del disco en cada peticion (ver
+# backend/config_store.py). Ausencia de archivo = valores por defecto,
 # nunca un error.
 # --------------------------------------------------------------------------
-THEME_CONFIG_PATH = REPO_ROOT / "backend" / "data" / "theme.json"
 FLAGS_CONFIG_PATH = REPO_ROOT / "backend" / "data" / "feature_flags.json"
 ADMIN_SETUP_PATH = REPO_ROOT / "backend" / "data" / "admin_setup.json"
 
@@ -310,14 +312,6 @@ def clear_admin_setup_token() -> None:
     nada y no tiene por que seguir en disco."""
     delete_json(ADMIN_SETUP_PATH)
 
-# Las 8 categorias de color que el Theme Lab puede sobreescribir, mapeadas
-# 1:1 a las variables CSS de Frontend/style.css (ver :root ahi). Sirven
-# tambien de validacion: PUT /api/v1/admin/theme rechaza cualquier clave
-# que no este en esta lista.
-THEME_COLOR_KEYS = [
-    "bg", "primary", "primary-rgb", "secondary", "secondary-rgb",
-    "accent", "button", "glow", "glow-rgb", "card-bg", "text", "text-muted",
-]
 
 # Secciones reservadas del sidebar del admin (ver admin-dashboard.html) que
 # todavia no tienen una herramienta real detras - el admin puede activarlas
@@ -390,12 +384,9 @@ def _award_passport_stamps(
 
 
 # --------------------------------------------------------------------------
-# Tema visual y feature flags - lectura publica (afectan a todo visitante,
-# no solo al admin), escritura protegida mas abajo bajo /api/v1/admin/*.
+# Feature flags - lectura publica (afectan a como se presenta el panel),
+# escritura protegida mas abajo bajo /api/v1/admin/*.
 # --------------------------------------------------------------------------
-@app.get("/api/theme", status_code=status.HTTP_200_OK)
-def get_active_theme():
-    return {"success": True, "colors": read_json(THEME_CONFIG_PATH, {})}
 
 
 @app.get("/api/flags", status_code=status.HTTP_200_OK)
@@ -530,11 +521,6 @@ def admin_dashboard_page():
 @app.get("/admin/login")
 def admin_login_page():
     return _web_page("admin-login.html")
-
-
-@app.get("/admin/theme-lab")
-def admin_theme_lab_page():
-    return _web_page("theme-lab.html")
 
 
 @app.get("/admin/system-health")
@@ -954,42 +940,6 @@ def admin_dashboard(current_admin: dict = Depends(get_current_admin_required)):
     }
 
 
-# --------------------------------------------------------------------------
-# Theme Lab - guarda un override de las 8 categorias de color de
-# Frontend/style.css. La vista previa en vivo (Frontend/admin/theme-lab.js)
-# es 100% client-side contra un <iframe> - nada de esto se llama hasta que
-# el admin pulsa "Guardar tema". GET /api/theme (publico, mas arriba) es lo
-# que hace que el cambio se vea para cualquier visitante real.
-# --------------------------------------------------------------------------
-class ThemeUpdateRequest(BaseModel):
-    colors: Dict[str, str] = Field(..., description="Mapa de categoria de color -> valor CSS")
-
-    @field_validator("colors")
-    @classmethod
-    def validate_keys(cls, value: Dict[str, str]) -> Dict[str, str]:
-        unknown = set(value) - set(THEME_COLOR_KEYS)
-        if unknown:
-            raise ValueError(f"Claves de color desconocidas: {', '.join(sorted(unknown))}")
-        return value
-
-
-@app.put("/api/v1/admin/theme", status_code=status.HTTP_200_OK)
-def update_theme(
-    payload: ThemeUpdateRequest,
-    current_admin: dict = Depends(get_current_admin_required),
-):
-    write_json(THEME_CONFIG_PATH, payload.colors)
-    users_store.record_admin_action(current_admin["id"], "theme.save", {"colors": payload.colors})
-    return {"success": True, "colors": payload.colors}
-
-
-@app.delete("/api/v1/admin/theme", status_code=status.HTTP_200_OK)
-def reset_theme(current_admin: dict = Depends(get_current_admin_required)):
-    """Restaura el tema original: borra el override, no escribe nada -
-    style.css vuelve a mandar con sus valores por defecto."""
-    delete_json(THEME_CONFIG_PATH)
-    users_store.record_admin_action(current_admin["id"], "theme.reset")
-    return {"success": True}
 
 
 # --------------------------------------------------------------------------

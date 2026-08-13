@@ -9,7 +9,6 @@
 // widget del mentor, el tema). Son los ultimos que quedan asi; el claim
 // del resultado y el conector de la API ya son imports normales, y app.js
 // los pide directamente.
-import "../shared/theme-loader.js";
 import "../shared/site-header.js";
 import "../shared/i18next.js";
 import "../shared/passport-stamp-toast.js";

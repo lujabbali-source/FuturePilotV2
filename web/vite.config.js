@@ -36,7 +36,6 @@ export default defineConfig({
         privacy: resolve(import.meta.dirname, 'privacy.html'),
         'admin-dashboard': resolve(import.meta.dirname, 'admin-dashboard.html'),
         'admin-login': resolve(import.meta.dirname, 'admin-login.html'),
-        'theme-lab': resolve(import.meta.dirname, 'theme-lab.html'),
         'system-health': resolve(import.meta.dirname, 'system-health.html'),
       },
     },

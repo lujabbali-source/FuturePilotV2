@@ -47,27 +47,28 @@ def test_admin_dashboard_metrics_are_real_counts(client, admin_headers, register
     assert after == before + 1
 
 
-def test_theme_save_read_reset_cycle(client, admin_headers):
-    r = client.put("/api/v1/admin/theme", headers=admin_headers, json={"colors": {"primary": "#123456"}})
-    assert r.status_code == 200
+def test_the_theme_lab_is_gone(client, admin_headers):
+    """El Theme Lab se retiro: dejaba al admin repintar el sitio, pero eso
+    no acercaba a ningun estudiante a elegir carrera, y a cambio metia un
+    endpoint publico (/api/theme) en CADA carga de pagina y obligaba a la
+    CSP a permitir iframes del mismo origen.
 
-    public = client.get("/api/theme").json()
-    assert public["colors"]["primary"] == "#123456"
-
-    r = client.delete("/api/v1/admin/theme", headers=admin_headers)
-    assert r.status_code == 200
-    assert client.get("/api/theme").json()["colors"] == {}
-
-
-def test_theme_rejects_unknown_color_keys(client, admin_headers):
-    r = client.put("/api/v1/admin/theme", headers=admin_headers, json={"colors": {"not_a_real_key": "#fff"}})
-    assert r.status_code == 422
+    Se comprueba que no quedan restos: una ruta huerfana que devuelva 500,
+    o un endpoint de escritura olvidado, es peor que la funcionalidad."""
+    assert client.get("/admin/theme-lab").status_code == 404
+    assert client.get("/api/theme").status_code == 404
+    # 404, no 405: la ruta no existe con ningun metodo.
+    assert client.put("/api/v1/admin/theme", headers=admin_headers, json={"colors": {}}).status_code == 404
+    assert client.delete("/api/v1/admin/theme", headers=admin_headers).status_code == 404
 
 
-def test_theme_write_requires_admin(client, register_and_login):
-    _, headers = register_and_login()
-    r = client.put("/api/v1/admin/theme", headers=headers, json={"colors": {"primary": "#000000"}})
-    assert r.status_code == 403
+def test_no_page_can_be_framed(client):
+    """frame-ancestors paso de 'self' a 'none' al irse el Theme Lab, que era
+    lo unico que embebia una pagina propia en un iframe. Sin iframes, 'none'
+    cierra el clickjacking del todo."""
+    csp = client.get("/").headers["content-security-policy"]
+    assert "frame-ancestors 'none'" in csp
+    assert "frame-src 'none'" in csp
 
 
 def test_flag_toggle_round_trip(client, admin_headers):
@@ -123,20 +124,22 @@ def test_repair_unknown_action_404s(client, admin_headers):
 
 
 def test_admin_actions_are_audited(client, admin_headers):
-    client.put("/api/v1/admin/theme", headers=admin_headers, json={"colors": {"primary": "#ABCDEF"}})
-    client.delete("/api/v1/admin/theme", headers=admin_headers)
+    # Antes se auditaba con theme.save/theme.reset; al retirarse el Theme
+    # Lab, las acciones que quedan son los flags y las reparaciones.
+    client.put("/api/v1/admin/flags/admin_logs", headers=admin_headers, json={"enabled": True})
+    client.post("/api/v1/admin/repair/resync-admin", headers=admin_headers)
 
     r = client.get("/api/v1/admin/audit-log", headers=admin_headers)
     assert r.status_code == 200
     actions = [entry["action"] for entry in r.json()["entries"]]
-    assert "theme.save" in actions
-    assert "theme.reset" in actions
+    assert "flag.update" in actions
+    assert "repair.resync-admin" in actions
 
 
 ALL_PAGES = [
     "/", "/assessment", "/globe", "/login", "/reset-password", "/passport",
     "/journey", "/flightplan", "/careers", "/terms", "/privacy",
-    "/admin", "/admin/login", "/admin/theme-lab", "/admin/system-health",
+    "/admin", "/admin/login", "/admin/system-health",
 ]
 
 
