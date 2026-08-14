@@ -1,3 +1,12 @@
+/* El atributo `hidden` tiene que ganar SIEMPRE.
+   Sin esto lo anula cualquier regla que fije `display` sobre la misma
+   clase, y el elemento se queda a la vista aunque el JS lo haya ocultado.
+   Paso justo eso: el indicador de carga y los controles de pagina llevaban
+   `hidden` puesto y seguian ocupando espacio, porque sus clases declaraban
+   `display: flex`. Es un fallo silencioso - nada avisa - asi que se
+   normaliza una vez aqui en vez de parchear clase por clase. */
+[hidden] { display: none !important; }
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
@@ -27,24 +36,10 @@ h1, h2 { margin: 0; }
 /* ==========================================================================
    Gate de carga - unico contenido visible hasta confirmar admin real.
    ========================================================================== */
-.admin-gate {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  min-height: 100vh;
-  color: var(--fp-muted);
-  font-size: .9rem;
-}
-.admin-gate__spinner {
-  width: 30px; height: 30px;
-  border-radius: 50%;
-  border: 2px solid rgba(0,255,179,.2);
-  border-top-color: var(--fp-green);
-  animation: admin-spin .8s linear infinite;
-}
-@keyframes admin-spin { to { transform: rotate(360deg); } }
+/* Hueco de verificacion: no pinta nada, solo evita que el panel aparezca
+   antes de confirmar la sesion de admin. */
+.admin-gate { min-height: 40vh; }
+ }
 
 /* ==========================================================================
    Layout general

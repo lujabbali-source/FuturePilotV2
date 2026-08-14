@@ -20,9 +20,6 @@ import { renderStamp, renderEmptySlot, applyStampQuirks } from "./stamps.js";
 // El cuerpo va dentro de una funcion con nombre porque necesita cortar
 // pronto (`return`) si no hay sesion.
 function main() {
-  const gate = document.getElementById("passportGate");
-  const shell = document.getElementById("passportShell");
-
   const token = localStorage.getItem("futurePilotAuthToken");
   if (!token) {
     window.location.href = "/login?mode=login";
@@ -523,8 +520,6 @@ function main() {
       window.location.href = "/login?mode=login";
       return;
     }
-    gate.hidden = true;
-    shell.hidden = false;
     renderCover(state.data);
     buildPages();
   }

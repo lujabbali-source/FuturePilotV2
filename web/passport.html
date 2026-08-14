@@ -11,12 +11,11 @@
 
   <div class="fp-bg" aria-hidden="true"></div>
 
-  <div class="fp-gate" id="passportGate">
-    <div class="fp-gate__spinner" aria-hidden="true"></div>
-    <p>Abriendo tu pasaporte…</p>
-  </div>
-
-  <main class="fp-passport" id="passportShell" hidden>
+  <!-- Sin indicador de carga: la cubierta es lo primero que se ve y no
+       necesita datos para dibujarse. El nombre y el ID se rellenan cuando
+       llega la respuesta, asi que no hay ni pantalla en blanco ni un
+       spinner parpadeando por unos milisegundos. -->
+  <main class="fp-passport" id="passportShell">
 
     <!-- El escenario aporta la perspectiva: sin ella el giro de la cubierta
          seria un simple encogimiento horizontal, no una tapa abriendose. -->

@@ -13,10 +13,11 @@
   <!-- Se muestra hasta que admin-dashboard.js confirme contra
        /api/v1/admin/me que el token guardado pertenece a un admin real.
        Ningun dato del panel se pinta antes de esa confirmacion. -->
-  <div class="admin-gate" id="adminGate">
-    <div class="admin-gate__spinner" aria-hidden="true"></div>
-    <p>Verificando acceso…</p>
-  </div>
+  <!-- Hueco de verificacion. Sigue existiendo porque es lo que impide que
+       el panel se pinte antes de confirmar contra /api/v1/admin/me, pero ya
+       no muestra nada: la comprobacion es local y tarda milisegundos, asi
+       que un spinner solo alcanzaba a parpadear. -->
+  <div class="admin-gate" id="adminGate" aria-hidden="true"></div>
 
   <div class="admin-app" id="adminApp" hidden>
 

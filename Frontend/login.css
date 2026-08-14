@@ -1,3 +1,12 @@
+/* El atributo `hidden` tiene que ganar SIEMPRE.
+   Sin esto lo anula cualquier regla que fije `display` sobre la misma
+   clase, y el elemento se queda a la vista aunque el JS lo haya ocultado.
+   Paso justo eso: el indicador de carga y los controles de pagina llevaban
+   `hidden` puesto y seguian ocupando espacio, porque sus clases declaraban
+   `display: flex`. Es un fallo silencioso - nada avisa - asi que se
+   normaliza una vez aqui en vez de parchear clase por clase. */
+[hidden] { display: none !important; }
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
@@ -281,7 +290,6 @@ svg { display: block; }
 .login-form .login-field:nth-of-type(2) { animation-delay: .24s; }
 .login-form .login-field:nth-of-type(3) { animation-delay: .3s; }
 
-.login-field--name[hidden] { display: none; }
 
 .login-field:focus-within {
   border-color: rgba(0,255,179,.6);

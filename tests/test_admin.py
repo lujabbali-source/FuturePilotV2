@@ -216,3 +216,29 @@ def test_no_page_ships_inline_handlers(client):
     for bundle in (Path(fp_app.WEB_DIST_DIR) / "assets").glob("*.js"):
         found = handlers.findall(bundle.read_text(encoding="utf-8", errors="ignore"))
         assert not found, f"{bundle.name} genera markup con manejador inline: {found[:3]}"
+
+
+def test_hidden_attribute_is_never_overridden(client):
+    """El atributo `hidden` solo vale `display: none` como estilo de agente de
+    usuario, asi que cualquier regla de autor que fije `display` sobre la misma
+    clase lo anula y el elemento sigue a la vista. Fallo silencioso: el JS cree
+    que lo oculto y nada avisa. Paso con el indicador de carga del pasaporte y
+    con sus controles de pagina, que seguian ocupando sitio con `hidden`
+    puesto. Por eso cada hoja que sirva una pagina con `hidden` en el markup
+    tiene que normalizarlo."""
+    import re
+    from pathlib import Path
+
+    import app as fp_app
+
+    normaliza = re.compile(r"\[hidden\][^{]*\{[^}]*display\s*:\s*none", re.I)
+    hojas = re.compile(r'<link[^>]+href="(/Frontend/[^"]+\.css)"')
+
+    for page in ("/", "/careers", "/assessment", "/passport", "/journey",
+                 "/flightplan", "/login", "/admin", "/system-health"):
+        html = client.get(page).text
+        if not re.search(r"\shidden(?=[\s>])", html):
+            continue
+        for href in hojas.findall(html):
+            css = (Path(fp_app.FRONTEND_DIR) / href[len("/Frontend/"):]).read_text(encoding="utf-8")
+            assert normaliza.search(css), f"{page}: {href} no neutraliza [hidden]"
