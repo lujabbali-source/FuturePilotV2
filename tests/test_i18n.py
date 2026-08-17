@@ -64,10 +64,109 @@ def test_ui_namespaces_have_the_same_keys_in_both_languages():
             keys |= flatten(value, f"{path}.") if isinstance(value, dict) else {path}
         return keys
 
-    for namespace in ("test.json", "common.json", "site.json"):
+    # Todos los namespaces, no una lista escrita a mano: uno nuevo tiene que
+    # quedar cubierto sin que nadie se acuerde de añadirlo aqui.
+    namespaces = sorted(p.name for p in (LOCALES / "es").glob("*.json"))
+    assert namespaces, "no se encontro ningun archivo de idioma"
+
+    for namespace in namespaces:
+        en_path = LOCALES / "en" / namespace
+        assert en_path.exists(), f"{namespace} existe en es pero no en en"
         es = flatten(json.loads((LOCALES / "es" / namespace).read_text(encoding="utf-8")))
-        en = flatten(json.loads((LOCALES / "en" / namespace).read_text(encoding="utf-8")))
+        en = flatten(json.loads(en_path.read_text(encoding="utf-8")))
         assert es == en, f"{namespace}: solo-es={sorted(es - en)} solo-en={sorted(en - es)}"
+
+
+def test_every_career_is_fully_translated(app_module):
+    """El catalogo venia con el titulo y la categoria en ingles y la
+    descripcion en castellano, asi que se veia mezclado en los DOS idiomas a
+    la vez. Media traduccion no se nota al programar y se nota mucho en
+    pantalla."""
+    for career in app_module.careers_db:
+        for field in ("title", "category", "description"):
+            assert career.get(field), f"{career['id']}: falta {field} en ingles"
+            assert career.get(f"{field}_es"), f"{career['id']}: falta {field}_es"
+
+
+def test_careers_endpoint_translates_but_keeps_the_matching_key(client):
+    """La categoria que se pinta va traducida; la que usa ai_engine para
+    emparejar hubs globales tiene que seguir siendo la inglesa, o media
+    aplicacion se queda sin ciudades recomendadas."""
+    es = client.get("/api/v1/careers?lang=es").json()["careers"]
+    en = client.get("/api/v1/careers?lang=en").json()["careers"]
+
+    assert [c["id"] for c in es] == [c["id"] for c in en]
+    assert [c["title"] for c in es] != [c["title"] for c in en]
+    # La clave de emparejamiento no depende del idioma.
+    assert [c["category_key"] for c in es] == [c["category_key"] for c in en]
+    # Y el cliente no ve los sufijos de traduccion.
+    assert not any(k.endswith(("_es", "_en")) for k in es[0])
+
+
+def test_results_are_stored_untranslated_and_read_in_any_language(client, sample_answers):
+    """El resultado se guarda en bruto (claves de texto e ids) y se redacta
+    al devolverlo. Ese es el motivo: un test hecho en castellano se tiene que
+    poder releer en ingles, sin repetirlo."""
+    es = client.post("/api/v1/assess?lang=es", json={"answers": sample_answers}).json()["data"]
+    en = client.post("/api/v1/assess?lang=en", json={"answers": sample_answers}).json()["data"]
+
+    assert es["recommended_careers"][0]["career_id"] == en["recommended_careers"][0]["career_id"]
+    for field in ("personality", "learning_style"):
+        assert es[field] and en[field] and es[field] != en[field], field
+
+    # Nada de lo que se pinta puede quedarse como identificador en crudo.
+    assert not any(s.isupper() for s in es["strengths"]), es["strengths"]
+    assert not any(s.isupper() for s in en["strengths"]), en["strengths"]
+
+    # Ni como clave de plantilla sin resolver.
+    for texto in [es["top_choice"]["justification"], en["top_choice"]["justification"],
+                  *es["future_predictions"], *en["future_predictions"]]:
+        assert " " in texto, f"clave sin redactar: {texto}"
+
+    # El roadmap tambien: es lo que lee Journey.
+    for datos in (es, en):
+        for checkpoint in datos["roadmap"]["checkpoints"]:
+            assert checkpoint["title"] and " " in checkpoint["title"]
+            assert "{" not in checkpoint["description"]
+
+
+def test_unknown_language_falls_back_to_english_everywhere(client, sample_answers):
+    """Un idioma que no existe no puede dejar la pantalla en blanco."""
+    fr = client.post("/api/v1/assess?lang=fr", json={"answers": sample_answers}).json()
+    en = client.post("/api/v1/assess?lang=en", json={"answers": sample_answers}).json()
+    assert fr["lang"] == "en"
+    assert fr["data"]["personality"] == en["data"]["personality"]
+
+
+def test_every_archetype_and_template_exists_in_both_languages():
+    """Una plantilla que falte se devuelve como su propia clave
+    ("justification.withGaps") y aparece asi delante del estudiante."""
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "futurepilot-IA"))
+    import localization
+
+    en, es = localization.TEMPLATES["en"], localization.TEMPLATES["es"]
+    assert set(en) == set(es), f"solo-en={sorted(set(en) - set(es))} solo-es={sorted(set(es) - set(en))}"
+
+    for key, archetype in localization.ARCHETYPES.items():
+        assert set(archetype) == {"en", "es"}, key
+        for lang in ("en", "es"):
+            assert archetype[lang]["name"] and archetype[lang]["style"], f"{key}/{lang}"
+
+    assert set(localization.CLUSTER_LABELS["en"]) == set(localization.CLUSTER_LABELS["es"])
+    assert set(localization.MENTOR_TEXTS["en"]) == set(localization.MENTOR_TEXTS["es"])
+
+
+def test_every_global_hub_has_both_descriptions():
+    """Los hubs se pintan en el Flight Plan. Uno sin traducir mete una frase
+    en castellano en medio de la pantalla en ingles."""
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "futurepilot-IA"))
+    from ai_engine import CareerEngine
+
+    for hub in CareerEngine.GLOBAL_HUBS:
+        assert hub.get("desc"), f"{hub['name']}: sin descripcion en ingles"
+        assert hub.get("desc_es"), f"{hub['name']}: sin descripcion en castellano"
 
 
 def test_every_cluster_has_a_label_in_both_languages(app_module):

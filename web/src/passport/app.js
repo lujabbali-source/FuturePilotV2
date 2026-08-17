@@ -16,6 +16,11 @@
 //     interior van por delegacion sobre el contenedor, que si es estable.
 
 import { renderStamp, renderEmptySlot, applyStampQuirks } from "./stamps.js";
+import { t, currentLanguage, onLanguageChange } from "../shared/i18next.js";
+
+// Todo el texto de esta pagina sale del namespace `passport`. Atajo para
+// no repetir el namespace en cada una de las cuarenta llamadas.
+const tp = (key, params) => t(key, { ns: "passport", ...params });
 
 // El cuerpo va dentro de una funcion con nombre porque necesita cortar
 // pronto (`return`) si no hay sesion.
@@ -63,14 +68,14 @@ function main() {
     if (!iso) return "—";
     const date = new Date(iso.endsWith("Z") || iso.includes("+") ? iso : `${iso}Z`);
     if (Number.isNaN(date.getTime())) return "—";
-    return date.toLocaleDateString("es-CO", { day: "2-digit", month: "long", year: "numeric" });
+    return date.toLocaleDateString(currentLanguage(), { day: "2-digit", month: "long", year: "numeric" });
   }
 
   function shortDate(iso) {
     if (!iso) return "";
     const date = new Date(iso.endsWith("Z") || iso.includes("+") ? iso : `${iso}Z`);
     return Number.isNaN(date.getTime())
-      ? "" : date.toLocaleDateString("es-CO", { day: "2-digit", month: "short", year: "2-digit" });
+      ? "" : date.toLocaleDateString(currentLanguage(), { day: "2-digit", month: "short", year: "2-digit" });
   }
 
   /** Campo de solo lectura de las paginas de documento. */
@@ -78,7 +83,7 @@ function main() {
     return `
       <div class="fp-field${wide ? " fp-field--wide" : ""}">
         <span class="fp-field__label">${escapeHtml(label)}</span>
-        <strong class="fp-field__value">${escapeHtml(value || "Sin definir")}</strong>
+        <strong class="fp-field__value">${escapeHtml(value || tp("common.undefined"))}</strong>
       </div>`;
   }
 
@@ -112,22 +117,22 @@ function main() {
 
     if (state.editing === "profile") {
       return {
-        title: "Identificación",
+        title: tp("identity.title"),
         body: `
           <form class="fp-form" data-form="profile">
-            ${input("country", "País de residencia", profile.country, "Colombia")}
-            ${input("city", "Ciudad", profile.city, "Bogotá")}
-            ${input("languages", "Idiomas (separados por coma)", (profile.languages || []).join(", "), "Español, Inglés")}
+            ${input("country", tp("identity.countryField"), profile.country, tp("identity.placeholderCountry"))}
+            ${input("city", tp("identity.city"), profile.city, tp("identity.placeholderCity"))}
+            ${input("languages", tp("identity.languagesField"), (profile.languages || []).join(", "), tp("identity.placeholderLanguages"))}
             <div class="fp-form__actions">
-              <button type="submit" class="fp-btn fp-btn--ink">Guardar</button>
-              <button type="button" class="fp-btn" data-cancel>Cancelar</button>
+              <button type="submit" class="fp-btn fp-btn--ink">${tp("common.save")}</button>
+              <button type="button" class="fp-btn" data-cancel>${tp("common.cancel")}</button>
             </div>
           </form>`,
       };
     }
 
     return {
-      title: "Identificación",
+      title: tp("identity.title"),
       body: `
         <div class="fp-identity">
           <div class="fp-identity__photo">
@@ -136,21 +141,21 @@ function main() {
               : `<span class="fp-identity__initial">${escapeHtml(inicial)}</span>`}
             <label class="fp-identity__upload">
               <input type="file" accept="image/*" data-photo hidden>
-              <span>Cambiar</span>
+              <span>${tp("identity.change")}</span>
             </label>
           </div>
           <div class="fp-identity__data">
-            ${field("Nombre", nombre)}
-            ${field("FuturePilot ID", user.passport_id)}
-            ${field("Emitido", formatDate(user.member_since))}
+            ${field(tp("identity.name"), nombre)}
+            ${field(tp("identity.futurepilotId"), user.passport_id)}
+            ${field(tp("identity.issued"), formatDate(user.member_since))}
           </div>
         </div>
         <div class="fp-fields">
-          ${field("País", profile.country)}
-          ${field("Ciudad", profile.city)}
-          ${field("Idiomas", (profile.languages || []).join(", "))}
+          ${field(tp("identity.country"), profile.country)}
+          ${field(tp("identity.city"), profile.city)}
+          ${field(tp("identity.languages"), (profile.languages || []).join(", "))}
         </div>
-        <button type="button" class="fp-btn fp-btn--edit" data-edit="profile">Editar datos</button>`,
+        <button type="button" class="fp-btn fp-btn--edit" data-edit="profile">${tp("identity.edit")}</button>`,
     };
   }
 
@@ -159,16 +164,16 @@ function main() {
 
     if (state.editing === "goals") {
       return {
-        title: "Objetivo académico",
+        title: tp("goals.title"),
         body: `
           <form class="fp-form" data-form="goals">
-            ${input("dream_university", "Universidad objetivo", goals.dream_university, "MIT")}
-            ${input("desired_career", "Carrera de interés", goals.desired_career, "Ingeniería de Software")}
-            ${input("target_country", "País donde estudiar", goals.target_country, "Canadá")}
-            ${input("languages_to_learn", "Idiomas por aprender", goals.languages_to_learn, "Francés")}
+            ${input("dream_university", tp("goals.university"), goals.dream_university, tp("goals.placeholderUniversity"))}
+            ${input("desired_career", tp("goals.career"), goals.desired_career, tp("goals.placeholderCareer"))}
+            ${input("target_country", tp("goals.country"), goals.target_country, tp("goals.placeholderCountry"))}
+            ${input("languages_to_learn", tp("goals.languages"), goals.languages_to_learn, tp("goals.placeholderLanguages"))}
             <label class="fp-input">
-              <span>Metas personales</span>
-              <textarea name="personal_goals" rows="3" placeholder="Lo que quieres lograr...">${escapeHtml(goals.personal_goals || "")}</textarea>
+              <span>${tp("goals.personal")}</span>
+              <textarea name="personal_goals" rows="3" placeholder="${escapeHtml(tp("goals.personalPlaceholder"))}">${escapeHtml(goals.personal_goals || "")}</textarea>
             </label>
             <div class="fp-form__actions">
               <button type="submit" class="fp-btn fp-btn--ink">Guardar</button>
@@ -179,17 +184,17 @@ function main() {
     }
 
     return {
-      title: "Objetivo académico",
+      title: tp("goals.title"),
       body: `
         <div class="fp-fields">
-          ${field("Universidad objetivo", goals.dream_university)}
-          ${field("Carrera de interés", goals.desired_career)}
-          ${field("País donde estudiar", goals.target_country)}
-          ${field("Idiomas por aprender", goals.languages_to_learn)}
-          ${field("Metas personales", goals.personal_goals, true)}
+          ${field(tp("goals.university"), goals.dream_university)}
+          ${field(tp("goals.career"), goals.desired_career)}
+          ${field(tp("goals.country"), goals.target_country)}
+          ${field(tp("goals.languages"), goals.languages_to_learn)}
+          ${field(tp("goals.personal"), goals.personal_goals, true)}
         </div>
-        <p class="fp-note">Fijar una universidad objetivo deja un sello en este pasaporte.</p>
-        <button type="button" class="fp-btn fp-btn--edit" data-edit="goals">Editar objetivos</button>`,
+        <p class="fp-note">${tp("goals.note")}</p>
+        <button type="button" class="fp-btn fp-btn--edit" data-edit="goals">${tp("goals.edit")}</button>`,
     };
   }
 
@@ -197,10 +202,10 @@ function main() {
     const vocational = state.data.vocational;
     if (!vocational) {
       return {
-        title: "Perfil vocacional",
+        title: tp("vocational.title"),
         body: `
-          <p class="fp-empty">Esta página se completa al terminar el test vocacional.</p>
-          <a class="fp-btn fp-btn--ink" href="/assessment">Hacer el test →</a>`,
+          <p class="fp-empty">${tp("vocational.empty")}</p>
+          <a class="fp-btn fp-btn--ink" href="/assessment">${tp("vocational.takeTest")}</a>`,
       };
     }
 
@@ -210,27 +215,27 @@ function main() {
           <span class="fp-match">${Math.round(c.match_percentage)}%</span></li>`).join("");
 
     return {
-      title: "Perfil vocacional",
+      title: tp("vocational.title"),
       body: `
         <div class="fp-fields">
-          ${field("Arquetipo", vocational.personality)}
-          ${field("Estilo de aprendizaje", vocational.learning_style, true)}
+          ${field(tp("vocational.archetype"), vocational.personality)}
+          ${field(tp("vocational.learningStyle"), vocational.learning_style, true)}
         </div>
-        <p class="fp-subhead">Carreras compatibles</p>
+        <p class="fp-subhead">${tp("vocational.matches")}</p>
         <ol class="fp-careers">${carreras}</ol>
-        <p class="fp-note">Registrado el ${escapeHtml(formatDate(vocational.completed_at))}.</p>`,
+        <p class="fp-note">${escapeHtml(tp("vocational.recordedOn", { date: formatDate(vocational.completed_at) }))}</p>`,
     };
   }
 
   function pageJourney() {
     const p = state.data.progress;
     const filas = [
-      ["Tests completados", p.tests_completed],
-      ["Roadmaps creados", p.roadmaps_completed],
-      ["Universidades descubiertas", p.universities_explored],
-      ["Países explorados", p.countries_explored],
-      ["Ciudades exploradas", p.cities_explored],
-      ["Conversaciones con el mentor", p.ai_conversations],
+      [tp("journey.tests"), p.tests_completed],
+      [tp("journey.roadmaps"), p.roadmaps_completed],
+      [tp("journey.universities"), p.universities_explored],
+      [tp("journey.countries"), p.countries_explored],
+      [tp("journey.cities"), p.cities_explored],
+      [tp("journey.conversations"), p.ai_conversations],
     ].map(([label, valor]) => `
       <tr><th>${escapeHtml(label)}</th><td>${valor}</td></tr>`).join("");
 
@@ -238,10 +243,10 @@ function main() {
       <li><span>${escapeHtml(shortDate(e.created_at))}</span> ${escapeHtml(e.subject_label || e.event_type)}</li>`).join("");
 
     return {
-      title: "Registro de viaje",
+      title: tp("journey.title"),
       body: `
         <table class="fp-ledger">${filas}</table>
-        ${actividad ? `<p class="fp-subhead">Últimos movimientos</p><ul class="fp-activity">${actividad}</ul>` : ""}`,
+        ${actividad ? `<p class="fp-subhead">${tp("journey.recent")}</p><ul class="fp-activity">${actividad}</ul>` : ""}`,
     };
   }
 
@@ -262,7 +267,9 @@ function main() {
       ).join("");
 
       return {
-        title: total > 1 ? `Sellos · ${i + 1} de ${total}` : "Sellos",
+        title: total > 1
+          ? tp("stamps.titlePaged", { current: i + 1, total })
+          : tp("stamps.title"),
         body: `<div class="fp-stamps">${trozo.map(renderStamp).join("")}${huecos}</div>`,
       };
     });
@@ -281,7 +288,7 @@ function main() {
     if (state.pages.length % 2 === 1) {
       state.pages.push({
         title: "",
-        body: `<p class="fp-endnote">Este pasaporte sigue escribiéndose.<br>Cada país, universidad y decisión deja su marca.</p>`,
+        body: `<p class="fp-endnote">${tp("endnote")}</p>`,
       });
     }
   }
@@ -422,7 +429,7 @@ function main() {
 
   async function savePhoto(file) {
     if (file.size > 200_000) {
-      window.alert("La imagen es muy pesada. Usa una foto de menos de 200KB.");
+      window.alert(tp("errors.photoTooBig"));
       return;
     }
     const reader = new FileReader();
@@ -523,6 +530,15 @@ function main() {
     renderCover(state.data);
     buildPages();
   }
+
+  // Las paginas se arman en JavaScript, asi que traducir el markup estatico
+  // no las toca: hay que volver a construirlas. Solo se repintan si el libro
+  // esta abierto; si esta cerrado ya se rearmaran al abrirlo.
+  onLanguageChange(() => {
+    if (!state.data) return;
+    buildPages();
+    if (state.open) render();
+  });
 
   init();
 }

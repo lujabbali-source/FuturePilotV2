@@ -14,6 +14,7 @@
 // real. Un "http://127.0.0.1:8000" hardcodeado aqui hacia que el sitio
 // desplegado le hablara a la maquina del propio visitante - y la CSP
 // (connect-src 'self', ver app.py) bloqueaba la peticion de todas formas.
+import { currentLanguage, t } from "./i18next.js";
 const AI_STORAGE_KEY = "futurePilotAIResponse";
 const USER_ANSWERS_KEY = "futurePilotAssessment";
 const RESULT_ID_KEY = "futurePilotResultId";
@@ -87,7 +88,7 @@ async function sendAssessmentToPythonAI(rawAnswers) {
 
   try {
     console.log("[FuturePilot AI] Enviando " + formattedAnswers.length + " respuestas a /api/v1/assess ...");
-    const response = await fetch("/api/v1/assess", {
+    const response = await fetch(`/api/v1/assess?lang=${currentLanguage()}`, {
       method: "POST",
       headers,
       body: JSON.stringify({ answers: formattedAnswers, anon_id: getAnonId() })
@@ -133,7 +134,7 @@ async function refreshResultsFromServer() {
   if (!token) return false;
 
   try {
-    const response = await fetch("/api/v1/me/results", {
+    const response = await fetch(`/api/v1/me/results?lang=${currentLanguage()}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (!response.ok) return false;
@@ -185,7 +186,7 @@ function updateFlightPlanUI() {
     if (countriesElement) {
       countriesElement.innerHTML = hubs.length
         ? hubs.map(hub => `🌐 ${hub.name} — ${hub.desc}`).join("<br>")
-        : "Explora el globo para descubrir destinos.";
+        : t("results.noDestinations", { ns: "site" });
     }
 
     // 4. Guardar carrera seleccionada en la memoria local
@@ -202,14 +203,14 @@ function updateFlightPlanUI() {
     const academicElement = document.getElementById("academicLevel");
     if (academicElement) {
       const rows = [
-        ["Arquetipo", aiData.personality],
-        ["Estilo de aprendizaje", aiData.learning_style],
-        ["Confianza del análisis", aiData.confidence ? `${Math.round(aiData.confidence * 100)}%` : null],
+        [t("results.archetype", { ns: "site" }), aiData.personality],
+        [t("results.learningStyle", { ns: "site" }), aiData.learning_style],
+        [t("results.confidence", { ns: "site" }), aiData.confidence ? `${Math.round(aiData.confidence * 100)}%` : null],
       ].filter(([, value]) => value);
 
       academicElement.innerHTML = rows.length
         ? rows.map(([label, value]) => `${label}: ${escapeHtml(String(value))}`).join("<br>")
-        : "Todavía no has hecho el test";
+        : t("flightplan.noTest", { ns: "site" });
     }
   } catch (err) {
     console.error("[FuturePilot AI Error] Error actualizando FlightPlan UI:", err);

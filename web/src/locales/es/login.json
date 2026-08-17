@@ -1,5 +1,71 @@
 {
   "title": "Bienvenido de nuevo",
   "signIn": "Iniciar sesión",
-  "createAccount": "Crear cuenta"
+  "createAccount": "Crear cuenta",
+  "aside": {
+    "kicker": "Build Your Future",
+    "blurb": "Descubre tu carrera ideal, explora universidades en todo el continente y construye el mapa hacia tu futuro — guiado por IA."
+  },
+  "badge": "FUTUREPILOT / ACCESO",
+  "mode": {
+    "loginTitle": "Bienvenido",
+    "loginTitleAccent": " de nuevo",
+    "loginSubtitle": "Tu camino hacia la carrera de tus sueños empieza aquí.",
+    "loginSwitchPrompt": "¿No tienes una cuenta?",
+    "loginSwitchAction": "Crear una",
+    "registerTitle": "Crea tu",
+    "registerTitleAccent": " cuenta",
+    "registerSubtitle": "Guarda tu perfil y desbloquea tu plan completo con FuturePilot.",
+    "registerSwitchPrompt": "¿Ya tienes una cuenta?",
+    "registerSwitchAction": "Iniciar sesión",
+    "recoverTitle": "Recupera",
+    "recoverTitleAccent": " tu acceso",
+    "recoverSubtitle": "Ingresa tu email y te enviamos instrucciones para elegir una nueva contraseña.",
+    "recoverSubmit": "Enviar instrucciones"
+  },
+  "fields": {
+    "name": "Tu nombre",
+    "email": "tu@email.com",
+    "password": "Mínimo 8 caracteres",
+    "adminToken": "Token de configuración del administrador",
+    "remember": "Recordarme",
+    "forgot": "¿Olvidaste tu contraseña?",
+    "showPassword": "Mostrar contraseña",
+    "hidePassword": "Ocultar contraseña",
+    "backToLogin": "← Volver a iniciar sesión"
+  },
+  "status": {
+    "working": "Un momento...",
+    "accountCreated": "Tu cuenta quedó creada",
+    "alreadySignedIn": "Ya iniciaste sesión",
+    "retry": "Intentar de nuevo"
+  },
+  "errors": {
+    "email": "Ingresa un email válido.",
+    "password": "La contraseña debe tener al menos 8 caracteres.",
+    "generic": "No pudimos procesar tu solicitud. Intenta de nuevo.",
+    "network": "No pudimos conectar con el servidor. Verifica tu conexión e intenta de nuevo."
+  },
+  "recover": {
+    "sent": "Si existe una cuenta con ese email, enviamos instrucciones para recuperar el acceso."
+  },
+  "reset": {
+    "pageTitle": "Restablecer contraseña · FuturePilot",
+    "title": "Elige tu",
+    "titleAccent": " nueva contraseña",
+    "subtitle": "Escribe una nueva contraseña para tu cuenta.",
+    "newPassword": "Nueva contraseña (mínimo 8 caracteres)",
+    "confirmPassword": "Confirma la nueva contraseña",
+    "submit": "Guardar nueva contraseña",
+    "noToken": "Este link no incluye un token válido.",
+    "requestNew": "Solicita un nuevo link de recuperación desde la página de inicio de sesión.",
+    "mismatch": "Las contraseñas no coinciden.",
+    "failed": "No pudimos actualizar tu contraseña. Solicita un nuevo link.",
+    "done": "¡Listo! Tu contraseña se actualizó. Te llevamos a iniciar sesión..."
+  },
+  "claim": {
+    "notLinked": "{{entrada}}, pero no pudimos vincular tu resultado todavía. No te preocupes: tus respuestas siguen guardadas.",
+    "retry": "Intentar de nuevo",
+    "skip": "Continuar sin vincular"
+  }
 }

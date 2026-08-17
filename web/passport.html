@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#040a08">
-  <title>Pasaporte FuturePilot</title>
+  <title data-i18n="site:pageTitle.passport">Pasaporte FuturePilot</title>
   <link rel="stylesheet" href="/Frontend/passport.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
              interior. El reverso (fp-cover__inner) es la guarda que queda a
              la vista con el libro abierto. -->
         <button type="button" class="fp-cover" id="cover" aria-expanded="false"
-                aria-controls="spread" aria-label="Abrir el pasaporte">
+                aria-controls="spread" data-i18n-label="passport:cover.open">
           <span class="fp-cover__face fp-cover__face--front">
             <span class="fp-cover__weave" aria-hidden="true"></span>
             <span class="fp-cover__circuit" aria-hidden="true"></span>
@@ -43,12 +43,12 @@
             <span class="fp-cover__holder">
               <b id="coverName">—</b>
               <span class="fp-cover__ids">
-                <span><small>ID</small><code id="coverId">—</code></span>
-                <span><small>EMITIDO</small><code id="coverIssued">—</code></span>
+                <span><small data-i18n="passport:cover.id">ID</small><code id="coverId">—</code></span>
+                <span><small data-i18n="passport:cover.issued">EMITIDO</small><code id="coverIssued">—</code></span>
               </span>
             </span>
 
-            <span class="fp-cover__hint" id="coverHint">Toca para abrir</span>
+            <span class="fp-cover__hint" id="coverHint" data-i18n="passport:cover.hint">Toca para abrir</span>
           </span>
 
           <span class="fp-cover__face fp-cover__face--inner" aria-hidden="true">
@@ -69,13 +69,13 @@
     <!-- Navegacion y salida. Siempre visibles con el libro abierto: nadie
          debe quedarse atrapado dentro de la experiencia. -->
     <nav class="fp-controls" id="controls" hidden>
-      <button type="button" class="fp-controls__btn" id="prevPage" aria-label="Página anterior">←</button>
+      <button type="button" class="fp-controls__btn" id="prevPage" data-i18n-label="passport:controls.prev">←</button>
       <span class="fp-controls__meta" id="pageIndicator">—</span>
-      <button type="button" class="fp-controls__btn" id="nextPage" aria-label="Página siguiente">→</button>
-      <button type="button" class="fp-controls__close" id="closeBook">Cerrar pasaporte</button>
+      <button type="button" class="fp-controls__btn" id="nextPage" data-i18n-label="passport:controls.next">→</button>
+      <button type="button" class="fp-controls__close" id="closeBook" data-i18n="passport:controls.close">Cerrar pasaporte</button>
     </nav>
 
-    <a class="fp-exit" href="/">← Volver al sitio</a>
+    <a class="fp-exit" href="/" data-i18n="passport:controls.exit">← Volver al sitio</a>
   </main>
 
   <script type="module" src="/src/passport/main.js"></script>

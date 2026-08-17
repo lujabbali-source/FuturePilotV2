@@ -455,7 +455,7 @@ async function init() {
 
   if (authToken) {
     try {
-      const response = await fetch("/api/v1/me/results", {
+      const response = await fetch(`/api/v1/me/results?lang=${currentLanguage()}`, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
       if (response.status === 401) {

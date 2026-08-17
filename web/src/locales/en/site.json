@@ -97,5 +97,38 @@
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
     "rights": "All rights reserved."
+  },
+  "pageTitle": {
+    "index": "FuturePilot",
+    "careers": "Careers · FuturePilot",
+    "assessment": "Discover your profile · FuturePilot",
+    "globe": "Explore your future · FuturePilot",
+    "journey": "Your route · FuturePilot",
+    "flightplan": "Flight plan · FuturePilot",
+    "passport": "FuturePilot Passport",
+    "login": "Sign in · FuturePilot",
+    "reset": "Reset password · FuturePilot",
+    "privacy": "Privacy policy · FuturePilot",
+    "terms": "Terms & conditions · FuturePilot"
+  },
+  "careers": {
+    "buildPlan": "Build my flight plan",
+    "loadError": "We couldn't load the career catalogue. Try reloading the page."
+  },
+  "flightplan": {
+    "noTest": "You haven't taken the test yet",
+    "soon": "Coming soon"
+  },
+  "results": {
+    "archetype": "Archetype",
+    "learningStyle": "Learning style",
+    "confidence": "Analysis confidence",
+    "noDestinations": "Explore the globe to discover destinations."
+  },
+  "mentor": {
+    "open": "Open the AI Mentor chat",
+    "placeholder": "Type your question...",
+    "hello": "Hi! I'm your AI Mentor. I can help with your roadmap, your recommended career, universities or your skills — or just a bit of encouragement. What do you need?",
+    "error": "I couldn't process your message. Try again in a moment."
   }
 }

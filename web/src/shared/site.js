@@ -1,4 +1,4 @@
-import { t } from "./i18next.js";
+import { currentLanguage, t } from "./i18next.js";
 
 (() => {
   // Año dinámico en el footer - se actualiza solo cada año, sin tocar el HTML.
@@ -11,7 +11,7 @@ import { t } from "./i18next.js";
   // asi que la landing nunca depende de esta llamada para verse bien.
   const careerCountEl = document.getElementById("careerCountStat");
   if (careerCountEl && location.protocol !== "file:") {
-    fetch("/api/v1/careers")
+    fetch(`/api/v1/careers?lang=${currentLanguage()}`)
       .then((response) => (response.ok ? response.json() : null))
       .then((data) => {
         if (data && data.total) careerCountEl.textContent = `${data.total}+`;

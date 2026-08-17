@@ -1,0 +1,77 @@
+{
+  "cover": {
+    "hint": "Toca para abrir",
+    "open": "Abrir el pasaporte",
+    "id": "ID",
+    "issued": "EMITIDO"
+  },
+  "controls": {
+    "prev": "Página anterior",
+    "next": "Página siguiente",
+    "close": "Cerrar pasaporte",
+    "exit": "← Volver al sitio"
+  },
+  "common": {
+    "undefined": "Sin definir",
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+  "identity": {
+    "title": "Identificación",
+    "change": "Cambiar",
+    "name": "Nombre",
+    "futurepilotId": "FuturePilot ID",
+    "issued": "Emitido",
+    "country": "País",
+    "city": "Ciudad",
+    "languages": "Idiomas",
+    "countryField": "País de residencia",
+    "languagesField": "Idiomas (separados por coma)",
+    "edit": "Editar datos",
+    "placeholderCountry": "Colombia",
+    "placeholderCity": "Bogotá",
+    "placeholderLanguages": "Español, Inglés"
+  },
+  "goals": {
+    "title": "Objetivo académico",
+    "university": "Universidad objetivo",
+    "career": "Carrera de interés",
+    "country": "País donde estudiar",
+    "languages": "Idiomas por aprender",
+    "personal": "Metas personales",
+    "personalPlaceholder": "Lo que quieres lograr...",
+    "note": "Fijar una universidad objetivo deja un sello en este pasaporte.",
+    "edit": "Editar objetivos",
+    "placeholderUniversity": "MIT",
+    "placeholderCareer": "Ingeniería de software",
+    "placeholderCountry": "Canadá",
+    "placeholderLanguages": "Francés"
+  },
+  "vocational": {
+    "title": "Perfil vocacional",
+    "empty": "Esta página se completa al terminar el test vocacional.",
+    "takeTest": "Hacer el test →",
+    "archetype": "Arquetipo",
+    "learningStyle": "Estilo de aprendizaje",
+    "matches": "Carreras compatibles",
+    "recordedOn": "Registrado el {{date}}."
+  },
+  "journey": {
+    "title": "Registro de viaje",
+    "tests": "Tests completados",
+    "roadmaps": "Roadmaps creados",
+    "universities": "Universidades descubiertas",
+    "countries": "Países explorados",
+    "cities": "Ciudades exploradas",
+    "conversations": "Conversaciones con el mentor",
+    "recent": "Últimos movimientos"
+  },
+  "stamps": {
+    "title": "Sellos",
+    "titlePaged": "Sellos · {{current}} de {{total}}"
+  },
+  "endnote": "Este pasaporte sigue escribiéndose.<br>Cada país, universidad y decisión deja su marca.",
+  "errors": {
+    "photoTooBig": "La imagen es muy pesada. Usa una foto de menos de 200KB."
+  }
+}

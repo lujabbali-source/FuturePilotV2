@@ -55,6 +55,7 @@ for _path in (REPO_ROOT, BASE_DIR):
     if str(_path) not in sys.path:
         sys.path.insert(0, str(_path))
 
+import localization  # noqa: E402
 from ai_engine import FuturePilotAIEcosystem  # noqa: E402
 from backend.config_store import delete_json, read_json, write_json  # noqa: E402
 from backend import mailer  # noqa: E402
@@ -763,7 +764,10 @@ class ClaimResultRequest(BaseModel):
 
 
 @app.get("/api/v1/me/results", status_code=status.HTTP_200_OK)
-def get_my_results(current_user: dict = Depends(get_current_user_required)):
+def get_my_results(
+    lang: Optional[str] = None,
+    current_user: dict = Depends(get_current_user_required),
+):
     """Ultimo resultado de test guardado para la cuenta autenticada, o
     resultados=None si todavia no ha completado ninguno con esta cuenta."""
     latest = users_store.latest_result_for_user(current_user["id"])
@@ -771,7 +775,8 @@ def get_my_results(current_user: dict = Depends(get_current_user_required)):
         return {"success": True, "results": None}
     return {
         "success": True,
-        "results": json.loads(latest["results_json"]),
+        "results": _localize_results(json.loads(latest["results_json"]), lang),
+        "lang": _resolve_lang(lang),
         "created_at": latest["created_at"],
     }
 
@@ -1247,6 +1252,131 @@ def _localize_question(question: Dict[str, Any], lang: str) -> Dict[str, Any]:
     return localized
 
 
+def _localize_career(career: Dict[str, Any], lang: str) -> Dict[str, Any]:
+    """Misma idea que _localize_question, para una carrera.
+
+    `category` viaja traducida porque es lo que se pinta en la tarjeta, pero
+    se conserva el valor ingles en `category_key`: ai_engine empareja los
+    hubs globales por esa cadena y traducirla dejaria a media aplicacion sin
+    ciudades recomendadas."""
+    localized = {
+        key: value for key, value in career.items()
+        if not key.endswith(tuple(f"_{code}" for code in SUPPORTED_LANGS))
+    }
+    localized["category_key"] = career["category"]
+    for field in ("title", "category", "description"):
+        localized[field] = localization.career_field(career, field, lang)
+    return localized
+
+
+def _localize_results(results: Dict[str, Any], lang: str) -> Dict[str, Any]:
+    """Redacta un resultado de test en el idioma pedido.
+
+    Se hace al devolver, no al calcular. El resultado se guarda en bruto
+    (`results_json`: claves de texto, ids de carrera y clusters en
+    mayusculas) y hay que poder releerlo en el idioma que el estudiante
+    tenga puesto HOY, no en el que tenia el dia que hizo el test.
+
+    Los resultados guardados por versiones anteriores ya venian redactados
+    en castellano y no traen esas claves. Se dejan como estan: mejor un
+    resultado antiguo en castellano que uno vacio."""
+    if not results:
+        return results
+
+    lang = _resolve_lang(lang)
+    catalog = {career["id"]: career for career in careers_db}
+    results = dict(results)
+
+    def career_title(career_id: Optional[str]) -> str:
+        career = catalog.get(career_id or "")
+        return localization.career_field(career, "title", lang) if career else ""
+
+    archetype = localization.archetype(results.get("archetype_key"), lang)
+
+    def redactar(spec: Optional[Dict[str, Any]], fallback: str = "") -> str:
+        """Convierte un {key, params, career_id, gaps, strengths} en prosa."""
+        if not isinstance(spec, dict) or "key" not in spec:
+            return fallback
+        # El arquetipo aparece en varias plantillas y siempre es el mismo,
+        # asi que se pasa de oficio en vez de repetirlo en cada spec.
+        params = {"personality": archetype["name"], **(spec.get("params") or {})}
+        if "career_id" in spec:
+            params["career"] = (
+                career_title(spec["career_id"])
+                or localization.text("reasoning.noCareer", lang)
+            )
+        if "gaps" in spec:
+            gaps = localization.cluster_labels(spec["gaps"], lang)
+            params["gaps"] = localization.join(gaps, lang) or localization.text(
+                "reasoning.noGaps", lang
+            )
+        if "strengths" in spec:
+            strengths = localization.cluster_labels(spec["strengths"], lang)
+            params["strengths"] = localization.join(strengths, lang) or localization.text(
+                "justification.noStrengths", lang
+            )
+        return localization.text(spec["key"], lang, **params)
+
+    if results.get("archetype_key"):
+        results["personality"] = archetype["name"]
+        results["learning_style"] = archetype["style"]
+
+    # Los clusters se guardan como identificadores (ANALYTICAL); en pantalla
+    # tienen que leerse como texto.
+    for field in ("strengths", "weaknesses"):
+        if results.get(field):
+            results[field] = localization.cluster_labels(results[field], lang)
+
+    for field in ("future_predictions", "next_actions"):
+        entries = results.get(field)
+        if entries and isinstance(entries[0], dict):
+            results[field] = [redactar(entry) for entry in entries]
+
+    if results.get("recommended_hubs"):
+        results["recommended_hubs"] = [
+            {**hub, "desc": localization.hub_desc(hub, lang)}
+            for hub in results["recommended_hubs"]
+        ]
+
+    roadmap = results.get("roadmap")
+    if roadmap and roadmap.get("checkpoints"):
+        titulo = career_title(roadmap.get("career_id"))
+        roadmap = dict(roadmap)
+        roadmap["career_title"] = titulo
+        roadmap["checkpoints"] = [
+            {**cp, **localization.checkpoint_text(cp, lang, titulo)}
+            if cp.get("key") else cp
+            for cp in roadmap["checkpoints"]
+        ]
+        results["roadmap"] = roadmap
+
+    for match in results.get("recommended_careers") or []:
+        career = catalog.get(match.get("career_id") or "")
+        if career:
+            for field in ("title", "category", "description"):
+                match[field] = localization.career_field(career, field, lang)
+        for field in ("strengths", "skill_gaps"):
+            if match.get(field) and isinstance(match[field][0], str):
+                match[field] = localization.cluster_labels(match[field], lang)
+        match["justification"] = redactar(
+            match.get("justification"), fallback=match.get("justification") or ""
+        )
+
+    top_choice = results.get("top_choice")
+    if isinstance(top_choice, dict):
+        top_choice = dict(top_choice)
+        career = catalog.get(top_choice.get("career_id") or "")
+        if career:
+            for field in ("title", "category", "description"):
+                top_choice[field] = localization.career_field(career, field, lang)
+        top_choice["justification"] = redactar(
+            top_choice.get("justification"), fallback=top_choice.get("justification") or ""
+        )
+        results["top_choice"] = top_choice
+
+    return results
+
+
 @app.get("/healthz", status_code=status.HTTP_200_OK)
 def liveness_probe():
     """Sonda para el balanceador / orquestador. Deliberadamente publica y
@@ -1285,18 +1415,20 @@ def get_all_questions(lang: str = "en"):
 
 
 @app.get("/api/v1/careers", status_code=status.HTTP_200_OK)
-def get_all_careers():
+def get_all_careers(lang: Optional[str] = None):
     """Obtiene el catálogo completo de carreras (fuente única de verdad)."""
     return {
         "success": True,
         "total": len(careers_db),
-        "careers": careers_db,
+        "lang": _resolve_lang(lang),
+        "careers": [_localize_career(career, lang) for career in careers_db],
     }
 
 
 @app.post("/api/v1/assess", status_code=status.HTTP_200_OK)
 def process_test_assessment(
     payload: TestSubmissionRequest,
+    lang: Optional[str] = None,
     current_user: Optional[dict] = Depends(get_current_user_optional),
 ):
     """
@@ -1328,7 +1460,10 @@ def process_test_assessment(
 
         return {
             "success": True,
-            "data": results,
+            # Se guarda en bruto y se traduce al salir: asi el mismo
+            # resultado se puede releer manana en el otro idioma.
+            "data": _localize_results(results, lang),
+            "lang": _resolve_lang(lang),
             # El test normalmente se completa antes de iniciar sesion (ver
             # flujo en Frontend/assessment.js): este id deja el resultado
             # "reclamable" via POST /api/v1/me/claim-result justo despues del
@@ -1346,6 +1481,7 @@ def process_test_assessment(
 @app.post("/api/v1/mentor/chat", status_code=status.HTTP_200_OK)
 def chat_with_mentor(
     payload: MentorChatRequest,
+    lang: Optional[str] = None,
     current_user: Optional[dict] = Depends(get_current_user_optional),
 ):
     """
@@ -1380,6 +1516,7 @@ def chat_with_mentor(
         response_text = ai_system.mentor.chat(
             user_message=payload.message,
             context=context,
+            lang=lang,
         )
 
         new_stamps: List[Dict[str, str]] = []

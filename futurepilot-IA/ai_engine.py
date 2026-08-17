@@ -34,6 +34,10 @@ from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 
+# El motor no redacta: produce claves y parametros, y localization.py los
+# convierte en texto en el idioma que pida cada peticion.
+import localization
+
 # Configurable via env var: para tests aislados (ver tests/conftest.py) y
 # para deployments reales donde este directorio deberia vivir en un disco
 # persistente separado, no junto al codigo de la app.
@@ -80,16 +84,18 @@ class BrainResponse:
     top_career: Optional[Dict[str, Any]]
     top_matches: List[Dict[str, Any]]
     roadmap: Optional[Dict[str, Any]]
-    reasoning: str
+    # `reasoning`, `next_actions` y `future_predictions` viajan como
+    # {key, params} sin redactar: el texto se arma en app.py, en el idioma
+    # que pida la peticion. Ver localization.py.
+    reasoning: Dict[str, Any]
     confidence: float
     strengths: List[str]
     weaknesses: List[str]
     recommended_hubs: List[Dict[str, Any]]
-    learning_style: str
-    personality: str
+    archetype_key: str
     memory_updates: Dict[str, Any]
-    next_actions: List[str]
-    future_predictions: List[str]
+    next_actions: List[Dict[str, Any]]
+    future_predictions: List[Dict[str, Any]]
 
     def to_dict(self) -> Dict[str, Any]:
         """Convierte la respuesta cognitiva a un diccionario explícito."""
@@ -293,32 +299,42 @@ class ReasoningEngine:
         "ENTREPRENEURIAL": "Identificación de oportunidades de valor"
     }
 
-    def infer_archetype(self, vector: Dict[str, float]) -> Tuple[str, str]:
+    def infer_archetype(self, vector: Dict[str, float]) -> str:
+        """Devuelve la CLAVE del arquetipo, no su nombre.
+
+        El nombre y el estilo de aprendizaje viven en localization.ARCHETYPES
+        y se resuelven al responder: asi el mismo resultado se lee en el
+        idioma que el estudiante tenga puesto hoy."""
         sorted_c = sorted(vector.items(), key=lambda x: x[1], reverse=True)
-        top1, val1 = sorted_c[0]
-        top2, val2 = sorted_c[1]
+        top1, _ = sorted_c[0]
+        top2, _ = sorted_c[1]
 
         if top1 in ["ANALYTICAL", "TECHNICAL"] and top2 in ["ANALYTICAL", "TECHNICAL"]:
-            return "Metódico y Tecnológico", "Aprende mejor mediante proyectos estructurados y código."
+            return "methodical"
         elif top1 in ["CREATIVE", "ENTREPRENEURIAL"] or top2 in ["CREATIVE", "ENTREPRENEURIAL"]:
-            return "Innovador Disruptivo", "Aprende mediante experimentos visuales y desafíos prácticos."
+            return "disruptive"
         elif top1 == "SOCIAL" or top2 == "SOCIAL":
-            return "Interpersonal Empático", "Aprende mejor con metodologías colaborativas."
-        return "Multidisciplinario Adaptativo", "Demuestra versatilidad entre razonamiento lógico e interacción."
+            return "empathetic"
+        return "adaptive"
 
-    def generate_hypotheses(self, vector: Dict[str, float], memory: Dict[str, Any]) -> List[str]:
-        hypotheses = []
+    def generate_hypotheses(self, vector: Dict[str, float], memory: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Hipotesis como {key, params}, sin redactar. Las arma el catalogo."""
         sorted_c = sorted(vector.items(), key=lambda x: x[1], reverse=True)
         top1, val1 = sorted_c[0]
-        
-        hypotheses.append(f"El estudiante muestra un sesgo fuerte hacia {top1} con {val1}/10.")
-        
+
+        hypotheses: List[Dict[str, Any]] = [
+            {"key": "hypothesis.bias", "params": {"cluster": top1, "value": val1}}
+        ]
+
         history_count = memory.get("assessments_count", 0)
         if history_count > 0:
-            hypotheses.append(f"El perfil muestra estabilidad a lo largo de {history_count + 1} evaluaciones.")
+            hypotheses.append({
+                "key": "hypothesis.stable",
+                "params": {"count": history_count + 1},
+            })
         else:
-            hypotheses.append("Primer diagnóstico: Se requiere validar consistencia en siguientes iteraciones.")
-            
+            hypotheses.append({"key": "hypothesis.first", "params": {}})
+
         return hypotheses
 
 
@@ -443,32 +459,32 @@ class CareerEngine:
     # las 14 del catalogo actual el fallback saltaba casi siempre y acababa
     # proponiendo Silicon Valley a quien le habia salido Creative Writing.
     GLOBAL_HUBS = [
-        {"name": "Silicon Valley (EE. UU.)", "category": "Technology", "desc": "Hub global de tecnología e inteligencia artificial."},
-        {"name": "Bangalore (India)", "category": "Technology", "desc": "Mayor concentración de ingeniería de software de Asia."},
-        {"name": "Bogotá (Colombia)", "category": "Technology", "desc": "Ecosistema emergente de desarrollo de software en LatAm."},
-        {"name": "Zúrich (Suiza)", "category": "Engineering", "desc": "Líder en ingeniería de precisión y sistemas industriales."},
-        {"name": "Múnich (Alemania)", "category": "Engineering", "desc": "Automoción, mecatrónica y manufactura avanzada.", "careers": ["c10", "c34", "c61"]},
-        {"name": "Londres (Reino Unido)", "category": "Business", "desc": "Centro internacional de negocios y consultoría.", "careers": ["c72", "c11"]},
-        {"name": "Singapur", "category": "Business", "desc": "Puerta de entrada al comercio y la logística de Asia.", "careers": ["c59", "c60"]},
-        {"name": "Nueva York (EE. UU.)", "category": "Mathematics & Finance", "desc": "Capital mundial de los mercados financieros."},
-        {"name": "Boston (EE. UU.)", "category": "Health", "desc": "Concentración de hospitales universitarios e investigación clínica.", "careers": ["c7", "c24", "c27"]},
-        {"name": "Basilea (Suiza)", "category": "Health", "desc": "Polo farmacéutico y de ciencias de la vida.", "careers": ["c22", "c9", "c16"]},
-        {"name": "Cambridge (Reino Unido)", "category": "Science", "desc": "Investigación básica y biotecnología de referencia.", "careers": ["c9", "c12", "c16"]},
-        {"name": "Ginebra (Suiza)", "category": "Science", "desc": "Física de partículas y organismos científicos internacionales.", "careers": ["c13", "c21"]},
-        {"name": "Milán (Italia)", "category": "Design", "desc": "Referente mundial en diseño industrial y de producto.", "careers": ["c41", "c42"]},
-        {"name": "Copenhague (Dinamarca)", "category": "Design", "desc": "Diseño escandinavo y arquitectura sostenible.", "careers": ["c36"]},
-        {"name": "París (Francia)", "category": "Arts", "desc": "Escena artística, editorial y audiovisual histórica.", "careers": ["c43", "c44"]},
-        {"name": "Los Ángeles (EE. UU.)", "category": "Arts", "desc": "Industria del cine, la música y la animación.", "careers": ["c37", "c39", "c40"]},
-        {"name": "Nueva York (EE. UU.)", "category": "Communication", "desc": "Sede de los grandes medios y agencias globales.", "careers": ["c48", "c73"]},
-        {"name": "Doha (Catar)", "category": "Communication", "desc": "Centro de medios internacionales para Oriente Medio.", "careers": ["c38"]},
-        {"name": "La Haya (Países Bajos)", "category": "Law & Politics", "desc": "Sede de las principales cortes internacionales.", "careers": ["c46"]},
-        {"name": "Bruselas (Bélgica)", "category": "Law & Politics", "desc": "Corazón institucional y diplomático de Europa.", "careers": ["c47", "c52"]},
-        {"name": "Helsinki (Finlandia)", "category": "Education", "desc": "Sistema educativo de referencia internacional.", "careers": ["c45"]},
-        {"name": "Estocolmo (Suecia)", "category": "Social Sciences", "desc": "Investigación social y políticas de bienestar.", "careers": ["c49", "c50", "c51"]},
-        {"name": "Costa Rica", "category": "Environment", "desc": "Modelo de conservación y energía renovable.", "careers": ["c19", "c69", "c20"]},
-        {"name": "Wageningen (Países Bajos)", "category": "Environment", "desc": "Referencia mundial en ciencias agrarias y alimentación.", "careers": ["c67", "c25"]},
-        {"name": "Toulouse (Francia)", "category": "Skilled Trades", "desc": "Capital europea de la industria aeronáutica.", "careers": ["c65", "c66"]},
-        {"name": "Lyon (Francia)", "category": "Skilled Trades", "desc": "Tradición gastronómica y formación culinaria de élite.", "careers": ["c68"]},
+        {"name": "Silicon Valley (EE. UU.)", "category": "Technology", "desc": "Global hub for technology and artificial intelligence.", "desc_es": "Hub global de tecnología e inteligencia artificial."},
+        {"name": "Bangalore (India)", "category": "Technology", "desc": "Asia's largest concentration of software engineering.", "desc_es": "Mayor concentración de ingeniería de software de Asia."},
+        {"name": "Bogotá (Colombia)", "category": "Technology", "desc": "A fast-growing software development scene in Latin America.", "desc_es": "Ecosistema emergente de desarrollo de software en LatAm."},
+        {"name": "Zúrich (Suiza)", "category": "Engineering", "desc": "A leader in precision engineering and industrial systems.", "desc_es": "Líder en ingeniería de precisión y sistemas industriales."},
+        {"name": "Múnich (Alemania)", "category": "Engineering", "desc": "Automotive, mechatronics and advanced manufacturing.", "desc_es": "Automoción, mecatrónica y manufactura avanzada.", "careers": ["c10", "c34", "c61"]},
+        {"name": "Londres (Reino Unido)", "category": "Business", "desc": "An international centre for business and consulting.", "desc_es": "Centro internacional de negocios y consultoría.", "careers": ["c72", "c11"]},
+        {"name": "Singapur", "category": "Business", "desc": "The gateway to trade and logistics across Asia.", "desc_es": "Puerta de entrada al comercio y la logística de Asia.", "careers": ["c59", "c60"]},
+        {"name": "Nueva York (EE. UU.)", "category": "Mathematics & Finance", "desc": "The world capital of financial markets.", "desc_es": "Capital mundial de los mercados financieros."},
+        {"name": "Boston (EE. UU.)", "category": "Health", "desc": "A dense cluster of teaching hospitals and clinical research.", "desc_es": "Concentración de hospitales universitarios e investigación clínica.", "careers": ["c7", "c24", "c27"]},
+        {"name": "Basilea (Suiza)", "category": "Health", "desc": "A pharmaceutical and life sciences powerhouse.", "desc_es": "Polo farmacéutico y de ciencias de la vida.", "careers": ["c22", "c9", "c16"]},
+        {"name": "Cambridge (Reino Unido)", "category": "Science", "desc": "Benchmark basic research and biotechnology.", "desc_es": "Investigación básica y biotecnología de referencia.", "careers": ["c9", "c12", "c16"]},
+        {"name": "Ginebra (Suiza)", "category": "Science", "desc": "Particle physics and international scientific bodies.", "desc_es": "Física de partículas y organismos científicos internacionales.", "careers": ["c13", "c21"]},
+        {"name": "Milán (Italia)", "category": "Design", "desc": "A world reference in industrial and product design.", "desc_es": "Referente mundial en diseño industrial y de producto.", "careers": ["c41", "c42"]},
+        {"name": "Copenhague (Dinamarca)", "category": "Design", "desc": "Scandinavian design and sustainable architecture.", "desc_es": "Diseño escandinavo y arquitectura sostenible.", "careers": ["c36"]},
+        {"name": "París (Francia)", "category": "Arts", "desc": "A historic art, publishing and audiovisual scene.", "desc_es": "Escena artística, editorial y audiovisual histórica.", "careers": ["c43", "c44"]},
+        {"name": "Los Ángeles (EE. UU.)", "category": "Arts", "desc": "The film, music and animation industry.", "desc_es": "Industria del cine, la música y la animación.", "careers": ["c37", "c39", "c40"]},
+        {"name": "Nueva York (EE. UU.)", "category": "Communication", "desc": "The world capital of financial markets.", "desc_es": "Sede de los grandes medios y agencias globales.", "careers": ["c48", "c73"]},
+        {"name": "Doha (Catar)", "category": "Communication", "desc": "A hub for international media across the Middle East.", "desc_es": "Centro de medios internacionales para Oriente Medio.", "careers": ["c38"]},
+        {"name": "La Haya (Países Bajos)", "category": "Law & Politics", "desc": "Home to the major international courts.", "desc_es": "Sede de las principales cortes internacionales.", "careers": ["c46"]},
+        {"name": "Bruselas (Bélgica)", "category": "Law & Politics", "desc": "The institutional and diplomatic heart of Europe.", "desc_es": "Corazón institucional y diplomático de Europa.", "careers": ["c47", "c52"]},
+        {"name": "Helsinki (Finlandia)", "category": "Education", "desc": "An education system studied the world over.", "desc_es": "Sistema educativo de referencia internacional.", "careers": ["c45"]},
+        {"name": "Estocolmo (Suecia)", "category": "Social Sciences", "desc": "Social research and welfare policy.", "desc_es": "Investigación social y políticas de bienestar.", "careers": ["c49", "c50", "c51"]},
+        {"name": "Costa Rica", "category": "Environment", "desc": "A model for conservation and renewable energy.", "desc_es": "Modelo de conservación y energía renovable.", "careers": ["c19", "c69", "c20"]},
+        {"name": "Wageningen (Países Bajos)", "category": "Environment", "desc": "A world reference in agricultural and food science.", "desc_es": "Referencia mundial en ciencias agrarias y alimentación.", "careers": ["c67", "c25"]},
+        {"name": "Toulouse (Francia)", "category": "Skilled Trades", "desc": "Europe's capital of the aerospace industry.", "desc_es": "Capital europea de la industria aeronáutica.", "careers": ["c65", "c66"]},
+        {"name": "Lyon (Francia)", "category": "Skilled Trades", "desc": "Deep culinary tradition and elite chef training.", "desc_es": "Tradición gastronómica y formación culinaria de élite.", "careers": ["c68"]},
     ]
 
     def get_recommended_hubs(
@@ -503,16 +519,20 @@ class RoadmapPlanner:
     """
     Módulo de Planificación de Rutas (GPS Educativo).
     """
-    def build_roadmap(self, career_title: str, gaps: List[str]) -> Dict[str, Any]:
-        gap_str = ", ".join(gaps) if gaps else "Habilidades Avanzadas"
+    def build_roadmap(self, career_id: Optional[str], gaps: List[str]) -> Dict[str, Any]:
+        """El roadmap sale sin redactar: cada hito lleva su clave de texto.
+
+        `career_id` en vez del titulo porque el titulo esta traducido y el
+        roadmap se guarda; el nombre de la carrera se resuelve al responder,
+        contra el catalogo."""
         return {
-            "career_title": career_title,
+            "career_id": career_id,
             "estimated_months": 8,
             "checkpoints": [
-                {"step": 1, "title": "Fundamentos y Conceptos Clave", "reward_xp": 100, "description": f"Bases esenciales para {career_title}."},
-                {"step": 2, "title": f"Nivelación en {gap_str}", "reward_xp": 250, "description": "Fortalecimiento de áreas de oportunidad."},
-                {"step": 3, "title": "Proyecto Integrador para Portfolio", "reward_xp": 400, "description": "Demostración práctica de competencias."},
-                {"step": 4, "title": "Certificación y Aplicación Profesional", "reward_xp": 600, "description": "Validación final y vinculación con oportunidades."}
+                {"step": 1, "key": "roadmap.step1", "reward_xp": 100},
+                {"step": 2, "key": "roadmap.step2", "reward_xp": 250, "gaps": gaps},
+                {"step": 3, "key": "roadmap.step3", "reward_xp": 400},
+                {"step": 4, "key": "roadmap.step4", "reward_xp": 600},
             ]
         }
 
@@ -521,12 +541,12 @@ class LearningEngine:
     """
     Módulo de Aprendizaje Continuo y Predicción de Evolución.
     """
-    def predict_growth(self, vector: Dict[str, float], top_career: str) -> List[str]:
-        predictions = [
-            f"Con práctica constante, tu capacidad analítica puede incrementarse un 15% en los próximos 6 meses.",
-            f"Tu alineación con {top_career} te permitirá completar proyectos de nivel intermedio rápidamente."
+    def predict_growth(self, vector: Dict[str, float], career_id: Optional[str]) -> List[Dict[str, Any]]:
+        """Predicciones sin redactar, igual que el resto del motor."""
+        return [
+            {"key": "prediction.growth", "params": {}},
+            {"key": "prediction.projects", "params": {}, "career_id": career_id},
         ]
-        return predictions
 
 
 class ResponseBuilder:
@@ -538,15 +558,14 @@ class ResponseBuilder:
         top_career: Optional[Dict[str, Any]],
         top_matches: List[Dict[str, Any]],
         roadmap: Optional[Dict[str, Any]],
-        reasoning: str,
+        reasoning: Dict[str, Any],
         confidence: float,
         strengths: List[str],
         weaknesses: List[str],
         hubs: List[Dict[str, Any]],
-        learning_style: str,
-        personality: str,
+        archetype_key: str,
         memory_updates: Dict[str, Any],
-        predictions: List[str]
+        predictions: List[Dict[str, Any]]
     ) -> BrainResponse:
         return BrainResponse(
             top_career=top_career,
@@ -557,10 +576,13 @@ class ResponseBuilder:
             strengths=strengths,
             weaknesses=weaknesses,
             recommended_hubs=hubs,
-            learning_style=learning_style,
-            personality=personality,
+            archetype_key=archetype_key,
             memory_updates=memory_updates,
-            next_actions=["Explorar Roadmap", "Revisar Hubs Globales", "Realizar Práctica de Nivelación"],
+            next_actions=[
+                {"key": "action.roadmap"},
+                {"key": "action.hubs"},
+                {"key": "action.practice"},
+            ],
             future_predictions=predictions
         )
 
@@ -578,18 +600,10 @@ class MentorEngine:
     en la memoria del estudiante) para no responder siempre lo mismo.
     """
 
-    GREETING_KEYWORDS = ["hola", "buenas", "hey", "qué tal", "que tal", "hi ", "hello"]
-    FAREWELL_KEYWORDS = ["adios", "adiós", "chao", "nos vemos", "bye", "hasta luego"]
-    THANKS_KEYWORDS = ["gracias", "thank"]
-    HELP_KEYWORDS = ["ayuda", "que puedes hacer", "qué puedes hacer", "en que me ayudas", "en qué me ayudas", "opciones"]
-
-    INTENT_KEYWORDS = {
-        "roadmap": ["roadmap", "pasos", "plan", "ruta", "checkpoint", "siguiente"],
-        "career": ["carrera", "career", "profesion", "profesión", "trabajo", "opciones"],
-        "university": ["universidad", "university", "estudiar", "hub", "pais", "país", "destino"],
-        "skills": ["habilidad", "skill", "fortaleza", "debilidad", "gap", "mejorar"],
-        "motivation": ["animo", "ánimo", "motivacion", "motivación", "duda", "nervios", "miedo", "inseguro"],
-    }
+    # El orden importa: un saludo gana a una pregunta, y "opciones" cae en
+    # `help` antes que en `career`.
+    INTENT_ORDER = ("greeting", "farewell", "thanks", "help",
+                    "roadmap", "career", "university", "skills", "motivation")
 
     def __init__(self, memory_system: StudentMemorySystem, careers_db: List[Dict[str, Any]]):
         self.memory_system = memory_system
@@ -600,26 +614,28 @@ class MentorEngine:
         catalogo (con limite de palabra, para no confundir un titulo corto
         con una palabra suelta), esa mencion tiene prioridad sobre la
         deteccion de intent generica - es la forma mas concreta de
-        "razonar" sobre lo que el estudiante pregunto."""
+        "razonar" sobre lo que el estudiante pregunto.
+
+        Se buscan los titulos en los DOS idiomas: el estudiante puede
+        escribir "psicologia" con la aplicacion en ingles."""
         lowered = message.lower()
         for career in self.careers_db:
-            title = (career.get("title") or "").strip().lower()
-            if title and re.search(r"\b" + re.escape(title) + r"\b", lowered):
-                return career
+            for field in ("title", "title_es"):
+                title = (career.get(field) or "").strip().lower()
+                if title and re.search(r"\b" + re.escape(title) + r"\b", lowered):
+                    return career
         return None
 
     def _detect_intent(self, message: str) -> str:
+        """La palabra clave se busca con limite de palabra y admitiendo el
+        plural: "skill" tiene que reconocer "skills" y "habilidad" tiene que
+        reconocer "habilidades", que es como escribe la gente. Sin el limite,
+        "hi" saludaria dentro de "hilo"; sin el plural, la mitad de las
+        preguntas caen en la respuesta generica."""
         lowered = message.lower()
-        if any(keyword in lowered for keyword in self.GREETING_KEYWORDS):
-            return "greeting"
-        if any(keyword in lowered for keyword in self.FAREWELL_KEYWORDS):
-            return "farewell"
-        if any(keyword in lowered for keyword in self.THANKS_KEYWORDS):
-            return "thanks"
-        if any(keyword in lowered for keyword in self.HELP_KEYWORDS):
-            return "help"
-        for intent, keywords in self.INTENT_KEYWORDS.items():
-            if any(keyword in lowered for keyword in keywords):
+        for intent in self.INTENT_ORDER:
+            keywords = localization.MENTOR_KEYWORDS.get(intent, [])
+            if any(re.search(rf"\b{re.escape(k)}(?:e?s)?\b", lowered) for k in keywords):
                 return intent
         return "general"
 
@@ -633,7 +649,12 @@ class MentorEngine:
         memory["chat_history"] = chat_history[-20:]
         self.memory_system.save_memory(user_id, memory)
 
-    def chat(self, user_message: str, context: Optional[Dict[str, Any]] = None) -> str:
+    def chat(
+        self,
+        user_message: str,
+        context: Optional[Dict[str, Any]] = None,
+        lang: Optional[str] = None,
+    ) -> str:
         context = context or {}
         user_id = context.get("user_id", "default_student")
         # Todo el ciclo load->responder->save queda bajo un solo lock por
@@ -641,9 +662,25 @@ class MentorEngine:
         # estudiante (o un chat justo cuando termina un test) no deben
         # poder pisarse la memoria guardada entre ellos.
         with self.memory_system.lock(user_id):
-            return self._chat_locked(user_message, context, user_id)
+            return self._chat_locked(user_message, context, user_id, localization.resolve(lang))
 
-    def _chat_locked(self, user_message: str, context: Dict[str, Any], user_id: str) -> str:
+    def _say(self, key: str, lang: str, **params: Any) -> str:
+        """Una de las variantes de `key`, ya interpolada."""
+        return random.choice(localization.mentor_options(key, lang)).format(**params)
+
+    def _career_name(self, career_id: Optional[str], lang: str) -> Optional[str]:
+        """El titulo de una carrera en el idioma pedido, buscado por id.
+
+        Se guarda el id y no el nombre porque el nombre esta traducido: el
+        mentor tiene que poder hablar de un test hecho en el otro idioma."""
+        if not career_id:
+            return None
+        career = next((c for c in self.careers_db if c.get("id") == career_id), None)
+        if not career:
+            return None
+        return localization.career_field(career, "title", lang)
+
+    def _chat_locked(self, user_message: str, context: Dict[str, Any], user_id: str, lang: str) -> str:
         name = (context.get("name") or "").strip()
         greeting_name = f", {name}" if name else ""
         goals = context.get("passport_goals") or {}
@@ -656,122 +693,101 @@ class MentorEngine:
 
         if not history:
             if intent == "greeting":
-                response = random.choice([
-                    f"¡Hola{greeting_name}! Soy tu AI Mentor. Todavía no tengo un diagnóstico tuyo — completa el test vocacional y con gusto te ayudo a interpretarlo.",
-                    f"¡Qué bueno verte{greeting_name}! Para poder orientarte necesito que hagas primero el test de FuturePilot.",
-                ])
+                response = self._say("noProfile.greeting", lang, name=greeting_name)
             elif intent in ("farewell", "thanks"):
-                response = "¡Cuando quieras! Aquí estaré."
+                response = self._say("noProfile.bye", lang)
             else:
-                response = (
-                    "Todavía no tengo un diagnóstico tuyo. Completa el test de orientación "
-                    "vocacional primero y con gusto te ayudo a interpretar tus resultados."
-                )
+                response = self._say("noProfile.general", lang)
             self._log_turn(memory, user_id, user_message, intent)
             return response
 
         last = history[-1]
-        top_choice = last.get("top_choice") or "tu perfil vocacional"
         top_matches = last.get("top_matches") or []
         roadmap = last.get("roadmap")
-        personality = last.get("personality")
-        strengths = last.get("strengths") or []
-        weaknesses = last.get("weaknesses") or []
+        strengths = localization.cluster_labels(last.get("strengths") or [], lang)
+        weaknesses = localization.cluster_labels(last.get("weaknesses") or [], lang)
         hubs = last.get("recommended_hubs") or []
 
+        top_choice = (
+            self._career_name(last.get("top_choice_id"), lang)
+            or self._say("fallback.career", lang)
+        )
+        personality = localization.archetype(last.get("archetype_key"), lang)["name"]
+
+        def match_name(match: Dict[str, Any]) -> str:
+            return self._career_name(match.get("career_id"), lang) or match.get("title", "")
+
         if intent == "greeting":
-            response = random.choice([
-                f"¡Hola{greeting_name}! ¿En qué te ayudo hoy: tu roadmap, tu carrera, universidades o tus habilidades?",
-                f"¡Hey{greeting_name}! Tu perfil ({personality or 'ya analizado'}) apunta fuerte hacia {top_choice}. ¿Sobre qué quieres hablar?",
-            ])
+            response = self._say("greeting", lang, name=greeting_name,
+                                 personality=personality, career=top_choice)
 
         elif intent == "farewell":
-            response = random.choice([
-                "¡Nos vemos! Sigue avanzando en tu roadmap.",
-                f"¡Éxitos con {top_choice}! Vuelve cuando quieras.",
-            ])
+            response = self._say("farewell", lang, career=top_choice)
 
         elif intent == "thanks":
-            response = random.choice([
-                "¡Con gusto! Para eso estoy.",
-                "¡De nada! Aquí sigo si necesitas algo más.",
-            ])
+            response = self._say("thanks", lang)
 
         elif intent == "help":
-            response = (
-                "Puedo ayudarte con: tu roadmap paso a paso, tu carrera recomendada y otras opciones "
-                "compatibles, universidades/hubs, tus fortalezas y áreas de mejora, o si necesitas ánimo. "
-                "También puedes preguntarme directamente por cualquier carrera del catálogo por su nombre."
-            )
+            response = self._say("help", lang)
 
         elif intent == "career_lookup" and named_career:
-            match = next((m for m in top_matches if m.get("title") == named_career.get("title")), None)
+            title = localization.career_field(named_career, "title", lang)
+            description = localization.career_field(named_career, "description", lang)
+            match = next((m for m in top_matches if m.get("career_id") == named_career.get("id")), None)
             if match:
-                response = (
-                    f"{named_career['title']}: tienes un {match['match_percentage']}% de compatibilidad "
-                    f"según tu diagnóstico. {named_career.get('description', '')}"
-                ).strip()
+                response = self._say("career.known", lang, career=title,
+                                     pct=match["match_percentage"], description=description).strip()
             else:
-                response = (
-                    f"{named_career['title']} no quedó entre tus mejores matches, pero aquí tienes de qué se trata: "
-                    f"{named_career.get('description') or 'no tengo más detalles todavía.'}"
-                )
+                response = self._say("career.unknown", lang, career=title,
+                                     description=description or self._say("career.noDetails", lang))
 
         elif intent == "roadmap":
             if roadmap and roadmap.get("checkpoints"):
-                steps = "; ".join(f"{cp['step']}. {cp['title']}" for cp in roadmap["checkpoints"])
-                response = (
-                    f"Tu ruta hacia {roadmap.get('career_title', top_choice)} "
-                    f"(~{roadmap.get('estimated_months', 8)} meses): {steps}. Puedes verla en detalle en Journey."
+                steps = "; ".join(
+                    f"{cp['step']}. {localization.checkpoint_text(cp, lang, top_choice)['title']}"
+                    for cp in roadmap["checkpoints"]
                 )
+                career = self._career_name(roadmap.get("career_id"), lang) or top_choice
+                response = self._say("roadmap.have", lang, career=career,
+                                     months=roadmap.get("estimated_months", 8), steps=steps)
             else:
-                response = f"Todavía no tengo un roadmap detallado para {top_choice}. Repite el test para generarlo."
+                response = self._say("roadmap.none", lang, career=top_choice)
 
         elif intent == "career":
             if len(top_matches) > 1:
-                others = ", ".join(f"{m['title']} ({m['match_percentage']}%)" for m in top_matches[1:4])
-                response = (
-                    f"Tu mejor match es {top_choice} ({top_matches[0]['match_percentage']}%). "
-                    f"También compatibles: {others}."
+                others = ", ".join(
+                    f"{match_name(m)} ({m['match_percentage']}%)" for m in top_matches[1:4]
                 )
+                response = self._say("career.others", lang, career=top_choice,
+                                     pct=top_matches[0]["match_percentage"], others=others)
             else:
-                response = f"Según tu último diagnóstico, tu mejor match es {top_choice}."
+                response = self._say("career.single", lang, career=top_choice)
 
         elif intent == "university":
             if hubs:
-                hub_list = "; ".join(f"{hub['name']} ({hub.get('desc', '')})" for hub in hubs)
-                response = f"Para {top_choice}, estos hubs encajan con tu perfil: {hub_list}."
-            else:
-                response = f"Revisa los hubs globales recomendados para {top_choice} en tu Flight Plan."
-            if goals.get("target_country"):
-                response += (
-                    f" Vi en tu Pasaporte que tu meta es estudiar en {goals['target_country']} — "
-                    "vale la pena comparar esos hubs con esa opción."
+                hub_list = "; ".join(
+                    f"{hub['name']} ({localization.hub_desc(hub, lang)})" for hub in hubs
                 )
+                response = self._say("university.have", lang, career=top_choice, hubs=hub_list)
+            else:
+                response = self._say("university.none", lang, career=top_choice)
+            if goals.get("target_country"):
+                response += self._say("university.goal", lang, country=goals["target_country"])
 
         elif intent == "skills":
             parts = []
             if strengths:
-                parts.append(f"tus fortalezas ({', '.join(strengths)})")
+                parts.append(self._say("skills.strengths", lang, items=localization.join(strengths, lang)))
             if weaknesses:
-                parts.append(f"áreas de oportunidad ({', '.join(weaknesses)})")
-            body = " y ".join(parts) if parts else "un perfil balanceado, sin brechas grandes"
-            response = f"Con base en tu diagnóstico tienes {body}. Enfócate en cerrar brechas hacia {top_choice}."
+                parts.append(self._say("skills.weaknesses", lang, items=localization.join(weaknesses, lang)))
+            body = localization.join(parts, lang) if parts else self._say("skills.balanced", lang)
+            response = self._say("skills.body", lang, body=body, career=top_choice)
 
         elif intent == "motivation":
-            response = random.choice([
-                f"Es normal tener dudas al elegir un camino. Tu diagnóstico se basa en tus propias respuestas, "
-                f"y {top_choice} refleja fortalezas reales tuyas — avanza un checkpoint a la vez.",
-                f"Nadie tiene todo resuelto desde el primer día. {top_choice} no es una sentencia final, "
-                "es un punto de partida que ya sabemos que encaja contigo.",
-            ])
+            response = self._say("motivation", lang, career=top_choice)
 
         else:
-            response = (
-                f"Puedo ayudarte con tu roadmap, tu carrera recomendada ({top_choice}), universidades/hubs, "
-                "tus habilidades, o si necesitas ánimo. También puedes preguntarme por cualquier carrera "
-                "del catálogo. ¿Sobre qué quieres hablar?"
-            )
+            response = self._say("general", lang, career=top_choice)
 
         self._log_turn(memory, user_id, user_message, intent)
         return response
@@ -822,7 +838,7 @@ class FuturePilotBrain:
         user_memory = self.memory_system.load_memory(user_id)
 
         # Paso 3: Análisis y Generación de Hipótesis
-        personality, learning_style = self.reasoning.infer_archetype(user_vector)
+        archetype_key = self.reasoning.infer_archetype(user_vector)
         hypotheses = self.reasoning.generate_hypotheses(user_vector, user_memory)
 
         # Paso 4: Evaluación de Confianza Cognitiva
@@ -844,7 +860,7 @@ class FuturePilotBrain:
         roadmap = None
         recommended_hubs = []
         if top_match:
-            roadmap = self.planner.build_roadmap(top_match["title"], top_match["skill_gaps"])
+            roadmap = self.planner.build_roadmap(top_match.get("career_id"), top_match["skill_gaps"])
             recommended_hubs = self.career_engine.get_recommended_hubs(
                 top_match.get("category", ""), top_match.get("career_id")
             )
@@ -852,14 +868,17 @@ class FuturePilotBrain:
         # Paso 7: Generar Justificación Razonada
         strengths = top_match.get("strengths", []) if top_match else []
         gaps = top_match.get("skill_gaps", []) if top_match else []
-        reasoning_text = (
-            f"Análisis Cognitivo ({personality}): Con un nivel de confianza del {int(confidence*100)}%, "
-            f"la IA identifica alta compatibilidad con {top_match['title'] if top_match else 'tu perfil'}. "
-            f"Se recomienda potenciar: {', '.join(gaps) if gaps else 'tus áreas clave'}."
-        )
+        reasoning = {
+            "key": "reasoning",
+            "career_id": top_match.get("career_id") if top_match else None,
+            "params": {"confidence": int(confidence * 100)},
+            "gaps": gaps,
+        }
 
         # Paso 8: Predicciones de Crecimiento
-        predictions = self.learning.predict_growth(user_vector, top_match["title"] if top_match else "")
+        predictions = self.learning.predict_growth(
+            user_vector, top_match.get("career_id") if top_match else None
+        )
 
         # Actualizar la Memoria del Usuario. Antes esta entrada solo
         # guardaba {timestamp, vector, top_choice} - el MentorEngine no
@@ -872,11 +891,10 @@ class FuturePilotBrain:
         user_memory["assessment_history"].append({
             "timestamp": datetime.now().isoformat(),
             "vector": user_vector,
-            "top_choice": top_match["title"] if top_match else None,
+            "top_choice_id": top_match.get("career_id") if top_match else None,
             "top_matches": ranked_matches[:TOP_MATCHES_RETURNED],
             "roadmap": roadmap,
-            "personality": personality,
-            "learning_style": learning_style,
+            "archetype_key": archetype_key,
             "strengths": strengths,
             "weaknesses": gaps,
             "recommended_hubs": recommended_hubs,
@@ -888,13 +906,12 @@ class FuturePilotBrain:
             top_career=top_match,
             top_matches=ranked_matches[:TOP_MATCHES_RETURNED],
             roadmap=roadmap,
-            reasoning=reasoning_text,
+            reasoning=reasoning,
             confidence=confidence,
             strengths=strengths,
             weaknesses=gaps,
             hubs=recommended_hubs,
-            learning_style=learning_style,
-            personality=personality,
+            archetype_key=archetype_key,
             memory_updates={"assessments_count": user_memory["assessments_count"]},
             predictions=predictions
         )
@@ -922,21 +939,20 @@ class FuturePilotAIEcosystem:
         se guardo en test_results al reclamarlo) a la memoria del usuario
         real, con la misma forma que run_cognitive_cycle - sin recalcular
         nada."""
-        top_choice = (results.get("top_choice") or {}).get("title")
+        top_choice_id = (results.get("top_choice") or {}).get("career_id")
         with self.brain.memory_system.lock(user_id):
-            self._sync_memory_locked(user_id, top_choice, results)
+            self._sync_memory_locked(user_id, top_choice_id, results)
 
-    def _sync_memory_locked(self, user_id: str, top_choice: Optional[str], results: Dict[str, Any]) -> None:
+    def _sync_memory_locked(self, user_id: str, top_choice_id: Optional[str], results: Dict[str, Any]) -> None:
         memory = self.brain.memory_system.load_memory(user_id)
         memory["assessments_count"] = memory.get("assessments_count", 0) + 1
         memory.setdefault("assessment_history", []).append({
             "timestamp": datetime.now().isoformat(),
             "vector": results.get("user_vector"),
-            "top_choice": top_choice,
+            "top_choice_id": top_choice_id,
             "top_matches": results.get("recommended_careers") or [],
             "roadmap": results.get("roadmap"),
-            "personality": results.get("personality"),
-            "learning_style": results.get("learning_style"),
+            "archetype_key": results.get("archetype_key"),
             "strengths": results.get("strengths") or [],
             "weaknesses": results.get("weaknesses") or [],
             "recommended_hubs": results.get("recommended_hubs") or [],
@@ -944,25 +960,20 @@ class FuturePilotAIEcosystem:
         self.brain.memory_system.save_memory(user_id, memory)
 
     @staticmethod
-    def _build_career_justification(match: Dict[str, Any], personality: str) -> str:
-        """Genera una justificacion propia por carrera (fortalezas/gaps de esa
-        carrera especifica) en vez de reutilizar el mismo texto de razonamiento
-        general para las cinco carreras recomendadas."""
-        strengths = match.get("strengths") or []
-        gaps = match.get("skill_gaps") or []
-        pct = match.get("match_percentage", 0)
-        strengths_text = ", ".join(strengths) if strengths else "tu perfil general"
+    def _build_career_justification(match: Dict[str, Any]) -> Dict[str, Any]:
+        """Justificacion propia de cada carrera (sus fortalezas y sus brechas)
+        en vez de repetir el razonamiento general en las ocho.
 
-        if gaps:
-            return (
-                f"Con un {pct}% de compatibilidad, tu perfil ({personality}) se alinea "
-                f"especialmente en {strengths_text}. Para acercarte aun mas a "
-                f"{match.get('title')}, conviene reforzar: {', '.join(gaps)}."
-            )
-        return (
-            f"Con un {pct}% de compatibilidad, tu perfil ({personality}) encaja "
-            f"fuertemente con {match.get('title')} gracias a {strengths_text}."
-        )
+        Devuelve la clave y los datos, no el texto: se redacta al responder,
+        en el idioma pedido."""
+        gaps = match.get("skill_gaps") or []
+        return {
+            "key": "justification.withGaps" if gaps else "justification.noGaps",
+            "career_id": match.get("career_id"),
+            "params": {"pct": match.get("match_percentage", 0)},
+            "strengths": match.get("strengths") or [],
+            "gaps": gaps,
+        }
 
     def process_user_test(self, user_answers: List[Dict[str, Any]], user_id: str = "default_student") -> Dict[str, Any]:
         response: BrainResponse = self.brain.run_cognitive_cycle(user_answers, user_id)
@@ -975,28 +986,33 @@ class FuturePilotAIEcosystem:
                 "match_percentage": m["match_percentage"],
                 "strengths": m["strengths"],
                 "skill_gaps": m["skill_gaps"],
-                "justification": self._build_career_justification(m, response.personality),
+                "justification": self._build_career_justification(m),
                 "description": m["description"]
             }
             for m in response.top_matches
         ]
 
         # Formato esperado por el API anterior, mas los campos que ya calcula
-        # FuturePilotBrain (personality, learning_style, strengths/weaknesses,
-        # confidence, recommended_hubs, future_predictions) y que antes se
-        # descartaban aqui - necesarios para la vista de resultados completos.
+        # FuturePilotBrain (arquetipo, strengths/weaknesses, confidence,
+        # recommended_hubs, future_predictions) y que antes se descartaban
+        # aqui - necesarios para la vista de resultados completos.
+        #
+        # Lo que sale de aqui es la forma SIN TRADUCIR: claves de texto,
+        # ids de carrera y clusters en mayusculas. Es lo que se guarda en
+        # results_json. app.py lo pasa por _localize_results antes de
+        # devolverlo. Ver localization.py.
         return {
             "user_id": user_id,
             "user_vector": self.brain.profile_engine.calculate_vector(
                 self.brain.perception.parse_test_inputs(user_answers, self.brain.questions_db)
             ),
-            "personality": response.personality,
-            "learning_style": response.learning_style,
+            "archetype_key": response.archetype_key,
             "strengths": response.strengths,
             "weaknesses": response.weaknesses,
             "confidence": response.confidence,
             "recommended_hubs": response.recommended_hubs,
             "future_predictions": response.future_predictions,
+            "next_actions": response.next_actions,
             "recommended_careers": recommended_careers,
             "top_choice": {
                 **(response.top_career if response.top_career else {}),

@@ -8,7 +8,7 @@
 
 // Estado de partida mientras llega el resultado. El conector lo sustituye
 // en cuanto lo tiene; si no hay ninguno, este texto es lo que se queda.
-const NO_RESULT = "Todavía no has hecho el test";
+const NO_RESULT = t("flightplan.noTest", { ns: "site" });
 
 document.getElementById("careerName").innerText =
   localStorage.getItem("selectedCareer") || NO_RESULT;
@@ -17,7 +17,7 @@ document.getElementById("careerName").innerText =
 // saber que universidades mostrar (la fuente real es
 // web/src/database/countries/**, indexada por ciudad). En vez de un listado
 // hardcodeado que no coincide con datos reales, un estado honesto.
-document.getElementById("universities").innerText = "Próximamente";
+document.getElementById("universities").innerText = t("flightplan.soon", { ns: "site" });
 
 // El "Academic Profile" mostraba Math/English/Learning Style sacados del
 // motor local. Ninguna pregunta del banco alimenta esos tres campos, asi

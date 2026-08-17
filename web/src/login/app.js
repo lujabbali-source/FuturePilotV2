@@ -1,3 +1,8 @@
+import { t, onLanguageChange } from "../shared/i18next.js";
+
+// Todo el texto de estas pantallas vive en el namespace `login`.
+const tl = (key, params) => t(key, { ns: "login", ...params });
+
 import { claimPendingAndCelebrate } from "../shared/resultClaim.js";
 
 // El cuerpo va dentro de una funcion con nombre porque necesita cortar
@@ -39,30 +44,35 @@ function main() {
   const requestedMode = new URLSearchParams(window.location.search).get("mode");
   let mode = requestedMode === "register" ? "register" : "login";
 
-  const COPY = {
-    login: {
-      title: ["Bienvenido", " de nuevo"],
-      subtitle: "Tu camino hacia la carrera de tus sueños empieza aquí.",
-      submit: "Iniciar sesión",
-      prompt: "¿No tienes una cuenta?",
-      switchLabel: "Crear una",
-    },
-    register: {
-      title: ["Crea tu", " cuenta"],
-      subtitle: "Guarda tu perfil y desbloquea tu plan completo con FuturePilot.",
-      submit: "Crear cuenta",
-      prompt: "¿Ya tienes una cuenta?",
-      switchLabel: "Iniciar sesión",
-    },
-    forgot: {
-      title: ["Recupera", " tu acceso"],
-      subtitle: "Ingresa tu email y te enviamos instrucciones para elegir una nueva contraseña.",
-      submit: "Enviar instrucciones",
-    },
-  };
+  // Se lee en cada uso y no una sola vez al cargar: si fuera una constante,
+  // cambiar de idioma con el formulario delante no cambiaria nada.
+  function copyFor(which) {
+    const M = {
+      login: {
+        title: [tl("mode.loginTitle"), tl("mode.loginTitleAccent")],
+        subtitle: tl("mode.loginSubtitle"),
+        submit: tl("signIn"),
+        prompt: tl("mode.loginSwitchPrompt"),
+        switchLabel: tl("mode.loginSwitchAction"),
+      },
+      register: {
+        title: [tl("mode.registerTitle"), tl("mode.registerTitleAccent")],
+        subtitle: tl("mode.registerSubtitle"),
+        submit: tl("createAccount"),
+        prompt: tl("mode.registerSwitchPrompt"),
+        switchLabel: tl("mode.registerSwitchAction"),
+      },
+      forgot: {
+        title: [tl("mode.recoverTitle"), tl("mode.recoverTitleAccent")],
+        subtitle: tl("mode.recoverSubtitle"),
+        submit: tl("mode.recoverSubmit"),
+      },
+    };
+    return M[which];
+  }
 
   function applyMode() {
-    const copy = COPY[mode];
+    const copy = copyFor(mode);
     cardTitle.innerHTML = `${copy.title[0]}<span>${copy.title[1]}</span>`;
     cardSubtitle.textContent = copy.subtitle;
     submitLabel.textContent = copy.submit;
@@ -114,20 +124,21 @@ function main() {
     // El mensaje depende de por donde entro: decirle "tu cuenta quedó
     // creada" a quien acaba de INICIAR SESION en una cuenta que ya tenia
     // es sencillamente falso.
-    const entrada = mode === "register" ? "Tu cuenta quedó creada" : "Ya iniciaste sesión";
+    const entrada = mode === "register"
+      ? tl("status.accountCreated")
+      : tl("status.alreadySignedIn");
     infoBox.hidden = true;
     errorBox.hidden = false;
     errorBox.innerHTML = `
-      <span>${entrada}, pero no pudimos vincular tu resultado todavía.
-      No te preocupes: tus respuestas siguen guardadas.</span>
-      <button type="button" class="text-action" data-action="retry-claim">Intentar de nuevo</button>
-      <button type="button" class="text-action" data-action="skip-claim">Continuar sin vincular</button>
+      <span>${tl("claim.notLinked", { entrada })}</span>
+      <button type="button" class="text-action" data-action="retry-claim">${tl("claim.retry")}</button>
+      <button type="button" class="text-action" data-action="skip-claim">${tl("claim.skip")}</button>
     `;
   }
 
   function setSubmitting(isSubmitting) {
     submitButton.disabled = isSubmitting;
-    submitLabel.textContent = isSubmitting ? "Un momento..." : COPY[mode].submit;
+    submitLabel.textContent = isSubmitting ? tl("status.working") : copyFor(mode).submit;
   }
 
   document.body.addEventListener("click", (event) => {
@@ -144,7 +155,7 @@ function main() {
       input.type = input.type === "password" ? "text" : "password";
       actionButton.setAttribute(
         "aria-label",
-        input.type === "password" ? "Mostrar contraseña" : "Ocultar contraseña"
+        input.type === "password" ? tl("fields.showPassword") : tl("fields.hidePassword")
       );
     }
 
@@ -167,7 +178,7 @@ function main() {
         // claim_test_result en users_store.py).
         if (claim.status === "failed") {
           actionButton.disabled = false;
-          actionButton.textContent = "Intentar de nuevo";
+          actionButton.textContent = tl("status.retry");
           return;
         }
         window.location.href = "/assessment";
@@ -191,11 +202,11 @@ function main() {
     const name = form.name ? form.name.value.trim() : "";
 
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      showError("Ingresa un email válido.");
+      showError(tl("errors.email"));
       return;
     }
     if (mode !== "forgot" && password.length < 8) {
-      showError("La contraseña debe tener al menos 8 caracteres.");
+      showError(tl("errors.password"));
       return;
     }
 
@@ -211,13 +222,13 @@ function main() {
         const data = await response.json().catch(() => ({}));
         setSubmitting(false);
         if (!response.ok) {
-          showError(data.detail || "No pudimos procesar tu solicitud. Intenta de nuevo.");
+          showError(data.detail || tl("errors.generic"));
           return;
         }
-        showInfo(data.detail || "Si existe una cuenta con ese email, enviamos instrucciones para recuperar el acceso.");
+        showInfo(data.detail || tl("recover.sent"));
       } catch (error) {
         setSubmitting(false);
-        showError("No pudimos conectar con el servidor. Verifica tu conexión e intenta de nuevo.");
+        showError(tl("errors.network"));
       }
       return;
     }
@@ -247,7 +258,7 @@ function main() {
           adminTokenField.hidden = false;
           form.adminSetupToken?.focus();
         }
-        showError(data.detail || "No pudimos procesar tu solicitud. Intenta de nuevo.");
+        showError(data.detail || tl("errors.generic"));
         return;
       }
 
@@ -280,11 +291,23 @@ function main() {
       window.location.href = "/assessment";
     } catch (error) {
       setSubmitting(false);
-      showError("No pudimos conectar con el servidor. Verifica tu conexión e intenta de nuevo.");
+      showError(tl("errors.network"));
     }
   });
 
   applyMode();
+
+  // El titulo, el subtitulo y el boton los escribe JavaScript segun el modo
+  // (login / registro / recuperar), asi que traducir el markup estatico no
+  // los alcanza: hay que volver a aplicarlos.
+  //
+  // applyMode() llama a hideMessages(), asi que un error visible se borraria
+  // al cambiar de idioma. Se conserva y se vuelve a mostrar.
+  onLanguageChange(() => {
+    const errorVisible = errorBox.hidden ? null : errorBox.textContent;
+    applyMode();
+    if (errorVisible) showError(errorVisible);
+  });
 }
 
 main();

@@ -97,5 +97,38 @@
     "terms": "Términos y Condiciones",
     "privacy": "Política de Privacidad",
     "rights": "Todos los derechos reservados."
+  },
+  "pageTitle": {
+    "index": "FuturePilot",
+    "careers": "Carreras · FuturePilot",
+    "assessment": "Descubre tu perfil · FuturePilot",
+    "globe": "Explora tu futuro · FuturePilot",
+    "journey": "Tu ruta · FuturePilot",
+    "flightplan": "Plan de vuelo · FuturePilot",
+    "passport": "Pasaporte FuturePilot",
+    "login": "Iniciar sesión · FuturePilot",
+    "reset": "Restablecer contraseña · FuturePilot",
+    "privacy": "Política de privacidad · FuturePilot",
+    "terms": "Términos y condiciones · FuturePilot"
+  },
+  "careers": {
+    "buildPlan": "Crear mi plan de vuelo",
+    "loadError": "No pudimos cargar el catálogo de carreras. Intenta recargar la página."
+  },
+  "flightplan": {
+    "noTest": "Todavía no has hecho el test",
+    "soon": "Próximamente"
+  },
+  "results": {
+    "archetype": "Arquetipo",
+    "learningStyle": "Estilo de aprendizaje",
+    "confidence": "Confianza del análisis",
+    "noDestinations": "Explora el globo para descubrir destinos."
+  },
+  "mentor": {
+    "open": "Abrir chat con el AI Mentor",
+    "placeholder": "Escribe tu pregunta...",
+    "hello": "¡Hola! Soy tu AI Mentor. Puedo ayudarte con tu roadmap, tu carrera recomendada, universidades o tus habilidades — o si necesitas ánimo. ¿En qué te ayudo?",
+    "error": "No pude procesar tu mensaje. Intenta de nuevo en un momento."
   }
 }

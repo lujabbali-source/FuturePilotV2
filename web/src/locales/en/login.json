@@ -1,5 +1,71 @@
 {
   "title": "Welcome back",
   "signIn": "Sign in",
-  "createAccount": "Create account"
+  "createAccount": "Create account",
+  "aside": {
+    "kicker": "Build Your Future",
+    "blurb": "Find the career that fits you, explore universities across the continent and build the map to your future — guided by AI."
+  },
+  "badge": "FUTUREPILOT / ACCESS",
+  "mode": {
+    "loginTitle": "Welcome",
+    "loginTitleAccent": " back",
+    "loginSubtitle": "Your path towards the career you want starts here.",
+    "loginSwitchPrompt": "Don't have an account?",
+    "loginSwitchAction": "Create one",
+    "registerTitle": "Create your",
+    "registerTitleAccent": " account",
+    "registerSubtitle": "Save your profile and unlock your full FuturePilot plan.",
+    "registerSwitchPrompt": "Already have an account?",
+    "registerSwitchAction": "Sign in",
+    "recoverTitle": "Recover",
+    "recoverTitleAccent": " your access",
+    "recoverSubtitle": "Enter your email and we'll send instructions to choose a new password.",
+    "recoverSubmit": "Send instructions"
+  },
+  "fields": {
+    "name": "Your name",
+    "email": "you@email.com",
+    "password": "At least 8 characters",
+    "adminToken": "Administrator setup token",
+    "remember": "Remember me",
+    "forgot": "Forgot your password?",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "backToLogin": "← Back to sign in"
+  },
+  "status": {
+    "working": "One moment...",
+    "accountCreated": "Your account is ready",
+    "alreadySignedIn": "You're already signed in",
+    "retry": "Try again"
+  },
+  "errors": {
+    "email": "Enter a valid email address.",
+    "password": "The password must be at least 8 characters.",
+    "generic": "We couldn't process your request. Please try again.",
+    "network": "We couldn't reach the server. Check your connection and try again."
+  },
+  "recover": {
+    "sent": "If an account exists for that email, we've sent instructions to recover access."
+  },
+  "reset": {
+    "pageTitle": "Reset password · FuturePilot",
+    "title": "Choose your",
+    "titleAccent": " new password",
+    "subtitle": "Enter a new password for your account.",
+    "newPassword": "New password (at least 8 characters)",
+    "confirmPassword": "Confirm the new password",
+    "submit": "Save new password",
+    "noToken": "This link doesn't include a valid token.",
+    "requestNew": "Request a new recovery link from the sign-in page.",
+    "mismatch": "The passwords don't match.",
+    "failed": "We couldn't update your password. Request a new link.",
+    "done": "Done! Your password has been updated. Taking you to sign in..."
+  },
+  "claim": {
+    "notLinked": "{{entrada}}, but we couldn't link your result yet. Don't worry: your answers are still saved.",
+    "retry": "Try again",
+    "skip": "Continue without linking"
+  }
 }

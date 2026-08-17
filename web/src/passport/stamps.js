@@ -20,6 +20,13 @@
 //
 // La rareza solo cambia el color de la tinta y el grosor del marco. No hay
 // destellos ni "legendario": es una coleccion, no un videojuego.
+//
+// El texto GRABADO en los sellos (CITY, EXPLORED, MILESTONE...) va siempre en
+// ingles, y es a proposito: un sello de inmigracion real tampoco cambia de
+// idioma segun quien lo mire. Lo unico que sigue al idioma de la aplicacion
+// es el formato de la fecha.
+
+import { currentLanguage } from "../shared/i18next.js";
 
 /** Hash determinista y pequeño de una cadena. Da los mismos numeros para la
  *  misma clave, que es lo que hace estables las imperfecciones. */
@@ -83,7 +90,7 @@ function shortDate(iso) {
   if (!iso) return "";
   const date = new Date(iso.endsWith?.("Z") || iso.includes?.("+") ? iso : `${iso}Z`);
   if (Number.isNaN(date.getTime())) return "";
-  return date.toLocaleDateString("es-CO", { day: "2-digit", month: "short" }).toUpperCase();
+  return date.toLocaleDateString(currentLanguage(), { day: "2-digit", month: "short" }).toUpperCase();
 }
 
 // --------------------------------------------------------------------------
@@ -147,7 +154,7 @@ function continentStamp(stamp, ink) {
     <text x="50" y="42" text-anchor="middle" class="fp-stamp__name">${escapeHtml(fit(stamp.subject_label || stamp.label, 12))}</text>
     <line x1="30" y1="47" x2="70" y2="47" stroke="${ink.stroke}" stroke-width="0.8" opacity=".6"/>
     <text x="50" y="58" text-anchor="middle" class="fp-stamp__kicker">EXPLORER</text>
-    ${count ? `<text x="50" y="72" text-anchor="middle" class="fp-stamp__meta">${count} PAÍSES</text>` : ""}
+    ${count ? `<text x="50" y="72" text-anchor="middle" class="fp-stamp__meta">${count} COUNTRIES</text>` : ""}
   `;
 }
 

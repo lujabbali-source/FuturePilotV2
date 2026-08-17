@@ -6,6 +6,7 @@
 // careerMap hardcodeado, con nombres que no coincidian con el catalogo real
 // que usa la IA para el matching.
 
+import { currentLanguage, onLanguageChange, t } from "../shared/i18next.js";
 import "./page.css";
 
 let careers = [];
@@ -30,7 +31,7 @@ function renderCareers(list) {
         <h3>${escapeHtml(career.title)}</h3>
         <p>${escapeHtml(career.description)}</p>
         <button type="button" class="build-btn" data-career-id="${escapeHtml(career.id)}">
-          Build My Flight Plan
+          ${escapeHtml(t("careers.buildPlan", { ns: "site" }))}
         </button>
       </div>`
     )
@@ -64,13 +65,17 @@ document.getElementById("searchInput").addEventListener("input", (event) => {
 
 async function loadCareers() {
   try {
-    const response = await fetch("/api/v1/careers");
+    const response = await fetch(`/api/v1/careers?lang=${currentLanguage()}`);
     const data = await response.json();
     careers = data.careers || [];
     renderCareers(careers);
   } catch (error) {
-    grid.innerHTML = "<p>No pudimos cargar el catálogo de carreras. Intenta recargar la página.</p>";
+    grid.innerHTML = `<p>${escapeHtml(t("careers.loadError", { ns: "site" }))}</p>`;
   }
 }
 
 loadCareers();
+
+// El catalogo lo traduce el servidor, asi que cambiar de idioma obliga a
+// volver a pedirlo: repintar lo que ya hay no cambiaria nada.
+onLanguageChange(() => loadCareers());

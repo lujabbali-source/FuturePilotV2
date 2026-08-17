@@ -2,6 +2,9 @@
 // bloquea la CSP igual que uno escrito en el HTML, y asi ademas los
 // empaqueta y minifica Vite.
 import "./mentor-chat.css";
+import { currentLanguage, t } from "./i18next.js";
+
+const tm = (key) => t(key, { ns: "site" });
 import { show as showStamps } from "./passport-stamp-toast.js";
 (() => {
   const HISTORY_KEY = "futurePilotMentorChatHistory";
@@ -25,7 +28,7 @@ import { show as showStamps } from "./passport-stamp-toast.js";
   const bubble = document.createElement("button");
   bubble.id = "fpMentorBubble";
   bubble.type = "button";
-  bubble.setAttribute("aria-label", "Abrir chat con el AI Mentor");
+  bubble.setAttribute("aria-label", tm("mentor.open"));
   bubble.textContent = "✦";
 
   const panel = document.createElement("div");
@@ -37,7 +40,7 @@ import { show as showStamps } from "./passport-stamp-toast.js";
     </div>
     <div id="fpMentorMessages"></div>
     <form id="fpMentorForm">
-      <input type="text" id="fpMentorInput" placeholder="Escribe tu pregunta..." autocomplete="off">
+      <input type="text" id="fpMentorInput" placeholder=tm("mentor.placeholder") autocomplete="off">
       <button type="submit" id="fpMentorSend">Enviar</button>
     </form>
   `;
@@ -81,7 +84,7 @@ import { show as showStamps } from "./passport-stamp-toast.js";
   if (messages.length === 0) {
     messages.push({
       role: "bot",
-      text: "¡Hola! Soy tu AI Mentor. Puedo ayudarte con tu roadmap, tu carrera recomendada, universidades o tus habilidades — o si necesitas ánimo. ¿En qué te ayudo?",
+      text: tm("mentor.hello"),
     });
     saveHistory(messages);
   }
@@ -123,7 +126,7 @@ import { show as showStamps } from "./passport-stamp-toast.js";
     if (token) headers.Authorization = `Bearer ${token}`;
 
     try {
-      const response = await fetch("/api/v1/mentor/chat", {
+      const response = await fetch(`/api/v1/mentor/chat?lang=${currentLanguage()}`, {
         method: "POST",
         headers,
         body: JSON.stringify({ message: text, anon_id: getAnonId() }),
@@ -133,7 +136,7 @@ import { show as showStamps } from "./passport-stamp-toast.js";
 
       const reply = response.ok
         ? data.response
-        : "No pude procesar tu mensaje. Intenta de nuevo en un momento.";
+        : tm("mentor.error");
       messages.push({ role: "bot", text: reply });
       renderMessages();
       saveHistory(messages);

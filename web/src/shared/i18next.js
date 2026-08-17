@@ -20,10 +20,14 @@ import commonEn from "../locales/en/common.json";
 import testEn from "../locales/en/test.json";
 import resultsEn from "../locales/en/results.json";
 import siteEn from "../locales/en/site.json";
+import passportEn from "../locales/en/passport.json";
+import loginEn from "../locales/en/login.json";
 import commonEs from "../locales/es/common.json";
 import testEs from "../locales/es/test.json";
 import resultsEs from "../locales/es/results.json";
 import siteEs from "../locales/es/site.json";
+import passportEs from "../locales/es/passport.json";
+import loginEs from "../locales/es/login.json";
 
 export const supportedLanguages = ["en", "es"];
 const STORAGE_KEY = "futurepilotLanguage";
@@ -32,15 +36,17 @@ const instance = i18next.createInstance();
 
 instance.init({
   resources: {
-    en: { common: commonEn, test: testEn, results: resultsEn, site: siteEn },
-    es: { common: commonEs, test: testEs, results: resultsEs, site: siteEs },
+    en: { common: commonEn, test: testEn, results: resultsEn, site: siteEn,
+          passport: passportEn, login: loginEn },
+    es: { common: commonEs, test: testEs, results: resultsEs, site: siteEs,
+          passport: passportEs, login: loginEs },
   },
   lng: localStorage.getItem(STORAGE_KEY) || undefined,
   fallbackLng: "en",
   supportedLngs: supportedLanguages,
   nonExplicitSupportedLngs: true,
   load: "languageOnly",
-  ns: ["common", "test", "results", "site"],
+  ns: ["common", "test", "results", "site", "passport", "login"],
   defaultNS: "test",
   interpolation: { escapeValue: false },
   returnEmptyString: false,
@@ -74,6 +80,12 @@ export function applyTranslations(root = document) {
   });
   root.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
     element.setAttribute("placeholder", t(element.getAttribute("data-i18n-placeholder"), { ns: "site" }));
+  });
+  // aria-label. Un boton cuyo contenido es una flecha ("←") necesita que su
+  // nombre accesible tambien cambie de idioma; sin esto un lector de
+  // pantalla lo anuncia en castellano con la interfaz en ingles.
+  root.querySelectorAll("[data-i18n-label]").forEach((element) => {
+    element.setAttribute("aria-label", t(element.getAttribute("data-i18n-label"), { ns: "site" }));
   });
   document.documentElement.lang = currentLanguage();
 

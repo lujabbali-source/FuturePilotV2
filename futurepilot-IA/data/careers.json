@@ -2,8 +2,11 @@
   {
     "id": "c1",
     "title": "Software Engineering",
+    "title_es": "Ingeniería de software",
     "category": "Technology",
-    "description": "Diseña, construye y optimiza sistemas de software, aplicaciones y arquitecturas digitales escalables.",
+    "category_es": "Tecnología",
+    "description": "Designs, builds and optimises software systems, applications and scalable digital architectures.",
+    "description_es": "Diseña, construye y optimiza sistemas de software, aplicaciones y arquitecturas digitales escalables.",
     "requirements": {
       "ANALYTICAL": 9.0,
       "CREATIVE": 7.0,
@@ -18,8 +21,11 @@
   {
     "id": "c2",
     "title": "Artificial Intelligence Specialist",
+    "title_es": "Especialista en inteligencia artificial",
     "category": "Technology",
-    "description": "Entrena y despliega modelos de aprendizaje automático para resolver problemas que no tienen una regla fija.",
+    "category_es": "Tecnología",
+    "description": "Trains and deploys machine learning models to solve problems that have no fixed rule.",
+    "description_es": "Entrena y despliega modelos de aprendizaje automático para resolver problemas que no tienen una regla fija.",
     "requirements": {
       "ANALYTICAL": 9.5,
       "CREATIVE": 6.5,
@@ -34,8 +40,11 @@
   {
     "id": "c3",
     "title": "UX/UI Design",
+    "title_es": "Diseño UX/UI",
     "category": "Design",
-    "description": "Investiga cómo usan las personas un producto digital y traduce esos hallazgos en interfaces claras.",
+    "category_es": "Diseño",
+    "description": "Researches how people use a digital product and turns those findings into clear interfaces.",
+    "description_es": "Investiga cómo usan las personas un producto digital y traduce esos hallazgos en interfaces claras.",
     "requirements": {
       "ANALYTICAL": 6.5,
       "CREATIVE": 9.5,
@@ -50,8 +59,11 @@
   {
     "id": "c4",
     "title": "Data Science",
+    "title_es": "Ciencia de datos",
     "category": "Technology",
-    "description": "Extrae patrones de grandes volúmenes de datos y los convierte en decisiones medibles.",
+    "category_es": "Tecnología",
+    "description": "Extracts patterns from large volumes of data and turns them into measurable decisions.",
+    "description_es": "Extrae patrones de grandes volúmenes de datos y los convierte en decisiones medibles.",
     "requirements": {
       "ANALYTICAL": 9.5,
       "CREATIVE": 5.5,
@@ -66,8 +78,11 @@
   {
     "id": "c5",
     "title": "Cybersecurity Specialist",
+    "title_es": "Especialista en ciberseguridad",
     "category": "Technology",
-    "description": "Protege sistemas e información frente a ataques, y responde cuando la defensa falla.",
+    "category_es": "Tecnología",
+    "description": "Protects systems and information from attack, and responds when the defences fail.",
+    "description_es": "Protege sistemas e información frente a ataques, y responde cuando la defensa falla.",
     "requirements": {
       "ANALYTICAL": 9.5,
       "CREATIVE": 5.0,
@@ -82,8 +97,11 @@
   {
     "id": "c6",
     "title": "Business & Entrepreneurship",
+    "title_es": "Negocios y emprendimiento",
     "category": "Business",
-    "description": "Detecta oportunidades de mercado y construye organizaciones capaces de aprovecharlas.",
+    "category_es": "Negocios",
+    "description": "Spots market opportunities and builds organisations able to act on them.",
+    "description_es": "Detecta oportunidades de mercado y construye organizaciones capaces de aprovecharlas.",
     "requirements": {
       "ANALYTICAL": 6.5,
       "CREATIVE": 7.0,
@@ -98,8 +116,11 @@
   {
     "id": "c7",
     "title": "Medicine & Healthcare",
+    "title_es": "Medicina y salud",
     "category": "Health",
-    "description": "Diagnostica y trata a pacientes combinando criterio clínico, ciencia y trato humano.",
+    "category_es": "Salud",
+    "description": "Diagnoses and treats patients, combining clinical judgement, science and human care.",
+    "description_es": "Diagnostica y trata a pacientes combinando criterio clínico, ciencia y trato humano.",
     "requirements": {
       "ANALYTICAL": 8.5,
       "CREATIVE": 4.0,
@@ -114,8 +135,11 @@
   {
     "id": "c8",
     "title": "Psychology",
+    "title_es": "Psicología",
     "category": "Social Sciences",
-    "description": "Estudia el comportamiento y los procesos mentales para acompañar a personas y organizaciones.",
+    "category_es": "Ciencias sociales",
+    "description": "Studies behaviour and mental processes in order to support people and organisations.",
+    "description_es": "Estudia el comportamiento y los procesos mentales para acompañar a personas y organizaciones.",
     "requirements": {
       "ANALYTICAL": 8.0,
       "CREATIVE": 6.0,
@@ -130,8 +154,11 @@
   {
     "id": "c9",
     "title": "Biotechnology",
+    "title_es": "Biotecnología",
     "category": "Science",
-    "description": "Aplica organismos y procesos biológicos al desarrollo de fármacos, alimentos y materiales.",
+    "category_es": "Ciencias",
+    "description": "Applies living organisms and biological processes to develop drugs, food and materials.",
+    "description_es": "Aplica organismos y procesos biológicos al desarrollo de fármacos, alimentos y materiales.",
     "requirements": {
       "ANALYTICAL": 9.0,
       "CREATIVE": 5.5,
@@ -146,8 +173,11 @@
   {
     "id": "c10",
     "title": "Robotics & Automation",
+    "title_es": "Robótica y automatización",
     "category": "Engineering",
-    "description": "Diseña máquinas que perciben su entorno y ejecutan tareas físicas sin supervisión constante.",
+    "category_es": "Ingeniería",
+    "description": "Designs machines that sense their surroundings and carry out physical tasks unsupervised.",
+    "description_es": "Diseña máquinas que perciben su entorno y ejecutan tareas físicas sin supervisión constante.",
     "requirements": {
       "ANALYTICAL": 9.0,
       "CREATIVE": 6.5,
@@ -162,8 +192,11 @@
   {
     "id": "c11",
     "title": "Economics",
+    "title_es": "Economía",
     "category": "Business",
-    "description": "Analiza cómo se asignan los recursos escasos y modela el efecto de políticas y decisiones.",
+    "category_es": "Negocios",
+    "description": "Analyses how scarce resources are allocated and models the effect of policies and decisions.",
+    "description_es": "Analiza cómo se asignan los recursos escasos y modela el efecto de políticas y decisiones.",
     "requirements": {
       "ANALYTICAL": 9.5,
       "CREATIVE": 4.5,
@@ -178,8 +211,11 @@
   {
     "id": "c12",
     "title": "Mathematics",
+    "title_es": "Matemáticas",
     "category": "Science",
-    "description": "Construye y demuestra estructuras abstractas que sostienen a casi todas las demás ciencias.",
+    "category_es": "Ciencias",
+    "description": "Builds and proves the abstract structures that underpin almost every other science.",
+    "description_es": "Construye y demuestra estructuras abstractas que sostienen a casi todas las demás ciencias.",
     "requirements": {
       "ANALYTICAL": 9.5,
       "CREATIVE": 6.0,
@@ -194,8 +230,11 @@
   {
     "id": "c13",
     "title": "Physics",
+    "title_es": "Física",
     "category": "Science",
-    "description": "Investiga las leyes que rigen la materia y la energía, de lo subatómico a lo cosmológico.",
+    "category_es": "Ciencias",
+    "description": "Investigates the laws governing matter and energy, from the subatomic to the cosmological.",
+    "description_es": "Investiga las leyes que rigen la materia y la energía, de lo subatómico a lo cosmológico.",
     "requirements": {
       "ANALYTICAL": 9.5,
       "CREATIVE": 6.5,
@@ -210,8 +249,11 @@
   {
     "id": "c14",
     "title": "Actuarial Science",
+    "title_es": "Ciencias actuariales",
     "category": "Mathematics & Finance",
-    "description": "Cuantifica el riesgo futuro de eventos inciertos para seguros, pensiones y finanzas.",
+    "category_es": "Matemáticas y finanzas",
+    "description": "Quantifies the future risk of uncertain events for insurance, pensions and finance.",
+    "description_es": "Cuantifica el riesgo futuro de eventos inciertos para seguros, pensiones y finanzas.",
     "requirements": {
       "ANALYTICAL": 9.5,
       "CREATIVE": 3.5,
@@ -226,8 +268,11 @@
   {
     "id": "c15",
     "title": "Statistics",
+    "title_es": "Estadística",
     "category": "Mathematics & Finance",
-    "description": "Diseña cómo recoger datos y qué se puede afirmar honestamente a partir de ellos.",
+    "category_es": "Matemáticas y finanzas",
+    "description": "Designs how data is collected and what can honestly be claimed from it.",
+    "description_es": "Diseña cómo recoger datos y qué se puede afirmar honestamente a partir de ellos.",
     "requirements": {
       "ANALYTICAL": 9.5,
       "CREATIVE": 4.0,
@@ -242,8 +287,11 @@
   {
     "id": "c16",
     "title": "Biochemistry",
+    "title_es": "Bioquímica",
     "category": "Science",
-    "description": "Estudia las reacciones químicas que sostienen la vida a escala molecular.",
+    "category_es": "Ciencias",
+    "description": "Studies the chemical reactions that sustain life at the molecular scale.",
+    "description_es": "Estudia las reacciones químicas que sostienen la vida a escala molecular.",
     "requirements": {
       "ANALYTICAL": 9.0,
       "CREATIVE": 4.5,
@@ -258,8 +306,11 @@
   {
     "id": "c17",
     "title": "Chemistry",
+    "title_es": "Química",
     "category": "Science",
-    "description": "Analiza y sintetiza sustancias, y controla las reacciones que las transforman.",
+    "category_es": "Ciencias",
+    "description": "Analyses and synthesises substances, and controls the reactions that transform them.",
+    "description_es": "Analiza y sintetiza sustancias, y controla las reacciones que las transforman.",
     "requirements": {
       "ANALYTICAL": 8.5,
       "CREATIVE": 5.0,
@@ -274,8 +325,11 @@
   {
     "id": "c18",
     "title": "Biomedical Engineering",
+    "title_es": "Ingeniería biomédica",
     "category": "Engineering",
-    "description": "Lleva la ingeniería al cuerpo humano: prótesis, imagen médica y dispositivos clínicos.",
+    "category_es": "Ingeniería",
+    "description": "Brings engineering to the human body: prosthetics, medical imaging and clinical devices.",
+    "description_es": "Lleva la ingeniería al cuerpo humano: prótesis, imagen médica y dispositivos clínicos.",
     "requirements": {
       "ANALYTICAL": 9.0,
       "CREATIVE": 6.5,
@@ -290,8 +344,11 @@
   {
     "id": "c19",
     "title": "Environmental Science",
+    "title_es": "Ciencias ambientales",
     "category": "Environment",
-    "description": "Mide el impacto humano sobre los ecosistemas y diseña formas de reducirlo.",
+    "category_es": "Medioambiente",
+    "description": "Measures human impact on ecosystems and designs ways to reduce it.",
+    "description_es": "Mide el impacto humano sobre los ecosistemas y diseña formas de reducirlo.",
     "requirements": {
       "ANALYTICAL": 8.5,
       "CREATIVE": 5.5,
@@ -306,8 +363,11 @@
   {
     "id": "c20",
     "title": "Marine Biology",
+    "title_es": "Biología marina",
     "category": "Science",
-    "description": "Investiga la vida en océanos y costas, y cómo la alteran el clima y la pesca.",
+    "category_es": "Ciencias",
+    "description": "Investigates life in oceans and along coastlines, and how climate and fishing alter it.",
+    "description_es": "Investiga la vida en océanos y costas, y cómo la alteran el clima y la pesca.",
     "requirements": {
       "ANALYTICAL": 8.0,
       "CREATIVE": 5.0,
@@ -322,8 +382,11 @@
   {
     "id": "c21",
     "title": "Astronomy & Astrophysics",
+    "title_es": "Astronomía y astrofísica",
     "category": "Science",
-    "description": "Observa y modela estrellas, galaxias y la estructura del universo.",
+    "category_es": "Ciencias",
+    "description": "Observes and models stars, galaxies and the structure of the universe.",
+    "description_es": "Observa y modela estrellas, galaxias y la estructura del universo.",
     "requirements": {
       "ANALYTICAL": 9.5,
       "CREATIVE": 6.0,
@@ -338,8 +401,11 @@
   {
     "id": "c22",
     "title": "Pharmacy",
+    "title_es": "Farmacia",
     "category": "Health",
-    "description": "Domina cómo actúan los medicamentos y garantiza que se usen de forma segura.",
+    "category_es": "Salud",
+    "description": "Masters how medicines act and makes sure they are used safely.",
+    "description_es": "Domina cómo actúan los medicamentos y garantiza que se usen de forma segura.",
     "requirements": {
       "ANALYTICAL": 8.5,
       "CREATIVE": 3.5,
@@ -354,8 +420,11 @@
   {
     "id": "c23",
     "title": "Veterinary Medicine",
+    "title_es": "Veterinaria",
     "category": "Health",
-    "description": "Diagnostica y trata animales, desde mascotas hasta producción ganadera y fauna silvestre.",
+    "category_es": "Salud",
+    "description": "Diagnoses and treats animals, from pets to livestock and wildlife.",
+    "description_es": "Diagnostica y trata animales, desde mascotas hasta producción ganadera y fauna silvestre.",
     "requirements": {
       "ANALYTICAL": 8.0,
       "CREATIVE": 4.0,
@@ -370,8 +439,11 @@
   {
     "id": "c24",
     "title": "Nursing",
+    "title_es": "Enfermería",
     "category": "Health",
-    "description": "Sostiene el cuidado directo del paciente y detecta antes que nadie cuando algo empeora.",
+    "category_es": "Salud",
+    "description": "Carries direct patient care and notices before anyone else when something is getting worse.",
+    "description_es": "Sostiene el cuidado directo del paciente y detecta antes que nadie cuando algo empeora.",
     "requirements": {
       "ANALYTICAL": 7.0,
       "CREATIVE": 4.0,
@@ -386,8 +458,11 @@
   {
     "id": "c25",
     "title": "Nutrition & Dietetics",
+    "title_es": "Nutrición y dietética",
     "category": "Health",
-    "description": "Traduce la ciencia de la alimentación en planes que la gente pueda sostener.",
+    "category_es": "Salud",
+    "description": "Turns the science of food into plans people can actually keep to.",
+    "description_es": "Traduce la ciencia de la alimentación en planes que la gente pueda sostener.",
     "requirements": {
       "ANALYTICAL": 7.5,
       "CREATIVE": 5.0,
@@ -402,8 +477,11 @@
   {
     "id": "c26",
     "title": "Physical Therapy",
+    "title_es": "Fisioterapia",
     "category": "Health",
-    "description": "Recupera la movilidad tras lesiones o cirugías mediante ejercicio terapéutico.",
+    "category_es": "Salud",
+    "description": "Restores movement after injury or surgery through therapeutic exercise.",
+    "description_es": "Recupera la movilidad tras lesiones o cirugías mediante ejercicio terapéutico.",
     "requirements": {
       "ANALYTICAL": 6.5,
       "CREATIVE": 4.5,
@@ -418,8 +496,11 @@
   {
     "id": "c27",
     "title": "Dentistry",
+    "title_es": "Odontología",
     "category": "Health",
-    "description": "Previene y trata problemas bucodentales con un trabajo manual de altísima precisión.",
+    "category_es": "Salud",
+    "description": "Prevents and treats oral health problems through extremely precise manual work.",
+    "description_es": "Previene y trata problemas bucodentales con un trabajo manual de altísima precisión.",
     "requirements": {
       "ANALYTICAL": 7.5,
       "CREATIVE": 5.5,
@@ -434,8 +515,11 @@
   {
     "id": "c28",
     "title": "Computer Science",
+    "title_es": "Ciencias de la computación",
     "category": "Technology",
-    "description": "Estudia la computación en sí: algoritmos, complejidad y los límites de lo calculable.",
+    "category_es": "Tecnología",
+    "description": "Studies computation itself: algorithms, complexity and the limits of what can be computed.",
+    "description_es": "Estudia la computación en sí: algoritmos, complejidad y los límites de lo calculable.",
     "requirements": {
       "ANALYTICAL": 9.5,
       "CREATIVE": 6.0,
@@ -450,8 +534,11 @@
   {
     "id": "c29",
     "title": "Cloud & DevOps Engineering",
+    "title_es": "Ingeniería cloud y DevOps",
     "category": "Technology",
-    "description": "Automatiza el despliegue y mantiene en pie la infraestructura donde corre el software.",
+    "category_es": "Tecnología",
+    "description": "Automates deployment and keeps standing the infrastructure the software runs on.",
+    "description_es": "Automatiza el despliegue y mantiene en pie la infraestructura donde corre el software.",
     "requirements": {
       "ANALYTICAL": 8.5,
       "CREATIVE": 5.0,
@@ -466,8 +553,11 @@
   {
     "id": "c30",
     "title": "Game Development",
+    "title_es": "Desarrollo de videojuegos",
     "category": "Technology",
-    "description": "Programa mundos interactivos donde la técnica y la narrativa pesan por igual.",
+    "category_es": "Tecnología",
+    "description": "Programs interactive worlds where craft and storytelling weigh the same.",
+    "description_es": "Programa mundos interactivos donde la técnica y la narrativa pesan por igual.",
     "requirements": {
       "ANALYTICAL": 8.0,
       "CREATIVE": 9.0,
@@ -482,8 +572,11 @@
   {
     "id": "c31",
     "title": "Mobile App Development",
+    "title_es": "Desarrollo de apps móviles",
     "category": "Technology",
-    "description": "Construye aplicaciones para móvil cuidando rendimiento y experiencia en pantalla pequeña.",
+    "category_es": "Tecnología",
+    "description": "Builds mobile applications, minding performance and the experience on a small screen.",
+    "description_es": "Construye aplicaciones para móvil cuidando rendimiento y experiencia en pantalla pequeña.",
     "requirements": {
       "ANALYTICAL": 8.0,
       "CREATIVE": 7.5,
@@ -498,8 +591,11 @@
   {
     "id": "c32",
     "title": "Network & Systems Administration",
+    "title_es": "Administración de redes y sistemas",
     "category": "Technology",
-    "description": "Mantiene funcionando redes y servidores, y responde cuando algo se cae.",
+    "category_es": "Tecnología",
+    "description": "Keeps networks and servers running, and responds when something goes down.",
+    "description_es": "Mantiene funcionando redes y servidores, y responde cuando algo se cae.",
     "requirements": {
       "ANALYTICAL": 7.5,
       "CREATIVE": 4.0,
@@ -514,8 +610,11 @@
   {
     "id": "c33",
     "title": "Electrical Engineering",
+    "title_es": "Ingeniería eléctrica",
     "category": "Engineering",
-    "description": "Diseña circuitos y sistemas eléctricos, del microchip a la red de distribución.",
+    "category_es": "Ingeniería",
+    "description": "Designs circuits and electrical systems, from the microchip to the distribution grid.",
+    "description_es": "Diseña circuitos y sistemas eléctricos, del microchip a la red de distribución.",
     "requirements": {
       "ANALYTICAL": 9.0,
       "CREATIVE": 5.5,
@@ -530,8 +629,11 @@
   {
     "id": "c34",
     "title": "Mechatronics Engineering",
+    "title_es": "Ingeniería mecatrónica",
     "category": "Engineering",
-    "description": "Integra mecánica, electrónica y software en máquinas que funcionan como una sola pieza.",
+    "category_es": "Ingeniería",
+    "description": "Integrates mechanics, electronics and software into machines that work as a single piece.",
+    "description_es": "Integra mecánica, electrónica y software en máquinas que funcionan como una sola pieza.",
     "requirements": {
       "ANALYTICAL": 8.5,
       "CREATIVE": 6.5,
@@ -546,8 +648,11 @@
   {
     "id": "c35",
     "title": "Graphic Design",
+    "title_es": "Diseño gráfico",
     "category": "Design",
-    "description": "Comunica ideas mediante composición, tipografía y color.",
+    "category_es": "Diseño",
+    "description": "Communicates ideas through composition, typography and colour.",
+    "description_es": "Comunica ideas mediante composición, tipografía y color.",
     "requirements": {
       "ANALYTICAL": 5.5,
       "CREATIVE": 9.5,
@@ -562,8 +667,11 @@
   {
     "id": "c36",
     "title": "Architecture",
+    "title_es": "Arquitectura",
     "category": "Design",
-    "description": "Proyecta edificios donde la estética, la estructura y el uso real tienen que convivir.",
+    "category_es": "Diseño",
+    "description": "Designs buildings where aesthetics, structure and real use all have to coexist.",
+    "description_es": "Proyecta edificios donde la estética, la estructura y el uso real tienen que convivir.",
     "requirements": {
       "ANALYTICAL": 8.0,
       "CREATIVE": 9.5,
@@ -578,8 +686,11 @@
   {
     "id": "c37",
     "title": "Animation & Motion Graphics",
+    "title_es": "Animación y motion graphics",
     "category": "Arts",
-    "description": "Da movimiento y intención a personajes y gráficos, cuadro a cuadro.",
+    "category_es": "Artes",
+    "description": "Gives movement and intent to characters and graphics, frame by frame.",
+    "description_es": "Da movimiento y intención a personajes y gráficos, cuadro a cuadro.",
     "requirements": {
       "ANALYTICAL": 6.0,
       "CREATIVE": 9.5,
@@ -594,8 +705,11 @@
   {
     "id": "c38",
     "title": "Digital Media Production",
+    "title_es": "Producción de medios digitales",
     "category": "Communication",
-    "description": "Produce contenido audiovisual pensado para las plataformas donde va a vivir.",
+    "category_es": "Comunicación",
+    "description": "Produces audiovisual content built for the platforms it will live on.",
+    "description_es": "Produce contenido audiovisual pensado para las plataformas donde va a vivir.",
     "requirements": {
       "ANALYTICAL": 5.5,
       "CREATIVE": 9.0,
@@ -610,8 +724,11 @@
   {
     "id": "c39",
     "title": "Music Production",
+    "title_es": "Producción musical",
     "category": "Arts",
-    "description": "Compone, graba y mezcla, con oído tan afinado como el manejo técnico del estudio.",
+    "category_es": "Artes",
+    "description": "Composes, records and mixes, with an ear as sharp as the technical command of the studio.",
+    "description_es": "Compone, graba y mezcla, con oído tan afinado como el manejo técnico del estudio.",
     "requirements": {
       "ANALYTICAL": 5.5,
       "CREATIVE": 9.5,
@@ -626,8 +743,11 @@
   {
     "id": "c40",
     "title": "Film & Audiovisual Direction",
+    "title_es": "Dirección de cine y audiovisual",
     "category": "Arts",
-    "description": "Dirige una historia y al equipo que la lleva a la pantalla.",
+    "category_es": "Artes",
+    "description": "Directs a story and the team that carries it to the screen.",
+    "description_es": "Dirige una historia y al equipo que la lleva a la pantalla.",
     "requirements": {
       "ANALYTICAL": 6.0,
       "CREATIVE": 9.5,
@@ -642,8 +762,11 @@
   {
     "id": "c41",
     "title": "Fashion Design",
+    "title_es": "Diseño de moda",
     "category": "Design",
-    "description": "Diseña prendas donde el concepto tiene que resolverse en patrón y tejido.",
+    "category_es": "Diseño",
+    "description": "Designs garments where the concept has to resolve itself into pattern and fabric.",
+    "description_es": "Diseña prendas donde el concepto tiene que resolverse en patrón y tejido.",
     "requirements": {
       "ANALYTICAL": 5.0,
       "CREATIVE": 9.5,
@@ -658,8 +781,11 @@
   {
     "id": "c42",
     "title": "Industrial & Product Design",
+    "title_es": "Diseño industrial y de producto",
     "category": "Design",
-    "description": "Diseña objetos que se fabrican en serie y deben ser usables, bellos y viables.",
+    "category_es": "Diseño",
+    "description": "Designs objects made at scale that must be usable, beautiful and viable.",
+    "description_es": "Diseña objetos que se fabrican en serie y deben ser usables, bellos y viables.",
     "requirements": {
       "ANALYTICAL": 7.5,
       "CREATIVE": 9.5,
@@ -674,8 +800,11 @@
   {
     "id": "c43",
     "title": "Creative Writing",
+    "title_es": "Escritura creativa",
     "category": "Arts",
-    "description": "Construye narrativas y da forma al lenguaje como material de trabajo.",
+    "category_es": "Artes",
+    "description": "Builds narrative and shapes language as working material.",
+    "description_es": "Construye narrativas y da forma al lenguaje como material de trabajo.",
     "requirements": {
       "ANALYTICAL": 6.0,
       "CREATIVE": 9.5,
@@ -690,8 +819,11 @@
   {
     "id": "c44",
     "title": "Photography",
+    "title_es": "Fotografía",
     "category": "Arts",
-    "description": "Captura y compone imágenes, dominando la luz y el instante.",
+    "category_es": "Artes",
+    "description": "Captures and composes images, mastering light and the moment.",
+    "description_es": "Captura y compone imágenes, dominando la luz y el instante.",
     "requirements": {
       "ANALYTICAL": 5.0,
       "CREATIVE": 9.5,
@@ -706,8 +838,11 @@
   {
     "id": "c45",
     "title": "Education & Teaching",
+    "title_es": "Educación y docencia",
     "category": "Education",
-    "description": "Diseña experiencias de aprendizaje y acompaña el proceso de cada estudiante.",
+    "category_es": "Educación",
+    "description": "Designs learning experiences and supports each student through their own process.",
+    "description_es": "Diseña experiencias de aprendizaje y acompaña el proceso de cada estudiante.",
     "requirements": {
       "ANALYTICAL": 7.0,
       "CREATIVE": 7.5,
@@ -722,8 +857,11 @@
   {
     "id": "c46",
     "title": "Law",
+    "title_es": "Derecho",
     "category": "Law & Politics",
-    "description": "Interpreta y aplica normas, y defiende posiciones con argumentación rigurosa.",
+    "category_es": "Derecho y política",
+    "description": "Interprets and applies rules, and defends positions with rigorous argument.",
+    "description_es": "Interpreta y aplica normas, y defiende posiciones con argumentación rigurosa.",
     "requirements": {
       "ANALYTICAL": 9.0,
       "CREATIVE": 5.5,
@@ -738,8 +876,11 @@
   {
     "id": "c47",
     "title": "International Relations",
+    "title_es": "Relaciones internacionales",
     "category": "Law & Politics",
-    "description": "Analiza la dinámica entre estados y organismos, y negocia entre culturas distintas.",
+    "category_es": "Derecho y política",
+    "description": "Analyses the dynamics between states and institutions, and negotiates across cultures.",
+    "description_es": "Analiza la dinámica entre estados y organismos, y negocia entre culturas distintas.",
     "requirements": {
       "ANALYTICAL": 8.5,
       "CREATIVE": 5.5,
@@ -754,8 +895,11 @@
   {
     "id": "c48",
     "title": "Journalism",
+    "title_es": "Periodismo",
     "category": "Communication",
-    "description": "Investiga, verifica y cuenta lo que ocurre con claridad y bajo presión de tiempo.",
+    "category_es": "Comunicación",
+    "description": "Investigates, verifies and reports what happens, clearly and against the clock.",
+    "description_es": "Investiga, verifica y cuenta lo que ocurre con claridad y bajo presión de tiempo.",
     "requirements": {
       "ANALYTICAL": 8.0,
       "CREATIVE": 8.0,
@@ -770,8 +914,11 @@
   {
     "id": "c49",
     "title": "Social Work",
+    "title_es": "Trabajo social",
     "category": "Social Sciences",
-    "description": "Interviene en situaciones de vulnerabilidad conectando personas con recursos reales.",
+    "category_es": "Ciencias sociales",
+    "description": "Intervenes in situations of vulnerability, connecting people with resources that exist.",
+    "description_es": "Interviene en situaciones de vulnerabilidad conectando personas con recursos reales.",
     "requirements": {
       "ANALYTICAL": 6.5,
       "CREATIVE": 5.5,
@@ -786,8 +933,11 @@
   {
     "id": "c50",
     "title": "Sociology",
+    "title_es": "Sociología",
     "category": "Social Sciences",
-    "description": "Estudia cómo se organizan las sociedades y por qué cambian.",
+    "category_es": "Ciencias sociales",
+    "description": "Studies how societies organise themselves and why they change.",
+    "description_es": "Estudia cómo se organizan las sociedades y por qué cambian.",
     "requirements": {
       "ANALYTICAL": 8.5,
       "CREATIVE": 6.0,
@@ -802,8 +952,11 @@
   {
     "id": "c51",
     "title": "Anthropology",
+    "title_es": "Antropología",
     "category": "Social Sciences",
-    "description": "Investiga culturas y prácticas humanas mediante trabajo de campo prolongado.",
+    "category_es": "Ciencias sociales",
+    "description": "Investigates human cultures and practices through prolonged fieldwork.",
+    "description_es": "Investiga culturas y prácticas humanas mediante trabajo de campo prolongado.",
     "requirements": {
       "ANALYTICAL": 8.0,
       "CREATIVE": 6.5,
@@ -818,8 +971,11 @@
   {
     "id": "c52",
     "title": "Political Science",
+    "title_es": "Ciencias políticas",
     "category": "Law & Politics",
-    "description": "Analiza el poder, las instituciones y el diseño de políticas públicas.",
+    "category_es": "Derecho y política",
+    "description": "Analyses power, institutions and the design of public policy.",
+    "description_es": "Analiza el poder, las instituciones y el diseño de políticas públicas.",
     "requirements": {
       "ANALYTICAL": 8.5,
       "CREATIVE": 5.5,
@@ -834,8 +990,11 @@
   {
     "id": "c53",
     "title": "Speech Therapy",
+    "title_es": "Logopedia",
     "category": "Health",
-    "description": "Evalúa y trata dificultades del habla, el lenguaje y la deglución.",
+    "category_es": "Salud",
+    "description": "Assesses and treats difficulties with speech, language and swallowing.",
+    "description_es": "Evalúa y trata dificultades del habla, el lenguaje y la deglución.",
     "requirements": {
       "ANALYTICAL": 7.0,
       "CREATIVE": 6.0,
@@ -850,8 +1009,11 @@
   {
     "id": "c54",
     "title": "Human Resources Management",
+    "title_es": "Gestión de recursos humanos",
     "category": "Business",
-    "description": "Cuida cómo se contrata, desarrolla y retiene a las personas de una organización.",
+    "category_es": "Negocios",
+    "description": "Looks after how an organisation hires, develops and keeps its people.",
+    "description_es": "Cuida cómo se contrata, desarrolla y retiene a las personas de una organización.",
     "requirements": {
       "ANALYTICAL": 6.5,
       "CREATIVE": 5.5,
@@ -866,8 +1028,11 @@
   {
     "id": "c55",
     "title": "Business Administration",
+    "title_es": "Administración de empresas",
     "category": "Business",
-    "description": "Coordina las áreas de una organización para que funcionen como un sistema.",
+    "category_es": "Negocios",
+    "description": "Coordinates an organisation's areas so that they work as one system.",
+    "description_es": "Coordina las áreas de una organización para que funcionen como un sistema.",
     "requirements": {
       "ANALYTICAL": 7.5,
       "CREATIVE": 5.5,
@@ -882,8 +1047,11 @@
   {
     "id": "c56",
     "title": "Finance & Investment",
+    "title_es": "Finanzas e inversión",
     "category": "Mathematics & Finance",
-    "description": "Valora activos y decide dónde poner el capital asumiendo riesgo calculado.",
+    "category_es": "Matemáticas y finanzas",
+    "description": "Values assets and decides where to place capital, taking calculated risk.",
+    "description_es": "Valora activos y decide dónde poner el capital asumiendo riesgo calculado.",
     "requirements": {
       "ANALYTICAL": 9.5,
       "CREATIVE": 4.0,
@@ -898,8 +1066,11 @@
   {
     "id": "c57",
     "title": "Marketing",
+    "title_es": "Marketing",
     "category": "Business",
-    "description": "Entiende a una audiencia y diseña cómo llegar a ella de forma medible.",
+    "category_es": "Negocios",
+    "description": "Understands an audience and designs how to reach it in measurable ways.",
+    "description_es": "Entiende a una audiencia y diseña cómo llegar a ella de forma medible.",
     "requirements": {
       "ANALYTICAL": 7.5,
       "CREATIVE": 8.5,
@@ -914,8 +1085,11 @@
   {
     "id": "c58",
     "title": "Project Management",
+    "title_es": "Gestión de proyectos",
     "category": "Business",
-    "description": "Lleva proyectos complejos a término coordinando alcance, plazos y personas.",
+    "category_es": "Negocios",
+    "description": "Brings complex projects to completion, coordinating scope, deadlines and people.",
+    "description_es": "Lleva proyectos complejos a término coordinando alcance, plazos y personas.",
     "requirements": {
       "ANALYTICAL": 7.5,
       "CREATIVE": 5.0,
@@ -930,8 +1104,11 @@
   {
     "id": "c59",
     "title": "Supply Chain & Logistics",
+    "title_es": "Cadena de suministro y logística",
     "category": "Business",
-    "description": "Optimiza el flujo de materiales e información desde el origen hasta el cliente.",
+    "category_es": "Negocios",
+    "description": "Optimises the flow of materials and information from origin to customer.",
+    "description_es": "Optimiza el flujo de materiales e información desde el origen hasta el cliente.",
     "requirements": {
       "ANALYTICAL": 8.5,
       "CREATIVE": 4.0,
@@ -946,8 +1123,11 @@
   {
     "id": "c60",
     "title": "Hospitality & Tourism Management",
+    "title_es": "Gestión hotelera y turística",
     "category": "Business",
-    "description": "Dirige operaciones de servicio donde la experiencia del huésped es el producto.",
+    "category_es": "Negocios",
+    "description": "Runs service operations where the guest's experience is the product.",
+    "description_es": "Dirige operaciones de servicio donde la experiencia del huésped es el producto.",
     "requirements": {
       "ANALYTICAL": 6.0,
       "CREATIVE": 6.5,
@@ -962,8 +1142,11 @@
   {
     "id": "c61",
     "title": "Mechanical Engineering",
+    "title_es": "Ingeniería mecánica",
     "category": "Engineering",
-    "description": "Diseña y valida sistemas mecánicos, de motores a líneas de producción.",
+    "category_es": "Ingeniería",
+    "description": "Designs and validates mechanical systems, from engines to production lines.",
+    "description_es": "Diseña y valida sistemas mecánicos, de motores a líneas de producción.",
     "requirements": {
       "ANALYTICAL": 9.0,
       "CREATIVE": 6.0,
@@ -978,8 +1161,11 @@
   {
     "id": "c62",
     "title": "Civil Engineering",
+    "title_es": "Ingeniería civil",
     "category": "Engineering",
-    "description": "Proyecta y construye infraestructura que debe resistir décadas de uso.",
+    "category_es": "Ingeniería",
+    "description": "Designs and builds infrastructure that has to withstand decades of use.",
+    "description_es": "Proyecta y construye infraestructura que debe resistir décadas de uso.",
     "requirements": {
       "ANALYTICAL": 9.0,
       "CREATIVE": 5.5,
@@ -994,8 +1180,11 @@
   {
     "id": "c63",
     "title": "Construction Management",
+    "title_es": "Gestión de la construcción",
     "category": "Engineering",
-    "description": "Coordina obra, plazos y presupuesto donde cada retraso cuesta dinero real.",
+    "category_es": "Ingeniería",
+    "description": "Coordinates site, schedule and budget where every delay costs real money.",
+    "description_es": "Coordina obra, plazos y presupuesto donde cada retraso cuesta dinero real.",
     "requirements": {
       "ANALYTICAL": 7.5,
       "CREATIVE": 4.5,
@@ -1010,8 +1199,11 @@
   {
     "id": "c64",
     "title": "Industrial Engineering",
+    "title_es": "Ingeniería industrial",
     "category": "Engineering",
-    "description": "Rediseña procesos y sistemas de trabajo para producir más con menos desperdicio.",
+    "category_es": "Ingeniería",
+    "description": "Redesigns processes and ways of working to produce more with less waste.",
+    "description_es": "Rediseña procesos y sistemas de trabajo para producir más con menos desperdicio.",
     "requirements": {
       "ANALYTICAL": 9.0,
       "CREATIVE": 5.5,
@@ -1026,8 +1218,11 @@
   {
     "id": "c65",
     "title": "Aviation Maintenance",
+    "title_es": "Mantenimiento aeronáutico",
     "category": "Skilled Trades",
-    "description": "Inspecciona y repara aeronaves bajo normativa donde no existe el margen de error.",
+    "category_es": "Oficios técnicos",
+    "description": "Inspects and repairs aircraft under regulation that allows no margin for error.",
+    "description_es": "Inspecciona y repara aeronaves bajo normativa donde no existe el margen de error.",
     "requirements": {
       "ANALYTICAL": 7.5,
       "CREATIVE": 3.5,
@@ -1042,8 +1237,11 @@
   {
     "id": "c66",
     "title": "Commercial Piloting",
+    "title_es": "Pilotaje comercial",
     "category": "Skilled Trades",
-    "description": "Opera aeronaves tomando decisiones rápidas con procedimientos estrictos.",
+    "category_es": "Oficios técnicos",
+    "description": "Flies aircraft, making fast decisions within strict procedure.",
+    "description_es": "Opera aeronaves tomando decisiones rápidas con procedimientos estrictos.",
     "requirements": {
       "ANALYTICAL": 8.0,
       "CREATIVE": 4.0,
@@ -1058,8 +1256,11 @@
   {
     "id": "c67",
     "title": "Agricultural Engineering",
+    "title_es": "Ingeniería agrícola",
     "category": "Environment",
-    "description": "Aplica ingeniería y biología a producir alimentos de forma sostenible.",
+    "category_es": "Medioambiente",
+    "description": "Applies engineering and biology to producing food sustainably.",
+    "description_es": "Aplica ingeniería y biología a producir alimentos de forma sostenible.",
     "requirements": {
       "ANALYTICAL": 8.0,
       "CREATIVE": 5.0,
@@ -1074,8 +1275,11 @@
   {
     "id": "c68",
     "title": "Culinary Arts",
+    "title_es": "Artes culinarias",
     "category": "Skilled Trades",
-    "description": "Crea y ejecuta propuestas gastronómicas bajo la presión del servicio.",
+    "category_es": "Oficios técnicos",
+    "description": "Creates and executes food under the pressure of service.",
+    "description_es": "Crea y ejecuta propuestas gastronómicas bajo la presión del servicio.",
     "requirements": {
       "ANALYTICAL": 5.5,
       "CREATIVE": 9.0,
@@ -1090,8 +1294,11 @@
   {
     "id": "c69",
     "title": "Renewable Energy Technology",
+    "title_es": "Tecnología de energías renovables",
     "category": "Environment",
-    "description": "Instala y optimiza sistemas de generación limpia, de la solar a la eólica.",
+    "category_es": "Medioambiente",
+    "description": "Installs and optimises clean generation systems, from solar to wind.",
+    "description_es": "Instala y optimiza sistemas de generación limpia, de la solar a la eólica.",
     "requirements": {
       "ANALYTICAL": 8.5,
       "CREATIVE": 5.0,
@@ -1106,8 +1313,11 @@
   {
     "id": "c70",
     "title": "Product Management",
+    "title_es": "Gestión de producto",
     "category": "Business",
-    "description": "Decide qué construir y por qué, entre lo que quiere el usuario y lo que puede el equipo.",
+    "category_es": "Negocios",
+    "description": "Decides what to build and why, between what the user wants and what the team can do.",
+    "description_es": "Decide qué construir y por qué, entre lo que quiere el usuario y lo que puede el equipo.",
     "requirements": {
       "ANALYTICAL": 8.5,
       "CREATIVE": 7.5,
@@ -1122,8 +1332,11 @@
   {
     "id": "c71",
     "title": "E-Commerce & Digital Business",
+    "title_es": "Comercio electrónico y negocio digital",
     "category": "Business",
-    "description": "Monta y hace crecer negocios digitales optimizando cada paso de la conversión.",
+    "category_es": "Negocios",
+    "description": "Sets up and grows digital businesses, optimising every step of the conversion.",
+    "description_es": "Monta y hace crecer negocios digitales optimizando cada paso de la conversión.",
     "requirements": {
       "ANALYTICAL": 8.0,
       "CREATIVE": 7.0,
@@ -1138,8 +1351,11 @@
   {
     "id": "c72",
     "title": "Business Innovation & Consulting",
+    "title_es": "Innovación y consultoría de negocio",
     "category": "Business",
-    "description": "Diagnostica problemas de negocio ajenos y diseña la forma de resolverlos.",
+    "category_es": "Negocios",
+    "description": "Diagnoses other people's business problems and designs the way to solve them.",
+    "description_es": "Diagnostica problemas de negocio ajenos y diseña la forma de resolverlos.",
     "requirements": {
       "ANALYTICAL": 9.0,
       "CREATIVE": 7.5,
@@ -1154,8 +1370,11 @@
   {
     "id": "c73",
     "title": "Advertising & Brand Strategy",
+    "title_es": "Publicidad y estrategia de marca",
     "category": "Communication",
-    "description": "Construye el significado de una marca y las campañas que lo sostienen.",
+    "category_es": "Comunicación",
+    "description": "Builds what a brand means and the campaigns that sustain it.",
+    "description_es": "Construye el significado de una marca y las campañas que lo sostienen.",
     "requirements": {
       "ANALYTICAL": 7.0,
       "CREATIVE": 9.0,

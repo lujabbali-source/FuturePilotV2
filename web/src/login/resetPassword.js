@@ -2,6 +2,11 @@
 // pronto (`return`) cuando la pagina no tiene nada que montar. Un `return`
 // suelto era valido dentro del IIFE que envolvia este archivo, pero en un
 // modulo ES es un error de sintaxis.
+import { t, onLanguageChange } from "../shared/i18next.js";
+
+// Todo el texto de estas pantallas vive en el namespace `login`.
+const tl = (key, params) => t(key, { ns: "login", ...params });
+
 function main() {
   const form = document.getElementById("resetForm");
   const errorBox = document.getElementById("resetError");
@@ -25,9 +30,9 @@ function main() {
   const token = new URLSearchParams(window.location.search).get("token");
 
   if (!token) {
-    subtitle.textContent = "Este link no incluye un token válido.";
+    subtitle.textContent = tl("reset.noToken");
     form.hidden = true;
-    showError("Solicita un nuevo link de recuperación desde la página de inicio de sesión.");
+    showError(tl("reset.requestNew"));
     return;
   }
 
@@ -37,11 +42,11 @@ function main() {
     const confirmPassword = form.confirmPassword.value;
 
     if (password.length < 8) {
-      showError("La contraseña debe tener al menos 8 caracteres.");
+      showError(tl("errors.password"));
       return;
     }
     if (password !== confirmPassword) {
-      showError("Las contraseñas no coinciden.");
+      showError(tl("reset.mismatch"));
       return;
     }
 
@@ -58,20 +63,20 @@ function main() {
 
       if (!response.ok) {
         submitButton.disabled = false;
-        submitLabel.textContent = "Guardar nueva contraseña";
-        showError(data.detail || "No pudimos actualizar tu contraseña. Solicita un nuevo link.");
+        submitLabel.textContent = tl("reset.submit");
+        showError(data.detail || tl("reset.failed"));
         return;
       }
 
       form.hidden = true;
-      showInfo("¡Listo! Tu contraseña se actualizó. Te llevamos a iniciar sesión...");
+      showInfo(tl("reset.done"));
       setTimeout(() => {
         window.location.href = "/login";
       }, 2200);
     } catch (error) {
       submitButton.disabled = false;
-      submitLabel.textContent = "Guardar nueva contraseña";
-      showError("No pudimos conectar con el servidor. Verifica tu conexión e intenta de nuevo.");
+      submitLabel.textContent = tl("reset.submit");
+      showError(tl("errors.network"));
     }
   });
 }
