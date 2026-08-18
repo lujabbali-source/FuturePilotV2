@@ -509,6 +509,27 @@ onLanguageChange(async () => {
       // media pantalla en otro idioma es mejor que una pantalla vacia.
     }
   }
+
+  // El resultado tambien. Lo traduce el SERVIDOR (el arquetipo, la
+  // justificacion de cada carrera, los nombres de las carreras y el
+  // roadmap), asi que repintar con el que ya teniamos deja la pantalla
+  // mitad en un idioma y mitad en el otro: los rotulos cambian y los datos
+  // no. Hay que volver a pedirlo.
+  const authToken = localStorage.getItem("futurePilotAuthToken");
+  if (aiResult && authToken) {
+    try {
+      const response = await fetch(`/api/v1/me/results?lang=${currentLanguage()}`, {
+        headers: { Authorization: `Bearer ${authToken}` },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        if (data.results) aiResult = data.results;
+      }
+    } catch {
+      // Igual que arriba: nos quedamos con lo que hay.
+    }
+  }
+
   render();
 });
 

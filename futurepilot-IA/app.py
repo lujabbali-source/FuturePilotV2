@@ -25,6 +25,7 @@ el globo lee esos archivos directamente.
 ===============================================================================
 """
 
+import copy
 import json
 import os
 import re
@@ -1269,6 +1270,93 @@ def _localize_career(career: Dict[str, Any], lang: str) -> Dict[str, Any]:
     return localized
 
 
+def _upgrade_legacy_results(results: Dict[str, Any]) -> Dict[str, Any]:
+    """Reconstruye la forma sin redactar de un resultado antiguo.
+
+    Hasta ahora el motor guardaba la prosa ya escrita, en castellano. Esos
+    resultados se quedaban en castellano para siempre: con la aplicacion en
+    ingles, el arquetipo, el estilo de aprendizaje, la justificacion de cada
+    carrera y el roadmap seguian saliendo en el idioma en que se hizo el
+    test. Es justo la mezcla que se ve en pantalla.
+
+    Todo lo que hace falta para rehacerlos esta guardado: el vector de
+    perfil da el arquetipo, cada carrera guarda su id, sus fortalezas y sus
+    brechas, y los hitos van numerados. Asi que en vez de descartar el
+    resultado o de pedirle a nadie que repita el test, se recompone la forma
+    nueva al leerlo.
+
+    Es una conversion de LECTURA: no se reescribe la base de datos. Un
+    resultado ya en formato nuevo sale de aqui intacto.
+    """
+    if results.get("archetype_key"):
+        return results
+
+    vector = results.get("user_vector")
+    if not vector:
+        # Sin vector no hay forma de recuperar el arquetipo. Se devuelve tal
+        # cual: un resultado antiguo en castellano es mejor que uno vacio.
+        return results
+
+    results["archetype_key"] = ai_system.brain.reasoning.infer_archetype(vector)
+    results.pop("personality", None)
+    results.pop("learning_style", None)
+
+    matches = results.get("recommended_careers") or []
+    for match in matches:
+        if isinstance(match.get("justification"), str):
+            match["justification"] = ai_system._build_career_justification(match)
+
+    top_choice = results.get("top_choice")
+    if isinstance(top_choice, dict) and isinstance(top_choice.get("justification"), str):
+        top_choice["justification"] = matches[0]["justification"] if matches else None
+
+    # El roadmap antiguo guarda el titulo de la carrera y la prosa de cada
+    # hito. Los hitos van numerados 1..4 y esa numeracion es justamente la
+    # clave de texto, asi que se recuperan por el numero de paso.
+    roadmap = results.get("roadmap")
+    if roadmap and roadmap.get("checkpoints") and not roadmap["checkpoints"][0].get("key"):
+        roadmap.pop("career_title", None)
+        roadmap["career_id"] = (
+            (results.get("top_choice") or {}).get("career_id")
+            or (matches[0].get("career_id") if matches else None)
+        )
+        brechas = matches[0].get("skill_gaps") if matches else []
+        roadmap["checkpoints"] = [
+            {
+                "step": cp.get("step", i + 1),
+                "key": f"roadmap.step{cp.get('step', i + 1)}",
+                "reward_xp": cp.get("reward_xp"),
+                **({"gaps": brechas} if cp.get("step", i + 1) == 2 else {}),
+            }
+            for i, cp in enumerate(roadmap["checkpoints"])
+        ]
+        results["roadmap"] = roadmap
+
+    # Predicciones y acciones: eran dos frases fijas en orden conocido.
+    predicciones = results.get("future_predictions") or []
+    if predicciones and isinstance(predicciones[0], str):
+        career_id = (results.get("top_choice") or {}).get("career_id")
+        results["future_predictions"] = [
+            {"key": "prediction.growth", "params": {}},
+            {"key": "prediction.projects", "params": {}, "career_id": career_id},
+        ][:len(predicciones)]
+
+    acciones = results.get("next_actions") or []
+    if acciones and isinstance(acciones[0], str):
+        results["next_actions"] = [
+            {"key": "action.roadmap"}, {"key": "action.hubs"}, {"key": "action.practice"},
+        ][:len(acciones)]
+
+    # Los hubs antiguos solo traian la descripcion castellana. Se emparejan
+    # por nombre con el catalogo actual, que ya la tiene en los dos idiomas.
+    hubs = results.get("recommended_hubs") or []
+    if hubs and not hubs[0].get("desc_es"):
+        catalogo = {h["name"]: h for h in ai_system.brain.career_engine.GLOBAL_HUBS}
+        results["recommended_hubs"] = [catalogo.get(h.get("name"), h) for h in hubs]
+
+    return results
+
+
 def _localize_results(results: Dict[str, Any], lang: str) -> Dict[str, Any]:
     """Redacta un resultado de test en el idioma pedido.
 
@@ -1277,15 +1365,23 @@ def _localize_results(results: Dict[str, Any], lang: str) -> Dict[str, Any]:
     mayusculas) y hay que poder releerlo en el idioma que el estudiante
     tenga puesto HOY, no en el que tenia el dia que hizo el test.
 
-    Los resultados guardados por versiones anteriores ya venian redactados
-    en castellano y no traen esas claves. Se dejan como estan: mejor un
-    resultado antiguo en castellano que uno vacio."""
+    Los resultados guardados por versiones anteriores traian la prosa ya
+    redactada en castellano. _upgrade_legacy_results los reconstruye antes
+    de entrar aqui, para que tambien se puedan leer en ingles."""
     if not results:
         return results
 
+    # Copia profunda antes de tocar nada. La funcion reescribe campos dentro
+    # de las listas anidadas (las carreras, los hitos), y un dict(results) de
+    # primer nivel las comparte con el original. Sin esto, leer el mismo
+    # resultado dos veces seguidas en idiomas distintos traduce la segunda
+    # vez sobre lo ya traducido en la primera, y salen las dos lenguas
+    # mezcladas en la misma frase.
+    results = copy.deepcopy(results)
+    results = _upgrade_legacy_results(results)
+
     lang = _resolve_lang(lang)
     catalog = {career["id"]: career for career in careers_db}
-    results = dict(results)
 
     def career_title(career_id: Optional[str]) -> str:
         career = catalog.get(career_id or "")

@@ -176,3 +176,68 @@ def test_every_cluster_has_a_label_in_both_languages(app_module):
     for lang in ("es", "en"):
         etiquetas = json.loads((LOCALES / lang / "test.json").read_text(encoding="utf-8"))["cluster"]
         assert clusters <= set(etiquetas), f"{lang}: faltan {sorted(clusters - set(etiquetas))}"
+
+
+def test_legacy_results_can_still_be_read_in_both_languages(app_module, client, register_and_login):
+    """Los resultados guardados antes de este cambio traian la prosa ya
+    escrita en castellano, y se quedaban asi para siempre: con la aplicacion
+    en ingles el arquetipo, la justificacion y el roadmap seguian saliendo
+    en castellano. Es la mezcla que se ve en pantalla.
+
+    Todo lo necesario para rehacerlos esta guardado (el vector da el
+    arquetipo, cada carrera guarda su id y sus clusters), asi que se
+    reconstruyen al leerlos en vez de pedirle a nadie que repita el test."""
+    antiguo = {
+        "user_vector": {"ANALYTICAL": 4.0, "CREATIVE": 9.0, "SOCIAL": 8.0, "LEADERSHIP": 3.0,
+                        "TECHNICAL": 3.0, "SCIENTIFIC": 4.0, "PRACTICAL": 5.0,
+                        "ENTREPRENEURIAL": 4.0},
+        "personality": "Innovador Disruptivo",
+        "learning_style": "Aprende mediante experimentos visuales y desafíos prácticos.",
+        "strengths": ["SOCIAL", "CREATIVE"],
+        "weaknesses": ["ANALYTICAL"],
+        "confidence": 0.92,
+        "recommended_careers": [{
+            "career_id": "c43", "title": "Creative Writing", "category": "Arts",
+            "match_percentage": 92.3, "strengths": ["SOCIAL", "CREATIVE"],
+            "skill_gaps": ["ANALYTICAL"],
+            "justification": "Con un 92.3% de compatibilidad, tu perfil (Innovador Disruptivo) ...",
+            "description": "Construye narrativas...",
+        }],
+        "top_choice": {"career_id": "c43", "title": "Creative Writing",
+                       "justification": "Con un 92.3% de compatibilidad, ..."},
+        "roadmap": {"career_title": "Creative Writing", "estimated_months": 8, "checkpoints": [
+            {"step": 1, "title": "Fundamentos y Conceptos Clave", "reward_xp": 100,
+             "description": "Bases esenciales para Creative Writing."},
+            {"step": 2, "title": "Nivelación en ANALYTICAL", "reward_xp": 250,
+             "description": "Fortalecimiento de áreas de oportunidad."},
+        ]},
+        "future_predictions": ["Con práctica constante, ...", "Tu alineación con ..."],
+        "recommended_hubs": [{"name": "París (Francia)", "category": "Arts",
+                              "desc": "Escena artística, editorial y audiovisual histórica."}],
+    }
+    original = json.dumps(antiguo, sort_keys=True)
+
+    es = app_module._localize_results(antiguo, "es")
+    en = app_module._localize_results(antiguo, "en")
+
+    # Lo que estaba congelado en castellano ahora responde al idioma.
+    assert es["personality"] != en["personality"]
+    assert es["learning_style"] != en["learning_style"]
+    assert es["strengths"] != en["strengths"]
+    assert en["recommended_careers"][0]["justification"].startswith("At 92.3%")
+    assert es["recommended_careers"][0]["justification"].startswith("Con un 92.3%")
+    assert en["roadmap"]["checkpoints"][0]["title"] == "Fundamentals and key concepts"
+    assert en["recommended_hubs"][0]["desc"].startswith("A historic art")
+
+    # Ni una etiqueta de cluster en crudo se escapa a la pantalla.
+    for datos in (es, en):
+        assert not any(s.isupper() for s in datos["strengths"]), datos["strengths"]
+        assert "ANALYTICAL" not in datos["roadmap"]["checkpoints"][1]["title"]
+
+    # Y traducir NO puede modificar lo que se recibio: si lo hiciera, la
+    # segunda lectura traduciria sobre lo ya traducido en la primera y las
+    # dos lenguas acabarian mezcladas en la misma frase.
+    assert json.dumps(antiguo, sort_keys=True) == original
+    otra_vez = app_module._localize_results(antiguo, "en")
+    assert otra_vez["recommended_careers"][0]["justification"] == \
+        en["recommended_careers"][0]["justification"]
