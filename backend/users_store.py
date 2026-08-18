@@ -479,6 +479,48 @@ class UsersStore:
             return None
         return {"results_json": row["results_json"], "created_at": row["created_at"]}
 
+    def results_history_for_user(self, user_id: int, limit: int = 10) -> list[dict]:
+        """Todos los tests de una cuenta, del mas reciente al mas antiguo.
+
+        Repetir el test nunca borro el resultado anterior - cada intento es
+        una fila propia - pero hasta ahora solo se leia el ultimo, asi que
+        ese historial no se veia por ningun lado. Aqui se devuelve entero
+        para poder mostrar como ha cambiado el perfil con el tiempo.
+
+        Se devuelve el JSON completo porque quien llama tiene que traducirlo
+        (ver _localize_results): un resumen hecho aqui vendria en el idioma
+        equivocado.
+        """
+        with self.connect() as connection:
+            rows = connection.execute(
+                """
+                SELECT id, results_json, created_at, top_career_id
+                FROM test_results
+                WHERE user_id = ? AND results_json IS NOT NULL
+                ORDER BY created_at DESC, id DESC
+                LIMIT ?
+                """,
+                (user_id, limit),
+            ).fetchall()
+        return [dict(row) for row in rows]
+
+    def delete_account(self, user_id: int) -> None:
+        """Borra la cuenta y todo lo que cuelga de ella.
+
+        Los resultados de test NO se borran: se desligan (user_id = NULL).
+        Son filas anonimas a partir de ese momento, sin nada que apunte a la
+        persona, y sostienen las estadisticas agregadas del panel de
+        administracion. Borrar la cuenta tiene que quitar los datos
+        personales, no falsear el historico de la plataforma.
+        """
+        with self.connect() as connection:
+            connection.execute("UPDATE test_results SET user_id = NULL WHERE user_id = ?", (user_id,))
+            for tabla in ("sessions", "password_resets", "passport_profiles",
+                          "passport_events", "passport_stamps"):
+                connection.execute(f"DELETE FROM {tabla} WHERE user_id = ?", (user_id,))
+            connection.execute("DELETE FROM users WHERE id = ?", (user_id,))
+            connection.commit()
+
     def count_users(self) -> int:
         with self.connect() as connection:
             return connection.execute("SELECT COUNT(*) FROM users").fetchone()[0]

@@ -188,5 +188,119 @@
     "viewPassport": "Ver mi Pasaporte",
     "footnote": "Tu perfil queda guardado en tu cuenta. Explora el globo para conectar tu carrera con países, universidades y oportunidades reales.",
     "retake": "¿Cambió algo? Repetir el test"
+  },
+  "dash": {
+    "nextStep": {
+      "label": "TU SIGUIENTE PASO",
+      "profile": {
+        "title": "Completa tu identificación",
+        "body": "Añade tu país y tu ciudad al pasaporte. Es lo que permite comparar tus opciones con dónde estás.",
+        "cta": "Ir al pasaporte"
+      },
+      "test": {
+        "title": "Haz el test vocacional",
+        "body": "Es el punto de partida de todo lo demás.",
+        "cta": "Empezar el test"
+      },
+      "explore": {
+        "title": "Explora el mundo",
+        "body": "Tu perfil ya está. Ahora mira a dónde te puede llevar: países, universidades y oportunidades reales.",
+        "cta": "Abrir el globo"
+      },
+      "universities": {
+        "title": "Descubre universidades",
+        "body": "Mira tres universidades que encajen con tu carrera. Cada una deja un sello en tu pasaporte.",
+        "cta": "Buscar universidades"
+      },
+      "goal": {
+        "title": "Fija tu universidad objetivo",
+        "body": "Ponerle nombre a la meta cambia cómo se lee todo lo demás.",
+        "cta": "Fijar mi objetivo"
+      },
+      "mentor": {
+        "title": "Habla con tu mentor",
+        "body": "Pregúntale lo que no entiendas de tu perfil, tu roadmap o tus opciones.",
+        "cta": "Abrir el mentor"
+      },
+      "done": {
+        "title": "Lo tienes todo al día",
+        "body": "Has completado cada paso del recorrido. Sigue explorando: cada país y cada universidad nueva deja su marca.",
+        "cta": "Seguir explorando"
+      }
+    },
+    "dna": {
+      "label": "TU PERFIL, DIMENSIÓN A DIMENSIÓN",
+      "hint": "Toca una dimensión para ver de dónde sale.",
+      "evidence_one": "Medido en {{count}} respuesta tuya.",
+      "evidence_other": "Medido en {{count}} respuestas tuyas.",
+      "noEvidence": "No hubo preguntas que midieran esta dimensión.",
+      "score": "{{value}} de 10"
+    },
+    "explore": {
+      "label": "ÁREAS POR EXPLORAR",
+      "note": "No son debilidades: son dimensiones donde todavía tienes poco recorrido."
+    },
+    "careers": {
+      "why": "¿Por qué encaja?",
+      "whatYouDo": "En qué consiste",
+      "strongOn": "Encajas sobre todo en",
+      "workOn": "Conviene reforzar",
+      "expand": "Ver por qué",
+      "collapse": "Ocultar",
+      "seePath": "Ver mi ruta hacia esta carrera"
+    },
+    "journey": {
+      "label": "TU RECORRIDO",
+      "complete": "{{done}} de {{total}} completados",
+      "steps": {
+        "profile": "Identificación",
+        "test": "Test vocacional",
+        "explore": "Países explorados",
+        "universities": "Universidades vistas",
+        "goal": "Objetivo académico",
+        "mentor": "Mentor"
+      }
+    },
+    "activity": {
+      "label": "ACTIVIDAD RECIENTE",
+      "empty": "Todavía no hay movimientos. Explora el globo y aquí irá quedando registro.",
+      "events": {
+        "test_completed": "Completaste el test vocacional",
+        "roadmap_created": "Se generó tu roadmap",
+        "ai_conversation": "Hablaste con el mentor",
+        "university_viewed": "Descubriste una universidad",
+        "city_explored": "Exploraste una ciudad",
+        "country_explored": "Exploraste un país",
+        "academic_goal_set": "Fijaste tu objetivo académico"
+      },
+      "stamps": "ÚLTIMOS SELLOS"
+    },
+    "history": {
+      "label": "HISTORIAL DEL TEST",
+      "note": "Repetir el test no borra lo anterior. Así puedes ver cómo cambia tu perfil.",
+      "current": "Actual",
+      "onDate": "Del {{date}}"
+    },
+    "account": {
+      "label": "TU CUENTA",
+      "email": "Correo",
+      "memberSince": "Miembro desde",
+      "passportId": "ID de pasaporte",
+      "changePassword": "Cambiar contraseña",
+      "currentPassword": "Contraseña actual",
+      "newPassword": "Nueva contraseña (mínimo 8 caracteres)",
+      "savePassword": "Guardar contraseña",
+      "passwordChanged": "Contraseña actualizada. Vuelve a iniciar sesión.",
+      "export": "Descargar mis datos",
+      "exportNote": "Un archivo JSON con todo lo que guardamos de ti.",
+      "logout": "Cerrar sesión",
+      "danger": "ZONA DELICADA",
+      "delete": "Borrar mi cuenta",
+      "deleteNote": "Se borra tu cuenta, tu pasaporte y tus sellos. No se puede deshacer.",
+      "deleteConfirm": "Escribe tu contraseña para confirmar",
+      "deleteAction": "Borrar definitivamente",
+      "cancel": "Cancelar",
+      "error": "No pudimos completar la acción. Revisa los datos e intenta de nuevo."
+    }
   }
 }

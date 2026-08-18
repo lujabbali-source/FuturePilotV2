@@ -263,6 +263,24 @@ class ProfileEngine:
                 vector[c] = 5.0
         return vector
 
+    def cluster_evidence(self, parsed_perception: Dict[str, Any]) -> Dict[str, Dict[str, float]]:
+        """Cuantas respuestas alimentaron cada cluster, y con cuantos puntos.
+
+        Es el mismo recuento que hace calculate_vector, pero conservado en
+        vez de descartado. Sirve para poder responder en pantalla a la
+        pregunta obvia del estudiante: "vale, dices que soy creativo, pero
+        *por que*". Un numero de respuestas reales contesta eso; una barra
+        sin procedencia, no.
+        """
+        evidence = {c: {"answered": 0, "points": 0.0, "max_points": 0.0} for c in self.CLUSTERS}
+        for resp in parsed_perception.get("responses", []):
+            cluster = resp.get("cluster")
+            if cluster in evidence:
+                evidence[cluster]["answered"] += 1
+                evidence[cluster]["points"] += resp.get("points", 0)
+                evidence[cluster]["max_points"] += 4.0
+        return evidence
+
     @staticmethod
     def profile_definition(vector: Dict[str, float]) -> float:
         """Cuanta señal trae el perfil, de 0 a 1.
@@ -1004,6 +1022,9 @@ class FuturePilotAIEcosystem:
         return {
             "user_id": user_id,
             "user_vector": self.brain.profile_engine.calculate_vector(
+                self.brain.perception.parse_test_inputs(user_answers, self.brain.questions_db)
+            ),
+            "cluster_evidence": self.brain.profile_engine.cluster_evidence(
                 self.brain.perception.parse_test_inputs(user_answers, self.brain.questions_db)
             ),
             "archetype_key": response.archetype_key,

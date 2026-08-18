@@ -13,6 +13,14 @@ import * as questionTypes from "./questionTypes.js";
 import { claimPendingAndCelebrate, pendingResultId } from "../shared/resultClaim.js";
 import { sendAssessmentToPythonAI } from "../shared/apiConnector.js";
 import { t, currentLanguage, onLanguageChange } from "../shared/i18next.js";
+import { renderDashboard } from "./dashboard.js";
+import "./dashboard.css";
+
+// Estado que solo vive en la pantalla de cuenta: que carrera esta desplegada,
+// si hay un formulario abierto y el ultimo mensaje. Se guarda aparte del
+// resultado porque no viene del servidor ni sobrevive a una recarga.
+let dashData = null;
+const dashState = { openCareer: null, passwordForm: false, deleteForm: false, message: "" };
 
 const STORAGE_KEY = "futurePilotAssessment";
 const RESULTS_KEY = "futurePilotResults";
@@ -316,6 +324,18 @@ function renderFullResults() {
   }
 
   const user = JSON.parse(localStorage.getItem("futurePilotUser") || "null");
+
+  // Con los datos de cuenta ya cargados se pinta el dashboard completo. Si
+  // todavia no han llegado - o si el test se acaba de hacer sin sesion - se
+  // pinta la hoja de resultados de siempre, que no necesita mas que
+  // `aiResult`. Nadie se queda mirando una pantalla vacia esperando datos
+  // que quiza no lleguen nunca.
+  if (dashData) {
+    app.innerHTML = renderDashboard({ data: dashData, user, estado: dashState });
+    applyFills();
+    return;
+  }
+
   const careers = aiResult.recommended_careers || [];
   const strengths = aiResult.strengths || [];
   const weaknesses = aiResult.weaknesses || [];
@@ -393,6 +413,32 @@ app.addEventListener("click", (event) => {
     window.location.href = "/login?mode=" + mode;
   }
   if (action === "retry-analysis") { screen = "analysis"; render(); }
+
+  // --- Pantalla de cuenta -------------------------------------------------
+  const careerToggle = event.target.closest("[data-career]");
+  if (careerToggle) {
+    // Un segundo clic sobre la misma carrera la cierra.
+    const id = careerToggle.dataset.career;
+    dashState.openCareer = dashState.openCareer === id ? null : id;
+    render();
+    return;
+  }
+
+  const dnaRow = event.target.closest("[data-dna]");
+  if (dnaRow) {
+    // Se alterna en el DOM en vez de repintar: repintar la pantalla entera
+    // para desplegar una linea reinicia la animacion de las ocho barras.
+    const abierto = dnaRow.getAttribute("aria-expanded") === "true";
+    dnaRow.setAttribute("aria-expanded", abierto ? "false" : "true");
+    return;
+  }
+
+  if (action === "change-password") { dashState.passwordForm = true; dashState.message = ""; render(); }
+  if (action === "cancel-password") { dashState.passwordForm = false; render(); }
+  if (action === "delete-account") { dashState.deleteForm = true; dashState.message = ""; render(); }
+  if (action === "cancel-delete") { dashState.deleteForm = false; render(); }
+  if (action === "logout") { signOut(); }
+  if (action === "export-data") { exportMyData(); }
   if (action === "explore-globe") { window.location.href = "/globe"; }
   if (action === "view-passport") { window.location.href = "/passport"; }
   if (action === "retake-test") {
@@ -409,6 +455,127 @@ app.addEventListener("click", (event) => {
     render();
   }
 });
+
+app.addEventListener("submit", (event) => {
+  const form = event.target.closest("[data-form]");
+  if (!form) return;
+  event.preventDefault();
+  if (form.dataset.form === "password") changePassword(form);
+  else if (form.dataset.form === "delete") deleteAccount(form);
+});
+
+function authHeaders() {
+  const token = localStorage.getItem("futurePilotAuthToken");
+  return token ? { Authorization: `Bearer ${token}` } : null;
+}
+
+/** Cierra la sesion en el servidor antes de olvidar el token.
+ *
+ *  Si solo se borrara del navegador, el token seguiria siendo valido hasta
+ *  que caducara: quien lo tuviera copiado seguiria dentro. */
+async function signOut() {
+  const headers = authHeaders();
+  try {
+    if (headers) await fetch("/api/v1/auth/logout", { method: "POST", headers });
+  } catch {
+    // Sin red no se puede invalidar en servidor, pero salir de la sesion
+    // local no puede quedarse bloqueado por eso.
+  }
+  localStorage.removeItem("futurePilotAuthToken");
+  localStorage.removeItem("futurePilotUser");
+  window.location.href = "/";
+}
+
+/** Descarga un JSON con todo lo que la plataforma guarda de la cuenta. */
+async function exportMyData() {
+  const headers = authHeaders();
+  if (!headers) return;
+  try {
+    const response = await fetch("/api/v1/me/export", { headers });
+    if (!response.ok) throw new Error("export");
+    const blob = new Blob([JSON.stringify(await response.json(), null, 2)],
+                          { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const enlace = document.createElement("a");
+    enlace.href = url;
+    enlace.download = "futurepilot-mis-datos.json";
+    enlace.click();
+    URL.revokeObjectURL(url);
+  } catch {
+    dashState.message = t("dash.account.error");
+    render();
+  }
+}
+
+async function changePassword(form) {
+  const headers = authHeaders();
+  if (!headers) return;
+  const datos = new FormData(form);
+  try {
+    const response = await fetch("/api/v1/me/password", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", ...headers },
+      body: JSON.stringify({
+        current_password: String(datos.get("current_password") || ""),
+        new_password: String(datos.get("new_password") || ""),
+      }),
+    });
+    if (!response.ok) {
+      dashState.message = t("dash.account.error");
+      render();
+      return;
+    }
+    // El servidor invalida TODAS las sesiones al cambiar la contrasena,
+    // incluida esta. Es lo que se quiere, asi que se sale limpiamente en vez
+    // de dejar la pantalla con un token que ya no vale.
+    localStorage.removeItem("futurePilotAuthToken");
+    localStorage.removeItem("futurePilotUser");
+    window.location.href = "/login?mode=login";
+  } catch {
+    dashState.message = t("dash.account.error");
+    render();
+  }
+}
+
+async function deleteAccount(form) {
+  const headers = authHeaders();
+  if (!headers) return;
+  const datos = new FormData(form);
+  try {
+    const response = await fetch("/api/v1/me", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json", ...headers },
+      body: JSON.stringify({ password: String(datos.get("password") || "") }),
+    });
+    if (!response.ok) {
+      dashState.message = t("dash.account.error");
+      render();
+      return;
+    }
+    localStorage.clear();
+    window.location.href = "/";
+  } catch {
+    dashState.message = t("dash.account.error");
+    render();
+  }
+}
+
+/** Trae los datos de cuenta: progreso, actividad, historial y ajustes.
+ *
+ *  Es lo que convierte la pantalla de resultados en una pantalla de cuenta.
+ *  Si falla no se corta nada: `dashData` se queda en null y se pinta la hoja
+ *  de resultados de siempre. */
+async function loadDashboard() {
+  const headers = authHeaders();
+  if (!headers) return null;
+  try {
+    const response = await fetch(`/api/v1/me/dashboard?lang=${currentLanguage()}`, { headers });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch {
+    return null;
+  }
+}
 
 /** Trae el banco de preguntas ya traducido por el servidor.
  *
@@ -476,6 +643,7 @@ async function init() {
           aiResult = data.results;
           aiError = "";
           screen = "results";
+          dashData = await loadDashboard();
           render();
           return;
         }
@@ -528,6 +696,7 @@ onLanguageChange(async () => {
     } catch {
       // Igual que arriba: nos quedamos con lo que hay.
     }
+    if (dashData) dashData = (await loadDashboard()) || dashData;
   }
 
   render();

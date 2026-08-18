@@ -206,3 +206,26 @@ def test_ai_chat_awards_stamp_on_first_message(client, register_and_login):
     # Un segundo mensaje no debe volver a otorgar el mismo sello.
     r2 = client.post("/api/v1/mentor/chat", headers=headers, json={"message": "hola de nuevo"})
     assert r2.json().get("new_stamps", []) == []
+
+
+def test_passport_vocational_page_is_readable_in_both_languages(client, register_and_login, sample_answers):
+    """La pagina de perfil vocacional del pasaporte lee el ULTIMO resultado
+    guardado. Ese resultado se guarda sin redactar (claves de texto, ids de
+    carrera y clusters en mayusculas), asi que leerlo directo del disco deja
+    el arquetipo en blanco y los clusters como "ANALYTICAL" en pantalla."""
+    _, headers = register_and_login()
+    assess = client.post("/api/v1/assess", json={"answers": sample_answers}).json()
+    client.post("/api/v1/me/claim-result", headers=headers, json={"result_id": assess["result_id"]})
+
+    es = client.get("/api/v1/passport?lang=es", headers=headers).json()["vocational"]
+    en = client.get("/api/v1/passport?lang=en", headers=headers).json()["vocational"]
+
+    for datos in (es, en):
+        assert datos["personality"], "el arquetipo llega vacio"
+        assert datos["learning_style"], "el estilo de aprendizaje llega vacio"
+        # Ni un identificador de cluster en crudo.
+        assert not any(s.isupper() for s in datos["strengths"]), datos["strengths"]
+        assert datos["recommended_careers"][0]["title"]
+
+    assert es["personality"] != en["personality"]
+    assert es["recommended_careers"][0]["title"] != en["recommended_careers"][0]["title"]

@@ -188,5 +188,119 @@
     "viewPassport": "View my Passport",
     "footnote": "Your profile is saved to your account. Explore the globe to connect your career with real countries, universities and opportunities.",
     "retake": "Something changed? Retake the test"
+  },
+  "dash": {
+    "nextStep": {
+      "label": "YOUR NEXT STEP",
+      "profile": {
+        "title": "Complete your identification",
+        "body": "Add your country and city to the passport. It is what lets us weigh your options against where you are.",
+        "cta": "Go to the passport"
+      },
+      "test": {
+        "title": "Take the vocational test",
+        "body": "It is the starting point for everything else.",
+        "cta": "Start the test"
+      },
+      "explore": {
+        "title": "Explore the world",
+        "body": "Your profile is done. Now see where it can take you: countries, universities and real opportunities.",
+        "cta": "Open the globe"
+      },
+      "universities": {
+        "title": "Discover universities",
+        "body": "Look at three universities that fit your career. Each one earns a stamp in your passport.",
+        "cta": "Find universities"
+      },
+      "goal": {
+        "title": "Set your target university",
+        "body": "Putting a name to the goal changes how everything else reads.",
+        "cta": "Set my goal"
+      },
+      "mentor": {
+        "title": "Talk to your mentor",
+        "body": "Ask about anything you do not follow in your profile, your roadmap or your options.",
+        "cta": "Open the mentor"
+      },
+      "done": {
+        "title": "You are all caught up",
+        "body": "You have completed every step of the journey. Keep exploring: each new country and university leaves its mark.",
+        "cta": "Keep exploring"
+      }
+    },
+    "dna": {
+      "label": "YOUR PROFILE, DIMENSION BY DIMENSION",
+      "hint": "Tap a dimension to see where it comes from.",
+      "evidence_one": "Measured across {{count}} of your answers.",
+      "evidence_other": "Measured across {{count}} of your answers.",
+      "noEvidence": "No questions measured this dimension.",
+      "score": "{{value}} out of 10"
+    },
+    "explore": {
+      "label": "AREAS TO EXPLORE",
+      "note": "Not weaknesses: dimensions where you simply have less ground covered so far."
+    },
+    "careers": {
+      "why": "Why is this a match?",
+      "whatYouDo": "What it actually involves",
+      "strongOn": "You line up especially on",
+      "workOn": "Worth working on",
+      "expand": "See why",
+      "collapse": "Hide",
+      "seePath": "See my route to this career"
+    },
+    "journey": {
+      "label": "YOUR JOURNEY",
+      "complete": "{{done}} of {{total}} complete",
+      "steps": {
+        "profile": "Identification",
+        "test": "Vocational test",
+        "explore": "Countries explored",
+        "universities": "Universities seen",
+        "goal": "Academic goal",
+        "mentor": "Mentor"
+      }
+    },
+    "activity": {
+      "label": "RECENT ACTIVITY",
+      "empty": "Nothing here yet. Explore the globe and it will start filling up.",
+      "events": {
+        "test_completed": "You completed the vocational test",
+        "roadmap_created": "Your roadmap was generated",
+        "ai_conversation": "You talked to the mentor",
+        "university_viewed": "You discovered a university",
+        "city_explored": "You explored a city",
+        "country_explored": "You explored a country",
+        "academic_goal_set": "You set your academic goal"
+      },
+      "stamps": "LATEST STAMPS"
+    },
+    "history": {
+      "label": "TEST HISTORY",
+      "note": "Retaking the test never erases the previous one, so you can see how your profile shifts.",
+      "current": "Current",
+      "onDate": "From {{date}}"
+    },
+    "account": {
+      "label": "YOUR ACCOUNT",
+      "email": "Email",
+      "memberSince": "Member since",
+      "passportId": "Passport ID",
+      "changePassword": "Change password",
+      "currentPassword": "Current password",
+      "newPassword": "New password (at least 8 characters)",
+      "savePassword": "Save password",
+      "passwordChanged": "Password updated. Please sign in again.",
+      "export": "Download my data",
+      "exportNote": "A JSON file with everything we hold about you.",
+      "logout": "Sign out",
+      "danger": "SENSITIVE AREA",
+      "delete": "Delete my account",
+      "deleteNote": "Deletes your account, your passport and your stamps. This cannot be undone.",
+      "deleteConfirm": "Type your password to confirm",
+      "deleteAction": "Delete permanently",
+      "cancel": "Cancel",
+      "error": "We could not complete that. Check the details and try again."
+    }
   }
 }

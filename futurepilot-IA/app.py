@@ -67,6 +67,7 @@ from backend.users_store import (  # noqa: E402
     UsersStore,
     hash_password,
     utc_now,
+    utc_now_iso,
 )
 
 load_dotenv(REPO_ROOT / ".env")
@@ -760,6 +761,15 @@ def logout(
 # (Frontend/assessment.js) recuerde el perfil de una cuenta entre sesiones,
 # sin obligar a repetir el test cada vez que alguien inicia sesion.
 # --------------------------------------------------------------------------
+class ChangePasswordRequest(BaseModel):
+    current_password: str = Field(..., description="Contrasena actual")
+    new_password: str = Field(..., min_length=8, description="Nueva contrasena, minimo 8 caracteres")
+
+
+class DeleteAccountRequest(BaseModel):
+    password: str = Field(..., description="Contrasena actual, para confirmar")
+
+
 class ClaimResultRequest(BaseModel):
     result_id: int = Field(..., description="id devuelto por POST /api/v1/assess")
 
@@ -780,6 +790,173 @@ def get_my_results(
         "lang": _resolve_lang(lang),
         "created_at": latest["created_at"],
     }
+
+
+# Cuantas acciones reales cuentan como "hecho" en cada hito del recorrido.
+# Un porcentaje decorativo no le dice nada a nadie: cada uno de estos sale de
+# algo que el estudiante hizo de verdad y que quedo registrado.
+JOURNEY_STEPS = [
+    # (clave, campo de progress, cuantas hacen falta, a donde lleva)
+    ("profile", None, 1, "/passport"),
+    ("test", "tests_completed", 1, "/assessment"),
+    ("explore", "countries_explored", 3, "/globe"),
+    ("universities", "universities_explored", 3, "/globe"),
+    ("goal", None, 1, "/passport"),
+    ("mentor", "ai_conversations", 1, "/assessment"),
+]
+
+
+def _build_journey(profile: Dict[str, Any], progress: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """El recorrido del estudiante, paso a paso, con lo que lleva hecho.
+
+    Todo sale de acciones registradas: el perfil esta completo si hay pais y
+    ciudad, el objetivo si hay universidad soñada, y el resto son contadores
+    de eventos reales del pasaporte. Nada aqui es un numero de adorno.
+    """
+    goals = profile.get("goals") or {}
+    hechos = {
+        "profile": 1 if (profile.get("country") and profile.get("city")) else 0,
+        "goal": 1 if goals.get("dream_university") else 0,
+    }
+
+    journey = []
+    for key, campo, objetivo, destino in JOURNEY_STEPS:
+        hecho = hechos[key] if campo is None else int(progress.get(campo) or 0)
+        journey.append({
+            "key": key,
+            "done": min(hecho, objetivo),
+            "target": objetivo,
+            "complete": hecho >= objetivo,
+            "href": destino,
+        })
+    return journey
+
+
+@app.get("/api/v1/me/dashboard", status_code=status.HTTP_200_OK)
+def get_my_dashboard(
+    lang: Optional[str] = None,
+    current_user: dict = Depends(get_current_user_required),
+):
+    """Todo lo que necesita la pantalla de cuenta, en una sola peticion.
+
+    Antes esa pantalla solo sabia del ultimo resultado del test, asi que era
+    una hoja de resultados y nada mas. Una cuenta es mas que eso: quien eres,
+    que llevas hecho, que hiciste ultimamente y por donde ibas. Todos esos
+    datos ya se estaban guardando; lo unico que faltaba era servirlos.
+
+    Se devuelven juntos a proposito: son una sola pantalla, y cuatro
+    peticiones en paralelo pintarian la pagina a trozos.
+    """
+    user_id = current_user["id"]
+    profile = users_store.get_passport_profile(user_id)
+    progress = users_store.passport_progress(user_id)
+
+    historial = users_store.results_history_for_user(user_id, limit=10)
+    resultados = [
+        {
+            "id": fila["id"],
+            "created_at": fila["created_at"],
+            "results": _localize_results(json.loads(fila["results_json"]), lang),
+        }
+        for fila in historial
+    ]
+
+    return {
+        "success": True,
+        "lang": _resolve_lang(lang),
+        "account": {
+            "name": current_user.get("name"),
+            "email": current_user["email"],
+            "member_since": current_user["created_at"],
+            "passport_id": f"FP-{user_id:06d}",
+        },
+        # El mas reciente aparte: es lo que se pinta arriba. El resto es el
+        # historial, que solo tiene sentido si hay mas de uno.
+        "latest": resultados[0] if resultados else None,
+        "history": resultados[1:],
+        "progress": progress,
+        "journey": _build_journey(profile, progress),
+        "stamps": users_store.list_passport_stamps(user_id)[-6:],
+        "recent_activity": users_store.list_passport_events(user_id, limit=8),
+        "goals": profile.get("goals") or {},
+    }
+
+
+@app.post("/api/v1/me/password", status_code=status.HTTP_200_OK)
+def change_my_password(
+    payload: ChangePasswordRequest,
+    current_user: dict = Depends(get_current_user_required),
+):
+    """Cambia la contrasena de la cuenta autenticada.
+
+    Exige la contrasena actual aunque ya haya sesion valida: un token
+    robado, o un portatil que alguien dejo abierto, no deberia bastar para
+    quedarse con la cuenta.
+    """
+    try:
+        users_store.verify_login(current_user["email"], payload.current_password)
+    except InvalidCredentialsError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="La contrasena actual no es correcta.",
+        )
+
+    users_store.set_password(current_user["id"], payload.new_password)
+    # set_password cierra todas las sesiones, incluida esta. Es lo que se
+    # quiere: si la razon del cambio es que alguien mas entro, ese alguien
+    # tiene que quedarse fuera. El cliente vuelve a iniciar sesion.
+    return {"success": True, "detail": "Contrasena actualizada. Vuelve a iniciar sesion."}
+
+
+@app.get("/api/v1/me/export", status_code=status.HTTP_200_OK)
+def export_my_data(current_user: dict = Depends(get_current_user_required)):
+    """Todo lo que la plataforma guarda sobre esta cuenta, en un JSON.
+
+    Sin traducir y sin resumir: es una copia de los datos, no una pantalla.
+    Se sirve como descarga para que el estudiante pueda quedarse con lo suyo
+    sin tener que pedirselo a nadie.
+    """
+    user_id = current_user["id"]
+    return {
+        "exported_at": utc_now_iso(),
+        "account": {
+            "name": current_user.get("name"),
+            "email": current_user["email"],
+            "member_since": current_user["created_at"],
+        },
+        "passport_profile": users_store.get_passport_profile(user_id),
+        "passport_progress": users_store.passport_progress(user_id),
+        "passport_stamps": users_store.list_passport_stamps(user_id),
+        "passport_events": users_store.list_passport_events(user_id, limit=1000),
+        "test_results": [
+            {"created_at": fila["created_at"], "results": json.loads(fila["results_json"])}
+            for fila in users_store.results_history_for_user(user_id, limit=100)
+        ],
+    }
+
+
+@app.delete("/api/v1/me", status_code=status.HTTP_200_OK)
+def delete_my_account(
+    payload: DeleteAccountRequest,
+    current_user: dict = Depends(get_current_user_required),
+):
+    """Borra la cuenta. Irreversible.
+
+    Pide la contrasena por lo mismo que el cambio de contrasena: tener la
+    sesion abierta no puede ser suficiente para destruir la cuenta de otro.
+    Los resultados de test sobreviven desligados (ver delete_account): dejan
+    de apuntar a nadie, pero no falsean las estadisticas de la plataforma.
+    """
+    try:
+        users_store.verify_login(current_user["email"], payload.password)
+    except InvalidCredentialsError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="La contrasena no es correcta.",
+        )
+
+    users_store.delete_account(current_user["id"])
+    return {"success": True, "detail": "Cuenta eliminada."}
 
 
 @app.post("/api/v1/me/claim-result", status_code=status.HTTP_200_OK)
@@ -875,13 +1052,20 @@ class PassportEventRequest(BaseModel):
 
 
 @app.get("/api/v1/passport", status_code=status.HTTP_200_OK)
-def get_passport(current_user: dict = Depends(get_current_user_required)):
+def get_passport(
+    lang: Optional[str] = None,
+    current_user: dict = Depends(get_current_user_required),
+):
     profile = users_store.get_passport_profile(current_user["id"])
 
     vocational = None
     latest_result = users_store.latest_result_for_user(current_user["id"])
     if latest_result:
-        results = json.loads(latest_result["results_json"])
+        # Por _localize_results, no crudo. Lo guardado son claves de texto e
+        # ids de carrera; leerlo directo deja el arquetipo vacio y los
+        # clusters como identificadores en mayusculas en la pagina del
+        # pasaporte.
+        results = _localize_results(json.loads(latest_result["results_json"]), lang)
         vocational = {
             "personality": results.get("personality"),
             "learning_style": results.get("learning_style"),

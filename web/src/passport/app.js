@@ -515,7 +515,7 @@ function main() {
 
   // ------------------------------------------------------------------
   async function loadPassport() {
-    const response = await fetch("/api/v1/passport", { headers: authHeaders });
+    const response = await fetch(`/api/v1/passport?lang=${currentLanguage()}`, { headers: authHeaders });
     if (!response.ok) throw new Error("passport fetch failed");
     return response.json();
   }
