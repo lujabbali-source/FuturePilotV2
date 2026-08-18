@@ -115,20 +115,72 @@
     "buildPlan": "Crear mi plan de vuelo",
     "loadError": "No pudimos cargar el catálogo de carreras. Intenta recargar la página."
   },
-  "flightplan": {
-    "noTest": "Todavía no has hecho el test",
-    "soon": "Próximamente"
-  },
-  "results": {
-    "archetype": "Arquetipo",
-    "learningStyle": "Estilo de aprendizaje",
-    "confidence": "Confianza del análisis",
-    "noDestinations": "Explora el globo para descubrir destinos."
-  },
   "mentor": {
     "open": "Abrir chat con el AI Mentor",
     "placeholder": "Escribe tu pregunta...",
     "hello": "¡Hola! Soy tu AI Mentor. Puedo ayudarte con tu roadmap, tu carrera recomendada, universidades o tus habilidades — o si necesitas ánimo. ¿En qué te ayudo?",
-    "error": "No pude procesar tu mensaje. Intenta de nuevo en un momento."
+    "error": "No pude procesar tu mensaje. Intenta de nuevo en un momento.",
+    "subtitle": "Tu guía vocacional en FuturePilot"
+  },
+  "flight": {
+    "title": "Tu plan de vuelo",
+    "titleNamed": "Tu plan de vuelo, {{name}}.",
+    "subtitle": "Llevas un {{percent}}% del recorrido. Esto es lo que sigue.",
+    "emptySubtitle": "Aquí verás tu ruta y a dónde te puede llevar tu perfil. Primero hay que saber cuál es.",
+    "takeTest": "Hacer el test vocacional",
+    "currentLabel": "LO QUE TOCA AHORA",
+    "whyMatters": "Por qué importa:",
+    "yourPath": "TU RUTA",
+    "complete": "del recorrido",
+    "destinations": "DESTINOS QUE ENCAJAN",
+    "destinationsNote": "Ciudades y regiones reconocidas en el área de tu carrera. Explóralas en el globo para ver universidades concretas.",
+    "noDestinations": "Todavía no tenemos destinos mapeados para tu área. Explora el globo y ve descubriéndolos por tu cuenta.",
+    "keepGoing": "SIGUE DESDE AQUÍ",
+    "exploreGlobe": "Explorar el globo",
+    "seeRoute": "Mi roadmap",
+    "myAccount": "Mi cuenta",
+    "myPassport": "Mi pasaporte",
+    "allDone": {
+      "title": "Ruta completa",
+      "body": "Has hecho los seis hitos. A partir de aquí el recorrido lo marcas tú: cada país y cada universidad nueva deja su sello."
+    },
+    "steps": {
+      "test": {
+        "name": "Test vocacional",
+        "body": "Cincuenta preguntas para medir tus ocho dimensiones de perfil.",
+        "why": "Sin esto no hay nada que recomendar: de aquí sale tu perfil, tus carreras compatibles y tus destinos.",
+        "cta": "Empezar el test"
+      },
+      "profile": {
+        "name": "Tu identificación",
+        "body": "Tu país y tu ciudad en el pasaporte.",
+        "why": "Permite comparar las opciones con dónde estás de verdad, no en abstracto.",
+        "cta": "Ir al pasaporte"
+      },
+      "explore": {
+        "name": "Explorar países",
+        "body": "Tres países en el globo, mirando qué se estudia y dónde.",
+        "why": "Tu carrera existe en sitios concretos. Verlos cambia lo que crees posible.",
+        "cta": "Abrir el globo"
+      },
+      "universities": {
+        "name": "Descubrir universidades",
+        "body": "Tres universidades que encajen con tu carrera.",
+        "why": "Pasar de «quiero estudiar esto» a «en estos sitios se estudia» es el salto más útil.",
+        "cta": "Buscar universidades"
+      },
+      "goal": {
+        "name": "Tu objetivo",
+        "body": "La universidad a la que quieres llegar.",
+        "why": "Ponerle nombre a la meta cambia cómo se lee todo lo demás, y deja sello en el pasaporte.",
+        "cta": "Fijar mi objetivo"
+      },
+      "mentor": {
+        "name": "Hablar con tu mentor",
+        "body": "Una conversación sobre lo que no te encaje.",
+        "why": "El mentor conoce tu diagnóstico real. Preguntarle sale más a cuenta que adivinar.",
+        "cta": "Abrir el mentor"
+      }
+    }
   }
 }

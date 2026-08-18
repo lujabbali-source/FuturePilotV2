@@ -115,20 +115,72 @@
     "buildPlan": "Build my flight plan",
     "loadError": "We couldn't load the career catalogue. Try reloading the page."
   },
-  "flightplan": {
-    "noTest": "You haven't taken the test yet",
-    "soon": "Coming soon"
-  },
-  "results": {
-    "archetype": "Archetype",
-    "learningStyle": "Learning style",
-    "confidence": "Analysis confidence",
-    "noDestinations": "Explore the globe to discover destinations."
-  },
   "mentor": {
     "open": "Open the AI Mentor chat",
     "placeholder": "Type your question...",
     "hello": "Hi! I'm your AI Mentor. I can help with your roadmap, your recommended career, universities or your skills — or just a bit of encouragement. What do you need?",
-    "error": "I couldn't process your message. Try again in a moment."
+    "error": "I couldn't process your message. Try again in a moment.",
+    "subtitle": "Your vocational guide at FuturePilot"
+  },
+  "flight": {
+    "title": "Your flight plan",
+    "titleNamed": "Your flight plan, {{name}}.",
+    "subtitle": "You are {{percent}}% of the way through. Here is what comes next.",
+    "emptySubtitle": "This is where you will see your route and how far your profile can take you. First we need to know what it is.",
+    "takeTest": "Take the vocational test",
+    "currentLabel": "WHAT COMES NEXT",
+    "whyMatters": "Why it matters:",
+    "yourPath": "YOUR ROUTE",
+    "complete": "of the route",
+    "destinations": "DESTINATIONS THAT FIT",
+    "destinationsNote": "Cities and regions known for your career area. Explore them on the globe to see specific universities.",
+    "noDestinations": "We have not mapped destinations for your area yet. Explore the globe and find them yourself.",
+    "keepGoing": "CARRY ON FROM HERE",
+    "exploreGlobe": "Explore the globe",
+    "seeRoute": "My roadmap",
+    "myAccount": "My account",
+    "myPassport": "My passport",
+    "allDone": {
+      "title": "Route complete",
+      "body": "You have done all six. From here the route is yours to set: every new country and university leaves its stamp."
+    },
+    "steps": {
+      "test": {
+        "name": "Vocational test",
+        "body": "Fifty questions measuring your eight profile dimensions.",
+        "why": "Without this there is nothing to recommend: your profile, your career matches and your destinations all come from here.",
+        "cta": "Start the test"
+      },
+      "profile": {
+        "name": "Your identification",
+        "body": "Your country and city in the passport.",
+        "why": "It lets us weigh the options against where you actually are, not in the abstract.",
+        "cta": "Go to the passport"
+      },
+      "explore": {
+        "name": "Explore countries",
+        "body": "Three countries on the globe, looking at what is studied where.",
+        "why": "Your career exists in specific places. Seeing them changes what you think is possible.",
+        "cta": "Open the globe"
+      },
+      "universities": {
+        "name": "Discover universities",
+        "body": "Three universities that fit your career.",
+        "why": "Going from “I want to study this” to “these places teach it” is the most useful jump there is.",
+        "cta": "Find universities"
+      },
+      "goal": {
+        "name": "Your goal",
+        "body": "The university you want to reach.",
+        "why": "Putting a name to the goal changes how everything else reads, and it earns a passport stamp.",
+        "cta": "Set my goal"
+      },
+      "mentor": {
+        "name": "Talk to your mentor",
+        "body": "A conversation about whatever does not add up.",
+        "why": "The mentor knows your real diagnosis. Asking beats guessing.",
+        "cta": "Open the mentor"
+      }
+    }
   }
 }

@@ -795,10 +795,19 @@ def get_my_results(
 # Cuantas acciones reales cuentan como "hecho" en cada hito del recorrido.
 # Un porcentaje decorativo no le dice nada a nadie: cada uno de estos sale de
 # algo que el estudiante hizo de verdad y que quedo registrado.
+# El orden es el de la historia que cuenta la ruta, no el de la base de datos:
+# primero descubres quien eres, luego te identificas, luego mires a donde
+# puedes ir, luego eliges. El "siguiente paso" que se sugiere en pantalla es el
+# primero de esta lista que no este completo, asi que el orden importa.
+#
+# Ninguno esta bloqueado de verdad: todos se pueden hacer hoy, en cualquier
+# orden. Se marcan como hecho / actual / pendiente, que es la verdad, en vez de
+# como "se desbloqueara cuando la IA analice tu perfil" - eso era lo que decia
+# la version anterior de esta pagina sobre funciones que no existen.
 JOURNEY_STEPS = [
     # (clave, campo de progress, cuantas hacen falta, a donde lleva)
-    ("profile", None, 1, "/passport"),
     ("test", "tests_completed", 1, "/assessment"),
+    ("profile", None, 1, "/passport"),
     ("explore", "countries_explored", 3, "/globe"),
     ("universities", "universities_explored", 3, "/globe"),
     ("goal", None, 1, "/passport"),
@@ -850,6 +859,7 @@ def get_my_dashboard(
     user_id = current_user["id"]
     profile = users_store.get_passport_profile(user_id)
     progress = users_store.passport_progress(user_id)
+    journey = _build_journey(profile, progress)
 
     historial = users_store.results_history_for_user(user_id, limit=10)
     resultados = [
@@ -875,7 +885,12 @@ def get_my_dashboard(
         "latest": resultados[0] if resultados else None,
         "history": resultados[1:],
         "progress": progress,
-        "journey": _build_journey(profile, progress),
+        "journey": journey,
+        # Cuanto del recorrido esta hecho, contando pasos completos sobre el
+        # total. Se calcula aqui para que ninguna pantalla se invente el suyo.
+        "journey_percent": round(
+            100 * sum(1 for paso in journey if paso["complete"]) / len(journey)
+        ) if journey else 0,
         "stamps": users_store.list_passport_stamps(user_id)[-6:],
         "recent_activity": users_store.list_passport_events(user_id, limit=8),
         "goals": profile.get("goals") or {},
@@ -1058,26 +1073,6 @@ def get_passport(
 ):
     profile = users_store.get_passport_profile(current_user["id"])
 
-    vocational = None
-    latest_result = users_store.latest_result_for_user(current_user["id"])
-    if latest_result:
-        # Por _localize_results, no crudo. Lo guardado son claves de texto e
-        # ids de carrera; leerlo directo deja el arquetipo vacio y los
-        # clusters como identificadores en mayusculas en la pagina del
-        # pasaporte.
-        results = _localize_results(json.loads(latest_result["results_json"]), lang)
-        vocational = {
-            "personality": results.get("personality"),
-            "learning_style": results.get("learning_style"),
-            "strengths": results.get("strengths") or [],
-            "weaknesses": results.get("weaknesses") or [],
-            "recommended_careers": [
-                {"title": career.get("title"), "match_percentage": career.get("match_percentage")}
-                for career in (results.get("recommended_careers") or [])[:5]
-            ],
-            "completed_at": latest_result["created_at"],
-        }
-
     return {
         "success": True,
         "user": {
@@ -1091,10 +1086,11 @@ def get_passport(
             "passport_id": f"FP-{current_user['id']:06d}",
         },
         "profile": profile,
-        "vocational": vocational,
-        "progress": users_store.passport_progress(current_user["id"]),
+        # Sin `vocational` ni `progress`: el perfil vocacional y el recuento
+        # de progreso los sirve /api/v1/me/dashboard, que es quien los pinta.
+        # Mandarlos aqui obligaba a leer y traducir el ultimo resultado del
+        # test en cada carga del pasaporte para nada.
         "stamps": users_store.list_passport_stamps(current_user["id"]),
-        "recent_activity": users_store.list_passport_events(current_user["id"], limit=15),
     }
 
 

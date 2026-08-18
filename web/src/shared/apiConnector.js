@@ -151,73 +151,6 @@ async function refreshResultsFromServer() {
 }
 
 // =============================================================================
-// 2. ACTUALIZAR DINÁMICAMENTE LA PANTALLA FLIGHTPLAN.HTML
-// =============================================================================
-function updateFlightPlanUI() {
-  const aiDataRaw = localStorage.getItem(AI_STORAGE_KEY);
-  if (!aiDataRaw) return;
-
-  try {
-    const aiData = JSON.parse(aiDataRaw);
-    const topChoice = aiData.top_choice || (aiData.recommended_careers ? aiData.recommended_careers[0] : null);
-
-    if (!topChoice) return;
-
-    // 1. Actualizar Titulo de Carrera Recomendada
-    const careerElement = document.getElementById("careerName");
-    if (careerElement) {
-      careerElement.innerText = topChoice.title || localStorage.getItem("selectedCareer") || "Software Engineering";
-    }
-
-    // 2. Actualizar Justificacion y Razonamiento Cognitivo de la IA
-    const aiBoxes = document.querySelectorAll("#aiRecommendation");
-    aiBoxes.forEach(box => {
-      if (topChoice.justification) {
-        box.innerText = topChoice.justification;
-      }
-    });
-
-    // 3. Actualizar Paises y Hubs Recomendados.
-    // recommended_hubs cuelga de la RAIZ de la respuesta, no de la
-    // carrera: se leia topChoice.recommended_hubs, siempre undefined, y
-    // el bloque se quedaba en "Loading..." para siempre.
-    const countriesElement = document.getElementById("countries");
-    const hubs = aiData.recommended_hubs || [];
-    if (countriesElement) {
-      countriesElement.innerHTML = hubs.length
-        ? hubs.map(hub => `🌐 ${hub.name} — ${hub.desc}`).join("<br>")
-        : t("results.noDestinations", { ns: "site" });
-    }
-
-    // 4. Guardar carrera seleccionada en la memoria local
-    if (topChoice.title) {
-      localStorage.setItem("selectedCareer", topChoice.title);
-    }
-
-    // 5. Perfil cognitivo. Antes esta tarjeta mostraba Math/English/Learning
-    // Style del motor local, tres campos que ninguna pregunta alimenta: el
-    // resultado era "Math: Beginner / English: Beginner / Learning Style:
-    // null" identico para todo el mundo. Ahora sale del resultado real, que
-    // si distingue un perfil de otro, y ademas viaja con la cuenta en vez de
-    // depender del dispositivo.
-    const academicElement = document.getElementById("academicLevel");
-    if (academicElement) {
-      const rows = [
-        [t("results.archetype", { ns: "site" }), aiData.personality],
-        [t("results.learningStyle", { ns: "site" }), aiData.learning_style],
-        [t("results.confidence", { ns: "site" }), aiData.confidence ? `${Math.round(aiData.confidence * 100)}%` : null],
-      ].filter(([, value]) => value);
-
-      academicElement.innerHTML = rows.length
-        ? rows.map(([label, value]) => `${label}: ${escapeHtml(String(value))}`).join("<br>")
-        : t("flightplan.noTest", { ns: "site" });
-    }
-  } catch (err) {
-    console.error("[FuturePilot AI Error] Error actualizando FlightPlan UI:", err);
-  }
-}
-
-// =============================================================================
 // 3. ACTUALIZAR DINÁMICAMENTE LA PANTALLA JOURNEY.HTML (ROADMAP STACK)
 // =============================================================================
 function updateJourneyUI() {
@@ -257,7 +190,6 @@ function updateJourneyUI() {
 export {
 sendAssessmentToPythonAI,
 refreshResultsFromServer,
-updateFlightPlanUI,
 updateJourneyUI,
 getAnonId,
 };

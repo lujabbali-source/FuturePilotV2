@@ -242,3 +242,55 @@ def test_hidden_attribute_is_never_overridden(client):
         for href in hojas.findall(html):
             css = (Path(fp_app.FRONTEND_DIR) / href[len("/Frontend/"):]).read_text(encoding="utf-8")
             assert normaliza.search(css), f"{page}: {href} no neutraliza [hidden]"
+
+
+def test_no_bundle_calls_an_undefined_helper(client):
+    """Una funcion usada sin importar mata el modulo entero en la primera
+    linea, y no se nota desde el servidor: la pagina se sirve con 200 y lo
+    que queda en pantalla es el markup de partida.
+
+    Paso justo eso en /flightplan. Al traducir la pagina sustitui unas cadenas
+    por llamadas a `t(...)` y no añadi el import; el bundle lanzaba
+    "t is not defined" antes de hacer nada, y las cuatro tarjetas se quedaban
+    diciendo "Loading..." para siempre. El test de manejadores inline no lo
+    veia porque no es markup, es un error de ejecucion.
+
+    Se comprueba estaticamente: si un bundle NOMBRA a `t(` o `currentLanguage(`
+    sin traerlo de i18next, esta roto.
+    """
+    import re
+    from pathlib import Path
+
+    import app as fp_app
+
+    # Los bundles compilados renombran los imports, asi que se revisa el
+    # FUENTE, que es donde se escribe el fallo.
+    fuente = Path(__file__).resolve().parent.parent / "web" / "src"
+
+    ayudas = ("t", "currentLanguage", "onLanguageChange", "setLanguage", "applyTranslations")
+    for modulo in fuente.rglob("*.js"):
+        if "/database/" in modulo.as_posix() or "/locales/" in modulo.as_posix():
+            continue
+        codigo = modulo.read_text(encoding="utf-8", errors="ignore")
+        # Comentarios fuera: hablan de estas funciones sin llamarlas.
+        codigo = re.sub(r"^\s*//.*$", "", codigo, flags=re.M)
+        codigo = re.sub(r"/\*[\s\S]*?\*/", "", codigo)
+
+        importado = set()
+        for m in re.finditer(r"import\s*\{([^}]*)\}\s*from", codigo):
+            for pieza in m.group(1).split(","):
+                nombre = pieza.split(" as ")[-1].strip()
+                if nombre:
+                    importado.add(nombre)
+        # Tambien vale definirlas o derivarlas en el propio modulo.
+        for m in re.finditer(r"(?:function|const|let|var)\s+(\w+)", codigo):
+            importado.add(m.group(1))
+
+        for ayuda in ayudas:
+            if re.search(rf"(?<![\w.$]){re.escape(ayuda)}\s*\(", codigo) and ayuda not in importado:
+                raise AssertionError(
+                    f"{modulo.relative_to(fuente)} llama a {ayuda}() sin importarlo ni definirlo"
+                )
+
+    # Y las paginas se siguen sirviendo desde el build compilado.
+    assert (Path(fp_app.WEB_DIST_DIR) / "assets").exists()

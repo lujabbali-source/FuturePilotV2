@@ -245,7 +245,9 @@ def test_claim_retry_does_not_duplicate_passport_activity(client, register_and_l
     for _ in range(3):
         client.post("/api/v1/me/claim-result", headers=headers, json={"result_id": assess["result_id"]})
 
-    activity = client.get("/api/v1/passport", headers=headers).json()["recent_activity"]
+    # La actividad reciente la sirve /api/v1/me/dashboard: el pasaporte dejo
+    # de pintarla cuando su pagina de registro de viaje paso a la cuenta.
+    activity = client.get("/api/v1/me/dashboard", headers=headers).json()["recent_activity"]
     for event_type in ("test_completed", "roadmap_created"):
         occurrences = [event for event in activity if event["event_type"] == event_type]
         assert len(occurrences) == 1, f"'{event_type}' aparece {len(occurrences)} veces tras 3 claims"

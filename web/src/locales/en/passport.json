@@ -47,25 +47,6 @@
     "placeholderCountry": "Canada",
     "placeholderLanguages": "French"
   },
-  "vocational": {
-    "title": "Vocational profile",
-    "empty": "This page fills in once you finish the vocational test.",
-    "takeTest": "Take the test →",
-    "archetype": "Archetype",
-    "learningStyle": "Learning style",
-    "matches": "Careers that fit",
-    "recordedOn": "Recorded on {{date}}."
-  },
-  "journey": {
-    "title": "Travel log",
-    "tests": "Tests completed",
-    "roadmaps": "Roadmaps created",
-    "universities": "Universities discovered",
-    "countries": "Countries explored",
-    "cities": "Cities explored",
-    "conversations": "Conversations with the mentor",
-    "recent": "Recent activity"
-  },
   "stamps": {
     "title": "Stamps",
     "titlePaged": "Stamps · {{current}} of {{total}}"

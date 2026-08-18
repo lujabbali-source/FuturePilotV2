@@ -47,25 +47,6 @@
     "placeholderCountry": "Canadá",
     "placeholderLanguages": "Francés"
   },
-  "vocational": {
-    "title": "Perfil vocacional",
-    "empty": "Esta página se completa al terminar el test vocacional.",
-    "takeTest": "Hacer el test →",
-    "archetype": "Arquetipo",
-    "learningStyle": "Estilo de aprendizaje",
-    "matches": "Carreras compatibles",
-    "recordedOn": "Registrado el {{date}}."
-  },
-  "journey": {
-    "title": "Registro de viaje",
-    "tests": "Tests completados",
-    "roadmaps": "Roadmaps creados",
-    "universities": "Universidades descubiertas",
-    "countries": "Países explorados",
-    "cities": "Ciudades exploradas",
-    "conversations": "Conversaciones con el mentor",
-    "recent": "Últimos movimientos"
-  },
   "stamps": {
     "title": "Sellos",
     "titlePaged": "Sellos · {{current}} de {{total}}"

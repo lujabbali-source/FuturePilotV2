@@ -176,3 +176,279 @@ body{
 
     border-radius:12px;
 }
+
+/* --- Plan de vuelo -------------------------------------------------------
+ * Lo de arriba son los estilos de la maqueta anterior (.dashboard, .card,
+ * .mission-card, .ai-box). Los usan otras paginas que comparten style.css,
+ * asi que no se tocan; lo que sigue es lo que necesita esta pagina ahora. */
+
+.flight-head {
+  max-width: 620px;
+  margin-bottom: 46px;
+}
+
+.flight-head h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  letter-spacing: -.04em;
+  line-height: 1.05;
+}
+
+.flight-head p {
+  margin: 0;
+  color: #98aabc;
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+#flightplan > section {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.flight-label {
+  margin: 0 0 12px;
+  color: #5e7387;
+  font-family: 'DM Mono', monospace;
+  font-size: .59rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.flight-career h2 {
+  margin: 0 0 6px;
+  font-size: 1.7rem;
+  letter-spacing: -.03em;
+}
+
+.flight-match {
+  margin: 0 0 12px;
+  color: #00FFB3;
+  font-family: 'DM Mono', monospace;
+  font-size: .82rem;
+}
+
+.flight-why,
+.flight-note {
+  max-width: 62ch;
+  margin: 0 0 14px;
+  color: #98aabc;
+  font-size: .84rem;
+  line-height: 1.65;
+}
+
+/* Los destinos son el contenido propio de esta pagina, asi que llevan el
+   unico tratamiento con fondo. */
+.hub-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.hub-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-left: 2px solid rgba(0, 255, 179, .5);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .03);
+}
+
+.hub-list strong {
+  font-size: .95rem;
+}
+
+.hub-list span {
+  color: #98aabc;
+  font-size: .8rem;
+  line-height: 1.55;
+}
+
+.flight-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.flight-cta {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  padding: 13px 24px;
+  border-radius: 99px;
+  background: #00FFB3;
+  color: #04140e;
+  font-size: .84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.flight-cta--ghost {
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: transparent;
+  color: #e8f1f8;
+}
+
+/* --- La ruta -------------------------------------------------------------
+ * Es lo que da sentido a la pagina, asi que se lleva el unico tratamiento
+ * con fondo junto a los destinos. Cada hito es un enlace: se puede hacer
+ * cualquiera hoy, en cualquier orden. */
+
+.flight-current {
+  border: 1px solid rgba(0, 255, 179, .3);
+  border-radius: 14px;
+  padding: 26px 28px;
+  background: linear-gradient(135deg, rgba(0, 255, 179, .1), rgba(0, 209, 255, .04));
+}
+
+.flight-current h2 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  letter-spacing: -.03em;
+}
+
+.flight-matters {
+  max-width: 62ch;
+  margin: 0 0 18px;
+  color: #b9c7d4;
+  font-size: .8rem;
+  line-height: 1.6;
+}
+
+.flight-matters b {
+  color: #00FFB3;
+  font-weight: 600;
+}
+
+.flight-current--done h2 {
+  color: #00FFB3;
+}
+
+.flight-path__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.flight-percent {
+  margin: 0 0 12px;
+  color: #00FFB3;
+  font-family: 'DM Mono', monospace;
+  font-size: .78rem;
+}
+
+.path-track {
+  height: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, .08);
+}
+
+.path-track i {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #00D1FF, #00FFB3);
+  transition: width .8s cubic-bezier(.22, .8, .3, 1);
+}
+
+.path-steps {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.path-step a {
+  display: grid;
+  gap: 4px 14px;
+  align-items: baseline;
+  padding: 14px 12px;
+  border-radius: 9px;
+  color: inherit;
+  text-decoration: none;
+  grid-template-columns: 26px 1fr auto;
+  transition: background .18s ease;
+}
+
+.path-step a:hover {
+  background: rgba(255, 255, 255, .04);
+}
+
+.path-step__dot {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 50%;
+  color: #98aabc;
+  font-family: 'DM Mono', monospace;
+  font-size: .68rem;
+}
+
+.path-step__name {
+  color: #c6d3de;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+/* El porque de cada hito va debajo del nombre y en gris: informa sin competir
+   con la accion protagonista, que es la tarjeta de arriba. */
+.path-step__why {
+  grid-column: 2 / -1;
+  color: #6d8093;
+  font-size: .76rem;
+  line-height: 1.55;
+}
+
+.path-step__count {
+  color: #5e7387;
+  font-family: 'DM Mono', monospace;
+  font-size: .7rem;
+}
+
+.path-step.is-done .path-step__dot {
+  border-color: #00FFB3;
+  background: #00FFB3;
+  color: #04140e;
+}
+
+.path-step.is-done .path-step__name {
+  color: #fff;
+}
+
+.path-step.is-current a {
+  background: rgba(0, 209, 255, .07);
+}
+
+.path-step.is-current .path-step__dot {
+  border-color: #00D1FF;
+  color: #00D1FF;
+}
+
+.path-step.is-current .path-step__name {
+  color: #00D1FF;
+}
+
+@media (max-width: 640px) {
+  .path-step a {
+    grid-template-columns: 26px 1fr;
+  }
+
+  .path-step__count {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}

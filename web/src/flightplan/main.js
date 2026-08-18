@@ -1,12 +1,12 @@
 // Punto de entrada de /flightplan.
-// Estilos propios de la pagina, antes en un <style> dentro del HTML.
+//
+// Ya no pasa por apiConnector: updateFlightPlanUI existia para rellenar el
+// markup fijo que tenia esta pagina (las tarjetas con "Loading..."), y ese
+// markup ya no existe. La pagina se construye sola desde su resultado.
 import "./page.css";
 import "../shared/site-header.js";
 import "../shared/i18next.js";
 import "../shared/passport-stamp-toast.js";
 import "../shared/mentor-chat.js";
 
-import { hydrate, updateFlightPlanUI } from "../shared/apiConnector.js";
 import "./app.js";
-
-hydrate(updateFlightPlanUI);

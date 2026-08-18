@@ -155,3 +155,38 @@ def test_delete_account_removes_the_person_not_the_statistics(
     assert client.post("/api/v1/auth/login",
                        json={"email": user["email"], "password": PASSWORD}).status_code == 401
     assert app_module.users_store.count_test_results() == antes
+
+
+def test_journey_percent_moves_only_with_real_actions(client, register_and_login, sample_answers):
+    """El "18%" que tenia /flightplan estaba escrito a mano en el HTML: el
+    mismo numero para todo el mundo, para siempre. Ahora sale de contar hitos
+    completos, asi que tiene que subir cuando el estudiante hace algo y no
+    moverse cuando solo mira la pagina."""
+    _, headers = register_and_login()
+
+    assert client.get("/api/v1/me/dashboard", headers=headers).json()["journey_percent"] == 0
+
+    # Leer la pantalla, muchas veces, no cambia nada.
+    for _ in range(3):
+        client.get("/api/v1/me/dashboard", headers=headers)
+    assert client.get("/api/v1/me/dashboard", headers=headers).json()["journey_percent"] == 0
+
+    a = client.post("/api/v1/assess", json={"answers": sample_answers}).json()
+    client.post("/api/v1/me/claim-result", headers=headers, json={"result_id": a["result_id"]})
+    con_test = client.get("/api/v1/me/dashboard", headers=headers).json()["journey_percent"]
+    assert con_test > 0
+
+    client.put("/api/v1/passport/profile", headers=headers,
+               json={"country": "Colombia", "city": "Bogota"})
+    assert client.get("/api/v1/me/dashboard", headers=headers).json()["journey_percent"] > con_test
+
+
+def test_the_route_starts_with_the_test(client, register_and_login):
+    """El orden de la ruta es el de la historia que cuenta, y de el sale el
+    "siguiente paso" que se sugiere. Sin test no hay nada que recomendar, asi
+    que va primero."""
+    _, headers = register_and_login()
+    journey = client.get("/api/v1/me/dashboard", headers=headers).json()["journey"]
+    assert journey[0]["key"] == "test"
+    # Y ninguno viene marcado como inalcanzable: todos tienen a donde ir.
+    assert all(paso["href"] for paso in journey)

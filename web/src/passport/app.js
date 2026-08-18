@@ -198,58 +198,6 @@ function main() {
     };
   }
 
-  function pageVocational() {
-    const vocational = state.data.vocational;
-    if (!vocational) {
-      return {
-        title: tp("vocational.title"),
-        body: `
-          <p class="fp-empty">${tp("vocational.empty")}</p>
-          <a class="fp-btn fp-btn--ink" href="/assessment">${tp("vocational.takeTest")}</a>`,
-      };
-    }
-
-    const carreras = (vocational.recommended_careers || []).map((c, i) => `
-      <li><span class="fp-rank">${String(i + 1).padStart(2, "0")}</span>
-          <span class="fp-career">${escapeHtml(c.title)}</span>
-          <span class="fp-match">${Math.round(c.match_percentage)}%</span></li>`).join("");
-
-    return {
-      title: tp("vocational.title"),
-      body: `
-        <div class="fp-fields">
-          ${field(tp("vocational.archetype"), vocational.personality)}
-          ${field(tp("vocational.learningStyle"), vocational.learning_style, true)}
-        </div>
-        <p class="fp-subhead">${tp("vocational.matches")}</p>
-        <ol class="fp-careers">${carreras}</ol>
-        <p class="fp-note">${escapeHtml(tp("vocational.recordedOn", { date: formatDate(vocational.completed_at) }))}</p>`,
-    };
-  }
-
-  function pageJourney() {
-    const p = state.data.progress;
-    const filas = [
-      [tp("journey.tests"), p.tests_completed],
-      [tp("journey.roadmaps"), p.roadmaps_completed],
-      [tp("journey.universities"), p.universities_explored],
-      [tp("journey.countries"), p.countries_explored],
-      [tp("journey.cities"), p.cities_explored],
-      [tp("journey.conversations"), p.ai_conversations],
-    ].map(([label, valor]) => `
-      <tr><th>${escapeHtml(label)}</th><td>${valor}</td></tr>`).join("");
-
-    const actividad = (state.data.recent_activity || []).slice(0, 6).map((e) => `
-      <li><span>${escapeHtml(shortDate(e.created_at))}</span> ${escapeHtml(e.subject_label || e.event_type)}</li>`).join("");
-
-    return {
-      title: tp("journey.title"),
-      body: `
-        <table class="fp-ledger">${filas}</table>
-        ${actividad ? `<p class="fp-subhead">${tp("journey.recent")}</p><ul class="fp-activity">${actividad}</ul>` : ""}`,
-    };
-  }
-
   /** Paginas de sellos. Se reparten de 6 en 6; siempre hay al menos una,
    *  aunque este vacia - un pasaporte nuevo tiene hojas en blanco, y verlas
    *  es parte de la experiencia de irlas llenando. */
@@ -276,11 +224,13 @@ function main() {
   }
 
   function buildPages() {
+    // Identificacion, objetivos y sellos. El perfil vocacional y el
+    // recuento de progreso vivian tambien aqui, pero ahora estan en la
+    // pantalla de cuenta con el vector completo y el recorrido enlazado: en
+    // el pasaporte eran una copia peor de lo mismo.
     state.pages = [
       pageIdentity(),
       pageGoals(),
-      pageVocational(),
-      pageJourney(),
       ...stampPages(),
     ];
     // Un pliego necesita par de paginas: si sobra una, se añade una hoja de

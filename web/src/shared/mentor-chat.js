@@ -35,7 +35,7 @@ import { show as showStamps } from "./passport-stamp-toast.js";
   panel.id = "fpMentorPanel";
   panel.innerHTML = `
     <div id="fpMentorHeader">
-      <div><strong>AI Mentor</strong><span>Tu guía vocacional en FuturePilot</span></div>
+      <div><strong>AI Mentor</strong><span>${tm("mentor.subtitle")}</span></div>
       <button type="button" id="fpMentorClose" aria-label="Cerrar chat">×</button>
     </div>
     <div id="fpMentorMessages"></div>

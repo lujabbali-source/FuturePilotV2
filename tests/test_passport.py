@@ -124,9 +124,9 @@ def test_passport_starts_empty_for_new_account(client, register_and_login):
     r = client.get("/api/v1/passport", headers=headers)
     assert r.status_code == 200
     body = r.json()
-    assert body["vocational"] is None
     assert body["stamps"] == []
-    assert body["progress"]["tests_completed"] == 0
+    # El progreso se pide a /api/v1/me/dashboard: el pasaporte no lo pinta.
+    assert client.get("/api/v1/me/dashboard", headers=headers).json()["progress"]["tests_completed"] == 0
 
 
 def test_update_profile_and_goals(client, register_and_login):
@@ -158,7 +158,7 @@ def test_test_completion_awards_stamps(client, register_and_login, sample_answer
     stamp_keys = {s["key"] for s in passport["stamps"]}
     assert "test_completed" in stamp_keys
     assert "roadmap_created" in stamp_keys
-    assert passport["progress"]["tests_completed"] == 1
+    assert client.get("/api/v1/me/dashboard", headers=headers).json()["progress"]["tests_completed"] == 1
 
 
 def test_country_explored_event_awards_stamp_once(client, register_and_login):
@@ -208,24 +208,27 @@ def test_ai_chat_awards_stamp_on_first_message(client, register_and_login):
     assert r2.json().get("new_stamps", []) == []
 
 
-def test_passport_vocational_page_is_readable_in_both_languages(client, register_and_login, sample_answers):
-    """La pagina de perfil vocacional del pasaporte lee el ULTIMO resultado
-    guardado. Ese resultado se guarda sin redactar (claves de texto, ids de
-    carrera y clusters en mayusculas), asi que leerlo directo del disco deja
-    el arquetipo en blanco y los clusters como "ANALYTICAL" en pantalla."""
+def test_passport_does_not_duplicate_the_account_screen(client, register_and_login, sample_answers):
+    """El pasaporte tenia una pagina de perfil vocacional y otra de recuento
+    de progreso. Las dos estan ahora en la pantalla de cuenta, con el vector
+    completo y el recorrido enlazado - alli son mejores, y en dos sitios eran
+    dos verdades que podian discrepar.
+
+    El pasaporte se queda con lo que solo es suyo: identidad, objetivos y
+    sellos. Y deja de leer y traducir el ultimo resultado del test en cada
+    carga para pintar algo que ya no pinta."""
     _, headers = register_and_login()
     assess = client.post("/api/v1/assess", json={"answers": sample_answers}).json()
     client.post("/api/v1/me/claim-result", headers=headers, json={"result_id": assess["result_id"]})
 
-    es = client.get("/api/v1/passport?lang=es", headers=headers).json()["vocational"]
-    en = client.get("/api/v1/passport?lang=en", headers=headers).json()["vocational"]
+    pasaporte = client.get("/api/v1/passport", headers=headers).json()
+    assert "vocational" not in pasaporte
+    assert "progress" not in pasaporte
+    # Lo suyo sigue entero.
+    assert pasaporte["user"]["passport_id"]
+    assert "profile" in pasaporte and "stamps" in pasaporte
 
-    for datos in (es, en):
-        assert datos["personality"], "el arquetipo llega vacio"
-        assert datos["learning_style"], "el estilo de aprendizaje llega vacio"
-        # Ni un identificador de cluster en crudo.
-        assert not any(s.isupper() for s in datos["strengths"]), datos["strengths"]
-        assert datos["recommended_careers"][0]["title"]
-
-    assert es["personality"] != en["personality"]
-    assert es["recommended_careers"][0]["title"] != en["recommended_careers"][0]["title"]
+    # Y lo retirado sigue disponible donde ahora vive.
+    cuenta = client.get("/api/v1/me/dashboard", headers=headers).json()
+    assert cuenta["latest"]["results"]["personality"]
+    assert cuenta["progress"]["tests_completed"] == 1
