@@ -294,3 +294,33 @@ def test_no_bundle_calls_an_undefined_helper(client):
 
     # Y las paginas se siguen sirviendo desde el build compilado.
     assert (Path(fp_app.WEB_DIST_DIR) / "assets").exists()
+
+
+def test_no_helper_call_leaks_into_markup_as_literal_text(client):
+    """Una llamada a t() escrita dentro de una plantilla sin `${}` no es codigo:
+    es texto. Se sirve tal cual al navegador.
+
+    Paso justo eso: al traducir el chat del mentor sustitui la cadena del
+    placeholder por `placeholder=tm("mentor.placeholder")` sin interpolar, y el
+    campo mostraba literalmente `tm("mentor.placeholder")`. No hay error ni en
+    consola ni en el build; solo se ve en pantalla.
+    """
+    import re
+    from pathlib import Path
+
+    fuente = Path(__file__).resolve().parent.parent / "web" / "src"
+
+    # Un atributo cuyo valor arranca directamente en una llamada a la funcion
+    # de traduccion, sin comillas ni `${`.
+    fuga = re.compile(r'\w+=\s*t[a-z]*\(')
+
+    for modulo in fuente.rglob("*.js"):
+        if "/database/" in modulo.as_posix():
+            continue
+        codigo = modulo.read_text(encoding="utf-8", errors="ignore")
+        codigo = re.sub(r"^\s*//.*$", "", codigo, flags=re.M)
+        encontrado = fuga.findall(codigo)
+        assert not encontrado, (
+            f"{modulo.relative_to(fuente)}: llamada a traduccion sin interpolar "
+            f"dentro de markup: {encontrado[:3]}"
+        )

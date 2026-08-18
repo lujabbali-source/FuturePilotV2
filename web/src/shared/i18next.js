@@ -50,6 +50,13 @@ instance.init({
   defaultNS: "test",
   interpolation: { escapeValue: false },
   returnEmptyString: false,
+  // Init SINCRONO. Por defecto i18next aplaza la inicializacion a un
+  // setTimeout, asi que cualquier modulo que llame a t() mientras se evalua
+  // -y no dentro de una funcion- recibe la clave sin traducir o el ingles de
+  // reserva. Le pasaba al saludo del chat del mentor: se construye al cargar
+  // el modulo, y salia en ingles con la interfaz en castellano. Los recursos
+  // estan aqui mismo, en el bundle, asi que no hay nada que esperar.
+  initImmediate: false,
 });
 
 export const t = instance.t.bind(instance);

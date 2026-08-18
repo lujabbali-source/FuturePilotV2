@@ -811,7 +811,7 @@ JOURNEY_STEPS = [
     ("explore", "countries_explored", 3, "/globe"),
     ("universities", "universities_explored", 3, "/globe"),
     ("goal", None, 1, "/passport"),
-    ("mentor", "ai_conversations", 1, "/assessment"),
+    ("mentor", "ai_conversations", 1, "#mentor"),
 ]
 
 

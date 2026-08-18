@@ -2,7 +2,7 @@
 // bloquea la CSP igual que uno escrito en el HTML, y asi ademas los
 // empaqueta y minifica Vite.
 import "./mentor-chat.css";
-import { currentLanguage, t } from "./i18next.js";
+import { currentLanguage, onLanguageChange, t } from "./i18next.js";
 
 const tm = (key) => t(key, { ns: "site" });
 import { show as showStamps } from "./passport-stamp-toast.js";
@@ -36,12 +36,12 @@ import { show as showStamps } from "./passport-stamp-toast.js";
   panel.innerHTML = `
     <div id="fpMentorHeader">
       <div><strong>AI Mentor</strong><span>${tm("mentor.subtitle")}</span></div>
-      <button type="button" id="fpMentorClose" aria-label="Cerrar chat">×</button>
+      <button type="button" id="fpMentorClose" aria-label="${tm("mentor.close")}">×</button>
     </div>
     <div id="fpMentorMessages"></div>
     <form id="fpMentorForm">
-      <input type="text" id="fpMentorInput" placeholder=tm("mentor.placeholder") autocomplete="off">
-      <button type="submit" id="fpMentorSend">Enviar</button>
+      <input type="text" id="fpMentorInput" placeholder="${tm("mentor.placeholder")}" autocomplete="off">
+      <button type="submit" id="fpMentorSend">${tm("mentor.send")}</button>
     </form>
   `;
 
@@ -90,6 +90,20 @@ import { show as showStamps } from "./passport-stamp-toast.js";
   }
   renderMessages();
 
+  // El historial persiste entre visitas, y con razon: nadie quiere perder la
+  // conversacion al recargar. Pero si lo unico que hay es el saludo y el
+  // estudiante cambia de idioma, ese saludo se queda dando la bienvenida en el
+  // idioma anterior. Solo se reescribe cuando esta solo: una conversacion de
+  // verdad no se toca - se respondio en el idioma en que se hablo, y
+  // reescribirla seria falsear lo que se dijo.
+  onLanguageChange(() => {
+    if (messages.length === 1 && messages[0].role === "bot") {
+      messages[0].text = tm("mentor.hello");
+      saveHistory(messages);
+      renderMessages();
+    }
+  });
+
   let isOpen = false;
   function togglePanel(open) {
     isOpen = open;
@@ -102,6 +116,20 @@ import { show as showStamps } from "./passport-stamp-toast.js";
 
   bubble.addEventListener("click", () => togglePanel(!isOpen));
   closeBtn.addEventListener("click", () => togglePanel(false));
+
+  // El mentor es un widget flotante, no una pagina, asi que hasta ahora solo
+  // se podia abrir pulsando su burbuja. Cualquier sitio de la aplicacion que
+  // quisiera mandar al estudiante a hablar con el acababa enlazando a otra
+  // pagina y no pasaba nada - el boton parecia roto.
+  //
+  // Se abre por delegacion en vez de con un manejador inline: la CSP del
+  // sitio declara script-src 'self' y bloquearia un onclick="".
+  document.addEventListener("click", (event) => {
+    const disparador = event.target.closest('[data-open-mentor], a[href="#mentor"]');
+    if (!disparador) return;
+    event.preventDefault();
+    togglePanel(true);
+  });
 
   formEl.addEventListener("submit", async (event) => {
     event.preventDefault();

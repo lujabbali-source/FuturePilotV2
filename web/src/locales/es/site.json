@@ -120,7 +120,9 @@
     "placeholder": "Escribe tu pregunta...",
     "hello": "¡Hola! Soy tu AI Mentor. Puedo ayudarte con tu roadmap, tu carrera recomendada, universidades o tus habilidades — o si necesitas ánimo. ¿En qué te ayudo?",
     "error": "No pude procesar tu mensaje. Intenta de nuevo en un momento.",
-    "subtitle": "Tu guía vocacional en FuturePilot"
+    "subtitle": "Tu guía vocacional en FuturePilot",
+    "close": "Cerrar chat",
+    "send": "Enviar"
   },
   "flight": {
     "title": "Tu plan de vuelo",

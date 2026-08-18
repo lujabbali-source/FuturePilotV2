@@ -120,7 +120,9 @@
     "placeholder": "Type your question...",
     "hello": "Hi! I'm your AI Mentor. I can help with your roadmap, your recommended career, universities or your skills — or just a bit of encouragement. What do you need?",
     "error": "I couldn't process your message. Try again in a moment.",
-    "subtitle": "Your vocational guide at FuturePilot"
+    "subtitle": "Your vocational guide at FuturePilot",
+    "close": "Close chat",
+    "send": "Send"
   },
   "flight": {
     "title": "Your flight plan",
