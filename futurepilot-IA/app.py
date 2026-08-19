@@ -1778,14 +1778,29 @@ def chat_with_mentor(
     # (saludo, universidades segun la meta del Pasaporte) sin que el
     # cliente pueda falsificarlos.
     user_id = str(current_user["id"]) if current_user else resolve_anon_memory_id(payload.anon_id)
-    passport_goals = {}
+    passport_profile, passport_goals = {}, {}
     if current_user:
-        passport_goals = users_store.get_passport_profile(current_user["id"]).get("goals") or {}
+        passport_profile = users_store.get_passport_profile(current_user["id"])
+        passport_goals = passport_profile.get("goals") or {}
+    # El recorrido va en el contexto para que el mentor pueda responder
+    # "como voy" con el mismo numero que pinta el plan de vuelo, en vez de
+    # con uno propio que podria discrepar.
+    journey_context = None
+    if current_user:
+        progreso = users_store.passport_progress(current_user["id"])
+        pasos = _build_journey(passport_profile, progreso)
+        pendiente = next((paso for paso in pasos if not paso["complete"]), None)
+        journey_context = {
+            "percent": round(100 * sum(1 for p in pasos if p["complete"]) / len(pasos)) if pasos else 0,
+            "next_step": pendiente["key"] if pendiente else None,
+        }
+
     context = {
         **(payload.user_context or {}),
         "user_id": user_id,
         "name": current_user.get("name") if current_user else None,
         "passport_goals": passport_goals,
+        "journey": journey_context,
     }
 
     try:

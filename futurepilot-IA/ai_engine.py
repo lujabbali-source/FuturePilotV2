@@ -621,11 +621,33 @@ class MentorEngine:
     # El orden importa: un saludo gana a una pregunta, y "opciones" cae en
     # `help` antes que en `career`.
     INTENT_ORDER = ("greeting", "farewell", "thanks", "help",
-                    "roadmap", "career", "university", "skills", "motivation")
+                    # `pressure` va antes que `career`: "mis papas quieren que
+                    # estudie derecho" menciona una carrera, pero la pregunta
+                    # no es sobre la carrera.
+                    "pressure", "compare", "progress",
+                    "roadmap", "career", "university", "skills", "motivation",
+                    # `why` es el ultimo: solo tiene sentido como seguimiento,
+                    # y "por que" aparece dentro de muchas otras preguntas.
+                    "why")
 
-    def __init__(self, memory_system: StudentMemorySystem, careers_db: List[Dict[str, Any]]):
+    # Una diferencia menor de esto entre dos carreras no distingue nada: el
+    # calculo tiene mas ruido que eso, y decir "te encaja mejor por 0.4
+    # puntos" es dar una precision que no existe.
+    COMPARE_MARGIN = 3.0
+
+    # Por debajo de esta diferencia contra lo que pide la carrera no se
+    # considera una carencia: estar en 6.8 donde piden 7.0 no es una brecha,
+    # es la misma cosa medida con ruido.
+    GAP_THRESHOLD = 1.0
+
+    def __init__(self, memory_system: StudentMemorySystem, careers_db: List[Dict[str, Any]],
+                 decision: Optional["DecisionEngine"] = None):
         self.memory_system = memory_system
         self.careers_db = careers_db
+        # El MISMO motor de decision que puntua el test. Si el mentor
+        # calculara la compatibilidad por su cuenta, sus numeros podrian
+        # discrepar de los que ve el estudiante en su pantalla de resultados.
+        self.decision = decision or DecisionEngine()
 
     def _detect_named_career(self, message: str) -> Optional[Dict[str, Any]]:
         """Si el mensaje menciona el nombre de una carrera real del
@@ -636,13 +658,129 @@ class MentorEngine:
 
         Se buscan los titulos en los DOS idiomas: el estudiante puede
         escribir "psicologia" con la aplicacion en ingles."""
+        encontradas = self._detect_named_careers(message)
+        return encontradas[0] if encontradas else None
+
+    def _detect_named_careers(self, message: str) -> List[Dict[str, Any]]:
+        """Todas las carreras mencionadas, en el orden en que aparecen.
+
+        Hace falta la lista y no solo la primera para poder comparar dos
+        ("derecho o diseño?") y para distinguir "mis papas quieren derecho"
+        -una carrera- de una comparacion."""
         lowered = message.lower()
+        vistas: List[tuple] = []
         for career in self.careers_db:
             for field in ("title", "title_es"):
                 title = (career.get(field) or "").strip().lower()
-                if title and re.search(r"\b" + re.escape(title) + r"\b", lowered):
-                    return career
-        return None
+                if not title:
+                    continue
+                encaje = re.search(r"\b" + re.escape(title) + r"\b", lowered)
+                if encaje:
+                    vistas.append((encaje.start(), career))
+                    break
+        vistas.sort(key=lambda par: par[0])
+        # Sin duplicados, conservando el orden de aparicion.
+        salida, ids = [], set()
+        for _, career in vistas:
+            if career["id"] not in ids:
+                ids.add(career["id"])
+                salida.append(career)
+        return salida
+
+    # ------------------------------------------------------------------
+    # Encaje contra los requisitos de la carrera
+    # ------------------------------------------------------------------
+    def _profile_fit(self, vector: Dict[str, float], career: Dict[str, Any],
+                     lang: str) -> Dict[str, Any]:
+        """Cruza el vector del estudiante con lo que pide la carrera.
+
+        Cada carrera del catalogo declara un nivel por dimension
+        (`requirements`), y el test produce un vector con esas mismas ocho
+        dimensiones. El dato mas util que tiene el motor es la RESTA entre
+        los dos, y hasta ahora no la calculaba nadie: el mentor hablaba de
+        fortalezas y brechas en abstracto, sin decir contra que.
+
+        Devuelve las dimensiones donde sobra y donde falta, con los dos
+        numeros, para que el estudiante pueda comprobarlo el mismo."""
+        requisitos = career.get("requirements") or {}
+        if not vector or not requisitos:
+            return {"strong": [], "short": []}
+
+        fuerte, corto = [], []
+        for cluster, pide in requisitos.items():
+            tiene = vector.get(cluster)
+            if tiene is None:
+                continue
+            diferencia = tiene - pide
+            entrada = {
+                "cluster": localization.cluster_label(cluster, lang),
+                "score": round(tiene, 1),
+                "needed": round(pide, 1),
+                "diff": diferencia,
+            }
+            if diferencia >= 0:
+                fuerte.append(entrada)
+            elif diferencia <= -self.GAP_THRESHOLD:
+                corto.append(entrada)
+
+        # Las tres mas relevantes de cada lado. Listarlas todas convierte la
+        # respuesta en una tabla que nadie lee.
+        fuerte.sort(key=lambda e: e["diff"], reverse=True)
+        corto.sort(key=lambda e: e["diff"])
+        return {"strong": fuerte[:3], "short": corto[:3]}
+
+    def _fit_sentence(self, vector: Dict[str, float], career: Dict[str, Any],
+                      lang: str) -> str:
+        """El encaje, redactado. Cadena vacia si no hay nada que decir."""
+        encaje = self._profile_fit(vector, career, lang)
+        titulo = localization.career_field(career, "title", lang)
+
+        def listar(entradas):
+            return localization.join(
+                [localization.text("fit.item", lang, **{k: e[k] for k in ("cluster", "score", "needed")})
+                 for e in entradas],
+                lang,
+            )
+
+        partes = []
+        if encaje["strong"]:
+            partes.append(localization.text("fit.strong", lang, career=titulo,
+                                            items=listar(encaje["strong"])))
+        if encaje["short"]:
+            partes.append(localization.text("fit.short", lang, items=listar(encaje["short"])))
+        elif encaje["strong"]:
+            partes.append(localization.text("fit.noGap", lang))
+
+        return " ".join(partes)
+
+    def _career_by_id(self, career_id: Optional[str]) -> Optional[Dict[str, Any]]:
+        if not career_id:
+            return None
+        return next((c for c in self.careers_db if c.get("id") == career_id), None)
+
+    def _match_pct(self, top_matches: List[Dict[str, Any]], career_id: str,
+                   vector: Optional[Dict[str, float]] = None) -> Optional[float]:
+        """La compatibilidad de esa carrera con el perfil.
+
+        Se guardan solo las ocho mejores, pero el estudiante pregunta por
+        cualquiera del catalogo - justamente por las que NO le salieron. Sin
+        esto, la comparacion imprimia un guion donde deberia ir el numero, y
+        preguntar por una carrera concreta no daba porcentaje alguno.
+
+        Primero se busca en lo guardado (asi coincide exactamente con lo que
+        ve en su pantalla) y, si no esta, se puntua al vuelo con el mismo
+        motor de decision."""
+        for match in top_matches:
+            if match.get("career_id") == career_id:
+                return match.get("match_percentage")
+
+        if not vector:
+            return None
+        career = self._career_by_id(career_id)
+        if not career:
+            return None
+        puntuadas = self.decision.rank_careers(vector, [career])
+        return puntuadas[0]["match_percentage"] if puntuadas else None
 
     def _detect_intent(self, message: str) -> str:
         """La palabra clave se busca con limite de palabra y admitiendo el
@@ -657,7 +795,14 @@ class MentorEngine:
                 return intent
         return "general"
 
-    def _log_turn(self, memory: Dict[str, Any], user_id: str, user_message: str, intent: str) -> None:
+    def _log_turn(self, memory: Dict[str, Any], user_id: str, user_message: str,
+                  intent: str, career_id: Optional[str] = None) -> None:
+        # De que carrera se hablo por ultima vez. Sin esto, un "¿por que?"
+        # suelto no tiene a que referirse: el estudiante pregunta por lo que
+        # se acaba de decir, no por su carrera principal.
+        if career_id:
+            memory["last_career_id"] = career_id
+
         chat_history = memory.setdefault("chat_history", [])
         chat_history.append({
             "timestamp": datetime.now().isoformat(),
@@ -683,8 +828,17 @@ class MentorEngine:
             return self._chat_locked(user_message, context, user_id, localization.resolve(lang))
 
     def _say(self, key: str, lang: str, **params: Any) -> str:
-        """Una de las variantes de `key`, ya interpolada."""
-        return random.choice(localization.mentor_options(key, lang)).format(**params)
+        """Una de las variantes de `key`, ya interpolada.
+
+        El catalogo tiene dos mitades: MENTOR_TEXTS son respuestas con varias
+        redacciones -se elige una al azar para no sonar a disco rayado- y
+        TEMPLATES son frases unicas. Se busca en las dos porque, si no, poner
+        una clave en la mitad equivocada no da error: saca la clave en crudo
+        a la pantalla del estudiante."""
+        variantes = localization.MENTOR_TEXTS[localization.resolve(lang)].get(key)
+        if variantes:
+            return random.choice(variantes).format(**params)
+        return localization.text(key, lang, **params)
 
     def _career_name(self, career_id: Optional[str], lang: str) -> Optional[str]:
         """El titulo de una carrera en el idioma pedido, buscado por id.
@@ -706,8 +860,17 @@ class MentorEngine:
         memory = self.memory_system.load_memory(user_id)
         history = memory.get("assessment_history", [])
 
-        named_career = self._detect_named_career(user_message)
-        intent = "career_lookup" if named_career else self._detect_intent(user_message)
+        mencionadas = self._detect_named_careers(user_message)
+        intent = self._detect_intent(user_message)
+        # Una carrera mencionada gana a la deteccion generica, PERO no a las
+        # intenciones que hablan de otra cosa aunque nombren una carrera:
+        # "mis papas quieren que estudie derecho" no es una consulta sobre
+        # derecho, y "derecho o diseño" tampoco.
+        if len(mencionadas) >= 2 and intent not in ("pressure", "why"):
+            intent = "compare"
+        elif mencionadas and intent not in ("pressure", "compare", "why"):
+            intent = "career_lookup"
+        named_career = mencionadas[0] if mencionadas else None
 
         if not history:
             if intent == "greeting":
@@ -720,6 +883,10 @@ class MentorEngine:
             return response
 
         last = history[-1]
+        # El vector es lo que el motor calcula con mas detalle -las ocho
+        # dimensiones con su puntuacion- y hasta ahora el mentor no lo miraba.
+        # Es lo que permite responder "por que" en vez de solo "cual".
+        vector = last.get("vector") or {}
         top_matches = last.get("top_matches") or []
         roadmap = last.get("roadmap")
         strengths = localization.cluster_labels(last.get("strengths") or [], lang)
@@ -758,6 +925,87 @@ class MentorEngine:
             else:
                 response = self._say("career.unknown", lang, career=title,
                                      description=description or self._say("career.noDetails", lang))
+            # El encaje dimension por dimension. Vale igual para una carrera
+            # que quedo fuera del top: saber POR QUE quedo fuera es
+            # justamente lo que se esta preguntando.
+            encaje = self._fit_sentence(vector, named_career, lang)
+            if encaje:
+                response = f"{response}\n\n{encaje}"
+
+        elif intent == "pressure":
+            # Alguien de fuera empuja hacia una carrera. No se le dice al
+            # estudiante que hacer: se le dan sus numeros y el lenguaje para
+            # defenderlos.
+            propuesta = mencionadas[0] if mencionadas else None
+            top_pct = top_matches[0]["match_percentage"] if top_matches else 0
+            if propuesta:
+                pct = self._match_pct(top_matches, propuesta["id"], vector)
+                response = self._say(
+                    "pressure.withCareer", lang,
+                    fit=self._fit_sentence(vector, propuesta, lang),
+                    top=top_choice, topPct=top_pct,
+                    career=localization.career_field(propuesta, "title", lang),
+                    pct=pct if pct is not None else "—",
+                )
+            else:
+                response = self._say("pressure.noCareer", lang, top=top_choice, topPct=top_pct)
+
+        elif intent == "compare":
+            if len(mencionadas) < 2:
+                response = self._say("compare.needTwo", lang)
+            else:
+                a, b = mencionadas[0], mencionadas[1]
+                lineas = []
+                puntos = {}
+                for career in (a, b):
+                    titulo = localization.career_field(career, "title", lang)
+                    pct = self._match_pct(top_matches, career["id"], vector)
+                    puntos[titulo] = pct
+                    lineas.append(self._say(
+                        "compare.line", lang, career=titulo,
+                        pct=pct if pct is not None else "—",
+                        fit=self._fit_sentence(vector, career, lang),
+                    ))
+                cabecera = self._say(
+                    "compare.head", lang,
+                    a=localization.career_field(a, "title", lang),
+                    b=localization.career_field(b, "title", lang),
+                )
+                # El veredicto solo si la diferencia es mayor que el ruido del
+                # calculo. Por debajo de eso, decir cual "gana" seria inventar
+                # una precision que el numero no tiene.
+                veredicto = ""
+                validos = {k: v for k, v in puntos.items() if v is not None}
+                if len(validos) == 2:
+                    (t1, p1), (t2, p2) = sorted(validos.items(), key=lambda kv: kv[1], reverse=True)
+                    veredicto = (
+                        self._say("compare.verdict", lang, winner=t1, margin=round(p1 - p2, 1))
+                        if p1 - p2 >= self.COMPARE_MARGIN
+                        else self._say("compare.tie", lang)
+                    )
+                response = "\n".join([cabecera, *lineas] + ([veredicto] if veredicto else []))
+
+        elif intent == "why":
+            # Seguimiento corto. Se explica la ultima carrera de la que se
+            # hablo; sin ese contexto no hay nada que explicar y se pregunta.
+            referida = mencionadas[0] if mencionadas else self._career_by_id(
+                memory.get("last_career_id") or last.get("top_choice_id")
+            )
+            encaje = self._fit_sentence(vector, referida, lang) if referida else ""
+            response = (
+                self._say("why.career", lang, fit=encaje) if encaje
+                else self._say("why.noContext", lang)
+            )
+
+        elif intent == "progress":
+            progreso = context.get("journey") or {}
+            siguiente = progreso.get("next_step")
+            response = (
+                self._say("progress.body", lang,
+                          percent=progreso.get("percent", 0),
+                          step=localization.text(f"journey.{siguiente}", lang))
+                if siguiente else self._say("progress.done", lang)
+            )
 
         elif intent == "roadmap":
             if roadmap and roadmap.get("checkpoints"):
@@ -807,7 +1055,8 @@ class MentorEngine:
         else:
             response = self._say("general", lang, career=top_choice)
 
-        self._log_turn(memory, user_id, user_message, intent)
+        self._log_turn(memory, user_id, user_message, intent,
+                       career_id=mencionadas[0]["id"] if mencionadas else None)
         return response
 
 

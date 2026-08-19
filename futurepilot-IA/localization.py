@@ -156,6 +156,45 @@ TEMPLATES: Dict[str, Dict[str, str]] = {
         "hypothesis.bias": "The student leans strongly towards {cluster}, at {value}/10.",
         "hypothesis.stable": "The profile has held steady across {count} assessments.",
         "hypothesis.first": "First assessment: consistency still needs confirming.",
+        # --- Fit against the career's requirements ------------------------
+        "fit.strong": "{career} fits you on {items}.",
+        "fit.short": "Where you fall short: {items}.",
+        "fit.item": "{cluster} ({score} against the {needed} it asks for)",
+        "fit.noGap": "There is no dimension where you fall short.",
+        "fit.balanced": "Your profile is fairly even, so no career stands out strongly over the rest.",
+
+        "pressure.withCareer": (
+            "Here is what your data says. The decision is yours.\n\n"
+            "{fit}\n\n"
+            "Your closest match is still {top} at {topPct}%, and {career} comes out at {pct}%. "
+            "That does not make {career} impossible — it means it would cost you more effort "
+            "in the areas where you are weakest today.\n\n"
+            "If you are going to talk it through at home, these numbers argue better than «I don't like it»."
+        ),
+        "pressure.noCareer": (
+            "This is one of the hardest parts of choosing, and it is completely normal.\n\n"
+            "What I have is your data: your profile points to {top} at {topPct}%, and that comes from "
+            "your own answers, not from anyone's opinion. Tell me which career they are pushing for "
+            "and I will show you how it fits you against that one."
+        ),
+
+        "compare.head": "{a} against {b}, with your profile:",
+        "compare.line": "· {career}: {pct}% compatibility. {fit}",
+        "compare.verdict": "On your numbers, {winner} fits you better by {margin} points.",
+        "compare.tie": "On your numbers the two are almost even, so this one comes down to which you like more.",
+        "compare.needTwo": "Name the two careers you want compared and I will put them side by side against your profile.",
+
+        "progress.body": "You are {percent}% of the way through. Next up is {step}.",
+        "progress.done": "You have completed all six milestones. From here the route is yours to set.",
+
+        "why.career": "By the numbers: {fit}",
+        "why.noContext": "About what exactly? Name the career or the figure and I will explain it.",
+        "journey.test": "taking the vocational test",
+        "journey.profile": "completing your identification in the passport",
+        "journey.explore": "exploring three countries on the globe",
+        "journey.universities": "discovering three universities",
+        "journey.goal": "setting your target university",
+        "journey.mentor": "talking to me",
         "action.roadmap": "Explore your roadmap",
         "action.hubs": "Review the global hubs",
         "action.practice": "Practise your weaker areas",
@@ -197,6 +236,54 @@ TEMPLATES: Dict[str, Dict[str, str]] = {
         "hypothesis.bias": "El estudiante muestra un sesgo fuerte hacia {cluster}, con {value}/10.",
         "hypothesis.stable": "El perfil se mantiene estable a lo largo de {count} evaluaciones.",
         "hypothesis.first": "Primer diagnóstico: falta confirmar la consistencia.",
+        # --- Encaje contra los requisitos de la carrera -------------------
+        # Cada carrera del catalogo declara que nivel pide en cada dimension.
+        # Cruzarlo con el vector del estudiante es lo mas concreto que el
+        # motor sabe decir, y hasta ahora no lo decia.
+        "fit.strong": "{career} encaja contigo en {items}.",
+        "fit.short": "Donde te queda lejos: {items}.",
+        "fit.item": "{cluster} ({score} y pide {needed})",
+        "fit.noGap": "No hay ninguna dimensión donde te quedes corto.",
+        "fit.balanced": "Tu perfil está bastante parejo, así que ninguna carrera destaca con fuerza sobre las demás.",
+
+        # --- Presion externa ----------------------------------------------
+        "pressure.withCareer": (
+            "Te cuento lo que dicen tus datos, y la decisión la tomas tú.\n\n"
+            "{fit}\n\n"
+            "Tu mejor coincidencia sigue siendo {top} con un {topPct}%, y {career} te da un {pct}%. "
+            "Eso no significa que {career} sea imposible: significa que te costaría más esfuerzo "
+            "en las áreas donde hoy estás más flojo.\n\n"
+            "Si vas a hablarlo en casa, estos números son mejor argumento que «no me gusta»."
+        ),
+        "pressure.noCareer": (
+            "Es de las cosas más difíciles de esto, y es normal.\n\n"
+            "Lo que tengo son tus datos: tu perfil apunta a {top} con un {topPct}%, y sale de tus "
+            "propias respuestas, no de una opinión. Si me dices qué carrera te están proponiendo, "
+            "te digo cómo encaja contigo comparada con esa."
+        ),
+
+        # --- Comparar dos carreras ----------------------------------------
+        "compare.head": "{a} contra {b}, con tu perfil:",
+        "compare.line": "· {career}: {pct}% de compatibilidad. {fit}",
+        "compare.verdict": "Con tus números, {winner} te encaja mejor por {margin} puntos.",
+        "compare.tie": "Con tus números las dos te encajan casi igual, así que aquí decide lo que te guste más.",
+        "compare.needTwo": "Dime las dos carreras que quieres comparar y te las pongo lado a lado con tu perfil.",
+
+        # --- Progreso -------------------------------------------------------
+        "progress.body": "Llevas {percent}% del recorrido. Lo que sigue es {step}.",
+        "progress.done": "Has completado los seis hitos del recorrido. A partir de aquí lo marcas tú.",
+
+        # --- Seguimiento ----------------------------------------------------
+        "why.career": "Por los números: {fit}",
+        "why.noContext": "¿Sobre qué en concreto? Dime la carrera o el dato y te lo explico.",
+        # Nombre de cada hito del recorrido. El frontend tiene los suyos en
+        # site.json; estos son para cuando el mentor los nombra en una frase.
+        "journey.test": "hacer el test vocacional",
+        "journey.profile": "completar tu identificación en el pasaporte",
+        "journey.explore": "explorar tres países en el globo",
+        "journey.universities": "descubrir tres universidades",
+        "journey.goal": "fijar tu universidad objetivo",
+        "journey.mentor": "hablar conmigo",
         "action.roadmap": "Explorar tu roadmap",
         "action.hubs": "Revisar los hubs globales",
         "action.practice": "Practicar tus áreas más flojas",
@@ -248,6 +335,18 @@ MENTOR_KEYWORDS: Dict[str, List[str]] = {
                "strength", "weakness", "improve"],
     "motivation": ["animo", "ánimo", "motivacion", "motivación", "duda", "nervios",
                    "miedo", "inseguro", "motivation", "scared", "unsure", "doubt", "nervous"],
+    # Quien decide una carrera casi nunca decide solo. Es de las cosas que
+    # mas se preguntan y hasta ahora caia en la respuesta generica.
+    "pressure": ["papa", "papá", "mama", "mamá", "papas", "papás", "padres", "familia",
+                 "mis viejos", "quieren que", "me obligan", "presion", "presión",
+                 "esperan que", "dad", "mom", "parents", "family", "they want me",
+                 "pressure", "expect me"],
+    "compare": ["comparar", "compara", "diferencia", "cual es mejor", "cuál es mejor",
+                "o mejor", "versus", "vs", "compare", "difference", "which is better"],
+    "progress": ["progreso", "avance", "como voy", "cómo voy", "que me falta",
+                 "qué me falta", "progress", "how am i doing", "what is left"],
+    "why": ["por que", "por qué", "porque", "porqué", "explica", "explicame",
+            "explícame", "why", "explain", "how come"],
 }
 
 # Las listas son alternativas: se elige una al azar para que el mentor no
