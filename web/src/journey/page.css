@@ -1,169 +1,536 @@
-/* Tu ruta.
+/* Tu ruta — el roadmap como un camino.
  *
- * Los estilos de la maqueta anterior (.pin, .card, .resources con sus
- * enlaces) vivian en Frontend/style.css y los usaban otras paginas, asi que
- * no se tocan; esto es lo que necesita la pagina ahora.
- *
- * Se reutilizan .path-track, .flight-label, .flight-cta y .flight-next del
- * plan de vuelo: son la misma barra y los mismos enlaces, y duplicarlos
- * dejaria dos verdades que acabarian divergiendo. */
+ * La senda la dibuja el JavaScript midiendo dónde quedaron los pines; aquí
+ * está cómo se ve. Dos trazos superpuestos: el discontinuo apagado es el
+ * camino entero, y el sólido encendido se recorta con dashoffset hasta donde
+ * llevas. Así lo recorrido y lo que falta se leen de un vistazo, sin números.
+ */
 
 body {
-  background: #07111F;
-  color: #fff;
+  background: #060d18;
+  color: #e8f1f8;
   min-height: 100vh;
 }
 
 .container {
-  width: 90%;
-  max-width: 900px;
+  width: min(1200px, 94%);
   margin: auto;
-  padding: 50px 0 90px;
+  padding: 44px 0 110px;
 }
 
-.journey-head {
-  margin-bottom: 40px;
+#journey {
+  display: grid;
+  gap: 40px;
+  align-items: start;
+  grid-template-columns: 300px 1fr;
 }
 
-.journey-head h1 {
-  margin: 0 0 26px;
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  letter-spacing: -.04em;
-  line-height: 1.05;
+.rm-kicker {
+  margin: 0 0 10px;
+  color: #5e7387;
+  font-family: 'DM Mono', monospace;
+  font-size: .58rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
 }
 
-.journey-head > p {
-  max-width: 60ch;
-  color: #98aabc;
-  font-size: .88rem;
-  line-height: 1.7;
+/* --- Columna izquierda -------------------------------------------------- */
+
+.rm-side {
+  position: sticky;
+  top: 28px;
+  display: grid;
+  gap: 14px;
 }
 
-/* --- Progreso --------------------------------------------------------- */
-
-.journey-progress__head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  color: #98aabc;
-  font-size: .82rem;
+.rm-side__card {
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .025);
 }
 
-.journey-progress__head strong {
+.rm-side__career {
+  margin: 0 0 6px;
+  font-size: 1.45rem;
+  letter-spacing: -.03em;
+  line-height: 1.15;
+}
+
+.rm-side__tagline {
+  margin: 0;
+  color: #7d8fa1;
+  font-size: .78rem;
+  line-height: 1.6;
+}
+
+.rm-side__sep {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, .07);
+}
+
+.rm-side__pct {
+  margin: 0 0 10px;
   color: #00FFB3;
   font-family: 'DM Mono', monospace;
-  font-size: 1.5rem;
+  font-size: 2.1rem;
+  letter-spacing: -.03em;
+  line-height: 1;
 }
 
-.journey-progress__count {
+.rm-bar {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, .08);
+}
+
+.rm-bar i {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #00D1FF, #00FFB3);
+  transition: width .5s cubic-bezier(.22, .8, .3, 1);
+}
+
+.rm-side__count {
   margin: 10px 0 0;
   color: #5e7387;
   font-family: 'DM Mono', monospace;
-  font-size: .7rem;
+  font-size: .66rem;
 }
 
-/* --- Un paso ---------------------------------------------------------- */
-
-.step {
-  margin-top: 34px;
-  padding-top: 26px;
-  border-top: 1px solid rgba(255, 255, 255, .1);
-}
-
-.step__head {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.step__num {
-  display: grid;
-  flex: none;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(0, 255, 179, .45);
-  border-radius: 50%;
-  color: #00FFB3;
-  font-family: 'DM Mono', monospace;
-  font-size: .78rem;
-}
-
-.step__head h2 {
+.rm-side__how p:last-child {
   margin: 0;
-  font-size: 1.24rem;
-  letter-spacing: -.02em;
-}
-
-.step__desc,
-.step__pending {
-  max-width: 62ch;
-  margin: 0 0 4px 44px;
-  color: #98aabc;
-  font-size: .82rem;
+  color: #7d8fa1;
+  font-size: .76rem;
   line-height: 1.65;
 }
 
-.step__items {
-  margin: 14px 0 0;
-  padding: 0 0 0 44px;
+.rm-side__howTitle {
+  margin: 0 0 8px;
+  font-size: .84rem;
+  font-weight: 600;
+}
+
+/* Leyenda: los mismos tres estados que llevan los pines de la senda. */
+.rm-legend {
+  display: grid;
+  gap: 11px;
+  margin: 4px 0 0;
+  padding: 0 4px;
   list-style: none;
 }
 
-.step__item {
+.rm-legend li {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px 14px;
+  gap: 12px;
   align-items: center;
-  justify-content: space-between;
-  padding: 11px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .05);
+  color: #7d8fa1;
+  font-size: .74rem;
 }
 
-.step__item label {
+.rm-legend__pin {
+  width: 13px;
+  height: 13px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.rm-legend__pin--current { color: #00FFB3; box-shadow: 0 0 12px rgba(0, 255, 179, .55); }
+.rm-legend__pin--next    { color: #55697c; }
+.rm-legend__pin--done    { border-color: #00FFB3; background: #00FFB3; }
+
+.rm-legend__dash {
+  width: 22px;
+  border-top: 2px dashed #3c4d5e;
+}
+
+.rm-quote {
+  margin: 6px 0 0;
+  padding: 18px 20px;
+  border-left: 2px solid rgba(0, 255, 179, .4);
+  border-radius: 0 12px 12px 0;
+  background: rgba(0, 255, 179, .04);
+}
+
+.rm-quote p {
+  margin: 0 0 8px;
+  font-size: .82rem;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.rm-quote cite {
+  color: #5e7387;
+  font-size: .7rem;
+  font-style: normal;
+}
+
+/* --- La senda ----------------------------------------------------------- */
+
+.rm-track {
+  position: relative;
+  padding: 10px 0 0;
+}
+
+/* Detrás de todo y sin capturar clics: es un adorno estructural, no un
+   control. */
+.rm-path {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.rm-path__base {
+  stroke: #26384a;
+  stroke-dasharray: 7 9;
+  stroke-linecap: round;
+  stroke-width: 2.5;
+}
+
+.rm-path__done {
+  stroke: #00FFB3;
+  stroke-linecap: round;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 179, .65));
+  transition: stroke-dashoffset .7s cubic-bezier(.22, .8, .3, 1);
+}
+
+.rm-start,
+.rm-end {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.rm-start {
+  margin: 0 0 34px;
+  color: #5e7387;
+  font-family: 'DM Mono', monospace;
+  font-size: .6rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.rm-nodes {
+  display: grid;
+  gap: 46px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cada hito ocupa una fila de tres columnas: tarjeta | pin | tarjeta. La
+   tarjeta cae a un lado u otro y el pin siempre queda en el centro, que es
+   por donde pasa la senda. */
+.rm-node {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-items: center;
+  gap: 0 26px;
+  grid-template-columns: 1fr 44px 1fr;
+}
+
+.rm-node--right .rm-card { grid-column: 3; }
+.rm-node--left  .rm-card { grid-column: 1; }
+.rm-pin { grid-column: 2; }
+
+.rm-pin {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #3c4d5e;
+  border-radius: 50%;
+  background: #060d18;
+  justify-self: center;
+  transition: border-color .3s, box-shadow .3s, transform .3s;
+}
+
+.rm-pin i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3c4d5e;
+  transition: background .3s;
+}
+
+.rm-node.is-current .rm-pin {
+  border-color: #00FFB3;
+  box-shadow: 0 0 0 6px rgba(0, 255, 179, .12), 0 0 18px rgba(0, 255, 179, .5);
+  transform: scale(1.18);
+}
+
+.rm-node.is-current .rm-pin i { background: #00FFB3; }
+
+.rm-node.is-done .rm-pin {
+  border-color: #00FFB3;
+  background: #00FFB3;
+}
+
+.rm-node.is-done .rm-pin i {
+  width: 11px;
+  height: 11px;
+  background: #060d18;
+  clip-path: polygon(14% 46%, 0 60%, 40% 100%, 100% 22%, 86% 8%, 38% 70%);
+}
+
+/* --- Tarjeta ------------------------------------------------------------ */
+
+.rm-card {
+  position: relative;
+  padding: 20px 22px;
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 14px;
+  background: #0c1725;
+  transition: border-color .3s, box-shadow .3s;
+}
+
+/* El pico que apunta al pin. Sin él, la tarjeta y su punto de la senda se
+   leen como dos cosas sueltas. */
+.rm-card::after {
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(255, 255, 255, .09);
+  background: #0c1725;
+  content: "";
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.rm-node--right .rm-card::after {
+  left: -6px;
+  border-top: 0;
+  border-right: 0;
+}
+
+.rm-node--left .rm-card::after {
+  right: -6px;
+  border-bottom: 0;
+  border-left: 0;
+}
+
+.rm-node.is-current .rm-card {
+  border-color: rgba(0, 255, 179, .42);
+  box-shadow: 0 0 34px rgba(0, 255, 179, .08);
+}
+
+.rm-node.is-current .rm-card::after { border-color: rgba(0, 255, 179, .42); }
+
+.rm-card__title {
   display: flex;
-  flex: 1 1 320px;
-  gap: 12px;
+  gap: 11px;
+  align-items: baseline;
+  margin: 0 0 8px;
+  font-size: 1.02rem;
+  letter-spacing: -.02em;
+  line-height: 1.3;
+}
+
+.rm-card__num {
+  color: #00FFB3;
+  font-family: 'DM Mono', monospace;
+  font-size: .72rem;
+}
+
+.rm-card__desc,
+.rm-card__pending {
+  margin: 0 0 14px;
+  color: #7d8fa1;
+  font-size: .78rem;
+  line-height: 1.6;
+}
+
+.rm-card__pending { margin-bottom: 0; }
+
+.rm-tasks {
+  display: grid;
+  gap: 2px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.rm-task label {
+  display: flex;
+  gap: 11px;
   align-items: flex-start;
+  padding: 6px 0;
   cursor: pointer;
-  font-size: .88rem;
+  font-size: .82rem;
   line-height: 1.5;
 }
 
-.step__item input {
+.rm-task input {
   flex: none;
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   margin-top: 2px;
   accent-color: #00FFB3;
   cursor: pointer;
 }
 
-/* Marcado: se tacha y se apaga, para que la vista quede leyendo lo que
-   falta en vez de lo que ya está. */
-.step__item.is-done span {
+.rm-task.is-done span {
   color: #5e7387;
   text-decoration: line-through;
 }
 
-.step__resources {
-  color: #46586a;
-  font-family: 'DM Mono', monospace;
-  font-size: .6rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  white-space: nowrap;
+.rm-mark {
+  width: 100%;
+  padding: 9px 14px;
+  border: 1px solid rgba(0, 255, 179, .3);
+  border-radius: 8px;
+  background: rgba(0, 255, 179, .07);
+  color: #00FFB3;
+  cursor: pointer;
+  font: inherit;
+  font-size: .74rem;
+  font-weight: 600;
+  transition: background .2s, border-color .2s;
 }
 
-@media (max-width: 560px) {
-  .step__desc,
-  .step__pending {
-    margin-left: 0;
+.rm-mark:hover { background: rgba(0, 255, 179, .14); }
+.rm-mark:disabled { cursor: progress; opacity: .5; }
+
+.rm-node.is-done .rm-mark {
+  border-color: rgba(255, 255, 255, .12);
+  background: transparent;
+  color: #7d8fa1;
+}
+
+/* --- Final -------------------------------------------------------------- */
+
+.rm-end {
+  margin-top: 56px;
+}
+
+.rm-end__flag {
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 14px;
+  border: 2px solid #00FFB3;
+  border-radius: 50%;
+  background: #060d18;
+  box-shadow: 0 0 24px rgba(0, 255, 179, .3);
+  color: #00FFB3;
+  font-size: 1.1rem;
+}
+
+.rm-end__title {
+  margin: 0 0 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: .68rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.rm-end__body {
+  max-width: 34ch;
+  margin: 0 auto 20px;
+  color: #7d8fa1;
+  font-size: .8rem;
+  line-height: 1.65;
+}
+
+.rm-end__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.rm-cta {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  padding: 12px 22px;
+  border-radius: 99px;
+  background: #00FFB3;
+  color: #04140e;
+  font-size: .8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.rm-cta--ghost {
+  border: 1px solid rgba(255, 255, 255, .17);
+  background: transparent;
+  color: #e8f1f8;
+}
+
+/* --- Sin resultado ------------------------------------------------------ */
+
+.rm-empty {
+  max-width: 46ch;
+  grid-column: 1 / -1;
+  padding: 60px 0;
+}
+
+.rm-empty h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2.1rem, 5vw, 3rem);
+  letter-spacing: -.04em;
+}
+
+.rm-empty__body {
+  margin: 0 0 26px;
+  color: #7d8fa1;
+  font-size: .86rem;
+  line-height: 1.7;
+}
+
+/* --- Estrecho ------------------------------------------------------------
+ * Por debajo de este ancho el camino se endereza: pasa a un carril a la
+ * izquierda con todas las tarjetas al mismo lado. Serpentear en una pantalla
+ * de móvil deja las tarjetas demasiado estrechas para leerlas. */
+
+@media (max-width: 980px) {
+  #journey {
+    gap: 26px;
+    grid-template-columns: 1fr;
   }
 
-  .step__items {
-    padding-left: 0;
+  .rm-side { position: static; }
+
+  .rm-node,
+  .rm-node--left,
+  .rm-node--right {
+    gap: 18px;
+    grid-template-columns: 26px 1fr;
   }
+
+  .rm-node--right .rm-card,
+  .rm-node--left .rm-card {
+    grid-column: 2;
+  }
+
+  .rm-pin {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .rm-node--left .rm-card::after,
+  .rm-node--right .rm-card::after {
+    right: auto;
+    left: -6px;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .09);
+    border-left: 1px solid rgba(255, 255, 255, .09);
+  }
+
+  .rm-start,
+  .rm-end { text-align: left; }
+
+  .rm-end__links { justify-content: flex-start; }
 }
