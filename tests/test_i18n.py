@@ -298,3 +298,48 @@ def test_every_translation_key_used_in_code_exists():
                 faltan.append(f"{modulo.relative_to(src)}: {ns}:{clave}")
 
     assert not faltan, "claves usadas y no definidas:\n  " + "\n  ".join(sorted(set(faltan)))
+
+
+def test_every_career_has_its_own_written_route(app_module):
+    """El roadmap eran cuatro pasos identicos para las 73 carreras: solo
+    cambiaba el nombre y la lista de brechas. En pantalla, Fisica mostraba las
+    mismas casillas que Ingenieria de software - de hecho las de Inteligencia
+    artificial, que estaban escritas a mano en el HTML para todo el mundo.
+
+    Una carrera sin ruta no rompe nada (cae a la espina generica), y por eso
+    hace falta un test: el hueco no se ve."""
+    rutas = {k: v for k, v in app_module.roadmaps_db.items() if not k.startswith("_")}
+    ids = {c["id"] for c in app_module.careers_db}
+
+    assert not (ids - set(rutas)), f"sin ruta escrita: {sorted(ids - set(rutas))}"
+    assert not (set(rutas) - ids), f"rutas de carreras que no existen: {sorted(set(rutas) - ids)}"
+
+    for career_id, ruta in rutas.items():
+        for paso in ("foundations", "project", "launch"):
+            contenido = ruta.get(paso)
+            assert contenido, f"{career_id}: falta el paso {paso}"
+            assert contenido.get("title") and contenido.get("title_es"), \
+                f"{career_id}.{paso}: titulo sin traducir"
+            items = contenido.get("items") or []
+            assert len(items) >= 3, f"{career_id}.{paso}: menos de tres sub-tareas"
+            for item in items:
+                assert item.get("text") and item.get("text_es"), \
+                    f"{career_id}.{paso}: sub-tarea sin traducir"
+
+
+def test_two_careers_do_not_share_the_same_route(app_module):
+    """Lo que se veia en pantalla: pulsar Fisica y leer las sub-tareas de
+    Ingenieria de software. Un copiar y pegar entre dos entradas reproduce
+    exactamente ese sintoma, y el test de completitud no lo veria."""
+    rutas = {k: v for k, v in app_module.roadmaps_db.items() if not k.startswith("_")}
+
+    vistas = {}
+    for career_id, ruta in rutas.items():
+        huella = tuple(
+            item["text"]
+            for paso in ("foundations", "project", "launch")
+            for item in ruta[paso]["items"]
+        )
+        assert huella not in vistas, \
+            f"{career_id} tiene la misma ruta que {vistas[huella]}"
+        vistas[huella] = career_id

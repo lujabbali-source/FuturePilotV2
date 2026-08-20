@@ -23,94 +23,4403 @@
     "Una carrera sin entrada aqui cae a los pasos genericos. Eso permite ir",
     "escribiendo por tandas sin romper nada por el camino."
   ],
-
   "c1": {
     "foundations": {
       "title": "Programming fundamentals",
       "title_es": "Fundamentos de programación",
       "items": [
-        {"text": "Get fluent in one language end to end", "text_es": "Manejar un lenguaje de principio a fin"},
-        {"text": "Data structures and algorithmic complexity", "text_es": "Estructuras de datos y complejidad algorítmica"},
-        {"text": "Version control with git, working on branches", "text_es": "Control de versiones con git, trabajando con ramas"}
+        {
+          "text": "Get fluent in one language end to end",
+          "text_es": "Manejar un lenguaje de principio a fin"
+        },
+        {
+          "text": "Data structures and algorithmic complexity",
+          "text_es": "Estructuras de datos y complejidad algorítmica"
+        },
+        {
+          "text": "Version control with git, working on branches",
+          "text_es": "Control de versiones con git, trabajando con ramas"
+        }
       ]
     },
     "project": {
       "title": "Ship something real",
       "title_es": "Publicar algo de verdad",
       "items": [
-        {"text": "An application with a database behind it, deployed and reachable", "text_es": "Una aplicación con base de datos detrás, desplegada y accesible"},
-        {"text": "Tests that actually run before each change", "text_es": "Pruebas que se ejecuten de verdad antes de cada cambio"},
-        {"text": "A README that lets a stranger run it", "text_es": "Un README que le permita a un desconocido ejecutarla"}
+        {
+          "text": "An application with a database behind it, deployed and reachable",
+          "text_es": "Una aplicación con base de datos detrás, desplegada y accesible"
+        },
+        {
+          "text": "Tests that actually run before each change",
+          "text_es": "Pruebas que se ejecuten de verdad antes de cada cambio"
+        },
+        {
+          "text": "A README that lets a stranger run it",
+          "text_es": "Un README que le permita a un desconocido ejecutarla"
+        }
       ]
     },
     "launch": {
       "title": "Portfolio and first professional steps",
       "title_es": "Portafolio y primeros pasos profesionales",
       "items": [
-        {"text": "Public repositories with readable commit history", "text_es": "Repositorios públicos con un historial de commits legible"},
-        {"text": "A contribution to an open source project", "text_es": "Una contribución a un proyecto de código abierto"},
-        {"text": "Technical interview practice: algorithms out loud", "text_es": "Práctica de entrevista técnica: algoritmos en voz alta"}
+        {
+          "text": "Public repositories with readable commit history",
+          "text_es": "Repositorios públicos con un historial de commits legible"
+        },
+        {
+          "text": "A contribution to an open source project",
+          "text_es": "Una contribución a un proyecto de código abierto"
+        },
+        {
+          "text": "Technical interview practice: algorithms out loud",
+          "text_es": "Práctica de entrevista técnica: algoritmos en voz alta"
+        }
       ]
     }
   },
-
   "c13": {
     "foundations": {
       "title": "The mathematics physics is written in",
       "title_es": "Las matemáticas en las que se escribe la física",
       "items": [
-        {"text": "Differential and integral calculus", "text_es": "Cálculo diferencial e integral"},
-        {"text": "Linear algebra and vector spaces", "text_es": "Álgebra lineal y espacios vectoriales"},
-        {"text": "Classical mechanics: from Newton to Lagrange", "text_es": "Mecánica clásica: de Newton a Lagrange"},
-        {"text": "Electromagnetism and Maxwell's equations", "text_es": "Electromagnetismo y las ecuaciones de Maxwell"}
+        {
+          "text": "Differential and integral calculus",
+          "text_es": "Cálculo diferencial e integral"
+        },
+        {
+          "text": "Linear algebra and vector spaces",
+          "text_es": "Álgebra lineal y espacios vectoriales"
+        },
+        {
+          "text": "Classical mechanics: from Newton to Lagrange",
+          "text_es": "Mecánica clásica: de Newton a Lagrange"
+        },
+        {
+          "text": "Electromagnetism and Maxwell's equations",
+          "text_es": "Electromagnetismo y las ecuaciones de Maxwell"
+        }
       ]
     },
     "project": {
       "title": "Measure something and defend the number",
       "title_es": "Medir algo y defender el número",
       "items": [
-        {"text": "An experiment of your own with its uncertainty calculated", "text_es": "Un experimento propio con su incertidumbre calculada"},
-        {"text": "Data analysis in Python: fitting, error propagation, plots", "text_es": "Análisis de datos en Python: ajuste, propagación de errores, gráficas"},
-        {"text": "A lab report written the way a journal would want it", "text_es": "Un informe de laboratorio escrito como lo pediría una revista"}
+        {
+          "text": "An experiment of your own with its uncertainty calculated",
+          "text_es": "Un experimento propio con su incertidumbre calculada"
+        },
+        {
+          "text": "Data analysis in Python: fitting, error propagation, plots",
+          "text_es": "Análisis de datos en Python: ajuste, propagación de errores, gráficas"
+        },
+        {
+          "text": "A lab report written the way a journal would want it",
+          "text_es": "Un informe de laboratorio escrito como lo pediría una revista"
+        }
       ]
     },
     "launch": {
       "title": "Into research",
       "title_es": "Entrar en investigación",
       "items": [
-        {"text": "Read a paper in your area of interest all the way through", "text_es": "Leer un paper de tu área de interés de principio a fin"},
-        {"text": "Contact a research group and ask what they need", "text_es": "Contactar a un grupo de investigación y preguntar qué necesitan"},
-        {"text": "A summer placement or an undergraduate assistantship", "text_es": "Una pasantía de verano o una monitoría"}
+        {
+          "text": "Read a paper in your area of interest all the way through",
+          "text_es": "Leer un paper de tu área de interés de principio a fin"
+        },
+        {
+          "text": "Contact a research group and ask what they need",
+          "text_es": "Contactar a un grupo de investigación y preguntar qué necesitan"
+        },
+        {
+          "text": "A summer placement or an undergraduate assistantship",
+          "text_es": "Una pasantía de verano o una monitoría"
+        }
       ]
     }
   },
-
   "c7": {
     "foundations": {
       "title": "The body before the illness",
       "title_es": "El cuerpo antes que la enfermedad",
       "items": [
-        {"text": "Human anatomy and physiology", "text_es": "Anatomía y fisiología humanas"},
-        {"text": "Biochemistry and cell biology", "text_es": "Bioquímica y biología celular"},
-        {"text": "Reading a paper: what a clinical study does and does not prove", "text_es": "Leer un paper: qué demuestra y qué no demuestra un estudio clínico"}
+        {
+          "text": "Human anatomy and physiology",
+          "text_es": "Anatomía y fisiología humanas"
+        },
+        {
+          "text": "Biochemistry and cell biology",
+          "text_es": "Bioquímica y biología celular"
+        },
+        {
+          "text": "Reading a paper: what a clinical study does and does not prove",
+          "text_es": "Leer un paper: qué demuestra y qué no demuestra un estudio clínico"
+        }
       ]
     },
     "project": {
       "title": "Contact with real patients",
       "title_es": "Contacto con pacientes reales",
       "items": [
-        {"text": "Hospital volunteering or community health work", "text_es": "Voluntariado hospitalario o trabajo en salud comunitaria"},
-        {"text": "First aid certification", "text_es": "Certificación en primeros auxilios"},
-        {"text": "Shadow a doctor for a full shift", "text_es": "Acompañar a un médico durante un turno completo"}
+        {
+          "text": "Hospital volunteering or community health work",
+          "text_es": "Voluntariado hospitalario o trabajo en salud comunitaria"
+        },
+        {
+          "text": "First aid certification",
+          "text_es": "Certificación en primeros auxilios"
+        },
+        {
+          "text": "Shadow a doctor for a full shift",
+          "text_es": "Acompañar a un médico durante un turno completo"
+        }
       ]
     },
     "launch": {
       "title": "Getting into medical school",
       "title_es": "Entrar a la facultad",
       "items": [
-        {"text": "Entrance exam: what it asks and how it is scored", "text_es": "Examen de admisión: qué pide y cómo se califica"},
-        {"text": "Compare programmes: hospitals they teach in, and where", "text_es": "Comparar programas: en qué hospitales se hace la práctica, y dónde"},
-        {"text": "Talk to someone already studying it about what it actually costs you", "text_es": "Hablar con alguien que ya la estudie sobre lo que de verdad te cuesta"}
+        {
+          "text": "Entrance exam: what it asks and how it is scored",
+          "text_es": "Examen de admisión: qué pide y cómo se califica"
+        },
+        {
+          "text": "Compare programmes: hospitals they teach in, and where",
+          "text_es": "Comparar programas: en qué hospitales se hace la práctica, y dónde"
+        },
+        {
+          "text": "Talk to someone already studying it about what it actually costs you",
+          "text_es": "Hablar con alguien que ya la estudie sobre lo que de verdad te cuesta"
+        }
+      ]
+    }
+  },
+  "c2": {
+    "foundations": {
+      "title": "The maths under the models",
+      "title_es": "Las matemáticas debajo de los modelos",
+      "items": [
+        {
+          "text": "Linear algebra and calculus — this is what a network actually is",
+          "text_es": "Álgebra lineal y cálculo: esto es lo que de verdad es una red"
+        },
+        {
+          "text": "Probability and statistics: why a model can be confident and wrong",
+          "text_es": "Probabilidad y estadística: por qué un modelo puede estar seguro y equivocado"
+        },
+        {
+          "text": "Python with NumPy and pandas before any framework",
+          "text_es": "Python con NumPy y pandas antes que cualquier framework"
+        },
+        {
+          "text": "Train a model from scratch once, without a library doing it for you",
+          "text_es": "Entrena un modelo desde cero una vez, sin que una librería lo haga por ti"
+        }
+      ]
+    },
+    "project": {
+      "title": "A model that meets real data",
+      "title_es": "Un modelo que se encuentra con datos reales",
+      "items": [
+        {
+          "text": "Take a messy public dataset and get it to a usable state",
+          "text_es": "Coge un dataset público sucio y déjalo en un estado usable"
+        },
+        {
+          "text": "Measure it against a baseline. A model with no baseline proves nothing",
+          "text_es": "Mídelo contra una referencia. Un modelo sin referencia no demuestra nada"
+        },
+        {
+          "text": "Find a case where it fails and explain why",
+          "text_es": "Encuentra un caso donde falle y explica por qué"
+        },
+        {
+          "text": "Deploy it so somebody who is not you can use it",
+          "text_es": "Despliégalo para que alguien que no seas tú pueda usarlo"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Into the field",
+      "title_es": "Entrar al campo",
+      "items": [
+        {
+          "text": "Reproduce a paper's result. That is the entry ticket",
+          "text_es": "Reproduce el resultado de un paper. Ese es el billete de entrada"
+        },
+        {
+          "text": "A Kaggle competition all the way to the leaderboard",
+          "text_es": "Una competición de Kaggle hasta llegar a la tabla"
+        },
+        {
+          "text": "Write up what you built for someone non-technical",
+          "text_es": "Escribe lo que construiste para alguien que no es técnico"
+        }
+      ]
+    }
+  },
+  "c4": {
+    "foundations": {
+      "title": "Statistics before tools",
+      "title_es": "Estadística antes que herramientas",
+      "items": [
+        {
+          "text": "Descriptive statistics and distributions",
+          "text_es": "Estadística descriptiva y distribuciones"
+        },
+        {
+          "text": "SQL — most of the job is getting the data out",
+          "text_es": "SQL: la mayor parte del trabajo es sacar los datos"
+        },
+        {
+          "text": "Python with pandas for cleaning and reshaping",
+          "text_es": "Python con pandas para limpiar y reestructurar"
+        },
+        {
+          "text": "Why correlation is not causation, with a real example",
+          "text_es": "Por qué correlación no es causalidad, con un ejemplo real"
+        }
+      ]
+    },
+    "project": {
+      "title": "A question answered with data",
+      "title_es": "Una pregunta respondida con datos",
+      "items": [
+        {
+          "text": "Start from a question someone cares about, not from a dataset",
+          "text_es": "Empieza por una pregunta que le importe a alguien, no por un dataset"
+        },
+        {
+          "text": "Document every cleaning decision you made and why",
+          "text_es": "Documenta cada decisión de limpieza que tomaste y por qué"
+        },
+        {
+          "text": "One chart that makes the answer obvious",
+          "text_es": "Una gráfica que haga la respuesta obvia"
+        },
+        {
+          "text": "State what your analysis does not prove",
+          "text_es": "Di qué es lo que tu análisis no demuestra"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Showing the work",
+      "title_es": "Enseñar el trabajo",
+      "items": [
+        {
+          "text": "A public notebook someone can run end to end",
+          "text_es": "Un notebook público que alguien pueda ejecutar de principio a fin"
+        },
+        {
+          "text": "Present your analysis to someone who will push back",
+          "text_es": "Presenta tu análisis a alguien que te va a rebatir"
+        },
+        {
+          "text": "Learn one BI tool — Power BI or Tableau",
+          "text_es": "Aprende una herramienta de BI: Power BI o Tableau"
+        }
+      ]
+    }
+  },
+  "c5": {
+    "foundations": {
+      "title": "How systems work before how they break",
+      "title_es": "Cómo funcionan los sistemas antes de cómo se rompen",
+      "items": [
+        {
+          "text": "Networking: TCP/IP, DNS, HTTP, what actually travels",
+          "text_es": "Redes: TCP/IP, DNS, HTTP, qué viaja de verdad"
+        },
+        {
+          "text": "Linux from the command line, no graphical shortcuts",
+          "text_es": "Linux desde la línea de comandos, sin atajos gráficos"
+        },
+        {
+          "text": "Cryptography basics: what it protects and what it does not",
+          "text_es": "Fundamentos de criptografía: qué protege y qué no"
+        },
+        {
+          "text": "Scripting in Python or Bash",
+          "text_es": "Scripting en Python o Bash"
+        }
+      ]
+    },
+    "project": {
+      "title": "A lab that is yours",
+      "title_es": "Un laboratorio que sea tuyo",
+      "items": [
+        {
+          "text": "Set up virtual machines and attack them. Yours, always",
+          "text_es": "Monta máquinas virtuales y atácalas. Tuyas, siempre"
+        },
+        {
+          "text": "Capture the flag challenges: HackTheBox, TryHackMe",
+          "text_es": "Retos capture the flag: HackTheBox, TryHackMe"
+        },
+        {
+          "text": "Harden a system and document what you changed",
+          "text_es": "Fortifica un sistema y documenta qué cambiaste"
+        },
+        {
+          "text": "Write an incident report for something you broke on purpose",
+          "text_es": "Escribe un informe de incidente de algo que rompiste a propósito"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Credentials and ethics",
+      "title_es": "Credenciales y ética",
+      "items": [
+        {
+          "text": "CompTIA Security+ is the usual first certification",
+          "text_es": "CompTIA Security+ suele ser la primera certificación"
+        },
+        {
+          "text": "Understand the law where you live. This field has real limits",
+          "text_es": "Entiende la ley de tu país. Este campo tiene límites reales"
+        },
+        {
+          "text": "Contribute to an open source security tool",
+          "text_es": "Contribuye a una herramienta de seguridad de código abierto"
+        }
+      ]
+    }
+  },
+  "c28": {
+    "foundations": {
+      "title": "Computation itself",
+      "title_es": "La computación en sí",
+      "items": [
+        {
+          "text": "Data structures and their real cost, not just their names",
+          "text_es": "Estructuras de datos y su coste real, no solo sus nombres"
+        },
+        {
+          "text": "Algorithmic complexity: why an algorithm stops scaling",
+          "text_es": "Complejidad algorítmica: por qué un algoritmo deja de escalar"
+        },
+        {
+          "text": "Discrete mathematics and formal logic",
+          "text_es": "Matemática discreta y lógica formal"
+        },
+        {
+          "text": "How a computer works underneath: memory, processes, compilation",
+          "text_es": "Cómo funciona un ordenador por debajo: memoria, procesos, compilación"
+        }
+      ]
+    },
+    "project": {
+      "title": "Build something from first principles",
+      "title_es": "Construir algo desde cero",
+      "items": [
+        {
+          "text": "Write an interpreter, a database or a small compiler",
+          "text_es": "Escribe un intérprete, una base de datos o un compilador pequeño"
+        },
+        {
+          "text": "Implement a data structure without looking at anyone else's",
+          "text_es": "Implementa una estructura de datos sin mirar la de nadie"
+        },
+        {
+          "text": "Benchmark two approaches and explain the difference",
+          "text_es": "Compara dos enfoques con medidas y explica la diferencia"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Into research or industry",
+      "title_es": "Hacia investigación o industria",
+      "items": [
+        {
+          "text": "Solve algorithm problems out loud, with someone listening",
+          "text_es": "Resuelve problemas de algoritmos en voz alta, con alguien escuchando"
+        },
+        {
+          "text": "Read a foundational paper — Dijkstra, Turing, Hoare",
+          "text_es": "Lee un paper fundacional: Dijkstra, Turing, Hoare"
+        },
+        {
+          "text": "Decide between research and industry by trying both",
+          "text_es": "Decide entre investigación e industria probando las dos"
+        }
+      ]
+    }
+  },
+  "c29": {
+    "foundations": {
+      "title": "Where the software actually runs",
+      "title_es": "Dónde corre el software de verdad",
+      "items": [
+        {
+          "text": "Linux and networking. There is no DevOps without them",
+          "text_es": "Linux y redes. No hay DevOps sin eso"
+        },
+        {
+          "text": "Docker: build an image and understand every layer",
+          "text_es": "Docker: construye una imagen y entiende cada capa"
+        },
+        {
+          "text": "Git and continuous integration from the first day",
+          "text_es": "Git e integración continua desde el primer día"
+        },
+        {
+          "text": "One cloud provider properly, not three badly",
+          "text_es": "Un proveedor cloud bien, no tres mal"
+        }
+      ]
+    },
+    "project": {
+      "title": "A deploy nobody has to babysit",
+      "title_es": "Un despliegue que nadie tenga que vigilar",
+      "items": [
+        {
+          "text": "A pipeline that tests and deploys with no manual steps",
+          "text_es": "Una tubería que prueba y despliega sin pasos manuales"
+        },
+        {
+          "text": "Infrastructure as code — Terraform or the equivalent",
+          "text_es": "Infraestructura como código: Terraform o su equivalente"
+        },
+        {
+          "text": "Monitoring that wakes you when it matters and not before",
+          "text_es": "Monitorización que te despierte cuando importa y no antes"
+        },
+        {
+          "text": "Break it on purpose and measure how long recovery takes",
+          "text_es": "Rómpelo a propósito y mide cuánto tarda en recuperarse"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Certification and on-call",
+      "title_es": "Certificación y guardias",
+      "items": [
+        {
+          "text": "AWS, Azure or GCP associate-level certification",
+          "text_es": "Certificación de nivel associate en AWS, Azure o GCP"
+        },
+        {
+          "text": "Kubernetes, once the rest is solid",
+          "text_es": "Kubernetes, cuando lo demás esté sólido"
+        },
+        {
+          "text": "Write a postmortem for a failure. Blameless, and honest",
+          "text_es": "Escribe un postmortem de un fallo. Sin culpables, y honesto"
+        }
+      ]
+    }
+  },
+  "c30": {
+    "foundations": {
+      "title": "Programming and the maths of movement",
+      "title_es": "Programación y las matemáticas del movimiento",
+      "items": [
+        {
+          "text": "A language the engines use: C# for Unity, C++ for Unreal",
+          "text_es": "Un lenguaje de los motores: C# para Unity, C++ para Unreal"
+        },
+        {
+          "text": "Vectors, matrices and basic physics",
+          "text_es": "Vectores, matrices y física básica"
+        },
+        {
+          "text": "The game loop: what happens sixty times a second",
+          "text_es": "El bucle de juego: qué pasa sesenta veces por segundo"
+        },
+        {
+          "text": "Play games asking why they feel the way they do",
+          "text_es": "Juega preguntándote por qué se sienten como se sienten"
+        }
+      ]
+    },
+    "project": {
+      "title": "Finish a small game",
+      "title_es": "Terminar un juego pequeño",
+      "items": [
+        {
+          "text": "Small and finished beats ambitious and abandoned",
+          "text_es": "Pequeño y terminado gana a ambicioso y abandonado"
+        },
+        {
+          "text": "A game jam: the deadline is the teacher",
+          "text_es": "Una game jam: el plazo es el profesor"
+        },
+        {
+          "text": "Put it in someone else's hands and watch without helping",
+          "text_es": "Ponlo en manos de otro y mira sin ayudar"
+        },
+        {
+          "text": "Publish it. itch.io is free",
+          "text_es": "Publícalo. itch.io es gratis"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Portfolio and industry",
+      "title_es": "Portafolio e industria",
+      "items": [
+        {
+          "text": "Three finished small games beat one unfinished big one",
+          "text_es": "Tres juegos pequeños terminados ganan a uno grande sin terminar"
+        },
+        {
+          "text": "Learn version control for binary assets",
+          "text_es": "Aprende control de versiones para assets binarios"
+        },
+        {
+          "text": "Talk to people already in the industry about the hours",
+          "text_es": "Habla con gente que ya esté en la industria sobre los horarios"
+        }
+      ]
+    }
+  },
+  "c31": {
+    "foundations": {
+      "title": "One platform, properly",
+      "title_es": "Una plataforma, bien",
+      "items": [
+        {
+          "text": "Kotlin for Android or Swift for iOS. Pick one first",
+          "text_es": "Kotlin para Android o Swift para iOS. Elige una primero"
+        },
+        {
+          "text": "The lifecycle: what happens when the app goes to background",
+          "text_es": "El ciclo de vida: qué pasa cuando la app pasa a segundo plano"
+        },
+        {
+          "text": "Consuming an API and handling errors gracefully",
+          "text_es": "Consumir una API y manejar los errores con elegancia"
+        },
+        {
+          "text": "Design for a thumb, not a mouse",
+          "text_es": "Diseña para un pulgar, no para un ratón"
+        }
+      ]
+    },
+    "project": {
+      "title": "An app on a real phone",
+      "title_es": "Una app en un móvil de verdad",
+      "items": [
+        {
+          "text": "Something you would use yourself, on your own phone",
+          "text_es": "Algo que usarías tú, en tu propio móvil"
+        },
+        {
+          "text": "Make it work offline, or say clearly that it does not",
+          "text_es": "Haz que funcione sin conexión, o di claramente que no"
+        },
+        {
+          "text": "Test it on the cheapest phone you can find",
+          "text_es": "Pruébala en el móvil más barato que encuentres"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Publishing",
+      "title_es": "Publicar",
+      "items": [
+        {
+          "text": "Publish to a store and go through the review process",
+          "text_es": "Publica en una tienda y pasa por el proceso de revisión"
+        },
+        {
+          "text": "Read your own analytics: where do people drop off",
+          "text_es": "Lee tu propia analítica: dónde se va la gente"
+        },
+        {
+          "text": "Learn the other platform once the first one is solid",
+          "text_es": "Aprende la otra plataforma cuando la primera esté sólida"
+        }
+      ]
+    }
+  },
+  "c32": {
+    "foundations": {
+      "title": "The network underneath",
+      "title_es": "La red por debajo",
+      "items": [
+        {
+          "text": "The OSI model, and what each layer really does",
+          "text_es": "El modelo OSI, y qué hace de verdad cada capa"
+        },
+        {
+          "text": "TCP/IP, subnetting, routing by hand",
+          "text_es": "TCP/IP, subredes, enrutamiento a mano"
+        },
+        {
+          "text": "Linux and Windows Server administration",
+          "text_es": "Administración de Linux y Windows Server"
+        },
+        {
+          "text": "Scripting to stop doing the same thing twice",
+          "text_es": "Scripting para dejar de hacer lo mismo dos veces"
+        }
+      ]
+    },
+    "project": {
+      "title": "A network you built",
+      "title_es": "Una red que montaste tú",
+      "items": [
+        {
+          "text": "Set up a home lab: server, router, DNS, backups",
+          "text_es": "Monta un laboratorio en casa: servidor, router, DNS, copias"
+        },
+        {
+          "text": "Simulate a failure and restore from your own backup",
+          "text_es": "Simula un fallo y restaura desde tu propia copia"
+        },
+        {
+          "text": "Document it so somebody else could take it over",
+          "text_es": "Documéntalo para que otro pudiera hacerse cargo"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Certification and the help desk",
+      "title_es": "Certificación y la mesa de ayuda",
+      "items": [
+        {
+          "text": "CompTIA Network+ or Cisco CCNA",
+          "text_es": "CompTIA Network+ o Cisco CCNA"
+        },
+        {
+          "text": "First jobs are support. It is where you learn what breaks",
+          "text_es": "Los primeros trabajos son soporte. Ahí se aprende qué se rompe"
+        },
+        {
+          "text": "Practise explaining a technical problem to a frustrated person",
+          "text_es": "Practica explicarle un problema técnico a alguien frustrado"
+        }
+      ]
+    }
+  },
+  "c9": {
+    "foundations": {
+      "title": "Biology at molecular scale",
+      "title_es": "Biología a escala molecular",
+      "items": [
+        {
+          "text": "Molecular biology and genetics",
+          "text_es": "Biología molecular y genética"
+        },
+        {
+          "text": "Organic chemistry and biochemistry",
+          "text_es": "Química orgánica y bioquímica"
+        },
+        {
+          "text": "Sterile technique. Contamination ruins months of work",
+          "text_es": "Técnica estéril. Una contaminación arruina meses de trabajo"
+        },
+        {
+          "text": "Basic bioinformatics: sequences are data",
+          "text_es": "Bioinformática básica: las secuencias son datos"
+        }
+      ]
+    },
+    "project": {
+      "title": "Bench work",
+      "title_es": "Trabajo de mesa",
+      "items": [
+        {
+          "text": "Run a PCR and interpret the gel yourself",
+          "text_es": "Haz una PCR e interpreta el gel tú mismo"
+        },
+        {
+          "text": "Keep a lab notebook someone else could follow",
+          "text_es": "Lleva un cuaderno de laboratorio que otro pudiera seguir"
+        },
+        {
+          "text": "An experiment with a control. Without one it is not an experiment",
+          "text_es": "Un experimento con control. Sin él no es un experimento"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Into a lab",
+      "title_es": "Entrar a un laboratorio",
+      "items": [
+        {
+          "text": "Volunteer in a university lab, even washing glassware",
+          "text_es": "Ofrécete en un laboratorio universitario, aunque sea lavando material"
+        },
+        {
+          "text": "Read papers in the area you want to work in",
+          "text_es": "Lee papers del área en la que quieras trabajar"
+        },
+        {
+          "text": "Understand the ethics and regulation. This field is watched",
+          "text_es": "Entiende la ética y la regulación. Este campo está vigilado"
+        }
+      ]
+    }
+  },
+  "c12": {
+    "foundations": {
+      "title": "Proof, not calculation",
+      "title_es": "Demostración, no cálculo",
+      "items": [
+        {
+          "text": "Calculus and mathematical analysis",
+          "text_es": "Cálculo y análisis matemático"
+        },
+        {
+          "text": "Linear algebra and abstract algebra",
+          "text_es": "Álgebra lineal y álgebra abstracta"
+        },
+        {
+          "text": "Learn to write a proof. That is the actual skill",
+          "text_es": "Aprende a escribir una demostración. Esa es la habilidad de verdad"
+        },
+        {
+          "text": "LaTeX, because that is how mathematics is written",
+          "text_es": "LaTeX, porque así se escriben las matemáticas"
+        }
+      ]
+    },
+    "project": {
+      "title": "Solve something hard",
+      "title_es": "Resolver algo difícil",
+      "items": [
+        {
+          "text": "A problem competition: Olympiad, Putnam or local",
+          "text_es": "Una competición de problemas: olimpiada, Putnam o local"
+        },
+        {
+          "text": "Prove a theorem you were not shown the proof of",
+          "text_es": "Demuestra un teorema del que no te enseñaron la demostración"
+        },
+        {
+          "text": "Explain an abstract idea to someone without the background",
+          "text_es": "Explica una idea abstracta a alguien sin la base"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Where mathematics goes",
+      "title_es": "A dónde va la matemática",
+      "items": [
+        {
+          "text": "Find out what mathematicians do outside academia",
+          "text_es": "Averigua qué hacen los matemáticos fuera de la academia"
+        },
+        {
+          "text": "Learn to program. It multiplies what you can attempt",
+          "text_es": "Aprende a programar. Multiplica lo que puedes intentar"
+        },
+        {
+          "text": "A summer research programme with a professor",
+          "text_es": "Un programa de investigación de verano con un profesor"
+        }
+      ]
+    }
+  },
+  "c16": {
+    "foundations": {
+      "title": "The chemistry of being alive",
+      "title_es": "La química de estar vivo",
+      "items": [
+        {
+          "text": "General and organic chemistry",
+          "text_es": "Química general y orgánica"
+        },
+        {
+          "text": "Metabolism: the pathways, and why they are regulated",
+          "text_es": "Metabolismo: las rutas, y por qué están reguladas"
+        },
+        {
+          "text": "Protein structure and enzyme kinetics",
+          "text_es": "Estructura de proteínas y cinética enzimática"
+        },
+        {
+          "text": "Laboratory technique and measurement error",
+          "text_es": "Técnica de laboratorio y error de medida"
+        }
+      ]
+    },
+    "project": {
+      "title": "Measure a reaction",
+      "title_es": "Medir una reacción",
+      "items": [
+        {
+          "text": "Characterise an enzyme: rate, optimum, inhibition",
+          "text_es": "Caracteriza una enzima: velocidad, óptimo, inhibición"
+        },
+        {
+          "text": "Handle the data properly: replicates and uncertainty",
+          "text_es": "Trata bien los datos: réplicas e incertidumbre"
+        },
+        {
+          "text": "Write it up as a paper, with its limitations",
+          "text_es": "Escríbelo como un paper, con sus limitaciones"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Lab and beyond",
+      "title_es": "Laboratorio y más allá",
+      "items": [
+        {
+          "text": "Undergraduate assistantship in a research group",
+          "text_es": "Monitoría en un grupo de investigación"
+        },
+        {
+          "text": "Learn Python or R for handling your own data",
+          "text_es": "Aprende Python o R para manejar tus propios datos"
+        },
+        {
+          "text": "Decide between research, industry and clinical work",
+          "text_es": "Decide entre investigación, industria y trabajo clínico"
+        }
+      ]
+    }
+  },
+  "c17": {
+    "foundations": {
+      "title": "Reactions and why they go",
+      "title_es": "Reacciones y por qué ocurren",
+      "items": [
+        {
+          "text": "General, organic and inorganic chemistry",
+          "text_es": "Química general, orgánica e inorgánica"
+        },
+        {
+          "text": "Thermodynamics: what is possible and what is fast",
+          "text_es": "Termodinámica: qué es posible y qué es rápido"
+        },
+        {
+          "text": "Analytical techniques: chromatography, spectroscopy",
+          "text_es": "Técnicas analíticas: cromatografía, espectroscopía"
+        },
+        {
+          "text": "Lab safety as a habit, not a rule you were told",
+          "text_es": "Seguridad en el laboratorio como hábito, no como norma que te dijeron"
+        }
+      ]
+    },
+    "project": {
+      "title": "Synthesise and prove it",
+      "title_es": "Sintetizar y demostrarlo",
+      "items": [
+        {
+          "text": "Synthesise a compound and prove it is what you claim",
+          "text_es": "Sintetiza un compuesto y demuestra que es lo que dices"
+        },
+        {
+          "text": "Calculate your yield and account for what you lost",
+          "text_es": "Calcula el rendimiento y explica qué perdiste"
+        },
+        {
+          "text": "Interpret a spectrum without the answer key",
+          "text_es": "Interpreta un espectro sin la hoja de respuestas"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Industry or research",
+      "title_es": "Industria o investigación",
+      "items": [
+        {
+          "text": "Visit a plant or an analytical lab and see the scale",
+          "text_es": "Visita una planta o un laboratorio analítico y ve la escala"
+        },
+        {
+          "text": "Green chemistry: the field is moving there",
+          "text_es": "Química verde: el campo se está moviendo hacia allí"
+        },
+        {
+          "text": "An assistantship or a summer placement",
+          "text_es": "Una monitoría o una pasantía de verano"
+        }
+      ]
+    }
+  },
+  "c20": {
+    "foundations": {
+      "title": "Life in water",
+      "title_es": "La vida en el agua",
+      "items": [
+        {
+          "text": "General biology, ecology and taxonomy",
+          "text_es": "Biología general, ecología y taxonomía"
+        },
+        {
+          "text": "Physical and chemical oceanography",
+          "text_es": "Oceanografía física y química"
+        },
+        {
+          "text": "Statistics — field data is noisy by nature",
+          "text_es": "Estadística: los datos de campo son ruidosos por naturaleza"
+        },
+        {
+          "text": "Learn to swim well and get dive certified",
+          "text_es": "Aprende a nadar bien y certifícate en buceo"
+        }
+      ]
+    },
+    "project": {
+      "title": "Field work",
+      "title_es": "Trabajo de campo",
+      "items": [
+        {
+          "text": "Count something in the field with a real method",
+          "text_es": "Cuenta algo en campo con un método de verdad"
+        },
+        {
+          "text": "Coastal or beach clean-up monitoring",
+          "text_es": "Monitoreo costero o limpieza de playa"
+        },
+        {
+          "text": "Photograph and identify species properly",
+          "text_es": "Fotografía e identifica especies como se debe"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Into marine research",
+      "title_es": "Entrar en investigación marina",
+      "items": [
+        {
+          "text": "Volunteer at an aquarium, a reserve or an NGO",
+          "text_es": "Voluntariado en un acuario, una reserva o una ONG"
+        },
+        {
+          "text": "Contact a marine research group near the coast",
+          "text_es": "Contacta un grupo de investigación marina cerca de la costa"
+        },
+        {
+          "text": "Understand that much of the work is boat time and paperwork",
+          "text_es": "Entiende que buena parte del trabajo es barco y papeleo"
+        }
+      ]
+    }
+  },
+  "c21": {
+    "foundations": {
+      "title": "Physics pointed upward",
+      "title_es": "Física apuntando hacia arriba",
+      "items": [
+        {
+          "text": "Calculus, mechanics and electromagnetism",
+          "text_es": "Cálculo, mecánica y electromagnetismo"
+        },
+        {
+          "text": "Programming in Python — astronomy runs on it",
+          "text_es": "Programación en Python: la astronomía funciona con él"
+        },
+        {
+          "text": "How light carries information across distance",
+          "text_es": "Cómo la luz transporta información a través de la distancia"
+        },
+        {
+          "text": "Learn the actual sky, by eye, before the telescope",
+          "text_es": "Aprende el cielo real, a ojo, antes que el telescopio"
+        }
+      ]
+    },
+    "project": {
+      "title": "Observe and reduce",
+      "title_es": "Observar y reducir",
+      "items": [
+        {
+          "text": "Take your own images and process them properly",
+          "text_es": "Toma tus propias imágenes y procésalas bien"
+        },
+        {
+          "text": "Analyse public data: Gaia, SDSS, TESS are all open",
+          "text_es": "Analiza datos públicos: Gaia, SDSS y TESS son abiertos"
+        },
+        {
+          "text": "Citizen science: Zooniverse has real projects",
+          "text_es": "Ciencia ciudadana: Zooniverse tiene proyectos reales"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Into the field",
+      "title_es": "Entrar al campo",
+      "items": [
+        {
+          "text": "An astronomy club or an observatory near you",
+          "text_es": "Un club de astronomía o un observatorio cerca de ti"
+        },
+        {
+          "text": "Read a paper and reproduce one of its figures",
+          "text_es": "Lee un paper y reproduce una de sus figuras"
+        },
+        {
+          "text": "A summer research programme. They exist and are competitive",
+          "text_es": "Un programa de investigación de verano. Existen y son competidos"
+        }
+      ]
+    }
+  },
+  "c10": {
+    "foundations": {
+      "title": "Machines that sense and act",
+      "title_es": "Máquinas que perciben y actúan",
+      "items": [
+        {
+          "text": "Mechanics, kinematics and how a joint moves",
+          "text_es": "Mecánica, cinemática y cómo se mueve una articulación"
+        },
+        {
+          "text": "Electronics: sensors, actuators, motor drivers",
+          "text_es": "Electrónica: sensores, actuadores, controladores de motor"
+        },
+        {
+          "text": "Programming in C++ and Python",
+          "text_es": "Programación en C++ y Python"
+        },
+        {
+          "text": "Control theory: why a robot oscillates instead of stopping",
+          "text_es": "Teoría de control: por qué un robot oscila en vez de detenerse"
+        }
+      ]
+    },
+    "project": {
+      "title": "A robot that does one thing well",
+      "title_es": "Un robot que haga bien una sola cosa",
+      "items": [
+        {
+          "text": "Build a line follower, then make it faster without crashing",
+          "text_es": "Construye un seguidor de línea y luego hazlo más rápido sin que se estrelle"
+        },
+        {
+          "text": "Add a sensor and let it react to something unexpected",
+          "text_es": "Añade un sensor y deja que reaccione a algo inesperado"
+        },
+        {
+          "text": "Film it failing and work out which subsystem gave way",
+          "text_es": "Grábalo fallando y averigua qué subsistema cedió"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Competition and industry",
+      "title_es": "Competición e industria",
+      "items": [
+        {
+          "text": "A robotics competition — the deadline forces you to finish",
+          "text_es": "Una competición de robótica: el plazo te obliga a terminar"
+        },
+        {
+          "text": "Learn ROS, the framework the industry actually uses",
+          "text_es": "Aprende ROS, el framework que usa de verdad la industria"
+        },
+        {
+          "text": "Visit an automated plant and see the scale",
+          "text_es": "Visita una planta automatizada y ve la escala"
+        }
+      ]
+    }
+  },
+  "c18": {
+    "foundations": {
+      "title": "Engineering plus the human body",
+      "title_es": "Ingeniería más el cuerpo humano",
+      "items": [
+        {
+          "text": "Human anatomy and physiology, from an engineer's angle",
+          "text_es": "Anatomía y fisiología humanas, desde la mirada del ingeniero"
+        },
+        {
+          "text": "Signals and systems: an ECG is a signal",
+          "text_es": "Señales y sistemas: un electrocardiograma es una señal"
+        },
+        {
+          "text": "Biomaterials and what the body rejects",
+          "text_es": "Biomateriales y qué rechaza el cuerpo"
+        },
+        {
+          "text": "Programming for signal and image processing",
+          "text_es": "Programación para procesamiento de señales e imágenes"
+        }
+      ]
+    },
+    "project": {
+      "title": "Something that touches a patient",
+      "title_es": "Algo que toca a un paciente",
+      "items": [
+        {
+          "text": "Build a low-cost measuring device and validate it",
+          "text_es": "Construye un dispositivo de medida de bajo coste y valídalo"
+        },
+        {
+          "text": "Process real biomedical signals with public datasets",
+          "text_es": "Procesa señales biomédicas reales con datasets públicos"
+        },
+        {
+          "text": "Design thinking about the person, not just the specification",
+          "text_es": "Diseña pensando en la persona, no solo en la especificación"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Regulation and hospitals",
+      "title_es": "Regulación y hospitales",
+      "items": [
+        {
+          "text": "Understand medical device regulation. It governs everything here",
+          "text_es": "Entiende la regulación de dispositivos médicos. Aquí lo gobierna todo"
+        },
+        {
+          "text": "Spend time in a hospital's biomedical engineering department",
+          "text_es": "Pasa tiempo en el departamento de ingeniería biomédica de un hospital"
+        },
+        {
+          "text": "Talk to a clinician about what actually fails in practice",
+          "text_es": "Habla con un clínico sobre qué falla de verdad en la práctica"
+        }
+      ]
+    }
+  },
+  "c33": {
+    "foundations": {
+      "title": "Circuits, from the chip to the grid",
+      "title_es": "Circuitos, del chip a la red",
+      "items": [
+        {
+          "text": "Circuit analysis: Ohm, Kirchhoff, transients",
+          "text_es": "Análisis de circuitos: Ohm, Kirchhoff, transitorios"
+        },
+        {
+          "text": "Electromagnetic fields and waves",
+          "text_es": "Campos y ondas electromagnéticas"
+        },
+        {
+          "text": "Analogue and digital electronics",
+          "text_es": "Electrónica analógica y digital"
+        },
+        {
+          "text": "Instrumentation: measuring without changing what you measure",
+          "text_es": "Instrumentación: medir sin alterar lo que mides"
+        }
+      ]
+    },
+    "project": {
+      "title": "A circuit that works outside the simulator",
+      "title_es": "Un circuito que funcione fuera del simulador",
+      "items": [
+        {
+          "text": "Design it, simulate it, then build it and find the difference",
+          "text_es": "Diséñalo, simúlalo, luego constrúyelo y encuentra la diferencia"
+        },
+        {
+          "text": "Design a PCB and have it manufactured",
+          "text_es": "Diseña una PCB y mándala a fabricar"
+        },
+        {
+          "text": "Measure with an oscilloscope and interpret what you see",
+          "text_es": "Mide con osciloscopio e interpreta lo que ves"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Standards and the field",
+      "title_es": "Normativa y campo",
+      "items": [
+        {
+          "text": "Electrical codes and safety standards where you live",
+          "text_es": "Códigos eléctricos y normas de seguridad de tu país"
+        },
+        {
+          "text": "Visit a substation or a power plant",
+          "text_es": "Visita una subestación o una central eléctrica"
+        },
+        {
+          "text": "Decide your branch: power, electronics, telecommunications",
+          "text_es": "Decide tu rama: potencia, electrónica, telecomunicaciones"
+        }
+      ]
+    }
+  },
+  "c34": {
+    "foundations": {
+      "title": "Three disciplines that have to agree",
+      "title_es": "Tres disciplinas que tienen que entenderse",
+      "items": [
+        {
+          "text": "Mechanics and materials strength",
+          "text_es": "Mecánica y resistencia de materiales"
+        },
+        {
+          "text": "Electronics and microcontrollers",
+          "text_es": "Electrónica y microcontroladores"
+        },
+        {
+          "text": "Programming for real-time systems",
+          "text_es": "Programación para sistemas en tiempo real"
+        },
+        {
+          "text": "Control: the layer that makes the three work as one",
+          "text_es": "Control: la capa que hace que las tres funcionen como una"
+        }
+      ]
+    },
+    "project": {
+      "title": "An integrated system",
+      "title_es": "Un sistema integrado",
+      "items": [
+        {
+          "text": "Something mechanical driven by code and sensors",
+          "text_es": "Algo mecánico movido por código y sensores"
+        },
+        {
+          "text": "CAD the parts and have them made or printed",
+          "text_es": "Diseña las piezas en CAD y hazlas fabricar o imprimir"
+        },
+        {
+          "text": "Iterate: the first version never fits",
+          "text_es": "Itera: la primera versión nunca encaja"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Industry",
+      "title_es": "Industria",
+      "items": [
+        {
+          "text": "Learn an industrial CAD tool: SolidWorks or Fusion",
+          "text_es": "Aprende un CAD industrial: SolidWorks o Fusion"
+        },
+        {
+          "text": "PLCs and industrial automation",
+          "text_es": "PLC y automatización industrial"
+        },
+        {
+          "text": "An internship on a real production line",
+          "text_es": "Una pasantía en una línea de producción real"
+        }
+      ]
+    }
+  },
+  "c61": {
+    "foundations": {
+      "title": "Forces, heat and materials",
+      "title_es": "Fuerzas, calor y materiales",
+      "items": [
+        {
+          "text": "Statics, dynamics and strength of materials",
+          "text_es": "Estática, dinámica y resistencia de materiales"
+        },
+        {
+          "text": "Thermodynamics and fluid mechanics",
+          "text_es": "Termodinámica y mecánica de fluidos"
+        },
+        {
+          "text": "Technical drawing and CAD",
+          "text_es": "Dibujo técnico y CAD"
+        },
+        {
+          "text": "Manufacturing processes: how the part is actually made",
+          "text_es": "Procesos de fabricación: cómo se hace la pieza de verdad"
+        }
+      ]
+    },
+    "project": {
+      "title": "Design, build, break",
+      "title_es": "Diseñar, construir, romper",
+      "items": [
+        {
+          "text": "Design a part, calculate whether it holds, then test it",
+          "text_es": "Diseña una pieza, calcula si aguanta y luego pruébala"
+        },
+        {
+          "text": "Simulation with finite elements, checked against reality",
+          "text_es": "Simulación por elementos finitos, contrastada con la realidad"
+        },
+        {
+          "text": "Take a mechanism apart and document how it works",
+          "text_es": "Desarma un mecanismo y documenta cómo funciona"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Workshop and industry",
+      "title_es": "Taller e industria",
+      "items": [
+        {
+          "text": "Get workshop hours: lathe, mill, welding",
+          "text_es": "Consigue horas de taller: torno, fresa, soldadura"
+        },
+        {
+          "text": "A student competition — Formula SAE or similar",
+          "text_es": "Una competición estudiantil: Fórmula SAE o similar"
+        },
+        {
+          "text": "An internship where you see production, not just design",
+          "text_es": "Una pasantía donde veas producción, no solo diseño"
+        }
+      ]
+    }
+  },
+  "c62": {
+    "foundations": {
+      "title": "Structures that have to stand for decades",
+      "title_es": "Estructuras que tienen que aguantar décadas",
+      "items": [
+        {
+          "text": "Statics and structural analysis",
+          "text_es": "Estática y análisis estructural"
+        },
+        {
+          "text": "Materials: concrete, steel, soil",
+          "text_es": "Materiales: hormigón, acero, suelo"
+        },
+        {
+          "text": "Soil mechanics — most failures start underneath",
+          "text_es": "Mecánica de suelos: casi todos los fallos empiezan abajo"
+        },
+        {
+          "text": "Topography and technical drawing",
+          "text_es": "Topografía y dibujo técnico"
+        }
+      ]
+    },
+    "project": {
+      "title": "Calculate a real structure",
+      "title_es": "Calcular una estructura real",
+      "items": [
+        {
+          "text": "Design a small structure and justify every dimension",
+          "text_es": "Diseña una estructura pequeña y justifica cada dimensión"
+        },
+        {
+          "text": "Apply the seismic code of your region",
+          "text_es": "Aplica la norma sismorresistente de tu región"
+        },
+        {
+          "text": "Visit a site and compare the drawing with what is built",
+          "text_es": "Visita una obra y compara el plano con lo construido"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Site and licence",
+      "title_es": "Obra y matrícula",
+      "items": [
+        {
+          "text": "Learn the structural software the field uses",
+          "text_es": "Aprende el software estructural que usa el campo"
+        },
+        {
+          "text": "Understand professional liability: signing has consequences",
+          "text_es": "Entiende la responsabilidad profesional: firmar tiene consecuencias"
+        },
+        {
+          "text": "Time on site. Design without site produces bad drawings",
+          "text_es": "Tiempo en obra. Diseñar sin obra produce planos malos"
+        }
+      ]
+    }
+  },
+  "c63": {
+    "foundations": {
+      "title": "Time, cost and what is actually built",
+      "title_es": "Tiempo, coste y lo que de verdad se construye",
+      "items": [
+        {
+          "text": "Read a full set of drawings and spot the contradiction",
+          "text_es": "Lee un juego de planos completo y encuentra la contradicción"
+        },
+        {
+          "text": "Quantity surveying and budgeting",
+          "text_es": "Presupuestos y cubicación"
+        },
+        {
+          "text": "Scheduling: critical path, not a wish list",
+          "text_es": "Programación: ruta crítica, no una lista de deseos"
+        },
+        {
+          "text": "Site safety regulation",
+          "text_es": "Normativa de seguridad en obra"
+        }
+      ]
+    },
+    "project": {
+      "title": "Plan a real job",
+      "title_es": "Planificar una obra real",
+      "items": [
+        {
+          "text": "Build a full schedule and budget for a small project",
+          "text_es": "Arma el cronograma y presupuesto completos de una obra pequeña"
+        },
+        {
+          "text": "Track a delay to its cause, not to a person",
+          "text_es": "Rastrea un retraso hasta su causa, no hasta una persona"
+        },
+        {
+          "text": "Learn a project tool: MS Project or Primavera",
+          "text_es": "Aprende una herramienta: MS Project o Primavera"
+        }
+      ]
+    },
+    "launch": {
+      "title": "On site",
+      "title_es": "En obra",
+      "items": [
+        {
+          "text": "Site time as a resident or assistant",
+          "text_es": "Tiempo en obra como residente o auxiliar"
+        },
+        {
+          "text": "Practise negotiating with contractors and suppliers",
+          "text_es": "Practica negociar con contratistas y proveedores"
+        },
+        {
+          "text": "BIM: the industry is moving there",
+          "text_es": "BIM: la industria se está moviendo hacia allí"
+        }
+      ]
+    }
+  },
+  "c64": {
+    "foundations": {
+      "title": "Systems, not machines",
+      "title_es": "Sistemas, no máquinas",
+      "items": [
+        {
+          "text": "Operations research and optimisation",
+          "text_es": "Investigación de operaciones y optimización"
+        },
+        {
+          "text": "Statistics and quality control",
+          "text_es": "Estadística y control de calidad"
+        },
+        {
+          "text": "Process design and work measurement",
+          "text_es": "Diseño de procesos y medición del trabajo"
+        },
+        {
+          "text": "Cost accounting: where the money leaks",
+          "text_es": "Contabilidad de costes: por dónde se escapa el dinero"
+        }
+      ]
+    },
+    "project": {
+      "title": "Improve a process that exists",
+      "title_es": "Mejorar un proceso que existe",
+      "items": [
+        {
+          "text": "Measure a real process before touching anything",
+          "text_es": "Mide un proceso real antes de tocar nada"
+        },
+        {
+          "text": "Find the bottleneck and prove it is the bottleneck",
+          "text_es": "Encuentra el cuello de botella y demuestra que lo es"
+        },
+        {
+          "text": "Propose a change and estimate what it saves",
+          "text_es": "Propón un cambio y estima cuánto ahorra"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Certification and the floor",
+      "title_es": "Certificación y planta",
+      "items": [
+        {
+          "text": "Lean and Six Sigma, at least green belt",
+          "text_es": "Lean y Six Sigma, al menos cinturón verde"
+        },
+        {
+          "text": "An internship on a factory or warehouse floor",
+          "text_es": "Una pasantía en planta o en un almacén"
+        },
+        {
+          "text": "Learn to present numbers to people who decide",
+          "text_es": "Aprende a presentar números a quien decide"
+        }
+      ]
+    }
+  },
+  "c22": {
+    "foundations": {
+      "title": "How a drug works, and where it goes",
+      "title_es": "Cómo actúa un fármaco, y a dónde va",
+      "items": [
+        {
+          "text": "Organic chemistry and pharmaceutical chemistry",
+          "text_es": "Química orgánica y química farmacéutica"
+        },
+        {
+          "text": "Pharmacology: mechanism, dose, adverse effects",
+          "text_es": "Farmacología: mecanismo, dosis, efectos adversos"
+        },
+        {
+          "text": "Pharmacokinetics: absorption, distribution, elimination",
+          "text_es": "Farmacocinética: absorción, distribución, eliminación"
+        },
+        {
+          "text": "Human physiology",
+          "text_es": "Fisiología humana"
+        }
+      ]
+    },
+    "project": {
+      "title": "Practice with real medication",
+      "title_es": "Práctica con medicamento real",
+      "items": [
+        {
+          "text": "Community or hospital pharmacy internship",
+          "text_es": "Pasantía en farmacia comunitaria u hospitalaria"
+        },
+        {
+          "text": "Learn to spot a drug interaction before it happens",
+          "text_es": "Aprende a detectar una interacción antes de que ocurra"
+        },
+        {
+          "text": "Practise explaining a treatment to someone who is frightened",
+          "text_es": "Practica explicar un tratamiento a alguien que está asustado"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Regulation and specialisation",
+      "title_es": "Regulación y especialización",
+      "items": [
+        {
+          "text": "Pharmaceutical regulation where you live",
+          "text_es": "Regulación farmacéutica de tu país"
+        },
+        {
+          "text": "Decide your branch: clinical, industry, research, regulatory",
+          "text_es": "Decide tu rama: clínica, industria, investigación, regulatoria"
+        },
+        {
+          "text": "Pharmacovigilance: reporting is part of the job",
+          "text_es": "Farmacovigilancia: reportar es parte del trabajo"
+        }
+      ]
+    }
+  },
+  "c23": {
+    "foundations": {
+      "title": "Many species, one biology",
+      "title_es": "Muchas especies, una biología",
+      "items": [
+        {
+          "text": "Comparative anatomy and physiology across species",
+          "text_es": "Anatomía y fisiología comparadas entre especies"
+        },
+        {
+          "text": "Microbiology and parasitology",
+          "text_es": "Microbiología y parasitología"
+        },
+        {
+          "text": "Animal handling — safely, for both of you",
+          "text_es": "Manejo animal: con seguridad, para los dos"
+        },
+        {
+          "text": "Zoonoses: what passes to humans",
+          "text_es": "Zoonosis: qué pasa a las personas"
+        }
+      ]
+    },
+    "project": {
+      "title": "Hands on animals",
+      "title_es": "Manos sobre animales",
+      "items": [
+        {
+          "text": "Volunteer at a clinic, a shelter or a farm",
+          "text_es": "Voluntariado en una clínica, un refugio o una finca"
+        },
+        {
+          "text": "Shadow a vet through a full day, including the hard part",
+          "text_es": "Acompaña a un veterinario un día entero, incluida la parte dura"
+        },
+        {
+          "text": "Learn basic clinical examination",
+          "text_es": "Aprende exploración clínica básica"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Choosing your species",
+      "title_es": "Elegir tu especie",
+      "items": [
+        {
+          "text": "Small animals, livestock and wildlife are different careers",
+          "text_es": "Pequeños animales, producción y fauna son carreras distintas"
+        },
+        {
+          "text": "Understand the emotional weight. Euthanasia is part of it",
+          "text_es": "Entiende el peso emocional. La eutanasia es parte del trabajo"
+        },
+        {
+          "text": "Time in a rural practice, not only urban",
+          "text_es": "Tiempo en práctica rural, no solo urbana"
+        }
+      ]
+    }
+  },
+  "c24": {
+    "foundations": {
+      "title": "The patient, continuously",
+      "title_es": "El paciente, de forma continua",
+      "items": [
+        {
+          "text": "Anatomy, physiology and pathophysiology",
+          "text_es": "Anatomía, fisiología y fisiopatología"
+        },
+        {
+          "text": "Pharmacology and dose calculation — the arithmetic matters",
+          "text_es": "Farmacología y cálculo de dosis: la aritmética importa"
+        },
+        {
+          "text": "Basic clinical procedures and asepsis",
+          "text_es": "Procedimientos clínicos básicos y asepsia"
+        },
+        {
+          "text": "Vital signs: what is normal and what is a warning",
+          "text_es": "Signos vitales: qué es normal y qué es una alarma"
+        }
+      ]
+    },
+    "project": {
+      "title": "Clinical practice",
+      "title_es": "Práctica clínica",
+      "items": [
+        {
+          "text": "Supervised hospital hours, from the first year if you can",
+          "text_es": "Horas hospitalarias supervisadas, desde primer año si puedes"
+        },
+        {
+          "text": "Basic life support certification",
+          "text_es": "Certificación en soporte vital básico"
+        },
+        {
+          "text": "Practise handover: what the next shift must know",
+          "text_es": "Practica el relevo: qué tiene que saber el siguiente turno"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Shifts and specialisation",
+      "title_es": "Turnos y especialización",
+      "items": [
+        {
+          "text": "Understand shift work before you commit to it",
+          "text_es": "Entiende el trabajo por turnos antes de comprometerte"
+        },
+        {
+          "text": "Specialties: ICU, emergency, paediatrics, surgery",
+          "text_es": "Especialidades: UCI, urgencias, pediatría, quirófano"
+        },
+        {
+          "text": "Emotional care is a skill, and it is trainable",
+          "text_es": "El cuidado emocional es una habilidad, y se entrena"
+        }
+      ]
+    }
+  },
+  "c25": {
+    "foundations": {
+      "title": "Food as biochemistry",
+      "title_es": "La alimentación como bioquímica",
+      "items": [
+        {
+          "text": "Nutritional biochemistry and metabolism",
+          "text_es": "Bioquímica nutricional y metabolismo"
+        },
+        {
+          "text": "Physiology of digestion",
+          "text_es": "Fisiología de la digestión"
+        },
+        {
+          "text": "Nutritional assessment: measuring, not guessing",
+          "text_es": "Valoración nutricional: medir, no adivinar"
+        },
+        {
+          "text": "Read the evidence — this field is full of noise",
+          "text_es": "Lee la evidencia: este campo está lleno de ruido"
+        }
+      ]
+    },
+    "project": {
+      "title": "A plan someone can actually keep",
+      "title_es": "Un plan que alguien pueda sostener",
+      "items": [
+        {
+          "text": "Design a plan around a real person's budget and schedule",
+          "text_es": "Diseña un plan con el presupuesto y los horarios de una persona real"
+        },
+        {
+          "text": "Follow up: adherence is where plans die",
+          "text_es": "Haz seguimiento: la adherencia es donde mueren los planes"
+        },
+        {
+          "text": "Practise counselling without judging",
+          "text_es": "Practica aconsejar sin juzgar"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Practice and ethics",
+      "title_es": "Ejercicio y ética",
+      "items": [
+        {
+          "text": "Clinical, sports or public health nutrition",
+          "text_es": "Nutrición clínica, deportiva o de salud pública"
+        },
+        {
+          "text": "Know where your scope ends and a doctor's begins",
+          "text_es": "Sabe dónde acaba tu alcance y empieza el de un médico"
+        },
+        {
+          "text": "Learn to counter a health myth with evidence, kindly",
+          "text_es": "Aprende a rebatir un mito de salud con evidencia, con tacto"
+        }
+      ]
+    }
+  },
+  "c26": {
+    "foundations": {
+      "title": "Movement and what stops it",
+      "title_es": "El movimiento y lo que lo detiene",
+      "items": [
+        {
+          "text": "Musculoskeletal anatomy in detail",
+          "text_es": "Anatomía musculoesquelética en detalle"
+        },
+        {
+          "text": "Biomechanics: how load travels through a body",
+          "text_es": "Biomecánica: cómo viaja la carga por un cuerpo"
+        },
+        {
+          "text": "Physiology of exercise and tissue healing",
+          "text_es": "Fisiología del ejercicio y curación de tejidos"
+        },
+        {
+          "text": "Manual assessment: your hands are the instrument",
+          "text_es": "Evaluación manual: tus manos son el instrumento"
+        }
+      ]
+    },
+    "project": {
+      "title": "Treat and measure",
+      "title_es": "Tratar y medir",
+      "items": [
+        {
+          "text": "Design a rehabilitation programme with measurable goals",
+          "text_es": "Diseña un programa de rehabilitación con metas medibles"
+        },
+        {
+          "text": "Track progress with objective tests, not impressions",
+          "text_es": "Sigue el progreso con pruebas objetivas, no impresiones"
+        },
+        {
+          "text": "Practise with athletes or in a clinic under supervision",
+          "text_es": "Practica con deportistas o en clínica, bajo supervisión"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Specialising",
+      "title_es": "Especializarse",
+      "items": [
+        {
+          "text": "Sports, neurological, respiratory, geriatric",
+          "text_es": "Deportiva, neurológica, respiratoria, geriátrica"
+        },
+        {
+          "text": "Learn to motivate someone through a slow recovery",
+          "text_es": "Aprende a motivar a alguien durante una recuperación lenta"
+        },
+        {
+          "text": "Supervised clinical hours before you practise alone",
+          "text_es": "Horas clínicas supervisadas antes de ejercer solo"
+        }
+      ]
+    }
+  },
+  "c27": {
+    "foundations": {
+      "title": "Precision at millimetre scale",
+      "title_es": "Precisión a escala de milímetro",
+      "items": [
+        {
+          "text": "Dental and craniofacial anatomy",
+          "text_es": "Anatomía dental y craneofacial"
+        },
+        {
+          "text": "Dental materials and their limits",
+          "text_es": "Materiales dentales y sus límites"
+        },
+        {
+          "text": "Manual dexterity — practise on models, a lot",
+          "text_es": "Destreza manual: practica en modelos, mucho"
+        },
+        {
+          "text": "Radiology: reading what the image really shows",
+          "text_es": "Radiología: leer lo que la imagen muestra de verdad"
+        }
+      ]
+    },
+    "project": {
+      "title": "Hands and models",
+      "title_es": "Manos y modelos",
+      "items": [
+        {
+          "text": "Preclinical work on typodonts until it is clean",
+          "text_es": "Trabajo preclínico en typodontos hasta que salga limpio"
+        },
+        {
+          "text": "Shadow a dentist and watch the patient, not only the mouth",
+          "text_es": "Acompaña a un odontólogo y mira al paciente, no solo la boca"
+        },
+        {
+          "text": "Practise managing someone who is afraid of the chair",
+          "text_es": "Practica manejar a alguien que le tiene miedo al sillón"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Clinic and specialisation",
+      "title_es": "Clínica y especialización",
+      "items": [
+        {
+          "text": "Supervised clinical practice with real patients",
+          "text_es": "Práctica clínica supervisada con pacientes reales"
+        },
+        {
+          "text": "Specialties: orthodontics, endodontics, surgery",
+          "text_es": "Especialidades: ortodoncia, endodoncia, cirugía"
+        },
+        {
+          "text": "Understand the business side: most dentists run a practice",
+          "text_es": "Entiende el lado del negocio: casi todo odontólogo lleva una consulta"
+        }
+      ]
+    }
+  },
+  "c53": {
+    "foundations": {
+      "title": "Speech, language and swallowing",
+      "title_es": "Habla, lenguaje y deglución",
+      "items": [
+        {
+          "text": "Anatomy of the vocal and swallowing apparatus",
+          "text_es": "Anatomía del aparato fonador y deglutorio"
+        },
+        {
+          "text": "Phonetics and language development",
+          "text_es": "Fonética y desarrollo del lenguaje"
+        },
+        {
+          "text": "Neurology of language: aphasia, dysarthria",
+          "text_es": "Neurología del lenguaje: afasia, disartria"
+        },
+        {
+          "text": "Audiology basics — hearing comes before speech",
+          "text_es": "Fundamentos de audiología: la audición va antes que el habla"
+        }
+      ]
+    },
+    "project": {
+      "title": "Assess and intervene",
+      "title_es": "Evaluar e intervenir",
+      "items": [
+        {
+          "text": "Apply a standardised assessment and interpret it",
+          "text_es": "Aplica una evaluación estandarizada e interprétala"
+        },
+        {
+          "text": "Design an intervention with measurable goals",
+          "text_es": "Diseña una intervención con metas medibles"
+        },
+        {
+          "text": "Practice with children and with adults — they are different",
+          "text_es": "Practica con niños y con adultos: son distintos"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Clinical practice",
+      "title_es": "Práctica clínica",
+      "items": [
+        {
+          "text": "Supervised placement in a school or a hospital",
+          "text_es": "Práctica supervisada en un colegio o un hospital"
+        },
+        {
+          "text": "Work with families: the therapy continues at home",
+          "text_es": "Trabaja con las familias: la terapia sigue en casa"
+        },
+        {
+          "text": "Specialise: paediatric, neurological, voice",
+          "text_es": "Especialízate: pediátrica, neurológica, voz"
+        }
+      ]
+    }
+  },
+  "c3": {
+    "foundations": {
+      "title": "People before pixels",
+      "title_es": "Las personas antes que los píxeles",
+      "items": [
+        {
+          "text": "User research: interviewing without leading the answer",
+          "text_es": "Investigación de usuarios: entrevistar sin dirigir la respuesta"
+        },
+        {
+          "text": "Information architecture and flows",
+          "text_es": "Arquitectura de información y flujos"
+        },
+        {
+          "text": "Visual fundamentals: hierarchy, typography, contrast",
+          "text_es": "Fundamentos visuales: jerarquía, tipografía, contraste"
+        },
+        {
+          "text": "Accessibility from the start, not as a final pass",
+          "text_es": "Accesibilidad desde el principio, no como repaso final"
+        }
+      ]
+    },
+    "project": {
+      "title": "A redesign you can defend",
+      "title_es": "Un rediseño que puedas defender",
+      "items": [
+        {
+          "text": "Take a real product, find a real problem, fix it",
+          "text_es": "Coge un producto real, encuentra un problema real, arréglalo"
+        },
+        {
+          "text": "Test with five people. Five is enough to find most of it",
+          "text_es": "Prueba con cinco personas. Cinco bastan para encontrar casi todo"
+        },
+        {
+          "text": "Show what you changed and why, with the evidence",
+          "text_es": "Enseña qué cambiaste y por qué, con la evidencia"
+        },
+        {
+          "text": "A prototype someone can click through",
+          "text_es": "Un prototipo que alguien pueda recorrer"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Portfolio and process",
+      "title_es": "Portafolio y proceso",
+      "items": [
+        {
+          "text": "Three case studies that show thinking, not just screens",
+          "text_es": "Tres casos que enseñen el razonamiento, no solo pantallas"
+        },
+        {
+          "text": "Learn enough HTML and CSS to know what is buildable",
+          "text_es": "Aprende el HTML y CSS suficientes para saber qué es construible"
+        },
+        {
+          "text": "Present a design to someone who disagrees with it",
+          "text_es": "Presenta un diseño a alguien que no esté de acuerdo"
+        }
+      ]
+    }
+  },
+  "c35": {
+    "foundations": {
+      "title": "Composition, type and colour",
+      "title_es": "Composición, tipografía y color",
+      "items": [
+        {
+          "text": "Typography properly — it is most of the craft",
+          "text_es": "Tipografía en serio: es la mayor parte del oficio"
+        },
+        {
+          "text": "Colour theory and how it behaves in print and screen",
+          "text_es": "Teoría del color y cómo se comporta en papel y pantalla"
+        },
+        {
+          "text": "Grids and composition",
+          "text_es": "Retículas y composición"
+        },
+        {
+          "text": "Adobe or Affinity, fluently",
+          "text_es": "Adobe o Affinity, con soltura"
+        }
+      ]
+    },
+    "project": {
+      "title": "A brief with constraints",
+      "title_es": "Un encargo con restricciones",
+      "items": [
+        {
+          "text": "Design a full identity: logo, palette, type, application",
+          "text_es": "Diseña una identidad completa: logo, paleta, tipografía, aplicación"
+        },
+        {
+          "text": "Work to a real constraint: two colours, one page, a budget",
+          "text_es": "Trabaja con una restricción real: dos tintas, una página, un presupuesto"
+        },
+        {
+          "text": "Send something to print and see what changes",
+          "text_es": "Manda algo a imprenta y mira qué cambia"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Portfolio and clients",
+      "title_es": "Portafolio y clientes",
+      "items": [
+        {
+          "text": "A portfolio of finished work, not experiments",
+          "text_es": "Un portafolio de trabajo terminado, no de experimentos"
+        },
+        {
+          "text": "Learn to write a quote and a contract",
+          "text_es": "Aprende a hacer un presupuesto y un contrato"
+        },
+        {
+          "text": "Take feedback without defending the first idea",
+          "text_es": "Recibe crítica sin defender la primera idea"
+        }
+      ]
+    }
+  },
+  "c36": {
+    "foundations": {
+      "title": "Space, structure and how people move",
+      "title_es": "Espacio, estructura y cómo se mueve la gente",
+      "items": [
+        {
+          "text": "Technical drawing and architectural representation",
+          "text_es": "Dibujo técnico y representación arquitectónica"
+        },
+        {
+          "text": "Structures and materials — the building has to stand",
+          "text_es": "Estructuras y materiales: el edificio tiene que sostenerse"
+        },
+        {
+          "text": "History of architecture: what has already been tried",
+          "text_es": "Historia de la arquitectura: qué se ha intentado ya"
+        },
+        {
+          "text": "CAD and BIM, plus a physical model by hand",
+          "text_es": "CAD y BIM, más una maqueta física a mano"
+        }
+      ]
+    },
+    "project": {
+      "title": "A project with a real site",
+      "title_es": "Un proyecto con un terreno real",
+      "items": [
+        {
+          "text": "Design for a site you have actually walked",
+          "text_es": "Diseña para un terreno que hayas pisado"
+        },
+        {
+          "text": "Justify your decisions with light, climate and use",
+          "text_es": "Justifica tus decisiones con luz, clima y uso"
+        },
+        {
+          "text": "Build a physical model. Screens hide problems",
+          "text_es": "Haz una maqueta física. Las pantallas esconden problemas"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Practice and licence",
+      "title_es": "Ejercicio y matrícula",
+      "items": [
+        {
+          "text": "Internship in a studio — you will draw a lot of details",
+          "text_es": "Pasantía en un estudio: dibujarás muchos detalles"
+        },
+        {
+          "text": "Building codes and accessibility regulation",
+          "text_es": "Normativa de construcción y accesibilidad"
+        },
+        {
+          "text": "Visit the sites of buildings you admire",
+          "text_es": "Visita las obras de edificios que admires"
+        }
+      ]
+    }
+  },
+  "c41": {
+    "foundations": {
+      "title": "Concept into pattern and fabric",
+      "title_es": "Del concepto al patrón y la tela",
+      "items": [
+        {
+          "text": "Pattern making and garment construction",
+          "text_es": "Patronaje y confección"
+        },
+        {
+          "text": "Textiles: what each fabric does and refuses to do",
+          "text_es": "Textiles: qué hace y qué se niega a hacer cada tela"
+        },
+        {
+          "text": "Fashion illustration and technical flats",
+          "text_es": "Ilustración de moda y fichas técnicas"
+        },
+        {
+          "text": "Sew. Designing without sewing produces impossible garments",
+          "text_es": "Cose. Diseñar sin coser produce prendas imposibles"
+        }
+      ]
+    },
+    "project": {
+      "title": "A finished collection",
+      "title_es": "Una colección terminada",
+      "items": [
+        {
+          "text": "A small coherent collection, made and photographed",
+          "text_es": "Una colección pequeña y coherente, hecha y fotografiada"
+        },
+        {
+          "text": "Fit on a real body, not a mannequin",
+          "text_es": "Prueba sobre un cuerpo real, no un maniquí"
+        },
+        {
+          "text": "Cost a garment: materials, hours, margin",
+          "text_es": "Costea una prenda: materiales, horas, margen"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Industry and sustainability",
+      "title_es": "Industria y sostenibilidad",
+      "items": [
+        {
+          "text": "Understand the supply chain behind a garment",
+          "text_es": "Entiende la cadena de suministro detrás de una prenda"
+        },
+        {
+          "text": "Sustainability is no longer optional in this field",
+          "text_es": "La sostenibilidad ya no es opcional en este campo"
+        },
+        {
+          "text": "A portfolio with process, not only final photographs",
+          "text_es": "Un portafolio con proceso, no solo fotos finales"
+        }
+      ]
+    }
+  },
+  "c42": {
+    "foundations": {
+      "title": "Objects made at scale",
+      "title_es": "Objetos hechos en serie",
+      "items": [
+        {
+          "text": "Sketching by hand — fast, before CAD",
+          "text_es": "Bocetado a mano: rápido, antes del CAD"
+        },
+        {
+          "text": "3D modelling: SolidWorks, Rhino or Fusion",
+          "text_es": "Modelado 3D: SolidWorks, Rhino o Fusion"
+        },
+        {
+          "text": "Materials and manufacturing processes",
+          "text_es": "Materiales y procesos de fabricación"
+        },
+        {
+          "text": "Ergonomics: the object meets a body",
+          "text_es": "Ergonomía: el objeto se encuentra con un cuerpo"
+        }
+      ]
+    },
+    "project": {
+      "title": "Prototype and iterate",
+      "title_es": "Prototipar e iterar",
+      "items": [
+        {
+          "text": "Make a physical prototype, however rough",
+          "text_es": "Haz un prototipo físico, por tosco que sea"
+        },
+        {
+          "text": "Put it in someone's hands and watch them get it wrong",
+          "text_es": "Ponlo en manos de alguien y mira cómo lo usa mal"
+        },
+        {
+          "text": "Design it so it can actually be manufactured",
+          "text_es": "Diséñalo para que se pueda fabricar de verdad"
+        }
+      ]
+    },
+    "launch": {
+      "title": "From portfolio to production",
+      "title_es": "Del portafolio a producción",
+      "items": [
+        {
+          "text": "A portfolio showing sketch, model, prototype, final",
+          "text_es": "Un portafolio con boceto, modelo, prototipo y final"
+        },
+        {
+          "text": "Visit a factory and see the constraints first-hand",
+          "text_es": "Visita una fábrica y ve las restricciones de primera mano"
+        },
+        {
+          "text": "Learn what a design costs to make in quantity",
+          "text_es": "Aprende lo que cuesta fabricar un diseño en cantidad"
+        }
+      ]
+    }
+  },
+  "c6": {
+    "foundations": {
+      "title": "How a business actually makes money",
+      "title_es": "Cómo gana dinero un negocio de verdad",
+      "items": [
+        {
+          "text": "Read a profit and loss statement and a cash flow",
+          "text_es": "Lee un estado de resultados y un flujo de caja"
+        },
+        {
+          "text": "Unit economics: what one customer costs and brings",
+          "text_es": "Economía unitaria: qué cuesta y qué deja un cliente"
+        },
+        {
+          "text": "Basic contract and company law where you live",
+          "text_es": "Derecho de contratos y sociedades básico de tu país"
+        },
+        {
+          "text": "Talk to ten people running a small business",
+          "text_es": "Habla con diez personas que lleven un negocio pequeño"
+        }
+      ]
+    },
+    "project": {
+      "title": "Sell something",
+      "title_es": "Vender algo",
+      "items": [
+        {
+          "text": "Sell one real thing to one real stranger",
+          "text_es": "Vende una cosa real a un desconocido real"
+        },
+        {
+          "text": "Track every peso in and out for a month",
+          "text_es": "Registra cada peso que entra y sale durante un mes"
+        },
+        {
+          "text": "Find out why the people who said no said no",
+          "text_es": "Averigua por qué los que dijeron que no, dijeron que no"
+        }
+      ]
+    },
+    "launch": {
+      "title": "From idea to something that runs",
+      "title_es": "De la idea a algo que funciona",
+      "items": [
+        {
+          "text": "Validate before building. Most ideas die at this step",
+          "text_es": "Valida antes de construir. Casi toda idea muere en este paso"
+        },
+        {
+          "text": "Learn what registering a company involves",
+          "text_es": "Aprende qué implica constituir una empresa"
+        },
+        {
+          "text": "Find a mentor who has already failed at least once",
+          "text_es": "Busca un mentor que ya haya fracasado al menos una vez"
+        }
+      ]
+    }
+  },
+  "c11": {
+    "foundations": {
+      "title": "Scarcity, incentives and evidence",
+      "title_es": "Escasez, incentivos y evidencia",
+      "items": [
+        {
+          "text": "Micro and macroeconomics",
+          "text_es": "Microeconomía y macroeconomía"
+        },
+        {
+          "text": "Calculus and statistics — economics is quantitative",
+          "text_es": "Cálculo y estadística: la economía es cuantitativa"
+        },
+        {
+          "text": "Econometrics: separating correlation from cause",
+          "text_es": "Econometría: separar correlación de causa"
+        },
+        {
+          "text": "Read the economic news of your own country critically",
+          "text_es": "Lee críticamente la noticia económica de tu propio país"
+        }
+      ]
+    },
+    "project": {
+      "title": "Analyse a real policy",
+      "title_es": "Analizar una política real",
+      "items": [
+        {
+          "text": "Take a policy that was actually implemented and study its effect",
+          "text_es": "Coge una política que se implementó de verdad y estudia su efecto"
+        },
+        {
+          "text": "Use public data: your national statistics office publishes it",
+          "text_es": "Usa datos públicos: tu instituto de estadística los publica"
+        },
+        {
+          "text": "Learn R or Stata for the analysis",
+          "text_es": "Aprende R o Stata para el análisis"
+        },
+        {
+          "text": "State clearly what your data cannot tell you",
+          "text_es": "Di con claridad qué no te pueden decir tus datos"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Where economists work",
+      "title_es": "Dónde trabajan los economistas",
+      "items": [
+        {
+          "text": "Central bank, ministry, consultancy, research, private sector",
+          "text_es": "Banco central, ministerio, consultoría, investigación, sector privado"
+        },
+        {
+          "text": "Write a short piece that a non-economist can follow",
+          "text_es": "Escribe algo corto que un no economista pueda seguir"
+        },
+        {
+          "text": "An internship where you see decisions being made",
+          "text_es": "Una pasantía donde veas cómo se toman las decisiones"
+        }
+      ]
+    }
+  },
+  "c54": {
+    "foundations": {
+      "title": "People as the organisation's core system",
+      "title_es": "Las personas como el sistema central de la organización",
+      "items": [
+        {
+          "text": "Labour law where you live — this is not optional",
+          "text_es": "Derecho laboral de tu país: esto no es opcional"
+        },
+        {
+          "text": "Organisational psychology and motivation",
+          "text_es": "Psicología organizacional y motivación"
+        },
+        {
+          "text": "Selection processes: structured interviews beat intuition",
+          "text_es": "Procesos de selección: la entrevista estructurada gana a la intuición"
+        },
+        {
+          "text": "Compensation and how a salary band is built",
+          "text_es": "Compensación y cómo se construye una banda salarial"
+        }
+      ]
+    },
+    "project": {
+      "title": "Run a real process",
+      "title_es": "Llevar un proceso real",
+      "items": [
+        {
+          "text": "Design a selection process with clear criteria beforehand",
+          "text_es": "Diseña un proceso de selección con criterios claros de antemano"
+        },
+        {
+          "text": "Practise a difficult conversation: feedback, or a dismissal",
+          "text_es": "Practica una conversación difícil: retroalimentación, o una desvinculación"
+        },
+        {
+          "text": "Measure something: turnover, time to hire, satisfaction",
+          "text_es": "Mide algo: rotación, tiempo de contratación, satisfacción"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Practice and ethics",
+      "title_es": "Ejercicio y ética",
+      "items": [
+        {
+          "text": "Understand your position: you serve the company and the people",
+          "text_es": "Entiende tu posición: sirves a la empresa y a las personas"
+        },
+        {
+          "text": "Confidentiality is the whole job",
+          "text_es": "La confidencialidad es todo el trabajo"
+        },
+        {
+          "text": "Specialise: selection, development, compensation, relations",
+          "text_es": "Especialízate: selección, desarrollo, compensación, relaciones"
+        }
+      ]
+    }
+  },
+  "c55": {
+    "foundations": {
+      "title": "The parts and how they connect",
+      "title_es": "Las partes y cómo se conectan",
+      "items": [
+        {
+          "text": "Accounting and finance for non-financiers, first",
+          "text_es": "Contabilidad y finanzas para no financieros, primero"
+        },
+        {
+          "text": "Operations, marketing and human resources",
+          "text_es": "Operaciones, marketing y recursos humanos"
+        },
+        {
+          "text": "Excel properly — it is the language of the job",
+          "text_es": "Excel de verdad: es el idioma del trabajo"
+        },
+        {
+          "text": "Strategy: why a company chooses not to do things",
+          "text_es": "Estrategia: por qué una empresa elige no hacer cosas"
+        }
+      ]
+    },
+    "project": {
+      "title": "Analyse a real company",
+      "title_es": "Analizar una empresa real",
+      "items": [
+        {
+          "text": "Take a listed company and read its annual report",
+          "text_es": "Coge una empresa cotizada y lee su informe anual"
+        },
+        {
+          "text": "Build a simple financial model of a small business",
+          "text_es": "Construye un modelo financiero simple de un negocio pequeño"
+        },
+        {
+          "text": "Present a recommendation and defend it with numbers",
+          "text_es": "Presenta una recomendación y defiéndela con números"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Into an organisation",
+      "title_es": "Entrar en una organización",
+      "items": [
+        {
+          "text": "An internship in an area you have not studied much",
+          "text_es": "Una pasantía en un área que hayas estudiado poco"
+        },
+        {
+          "text": "Learn to run a meeting that ends in a decision",
+          "text_es": "Aprende a llevar una reunión que termine en una decisión"
+        },
+        {
+          "text": "Choose a specialisation. Generalist is a later stage",
+          "text_es": "Elige una especialización. Generalista es una etapa posterior"
+        }
+      ]
+    }
+  },
+  "c57": {
+    "foundations": {
+      "title": "An audience, and what moves it",
+      "title_es": "Una audiencia, y qué la mueve",
+      "items": [
+        {
+          "text": "Segmentation and positioning, before any channel",
+          "text_es": "Segmentación y posicionamiento, antes que cualquier canal"
+        },
+        {
+          "text": "Consumer behaviour and basic psychology",
+          "text_es": "Comportamiento del consumidor y psicología básica"
+        },
+        {
+          "text": "Metrics: reach, conversion, cost per acquisition",
+          "text_es": "Métricas: alcance, conversión, coste por adquisición"
+        },
+        {
+          "text": "Write well. Most of marketing is writing",
+          "text_es": "Escribe bien. Casi todo el marketing es escribir"
+        }
+      ]
+    },
+    "project": {
+      "title": "A campaign with numbers",
+      "title_es": "Una campaña con números",
+      "items": [
+        {
+          "text": "Run a real campaign with a small budget",
+          "text_es": "Lanza una campaña real con presupuesto pequeño"
+        },
+        {
+          "text": "Set the success metric before you launch",
+          "text_es": "Define la métrica de éxito antes de lanzar"
+        },
+        {
+          "text": "A/B test something and let the data win the argument",
+          "text_es": "Prueba A/B algo y deja que los datos ganen la discusión"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Tools and portfolio",
+      "title_es": "Herramientas y portafolio",
+      "items": [
+        {
+          "text": "Google Analytics and Meta Ads certifications are free",
+          "text_es": "Las certificaciones de Google Analytics y Meta Ads son gratis"
+        },
+        {
+          "text": "A portfolio of campaigns with their real results",
+          "text_es": "Un portafolio de campañas con sus resultados reales"
+        },
+        {
+          "text": "Learn to say what did not work and why",
+          "text_es": "Aprende a decir qué no funcionó y por qué"
+        }
+      ]
+    }
+  },
+  "c58": {
+    "foundations": {
+      "title": "Scope, time and people",
+      "title_es": "Alcance, tiempo y personas",
+      "items": [
+        {
+          "text": "Scope definition: most failures start with a vague scope",
+          "text_es": "Definición de alcance: casi todo fallo empieza con un alcance vago"
+        },
+        {
+          "text": "Scheduling and critical path",
+          "text_es": "Programación y ruta crítica"
+        },
+        {
+          "text": "Risk management: naming what could go wrong beforehand",
+          "text_es": "Gestión de riesgos: nombrar de antemano lo que puede salir mal"
+        },
+        {
+          "text": "Agile and waterfall — when each one fits",
+          "text_es": "Ágil y cascada: cuándo encaja cada uno"
+        }
+      ]
+    },
+    "project": {
+      "title": "Deliver something on a deadline",
+      "title_es": "Entregar algo en plazo",
+      "items": [
+        {
+          "text": "Run a real project with more than one person involved",
+          "text_es": "Lleva un proyecto real con más de una persona involucrada"
+        },
+        {
+          "text": "Keep a risk log and update it weekly",
+          "text_es": "Lleva un registro de riesgos y actualízalo cada semana"
+        },
+        {
+          "text": "Write a retrospective: what you would do differently",
+          "text_es": "Escribe una retrospectiva: qué harías distinto"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Certification and practice",
+      "title_es": "Certificación y práctica",
+      "items": [
+        {
+          "text": "Scrum Master or PMP, once you have real experience",
+          "text_es": "Scrum Master o PMP, cuando tengas experiencia real"
+        },
+        {
+          "text": "Learn to say no to scope without losing the client",
+          "text_es": "Aprende a decir que no al alcance sin perder al cliente"
+        },
+        {
+          "text": "Practise reporting bad news early",
+          "text_es": "Practica dar malas noticias pronto"
+        }
+      ]
+    }
+  },
+  "c59": {
+    "foundations": {
+      "title": "Things moving through space and time",
+      "title_es": "Cosas moviéndose por el espacio y el tiempo",
+      "items": [
+        {
+          "text": "Inventory management and demand forecasting",
+          "text_es": "Gestión de inventario y pronóstico de demanda"
+        },
+        {
+          "text": "Transport, warehousing and distribution",
+          "text_es": "Transporte, almacenamiento y distribución"
+        },
+        {
+          "text": "Statistics and operations research",
+          "text_es": "Estadística e investigación de operaciones"
+        },
+        {
+          "text": "Excel and one ERP system",
+          "text_es": "Excel y un sistema ERP"
+        }
+      ]
+    },
+    "project": {
+      "title": "Optimise a real flow",
+      "title_es": "Optimizar un flujo real",
+      "items": [
+        {
+          "text": "Map an existing supply chain, however small",
+          "text_es": "Mapea una cadena existente, por pequeña que sea"
+        },
+        {
+          "text": "Find where cost accumulates and quantify it",
+          "text_es": "Encuentra dónde se acumula el coste y cuantifícalo"
+        },
+        {
+          "text": "Simulate a disruption and plan the response",
+          "text_es": "Simula una interrupción y planea la respuesta"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Warehouse and route",
+      "title_es": "Almacén y ruta",
+      "items": [
+        {
+          "text": "Spend time in a real warehouse. Theory looks different there",
+          "text_es": "Pasa tiempo en un almacén real. La teoría se ve distinta ahí"
+        },
+        {
+          "text": "International trade and customs, if you want the global side",
+          "text_es": "Comercio internacional y aduanas, si quieres el lado global"
+        },
+        {
+          "text": "Learn the sustainability angle: logistics is a big emitter",
+          "text_es": "Aprende el ángulo de sostenibilidad: la logística emite mucho"
+        }
+      ]
+    }
+  },
+  "c60": {
+    "foundations": {
+      "title": "The experience is the product",
+      "title_es": "La experiencia es el producto",
+      "items": [
+        {
+          "text": "Hotel and food service operations",
+          "text_es": "Operaciones hoteleras y de alimentos y bebidas"
+        },
+        {
+          "text": "Revenue management: pricing that changes by the day",
+          "text_es": "Revenue management: precios que cambian a diario"
+        },
+        {
+          "text": "Languages. This industry runs on them",
+          "text_es": "Idiomas. Esta industria funciona con ellos"
+        },
+        {
+          "text": "Service standards and complaint handling",
+          "text_es": "Estándares de servicio y manejo de quejas"
+        }
+      ]
+    },
+    "project": {
+      "title": "Work a real shift",
+      "title_es": "Trabajar un turno real",
+      "items": [
+        {
+          "text": "Work front desk, service or events, for real hours",
+          "text_es": "Trabaja recepción, servicio o eventos, horas de verdad"
+        },
+        {
+          "text": "Handle a complaint start to finish and record what worked",
+          "text_es": "Maneja una queja de principio a fin y anota qué funcionó"
+        },
+        {
+          "text": "Organise an event with a budget and a guest count",
+          "text_es": "Organiza un evento con presupuesto y número de invitados"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Industry and hours",
+      "title_es": "Industria y horarios",
+      "items": [
+        {
+          "text": "Understand the schedule: weekends and holidays are the busy days",
+          "text_es": "Entiende el horario: fines de semana y festivos son los días fuertes"
+        },
+        {
+          "text": "Specialise: hotels, restaurants, events, tour operations",
+          "text_es": "Especialízate: hoteles, restaurantes, eventos, operación turística"
+        },
+        {
+          "text": "Learn the digital side: reviews and channels drive occupancy",
+          "text_es": "Aprende el lado digital: reseñas y canales mueven la ocupación"
+        }
+      ]
+    }
+  },
+  "c70": {
+    "foundations": {
+      "title": "What to build, and why not the rest",
+      "title_es": "Qué construir, y por qué no lo demás",
+      "items": [
+        {
+          "text": "User research and problem discovery",
+          "text_es": "Investigación de usuarios y descubrimiento del problema"
+        },
+        {
+          "text": "Metrics: how you will know it worked",
+          "text_es": "Métricas: cómo sabrás que funcionó"
+        },
+        {
+          "text": "Enough technical fluency to talk to engineers",
+          "text_es": "La soltura técnica suficiente para hablar con ingeniería"
+        },
+        {
+          "text": "Prioritisation: saying no is the actual job",
+          "text_es": "Priorización: decir que no es el trabajo de verdad"
+        }
+      ]
+    },
+    "project": {
+      "title": "Ship something and measure it",
+      "title_es": "Lanzar algo y medirlo",
+      "items": [
+        {
+          "text": "Take a product from problem to launch, however small",
+          "text_es": "Lleva un producto del problema al lanzamiento, por pequeño que sea"
+        },
+        {
+          "text": "Write the spec before building, and keep it honest",
+          "text_es": "Escribe la especificación antes de construir, y mantenla honesta"
+        },
+        {
+          "text": "Measure adoption and be willing to call it a failure",
+          "text_es": "Mide la adopción y ten la disposición de llamarlo fracaso"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Into a team",
+      "title_es": "Entrar en un equipo",
+      "items": [
+        {
+          "text": "Work alongside engineers and designers, not above them",
+          "text_es": "Trabaja al lado de ingeniería y diseño, no por encima"
+        },
+        {
+          "text": "Practise presenting a roadmap and defending the cuts",
+          "text_es": "Practica presentar un roadmap y defender los recortes"
+        },
+        {
+          "text": "Learn SQL: you should not need someone else for a number",
+          "text_es": "Aprende SQL: no deberías depender de otro para un número"
+        }
+      ]
+    }
+  },
+  "c71": {
+    "foundations": {
+      "title": "The funnel, end to end",
+      "title_es": "El embudo, de principio a fin",
+      "items": [
+        {
+          "text": "Conversion: where people leave, and why",
+          "text_es": "Conversión: dónde se va la gente, y por qué"
+        },
+        {
+          "text": "Digital marketing: paid, organic, email",
+          "text_es": "Marketing digital: pago, orgánico, correo"
+        },
+        {
+          "text": "Payments, logistics and returns — the unglamorous half",
+          "text_es": "Pagos, logística y devoluciones: la mitad poco glamurosa"
+        },
+        {
+          "text": "Analytics and attribution",
+          "text_es": "Analítica y atribución"
+        }
+      ]
+    },
+    "project": {
+      "title": "A store that actually sells",
+      "title_es": "Una tienda que venda de verdad",
+      "items": [
+        {
+          "text": "Build a store on Shopify or WooCommerce and sell one thing",
+          "text_es": "Monta una tienda en Shopify o WooCommerce y vende una cosa"
+        },
+        {
+          "text": "Improve one step of the funnel and measure the change",
+          "text_es": "Mejora un paso del embudo y mide el cambio"
+        },
+        {
+          "text": "Handle a real return and learn what it costs you",
+          "text_es": "Gestiona una devolución real y aprende lo que te cuesta"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Scale and margin",
+      "title_es": "Escala y margen",
+      "items": [
+        {
+          "text": "Know your margin per product before scaling anything",
+          "text_es": "Conoce tu margen por producto antes de escalar nada"
+        },
+        {
+          "text": "Marketplaces versus your own store: the trade-off",
+          "text_es": "Marketplaces frente a tienda propia: el intercambio"
+        },
+        {
+          "text": "Consumer protection law where you sell",
+          "text_es": "Ley de protección al consumidor donde vendas"
+        }
+      ]
+    }
+  },
+  "c72": {
+    "foundations": {
+      "title": "Diagnosing someone else's problem",
+      "title_es": "Diagnosticar el problema de otro",
+      "items": [
+        {
+          "text": "Structured problem solving: break it into parts that add up",
+          "text_es": "Resolución estructurada: parte el problema en piezas que sumen"
+        },
+        {
+          "text": "Financial and market analysis",
+          "text_es": "Análisis financiero y de mercado"
+        },
+        {
+          "text": "Interviewing: the client rarely states the real problem first",
+          "text_es": "Entrevistar: el cliente rara vez dice el problema real primero"
+        },
+        {
+          "text": "Slide craft — the recommendation has to land",
+          "text_es": "Oficio de presentaciones: la recomendación tiene que aterrizar"
+        }
+      ]
+    },
+    "project": {
+      "title": "A real case",
+      "title_es": "Un caso real",
+      "items": [
+        {
+          "text": "Take a real business and diagnose one problem end to end",
+          "text_es": "Coge un negocio real y diagnostica un problema de punta a punta"
+        },
+        {
+          "text": "Quantify your recommendation. Advice without numbers is opinion",
+          "text_es": "Cuantifica tu recomendación. El consejo sin números es opinión"
+        },
+        {
+          "text": "Present to the person who would have to do it",
+          "text_es": "Preséntalo a quien tendría que ejecutarlo"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Into consulting",
+      "title_es": "Entrar en consultoría",
+      "items": [
+        {
+          "text": "Case interview practice, out loud, with someone else",
+          "text_es": "Practica entrevistas de caso, en voz alta, con alguien"
+        },
+        {
+          "text": "Understand the hours before you commit to the industry",
+          "text_es": "Entiende los horarios antes de comprometerte con la industria"
+        },
+        {
+          "text": "Build one area of genuine expertise, not general advice",
+          "text_es": "Construye un área de experiencia real, no consejo genérico"
+        }
+      ]
+    }
+  },
+  "c38": {
+    "foundations": {
+      "title": "Camera, sound and edit",
+      "title_es": "Cámara, sonido y montaje",
+      "items": [
+        {
+          "text": "Exposure, framing and lighting",
+          "text_es": "Exposición, encuadre e iluminación"
+        },
+        {
+          "text": "Sound. Bad audio kills good picture, never the reverse",
+          "text_es": "Sonido. El mal audio mata la buena imagen, nunca al revés"
+        },
+        {
+          "text": "Editing in Premiere, DaVinci or Final Cut",
+          "text_es": "Montaje en Premiere, DaVinci o Final Cut"
+        },
+        {
+          "text": "Each platform has its own grammar. Learn one properly",
+          "text_es": "Cada plataforma tiene su gramática. Aprende una bien"
+        }
+      ]
+    },
+    "project": {
+      "title": "Publish on a schedule",
+      "title_es": "Publicar con un ritmo",
+      "items": [
+        {
+          "text": "Produce and publish consistently for two months",
+          "text_es": "Produce y publica con constancia durante dos meses"
+        },
+        {
+          "text": "Read your retention curve and find where people leave",
+          "text_es": "Lee tu curva de retención y encuentra dónde se va la gente"
+        },
+        {
+          "text": "Shoot something with a plan, not only with a camera",
+          "text_es": "Rueda algo con un plan, no solo con una cámara"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Portfolio and clients",
+      "title_es": "Portafolio y clientes",
+      "items": [
+        {
+          "text": "A reel of your best work, ninety seconds maximum",
+          "text_es": "Un reel con tu mejor trabajo, noventa segundos como mucho"
+        },
+        {
+          "text": "Learn to quote a job: hours, equipment, licensing",
+          "text_es": "Aprende a cotizar un trabajo: horas, equipo, licencias"
+        },
+        {
+          "text": "Copyright and music licensing — this gets people sued",
+          "text_es": "Derechos de autor y licencias musicales: esto acaba en demandas"
+        }
+      ]
+    }
+  },
+  "c48": {
+    "foundations": {
+      "title": "Verify before you publish",
+      "title_es": "Verificar antes de publicar",
+      "items": [
+        {
+          "text": "Writing: clear, short, and structured for a reader in a hurry",
+          "text_es": "Escritura: clara, corta y estructurada para quien tiene prisa"
+        },
+        {
+          "text": "Verification: two independent sources, always",
+          "text_es": "Verificación: dos fuentes independientes, siempre"
+        },
+        {
+          "text": "Media law and ethics where you live",
+          "text_es": "Derecho y ética de los medios en tu país"
+        },
+        {
+          "text": "Interviewing: preparing so the answer surprises you",
+          "text_es": "Entrevistar: prepararte para que la respuesta te sorprenda"
+        }
+      ]
+    },
+    "project": {
+      "title": "Publish something real",
+      "title_es": "Publicar algo real",
+      "items": [
+        {
+          "text": "Report a local story nobody else has covered",
+          "text_es": "Cubre una historia local que nadie más haya contado"
+        },
+        {
+          "text": "Use a public records request. It is a right, use it",
+          "text_es": "Usa una petición de información pública. Es un derecho, úsalo"
+        },
+        {
+          "text": "Get it published somewhere with an editor",
+          "text_es": "Publícalo en algún sitio que tenga editor"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Beat and safety",
+      "title_es": "Fuente y seguridad",
+      "items": [
+        {
+          "text": "Choose a beat and go deep instead of wide",
+          "text_es": "Elige una fuente y ve a fondo en vez de a lo ancho"
+        },
+        {
+          "text": "Learn data journalism: spreadsheets find stories",
+          "text_es": "Aprende periodismo de datos: las hojas de cálculo encuentran historias"
+        },
+        {
+          "text": "Source protection and your own safety",
+          "text_es": "Protección de fuentes y tu propia seguridad"
+        }
+      ]
+    }
+  },
+  "c73": {
+    "foundations": {
+      "title": "What a brand means to someone",
+      "title_es": "Qué significa una marca para alguien",
+      "items": [
+        {
+          "text": "Brand strategy: positioning before execution",
+          "text_es": "Estrategia de marca: posicionamiento antes que ejecución"
+        },
+        {
+          "text": "Copywriting — the idea lives or dies in the words",
+          "text_es": "Redacción publicitaria: la idea vive o muere en las palabras"
+        },
+        {
+          "text": "Consumer insight, gathered rather than assumed",
+          "text_es": "Insight del consumidor, recogido en vez de supuesto"
+        },
+        {
+          "text": "Media planning: where the message meets the person",
+          "text_es": "Planificación de medios: dónde el mensaje encuentra a la persona"
+        }
+      ]
+    },
+    "project": {
+      "title": "A campaign from brief to piece",
+      "title_es": "Una campaña del brief a la pieza",
+      "items": [
+        {
+          "text": "Write a real brief, then answer it with three routes",
+          "text_es": "Escribe un brief real, y respóndelo con tres rutas"
+        },
+        {
+          "text": "Produce at least one piece properly finished",
+          "text_es": "Produce al menos una pieza bien terminada"
+        },
+        {
+          "text": "Defend the idea to someone who does not like it",
+          "text_es": "Defiende la idea ante alguien a quien no le guste"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Agency and portfolio",
+      "title_es": "Agencia y portafolio",
+      "items": [
+        {
+          "text": "A book with ideas, not decoration",
+          "text_es": "Un book con ideas, no decoración"
+        },
+        {
+          "text": "Advertising regulation: what you legally cannot claim",
+          "text_es": "Regulación publicitaria: qué no puedes afirmar legalmente"
+        },
+        {
+          "text": "Internship in an agency to see how a pitch really works",
+          "text_es": "Pasantía en agencia para ver cómo funciona un pitch de verdad"
+        }
+      ]
+    }
+  },
+  "c14": {
+    "foundations": {
+      "title": "Putting a number on uncertainty",
+      "title_es": "Ponerle número a la incertidumbre",
+      "items": [
+        {
+          "text": "Probability and stochastic processes",
+          "text_es": "Probabilidad y procesos estocásticos"
+        },
+        {
+          "text": "Financial mathematics: interest, annuities, present value",
+          "text_es": "Matemática financiera: interés, anualidades, valor presente"
+        },
+        {
+          "text": "Survival models and mortality tables",
+          "text_es": "Modelos de supervivencia y tablas de mortalidad"
+        },
+        {
+          "text": "R or Python for the modelling",
+          "text_es": "R o Python para el modelado"
+        }
+      ]
+    },
+    "project": {
+      "title": "Price a risk",
+      "title_es": "Tarificar un riesgo",
+      "items": [
+        {
+          "text": "Build a pricing model for a simple insurance product",
+          "text_es": "Construye un modelo de tarificación para un producto simple"
+        },
+        {
+          "text": "Work with real claims data and its messiness",
+          "text_es": "Trabaja con datos reales de siniestros y su desorden"
+        },
+        {
+          "text": "Test what happens when your assumption is wrong",
+          "text_es": "Prueba qué pasa cuando tu supuesto es falso"
+        }
+      ]
+    },
+    "launch": {
+      "title": "The exams",
+      "title_es": "Los exámenes",
+      "items": [
+        {
+          "text": "The professional exams are the career. Start early",
+          "text_es": "Los exámenes profesionales son la carrera. Empieza pronto"
+        },
+        {
+          "text": "An internship in insurance or pensions",
+          "text_es": "Una pasantía en seguros o pensiones"
+        },
+        {
+          "text": "Learn to explain a model to someone who will not read it",
+          "text_es": "Aprende a explicar un modelo a quien no va a leerlo"
+        }
+      ]
+    }
+  },
+  "c15": {
+    "foundations": {
+      "title": "How to collect, and what you may claim",
+      "title_es": "Cómo recoger, y qué puedes afirmar",
+      "items": [
+        {
+          "text": "Probability and inference",
+          "text_es": "Probabilidad e inferencia"
+        },
+        {
+          "text": "Experimental design and sampling",
+          "text_es": "Diseño experimental y muestreo"
+        },
+        {
+          "text": "Regression and its assumptions — especially the assumptions",
+          "text_es": "Regresión y sus supuestos, sobre todo los supuestos"
+        },
+        {
+          "text": "R or Python, fluently",
+          "text_es": "R o Python, con soltura"
+        }
+      ]
+    },
+    "project": {
+      "title": "An analysis you can defend",
+      "title_es": "Un análisis que puedas defender",
+      "items": [
+        {
+          "text": "Design the collection before touching any data",
+          "text_es": "Diseña la recolección antes de tocar ningún dato"
+        },
+        {
+          "text": "Analyse a real dataset and report the uncertainty",
+          "text_es": "Analiza un dataset real y reporta la incertidumbre"
+        },
+        {
+          "text": "Find a published statistic that is wrong, and show why",
+          "text_es": "Encuentra una estadística publicada que esté mal, y demuestra por qué"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Applied work",
+      "title_es": "Trabajo aplicado",
+      "items": [
+        {
+          "text": "Choose a domain: health, social, industry, sport",
+          "text_es": "Elige un dominio: salud, social, industria, deporte"
+        },
+        {
+          "text": "Learn to visualise honestly — no truncated axes",
+          "text_es": "Aprende a visualizar con honestidad: sin ejes truncados"
+        },
+        {
+          "text": "Statistical consulting: work with a researcher on their data",
+          "text_es": "Consultoría estadística: trabaja con un investigador sobre sus datos"
+        }
+      ]
+    }
+  },
+  "c56": {
+    "foundations": {
+      "title": "Value, risk and time",
+      "title_es": "Valor, riesgo y tiempo",
+      "items": [
+        {
+          "text": "Financial accounting: read the three statements",
+          "text_es": "Contabilidad financiera: lee los tres estados"
+        },
+        {
+          "text": "Valuation: discounted cash flow and multiples",
+          "text_es": "Valoración: flujo de caja descontado y múltiplos"
+        },
+        {
+          "text": "Portfolio theory and risk",
+          "text_es": "Teoría de portafolio y riesgo"
+        },
+        {
+          "text": "Excel modelling, to a professional standard",
+          "text_es": "Modelado en Excel, a nivel profesional"
+        }
+      ]
+    },
+    "project": {
+      "title": "Value a real company",
+      "title_es": "Valorar una empresa real",
+      "items": [
+        {
+          "text": "Build a full valuation model of a listed company",
+          "text_es": "Construye un modelo de valoración completo de una cotizada"
+        },
+        {
+          "text": "Write the investment thesis in one page",
+          "text_es": "Escribe la tesis de inversión en una página"
+        },
+        {
+          "text": "Track a paper portfolio and record why each decision was made",
+          "text_es": "Lleva un portafolio en papel y anota por qué tomaste cada decisión"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Certification and markets",
+      "title_es": "Certificación y mercados",
+      "items": [
+        {
+          "text": "CFA level I once you have the foundations",
+          "text_es": "CFA nivel I cuando tengas los fundamentos"
+        },
+        {
+          "text": "Understand regulation and conflicts of interest",
+          "text_es": "Entiende la regulación y los conflictos de interés"
+        },
+        {
+          "text": "Learn to be wrong in public without freezing",
+          "text_es": "Aprende a equivocarte en público sin bloquearte"
+        }
+      ]
+    }
+  },
+  "c37": {
+    "foundations": {
+      "title": "Movement, frame by frame",
+      "title_es": "El movimiento, cuadro a cuadro",
+      "items": [
+        {
+          "text": "The twelve principles of animation. All of them",
+          "text_es": "Los doce principios de la animación. Todos"
+        },
+        {
+          "text": "Drawing and gesture, even for 3D",
+          "text_es": "Dibujo y gesto, incluso para 3D"
+        },
+        {
+          "text": "Timing and spacing: this is where life comes from",
+          "text_es": "Timing y espaciado: de aquí sale la vida"
+        },
+        {
+          "text": "A tool: After Effects, Blender or Toon Boom",
+          "text_es": "Una herramienta: After Effects, Blender o Toon Boom"
+        }
+      ]
+    },
+    "project": {
+      "title": "Animate something short and finish it",
+      "title_es": "Animar algo corto y terminarlo",
+      "items": [
+        {
+          "text": "A ten-second piece, polished, beats a minute abandoned",
+          "text_es": "Diez segundos pulidos ganan a un minuto abandonado"
+        },
+        {
+          "text": "Animate a bouncing ball until it feels like it has weight",
+          "text_es": "Anima una pelota que rebota hasta que se sienta con peso"
+        },
+        {
+          "text": "Get feedback from an animator, not from friends",
+          "text_es": "Pide crítica a un animador, no a amigos"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Reel and studio",
+      "title_es": "Reel y estudio",
+      "items": [
+        {
+          "text": "A reel of thirty to sixty seconds. Best work first",
+          "text_es": "Un reel de treinta a sesenta segundos. Lo mejor primero"
+        },
+        {
+          "text": "Learn the pipeline: nobody animates alone in a studio",
+          "text_es": "Aprende la tubería: en un estudio nadie anima solo"
+        },
+        {
+          "text": "Specialise: character, motion graphics, effects",
+          "text_es": "Especialízate: personaje, motion graphics, efectos"
+        }
+      ]
+    }
+  },
+  "c39": {
+    "foundations": {
+      "title": "Ear, theory and the room",
+      "title_es": "Oído, teoría y la sala",
+      "items": [
+        {
+          "text": "Music theory: harmony, rhythm, arrangement",
+          "text_es": "Teoría musical: armonía, ritmo, arreglo"
+        },
+        {
+          "text": "A DAW properly: Ableton, Logic or FL Studio",
+          "text_es": "Un DAW en serio: Ableton, Logic o FL Studio"
+        },
+        {
+          "text": "Acoustics and signal flow",
+          "text_es": "Acústica y flujo de señal"
+        },
+        {
+          "text": "Train your ear. It is the instrument you cannot replace",
+          "text_es": "Entrena el oído. Es el instrumento que no puedes reemplazar"
+        }
+      ]
+    },
+    "project": {
+      "title": "Finish and release tracks",
+      "title_es": "Terminar y publicar temas",
+      "items": [
+        {
+          "text": "Finish ten tracks. Finished, not perfect",
+          "text_es": "Termina diez temas. Terminados, no perfectos"
+        },
+        {
+          "text": "Record someone else and serve their idea, not yours",
+          "text_es": "Graba a otra persona y sirve a su idea, no a la tuya"
+        },
+        {
+          "text": "Get one mastered properly and hear the difference",
+          "text_es": "Consigue que masterizen uno bien y escucha la diferencia"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Release and rights",
+      "title_es": "Publicar y derechos",
+      "items": [
+        {
+          "text": "Publish on streaming platforms and learn how royalties work",
+          "text_es": "Publica en plataformas y aprende cómo funcionan las regalías"
+        },
+        {
+          "text": "Register your works. Rights are the income",
+          "text_es": "Registra tus obras. Los derechos son el ingreso"
+        },
+        {
+          "text": "Collaborate. This industry runs on who you have worked with",
+          "text_es": "Colabora. Esta industria funciona con quién has trabajado"
+        }
+      ]
+    }
+  },
+  "c40": {
+    "foundations": {
+      "title": "Story before camera",
+      "title_es": "La historia antes que la cámara",
+      "items": [
+        {
+          "text": "Narrative structure and screenwriting",
+          "text_es": "Estructura narrativa y guion"
+        },
+        {
+          "text": "Visual language: shot, framing, continuity",
+          "text_es": "Lenguaje visual: plano, encuadre, continuidad"
+        },
+        {
+          "text": "Directing actors — most of the job on the day",
+          "text_es": "Dirección de actores: la mayor parte del trabajo el día del rodaje"
+        },
+        {
+          "text": "Watch films with the sound off, then only the sound",
+          "text_es": "Mira películas sin sonido, luego solo el sonido"
+        }
+      ]
+    },
+    "project": {
+      "title": "Direct something with a crew",
+      "title_es": "Dirigir algo con un equipo",
+      "items": [
+        {
+          "text": "A short film, however small, with people you have to lead",
+          "text_es": "Un cortometraje, por pequeño que sea, con gente a la que dirigir"
+        },
+        {
+          "text": "Storyboard and shot list before the day",
+          "text_es": "Storyboard y plan de rodaje antes del día"
+        },
+        {
+          "text": "Screen it for strangers and watch their faces",
+          "text_es": "Proyéctalo ante desconocidos y mírales la cara"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Festivals and crew",
+      "title_es": "Festivales y equipo",
+      "items": [
+        {
+          "text": "Submit to festivals. Rejection is part of the process",
+          "text_es": "Manda a festivales. El rechazo es parte del proceso"
+        },
+        {
+          "text": "Work in other roles on other people's sets",
+          "text_es": "Trabaja en otros puestos en rodajes ajenos"
+        },
+        {
+          "text": "Learn production: schedules, budgets, permits",
+          "text_es": "Aprende producción: planes, presupuestos, permisos"
+        }
+      ]
+    }
+  },
+  "c43": {
+    "foundations": {
+      "title": "Read like a writer",
+      "title_es": "Leer como quien escribe",
+      "items": [
+        {
+          "text": "Read widely and analyse how it was built",
+          "text_es": "Lee mucho y analiza cómo está construido"
+        },
+        {
+          "text": "Narrative structure, point of view, voice",
+          "text_es": "Estructura narrativa, punto de vista, voz"
+        },
+        {
+          "text": "Write daily. Volume comes before quality",
+          "text_es": "Escribe a diario. El volumen va antes que la calidad"
+        },
+        {
+          "text": "Learn to cut. Most improvement is deletion",
+          "text_es": "Aprende a cortar. Casi toda mejora es borrar"
+        }
+      ]
+    },
+    "project": {
+      "title": "Finish and be read",
+      "title_es": "Terminar y ser leído",
+      "items": [
+        {
+          "text": "Finish a complete piece: story, essay, chapter",
+          "text_es": "Termina una pieza completa: cuento, ensayo, capítulo"
+        },
+        {
+          "text": "A workshop where people you do not know critique it",
+          "text_es": "Un taller donde te critique gente que no conoces"
+        },
+        {
+          "text": "Rewrite it after the critique. That is where the work is",
+          "text_es": "Reescríbelo tras la crítica. Ahí está el trabajo"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Publishing",
+      "title_es": "Publicar",
+      "items": [
+        {
+          "text": "Submit to magazines and competitions. Expect rejection",
+          "text_es": "Manda a revistas y concursos. Cuenta con el rechazo"
+        },
+        {
+          "text": "Learn how the publishing industry actually works",
+          "text_es": "Aprende cómo funciona de verdad la industria editorial"
+        },
+        {
+          "text": "Most writers have another income. Plan for it honestly",
+          "text_es": "Casi todo escritor tiene otro ingreso. Planéalo con honestidad"
+        }
+      ]
+    }
+  },
+  "c44": {
+    "foundations": {
+      "title": "Light, and deciding when",
+      "title_es": "La luz, y decidir cuándo",
+      "items": [
+        {
+          "text": "The exposure triangle until it is automatic",
+          "text_es": "El triángulo de exposición hasta que sea automático"
+        },
+        {
+          "text": "Composition and how the eye moves through a frame",
+          "text_es": "Composición y cómo se mueve el ojo por un encuadre"
+        },
+        {
+          "text": "Natural and artificial lighting",
+          "text_es": "Iluminación natural y artificial"
+        },
+        {
+          "text": "Editing in Lightroom or Capture One",
+          "text_es": "Edición en Lightroom o Capture One"
+        }
+      ]
+    },
+    "project": {
+      "title": "A body of work, not photographs",
+      "title_es": "Un cuerpo de trabajo, no fotos",
+      "items": [
+        {
+          "text": "Shoot one subject for a month, every day",
+          "text_es": "Fotografía un solo tema durante un mes, todos los días"
+        },
+        {
+          "text": "Edit down to ten images that hold together",
+          "text_es": "Reduce a diez imágenes que se sostengan juntas"
+        },
+        {
+          "text": "Print something. Screens are forgiving; paper is not",
+          "text_es": "Imprime algo. La pantalla perdona; el papel no"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Clients and rights",
+      "title_es": "Clientes y derechos",
+      "items": [
+        {
+          "text": "A portfolio in one genre, not a bit of everything",
+          "text_es": "Un portafolio de un género, no un poco de todo"
+        },
+        {
+          "text": "Learn to price a shoot and write a usage licence",
+          "text_es": "Aprende a cotizar una sesión y a escribir una licencia de uso"
+        },
+        {
+          "text": "Model releases and image rights",
+          "text_es": "Cesión de derechos de imagen"
+        }
+      ]
+    }
+  },
+  "c8": {
+    "foundations": {
+      "title": "Behaviour, measured",
+      "title_es": "El comportamiento, medido",
+      "items": [
+        {
+          "text": "General, developmental and social psychology",
+          "text_es": "Psicología general, del desarrollo y social"
+        },
+        {
+          "text": "Statistics and research methods — this is a science",
+          "text_es": "Estadística y métodos de investigación: esto es una ciencia"
+        },
+        {
+          "text": "Neuroscience basics",
+          "text_es": "Fundamentos de neurociencia"
+        },
+        {
+          "text": "Learn which popular claims have no evidence behind them",
+          "text_es": "Aprende qué afirmaciones populares no tienen evidencia detrás"
+        }
+      ]
+    },
+    "project": {
+      "title": "Observe and measure",
+      "title_es": "Observar y medir",
+      "items": [
+        {
+          "text": "Design and run a small study with real participants",
+          "text_es": "Diseña y ejecuta un estudio pequeño con participantes reales"
+        },
+        {
+          "text": "Apply a standardised instrument and interpret it correctly",
+          "text_es": "Aplica un instrumento estandarizado e interprétalo bien"
+        },
+        {
+          "text": "Practise active listening until silence stops being uncomfortable",
+          "text_es": "Practica escucha activa hasta que el silencio deje de incomodar"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Choosing your branch",
+      "title_es": "Elegir tu rama",
+      "items": [
+        {
+          "text": "Clinical, organisational, educational, research — very different jobs",
+          "text_es": "Clínica, organizacional, educativa, investigación: trabajos muy distintos"
+        },
+        {
+          "text": "Supervised hours before seeing anyone alone",
+          "text_es": "Horas supervisadas antes de atender a nadie solo"
+        },
+        {
+          "text": "Your own therapy. You cannot hold what you have not looked at",
+          "text_es": "Tu propia terapia. No puedes sostener lo que no has mirado"
+        }
+      ]
+    }
+  },
+  "c49": {
+    "foundations": {
+      "title": "Systems, rights and resources",
+      "title_es": "Sistemas, derechos y recursos",
+      "items": [
+        {
+          "text": "Social policy and the rights people actually have",
+          "text_es": "Política social y los derechos que la gente tiene de verdad"
+        },
+        {
+          "text": "Case work and intervention methods",
+          "text_es": "Trabajo de caso y métodos de intervención"
+        },
+        {
+          "text": "Know the resource map of your own city",
+          "text_es": "Conoce el mapa de recursos de tu propia ciudad"
+        },
+        {
+          "text": "Interviewing in crisis situations",
+          "text_es": "Entrevista en situaciones de crisis"
+        }
+      ]
+    },
+    "project": {
+      "title": "Work with real people",
+      "title_es": "Trabajar con personas reales",
+      "items": [
+        {
+          "text": "Field practice with an organisation, supervised",
+          "text_es": "Práctica de campo con una organización, supervisada"
+        },
+        {
+          "text": "Follow one case through and document it properly",
+          "text_es": "Sigue un caso hasta el final y documéntalo bien"
+        },
+        {
+          "text": "Connect someone with a resource that actually exists",
+          "text_es": "Conecta a alguien con un recurso que exista de verdad"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Practice and boundaries",
+      "title_es": "Ejercicio y límites",
+      "items": [
+        {
+          "text": "Learn where your role ends. You cannot carry everything",
+          "text_es": "Aprende dónde acaba tu papel. No puedes con todo"
+        },
+        {
+          "text": "Supervision and self-care are professional requirements here",
+          "text_es": "La supervisión y el autocuidado son requisitos profesionales aquí"
+        },
+        {
+          "text": "Specialise: childhood, health, community, justice",
+          "text_es": "Especialízate: infancia, salud, comunidad, justicia"
+        }
+      ]
+    }
+  },
+  "c50": {
+    "foundations": {
+      "title": "Why societies do what they do",
+      "title_es": "Por qué las sociedades hacen lo que hacen",
+      "items": [
+        {
+          "text": "Classical and contemporary sociological theory",
+          "text_es": "Teoría sociológica clásica y contemporánea"
+        },
+        {
+          "text": "Quantitative and qualitative methods, both",
+          "text_es": "Métodos cuantitativos y cualitativos, los dos"
+        },
+        {
+          "text": "Statistics and survey analysis",
+          "text_es": "Estadística y análisis de encuestas"
+        },
+        {
+          "text": "Read your own country's social data",
+          "text_es": "Lee los datos sociales de tu propio país"
+        }
+      ]
+    },
+    "project": {
+      "title": "Research something local",
+      "title_es": "Investigar algo local",
+      "items": [
+        {
+          "text": "Study a phenomenon in your own city with a real method",
+          "text_es": "Estudia un fenómeno de tu ciudad con un método real"
+        },
+        {
+          "text": "Interview people whose views you do not share",
+          "text_es": "Entrevista a personas con opiniones que no compartes"
+        },
+        {
+          "text": "Write it up with the limitations stated",
+          "text_es": "Escríbelo con las limitaciones dichas"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Applied work",
+      "title_es": "Trabajo aplicado",
+      "items": [
+        {
+          "text": "Research, public policy, market research, NGOs",
+          "text_es": "Investigación, política pública, estudios de mercado, ONG"
+        },
+        {
+          "text": "Learn a statistical tool: R, SPSS or Stata",
+          "text_es": "Aprende una herramienta estadística: R, SPSS o Stata"
+        },
+        {
+          "text": "Practise writing for people outside the discipline",
+          "text_es": "Practica escribir para gente de fuera de la disciplina"
+        }
+      ]
+    }
+  },
+  "c51": {
+    "foundations": {
+      "title": "Cultures, from the inside",
+      "title_es": "Culturas, desde dentro",
+      "items": [
+        {
+          "text": "Anthropological theory and its own history",
+          "text_es": "Teoría antropológica y su propia historia"
+        },
+        {
+          "text": "Ethnographic method and participant observation",
+          "text_es": "Método etnográfico y observación participante"
+        },
+        {
+          "text": "Field notes: writing daily, even when nothing happened",
+          "text_es": "Notas de campo: escribir a diario, aunque no pasara nada"
+        },
+        {
+          "text": "Research ethics with communities",
+          "text_es": "Ética de la investigación con comunidades"
+        }
+      ]
+    },
+    "project": {
+      "title": "Fieldwork",
+      "title_es": "Trabajo de campo",
+      "items": [
+        {
+          "text": "A small ethnography, sustained over weeks not days",
+          "text_es": "Una etnografía pequeña, sostenida semanas y no días"
+        },
+        {
+          "text": "Learn to be present without directing what happens",
+          "text_es": "Aprende a estar presente sin dirigir lo que pasa"
+        },
+        {
+          "text": "Return your findings to the community you studied",
+          "text_es": "Devuelve tus hallazgos a la comunidad que estudiaste"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Where anthropology goes",
+      "title_es": "A dónde va la antropología",
+      "items": [
+        {
+          "text": "Academia, heritage, applied work, design research",
+          "text_es": "Academia, patrimonio, trabajo aplicado, investigación en diseño"
+        },
+        {
+          "text": "A language relevant to where you want to work",
+          "text_es": "Un idioma relevante para donde quieras trabajar"
+        },
+        {
+          "text": "Understand extractive research, and refuse to do it",
+          "text_es": "Entiende la investigación extractiva, y niégate a hacerla"
+        }
+      ]
+    }
+  },
+  "c46": {
+    "foundations": {
+      "title": "Reading and arguing",
+      "title_es": "Leer y argumentar",
+      "items": [
+        {
+          "text": "Constitutional and civil law of your own country",
+          "text_es": "Derecho constitucional y civil de tu propio país"
+        },
+        {
+          "text": "Read a ruling and extract the reasoning, not the outcome",
+          "text_es": "Lee una sentencia y extrae el razonamiento, no el resultado"
+        },
+        {
+          "text": "Legal writing: precise, structured, without decoration",
+          "text_es": "Escritura jurídica: precisa, estructurada, sin adornos"
+        },
+        {
+          "text": "Legal research: finding the norm that actually applies",
+          "text_es": "Investigación jurídica: encontrar la norma que de verdad aplica"
+        }
+      ]
+    },
+    "project": {
+      "title": "Argue a real case",
+      "title_es": "Argumentar un caso real",
+      "items": [
+        {
+          "text": "Moot court or legal debate, with an opponent",
+          "text_es": "Tribunal simulado o debate jurídico, con contraparte"
+        },
+        {
+          "text": "Write a brief and have a lawyer tear it apart",
+          "text_es": "Escribe un escrito y deja que un abogado lo desarme"
+        },
+        {
+          "text": "Legal clinic: real people with real problems",
+          "text_es": "Consultorio jurídico: personas reales con problemas reales"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Specialisation and ethics",
+      "title_es": "Especialización y ética",
+      "items": [
+        {
+          "text": "Choose a branch: criminal, corporate, labour, public",
+          "text_es": "Elige una rama: penal, corporativo, laboral, público"
+        },
+        {
+          "text": "Professional ethics is not a formality here",
+          "text_es": "La ética profesional aquí no es una formalidad"
+        },
+        {
+          "text": "Practise oral argument. Writing well is not enough",
+          "text_es": "Practica el alegato oral. Escribir bien no basta"
+        }
+      ]
+    }
+  },
+  "c47": {
+    "foundations": {
+      "title": "States, institutions and interests",
+      "title_es": "Estados, instituciones e intereses",
+      "items": [
+        {
+          "text": "International relations theory and international law",
+          "text_es": "Teoría de las relaciones internacionales y derecho internacional"
+        },
+        {
+          "text": "Contemporary history and geopolitics",
+          "text_es": "Historia contemporánea y geopolítica"
+        },
+        {
+          "text": "Two languages beyond your own, seriously",
+          "text_es": "Dos idiomas además del tuyo, en serio"
+        },
+        {
+          "text": "International economics and trade",
+          "text_es": "Economía internacional y comercio"
+        }
+      ]
+    },
+    "project": {
+      "title": "Negotiate and analyse",
+      "title_es": "Negociar y analizar",
+      "items": [
+        {
+          "text": "Model United Nations, or a real negotiation simulation",
+          "text_es": "Modelo de Naciones Unidas, o una simulación de negociación real"
+        },
+        {
+          "text": "Write a policy brief on a current conflict",
+          "text_es": "Escribe un policy brief sobre un conflicto actual"
+        },
+        {
+          "text": "Follow one region closely for six months",
+          "text_es": "Sigue de cerca una región durante seis meses"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Into the field",
+      "title_es": "Entrar al campo",
+      "items": [
+        {
+          "text": "Foreign ministry, international organisations, NGOs, private sector",
+          "text_es": "Cancillería, organismos internacionales, ONG, sector privado"
+        },
+        {
+          "text": "An internship abroad if you can manage it",
+          "text_es": "Una pasantía en el exterior si puedes conseguirla"
+        },
+        {
+          "text": "Build regional expertise. Generalists compete with everyone",
+          "text_es": "Construye experiencia regional. Los generalistas compiten con todos"
+        }
+      ]
+    }
+  },
+  "c52": {
+    "foundations": {
+      "title": "Power and how it is organised",
+      "title_es": "El poder y cómo se organiza",
+      "items": [
+        {
+          "text": "Political theory and comparative systems",
+          "text_es": "Teoría política y sistemas comparados"
+        },
+        {
+          "text": "Public policy analysis",
+          "text_es": "Análisis de política pública"
+        },
+        {
+          "text": "Quantitative methods and electoral analysis",
+          "text_es": "Métodos cuantitativos y análisis electoral"
+        },
+        {
+          "text": "Know your own country's institutions in detail",
+          "text_es": "Conoce en detalle las instituciones de tu propio país"
+        }
+      ]
+    },
+    "project": {
+      "title": "Analyse a real decision",
+      "title_es": "Analizar una decisión real",
+      "items": [
+        {
+          "text": "Follow a bill from proposal to vote",
+          "text_es": "Sigue un proyecto de ley desde la propuesta hasta la votación"
+        },
+        {
+          "text": "Analyse an election with actual data",
+          "text_es": "Analiza una elección con datos reales"
+        },
+        {
+          "text": "Write a policy proposal costed and argued",
+          "text_es": "Escribe una propuesta de política costeada y argumentada"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Practice",
+      "title_es": "Ejercicio",
+      "items": [
+        {
+          "text": "Public sector, campaigns, think tanks, journalism, academia",
+          "text_es": "Sector público, campañas, centros de pensamiento, periodismo, academia"
+        },
+        {
+          "text": "Volunteer on a campaign to see the machinery",
+          "text_es": "Voluntariado en una campaña para ver la maquinaria"
+        },
+        {
+          "text": "Learn to separate analysis from your own position",
+          "text_es": "Aprende a separar el análisis de tu propia postura"
+        }
+      ]
+    }
+  },
+  "c19": {
+    "foundations": {
+      "title": "Systems that do not respect borders",
+      "title_es": "Sistemas que no respetan fronteras",
+      "items": [
+        {
+          "text": "Ecology, biology and earth sciences",
+          "text_es": "Ecología, biología y ciencias de la tierra"
+        },
+        {
+          "text": "Chemistry of water, soil and air",
+          "text_es": "Química del agua, el suelo y el aire"
+        },
+        {
+          "text": "Statistics and field sampling",
+          "text_es": "Estadística y muestreo en campo"
+        },
+        {
+          "text": "Environmental legislation of your country",
+          "text_es": "Legislación ambiental de tu país"
+        }
+      ]
+    },
+    "project": {
+      "title": "Measure an impact",
+      "title_es": "Medir un impacto",
+      "items": [
+        {
+          "text": "Sample and analyse water or soil with a real protocol",
+          "text_es": "Muestrea y analiza agua o suelo con un protocolo real"
+        },
+        {
+          "text": "Learn GIS: QGIS is free and professional",
+          "text_es": "Aprende SIG: QGIS es gratis y profesional"
+        },
+        {
+          "text": "Do a small environmental impact assessment",
+          "text_es": "Haz una evaluación de impacto ambiental pequeña"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Field and policy",
+      "title_es": "Campo y política",
+      "items": [
+        {
+          "text": "Consultancy, public sector, NGO, research",
+          "text_es": "Consultoría, sector público, ONG, investigación"
+        },
+        {
+          "text": "Learn to communicate risk without exaggerating it",
+          "text_es": "Aprende a comunicar riesgo sin exagerarlo"
+        },
+        {
+          "text": "Field work with an organisation that monitors something",
+          "text_es": "Trabajo de campo con una organización que monitoree algo"
+        }
+      ]
+    }
+  },
+  "c67": {
+    "foundations": {
+      "title": "Soil, water and what grows",
+      "title_es": "Suelo, agua y lo que crece",
+      "items": [
+        {
+          "text": "Soil science and plant physiology",
+          "text_es": "Edafología y fisiología vegetal"
+        },
+        {
+          "text": "Irrigation and water management",
+          "text_es": "Riego y manejo del agua"
+        },
+        {
+          "text": "Agricultural machinery and processes",
+          "text_es": "Maquinaria y procesos agrícolas"
+        },
+        {
+          "text": "Statistics for field trials",
+          "text_es": "Estadística para ensayos de campo"
+        }
+      ]
+    },
+    "project": {
+      "title": "A plot you are responsible for",
+      "title_es": "Una parcela de la que respondas",
+      "items": [
+        {
+          "text": "Manage a small plot through a full cycle",
+          "text_es": "Maneja una parcela pequeña durante un ciclo completo"
+        },
+        {
+          "text": "A trial with a control plot and measured results",
+          "text_es": "Un ensayo con parcela control y resultados medidos"
+        },
+        {
+          "text": "Cost it: yield against inputs",
+          "text_es": "Costéalo: rendimiento contra insumos"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Field and technology",
+      "title_es": "Campo y tecnología",
+      "items": [
+        {
+          "text": "Time on a real farm, in every season",
+          "text_es": "Tiempo en una finca real, en todas las estaciones"
+        },
+        {
+          "text": "Precision agriculture: sensors, drones, data",
+          "text_es": "Agricultura de precisión: sensores, drones, datos"
+        },
+        {
+          "text": "Work with producers. Their knowledge is not in the textbook",
+          "text_es": "Trabaja con productores. Su conocimiento no está en el libro"
+        }
+      ]
+    }
+  },
+  "c69": {
+    "foundations": {
+      "title": "Energy, converted",
+      "title_es": "Energía, convertida",
+      "items": [
+        {
+          "text": "Thermodynamics and electrical fundamentals",
+          "text_es": "Termodinámica y fundamentos eléctricos"
+        },
+        {
+          "text": "Solar, wind and storage technologies",
+          "text_es": "Tecnologías solar, eólica y de almacenamiento"
+        },
+        {
+          "text": "Resource assessment: is there enough sun or wind here",
+          "text_es": "Evaluación del recurso: ¿hay aquí sol o viento suficiente?"
+        },
+        {
+          "text": "Grid integration — generation is only half the problem",
+          "text_es": "Integración a la red: generar es solo la mitad del problema"
+        }
+      ]
+    },
+    "project": {
+      "title": "Size a real installation",
+      "title_es": "Dimensionar una instalación real",
+      "items": [
+        {
+          "text": "Size a solar system for an actual building",
+          "text_es": "Dimensiona un sistema solar para un edificio real"
+        },
+        {
+          "text": "Calculate the payback honestly, including maintenance",
+          "text_es": "Calcula el retorno con honestidad, mantenimiento incluido"
+        },
+        {
+          "text": "Install something small and measure what it produces",
+          "text_es": "Instala algo pequeño y mide lo que produce"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Certification and industry",
+      "title_es": "Certificación e industria",
+      "items": [
+        {
+          "text": "Installation certification for the technology you choose",
+          "text_es": "Certificación de instalación en la tecnología que elijas"
+        },
+        {
+          "text": "Understand the incentives and regulation in your country",
+          "text_es": "Entiende los incentivos y la regulación de tu país"
+        },
+        {
+          "text": "Visit an operating plant, not just a datasheet",
+          "text_es": "Visita una planta en operación, no solo una ficha técnica"
+        }
+      ]
+    }
+  },
+  "c65": {
+    "foundations": {
+      "title": "Systems where error has no margin",
+      "title_es": "Sistemas donde el error no tiene margen",
+      "items": [
+        {
+          "text": "Aerodynamics and aircraft systems",
+          "text_es": "Aerodinámica y sistemas de aeronave"
+        },
+        {
+          "text": "Turbine and piston engines",
+          "text_es": "Motores de turbina y de pistón"
+        },
+        {
+          "text": "Aviation regulation. It governs every action you take",
+          "text_es": "Regulación aeronáutica. Gobierna cada acción que haces"
+        },
+        {
+          "text": "Technical English — the manuals are not translated",
+          "text_es": "Inglés técnico: los manuales no vienen traducidos"
+        }
+      ]
+    },
+    "project": {
+      "title": "Hands on aircraft",
+      "title_es": "Manos sobre la aeronave",
+      "items": [
+        {
+          "text": "Workshop hours under a licensed technician",
+          "text_es": "Horas de taller bajo un técnico licenciado"
+        },
+        {
+          "text": "Follow a manual exactly, without improvising a single step",
+          "text_es": "Sigue un manual exactamente, sin improvisar un solo paso"
+        },
+        {
+          "text": "Learn to document work the way an audit expects",
+          "text_es": "Aprende a documentar el trabajo como lo espera una auditoría"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Licence",
+      "title_es": "Licencia",
+      "items": [
+        {
+          "text": "The technician licence is mandatory. Find out what it requires",
+          "text_es": "La licencia de técnico es obligatoria. Averigua qué exige"
+        },
+        {
+          "text": "Type ratings for specific aircraft",
+          "text_es": "Habilitaciones de tipo para aeronaves concretas"
+        },
+        {
+          "text": "Safety culture: reporting your own error is the standard",
+          "text_es": "Cultura de seguridad: reportar tu propio error es la norma"
+        }
+      ]
+    }
+  },
+  "c66": {
+    "foundations": {
+      "title": "Fly, and know why it flies",
+      "title_es": "Volar, y saber por qué vuela",
+      "items": [
+        {
+          "text": "Aerodynamics, meteorology and navigation",
+          "text_es": "Aerodinámica, meteorología y navegación"
+        },
+        {
+          "text": "Air law and procedures",
+          "text_es": "Derecho aéreo y procedimientos"
+        },
+        {
+          "text": "Aeronautical English — it is a licence requirement",
+          "text_es": "Inglés aeronáutico: es requisito de licencia"
+        },
+        {
+          "text": "The class one medical, before you spend anything",
+          "text_es": "El certificado médico clase uno, antes de gastar nada"
+        }
+      ]
+    },
+    "project": {
+      "title": "Hours",
+      "title_es": "Horas",
+      "items": [
+        {
+          "text": "Private licence first, then build hours",
+          "text_es": "Licencia privada primero, luego acumular horas"
+        },
+        {
+          "text": "Instrument rating: flying without seeing outside",
+          "text_es": "Habilitación instrumental: volar sin ver afuera"
+        },
+        {
+          "text": "Practise decision making under pressure, deliberately",
+          "text_es": "Practica la toma de decisiones bajo presión, a propósito"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Commercial licence",
+      "title_es": "Licencia comercial",
+      "items": [
+        {
+          "text": "Understand the real cost of the training before starting",
+          "text_es": "Entiende el coste real de la formación antes de empezar"
+        },
+        {
+          "text": "Instructing is the usual way to build hours",
+          "text_es": "Instruir es la forma habitual de acumular horas"
+        },
+        {
+          "text": "Learn how airline hiring actually works",
+          "text_es": "Aprende cómo funciona de verdad la contratación en aerolíneas"
+        }
+      ]
+    }
+  },
+  "c68": {
+    "foundations": {
+      "title": "Technique before creativity",
+      "title_es": "Técnica antes que creatividad",
+      "items": [
+        {
+          "text": "Knife skills and the mother sauces",
+          "text_es": "Manejo del cuchillo y las salsas madre"
+        },
+        {
+          "text": "Cooking methods and what heat does to food",
+          "text_es": "Métodos de cocción y qué le hace el calor a la comida"
+        },
+        {
+          "text": "Food safety and cold chain",
+          "text_es": "Inocuidad alimentaria y cadena de frío"
+        },
+        {
+          "text": "Mise en place. Service is won before it starts",
+          "text_es": "Mise en place. El servicio se gana antes de empezar"
+        }
+      ]
+    },
+    "project": {
+      "title": "Cook under pressure",
+      "title_es": "Cocinar bajo presión",
+      "items": [
+        {
+          "text": "Work a real service. The clock is the teacher",
+          "text_es": "Trabaja un servicio real. El reloj es el profesor"
+        },
+        {
+          "text": "Design a menu and cost every plate",
+          "text_es": "Diseña un menú y costea cada plato"
+        },
+        {
+          "text": "Cook the same dish twenty times until it is identical",
+          "text_es": "Cocina el mismo plato veinte veces hasta que salga idéntico"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Kitchen and business",
+      "title_es": "Cocina y negocio",
+      "items": [
+        {
+          "text": "Stage in a kitchen better than you are",
+          "text_es": "Haz un stage en una cocina mejor que tú"
+        },
+        {
+          "text": "Understand the margins. Most restaurants close",
+          "text_es": "Entiende los márgenes. Casi todos los restaurantes cierran"
+        },
+        {
+          "text": "The hours are brutal. Know that before you commit",
+          "text_es": "Los horarios son duros. Sábelo antes de comprometerte"
+        }
+      ]
+    }
+  },
+  "c45": {
+    "foundations": {
+      "title": "How people actually learn",
+      "title_es": "Cómo aprende de verdad la gente",
+      "items": [
+        {
+          "text": "Learning psychology and cognitive development",
+          "text_es": "Psicología del aprendizaje y desarrollo cognitivo"
+        },
+        {
+          "text": "Didactics: what evidence says works, and what does not",
+          "text_es": "Didáctica: qué dice la evidencia que funciona, y qué no"
+        },
+        {
+          "text": "Your subject, deeper than you will ever teach it",
+          "text_es": "Tu materia, más a fondo de lo que llegarás a enseñarla"
+        },
+        {
+          "text": "Assessment: measuring learning, not compliance",
+          "text_es": "Evaluación: medir aprendizaje, no obediencia"
+        }
+      ]
+    },
+    "project": {
+      "title": "Teach real students",
+      "title_es": "Enseñar a estudiantes reales",
+      "items": [
+        {
+          "text": "Teach a class and record yourself doing it",
+          "text_es": "Da una clase y grábate haciéndolo"
+        },
+        {
+          "text": "Design a unit with objectives and assessment aligned",
+          "text_es": "Diseña una unidad con objetivos y evaluación alineados"
+        },
+        {
+          "text": "Tutor one student who is struggling and find out why",
+          "text_es": "Da tutoría a un estudiante que va mal y averigua por qué"
+        }
+      ]
+    },
+    "launch": {
+      "title": "Classroom and vocation",
+      "title_es": "Aula y vocación",
+      "items": [
+        {
+          "text": "Supervised teaching practice, as early as possible",
+          "text_es": "Práctica docente supervisada, lo antes posible"
+        },
+        {
+          "text": "Classroom management is a skill, and it is learnable",
+          "text_es": "El manejo de aula es una habilidad, y se aprende"
+        },
+        {
+          "text": "Talk honestly with teachers about pay and conditions",
+          "text_es": "Habla con honestidad con docentes sobre sueldo y condiciones"
+        }
       ]
     }
   }
