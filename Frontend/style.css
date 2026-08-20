@@ -1,3 +1,4 @@
+@import url('/Frontend/fonts.css');
 /* El atributo `hidden` tiene que ganar SIEMPRE.
    Sin esto lo anula cualquier regla que fije `display` sobre la misma
    clase, y el elemento se queda a la vista aunque el JS lo haya ocultado.
@@ -26,7 +27,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Inter, sans-serif;
+    font-family:'Manrope', Arial, sans-serif;
 }
 
 body{

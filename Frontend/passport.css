@@ -1,3 +1,4 @@
+@import url('/Frontend/fonts.css');
 /* =========================================================================
    PASAPORTE FUTUREPILOT
    =========================================================================
@@ -52,7 +53,7 @@ body {
   padding: 28px 16px 40px;
   background: var(--fp-night);
   color: #eaf6f1;
-  font-family: Manrope, Inter, system-ui, Arial, sans-serif;
+  font-family: Manrope, system-ui, Arial, sans-serif;
   overflow-x: hidden;
 }
 
@@ -564,7 +565,7 @@ body {
   border-radius: 2px;
   background: transparent;
   color: var(--ink);
-  font: 700 .64rem/1 Manrope, Inter, Arial, sans-serif;
+  font: 700 .64rem/1 Manrope, Arial, sans-serif;
   letter-spacing: .12em;
   text-transform: uppercase;
   text-decoration: none;
@@ -594,7 +595,7 @@ body {
   border-radius: 2px;
   background: rgba(255, 255, 255, .45);
   color: var(--ink);
-  font: 500 .8rem Manrope, Inter, Arial, sans-serif;
+  font: 500 .8rem Manrope, Arial, sans-serif;
   resize: vertical;
 }
 
@@ -631,12 +632,12 @@ body {
 .fp-stamp svg { width: 100%; height: 100%; display: block; }
 
 .fp-stamp__kicker {
-  font: 800 6.4px/1 Manrope, Inter, Arial, sans-serif;
+  font: 800 6.4px/1 Manrope, Arial, sans-serif;
   letter-spacing: .12em;
   fill: currentColor;
 }
 
-.fp-stamp__name { font: 800 9px/1 Manrope, Inter, Arial, sans-serif; letter-spacing: .02em; }
+.fp-stamp__name { font: 800 9px/1 Manrope, Arial, sans-serif; letter-spacing: .02em; }
 .fp-stamp__name--sm { font-size: 6.6px; }
 .fp-stamp__meta { font: 600 4.6px/1 'DM Mono', ui-monospace, monospace; letter-spacing: .1em; }
 .fp-stamp__flag { font-size: 16px; }
@@ -714,7 +715,7 @@ body {
   border-radius: 999px;
   background: rgba(0, 255, 179, .14);
   color: var(--fp-emerald);
-  font: 700 .68rem Manrope, Inter, Arial, sans-serif;
+  font: 700 .68rem Manrope, Arial, sans-serif;
   cursor: pointer;
 }
 

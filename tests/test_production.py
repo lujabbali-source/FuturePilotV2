@@ -249,3 +249,62 @@ def test_changing_the_admin_email_invalidates_the_old_token(app_module, monkeypa
     segundo = app_module.admin_setup_token()
 
     assert segundo and segundo != primero
+
+
+def test_every_font_a_stylesheet_asks_for_is_actually_declared():
+    """Una tipografia que nadie declara no da error: el navegador cae al
+    sistema y la pagina sigue viendose "bien", solo que con otra letra.
+
+    Paso justo eso al dejar de pedirle las fuentes a Google. Auto-hospede
+    Manrope y DM Mono en Frontend/fonts.css pero solo enlace esa hoja en
+    cuatro de las nueve, asi que la portada, /careers, /journey y la politica
+    de privacidad renderizaban con la letra del sistema. Nada fallaba. Habia
+    ademas un `font-family: Inter` huerfano que no se hospedaba ni se pedia a
+    ningun sitio, imponiendose sobre Manrope desde el selector `*`.
+
+    La regla: si una hoja nombra una familia que no es generica, esa familia
+    tiene que estar declarada por un @font-face que la hoja alcance."""
+    import re
+    from pathlib import Path
+
+    frontend = Path(__file__).resolve().parent.parent / "Frontend"
+
+    GENERICAS = {
+        "sans-serif", "serif", "monospace", "cursive", "fantasy", "system-ui",
+        "ui-monospace", "ui-sans-serif", "inherit", "initial", "unset",
+        "arial", "helvetica", "georgia", "courier new", "times new roman",
+    }
+
+    declaradas = {
+        m.group(1).strip("'\"").lower()
+        for hoja in frontend.rglob("*.css")
+        for bloque in re.findall(r"@font-face\s*\{[^}]*\}", hoja.read_text(encoding="utf-8"))
+        for m in [re.search(r"font-family:\s*([^;]+)", bloque)]
+        if m
+    }
+    assert declaradas, "ninguna @font-face: fonts.css desaparecio"
+
+    huerfanas, sin_importar = [], []
+    for hoja in sorted(frontend.rglob("*.css")):
+        texto = hoja.read_text(encoding="utf-8")
+        if "@font-face" in texto:
+            continue
+        pedidas = set()
+        for valor in re.findall(r"font-family:\s*([^;}]+)", texto):
+            for familia in valor.split(","):
+                familia = familia.strip().strip("'\"").lower()
+                if familia and familia not in GENERICAS and not familia.startswith("var("):
+                    pedidas.add(familia)
+        if not pedidas:
+            continue
+        for familia in sorted(pedidas):
+            if familia not in declaradas:
+                huerfanas.append(f"{hoja.name}: pide '{familia}', que nadie declara")
+        # La hoja pide una webfont, asi que tiene que alcanzar las @font-face.
+        if "fonts.css" not in texto:
+            sin_importar.append(f"{hoja.name}: pide {sorted(pedidas)} sin importar fonts.css")
+
+    assert not huerfanas, "familias sin @font-face:\n  " + "\n  ".join(huerfanas)
+    assert not sin_importar, (
+        "hojas que piden una webfont y no la cargan:\n  " + "\n  ".join(sin_importar)
+    )
