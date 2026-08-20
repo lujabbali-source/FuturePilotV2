@@ -183,6 +183,32 @@
         "why": "El mentor conoce tu diagnóstico real. Preguntarle sale más a cuenta que adivinar.",
         "cta": "Abrir el mentor"
       }
-    }
+    },
+    "chosenCareer": "La carrera que elegiste",
+    "myPlan": "Mi plan de vuelo",
+    "askMentor": "Preguntarle al mentor",
+    "whyYou": "POR QUÉ IRÍA CONTIGO",
+    "whyYouNote": "Las dimensiones donde ya llegas a lo que pide esta carrera. Pulsa una para ver por qué importa.",
+    "whatToImprove": "QUÉ PODRÍAS MEJORAR",
+    "whatToImproveNote": "Donde te quedas corto hoy. Ninguna es definitiva: pulsa una y verás por dónde se empieza.",
+    "youHave": "Tienes {{score}} y esta carrera pide {{needed}}",
+    "strategies": "Cómo se sube",
+    "tools": "Con qué",
+    "closePanel": "Cerrar",
+    "match": "de compatibilidad",
+    "yourCareer": "Tu mejor coincidencia"
+  },
+  "journeyPage": {
+    "label": "TU RUTA",
+    "title": "Tu ruta",
+    "emptyBody": "Aquí verás los pasos hacia tu carrera. Primero hay que saber cuál es.",
+    "takeTest": "Hacer el test vocacional",
+    "progress": "Progreso",
+    "counted": "{{done}} de {{total}} pasos marcados",
+    "resourcesPending": "recursos pendientes",
+    "stepPending": "Todavía no hemos escrito los pasos concretos para esta carrera. Los cuatro hitos de arriba sí aplican.",
+    "keepGoing": "SIGUE DESDE AQUÍ",
+    "flightPlan": "Mi plan de vuelo",
+    "askMentor": "Preguntarle al mentor"
   }
 }

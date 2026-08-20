@@ -452,3 +452,160 @@ body{
     grid-row: 3;
   }
 }
+
+/* --- Habilidades ---------------------------------------------------------
+ * Sobrio a proposito: el color solo distingue lo que cubres de lo que no, y
+ * el numero acompaña al nombre en vez de competir con el. Nada de insignias
+ * ni brillos - esto se lee, no se colecciona. */
+
+.flight-skills + .flight-skills {
+  margin-top: 26px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 4px;
+}
+
+.skill-chip {
+  display: inline-flex;
+  gap: 9px;
+  align-items: baseline;
+  padding: 9px 15px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 99px;
+  background: rgba(255, 255, 255, .03);
+  color: #c6d3de;
+  font: inherit;
+  font-size: .82rem;
+  cursor: pointer;
+  transition: border-color .16s ease, background .16s ease;
+}
+
+.skill-chip:hover {
+  border-color: rgba(255, 255, 255, .3);
+  background: rgba(255, 255, 255, .06);
+}
+
+.skill-chip__score {
+  color: #6d8093;
+  font-family: 'DM Mono', monospace;
+  font-size: .7rem;
+}
+
+.skill-chip__score i {
+  font-style: normal;
+  opacity: .6;
+}
+
+/* Cubierta: verde. Corta: ambar. El estado se lee sin tener que abrirla. */
+.skill-chip--match {
+  border-color: rgba(0, 255, 179, .32);
+}
+
+.skill-chip--match .skill-chip__score {
+  color: #00FFB3;
+}
+
+.skill-chip--gap {
+  border-color: rgba(255, 183, 77, .32);
+}
+
+.skill-chip--gap .skill-chip__score {
+  color: #FFB74D;
+}
+
+.skill-chip[aria-expanded="true"] {
+  border-color: #fff;
+  background: rgba(255, 255, 255, .1);
+}
+
+/* --- El panel ------------------------------------------------------------ */
+
+.skill-panel {
+  margin-top: 18px;
+  padding: 22px 24px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, .04);
+}
+
+.skill-panel__head {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.skill-panel__head h3 {
+  margin: 0 0 3px;
+  font-size: 1.1rem;
+  letter-spacing: -.02em;
+}
+
+.skill-panel__score {
+  margin: 0;
+  color: #6d8093;
+  font-family: 'DM Mono', monospace;
+  font-size: .72rem;
+}
+
+.skill-panel__close {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 50%;
+  background: transparent;
+  color: #98aabc;
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.skill-panel__close:hover {
+  border-color: rgba(255, 255, 255, .35);
+  color: #fff;
+}
+
+.skill-panel__what,
+.skill-panel__why {
+  max-width: 64ch;
+  margin: 14px 0 0;
+  color: #b9c7d4;
+  font-size: .85rem;
+  line-height: 1.65;
+}
+
+.skill-panel__why {
+  color: #98aabc;
+}
+
+.skill-panel__block {
+  margin-top: 20px;
+}
+
+.skill-panel__subhead {
+  margin: 0 0 8px;
+  color: #5e7387;
+  font-family: 'DM Mono', monospace;
+  font-size: .59rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.skill-panel__block ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #b9c7d4;
+  font-size: .84rem;
+  line-height: 1.7;
+}
+
+.skill-panel__block li + li {
+  margin-top: 5px;
+}

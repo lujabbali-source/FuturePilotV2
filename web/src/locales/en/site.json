@@ -183,6 +183,32 @@
         "why": "The mentor knows your real diagnosis. Asking beats guessing.",
         "cta": "Open the mentor"
       }
-    }
+    },
+    "chosenCareer": "The career you picked",
+    "myPlan": "My flight plan",
+    "askMentor": "Ask the mentor",
+    "whyYou": "WHY IT WOULD SUIT YOU",
+    "whyYouNote": "The dimensions where you already meet what this career asks for. Tap one to see why it matters.",
+    "whatToImprove": "WHAT YOU COULD IMPROVE",
+    "whatToImproveNote": "Where you fall short today. None of it is final: tap one and you will see where to start.",
+    "youHave": "You have {{score}} and this career asks for {{needed}}",
+    "strategies": "How to raise it",
+    "tools": "What with",
+    "closePanel": "Close",
+    "match": "compatibility",
+    "yourCareer": "Your closest match"
+  },
+  "journeyPage": {
+    "label": "YOUR ROUTE",
+    "title": "Your route",
+    "emptyBody": "This is where you will see the steps towards your career. First we need to know what it is.",
+    "takeTest": "Take the vocational test",
+    "progress": "Progress",
+    "counted": "{{done}} of {{total}} steps marked",
+    "resourcesPending": "resources pending",
+    "stepPending": "We have not written the specific steps for this career yet. The four milestones above still apply.",
+    "keepGoing": "CARRY ON FROM HERE",
+    "flightPlan": "My flight plan",
+    "askMentor": "Ask the mentor"
   }
 }

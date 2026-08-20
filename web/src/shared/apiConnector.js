@@ -151,46 +151,11 @@ async function refreshResultsFromServer() {
 }
 
 // =============================================================================
-// 3. ACTUALIZAR DINÁMICAMENTE LA PANTALLA JOURNEY.HTML (ROADMAP STACK)
-// =============================================================================
-function updateJourneyUI() {
-  const aiDataRaw = localStorage.getItem(AI_STORAGE_KEY);
-  if (!aiDataRaw) return;
-
-  try {
-    const aiData = JSON.parse(aiDataRaw);
-    const roadmap = aiData.roadmap;
-
-    if (!roadmap || !roadmap.checkpoints) return;
-
-    // Actualizar titulo de carrera en la barra lateral
-    const titleElement = document.getElementById("careerTitle");
-    if (titleElement && roadmap.career_title) {
-      titleElement.innerText = roadmap.career_title;
-    }
-
-    // Actualizar los textos de las tarjetas del roadmap (Paso 1, 2, 3, 4)
-    const cards = document.querySelectorAll(".card");
-    roadmap.checkpoints.forEach((cp, idx) => {
-      if (cards[idx]) {
-        const h3 = cards[idx].querySelector("h3");
-        if (h3) {
-          h3.innerText = `${cp.step}. ${cp.title}`;
-        }
-      }
-    });
-  } catch (err) {
-    console.error("[FuturePilot AI Error] Error actualizando Journey UI:", err);
-  }
-}
-
-// =============================================================================
 // DETECCIÓN DE PÁGINA E INICIALIZACIÓN
 // =============================================================================
 export {
 sendAssessmentToPythonAI,
 refreshResultsFromServer,
-updateJourneyUI,
 getAnonId,
 };
 

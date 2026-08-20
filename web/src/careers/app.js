@@ -48,8 +48,10 @@ grid.addEventListener("click", (event) => {
   const career = careers.find((item) => item.id === button.dataset.careerId);
   if (!career) return;
 
-  localStorage.setItem("selectedCareer", career.title);
-  window.location.href = "/flightplan";
+  // Por la URL, no por localStorage. El plan de vuelo tiene que ser de LA
+  // carrera que se pulso: antes se guardaba el titulo en localStorage, la
+  // pagina no lo miraba, y acababas en un plan sobre otra carrera distinta.
+  window.location.href = `/flightplan?career=${encodeURIComponent(career.id)}`;
 });
 
 document.getElementById("searchInput").addEventListener("input", (event) => {

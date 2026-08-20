@@ -1,0 +1,117 @@
+{
+  "_README": [
+    "Ruta de aprendizaje por carrera.",
+    "",
+    "Antes el roadmap eran cuatro pasos identicos para las 73 carreras: solo",
+    "cambiaba el nombre de la carrera y la lista de brechas. En pantalla eso",
+    "significaba que Fisica mostraba las mismas sub-tareas que Ingenieria de",
+    "software - de hecho las de Inteligencia artificial, que estaban escritas a",
+    "mano en el HTML de /journey para todo el mundo.",
+    "",
+    "La ESPINA se mantiene porque es pedagogicamente sana y ordena bien el",
+    "camino: fundamentos, nivelacion, proyecto, certificacion. Lo que cambia por",
+    "carrera es el CONTENIDO de cada paso.",
+    "",
+    "El paso 2 (nivelacion) no se escribe aqui: se deriva del cruce entre el",
+    "perfil del estudiante y lo que pide la carrera, asi que es distinto para",
+    "cada persona aunque la carrera sea la misma. Ver _levelling_step en",
+    "ai_engine.py.",
+    "",
+    "Convenio de idioma, el mismo que careers.json y questions.json: la clave",
+    "pelada es el ingles y `_es` es la traduccion.",
+    "",
+    "Una carrera sin entrada aqui cae a los pasos genericos. Eso permite ir",
+    "escribiendo por tandas sin romper nada por el camino."
+  ],
+
+  "c1": {
+    "foundations": {
+      "title": "Programming fundamentals",
+      "title_es": "Fundamentos de programación",
+      "items": [
+        {"text": "Get fluent in one language end to end", "text_es": "Manejar un lenguaje de principio a fin"},
+        {"text": "Data structures and algorithmic complexity", "text_es": "Estructuras de datos y complejidad algorítmica"},
+        {"text": "Version control with git, working on branches", "text_es": "Control de versiones con git, trabajando con ramas"}
+      ]
+    },
+    "project": {
+      "title": "Ship something real",
+      "title_es": "Publicar algo de verdad",
+      "items": [
+        {"text": "An application with a database behind it, deployed and reachable", "text_es": "Una aplicación con base de datos detrás, desplegada y accesible"},
+        {"text": "Tests that actually run before each change", "text_es": "Pruebas que se ejecuten de verdad antes de cada cambio"},
+        {"text": "A README that lets a stranger run it", "text_es": "Un README que le permita a un desconocido ejecutarla"}
+      ]
+    },
+    "launch": {
+      "title": "Portfolio and first professional steps",
+      "title_es": "Portafolio y primeros pasos profesionales",
+      "items": [
+        {"text": "Public repositories with readable commit history", "text_es": "Repositorios públicos con un historial de commits legible"},
+        {"text": "A contribution to an open source project", "text_es": "Una contribución a un proyecto de código abierto"},
+        {"text": "Technical interview practice: algorithms out loud", "text_es": "Práctica de entrevista técnica: algoritmos en voz alta"}
+      ]
+    }
+  },
+
+  "c13": {
+    "foundations": {
+      "title": "The mathematics physics is written in",
+      "title_es": "Las matemáticas en las que se escribe la física",
+      "items": [
+        {"text": "Differential and integral calculus", "text_es": "Cálculo diferencial e integral"},
+        {"text": "Linear algebra and vector spaces", "text_es": "Álgebra lineal y espacios vectoriales"},
+        {"text": "Classical mechanics: from Newton to Lagrange", "text_es": "Mecánica clásica: de Newton a Lagrange"},
+        {"text": "Electromagnetism and Maxwell's equations", "text_es": "Electromagnetismo y las ecuaciones de Maxwell"}
+      ]
+    },
+    "project": {
+      "title": "Measure something and defend the number",
+      "title_es": "Medir algo y defender el número",
+      "items": [
+        {"text": "An experiment of your own with its uncertainty calculated", "text_es": "Un experimento propio con su incertidumbre calculada"},
+        {"text": "Data analysis in Python: fitting, error propagation, plots", "text_es": "Análisis de datos en Python: ajuste, propagación de errores, gráficas"},
+        {"text": "A lab report written the way a journal would want it", "text_es": "Un informe de laboratorio escrito como lo pediría una revista"}
+      ]
+    },
+    "launch": {
+      "title": "Into research",
+      "title_es": "Entrar en investigación",
+      "items": [
+        {"text": "Read a paper in your area of interest all the way through", "text_es": "Leer un paper de tu área de interés de principio a fin"},
+        {"text": "Contact a research group and ask what they need", "text_es": "Contactar a un grupo de investigación y preguntar qué necesitan"},
+        {"text": "A summer placement or an undergraduate assistantship", "text_es": "Una pasantía de verano o una monitoría"}
+      ]
+    }
+  },
+
+  "c7": {
+    "foundations": {
+      "title": "The body before the illness",
+      "title_es": "El cuerpo antes que la enfermedad",
+      "items": [
+        {"text": "Human anatomy and physiology", "text_es": "Anatomía y fisiología humanas"},
+        {"text": "Biochemistry and cell biology", "text_es": "Bioquímica y biología celular"},
+        {"text": "Reading a paper: what a clinical study does and does not prove", "text_es": "Leer un paper: qué demuestra y qué no demuestra un estudio clínico"}
+      ]
+    },
+    "project": {
+      "title": "Contact with real patients",
+      "title_es": "Contacto con pacientes reales",
+      "items": [
+        {"text": "Hospital volunteering or community health work", "text_es": "Voluntariado hospitalario o trabajo en salud comunitaria"},
+        {"text": "First aid certification", "text_es": "Certificación en primeros auxilios"},
+        {"text": "Shadow a doctor for a full shift", "text_es": "Acompañar a un médico durante un turno completo"}
+      ]
+    },
+    "launch": {
+      "title": "Getting into medical school",
+      "title_es": "Entrar a la facultad",
+      "items": [
+        {"text": "Entrance exam: what it asks and how it is scored", "text_es": "Examen de admisión: qué pide y cómo se califica"},
+        {"text": "Compare programmes: hospitals they teach in, and where", "text_es": "Comparar programas: en qué hospitales se hace la práctica, y dónde"},
+        {"text": "Talk to someone already studying it about what it actually costs you", "text_es": "Hablar con alguien que ya la estudie sobre lo que de verdad te cuesta"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "_README": [
+    "Las ocho dimensiones del perfil, explicadas.",
+    "",
+    "El motor ya sabia PUNTUAR cada dimension y compararla con lo que pide una",
+    "carrera. Lo que no tenia era nada que decir sobre ellas: el estudiante veia",
+    "'Pensamiento analitico 5.0 y pide 9.0' sin saber que significa eso ni que",
+    "hacer al respecto.",
+    "",
+    "Cada entrada tiene cuatro partes:",
+    "  what      - que es la dimension, en una frase",
+    "  why       - por que le importa a una carrera que la pide alto",
+    "  strategies- como se sube. Cosas que se hacen, no consejos genericos",
+    "  tools     - con que. Nombres reales, no categorias",
+    "",
+    "Convenio de idioma, el mismo que el resto de los datos: la clave pelada es",
+    "el ingles y `_es` la traduccion.",
+    "",
+    "Ocho entradas, no setenta y tres: las habilidades son las mismas para todas",
+    "las carreras. Lo que cambia por carrera es el NIVEL que pide, y eso ya esta",
+    "en careers.json."
+  ],
+
+  "ANALYTICAL": {
+    "what": "Breaking a problem into parts and following the evidence to a conclusion.",
+    "what_es": "Descomponer un problema en partes y seguir la evidencia hasta una conclusión.",
+    "why": "Careers that ask for this high spend their days on problems with no obvious answer, where guessing wrong is expensive.",
+    "why_es": "Las carreras que la piden alta se pasan el día en problemas sin respuesta obvia, donde equivocarse sale caro.",
+    "strategies": [
+      {"text": "Take a decision you already made and write down, afterwards, what evidence actually supported it", "text_es": "Coge una decisión que ya tomaste y escribe después qué evidencia la sostenía de verdad"},
+      {"text": "Work through logic or probability problems where you can check the answer", "text_es": "Resuelve problemas de lógica o probabilidad donde puedas comprobar el resultado"},
+      {"text": "When you read a claim, look for what would have to be true for it to be false", "text_es": "Cuando leas una afirmación, busca qué tendría que ser cierto para que fuera falsa"}
+    ],
+    "tools": [
+      {"text": "Brilliant — interactive logic and maths", "text_es": "Brilliant — lógica y matemáticas interactivas"},
+      {"text": "Project Euler — problems that need reasoning, not just code", "text_es": "Project Euler — problemas que exigen razonar, no solo programar"},
+      {"text": "Khan Academy — statistics and probability, free", "text_es": "Khan Academy — estadística y probabilidad, gratis"}
+    ]
+  },
+
+  "CREATIVE": {
+    "what": "Producing options that were not on the table, and choosing well among them.",
+    "what_es": "Producir opciones que no estaban sobre la mesa, y elegir bien entre ellas.",
+    "why": "Where this is asked for high, the work has no correct answer to find — it has to be invented, and then defended.",
+    "why_es": "Donde se pide alta, el trabajo no tiene una respuesta correcta que encontrar: hay que inventarla, y luego defenderla.",
+    "strategies": [
+      {"text": "Set yourself a constraint on purpose — one colour, sixty seconds, no words — and work inside it", "text_es": "Ponte una restricción a propósito —un solo color, sesenta segundos, sin palabras— y trabaja dentro de ella"},
+      {"text": "Copy something you admire exactly, then change one thing and see what breaks", "text_es": "Copia exactamente algo que admires, luego cambia una sola cosa y mira qué se rompe"},
+      {"text": "Finish and show it. Creativity that stays in the drafts folder does not compound", "text_es": "Termínalo y enséñalo. La creatividad que se queda en borradores no se acumula"}
+    ],
+    "tools": [
+      {"text": "Figma — free, and the industry standard for interface design", "text_es": "Figma — gratis, y el estándar de la industria en diseño de interfaces"},
+      {"text": "Blender — 3D and animation, free and professional", "text_es": "Blender — 3D y animación, gratis y profesional"},
+      {"text": "A physical sketchbook. Slower on purpose, which is the point", "text_es": "Un cuaderno de papel. Más lento a propósito, que es de lo que se trata"}
+    ]
+  },
+
+  "SOCIAL": {
+    "what": "Reading what someone needs and adjusting how you speak so it lands.",
+    "what_es": "Leer lo que alguien necesita y ajustar cómo hablas para que llegue.",
+    "why": "In these careers the technical part is rarely what fails. What fails is the conversation around it.",
+    "why_es": "En estas carreras lo técnico rara vez es lo que falla. Lo que falla es la conversación alrededor.",
+    "strategies": [
+      {"text": "Explain something you know well to someone who does not, and watch where they lose you", "text_es": "Explícale algo que domines a alguien que no lo sepa, y fíjate en dónde lo pierdes"},
+      {"text": "In your next disagreement, state the other position out loud until they say «yes, that's it» before answering", "text_es": "En tu próximo desacuerdo, di la postura del otro en voz alta hasta que te diga «sí, eso es» antes de responder"},
+      {"text": "Volunteer somewhere you have to deal with people you would not have chosen", "text_es": "Ofrécete de voluntario donde tengas que tratar con gente que no habrías elegido"}
+    ],
+    "tools": [
+      {"text": "A local debate or public speaking club", "text_es": "Un club de debate o de oratoria de tu ciudad"},
+      {"text": "Community volunteering — the hours count on an application too", "text_es": "Voluntariado comunitario — las horas también cuentan en una solicitud"},
+      {"text": "Record yourself explaining something and watch it back. It is uncomfortable and it works", "text_es": "Grábate explicando algo y míralo. Es incómodo y funciona"}
+    ]
+  },
+
+  "LEADERSHIP": {
+    "what": "Taking responsibility for an outcome that depends on other people.",
+    "what_es": "Hacerte responsable de un resultado que depende de otras personas.",
+    "why": "Not about giving orders. These careers put you where someone has to decide, and where the decision has consequences for others.",
+    "why_es": "No va de mandar. Estas carreras te ponen donde alguien tiene que decidir, y donde la decisión tiene consecuencias para otros.",
+    "strategies": [
+      {"text": "Take charge of one small thing end to end — a class project, an event — and own how it turns out", "text_es": "Hazte cargo de algo pequeño de principio a fin —un trabajo de clase, un evento— y responde por cómo sale"},
+      {"text": "Practise saying «I got that wrong» in public. It is what buys you the room's trust", "text_es": "Practica decir «me equivoqué» en público. Es lo que te compra la confianza del grupo"},
+      {"text": "Delegate something you could do yourself, and let it be done differently", "text_es": "Delega algo que podrías hacer tú, y deja que se haga distinto"}
+    ],
+    "tools": [
+      {"text": "Student council, a club committee, a sports team", "text_es": "Consejo estudiantil, la junta de un club, un equipo deportivo"},
+      {"text": "Organise something real: a tournament, a fundraiser, a trip", "text_es": "Organiza algo de verdad: un torneo, una recolecta, un viaje"},
+      {"text": "Ask someone who leads well what they do when it goes wrong", "text_es": "Pregúntale a alguien que lidere bien qué hace cuando sale mal"}
+    ]
+  },
+
+  "TECHNICAL": {
+    "what": "Working fluently with the tools and systems the field runs on.",
+    "what_es": "Manejarte con soltura en las herramientas y los sistemas del campo.",
+    "why": "This one is the most learnable of the eight. A low score here says what you have not done yet, not what you cannot do.",
+    "why_es": "Es la más aprendible de las ocho. Una puntuación baja aquí dice lo que no has hecho todavía, no lo que no puedes hacer.",
+    "strategies": [
+      {"text": "Build one thing that works, badly, all the way to the end. Then build it again", "text_es": "Construye una cosa que funcione, mal, hasta el final. Luego constrúyela otra vez"},
+      {"text": "Learn the tool by breaking it: change something and find out why it stopped working", "text_es": "Aprende la herramienta rompiéndola: cambia algo y averigua por qué dejó de funcionar"},
+      {"text": "Read code or work made by someone better than you and copy their habits", "text_es": "Lee código o trabajo de alguien mejor que tú y cópiale las costumbres"}
+    ],
+    "tools": [
+      {"text": "freeCodeCamp — full free curriculum, project-based", "text_es": "freeCodeCamp — currículo completo y gratis, basado en proyectos"},
+      {"text": "The Odin Project — free, and it makes you build", "text_es": "The Odin Project — gratis, y te obliga a construir"},
+      {"text": "GitHub — put your work somewhere public from day one", "text_es": "GitHub — pon tu trabajo en un sitio público desde el primer día"}
+    ]
+  },
+
+  "SCIENTIFIC": {
+    "what": "Asking what would show you are wrong, and then going to look.",
+    "what_es": "Preguntarte qué demostraría que estás equivocado, y luego ir a mirar.",
+    "why": "These careers are judged on whether the evidence holds, not on whether the idea sounded good.",
+    "why_es": "Estas carreras se juzgan por si la evidencia aguanta, no por si la idea sonaba bien.",
+    "strategies": [
+      {"text": "Read one paper all the way through, including the limitations section nobody reads", "text_es": "Lee un paper entero, incluida la sección de limitaciones que no lee nadie"},
+      {"text": "Measure something twice and work out why the two numbers differ", "text_es": "Mide algo dos veces y averigua por qué los dos números no coinciden"},
+      {"text": "Before looking up an answer, write down what you expect and why", "text_es": "Antes de buscar una respuesta, escribe qué esperas y por qué"}
+    ],
+    "tools": [
+      {"text": "Google Scholar — the papers themselves, not the news article about them", "text_es": "Google Académico — los papers, no la noticia que habla de ellos"},
+      {"text": "A school lab, or a science fair with a real question", "text_es": "El laboratorio del colegio, o una feria de ciencias con una pregunta de verdad"},
+      {"text": "Python with pandas — the working language of data analysis", "text_es": "Python con pandas — el idioma de trabajo del análisis de datos"}
+    ]
+  },
+
+  "PRACTICAL": {
+    "what": "Making something physical work, with your hands and under real constraints.",
+    "what_es": "Hacer que algo físico funcione, con las manos y con limitaciones reales.",
+    "why": "Here the work meets material that does not care about your plan: it fits or it does not.",
+    "why_es": "Aquí el trabajo se encuentra con material al que tu plan le da igual: encaja o no encaja.",
+    "strategies": [
+      {"text": "Fix something that is broken instead of replacing it", "text_es": "Arregla algo que esté roto en vez de reemplazarlo"},
+      {"text": "Take something apart and put it back together. The second part is the lesson", "text_es": "Desarma algo y vuelve a armarlo. La segunda parte es la lección"},
+      {"text": "Work to a measurement someone else set, not to what looks about right", "text_es": "Trabaja con una medida que puso otro, no con lo que parece que está bien"}
+    ],
+    "tools": [
+      {"text": "Arduino or Raspberry Pi — electronics you can hold", "text_es": "Arduino o Raspberry Pi — electrónica que puedes sostener"},
+      {"text": "A makerspace or a technical workshop near you", "text_es": "Un makerspace o un taller técnico cerca de ti"},
+      {"text": "iFixit — repair guides for almost anything", "text_es": "iFixit — guías de reparación de casi cualquier cosa"}
+    ]
+  },
+
+  "ENTREPRENEURIAL": {
+    "what": "Spotting that something is missing, and doing something about it before being asked.",
+    "what_es": "Ver que algo falta, y hacer algo al respecto antes de que te lo pidan.",
+    "why": "These careers reward whoever starts. Not the best idea — the one that got built.",
+    "why_es": "Estas carreras premian a quien empieza. No a la mejor idea: a la que se llegó a construir.",
+    "strategies": [
+      {"text": "Sell something, once, to a stranger. Anything. The lesson is in being told no", "text_es": "Vende algo, una vez, a un desconocido. Lo que sea. La lección está en que te digan que no"},
+      {"text": "Find a problem someone near you actually has and solve it badly this week", "text_es": "Encuentra un problema que alguien cercano tenga de verdad y resuélvelo mal esta semana"},
+      {"text": "Work out what one hour of your time is worth, and act like it", "text_es": "Calcula cuánto vale una hora de tu tiempo, y actúa en consecuencia"}
+    ],
+    "tools": [
+      {"text": "A notebook of problems you notice. Most will be nothing; one will not", "text_es": "Un cuaderno de problemas que detectes. Casi todos serán nada; uno no"},
+      {"text": "A marketplace — sell something you made, not something you bought", "text_es": "Un marketplace — vende algo que hiciste, no algo que compraste"},
+      {"text": "Talk to someone running a small business about what actually costs them money", "text_es": "Habla con alguien que lleve un negocio pequeño sobre qué le cuesta dinero de verdad"}
+    ]
+  }
+}

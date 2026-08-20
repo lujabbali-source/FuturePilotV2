@@ -241,3 +241,60 @@ def test_legacy_results_can_still_be_read_in_both_languages(app_module, client, 
     otra_vez = app_module._localize_results(antiguo, "en")
     assert otra_vez["recommended_careers"][0]["justification"] == \
         en["recommended_careers"][0]["justification"]
+
+
+def test_every_translation_key_used_in_code_exists():
+    """Una clave que el codigo usa y el catalogo no tiene sale en crudo a la
+    pantalla: `27.3% flight.match`. No da error, no rompe el build, y el test
+    de simetria entre idiomas tampoco la ve - si falta en los dos, los dos
+    siguen siendo simetricos.
+
+    Paso justo eso al reescribir el plan de vuelo: reintroduje `tf("match")` y
+    `tf("yourCareer")` en la plantilla despues de que una tanda anterior las
+    hubiera retirado del catalogo."""
+    import re
+    from pathlib import Path
+
+    src = Path(__file__).resolve().parent.parent / "web" / "src"
+
+    def aplanar(node, prefix=""):
+        claves = set()
+        for clave, valor in node.items():
+            ruta = f"{prefix}{clave}"
+            claves |= aplanar(valor, f"{ruta}.") if isinstance(valor, dict) else {ruta}
+        return claves
+
+    catalogo = {
+        namespace.stem: aplanar(json.loads(namespace.read_text(encoding="utf-8")))
+        for namespace in (LOCALES / "es").glob("*.json")
+    }
+
+    # Los atajos por pagina: `const tf = (key) => t(`flight.${key}`, {ns:"site"})`.
+    # Sin resolverlos, medio codigo usa claves que este test no reconoceria.
+    ATAJOS = {"tf": ("site", "flight."), "tj": ("site", "journeyPage."),
+              "tp": ("passport", ""), "tl": ("login", ""), "tm": ("site", "")}
+
+    faltan = []
+    for modulo in src.rglob("*.js"):
+        if "/database/" in modulo.as_posix() or "/locales/" in modulo.as_posix():
+            continue
+        codigo = modulo.read_text(encoding="utf-8", errors="ignore")
+        codigo = re.sub(r"^\s*//.*$", "", codigo, flags=re.M)
+
+        usos = []
+        # t("clave", { ns: "x" }) y t("ns:clave")
+        for m in re.finditer(r'\bt\(\s*"([\w.:]+)"(?:\s*,\s*\{[^}]*ns:\s*"(\w+)")?', codigo):
+            clave, ns = m.group(1), m.group(2)
+            if ":" in clave:
+                ns, clave = clave.split(":", 1)
+            usos.append((ns or "test", clave))
+        # Los atajos por pagina
+        for atajo, (ns, prefijo) in ATAJOS.items():
+            for m in re.finditer(rf'\b{atajo}\(\s*"([\w.]+)"', codigo):
+                usos.append((ns, prefijo + m.group(1)))
+
+        for ns, clave in usos:
+            if ns in catalogo and clave not in catalogo[ns]:
+                faltan.append(f"{modulo.relative_to(src)}: {ns}:{clave}")
+
+    assert not faltan, "claves usadas y no definidas:\n  " + "\n  ".join(sorted(set(faltan)))

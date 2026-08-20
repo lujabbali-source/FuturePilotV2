@@ -240,9 +240,17 @@ def load_json_file(relative_path: str) -> List[Dict[str, Any]]:
 
 
 careers_db = load_json_file("data/careers.json")
+# Rutas de aprendizaje por carrera. Una carrera sin entrada aqui usa solo la
+# espina generica, asi que el archivo puede ir creciendo por tandas.
+roadmaps_db = load_json_file("data/roadmaps.json")
+# Que es cada dimension del perfil, por que importa y como se sube. Ocho
+# entradas, no setenta y tres: las habilidades son las mismas para todas las
+# carreras; lo que cambia por carrera es el nivel que pide.
+skills_db = load_json_file("data/skills.json")
 questions_db = load_json_file("data/questions.json")
 
-ai_system = FuturePilotAIEcosystem(careers_data=careers_db, questions_data=questions_db)
+ai_system = FuturePilotAIEcosystem(careers_data=careers_db, questions_data=questions_db,
+                                   roadmaps_data=roadmaps_db)
 
 # Configurable via env var: para tests aislados (ver tests/conftest.py) y
 # para deployments reales donde la base deberia vivir en un disco
@@ -788,6 +796,9 @@ def get_my_results(
         "success": True,
         "results": _localize_results(json.loads(latest["results_json"]), lang),
         "lang": _resolve_lang(lang),
+        # Lo ya marcado viaja con el resultado: /journey necesita las dos
+        # cosas a la vez y pedirlas por separado deja la barra parpadeando.
+        "completed_checkpoints": ai_system.completed_checkpoints(str(current_user["id"])),
         "created_at": latest["created_at"],
     }
 
@@ -810,7 +821,8 @@ JOURNEY_STEPS = [
     ("profile", None, 1, "/passport"),
     ("explore", "countries_explored", 3, "/globe"),
     ("universities", "universities_explored", 3, "/globe"),
-    ("goal", None, 1, "/passport"),
+    # Tres de los cuatro campos del objetivo: la meta pensada, no tecleada.
+    ("goal", None, 3, "/passport"),
     ("mentor", "ai_conversations", 1, "#mentor"),
 ]
 
@@ -823,9 +835,15 @@ def _build_journey(profile: Dict[str, Any], progress: Dict[str, Any]) -> List[Di
     de eventos reales del pasaporte. Nada aqui es un numero de adorno.
     """
     goals = profile.get("goals") or {}
+    # El objetivo no es una casilla: se cuenta cuantos campos ha pensado.
+    # Antes bastaba escribir el nombre de una universidad para dar el hito
+    # entero por hecho, asi que el recorrido subia un escalon completo por
+    # teclear una palabra. Tres de cuatro es haberlo pensado; uno es una idea
+    # suelta.
+    campos_objetivo = ("dream_university", "desired_career", "target_country", "languages_to_learn")
     hechos = {
         "profile": 1 if (profile.get("country") and profile.get("city")) else 0,
-        "goal": 1 if goals.get("dream_university") else 0,
+        "goal": sum(1 for campo in campos_objetivo if (goals.get(campo) or "").strip()),
     }
 
     journey = []
@@ -1318,7 +1336,8 @@ def admin_repair(action: str, current_admin: dict = Depends(get_current_admin_re
     if action == "reload-data":
         careers_db = load_json_file("data/careers.json")
         questions_db = load_json_file("data/questions.json")
-        ai_system = FuturePilotAIEcosystem(careers_data=careers_db, questions_data=questions_db)
+        ai_system = FuturePilotAIEcosystem(careers_data=careers_db, questions_data=questions_db,
+                                   roadmaps_data=roadmaps_db)
         users_store.record_admin_action(
             current_admin["id"], "repair.reload-data",
             {"careers": len(careers_db), "questions": len(questions_db)},
@@ -1431,6 +1450,23 @@ def _localize_question(question: Dict[str, Any], lang: str) -> Dict[str, Any]:
         for answer in question.get("answers", [])
     ]
     return localized
+
+
+# Por debajo de esta diferencia contra lo que pide la carrera no se considera
+# una carencia: estar en 6.8 donde piden 7.0 no es una brecha, es la misma
+# cosa medida con ruido. Mismo umbral que usa el mentor.
+GAP_THRESHOLD = 1.0
+
+
+def _career_match_percentage(vector: Dict[str, Any], career: Dict[str, Any]) -> Optional[float]:
+    """La compatibilidad de UNA carrera con el perfil.
+
+    Se puntua con el mismo motor que el test para que el numero no pueda
+    discrepar del que el estudiante ve en su pantalla de resultados."""
+    if not vector:
+        return None
+    puntuadas = ai_system.brain.decision.rank_careers(vector, [career])
+    return puntuadas[0]["match_percentage"] if puntuadas else None
 
 
 def _localize_career(career: Dict[str, Any], lang: str) -> Dict[str, Any]:
@@ -1620,7 +1656,12 @@ def _localize_results(results: Dict[str, Any], lang: str) -> Dict[str, Any]:
         roadmap = dict(roadmap)
         roadmap["career_title"] = titulo
         roadmap["checkpoints"] = [
-            {**cp, **localization.checkpoint_text(cp, lang, titulo)}
+            {**cp,
+             **localization.checkpoint_text(cp, lang, titulo),
+             # Las sub-tareas viajan con los dos idiomas y, en el paso de
+             # nivelacion, con el cluster en mayusculas. Sin esto el cliente
+             # recibiria ambas versiones y un identificador en crudo.
+             "content": localization.checkpoint_content(cp.get("content"), lang)}
             if cp.get("key") else cp
             for cp in roadmap["checkpoints"]
         ]
@@ -1752,6 +1793,114 @@ def process_test_assessment(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error procesando el test de orientacion: {str(e)}",
         )
+
+
+class CheckpointRequest(BaseModel):
+    item_id: str = Field(..., min_length=1, max_length=120,
+                         description="id de la sub-tarea, ej. c1:foundations:0")
+    done: bool = Field(True, description="true para marcarla, false para desmarcarla")
+
+
+@app.get("/api/v1/careers/{career_id}/fit", status_code=status.HTTP_200_OK)
+def get_career_fit(
+    career_id: str,
+    lang: Optional[str] = None,
+    current_user: dict = Depends(get_current_user_required),
+):
+    """Por que esta carrera encaja contigo, dimension a dimension.
+
+    El motor ya sabia puntuar el perfil y comparar contra lo que pide cada
+    carrera; lo que faltaba era decirlo. El estudiante veia un porcentaje sin
+    saber de donde salia ni que hacer si no le gustaba.
+
+    Devuelve dos listas: en que dimensiones llegas o sobras, y en cuales te
+    quedas corto. Cada una con lo que tienes, lo que pide la carrera, y que
+    es esa dimension - y para las que faltan, como se sube y con que."""
+    career = next((c for c in careers_db if c.get("id") == career_id), None)
+    if career is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f"No existe la carrera {career_id}.")
+
+    latest = users_store.latest_result_for_user(current_user["id"])
+    if latest is None:
+        # Sin test no hay perfil contra el que comparar. Es una respuesta
+        # valida, no un error: la pantalla la usa para invitar a hacerlo.
+        return {"success": True, "career_id": career_id, "has_profile": False,
+                "matched": [], "gaps": []}
+
+    resultado = json.loads(latest["results_json"])
+    vector = resultado.get("user_vector") or {}
+    requisitos = career.get("requirements") or {}
+    lang = _resolve_lang(lang)
+
+    def describir(cluster: str, tiene: float, pide: float, con_ayuda: bool) -> Dict[str, Any]:
+        info = skills_db.get(cluster) or {}
+        suffix = "" if lang == "en" else f"_{lang}"
+
+        def campo(nombre):
+            return info.get(f"{nombre}{suffix}") or info.get(nombre, "")
+
+        def lista(nombre):
+            return [
+                item.get(f"text{suffix}") or item.get("text", "")
+                for item in (info.get(nombre) or [])
+            ]
+
+        salida = {
+            "cluster": cluster,
+            "label": localization.cluster_label(cluster, lang),
+            "score": round(tiene, 1),
+            "needed": round(pide, 1),
+            "what": campo("what"),
+            "why": campo("why"),
+        }
+        # Las estrategias y las herramientas solo donde hacen falta. En una
+        # dimension que ya cubres, decirle como mejorarla es ruido.
+        if con_ayuda:
+            salida["strategies"] = lista("strategies")
+            salida["tools"] = lista("tools")
+        return salida
+
+    matched, gaps = [], []
+    for cluster, pide in requisitos.items():
+        tiene = vector.get(cluster)
+        if tiene is None:
+            continue
+        if tiene >= pide:
+            matched.append(describir(cluster, tiene, pide, con_ayuda=False))
+        elif pide - tiene >= GAP_THRESHOLD:
+            gaps.append(describir(cluster, tiene, pide, con_ayuda=True))
+
+    # Lo mas relevante primero: donde mas sobras y donde mas falta.
+    matched.sort(key=lambda e: e["score"] - e["needed"], reverse=True)
+    gaps.sort(key=lambda e: e["score"] - e["needed"])
+
+    return {
+        "success": True,
+        "career_id": career_id,
+        "career": _localize_career(career, lang),
+        "has_profile": True,
+        "match_percentage": _career_match_percentage(vector, career),
+        "matched": matched,
+        "gaps": gaps,
+        "lang": lang,
+    }
+
+
+@app.post("/api/v1/me/roadmap/checkpoint", status_code=status.HTTP_200_OK)
+def toggle_roadmap_checkpoint(
+    payload: CheckpointRequest,
+    current_user: dict = Depends(get_current_user_required),
+):
+    """Marca una sub-tarea del roadmap como hecha, o la desmarca.
+
+    El progreso vive en la CUENTA, no en el navegador: quien marca un paso
+    desde el movil tiene que verlo marcado al abrir el portatil. Ese es todo
+    el motivo por el que esto es un endpoint y no localStorage."""
+    completados = ai_system.toggle_checkpoint(
+        str(current_user["id"]), payload.item_id, payload.done
+    )
+    return {"success": True, "completed": completados}
 
 
 @app.post("/api/v1/mentor/chat", status_code=status.HTTP_200_OK)

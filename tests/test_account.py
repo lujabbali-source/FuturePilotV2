@@ -56,11 +56,21 @@ def test_journey_counts_real_actions_only(client, register_and_login, sample_ans
     client.put("/api/v1/passport/goals", headers=headers,
                json={"goals": {"dream_university": "MIT"}})
 
+    a_medias = {p["key"]: p for p in client.get("/api/v1/me/dashboard", headers=headers).json()["journey"]}
+    assert a_medias["test"]["complete"]
+    assert a_medias["profile"]["complete"], "pais + ciudad completan la identificacion"
+    # Un solo campo no es haber pensado la meta. Antes bastaba teclear el
+    # nombre de una universidad para dar el hito entero por hecho, asi que el
+    # recorrido subia un escalon completo por escribir una palabra.
+    assert not a_medias["goal"]["complete"], "un campo no completa la meta"
+    assert a_medias["goal"]["done"] == 1, "pero si cuenta como avance parcial"
+    assert not a_medias["explore"]["complete"], "no se ha explorado ningun pais"
+
+    client.put("/api/v1/passport/goals", headers=headers, json={"goals": {
+        "dream_university": "MIT", "desired_career": "Fisica", "target_country": "Canada",
+    }})
     lleno = {p["key"]: p for p in client.get("/api/v1/me/dashboard", headers=headers).json()["journey"]}
-    assert lleno["test"]["complete"]
-    assert lleno["profile"]["complete"], "pais + ciudad completan la identificacion"
-    assert lleno["goal"]["complete"], "la universidad objetivo completa la meta"
-    assert not lleno["explore"]["complete"], "no se ha explorado ningun pais"
+    assert lleno["goal"]["complete"], "tres campos si completan la meta"
 
 
 def test_history_keeps_every_attempt(client, register_and_login, sample_answers):
@@ -190,3 +200,80 @@ def test_the_route_starts_with_the_test(client, register_and_login):
     assert journey[0]["key"] == "test"
     # Y ninguno viene marcado como inalcanzable: todos tienen a donde ir.
     assert all(paso["href"] for paso in journey)
+
+
+def _perfil_creativo(client, headers, questions):
+    """Perfil marcado en creatividad y trato con personas: hace falta uno
+    desequilibrado para que haya algo que explicar."""
+    answers = [
+        {"question_index": i,
+         "answer_index": 0 if ({a.get("cluster") for a in q.get("answers", [])} & {"CREATIVE", "SOCIAL"}) else 4}
+        for i, q in enumerate(questions)
+    ]
+    r = client.post("/api/v1/assess?lang=es", json={"answers": answers}, headers=headers).json()
+    client.post("/api/v1/me/claim-result", headers=headers, json={"result_id": r["result_id"]})
+    return r["data"]
+
+
+def test_career_fit_explains_any_career_not_just_your_own(client, register_and_login, app_module):
+    """El boton de /careers manda a /flightplan, y la pagina hablaba SIEMPRE de
+    tu mejor coincidencia: pulsaras la carrera que pulsaras, acababas leyendo
+    sobre otra. Ahora se puede preguntar por cualquiera del catalogo."""
+    _, headers = register_and_login()
+    datos = _perfil_creativo(client, headers, app_module.questions_db)
+    tuya = datos["recommended_careers"][0]["career_id"]
+
+    otra = next(c["id"] for c in app_module.careers_db if c["id"] != tuya)
+    r = client.get(f"/api/v1/careers/{otra}/fit?lang=es", headers=headers)
+    assert r.status_code == 200
+    cuerpo = r.json()
+    assert cuerpo["career_id"] == otra, "responde por la carrera pedida, no por la tuya"
+    assert cuerpo["match_percentage"] is not None
+
+
+def test_career_fit_splits_what_fits_from_what_is_missing(client, register_and_login, app_module):
+    """Las dos preguntas que el estudiante hace de verdad: por que iria
+    conmigo, y que tendria que mejorar. Con los dos numeros a la vista para
+    que pueda comprobarlo."""
+    _, headers = register_and_login()
+    _perfil_creativo(client, headers, app_module.questions_db)
+
+    cuerpo = client.get("/api/v1/careers/c1/fit?lang=es", headers=headers).json()
+    assert cuerpo["has_profile"]
+    assert cuerpo["matched"] and cuerpo["gaps"], "un perfil marcado tiene de las dos"
+
+    for entrada in cuerpo["matched"]:
+        assert entrada["score"] >= entrada["needed"]
+        # En lo que ya cubres, decirte como mejorarlo es ruido.
+        assert "strategies" not in entrada
+    for entrada in cuerpo["gaps"]:
+        assert entrada["score"] < entrada["needed"]
+        assert entrada["strategies"] and entrada["tools"], "una brecha sin salida no ayuda"
+        assert entrada["what"] and entrada["why"]
+
+
+def test_career_fit_answers_before_the_test_without_failing(client, register_and_login):
+    """Sin test no hay perfil contra el que comparar. Es una respuesta valida,
+    no un error: la pantalla la usa para invitar a hacerlo."""
+    _, headers = register_and_login()
+    cuerpo = client.get("/api/v1/careers/c1/fit", headers=headers).json()
+    assert cuerpo["has_profile"] is False
+    assert cuerpo["matched"] == [] and cuerpo["gaps"] == []
+
+
+def test_every_skill_has_content_in_both_languages(app_module):
+    """El panel se abre con lo que hay en skills.json. Una dimension a medias
+    abre un panel vacio, y el estudiante ve un numero que no sabe interpretar
+    ni como cambiar."""
+    clusters = set(app_module.ai_system.brain.profile_engine.CLUSTERS)
+    escritas = {k for k in app_module.skills_db if not k.startswith("_")}
+    assert clusters == escritas, f"faltan: {sorted(clusters - escritas)}"
+
+    for cluster in clusters:
+        info = app_module.skills_db[cluster]
+        for campo in ("what", "why"):
+            assert info.get(campo) and info.get(f"{campo}_es"), f"{cluster}: falta {campo}"
+        for lista in ("strategies", "tools"):
+            assert len(info.get(lista) or []) >= 3, f"{cluster}: {lista} corta"
+            for item in info[lista]:
+                assert item.get("text") and item.get("text_es"), f"{cluster}: {lista} sin traducir"

@@ -195,6 +195,7 @@ TEMPLATES: Dict[str, Dict[str, str]] = {
         "journey.universities": "discovering three universities",
         "journey.goal": "setting your target university",
         "journey.mentor": "talking to me",
+        "levelling.item": "Raise {cluster} from {from_} to {to}",
         "action.roadmap": "Explore your roadmap",
         "action.hubs": "Review the global hubs",
         "action.practice": "Practise your weaker areas",
@@ -284,6 +285,7 @@ TEMPLATES: Dict[str, Dict[str, str]] = {
         "journey.universities": "descubrir tres universidades",
         "journey.goal": "fijar tu universidad objetivo",
         "journey.mentor": "hablar conmigo",
+        "levelling.item": "Subir {cluster} de {from_} a {to}",
         "action.roadmap": "Explorar tu roadmap",
         "action.hubs": "Revisar los hubs globales",
         "action.practice": "Practicar tus áreas más flojas",
@@ -471,6 +473,40 @@ def hub_desc(hub: Dict[str, Any], lang: str) -> str:
     """La descripcion de un hub global. Mismo convenio que las carreras."""
     suffix = "" if resolve(lang) == "en" else f"_{resolve(lang)}"
     return hub.get(f"desc{suffix}") or hub.get("desc", "")
+
+
+def checkpoint_content(content: Optional[Dict[str, Any]], lang: str) -> Optional[Dict[str, Any]]:
+    """Traduce las sub-tareas de un hito del roadmap.
+
+    Dos formas conviven. Las escritas a mano en roadmaps.json llevan
+    `text`/`text_es`, mismo convenio que el resto de los datos. La de
+    nivelacion no se escribe: se genera del cruce entre el perfil y lo que
+    pide la carrera, y llega como {cluster, from, to} para redactarse aqui -
+    asi el numero se presenta en el idioma correcto y el cluster no sale como
+    identificador en mayusculas."""
+    if not content:
+        return None
+
+    if content.get("key") == "levelling":
+        return {
+            "title": text("roadmap.step2.title", lang, career="", gaps=join(
+                [cluster_label(i["cluster"], lang) for i in content.get("items", [])], lang
+            )),
+            "items": [
+                text("levelling.item", lang, cluster=cluster_label(i["cluster"], lang),
+                     from_=i["from"], to=i["to"])
+                for i in content.get("items", [])
+            ],
+        }
+
+    suffix = "" if resolve(lang) == "en" else f"_{resolve(lang)}"
+    return {
+        "title": content.get(f"title{suffix}") or content.get("title", ""),
+        "items": [
+            item.get(f"text{suffix}") or item.get("text", "")
+            for item in content.get("items", [])
+        ],
+    }
 
 
 def checkpoint_text(checkpoint: Dict[str, Any], lang: str, career: str) -> Dict[str, str]:

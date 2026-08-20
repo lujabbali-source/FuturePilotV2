@@ -536,23 +536,78 @@ class CareerEngine:
 class RoadmapPlanner:
     """
     Módulo de Planificación de Rutas (GPS Educativo).
+
+    La ESPINA es la misma para todas las carreras -fundamentos, nivelacion,
+    proyecto, salida profesional- porque ordena bien cualquier camino. Lo que
+    cambia por carrera es el CONTENIDO de cada paso, y vive en
+    data/roadmaps.json.
+
+    Antes no cambiaba nada: los cuatro pasos eran identicos para las 73
+    carreras salvo el nombre y la lista de brechas. En pantalla, Fisica
+    mostraba exactamente lo mismo que Ingenieria de software.
     """
-    def build_roadmap(self, career_id: Optional[str], gaps: List[str]) -> Dict[str, Any]:
-        """El roadmap sale sin redactar: cada hito lleva su clave de texto.
+
+    # Las sub-tareas por carrera. Una carrera sin entrada usa solo la espina,
+    # que es lo que habia antes: asi se puede ir escribiendo por tandas sin
+    # dejar la aplicacion a medias por el camino.
+    def __init__(self, roadmaps: Optional[Dict[str, Any]] = None):
+        self.roadmaps = roadmaps or {}
+
+    def build_roadmap(self, career_id: Optional[str], gaps: List[str],
+                      vector: Optional[Dict[str, float]] = None,
+                      career: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """El roadmap sale sin redactar: cada hito lleva su clave de texto y,
+        cuando la carrera tiene ruta escrita, sus sub-tareas.
 
         `career_id` en vez del titulo porque el titulo esta traducido y el
         roadmap se guarda; el nombre de la carrera se resuelve al responder,
         contra el catalogo."""
+        ruta = self.roadmaps.get(career_id or "") or {}
+
+        checkpoints = [
+            {"step": 1, "key": "roadmap.step1", "reward_xp": 100,
+             "content": ruta.get("foundations")},
+            # El paso de nivelacion NO se escribe a mano: sale del cruce entre
+            # el perfil del estudiante y lo que pide la carrera, asi que es
+            # distinto para cada persona aunque la carrera sea la misma.
+            {"step": 2, "key": "roadmap.step2", "reward_xp": 250, "gaps": gaps,
+             "content": self._levelling_step(gaps, vector, career)},
+            {"step": 3, "key": "roadmap.step3", "reward_xp": 400,
+             "content": ruta.get("project")},
+            {"step": 4, "key": "roadmap.step4", "reward_xp": 600,
+             "content": ruta.get("launch")},
+        ]
         return {
             "career_id": career_id,
             "estimated_months": 8,
-            "checkpoints": [
-                {"step": 1, "key": "roadmap.step1", "reward_xp": 100},
-                {"step": 2, "key": "roadmap.step2", "reward_xp": 250, "gaps": gaps},
-                {"step": 3, "key": "roadmap.step3", "reward_xp": 400},
-                {"step": 4, "key": "roadmap.step4", "reward_xp": 600},
-            ]
+            "checkpoints": checkpoints,
         }
+
+    @staticmethod
+    def _levelling_step(gaps: List[str], vector: Optional[Dict[str, float]],
+                        career: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+        """Una sub-tarea por cada dimension donde el estudiante queda corto,
+        con el numero que tiene y al que hay que llegar.
+
+        Es lo mas personal del roadmap y no cuesta redactar nada: los dos
+        numeros ya estan calculados. "Subir Habilidad tecnica de 5.0 a 9.5" es
+        comprobable; "fortalecimiento de areas de oportunidad" no."""
+        if not gaps or not vector or not career:
+            return None
+        requisitos = career.get("requirements") or {}
+        items = [
+            {"cluster": cluster,
+             "from": round(vector[cluster], 1),
+             "to": round(requisitos[cluster], 1)}
+            for cluster in gaps
+            # Solo si de verdad hay que subir. Sin esta comprobacion, una
+            # dimension donde el estudiante ya va sobrado imprime un absurdo
+            # -"subir Habilidad tecnica de 10.0 a 7.5"- y basta con que la
+            # lista de brechas venga de otro calculo para que ocurra.
+            if cluster in vector and cluster in requisitos
+            and vector[cluster] < requisitos[cluster]
+        ]
+        return {"key": "levelling", "items": items} if items else None
 
 
 class LearningEngine:
@@ -1070,7 +1125,8 @@ class FuturePilotBrain:
     Orquesta el flujo completo de módulos siguiendo el ciclo cognitivo.
     """
 
-    def __init__(self, careers_data: List[Dict[str, Any]], questions_data: List[Dict[str, Any]]):
+    def __init__(self, careers_data: List[Dict[str, Any]], questions_data: List[Dict[str, Any]],
+                 roadmaps_data: Optional[Dict[str, Any]] = None):
         self.careers_db = careers_data
         self.questions_db = questions_data
 
@@ -1081,7 +1137,7 @@ class FuturePilotBrain:
         self.reasoning = ReasoningEngine()
         self.decision = DecisionEngine()
         self.career_engine = CareerEngine()
-        self.planner = RoadmapPlanner()
+        self.planner = RoadmapPlanner(roadmaps_data)
         self.learning = LearningEngine()
         self.builder = ResponseBuilder()
 
@@ -1127,7 +1183,13 @@ class FuturePilotBrain:
         roadmap = None
         recommended_hubs = []
         if top_match:
-            roadmap = self.planner.build_roadmap(top_match.get("career_id"), top_match["skill_gaps"])
+            carrera = next(
+                (c for c in self.careers_db if c.get("id") == top_match.get("career_id")), None
+            )
+            roadmap = self.planner.build_roadmap(
+                top_match.get("career_id"), top_match["skill_gaps"],
+                vector=user_vector, career=carrera,
+            )
             recommended_hubs = self.career_engine.get_recommended_hubs(
                 top_match.get("category", ""), top_match.get("career_id")
             )
@@ -1192,9 +1254,10 @@ class FuturePilotAIEcosystem:
     """
     Fachada adaptadora para mantener compatibilidad total con el servidor FastAPI (app.py).
     """
-    def __init__(self, careers_data: List[Dict[str, Any]], questions_data: List[Dict[str, Any]]):
-        self.brain = FuturePilotBrain(careers_data, questions_data)
-        self.mentor = MentorEngine(self.brain.memory_system, careers_data)
+    def __init__(self, careers_data: List[Dict[str, Any]], questions_data: List[Dict[str, Any]],
+                 roadmaps_data: Optional[Dict[str, Any]] = None):
+        self.brain = FuturePilotBrain(careers_data, questions_data, roadmaps_data)
+        self.mentor = MentorEngine(self.brain.memory_system, careers_data, self.brain.decision)
 
     def sync_memory_from_results(self, user_id: str, results: Dict[str, Any]) -> None:
         """El test casi siempre se completa antes de iniciar sesion, con
@@ -1225,6 +1288,34 @@ class FuturePilotAIEcosystem:
             "recommended_hubs": results.get("recommended_hubs") or [],
         })
         self.brain.memory_system.save_memory(user_id, memory)
+
+    # ------------------------------------------------------------------
+    # Progreso del roadmap
+    # ------------------------------------------------------------------
+    def toggle_checkpoint(self, user_id: str, item_id: str, done: bool) -> List[str]:
+        """Marca o desmarca una sub-tarea del roadmap y devuelve la lista
+        completa de completadas.
+
+        `completed_checkpoints` estaba en el esquema de la memoria desde el
+        primer dia -en el archivo de cada estudiante, siempre vacio- y nada
+        escribia nunca en el. Por eso la barra de progreso de /journey era un
+        35% fijo en el HTML que no se movia al pulsar nada.
+
+        Es idempotente: marcar dos veces lo mismo no lo duplica, y desmarcar
+        algo que no estaba no falla. El cliente puede reintentar sin miedo."""
+        with self.brain.memory_system.lock(user_id):
+            memory = self.brain.memory_system.load_memory(user_id)
+            hechos = list(memory.get("completed_checkpoints") or [])
+            if done and item_id not in hechos:
+                hechos.append(item_id)
+            elif not done and item_id in hechos:
+                hechos.remove(item_id)
+            memory["completed_checkpoints"] = hechos
+            self.brain.memory_system.save_memory(user_id, memory)
+            return hechos
+
+    def completed_checkpoints(self, user_id: str) -> List[str]:
+        return list(self.brain.memory_system.load_memory(user_id).get("completed_checkpoints") or [])
 
     @staticmethod
     def _build_career_justification(match: Dict[str, Any]) -> Dict[str, Any]:
