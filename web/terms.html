@@ -1,30 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="site:pageTitle.terms">Terms &amp; Conditions · FuturePilot</title>
+<title data-i18n="site:pageTitle.terms">Términos y condiciones · FuturePilot</title>
 <link rel="stylesheet" href="/Frontend/style.css">
 </head>
 <body>
 <div class="background-glow"></div>
 
+<!-- Mismo criterio que /privacy: todo el texto pasa por data-i18n. Unos
+     términos que solo existen en inglés no obligan a nadie que no los pueda
+     leer, y quien los tiene que entender aquí es un estudiante de colegio. -->
 <main class="legal-shell">
-  <a class="back" href="/">← Back to FuturePilot</a>
-  <h1>Terms &amp; Conditions</h1>
-  <p class="legal-note">This page is a placeholder. FuturePilot is under active development and these terms have not yet been finalized or reviewed by legal counsel. Do not treat this as a binding agreement.</p>
+  <a class="back" href="/" data-i18n="terms.back">← Volver a FuturePilot</a>
+  <h1 data-i18n="terms.title">Términos y condiciones</h1>
+  <p class="legal-updated" data-i18n="terms.updated">Última actualización: 20 de agosto de 2026</p>
 
-  <h2>Using FuturePilot</h2>
-  <p>FuturePilot is a vocational guidance platform: it helps you explore careers, universities and personalized roadmaps based on an assessment you complete voluntarily.</p>
+  <div class="legal-note">
+    <p class="legal-note__title" data-i18n="terms.noteTitle">En una frase</p>
+    <p data-i18n="terms.note"></p>
+  </div>
 
-  <h2>Your account</h2>
-  <p>You're responsible for keeping your login credentials private. Don't share your account, and let us know if you believe it's been compromised.</p>
+  <h2 data-i18n="terms.whatTitle">Qué es FuturePilot</h2>
+  <p data-i18n="terms.what"></p>
+  <p data-i18n="terms.free"></p>
 
-  <h2>Your content</h2>
-  <p>Your test answers and generated results belong to you. We use them only to power your experience on the platform.</p>
+  <!-- Este bloque va resaltado igual que el de menores en la política: es lo
+       que evita que un chico de 16 años se tome el resultado como una
+       sentencia sobre su vida. -->
+  <section class="legal-minors">
+    <h2 data-i18n="terms.notTitle">Qué NO es, y esto importa</h2>
+    <p data-i18n="terms.notAdvice"></p>
+    <p data-i18n="terms.notAdmission"></p>
+    <p class="legal-pending" data-i18n="terms.notData"></p>
+  </section>
 
-  <h2>Questions</h2>
-  <p>Reach out at <a href="mailto:ljfuturepilot@gmail.com">ljfuturepilot@gmail.com</a> with any questions about these terms.</p>
+  <h2 data-i18n="terms.whoTitle">Quién puede usarlo</h2>
+  <p data-i18n="terms.who"></p>
+
+  <h2 data-i18n="terms.accountTitle">Tu cuenta</h2>
+  <ul class="legal-list">
+    <li data-i18n="terms.accountKeep"></li>
+    <li data-i18n="terms.accountOne"></li>
+    <li data-i18n="terms.accountLose"></li>
+  </ul>
+
+  <h2 data-i18n="terms.yoursTitle">Lo que tú pones</h2>
+  <p data-i18n="terms.yours"></p>
+
+  <h2 data-i18n="terms.oursTitle">Lo que ponemos nosotros</h2>
+  <p data-i18n="terms.ours"></p>
+
+  <h2 data-i18n="terms.fairTitle">Lo que te pedimos</h2>
+  <p data-i18n="terms.fairIntro"></p>
+  <ul class="legal-list">
+    <li data-i18n="terms.fairAbuse"></li>
+    <li data-i18n="terms.fairHonest"></li>
+    <li data-i18n="terms.fairReport"></li>
+  </ul>
+
+  <h2 data-i18n="terms.upTitle">Disponibilidad, dicho sin adornos</h2>
+  <p data-i18n="terms.up"></p>
+  <p data-i18n="terms.upBackup"></p>
+
+  <h2 data-i18n="terms.endTitle">Cerrar la cuenta</h2>
+  <p data-i18n="terms.endYou"></p>
+  <p data-i18n="terms.endUs"></p>
+
+  <h2 data-i18n="terms.liabTitle">Responsabilidad</h2>
+  <p data-i18n="terms.liab"></p>
+
+  <h2 data-i18n="terms.lawTitle">Ley aplicable</h2>
+  <p data-i18n="terms.law"></p>
+
+  <h2 data-i18n="terms.changesTitle">Cambios</h2>
+  <p data-i18n="terms.changes"></p>
+
+  <h2 data-i18n="terms.contactTitle">Contacto</h2>
+  <p data-i18n="terms.contact"></p>
 </main>
 <script type="module" src="/src/terms/main.js"></script>
 </body>

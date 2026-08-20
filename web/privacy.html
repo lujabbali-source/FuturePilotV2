@@ -1,30 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="site:pageTitle.privacy">Privacy Policy · FuturePilot</title>
+<title data-i18n="site:pageTitle.privacy">Política de privacidad · FuturePilot</title>
 <link rel="stylesheet" href="/Frontend/style.css">
 </head>
 <body>
 <div class="background-glow"></div>
 
+<!-- Todo el texto pasa por data-i18n: esta es una plataforma para estudiantes
+     colombianos y una política de privacidad que solo existe en inglés no la
+     puede leer la persona a la que le estamos pidiendo los datos. El HTML
+     lleva el español porque es el idioma por defecto de la app. -->
 <main class="legal-shell">
-  <a class="back" href="/">← Back to FuturePilot</a>
-  <h1>Privacy Policy</h1>
-  <p class="legal-note">This page is a placeholder. FuturePilot is under active development and this policy has not yet been finalized or reviewed by legal counsel. Do not treat this as a complete or binding privacy notice.</p>
+  <a class="back" href="/" data-i18n="privacy.back">← Volver a FuturePilot</a>
+  <h1 data-i18n="privacy.title">Política de privacidad</h1>
+  <p class="legal-updated" data-i18n="privacy.updated">Última actualización: 20 de agosto de 2026</p>
 
-  <h2>What we store</h2>
-  <p>Your email, name (if provided), and a securely hashed version of your password - never the password itself. Your assessment answers and the results generated from them, tied to your account once you register or log in.</p>
+  <div class="legal-note">
+    <p class="legal-note__title" data-i18n="privacy.noteTitle">Antes de empezar, con honestidad</p>
+    <p data-i18n="privacy.note"></p>
+  </div>
 
-  <h2>How we protect it</h2>
-  <p>Passwords are hashed with PBKDF2-SHA256 before they ever touch storage. Sessions use bearer tokens, not your raw credentials, and expire automatically.</p>
+  <h2 data-i18n="privacy.whoTitle">Quién responde por tus datos</h2>
+  <p data-i18n="privacy.who"></p>
 
-  <h2>What we don't do</h2>
-  <p>We don't sell your data, and we don't share it with third parties beyond what's needed to run the platform itself.</p>
+  <h2 data-i18n="privacy.whatTitle">Qué guardamos exactamente</h2>
+  <p data-i18n="privacy.whatIntro"></p>
+  <ul class="legal-list">
+    <li data-i18n="privacy.whatAccount"></li>
+    <li data-i18n="privacy.whatTest"></li>
+    <li data-i18n="privacy.whatPassport"></li>
+    <li data-i18n="privacy.whatActivity"></li>
+    <li data-i18n="privacy.whatTech"></li>
+  </ul>
 
-  <h2>Questions</h2>
-  <p>Reach out at <a href="mailto:ljfuturepilot@gmail.com">ljfuturepilot@gmail.com</a> with any questions about your data.</p>
+  <h2 data-i18n="privacy.whyTitle">Para qué los usamos</h2>
+  <p data-i18n="privacy.why"></p>
+
+  <h2 data-i18n="privacy.shareTitle">Con quién los compartimos</h2>
+  <p data-i18n="privacy.share"></p>
+  <p data-i18n="privacy.shareAI"></p>
+  <p data-i18n="privacy.shareMail"></p>
+
+  <!-- El bloque de menores va resaltado a propósito: es la parte que un padre
+       o una madre viene a buscar, y la que admite menos ambigüedad. -->
+  <section class="legal-minors">
+    <h2 data-i18n="privacy.minorsTitle">Si eres menor de edad</h2>
+    <p data-i18n="privacy.minorsIntro"></p>
+    <p data-i18n="privacy.minorsLaw"></p>
+    <p data-i18n="privacy.minorsPractice"></p>
+    <p class="legal-pending" data-i18n="privacy.minorsPending"></p>
+  </section>
+
+  <h2 data-i18n="privacy.timeTitle">Cuánto tiempo los conservamos</h2>
+  <p data-i18n="privacy.timeSession"></p>
+  <p data-i18n="privacy.timeRest"></p>
+
+  <h2 data-i18n="privacy.rightsTitle">Qué puedes hacer con tus datos</h2>
+  <p data-i18n="privacy.rightsIntro"></p>
+  <ul class="legal-list">
+    <li data-i18n="privacy.rightsExport"></li>
+    <li data-i18n="privacy.rightsDelete"></li>
+    <li data-i18n="privacy.rightsFix"></li>
+    <li data-i18n="privacy.rightsAsk"></li>
+  </ul>
+
+  <h2 data-i18n="privacy.secTitle">Cómo lo protegemos</h2>
+  <p data-i18n="privacy.sec"></p>
+  <p data-i18n="privacy.secHonest"></p>
+
+  <h2 data-i18n="privacy.changesTitle">Cambios a esta política</h2>
+  <p data-i18n="privacy.changes"></p>
+
+  <h2 data-i18n="privacy.contactTitle">Contacto</h2>
+  <p data-i18n="privacy.contact"></p>
 </main>
 <script type="module" src="/src/privacy/main.js"></script>
 </body>

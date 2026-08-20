@@ -150,6 +150,13 @@ app.add_middleware(
 # el clickjacking del todo en vez de permitirlo desde el mismo origen.
 # --------------------------------------------------------------------------
 def _build_csp(*, allow_inline_scripts: bool) -> str:
+    # Nada externo. La politica permitia fonts.googleapis.com y
+    # fonts.gstatic.com para las tipografias, asi que cada carga de pagina
+    # mandaba a Google la IP del estudiante, su navegador y la pagina que
+    # estaba viendo. Ahora se sirven desde aqui (ver Frontend/fonts.css) y la
+    # CSP no autoriza un solo destino de fuera: si algun dia se cuela una
+    # dependencia externa, el navegador la bloquea en vez de permitirla.
+    #
     # Ni script-src ni style-src necesitan ya 'unsafe-inline'. El sitio no
     # tiene un solo <script> ni un solo <style> inline: todo se sirve
     # compilado desde web/. Lo que sigue siendo dinamico - el ancho de las
@@ -162,8 +169,8 @@ def _build_csp(*, allow_inline_scripts: bool) -> str:
     return (
         "default-src 'self'; "
         f"script-src {script_src}; "
-        "style-src 'self' https://fonts.googleapis.com; "
-        "font-src 'self' https://fonts.gstatic.com; "
+        "style-src 'self'; "
+        "font-src 'self'; "
         "img-src 'self' data:; "
         "connect-src 'self'; "
         "frame-src 'none'; "
@@ -257,6 +264,14 @@ ai_system = FuturePilotAIEcosystem(careers_data=careers_db, questions_data=quest
 # persistente separado, no junto al codigo de la app.
 USERS_DB_PATH = os.environ.get("USERS_DB_PATH") or str(REPO_ROOT / "backend" / "data" / "users.sqlite3")
 users_store = UsersStore(USERS_DB_PATH)
+# Las cuentas borradas antes de que el borrado limpiara el blob siguen siendo
+# vinculables. Se limpian al arrancar: idempotente y sin coste apreciable, y
+# nadie tiene que acordarse de ejecutar un script para que un borrado que ya
+# se pidio se cumpla del todo.
+_limpiadas = users_store.scrub_orphaned_result_owners()
+if _limpiadas:
+    print(f"[FuturePilot] {_limpiadas} resultados de cuentas borradas quedaron sin identificador.")
+
 users_store.sync_admin_email(ADMIN_EMAIL or None)
 
 # --------------------------------------------------------------------------

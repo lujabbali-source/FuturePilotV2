@@ -343,3 +343,49 @@ def test_two_careers_do_not_share_the_same_route(app_module):
         assert huella not in vistas, \
             f"{career_id} tiene la misma ruta que {vistas[huella]}"
         vistas[huella] = career_id
+
+
+def test_every_data_i18n_attribute_in_the_pages_points_at_a_real_key():
+    """Igual que el test de arriba, pero para el HTML.
+
+    Aquel solo mira los `.js`. Las paginas traducen tambien por atributo
+    (`data-i18n`, `-html`, `-placeholder`, `-label`) y ahi una clave mal
+    escrita no falla: `applyTranslations` le pide a i18next una clave que no
+    existe y i18next devuelve la clave misma, asi que al estudiante le sale
+    `privacy.whatPassport` escrito en la pantalla. En una politica de
+    privacidad, con 41 claves conectadas por atributo, eso es cuestion de
+    tiempo si nadie lo vigila."""
+    import re
+    from pathlib import Path
+
+    raiz = Path(__file__).resolve().parent.parent / "web"
+
+    def aplanar(node, prefix=""):
+        claves = set()
+        for clave, valor in node.items():
+            ruta = f"{prefix}{clave}"
+            claves |= aplanar(valor, f"{ruta}.") if isinstance(valor, dict) else {ruta}
+        return claves
+
+    catalogo = {
+        namespace.stem: aplanar(json.loads(namespace.read_text(encoding="utf-8")))
+        for namespace in (LOCALES / "es").glob("*.json")
+    }
+
+    ATRIBUTO = re.compile(r'data-i18n(?:-html|-placeholder|-label)?="([\w.:]+)"')
+
+    faltan = []
+    for pagina in sorted(raiz.glob("*.html")):
+        for m in ATRIBUTO.finditer(pagina.read_text(encoding="utf-8")):
+            clave = m.group(1)
+            # `applyTranslations` pide el namespace `site` salvo que la clave
+            # lo lleve delante con dos puntos.
+            ns, _, resto = clave.partition(":")
+            if not resto:
+                ns, resto = "site", clave
+            if ns in catalogo and resto not in catalogo[ns]:
+                faltan.append(f"{pagina.name}: {ns}:{resto}")
+
+    assert not faltan, (
+        "atributos data-i18n sin clave en el catalogo:\n  " + "\n  ".join(sorted(set(faltan)))
+    )

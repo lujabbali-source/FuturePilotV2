@@ -507,19 +507,80 @@ class UsersStore:
     def delete_account(self, user_id: int) -> None:
         """Borra la cuenta y todo lo que cuelga de ella.
 
-        Los resultados de test NO se borran: se desligan (user_id = NULL).
-        Son filas anonimas a partir de ese momento, sin nada que apunte a la
-        persona, y sostienen las estadisticas agregadas del panel de
-        administracion. Borrar la cuenta tiene que quitar los datos
+        Los resultados de test NO se borran: se desligan. Son filas anonimas
+        a partir de ese momento y sostienen las estadisticas agregadas del
+        panel de administracion. Borrar la cuenta tiene que quitar los datos
         personales, no falsear el historico de la plataforma.
+
+        Desligar es DOS cosas, no una. Poner la columna a NULL no bastaba: el
+        identificador viaja tambien DENTRO de `results_json`, asi que la fila
+        seguia siendo vinculable a la persona que pidio el borrado. Se
+        limpian las dos, o el borrado es una promesa que no se cumple.
         """
         with self.connect() as connection:
+            self._scrub_result_owner(connection, user_id)
             connection.execute("UPDATE test_results SET user_id = NULL WHERE user_id = ?", (user_id,))
             for tabla in ("sessions", "password_resets", "passport_profiles",
                           "passport_events", "passport_stamps"):
                 connection.execute(f"DELETE FROM {tabla} WHERE user_id = ?", (user_id,))
             connection.execute("DELETE FROM users WHERE id = ?", (user_id,))
             connection.commit()
+
+    @staticmethod
+    def _scrub_result_owner(connection: sqlite3.Connection, user_id: int) -> None:
+        """Quita el identificador de dentro del resultado guardado.
+
+        El motor escribe `user_id` en el resultado que serializa, asi que el
+        blob lo lleva ademas de la columna. Se pone a None en vez de quitar la
+        clave: el resto del sistema la lee, y una clave ausente rompe lo que
+        una clave vacia no."""
+        filas = connection.execute(
+            "SELECT id, results_json FROM test_results WHERE user_id = ? AND results_json IS NOT NULL",
+            (user_id,),
+        ).fetchall()
+        for fila in filas:
+            try:
+                datos = json.loads(fila["results_json"])
+            except (TypeError, ValueError):
+                continue
+            if datos.get("user_id") is None:
+                continue
+            datos["user_id"] = None
+            connection.execute(
+                "UPDATE test_results SET results_json = ? WHERE id = ?",
+                (json.dumps(datos), fila["id"]),
+            )
+
+    def scrub_orphaned_result_owners(self) -> int:
+        """Limpia las filas que quedaron desligadas ANTES de que el borrado
+        limpiara el blob. Sin esto, las cuentas ya borradas siguen siendo
+        vinculables y no hay forma de que su dueño lo sepa.
+
+        Idempotente: se puede llamar en cada arranque sin coste apreciable."""
+        limpiadas = 0
+        with self.connect() as connection:
+            filas = connection.execute(
+                "SELECT id, results_json FROM test_results "
+                "WHERE user_id IS NULL AND results_json IS NOT NULL"
+            ).fetchall()
+            for fila in filas:
+                try:
+                    datos = json.loads(fila["results_json"])
+                except (TypeError, ValueError):
+                    continue
+                # Los ids anonimos (anon-...) no identifican a nadie: son de
+                # quien hizo el test sin cuenta y se generan por dispositivo.
+                dentro = datos.get("user_id")
+                if dentro is None or not str(dentro).isdigit():
+                    continue
+                datos["user_id"] = None
+                connection.execute(
+                    "UPDATE test_results SET results_json = ? WHERE id = ?",
+                    (json.dumps(datos), fila["id"]),
+                )
+                limpiadas += 1
+            connection.commit()
+        return limpiadas
 
     def count_users(self) -> int:
         with self.connect() as connection:
