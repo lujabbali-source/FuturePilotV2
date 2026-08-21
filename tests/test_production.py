@@ -308,3 +308,22 @@ def test_every_font_a_stylesheet_asks_for_is_actually_declared():
     assert not sin_importar, (
         "hojas que piden una webfont y no la cargan:\n  " + "\n  ".join(sin_importar)
     )
+
+
+def test_the_health_probe_answers_a_head_request(client):
+    """Un monitor de disponibilidad rara vez pide el cuerpo: le basta con la
+    cabecera, asi que sondea con HEAD.
+
+    `@app.get` en FastAPI registra GET a secas, de modo que HEAD devolvia 405 y
+    el monitor daba el servicio por caido estando perfectamente vivo. Es el
+    peor tipo de fallo de despliegue: no se ve en desarrollo, porque en el
+    navegador uno siempre entra con GET, y aparece de madrugada como una
+    alerta falsa."""
+    assert client.get("/healthz").status_code == 200
+    assert client.head("/healthz").status_code == 200
+
+
+def test_the_landing_page_answers_a_head_request(client):
+    """La otra URL que se monitoriza por defecto es la raiz del sitio."""
+    assert client.get("/").status_code == 200
+    assert client.head("/").status_code == 200

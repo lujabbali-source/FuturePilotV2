@@ -491,7 +491,12 @@ def _web_page(filename: str, fallback: Optional[Path] = None) -> FileResponse:
     )
 
 
+# La portada tambien acepta HEAD, por el mismo motivo que /healthz: es la URL
+# que sondea por defecto casi cualquier monitor de disponibilidad, y con solo
+# GET registrado le contestabamos 405. Las demas paginas se quedan en GET: a
+# nadie se le ocurre monitorizar /passport.
 @app.get("/")
+@app.head("/", include_in_schema=False)
 def home():
     return _web_page("index.html")
 
@@ -1903,7 +1908,13 @@ def _localize_results(results: Dict[str, Any], lang: str) -> Dict[str, Any]:
     return results
 
 
+# HEAD ademas de GET. `@app.get` en FastAPI registra GET a secas, y buena
+# parte de los monitores de disponibilidad y de los balanceadores sondean con
+# HEAD porque no necesitan el cuerpo: recibian 405 y daban el servicio por
+# caido estando perfectamente vivo. El cuerpo lo descarta el propio protocolo,
+# asi que la misma funcion sirve para las dos.
 @app.get("/healthz", status_code=status.HTTP_200_OK)
+@app.head("/healthz", status_code=status.HTTP_200_OK, include_in_schema=False)
 def liveness_probe():
     """Sonda para el balanceador / orquestador. Deliberadamente publica y
     deliberadamente muda: solo dice que el proceso responde y sabe hablar
