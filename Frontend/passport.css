@@ -469,6 +469,26 @@ body {
   cursor: pointer;
 }
 
+/* Franja gemela de la de subir, arriba en vez de abajo. El recuadro mide
+   84x104: no cabe un boton normal, y la simetria con la franja inferior deja
+   claro que son las dos caras de lo mismo. */
+.fp-identity__remove {
+  position: absolute;
+  inset: 0 0 auto 0;
+  padding: 3px 0;
+  border: 0;
+  width: 100%;
+  font: inherit;
+  font-size: .52rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background: rgba(122, 42, 34, .78);
+  color: #f4efe2;
+  cursor: pointer;
+}
+
+.fp-identity__remove:hover { background: rgba(122, 42, 34, .95); }
+
 .fp-identity__data { flex: 1 1 auto; display: grid; gap: 8px; }
 
 .fp-fields { display: grid; gap: 8px; margin-top: 14px; }

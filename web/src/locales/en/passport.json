@@ -30,7 +30,9 @@
     "edit": "Edit details",
     "placeholderCountry": "Colombia",
     "placeholderCity": "Bogotá",
-    "placeholderLanguages": "Spanish, English"
+    "placeholderLanguages": "Spanish, English",
+    "removePhoto": "Remove photo",
+    "removePhotoConfirm": "Remove your passport photo? It will be deleted from our servers."
   },
   "goals": {
     "title": "Academic goal",
@@ -53,6 +55,7 @@
   },
   "endnote": "This passport is still being written.<br>Every country, university and decision leaves its mark.",
   "errors": {
-    "photoTooBig": "That image is too heavy. Use a photo under 200KB."
+    "photoTooBig": "That image is too large. Use a photo under 12 MB.",
+    "photoUnreadable": "We could not read that file as an image. Try a JPG or PNG photo."
   }
 }

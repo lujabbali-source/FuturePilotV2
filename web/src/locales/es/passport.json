@@ -30,7 +30,9 @@
     "edit": "Editar datos",
     "placeholderCountry": "Colombia",
     "placeholderCity": "Bogotá",
-    "placeholderLanguages": "Español, Inglés"
+    "placeholderLanguages": "Español, Inglés",
+    "removePhoto": "Quitar foto",
+    "removePhotoConfirm": "¿Quitar tu foto del pasaporte? Se borra de nuestros servidores."
   },
   "goals": {
     "title": "Objetivo académico",
@@ -53,6 +55,7 @@
   },
   "endnote": "Este pasaporte sigue escribiéndose.<br>Cada país, universidad y decisión deja su marca.",
   "errors": {
-    "photoTooBig": "La imagen es muy pesada. Usa una foto de menos de 200KB."
+    "photoTooBig": "Esa imagen es demasiado grande. Usa una foto de menos de 12 MB.",
+    "photoUnreadable": "No pudimos leer ese archivo como imagen. Prueba con una foto en JPG o PNG."
   }
 }

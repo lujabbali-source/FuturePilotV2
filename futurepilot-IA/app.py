@@ -25,6 +25,8 @@ el globo lee esos archivos directamente.
 ===============================================================================
 """
 
+import base64
+import binascii
 import copy
 import json
 import os
@@ -1067,18 +1069,106 @@ def claim_my_result(
 # eventos que el propio frontend puede reportar estan restringidos a
 # PASSPORT_CLIENT_EVENT_TYPES (ver comentario ahi arriba).
 # --------------------------------------------------------------------------
+# Formatos que aceptamos para la foto del pasaporte, con los bytes que tiene
+# que traer el archivo al principio para ser de verdad de ese tipo.
+#
+# `data:image/svg+xml` desaparece a proposito: un SVG es un documento con
+# marcado dentro, no una fotografia, y aqui la unica razon de existir del
+# campo es la cara de alguien.
+_FOTO_FORMATOS = {
+    "image/jpeg": (b"\xff\xd8\xff",),
+    "image/png": (b"\x89PNG\r\n\x1a\n",),
+    "image/webp": (b"RIFF",),
+}
+# Una foto de 320x320 recomprimida pesa ~25 KB, o ~34 KB al pasarla a base64.
+# 150 KB deja margen de sobra sin que el campo sirva de almacen general.
+_FOTO_MAX = 150_000
+
+
+def _decodificar_foto(value: str) -> tuple[str, bytes]:
+    """Comprueba que el data URL sea una imagen real y devuelve sus bytes.
+
+    Antes bastaba con que la cadena empezara por `data:image/`, asi que
+    `data:image/png;base64,` seguido de cualquier cosa pasaba: ni era una
+    imagen ni habia forma de saberlo hasta que el navegador no la pintaba.
+    """
+    if not value.startswith("data:"):
+        raise ValueError("la foto debe ser un data URL")
+    cabecera, _, cuerpo = value.partition(",")
+    if not cuerpo:
+        raise ValueError("el data URL no trae contenido")
+    tipo = cabecera[5:].split(";")[0].strip().lower()
+    if tipo not in _FOTO_FORMATOS:
+        raise ValueError(f"formato de imagen no admitido: {tipo or 'sin tipo'}")
+    if ";base64" not in cabecera:
+        raise ValueError("la foto debe venir en base64")
+    try:
+        crudo = base64.b64decode(cuerpo, validate=True)
+    except (binascii.Error, ValueError) as exc:
+        raise ValueError("la foto no es base64 valido") from exc
+    if not any(crudo.startswith(firma) for firma in _FOTO_FORMATOS[tipo]):
+        raise ValueError(f"el contenido no es un {tipo}")
+    return tipo, crudo
+
+
+def _sin_metadatos_jpeg(crudo: bytes) -> bytes:
+    """Quita de un JPEG los segmentos de metadatos.
+
+    El navegador ya no manda EXIF porque redibuja la foto en un lienzo antes
+    de subirla, pero el endpoint es publico: quien llame a la API a mano puede
+    mandar el archivo tal cual salio del celular, con el modelo del aparato,
+    la fecha exacta y las coordenadas GPS de donde se tomo pegadas detras de
+    la cara. Se descartan APP1..APP15 (EXIF, XMP, IPTC) y los comentarios.
+
+    Es manipulacion de bytes, no decodificacion: no hace falta ninguna
+    libreria de imagenes.
+    """
+    if not crudo.startswith(b"\xff\xd8"):
+        return crudo
+    salida = bytearray(b"\xff\xd8")
+    i, n = 2, len(crudo)
+    while i + 3 < n:
+        if crudo[i] != 0xFF:
+            break  # no estamos en un limite de segmento: se copia el resto
+        marcador = crudo[i + 1]
+        if marcador == 0xDA:  # SOS: detras van los datos comprimidos
+            break
+        if marcador == 0x01 or 0xD0 <= marcador <= 0xD8:  # sin longitud
+            salida += crudo[i:i + 2]
+            i += 2
+            continue
+        longitud = int.from_bytes(crudo[i + 2:i + 4], "big")
+        fin = i + 2 + longitud
+        if longitud < 2 or fin > n:
+            break
+        if not (0xE1 <= marcador <= 0xEF or marcador == 0xFE):
+            salida += crudo[i:fin]
+        i = fin
+    salida += crudo[i:]
+    return bytes(salida)
+
+
+def _foto_saneada(value: str) -> str:
+    tipo, crudo = _decodificar_foto(value)
+    if tipo == "image/jpeg":
+        crudo = _sin_metadatos_jpeg(crudo)
+    return f"data:{tipo};base64," + base64.b64encode(crudo).decode("ascii")
+
+
 class PassportProfileUpdateRequest(BaseModel):
     country: Optional[str] = None
     city: Optional[str] = None
     languages: Optional[List[str]] = None
-    photo_data_url: Optional[str] = Field(default=None, max_length=300_000)
+    photo_data_url: Optional[str] = Field(default=None, max_length=_FOTO_MAX)
 
     @field_validator("photo_data_url")
     @classmethod
     def validate_photo(cls, value: Optional[str]) -> Optional[str]:
-        if value and not value.startswith("data:image/"):
-            raise ValueError("photo_data_url debe ser un data URL de imagen (data:image/...)")
-        return value
+        # La cadena vacia es como se quita la foto; `None` significa "no
+        # toques este campo".
+        if value is None or value == "":
+            return value
+        return _foto_saneada(value)
 
 
 class PassportGoalsUpdateRequest(BaseModel):
@@ -1132,12 +1222,17 @@ def update_passport_profile_route(
     payload: PassportProfileUpdateRequest,
     current_user: dict = Depends(get_current_user_required),
 ):
+    # El store entiende `None` como "no cambies este campo", asi que quitar la
+    # foto necesita una senal distinta: la cadena vacia, que aqui se convierte
+    # en el NULL que de verdad la borra de la fila.
+    foto = payload.photo_data_url
     profile = users_store.update_passport_profile(
         current_user["id"],
         country=payload.country,
         city=payload.city,
         languages=payload.languages,
-        photo_data_url=payload.photo_data_url,
+        photo_data_url=foto,
+        clear_photo=(foto == ""),
     )
     return {"success": True, "profile": profile}
 

@@ -722,6 +722,7 @@ class UsersStore:
         city: str | None = None,
         languages: list[str] | None = None,
         photo_data_url: str | None = None,
+        clear_photo: bool = False,
     ) -> dict:
         fields = {}
         if country is not None:
@@ -730,7 +731,12 @@ class UsersStore:
             fields["city"] = city
         if languages is not None:
             fields["languages"] = languages
-        if photo_data_url is not None:
+        # `None` significa "no toques la foto", asi que borrarla necesita
+        # decirse aparte: sin esto, la unica forma de quitarse la cara de
+        # encima era borrar la cuenta entera.
+        if clear_photo:
+            fields["photo_data_url"] = None
+        elif photo_data_url is not None:
             fields["photo_data_url"] = photo_data_url
         self._upsert_passport_profile(user_id, **fields)
         return self.get_passport_profile(user_id)

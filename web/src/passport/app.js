@@ -143,6 +143,14 @@ function main() {
               <input type="file" accept="image/*" data-photo hidden>
               <span>${tp("identity.change")}</span>
             </label>
+            ${foto
+              // Sin esto, arrepentirse de haber subido la cara costaba borrar
+              // la cuenta entera. La politica de privacidad promete poder
+              // corregir lo que este mal; esto lo cumple.
+              ? `<button type="button" class="fp-identity__remove" data-photo-remove>
+                   ${tp("identity.removePhoto")}
+                 </button>`
+              : ""}
           </div>
           <div class="fp-identity__data">
             ${field(tp("identity.name"), nombre)}
@@ -377,24 +385,90 @@ function main() {
     render();
   }
 
+  // Lado del recuadro de la foto, en pixeles. Es una foto de pasaporte, no un
+  // fondo de pantalla: 320 se ve nitido hasta en pantallas densas.
+  const LADO_FOTO = 320;
+
+  /** Decodifica el archivo. Falla si no es una imagen de verdad.
+   *
+   *  `imageOrientation: "from-image"` importa: al reencodar se pierde la
+   *  etiqueta EXIF de orientacion, asi que si no la aplicamos ahora, una foto
+   *  vertical de celular queda tumbada para siempre. */
+  async function decodificar(file) {
+    if (typeof createImageBitmap === "function") {
+      try {
+        return await createImageBitmap(file, { imageOrientation: "from-image" });
+      } catch {
+        // Navegadores que no aceptan el diccionario de opciones.
+      }
+    }
+    const url = URL.createObjectURL(file);
+    try {
+      const img = new Image();
+      await new Promise((listo, fallo) => {
+        img.onload = listo;
+        img.onerror = () => fallo(new Error("no se pudo decodificar"));
+        img.src = url;
+      });
+      await img.decode?.().catch(() => {});
+      return img;
+    } finally {
+      URL.revokeObjectURL(url);
+    }
+  }
+
+  /** Recorta al cuadrado, reduce y reencoda.
+   *
+   *  El motivo no es el peso: `readAsDataURL` copiaba el archivo tal cual, y
+   *  una foto de celular trae EXIF pegado - modelo del aparato, fecha y hora,
+   *  y muy a menudo las coordenadas GPS de donde se tomo. Quien sube su cara
+   *  no esta aceptando publicar donde vive. Al redibujar en un lienzo salen
+   *  bytes nuevos y esa metadata no viaja. */
+  async function normalizarFoto(file) {
+    const imagen = await decodificar(file);
+    const ancho = imagen.width;
+    const alto = imagen.height;
+    if (!ancho || !alto) throw new Error("imagen vacia");
+
+    const lado = Math.min(ancho, alto);
+    const lienzo = document.createElement("canvas");
+    lienzo.width = LADO_FOTO;
+    lienzo.height = LADO_FOTO;
+    lienzo.getContext("2d").drawImage(
+      imagen,
+      (ancho - lado) / 2, (alto - lado) / 2, lado, lado,
+      0, 0, LADO_FOTO, LADO_FOTO,
+    );
+    imagen.close?.();
+    return lienzo.toDataURL("image/jpeg", 0.82);
+  }
+
   async function savePhoto(file) {
-    if (file.size > 200_000) {
+    if (file.size > 12_000_000) {
       window.alert(tp("errors.photoTooBig"));
       return;
     }
-    const reader = new FileReader();
-    reader.onload = async () => {
-      const response = await fetch("/api/v1/passport/profile", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json", ...authHeaders },
-        body: JSON.stringify({ photo_data_url: reader.result }),
-      });
-      if (!response.ok) return;
-      state.data.profile = (await response.json()).profile;
-      buildPages();
-      render();
-    };
-    reader.readAsDataURL(file);
+    let dataUrl;
+    try {
+      dataUrl = await normalizarFoto(file);
+    } catch {
+      window.alert(tp("errors.photoUnreadable"));
+      return;
+    }
+    await guardarFoto(dataUrl);
+  }
+
+  /** Guardar la cadena vacia quita la foto. */
+  async function guardarFoto(dataUrl) {
+    const response = await fetch("/api/v1/passport/profile", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json", ...authHeaders },
+      body: JSON.stringify({ photo_data_url: dataUrl }),
+    });
+    if (!response.ok) return;
+    state.data.profile = (await response.json()).profile;
+    buildPages();
+    render();
   }
 
   spread.addEventListener("click", (event) => {
@@ -403,6 +477,10 @@ function main() {
       state.editing = editar.dataset.edit;
       buildPages();
       render();
+      return;
+    }
+    if (event.target.closest("[data-photo-remove]")) {
+      if (window.confirm(tp("identity.removePhotoConfirm"))) guardarFoto("");
       return;
     }
     if (event.target.closest("[data-cancel]")) {
