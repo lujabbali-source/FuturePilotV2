@@ -227,7 +227,10 @@
     "markUndo": "Unmark milestone",
     "quote": "The best way to predict the future is to create it.",
     "quoteBy": "— Alan Kay",
-    "noGaps": "You are not below what this career asks for on any dimension. Your profile already covers this milestone."
+    "noGaps": "You are not below what this career asks for on any dimension. Your profile already covers this milestone.",
+    "resVideo": "Videos",
+    "resPractice": "Practice",
+    "resRead": "Read"
   },
   "privacy": {
     "back": "← Back to FuturePilot",

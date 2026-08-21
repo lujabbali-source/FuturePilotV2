@@ -17,6 +17,8 @@ mayusculas dentro del motor. Aqui solo se les pone etiqueta.
 
 from typing import Any, Dict, Iterable, List, Optional
 
+import resources
+
 LANGS = ("en", "es")
 DEFAULT_LANG = "en"
 
@@ -475,7 +477,8 @@ def hub_desc(hub: Dict[str, Any], lang: str) -> str:
     return hub.get(f"desc{suffix}") or hub.get("desc", "")
 
 
-def checkpoint_content(content: Optional[Dict[str, Any]], lang: str) -> Optional[Dict[str, Any]]:
+def checkpoint_content(content: Optional[Dict[str, Any]], lang: str,
+                       career: str = "") -> Optional[Dict[str, Any]]:
     """Traduce las sub-tareas de un hito del roadmap.
 
     Dos formas conviven. Las escritas a mano en roadmaps.json llevan
@@ -493,8 +496,16 @@ def checkpoint_content(content: Optional[Dict[str, Any]], lang: str) -> Optional
                 [cluster_label(i["cluster"], lang) for i in content.get("items", [])], lang
             )),
             "items": [
-                text("levelling.item", lang, cluster=cluster_label(i["cluster"], lang),
-                     from_=i["from"], to=i["to"])
+                _item(
+                    text("levelling.item", lang, cluster=cluster_label(i["cluster"], lang),
+                         from_=i["from"], to=i["to"]),
+                    lang,
+                    # La nivelacion habla de una dimension del perfil, no de
+                    # una materia: el material se busca por el nombre del
+                    # cluster, que es lo unico estudiable de la frase.
+                    tema=cluster_label(i["cluster"], lang),
+                    career=career,
+                )
                 for i in content.get("items", [])
             ],
         }
@@ -503,9 +514,27 @@ def checkpoint_content(content: Optional[Dict[str, Any]], lang: str) -> Optional
     return {
         "title": content.get(f"title{suffix}") or content.get("title", ""),
         "items": [
-            item.get(f"text{suffix}") or item.get("text", "")
+            _item(item.get(f"text{suffix}") or item.get("text", ""), lang, career=career)
             for item in content.get("items", [])
         ],
+    }
+
+
+def _item(texto: str, lang: str, tema: Optional[str] = None,
+          career: str = "") -> Dict[str, Any]:
+    """Una sub-tarea con su material de estudio al lado.
+
+    Antes esto era una cadena suelta. El roadmap decia "Aprende estadistica" y
+    ahi terminaba, dando por hecho que el estudiante sabe donde se aprende
+    estadistica - que es justo lo que no sabe quien todavia esta escogiendo
+    carrera.
+
+    `resources` puede venir vacia y eso es a proposito: las sub-tareas de
+    salir al mundo ("consigue una pasantia") no tienen material que ofrecer.
+    """
+    return {
+        "text": texto,
+        "resources": resources.for_item(tema or texto, lang, career),
     }
 
 

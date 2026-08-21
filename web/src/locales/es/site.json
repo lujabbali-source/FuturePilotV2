@@ -227,7 +227,10 @@
     "markUndo": "Desmarcar el hito",
     "quote": "La mejor forma de predecir el futuro es construirlo.",
     "quoteBy": "— Alan Kay",
-    "noGaps": "No tienes ninguna dimensión por debajo de lo que pide esta carrera. Este hito ya está cubierto por tu perfil."
+    "noGaps": "No tienes ninguna dimensión por debajo de lo que pide esta carrera. Este hito ya está cubierto por tu perfil.",
+    "resVideo": "Videos",
+    "resPractice": "Práctica",
+    "resRead": "Leer"
   },
   "privacy": {
     "back": "← Volver a FuturePilot",

@@ -383,6 +383,48 @@ body {
   text-decoration: line-through;
 }
 
+/* Material de estudio.
+   Van alineados bajo el texto de la tarea, no bajo la casilla, para que se
+   lean como parte de ella. Discretos a proposito: la tarea es lo que hay que
+   hacer y el material es la ayuda, asi que no puede gritar mas que ella. */
+.rm-res {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 8px 26px;
+  padding: 0;
+  list-style: none;
+}
+
+.rm-res__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .03);
+  color: #8ba0b4;
+  font-size: .68rem;
+  letter-spacing: .02em;
+  text-decoration: none;
+  transition: color .15s, border-color .15s, background .15s;
+}
+
+.rm-res__link:hover,
+.rm-res__link:focus-visible {
+  color: #00FFB3;
+  border-color: rgba(0, 255, 179, .38);
+  background: rgba(0, 255, 179, .07);
+}
+
+.rm-res__icon { font-size: .62rem; opacity: .85; }
+
+/* Al tachar la tarea el material se apaga, pero sigue clicable: repasar algo
+   que ya marcaste es legitimo. */
+.rm-task.is-done .rm-res { opacity: .4; }
+.rm-task.is-done .rm-res:hover { opacity: 1; }
+
 .rm-mark {
   width: 100%;
   padding: 9px 14px;

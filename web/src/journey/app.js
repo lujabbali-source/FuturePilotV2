@@ -152,6 +152,40 @@ function renderSidebar() {
     </aside>`;
 }
 
+// Como se llama y como se ve cada clase de material.
+const MATERIAL = {
+  video:    { icono: "▶", clave: "resVideo" },
+  practice: { icono: "✎", clave: "resPractice" },
+  read:     { icono: "▤", clave: "resRead" },
+};
+
+/** Los enlaces de estudio de una sub-tarea.
+ *
+ *  Puede no haber ninguno, y eso es deliberado: "consigue una pasantía" no
+ *  tiene video que ver. Si todo llevara botones, los botones no dirian nada.
+ *
+ *  Van con `rel="noopener noreferrer"` y sin previsualizacion de ningun tipo:
+ *  hasta que el estudiante no hace clic, el sitio de destino no se entera de
+ *  que existe. */
+function renderResources(recursos) {
+  if (!recursos?.length) return "";
+  return `
+    <ul class="rm-res">
+      ${recursos.map((r) => {
+        const pinta = MATERIAL[r.kind] || MATERIAL.read;
+        return `
+          <li>
+            <a class="rm-res__link rm-res__link--${escapeHtml(r.kind)}"
+               href="${escapeHtml(r.url)}" target="_blank" rel="noopener noreferrer"
+               title="${escapeHtml(r.label)}">
+              <span class="rm-res__icon" aria-hidden="true">${pinta.icono}</span>
+              ${tj(pinta.clave)}
+            </a>
+          </li>`;
+      }).join("")}
+    </ul>`;
+}
+
 function renderNode(cp, index) {
   const contenido = cp.content;
   const titulo = contenido?.title || cp.title;
@@ -172,15 +206,16 @@ function renderNode(cp, index) {
 
         ${items.length ? `
           <ul class="rm-tasks">
-            ${items.map((texto, i) => {
+            ${items.map((item, i) => {
               const id = itemId(cp.step, i);
               const hecho = state.done.has(id);
               return `
                 <li class="rm-task${hecho ? " is-done" : ""}">
                   <label>
                     <input type="checkbox" data-item="${escapeHtml(id)}"${hecho ? " checked" : ""}>
-                    <span>${escapeHtml(texto)}</span>
+                    <span>${escapeHtml(item.text)}</span>
                   </label>
+                  ${renderResources(item.resources)}
                 </li>`;
             }).join("")}
           </ul>

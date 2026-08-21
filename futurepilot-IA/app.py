@@ -1771,7 +1771,7 @@ def _localize_results(results: Dict[str, Any], lang: str) -> Dict[str, Any]:
              # Las sub-tareas viajan con los dos idiomas y, en el paso de
              # nivelacion, con el cluster en mayusculas. Sin esto el cliente
              # recibiria ambas versiones y un identificador en crudo.
-             "content": localization.checkpoint_content(cp.get("content"), lang)}
+             "content": localization.checkpoint_content(cp.get("content"), lang, titulo)}
             if cp.get("key") else cp
             for cp in roadmap["checkpoints"]
         ]

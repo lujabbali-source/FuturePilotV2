@@ -1,0 +1,1368 @@
+{
+  "_README": [
+    "Material de estudio para las sub-tareas del roadmap.",
+    "",
+    "Regla que gobierna este archivo: aqui NO se inventan enlaces. Hay 735",
+    "sub-tareas repartidas en 73 carreras y nadie puede verificar a mano dos",
+    "mil URLs; un enlace muerto o equivocado es peor que no tener enlace,",
+    "porque el estudiante ya hizo clic y ya perdio la confianza.",
+    "",
+    "De ahi las dos clases de destino:",
+    "",
+    "  - `url`: una direccion concreta, y solo cuando es la pagina canonica y",
+    "    estable de algo conocido (la documentacion oficial de Python, MDN,",
+    "    OpenStax). Nunca una ruta profunda adivinada.",
+    "",
+    "  - `search`: la propia busqueda del sitio, con el tema como consulta.",
+    "    No caduca nunca, porque no apunta a una pagina concreta sino a lo que",
+    "    ese sitio tenga hoy sobre el tema.",
+    "",
+    "Tercera regla: no todas las sub-tareas llevan material. `Consigue una",
+    "pasantia en un hospital` no tiene video que ver. Solo las que se pueden",
+    "estudiar reciben botones (ver VERBOS_ESTUDIO en resources.py); las de",
+    "salir al mundo se quedan limpias, y asi los botones que si aparecen",
+    "significan algo.",
+    "",
+    "Para agregar un tema: una entrada en `topics` con las palabras que lo",
+    "disparan y sus recursos. El emparejamiento es por palabra suelta sobre el",
+    "texto de la sub-tarea, en los dos idiomas."
+  ],
+  "search": {
+    "youtube": "https://www.youtube.com/results?search_query={q}",
+    "wikipedia_es": "https://es.wikipedia.org/w/index.php?search={q}",
+    "wikipedia_en": "https://en.wikipedia.org/w/index.php?search={q}",
+    "ocw": "https://ocw.mit.edu/search/?q={q}",
+    "coursera": "https://www.coursera.org/search?query={q}"
+  },
+  "topics": {
+    "python": {
+      "match": [
+        "python",
+        "django",
+        "flask",
+        "pandas",
+        "numpy"
+      ],
+      "query_es": "curso de Python desde cero en español",
+      "query_en": "Python programming course for beginners",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Tutorial oficial de Python",
+          "label_en": "Official Python tutorial",
+          "url": "https://docs.python.org/es/3/tutorial/"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Ejercicios en Exercism",
+          "label_en": "Exercises on Exercism",
+          "url": "https://exercism.org/tracks/python"
+        }
+      ]
+    },
+    "programacion": {
+      "match": [
+        "programación",
+        "programar",
+        "programming",
+        "código",
+        "code",
+        "algoritmo",
+        "algorithm",
+        "software",
+        "git"
+      ],
+      "query_es": "fundamentos de programación explicados",
+      "query_en": "programming fundamentals explained",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "freeCodeCamp en español",
+          "label_en": "freeCodeCamp",
+          "url": "https://www.freecodecamp.org/espanol/"
+        },
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "algoritmo",
+          "query_en": "algorithm"
+        }
+      ]
+    },
+    "web": {
+      "match": [
+        "html",
+        "css",
+        "javascript",
+        "frontend",
+        "backend",
+        "web"
+      ],
+      "query_es": "curso de desarrollo web HTML CSS JavaScript",
+      "query_en": "web development course HTML CSS JavaScript",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "MDN Web Docs",
+          "label_en": "MDN Web Docs",
+          "url": "https://developer.mozilla.org/es/docs/Learn"
+        },
+        {
+          "kind": "practice",
+          "label_es": "freeCodeCamp en español",
+          "label_en": "freeCodeCamp",
+          "url": "https://www.freecodecamp.org/espanol/"
+        }
+      ]
+    },
+    "datos": {
+      "match": [
+        "datos",
+        "data",
+        "sql",
+        "base de datos",
+        "database",
+        "machine learning",
+        "aprendizaje automático"
+      ],
+      "query_es": "análisis de datos para principiantes",
+      "query_en": "data analysis for beginners",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Cursos abiertos del MIT",
+          "label_en": "MIT OpenCourseWare",
+          "search": "ocw",
+          "query_es": "data analysis",
+          "query_en": "data analysis"
+        },
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "análisis de datos",
+          "query_en": "data analysis"
+        }
+      ]
+    },
+    "matematicas": {
+      "match": [
+        "matemática",
+        "matemáticas",
+        "math",
+        "álgebra",
+        "algebra",
+        "aritmética",
+        "trigonometría",
+        "trigonometry"
+      ],
+      "query_es": "álgebra explicada paso a paso",
+      "query_en": "algebra explained step by step",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Khan Academy en español",
+          "label_en": "Khan Academy",
+          "url": "https://es.khanacademy.org/math"
+        },
+        {
+          "kind": "read",
+          "label_es": "Libros libres de OpenStax",
+          "label_en": "Free textbooks at OpenStax",
+          "url": "https://openstax.org/subjects/math"
+        }
+      ]
+    },
+    "calculo": {
+      "match": [
+        "cálculo",
+        "calculus",
+        "derivada",
+        "integral",
+        "ecuaciones diferenciales",
+        "differential equations"
+      ],
+      "query_es": "cálculo diferencial explicado desde cero",
+      "query_en": "calculus explained from scratch",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Cálculo en Khan Academy",
+          "label_en": "Calculus on Khan Academy",
+          "url": "https://es.khanacademy.org/math/calculus-1"
+        },
+        {
+          "kind": "read",
+          "label_es": "Cálculo en OpenStax",
+          "label_en": "Calculus at OpenStax",
+          "url": "https://openstax.org/subjects/math"
+        }
+      ]
+    },
+    "estadistica": {
+      "match": [
+        "estadística",
+        "statistics",
+        "probabilidad",
+        "probability",
+        "muestra",
+        "regresión"
+      ],
+      "query_es": "estadística básica explicada con ejemplos",
+      "query_en": "basic statistics explained with examples",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Estadística en Khan Academy",
+          "label_en": "Statistics on Khan Academy",
+          "url": "https://es.khanacademy.org/math/statistics-probability"
+        },
+        {
+          "kind": "read",
+          "label_es": "Estadística en OpenStax",
+          "label_en": "Statistics at OpenStax",
+          "url": "https://openstax.org/subjects/math"
+        }
+      ]
+    },
+    "fisica": {
+      "match": [
+        "física",
+        "physics",
+        "mecánica",
+        "termodinámica",
+        "thermodynamics",
+        "óptica",
+        "maxwell",
+        "cuántica",
+        "quantum"
+      ],
+      "query_es": "física explicada desde cero",
+      "query_en": "physics explained from scratch",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Física en Khan Academy",
+          "label_en": "Physics on Khan Academy",
+          "url": "https://es.khanacademy.org/science/physics"
+        },
+        {
+          "kind": "read",
+          "label_es": "Física en OpenStax",
+          "label_en": "Physics at OpenStax",
+          "url": "https://openstax.org/subjects/science"
+        }
+      ]
+    },
+    "quimica": {
+      "match": [
+        "química",
+        "chemistry",
+        "molécula",
+        "reacción",
+        "orgánica",
+        "organic",
+        "estequiometría"
+      ],
+      "query_es": "química general explicada",
+      "query_en": "general chemistry explained",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Química en Khan Academy",
+          "label_en": "Chemistry on Khan Academy",
+          "url": "https://es.khanacademy.org/science/chemistry"
+        },
+        {
+          "kind": "read",
+          "label_es": "Química en OpenStax",
+          "label_en": "Chemistry at OpenStax",
+          "url": "https://openstax.org/subjects/science"
+        }
+      ]
+    },
+    "biologia": {
+      "match": [
+        "biología",
+        "biology",
+        "célula",
+        "cell",
+        "genética",
+        "genetics",
+        "evolución",
+        "ecosistema",
+        "microbiología"
+      ],
+      "query_es": "biología celular explicada",
+      "query_en": "cell biology explained",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Biología en Khan Academy",
+          "label_en": "Biology on Khan Academy",
+          "url": "https://es.khanacademy.org/science/biology"
+        },
+        {
+          "kind": "read",
+          "label_es": "Biología en OpenStax",
+          "label_en": "Biology at OpenStax",
+          "url": "https://openstax.org/subjects/science"
+        }
+      ]
+    },
+    "anatomia": {
+      "match": [
+        "anatomía",
+        "anatomy",
+        "fisiología",
+        "physiology",
+        "músculo",
+        "esqueleto",
+        "sistema nervioso"
+      ],
+      "query_es": "anatomía y fisiología humana explicada",
+      "query_en": "human anatomy and physiology explained",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Anatomía y fisiología en OpenStax",
+          "label_en": "Anatomy and Physiology at OpenStax",
+          "url": "https://openstax.org/subjects/science"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Medicina en Khan Academy",
+          "label_en": "Health and medicine on Khan Academy",
+          "url": "https://es.khanacademy.org/science/health-and-medicine"
+        }
+      ]
+    },
+    "medicina": {
+      "match": [
+        "medicina",
+        "medicine",
+        "clínica",
+        "clinical",
+        "paciente",
+        "patient",
+        "diagnóstico",
+        "farmacología",
+        "enfermería",
+        "nursing"
+      ],
+      "query_es": "introducción a la medicina clínica",
+      "query_en": "introduction to clinical medicine",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Salud y medicina en Khan Academy",
+          "label_en": "Health and medicine on Khan Academy",
+          "url": "https://es.khanacademy.org/science/health-and-medicine"
+        },
+        {
+          "kind": "read",
+          "label_es": "Cursos abiertos del MIT",
+          "label_en": "MIT OpenCourseWare",
+          "search": "ocw",
+          "query_es": "medicine",
+          "query_en": "medicine"
+        }
+      ]
+    },
+    "psicologia": {
+      "match": [
+        "psicología",
+        "psychology",
+        "conducta",
+        "behaviour",
+        "behavior",
+        "terapia",
+        "cognitiv",
+        "salud mental"
+      ],
+      "query_es": "introducción a la psicología",
+      "query_en": "introduction to psychology",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Psicología en OpenStax",
+          "label_en": "Psychology at OpenStax",
+          "url": "https://openstax.org/subjects/social-sciences"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "psicología",
+          "query_en": "psychology"
+        }
+      ]
+    },
+    "economia": {
+      "match": [
+        "economía",
+        "economics",
+        "microeconomía",
+        "macroeconomía",
+        "mercado",
+        "oferta y demanda",
+        "inflación"
+      ],
+      "query_es": "economía explicada para principiantes",
+      "query_en": "economics explained for beginners",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Economía en Khan Academy",
+          "label_en": "Economics on Khan Academy",
+          "url": "https://es.khanacademy.org/economics-finance-domain"
+        },
+        {
+          "kind": "read",
+          "label_es": "Economía en OpenStax",
+          "label_en": "Economics at OpenStax",
+          "url": "https://openstax.org/subjects/social-sciences"
+        }
+      ]
+    },
+    "finanzas": {
+      "match": [
+        "finanzas",
+        "finance",
+        "contabilidad",
+        "accounting",
+        "presupuesto",
+        "budget",
+        "inversión",
+        "costos",
+        "flujo de caja"
+      ],
+      "query_es": "contabilidad y finanzas básicas explicadas",
+      "query_en": "basic accounting and finance explained",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Finanzas en Khan Academy",
+          "label_en": "Finance on Khan Academy",
+          "url": "https://es.khanacademy.org/economics-finance-domain"
+        },
+        {
+          "kind": "read",
+          "label_es": "Contabilidad en OpenStax",
+          "label_en": "Accounting at OpenStax",
+          "url": "https://openstax.org/subjects/business"
+        }
+      ]
+    },
+    "negocio": {
+      "match": [
+        "negocio",
+        "business",
+        "emprend",
+        "startup",
+        "empresa",
+        "modelo de negocio",
+        "clientes",
+        "ventas"
+      ],
+      "query_es": "cómo armar un modelo de negocio",
+      "query_en": "how to build a business model",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Emprendimiento en OpenStax",
+          "label_en": "Entrepreneurship at OpenStax",
+          "url": "https://openstax.org/subjects/business"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "emprendimiento",
+          "query_en": "entrepreneurship"
+        }
+      ]
+    },
+    "marketing": {
+      "match": [
+        "marketing",
+        "mercadeo",
+        "publicidad",
+        "advertising",
+        "marca",
+        "brand",
+        "campaña"
+      ],
+      "query_es": "fundamentos de marketing explicados",
+      "query_en": "marketing fundamentals explained",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Marketing en OpenStax",
+          "label_en": "Marketing at OpenStax",
+          "url": "https://openstax.org/subjects/business"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "marketing digital",
+          "query_en": "digital marketing"
+        }
+      ]
+    },
+    "derecho": {
+      "match": [
+        "derecho",
+        "law",
+        "legal",
+        "jurídic",
+        "constitución",
+        "norma",
+        "regulación",
+        "contrato"
+      ],
+      "query_es": "introducción al derecho explicada",
+      "query_en": "introduction to law explained",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "derecho",
+          "query_en": "law"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "derecho",
+          "query_en": "law"
+        }
+      ]
+    },
+    "diseno": {
+      "match": [
+        "diseño",
+        "design",
+        "tipografía",
+        "typography",
+        "color",
+        "composición",
+        "ux",
+        "ui",
+        "prototipo"
+      ],
+      "query_es": "fundamentos del diseño gráfico",
+      "query_en": "graphic design fundamentals",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "diseño gráfico",
+          "query_en": "graphic design"
+        },
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "diseño gráfico",
+          "query_en": "graphic design"
+        }
+      ]
+    },
+    "dibujo": {
+      "match": [
+        "dibujo",
+        "drawing",
+        "ilustración",
+        "illustration",
+        "perspectiva",
+        "anatomía artística",
+        "boceto"
+      ],
+      "query_es": "aprender a dibujar desde cero",
+      "query_en": "learn to draw from scratch",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Arte en Khan Academy",
+          "label_en": "Art on Khan Academy",
+          "url": "https://es.khanacademy.org/humanities"
+        },
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "dibujo artístico",
+          "query_en": "drawing"
+        }
+      ]
+    },
+    "arquitectura": {
+      "match": [
+        "arquitectura",
+        "architecture",
+        "plano",
+        "urbanismo",
+        "maqueta",
+        "espacio construido"
+      ],
+      "query_es": "fundamentos de arquitectura explicados",
+      "query_en": "architecture fundamentals explained",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Arquitectura en el MIT",
+          "label_en": "Architecture at MIT",
+          "search": "ocw",
+          "query_es": "architecture",
+          "query_en": "architecture"
+        },
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "arquitectura",
+          "query_en": "architecture"
+        }
+      ]
+    },
+    "ingenieria": {
+      "match": [
+        "ingeniería",
+        "engineering",
+        "estructura",
+        "structural",
+        "mecánica de suelos",
+        "resistencia de materiales",
+        "circuito",
+        "circuit",
+        "materiales",
+        "materials"
+      ],
+      "query_es": "fundamentos de ingeniería explicados",
+      "query_en": "engineering fundamentals explained",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Ingeniería en el MIT",
+          "label_en": "Engineering at MIT",
+          "search": "ocw",
+          "query_es": "engineering",
+          "query_en": "engineering"
+        },
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "resistencia de materiales",
+          "query_en": "strength of materials"
+        }
+      ]
+    },
+    "electronica": {
+      "match": [
+        "electrónica",
+        "electronics",
+        "eléctric",
+        "electric",
+        "voltaje",
+        "arduino",
+        "sensor",
+        "microcontrolador"
+      ],
+      "query_es": "electrónica básica explicada",
+      "query_en": "basic electronics explained",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Circuitos en el MIT",
+          "label_en": "Circuits at MIT",
+          "search": "ocw",
+          "query_es": "circuits electronics",
+          "query_en": "circuits electronics"
+        },
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "electrónica",
+          "query_en": "electronics"
+        }
+      ]
+    },
+    "cocina": {
+      "match": [
+        "cocina",
+        "cooking",
+        "culinari",
+        "cuchillo",
+        "knife",
+        "salsa",
+        "sauce",
+        "fermenta",
+        "repostería",
+        "mise en place"
+      ],
+      "query_es": "técnicas básicas de cocina profesional",
+      "query_en": "basic professional cooking techniques",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "técnicas culinarias",
+          "query_en": "culinary technique"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "cocina",
+          "query_en": "cooking"
+        }
+      ]
+    },
+    "nutricion": {
+      "match": [
+        "nutrición",
+        "nutrition",
+        "dieta",
+        "diet",
+        "alimento",
+        "macronutriente",
+        "metabolismo"
+      ],
+      "query_es": "nutrición humana explicada",
+      "query_en": "human nutrition explained",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Salud en OpenStax",
+          "label_en": "Health at OpenStax",
+          "url": "https://openstax.org/subjects/science"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "nutrición",
+          "query_en": "nutrition"
+        }
+      ]
+    },
+    "musica": {
+      "match": [
+        "música",
+        "music",
+        "armonía",
+        "harmony",
+        "ritmo",
+        "partitura",
+        "instrumento",
+        "solfeo",
+        "acorde"
+      ],
+      "query_es": "teoría musical desde cero",
+      "query_en": "music theory from scratch",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Música en Khan Academy",
+          "label_en": "Music on Khan Academy",
+          "url": "https://es.khanacademy.org/humanities"
+        },
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "teoría musical",
+          "query_en": "music theory"
+        }
+      ]
+    },
+    "audiovisual": {
+      "match": [
+        "cine",
+        "film",
+        "cámara",
+        "camera",
+        "fotografía",
+        "photography",
+        "edición",
+        "montaje",
+        "guion",
+        "iluminación",
+        "sonido"
+      ],
+      "query_es": "fundamentos de fotografía y cine",
+      "query_en": "photography and filmmaking fundamentals",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "lenguaje cinematográfico",
+          "query_en": "film technique"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "fotografía",
+          "query_en": "photography"
+        }
+      ]
+    },
+    "escritura": {
+      "match": [
+        "escrib",
+        "writing",
+        "redacción",
+        "narrativa",
+        "periodis",
+        "journalis",
+        "crónica",
+        "entrevista",
+        "literatura"
+      ],
+      "query_es": "cómo escribir mejor: estructura y estilo",
+      "query_en": "how to write better: structure and style",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "redacción periodística",
+          "query_en": "journalism"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Escritura en el MIT",
+          "label_en": "Writing at MIT",
+          "search": "ocw",
+          "query_es": "writing",
+          "query_en": "writing"
+        }
+      ]
+    },
+    "idiomas": {
+      "match": [
+        "idioma",
+        "language",
+        "inglés",
+        "english",
+        "bilingüe",
+        "traducción",
+        "translation"
+      ],
+      "query_es": "cómo aprender un idioma de verdad",
+      "query_en": "how to actually learn a language",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "aprender inglés",
+          "query_en": "learn english"
+        },
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "adquisición del lenguaje",
+          "query_en": "language acquisition"
+        }
+      ]
+    },
+    "educacion": {
+      "match": [
+        "educación",
+        "education",
+        "pedagog",
+        "enseñ",
+        "teaching",
+        "aula",
+        "currículo",
+        "didáctica"
+      ],
+      "query_es": "pedagogía y didáctica explicadas",
+      "query_en": "pedagogy and teaching methods explained",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "pedagogía",
+          "query_en": "pedagogy"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "enseñanza",
+          "query_en": "teaching"
+        }
+      ]
+    },
+    "historia": {
+      "match": [
+        "historia",
+        "history",
+        "histórico",
+        "arqueolog",
+        "patrimonio"
+      ],
+      "query_es": "historia explicada de forma clara",
+      "query_en": "history explained clearly",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Historia en Khan Academy",
+          "label_en": "History on Khan Academy",
+          "url": "https://es.khanacademy.org/humanities"
+        },
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "historia",
+          "query_en": "history"
+        }
+      ]
+    },
+    "sociedad": {
+      "match": [
+        "sociolog",
+        "antropolog",
+        "social",
+        "comunidad",
+        "política",
+        "politic",
+        "relaciones internacionales",
+        "género"
+      ],
+      "query_es": "introducción a las ciencias sociales",
+      "query_en": "introduction to social sciences",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Ciencias sociales en OpenStax",
+          "label_en": "Social sciences at OpenStax",
+          "url": "https://openstax.org/subjects/social-sciences"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "ciencias sociales",
+          "query_en": "social sciences"
+        }
+      ]
+    },
+    "ambiente": {
+      "match": [
+        "ambient",
+        "environment",
+        "ecolog",
+        "sostenib",
+        "sustainab",
+        "clima",
+        "climate",
+        "residuo",
+        "conservación"
+      ],
+      "query_es": "ciencia ambiental y cambio climático explicados",
+      "query_en": "environmental science and climate change explained",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "ciencia ambiental",
+          "query_en": "environmental science"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Medio ambiente en el MIT",
+          "label_en": "Environment at MIT",
+          "search": "ocw",
+          "query_es": "environmental science",
+          "query_en": "environmental science"
+        }
+      ]
+    },
+    "geociencias": {
+      "match": [
+        "geolog",
+        "geograf",
+        "geography",
+        "suelo",
+        "mineral",
+        "sísmic",
+        "topograf",
+        "cartograf"
+      ],
+      "query_es": "geología y geografía explicadas",
+      "query_en": "geology and geography explained",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "geología",
+          "query_en": "geology"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Ciencias de la Tierra en el MIT",
+          "label_en": "Earth science at MIT",
+          "search": "ocw",
+          "query_es": "earth science",
+          "query_en": "earth science"
+        }
+      ]
+    },
+    "astronomia": {
+      "match": [
+        "astronom",
+        "astrofísic",
+        "espacio",
+        "space",
+        "planeta",
+        "telescopio",
+        "órbita"
+      ],
+      "query_es": "astronomía explicada desde cero",
+      "query_en": "astronomy explained from scratch",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Cosmología en Khan Academy",
+          "label_en": "Cosmology on Khan Academy",
+          "url": "https://es.khanacademy.org/science/cosmology-and-astronomy"
+        },
+        {
+          "kind": "read",
+          "label_es": "Astronomía en OpenStax",
+          "label_en": "Astronomy at OpenStax",
+          "url": "https://openstax.org/subjects/science"
+        }
+      ]
+    },
+    "aviacion": {
+      "match": [
+        "aviación",
+        "aviation",
+        "piloto",
+        "pilot",
+        "vuelo",
+        "flight",
+        "aeronáutic",
+        "aerodinámic"
+      ],
+      "query_es": "cómo se convierte alguien en piloto",
+      "query_en": "how to become a pilot",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "aerodinámica",
+          "query_en": "aerodynamics"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Aeronáutica en el MIT",
+          "label_en": "Aeronautics at MIT",
+          "search": "ocw",
+          "query_es": "aeronautics",
+          "query_en": "aeronautics"
+        }
+      ]
+    },
+    "agro": {
+      "match": [
+        "agr",
+        "cultivo",
+        "crop",
+        "cosecha",
+        "ganader",
+        "veterinar",
+        "animal",
+        "zootecnia"
+      ],
+      "query_es": "agronomía y producción agrícola explicadas",
+      "query_en": "agronomy and crop production explained",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "agronomía",
+          "query_en": "agronomy"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "agricultura",
+          "query_en": "agriculture"
+        }
+      ]
+    },
+    "deporte": {
+      "match": [
+        "deporte",
+        "sport",
+        "entrenamiento",
+        "training",
+        "físic",
+        "kinesiolog",
+        "atleta",
+        "lesión"
+      ],
+      "query_es": "fisiología del ejercicio explicada",
+      "query_en": "exercise physiology explained",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "fisiología del ejercicio",
+          "query_en": "exercise physiology"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "ciencias del deporte",
+          "query_en": "sports science"
+        }
+      ]
+    },
+    "logistica": {
+      "match": [
+        "logístic",
+        "logistic",
+        "cadena de suministro",
+        "supply chain",
+        "inventario",
+        "transporte",
+        "operaciones"
+      ],
+      "query_es": "logística y cadena de suministro explicadas",
+      "query_en": "logistics and supply chain explained",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Logística en el MIT",
+          "label_en": "Logistics at MIT",
+          "search": "ocw",
+          "query_es": "supply chain logistics",
+          "query_en": "supply chain logistics"
+        },
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "cadena de suministro",
+          "query_en": "supply chain"
+        }
+      ]
+    },
+    "turismo": {
+      "match": [
+        "turismo",
+        "tourism",
+        "hotel",
+        "hospitalidad",
+        "hospitality",
+        "viaje",
+        "huésped"
+      ],
+      "query_es": "gestión de turismo y hotelería",
+      "query_en": "tourism and hospitality management",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "turismo",
+          "query_en": "tourism"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "turismo y hotelería",
+          "query_en": "hospitality management"
+        }
+      ]
+    },
+    "moda": {
+      "match": [
+        "moda",
+        "fashion",
+        "textil",
+        "textile",
+        "patronaje",
+        "costura",
+        "prenda"
+      ],
+      "query_es": "diseño de moda y patronaje explicados",
+      "query_en": "fashion design and pattern making explained",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "diseño de moda",
+          "query_en": "fashion design"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Buscar cursos en Coursera",
+          "label_en": "Search courses on Coursera",
+          "search": "coursera",
+          "query_es": "diseño de moda",
+          "query_en": "fashion design"
+        }
+      ]
+    },
+    "escena": {
+      "match": [
+        "teatro",
+        "theatre",
+        "theater",
+        "danza",
+        "dance",
+        "actuación",
+        "acting",
+        "coreograf",
+        "escenario"
+      ],
+      "query_es": "técnica de actuación y artes escénicas",
+      "query_en": "acting technique and performing arts",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "artes escénicas",
+          "query_en": "performing arts"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Teatro en el MIT",
+          "label_en": "Theater at MIT",
+          "search": "ocw",
+          "query_es": "theater arts",
+          "query_en": "theater arts"
+        }
+      ]
+    },
+    "seguridad": {
+      "match": [
+        "ciberseguridad",
+        "cybersecurity",
+        "seguridad informática",
+        "criptograf",
+        "vulnerabilidad",
+        "hacking"
+      ],
+      "query_es": "fundamentos de ciberseguridad explicados",
+      "query_en": "cybersecurity fundamentals explained",
+      "resources": [
+        {
+          "kind": "practice",
+          "label_es": "Seguridad en el MIT",
+          "label_en": "Security at MIT",
+          "search": "ocw",
+          "query_es": "computer security",
+          "query_en": "computer security"
+        },
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "seguridad informática",
+          "query_en": "computer security"
+        }
+      ]
+    },
+    "investigacion": {
+      "match": [
+        "investigación",
+        "research",
+        "metodolog",
+        "hipótesis",
+        "paper",
+        "artículo científico",
+        "experimento"
+      ],
+      "query_es": "cómo se hace una investigación científica",
+      "query_en": "how scientific research works",
+      "resources": [
+        {
+          "kind": "read",
+          "label_es": "Buscar en Wikipedia",
+          "label_en": "Search Wikipedia",
+          "search": "wikipedia",
+          "query_es": "método científico",
+          "query_en": "scientific method"
+        },
+        {
+          "kind": "practice",
+          "label_es": "Metodología en el MIT",
+          "label_en": "Research methods at MIT",
+          "search": "ocw",
+          "query_es": "research methods",
+          "query_en": "research methods"
+        }
+      ]
+    }
+  }
+}
