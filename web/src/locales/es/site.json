@@ -199,7 +199,8 @@
     "tools": "Con qué",
     "closePanel": "Cerrar",
     "match": "de compatibilidad",
-    "yourCareer": "Tu mejor coincidencia"
+    "yourCareer": "Tu mejor coincidencia",
+    "exploreRoute": "Explorar la ruta de esta carrera"
   },
   "journeyPage": {
     "label": "TU RUTA",
@@ -230,7 +231,10 @@
     "noGaps": "No tienes ninguna dimensión por debajo de lo que pide esta carrera. Este hito ya está cubierto por tu perfil.",
     "resVideo": "Videos",
     "resPractice": "Práctica",
-    "resRead": "Leer"
+    "resRead": "Leer",
+    "exploringTagline": "Así se ve el camino si eliges esta carrera.",
+    "exploringNote": "Estás explorando una carrera distinta a la que te salió en el test.",
+    "exploringBack": "Ver mi ruta"
   },
   "privacy": {
     "back": "← Volver a FuturePilot",

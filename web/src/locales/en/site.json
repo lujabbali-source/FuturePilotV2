@@ -199,7 +199,8 @@
     "tools": "What with",
     "closePanel": "Close",
     "match": "compatibility",
-    "yourCareer": "Your closest match"
+    "yourCareer": "Your closest match",
+    "exploreRoute": "Explore this career's route"
   },
   "journeyPage": {
     "label": "YOUR ROUTE",
@@ -230,7 +231,10 @@
     "noGaps": "You are not below what this career asks for on any dimension. Your profile already covers this milestone.",
     "resVideo": "Videos",
     "resPractice": "Practice",
-    "resRead": "Read"
+    "resRead": "Read",
+    "exploringTagline": "This is what the path looks like if you choose this career.",
+    "exploringNote": "You are exploring a career other than the one your assessment pointed to.",
+    "exploringBack": "See my route"
   },
   "privacy": {
     "back": "← Back to FuturePilot",

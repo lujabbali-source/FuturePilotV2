@@ -143,3 +143,97 @@ def test_a_topic_never_offers_the_same_kind_twice():
         if duplicados:
             repetidos[tema] = sorted(duplicados)
     assert not repetidos, f"temas con el mismo tipo repetido: {repetidos}"
+
+
+def test_an_older_account_still_gets_its_checkboxes(client, register_and_login, sample_answers, app_module):
+    """El fallo que reporta quien lleva tiempo usando la app.
+
+    Las rutas de las 73 carreras se escribieron despues de que varias cuentas
+    ya hubieran hecho el test. Esos resultados tienen los hitos guardados con
+    su titulo pero SIN sub-tareas, asi que el roadmap salia con los cuatro
+    encabezados puestos y ni una casilla debajo - ni casillas ni material.
+
+    Probar solo con cuentas nuevas no lo veia: una cuenta nueva sí guarda las
+    sub-tareas. La ruta es un dato del servidor y ahora se rehace al leer, que
+    es lo que arregla las cuentas que ya existian.
+    """
+    import json
+
+    _, headers = register_and_login()
+    client.post("/api/v1/assess", json={"answers": sample_answers, "lang": "es"}, headers=headers)
+
+    # Se envejece el resultado a mano: se le quita el contenido a los hitos,
+    # que es exactamente como quedo guardado antes de que existieran las rutas.
+    store = app_module.users_store
+    with store.connect() as conexion:
+        fila = conexion.execute(
+            "SELECT id, results_json FROM test_results ORDER BY id DESC LIMIT 1"
+        ).fetchone()
+        guardado = json.loads(fila["results_json"])
+        for cp in guardado["roadmap"]["checkpoints"]:
+            cp.pop("content", None)
+        conexion.execute("UPDATE test_results SET results_json = ? WHERE id = ?",
+                         (json.dumps(guardado), fila["id"]))
+
+    datos = client.get("/api/v1/me/results?lang=es", headers=headers).json()
+    pasos = datos["results"]["roadmap"]["checkpoints"]
+    items = [i for cp in pasos if cp.get("content") for i in cp["content"]["items"]]
+
+    assert items, "un resultado antiguo se quedo sin casillas"
+    assert all(i.get("text") for i in items)
+    assert any(i["resources"] for i in items), "y sin material de estudio"
+
+
+def test_you_can_look_at_a_career_the_test_did_not_pick(client, register_and_login, sample_answers, app_module):
+    """El roadmap vivia encerrado en el resultado del test, asi que solo se
+    podia ver la ruta de la carrera que el test eligio por ti. Eso es al reves
+    de para que sirve la app: aqui se entra a decidir, y para decidir hay que
+    poder mirar lo que implica cada opcion antes de comprometerse."""
+    _, headers = register_and_login()
+    propio = client.post("/api/v1/assess", json={"answers": sample_answers, "lang": "es"},
+                         headers=headers)
+    assert propio.status_code == 200
+
+    mia = client.get("/api/v1/me/results?lang=es", headers=headers).json()
+    mi_carrera = mia["results"]["roadmap"]["career_id"]
+    otra = next(c["id"] for c in app_module.careers_db if c["id"] != mi_carrera)
+
+    respuesta = client.get(f"/api/v1/careers/{otra}/roadmap?lang=es", headers=headers)
+    assert respuesta.status_code == 200
+    datos = respuesta.json()
+
+    assert datos["is_own"] is False, "hay que poder avisar de que esta no es tu ruta"
+    assert datos["roadmap"]["career_id"] == otra
+    assert datos["roadmap"]["career_title"]
+
+    items = [i for cp in datos["roadmap"]["checkpoints"] if cp.get("content")
+             for i in cp["content"]["items"]]
+    assert items, "la ruta explorada llego sin sub-tareas"
+    assert any(i["resources"] for i in items), "y sin material"
+
+    # Y la propia sigue siendo la propia.
+    assert client.get(f"/api/v1/careers/{mi_carrera}/roadmap?lang=es",
+                      headers=headers).json()["is_own"] is True
+
+
+def test_two_careers_show_two_different_routes(client, register_and_login, sample_answers, app_module):
+    """El sintoma que ya se dio una vez: pulsar Fisica y leer los pasos de
+    Ingenieria de software. Si explorar devolviera siempre lo mismo, el boton
+    nuevo seria peor que no tenerlo."""
+    _, headers = register_and_login()
+    client.post("/api/v1/assess", json={"answers": sample_answers, "lang": "es"}, headers=headers)
+
+    a, b = app_module.careers_db[0]["id"], app_module.careers_db[1]["id"]
+    textos = []
+    for cid in (a, b):
+        datos = client.get(f"/api/v1/careers/{cid}/roadmap?lang=es", headers=headers).json()
+        textos.append(tuple(
+            i["text"] for cp in datos["roadmap"]["checkpoints"] if cp.get("content")
+            for i in cp["content"]["items"]
+        ))
+    assert textos[0] != textos[1]
+
+
+def test_asking_for_a_career_that_does_not_exist_says_so(client, register_and_login):
+    _, headers = register_and_login()
+    assert client.get("/api/v1/careers/no-existe/roadmap", headers=headers).status_code == 404

@@ -132,16 +132,26 @@ body {
   font-size: .74rem;
 }
 
+/* La misma forma que la senda, en pequeño. */
 .rm-legend__pin {
   width: 13px;
-  height: 13px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
+  height: 18px;
+  flex: none;
+  overflow: visible;
 }
 
-.rm-legend__pin--current { color: #00FFB3; box-shadow: 0 0 12px rgba(0, 255, 179, .55); }
-.rm-legend__pin--next    { color: #55697c; }
-.rm-legend__pin--done    { border-color: #00FFB3; background: #00FFB3; }
+.rm-legend__pin .rm-pin__body { fill: #060d18; stroke: #55697c; stroke-width: 2; }
+.rm-legend__pin .rm-pin__hole { fill: #55697c; }
+.rm-legend__pin .rm-pin__check { fill: none; stroke: #060d18; stroke-width: 2.4;
+  stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
+
+.rm-legend__pin--current .rm-pin__body { stroke: #00FFB3; }
+.rm-legend__pin--current .rm-pin__hole { fill: #00FFB3; }
+.rm-legend__pin--current { filter: drop-shadow(0 0 6px rgba(0, 255, 179, .6)); }
+
+.rm-legend__pin--done .rm-pin__body { fill: #00FFB3; stroke: #00FFB3; }
+.rm-legend__pin--done .rm-pin__hole { fill: transparent; }
+.rm-legend__pin--done .rm-pin__check { opacity: 1; }
 
 .rm-legend__dash {
   width: 22px;
@@ -242,44 +252,84 @@ body {
 .rm-node--left  .rm-card { grid-column: 1; }
 .rm-pin { grid-column: 2; }
 
+/* El marcador es un pin de ubicación, no un punto: la forma sola ya dice que
+   esto es un lugar y que el camino se recorre.
+
+   Se ancla por la punta (ver `anclaY` en app.js), así que la senda le pasa por
+   abajo y el pin queda clavado en ella. */
 .rm-pin {
   display: grid;
   place-items: center;
   width: 26px;
-  height: 26px;
-  border: 2px solid #3c4d5e;
-  border-radius: 50%;
-  background: #060d18;
   justify-self: center;
-  transition: border-color .3s, box-shadow .3s, transform .3s;
+  /* Dos desplazamientos, cada uno con su motivo.
+     En Y: la punta cae donde estaba el centro del punto anterior, así los
+     hitos no se descolocan respecto de su tarjeta.
+     En X: cada pin se inclina hacia el lado de SU tarjeta, y como las
+     tarjetas alternan, la senda que los une deja de ser una vertical y
+     serpentea de verdad. Antes todos caían en el mismo eje y el camino era
+     una raya recta. */
+  transform: translate(var(--rm-lado, 0), -9px);
+  /* Sin transicion en `transform` a proposito. `drawPath` traza la senda
+     midiendo donde estan los pines, asi que un pin a medio desplazarse hace
+     que el camino se dibuje por donde estaba y no por donde queda. El color y
+     el halo si se animan, porque no mueven nada. */
 }
 
-.rm-pin i {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #3c4d5e;
-  transition: background .3s;
+.rm-node--right { --rm-lado: 24px; }
+.rm-node--left  { --rm-lado: -24px; }
+
+.rm-pin__svg {
+  width: 26px;
+  height: 37px;
+  overflow: visible;
+  transition: filter .3s;
 }
 
-.rm-node.is-current .rm-pin {
-  border-color: #00FFB3;
-  box-shadow: 0 0 0 6px rgba(0, 255, 179, .12), 0 0 18px rgba(0, 255, 179, .5);
-  transform: scale(1.18);
+.rm-pin__body {
+  fill: #060d18;
+  stroke: #3c4d5e;
+  stroke-width: 2;
+  transition: fill .3s, stroke .3s;
 }
 
-.rm-node.is-current .rm-pin i { background: #00FFB3; }
-
-.rm-node.is-done .rm-pin {
-  border-color: #00FFB3;
-  background: #00FFB3;
+.rm-pin__hole {
+  fill: #3c4d5e;
+  transition: fill .3s;
 }
 
-.rm-node.is-done .rm-pin i {
-  width: 11px;
-  height: 11px;
-  background: #060d18;
-  clip-path: polygon(14% 46%, 0 60%, 40% 100%, 100% 22%, 86% 8%, 38% 70%);
+/* La marca de cumplido solo aparece en los hitos hechos. */
+.rm-pin__check {
+  fill: none;
+  stroke: #060d18;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+/* Donde estás: relleno oscuro, contorno y halo encendidos, y algo más grande
+   que los demás - es el único que hay que encontrar de un vistazo. */
+.rm-node.is-current .rm-pin { transform: translate(var(--rm-lado, 0), -9px) scale(1.2); }
+.rm-node.is-current .rm-pin__body { stroke: #00FFB3; }
+.rm-node.is-current .rm-pin__hole { fill: #00FFB3; }
+.rm-node.is-current .rm-pin__svg {
+  filter: drop-shadow(0 0 9px rgba(0, 255, 179, .7));
+}
+
+/* Recorrido: el pin se rellena y el hueco se convierte en un visto. */
+.rm-node.is-done .rm-pin__body { fill: #00FFB3; stroke: #00FFB3; }
+.rm-node.is-done .rm-pin__hole { fill: transparent; }
+.rm-node.is-done .rm-pin__check { opacity: 1; }
+.rm-node.is-done .rm-pin__svg {
+  filter: drop-shadow(0 0 6px rgba(0, 255, 179, .35));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rm-pin, .rm-pin__svg, .rm-pin__body, .rm-pin__hole, .rm-pin__check {
+    transition: none;
+  }
 }
 
 /* --- Tarjeta ------------------------------------------------------------ */
@@ -556,6 +606,9 @@ body {
     grid-column: 2;
   }
 
+  .rm-node--left,
+  .rm-node--right { --rm-lado: 0; }
+
   .rm-pin {
     grid-column: 1;
     justify-self: start;
@@ -576,3 +629,20 @@ body {
 
   .rm-end__links { justify-content: flex-start; }
 }
+
+/* Aviso de que esto no es tu ruta.
+   Sin él, alguien que llega desde una carrera cualquiera se lleva a casa una
+   ruta que no le corresponde creyendo que sí. */
+.rm-exploring {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-left: 2px solid rgba(255, 199, 89, .6);
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 199, 89, .06);
+  color: #d5c6a4;
+  font-size: .74rem;
+  line-height: 1.55;
+}
+
+.rm-exploring a { color: #00FFB3; text-decoration: none; white-space: nowrap; }
+.rm-exploring a:hover { text-decoration: underline; }

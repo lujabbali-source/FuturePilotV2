@@ -1683,6 +1683,54 @@ def _upgrade_legacy_results(results: Dict[str, Any]) -> Dict[str, Any]:
     return results
 
 
+def _refresh_roadmap_content(results: Dict[str, Any]) -> Dict[str, Any]:
+    """Rehace las sub-tareas del roadmap a partir de la ruta de la carrera.
+
+    Guardar la ruta dentro del resultado fue el error. Es un dato del
+    servidor, igual que la prosa, y por el mismo motivo se resuelve al leer:
+    quien hizo el test antes de que existieran las 73 rutas tiene los hitos
+    guardados SIN sub-tareas, y en pantalla veia un roadmap con los titulos
+    puestos y ni una casilla debajo. No es un caso raro - le pasa a todas las
+    cuentas anteriores a esa version, que son justo las de los primeros
+    usuarios.
+
+    Rehacerlo siempre, y no solo cuando falta, tiene una segunda ventaja:
+    corregir una ruta en roadmaps.json arregla el roadmap de todo el mundo sin
+    tener que repetir el test.
+
+    El paso de nivelacion es la excepcion, porque no sale de la ruta escrita
+    sino del cruce entre el perfil y lo que pide la carrera. Se recalcula con
+    el vector guardado; si no lo hay, se respeta lo que hubiera.
+    """
+    roadmap = results.get("roadmap")
+    if not roadmap or not roadmap.get("checkpoints"):
+        return results
+
+    career_id = roadmap.get("career_id")
+    if not career_id:
+        return results
+
+    matches = results.get("recommended_careers") or []
+    gaps = next((m.get("skill_gaps") or [] for m in matches
+                 if m.get("career_id") == career_id), [])
+    vector = results.get("user_vector")
+    career = next((c for c in careers_db if c["id"] == career_id), None)
+
+    fresco = ai_system.brain.planner.build_roadmap(career_id, gaps, vector, career)
+    por_paso = {cp["step"]: cp for cp in fresco["checkpoints"]}
+
+    for cp in roadmap["checkpoints"]:
+        nuevo = por_paso.get(cp.get("step"))
+        if not nuevo:
+            continue
+        contenido = nuevo.get("content")
+        # El de nivelacion solo se pisa si se pudo recalcular: sin vector
+        # guardado, lo que ya hubiera es mejor que nada.
+        if contenido or cp.get("step") != 2:
+            cp["content"] = contenido
+    return results
+
+
 def _localize_results(results: Dict[str, Any], lang: str) -> Dict[str, Any]:
     """Redacta un resultado de test en el idioma pedido.
 
@@ -1705,6 +1753,7 @@ def _localize_results(results: Dict[str, Any], lang: str) -> Dict[str, Any]:
     # mezcladas en la misma frase.
     results = copy.deepcopy(results)
     results = _upgrade_legacy_results(results)
+    results = _refresh_roadmap_content(results)
 
     lang = _resolve_lang(lang)
     catalog = {career["id"]: career for career in careers_db}
@@ -1909,6 +1958,63 @@ class CheckpointRequest(BaseModel):
     item_id: str = Field(..., min_length=1, max_length=120,
                          description="id de la sub-tarea, ej. c1:foundations:0")
     done: bool = Field(True, description="true para marcarla, false para desmarcarla")
+
+
+@app.get("/api/v1/careers/{career_id}/roadmap", status_code=status.HTTP_200_OK)
+def get_career_roadmap(
+    career_id: str,
+    lang: Optional[str] = None,
+    current_user: dict = Depends(get_current_user_required),
+):
+    """La ruta de CUALQUIER carrera, no solo la que salio en el test.
+
+    El roadmap vivia encerrado en el resultado del test, asi que el estudiante
+    solo podia ver la ruta de la carrera que el test eligio por el. Eso es al
+    reves de para que sirve la aplicacion: se entra aqui a decidir, y para
+    decidir hay que poder mirar lo que implica cada opcion antes de
+    comprometerse con ninguna.
+
+    El paso de nivelacion sale del perfil de quien pregunta cruzado con lo que
+    pide ESTA carrera, asi que cambia segun quien mire - que es justo lo que
+    lo hace util para comparar dos carreras.
+    """
+    career = next((c for c in careers_db if c.get("id") == career_id), None)
+    if career is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f"No existe la carrera {career_id}.")
+
+    vector, gaps, propia = {}, [], False
+    latest = users_store.latest_result_for_user(current_user["id"])
+    if latest is not None:
+        resultado = json.loads(latest["results_json"])
+        vector = resultado.get("user_vector") or {}
+        propia = (resultado.get("roadmap") or {}).get("career_id") == career_id
+        gaps = next((m.get("skill_gaps") or []
+                     for m in (resultado.get("recommended_careers") or [])
+                     if m.get("career_id") == career_id), [])
+        if not gaps:
+            # Una carrera fuera del top: las brechas se calculan al vuelo
+            # contra sus requisitos, o el hito de nivelacion saldria vacio.
+            requisitos = career.get("requirements") or {}
+            gaps = [c for c, pide in requisitos.items() if vector.get(c, 0) < pide]
+
+    roadmap = ai_system.brain.planner.build_roadmap(career_id, gaps, vector, career)
+    titulo = localization.career_field(career, "title", lang)
+    roadmap["career_title"] = titulo
+    roadmap["checkpoints"] = [
+        {**cp,
+         **localization.checkpoint_text(cp, lang, titulo),
+         "content": localization.checkpoint_content(cp.get("content"), lang, titulo)}
+        for cp in roadmap["checkpoints"]
+    ]
+
+    return {
+        "success": True,
+        "roadmap": roadmap,
+        # Para que la pagina pueda avisar de que esto no es tu ruta.
+        "is_own": propia,
+        "completed_checkpoints": ai_system.completed_checkpoints(str(current_user["id"])),
+    }
 
 
 @app.get("/api/v1/careers/{career_id}/fit", status_code=status.HTTP_200_OK)

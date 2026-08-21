@@ -344,8 +344,15 @@ async function main() {
     <section class="flight-next">
       <p class="flight-label">${tf("keepGoing")}</p>
       <div class="flight-links">
+        ${CAREER_PARAM
+          // La ruta de ESTA carrera, no la que el test escogió. Mirar lo que
+          // implica una opción antes de comprometerse con ella es la mitad de
+          // para lo que se entra aquí, y hasta ahora el roadmap solo sabía
+          // enseñar una sola carrera.
+          ? `<a class="flight-cta" href="/journey?career=${encodeURIComponent(CAREER_PARAM)}">${tf("exploreRoute")} <span>→</span></a>`
+          : ""}
         ${!esLaTuya ? `<a class="flight-cta flight-cta--ghost" href="/flightplan">${tf("myPlan")} <span>→</span></a>` : ""}
-        <a class="flight-cta flight-cta--ghost" href="/journey">${tf("seeRoute")} <span>→</span></a>
+        ${!CAREER_PARAM ? `<a class="flight-cta flight-cta--ghost" href="/journey">${tf("seeRoute")} <span>→</span></a>` : ""}
         <a class="flight-cta flight-cta--ghost" href="/assessment">${tf("myAccount")} <span>→</span></a>
         <a class="flight-cta flight-cta--ghost" href="#mentor">${tf("askMentor")} <span>→</span></a>
       </div>

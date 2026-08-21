@@ -31,10 +31,37 @@ function escapeHtml(value) {
 }
 
 /** El estado: el roadmap, la carrera y lo que ya está marcado. */
-const state = { roadmap: null, career: "", done: new Set() };
+const state = { roadmap: null, career: "", done: new Set(), explorando: false };
+
+// La carrera que se pide por la URL, si se pidió alguna. Sin esto el roadmap
+// solo sabía enseñar la carrera que el test eligió por ti, que es al revés de
+// para qué sirve la app: aquí se entra a decidir, y para decidir hay que poder
+// mirar lo que implica cada opción antes de comprometerse con ninguna.
+const CARRERA_PEDIDA = new URLSearchParams(window.location.search).get("career");
 
 async function load() {
   const token = localStorage.getItem(AUTH_TOKEN_KEY);
+
+  if (token && CARRERA_PEDIDA) {
+    try {
+      const response = await fetch(
+        `/api/v1/careers/${encodeURIComponent(CARRERA_PEDIDA)}/roadmap?lang=${currentLanguage()}`,
+        { headers: { Authorization: `Bearer ${token}` } },
+      );
+      if (response.ok) {
+        const data = await response.json();
+        state.done = new Set(data.completed_checkpoints || []);
+        state.explorando = !data.is_own;
+        // A propósito no se guarda en el dispositivo: esto es una carrera que
+        // estás mirando, no la tuya, y pisar la tuya en el almacenamiento
+        // haría que al volver sin parámetro apareciera la ajena.
+        return { roadmap: data.roadmap };
+      }
+    } catch {
+      // Si falla, se cae al roadmap propio de abajo.
+    }
+  }
+
   if (token) {
     try {
       const response = await fetch(`/api/v1/me/results?lang=${currentLanguage()}`, {
@@ -125,7 +152,12 @@ function renderSidebar() {
       <div class="rm-side__card">
         <p class="rm-kicker">${tj("label")}</p>
         <h1 class="rm-side__career">${escapeHtml(state.career)}</h1>
-        <p class="rm-side__tagline">${tj("tagline")}</p>
+        <p class="rm-side__tagline">${state.explorando ? tj("exploringTagline") : tj("tagline")}</p>
+        ${state.explorando ? `
+          <p class="rm-exploring">
+            ${tj("exploringNote")}
+            <a href="/journey">${tj("exploringBack")}</a>
+          </p>` : ""}
 
         <p class="rm-kicker rm-side__sep">${tj("progress")}</p>
         <p class="rm-side__pct" data-progress-pct>${percent}%</p>
@@ -139,9 +171,9 @@ function renderSidebar() {
       </div>
 
       <ul class="rm-legend">
-        <li><i class="rm-legend__pin rm-legend__pin--current"></i>${tj("legendCurrent")}</li>
-        <li><i class="rm-legend__pin rm-legend__pin--next"></i>${tj("legendUpcoming")}</li>
-        <li><i class="rm-legend__pin rm-legend__pin--done"></i>${tj("legendDone")}</li>
+        <li>${pinLeyenda("current")}${tj("legendCurrent")}</li>
+        <li>${pinLeyenda("next")}${tj("legendUpcoming")}</li>
+        <li>${pinLeyenda("done")}${tj("legendDone")}</li>
         <li><i class="rm-legend__dash"></i>${tj("legendPath")}</li>
       </ul>
 
@@ -150,6 +182,45 @@ function renderSidebar() {
         <cite>${tj("quoteBy")}</cite>
       </blockquote>
     </aside>`;
+}
+
+/** El mismo pin, en pequeño, para la leyenda.
+ *
+ *  Tiene que ser la misma forma que la de la senda: una leyenda que dibuja un
+ *  circulito para explicar un pin no explica nada. */
+function pinLeyenda(estado) {
+  return `
+    <svg viewBox="0 0 24 34" class="rm-legend__pin rm-legend__pin--${estado}" aria-hidden="true">
+      <path class="rm-pin__body"
+            d="M12 1.6c-5.3 0-9.6 4.3-9.6 9.6 0 7.2 9.6 21.2 9.6 21.2s9.6-14 9.6-21.2c0-5.3-4.3-9.6-9.6-9.6z"/>
+      <circle class="rm-pin__hole" cx="12" cy="11.2" r="3.9"/>
+      <path class="rm-pin__check" d="M8.2 11.2l2.6 2.6 5-5.2"/>
+    </svg>`;
+}
+
+/** El marcador de cada hito: un pin de ubicación, no un punto.
+ *
+ *  Un punto no dice nada por sí solo; hay que explicarle al estudiante qué
+ *  significa. Un pin de mapa ya lo dice - esto es un lugar, y este camino se
+ *  recorre. La forma sola transmite el mensaje.
+ *
+ *  Va en SVG en línea y no como imagen porque la CSP prohíbe cargar nada de
+ *  fuera, y porque así los tres estados se pintan con CSS sobre las mismas
+ *  formas en vez de necesitar tres archivos.
+ *
+ *  La punta abajo importa: es la que se apoya en la senda (ver `anclaY`), como
+ *  un pin clavado en un mapa. Si el camino le pasara por la mitad, el pin
+ *  flotaría en vez de estar puesto en algún sitio. */
+function pin() {
+  return `
+    <span class="rm-pin" aria-hidden="true">
+      <svg viewBox="0 0 24 34" class="rm-pin__svg">
+        <path class="rm-pin__body"
+              d="M12 1.6c-5.3 0-9.6 4.3-9.6 9.6 0 7.2 9.6 21.2 9.6 21.2s9.6-14 9.6-21.2c0-5.3-4.3-9.6-9.6-9.6z"/>
+        <circle class="rm-pin__hole" cx="12" cy="11.2" r="3.9"/>
+        <path class="rm-pin__check" d="M8.2 11.2l2.6 2.6 5-5.2"/>
+      </svg>
+    </span>`;
 }
 
 // Como se llama y como se ve cada clase de material.
@@ -195,7 +266,7 @@ function renderNode(cp, index) {
 
   return `
     <li class="rm-node rm-node--${index % 2 ? "left" : "right"} is-${estado}" data-step="${cp.step}">
-      <span class="rm-pin" aria-hidden="true"><i></i></span>
+      ${pin()}
 
       <article class="rm-card">
         <h2 class="rm-card__title">
@@ -261,6 +332,7 @@ function render() {
 
   syncProgress();
   drawPath();
+  vigilarMedidas();
 }
 
 // ---------------------------------------------------------------------------
@@ -285,11 +357,19 @@ function drawPath() {
   if (anclas.length < 2) return;
 
   const marco = track.getBoundingClientRect();
-  const centro = (el) => {
+  /** Dónde toca la senda a este ancla.
+   *
+   *  Un pin de mapa se ancla por la punta, no por el centro: es lo que hace
+   *  que se vea clavado en el camino en vez de flotando encima. Los demás
+   *  anclajes (el inicio y la bandera) sí van por su centro. */
+  const anclaY = (el, r) => (el.classList.contains("rm-pin")
+    ? r.bottom - marco.top - 1
+    : r.top - marco.top + r.height / 2);
+  const punto = (el) => {
     const r = el.getBoundingClientRect();
-    return { x: r.left - marco.left + r.width / 2, y: r.top - marco.top + r.height / 2 };
+    return { x: r.left - marco.left + r.width / 2, y: anclaY(el, r) };
   };
-  const puntos = anclas.map(centro);
+  const puntos = anclas.map(punto);
 
   // Curvas cúbicas con tiradores verticales: la senda entra y sale de cada
   // pin en vertical, que es lo que la hace leerse como un camino y no como
@@ -350,7 +430,10 @@ function syncProgress() {
     if (boton) boton.textContent = estado === "done" ? tj("markUndo") : tj("markDone");
   });
 
-  syncPathProgress();
+  // Redibujar y no solo recortar: al marcar un hito cambia que pin es el
+  // actual, y el actual se pinta mas grande, con lo que su punta - que es por
+  // donde pasa la senda - se mueve.
+  drawPath();
 }
 
 // ---------------------------------------------------------------------------
@@ -438,10 +521,30 @@ root.addEventListener("click", async (event) => {
 
 // La senda se redibuja cuando cambian las medidas: al cambiar el ancho, al
 // cargar una tipografía, al reflujo de un texto más largo.
-if (typeof ResizeObserver !== "undefined") {
-  new ResizeObserver(() => drawPath()).observe(root);
+//
+// El observador mira la PISTA, no solo `#journey`. La pista es la que fija el
+// alto de la senda, y su contenido puede encoger sin que la caja de `#journey`
+// se mueva - la columna lateral es pegajosa y a menudo manda ella en el alto
+// de la fila. Vigilando solo el contenedor exterior, ese reflujo pasaba
+// desapercibido y el trazo quedaba unos pixeles por debajo de las puntas.
+const observador = typeof ResizeObserver !== "undefined"
+  ? new ResizeObserver(() => drawPath())
+  : null;
+
+function vigilarMedidas() {
+  if (!observador) return;
+  observador.disconnect();          // la pista se recrea en cada repintado
+  observador.observe(root);
+  const pista = root.querySelector(".rm-track");
+  if (pista) observador.observe(pista);
 }
+
 window.addEventListener("resize", drawPath);
+// Dos repasos tardíos. El comentario de arriba prometía uno al cargar la
+// tipografía y no existía: una fuente que llega después estrecha las líneas,
+// la pista encoge y la senda se queda descolgada de los pines.
+if (document.fonts?.ready) document.fonts.ready.then(() => drawPath());
+window.addEventListener("load", () => drawPath());
 
 async function main() {
   const resultado = await load();
