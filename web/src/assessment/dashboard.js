@@ -163,7 +163,15 @@ function renderCareers(careers, abierta) {
                 ${fortalezas ? `<p><b>${td("careers.strongOn")}:</b> ${escapeHtml(fortalezas)}</p>` : ""}
                 ${brechas ? `<p><b>${td("careers.workOn")}:</b> ${escapeHtml(brechas)}</p>` : ""}
                 ${career.description ? `<p><b>${td("careers.whatYouDo")}:</b> ${escapeHtml(career.description)}</p>` : ""}
-                <a class="text-action" href="/journey">${td("careers.seePath")} →</a>
+                <!-- Con la carrera dentro. El enlace decia "ver mi ruta hacia
+                     ESTA carrera" y llevaba a /journey a secas, o sea siempre
+                     a la que eligio el test: se abria Medicina y salia
+                     Ingenieria de software. La promesa del texto y el destino
+                     no coincidian. -->
+                <a class="text-action"
+                   href="/journey?career=${encodeURIComponent(career.career_id || "")}">
+                  ${td("careers.seePath")} →
+                </a>
               </div>` : ""}
           </div>
           <span class="career-score">

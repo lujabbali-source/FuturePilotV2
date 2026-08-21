@@ -389,3 +389,46 @@ def test_every_data_i18n_attribute_in_the_pages_points_at_a_real_key():
     assert not faltan, (
         "atributos data-i18n sin clave en el catalogo:\n  " + "\n  ".join(sorted(set(faltan)))
     )
+
+
+def test_a_stored_result_does_not_keep_saying_you_are_good_at_everything(
+    client, register_and_login, sample_answers, app_module
+):
+    """La pantalla de carreras decia, en las ocho: "encajas sobre todo en"
+    seguido de las OCHO dimensiones del perfil. Destacar en todo es no destacar
+    en nada, y ademas hacia que las ocho carreras se justificaran con la misma
+    frase.
+
+    El motor ya se corrigio a las tres mayores, pero los resultados guardados
+    antes de ese cambio conservan las ocho. Se rehacen al leer: el vector esta
+    guardado y los requisitos estan en el catalogo, asi que no hace falta que
+    nadie repita el test.
+    """
+    _, headers = register_and_login()
+    client.post("/api/v1/assess", json={"answers": sample_answers, "lang": "es"}, headers=headers)
+
+    todos = ["ANALYTICAL", "CREATIVE", "SOCIAL", "LEADERSHIP",
+             "TECHNICAL", "SCIENTIFIC", "PRACTICAL", "ENTREPRENEURIAL"]
+    store = app_module.users_store
+    with store.connect() as conexion:
+        fila = conexion.execute(
+            "SELECT id, results_json FROM test_results ORDER BY id DESC LIMIT 1"
+        ).fetchone()
+        guardado = json.loads(fila["results_json"])
+        for match in guardado["recommended_careers"]:
+            match["strengths"] = list(todos)          # como se guardaba antes
+            match["justification"]["strengths"] = list(todos)
+        conexion.execute("UPDATE test_results SET results_json = ? WHERE id = ?",
+                         (json.dumps(guardado), fila["id"]))
+
+    leido = client.get("/api/v1/me/results?lang=es", headers=headers).json()
+    carreras = leido["results"]["recommended_careers"]
+
+    for match in carreras:
+        assert len(match["strengths"]) <= 3, \
+            f"{match['title']} sigue listando {len(match['strengths'])} fortalezas"
+
+    # Y la frase tiene que decir lo mismo que la lista, no la version vieja.
+    justificaciones = [m["justification"] for m in carreras]
+    assert len(set(justificaciones)) > 1, \
+        "las ocho carreras se justifican con la misma frase"

@@ -1683,6 +1683,55 @@ def _upgrade_legacy_results(results: Dict[str, Any]) -> Dict[str, Any]:
     return results
 
 
+def _refresh_match_details(results: Dict[str, Any]) -> Dict[str, Any]:
+    """Recalcula fortalezas y brechas de cada carrera desde el vector guardado.
+
+    Mismo problema que la ruta, otra cara. El motor devolvia como fortaleza
+    TODO cluster que llegara al requisito, y para un perfil alto eso son los
+    ocho: la pantalla decia "encajas sobre todo en" seguido de la lista
+    completa de dimensiones, en las ocho carreras, con lo cual no decia nada.
+    Se corrigio a las tres mayores, pero los resultados que ya estaban
+    guardados conservan las ocho, porque se calcularon antes.
+
+    Todo lo necesario esta guardado - el vector del estudiante - y los
+    requisitos estan en el catalogo, asi que se rehace al leer. La
+    justificacion se reconstruye tambien: lleva las fortalezas dentro, y
+    arreglar la lista sin arreglar la frase dejaria las dos contradiciendose.
+    """
+    vector = results.get("user_vector")
+    matches = results.get("recommended_careers") or []
+    if not vector or not matches:
+        return results
+
+    catalogo = {c["id"]: c for c in careers_db}
+    for match in matches:
+        career = catalogo.get(match.get("career_id"))
+        if not career:
+            continue
+        requisitos = career.get("requirements") or {}
+        if not requisitos:
+            continue
+
+        sobrantes = sorted(
+            ((c, vector[c] - requisitos.get(c, 5.0)) for c in vector
+             if vector[c] >= requisitos.get(c, 5.0)),
+            key=lambda par: par[1], reverse=True,
+        )
+        faltantes = sorted(
+            ((c, requisitos.get(c, 5.0) - vector[c]) for c in vector
+             if requisitos.get(c, 5.0) - vector[c] > 2.0),
+            key=lambda par: par[1], reverse=True,
+        )
+        match["strengths"] = [c for c, _ in sobrantes[:3]]
+        match["skill_gaps"] = [c for c, _ in faltantes[:3]]
+        match["justification"] = ai_system._build_career_justification(match)
+
+    top = results.get("top_choice")
+    if isinstance(top, dict) and matches:
+        top["justification"] = matches[0]["justification"]
+    return results
+
+
 def _refresh_roadmap_content(results: Dict[str, Any]) -> Dict[str, Any]:
     """Rehace las sub-tareas del roadmap a partir de la ruta de la carrera.
 
@@ -1753,6 +1802,7 @@ def _localize_results(results: Dict[str, Any], lang: str) -> Dict[str, Any]:
     # mezcladas en la misma frase.
     results = copy.deepcopy(results)
     results = _upgrade_legacy_results(results)
+    results = _refresh_match_details(results)
     results = _refresh_roadmap_content(results)
 
     lang = _resolve_lang(lang)
