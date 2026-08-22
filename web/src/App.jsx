@@ -17,6 +17,7 @@ import { recordPassportEvent } from "./services/passportService";
 import globePalette from "./globePalette";
 import TopNav from "./components/TopNav";
 import CountryHoverLabel from "./components/CountryHoverLabel";
+import DestinationIntro from "./components/DestinationIntro";
 import "./App.css";
 
 export default function App() {
@@ -76,6 +77,7 @@ export default function App() {
   return (
     <>
       <TopNav />
+      <DestinationIntro />
 
       <section className={`globe-hero ${selectedCountry ? "globe-hero--compact" : ""}`}>
         {/* El eyebrow tiene su propia clave: usaba t("explore"), la misma

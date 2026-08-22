@@ -191,6 +191,7 @@ class UsersStore:
             connection.executescript(SCHEMA)
             self._ensure_admin_column(connection)
             self._ensure_results_json_column(connection)
+            self._ensure_preferences_column(connection)
             self._ensure_stamp_columns(connection)
 
     @staticmethod
@@ -201,6 +202,19 @@ class UsersStore:
         columns = {row["name"] for row in connection.execute("PRAGMA table_info(users)")}
         if "is_admin" not in columns:
             connection.execute("ALTER TABLE users ADD COLUMN is_admin INTEGER NOT NULL DEFAULT 0")
+
+    @staticmethod
+    def _ensure_preferences_column(connection: sqlite3.Connection) -> None:
+        """Preferencias de exploracion, aparte de `goals_json`.
+
+        Las metas son aspiraciones que el estudiante escribio y ve impresas en
+        su pasaporte. Las preferencias son entrada de maquina: le dicen al
+        motor que destinos destacar. Mezclarlas haria que el pasaporte mostrara
+        campos tecnicos que nadie escribio.
+        """
+        columns = {row["name"] for row in connection.execute("PRAGMA table_info(passport_profiles)")}
+        if "preferences_json" not in columns:
+            connection.execute("ALTER TABLE passport_profiles ADD COLUMN preferences_json TEXT")
 
     @staticmethod
     def _ensure_results_json_column(connection: sqlite3.Connection) -> None:
@@ -678,6 +692,7 @@ class UsersStore:
                 "languages": [],
                 "photo_data_url": None,
                 "goals": {},
+                "preferences": {},
                 "updated_at": None,
             }
         return {
@@ -686,6 +701,10 @@ class UsersStore:
             "languages": json.loads(row["languages_json"]) if row["languages_json"] else [],
             "photo_data_url": row["photo_data_url"],
             "goals": json.loads(row["goals_json"]) if row["goals_json"] else {},
+            "preferences": (
+                json.loads(row["preferences_json"])
+                if "preferences_json" in row.keys() and row["preferences_json"] else {}
+            ),
             "updated_at": row["updated_at"],
         }
 
@@ -695,14 +714,15 @@ class UsersStore:
         with self.connect() as connection:
             connection.execute(
                 """
-                INSERT INTO passport_profiles (user_id, country, city, languages_json, photo_data_url, goals_json, updated_at)
-                VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                INSERT INTO passport_profiles (user_id, country, city, languages_json, photo_data_url, goals_json, preferences_json, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
                 ON CONFLICT(user_id) DO UPDATE SET
                     country = excluded.country,
                     city = excluded.city,
                     languages_json = excluded.languages_json,
                     photo_data_url = excluded.photo_data_url,
                     goals_json = excluded.goals_json,
+                    preferences_json = excluded.preferences_json,
                     updated_at = CURRENT_TIMESTAMP
                 """,
                 (
@@ -712,6 +732,7 @@ class UsersStore:
                     json.dumps(merged["languages"]),
                     merged["photo_data_url"],
                     json.dumps(merged["goals"]),
+                    json.dumps(merged.get("preferences") or {}),
                 ),
             )
 
@@ -740,6 +761,18 @@ class UsersStore:
             fields["photo_data_url"] = photo_data_url
         self._upsert_passport_profile(user_id, **fields)
         return self.get_passport_profile(user_id)
+
+    def update_passport_preferences(self, user_id: int, preferences: dict) -> dict:
+        """Fusiona, no reemplaza.
+
+        Las preferencias se van respondiendo de a poco - hoy la disposicion a
+        salir del pais, mañana otra cosa - y cada pantalla manda solo lo suyo.
+        Si esto sobrescribiera el objeto entero, contestar la segunda pregunta
+        borraria la respuesta de la primera.
+        """
+        actuales = self.get_passport_profile(user_id).get("preferences") or {}
+        self._upsert_passport_profile(user_id, preferences={**actuales, **preferences})
+        return self.get_passport_profile(user_id)["preferences"]
 
     def update_passport_goals(self, user_id: int, goals: dict) -> dict:
         self._upsert_passport_profile(user_id, goals=goals)

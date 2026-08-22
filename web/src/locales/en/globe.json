@@ -15,5 +15,18 @@
   },
   "cta": {
     "createMap": "Create my personalized map"
+  },
+  "intro": {
+    "eyebrow": "Before you explore",
+    "title": "Your future has more than one route.",
+    "lead": "Tell us one thing and we will help you look at the world from where you actually are, not from where everyone else is.",
+    "question": "How open are you to studying in another country?",
+    "options": {
+      "yes_definitely": "Yes, definitely",
+      "yes_if_viable": "Yes, if I find something workable",
+      "maybe": "Maybe, I am still thinking about it",
+      "prefer_home": "For now I would rather study in my own country"
+    },
+    "skip": "I would rather just explore"
   }
 }

@@ -15,5 +15,18 @@
   },
   "cta": {
     "createMap": "Crear mi mapa personalizado"
+  },
+  "intro": {
+    "eyebrow": "Antes de explorar",
+    "title": "Tu futuro no tiene una sola ruta.",
+    "lead": "Cuéntanos una cosa y te ayudamos a mirar el mundo desde donde estás tú, no desde donde está todo el mundo.",
+    "question": "¿Qué tan dispuesto o dispuesta estás a estudiar en otro país?",
+    "options": {
+      "yes_definitely": "Sí, definitivamente",
+      "yes_if_viable": "Sí, si encuentro una opción viable",
+      "maybe": "Tal vez, todavía lo estoy pensando",
+      "prefer_home": "Por ahora prefiero estudiar en mi país"
+    },
+    "skip": "Prefiero explorar sin responder"
   }
 }

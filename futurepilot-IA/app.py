@@ -1242,6 +1242,74 @@ def update_passport_profile_route(
     return {"success": True, "profile": profile}
 
 
+# Disposicion a estudiar fuera. Se guarda la CLAVE, nunca la frase: el
+# estudiante puede cambiar de idioma despues de responder, y una respuesta
+# congelada en castellano se leeria en castellano para siempre - el mismo
+# motivo por el que el motor emite claves y no prosa.
+MOBILITY_CHOICES = ("yes_definitely", "yes_if_viable", "maybe", "prefer_home")
+
+
+class ExplorationPreferencesRequest(BaseModel):
+    mobility: Optional[str] = None
+    # Cerrar sin responder tambien es una respuesta: significa "ahora no". Se
+    # guarda para no volver a preguntarselo cada vez que entra al globo.
+    dismissed: bool = False
+
+    @field_validator("mobility")
+    @classmethod
+    def validate_mobility(cls, value: Optional[str]) -> Optional[str]:
+        if value is not None and value not in MOBILITY_CHOICES:
+            raise ValueError(
+                f"mobility debe ser una de {MOBILITY_CHOICES}, no {value!r}"
+            )
+        return value
+
+
+@app.get("/api/v1/me/preferences", status_code=status.HTTP_200_OK)
+def get_my_preferences(current_user: dict = Depends(get_current_user_required)):
+    """Las preferencias de exploracion, y lo que ya sabemos sin preguntar.
+
+    `known` es la mitad importante: el pasaporte YA guarda los idiomas que
+    habla el estudiante y el pais al que le gustaria ir. Volver a preguntarlo
+    en el globo seria hacerle repetir lo que ya escribio, que es justo lo que
+    convierte una experiencia en un formulario.
+    """
+    perfil = users_store.get_passport_profile(current_user["id"])
+    metas = perfil.get("goals") or {}
+    return {
+        "success": True,
+        "preferences": perfil.get("preferences") or {},
+        "known": {
+            "languages": perfil.get("languages") or [],
+            "languages_to_learn": (metas.get("languages_to_learn") or "").strip() or None,
+            "target_country": (metas.get("target_country") or "").strip() or None,
+            "desired_career": (metas.get("desired_career") or "").strip() or None,
+        },
+    }
+
+
+@app.put("/api/v1/me/preferences", status_code=status.HTTP_200_OK)
+def update_my_preferences(
+    payload: ExplorationPreferencesRequest,
+    current_user: dict = Depends(get_current_user_required),
+):
+    cambios: Dict[str, Any] = {}
+    if payload.mobility is not None:
+        cambios["mobility"] = payload.mobility
+        cambios["mobility_answered_at"] = utc_now_iso()
+    if payload.dismissed:
+        cambios["mobility_dismissed_at"] = utc_now_iso()
+    if not cambios:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="No hay nada que guardar.",
+        )
+    return {
+        "success": True,
+        "preferences": users_store.update_passport_preferences(current_user["id"], cambios),
+    }
+
+
 @app.put("/api/v1/passport/goals", status_code=status.HTTP_200_OK)
 def update_passport_goals_route(
     payload: PassportGoalsUpdateRequest,
