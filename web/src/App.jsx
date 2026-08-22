@@ -18,6 +18,7 @@ import globePalette from "./globePalette";
 import TopNav from "./components/TopNav";
 import CountryHoverLabel from "./components/CountryHoverLabel";
 import DestinationIntro from "./components/DestinationIntro";
+import DestinationPanel from "./components/DestinationPanel";
 import "./App.css";
 
 export default function App() {
@@ -78,6 +79,7 @@ export default function App() {
     <>
       <TopNav />
       <DestinationIntro />
+      <DestinationPanel onSelectCity={(d) => setSelectedCity(d.city)} />
 
       <section className={`globe-hero ${selectedCountry ? "globe-hero--compact" : ""}`}>
         {/* El eyebrow tiene su propia clave: usaba t("explore"), la misma

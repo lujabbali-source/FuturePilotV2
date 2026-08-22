@@ -44,4 +44,15 @@ i18n
     returnEmptyString: false,
   });
 
+// El `lang` del documento. Las páginas vanilla lo ponen (ver
+// shared/i18next.js) y esta no lo hacía: el globo se quedaba con el idioma
+// escrito en el HTML mientras el texto salía en otro. No se ve, pero un lector
+// de pantalla lee el español con pronunciación inglesa, y el navegador ofrece
+// traducir una página que ya está en el idioma del lector.
+function marcarIdioma(lng) {
+  if (lng) document.documentElement.lang = lng;
+}
+marcarIdioma(i18n.resolvedLanguage || i18n.language);
+i18n.on("languageChanged", marcarIdioma);
+
 export default i18n;

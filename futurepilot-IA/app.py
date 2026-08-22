@@ -1280,6 +1280,10 @@ def get_my_preferences(current_user: dict = Depends(get_current_user_required)):
         "success": True,
         "preferences": perfil.get("preferences") or {},
         "known": {
+            # De donde es. Sirve para saber que destino es "quedarse" y cual
+            # es "salir", que es la diferencia que cambia toda la pantalla.
+            "home_country": perfil.get("country"),
+            "home_city": perfil.get("city"),
             "languages": perfil.get("languages") or [],
             "languages_to_learn": (metas.get("languages_to_learn") or "").strip() or None,
             "target_country": (metas.get("target_country") or "").strip() or None,

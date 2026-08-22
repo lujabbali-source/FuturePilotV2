@@ -28,5 +28,21 @@
       "prefer_home": "Por ahora prefiero estudiar en mi país"
     },
     "skip": "Prefiero explorar sin responder"
+  },
+  "destinations": {
+    "title": "Destinos para ti",
+    "strong": "Encaja con lo que buscas",
+    "strongHelp": "Coincide con lo que nos contaste: idioma, país o disposición.",
+    "explore": "Podría servirte, revísalo",
+    "exploreHelp": "Tiene dónde estudiar, pero hay algo que conviene que mires tú.",
+    "caveat": "Esto no es una garantía de admisión ni un consejo migratorio. Es lo que tu perfil sugiere explorar; los requisitos, costos y visados verifícalos siempre con la institución.",
+    "reasons": {
+      "language": "se estudia en {{language}}, un idioma que ya manejas",
+      "otherLanguage": "se estudia en {{language}}",
+      "targetCountry": "está en {{country}}, el país que pusiste como objetivo",
+      "home": "está en {{country}}, y por ahora prefieres quedarte",
+      "universities": "{{count}} universidades registradas",
+      "checkCosts": "todavía no tenemos sus costos"
+    }
   }
 }

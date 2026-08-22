@@ -255,3 +255,109 @@ canvas {
   .dest-intro__option { transition: none; }
   .dest-intro__option:hover:not(:disabled) { transform: none; }
 }
+
+/* --- Destinos recomendados ---------------------------------------------- */
+/* A la derecha y plegable: es una ayuda, no el protagonista. El globo es lo
+   que el estudiante vino a ver. */
+.dest-panel {
+  position: fixed;
+  top: 96px;
+  right: 20px;
+  z-index: 20;
+  width: min(320px, calc(100vw - 40px));
+  max-height: calc(100vh - 140px);
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 16px;
+  background: rgba(8, 16, 28, .92);
+  backdrop-filter: blur(8px);
+}
+
+.dest-panel__toggle {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .07);
+  background: rgba(8, 16, 28, .96);
+  color: #e8f1f8;
+  font: inherit;
+  font-size: .84rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dest-panel__body { padding: 6px 16px 16px; }
+
+.dest-panel__group { margin-top: 14px; }
+
+.dest-panel__groupTitle {
+  margin: 0 0 3px;
+  color: #00FFB3;
+  font-family: 'DM Mono', monospace;
+  font-size: .58rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.dest-panel__groupHelp {
+  margin: 0 0 10px;
+  color: #5e7387;
+  font-size: .7rem;
+  line-height: 1.5;
+}
+
+.dest-panel__list { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+
+.dest-panel__city {
+  display: grid;
+  width: 100%;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, .07);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .025);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .16s, background .16s;
+}
+
+.dest-panel__city:hover,
+.dest-panel__city:focus-visible {
+  border-color: rgba(0, 255, 179, .38);
+  background: rgba(0, 255, 179, .06);
+}
+
+.dest-panel__cityName { font-size: .86rem; font-weight: 600; }
+.dest-panel__cityCountry { color: #7d8fa1; font-size: .7rem; }
+
+/* El porqué, siempre visible. Si hay que abrir algo para saber de dónde sale
+   la recomendación, deja de ser una explicación. */
+.dest-panel__why {
+  margin-top: 4px;
+  color: #6d8296;
+  font-size: .68rem;
+  line-height: 1.45;
+}
+
+.dest-panel__caveat {
+  margin: 16px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, .07);
+  color: #5e7387;
+  font-size: .66rem;
+  line-height: 1.55;
+}
+
+.dest-panel--closed { max-height: none; }
+
+@media (max-width: 900px) {
+  .dest-panel { position: static; width: auto; margin: 16px 20px 0; max-height: none; }
+}

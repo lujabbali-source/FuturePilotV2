@@ -28,5 +28,21 @@
       "prefer_home": "For now I would rather study in my own country"
     },
     "skip": "I would rather just explore"
+  },
+  "destinations": {
+    "title": "Destinations for you",
+    "strong": "Fits what you are looking for",
+    "strongHelp": "It matches what you told us: language, country, or how open you are to leaving.",
+    "explore": "Might work, worth a look",
+    "exploreHelp": "There is somewhere to study, but something here is for you to check.",
+    "caveat": "This is not an admission guarantee or immigration advice. It is what your profile suggests exploring; always verify requirements, costs, and visas with the institution.",
+    "reasons": {
+      "language": "taught in {{language}}, a language you already have",
+      "otherLanguage": "taught in {{language}}",
+      "targetCountry": "it is in {{country}}, the country you set as your goal",
+      "home": "it is in {{country}}, and for now you would rather stay",
+      "universities": "{{count}} universities on record",
+      "checkCosts": "we do not have its costs yet"
+    }
   }
 }
