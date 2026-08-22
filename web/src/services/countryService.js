@@ -21,9 +21,60 @@ const aliases = {
     colombia: "colombia",
 };
 
+// Abreviaturas del propio mapa (Natural Earth, public/geo/countries-110m.json).
+// Escribe "Dem. Rep. Congo" y "Bosnia and Herz.", que no coinciden ni con el
+// nombre en español ni con el inglés completo. Son manías del mapa, no
+// propiedades de los países, así que viven aquí junto a la traducción de
+// nombre a ficha y no dentro de los datos generados.
+//
+// Faltan a propósito Antártida, Sahara Occidental, Malvinas, Chipre del Norte,
+// Somalilandia y las Tierras Australes Francesas: el importador las deja fuera
+// porque no son destinos donde alguien pueda estudiar, y el mapa las pinta sin
+// ficha, que es lo correcto.
+const mapQuirks = {
+    "dem-rep-congo": "congo-rep-dem",
+    "dominican-rep": "republica-dominicana",
+    "cote-d-ivoire": "costa-de-marfil",
+    "central-african-rep": "republica-centroafricana",
+    "eq-guinea": "guinea-ecuatorial",
+    turkey: "turquia",
+    "solomon-is": "islas-salomon",
+    "bosnia-and-herz": "bosnia-y-herzegovina",
+    macedonia: "macedonia-del-norte",
+    "s-sudan": "sudan-del-sur",
+};
+
+/** Índice de todos los nombres por los que se puede llamar a un país.
+ *
+ *  Las fichas están indexadas por su slug en ESPAÑOL, y el mapa las nombra en
+ *  inglés: "Germany" no encontraba "alemania". Con los datos ya en el repo, el
+ *  globo resolvía 88 de los 177 países del mapa — la mitad quedaba muda al
+ *  hacer clic, sin un solo error en consola que lo delatara.
+ *
+ *  Cada país generado trae sus `aliases` (hoy, su nombre en inglés). El índice
+ *  se construye una sola vez, la primera vez que alguien pregunta. */
+let indiceNombres = null;
+
+function nombreIndex() {
+    if (indiceNombres) return indiceNombres;
+    indiceNombres = { ...mapQuirks };
+    for (const [id, country] of Object.entries(countries)) {
+        indiceNombres[id] = id;
+        for (const alias of country?.aliases || []) {
+            // El id gana: un alias nunca puede tapar a un país que ya existe
+            // con ese nombre propio.
+            if (!countries[alias]) indiceNombres[normalize(alias)] = id;
+        }
+    }
+    // Los de siempre mandan sobre todo lo demás.
+    Object.assign(indiceNombres, aliases);
+    return indiceNombres;
+}
+
 export function getCountryIdFromName(name) {
     const normalizedName = normalize(name);
-    if (aliases[normalizedName]) return aliases[normalizedName];
+    const encontrado = nombreIndex()[normalizedName];
+    if (encontrado && countries[encontrado]) return encontrado;
     return countries[normalizedName] ? normalizedName : null;
 }
 

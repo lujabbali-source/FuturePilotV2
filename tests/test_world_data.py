@@ -144,3 +144,94 @@ def test_the_importer_can_be_run_again_without_hand_edits():
         if "No editar a mano" not in f.read_text(encoding="utf-8")
     ]
     assert not sin_aviso, f"archivos generados sin el aviso: {sin_aviso[:10]}"
+
+
+# ---------------------------------------------------------------------------
+# El puente entre el mapa y las fichas
+# ---------------------------------------------------------------------------
+import json  # noqa: E402
+import unicodedata  # noqa: E402
+
+MAPA = RAIZ / "web" / "public" / "geo" / "countries-110m.json"
+SERVICIO = RAIZ / "web" / "src" / "services" / "countryService.js"
+
+# El mapa los pinta pero nadie estudia ahi: el importador los deja fuera a
+# proposito y quedarse sin ficha es lo correcto, no un fallo.
+SIN_FICHA_A_PROPOSITO = {
+    "Antarctica", "Fr. S. Antarctic Lands", "W. Sahara", "Falkland Is.",
+    "N. Cyprus", "Somaliland",
+}
+
+
+def _slug(texto: str) -> str:
+    plano = "".join(
+        c for c in unicodedata.normalize("NFD", (texto or "").lower())
+        if unicodedata.category(c) != "Mn"
+    )
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", plano)).strip("-")
+
+
+def _fichas() -> set[str]:
+    ids = {f.stem for f in paises_mundo()}
+    ids |= {f.stem for f in AMERICAS.glob("*.js") if f.name != "index.js"}
+    ids.add("colombia")
+    return ids
+
+
+def _indice_de_nombres() -> dict[str, str]:
+    """Reproduce lo que hace `nombreIndex` en countryService."""
+    indice: dict[str, str] = {}
+    for archivo in paises_mundo():
+        texto = archivo.read_text(encoding="utf-8")
+        indice[archivo.stem] = archivo.stem
+        for bloque in re.findall(r"aliases:\s*\[([^\]]*)\]", texto):
+            for alias in re.findall(r'"([^"]+)"', bloque):
+                indice.setdefault(_slug(alias), archivo.stem)
+    for archivo in AMERICAS.glob("*.js"):
+        if archivo.name != "index.js":
+            indice[archivo.stem] = archivo.stem
+    indice["colombia"] = "colombia"
+
+    servicio = SERVICIO.read_text(encoding="utf-8")
+    for bloque in re.findall(r"const (?:aliases|mapQuirks) = \{(.*?)\n\};", servicio, re.S):
+        for clave, valor in re.findall(r'"?([\w-]+)"?:\s*"([\w-]+)"', bloque):
+            indice[clave] = valor
+    return indice
+
+
+def test_the_globe_can_find_the_data_for_the_countries_it_draws():
+    """El fallo que dejo el importador a medias.
+
+    Las fichas se indexan por su slug en ESPAÑOL y el mapa nombra los paises en
+    ingles: "Germany" no encontraba "alemania". Con los datos ya en el repo, el
+    globo resolvia 88 de 177 - la mitad de los paises quedaba muda al hacer
+    clic, sin ningun error en consola que lo delatara.
+
+    Este test es la unica forma de verlo: no hay excepcion, no hay pantalla
+    rota, solo un panel que no aparece.
+    """
+    topo = json.loads(MAPA.read_text(encoding="utf-8"))
+    nombres = [
+        g.get("properties", {}).get("name")
+        for g in topo["objects"]["countries"]["geometries"]
+    ]
+    indice, fichas = _indice_de_nombres(), _fichas()
+
+    huerfanos = [
+        n for n in nombres
+        if n not in SIN_FICHA_A_PROPOSITO and indice.get(_slug(n)) not in fichas
+    ]
+    assert not huerfanos, (
+        f"{len(huerfanos)} paises del mapa se quedan sin ficha:\n  "
+        + "\n  ".join(sorted(huerfanos))
+    )
+
+
+def test_no_alias_hides_a_country_that_exists():
+    """Un alias no puede tapar a un pais con ese nombre propio: "georgia" es un
+    pais y tambien un estado, y si el alias ganara, el pais desapareceria."""
+    indice = _indice_de_nombres()
+    fichas = _fichas()
+    tapados = [f"{n} -> {destino}" for n, destino in indice.items()
+               if n in fichas and destino != n]
+    assert not tapados, f"alias que tapan un pais existente: {tapados}"
