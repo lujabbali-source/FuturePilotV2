@@ -18,4 +18,8 @@ export default defineCity({
     living: {
         bestNeighborhoods: [{"es": "San Antonio (bohemio e histórico), Granada, El Peñón, Ciudad Jardín (sur).", "en": "San Antonio (bohemian/historic), Granada, Peñón, Ciudad Jardín (south)."}],
     },
+    breakdown: {
+        household: [{"label": {"es": "Una persona (moderado)", "en": "Single person (Moderate)"}, "amount": {"min": 520, "max": 850, "currency": "USD"}}, {"label": {"es": "Estudiante (frugal)", "en": "Student (Frugal)"}, "amount": {"min": 330, "max": 480, "currency": "USD"}}],
+        housing: [{"label": {"es": "Apartaestudio (zona estándar - San Antonio/Granada)", "en": "1 bedroom apartment (Standard - San Antonio/Granada)"}, "amount": {"min": 280, "max": 420, "currency": "USD"}}, {"label": {"es": "Apartaestudio (zona alta - Ciudad Jardín)", "en": "1 bedroom apartment (Upscale - Ciudad Jardín)"}, "amount": {"min": 450, "max": 750, "currency": "USD"}}],
+    },
 });

@@ -14,7 +14,8 @@
       "jobs": "Jobs",
       "statistics": "Statistics",
       "living": "Living",
-      "outlook": "Strengths & challenges"
+      "outlook": "Strengths & challenges",
+      "breakdown": "Cost breakdown"
     },
     "fields": {
       "monthlyEstimate": "Monthly estimate",
@@ -62,6 +63,14 @@
       "nationalRanking": "National ranking"
     },
     "regionalNote": "Estimated regional-level data: {{region}}",
-    "outlookNote": "These are judgements, not measurements. They come from the cities document and describe what living there is like; check them with someone who is there."
+    "outlookNote": "These are judgements, not measurements. They come from the cities document and describe what living there is like; check them with someone who is there.",
+    "breakdown": {
+      "household": "By household",
+      "housing": "Housing",
+      "food": "Food",
+      "utilities": "Utilities",
+      "transport": "Transport",
+      "student": "Student budget"
+    }
   }
 }

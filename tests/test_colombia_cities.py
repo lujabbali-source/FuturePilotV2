@@ -267,3 +267,131 @@ def test_no_judgement_was_softened_away():
     traducciones = OUTLOOK_PY.read_text(encoding="utf-8")
     assert "precaución" in traducciones, "se perdio la advertencia de El Centro"
     assert "Gentrificación" in traducciones, "se perdio el reto de Medellín"
+
+
+# ---------------------------------------------------------------------------
+# Desglose de costos
+# ---------------------------------------------------------------------------
+BREAKDOWN_PY = RAIZ / "web" / "scripts" / "colombia_breakdown_es.py"
+
+
+def _bloques_breakdown():
+    for ficha in fichas():
+        m = re.search(r"breakdown:\s*\{(.*?)\n\s*\},",
+                      ficha.read_text(encoding="utf-8"), re.S)
+        if m:
+            yield ficha.stem, m.group(1)
+
+
+def test_the_breakdown_tab_exists_in_both_languages():
+    assert '{ id: "breakdown"' in PANEL.read_text(encoding="utf-8")
+    for lang in ("es", "en"):
+        j = json.loads((LOCALES / lang / "cities.json").read_text(encoding="utf-8"))
+        assert j["panel"]["sections"].get("breakdown"), f"falta la etiqueta en {lang}"
+        for grupo in ("household", "housing", "food", "utilities", "transport", "student"):
+            assert j["panel"]["breakdown"].get(grupo), f"falta el grupo {grupo} en {lang}"
+
+
+def test_every_breakdown_label_is_translated():
+    """Una etiqueta sin regla se salta y no llega a la ficha, asi que si algo
+    se cuela en ingles es que la regla la tradujo mal, no que falte."""
+    con_desglose = 0
+    for cid, bloque in _bloques_breakdown():
+        con_desglose += 1
+        for label in re.findall(r'"label":\s*(\{[^{}]*\})', bloque):
+            par = json.loads(label)
+            assert par.get("es") and par.get("en"), f"{cid}: etiqueta incompleta"
+            assert par["es"] != par["en"] or not re.search(
+                r"\b(bedroom|shared|room|person|family|lunch|dinner|groceries)\b",
+                par["es"], re.I), f"{cid}: etiqueta sin traducir -> {par['es']}"
+    assert con_desglose >= 8, f"solo {con_desglose} ciudades con desglose"
+
+
+def test_every_breakdown_amount_names_its_currency():
+    """Igual que en el panel de costos: sin moneda, una cifra en dolares se
+    pinta como pesos y parece noventa veces mas barata."""
+    for cid, bloque in _bloques_breakdown():
+        for monto in re.findall(r'"amount":\s*(\{[^{}]*\})', bloque):
+            par = json.loads(monto)
+            assert par.get("currency"), f"{cid}: un monto del desglose sin moneda"
+            assert par["min"] <= par["max"]
+
+
+def test_an_untranslatable_label_is_skipped_not_leaked():
+    """La regla que sostiene lo anterior: si el documento trae una etiqueta
+    nueva, el importador la deja fuera y avisa, en vez de meterla en ingles en
+    medio de una pantalla en castellano."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("bd", BREAKDOWN_PY)
+    modulo = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(modulo)
+    assert modulo.etiqueta_es("Something the document never said before") is None
+    assert modulo.etiqueta_es("Student (Frugal)") == "Estudiante (frugal)"
+    # Y los nombres propios sobreviven a la traduccion.
+    assert "El Poblado" in modulo.etiqueta_es("1 bedroom apartment (Upscale area - El Poblado)")
+
+
+def test_the_translation_rules_cover_every_label_in_the_document():
+    """Esta guarda mira la REGLA, no el resultado.
+
+    La de arriba lee las fichas ya escritas, asi que romper una regla de
+    traduccion no la despierta hasta que alguien reejecuta el importador -
+    justo el momento en el que nadie esta mirando. Se comprobo: rompiendo la
+    regla de los apartaestudios, catorce etiquetas se habrian ido en ingles y
+    los tests seguian en verde.
+
+    Aqui se pasan por el traductor las etiquetas REALES del documento.
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("bd", BREAKDOWN_PY)
+    modulo = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(modulo)
+
+    fuente = json.loads(FUENTE.read_text(encoding="utf-8"))["cities"]
+    BLOQUES = {"Monthly estimate", "Rent", "Food", "Utilities",
+               "Transportation", "Student budget"}
+    # OJO: este patron se escribio una vez desde la shell y el `` acabo
+    # siendo un byte de retroceso (0x08) en vez de un limite de palabra.
+    # El regex no casaba nunca y el test pasaba sin comprobar nada. Si hay
+    # que tocarlo, editar el archivo, no generarlo con un heredoc.
+    # El limite de palabra se compone, no se escribe literal: este patron ya se
+    # estropeo dos veces generandolo desde la shell, donde el escape acabo
+    # siendo un byte de retroceso (0x08). El regex no casaba con nada y el test
+    # pasaba sin comprobar nada, que es la forma mas silenciosa de perder una
+    # guarda. El assert de abajo lo verifica antes de usarlo.
+    LIMITE = "\\" + "b"
+    # "buses" no esta en la lista aunque venga del ingles: es la misma palabra
+    # en castellano ("TransMetro y buses urbanos") y marcaba como sin traducir
+    # dos etiquetas que estaban bien.
+    PALABRAS = ("bedroom", "shared", "room", "person", "people", "family",
+                "lunch", "dinner", "groceries", "strata", "upscale",
+                "standard", "mobile", "cheap", "composition", "commute",
+                "rideshares")
+    ENGLISH = re.compile(LIMITE + "(" + "|".join(PALABRAS) + ")" + LIMITE, re.I)
+    assert ENGLISH.search("1 bedroom apartment"), \
+        "el patron de deteccion no casa ni con su propio ejemplo"
+
+    problemas, revisadas = [], 0
+    for cid, ciudad in fuente.items():
+        for bloque, lista in (ciudad.get("costOfLiving") or {}).items():
+            if bloque not in BLOQUES:
+                continue
+            for e in lista:
+                etiqueta = e.get("label")
+                if not etiqueta:
+                    continue
+                revisadas += 1
+                es = modulo.etiqueta_es(etiqueta)
+                if es is None:
+                    problemas.append(f"{cid}: sin regla -> {etiqueta}")
+                elif ENGLISH.search(es):
+                    problemas.append(f"{cid}: sigue en ingles -> {es}")
+
+    # Un test que no visita nada pasa igual, y es la forma mas silenciosa de
+    # perder una guarda: sigue en verde mientras deja de comprobar. Se exige
+    # haber mirado las 82 etiquetas que el documento trae hoy.
+    assert revisadas >= 80, (
+        f"solo se revisaron {revisadas} etiquetas; el recorrido dejo de "
+        "encontrar los bloques del documento")
+    assert not problemas, ("etiquetas del desglose mal traducidas:\n  "
+                           + "\n  ".join(problemas[:10]))

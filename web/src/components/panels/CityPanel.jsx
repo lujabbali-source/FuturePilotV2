@@ -13,6 +13,7 @@ const sections = [
     { id: "scholarships", labelKey: "panel.sections.scholarships", icon: "🏅" },
     { id: "jobs", labelKey: "panel.sections.jobs", icon: "💼" },
     { id: "statistics", labelKey: "panel.sections.statistics", icon: "📊" },
+    { id: "breakdown", labelKey: "panel.sections.breakdown", icon: "🧾" },
     { id: "outlook", labelKey: "panel.sections.outlook", icon: "⚖️" },
     { id: "living", labelKey: "panel.sections.living", icon: "🌎" },
 ];
@@ -211,6 +212,55 @@ function StatisticsSection({ city }) {
  *  noche" es un juicio sobre un barrio donde vive gente. Mezclarlos haría que
  *  el juicio se leyera con la autoridad del dato.
  */
+/** La letra chica de cada cifra.
+ *
+ *  El panel de costos da un rango por concepto. Detrás de "arriendo
+ *  680.000 – 1.100.000 COP" está la diferencia entre una habitación
+ *  compartida y un apartaestudio en El Poblado, y es justo esa diferencia la
+ *  que decide si a alguien le alcanza. Aquí se ve desglosado.
+ */
+function BreakdownSection({ city }) {
+    const { t, i18n } = useTranslation(["cities", "common"]);
+    const desglose = city.breakdown || {};
+    const lang = (i18n.resolvedLanguage || i18n.language || "es").slice(0, 2);
+    const locale = lang === "es" ? "es-ES" : "en-US";
+    const fallback = t("status.notConnected", { ns: "common" });
+    const grupos = ["household", "housing", "food", "utilities", "transport", "student"];
+    const conDatos = grupos.filter((g) => desglose[g]?.length);
+
+    if (!conDatos.length) {
+        return (
+            <section className="panel-section">
+                <h2>🧾 {t("panel.sections.breakdown")}</h2>
+                <EmptyState />
+            </section>
+        );
+    }
+
+    return (
+        <section className="panel-section">
+            <h2>🧾 {t("panel.sections.breakdown")}</h2>
+            {conDatos.map((grupo) => (
+                <div className="breakdown-group" key={grupo}>
+                    <h3>{t(`panel.breakdown.${grupo}`)}</h3>
+                    <div className="city-field-grid">
+                        {desglose[grupo].map((linea, i) => (
+                            <Field
+                                key={`${grupo}-${i}`}
+                                label={enIdioma(linea.label, lang)}
+                                value={linea.amount ?? linea.note}
+                                formatter={linea.amount
+                                    ? (v) => money(v, v?.currency || "COP", locale, fallback)
+                                    : undefined}
+                            />
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </section>
+    );
+}
+
 function OutlookSection({ city }) {
     const { t } = useTranslation("cities");
     const outlook = city.outlook || {};
@@ -265,6 +315,7 @@ export default function CityPanel({ selectedCity, onClose }) {
                 {city && activeSection === "scholarships" && <ScholarshipsSection city={city} />}
                 {city && activeSection === "jobs" && <JobsSection city={city} />}
                 {city && activeSection === "statistics" && <StatisticsSection city={city} />}
+                {city && activeSection === "breakdown" && <BreakdownSection city={city} />}
                 {city && activeSection === "outlook" && <OutlookSection city={city} />}
                 {city && activeSection === "living" && <LivingSection city={city} />}
                 {!city && <p className="loading-state">{t("status.loadingCity", { ns: "common" })}</p>}

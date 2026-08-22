@@ -19,4 +19,8 @@ export default defineCity({
         bestNeighborhoods: [{"es": "El Cable, Palermo, La Estrella, Chipre, Milán.", "en": "El Cable, Palermo, La Estrella, Chipre, Milán."}],
         tourism: [{"es": "Parque Nacional Natural Los Nevados, Termales San Vicente y del Otoño, Catedral Basílica de Nuestra Señora del Rosario, Cable Aéreo.", "en": "Los Nevados National Natural Park, Termales San Vicente / Otoño, Cathedral Basilica of Our Lady of Rosary, Cable Aéreo transit."}],
     },
+    breakdown: {
+        household: [{"label": {"es": "Una persona (moderado)", "en": "Single person (Moderate)"}, "amount": {"min": 1800000, "max": 3000000, "currency": "COP"}}, {"label": {"es": "Estudiante (frugal)", "en": "Student (Frugal)"}, "amount": {"min": 1200000, "max": 1700000, "currency": "COP"}}, {"label": {"es": "Familia de cuatro", "en": "Family of four"}, "amount": {"min": 1200, "max": 1800, "currency": "USD"}}],
+        housing: [{"label": {"es": "Apartaestudio (El Cable/Palermo)", "en": "1 bedroom apartment (El Cable/Palermo)"}, "amount": {"min": 250, "max": 400, "currency": "USD"}}, {"label": {"es": "Habitación compartida de estudiante", "en": "Shared student room"}, "amount": {"min": 120, "max": 200, "currency": "USD"}}],
+    },
 });

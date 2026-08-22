@@ -14,7 +14,8 @@
       "jobs": "Empleo",
       "statistics": "Estadísticas",
       "living": "Vida diaria",
-      "outlook": "Fortalezas y retos"
+      "outlook": "Fortalezas y retos",
+      "breakdown": "Desglose de costos"
     },
     "fields": {
       "monthlyEstimate": "Estimado mensual",
@@ -62,6 +63,14 @@
       "nationalRanking": "Ranking nacional"
     },
     "regionalNote": "Datos estimados a nivel regional: {{region}}",
-    "outlookNote": "Esto son valoraciones, no mediciones. Vienen del documento de ciudades y describen cómo se vive allí; contrástalas con alguien que esté en la ciudad."
+    "outlookNote": "Esto son valoraciones, no mediciones. Vienen del documento de ciudades y describen cómo se vive allí; contrástalas con alguien que esté en la ciudad.",
+    "breakdown": {
+      "household": "Por tipo de hogar",
+      "housing": "Vivienda",
+      "food": "Comida",
+      "utilities": "Servicios públicos",
+      "transport": "Transporte",
+      "student": "Presupuesto de estudiante"
+    }
   }
 }

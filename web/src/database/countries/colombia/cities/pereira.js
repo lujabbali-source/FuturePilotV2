@@ -19,4 +19,8 @@ export default defineCity({
         bestNeighborhoods: [{"es": "Pinares, Avenida Circunvalar, Cerritos (zona campestre), Álamos.", "en": "Pinares, Av. Circunvalar, Cerritos (suburban luxury), Álamos."}],
         tourism: [{"es": "Bioparque Ukumarí, Salento y el Valle de Cocora (cerca), Termales de Santa Rosa de Cabal, Otún Quimbaya.", "en": "Ukumarí Biopark, Salento & Cocora Valley (nearby), Santa Rosa de Cabal Hot Springs, Otún Quimbaya."}],
     },
+    breakdown: {
+        household: [{"label": {"es": "Una persona (moderado)", "en": "Single person (Moderate)"}, "amount": {"min": 480, "max": 800, "currency": "USD"}}, {"label": {"es": "Estudiante (frugal)", "en": "Student (Frugal)"}, "amount": {"min": 320, "max": 450, "currency": "USD"}}],
+        housing: [{"label": {"es": "Apartaestudio (Pinares/Circunvalar)", "en": "1 bedroom apartment (Pinares/Circunvalar)"}, "amount": {"min": 280, "max": 450, "currency": "USD"}}],
+    },
 });
