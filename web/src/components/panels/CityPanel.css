@@ -133,3 +133,13 @@
     .city-content { padding: 20px 16px; }
     .city-field-grid { grid-template-columns: 1fr; }
 }
+
+/* La advertencia de que una sección son valoraciones y no medidas. */
+.panel-note {
+    margin: 14px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    color: #6d8296;
+    font-size: .72rem;
+    line-height: 1.55;
+}

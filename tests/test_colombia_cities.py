@@ -213,3 +213,57 @@ def test_the_panel_can_read_a_bilingual_value():
     codigo = PANEL.read_text(encoding="utf-8")
     assert "function enIdioma" in codigo, "el panel no resuelve textos bilingues"
     assert "resolvedLanguage" in codigo, "el panel no sabe en que idioma esta"
+
+
+# ---------------------------------------------------------------------------
+# Fortalezas y retos
+# ---------------------------------------------------------------------------
+OUTLOOK_PY = RAIZ / "web" / "scripts" / "colombia_outlook_es.py"
+LOCALES = RAIZ / "web" / "src" / "locales"
+
+
+def test_the_outlook_tab_exists_in_both_languages():
+    """Un boton cuya etiqueta falta sale como `panel.sections.outlook`."""
+    assert '{ id: "outlook"' in PANEL.read_text(encoding="utf-8")
+    for lang in ("es", "en"):
+        j = json.loads((LOCALES / lang / "cities.json").read_text(encoding="utf-8"))
+        assert j["panel"]["sections"].get("outlook"), f"falta la etiqueta en {lang}"
+        for campo in ("strengths", "challenges", "safetyStrategy", "englishProficiency"):
+            assert j["panel"]["fields"].get(campo), f"falta {campo} en {lang}"
+        assert j["panel"].get("outlookNote"), f"falta la advertencia en {lang}"
+
+
+def test_the_screen_says_these_are_judgements():
+    """La diferencia entre esta seccion y las demas: una poblacion es un dato,
+    "conviene precaucion en El Centro de noche" es un juicio sobre un barrio
+    donde vive gente. Sin decirlo, el juicio se lee con la autoridad del dato -
+    y el juicio va sobre sitios reales y personas reales."""
+    assert 'className="panel-note"' in PANEL.read_text(encoding="utf-8")
+    for lang, palabras in (("es", ("valoraciones", "no mediciones")),
+                           ("en", ("judgements", "not measurements"))):
+        nota = json.loads((LOCALES / lang / "cities.json").read_text(encoding="utf-8"))["panel"]["outlookNote"]
+        for palabra in palabras:
+            assert palabra in nota, f"la advertencia en {lang} no dice {palabra!r}"
+
+
+def test_outlook_is_bilingual_too():
+    con_outlook = 0
+    for ficha in fichas():
+        bloque = re.search(r"outlook:\s*\{(.*?)\n\s*\},",
+                           ficha.read_text(encoding="utf-8"), re.S)
+        if not bloque:
+            continue
+        con_outlook += 1
+        for entrada in re.findall(r'\{[^{}]*\}', bloque.group(1)):
+            assert '"es"' in entrada and '"en"' in entrada, \
+                f"{ficha.stem}: fortaleza o reto en un solo idioma"
+    assert con_outlook >= 4, f"solo {con_outlook} ciudades con fortalezas y retos"
+
+
+def test_no_judgement_was_softened_away():
+    """Estos textos son advertencias sobre barrios reales. Se traducen tal
+    cual: suavizar "caution required in Downtown at night" para que suene mejor
+    seria quitarle a alguien una advertencia que le sirve."""
+    traducciones = OUTLOOK_PY.read_text(encoding="utf-8")
+    assert "precaución" in traducciones, "se perdio la advertencia de El Centro"
+    assert "Gentrificación" in traducciones, "se perdio el reto de Medellín"

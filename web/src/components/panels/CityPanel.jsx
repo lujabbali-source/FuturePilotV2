@@ -13,6 +13,7 @@ const sections = [
     { id: "scholarships", labelKey: "panel.sections.scholarships", icon: "🏅" },
     { id: "jobs", labelKey: "panel.sections.jobs", icon: "💼" },
     { id: "statistics", labelKey: "panel.sections.statistics", icon: "📊" },
+    { id: "outlook", labelKey: "panel.sections.outlook", icon: "⚖️" },
     { id: "living", labelKey: "panel.sections.living", icon: "🌎" },
 ];
 
@@ -203,6 +204,37 @@ function StatisticsSection({ city }) {
     );
 }
 
+/** Lo bueno y lo difícil de la ciudad.
+ *
+ *  Va en su propia sección y no dentro de las estadísticas porque es de otra
+ *  naturaleza: una población es un dato, "conviene precaución en El Centro de
+ *  noche" es un juicio sobre un barrio donde vive gente. Mezclarlos haría que
+ *  el juicio se leyera con la autoridad del dato.
+ */
+function OutlookSection({ city }) {
+    const { t } = useTranslation("cities");
+    const outlook = city.outlook || {};
+    const fields = [
+        ["strengths", outlook.strengths],
+        ["challenges", outlook.challenges],
+        ["safetyStrategy", outlook.safetyStrategy],
+        ["englishProficiency", outlook.englishProficiency],
+    ];
+    return (
+        <section className="panel-section">
+            <h2>⚖️ {t("panel.sections.outlook")}</h2>
+            <div className="city-field-grid">
+                {fields.map(([key, value]) => (
+                    <Field key={key} label={t(`panel.fields.${key}`)} value={value} />
+                ))}
+            </div>
+            {/* Quién lo dice. Sin esto, un juicio sobre un barrio se lee como
+                un hecho medido, y no lo es. */}
+            <p className="panel-note">{t("panel.outlookNote")}</p>
+        </section>
+    );
+}
+
 function LivingSection({ city }) {
     const { t } = useTranslation("cities");
     const living = city.living || {};
@@ -233,6 +265,7 @@ export default function CityPanel({ selectedCity, onClose }) {
                 {city && activeSection === "scholarships" && <ScholarshipsSection city={city} />}
                 {city && activeSection === "jobs" && <JobsSection city={city} />}
                 {city && activeSection === "statistics" && <StatisticsSection city={city} />}
+                {city && activeSection === "outlook" && <OutlookSection city={city} />}
                 {city && activeSection === "living" && <LivingSection city={city} />}
                 {!city && <p className="loading-state">{t("status.loadingCity", { ns: "common" })}</p>}
             </div>

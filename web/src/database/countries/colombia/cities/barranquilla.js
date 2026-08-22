@@ -27,4 +27,10 @@ export default defineCity({
         nightlife: [{"es": "Carrera 53, Calle 84, La Troja (templo de la salsa).", "en": "Carrera 53, Calle 84, La Troja (legendary salsa venue)."}],
         transportation: {"es": "TransMetro, buses urbanos, taxis y aplicaciones de transporte.", "en": "TransMetro, urban buses, taxis, rideshare apps."},
     },
+    outlook: {
+        safetyStrategy: {"es": "Los sectores del norte (Alto Prado, Riomar) son seguros; las zonas del sur exigen precaución.", "en": "Northern sectors (Alto Prado, Riomar) are secure; southern zones require caution."},
+        englishProficiency: {"es": "Bajo-moderado; más alto en colegios privados y en los centros regionales de BPO.", "en": "Low-Moderate; higher in private schools and regional BPO hubs."},
+        strengths: {"es": "Crecimiento rápido en infraestructura, puerto industrial y logístico de gran calado, y un festival cultural conocido en todo el mundo (el Carnaval).", "en": "Rapid infrastructural growth, major industrial/logistics seaport, world-famous cultural festival (Carnaval)."},
+        challenges: {"es": "Calor intenso que obliga a aire acondicionado, e inundaciones de calles durante los aguaceros repentinos (los arroyos, aunque los canales principales ya están canalizados).", "en": "Intense heat requiring AC, street flooding during sudden heavy rains ( arroyos , though major channels are paved)."},
+    },
 });

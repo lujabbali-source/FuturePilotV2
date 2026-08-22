@@ -14,4 +14,7 @@ export default defineCity({
         studentBudget: {"min": 380, "max": 600, "currency": "USD"},
     },
     jobs: { mainIndustries: ["Border Trade with Venezuela", "Textiles", "Clay & Ceramic Manufacturing", "Mining"] },
+    outlook: {
+        strengths: {"es": "Precios de vivienda bajos y condición de centro de intercambio comercial.", "en": "Low housing prices, commercial exchange hub."},
+    },
 });

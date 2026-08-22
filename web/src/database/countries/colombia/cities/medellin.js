@@ -27,4 +27,10 @@ export default defineCity({
         nightlife: [{"es": "Provenza, Parque Lleras, La 70 (Laureles), Dulce Jesús Mío.", "en": "Provenza, Parque Lleras, La 70 (Laureles), Dulce Jesús Mío."}],
         transportation: {"es": "Metro de Medellín, Metrocable, Tranvía de Ayacucho, EnCicla (bicicletas públicas), aplicaciones de transporte.", "en": "Metro de Medellín, Metrocable, Tranvía de Ayacucho, EnCicla (bike share), Rideshares."},
     },
+    outlook: {
+        safetyStrategy: {"es": "El Poblado, Envigado y Laureles están bien vigilados; conviene precaución en El Centro de noche.", "en": "El Poblado, Envigado, and Laureles are well-policed; caution required in Downtown (El Centro) at night."},
+        englishProficiency: {"es": "Moderado en las zonas de extranjeros y nómadas digitales (El Poblado, Provenza); fuera de ahí hace falta español básico.", "en": "Moderate in expat/digital nomad hubs (El Poblado, Provenza); basic Spanish needed elsewhere."},
+        strengths: {"es": "Transporte urbano de primer nivel (el único metro de Colombia), ecosistema de innovación fuerte, clima ideal y vida social vibrante.", "en": "Top-tier urban transport (only Metro in Colombia), strong innovation ecosystem, ideal climate, vibrant social life."},
+        challenges: {"es": "Gentrificación en El Poblado y Laureles, y contaminación del aire en el valle durante las inversiones térmicas estacionales.", "en": "Gentrification in El Poblado/Laureles, air pollution in the valley during seasonal inversions."},
+    },
 });

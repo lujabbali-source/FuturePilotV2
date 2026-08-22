@@ -13,7 +13,8 @@
       "scholarships": "Scholarships",
       "jobs": "Jobs",
       "statistics": "Statistics",
-      "living": "Living"
+      "living": "Living",
+      "outlook": "Strengths & challenges"
     },
     "fields": {
       "monthlyEstimate": "Monthly estimate",
@@ -47,7 +48,11 @@
       "healthcare": "Healthcare",
       "nightlife": "Nightlife",
       "culture": "Culture",
-      "tourism": "Tourism"
+      "tourism": "Tourism",
+      "strengths": "What it has going for it",
+      "challenges": "What is hard",
+      "safetyStrategy": "Safety by area",
+      "englishProficiency": "English level"
     },
     "records": {
       "loadingUniversities": "Loading universities",
@@ -56,6 +61,7 @@
       "officialWebsiteLink": "Official website ↗",
       "nationalRanking": "National ranking"
     },
-    "regionalNote": "Estimated regional-level data: {{region}}"
+    "regionalNote": "Estimated regional-level data: {{region}}",
+    "outlookNote": "These are judgements, not measurements. They come from the cities document and describe what living there is like; check them with someone who is there."
   }
 }

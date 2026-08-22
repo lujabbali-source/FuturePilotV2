@@ -13,7 +13,8 @@
       "scholarships": "Becas",
       "jobs": "Empleo",
       "statistics": "Estadísticas",
-      "living": "Vida diaria"
+      "living": "Vida diaria",
+      "outlook": "Fortalezas y retos"
     },
     "fields": {
       "monthlyEstimate": "Estimado mensual",
@@ -47,7 +48,11 @@
       "healthcare": "Salud",
       "nightlife": "Vida nocturna",
       "culture": "Cultura",
-      "tourism": "Turismo"
+      "tourism": "Turismo",
+      "strengths": "Lo que tiene a favor",
+      "challenges": "Lo que cuesta",
+      "safetyStrategy": "Seguridad por zonas",
+      "englishProficiency": "Nivel de inglés"
     },
     "records": {
       "loadingUniversities": "Cargando universidades",
@@ -56,6 +61,7 @@
       "officialWebsiteLink": "Sitio web oficial ↗",
       "nationalRanking": "Ranking nacional"
     },
-    "regionalNote": "Datos estimados a nivel regional: {{region}}"
+    "regionalNote": "Datos estimados a nivel regional: {{region}}",
+    "outlookNote": "Esto son valoraciones, no mediciones. Vienen del documento de ciudades y describen cómo se vive allí; contrástalas con alguien que esté en la ciudad."
   }
 }
