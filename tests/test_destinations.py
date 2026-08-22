@@ -134,3 +134,52 @@ def test_what_we_do_not_know_is_said_out_loud():
     codigo = SERVICIO.read_text(encoding="utf-8")
     assert 'key: "checkCosts"' in codigo
     assert "costOfLiving?.monthlyEstimate" in codigo
+
+
+# ---------------------------------------------------------------------------
+# Volar al destino
+# ---------------------------------------------------------------------------
+APP = RAIZ / "web" / "src" / "App.jsx"
+CAMARA = RAIZ / "web" / "src" / "components" / "camera" / "CameraController.jsx"
+
+
+def test_choosing_a_destination_selects_its_country_too():
+    """El panel de ciudad y los marcadores cuelgan del pais seleccionado.
+    Eligiendo solo la ciudad, la tarjeta se abria sobre un globo que seguia
+    mirando a otra parte: se hacia clic en Ciudad de Mexico y no pasaba nada
+    visible."""
+    codigo = APP.read_text(encoding="utf-8")
+    manejador = re.search(r"handleDestinationSelect = useCallback\((.*?)\n  \}, \[\]\);",
+                          codigo, re.S)
+    assert manejador, "no existe el manejador de destino"
+    cuerpo = manejador.group(1)
+    assert "setSelectedCountry" in cuerpo
+    assert "setSelectedCity" in cuerpo
+    assert "setCameraTarget" in cuerpo
+
+
+def test_a_city_is_approached_closer_than_a_country():
+    """A la distancia de un pais, una ciudad es un pixel y el vuelo no se
+    distingue de no haber hecho nada."""
+    codigo = APP.read_text(encoding="utf-8")
+    distancias = [float(x) for x in re.findall(r"setCameraDistance\(([\d.]+)\)", codigo)]
+    assert distancias, "nadie fija la distancia de camara"
+    assert min(distancias) < 2.15, "ninguna vista se acerca mas que un pais"
+
+
+def test_the_camera_still_has_a_default_for_countries():
+    """La distancia se hizo configurable para las ciudades. Si el valor por
+    defecto se perdiera, los paises - que llevan funcionando desde antes -
+    volarian a donde toque."""
+    assert re.search(r"distance = 2\.15", CAMARA.read_text(encoding="utf-8")), \
+        "CameraController perdio su distancia por defecto"
+
+
+def test_a_destination_without_coordinates_still_goes_somewhere():
+    """Hoy las 223 ciudades tienen coordenadas, pero el catalogo crece. Una
+    ciudad nueva sin ellas no puede dejar el globo quieto sin explicacion."""
+    cuerpo = re.search(r"handleDestinationSelect = useCallback\((.*?)\n  \}, \[\]\);",
+                       APP.read_text(encoding="utf-8"), re.S).group(1)
+    assert "getCountryCenter" in cuerpo, "sin coordenadas no hay plan B"
+    assert "Number.isFinite" in cuerpo, \
+        "unas coordenadas corruptas mandarian la camara a NaN, y de ahi no vuelve"

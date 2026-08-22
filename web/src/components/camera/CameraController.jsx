@@ -2,7 +2,10 @@ import { useThree, useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-export default function CameraController({ target, controlsRef, onFocusComplete }) {
+// `distance` es a que altura se queda la camara sobre el punto. Un pais se
+// entiende visto entero (2.15); una ciudad es un punto y hay que bajar hasta
+// que se vean sus alrededores, o el vuelo no comunica nada.
+export default function CameraController({ target, controlsRef, onFocusComplete, distance = 2.15 }) {
 
     const { camera } = useThree();
 
@@ -20,13 +23,13 @@ export default function CameraController({ target, controlsRef, onFocusComplete 
 
         const dir = target.clone().normalize();
 
-        destination.current.copy(dir).multiplyScalar(2.15);
+        destination.current.copy(dir).multiplyScalar(distance);
 
         lookAt.current.copy(dir).multiplyScalar(0.35);
         isAnimating.current = true;
         hasCompleted.current = false;
 
-    }, [target]);
+    }, [target, distance]);
 
     useFrame((_, delta) => {
 

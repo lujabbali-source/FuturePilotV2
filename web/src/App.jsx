@@ -10,6 +10,8 @@ import GlobeBorders from "./components/GlobeBorders";
 import CameraController from "./components/camera/CameraController";
 import CountryMeshes from "./geo/CountryMeshes";
 import getCountryCenter from "./geo/getCountryCenter";
+import latLngToVector3 from "./geo/latLngToVector3";
+import { world } from "./geo/world";
 import Doctor from "./debug/Doctor";
 import { getCities } from "./services/cityService";
 import { getCountryIdFromName } from "./services/countryService";
@@ -26,6 +28,8 @@ export default function App() {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
   const [cameraTarget, setCameraTarget] = useState(null);
+  // Un país se ve entero desde lejos; una ciudad hay que bajar a mirarla.
+  const [cameraDistance, setCameraDistance] = useState(2.15);
   const [hoveredCountry, setHoveredCountry] = useState(null);
   const controlsRef = useRef(null);
   const hoverClearTimeoutRef = useRef(null);
@@ -42,6 +46,7 @@ export default function App() {
     // se generaliza a cualquier pais para que la navegacion se sienta
     // igual en todo el continente.
     setCameraTarget(country ? getCountryCenter(country) : null);
+    setCameraDistance(2.15);
 
     if (country) {
       const countryId = getCountryIdFromName(country.properties?.name);
@@ -53,6 +58,45 @@ export default function App() {
     setSelectedCity(city);
     if (city) {
       recordPassportEvent("city_explored", city.id, city.name);
+    }
+  }, []);
+
+  /** Ir a un destino recomendado: se selecciona su país, su ciudad, y el globo
+   *  vuela hasta ella.
+   *
+   *  Las tres cosas juntas y no solo la ciudad. El panel de ciudad y los
+   *  marcadores cuelgan del país seleccionado, así que elegir una ciudad sin
+   *  su país dejaba la tarjeta abierta sobre un globo que seguía mirando a
+   *  otra parte - el estudiante hacía clic en Ciudad de México y no pasaba
+   *  nada visible.
+   */
+  const handleDestinationSelect = useCallback((destino) => {
+    const ciudad = destino?.city;
+    if (!ciudad) return;
+
+    // El país en la forma que entiende el mapa (una feature del GeoJSON), que
+    // no es la misma que la ficha de datos.
+    const feature = world.features.find(
+      (f) => getCountryIdFromName(f.properties?.name) === destino.country?.id,
+    );
+    if (feature) {
+      setSelectedCountry(feature);
+      recordPassportEvent("country_explored", destino.country.id, destino.country.name);
+    }
+
+    setSelectedCity(ciudad);
+    recordPassportEvent("city_explored", ciudad.id, ciudad.name);
+
+    const punto = ciudad.coordinates;
+    if (punto && Number.isFinite(punto.lat) && Number.isFinite(punto.lng)) {
+      setCameraTarget(latLngToVector3(punto.lat, punto.lng, 1));
+      // Más cerca que un país: a 2.15 la ciudad es un pixel y el vuelo no se
+      // distingue de no haber hecho nada.
+      setCameraDistance(1.7);
+    } else if (feature) {
+      // Sin coordenadas se vuela al país, que es peor pero no es nada.
+      setCameraTarget(getCountryCenter(feature));
+      setCameraDistance(2.15);
     }
   }, []);
 
@@ -79,7 +123,7 @@ export default function App() {
     <>
       <TopNav />
       <DestinationIntro />
-      <DestinationPanel onSelectCity={(d) => setSelectedCity(d.city)} />
+      <DestinationPanel onSelectCity={handleDestinationSelect} />
 
       <section className={`globe-hero ${selectedCountry ? "globe-hero--compact" : ""}`}>
         {/* El eyebrow tiene su propia clave: usaba t("explore"), la misma
@@ -143,6 +187,7 @@ export default function App() {
         />
         <CameraController
           target={cameraTarget}
+          distance={cameraDistance}
           controlsRef={controlsRef}
         />
         <Doctor />
