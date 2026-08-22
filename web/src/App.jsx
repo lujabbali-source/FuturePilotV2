@@ -54,12 +54,17 @@ export default function App() {
     }
   }, []);
 
-  const handleCitySelect = useCallback((city) => {
-    setSelectedCity(city);
-    if (city) {
-      recordPassportEvent("city_explored", city.id, city.name);
-    }
-  }, []);
+  const handleCitySelect = useCallback((cityId) => {
+    setSelectedCity(cityId);
+    if (!cityId) return;
+    // Los marcadores entregan un ID, no el objeto. Antes se hacia `city.id` y
+    // `city.name` sobre esa cadena: ambos daban undefined, asi que todos los
+    // sellos de "ciudad explorada" se guardaban sin sujeto ni nombre. No
+    // fallaba nada visible - el pasaporte simplemente coleccionaba sellos en
+    // blanco.
+    const ciudad = selectedCountryCities.find((c) => c.id === cityId);
+    recordPassportEvent("city_explored", cityId, ciudad?.name || cityId);
+  }, [selectedCountryCities]);
 
   /** Ir a un destino recomendado: se selecciona su país, su ciudad, y el globo
    *  vuela hasta ella.
@@ -84,7 +89,10 @@ export default function App() {
       recordPassportEvent("country_explored", destino.country.id, destino.country.name);
     }
 
-    setSelectedCity(ciudad);
+    // El ID, no el objeto: `CityPanel` recibe un identificador y carga la
+    // ciudad con el. Pasandole el objeto se quedaba en "Cargando ciudad" para
+    // siempre - los datos estaban ahi, pero nadie sabia por cual preguntar.
+    setSelectedCity(ciudad.id);
     recordPassportEvent("city_explored", ciudad.id, ciudad.name);
 
     const punto = ciudad.coordinates;

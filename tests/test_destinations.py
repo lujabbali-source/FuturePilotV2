@@ -183,3 +183,43 @@ def test_a_destination_without_coordinates_still_goes_somewhere():
     assert "getCountryCenter" in cuerpo, "sin coordenadas no hay plan B"
     assert "Number.isFinite" in cuerpo, \
         "unas coordenadas corruptas mandarian la camara a NaN, y de ahi no vuelve"
+
+
+def test_the_panel_is_given_a_city_id_and_not_the_object():
+    """El fallo que dejo Bogota en "Cargando ciudad" para siempre.
+
+    `CityPanel` recibe un identificador y carga la ciudad con el; los
+    marcadores del globo ya le pasaban `city.id`. El panel de destinos le
+    pasaba el objeto entero, asi que `useCity` preguntaba por algo que no era
+    un id y la carga no terminaba nunca. Los datos estaban en el repo: lo que
+    faltaba era decir por cual preguntar.
+
+    No hay excepcion ni pantalla rota - solo una tarjeta cargando - asi que
+    esto solo se ve mirandolo.
+    """
+    codigo = APP.read_text(encoding="utf-8")
+    for manejador in ("handleDestinationSelect", "handleCitySelect"):
+        cuerpo = re.search(rf"{manejador} = useCallback\((.*?)\n  \}}, \[", codigo, re.S)
+        assert cuerpo, f"no existe {manejador}"
+        asignaciones = re.findall(r"setSelectedCity\(([^)]*)\)", cuerpo.group(1))
+        assert asignaciones, f"{manejador} no selecciona ninguna ciudad"
+        for valor in asignaciones:
+            assert not re.fullmatch(r"\s*(ciudad|city|destino\.city)\s*", valor), (
+                f"{manejador} le pasa el objeto a CityPanel, que espera un id: "
+                f"setSelectedCity({valor.strip()})"
+            )
+
+
+def test_exploring_a_city_records_which_one():
+    """Los marcadores entregan un ID, no el objeto. Se hacia `city.id` y
+    `city.name` sobre esa cadena, y ambos daban undefined: todos los sellos de
+    ciudad explorada se guardaban sin sujeto ni nombre. No fallaba nada
+    visible; el pasaporte coleccionaba sellos en blanco."""
+    cuerpo = re.search(r"handleCitySelect = useCallback\((.*?)\n  \}, \[", 
+                       APP.read_text(encoding="utf-8"), re.S).group(1)
+    # Sin los comentarios: el que explica el fallo tambien menciona `city.name`.
+    cuerpo = re.sub(r"^\s*//.*$", "", cuerpo, flags=re.M)
+    assert "city.name" not in cuerpo and "city.id" not in cuerpo, \
+        "se vuelven a pedir propiedades de objeto sobre lo que es un id"
+    assert "recordPassportEvent" in cuerpo
+    assert ".find(" in cuerpo, "hay que buscar la ciudad para saber como se llama"
