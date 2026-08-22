@@ -8,4 +8,11 @@ export default defineCity({
     region: "Cali y Región Pacífica (Palmira, Buenaventura)",
     statistics: { population: "~2.300.000 habitantes", safety: "Moderada - Baja", weather: "19°C a 31°C", language: "Español", currency: "Peso colombiano (COP)", internetSpeed: "~85 Mbps", qualityOfLife: "Media", studentSatisfaction: "Alta" },
     universities,
+    costOfLiving: {
+        currency: "COP",
+        monthlyEstimate: {"min": 520, "max": 850, "currency": "USD"},
+        studentBudget: {"min": 330, "max": 480, "currency": "USD"},
+        rent: {"min": 280, "max": 420, "currency": "USD"},
+    },
+    jobs: { mainIndustries: ["Sugar Cane & Agro-industry", "Pharmaceuticals", "Food & Beverage Processing", "Commercial Trade", "Salsa Tourism"] },
 });

@@ -8,4 +8,10 @@ export default defineCity({
     region: "Barranquilla y Región Caribe (Cartagena, Santa Marta, Montería, Sincelejo)",
     statistics: { population: "~1.300.000 habitantes (Barranquilla)", safety: "Moderada", weather: "24°C a 33°C", language: "Español", currency: "Peso colombiano (COP)", internetSpeed: "~80 Mbps", qualityOfLife: "Media", studentSatisfaction: "Alta" },
     universities,
+    costOfLiving: {
+        currency: "COP",
+        monthlyEstimate: {"min": 380, "max": 600, "currency": "USD"},
+        studentBudget: {"min": 380, "max": 600, "currency": "USD"},
+    },
+    jobs: { mainIndustries: ["Livestock & Beef Exports", "Agriculture", "River Commerce"] },
 });

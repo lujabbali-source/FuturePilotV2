@@ -24,8 +24,30 @@ function displayValue(value, fallback) {
 }
 
 function money(value, currency, locale, fallback) {
-    if (typeof value !== "number") return fallback;
-    return new Intl.NumberFormat(locale, { style: "currency", currency, maximumFractionDigits: 0 }).format(value);
+    const formato = new Intl.NumberFormat(locale, {
+        style: "currency", currency, maximumFractionDigits: 0,
+    });
+    if (typeof value === "number") return formato.format(value);
+
+    // Un rango, no un punto. La fuente dice "1.8M – 2.6M COP" y eso es lo que
+    // se muestra: quedarse con el punto medio inventaria una precision que el
+    // dato no tiene, y alguien va a presupuestar una mudanza con esta cifra.
+    if (value && typeof value === "object"
+        && typeof value.min === "number" && typeof value.max === "number") {
+        // La moneda del propio rango manda sobre la de la ciudad. El documento
+        // convirtió a pesos solo las ciudades grandes; las demás vienen en
+        // dólares, y pintarlas como pesos multiplicaría la cifra por cuatro
+        // mil. Que se lea "USD" es la señal de que no son comparables.
+        const suyo = value.currency && value.currency !== currency
+            ? new Intl.NumberFormat(locale, {
+                style: "currency", currency: value.currency, maximumFractionDigits: 0,
+              })
+            : formato;
+        return value.min === value.max
+            ? suyo.format(value.min)
+            : `${suyo.format(value.min)} – ${suyo.format(value.max)}`;
+    }
+    return fallback;
 }
 
 function Field({ label, value, formatter }) {

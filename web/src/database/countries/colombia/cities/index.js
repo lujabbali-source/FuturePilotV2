@@ -1,3 +1,6 @@
+import leticia from "./leticia";
+import quibdo from "./quibdo";
+import valledupar from "./valledupar";
 import bogota from "./bogota";
 import medellin from "./medellin";
 import cali from "./cali";
@@ -48,6 +51,10 @@ const cities = [
     tunja,
     villavicencio,
     yopal,
+    // De 'America cities.docx': no existían como ficha hasta ahora.
+    valledupar,
+    quibdo,
+    leticia,
 ];
 
 export default cities;

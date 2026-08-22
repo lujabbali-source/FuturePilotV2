@@ -1,8 +1,12 @@
 import cityCatalog from "../database/countries/colombia/cities/index";
 import { countries } from "../database/countries";
 
+// La carpeta entera, no una lista escrita a mano. Antes iban los 21 nombres
+// enumerados aqui: añadir una ciudad al catalogo sin acordarse de esta linea
+// la dejaba cargando para siempre, sin ningun error que lo delatara. Justo lo
+// que paso con Valledupar, Quibdó y Leticia.
 const cityLoaders = import.meta.glob(
-    "../database/countries/colombia/cities/{bogota,medellin,cali,barranquilla,cartagena,santa-marta,monteria,sincelejo,bucaramanga,cucuta,manizales,pereira,armenia,popayan,pasto,ibague,neiva,florencia,tunja,villavicencio,yopal}.js",
+    "../database/countries/colombia/cities/*.js",
     { import: "default" }
 );
 

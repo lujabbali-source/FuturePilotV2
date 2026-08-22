@@ -1,0 +1,2413 @@
+{
+  "_README": [
+    "Volcado fiel de 'America cities.docx'. Generado por",
+    "web/scripts/import_colombia_cities_docx.py; no editar a mano.",
+    "",
+    "Los rangos se guardan como rangos (min/max en COP). El documento",
+    "dice '1.8M - 2.6M' y eso es lo que hay: un punto medio inventaria",
+    "una precision que la fuente no tiene, y alguien planea una mudanza",
+    "sobre esa cifra.",
+    "",
+    "El texto esta en ingles porque el documento lo esta. Lo que se",
+    "lleve a la interfaz hay que traducirlo."
+  ],
+  "cities": {
+    "bogota": {
+      "name": "Bogotá, D.C.",
+      "department": "Distrito Capital",
+      "costOfLiving": {
+        "Monthly estimate": [
+          {
+            "label": "Single person (Moderate)",
+            "text": "$700 – $1,200 USD (approx. 2.8M – 4.8M COP) per month.",
+            "money": [
+              {
+                "min": 2800000,
+                "max": 4800000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Student (Frugal)",
+            "text": "$450 – $650 USD (approx. 1.8M – 2.6M COP) per month.",
+            "money": [
+              {
+                "min": 1800000,
+                "max": 2600000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Family of four",
+            "text": "$1,800 – $2,800+ USD (approx. 7.2M – 11.2M+ COP) per month.",
+            "money": [
+              {
+                "min": 7200000,
+                "max": 11200000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ],
+        "Food": [
+          {
+            "label": "Local groceries (1 person)",
+            "text": "$150 – $220 USD (approx. 600k – 880k COP) per month.",
+            "money": [
+              {
+                "min": 600000,
+                "max": 880000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Cheap local lunch (Corrientazo)",
+            "text": "$3 – $5 USD (approx. 12k – 20k COP) per meal.",
+            "money": [
+              {
+                "min": 12000,
+                "max": 20000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Mid-range restaurant dinner (2 people)",
+            "text": "$30 – $50 USD (approx. 120k – 200k COP) total.",
+            "money": [
+              {
+                "min": 120000,
+                "max": 200000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ],
+        "Utilities": [
+          {
+            "label": "Strata 3–4 (Middle class)",
+            "text": "$40 – $70 USD (approx. 160k – 280k COP) per month for electricity, water, and gas.",
+            "money": [
+              {
+                "min": 160000,
+                "max": 280000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Strata 5–6 (Upper class)",
+            "text": "$90 – $150 USD (approx. 360k – 600k COP) per month due to Colombia's tiered subsidy system.",
+            "money": [
+              {
+                "min": 360000,
+                "max": 600000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Home internet & mobile plan",
+            "text": "$25 – $35 USD (approx. 100k – 140k COP) per month.",
+            "money": [
+              {
+                "min": 100000,
+                "max": 140000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ],
+        "Rent": [
+          {
+            "label": "Shared room (Student/Coliving)",
+            "text": "$180 – $300 USD (approx. 720k – 1.2M COP) per month.",
+            "money": [
+              {
+                "min": 720000,
+                "max": 1200000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "1 bedroom apartment (Standard area)",
+            "text": "$350 – $500 USD (approx. 1.4M – 2M COP) per month.",
+            "money": [
+              {
+                "min": 1400000,
+                "max": 2000000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "1 bedroom apartment (Upscale area like El Chicó)",
+            "text": "$650 – $1,000+ USD (approx. 2.6M – 4M+ COP) per month.",
+            "money": [
+              {
+                "min": 2600000,
+                "max": 4000000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ],
+        "Student budget": [
+          {
+            "label": "Total essential student cost",
+            "text": "$450 – $600 USD (approx. 1.8M – 2.4M COP) per month.",
+            "money": [
+              {
+                "min": 1800000,
+                "max": 2400000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Composition",
+            "text": "Covers a shared room near universities (e.g., Chapinero or Centro), cooking at home, public transit, and basic health insurance."
+          }
+        ],
+        "Transportation": [
+          {
+            "label": "TransMilenio / SITP bus (Daily commute)",
+            "text": "$35 – $50 USD (approx. 140k – 200k COP) per month.",
+            "money": [
+              {
+                "min": 140000,
+                "max": 200000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Rideshares (Uber/Cabify, 2–3 times a week)",
+            "text": "$40 – $70 USD (approx. 160k – 280k COP) per month.",
+            "money": [
+              {
+                "min": 160000,
+                "max": 280000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "Population": [
+          {
+            "label": "Capital District",
+            "text": "~7.95 million people."
+          },
+          {
+            "label": "Metropolitan Area",
+            "text": "~11.9 million people incorporating surrounding suburbs."
+          }
+        ],
+        "Weather": [
+          {
+            "label": "Climate type",
+            "text": "Subtropical highland climate (eternal spring/cool)."
+          },
+          {
+            "label": "Average temperatures",
+            "text": "Highs of 18°C to 20°C (64°F - 68°F); lows of 7°C to 10°C (45°F - 50°F) year-round."
+          },
+          {
+            "label": "Weather patterns",
+            "text": "Rainy seasons typically peak in April–May and October–November."
+          }
+        ],
+        "Currency": [
+          {
+            "label": "Official Currency",
+            "text": "Colombian Peso (COP)."
+          },
+          {
+            "label": "Exchange Rate Context",
+            "text": "Fluctuates dynamically; traditionally sits between 3,800 to 4,300 COP per 1 USD."
+          },
+          {
+            "label": null,
+            "text": "Quality of life"
+          },
+          {
+            "label": "General Index",
+            "text": "Moderate."
+          },
+          {
+            "label": null,
+            "text": "Safety"
+          },
+          {
+            "label": "Safety Index",
+            "text": "33.3 / 100 (Low) according to Numbeo City Rankings."
+          },
+          {
+            "label": "Crime Index",
+            "text": "66.7 / 100 (High), driven primarily by opportunistic property crimes."
+          },
+          {
+            "label": "Safety Strategy",
+            "text": "Highly localized. Upper-tier districts (Estratos 4, 5, and 6) like Chicó, Usaquén, and Rosales maintain heavy private security."
+          },
+          {
+            "label": null,
+            "text": "Language"
+          },
+          {
+            "label": "Primary Language",
+            "text": "Spanish."
+          },
+          {
+            "label": "English Proficiency",
+            "text": "Low to moderate globally across the city. Widespread within international corporate spaces and upper-tier university campuses."
+          },
+          {
+            "label": null,
+            "text": "Internet speed"
+          },
+          {
+            "label": "Fixed Broadband Avg",
+            "text": "168.7 Mbps download and 148.0 Mbps upload."
+          },
+          {
+            "label": "Top Fiber Providers",
+            "text": "Movistar and ETB offer symmetric FTTH exceeding 240+ Mbps."
+          },
+          {
+            "label": "Mobile Internet Speed",
+            "text": "Averaging 87.2 Mbps download on expanding 5G networks."
+          },
+          {
+            "label": null,
+            "text": "Student satisfaction"
+          },
+          {
+            "label": "Overall Sentiment",
+            "text": "High for social/academic life; Moderate for structural logistics."
+          },
+          {
+            "label": "Key Highlights",
+            "text": "Premier educational capital (Universidad de los Andes, Universidad Nacional). Vibrant nightlife in Chapinero."
+          },
+          {
+            "label": "Key Complaints",
+            "text": "Long commute times to campuses, phone safety awareness needed at night."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Key Strengths",
+            "text": "Exceptional cultural scene, world-class gastronomy, strong corporate hub, and highly sustainable public focus."
+          },
+          {
+            "label": "Key Challenges",
+            "text": "Intense traffic congestion, air pollution in specific corridors, and social disparity mapped across estratos."
+          },
+          {
+            "label": "Main industries",
+            "text": "Financial Services & Fintech, IT & Software Outsourcing, Public Administration, BPO & Customer Experience."
+          },
+          {
+            "label": "Employment Rate",
+            "text": "City Unemployment Rate ~8.8%; Youth Unemployment ~12.4%."
+          }
+        ],
+        "Average salary": [
+          {
+            "label": "General Average",
+            "text": "Approximately 5,420,000 COP per month (~$1,350 USD).",
+            "money": [
+              {
+                "min": 5420000,
+                "max": 5420000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Minimum Wage (SMMLV)",
+            "text": "~1,750,905 COP base + transport subsidies (~$485–$550 USD total).",
+            "money": [
+              {
+                "min": 1750905,
+                "max": 1750905,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Bilingual Professionals",
+            "text": "2,900,000 COP (entry-level) to 7,800,000 COP (managers).",
+            "money": [
+              {
+                "min": 2900000,
+                "max": 2900000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Student Jobs",
+            "text": "Bilingual Call Centers (TTEC, Teleperformance), On-Campus Employment, Retail & Food Service."
+          },
+          {
+            "label": "Internships",
+            "text": "Governed by Contrato de Aprendizaje (approx. 1 SMMLV to 2.0M COP).",
+            "money": [
+              {
+                "min": 2000000,
+                "max": 2000000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Remote opportunities",
+            "text": "Widespread adoption among tech and international firms."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Best neighborhoods",
+            "text": "Chicó & Parque de la 93 (Estratos 5–6), Chapinero Alto & Zona G (Estrato 4), Usaquén (Estratos 5–6), Teusaquillo & La Soledad (Estratos 3–4)."
+          },
+          {
+            "label": "Healthcare",
+            "text": "Excellent. World-class institutions like Fundación Santa Fe de Bogotá and Hospital Universitario San Ignacio."
+          },
+          {
+            "label": "Culture",
+            "text": "Museo del Oro, Museo Botero, street art, Parque Simón Bolívar, Ciclovía."
+          },
+          {
+            "label": "Tourism",
+            "text": "Monserrate, La Candelaria, Zipaquirá Salt Cathedral."
+          },
+          {
+            "label": "Food",
+            "text": "Ajiaco, international fine dining in Zona G, staple chains like Crepes & Waffles."
+          },
+          {
+            "label": "Nightlife",
+            "text": "Zona Rosa (Zona T), Andrés Carne de Res (Chia), Theatron in Chapinero."
+          },
+          {
+            "label": "Transportation",
+            "text": "TransMilenio, SITP, Rideshares (Uber, Cabify, DiDi)."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "medellin": {
+      "name": "Medellín",
+      "department": "Antioquia",
+      "costOfLiving": {
+        "Monthly estimate": [
+          {
+            "label": "Single person (Moderate)",
+            "text": "$650 – $1,100 USD (approx. 2.6M – 4.4M COP) per month.",
+            "money": [
+              {
+                "min": 2600000,
+                "max": 4400000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Student (Frugal)",
+            "text": "$400 – $600 USD (approx. 1.6M – 2.4M COP) per month.",
+            "money": [
+              {
+                "min": 1600000,
+                "max": 2400000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Family of four",
+            "text": "$1,600 – $2,500 USD (approx. 6.4M – 10M COP) per month.",
+            "money": [
+              {
+                "min": 6400000,
+                "max": 10000000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ],
+        "Food": [
+          {
+            "label": "Local groceries (1 person)",
+            "text": "$140 – $200 USD (approx. 560k – 800k COP) per month.",
+            "money": [
+              {
+                "min": 560000,
+                "max": 800000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Cheap local lunch (Corrientazo)",
+            "text": "$3 – $4.50 USD (approx. 12k – 18k COP) per meal.",
+            "money": [
+              {
+                "min": 12000,
+                "max": 18000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Mid-range restaurant dinner (2 people)",
+            "text": "$25 – $45 USD (approx. 100k – 180k COP) total.",
+            "money": [
+              {
+                "min": 100000,
+                "max": 180000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ],
+        "Utilities": [
+          {
+            "label": "Strata 3–4 (Middle class)",
+            "text": "$35 – $65 USD (approx. 140k – 260k COP) per month.",
+            "money": [
+              {
+                "min": 140000,
+                "max": 260000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Strata 5–6 (Upper class)",
+            "text": "$80 – $140 USD (approx. 320k – 560k COP) per month.",
+            "money": [
+              {
+                "min": 320000,
+                "max": 560000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Home internet & mobile plan",
+            "text": "$22 – $32 USD (approx. 90k – 130k COP) per month.",
+            "money": [
+              {
+                "min": 90000,
+                "max": 130000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ],
+        "Rent": [
+          {
+            "label": "Shared room (Student/Coliving)",
+            "text": "$170 – $280 USD (approx. 680k – 1.1M COP) per month.",
+            "money": [
+              {
+                "min": 680000,
+                "max": 1100000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "1 bedroom apartment (Standard area - Laureles/Envigado)",
+            "text": "$380 – $550 USD (approx. 1.5M – 2.2M COP) per month.",
+            "money": [
+              {
+                "min": 1500000,
+                "max": 2200000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "1 bedroom apartment (Upscale area - El Poblado)",
+            "text": "$700 – $1,200 USD (approx. 2.8M – 4.8M COP) per month.",
+            "money": [
+              {
+                "min": 2800000,
+                "max": 4800000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ],
+        "Student budget": [
+          {
+            "label": "Total essential student cost",
+            "text": "$400 – $580 USD (approx. 1.6M – 2.3M COP) per month.",
+            "money": [
+              {
+                "min": 1600000,
+                "max": 2300000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Composition",
+            "text": "Shared flat near Robledo or Belén, public transport via Metro, home cooking."
+          }
+        ],
+        "Transportation": [
+          {
+            "label": "Metro de Medellín / Metrocable / Tram (Daily commute)",
+            "text": "$25 – $40 USD (approx. 100k – 160k COP) per month.",
+            "money": [
+              {
+                "min": 100000,
+                "max": 160000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Rideshares & Taxis",
+            "text": "$35 – $60 USD (approx. 140k – 240k COP) per month.",
+            "money": [
+              {
+                "min": 140000,
+                "max": 240000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "Population": [
+          {
+            "label": "Municipality",
+            "text": "~2.6 million people."
+          },
+          {
+            "label": "Metropolitan Area (Valle de Aburrá)",
+            "text": "~4.1 million people."
+          }
+        ],
+        "Weather": [
+          {
+            "label": "Climate type",
+            "text": "Tropical rainforest / warm temperate (\"City of Eternal Spring\")."
+          },
+          {
+            "label": "Average temperatures",
+            "text": "Highs of 26°C to 28°C (78°F - 82°F); lows of 16°C to 18°C (60°F - 64°F)."
+          },
+          {
+            "label": "Weather patterns",
+            "text": "Pleasant climate with brief showers, rain peaks in April–May and September–November."
+          }
+        ],
+        "Currency": [
+          {
+            "label": "Official Currency",
+            "text": "Colombian Peso (COP)."
+          },
+          {
+            "label": "Exchange Rate Context",
+            "text": "3,800 to 4,300 COP per 1 USD."
+          },
+          {
+            "label": null,
+            "text": "Quality of life"
+          },
+          {
+            "label": "General Index",
+            "text": "High / Moderate-High."
+          },
+          {
+            "label": null,
+            "text": "Safety"
+          },
+          {
+            "label": "Safety Index",
+            "text": "42.1 / 100 (Moderate)."
+          },
+          {
+            "label": "Crime Index",
+            "text": "57.9 / 100 (Moderate-High)."
+          },
+          {
+            "label": "Safety Strategy",
+            "text": "El Poblado, Envigado, and Laureles are well-policed; caution required in Downtown (El Centro) at night."
+          },
+          {
+            "label": null,
+            "text": "Language"
+          },
+          {
+            "label": "Primary Language",
+            "text": "Spanish (Paisa accent)."
+          },
+          {
+            "label": "English Proficiency",
+            "text": "Moderate in expat/digital nomad hubs (El Poblado, Provenza); basic Spanish needed elsewhere."
+          },
+          {
+            "label": null,
+            "text": "Internet speed"
+          },
+          {
+            "label": "Fixed Broadband Avg",
+            "text": "175.4 Mbps download."
+          },
+          {
+            "label": "Top Fiber Providers",
+            "text": "Tigo, Movistar, Claro FTTH."
+          },
+          {
+            "label": "Mobile Internet Speed",
+            "text": "~85 Mbps download with active 5G deployment."
+          },
+          {
+            "label": null,
+            "text": "Student satisfaction"
+          },
+          {
+            "label": "Overall Sentiment",
+            "text": "Very High."
+          },
+          {
+            "label": "Key Highlights",
+            "text": "Top universities (Universidad de Antioquia, EAFIT, UPB), incredible climate, social lifestyle."
+          },
+          {
+            "label": "Key Complaints",
+            "text": "Rising rental costs in student-friendly neighborhoods due to nomad demand."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Key Strengths",
+            "text": "Top-tier urban transport (only Metro in Colombia), strong innovation ecosystem, ideal climate, vibrant social life."
+          },
+          {
+            "label": "Key Challenges",
+            "text": "Gentrification in El Poblado/Laureles, air pollution in the valley during seasonal inversions."
+          },
+          {
+            "label": "Main industries",
+            "text": "Technology & Innovation, Textiles & Fashion, Financial Services, Health Tourism, BPO."
+          },
+          {
+            "label": "Employment Rate",
+            "text": "Unemployment ~8.5%; Youth Unemployment ~12.0%."
+          }
+        ],
+        "Average salary": [
+          {
+            "label": "General Average",
+            "text": "Approximately 4,800,000 COP per month (~$1,200 USD).",
+            "money": [
+              {
+                "min": 4800000,
+                "max": 4800000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Minimum Wage (SMMLV)",
+            "text": "Standard national minimum wage baseline."
+          },
+          {
+            "label": "Bilingual Professionals",
+            "text": "2,800,000 COP to 7,500,000 COP per month.",
+            "money": [
+              {
+                "min": 2800000,
+                "max": 2800000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Student Jobs",
+            "text": "BPO/Customer Support (Teleperformance, Solvo Global), language tutoring, cafes."
+          },
+          {
+            "label": "Internships",
+            "text": "Strongly supported by Ruta N and local corporate headquarters (Grupo Nutresa, Argos, Bancolombia)."
+          },
+          {
+            "label": "Remote opportunities",
+            "text": "Major hub for international remote workers and local tech teams."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Best neighborhoods",
+            "text": "El Poblado / Provenza (Estrato 6), Laureles - Estadio (Estrato 4–5), Envigado (Estrato 4–5), Sabaneta (Estrato 3–4)."
+          },
+          {
+            "label": "Healthcare",
+            "text": "World-class. Hospital Pablo Tobón Uribe, Clínica Las Américas."
+          },
+          {
+            "label": "Culture",
+            "text": "Feria de las Flores, Museo de Antioquia (Botero Plaza), Parque Arví, Comuna 13 art tours."
+          },
+          {
+            "label": "Tourism",
+            "text": "Pueblito Paisa, Comuna 13, Cable cars, Day trip to Guatapé & El Peñol."
+          },
+          {
+            "label": "Food",
+            "text": "Bandeja Paisa, Arepa de Choclo, gourmet international dining in Provenza."
+          },
+          {
+            "label": "Nightlife",
+            "text": "Provenza, Parque Lleras, La 70 (Laureles), Dulce Jesús Mío."
+          },
+          {
+            "label": "Transportation",
+            "text": "Metro de Medellín, Metrocable, Tranvía de Ayacucho, EnCicla (bike share), Rideshares."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "barranquilla": {
+      "name": "Barranquilla",
+      "department": "Atlántico",
+      "costOfLiving": {
+        "Monthly estimate": [
+          {
+            "label": "Single person (Moderate)",
+            "text": "$550 – $900 USD (approx. 2.2M – 3.6M COP) per month.",
+            "money": [
+              {
+                "min": 2200000,
+                "max": 3600000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Student (Frugal)",
+            "text": "$350 – $500 USD (approx. 1.4M – 2.0M COP) per month.",
+            "money": [
+              {
+                "min": 1400000,
+                "max": 2000000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Family of four",
+            "text": "$1,400 – $2,200 USD (approx. 5.6M – 8.8M COP) per month.",
+            "money": [
+              {
+                "min": 5600000,
+                "max": 8800000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ],
+        "Food": [
+          {
+            "label": "Local groceries (1 person)",
+            "text": "$130 – $180 USD (approx. 520k – 720k COP) per month.",
+            "money": [
+              {
+                "min": 520000,
+                "max": 720000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Cheap local lunch (Corrientazo)",
+            "text": "$2.50 – $4 USD (approx. 10k – 16k COP) per meal.",
+            "money": [
+              {
+                "min": 10000,
+                "max": 16000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Mid-range restaurant dinner (2 people)",
+            "text": "$25 – $40 USD (approx. 100k – 160k COP) total.",
+            "money": [
+              {
+                "min": 100000,
+                "max": 160000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ],
+        "Utilities": [
+          {
+            "label": "Strata 3–4 (Middle class)",
+            "text": "$50 – $90 USD (approx. 200k – 360k COP) per month (higher due to essential air conditioning).",
+            "money": [
+              {
+                "min": 200000,
+                "max": 360000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Strata 5–6 (Upper class)",
+            "text": "$110 – $180 USD (approx. 440k – 720k COP) per month.",
+            "money": [
+              {
+                "min": 440000,
+                "max": 720000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Home internet & mobile plan",
+            "text": "$20 – $30 USD (approx. 80k – 120k COP) per month.",
+            "money": [
+              {
+                "min": 80000,
+                "max": 120000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ],
+        "Rent": [
+          {
+            "label": "Shared room (Student/Coliving)",
+            "text": "$140 – $230 USD (approx. 560k – 920k COP) per month.",
+            "money": [
+              {
+                "min": 560000,
+                "max": 920000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "1 bedroom apartment (Standard area - Villa Santos/El Prado)",
+            "text": "$300 – $450 USD (approx. 1.2M – 1.8M COP) per month.",
+            "money": [
+              {
+                "min": 1200000,
+                "max": 1800000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "1 bedroom apartment (Upscale area - Alto Prado/Riomar)",
+            "text": "$500 – $800 USD (approx. 2.0M – 3.2M COP) per month.",
+            "money": [
+              {
+                "min": 2000000,
+                "max": 3200000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ],
+        "Student budget": [
+          {
+            "label": "Total essential student cost",
+            "text": "$350 – $500 USD per month.",
+            "money": [
+              {
+                "min": 350,
+                "max": 500,
+                "currency": "USD",
+                "who": "al essential student cost"
+              }
+            ]
+          },
+          {
+            "label": "Composition",
+            "text": "Covers shared room near Universidad del Norte or Uniatlántico, groceries, local bus."
+          }
+        ],
+        "Transportation": [
+          {
+            "label": "TransMetro / Public buses",
+            "text": "$25 – $35 USD (approx. 100k – 140k COP) per month.",
+            "money": [
+              {
+                "min": 100000,
+                "max": 140000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Taxis / InDrive / Uber",
+            "text": "$30 – $55 USD per month.",
+            "money": [
+              {
+                "min": 30,
+                "max": 55,
+                "currency": "USD",
+                "who": "Uber"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "Population": [
+          {
+            "label": "Municipality",
+            "text": "~1.3 million people."
+          },
+          {
+            "label": "Metropolitan Area",
+            "text": "~2.2 million people (including Soledad, Malambo, Galapa, Puerto Colombia)."
+          }
+        ],
+        "Weather": [
+          {
+            "label": "Climate type",
+            "text": "Tropical savanna climate (hot and humid)."
+          },
+          {
+            "label": "Average temperatures",
+            "text": "Highs of 31°C to 33°C (88°F - 91°F); lows of 24°C to 25°C (75°F - 77°F)."
+          },
+          {
+            "label": "Weather patterns",
+            "text": "Sunny year-round with coastal breeze; rainy season from May to November."
+          }
+        ],
+        "Currency": [
+          {
+            "label": "Official Currency",
+            "text": "Colombian Peso (COP)."
+          },
+          {
+            "label": null,
+            "text": "Quality of life"
+          },
+          {
+            "label": "General Index",
+            "text": "Moderate-High."
+          },
+          {
+            "label": null,
+            "text": "Safety"
+          },
+          {
+            "label": "Safety Index",
+            "text": "38.5 / 100 (Moderate)."
+          },
+          {
+            "label": "Crime Index",
+            "text": "61.5 / 100."
+          },
+          {
+            "label": "Safety Strategy",
+            "text": "Northern sectors (Alto Prado, Riomar) are secure; southern zones require caution."
+          },
+          {
+            "label": null,
+            "text": "Language"
+          },
+          {
+            "label": "Primary Language",
+            "text": "Spanish (Costeño accent)."
+          },
+          {
+            "label": "English Proficiency",
+            "text": "Low-Moderate; higher in private schools and regional BPO hubs."
+          },
+          {
+            "label": null,
+            "text": "Internet speed"
+          },
+          {
+            "label": "Fixed Broadband Avg",
+            "text": "150.2 Mbps download."
+          },
+          {
+            "label": "Top Fiber Providers",
+            "text": "Movistar, Claro, Tigo."
+          },
+          {
+            "label": "Mobile Internet Speed",
+            "text": "~78 Mbps download."
+          },
+          {
+            "label": null,
+            "text": "Student satisfaction"
+          },
+          {
+            "label": "Overall Sentiment",
+            "text": "High."
+          },
+          {
+            "label": "Key Highlights",
+            "text": "Universidad del Norte is top tier. Vibrant coastal culture, welcoming locals."
+          },
+          {
+            "label": "Key Complaints",
+            "text": "High electricity bills from AC usage."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Key Strengths",
+            "text": "Rapid infrastructural growth, major industrial/logistics seaport, world-famous cultural festival (Carnaval)."
+          },
+          {
+            "label": "Key Challenges",
+            "text": "Intense heat requiring AC, street flooding during sudden heavy rains ( arroyos , though major channels are paved)."
+          },
+          {
+            "label": "Main industries",
+            "text": "Logistics & Maritime Freight, Industrial Manufacturing, Construction, BPO, Commerce."
+          },
+          {
+            "label": "Employment Rate",
+            "text": "Unemployment ~9.2%."
+          }
+        ],
+        "Average salary": [
+          {
+            "label": "General Average",
+            "text": "Approximately 3,800,000 COP per month (~$950 USD).",
+            "money": [
+              {
+                "min": 3800000,
+                "max": 3800000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Minimum Wage (SMMLV)",
+            "text": "Standard national minimum wage baseline."
+          },
+          {
+            "label": "Student Jobs",
+            "text": "Contact centers (Sitel/Foundever, Lean Solutions Group), commercial retail."
+          },
+          {
+            "label": "Internships",
+            "text": "Logistics, port operations, industrial engineering firms (Tecnoglass, Monómeros)."
+          },
+          {
+            "label": "Remote opportunities",
+            "text": "Growing sector in logistics management and customer service for US firms."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Best neighborhoods",
+            "text": "Alto Prado, Riomar, Villa Santos, El Prado, Bellavista."
+          },
+          {
+            "label": "Healthcare",
+            "text": "Excellent (Clínica Portoazul, Clínica Iberoamérica)."
+          },
+          {
+            "label": "Culture",
+            "text": "Carnaval de Barranquilla (UNESCO World Heritage), Gran Malecón del Río, Museo del Caribe."
+          },
+          {
+            "label": "Tourism",
+            "text": "Gran Malecón, Bocas de Cenoza, Puerto Colombia Pier."
+          },
+          {
+            "label": "Food",
+            "text": "Arepa de huevo, Arroz de lisa, Sancocho de guandú, fresh seafood."
+          },
+          {
+            "label": "Nightlife",
+            "text": "Carrera 53, Calle 84, La Troja (legendary salsa venue)."
+          },
+          {
+            "label": "Transportation",
+            "text": "TransMetro, urban buses, taxis, rideshare apps."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "cartagena": {
+      "name": "Cartagena de Indias",
+      "department": "Bolívar",
+      "costOfLiving": {
+        "Monthly estimate": [
+          {
+            "label": "Single person (Moderate)",
+            "text": "$650 – $1,050 USD (approx. 2.6M – 4.2M COP) per month.",
+            "money": [
+              {
+                "min": 2600000,
+                "max": 4200000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Student (Frugal)",
+            "text": "$400 – $580 USD (approx. 1.6M – 2.3M COP) per month.",
+            "money": [
+              {
+                "min": 1600000,
+                "max": 2300000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Family of four",
+            "text": "$1,600 – $2,600 USD per month.",
+            "money": [
+              {
+                "min": 1600,
+                "max": 2600,
+                "currency": "USD",
+                "who": "Family of four"
+              }
+            ]
+          }
+        ],
+        "Food": [
+          {
+            "label": "Local groceries (1 person)",
+            "text": "$140 – $210 USD per month.",
+            "money": [
+              {
+                "min": 140,
+                "max": 210,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          },
+          {
+            "label": "Cheap local lunch (Corrientazo)",
+            "text": "$3 – $5 USD per meal.",
+            "money": [
+              {
+                "min": 3,
+                "max": 5,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          },
+          {
+            "label": "Mid-range restaurant dinner (2 people)",
+            "text": "$35 – $65 USD total (tourist zone premium).",
+            "money": [
+              {
+                "min": 35,
+                "max": 65,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          }
+        ],
+        "Utilities": [
+          {
+            "label": "Strata 3–4",
+            "text": "$55 – $95 USD per month (high AC dependence).",
+            "money": [
+              {
+                "min": 55,
+                "max": 95,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          },
+          {
+            "label": "Strata 5–6 / Tourist Zones",
+            "text": "$120 – $200 USD per month.",
+            "money": [
+              {
+                "min": 120,
+                "max": 200,
+                "currency": "USD",
+                "who": "Tourist Zones"
+              }
+            ]
+          },
+          {
+            "label": "Home internet & mobile plan",
+            "text": "$22 – $32 USD per month.",
+            "money": [
+              {
+                "min": 22,
+                "max": 32,
+                "currency": "USD",
+                "who": "mobile plan"
+              }
+            ]
+          }
+        ],
+        "Rent": [
+          {
+            "label": "Shared room",
+            "text": "$160 – $260 USD per month.",
+            "money": [
+              {
+                "min": 160,
+                "max": 260,
+                "currency": "USD",
+                "who": "Shared room"
+              }
+            ]
+          },
+          {
+            "label": "1 bedroom apartment (Standard area - Manga/Mancini)",
+            "text": "$350 – $500 USD per month.",
+            "money": [
+              {
+                "min": 350,
+                "max": 500,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          },
+          {
+            "label": null,
+            "text": "1 bedroom apartment (Tourist/Upscale area - Bocagrande/Castillogrande/Centro Histórico): $650 – $1,200 USD per month.",
+            "money": [
+              {
+                "min": 650,
+                "max": 1200,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          }
+        ],
+        "Student budget": [
+          {
+            "label": "Total essential student cost",
+            "text": "$400 – $580 USD per month.",
+            "money": [
+              {
+                "min": 400,
+                "max": 580,
+                "currency": "USD",
+                "who": "al essential student cost"
+              }
+            ]
+          }
+        ],
+        "Transportation": [
+          {
+            "label": "Transcaribe / Buses",
+            "text": "$25 – $35 USD per month.",
+            "money": [
+              {
+                "min": 25,
+                "max": 35,
+                "currency": "USD",
+                "who": "Buses"
+              }
+            ]
+          },
+          {
+            "label": "Taxis / Rideshares",
+            "text": "$35 – $65 USD per month.",
+            "money": [
+              {
+                "min": 35,
+                "max": 65,
+                "currency": "USD",
+                "who": "Rideshares"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Population",
+            "text": "~1.03 million people."
+          },
+          {
+            "label": "Weather",
+            "text": "Tropical wet and dry; average high 31°C (88°F), humid year-round."
+          },
+          {
+            "label": "Currency",
+            "text": "COP."
+          },
+          {
+            "label": "General Index",
+            "text": "Moderate (High inequality between tourism zones and informal outer districts)."
+          },
+          {
+            "label": "Safety Index",
+            "text": "36.2 / 100. High tourist scammings and property crime in unmonitored zones; Walled City and Bocagrande are heavily patrolled."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Main industries",
+            "text": "Tourism & Hospitality, Petrochemicals (Mamonal complex), Port Logistics, Maritime Trade."
+          },
+          {
+            "label": "Average salary",
+            "text": "~3,500,000 COP per month.",
+            "money": [
+              {
+                "min": 3500000,
+                "max": 3500000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Best neighborhoods",
+            "text": "Bocagrande, Castillogrande, Manga, Getsemaní, Zona Norte."
+          },
+          {
+            "label": "Tourism",
+            "text": "Walled City (Ciudad Amurallada), Castillo San Felipe de Barajas, Rosario Islands, Baru."
+          },
+          {
+            "label": "Food",
+            "text": "Posta Negra Cartagenera, Coconut rice, Fried fish, Patacones."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "bucaramanga": {
+      "name": "Bucaramanga",
+      "department": "Santander",
+      "costOfLiving": {
+        "Monthly estimate": [
+          {
+            "label": "Single person (Moderate)",
+            "text": "$500 – $800 USD (approx. 2.0M – 3.2M COP) per month.",
+            "money": [
+              {
+                "min": 2000000,
+                "max": 3200000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Student (Frugal)",
+            "text": "$320 – $450 USD (approx. 1.3M – 1.8M COP) per month.",
+            "money": [
+              {
+                "min": 1300000,
+                "max": 1800000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Family of four",
+            "text": "$1,300 – $2,000 USD per month.",
+            "money": [
+              {
+                "min": 1300,
+                "max": 2000,
+                "currency": "USD",
+                "who": "Family of four"
+              }
+            ]
+          }
+        ],
+        "Food": [
+          {
+            "label": "Local groceries (1 person)",
+            "text": "$120 – $170 USD per month.",
+            "money": [
+              {
+                "min": 120,
+                "max": 170,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          },
+          {
+            "label": "Cheap local lunch",
+            "text": "$2.50 – $4 USD per meal.",
+            "money": [
+              {
+                "min": 2,
+                "max": 4,
+                "currency": "USD",
+                "who": "Cheap local lunch"
+              }
+            ]
+          },
+          {
+            "label": "Mid-range dinner (2 people)",
+            "text": "$20 – $35 USD total.",
+            "money": [
+              {
+                "min": 20,
+                "max": 35,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          }
+        ],
+        "Rent": [
+          {
+            "label": "1 bedroom apartment (Standard area - Cabecera/Cañaveral)",
+            "text": "$280 – $420 USD per month.",
+            "money": [
+              {
+                "min": 280,
+                "max": 420,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          },
+          {
+            "label": "Student budget",
+            "text": "$320 – $450 USD per month (One of Colombia's best value university cities).",
+            "money": [
+              {
+                "min": 320,
+                "max": 450,
+                "currency": "USD",
+                "who": "Student budget"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Population",
+            "text": "~600,000 (Metropolitan Area ~1.2 million with Floridablanca, Girón, Piedecuesta)."
+          },
+          {
+            "label": "Weather",
+            "text": "Pleasant tropical climate (\"The Beautiful City\" / \"City of Parks\"), avg 23°C (73°F)."
+          },
+          {
+            "label": "General Index",
+            "text": "High. Top ratings in Colombian urban quality of life metrics, excellent park system, clean air."
+          },
+          {
+            "label": "Safety Index",
+            "text": "48.5 / 100 (Relatively safe compared to major national averages)."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Main industries",
+            "text": "Footwear & Apparel Manufacturing, Healthcare Services, Oil & Gas engineering (Ecopetrol research center), Higher Education."
+          },
+          {
+            "label": "Average salary",
+            "text": "~3,600,000 COP per month.",
+            "money": [
+              {
+                "min": 3600000,
+                "max": 3600000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Best neighborhoods",
+            "text": "Cabecera del Llano, Sotomayor, Cañaveral (Floridablanca), Ruitoque."
+          },
+          {
+            "label": "Healthcare",
+            "text": "Outstanding national reference (Fundación FOSCAL, Hospital Internacional de Colombia - HIC)."
+          },
+          {
+            "label": "Culture & Tourism",
+            "text": "Chicamocha Canyon (PANACHI), Girón (Colonial town), Paragliding in Curití/Mesa de los Santos."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "manizales": {
+      "name": "Manizales",
+      "department": "Caldas",
+      "costOfLiving": {
+        "Monthly estimate": [
+          {
+            "label": "Single person (Moderate)",
+            "text": "$450 – $750 USD (approx. 1.8M – 3.0M COP) per month.",
+            "money": [
+              {
+                "min": 1800000,
+                "max": 3000000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Student (Frugal)",
+            "text": "$300 – $420 USD (approx. 1.2M – 1.7M COP) per month.",
+            "money": [
+              {
+                "min": 1200000,
+                "max": 1700000,
+                "currency": "COP"
+              }
+            ]
+          },
+          {
+            "label": "Family of four",
+            "text": "$1,200 – $1,800 USD per month.",
+            "money": [
+              {
+                "min": 1200,
+                "max": 1800,
+                "currency": "USD",
+                "who": "Family of four"
+              }
+            ]
+          }
+        ],
+        "Rent": [
+          {
+            "label": "1 bedroom apartment (El Cable/Palermo)",
+            "text": "$250 – $400 USD per month.",
+            "money": [
+              {
+                "min": 250,
+                "max": 400,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          },
+          {
+            "label": "Shared student room",
+            "text": "$120 – $200 USD per month.",
+            "money": [
+              {
+                "min": 120,
+                "max": 200,
+                "currency": "USD",
+                "who": "Shared student room"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Population",
+            "text": "~450,000."
+          },
+          {
+            "label": "Weather",
+            "text": "Mountainous subtropical highland climate, avg 16°C (61°F). Cool, foggy afternoons, surrounded by coffee hills and Nevado del Ruiz."
+          },
+          {
+            "label": "General Index",
+            "text": "Very High. Frequently ranked as the best city for student life and public security in mainland Colombia."
+          },
+          {
+            "label": "Safety Index",
+            "text": "62.4 / 100 (High safety level for Colombia)."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Main industries",
+            "text": "Coffee Production & Export, Higher Education, Call Centers/BPO, Agro-industry, Metalworking."
+          },
+          {
+            "label": "Student satisfaction",
+            "text": "Exceptionally High. Known as the ultimate \"University City\" ( Ciudad Universitaria ) of Colombia (Universidad Caldas, Universidad Nacional campus Manizales)."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Best neighborhoods",
+            "text": "El Cable, Palermo, La Estrella, Chipre, Milán."
+          },
+          {
+            "label": "Tourism",
+            "text": "Los Nevados National Natural Park, Termales San Vicente / Otoño, Cathedral Basilica of Our Lady of Rosary, Cable Aéreo transit."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "pereira": {
+      "name": "Pereira",
+      "department": "Risaralda",
+      "costOfLiving": {
+        "Monthly estimate": [
+          {
+            "label": "Single person (Moderate)",
+            "text": "$480 – $800 USD per month.",
+            "money": [
+              {
+                "min": 480,
+                "max": 800,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          },
+          {
+            "label": "Student (Frugal)",
+            "text": "$320 – $450 USD per month.",
+            "money": [
+              {
+                "min": 320,
+                "max": 450,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          }
+        ],
+        "Rent": [
+          {
+            "label": "1 bedroom apartment (Pinares/Circunvalar)",
+            "text": "$280 – $450 USD per month.",
+            "money": [
+              {
+                "min": 280,
+                "max": 450,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Population",
+            "text": "~480,000 (Metropolitan Area ~700,000 with Dosquebradas and La Virginia)."
+          },
+          {
+            "label": "Weather",
+            "text": "Tropical highland, warm and temperate, avg 21°C (70°F)."
+          },
+          {
+            "label": "General Index",
+            "text": "High. Strategic location in the Coffee Triangle ( Eje Cafetero ), excellent road connectivity, modern commerce hubs."
+          },
+          {
+            "label": "Safety Index",
+            "text": "46.8 / 100 (Moderate)."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Main industries",
+            "text": "Commercial Trade, Coffee Logistics, Garment Manufacturing, BPO, Tourism & Leisure."
+          },
+          {
+            "label": "Average salary",
+            "text": "~3,400,000 COP per month.",
+            "money": [
+              {
+                "min": 3400000,
+                "max": 3400000,
+                "currency": "COP"
+              }
+            ]
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Best neighborhoods",
+            "text": "Pinares, Av. Circunvalar, Cerritos (suburban luxury), Álamos."
+          },
+          {
+            "label": "Tourism",
+            "text": "Ukumarí Biopark, Salento & Cocora Valley (nearby), Santa Rosa de Cabal Hot Springs, Otún Quimbaya."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "cali": {
+      "name": "Cali",
+      "department": "Valle del Cauca",
+      "costOfLiving": {
+        "Monthly estimate": [
+          {
+            "label": "Single person (Moderate)",
+            "text": "$520 – $850 USD per month.",
+            "money": [
+              {
+                "min": 520,
+                "max": 850,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          },
+          {
+            "label": "Student (Frugal)",
+            "text": "$330 – $480 USD per month.",
+            "money": [
+              {
+                "min": 330,
+                "max": 480,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          }
+        ],
+        "Rent": [
+          {
+            "label": "1 bedroom apartment (Standard - San Antonio/Granada)",
+            "text": "$280 – $420 USD per month.",
+            "money": [
+              {
+                "min": 280,
+                "max": 420,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          },
+          {
+            "label": "1 bedroom apartment (Upscale - Ciudad Jardín)",
+            "text": "$450 – $750 USD per month.",
+            "money": [
+              {
+                "min": 450,
+                "max": 750,
+                "currency": "USD",
+                "who": null
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Population",
+            "text": "~2.2 million."
+          },
+          {
+            "label": "Weather",
+            "text": "Tropical savanna, warm afternoons, cool evening breeze ( brisas del Pacífico ), avg 25°C (77°F)."
+          },
+          {
+            "label": "General Index",
+            "text": "Moderate. Rich cultural heritage, world capital of Salsa."
+          },
+          {
+            "label": "Safety Index",
+            "text": "28.4 / 100 (Low). Requires active street smarts and awareness, specifically outside West/South zones."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Main industries",
+            "text": "Sugar Cane & Agro-industry, Pharmaceuticals, Food & Beverage Processing, Commercial Trade, Salsa Tourism."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Best neighborhoods",
+            "text": "San Antonio (bohemian/historic), Granada, Peñón, Ciudad Jardín (south)."
+          },
+          {
+            "label": "Culture & Nightlife",
+            "text": "World Capital of Salsa (Juanchito, Alameda, La Topa Tolondra), Cristo Rey, San Antonio Church."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "cucuta": {
+      "name": "Cúcuta",
+      "department": "Norte de Santander",
+      "costOfLiving": {
+        "_": [
+          {
+            "label": "Monthly estimate",
+            "text": "Single person: $380 – $600 USD; Student: $250 – $380 USD. Highly affordable.",
+            "money": [
+              {
+                "min": 380,
+                "max": 600,
+                "currency": "USD",
+                "who": "Single person"
+              },
+              {
+                "min": 250,
+                "max": 380,
+                "currency": "USD",
+                "who": "Student"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Statistics",
+            "text": "Population ~780,000. Hot semi-arid climate, avg 28°C (82°F)."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Economy",
+            "text": "Border Trade with Venezuela, Textiles, Clay & Ceramic Manufacturing, Mining."
+          },
+          {
+            "label": "Key Strengths",
+            "text": "Low housing prices, commercial exchange hub."
+          }
+        ]
+      },
+      "living": {},
+      "scholarships": {},
+      "universities": {}
+    },
+    "pasto": {
+      "name": "Pasto",
+      "department": "Nariño",
+      "costOfLiving": {
+        "_": [
+          {
+            "label": "Monthly estimate",
+            "text": "Single person: $350 – $550 USD; Student: $220 – $350 USD. Very economical.",
+            "money": [
+              {
+                "min": 350,
+                "max": 550,
+                "currency": "USD",
+                "who": "Single person"
+              },
+              {
+                "min": 220,
+                "max": 350,
+                "currency": "USD",
+                "who": "Student"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Statistics",
+            "text": "Population ~400,000. Cool mountain climate at the foot of Galeras Volcano, avg 13°C (55°F)."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Economy",
+            "text": "Agriculture, Dairy Production, Handicrafts (Varnish of Pasto/Mopa-Mopa), Cross-border trade with Ecuador."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Culture",
+            "text": "Carnaval de Negros y Blancos (UNESCO World Heritage), Laguna de la Cocha, Las Lajas Sanctuary (Ipiales)."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "neiva": {
+      "name": "Neiva",
+      "department": "Huila",
+      "costOfLiving": {
+        "_": [
+          {
+            "label": "Monthly estimate",
+            "text": "Single person: $400 – $650 USD; Student: $270 – $400 USD.",
+            "money": [
+              {
+                "min": 400,
+                "max": 650,
+                "currency": "USD",
+                "who": "Single person"
+              },
+              {
+                "min": 270,
+                "max": 400,
+                "currency": "USD",
+                "who": "Student"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Statistics",
+            "text": "Population ~360,000. Hot tropical climate along the Magdalena River, avg 28°C–32°C."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Economy",
+            "text": "Energy (Hydroelectric), Coffee Production (Huila gourmet coffees), Rice, Petroleum extraction."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Tourism",
+            "text": "Tatacoa Desert (Desierto de la Tatacoa), San Agustín Archaeological Park (regional)."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "villavicencio": {
+      "name": "Villavicencio",
+      "department": "Meta",
+      "costOfLiving": {
+        "_": [
+          {
+            "label": "Monthly estimate",
+            "text": "Single person: $450 – $700 USD; Student: $300 – $420 USD.",
+            "money": [
+              {
+                "min": 450,
+                "max": 700,
+                "currency": "USD",
+                "who": "Single person"
+              },
+              {
+                "min": 300,
+                "max": 420,
+                "currency": "USD",
+                "who": "Student"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Statistics",
+            "text": "Population ~550,000. Warm tropical climate (\"Gateway to the Eastern Plains\" / Llanos Orientales ), avg 26°C."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Economy",
+            "text": "Cattle Ranching, Agribusiness (Palm oil, rice), Oil & Gas Logistics, Ecotourism."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Culture",
+            "text": "Joropo music and dance, Coleo, Meat gastronomy (Ternera a la Llanera)."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "santa-marta": {
+      "name": "Santa Marta",
+      "department": "Magdalena",
+      "costOfLiving": {
+        "_": [
+          {
+            "label": "Monthly estimate",
+            "text": "Single person: $500 – $850 USD; Student: $320 – $480 USD.",
+            "money": [
+              {
+                "min": 500,
+                "max": 850,
+                "currency": "USD",
+                "who": "Single person"
+              },
+              {
+                "min": 320,
+                "max": 480,
+                "currency": "USD",
+                "who": "Student"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Statistics",
+            "text": "Population ~540,000. Hot coastal climate, oldest surviving city in Colombia, avg 28°C."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Economy",
+            "text": "Port Operations, International Tourism, Banana & Palm Agribusiness."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Tourism",
+            "text": "Tayrona National Natural Park, Minca (coffee/cloud forest), Rodadero, Lost City (Ciudad Perdida)."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "valledupar": {
+      "name": "Valledupar",
+      "department": "Cesar",
+      "costOfLiving": {
+        "_": [
+          {
+            "label": "Monthly estimate",
+            "text": "Single person: $380 – $600 USD; Student: $250 – $380 USD.",
+            "money": [
+              {
+                "min": 380,
+                "max": 600,
+                "currency": "USD",
+                "who": "Single person"
+              },
+              {
+                "min": 250,
+                "max": 380,
+                "currency": "USD",
+                "who": "Student"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Statistics",
+            "text": "Population ~500,000. Hot tropical climate at the foot of Sierra Nevada de Santa Marta, avg 29°C."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Economy",
+            "text": "Coal Mining Logistics, Cattle Livestock, Cotton & Agribusiness, Vallenato Culture."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Culture",
+            "text": "Cradle of Vallenato Music ( Festival de la Leyenda Vallenata ), Guatapurí River."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "monteria": {
+      "name": "Montería",
+      "department": "Córdoba",
+      "costOfLiving": {
+        "_": [
+          {
+            "label": "Monthly estimate",
+            "text": "Single person: $380 – $600 USD; Student: $250 – $370 USD.",
+            "money": [
+              {
+                "min": 380,
+                "max": 600,
+                "currency": "USD",
+                "who": "Single person"
+              },
+              {
+                "min": 250,
+                "max": 370,
+                "currency": "USD",
+                "who": "Student"
+              }
+            ]
+          },
+          {
+            "label": "Living",
+            "text": "Known for Ronda del Sinú (one of South America's longest linear river parks)."
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Statistics",
+            "text": "Population ~460,000. Warm tropical climate along Sinú River (\"Cattle Capital of Colombia\")."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Economy",
+            "text": "Livestock & Beef Exports, Agriculture, River Commerce."
+          }
+        ]
+      },
+      "living": {},
+      "scholarships": {},
+      "universities": {}
+    },
+    "popayan": {
+      "name": "Popayán",
+      "department": "Cauca",
+      "costOfLiving": {
+        "_": [
+          {
+            "label": "Monthly estimate",
+            "text": "Single person: $380 – $580 USD; Student: $240 – $350 USD.",
+            "money": [
+              {
+                "min": 380,
+                "max": 580,
+                "currency": "USD",
+                "who": "Single person"
+              },
+              {
+                "min": 240,
+                "max": 350,
+                "currency": "USD",
+                "who": "Student"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Statistics",
+            "text": "Population ~320,000. Moderate highland climate (\"The White City\" / La Ciudad Blanca ), avg 18°C."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Economy",
+            "text": "Higher Education (Universidad del Cauca), Public Administration, Cultural & Gastronomic Tourism."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Culture",
+            "text": "UNESCO City of Gastronomy, Holy Week processions ( Semana Santa )."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "quibdo": {
+      "name": "Quibdó",
+      "department": "Chocó",
+      "costOfLiving": {
+        "_": [
+          {
+            "label": "Monthly estimate",
+            "text": "Single person: $350 – $550 USD; Student: $220 – $340 USD.",
+            "money": [
+              {
+                "min": 350,
+                "max": 550,
+                "currency": "USD",
+                "who": "Single person"
+              },
+              {
+                "min": 220,
+                "max": 340,
+                "currency": "USD",
+                "who": "Student"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Statistics",
+            "text": "Population ~130,000. Tropical rainforest climate (one of the rainiest urban areas globally), avg 27°C."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Economy",
+            "text": "Gold & Platinum Mining trade, Public Sector, Forestry, River Transportation along Atrato River."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Culture",
+            "text": "Fiestas de San Pacho (UNESCO Intangible Cultural Heritage), Pacific Afro-Colombian music & culinary heritage."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    },
+    "leticia": {
+      "name": "Leticia",
+      "department": "Amazonas",
+      "costOfLiving": {
+        "_": [
+          {
+            "label": "Monthly estimate",
+            "text": "Single person: $400 – $650 USD (Freight increases cost of imported goods).",
+            "money": [
+              {
+                "min": 400,
+                "max": 650,
+                "currency": "USD",
+                "who": "Single person"
+              }
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "_": [
+          {
+            "label": "Statistics",
+            "text": "Population ~50,000. Equatorial rainforest climate, avg 26°C. Triple border (Colombia, Brazil, Peru)."
+          }
+        ]
+      },
+      "jobs": {
+        "_": [
+          {
+            "label": "Economy",
+            "text": "Ecotourism, Amazon River Logistics, Artisanal Fishing, Indigenous Crafts."
+          }
+        ]
+      },
+      "living": {
+        "_": [
+          {
+            "label": "Culture & Nature",
+            "text": "Amazon River excursions, Tanimboca Reserve, Monkey Island (Isla de los Monos)."
+          }
+        ]
+      },
+      "scholarships": {},
+      "universities": {}
+    }
+  }
+}
