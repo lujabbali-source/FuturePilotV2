@@ -31,3 +31,6 @@ futurepilot-IA/data/users/*.json
 desktop.ini
 *.lnk
 *.log
+
+# Descargas del importador del mundo: se regeneran solas y pesan 12 MB.
+web/scripts/.cache-world/
