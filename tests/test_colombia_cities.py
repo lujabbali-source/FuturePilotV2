@@ -395,3 +395,18 @@ def test_the_translation_rules_cover_every_label_in_the_document():
         "encontrar los bloques del documento")
     assert not problemas, ("etiquetas del desglose mal traducidas:\n  "
                            + "\n  ".join(problemas[:10]))
+
+
+def test_the_student_budget_note_is_translated_too():
+    """La linea "En que consiste" no es una etiqueta sino una frase, y por eso
+    se escapo de la traduccion por reglas: salia en ingles dentro del panel en
+    castellano. Es el mismo fallo que el resto de este archivo vigila, colado
+    por la puerta de al lado."""
+    con_nota = 0
+    for cid, bloque in _bloques_breakdown():
+        for nota in re.findall(r'"note":\s*(\{[^{}]*\})', bloque):
+            con_nota += 1
+            par = json.loads(nota)
+            assert par.get("es") and par.get("en"), f"{cid}: nota en un solo idioma"
+            assert par["es"] != par["en"], f"{cid}: la nota no se tradujo"
+    assert con_nota >= 3, f"solo {con_nota} notas; se esperaban 3"

@@ -21,7 +21,7 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from colombia_breakdown_es import etiqueta_es  # noqa: E402
+from colombia_breakdown_es import COMPOSICION_ES, etiqueta_es  # noqa: E402
 
 FUENTE = RAIZ / "web" / "src" / "database" / "countries" / "colombia" / "cities-source.json"
 CIUDADES = RAIZ / "web" / "src" / "database" / "countries" / "colombia" / "cities"
@@ -62,10 +62,14 @@ def main() -> None:
                 if dinero:
                     linea["amount"] = {k: dinero[k] for k in ("min", "max", "currency")}
                 elif e.get("text"):
-                    # "Composition" no trae cifra: es una frase. Se guarda en
-                    # ingles unicamente porque describe la ciudad y aun no esta
-                    # traducida; la pantalla la muestra igual.
-                    linea["note"] = e["text"]
+                    # "Composition" no trae cifra sino una frase. Va en los dos
+                    # idiomas como todo lo demas: dejarla solo en ingles la
+                    # colaba tal cual en la pantalla en castellano.
+                    es_texto = COMPOSICION_ES.get(cid)
+                    if not es_texto:
+                        saltadas.append(f"{cid}: (frase sin traducir) {etiqueta}")
+                        continue
+                    linea["note"] = {"es": es_texto, "en": e["text"]}
                 lineas.append(linea)
             if lineas:
                 grupos[grupo] = lineas

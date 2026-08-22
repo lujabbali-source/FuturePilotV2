@@ -74,3 +74,14 @@ def etiqueta_es(ingles: str) -> str | None:
         if patron.match(limpio):
             return patron.sub(reemplazo, limpio)
     return None
+
+
+# Las lineas de "Composition" no son etiquetas sino frases: describen en que
+# consiste el presupuesto de estudiante. Se dejaron sin traducir en el primer
+# volcado y se colaron en ingles dentro de la interfaz en castellano - el fallo
+# exacto contra el que existe el resto de este archivo.
+COMPOSICION_ES = {
+    "bogota": "Cubre una habitación compartida cerca de universidades (Chapinero o el Centro), cocinar en casa, transporte público y un seguro de salud básico.",
+    "medellin": "Apartamento compartido cerca de Robledo o Belén, transporte en Metro y comida hecha en casa.",
+    "barranquilla": "Cubre habitación compartida cerca de la Universidad del Norte o la Uniatlántico, mercado y bus urbano.",
+}
