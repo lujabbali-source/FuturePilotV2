@@ -8,4 +8,7 @@ export default defineCity({ id: "neiva", name: "Neiva", coordinates: { lat: 2.92
         studentBudget: {"min": 400, "max": 650, "currency": "USD"},
     },
     jobs: { mainIndustries: ["Energy"] },
+    living: {
+        tourism: [{"es": "Desierto de la Tatacoa, Parque Arqueológico de San Agustín (en la región).", "en": "Tatacoa Desert (Desierto de la Tatacoa), San Agustín Archaeological Park (regional)."}],
+    },
 });

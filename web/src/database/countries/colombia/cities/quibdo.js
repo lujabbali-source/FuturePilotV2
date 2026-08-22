@@ -36,4 +36,7 @@ export default defineCity({
     mainIndustries: ["Gold & Platinum Mining trade", "Public Sector", "Forestry", "River Transportation along Atrato River"],
     studentJobs: [], remoteOpportunities: [], internships: [], employmentRate: null,
   },
+    living: {
+        culture: [{"es": "Fiestas de San Pacho (Patrimonio Cultural Inmaterial de la Unesco), música y cocina afrocolombiana del Pacífico.", "en": "Fiestas de San Pacho (UNESCO Intangible Cultural Heritage), Pacific Afro-Colombian music & culinary heritage."}],
+    },
 });

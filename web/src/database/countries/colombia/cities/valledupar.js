@@ -36,4 +36,7 @@ export default defineCity({
     mainIndustries: ["Coal Mining Logistics", "Cattle Livestock", "Cotton & Agribusiness", "Vallenato Culture"],
     studentJobs: [], remoteOpportunities: [], internships: [], employmentRate: null,
   },
+    living: {
+        culture: [{"es": "Cuna del vallenato (Festival de la Leyenda Vallenata), río Guatapurí.", "en": "Cradle of Vallenato Music ( Festival de la Leyenda Vallenata ), Guatapurí River."}],
+    },
 });

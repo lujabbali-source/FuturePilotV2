@@ -15,4 +15,7 @@ export default defineCity({
         rent: {"min": 280, "max": 420, "currency": "USD"},
     },
     jobs: { mainIndustries: ["Sugar Cane & Agro-industry", "Pharmaceuticals", "Food & Beverage Processing", "Commercial Trade", "Salsa Tourism"] },
+    living: {
+        bestNeighborhoods: [{"es": "San Antonio (bohemio e histórico), Granada, El Peñón, Ciudad Jardín (sur).", "en": "San Antonio (bohemian/historic), Granada, Peñón, Ciudad Jardín (south)."}],
+    },
 });

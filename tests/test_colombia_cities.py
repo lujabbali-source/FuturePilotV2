@@ -132,3 +132,84 @@ def test_curated_spanish_was_not_overwritten_with_english():
         m = re.search(r'population:\s*"([^"]+)"', texto)
         if m and "habitantes" not in m.group(1):
             pytest.fail(f"{ficha.stem}: poblacion sin traducir -> {m.group(1)}")
+
+
+# ---------------------------------------------------------------------------
+# La prosa, en los dos idiomas
+# ---------------------------------------------------------------------------
+TRADUCCIONES_PY = RAIZ / "web" / "scripts" / "colombia_living_es.py"
+
+
+def _bloques_living():
+    for ficha in fichas():
+        texto = ficha.read_text(encoding="utf-8")
+        m = re.search(r"living:\s*\{(.*?)\n\s*\},", texto, re.S)
+        if m:
+            yield ficha.stem, m.group(1)
+
+
+def test_the_daily_life_prose_speaks_both_languages():
+    """El documento esta en ingles. Guardarlo tal cual dejaria a un estudiante
+    colombiano leyendo "World-class institutions like..." dentro de una
+    interfaz en castellano - y guardar solo la traduccion romperia el ingles.
+    Van los dos: la pantalla elige, no el importador."""
+    revisados = 0
+    for cid, bloque in _bloques_living():
+        for entrada in re.findall(r'\{[^{}]*"en"[^{}]*\}|\{[^{}]*"es"[^{}]*\}', bloque):
+            revisados += 1
+            assert '"es"' in entrada and '"en"' in entrada, \
+                f"{cid}: un texto de vida diaria en un solo idioma -> {entrada[:60]}"
+    assert revisados >= 30, f"solo {revisados} textos bilingues; se esperaban ~39"
+
+
+def test_no_english_prose_leaks_into_a_spanish_field():
+    """Un `{es}` que en realidad trae el ingles es peor que no traducir: nadie
+    lo ve hasta que un estudiante lee la ficha."""
+    import json as _json
+    sospechosos = []
+    for cid, bloque in _bloques_living():
+        for entrada in re.findall(r'\{[^{}]*\}', bloque):
+            try:
+                par = _json.loads(entrada)
+            except ValueError:
+                continue
+            es = (par.get("es") or "").lower()
+            # Con limite de palabra, no con espacio delante: el ingles suele
+            # estar al PRINCIPIO de la frase ("World-class. Hospital...") y
+            # exigir un espacio previo hacia que la guarda no viera justo el
+            # caso mas probable. Se comprobo rompiendolo.
+            import re as _re
+            for delator in ("world-class", "nearby", "like", "heritage",
+                            "venue", "outstanding", "excellent", "avg"):
+                if _re.search(rf"(?<![a-záéíóúñ]){delator}(?![a-záéíóúñ])", es):
+                    sospechosos.append(f"{cid}: {es[:60]}")
+                    break
+    assert not sospechosos, "castellano con ingles dentro:\n  " + "\n  ".join(sospechosos)
+
+
+def test_every_english_text_got_a_translation():
+    """Si el documento crece y nadie traduce lo nuevo, el importador lo salta
+    en silencio y ese campo se queda vacio para siempre."""
+    fuente = json.loads(FUENTE.read_text(encoding="utf-8"))["cities"]
+    traducciones = TRADUCCIONES_PY.read_text(encoding="utf-8")
+    CAMPOS = {"best neighborhoods": "bestNeighborhoods", "culture": "culture",
+              "culture & nature": "culture", "tourism": "tourism",
+              "healthcare": "healthcare", "food": "food",
+              "nightlife": "nightlife", "transportation": "transportation"}
+    faltan = []
+    for cid, ciudad in fuente.items():
+        for bloque, lista in (ciudad.get("living") or {}).items():
+            for e in lista:
+                campo = CAMPOS.get((e.get("label") or bloque or "").lower())
+                if not campo or not e.get("text"):
+                    continue
+                if not re.search(rf'"{cid}":\s*\{{(?:[^{{}}]|\{{[^{{}}]*\}})*?"{campo}"',
+                                 traducciones, re.S):
+                    faltan.append(f"{cid}.{campo}")
+    assert not faltan, f"textos del documento sin traduccion: {sorted(set(faltan))}"
+
+
+def test_the_panel_can_read_a_bilingual_value():
+    codigo = PANEL.read_text(encoding="utf-8")
+    assert "function enIdioma" in codigo, "el panel no resuelve textos bilingues"
+    assert "resolvedLanguage" in codigo, "el panel no sabe en que idioma esta"

@@ -16,4 +16,8 @@ export default defineCity({
         food: {"min": 120, "max": 170, "currency": "USD"},
     },
     jobs: { averageSalary: 3600000, mainIndustries: ["Footwear & Apparel Manufacturing", "Healthcare Services", "Oil & Gas engineering"] },
+    living: {
+        bestNeighborhoods: [{"es": "Cabecera del Llano, Sotomayor, Cañaveral (Floridablanca), Ruitoque.", "en": "Cabecera del Llano, Sotomayor, Cañaveral (Floridablanca), Ruitoque."}],
+        healthcare: [{"es": "Referente nacional destacado (Fundación FOSCAL, Hospital Internacional de Colombia - HIC).", "en": "Outstanding national reference (Fundación FOSCAL, Hospital Internacional de Colombia - HIC)."}],
+    },
 });

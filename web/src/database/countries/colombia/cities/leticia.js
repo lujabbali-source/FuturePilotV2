@@ -36,4 +36,7 @@ export default defineCity({
     mainIndustries: ["Ecotourism", "Amazon River Logistics", "Artisanal Fishing", "Indigenous Crafts"],
     studentJobs: [], remoteOpportunities: [], internships: [], employmentRate: null,
   },
+    living: {
+        culture: [{"es": "Excursiones por el río Amazonas, Reserva Tanimboca, Isla de los Micos.", "en": "Amazon River excursions, Tanimboca Reserve, Monkey Island (Isla de los Monos)."}],
+    },
 });

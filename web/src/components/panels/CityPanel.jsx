@@ -16,11 +16,30 @@ const sections = [
     { id: "living", labelKey: "panel.sections.living", icon: "🌎" },
 ];
 
-function displayValue(value, fallback) {
-    if (value === null || value === undefined || value === "") return fallback;
-    if (Array.isArray(value)) return value.length ? value.join(", ") : fallback;
-    if (typeof value === "object") return fallback;
-    return String(value);
+/** Resuelve un texto que puede venir en los dos idiomas.
+ *
+ *  Los datos de ciudad salieron de un documento en inglés y se tradujeron; se
+ *  guardan como `{ es, en }` en vez de elegir uno, porque el estudiante cambia
+ *  de idioma cuando quiere y una ficha congelada en el idioma de importación
+ *  se leería así para siempre. Si falta el idioma pedido se usa el otro: medio
+ *  dato en el idioma equivocado sigue siendo mejor que "no conectado". */
+function enIdioma(value, lang) {
+    if (value && typeof value === "object" && !Array.isArray(value)
+        && ("es" in value || "en" in value)) {
+        return value[lang] || value.es || value.en || "";
+    }
+    return value;
+}
+
+function displayValue(value, fallback, lang = "es") {
+    const resuelto = enIdioma(value, lang);
+    if (resuelto === null || resuelto === undefined || resuelto === "") return fallback;
+    if (Array.isArray(resuelto)) {
+        const partes = resuelto.map((x) => enIdioma(x, lang)).filter(Boolean);
+        return partes.length ? partes.join(", ") : fallback;
+    }
+    if (typeof resuelto === "object") return fallback;
+    return String(resuelto);
 }
 
 function money(value, currency, locale, fallback) {
@@ -51,12 +70,13 @@ function money(value, currency, locale, fallback) {
 }
 
 function Field({ label, value, formatter }) {
-    const { t } = useTranslation(["cities", "common"]);
+    const { t, i18n } = useTranslation(["cities", "common"]);
     const fallback = t("status.notConnected", { ns: "common" });
+    const lang = (i18n.resolvedLanguage || i18n.language || "es").slice(0, 2);
     return (
         <div className="city-field">
             <span>{label}</span>
-            <strong>{formatter ? formatter(value) : displayValue(value, fallback)}</strong>
+            <strong>{formatter ? formatter(value) : displayValue(value, fallback, lang)}</strong>
         </div>
     );
 }

@@ -18,4 +18,13 @@ export default defineCity({
         utilities: {"min": 140000, "max": 260000, "currency": "COP"},
     },
     jobs: { mainIndustries: ["Technology & Innovation", "Textiles & Fashion", "Financial Services", "Health Tourism", "BPO"] },
+    living: {
+        bestNeighborhoods: [{"es": "El Poblado / Provenza (estrato 6), Laureles - Estadio (estratos 4–5), Envigado (estratos 4–5), Sabaneta (estratos 3–4).", "en": "El Poblado / Provenza (Estrato 6), Laureles - Estadio (Estrato 4–5), Envigado (Estrato 4–5), Sabaneta (Estrato 3–4)."}],
+        healthcare: [{"es": "De primer nivel. Hospital Pablo Tobón Uribe, Clínica Las Américas.", "en": "World-class. Hospital Pablo Tobón Uribe, Clínica Las Américas."}],
+        culture: [{"es": "Feria de las Flores, Museo de Antioquia (Plaza Botero), Parque Arví, recorridos de arte por la Comuna 13.", "en": "Feria de las Flores, Museo de Antioquia (Botero Plaza), Parque Arví, Comuna 13 art tours."}],
+        tourism: [{"es": "Pueblito Paisa, Comuna 13, metrocables, paseo de un día a Guatapé y El Peñol.", "en": "Pueblito Paisa, Comuna 13, Cable cars, Day trip to Guatapé & El Peñol."}],
+        food: [{"es": "Bandeja paisa, arepa de choclo, cocina internacional de autor en Provenza.", "en": "Bandeja Paisa, Arepa de Choclo, gourmet international dining in Provenza."}],
+        nightlife: [{"es": "Provenza, Parque Lleras, La 70 (Laureles), Dulce Jesús Mío.", "en": "Provenza, Parque Lleras, La 70 (Laureles), Dulce Jesús Mío."}],
+        transportation: {"es": "Metro de Medellín, Metrocable, Tranvía de Ayacucho, EnCicla (bicicletas públicas), aplicaciones de transporte.", "en": "Metro de Medellín, Metrocable, Tranvía de Ayacucho, EnCicla (bike share), Rideshares."},
+    },
 });

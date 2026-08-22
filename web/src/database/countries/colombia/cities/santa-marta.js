@@ -14,4 +14,7 @@ export default defineCity({
         studentBudget: {"min": 500, "max": 850, "currency": "USD"},
     },
     jobs: { mainIndustries: ["Port Operations", "International Tourism", "Banana & Palm Agribusiness"] },
+    living: {
+        tourism: [{"es": "Parque Nacional Natural Tayrona, Minca (café y bosque de niebla), El Rodadero, Ciudad Perdida.", "en": "Tayrona National Natural Park, Minca (coffee/cloud forest), Rodadero, Lost City (Ciudad Perdida)."}],
+    },
 });

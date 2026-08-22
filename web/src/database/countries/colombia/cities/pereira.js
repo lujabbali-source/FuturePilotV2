@@ -15,4 +15,8 @@ export default defineCity({
         rent: {"min": 280, "max": 450, "currency": "USD"},
     },
     jobs: { averageSalary: 3400000, mainIndustries: ["Commercial Trade", "Coffee Logistics", "Garment Manufacturing", "BPO", "Tourism & Leisure"] },
+    living: {
+        bestNeighborhoods: [{"es": "Pinares, Avenida Circunvalar, Cerritos (zona campestre), Álamos.", "en": "Pinares, Av. Circunvalar, Cerritos (suburban luxury), Álamos."}],
+        tourism: [{"es": "Bioparque Ukumarí, Salento y el Valle de Cocora (cerca), Termales de Santa Rosa de Cabal, Otún Quimbaya.", "en": "Ukumarí Biopark, Salento & Cocora Valley (nearby), Santa Rosa de Cabal Hot Springs, Otún Quimbaya."}],
+    },
 });

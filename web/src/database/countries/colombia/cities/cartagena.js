@@ -18,4 +18,9 @@ export default defineCity({
         utilities: {"min": 55, "max": 95, "currency": "USD"},
     },
     jobs: { averageSalary: 3500000, mainIndustries: ["Tourism & Hospitality", "Petrochemicals"] },
+    living: {
+        bestNeighborhoods: [{"es": "Bocagrande, Castillogrande, Manga, Getsemaní, Zona Norte.", "en": "Bocagrande, Castillogrande, Manga, Getsemaní, Zona Norte."}],
+        tourism: [{"es": "Ciudad Amurallada, Castillo San Felipe de Barajas, Islas del Rosario, Barú.", "en": "Walled City (Ciudad Amurallada), Castillo San Felipe de Barajas, Rosario Islands, Baru."}],
+        food: [{"es": "Posta negra cartagenera, arroz con coco, pescado frito, patacones.", "en": "Posta Negra Cartagenera, Coconut rice, Fried fish, Patacones."}],
+    },
 });
