@@ -33,6 +33,7 @@ import os
 import re
 import secrets
 import sys
+import time
 from datetime import timedelta
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -1490,6 +1491,39 @@ def _check_static_assets() -> Dict[str, Any]:
 _STATUS_SEVERITY = {"error": 0, "warning": 1, "ok": 2}
 
 
+def _check_backups() -> Dict[str, str]:
+    """Hay copias, y son recientes.
+
+    Una copia que dejo de hacerse hace tres semanas no avisa: el cron falla en
+    silencio, el disco se llena, alguien cambia una ruta. Lo unico que
+    convierte un respaldo en una garantia es que alguien mire si sigue vivo, y
+    este panel es donde se mira.
+    """
+    try:
+        from backend import backup as backup_mod
+    except ImportError as error:
+        return {"status": "error", "detail": f"no se pudo cargar el modulo: {error}"}
+
+    copias = backup_mod.listar()
+    if not copias:
+        return {"status": "error",
+                "detail": f"No hay ninguna copia en {backup_mod.carpeta_copias()}. "
+                          "Programa 'python -m backend.backup' a diario."}
+
+    ultima, tam = copias[-1]
+    edad_h = (time.time() - ultima.stat().st_mtime) / 3600
+    ok, detalle = backup_mod.verificar(ultima)
+    if not ok:
+        return {"status": "error", "detail": f"La copia mas reciente no sirve: {detalle}"}
+    if edad_h > 48:
+        return {"status": "warning",
+                "detail": f"La copia mas reciente tiene {edad_h/24:.1f} dias. "
+                          "El respaldo diario puede haber dejado de correr."}
+    return {"status": "ok",
+            "detail": f"{len(copias)} copias, la ultima hace {edad_h:.0f} h "
+                      f"({tam/1024:.0f} KB, {detalle})."}
+
+
 @app.get("/api/v1/admin/health", status_code=status.HTTP_200_OK)
 def admin_health(current_admin: dict = Depends(get_current_admin_required)):
     checks = {
@@ -1502,6 +1536,7 @@ def admin_health(current_admin: dict = Depends(get_current_admin_required)):
         "auth": _check_auth(),
         "apis": _check_apis(),
         "static_assets": _check_static_assets(),
+        "backups": _check_backups(),
     }
     overall = min((check["status"] for check in checks.values()), key=lambda s: _STATUS_SEVERITY[s])
     return {"success": True, "overall": overall, "checks": checks}
