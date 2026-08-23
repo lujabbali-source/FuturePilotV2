@@ -1,3 +1,5 @@
+// Pide cuenta antes que nada. Primer import a proposito: ver exigirCuenta.js.
+import "./shared/exigirCuenta.js";
 import "./shared/passport-stamp-toast.js";
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'

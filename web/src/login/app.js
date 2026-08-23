@@ -1,4 +1,5 @@
 import { t, onLanguageChange } from "../shared/i18next.js";
+import { destinoSeguro } from "../shared/sessionGuard.js";
 
 // Todo el texto de estas pantallas vive en el namespace `login`.
 const tl = (key, params) => t(key, { ns: "login", ...params });
@@ -9,6 +10,24 @@ import { claimPendingAndCelebrate } from "../shared/resultClaim.js";
 // pronto (`return`) cuando la pagina no tiene nada que montar. Un `return`
 // suelto era valido dentro del IIFE que envolvia este archivo, pero en un
 // modulo ES es un error de sintaxis.
+/**
+ * A donde ir despues de entrar.
+ *
+ * Antes siempre era /assessment. Ahora que el globo, las carreras, la ruta y
+ * el plan de vuelo piden cuenta, esa constante partia el recorrido en dos:
+ * hacias clic en "explorar el globo", te mandaba a registrarte y aterrizabas
+ * en el test, sin ninguna pista de que el globo seguia esperandote.
+ *
+ * `destinoSeguro` filtra el parametro contra la lista de paginas reales. Sin
+ * ese filtro, /login?next=https://sitio-falso.com haria que FuturePilot
+ * mandara a sus propios usuarios a otro sitio justo despues de escribir la
+ * contraseña, y con nuestro dominio en la barra hasta el ultimo momento.
+ */
+function destinoTrasEntrar() {
+  const pedido = new URLSearchParams(window.location.search).get("next");
+  return destinoSeguro(pedido) || "/assessment";
+}
+
 function main() {
 
   // Si ya hay una sesion guardada, mostrar el formulario de login de nuevo
@@ -17,7 +36,7 @@ function main() {
   // mostrar - resultados guardados si ya hizo el test con esta cuenta, o
   // el test si es la primera vez.
   if (localStorage.getItem("futurePilotAuthToken")) {
-    window.location.href = "/assessment";
+    window.location.href = destinoTrasEntrar();
     return;
   }
 
@@ -181,7 +200,7 @@ function main() {
           actionButton.textContent = tl("status.retry");
           return;
         }
-        window.location.href = "/assessment";
+        window.location.href = destinoTrasEntrar();
       });
     }
 
@@ -189,7 +208,7 @@ function main() {
       // Salida voluntaria. El result_id se conserva: /assessment vuelve a
       // intentar la vinculacion al cargar, asi que sigue siendo
       // recuperable sin que el usuario tenga que hacer nada.
-      window.location.href = "/assessment";
+      window.location.href = destinoTrasEntrar();
     }
   });
 
@@ -288,7 +307,7 @@ function main() {
 
       // /assessment decide que mostrar: resultados recien reclamados (o ya
       // guardados de antes) si existen, o el test si es la primera vez.
-      window.location.href = "/assessment";
+      window.location.href = destinoTrasEntrar();
     } catch (error) {
       setSubmitting(false);
       showError(tl("errors.network"));

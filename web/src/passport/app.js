@@ -17,6 +17,7 @@
 
 import { renderStamp, renderEmptySlot, applyStampQuirks } from "./stamps.js";
 import { t, currentLanguage, onLanguageChange } from "../shared/i18next.js";
+import { exigirCuenta } from "../shared/sessionGuard.js";
 
 // Todo el texto de esta pagina sale del namespace `passport`. Atajo para
 // no repetir el namespace en cada una de las cuarenta llamadas.
@@ -25,11 +26,11 @@ const tp = (key, params) => t(key, { ns: "passport", ...params });
 // El cuerpo va dentro de una funcion con nombre porque necesita cortar
 // pronto (`return`) si no hay sesion.
 function main() {
-  const token = localStorage.getItem("futurePilotAuthToken");
-  if (!token) {
-    window.location.href = "/login?mode=login";
-    return;
-  }
+  // Antes esta comprobacion estaba escrita aqui a mano. Ahora la comparten
+  // las cinco paginas privadas, y de paso recuerda a donde iba el usuario:
+  // volver al pasaporte tras registrarse en vez de caer en /assessment.
+  const token = exigirCuenta();
+  if (!token) return;
   const authHeaders = { Authorization: `Bearer ${token}` };
 
   const book = document.getElementById("book");
