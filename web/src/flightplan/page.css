@@ -358,7 +358,7 @@ body{
   width: 0;
   height: 100%;
   border-radius: 99px;
-  background: linear-gradient(90deg, #00D1FF, #00FFB3);
+  background: linear-gradient(90deg, #00D4FF, #00FFB3);
   transition: width .8s cubic-bezier(.22, .8, .3, 1);
 }
 
@@ -434,12 +434,12 @@ body{
 }
 
 .path-step.is-current .path-step__dot {
-  border-color: #00D1FF;
-  color: #00D1FF;
+  border-color: #00D4FF;
+  color: #00D4FF;
 }
 
 .path-step.is-current .path-step__name {
-  color: #00D1FF;
+  color: #00D4FF;
 }
 
 @media (max-width: 640px) {

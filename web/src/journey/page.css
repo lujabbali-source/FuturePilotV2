@@ -91,7 +91,7 @@ body {
   width: 0;
   height: 100%;
   border-radius: 99px;
-  background: linear-gradient(90deg, #00D1FF, #00FFB3);
+  background: linear-gradient(90deg, #00D4FF, #00FFB3);
   transition: width .5s cubic-bezier(.22, .8, .3, 1);
 }
 
