@@ -15,7 +15,7 @@ export default defineCity({
         rent: {"min": 280, "max": 420, "currency": "USD"},
         food: {"min": 120, "max": 170, "currency": "USD"},
     },
-    jobs: { averageSalary: 3600000, mainIndustries: [{"es": "Calzado y confección", "en": "Footwear & Apparel Manufacturing"}, {"es": "Servicios de salud", "en": "Healthcare Services"}, {"es": "Ingeniería de petróleo y gas", "en": "Oil & Gas engineering"}] },
+    jobs: { averageSalary: {"amount": 3600000, "currency": "COP", "source": "America cities.docx", "asOf": "2026"}, mainIndustries: [{"es": "Calzado y confección", "en": "Footwear & Apparel Manufacturing"}, {"es": "Servicios de salud", "en": "Healthcare Services"}, {"es": "Ingeniería de petróleo y gas", "en": "Oil & Gas engineering"}] },
     living: {
         bestNeighborhoods: [{"es": "Cabecera del Llano, Sotomayor, Cañaveral (Floridablanca), Ruitoque.", "en": "Cabecera del Llano, Sotomayor, Cañaveral (Floridablanca), Ruitoque."}],
         healthcare: [{"es": "Referente nacional destacado (Fundación FOSCAL, Hospital Internacional de Colombia - HIC).", "en": "Outstanding national reference (Fundación FOSCAL, Hospital Internacional de Colombia - HIC)."}],

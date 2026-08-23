@@ -14,7 +14,7 @@ export default defineCity({
         studentBudget: {"min": 320, "max": 450, "currency": "USD"},
         rent: {"min": 280, "max": 450, "currency": "USD"},
     },
-    jobs: { averageSalary: 3400000, mainIndustries: [{"es": "Comercio", "en": "Commercial Trade"}, {"es": "Logística cafetera", "en": "Coffee Logistics"}, {"es": "Confección", "en": "Garment Manufacturing"}, {"es": "BPO", "en": "BPO"}, {"es": "Turismo y ocio", "en": "Tourism & Leisure"}] },
+    jobs: { averageSalary: {"amount": 3400000, "currency": "COP", "source": "America cities.docx", "asOf": "2026"}, mainIndustries: [{"es": "Comercio", "en": "Commercial Trade"}, {"es": "Logística cafetera", "en": "Coffee Logistics"}, {"es": "Confección", "en": "Garment Manufacturing"}, {"es": "BPO", "en": "BPO"}, {"es": "Turismo y ocio", "en": "Tourism & Leisure"}] },
     living: {
         bestNeighborhoods: [{"es": "Pinares, Avenida Circunvalar, Cerritos (zona campestre), Álamos.", "en": "Pinares, Av. Circunvalar, Cerritos (suburban luxury), Álamos."}],
         tourism: [{"es": "Bioparque Ukumarí, Salento y el Valle de Cocora (cerca), Termales de Santa Rosa de Cabal, Otún Quimbaya.", "en": "Ukumarí Biopark, Salento & Cocora Valley (nearby), Santa Rosa de Cabal Hot Springs, Otún Quimbaya."}],

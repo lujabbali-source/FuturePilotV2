@@ -71,6 +71,8 @@
       "utilities": "Servicios públicos",
       "transport": "Transporte",
       "student": "Presupuesto de estudiante"
-    }
+    },
+    "salarySource": "Salario según {{source}} ({{date}}).",
+    "undated": "sin fecha"
   }
 }

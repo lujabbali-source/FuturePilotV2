@@ -186,10 +186,45 @@ function ScholarshipsSection({ city }) {
 }
 
 function JobsSection({ city }) {
-    const { t } = useTranslation("cities");
+    const { t, i18n } = useTranslation(["cities", "common"]);
     const jobs = city.jobs || {};
-    const fields = [["averageSalary", jobs.averageSalary], ["mainIndustries", jobs.mainIndustries], ["studentJobs", jobs.studentJobs], ["remoteOpportunities", jobs.remoteOpportunities], ["internships", jobs.internships], ["employmentRate", jobs.employmentRate]];
-    return <section className="panel-section"><h2>💼 {t("panel.sections.jobs")}</h2><div className="city-field-grid">{fields.map(([key, value]) => <Field key={key} label={t(`panel.fields.${key}`)} value={value} />)}</div></section>;
+    const fallback = t("status.notConnected", { ns: "common" });
+    const locale = i18n.resolvedLanguage === "es" ? "es-ES" : "en-US";
+    // El salario puede venir como numero suelto (lo que ya habia) o como
+    // `{ amount, currency, source, asOf }`. La segunda forma existe porque una
+    // cifra de salario sin fuente ni fecha no se puede comprobar ni actualizar,
+    // y es justo la que un estudiante usa para decidir si le alcanza.
+    const salario = jobs.averageSalary;
+    const monto = salario && typeof salario === "object" ? salario.amount : salario;
+    const moneda = (salario && typeof salario === "object" && salario.currency)
+        || city.costOfLiving?.currency || "COP";
+
+    const fields = [["averageSalary", monto], ["mainIndustries", jobs.mainIndustries], ["studentJobs", jobs.studentJobs], ["remoteOpportunities", jobs.remoteOpportunities], ["internships", jobs.internships], ["employmentRate", jobs.employmentRate]];
+    return (
+        <section className="panel-section">
+            <h2>💼 {t("panel.sections.jobs")}</h2>
+            <div className="city-field-grid">
+                {fields.map(([key, value]) => (
+                    <Field
+                        key={key}
+                        label={t(`panel.fields.${key}`)}
+                        value={value}
+                        formatter={key === "averageSalary"
+                            ? (v) => money(v, moneda, locale, fallback)
+                            : undefined}
+                    />
+                ))}
+            </div>
+            {salario?.source && (
+                <p className="panel-note">
+                    {t("panel.salarySource", {
+                        source: salario.source,
+                        date: salario.asOf || t("panel.undated"),
+                    })}
+                </p>
+            )}
+        </section>
+    );
 }
 
 function StatisticsSection({ city }) {

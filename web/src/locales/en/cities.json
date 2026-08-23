@@ -71,6 +71,8 @@
       "utilities": "Utilities",
       "transport": "Transport",
       "student": "Student budget"
-    }
+    },
+    "salarySource": "Salary from {{source}} ({{date}}).",
+    "undated": "undated"
   }
 }

@@ -505,3 +505,32 @@ def test_curated_weather_was_not_replaced():
     huecos, no reescribe."""
     texto = (CIUDADES / "manizales.js").read_text(encoding="utf-8")
     assert '"14°C a 26°C"' in texto, "se sobrescribio el clima curado de Manizales"
+
+
+def test_every_salary_says_where_it_came_from():
+    """Una cifra de salario sin fuente ni fecha no se puede comprobar ni
+    actualizar, y es justo la que un estudiante usa para decidir si le alcanza
+    mudarse. El documento solo trae tres; cualquiera que se añada despues tiene
+    que decir de donde sale."""
+    sin_fuente = []
+    for ficha in fichas():
+        texto = ficha.read_text(encoding="utf-8")
+        m = re.search(r"averageSalary:\s*(\{[^{}]*\}|\d+|null)", texto)
+        if not m or m.group(1) == "null":
+            continue
+        crudo = m.group(1)
+        if not crudo.startswith("{"):
+            sin_fuente.append(f"{ficha.stem}: {crudo} (numero suelto, sin fuente)")
+            continue
+        dato = json.loads(crudo)
+        for campo in ("amount", "currency", "source", "asOf"):
+            assert dato.get(campo), f"{ficha.stem}: al salario le falta {campo}"
+    assert not sin_fuente, "salarios sin fuente:\n  " + "\n  ".join(sin_fuente)
+
+
+def test_the_panel_shows_the_salary_source():
+    codigo = PANEL.read_text(encoding="utf-8")
+    assert "salarySource" in codigo, "el panel no muestra de donde sale el salario"
+    for lang in ("es", "en"):
+        j = json.loads((LOCALES / lang / "cities.json").read_text(encoding="utf-8"))
+        assert j["panel"].get("salarySource"), f"falta el texto de fuente en {lang}"
