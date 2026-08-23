@@ -53,6 +53,10 @@ const StampToast = (() => {
       setTimeout(() => {
         const toast = document.createElement("div");
         toast.className = "fp-stamp-toast";
+        // Sin este desplazamiento, dos sellos que coinciden en pantalla
+        // (el siguiente entra a los 900ms, el anterior no se quita hasta
+        // los 1400ms) caen exactamente en el mismo sitio y se pisan.
+        toast.style.top = `${24 + index * 76}px`;
         const [icon, ...rest] = stamp.label.split(" ");
         toast.innerHTML = `
           <span class="fp-stamp-toast__icon">${icon}</span>

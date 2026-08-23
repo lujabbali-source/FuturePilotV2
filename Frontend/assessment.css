@@ -82,7 +82,7 @@ button { cursor: pointer; }
    ========================================================================== */
 .welcome-screen { display: flex; flex-direction: column; align-items: center; width: min(680px, calc(100% - 40px)); min-height: 100vh; margin: auto; padding: 9vh 0 30px; text-align: center; }
 .welcome-orbit { position: relative; display: grid; place-items: center; width: 116px; height: 116px; margin-bottom: 34px; }
-.orbit-core { display: grid; place-items: center; width: 51px; height: 51px; border-radius: 17px; color: var(--fp-black); background: linear-gradient(140deg, var(--fp-cyan), var(--fp-green)); box-shadow: 0 0 35px rgba(var(--fp-green-rgb),.55); font-size: 1.5rem; }
+.orbit-core { display: grid; place-items: center; width: 51px; height: 51px; padding: 10px; box-sizing: border-box; border-radius: 17px; background: linear-gradient(140deg, var(--fp-cyan), var(--fp-green)); box-shadow: 0 0 35px rgba(var(--fp-green-rgb),.55); object-fit: contain; }
 .orbit-ring { position: absolute; inset: 0; border: 1px solid rgba(var(--fp-green-rgb),.26); border-radius: 50%; animation: orbit 6s linear infinite; }
 .orbit-ring--one { transform: rotate(35deg) scaleX(.55); }
 .orbit-ring--two { transform: rotate(-42deg) scaleY(.5); animation-duration: 8s; border-color: rgba(var(--fp-cyan-rgb),.4); }

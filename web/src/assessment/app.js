@@ -106,7 +106,7 @@ function renderWelcome() {
   const saved = savedAssessment();
   const hasSavedProgress = saved && saved.currentQuestion > 0 && saved.currentQuestion < questionCount();
   app.innerHTML = `<main class="welcome-screen screen-enter">
-    <div class="welcome-orbit"><span class="orbit-core">✦</span><span class="orbit-ring orbit-ring--one"></span><span class="orbit-ring orbit-ring--two"></span></div>
+    <div class="welcome-orbit"><img class="orbit-core" src="/Frontend/futurepilot-logo-transparent.png" alt=""><span class="orbit-ring orbit-ring--one"></span><span class="orbit-ring orbit-ring--two"></span></div>
     <div class="eyebrow"><span class="eyebrow-dot"></span> ${t("welcome.eyebrow")}</div>
     <h1>${t("welcome.title")}<br><span>${t("welcome.titleAccent")}</span></h1>
     <p class="welcome-copy">${t("welcome.copy")}</p>
