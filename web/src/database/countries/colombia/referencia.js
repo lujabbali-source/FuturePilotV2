@@ -60,3 +60,49 @@ export function enSalariosMinimos(rango, ref = COLOMBIA_REFERENCE.minimumWage) {
     if (desde === null) return null;
     return Math.round((desde / ref.amount) * 10) / 10;
 }
+
+/**
+ * Tasa de cambio, tal como la da el documento de ciudades.
+ *
+ * Va aquí y no en cada ficha por lo mismo que el salario mínimo: es nacional y
+ * una sola. El documento la menciona dos veces, en Bogotá y Medellín, y dice
+ * lo mismo las dos - con una salvedad que conviene conservar: la de Bogotá
+ * dice "tradicionalmente se sitúa entre", no "hoy está en". Es un rango
+ * histórico, no una cotización.
+ *
+ * Por eso la conversión se hace AL PINTAR y no se escribe en los datos de
+ * ciudad: lo guardado sigue siendo exactamente lo que dijo la fuente (dólares),
+ * y el peso derivado no puede confundirse nunca con un dato original.
+ */
+export const TASA_USD_COP = {
+    from: "USD",
+    to: "COP",
+    min: 3800,
+    max: 4300,
+    source: "America cities.docx",
+    asOf: "2026",
+};
+
+/**
+ * Un rango en dólares, en pesos.
+ *
+ * El mínimo con la tasa baja y el máximo con la alta: da el intervalo más
+ * ancho, que es el honesto cuando se multiplica un rango por otro rango.
+ * Estrecharlo usando la tasa media fingiría una precisión que no existe ni en
+ * el presupuesto ni en la tasa.
+ *
+ * `converted: true` viaja con el resultado para que la pantalla pueda decir
+ * que es una conversión y no una cifra que alguien midió en pesos.
+ */
+export function aPesos(rango, tasa = TASA_USD_COP) {
+    if (!rango || rango.currency !== tasa.from) return null;
+    if (typeof rango.min !== "number" || typeof rango.max !== "number") return null;
+    return {
+        min: Math.round(rango.min * tasa.min),
+        max: Math.round(rango.max * tasa.max),
+        currency: tasa.to,
+        converted: true,
+        from: rango,
+        rate: tasa,
+    };
+}

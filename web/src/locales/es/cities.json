@@ -75,6 +75,7 @@
     "salarySource": "Salario según {{source}} ({{date}}).",
     "undated": "sin fecha",
     "inMinimumWages": "Eso es desde {{veces}} salarios mínimos al mes.",
-    "minimumWageSource": "({{source}}, {{year}})"
+    "minimumWageSource": "({{source}}, {{year}})",
+    "convertedFrom": "Convertido de {{original}} a {{min}}–{{max}} COP por dólar ({{source}}). No es una cifra medida en pesos."
   }
 }

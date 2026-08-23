@@ -5,7 +5,7 @@ import { recordPassportEvent } from "../../services/passportService";
 import { getScholarships } from "../../services/scholarshipService";
 import { getUniversities } from "../../services/universityService";
 import useCity from "../../hooks/useCity";
-import { COLOMBIA_REFERENCE, enSalariosMinimos, referenciaCompleta } from "../../database/countries/colombia/referencia";
+import { COLOMBIA_REFERENCE, TASA_USD_COP, aPesos, enSalariosMinimos, referenciaCompleta } from "../../database/countries/colombia/referencia";
 import "./CityPanel.css";
 
 const sections = [
@@ -101,8 +101,16 @@ function CostSection({ city }) {
     // "1,2 mínimos" dice más que "1.600.000 COP": es la unidad en la que ya
     // piensa su familia. Solo aparece en ciudades colombianas y solo si la
     // referencia nacional está puesta con su fuente y su año.
-    const enMinimos = city.countryId === "colombia" && referenciaCompleta()
-        ? enSalariosMinimos(costs.studentBudget)
+    // Quince de las dieciocho ciudades traen el presupuesto de estudiante solo
+    // en dólares. Se convierte con la tasa que da el propio documento y se
+    // marca como conversión: mostrarla sin marcar la haría pasar por una cifra
+    // que alguien midió en pesos, y esconderla dejaría la comparación con el
+    // salario mínimo en tres ciudades de dieciocho.
+    const esColombia = city.countryId === "colombia";
+    const convertido = esColombia ? aPesos(costs.studentBudget) : null;
+    const presupuesto = convertido || costs.studentBudget;
+    const enMinimos = esColombia && referenciaCompleta()
+        ? enSalariosMinimos(presupuesto)
         : null;
 
     return (
@@ -114,8 +122,22 @@ function CostSection({ city }) {
                 <Field label={t("panel.fields.food")} value={costs.food} formatter={formatMoney} />
                 <Field label={t("panel.fields.transportation")} value={costs.transportation} formatter={formatMoney} />
                 <Field label={t("panel.fields.utilities")} value={costs.utilities} formatter={formatMoney} />
-                <Field label={t("panel.fields.studentBudget")} value={costs.studentBudget} formatter={formatMoney} />
+                <Field
+                    label={t("panel.fields.studentBudget")}
+                    value={presupuesto}
+                    formatter={(v) => (convertido ? "≈ " : "") + money(v, currency, locale, fallback)}
+                />
             </div>
+            {convertido && (
+                <p className="panel-note">
+                    {t("panel.convertedFrom", {
+                        original: money(convertido.from, convertido.from.currency, locale, fallback),
+                        min: TASA_USD_COP.min.toLocaleString(locale, { useGrouping: "always" }),
+                        max: TASA_USD_COP.max.toLocaleString(locale, { useGrouping: "always" }),
+                        source: TASA_USD_COP.source,
+                    })}
+                </p>
+            )}
             {enMinimos !== null && (
                 <p className="panel-note">
                     {t("panel.inMinimumWages", { veces: enMinimos.toLocaleString(locale) })}

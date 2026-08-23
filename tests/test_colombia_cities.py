@@ -589,8 +589,12 @@ def test_the_ratio_uses_the_low_end_of_the_range():
     """Es el numero que responde a "¿me alcanza?": el minimo que hay que
     reunir. Un punto medio diria "1,5 minimos" donde lo cierto es "desde
     1,2"."""
+    # Acotado a SU funcion: un `.*` con DOTALL llegaba hasta el final del
+    # archivo y, al añadir `aPesos` debajo, empezo a leer el "max" de la
+    # conversion como si fuera de aqui. El test fallaba por donde miraba, no
+    # por lo que vigilaba.
     codigo = REFERENCIA.read_text(encoding="utf-8")
-    cuerpo = re.search(r"export function enSalariosMinimos.*", codigo, re.S).group(0)
+    cuerpo = re.search(r"export function enSalariosMinimos.*?\n\}", codigo, re.S).group(0)
     assert "rango.min" in cuerpo, "la comparacion ya no usa el extremo bajo"
     assert "max" not in cuerpo.split("return")[-1], \
         "la comparacion empezo a promediar el rango"
@@ -603,3 +607,50 @@ def test_dollars_are_never_compared_against_a_colombian_wage():
     cuerpo = REFERENCIA.read_text(encoding="utf-8")
     assert "rango.currency" in cuerpo and "ref.currency" in cuerpo, \
         "la comparacion no comprueba que las monedas coincidan"
+
+
+def test_a_converted_figure_says_it_is_converted():
+    """Quince ciudades traen el presupuesto en dolares y se muestran en pesos.
+    Sin marcarlo, una cifra derivada de multiplicar dos rangos pasaria por una
+    que alguien midio - y es la cifra con la que se calcula si alcanza."""
+    panel = PANEL.read_text(encoding="utf-8")
+    assert "convertedFrom" in panel, "el panel no avisa de que la cifra es convertida"
+    assert '"≈ "' in panel or "'≈ '" in panel, "falta la marca de aproximacion"
+    for lang, palabras in (("es", ("Convertido de", "No es una cifra medida en pesos")),
+                           ("en", ("Converted from", "Not a figure measured in pesos"))):
+        nota = json.loads((LOCALES / lang / "cities.json").read_text(encoding="utf-8"))["panel"]["convertedFrom"]
+        for palabra in palabras:
+            assert palabra in nota, f"el aviso en {lang} no dice {palabra!r}"
+
+
+def test_the_conversion_widens_instead_of_averaging():
+    """Un rango por otro rango da un intervalo ancho. Usar la tasa media lo
+    estrecharia fingiendo una precision que no existe ni en el presupuesto ni
+    en la tasa."""
+    codigo = REFERENCIA.read_text(encoding="utf-8")
+    cuerpo = re.search(r"export function aPesos.*", codigo, re.S).group(0)
+    assert "rango.min * tasa.min" in cuerpo, "el minimo ya no usa la tasa baja"
+    assert "rango.max * tasa.max" in cuerpo, "el maximo ya no usa la tasa alta"
+    assert "/ 2" not in cuerpo, "la conversion empezo a promediar la tasa"
+
+
+def test_the_exchange_rate_lives_with_the_wage():
+    """Nacional y una sola, igual que el salario minimo. Copiada por ciudad,
+    una actualizacion se olvidaria en la mitad."""
+    codigo = REFERENCIA.read_text(encoding="utf-8")
+    assert "TASA_USD_COP" in codigo
+    for campo in ("source", "asOf"):
+        assert re.search(rf"{campo}:", codigo), f"la tasa no declara {campo}"
+    culpables = [f.stem for f in fichas()
+                 if re.search(r"\b4300\b|TASA_USD", f.read_text(encoding="utf-8"))]
+    assert not culpables, f"la tasa se copio a fichas de ciudad: {culpables}"
+
+
+def test_conversion_never_touches_the_stored_data():
+    """Lo guardado sigue siendo lo que dijo la fuente. Escribir los pesos en la
+    ficha haria imposible distinguir despues que cifras midio alguien y cuales
+    salieron de una multiplicacion."""
+    for ficha in fichas():
+        texto = ficha.read_text(encoding="utf-8")
+        assert '"converted"' not in texto and "converted:" not in texto, \
+            f"{ficha.stem}: una conversion acabo escrita en los datos"

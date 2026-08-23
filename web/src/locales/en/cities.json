@@ -75,6 +75,7 @@
     "salarySource": "Salary from {{source}} ({{date}}).",
     "undated": "undated",
     "inMinimumWages": "That is from {{veces}} minimum wages a month.",
-    "minimumWageSource": "({{source}}, {{year}})"
+    "minimumWageSource": "({{source}}, {{year}})",
+    "convertedFrom": "Converted from {{original}} at {{min}}–{{max}} COP per dollar ({{source}}). Not a figure measured in pesos."
   }
 }
