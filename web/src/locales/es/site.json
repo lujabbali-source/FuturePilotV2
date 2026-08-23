@@ -109,7 +109,8 @@
     "login": "Iniciar sesión · FuturePilot",
     "reset": "Restablecer contraseña · FuturePilot",
     "privacy": "Política de privacidad · FuturePilot",
-    "terms": "Términos y condiciones · FuturePilot"
+    "terms": "Términos y condiciones · FuturePilot",
+    "parent": "Centro para Padres · FuturePilot"
   },
   "careers": {
     "buildPlan": "Crear mi plan de vuelo",
@@ -321,5 +322,35 @@
     "changes": "Si estos términos cambian, se actualiza esta página y la fecha de arriba. Si el cambio es importante, se avisa dentro de la aplicación.",
     "contactTitle": "Contacto",
     "contact": "Escribe a ljfuturepilot@gmail.com. Responde una persona, no un formulario."
+  },
+  "parent": {
+    "title": "Permiso para la cuenta de tu hijo o hija",
+    "loading": "Cargando…",
+    "who": "{{name}} ({{email}}) te indicó como su padre, madre o acudiente.",
+    "invalidTitle": "Este enlace no sirve",
+    "invalid": "Puede que haya caducado o que se haya pedido uno nuevo. Si crees que es un error, pídele a tu hijo o hija que vuelva a enviarlo desde su cuenta.",
+    "home": "Ir a FuturePilot",
+    "whatTitle": "Qué es FuturePilot",
+    "what": "Una plataforma gratuita de orientación vocacional para estudiantes de secundaria. Hace un test de intereses y muestra carreras, universidades y ciudades que podrían encajar. No es un consejo profesional ni decide nada por nadie: es una herramienta para explorar.",
+    "dataTitle": "Qué datos guardamos",
+    "data1": "Su correo, su nombre y una contraseña cifrada.",
+    "data2": "Las respuestas de su test vocacional y el resultado.",
+    "data3": "Lo que ha explorado: carreras, ciudades y universidades que abrió.",
+    "data4": "Si lo puso, una foto para su pasaporte. Le quitamos los datos ocultos, incluida la ubicación, antes de guardarla.",
+    "rightsTitle": "Tus derechos",
+    "rights": "Puedes pedir en cualquier momento que te enseñemos todo lo que tenemos, que lo corrijamos o que lo borremos. Autorizar hoy no te ata: puedes retirar el permiso cuando quieras y los datos se borran.",
+    "deadlineTitle": "Si no respondes",
+    "deadline": "Borraremos sus datos el {{date}}. No hace falta que hagas nada para eso: pasa solo.",
+    "decisionTitle": "Tu decisión",
+    "agree": "Soy el padre, la madre o el acudiente de esta persona y autorizo que FuturePilot trate sus datos como se describe arriba.",
+    "authorize": "Autorizo",
+    "deny": "No autorizo y quiero que borren sus datos",
+    "resolvedTitle": "Ya respondiste",
+    "stateAuthorized": "Autorizaste el {{date}}. Puedes retirar el permiso cuando quieras escribiéndonos.",
+    "stateDenied": "No autorizaste, el {{date}}. Sus datos se borrarán.",
+    "stateRevoked": "Retiraste el permiso el {{date}}. Sus datos se borrarán.",
+    "stateExpired": "Este permiso venció sin respuesta. Sus datos se borrarán.",
+    "errorGeneric": "No pudimos guardar tu respuesta. Intenta de nuevo.",
+    "errorNetwork": "No pudimos conectar. Revisa tu conexión e intenta de nuevo."
   }
 }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="site:pageTitle.parent">Centro para Padres · FuturePilot</title>
+<link rel="stylesheet" href="/Frontend/style.css">
+</head>
+<body>
+<div class="background-glow"></div>
+
+<!-- Centro para Padres.
+     Quien abre esto no tiene cuenta y probablemente no conoce FuturePilot:
+     llego por un correo que le mando el hijo sin avisar. Por eso la pagina
+     empieza explicando que es esto y que datos hay, y solo despues pregunta.
+     Pedir la respuesta antes de haber explicado nada seria pedirle a alguien
+     que firme sin leer. -->
+<main class="legal-shell">
+  <h1 data-i18n="parent.title">Permiso para la cuenta de tu hijo o hija</h1>
+
+  <!-- Los tres estados de carga. Se muestra uno a la vez desde app.js. -->
+  <p id="parentLoading" data-i18n="parent.loading">Cargando…</p>
+
+  <div id="parentInvalid" hidden>
+    <div class="legal-note">
+      <p class="legal-note__title" data-i18n="parent.invalidTitle">Este enlace no sirve</p>
+      <p data-i18n="parent.invalid"></p>
+    </div>
+    <a class="back" href="/" data-i18n="parent.home">Ir a FuturePilot</a>
+  </div>
+
+  <div id="parentBody" hidden>
+    <p class="legal-updated" id="parentWho"></p>
+
+    <div class="legal-note">
+      <p class="legal-note__title" data-i18n="parent.whatTitle">Qué es FuturePilot</p>
+      <p data-i18n="parent.what"></p>
+    </div>
+
+    <h2 data-i18n="parent.dataTitle">Qué datos guardamos</h2>
+    <ul>
+      <li data-i18n="parent.data1"></li>
+      <li data-i18n="parent.data2"></li>
+      <li data-i18n="parent.data3"></li>
+      <li data-i18n="parent.data4"></li>
+    </ul>
+
+    <h2 data-i18n="parent.rightsTitle">Tus derechos</h2>
+    <p data-i18n="parent.rights"></p>
+
+    <!-- El aviso del plazo. Va antes de la pregunta, no despues: es parte de
+         lo que hay que saber para responder, no una nota al pie. -->
+    <div class="legal-note" id="parentDeadline">
+      <p class="legal-note__title" data-i18n="parent.deadlineTitle">Si no respondes</p>
+      <p data-i18n="parent.deadline"></p>
+    </div>
+
+    <!-- Ya respondido: se enseña que quedo, sin volver a preguntar. -->
+    <div id="parentResolved" hidden>
+      <div class="legal-note">
+        <p class="legal-note__title" id="parentResolvedTitle"></p>
+        <p id="parentResolvedText"></p>
+      </div>
+    </div>
+
+    <!-- Pendiente: la pregunta. -->
+    <form id="parentForm" hidden>
+      <h2 data-i18n="parent.decisionTitle">Tu decisión</h2>
+
+      <label class="login-remember">
+        <input type="checkbox" id="parentAgree">
+        <span class="login-remember__box"></span>
+        <span data-i18n="parent.agree"></span>
+      </label>
+
+      <p class="login-error" id="parentError" hidden></p>
+
+      <div class="parent-actions">
+        <button type="submit" class="login-submit" id="parentAuthorize" disabled
+                data-i18n="parent.authorize">Autorizo</button>
+        <button type="button" class="login-link" id="parentDeny"
+                data-i18n="parent.deny">No autorizo y quiero que borren sus datos</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<script type="module" src="/src/parent/main.js"></script>
+</body>
+</html>

@@ -34,6 +34,7 @@ export default defineConfig({
         careers: resolve(import.meta.dirname, 'careers.html'),
         terms: resolve(import.meta.dirname, 'terms.html'),
         privacy: resolve(import.meta.dirname, 'privacy.html'),
+        parent: resolve(import.meta.dirname, 'parent.html'),
         'admin-dashboard': resolve(import.meta.dirname, 'admin-dashboard.html'),
         'admin-login': resolve(import.meta.dirname, 'admin-login.html'),
         'system-health': resolve(import.meta.dirname, 'system-health.html'),

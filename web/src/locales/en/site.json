@@ -109,7 +109,8 @@
     "login": "Sign in · FuturePilot",
     "reset": "Reset password · FuturePilot",
     "privacy": "Privacy policy · FuturePilot",
-    "terms": "Terms & conditions · FuturePilot"
+    "terms": "Terms & conditions · FuturePilot",
+    "parent": "Parent Centre · FuturePilot"
   },
   "careers": {
     "buildPlan": "Build my flight plan",
@@ -321,5 +322,35 @@
     "changes": "If these terms change, this page and the date above are updated. If the change is significant, you will be told inside the application.",
     "contactTitle": "Contact",
     "contact": "Write to ljfuturepilot@gmail.com. A person replies, not a form."
+  },
+  "parent": {
+    "title": "Permission for your child's account",
+    "loading": "Loading…",
+    "who": "{{name}} ({{email}}) named you as their parent or guardian.",
+    "invalidTitle": "This link doesn't work",
+    "invalid": "It may have expired, or a new one may have been requested. If you think this is a mistake, ask your child to send it again from their account.",
+    "home": "Go to FuturePilot",
+    "whatTitle": "What FuturePilot is",
+    "what": "A free careers-guidance platform for secondary-school students. It runs an interests test and shows careers, universities and cities that might fit. It is not professional advice and it decides nothing for anyone: it is a tool for exploring.",
+    "dataTitle": "What we store",
+    "data1": "Their email, their name and an encrypted password.",
+    "data2": "Their careers-test answers and the result.",
+    "data3": "What they have explored: careers, cities and universities they opened.",
+    "data4": "A passport photo, if they added one. We strip the hidden data, including location, before storing it.",
+    "rightsTitle": "Your rights",
+    "rights": "You can ask us at any time to show you everything we hold, to correct it, or to delete it. Saying yes today does not tie you down: you can withdraw permission whenever you want and the data is deleted.",
+    "deadlineTitle": "If you don't reply",
+    "deadline": "We will delete their data on {{date}}. You don't have to do anything for that: it happens on its own.",
+    "decisionTitle": "Your decision",
+    "agree": "I am this person's parent or guardian and I authorise FuturePilot to process their data as described above.",
+    "authorize": "I authorise",
+    "deny": "I do not authorise, and I want their data deleted",
+    "resolvedTitle": "You already replied",
+    "stateAuthorized": "You authorised on {{date}}. You can withdraw permission at any time by writing to us.",
+    "stateDenied": "You did not authorise, on {{date}}. Their data will be deleted.",
+    "stateRevoked": "You withdrew permission on {{date}}. Their data will be deleted.",
+    "stateExpired": "This permission expired without a reply. Their data will be deleted.",
+    "errorGeneric": "We couldn't save your reply. Please try again.",
+    "errorNetwork": "We couldn't connect. Check your connection and try again."
   }
 }

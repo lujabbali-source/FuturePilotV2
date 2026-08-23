@@ -38,6 +38,31 @@ CREATE TABLE IF NOT EXISTS sessions (
 
 CREATE INDEX IF NOT EXISTS idx_sessions_user ON sessions(user_id);
 
+-- Expediente de autorizacion del acudiente.
+--
+-- Tabla aparte y no columnas en users porque una autorizacion es un HECHO
+-- con fecha, no un atributo de la cuenta: se pide, se responde o caduca, y
+-- puede revocarse despues. Guardarlo como un campo perderia el cuando.
+--
+-- Se guarda el hash del token, nunca el token: mismo criterio que sessions.
+-- Quien tenga acceso a la base no puede autorizar en nombre de nadie.
+--
+-- NO se guarda la IP del acudiente. Da poca prueba adicional - la fecha, el
+-- token usado y el correo ya identifican el acto - y seria un dato personal
+-- mas sobre alguien que solo entro a responder una pregunta.
+CREATE TABLE IF NOT EXISTS guardian_consents (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    guardian_email TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'PENDING',
+    token_hash TEXT NOT NULL UNIQUE,
+    requested_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    expires_at TEXT NOT NULL,
+    resolved_at TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_consents_user ON guardian_consents(user_id);
+
 -- Mismo patron que sessions: se guarda el hash del token, nunca el token
 -- crudo. De un solo uso (se borra al consumirse) y expira rapido (ver
 -- PASSWORD_RESET_LIFETIME) porque a diferencia de una sesion, este token
@@ -133,6 +158,16 @@ CREATE INDEX IF NOT EXISTS idx_admin_audit_log_created ON admin_audit_log(create
 
 SESSION_LIFETIME = timedelta(days=30)
 PASSWORD_RESET_LIFETIME = timedelta(hours=1)
+
+# Cuanto se espera al acudiente antes de borrar los datos del menor.
+#
+# La cuenta NO se bloquea durante ese tiempo: el estudiante usa todo desde el
+# primer minuto. El plazo existe para que la espera no sea infinita - sin el,
+# los datos de un menor cuyo padre nunca respondio se quedarian para siempre.
+GUARDIAN_CONSENT_LIFETIME = timedelta(days=30)
+
+# Los estados por los que pasa un expediente. PENDING no bloquea nada.
+CONSENT_STATES = ("PENDING", "AUTHORIZED", "DENIED", "REVOKED", "EXPIRED")
 # Configurable solo para que la suite de tests (ver tests/conftest.py) no
 # tarde minutos reales en cada registro/login - en produccion esto NUNCA
 # debe fijarse por env var, 600_000 es el minimo recomendado hoy para
@@ -440,6 +475,138 @@ class UsersStore:
             "is_minor": bool(row["is_minor"]),
             "guardian_email": row["guardian_email"],
         }
+
+    # ----------------------------------------------------------------
+    # Autorizacion del acudiente
+    #
+    # Nada de lo que hay aqui bloquea al estudiante. La cuenta funciona
+    # entera desde el primer minuto, tenga el expediente el estado que
+    # tenga. Esto registra si un adulto lo autorizo y cuando, y le pone
+    # fecha limite a la espera.
+    # ----------------------------------------------------------------
+
+    def create_consent_request(self, user_id: int, guardian_email: str,
+                               lifetime: timedelta = GUARDIAN_CONSENT_LIFETIME) -> str:
+        """Abre el expediente y devuelve el token para el enlace del correo.
+
+        El token se devuelve UNA vez y solo se guarda su hash. Si se pierde,
+        se pide otro: no hay forma de recuperarlo desde la base, que es
+        justamente lo que impide que alguien con acceso al SQLite autorice
+        en nombre de un padre.
+
+        Si ya habia un expediente pendiente para esta cuenta se marca como
+        reemplazado (EXPIRED) antes de abrir el nuevo. Dos enlaces vivos a la
+        vez para el mismo menor serian dos respuestas posibles y ninguna
+        forma de saber cual manda.
+        """
+        token = secrets.token_urlsafe(32)
+        expires_at = (utc_now() + lifetime).isoformat()
+
+        with self.connect() as connection:
+            connection.execute(
+                "UPDATE guardian_consents SET status = 'EXPIRED', resolved_at = ? "
+                "WHERE user_id = ? AND status = 'PENDING'",
+                (utc_now_iso(), user_id),
+            )
+            connection.execute(
+                "INSERT INTO guardian_consents (user_id, guardian_email, token_hash, expires_at) "
+                "VALUES (?, ?, ?, ?)",
+                (user_id, (guardian_email or "").strip().lower(), hash_token(token), expires_at),
+            )
+            connection.commit()
+        return token
+
+    def get_consent_by_token(self, token: str) -> Optional[dict]:
+        """El expediente al que apunta un enlace, con el nombre del menor.
+
+        Se busca por el hash, asi que un token invalido simplemente no
+        encuentra nada - no hay comparacion que se pueda medir por tiempo.
+        """
+        if not token:
+            return None
+        with self.connect() as connection:
+            fila = connection.execute(
+                "SELECT c.*, u.name AS student_name, u.email AS student_email "
+                "FROM guardian_consents c JOIN users u ON u.id = c.user_id "
+                "WHERE c.token_hash = ?",
+                (hash_token(token),),
+            ).fetchone()
+        if fila is None:
+            return None
+        expediente = dict(fila)
+        # Caducado se calcula al leer y no por un proceso que quiza no corrio:
+        # un expediente vencido no puede aceptar una respuesta solo porque
+        # nadie paso a marcarlo.
+        if expediente["status"] == "PENDING" and expediente["expires_at"] <= utc_now_iso():
+            expediente["status"] = "EXPIRED"
+        expediente.pop("token_hash", None)
+        return expediente
+
+    def resolve_consent(self, token: str, authorized: bool) -> Optional[dict]:
+        """El acudiente responde. Devuelve el expediente ya resuelto, o None.
+
+        Solo se responde a un expediente PENDIENTE y no vencido. Volver a
+        pulsar el enlace despues no cambia nada: la primera respuesta es la
+        que queda, y sobrescribirla en silencio borraria la prueba de lo que
+        el acudiente dijo de verdad.
+        """
+        actual = self.get_consent_by_token(token)
+        if actual is None or actual["status"] != "PENDING":
+            return None
+        nuevo = "AUTHORIZED" if authorized else "DENIED"
+        with self.connect() as connection:
+            connection.execute(
+                "UPDATE guardian_consents SET status = ?, resolved_at = ? "
+                "WHERE token_hash = ? AND status = 'PENDING'",
+                (nuevo, utc_now_iso(), hash_token(token)),
+            )
+            connection.commit()
+        return self.get_consent_by_token(token)
+
+    def get_consent_for_user(self, user_id: int) -> Optional[dict]:
+        """El expediente vigente de una cuenta: el mas reciente."""
+        with self.connect() as connection:
+            fila = connection.execute(
+                "SELECT id, user_id, guardian_email, status, requested_at, expires_at, resolved_at "
+                "FROM guardian_consents WHERE user_id = ? ORDER BY id DESC LIMIT 1",
+                (user_id,),
+            ).fetchone()
+        if fila is None:
+            return None
+        expediente = dict(fila)
+        if expediente["status"] == "PENDING" and expediente["expires_at"] <= utc_now_iso():
+            expediente["status"] = "EXPIRED"
+        return expediente
+
+    def list_expired_consents(self) -> list[dict]:
+        """Expedientes pendientes cuyo plazo ya paso.
+
+        Se listan, no se borran: quien decide borrar cuentas es un proceso de
+        mantenimiento explicito (backend/consent_expiry.py), no una consulta
+        de lectura que alguien llamo sin saberlo.
+        """
+        with self.connect() as connection:
+            filas = connection.execute(
+                "SELECT c.id, c.user_id, c.guardian_email, c.requested_at, c.expires_at, "
+                "       u.email AS student_email, u.name AS student_name "
+                "FROM guardian_consents c JOIN users u ON u.id = c.user_id "
+                "WHERE c.status = 'PENDING' AND c.expires_at <= ? ORDER BY c.expires_at",
+                (utc_now_iso(),),
+            ).fetchall()
+        return [dict(f) for f in filas]
+
+    def mark_consents_expired(self, consent_ids: list[int]) -> int:
+        if not consent_ids:
+            return 0
+        marcas = ",".join("?" * len(consent_ids))
+        with self.connect() as connection:
+            cursor = connection.execute(
+                f"UPDATE guardian_consents SET status = 'EXPIRED', resolved_at = ? "
+                f"WHERE id IN ({marcas}) AND status = 'PENDING'",
+                [utc_now_iso(), *consent_ids],
+            )
+            connection.commit()
+        return cursor.rowcount
 
     def sync_admin_email(self, admin_email: str | None) -> None:
         """Unica fuente de verdad para quien es admin: la variable de entorno

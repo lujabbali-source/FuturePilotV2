@@ -114,6 +114,10 @@ app = FastAPI(
 login_rate_limiter = RateLimiter(max_requests=10, window_seconds=60)
 register_rate_limiter = RateLimiter(max_requests=5, window_seconds=300)
 password_reset_rate_limiter = RateLimiter(max_requests=5, window_seconds=300)
+# El enlace del acudiente es un token de 32 bytes: adivinarlo es inviable.
+# El limite esta por si alguien lo intenta igual, y para que un bot que
+# recorra /consent/... no consuma el servidor entero.
+consent_rate_limiter = RateLimiter(max_requests=30, window_seconds=300)
 
 # Origenes permitidos por CORS: configurables via env (coma-separada) para
 # no tener que tocar codigo por cada entorno (dev/staging/produccion). Los
@@ -558,6 +562,17 @@ def passport_page():
     return _web_page("passport.html")
 
 
+@app.get("/consent/{token}")
+def consent_page(token: str):
+    """Centro para Padres. Publica a proposito: el acudiente no tiene cuenta
+    y no vamos a pedirle que se cree una para responder una pregunta.
+
+    La pagina es un cascaron vacio; el token no se mira aqui. Los datos los
+    pide ella a /api/v1/consent/{token}, que si comprueba que el enlace vale.
+    """
+    return _web_page("parent.html")
+
+
 @app.get("/terms")
 def terms_page():
     return _web_page("terms.html")
@@ -746,8 +761,42 @@ def register(payload: RegisterRequest, request: Request):
     if user.get("is_admin"):
         # Asiento ocupado: el token de reclamacion ya no sirve para nada.
         clear_admin_setup_token()
+
+    # Si es menor, se abre el expediente del acudiente. NO bloquea nada: la
+    # sesion se crea igual y la cuenta funciona entera desde este momento. Lo
+    # que arranca aqui es el reloj de los 30 dias y el enlace del correo.
+    if user.get("is_minor") and user.get("guardian_email"):
+        consent_token = users_store.create_consent_request(
+            user["id"], user["guardian_email"])
+        _notificar_acudiente(user, consent_token, request)
+
     token = users_store.create_session(user["id"])
     return {"success": True, "token": token, "user": user}
+
+
+def _notificar_acudiente(user: dict, consent_token: str, request: Request) -> bool:
+    """Avisa al acudiente y le manda su enlace.
+
+    Devuelve si el correo salio de verdad, pero NO propaga el fallo: que el
+    correo no salga no puede impedir que el chico tenga su cuenta. El
+    expediente ya quedo abierto y el enlace se puede reenviar.
+
+    Sin SMTP configurado esto no envia nada (ver backend/mailer.py): en
+    desarrollo el cuerpo se imprime en consola, en produccion ni eso, porque
+    el mensaje lleva el token dentro.
+    """
+    enlace = f"{str(request.base_url).rstrip('/')}/consent/{consent_token}"
+    nombre = (user.get("name") or "").strip() or user["email"]
+    try:
+        return mailer.send_email(
+            to_email=user["guardian_email"],
+            subject="Permiso para la cuenta de FuturePilot de tu hijo o hija",
+            body=f"Hola,\n\n{nombre} creo una cuenta en FuturePilot y nos dijo que es menor de edad, indicandote como su padre, madre o acudiente.\n\nFuturePilot es una plataforma de orientacion vocacional para estudiantes de secundaria. Para poder seguir tratando sus datos necesitamos tu autorizacion:\n\n    {enlace}\n\nAhi puedes ver que guardamos exactamente, autorizar o negar, y pedir que se borre todo.\n\nSi no respondes, en 30 dias borraremos sus datos.\n\nSi no conoces a esta persona, ignora este mensaje: sin tu autorizacion los datos se borran solos.\n\n- FuturePilot",
+        )
+    except Exception as error:  # noqa: BLE001
+        # Un SMTP caido no puede tumbar un registro que ya se completo.
+        print(f"[FuturePilot] No se pudo avisar al acudiente: {error}")
+        return False
 
 
 @app.post("/api/v1/auth/login", status_code=status.HTTP_200_OK)
@@ -1408,6 +1457,72 @@ def record_passport_event_route(
 # pero no es la cuenta admin) - ningun dato sale ni cambia en el backend
 # sin ese chequeo, sin importar lo que muestre o no el frontend.
 # --------------------------------------------------------------------------
+class ConsentDecision(BaseModel):
+    authorized: bool = Field(..., description="True autoriza, False niega.")
+
+
+def _consent_publico(expediente: dict) -> dict:
+    """Lo que ve quien abre el enlace.
+
+    Se manda el nombre y el correo del estudiante porque el acudiente puede
+    tener mas de un hijo y necesita saber de cual se le habla. No se manda
+    nada mas de la cuenta: ni el resultado del test, ni el pasaporte, ni por
+    donde ha navegado. El permiso es sobre el tratamiento, no una mirilla.
+    """
+    return {
+        "status": expediente["status"],
+        "studentName": expediente.get("student_name"),
+        "studentEmail": expediente.get("student_email"),
+        "guardianEmail": expediente["guardian_email"],
+        "requestedAt": expediente["requested_at"],
+        "expiresAt": expediente["expires_at"],
+        "resolvedAt": expediente.get("resolved_at"),
+    }
+
+
+@app.get("/api/v1/consent/{token}", status_code=status.HTTP_200_OK)
+def get_consent(token: str, request: Request):
+    consent_rate_limiter.check(client_ip(request))
+    expediente = users_store.get_consent_by_token(token)
+    if expediente is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Este enlace no es valido. Puede que se haya pedido uno nuevo.",
+        )
+    return {"success": True, "consent": _consent_publico(expediente)}
+
+
+@app.post("/api/v1/consent/{token}", status_code=status.HTTP_200_OK)
+def resolve_consent(token: str, payload: ConsentDecision, request: Request):
+    """El acudiente responde.
+
+    Que niegue NO borra la cuenta aqui mismo. Se registra la negativa y el
+    borrado lo hace el proceso de mantenimiento, que es explicito y deja
+    rastro: un DELETE en cascada disparado desde un clic en un correo, sin
+    confirmacion y sin vuelta atras, es demasiado poder para un enlace que
+    pudo reenviarse a cualquiera.
+    """
+    consent_rate_limiter.check(client_ip(request))
+    resuelto = users_store.resolve_consent(token, payload.authorized)
+    if resuelto is None:
+        actual = users_store.get_consent_by_token(token)
+        if actual is None:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Este enlace no es valido.",
+            )
+        # Ya respondido o vencido. Se devuelve el estado real en vez de un
+        # error a secas: el acudiente merece ver que fue lo que quedo.
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail={
+                "message": "Este permiso ya no admite respuesta.",
+                "consent": _consent_publico(actual),
+            },
+        )
+    return {"success": True, "consent": _consent_publico(resuelto)}
+
+
 @app.get("/api/v1/admin/me", status_code=status.HTTP_200_OK)
 def admin_me(current_admin: dict = Depends(get_current_admin_required)):
     return {"success": True, "user": current_admin}

@@ -272,7 +272,8 @@ def test_every_translation_key_used_in_code_exists():
     # Los atajos por pagina: `const tf = (key) => t(`flight.${key}`, {ns:"site"})`.
     # Sin resolverlos, medio codigo usa claves que este test no reconoceria.
     ATAJOS = {"tf": ("site", "flight."), "tj": ("site", "journeyPage."),
-              "tp": ("passport", ""), "tl": ("login", ""), "tm": ("site", "")}
+              "tp": ("passport", ""), "tl": ("login", ""), "tm": ("site", ""),
+              "ta": ("site", "parent.")}
 
     faltan = []
     for modulo in src.rglob("*.js"):

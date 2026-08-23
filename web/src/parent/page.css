@@ -1,0 +1,18 @@
+/* Centro para Padres. Se apoya en legal.css, que ya da el ancho de lectura
+   y la tipografia; aqui solo va lo que esa hoja no tiene. */
+.parent-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: stretch;
+  margin-top: 22px;
+}
+/* "No autorizo" NO se disfraza de enlace secundario ni se esconde. Una
+   decision que se puede tomar en los dos sentidos tiene que verse en los
+   dos sentidos, o la pagina esta empujando hacia una. */
+#parentDeny {
+  font-size: .9rem;
+  padding: 12px;
+  text-align: center;
+}
+#parentAgree { position: absolute; opacity: 0; width: 0; height: 0; }
