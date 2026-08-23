@@ -595,6 +595,44 @@ class UsersStore:
             ).fetchall()
         return [dict(f) for f in filas]
 
+    # Los desenlaces que significan "esta cuenta no puede seguir existiendo".
+    # DENIED y REVOKED son una respuesta explicita del acudiente; EXPIRED es
+    # el plazo agotado. AUTHORIZED no esta, obviamente, y PENDING solo cuenta
+    # cuando la fecha ya paso - eso se mira aparte porque necesita comparar.
+    CONSENT_STATES_OWED_DELETION = ("DENIED", "REVOKED", "EXPIRED")
+
+    def list_consents_awaiting_deletion(self) -> list[dict]:
+        """Menores a los que se les debe un borrado, por el motivo que sea.
+
+        No basta con los PENDING vencidos. Un acudiente que pulsa "No autorizo
+        y quiero que borren sus datos" deja el expediente en DENIED, y la
+        pagina le responde "sus datos se borraran": si el barrido solo mira
+        los PENDING, esa frase es mentira y la cuenta vive para siempre. Lo
+        mismo con los que ya estaban marcados EXPIRED por un --expirar
+        anterior, que quedaban fuera del alcance de --borrar para siempre.
+
+        Solo se mira el expediente MAS RECIENTE de cada cuenta. Abrir un
+        permiso nuevo marca el anterior como EXPIRED (ver
+        create_consent_request): sin esta condicion, pedir de nuevo la
+        autorizacion borraria la cuenta por el expediente que acabamos de
+        reemplazar - exactamente al reves de lo que se pretendia.
+        """
+        marcas = ",".join("?" * len(self.CONSENT_STATES_OWED_DELETION))
+        with self.connect() as connection:
+            filas = connection.execute(
+                "SELECT c.id, c.user_id, c.status, c.guardian_email, c.requested_at, "
+                "       c.expires_at, c.resolved_at, "
+                "       u.email AS student_email, u.name AS student_name "
+                "FROM guardian_consents c JOIN users u ON u.id = c.user_id "
+                "WHERE c.id = (SELECT MAX(id) FROM guardian_consents "
+                "              WHERE user_id = c.user_id) "
+                f"  AND (c.status IN ({marcas}) "
+                "       OR (c.status = 'PENDING' AND c.expires_at <= ?)) "
+                "ORDER BY c.expires_at",
+                [*self.CONSENT_STATES_OWED_DELETION, utc_now_iso()],
+            ).fetchall()
+        return [dict(f) for f in filas]
+
     def mark_consents_expired(self, consent_ids: list[int]) -> int:
         if not consent_ids:
             return 0

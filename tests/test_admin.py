@@ -324,3 +324,29 @@ def test_no_helper_call_leaks_into_markup_as_literal_text(client):
             f"{modulo.relative_to(fuente)}: llamada a traduccion sin interpolar "
             f"dentro de markup: {encontrado[:3]}"
         )
+
+
+def test_every_health_check_has_a_label_in_the_panel(client, admin_headers):
+    """El panel solo pinta los checks que aparecen en su diccionario LABELS
+    (web/src/admin/system-health.js): `Object.keys(LABELS).forEach`. Un check
+    que el backend devuelve pero que no esta ahi no da error ni hueco - no
+    existe, y nadie lo mira nunca.
+
+    Se descubrio porque `backups` llevaba asi desde que se anadio: vigilaba
+    que el respaldo diario no muriera en silencio, y era invisible.
+    """
+    import re
+    from pathlib import Path
+
+    panel = (Path(__file__).resolve().parent.parent
+             / "web" / "src" / "admin" / "system-health.js").read_text(encoding="utf-8")
+    bloque = re.search(r"const LABELS = \{(.*?)\};", panel, re.S)
+    assert bloque, "no se encontro el diccionario LABELS en system-health.js"
+    etiquetados = set(re.findall(r"^\s*(\w+):", bloque.group(1), re.M))
+
+    devueltos = set(client.get("/api/v1/admin/health", headers=admin_headers).json()["checks"])
+    invisibles = devueltos - etiquetados
+    assert not invisibles, (
+        f"checks que el panel nunca muestra: {sorted(invisibles)}. "
+        "Anade su etiqueta en LABELS (web/src/admin/system-health.js)."
+    )

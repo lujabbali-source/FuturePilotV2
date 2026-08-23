@@ -197,3 +197,94 @@ def test_an_authorized_permission_is_never_swept_up(store):
     consent_expiry.borrar(store)
     assert store.get_user_by_id(usuario["id"]) is not None, \
         "se borro la cuenta de un menor CON autorizacion"
+
+
+def test_a_guardian_who_says_no_gets_the_account_deleted(store):
+    """El boton dice "No autorizo y quiero que borren sus datos" y la pagina
+    responde "sus datos se borraran". Durante un tiempo eso fue falso: negar
+    dejaba el expediente en DENIED y el barrido solo miraba los PENDING, asi
+    que la cuenta vivia para siempre. Una negativa explicita es la senal mas
+    fuerte que puede mandar un acudiente; si alguna vale, es esa."""
+    from backend import consent_expiry
+
+    usuario = store.register("hijo@example.com", "password123", "Ana",
+                             is_minor=True, guardian_email="madre@example.com")
+    token = store.create_consent_request(usuario["id"], "madre@example.com")
+    store.resolve_consent(token, authorized=False)
+
+    assert len(consent_expiry.listar(store)) == 1, \
+        "negarse no puso la cuenta en la lista de borrado"
+    assert len(consent_expiry.borrar(store)) == 1
+    assert store.find_user_id_by_email("hijo@example.com") is None, \
+        "el acudiente dijo que no y la cuenta sigue viva"
+
+
+def test_marking_expired_first_does_not_put_the_account_out_of_reach(store):
+    """--expirar y --borrar son dos comandos a proposito, y el orden natural
+    es mirar antes de borrar. Pero marcar movia el expediente a EXPIRED y la
+    consulta solo buscaba PENDING: quien hacia lo prudente dejaba la cuenta
+    fuera del alcance del borrado para siempre."""
+    from backend import consent_expiry
+
+    usuario = store.register("hijo@example.com", "password123", "Ana",
+                             is_minor=True, guardian_email="madre@example.com")
+    store.create_consent_request(usuario["id"], "madre@example.com",
+                                 lifetime=timedelta(seconds=-1))
+
+    assert consent_expiry.expirar(store) == 1
+    assert len(consent_expiry.listar(store)) == 1, \
+        "marcar como EXPIRED escondio la cuenta del barrido"
+    consent_expiry.borrar(store)
+    assert store.find_user_id_by_email("hijo@example.com") is None
+
+
+def test_asking_for_permission_again_does_not_delete_the_account(store):
+    """El reverso, y el que mas dano haria. Pedir de nuevo la autorizacion
+    marca el expediente anterior como EXPIRED (create_consent_request). Si el
+    barrido mirara cualquier expediente en vez del ultimo, reenviarle el
+    enlace a un padre que no contesta borraria justo la cuenta que se estaba
+    intentando salvar."""
+    from backend import consent_expiry
+
+    usuario = store.register("hijo@example.com", "password123", "Ana",
+                             is_minor=True, guardian_email="madre@example.com")
+    store.create_consent_request(usuario["id"], "madre@example.com",
+                                 lifetime=timedelta(seconds=-1))
+    # Se le vuelve a mandar el enlace, ahora con plazo por delante.
+    store.create_consent_request(usuario["id"], "madre@example.com",
+                                 lifetime=timedelta(days=30))
+
+    assert consent_expiry.listar(store) == [], \
+        "el expediente reemplazado marco la cuenta para borrado"
+    consent_expiry.borrar(store)
+    assert store.get_user_by_id(usuario["id"]) is not None, \
+        "reenviar el enlace borro la cuenta del menor"
+
+
+def test_the_automatic_sweep_is_off_unless_someone_turns_it_on(app_module):
+    """Borrar es irreversible y se lleva la cuenta de una persona real. Que
+    aparezca solo, porque el codigo se despliega, seria justo lo que la
+    separacion entre --expirar y --borrar existia para evitar."""
+    assert app_module.CONSENT_SWEEP_ENABLED is False, \
+        "el barrido automatico viene encendido de fabrica"
+
+
+def test_the_sweep_reports_what_it_deleted(app_module, store, capsys, monkeypatch):
+    """Un borrado automatico silencioso es la peor version de esto: cuando
+    alguien pregunte por que desaparecio una cuenta, el log tiene que poder
+    responder."""
+    from backend import consent_expiry
+
+    usuario = store.register("hijo@example.com", "password123", "Ana",
+                             is_minor=True, guardian_email="madre@example.com")
+    token = store.create_consent_request(usuario["id"], "madre@example.com")
+    store.resolve_consent(token, authorized=False)
+
+    monkeypatch.setattr(consent_expiry, "_store", lambda ruta=None: store)
+    assert app_module.run_consent_sweep() == 1
+
+    salida = capsys.readouterr().out
+    assert "hijo@example.com" in salida, "no dijo QUE cuenta borro"
+    assert "madre@example.com" in salida, "no dijo por orden de quien"
+    assert "DENIED" in salida, "no dijo por que motivo"
+    assert store.find_user_id_by_email("hijo@example.com") is None

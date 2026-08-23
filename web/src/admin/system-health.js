@@ -28,6 +28,12 @@ function main() {
     auth: "Autenticación",
     apis: "APIs",
     static_assets: "Recursos estáticos",
+    // Estos dos vigilan trabajo que corre FUERA del servidor (cron), que es
+    // justo el que puede morirse sin que nadie se entere. Ojo al añadir un
+    // check nuevo en app.py: esta lista decide qué se pinta, así que un check
+    // sin etiqueta aquí es un check invisible. Hay un test que lo comprueba.
+    backups: "Copias de seguridad",
+    consents: "Permisos de acudientes",
   };
 
   // Solo las acciones que el backend realmente sabe ejecutar (ver

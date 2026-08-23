@@ -33,8 +33,9 @@ import os
 import re
 import secrets
 import sys
+import threading
 import time
-from datetime import timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -1687,6 +1688,52 @@ def _check_backups() -> Dict[str, str]:
                       f"({tam/1024:.0f} KB, {detalle})."}
 
 
+def _check_consents() -> Dict[str, str]:
+    """El barrido de permisos sigue corriendo.
+
+    Mismo problema que los respaldos y peor final. A un acudiente que no
+    responde le prometimos por correo que en 30 dias borrariamos los datos de
+    su hijo, y a uno que se nego le dijimos "sus datos se borraran". Quien
+    cumple esa frase es un comando de mantenimiento que corre fuera de este
+    proceso (backend/consent_expiry.py). Si nadie lo programo, o el cron
+    murio, no falla nada visible: simplemente los datos de un menor se quedan,
+    y la promesa pasa a ser mentira en silencio.
+
+    Que aparezca algo aqui no es un fallo del servidor. Es trabajo pendiente
+    que solo se puede hacer a mano, y por eso se mira desde el panel.
+    """
+    try:
+        from backend import consent_expiry
+    except ImportError as error:
+        return {"status": "error", "detail": f"no se pudo cargar el modulo: {error}"}
+
+    try:
+        pendientes = consent_expiry.listar()
+    except Exception as error:  # noqa: BLE001 - health check, cualquier fallo cuenta
+        return {"status": "error", "detail": f"no se pudo consultar: {error}"}
+
+    if not pendientes:
+        return {"status": "ok", "detail": "Ningun borrado de menor pendiente."}
+
+    # El mas viejo manda: mide cuanto lleva sin correr el barrido.
+    atraso_dias = 0.0
+    for expediente in pendientes:
+        try:
+            vencio = datetime.fromisoformat(expediente["expires_at"])
+        except (ValueError, KeyError):
+            continue
+        if vencio.tzinfo is None:
+            vencio = vencio.replace(tzinfo=timezone.utc)
+        atraso_dias = max(atraso_dias, (datetime.now(timezone.utc) - vencio).days)
+
+    detalle = (f"{len(pendientes)} cuenta(s) de menor sin autorizacion que deberian "
+               f"estar borradas (la mas antigua lleva {atraso_dias:.0f} dia(s) de "
+               f"retraso). Corre 'python -m backend.consent_expiry --borrar'.")
+    # Una semana de retraso ya no es un cron que se salto un dia: es que nadie
+    # lo programo, y llevamos una semana incumpliendolo por escrito.
+    return {"status": "error" if atraso_dias > 7 else "warning", "detail": detalle}
+
+
 @app.get("/api/v1/admin/health", status_code=status.HTTP_200_OK)
 def admin_health(current_admin: dict = Depends(get_current_admin_required)):
     checks = {
@@ -1700,6 +1747,7 @@ def admin_health(current_admin: dict = Depends(get_current_admin_required)):
         "apis": _check_apis(),
         "static_assets": _check_static_assets(),
         "backups": _check_backups(),
+        "consents": _check_consents(),
     }
     overall = min((check["status"] for check in checks.values()), key=lambda s: _STATUS_SEVERITY[s])
     return {"success": True, "overall": overall, "checks": checks}
@@ -2613,6 +2661,83 @@ def report_production_config() -> None:
 
 
 report_production_config()
+
+
+# --------------------------------------------------------------------------
+# El barrido de permisos de acudiente, dentro de este mismo proceso.
+#
+# Deberia ser un cron - y en la documentacion del modulo sigue estando la
+# linea de crontab para quien despliegue donde eso sea posible. En Render no
+# lo es: sus cron jobs corren en un contenedor aparte y no pueden montar el
+# disco persistente, asi que no verian la base de datos.
+#
+# Por eso vive aqui, y por eso esta APAGADO por defecto. Que borrar exija
+# escribir --borrar fue una decision deliberada: borrar es irreversible y se
+# lleva la cuenta de una persona real. Una variable de entorno es la forma de
+# tomar esa misma decision una sola vez, a conciencia, al desplegar - no un
+# comportamiento que aparece solo porque si.
+# --------------------------------------------------------------------------
+CONSENT_SWEEP_ENABLED = (
+    os.environ.get("CONSENT_SWEEP_ENABLED") or "").strip().lower() in (
+        "1", "true", "yes", "si", "sí", "on")
+CONSENT_SWEEP_INTERVAL_HOURS = float(
+    os.environ.get("CONSENT_SWEEP_INTERVAL_HOURS") or "24")
+
+
+def run_consent_sweep() -> int:
+    """Una pasada del barrido. Devuelve cuantas cuentas borro.
+
+    Grita lo que hace, siempre. Un borrado automatico silencioso es la peor
+    version de esto: cuando alguien pregunte por que desaparecio una cuenta,
+    el log tiene que poder responder.
+    """
+    from backend import consent_expiry
+
+    borradas = consent_expiry.borrar()
+    if not borradas:
+        print("[consent] Barrido: nada que borrar.")
+        return 0
+
+    print(f"[consent] Barrido: {len(borradas)} cuenta(s) de menor borradas "
+          "por falta de autorizacion del acudiente.")
+    for expediente in borradas:
+        print(f"  - cuenta {expediente['user_id']} ({expediente['student_email']}), "
+              f"acudiente {expediente['guardian_email']}, estado {expediente['status']}")
+    return len(borradas)
+
+
+def _consent_sweep_loop() -> None:
+    while True:
+        try:
+            run_consent_sweep()
+        except Exception as error:  # noqa: BLE001
+            # Un fallo no puede matar el hilo: si muere, el barrido deja de
+            # correr en silencio y volvemos justo al problema que esto venia
+            # a resolver. Se avisa y se reintenta en la siguiente vuelta.
+            print(f"[consent] ERROR en el barrido: {error}")
+        time.sleep(CONSENT_SWEEP_INTERVAL_HOURS * 3600)
+
+
+def start_consent_sweep() -> bool:
+    """Arranca el hilo si esta activado. Devuelve si lo arranco."""
+    if not CONSENT_SWEEP_ENABLED:
+        print("[consent] Barrido automatico APAGADO. El plazo de 30 dias y las "
+              "negativas de los acudientes no se ejecutan solos: corre "
+              "'python -m backend.consent_expiry --borrar' a mano, o pon "
+              "CONSENT_SWEEP_ENABLED=1. El panel de salud avisa si se acumulan.")
+        return False
+
+    # Daemon: no puede impedir que el servidor se apague. Y ojo con
+    # --workers > 1, que arrancaria un barrido por worker; hoy no es un
+    # problema porque se despliega con un solo proceso.
+    hilo = threading.Thread(target=_consent_sweep_loop, name="consent-sweep", daemon=True)
+    hilo.start()
+    print(f"[consent] Barrido automatico activo, cada "
+          f"{CONSENT_SWEEP_INTERVAL_HOURS:g} h.")
+    return True
+
+
+start_consent_sweep()
 
 
 # --------------------------------------------------------------------------

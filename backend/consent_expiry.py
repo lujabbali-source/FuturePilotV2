@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
-"""Los 30 dias del permiso del acudiente.
+"""El permiso del acudiente, cuando la respuesta no llega o es que no.
 
 La cuenta del estudiante NO se bloquea en ningun momento. Funciona entera
 desde el primer minuto, tenga el expediente el estado que tenga. Lo que hace
 este modulo es que la espera no sea infinita: si nadie autoriza, los datos
 del menor no se quedan para siempre.
+
+Barre los tres desenlaces que acaban en borrado, no solo el plazo: nadie
+respondio en 30 dias (EXPIRED), el acudiente dijo que no (DENIED), o retiro
+un permiso que ya habia dado (REVOKED). Los tres significan lo mismo - no hay
+permiso - y la pagina del acudiente promete lo mismo en los tres: "sus datos
+se borraran".
 
     python -m backend.consent_expiry              # que hay, sin tocar nada
     python -m backend.consent_expiry --expirar    # marcar los vencidos
@@ -33,12 +39,17 @@ def _store(ruta=None) -> UsersStore:
 
 
 def listar(store: UsersStore | None = None) -> list[dict]:
-    """Expedientes pendientes cuyo plazo ya paso."""
-    return (store or _store()).list_expired_consents()
+    """A quien se le debe un borrado: plazo agotado, negado o revocado."""
+    return (store or _store()).list_consents_awaiting_deletion()
 
 
 def expirar(store: UsersStore | None = None) -> int:
-    """Los marca EXPIRED. No borra nada."""
+    """Marca EXPIRED los pendientes vencidos. No borra nada.
+
+    Solo toca los PENDING: un DENIED ya tiene su desenlace escrito y no hay
+    nada que marcar en el. Sigue apareciendo en listar(), porque el borrado
+    se le debe igual.
+    """
     store = store or _store()
     vencidos = store.list_expired_consents()
     return store.mark_consents_expired([v["id"] for v in vencidos])
@@ -46,6 +57,11 @@ def expirar(store: UsersStore | None = None) -> int:
 
 def borrar(store: UsersStore | None = None) -> list[dict]:
     """Marca y borra las cuentas de los menores sin autorizacion.
+
+    Cubre los tres desenlaces que llevan al mismo sitio: el plazo se agoto,
+    el acudiente se nego, o retiro un permiso que ya habia dado. Los tres
+    terminan en borrado porque los tres significan lo mismo - no hay permiso
+    para seguir tratando los datos de ese menor.
 
     Se borra por la misma puerta que un estudiante que pide el borrado
     (delete_account), no con un DELETE a mano: asi los resultados del test
@@ -55,13 +71,18 @@ def borrar(store: UsersStore | None = None) -> list[dict]:
     oportunidad de olvidarse de algo.
     """
     store = store or _store()
-    vencidos = store.list_expired_consents()
-    if not vencidos:
+    pendientes = store.list_consents_awaiting_deletion()
+    if not pendientes:
         return []
-    store.mark_consents_expired([v["id"] for v in vencidos])
+
+    # Los que aun estaban PENDING se dejan marcados antes de tocar la cuenta:
+    # si el borrado se cae a la mitad, el expediente ya no miente sobre su
+    # estado. Los que ya venian DENIED o EXPIRED no necesitan marca.
+    store.mark_consents_expired(
+        [p["id"] for p in pendientes if p["status"] == "PENDING"])
 
     borradas = []
-    for expediente in vencidos:
+    for expediente in pendientes:
         store.delete_account(expediente["user_id"])
         _olvidar_mentor(expediente["user_id"])
         borradas.append(expediente)
@@ -98,13 +119,20 @@ def main(argv: list[str] | None = None) -> int:
     vencidos = listar(store)
 
     if not vencidos:
-        print("[consent] No hay permisos vencidos.")
+        print("[consent] Nada que borrar.")
         return 0
 
-    print(f"[consent] {len(vencidos)} permiso(s) vencido(s) sin respuesta:")
+    MOTIVOS = {
+        "PENDING": "plazo agotado sin respuesta",
+        "EXPIRED": "plazo agotado sin respuesta",
+        "DENIED": "el acudiente NO autorizo",
+        "REVOKED": "el acudiente retiro el permiso",
+    }
+    print(f"[consent] {len(vencidos)} cuenta(s) de menor sin autorizacion:")
     for v in vencidos:
+        motivo = MOTIVOS.get(v["status"], v["status"])
         print(f"    cuenta {v['user_id']}  {v['student_email']}  "
-              f"acudiente {v['guardian_email']}  vencio {v['expires_at']}")
+              f"acudiente {v['guardian_email']}  ({motivo}, {v['expires_at']})")
 
     if args.borrar:
         borradas = borrar(store)
