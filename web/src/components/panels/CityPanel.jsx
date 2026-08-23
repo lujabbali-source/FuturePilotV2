@@ -5,6 +5,7 @@ import { recordPassportEvent } from "../../services/passportService";
 import { getScholarships } from "../../services/scholarshipService";
 import { getUniversities } from "../../services/universityService";
 import useCity from "../../hooks/useCity";
+import { COLOMBIA_REFERENCE, enSalariosMinimos, referenciaCompleta } from "../../database/countries/colombia/referencia";
 import "./CityPanel.css";
 
 const sections = [
@@ -96,6 +97,14 @@ function CostSection({ city }) {
     const locale = i18n.resolvedLanguage === "es" ? "es-ES" : "en-US";
     const formatMoney = (value) => money(value, currency, locale, fallback);
 
+    // Cuánto es eso en salarios mínimos. Para alguien de 17 años en Colombia,
+    // "1,2 mínimos" dice más que "1.600.000 COP": es la unidad en la que ya
+    // piensa su familia. Solo aparece en ciudades colombianas y solo si la
+    // referencia nacional está puesta con su fuente y su año.
+    const enMinimos = city.countryId === "colombia" && referenciaCompleta()
+        ? enSalariosMinimos(costs.studentBudget)
+        : null;
+
     return (
         <section className="panel-section">
             <h2>💰 {t("panel.sections.cost")}</h2>
@@ -107,6 +116,18 @@ function CostSection({ city }) {
                 <Field label={t("panel.fields.utilities")} value={costs.utilities} formatter={formatMoney} />
                 <Field label={t("panel.fields.studentBudget")} value={costs.studentBudget} formatter={formatMoney} />
             </div>
+            {enMinimos !== null && (
+                <p className="panel-note">
+                    {t("panel.inMinimumWages", { veces: enMinimos.toLocaleString(locale) })}
+                    {" "}
+                    <span className="panel-note__source">
+                        {t("panel.minimumWageSource", {
+                            source: COLOMBIA_REFERENCE.minimumWage.source,
+                            year: COLOMBIA_REFERENCE.minimumWage.year,
+                        })}
+                    </span>
+                </p>
+            )}
         </section>
     );
 }

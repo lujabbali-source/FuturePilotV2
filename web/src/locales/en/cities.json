@@ -73,6 +73,8 @@
       "student": "Student budget"
     },
     "salarySource": "Salary from {{source}} ({{date}}).",
-    "undated": "undated"
+    "undated": "undated",
+    "inMinimumWages": "That is from {{veces}} minimum wages a month.",
+    "minimumWageSource": "({{source}}, {{year}})"
   }
 }

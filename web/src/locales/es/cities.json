@@ -73,6 +73,8 @@
       "student": "Presupuesto de estudiante"
     },
     "salarySource": "Salario según {{source}} ({{date}}).",
-    "undated": "sin fecha"
+    "undated": "sin fecha",
+    "inMinimumWages": "Eso es desde {{veces}} salarios mínimos al mes.",
+    "minimumWageSource": "({{source}}, {{year}})"
   }
 }

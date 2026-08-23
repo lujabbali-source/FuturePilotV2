@@ -534,3 +534,72 @@ def test_the_panel_shows_the_salary_source():
     for lang in ("es", "en"):
         j = json.loads((LOCALES / lang / "cities.json").read_text(encoding="utf-8"))
         assert j["panel"].get("salarySource"), f"falta el texto de fuente en {lang}"
+
+
+# ---------------------------------------------------------------------------
+# El salario mínimo como referencia
+# ---------------------------------------------------------------------------
+REFERENCIA = CIUDADES.parent / "referencia.js"
+
+
+def test_the_minimum_wage_lives_in_exactly_one_place():
+    """Repetido por ciudad, una actualizacion se olvidaria en la mitad de las
+    fichas y unas dirian una cosa y otras otra."""
+    assert REFERENCIA.exists()
+    culpables = [f.stem for f in fichas()
+                 if "minimumWage" in f.read_text(encoding="utf-8")]
+    assert not culpables, f"el salario minimo se copio a fichas de ciudad: {culpables}"
+
+
+def test_the_comparison_needs_amount_source_and_year():
+    """Un salario minimo equivocado no falla ni avisa: multiplica mal en las 24
+    ciudades a la vez, en la cifra con la que alguien juzga si le alcanza. Y sin
+    año nadie puede saber si esta viejo - en Colombia se desactualiza dentro del
+    mismo año."""
+    codigo = REFERENCIA.read_text(encoding="utf-8")
+    m = re.search(r"export function referenciaCompleta[^{]*\{(.*?)\n\}", codigo, re.S)
+    assert m, "no existe la comprobacion de referencia completa"
+    for campo in ("amount", "currency", "year", "source"):
+        assert campo in m.group(1), f"referenciaCompleta no exige {campo}"
+
+
+def test_nothing_is_shown_while_the_wage_is_unset():
+    """Mientras el numero no este puesto, la comparacion no aparece. Un cero o
+    un guion invitarian a leerlo como un dato."""
+    # Desde el `export`, no desde el principio: el comentario de arriba trae un
+    # ejemplo relleno de `minimumWage`, y buscar la primera coincidencia leia
+    # ese ejemplo en vez del valor real. La guarda pasaba con el codigo puesto
+    # a mano sin fuente - se comprobo rompiendolo.
+    codigo = REFERENCIA.read_text(encoding="utf-8")
+    codigo = codigo[codigo.index("export const COLOMBIA_REFERENCE"):]
+    m = re.search(r"minimumWage:\s*\{(.*?)\}", codigo, re.S)
+    assert m, "no se encontro la referencia"
+    if re.search(r"amount:\s*null", m.group(1)):
+        panel = PANEL.read_text(encoding="utf-8")
+        assert "referenciaCompleta()" in panel, \
+            "el panel no comprueba que la referencia este puesta antes de usarla"
+    else:
+        # Ya la llenaron: entonces tiene que traer fuente y año de verdad.
+        for campo in ("year", "source"):
+            assert not re.search(rf"{campo}:\s*null", m.group(1)), \
+                f"el salario minimo tiene monto pero no {campo}"
+
+
+def test_the_ratio_uses_the_low_end_of_the_range():
+    """Es el numero que responde a "¿me alcanza?": el minimo que hay que
+    reunir. Un punto medio diria "1,5 minimos" donde lo cierto es "desde
+    1,2"."""
+    codigo = REFERENCIA.read_text(encoding="utf-8")
+    cuerpo = re.search(r"export function enSalariosMinimos.*", codigo, re.S).group(0)
+    assert "rango.min" in cuerpo, "la comparacion ya no usa el extremo bajo"
+    assert "max" not in cuerpo.split("return")[-1], \
+        "la comparacion empezo a promediar el rango"
+
+
+def test_dollars_are_never_compared_against_a_colombian_wage():
+    """Diez ciudades traen su presupuesto en dolares. Dividir 330 USD entre un
+    salario minimo en pesos daria un numero cuarenta veces menor y parecia que
+    vivir alli cuesta nada."""
+    cuerpo = REFERENCIA.read_text(encoding="utf-8")
+    assert "rango.currency" in cuerpo and "ref.currency" in cuerpo, \
+        "la comparacion no comprueba que las monedas coincidan"
