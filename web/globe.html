@@ -5,6 +5,10 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-i18n="site:pageTitle.globe">Explora tu futuro · FuturePilot</title>
+    <!-- Ver la nota en src/index.css: aqui y no como @import de CSS, porque
+         Vite intenta resolver un @import en build y esto vive fuera de su
+         raiz de proyecto. -->
+    <link rel="stylesheet" href="/Frontend/fonts.css">
   </head>
   <body>
     <div id="root"></div>

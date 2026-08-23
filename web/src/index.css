@@ -1,3 +1,10 @@
+/* Las fuentes ('Manrope', 'DM Mono') se cargan desde globe.html con un
+   <link> normal a Frontend/fonts.css, igual que en las demas paginas del
+   sitio - NO con @import aqui. Vite si intenta resolver un @import de CSS
+   en build (a diferencia de un <link href> en el HTML, que deja intacto
+   para el servidor), y Frontend/ vive un nivel por encima de la raiz del
+   proyecto Vite: el build fallaba buscando el archivo en la raiz del disco. */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +18,7 @@ body,
   height: 100vh;
   overflow: hidden;
   background: #02050b;
+  font-family: 'Manrope', Arial, sans-serif;
 }
 
 canvas {
