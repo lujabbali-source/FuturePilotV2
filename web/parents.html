@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="site:pageTitle.parents">Para padres y acudientes · FuturePilot</title>
+<link rel="stylesheet" href="/Frontend/style.css">
+</head>
+<body>
+<div class="background-glow"></div>
+
+<!-- Página PÚBLICA para padres, enlazada desde el pie junto a lo legal. No
+     confundir con /consent/{token} (parent.html), que es el enlace privado
+     que llega por correo y es el único sitio donde se decide algo.
+
+     Aquí no se autoriza ni se niega nada, a propósito: sin token no sabemos
+     de quién es hijo quien entra, y una página pública que aceptara permisos
+     sería una forma de autorizar en nombre de un padre cualquiera. -->
+<main class="legal-shell">
+  <a class="back" href="/" data-i18n="forParents.back">← Volver a FuturePilot</a>
+  <h1 data-i18n="forParents.title">Para padres y acudientes</h1>
+  <p class="legal-updated" data-i18n="forParents.updated">Última actualización: 23 de agosto de 2026</p>
+
+  <div class="legal-note">
+    <p class="legal-note__title" data-i18n="forParents.noteTitle">Si llegaste aquí por un correo nuestro</p>
+    <p data-i18n="forParents.note"></p>
+  </div>
+
+  <h2 data-i18n="forParents.whatTitle">Qué es FuturePilot</h2>
+  <p data-i18n="forParents.what"></p>
+  <p data-i18n="forParents.whatNot"></p>
+
+  <h2 data-i18n="forParents.dataTitle">Qué sabemos de su hijo o hija</h2>
+  <p data-i18n="forParents.dataIntro"></p>
+  <ul class="legal-list">
+    <li data-i18n="forParents.dataAccount"></li>
+    <li data-i18n="forParents.dataTest"></li>
+    <li data-i18n="forParents.dataYou"></li>
+  </ul>
+  <p data-i18n="forParents.dataNever"></p>
+
+  <!-- El bloque de la autorización va resaltado: es lo que un padre viene a
+       entender, y lo que decide si la cuenta sigue existiendo. -->
+  <section class="legal-minors">
+    <h2 data-i18n="forParents.consentTitle">La autorización que le pedimos</h2>
+    <p data-i18n="forParents.consentWhy"></p>
+    <p data-i18n="forParents.consentHow"></p>
+    <p data-i18n="forParents.consentDeadline"></p>
+    <p class="legal-pending" data-i18n="forParents.consentNoBlock"></p>
+  </section>
+
+  <h2 data-i18n="forParents.rightsTitle">Qué puede pedirnos</h2>
+  <p data-i18n="forParents.rightsIntro"></p>
+  <ul class="legal-list">
+    <li data-i18n="forParents.rightsSee"></li>
+    <li data-i18n="forParents.rightsDelete"></li>
+    <li data-i18n="forParents.rightsWithdraw"></li>
+  </ul>
+
+  <h2 data-i18n="forParents.unknownTitle">Si su hijo se registró sin decírselo</h2>
+  <p data-i18n="forParents.unknown"></p>
+
+  <h2 data-i18n="forParents.contactTitle">Hablar con una persona</h2>
+  <p data-i18n="forParents.contact"></p>
+  <p>
+    <a class="back" href="/privacy" data-i18n="forParents.readPrivacy">Leer la política de privacidad completa →</a>
+  </p>
+</main>
+<script type="module" src="/src/parents/main.js"></script>
+</body>
+</html>

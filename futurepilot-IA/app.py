@@ -574,6 +574,18 @@ def consent_page(token: str):
     return _web_page("parent.html")
 
 
+@app.get("/parents")
+def parents_page():
+    """Pagina publica para padres, enlazada desde el pie con lo legal.
+
+    Distinta de /consent/{token}: aqui no se decide nada. Sin token no hay
+    forma de saber de quien es acudiente quien entra, asi que esta pagina
+    explica e informa, y la decision sigue viviendo solo en el enlace que
+    llega por correo.
+    """
+    return _web_page("parents.html")
+
+
 @app.get("/terms")
 def terms_page():
     return _web_page("terms.html")

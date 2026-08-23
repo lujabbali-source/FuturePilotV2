@@ -96,7 +96,8 @@
     "supportNote": "Dudas, sugerencias o comentarios:",
     "terms": "Términos y Condiciones",
     "privacy": "Política de Privacidad",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "parents": "Para Padres y Acudientes"
   },
   "pageTitle": {
     "index": "FuturePilot",
@@ -110,7 +111,8 @@
     "reset": "Restablecer contraseña · FuturePilot",
     "privacy": "Política de privacidad · FuturePilot",
     "terms": "Términos y condiciones · FuturePilot",
-    "parent": "Centro para Padres · FuturePilot"
+    "parent": "Centro para Padres · FuturePilot",
+    "parents": "Para padres y acudientes · FuturePilot"
   },
   "careers": {
     "buildPlan": "Crear mi plan de vuelo",
@@ -240,7 +242,7 @@
   "privacy": {
     "back": "← Volver a FuturePilot",
     "title": "Política de privacidad",
-    "updated": "Última actualización: 20 de agosto de 2026",
+    "updated": "Última actualización: 23 de agosto de 2026",
     "noteTitle": "Antes de empezar, con honestidad",
     "note": "FuturePilot es un proyecto en desarrollo activo, hecho por una sola persona. Esta política describe con exactitud lo que el sistema hace hoy: está escrita leyendo el código, no copiada de una plantilla. Lo que todavía no está resuelto aparece dicho como tal, no escondido. Este texto no ha sido revisado por un abogado.",
     "whoTitle": "Quién responde por tus datos",
@@ -255,17 +257,17 @@
     "whyTitle": "Para qué los usamos",
     "why": "Para una sola cosa: darte la orientación que viniste a buscar y que la encuentres tal como la dejaste cuando vuelvas. Tus respuestas alimentan el motor que calcula tu perfil y tu ruta. No se usan para perfilarte con fines comerciales, ni para entrenar modelos, ni para decidir nada sobre ti fuera de la aplicación.",
     "shareTitle": "Con quién los compartimos",
-    "share": "Con nadie. FuturePilot no tiene analítica, ni publicidad, ni botones de redes sociales, ni servicios de terceros incrustados. Las tipografías se sirven desde nuestro propio servidor en vez de pedirlas a Google, precisamente para que ningún tercero sepa que visitaste esta página. El navegador tiene prohibido, por política de seguridad, conectarse a cualquier dominio que no sea el nuestro.",
+    "share": "Con nadie, salvo el proveedor de correo que explicamos justo abajo. FuturePilot no tiene analítica, ni publicidad, ni botones de redes sociales, ni servicios de terceros incrustados. Las tipografías se sirven desde nuestro propio servidor en vez de pedirlas a Google, precisamente para que ningún tercero sepa que visitaste esta página. El navegador tiene prohibido, por política de seguridad, conectarse a cualquier dominio que no sea el nuestro.",
     "shareAI": "El motor que analiza tu test es nuestro y corre en nuestro servidor. Tus respuestas no se envían a ninguna inteligencia artificial externa. Esto fue una decisión deliberada: no queríamos que las respuestas de un estudiante menor de edad salieran hacia la infraestructura de otra compañía.",
-    "shareMail": "La única información que sale del servidor es un correo electrónico, y solo si pides recuperar tu contraseña: se envía a tu propia dirección, a través de un servidor de correo. Ese correo contiene un enlace temporal, nunca tu contraseña.",
+    "shareMail": "Del servidor solo salen correos, y solo en dos situaciones. Si pides recuperar tu contraseña, va a tu propia dirección y lleva un enlace temporal, nunca tu contraseña. Y si dijiste que eres menor de edad, va a la dirección de tu acudiente para pedirle la autorización: ese correo lleva tu nombre, tu correo y el enlace para responder, porque quien lo recibe necesita saber sobre quién está decidiendo. No lleva tu resultado del test, ni tu pasaporte, ni por dónde has navegado.",
     "minorsTitle": "Si eres menor de edad",
     "minorsIntro": "FuturePilot está pensado para estudiantes de colegio, así que damos por hecho que buena parte de quienes lo usan son menores de edad. Eso nos obliga a más cuidado, no a menos.",
     "minorsLaw": "En Colombia, el tratamiento de datos de niñas, niños y adolescentes está regulado por la Ley 1581 de 2012 y el Decreto 1377 de 2013: debe responder al interés superior del menor, respetar su derecho a ser escuchado y contar con la autorización de quien ejerce la patria potestad.",
-    "minorsPractice": "En la práctica esto significa que si eres menor de edad deberías crear tu cuenta con el conocimiento de tu madre, tu padre o tu acudiente, y que ellos pueden pedir en cualquier momento ver, corregir o eliminar tus datos escribiendo al correo de contacto. También significa que pedimos lo mínimo: no preguntamos por tu documento de identidad, tu dirección, tu colegio, tu teléfono ni el nombre de tus padres, porque nada de eso hace falta para orientarte.",
-    "minorsPending": "Lo que todavía no está implementado, y lo decimos claro: no existe aún un mecanismo técnico que verifique la edad ni que recoja la autorización del acudiente antes de crear la cuenta. Es la principal tarea pendiente de privacidad del proyecto y se trabajará antes de cualquier apertura al público general.",
+    "minorsPractice": "En la práctica esto significa que al crear la cuenta te preguntamos si eres menor de edad, y si dices que sí te pedimos el correo de tu padre, madre o acudiente para pedirle la autorización. También significa que pedimos lo mínimo: no preguntamos por tu documento de identidad, tu dirección, tu colegio, tu teléfono ni el nombre de tus padres, porque nada de eso hace falta para orientarte.",
+    "minorsPending": "Lo que todavía no está resuelto, y lo decimos claro: la edad no se verifica. Si alguien dice que es mayor de edad, le creemos, y tampoco podemos comprobar que el correo que nos das sea de verdad el de tu acudiente y no el de un amigo. Verificarlo de verdad exigiría pedir documentos de identidad, que es justo el tipo de dato que hemos decidido no guardar. Tampoco existe todavía una forma de retirar la autorización desde la propia página: un acudiente que cambie de opinión tiene que escribirnos al correo de contacto, y lo hacemos a mano.",
     "timeTitle": "Cuánto tiempo los conservamos",
     "timeSession": "La sesión con la que quedas conectado caduca a los 30 días. Los enlaces para recuperar contraseña caducan a la hora y quedan inutilizados en cuanto los usas.",
-    "timeRest": "El resto — tu cuenta, tu test, tu pasaporte y tu progreso — se conserva mientras tengas la cuenta abierta, porque el sentido de la aplicación es que puedas volver meses después y encontrar tu ruta. Se borra cuando tú lo pidas. Todavía no hay un plazo automático de eliminación por inactividad; es una decisión pendiente.",
+    "timeRest": "El resto — tu cuenta, tu test, tu pasaporte y tu progreso — se conserva mientras tengas la cuenta abierta, porque el sentido de la aplicación es que puedas volver meses después y encontrar tu ruta. Se borra cuando tú lo pidas. La única eliminación automática que existe es la de los 30 días sin respuesta del acudiente que explicamos arriba; no hay todavía un plazo por inactividad, y es una decisión pendiente.",
     "rightsTitle": "Qué puedes hacer con tus datos",
     "rightsIntro": "Estos derechos no son una promesa en un documento: están construidos en la aplicación y funcionan hoy.",
     "rightsExport": "Descargar todo lo tuyo en un archivo, desde tu cuenta. Incluye tu perfil, tus resultados y tu pasaporte.",
@@ -278,12 +280,15 @@
     "changesTitle": "Cambios a esta política",
     "changes": "Si algo cambia en lo que guardamos o en cómo lo usamos, se actualiza esta página y la fecha de arriba. Si el cambio es importante, se avisa dentro de la aplicación.",
     "contactTitle": "Contacto",
-    "contact": "Escribe a ljfuturepilot@gmail.com — para preguntas, para pedir tus datos, para exigir que los borremos, o si eres madre, padre o acudiente y quieres saber qué tenemos de tu hijo o hija."
+    "contact": "Escribe a ljfuturepilot@gmail.com — para preguntas, para pedir tus datos, para exigir que los borremos, o si eres madre, padre o acudiente y quieres saber qué tenemos de tu hijo o hija.",
+    "whatGuardian": "Si dices que eres menor de edad: ese hecho y el correo de tu padre, madre o acudiente. Ese correo se usa para una sola cosa, pedirle la autorización, y se borra junto con tu cuenta. No pedimos su nombre, ni su teléfono, ni su documento, y tampoco guardamos desde qué conexión respondió: sería un dato personal más sobre alguien que solo entró a contestar una pregunta.",
+    "shareProvider": "Esos correos se entregan a través de Brevo, una empresa europea que actúa como proveedor de envío. Para poder entregarlos, Brevo procesa la dirección de destino y el contenido del mensaje. Es el único tercero que llega a ver un dato tuyo, no recibe nada más, y no se usa para publicidad ni para ninguna otra finalidad. Hasta el 23 de agosto de 2026 esta página decía que no salía nada del servidor; dejó de ser cierto el día que el envío de correo empezó a funcionar de verdad, y por eso está escrito aquí.",
+    "minorsConsent": "Cómo funciona esa autorización: a tu acudiente le llega un correo con un enlace a una página donde le explicamos qué es FuturePilot y qué datos tuyos tenemos antes de preguntarle nada, y desde ahí puede autorizar o negarse. Mientras tanto tu cuenta no se bloquea ni se limita: funciona entera desde el primer minuto, porque castigarte a ti por una respuesta que no depende de ti no protegería a nadie. Lo que sí tiene fecha es la espera. Si tu acudiente se niega, o si nadie responde en 30 días, tu cuenta y todo lo que hay bajo ella se borran."
   },
   "terms": {
     "back": "← Volver a FuturePilot",
     "title": "Términos y condiciones",
-    "updated": "Última actualización: 20 de agosto de 2026",
+    "updated": "Última actualización: 23 de agosto de 2026",
     "noteTitle": "En una frase",
     "note": "FuturePilot es gratis, te ayuda a explorar carreras y a armar una ruta, y no decide nada por ti. Lo que sigue lo explica con detalle y sin letra pequeña. Este texto no ha sido revisado por un abogado.",
     "whatTitle": "Qué es FuturePilot",
@@ -294,7 +299,7 @@
     "notAdmission": "No garantiza admisión en ninguna universidad, ni becas, ni empleo. FuturePilot no tiene convenio con las instituciones que aparecen y no interviene en sus procesos de selección.",
     "notData": "La información de universidades y programas está curada a mano y puede quedarse desactualizada: los requisitos, los costos y la oferta cambian cada año. Antes de tomar una decisión real, verifica siempre en la página oficial de la institución.",
     "whoTitle": "Quién puede usarlo",
-    "who": "Cualquier estudiante. Como la plataforma está dirigida a personas que cursan bachillerato, damos por hecho que muchas serán menores de edad: si ese es tu caso, deberías crear tu cuenta con el conocimiento de tu madre, tu padre o tu acudiente. Cómo tratamos los datos de menores está explicado en la política de privacidad.",
+    "who": "Cualquier estudiante. Como la plataforma está dirigida a personas que cursan bachillerato, damos por hecho que muchas serán menores de edad, así que al crear la cuenta te preguntamos la edad. Si eres menor, necesitamos el correo de tu padre, madre o acudiente para pedirle la autorización. Cómo tratamos los datos de menores está explicado en la política de privacidad.",
     "accountTitle": "Tu cuenta",
     "accountKeep": "Tu contraseña es tuya y no la compartas con nadie. Nadie de FuturePilot te la va a pedir nunca, ni por correo ni por ningún otro medio: si alguien lo hace, no es de aquí.",
     "accountOne": "Una cuenta por persona. Registrarte con el correo de otra persona, o hacerte pasar por alguien más, no está permitido.",
@@ -321,7 +326,8 @@
     "changesTitle": "Cambios",
     "changes": "Si estos términos cambian, se actualiza esta página y la fecha de arriba. Si el cambio es importante, se avisa dentro de la aplicación.",
     "contactTitle": "Contacto",
-    "contact": "Escribe a ljfuturepilot@gmail.com. Responde una persona, no un formulario."
+    "contact": "Escribe a ljfuturepilot@gmail.com. Responde una persona, no un formulario.",
+    "whoGuardian": "Tu cuenta funciona completa desde el primer momento, sin esperar esa respuesta. Pero es una condición para conservarla: si tu acudiente se niega, o si nadie responde en 30 días, la cuenta y sus datos se borran. No es una sanción ni tiene nada que ver con cómo uses la plataforma — es el único modo honesto de tratar los datos de un menor sin el permiso de quien responde por él."
   },
   "parent": {
     "title": "Permiso para la cuenta de tu hijo o hija",
@@ -352,5 +358,36 @@
     "stateExpired": "Este permiso venció sin respuesta. Sus datos se borrarán.",
     "errorGeneric": "No pudimos guardar tu respuesta. Intenta de nuevo.",
     "errorNetwork": "No pudimos conectar. Revisa tu conexión e intenta de nuevo."
+  },
+  "forParents": {
+    "back": "← Volver a FuturePilot",
+    "title": "Para padres y acudientes",
+    "updated": "Última actualización: 23 de agosto de 2026",
+    "noteTitle": "Si llegaste aquí por un correo nuestro",
+    "note": "Esta página explica, pero no decide. Si te escribimos para pedirte autorización sobre la cuenta de tu hijo o tu hija, la decisión se toma en el enlace personal que venía en ese correo, no aquí: es la única forma que tenemos de saber que quien responde eres tú y no cualquiera que pase por la página. Si perdiste ese correo, escríbenos y te mandamos el enlace de nuevo. Y por si acaso: FuturePilot nunca te va a pedir una contraseña, ni datos de tarjeta, ni un pago. Si recibes algo así en nuestro nombre, no es nuestro.",
+    "whatTitle": "Qué es FuturePilot",
+    "what": "Una plataforma gratuita de orientación vocacional para estudiantes de bachillerato. Tu hijo responde un test de intereses, ve qué carreras encajan con lo que le sale bien y lo que le gusta, explora universidades y ciudades, y arma una ruta para llegar hasta ahí. La hace una sola persona y no cobra nada.",
+    "whatNot": "Lo que no es, y conviene decirlo antes que nada: no decide nada por él. El resultado del test es una conversación para tener en casa, no un veredicto sobre su futuro ni un pronóstico de en qué va a ser bueno. Tampoco es una entidad educativa, ni tiene convenio con ninguna universidad, ni gestiona admisiones.",
+    "dataTitle": "Qué sabemos de su hijo o hija",
+    "dataIntro": "Todo lo que guardamos, sin excepción:",
+    "dataAccount": "Su correo, su nombre si decidió escribirlo (es opcional), y su contraseña convertida en un hash irreversible: nadie puede leerla, tampoco quien administra el servidor.",
+    "dataTest": "Sus respuestas al test, el perfil que sale de ellas, y por dónde va en su ruta: las carreras y ciudades que ha mirado o guardado.",
+    "dataYou": "Tu correo electrónico, porque él lo escribió al decirnos que es menor de edad. Se usa para una sola cosa, pedirte esta autorización, y se borra junto con su cuenta. No guardamos tu nombre, ni tu teléfono, ni desde qué conexión respondiste.",
+    "dataNever": "Y lo que nunca pedimos, porque no hace falta para orientar a nadie: documento de identidad, dirección, colegio, teléfono, ni el nombre de los padres. No hay publicidad, no hay analítica, no se vende nada a nadie y no hay ningún servicio de terceros incrustado en las páginas.",
+    "consentTitle": "La autorización que le pedimos",
+    "consentWhy": "En Colombia, tratar datos de menores de edad exige la autorización de quien ejerce la patria potestad (Ley 1581 de 2012 y Decreto 1377 de 2013). Por eso, cuando un estudiante nos dice que es menor, le pedimos tu correo y te escribimos.",
+    "consentHow": "En ese correo va un enlace a una página donde ves de qué cuenta se te habla, qué datos hay, y puedes autorizar o negarte. Negarse está a la vista, con el mismo peso que autorizar: una decisión que se puede tomar en los dos sentidos tiene que verse en los dos.",
+    "consentDeadline": "Si te niegas, o si nadie responde en 30 días, la cuenta y todo lo que hay bajo ella se borran. No es una amenaza ni una forma de presionarte: es lo contrario, es que el silencio no nos sirva de excusa para quedarnos con los datos de un menor.",
+    "consentNoBlock": "Mientras tanto su cuenta funciona entera, sin bloqueos ni recortes. Castigar al estudiante por una respuesta que no depende de él no protegería a nadie, y lo único que conseguiría es empujarlo a registrarse otra vez mintiendo sobre su edad.",
+    "rightsTitle": "Qué puede pedirnos",
+    "rightsIntro": "En cualquier momento, respondas lo que respondas, y sin dar explicaciones:",
+    "rightsSee": "Ver exactamente qué datos suyos tenemos, y que te los enviemos.",
+    "rightsDelete": "Que borremos la cuenta y todo lo asociado a ella.",
+    "rightsWithdraw": "Retirar una autorización que ya habías dado. Esto todavía no se puede hacer solo desde la página: escríbenos y lo hacemos a mano, con el mismo efecto — se borra todo.",
+    "unknownTitle": "Si su hijo se registró sin decírselo",
+    "unknown": "Escríbenos y lo resolvemos. Sé honesto con lo que podemos comprobar: por correo no tenemos forma de verificar con certeza que eres el acudiente de esa persona. Cuando hay duda erramos hacia borrar, porque equivocarnos borrando le cuesta a un estudiante una cuenta que puede volver a crear, y equivocarnos guardando le cuesta sus datos a alguien que no dio permiso.",
+    "contactTitle": "Hablar con una persona",
+    "contact": "Escribe a ljfuturepilot@gmail.com. Responde una persona, no un formulario ni un bot, y normalmente en menos de unos días. Si algo de esta página no se entiende, esa también es una razón válida para escribir: si no se entiende, está mal escrita.",
+    "readPrivacy": "Leer la política de privacidad completa →"
   }
 }

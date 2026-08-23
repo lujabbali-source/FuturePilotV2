@@ -96,7 +96,8 @@
     "supportNote": "Questions, suggestions or feedback:",
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "parents": "For Parents & Guardians"
   },
   "pageTitle": {
     "index": "FuturePilot",
@@ -110,7 +111,8 @@
     "reset": "Reset password · FuturePilot",
     "privacy": "Privacy policy · FuturePilot",
     "terms": "Terms & conditions · FuturePilot",
-    "parent": "Parent Centre · FuturePilot"
+    "parent": "Parent Centre · FuturePilot",
+    "parents": "For parents and guardians · FuturePilot"
   },
   "careers": {
     "buildPlan": "Build my flight plan",
@@ -240,7 +242,7 @@
   "privacy": {
     "back": "← Back to FuturePilot",
     "title": "Privacy policy",
-    "updated": "Last updated: 20 August 2026",
+    "updated": "Last updated: 23 August 2026",
     "noteTitle": "Up front, honestly",
     "note": "FuturePilot is a project under active development, built by one person. This policy describes exactly what the system does today: it was written by reading the code, not copied from a template. What is still unresolved is stated as such rather than hidden. This text has not been reviewed by a lawyer.",
     "whoTitle": "Who is responsible for your data",
@@ -255,17 +257,17 @@
     "whyTitle": "What we use them for",
     "why": "For one thing only: giving you the guidance you came for, and having it there as you left it when you return. Your answers feed the engine that computes your profile and your route. They are not used to profile you commercially, to train models, or to decide anything about you outside the application.",
     "shareTitle": "Who we share them with",
-    "share": "Nobody. FuturePilot has no analytics, no advertising, no social media buttons, and no embedded third-party services. Fonts are served from our own server instead of requested from Google, precisely so that no third party learns you visited this page. The browser is forbidden, by security policy, from connecting to any domain other than ours.",
+    "share": "Nobody, other than the mail provider explained just below. FuturePilot has no analytics, no advertising, no social media buttons, and no embedded third-party services. Fonts are served from our own server instead of requested from Google, precisely so that no third party learns you visited this page. The browser is forbidden, by security policy, from connecting to any domain other than ours.",
     "shareAI": "The engine that analyses your assessment is ours and runs on our server. Your answers are not sent to any external artificial intelligence. This was a deliberate decision: we did not want a school student's answers travelling into another company's infrastructure.",
-    "shareMail": "The only information that leaves the server is an email, and only if you ask to reset your password: it goes to your own address through a mail server. That email contains a temporary link, never your password.",
+    "shareMail": "The only thing that leaves the server is email, and only in two situations. If you ask to reset your password, it goes to your own address and carries a temporary link, never your password. And if you told us you are a minor, it goes to your guardian's address to ask for their authorisation: that email carries your name, your email and the link to answer, because whoever receives it needs to know who they are deciding about. It does not carry your assessment result, your passport, or anywhere you have browsed.",
     "minorsTitle": "If you are under 18",
     "minorsIntro": "FuturePilot is made for school students, so we assume a good share of the people using it are minors. That obliges us to more care, not less.",
     "minorsLaw": "In Colombia, processing the data of children and adolescents is governed by Law 1581 of 2012 and Decree 1377 of 2013: it must serve the best interest of the minor, respect their right to be heard, and have the authorisation of whoever holds parental authority.",
-    "minorsPractice": "In practice this means that if you are a minor you should create your account with the knowledge of your parent or guardian, and that they may at any time ask to see, correct, or delete your data by writing to the contact address. It also means we ask for the minimum: we do not ask for your ID number, your address, your school, your phone, or your parents' names, because none of that is needed to guide you.",
-    "minorsPending": "What is not yet implemented, stated plainly: there is still no technical mechanism that verifies age or collects a guardian's authorisation before an account is created. It is the project's main outstanding privacy task and will be addressed before any general public launch.",
+    "minorsPractice": "In practice this means that when you create your account we ask whether you are a minor, and if you say yes we ask for your parent's or guardian's email so we can request their authorisation. It also means we ask for the bare minimum: we do not ask for your ID, your address, your school, your phone number or your parents' names, because none of that is needed to help you find your direction.",
+    "minorsPending": "What is still unresolved, stated plainly: age is not verified. If someone says they are an adult, we believe them, and we cannot check that the address you give us really belongs to your guardian rather than to a friend. Verifying that properly would mean asking for identity documents, which is exactly the kind of data we have decided not to hold. There is also no way yet to withdraw an authorisation from the page itself: a guardian who changes their mind has to write to our contact address, and we do it by hand.",
     "timeTitle": "How long we keep them",
     "timeSession": "The session that keeps you logged in expires after 30 days. Password reset links expire after one hour and stop working the moment you use them.",
-    "timeRest": "Everything else — your account, your assessment, your passport, and your progress — is kept for as long as your account is open, because the whole point is that you can come back months later and find your route. It is deleted when you ask. There is not yet an automatic deletion deadline for inactivity; that decision is still pending.",
+    "timeRest": "Everything else — your account, your assessment, your passport, and your progress — is kept for as long as your account is open, because the whole point is that you can come back months later and find your route. It is deleted when you ask. The only automatic deletion that exists is the 30 days without a guardian's answer explained above; there is still no deadline for inactivity, and that decision is still pending.",
     "rightsTitle": "What you can do with your data",
     "rightsIntro": "These rights are not a promise in a document: they are built into the application and work today.",
     "rightsExport": "Download everything of yours as a file, from your account. It includes your profile, your results, and your passport.",
@@ -278,12 +280,15 @@
     "changesTitle": "Changes to this policy",
     "changes": "If what we store or how we use it changes, this page and the date above are updated. If the change is significant, you will be told inside the application.",
     "contactTitle": "Contact",
-    "contact": "Write to ljfuturepilot@gmail.com — for questions, to request your data, to demand we delete it, or if you are a parent or guardian and want to know what we hold about your child."
+    "contact": "Write to ljfuturepilot@gmail.com — for questions, to request your data, to demand we delete it, or if you are a parent or guardian and want to know what we hold about your child.",
+    "whatGuardian": "If you tell us you are a minor: that fact and the email address of your parent or guardian. That address is used for one thing only, asking for their authorisation, and it is deleted along with your account. We do not ask for their name, their phone number or their ID, and we do not store the connection they answered from either: it would be one more piece of personal data about someone who only came by to answer a question.",
+    "shareProvider": "Those emails are delivered through Brevo, a European company acting as our sending provider. To deliver them, Brevo processes the destination address and the content of the message. It is the only third party that ever sees any data of yours, it receives nothing else, and it is not used for advertising or any other purpose. Until 23 August 2026 this page said nothing left the server at all; that stopped being true the day email delivery actually started working, which is why it is written here.",
+    "minorsConsent": "How that authorisation works: your guardian receives an email with a link to a page that explains what FuturePilot is and what data of yours we hold before asking them anything, and from there they can authorise or refuse. In the meantime your account is neither blocked nor limited: it works in full from the first minute, because punishing you for an answer that is not yours to give would protect nobody. What does have a deadline is the wait. If your guardian refuses, or if nobody answers within 30 days, your account and everything under it are deleted."
   },
   "terms": {
     "back": "← Back to FuturePilot",
     "title": "Terms and conditions",
-    "updated": "Last updated: 20 August 2026",
+    "updated": "Last updated: 23 August 2026",
     "noteTitle": "In one sentence",
     "note": "FuturePilot is free, it helps you explore careers and build a route, and it decides nothing for you. What follows explains that in detail, with no fine print. This text has not been reviewed by a lawyer.",
     "whatTitle": "What FuturePilot is",
@@ -294,7 +299,7 @@
     "notAdmission": "It guarantees no university admission, no scholarship, and no job. FuturePilot has no agreement with the institutions listed and plays no part in their selection processes.",
     "notData": "University and programme information is curated by hand and can go out of date: requirements, costs, and course offerings change every year. Before making a real decision, always check the institution's official page.",
     "whoTitle": "Who can use it",
-    "who": "Any student. Because the platform is aimed at people in secondary school, we assume many will be minors: if that is you, you should create your account with the knowledge of your parent or guardian. How we handle minors' data is explained in the privacy policy.",
+    "who": "Any student. Since the platform is aimed at people in secondary school, we assume many of them are minors, so we ask your age when you create the account. If you are a minor, we need your parent's or guardian's email in order to request their authorisation. How we handle minors' data is explained in the privacy policy.",
     "accountTitle": "Your account",
     "accountKeep": "Your password is yours; do not share it with anyone. Nobody from FuturePilot will ever ask you for it, by email or by any other means: if someone does, they are not from here.",
     "accountOne": "One account per person. Registering with someone else's email, or passing yourself off as another person, is not allowed.",
@@ -321,7 +326,8 @@
     "changesTitle": "Changes",
     "changes": "If these terms change, this page and the date above are updated. If the change is significant, you will be told inside the application.",
     "contactTitle": "Contact",
-    "contact": "Write to ljfuturepilot@gmail.com. A person replies, not a form."
+    "contact": "Write to ljfuturepilot@gmail.com. A person replies, not a form.",
+    "whoGuardian": "Your account works in full from the very first moment, without waiting for that answer. But it is a condition for keeping it: if your guardian refuses, or if nobody answers within 30 days, the account and its data are deleted. It is not a punishment and has nothing to do with how you use the platform — it is the only honest way to handle a minor's data without permission from whoever answers for them."
   },
   "parent": {
     "title": "Permission for your child's account",
@@ -352,5 +358,36 @@
     "stateExpired": "This permission expired without a reply. Their data will be deleted.",
     "errorGeneric": "We couldn't save your reply. Please try again.",
     "errorNetwork": "We couldn't connect. Check your connection and try again."
+  },
+  "forParents": {
+    "back": "← Back to FuturePilot",
+    "title": "For parents and guardians",
+    "updated": "Last updated: 23 August 2026",
+    "noteTitle": "If you got here from an email of ours",
+    "note": "This page explains, but it does not decide. If we wrote to ask for your authorisation about your child's account, that decision is made through the personal link in that email, not here: it is the only way we can know it is you answering and not whoever happens to open this page. If you lost that email, write to us and we will send the link again. And just in case: FuturePilot will never ask you for a password, card details, or a payment. If you receive anything like that in our name, it is not ours.",
+    "whatTitle": "What FuturePilot is",
+    "what": "A free career-guidance platform for secondary school students. Your child answers an interests assessment, sees which careers fit what they enjoy and what they are good at, explores universities and cities, and builds a route to get there. It is made by one person and costs nothing.",
+    "whatNot": "What it is not, and this is worth saying first: it does not decide anything for them. The assessment result is a conversation to have at home, not a verdict on their future or a prediction of what they will be good at. It is also not an educational institution, has no agreement with any university, and does not handle admissions.",
+    "dataTitle": "What we know about your child",
+    "dataIntro": "Everything we hold, without exception:",
+    "dataAccount": "Their email, their name if they chose to enter one (it is optional), and their password turned into an irreversible hash: nobody can read it, not even whoever administers the server.",
+    "dataTest": "Their answers to the assessment, the profile that comes out of it, and where they are along their route: the careers and cities they have looked at or saved.",
+    "dataYou": "Your email address, because they entered it when telling us they are a minor. It is used for one thing only, asking for this authorisation, and it is deleted along with their account. We do not store your name, your phone number, or the connection you answered from.",
+    "dataNever": "And what we never ask for, because none of it is needed to help anyone find their direction: identity documents, address, school, phone number, or parents' names. There is no advertising, no analytics, nothing is sold to anyone, and there are no third-party services embedded in the pages.",
+    "consentTitle": "The authorisation we are asking you for",
+    "consentWhy": "In Colombia, handling minors' data requires authorisation from whoever holds parental responsibility (Law 1581 of 2012 and Decree 1377 of 2013). So when a student tells us they are a minor, we ask for your email and write to you.",
+    "consentHow": "That email carries a link to a page where you can see which account you are being asked about, what data exists, and either authorise or refuse. Refusing is in plain sight, carrying the same weight as authorising: a decision that can go both ways has to look like it can go both ways.",
+    "consentDeadline": "If you refuse, or if nobody answers within 30 days, the account and everything under it are deleted. That is not a threat or a way to pressure you: it is the opposite, it stops silence from working as our excuse to keep a minor's data.",
+    "consentNoBlock": "In the meantime their account works in full, with nothing blocked or cut back. Punishing the student for an answer that is not theirs to give would protect nobody, and the only thing it would achieve is pushing them to sign up again lying about their age.",
+    "rightsTitle": "What you can ask us for",
+    "rightsIntro": "At any time, whatever you answered, and without explaining yourself:",
+    "rightsSee": "To see exactly what data of theirs we hold, and to have it sent to you.",
+    "rightsDelete": "To delete the account and everything attached to it.",
+    "rightsWithdraw": "To withdraw an authorisation you had already given. This cannot be done from the page yet: write to us and we do it by hand, with the same effect — everything is deleted.",
+    "unknownTitle": "If your child signed up without telling you",
+    "unknown": "Write to us and we will sort it out. To be honest about what we can check: over email we have no way to verify with certainty that you are that person's guardian. When in doubt we err towards deleting, because getting it wrong by deleting costs a student an account they can create again, and getting it wrong by keeping costs someone their data without permission.",
+    "contactTitle": "Talking to a person",
+    "contact": "Write to ljfuturepilot@gmail.com. A person answers, not a form or a bot, usually within a few days. If something on this page does not make sense, that is also a valid reason to write: if it does not make sense, it is badly written.",
+    "readPrivacy": "Read the full privacy policy →"
   }
 }

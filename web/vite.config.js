@@ -35,6 +35,7 @@ export default defineConfig({
         terms: resolve(import.meta.dirname, 'terms.html'),
         privacy: resolve(import.meta.dirname, 'privacy.html'),
         parent: resolve(import.meta.dirname, 'parent.html'),
+        parents: resolve(import.meta.dirname, 'parents.html'),
         'admin-dashboard': resolve(import.meta.dirname, 'admin-dashboard.html'),
         'admin-login': resolve(import.meta.dirname, 'admin-login.html'),
         'system-health': resolve(import.meta.dirname, 'system-health.html'),
