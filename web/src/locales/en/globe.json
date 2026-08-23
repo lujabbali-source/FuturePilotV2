@@ -44,5 +44,10 @@
       "universities": "{{count}} universities on record",
       "checkCosts": "we do not have its costs yet"
     }
+  },
+  "noCities": {
+    "title": "{{country}} has no cities in FuturePilot yet",
+    "imported": "We have {{count}} universities on record for this country, but not its cities or cost of living yet. We are starting with the Americas.",
+    "unknown": "We have no data for this territory. It is not a study destination we track."
   }
 }

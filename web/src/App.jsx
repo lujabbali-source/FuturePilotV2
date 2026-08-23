@@ -14,7 +14,7 @@ import latLngToVector3 from "./geo/latLngToVector3";
 import { world } from "./geo/world";
 import Doctor from "./debug/Doctor";
 import { getCities } from "./services/cityService";
-import { getCountryIdFromName } from "./services/countryService";
+import { getCountry, getCountryIdFromName } from "./services/countryService";
 import { recordPassportEvent } from "./services/passportService";
 import globePalette from "./globePalette";
 import TopNav from "./components/TopNav";
@@ -34,8 +34,19 @@ export default function App() {
   const controlsRef = useRef(null);
   const hoverClearTimeoutRef = useRef(null);
   const selectedCountryId = getCountryIdFromName(selectedCountry?.properties?.name);
+  // Sin `|| "colombia"`. Ese respaldo hacía que un país sin ficha mostrara las
+  // 24 ciudades colombianas encima: al abrir la Antártida aparecían Bogotá,
+  // Medellín y Cali clavadas en el hielo. Nadie lo veía porque los seis países
+  // sin ficha son sitios que casi nadie pulsa - hasta que alguien los pulse.
+  // Cuántas universidades tiene el país aunque no tengamos sus ciudades. Es
+  // lo único cierto que se le puede ofrecer a quien abre uno importado.
+  const countryUniversityCount = useMemo(
+    () => (selectedCountryId ? getCountry(selectedCountryId)?.universityCount || 0 : 0),
+    [selectedCountryId]
+  );
+
   const selectedCountryCities = useMemo(
-    () => getCities(selectedCountryId || "colombia"),
+    () => (selectedCountryId ? getCities(selectedCountryId) : []),
     [selectedCountryId]
   );
 
@@ -140,6 +151,20 @@ export default function App() {
         <h1 className="globe-hero__title">{t("explore")}</h1>
         <p className="globe-hero__subtitle">{t("subtitle")}</p>
       </section>
+
+      {selectedCountry && selectedCountryCities.length === 0 && (
+        <aside className="globe-hint globe-hint--empty">
+          <span className="globe-hint__dot" />
+          <div>
+            <strong>{t("noCities.title", { country: selectedCountry.properties?.name })}</strong>
+            <p>
+              {selectedCountryId
+                ? t("noCities.imported", { count: countryUniversityCount })
+                : t("noCities.unknown")}
+            </p>
+          </div>
+        </aside>
+      )}
 
       {!selectedCountry && (
         <aside className="globe-hint">

@@ -361,3 +361,7 @@ canvas {
 @media (max-width: 900px) {
   .dest-panel { position: static; width: auto; margin: 16px 20px 0; max-height: none; }
 }
+
+/* Un país sin ciudades tiene que decirlo. El silencio se lee como que la
+   aplicación se rompió. */
+.globe-hint--empty { border-color: rgba(255, 199, 89, .3); }

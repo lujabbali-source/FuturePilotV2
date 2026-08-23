@@ -235,3 +235,42 @@ def test_no_alias_hides_a_country_that_exists():
     tapados = [f"{n} -> {destino}" for n, destino in indice.items()
                if n in fichas and destino != n]
     assert not tapados, f"alias que tapan un pais existente: {tapados}"
+
+
+# ---------------------------------------------------------------------------
+# Que ve alguien que abre un pais sin ciudades
+# ---------------------------------------------------------------------------
+APP_JSX = RAIZ / "web" / "src" / "App.jsx"
+SERVICIO_CIUDADES = RAIZ / "web" / "src" / "services" / "cityService.js"
+
+
+def test_an_unknown_country_does_not_show_colombian_cities():
+    """El fallo mas visible que tenia el globo.
+
+    `getCities(selectedCountryId || "colombia")` devolvia las 24 ciudades
+    colombianas cuando el pais no resolvia. Al abrir la Antartida aparecian
+    Bogota, Medellin y Cali clavadas en el hielo - y lo mismo en el Sahara
+    Occidental y en Somalilandia. Nadie lo habia visto porque son los seis
+    sitios que casi nadie pulsa.
+    """
+    codigo = APP_JSX.read_text(encoding="utf-8")
+    assert 'getCities(selectedCountryId || "colombia")' not in codigo, \
+        "volvio el respaldo a Colombia para paises sin ficha"
+    assert re.search(r"selectedCountryId\s*\?\s*getCities\(selectedCountryId\)\s*:\s*\[\]",
+                     codigo), "el listado de ciudades ya no protege el caso sin pais"
+
+
+def test_a_country_without_cities_says_so():
+    """Sin esto, el estudiante hace clic en Alemania, el globo vuela hasta
+    alli y no pasa nada. El silencio se lee como que la aplicacion se rompio,
+    no como que el dato no esta."""
+    codigo = APP_JSX.read_text(encoding="utf-8")
+    assert "selectedCountryCities.length === 0" in codigo, \
+        "no hay estado vacio para un pais sin ciudades"
+    for lang in ("es", "en"):
+        import json as _json
+        catalogo = _json.loads(
+            (RAIZ / "web" / "src" / "locales" / lang / "globe.json").read_text(encoding="utf-8"))
+        assert catalogo.get("noCities", {}).get("title"), f"falta el aviso en {lang}"
+        assert catalogo["noCities"].get("imported"), f"falta el texto de pais importado en {lang}"
+        assert catalogo["noCities"].get("unknown"), f"falta el texto de territorio sin datos en {lang}"
