@@ -1,0 +1,31 @@
+# Lo que no tiene que entrar en la imagen. Ojo con .env: contiene la SMTP key
+# y la clave de OpenAI, y en la plataforma las variables se configuran en su
+# panel, no copiando el archivo.
+.env
+.env.local
+*.env.local
+
+.git
+.github
+.venv
+venv
+web/.venv
+__pycache__
+**/__pycache__
+*.pyc
+.pytest_cache
+
+node_modules
+web/node_modules
+web/dist
+
+# Datos reales: la base vive en el disco persistente de la plataforma, no
+# dentro de la imagen. Copiarla aqui subiria cuentas de personas a un registro
+# de contenedores.
+backend/data
+futurepilot-IA/data/users
+
+tests
+docs
+*.md
+!README.md

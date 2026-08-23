@@ -1,0 +1,72 @@
+# Despliegue en Render. Es un Blueprint: no toca ningun servicio que ya
+# exista en la cuenta hasta que se crea explicitamente desde este archivo.
+#
+# El plan NO es "starter" por gusto. El disco persistente no existe en el plan
+# gratuito, y sin disco la base SQLite vive dentro del contenedor: cada
+# despliegue la borraria entera, con todas las cuentas dentro. Para una prueba
+# de un rato el plan free sirve; para gente real, no.
+
+services:
+  - type: web
+    name: futurepilot
+    runtime: docker
+    plan: starter
+    region: oregon
+    healthCheckPath: /healthz
+
+    disk:
+      name: datos
+      mountPath: /var/data
+      sizeGB: 1
+
+    envVars:
+      - key: FUTUREPILOT_ENV
+        value: production
+
+      # Las tres rutas van al disco montado. Si alguna se queda por defecto,
+      # sus datos viven dentro del contenedor y desaparecen en el siguiente
+      # despliegue sin avisar.
+      - key: USERS_DB_PATH
+        value: /var/data/users.sqlite3
+      - key: FUTUREPILOT_MEMORY_DIR
+        value: /var/data/mentor
+      - key: BACKUP_DIR
+        value: /var/data/backups
+
+      # El barrido de los 30 dias corre dentro de este mismo servicio, en un
+      # hilo, porque los cron jobs de Render no pueden montar el disco. Viene
+      # apagado de fabrica: encenderlo es decir "si, borra cuentas solo".
+      - key: CONSENT_SWEEP_ENABLED
+        value: "1"
+
+      # sync: false = Render las pide en el panel y no se guardan aqui. La
+      # SMTP key y el correo del admin no pueden vivir en un archivo del
+      # repositorio.
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+
+# --------------------------------------------------------------------------
+# El barrido de los 30 dias
+# --------------------------------------------------------------------------
+# Aqui deberia ir un `type: cron` con
+# `python -m backend.consent_expiry --borrar`. No se puede: los cron jobs de
+# Render corren en un contenedor aparte y no pueden montar un disco
+# persistente, asi que no verian la base de datos.
+#
+#   https://render.com/docs/cronjobs
+#
+# La salida elegida es CONSENT_SWEEP_ENABLED, arriba: el barrido vive en un
+# hilo del propio servicio web. Deja constancia en los logs de cada cuenta que
+# borra y por orden de quien. Si alguna vez se despliega donde si haya cron,
+# la linea de crontab sigue documentada en backend/consent_expiry.py y basta
+# con apagar la variable.
