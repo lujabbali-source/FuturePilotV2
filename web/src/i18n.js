@@ -8,6 +8,9 @@ import roadmapEn from "./locales/en/roadmap.json";
 import citiesEn from "./locales/en/cities.json";
 import loginEn from "./locales/en/login.json";
 import resultsEn from "./locales/en/results.json";
+// El globo reutiliza las etiquetas de navegacion del sitio en vez de
+// copiarlas: dos listas de enlaces acaban diciendo cosas distintas.
+import siteEn from "./locales/en/site.json";
 import commonEs from "./locales/es/common.json";
 import testEs from "./locales/es/test.json";
 import globeEs from "./locales/es/globe.json";
@@ -15,13 +18,14 @@ import roadmapEs from "./locales/es/roadmap.json";
 import citiesEs from "./locales/es/cities.json";
 import loginEs from "./locales/es/login.json";
 import resultsEs from "./locales/es/results.json";
+import siteEs from "./locales/es/site.json";
 
 export const supportedLanguages = ["en", "es"];
 export const defaultLanguage = "en";
 
 const resources = {
-  en: { common: commonEn, test: testEn, globe: globeEn, roadmap: roadmapEn, cities: citiesEn, login: loginEn, results: resultsEn },
-  es: { common: commonEs, test: testEs, globe: globeEs, roadmap: roadmapEs, cities: citiesEs, login: loginEs, results: resultsEs },
+  en: { common: commonEn, test: testEn, globe: globeEn, roadmap: roadmapEn, cities: citiesEn, login: loginEn, results: resultsEn, site: siteEn },
+  es: { common: commonEs, test: testEs, globe: globeEs, roadmap: roadmapEs, cities: citiesEs, login: loginEs, results: resultsEs, site: siteEs },
 };
 
 i18n
@@ -33,7 +37,7 @@ i18n
     supportedLngs: supportedLanguages,
     nonExplicitSupportedLngs: true,
     load: "languageOnly",
-    ns: ["common", "test", "globe", "roadmap", "cities", "login", "results"],
+    ns: ["common", "test", "globe", "roadmap", "cities", "login", "results", "site"],
     defaultNS: "common",
     detection: {
       order: ["localStorage", "navigator"],
