@@ -6,6 +6,7 @@ import { getScholarships } from "../../services/scholarshipService";
 import { getUniversities } from "../../services/universityService";
 import useCity from "../../hooks/useCity";
 import { COLOMBIA_REFERENCE, TASA_USD_COP, aPesos, enSalariosMinimos, referenciaCompleta } from "../../database/countries/colombia/referencia";
+import { formateadorMoneda } from "./moneda";
 import "./CityPanel.css";
 
 const sections = [
@@ -46,9 +47,7 @@ function displayValue(value, fallback, lang = "es") {
 }
 
 function money(value, currency, locale, fallback) {
-    const formato = new Intl.NumberFormat(locale, {
-        style: "currency", currency, maximumFractionDigits: 0,
-    });
+    const formato = formateadorMoneda(locale, currency);
     if (typeof value === "number") return formato.format(value);
 
     // Un rango, no un punto. La fuente dice "1.8M – 2.6M COP" y eso es lo que
@@ -61,9 +60,7 @@ function money(value, currency, locale, fallback) {
         // dólares, y pintarlas como pesos multiplicaría la cifra por cuatro
         // mil. Que se lea "USD" es la señal de que no son comparables.
         const suyo = value.currency && value.currency !== currency
-            ? new Intl.NumberFormat(locale, {
-                style: "currency", currency: value.currency, maximumFractionDigits: 0,
-              })
+            ? formateadorMoneda(locale, value.currency)
             : formato;
         return value.min === value.max
             ? suyo.format(value.min)
@@ -93,7 +90,11 @@ function CostSection({ city }) {
     const { t, i18n } = useTranslation(["cities", "common"]);
     const fallback = t("status.notConnected", { ns: "common" });
     const costs = getCostOfLiving(city);
-    const currency = costs.currency || city.statistics?.currency || "COP";
+    // Sin "COP" de ultimo recurso: para una ciudad de fuera, poner pesos
+    // colombianos a una cifra que nadie midio en pesos es peor que dejarla sin
+    // simbolo. Si no hay codigo, formateadorMoneda da el numero a secas.
+    const currency = costs.currency || city.statistics?.currency
+        || (city.countryId === "colombia" ? "COP" : null);
     const locale = i18n.resolvedLanguage === "es" ? "es-ES" : "en-US";
     const formatMoney = (value) => money(value, currency, locale, fallback);
 
