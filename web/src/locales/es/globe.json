@@ -49,5 +49,28 @@
     "title": "{{country}} todavía no tiene ciudades en FuturePilot",
     "imported": "Tenemos {{count}} universidades registradas de este país, pero aún no su costo de vida ni sus ciudades. Estamos empezando por América.",
     "unknown": "No tenemos datos de este territorio. No es un destino de estudio que sigamos."
+  },
+  "guide": {
+    "eyebrow": "Cómo funciona",
+    "title": "Esto es un mapa de tus opciones.",
+    "lead": "Cada país del globo tiene ciudades, y cada ciudad tiene universidades, carreras y lo que cuesta vivir ahí. No hay nada que memorizar: se explora tocando.",
+    "steps": {
+      "rotate": {
+        "title": "Gira el globo y toca un país",
+        "body": "Arrastra para girarlo. Al tocar un país se abren sus ciudades."
+      },
+      "city": {
+        "title": "Entra a una ciudad",
+        "body": "Ahí ves sus universidades, qué carreras ofrecen y cuánto cuesta vivir, en salarios mínimos para que signifique algo."
+      },
+      "save": {
+        "title": "Lo que te sirva, guárdalo",
+        "body": "Las ciudades y carreras que te interesen quedan en tu pasaporte y en tu plan de vuelo, para que al volver sigas donde ibas."
+      }
+    },
+    "note": "Colombia es la que tiene el catálogo más completo por ahora. En otros países vas a encontrar menos ciudades: se van llenando.",
+    "next": "Entendido, una pregunta más",
+    "close": "Entendido",
+    "reopen": "Cómo funciona"
   }
 }

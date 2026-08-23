@@ -49,5 +49,28 @@
     "title": "{{country}} has no cities in FuturePilot yet",
     "imported": "We have {{count}} universities on record for this country, but not its cities or cost of living yet. We are starting with the Americas.",
     "unknown": "We have no data for this territory. It is not a study destination we track."
+  },
+  "guide": {
+    "eyebrow": "How it works",
+    "title": "This is a map of your options.",
+    "lead": "Every country on the globe has cities, and every city has universities, degrees, and what it costs to live there. There is nothing to memorise: you explore by tapping.",
+    "steps": {
+      "rotate": {
+        "title": "Spin the globe and tap a country",
+        "body": "Drag to spin it. Tapping a country opens up its cities."
+      },
+      "city": {
+        "title": "Open a city",
+        "body": "There you see its universities, which degrees they offer, and the cost of living, in minimum wages so that the number actually means something."
+      },
+      "save": {
+        "title": "Keep whatever is useful",
+        "body": "The cities and careers you care about stay in your passport and your flight plan, so when you come back you pick up where you left off."
+      }
+    },
+    "note": "Colombia has the most complete catalogue for now. In other countries you will find fewer cities: they are being filled in.",
+    "next": "Got it, one more question",
+    "close": "Got it",
+    "reopen": "How it works"
   }
 }
