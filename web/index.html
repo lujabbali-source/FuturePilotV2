@@ -79,6 +79,119 @@ Explore the Globe
 </div>
 </div>
 
+<!-- El planeta es puramente decorativo (sin i18n, sin datos): llena el
+     espacio vacio a la derecha del hero en escritorio. En movil se oculta
+     via CSS porque no cabe junto al texto. -->
+<div class="planet-wrap">
+  <div class="orbit orbit--a"><div class="sat"></div></div>
+  <div class="orbit orbit--b"><div class="sat sat--b"></div></div>
+  <div class="planet">
+    <svg viewBox="0 0 280 280">
+      <defs>
+        <clipPath id="pClip"><circle cx="140" cy="140" r="140"/></clipPath>
+        <radialGradient id="glowTop" cx="50%" cy="14%" r="60%">
+          <stop offset="0%" stop-color="#00D4FF" stop-opacity=".85"/>
+          <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="glowBot" cx="50%" cy="88%" r="65%">
+          <stop offset="0%" stop-color="#00FFB3" stop-opacity=".8"/>
+          <stop offset="100%" stop-color="#00FFB3" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="volume" cx="36%" cy="28%" r="95%">
+          <stop offset="0%" stop-color="#a8ecff" stop-opacity=".9"/>
+          <stop offset="30%" stop-color="#1f6f96" stop-opacity=".7"/>
+          <stop offset="60%" stop-color="#0a2c3f" stop-opacity=".55"/>
+          <stop offset="100%" stop-color="#020a12" stop-opacity=".35"/>
+        </radialGradient>
+        <radialGradient id="vignette" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#02141f" stop-opacity="0"/>
+          <stop offset="55%" stop-color="#02141f" stop-opacity="0"/>
+          <stop offset="82%" stop-color="#03202f" stop-opacity=".25"/>
+          <stop offset="100%" stop-color="#04131a" stop-opacity=".4"/>
+        </radialGradient>
+        <radialGradient id="specular" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity=".55"/>
+          <stop offset="60%" stop-color="#ffffff" stop-opacity=".08"/>
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="edgeFadeGrad" x1="0" y1="0" x2="280" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#000"/>
+          <stop offset="14%" stop-color="#fff"/>
+          <stop offset="86%" stop-color="#fff"/>
+          <stop offset="100%" stop-color="#000"/>
+        </linearGradient>
+        <mask id="edgeFade">
+          <rect x="0" y="0" width="280" height="280" fill="url(#edgeFadeGrad)"/>
+        </mask>
+      </defs>
+      <g clip-path="url(#pClip)">
+        <circle cx="140" cy="140" r="140" fill="url(#volume)"/>
+        <circle cx="140" cy="140" r="140" fill="url(#glowTop)" opacity=".45"/>
+        <circle cx="140" cy="140" r="140" fill="url(#glowBot)" opacity=".4"/>
+
+        <g fill="none">
+          <path d="M-10 96 Q90 74 140 88 T300 84" stroke="rgba(190,235,255,.2)" stroke-width=".8"/>
+          <path d="M-10 136 Q70 158 150 132 T300 146" stroke="rgba(160,255,225,.16)" stroke-width="1.1"/>
+          <path d="M-10 176 Q100 150 160 184 T300 168" stroke="rgba(190,235,255,.14)" stroke-width=".7"/>
+          <path d="M20 60 Q60 90 40 130" stroke="rgba(190,235,255,.18)" stroke-width=".6"/>
+          <path d="M235 210 Q205 180 230 150" stroke="rgba(160,255,225,.16)" stroke-width=".6"/>
+        </g>
+
+        <g mask="url(#edgeFade)">
+          <g class="scroll-group">
+            <g fill="none">
+              <path d="M-272 -10 Q-292 90 -268 150 T-276 300" stroke="rgba(150,225,255,.28)" stroke-width=".9"/>
+              <path d="M-238 -10 Q-215 70 -244 160 T-222 300" stroke="rgba(160,255,220,.2)" stroke-width=".6"/>
+              <path d="M-200 -10 Q-224 100 -190 190 T-208 300" stroke="rgba(150,225,255,.24)" stroke-width="1.1"/>
+              <path d="M-160 -10 Q-140 110 -168 200 T-148 300" stroke="rgba(190,235,255,.16)" stroke-width=".6"/>
+              <path d="M-112 -10 Q-132 90 -100 170 T-122 300" stroke="rgba(160,255,220,.22)" stroke-width=".8"/>
+              <path d="M-60 -10 Q-40 120 -70 210 T-46 300" stroke="rgba(150,225,255,.18)" stroke-width=".7"/>
+
+              <path d="M8 -10 Q-12 90 12 150 T4 300" stroke="rgba(150,225,255,.28)" stroke-width=".9"/>
+              <path d="M42 -10 Q65 70 36 160 T58 300" stroke="rgba(160,255,220,.2)" stroke-width=".6"/>
+              <path d="M80 -10 Q56 100 90 190 T72 300" stroke="rgba(150,225,255,.24)" stroke-width="1.1"/>
+              <path d="M120 -10 Q140 110 112 200 T132 300" stroke="rgba(190,235,255,.16)" stroke-width=".6"/>
+              <path d="M168 -10 Q148 90 180 170 T158 300" stroke="rgba(160,255,220,.22)" stroke-width=".8"/>
+              <path d="M220 -10 Q240 120 210 210 T234 300" stroke="rgba(150,225,255,.18)" stroke-width=".7"/>
+              <path d="M258 -10 Q238 95 264 175 T246 300" stroke="rgba(190,235,255,.15)" stroke-width=".6"/>
+
+              <path d="M288 -10 Q268 90 292 150 T284 300" stroke="rgba(150,225,255,.28)" stroke-width=".9"/>
+              <path d="M322 -10 Q345 70 316 160 T338 300" stroke="rgba(160,255,220,.2)" stroke-width=".6"/>
+              <path d="M360 -10 Q336 100 370 190 T352 300" stroke="rgba(150,225,255,.24)" stroke-width="1.1"/>
+              <path d="M400 -10 Q420 110 392 200 T412 300" stroke="rgba(190,235,255,.16)" stroke-width=".6"/>
+              <path d="M448 -10 Q428 90 460 170 T438 300" stroke="rgba(160,255,220,.22)" stroke-width=".8"/>
+              <path d="M500 -10 Q520 120 490 210 T514 300" stroke="rgba(150,225,255,.18)" stroke-width=".7"/>
+              <path d="M538 -10 Q518 95 544 175 T526 300" stroke="rgba(190,235,255,.15)" stroke-width=".6"/>
+
+              <path d="M20 60 Q45 45 30 25" stroke="rgba(210,255,240,.22)" stroke-width=".6"/>
+              <path d="M195 210 Q220 225 205 245" stroke="rgba(210,255,240,.2)" stroke-width=".6"/>
+              <path d="M300 60 Q325 45 310 25" stroke="rgba(210,255,240,.22)" stroke-width=".6"/>
+              <path d="M475 210 Q500 225 485 245" stroke="rgba(210,255,240,.2)" stroke-width=".6"/>
+            </g>
+            <g fill="#eafcff">
+              <circle class="twinkle" cx="30" cy="70" r="1.5"/>
+              <circle cx="80" cy="150" r="1.1" opacity=".55"/>
+              <circle class="twinkle twinkle--d7" cx="130" cy="95" r="1.6"/>
+              <circle cx="190" cy="180" r="1.2" opacity=".5"/>
+              <circle class="twinkle twinkle--d14" cx="240" cy="60" r="1.4"/>
+
+              <circle class="twinkle twinkle--d3" cx="310" cy="70" r="1.5"/>
+              <circle cx="360" cy="150" r="1.1" opacity=".55"/>
+              <circle class="twinkle twinkle--d1" cx="410" cy="95" r="1.6"/>
+              <circle cx="470" cy="180" r="1.2" opacity=".5"/>
+              <circle class="twinkle twinkle--d19" cx="520" cy="60" r="1.4"/>
+            </g>
+          </g>
+        </g>
+
+        <circle cx="140" cy="140" r="140" fill="url(#vignette)"/>
+        <circle cx="95" cy="78" r="58" fill="url(#specular)"/>
+      </g>
+      <path class="rim" d="M10 92 A139 139 0 0 1 116 3"/>
+    </svg>
+  </div>
+</div>
+
 </section>
 
 <section class="features">
