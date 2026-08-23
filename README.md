@@ -149,6 +149,38 @@ Declarar `FUTUREPILOT_ENV=production` cambia cuatro cosas:
 repositorio**. En muchos PaaS el disco del contenedor es efímero y cada despliegue se llevaría por
 delante todas las cuentas.
 
+### Tareas programadas (hay que montarlas, no arrancan solas)
+
+Dos trabajos corren **fuera** del servidor. Ninguno se lanza al levantar la aplicación, y si nadie
+los programa no falla nada visible — que es justo el problema.
+
+```bash
+python -m backend.backup            # copia + verifica + rota (diario)
+python -m backend.consent_expiry    # informa; no toca nada
+```
+
+| Cuándo | Comando |
+|---|---|
+| Diario, 03:00 | `python -m backend.backup` |
+| Diario, 03:30 | `python -m backend.consent_expiry --borrar` |
+
+En Linux, con `crontab -e`:
+
+```bash
+0  3 * * *  cd /ruta/al/proyecto && python -m backend.backup >> /var/log/fp-backup.log 2>&1
+30 3 * * *  cd /ruta/al/proyecto && python -m backend.consent_expiry --borrar >> /var/log/fp-consent.log 2>&1
+```
+
+**`--borrar` es irreversible**: cierra las cuentas de menores cuyo acudiente se negó, revocó el
+permiso, o no respondió en 30 días. Sin argumentos el comando solo informa, así que ejecútalo a
+secas la primera vez para ver a quién afectaría. Que el borrado exija escribir `--borrar` es
+deliberado.
+
+Esto no es opcional ni cosmético: al acudiente **se le prometió por correo** que sin su respuesta
+los datos de su hijo se borrarían en 30 días. Si el cron no existe, esa frase es falsa. El panel
+`/admin/system-health` vigila los dos trabajos y se pone en rojo si dejan de correr — pero el panel
+avisa, no ejecuta.
+
 ### Reclamar la cuenta de administrador
 
 El acceso a `/admin` se concede a la cuenta cuyo email coincide con `ADMIN_EMAIL`, y el registro no
