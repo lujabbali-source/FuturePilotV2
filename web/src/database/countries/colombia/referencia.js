@@ -24,10 +24,13 @@
  */
 export const COLOMBIA_REFERENCE = {
     minimumWage: {
-        amount: null,
+        amount: 1623500,
         currency: "COP",
-        year: null,
-        source: null,
+        year: 2026,
+        // Sin número de decreto porque no lo tengo confirmado y no me lo voy a
+        // inventar: una fuente falsa es peor que una genérica, porque invita a
+        // creer que alguien la verificó. Si lo añades, aquí es donde va.
+        source: "SMMLV",
     },
 };
 
