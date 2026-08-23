@@ -26,6 +26,23 @@ os.environ["ADMIN_EMAIL"] = "admin@test.local"
 # fija esta variable, asi que produccion siempre usa las 600k completas.
 os.environ["PBKDF2_ITERATIONS_TEST_ONLY"] = "1000"
 
+# La suite NO manda correo. app.py hace load_dotenv(.env), asi que en cuanto
+# hay un proveedor configurado de verdad los tests que registran un menor o
+# piden recuperar la contraseña se ponen a hablar con el servidor de correo:
+# gastan cuota, tardan, fallan sin red, y - lo peor - entregan a direcciones
+# inventadas tipo @example.com. Cada una de esas rebota, y los rebotes son
+# justo lo que hace que a un remitente le cierren la cuenta.
+#
+# Se ponen VACIAS en vez de borrarlas: load_dotenv() no pisa una variable que
+# ya existe, pero si rellena una que falta, asi que borrarlas las devolveria
+# el propio .env al importar app.py. Vacia gana a las dos cosas -
+# mailer.is_configured() lee bool(SMTP_HOST) y "" es falso - y deja a la suite
+# en el camino que ya esperaba: imprimir en consola en vez de enviar. Mismo
+# criterio que USERS_DB_PATH: los tests no tocan los datos reales, y tampoco
+# el correo real.
+for _smtp in ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD", "SMTP_FROM"):
+    os.environ[_smtp] = ""
+
 for _path in (REPO_ROOT, FUTUREPILOT_IA_DIR):
     if str(_path) not in sys.path:
         sys.path.insert(0, str(_path))
