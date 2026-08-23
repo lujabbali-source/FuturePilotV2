@@ -1,43 +1,66 @@
 # Despliegue en Render. Es un Blueprint: no toca ningun servicio que ya
 # exista en la cuenta hasta que se crea explicitamente desde este archivo.
 #
-# El plan NO es "starter" por gusto. El disco persistente no existe en el plan
-# gratuito, y sin disco la base SQLite vive dentro del contenedor: cada
-# despliegue la borraria entera, con todas las cuentas dentro. Para una prueba
-# de un rato el plan free sirve; para gente real, no.
+# Va en plan FREE para que se pueda desplegar sin tarjeta. Eso tiene un precio
+# concreto y conviene saberlo antes de enseñarle esto a nadie:
+#
+#   - NO HAY DISCO. El plan gratuito no lo admite, asi que la base SQLite vive
+#     dentro del contenedor. Render lo reinicia por su cuenta, al desplegar y
+#     tras un rato de inactividad, y en cada reinicio SE PIERDEN TODAS LAS
+#     CUENTAS. La aplicacion arranca tan contenta con una base vacia: no falla
+#     nada visible.
+#   - El servicio se duerme. Un acudiente que abra su enlace despues de un
+#     rato sin visitas espera ~50s a que despierte, y puede que su expediente
+#     ya no exista por lo de arriba.
+#
+# O sea: sirve para enseñar el sitio y las paginas publicas (/parents,
+# /privacy, /terms funcionan perfectamente, no guardan nada). NO sirve para
+# cuentas de estudiantes reales.
+#
+# Para pasarlo a serio hace falta tarjeta y son cuatro lineas:
+#   1. plan: starter
+#   2. descomentar el bloque `disk`
+#   3. descomentar USERS_DB_PATH, FUTUREPILOT_MEMORY_DIR y BACKUP_DIR
+#   4. CONSENT_SWEEP_ENABLED a "1"
 
 services:
   - type: web
     name: futurepilot
     runtime: docker
-    plan: starter
+    plan: free
     region: oregon
     healthCheckPath: /healthz
 
-    disk:
-      name: datos
-      mountPath: /var/data
-      sizeGB: 1
+    # Descomentar junto con `plan: starter`. En free, Render rechaza el
+    # Blueprint entero si esto esta presente.
+    # disk:
+    #   name: datos
+    #   mountPath: /var/data
+    #   sizeGB: 1
 
     envVars:
+      # Esta importa aunque no haya disco, y es gratis. Sin ella: /docs y
+      # /openapi.json quedan publicos, y - lo serio - si un correo no sale,
+      # su contenido se imprime en los logs. El de recuperacion de contraseña
+      # lleva un token valido dentro.
       - key: FUTUREPILOT_ENV
         value: production
 
-      # Las tres rutas van al disco montado. Si alguna se queda por defecto,
-      # sus datos viven dentro del contenedor y desaparecen en el siguiente
-      # despliegue sin avisar.
-      - key: USERS_DB_PATH
-        value: /var/data/users.sqlite3
-      - key: FUTUREPILOT_MEMORY_DIR
-        value: /var/data/mentor
-      - key: BACKUP_DIR
-        value: /var/data/backups
+      # Solo tienen sentido con disco montado. En free no hay donde apuntar:
+      # cualquier ruta que se ponga vive en el contenedor y se va con el.
+      # - key: USERS_DB_PATH
+      #   value: /var/data/users.sqlite3
+      # - key: FUTUREPILOT_MEMORY_DIR
+      #   value: /var/data/mentor
+      # - key: BACKUP_DIR
+      #   value: /var/data/backups
 
       # El barrido de los 30 dias corre dentro de este mismo servicio, en un
-      # hilo, porque los cron jobs de Render no pueden montar el disco. Viene
-      # apagado de fabrica: encenderlo es decir "si, borra cuentas solo".
+      # hilo, porque los cron jobs de Render no pueden montar el disco. En
+      # free se queda apagado: sin persistencia no hay ningun expediente que
+      # sobreviva 30 dias, asi que solo seria ruido en los logs.
       - key: CONSENT_SWEEP_ENABLED
-        value: "1"
+        value: ""
 
       # sync: false = Render las pide en el panel y no se guardan aqui. La
       # SMTP key y el correo del admin no pueden vivir en un archivo del
