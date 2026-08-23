@@ -5,6 +5,8 @@ hoja de resultados. Estos tests cubren lo que la convierte en una cuenta:
 progreso real, actividad, historial y los ajustes.
 """
 
+from pathlib import Path
+
 # La contrasena por defecto de la fixture register_and_login.
 PASSWORD = "password123"
 
@@ -277,3 +279,35 @@ def test_every_skill_has_content_in_both_languages(app_module):
             assert len(info.get(lista) or []) >= 3, f"{cluster}: {lista} corta"
             for item in info[lista]:
                 assert item.get("text") and item.get("text_es"), f"{cluster}: {lista} sin traducir"
+
+
+def test_deleting_the_account_also_erases_what_the_mentor_remembers(
+    client, register_and_login, sample_answers, app_module
+):
+    """La base no era todo.
+
+    `delete_account` limpiaba la base con cuidado - hasta quita el
+    identificador de DENTRO de results_json para que las filas no sigan
+    siendo vinculables - y despues quedaba en disco un archivo llamado
+    `{id}_memory.json`, con el id de la persona en el nombre y su historial
+    de evaluaciones dentro. Habia 15 de esos, de cuentas ya borradas, el dia
+    que se descubrio.
+    """
+    memoria = app_module.ai_system.brain.memory_system
+    user, headers = register_and_login()
+    uid = str(user["id"])
+
+    # Hacer el test y reclamarlo es lo que crea la memoria del estudiante.
+    a = client.post("/api/v1/assess", json={"answers": sample_answers}).json()
+    client.post("/api/v1/me/claim-result", headers=headers, json={"result_id": a["result_id"]})
+
+    archivo = memoria._get_path(uid)
+    assert Path(archivo).exists(), \
+        "el test no dejo memoria: sin eso este test no prueba nada"
+
+    respuesta = client.request("DELETE", "/api/v1/me", headers=headers,
+                               json={"password": PASSWORD})
+    assert respuesta.status_code == 200
+
+    assert not Path(archivo).exists(), \
+        f"la cuenta se borro pero su perfil sigue en {archivo}"

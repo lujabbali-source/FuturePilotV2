@@ -193,6 +193,7 @@ class UsersStore:
             self._ensure_results_json_column(connection)
             self._ensure_preferences_column(connection)
             self._ensure_stamp_columns(connection)
+            self._ensure_guardian_columns(connection)
 
     @staticmethod
     def _ensure_admin_column(connection: sqlite3.Connection) -> None:
@@ -202,6 +203,27 @@ class UsersStore:
         columns = {row["name"] for row in connection.execute("PRAGMA table_info(users)")}
         if "is_admin" not in columns:
             connection.execute("ALTER TABLE users ADD COLUMN is_admin INTEGER NOT NULL DEFAULT 0")
+
+    @staticmethod
+    def _ensure_guardian_columns(connection: sqlite3.Connection) -> None:
+        """Si quien se registra es menor, y a que acudiente avisar.
+
+        La aplicacion no sabia la edad de nadie: no habia fecha de nacimiento
+        ni nada parecido. Sin eso no se puede pedir permiso a un adulto,
+        porque no se sabe a quien hace falta pedirselo.
+
+        Se guarda un booleano, no una fecha de nacimiento. Basta para decidir
+        y es un dato menos sobre un menor: importa QUE lo es, no cuando nacio.
+
+        Es autodeclarado y un adolescente puede desmarcarlo. Eso es cierto y
+        no tiene arreglo tecnico - lo que cambia es que ahora se pregunta y
+        queda constancia de la respuesta.
+        """
+        columns = {row["name"] for row in connection.execute("PRAGMA table_info(users)")}
+        if "is_minor" not in columns:
+            connection.execute("ALTER TABLE users ADD COLUMN is_minor INTEGER NOT NULL DEFAULT 0")
+        if "guardian_email" not in columns:
+            connection.execute("ALTER TABLE users ADD COLUMN guardian_email TEXT")
 
     @staticmethod
     def _ensure_preferences_column(connection: sqlite3.Connection) -> None:
@@ -253,8 +275,18 @@ class UsersStore:
                 END
             """)
 
-    def register(self, email: str, password: str, name: str | None = None) -> dict:
+    def register(self, email: str, password: str, name: str | None = None,
+                 is_minor: bool = False, guardian_email: str | None = None) -> dict:
+        """Crea la cuenta.
+
+        `guardian_email` solo se guarda si `is_minor`: quien dice ser mayor de
+        edad no deja el correo de nadie mas. Guardarlo "por si acaso" seria
+        justo lo contrario de pedir lo minimo.
+        """
         normalized_email = email.strip().lower()
+        acudiente = (guardian_email or "").strip().lower() or None
+        if not is_minor:
+            acudiente = None
         salt = secrets.token_bytes(16)
         password_hash = hash_password(password, salt)
 
@@ -262,10 +294,12 @@ class UsersStore:
             try:
                 cursor = connection.execute(
                     """
-                    INSERT INTO users (email, password_hash, password_salt, name)
-                    VALUES (?, ?, ?, ?)
+                    INSERT INTO users (email, password_hash, password_salt, name,
+                                       is_minor, guardian_email)
+                    VALUES (?, ?, ?, ?, ?, ?)
                     """,
-                    (normalized_email, password_hash, salt.hex(), name),
+                    (normalized_email, password_hash, salt.hex(), name,
+                     1 if is_minor else 0, acudiente),
                 )
             except sqlite3.IntegrityError as error:
                 raise DuplicateEmailError(normalized_email) from error
@@ -401,6 +435,10 @@ class UsersStore:
             "name": row["name"],
             "created_at": row["created_at"],
             "is_admin": bool(row["is_admin"]),
+            # Los ve el propio estudiante, que fue quien los escribio: sin
+            # esto no habria forma de corregir un correo mal tecleado.
+            "is_minor": bool(row["is_minor"]),
+            "guardian_email": row["guardian_email"],
         }
 
     def sync_admin_email(self, admin_email: str | None) -> None:

@@ -43,7 +43,7 @@ from fastapi import Depends, FastAPI, Header, HTTPException, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 # --------------------------------------------------------------------------
 # Resolución de rutas e imports entre paquetes hermanos
@@ -607,12 +607,52 @@ class RegisterRequest(BaseModel):
         ),
     )
 
+    is_minor: bool = Field(
+        default=False,
+        description="El estudiante declara ser menor de 18 anos.",
+    )
+    guardian_email: Optional[str] = Field(
+        default=None,
+        description=(
+            "Correo del padre, madre o acudiente. Obligatorio si is_minor. "
+            "Se ignora si no lo es: quien dice ser mayor de edad no deja el "
+            "correo de nadie mas."
+        ),
+    )
+
     @field_validator("email")
     @classmethod
     def validate_email(cls, value: str) -> str:
         if not EMAIL_PATTERN.match(value.strip()):
             raise ValueError("Email invalido")
         return value
+
+    @model_validator(mode="after")
+    def validate_guardian(self) -> "RegisterRequest":
+        """El correo del acudiente solo se exige - y solo se acepta - cuando
+        hace falta.
+
+        La comprobacion de que no sea el suyo propio no detecta a un menor
+        deshonesto: puede poner cualquier otra direccion. Detecta el atajo
+        obvio, el que se toma sin pensarlo, y de paso el error de teclear dos
+        veces el mismo correo sin darse cuenta.
+        """
+        if not self.is_minor:
+            self.guardian_email = None
+            return self
+        acudiente = (self.guardian_email or "").strip()
+        if not acudiente:
+            raise ValueError(
+                "Si eres menor de edad hace falta el correo de tu padre, madre o acudiente."
+            )
+        if not EMAIL_PATTERN.match(acudiente):
+            raise ValueError("El correo del acudiente no es valido.")
+        if acudiente.lower() == self.email.strip().lower():
+            raise ValueError(
+                "El correo del acudiente tiene que ser distinto del tuyo."
+            )
+        self.guardian_email = acudiente
+        return self
 
 
 class LoginRequest(BaseModel):
@@ -689,7 +729,10 @@ def register(payload: RegisterRequest, request: Request):
             )
 
     try:
-        user = users_store.register(payload.email, payload.password, payload.name)
+        user = users_store.register(
+            payload.email, payload.password, payload.name,
+            is_minor=payload.is_minor, guardian_email=payload.guardian_email,
+        )
     except DuplicateEmailError:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
@@ -1012,6 +1055,11 @@ def delete_my_account(
         )
 
     users_store.delete_account(current_user["id"])
+    # La base no era todo. El mentor guarda el historial de cada estudiante en
+    # un archivo aparte (data/users/{id}_memory.json) y nadie lo borraba: la
+    # cuenta desaparecia y el perfil - con sus evaluaciones dentro - se
+    # quedaba en disco, con el id de la persona en el propio nombre.
+    ai_system.forget_student(str(current_user["id"]))
     return {"success": True, "detail": "Cuenta eliminada."}
 
 

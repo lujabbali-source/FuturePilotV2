@@ -32,7 +32,10 @@
     "forgot": "¿Olvidaste tu contraseña?",
     "showPassword": "Mostrar contraseña",
     "hidePassword": "Ocultar contraseña",
-    "backToLogin": "← Volver a iniciar sesión"
+    "backToLogin": "← Volver a iniciar sesión",
+    "isMinor": "Soy menor de 18 años",
+    "guardianEmail": "Correo de tu padre, madre o acudiente",
+    "guardianHint": "Le escribiremos para contarle que usas FuturePilot y pedirle su permiso. Tu cuenta funciona desde ya."
   },
   "status": {
     "working": "Un momento...",
@@ -44,7 +47,9 @@
     "email": "Ingresa un email válido.",
     "password": "La contraseña debe tener al menos 8 caracteres.",
     "generic": "No pudimos procesar tu solicitud. Intenta de nuevo.",
-    "network": "No pudimos conectar con el servidor. Verifica tu conexión e intenta de nuevo."
+    "network": "No pudimos conectar con el servidor. Verifica tu conexión e intenta de nuevo.",
+    "guardianEmail": "Necesitamos un correo válido de tu padre, madre o acudiente.",
+    "guardianSame": "El correo de tu acudiente tiene que ser distinto del tuyo."
   },
   "recover": {
     "sent": "Si existe una cuenta con ese email, enviamos instrucciones para recuperar el acceso."

@@ -168,6 +168,27 @@ class StudentMemorySystem:
         `with memory_system.lock(user_id):` para que quede atomico."""
         return _FileLock(self._get_path(user_id))
 
+    def forget(self, user_id: str) -> bool:
+        """Borra la memoria de un estudiante. Devuelve si habia algo que borrar.
+
+        Existe porque `delete_account` no llegaba hasta aqui. La cuenta se
+        borraba de la base con cuidado - hasta se limpia el identificador de
+        DENTRO de results_json para que las filas no sigan siendo vinculables -
+        y luego quedaba en disco un archivo llamado `26_memory.json` con
+        `"user_id": "26"` y el historial de tests de esa persona dentro.
+
+        Se hace bajo el mismo lock que las escrituras: sin el, un mensaje del
+        mentor que estuviera a medio guardar volveria a crear el archivo
+        justo despues de borrarlo.
+        """
+        ruta = self._get_path(user_id)
+        with self.lock(user_id):
+            try:
+                os.remove(ruta)
+                return True
+            except FileNotFoundError:
+                return False
+
     def load_memory(self, user_id: str) -> Dict[str, Any]:
         path = self._get_path(user_id)
         if os.path.exists(path):
@@ -1258,6 +1279,11 @@ class FuturePilotAIEcosystem:
                  roadmaps_data: Optional[Dict[str, Any]] = None):
         self.brain = FuturePilotBrain(careers_data, questions_data, roadmaps_data)
         self.mentor = MentorEngine(self.brain.memory_system, careers_data, self.brain.decision)
+
+    def forget_student(self, user_id: str) -> bool:
+        """Olvidar todo lo que el mentor sabe de alguien. La llama el borrado
+        de cuenta: si no, el perfil sobrevive a la cuenta."""
+        return self.brain.memory_system.forget(user_id)
 
     def sync_memory_from_results(self, user_id: str, results: Dict[str, Any]) -> None:
         """El test casi siempre se completa antes de iniciar sesion, con

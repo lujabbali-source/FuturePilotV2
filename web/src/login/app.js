@@ -47,6 +47,10 @@ function main() {
   const cardTitle = document.getElementById("cardTitle");
   const cardSubtitle = document.getElementById("cardSubtitle");
   const loginOptions = document.getElementById("loginOptions");
+  const minorField = document.getElementById("minorField");
+  const isMinorCheck = document.getElementById("isMinorCheck");
+  const guardianField = document.getElementById("guardianField");
+  const guardianHint = document.getElementById("guardianHint");
   const backToLoginLink = document.getElementById("backToLoginLink");
   const submitLabel = document.getElementById("submitLabel");
   const submitButton = document.getElementById("loginSubmit");
@@ -90,6 +94,22 @@ function main() {
     return M[which];
   }
 
+  /**
+   * El correo del acudiente aparece solo si la casilla esta marcada.
+   *
+   * Al ocultarlo se BORRA su contenido. Si no, alguien que marca la casilla,
+   * escribe un correo y se desmarca al darse cuenta de que ya cumplio 18
+   * dejaria enviado el correo de su padre en un campo que ya no ve - y el
+   * servidor lo ignoraria, pero habria viajado igual.
+   */
+  function aplicarAcudiente() {
+    const visible = mode === "register" && isMinorCheck.checked;
+    guardianField.hidden = !visible;
+    guardianHint.hidden = !visible;
+    if (!visible) form.guardianEmail.value = "";
+    form.guardianEmail.required = visible;
+  }
+
   function applyMode() {
     const copy = copyFor(mode);
     cardTitle.innerHTML = `${copy.title[0]}<span>${copy.title[1]}</span>`;
@@ -97,7 +117,14 @@ function main() {
     submitLabel.textContent = copy.submit;
 
     const isForgot = mode === "forgot";
-    nameField.hidden = mode !== "register";
+    const esRegistro = mode === "register";
+    nameField.hidden = !esRegistro;
+
+    // La edad solo se pregunta al crear la cuenta. En login no hace falta:
+    // ya se guardo, y volver a preguntarla invitaria a cambiarla.
+    minorField.hidden = !esRegistro;
+    if (!esRegistro) isMinorCheck.checked = false;
+    aplicarAcudiente();
     adminTokenField.hidden = true;
     passwordField.hidden = isForgot;
     form.password.required = !isForgot;
@@ -212,6 +239,8 @@ function main() {
     }
   });
 
+  isMinorCheck.addEventListener("change", aplicarAcudiente);
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     hideMessages();
@@ -227,6 +256,21 @@ function main() {
     if (mode !== "forgot" && password.length < 8) {
       showError(tl("errors.password"));
       return;
+    }
+
+    // El correo del acudiente, si la casilla esta marcada. Se valida aqui y
+    // no solo en el servidor porque el formulario lleva `novalidate`: sin
+    // esto el unico aviso seria un 422, que no dice nada util a un chico.
+    if (mode === "register" && isMinorCheck.checked) {
+      const acudiente = form.guardianEmail.value.trim();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(acudiente)) {
+        showError(tl("errors.guardianEmail"));
+        return;
+      }
+      if (acudiente.toLowerCase() === email.toLowerCase()) {
+        showError(tl("errors.guardianSame"));
+        return;
+      }
     }
 
     setSubmitting(true);
@@ -254,8 +298,17 @@ function main() {
 
     const endpoint = mode === "register" ? "/api/v1/auth/register" : "/api/v1/auth/login";
     const adminSetupToken = form.adminSetupToken?.value.trim();
+    const esMenor = mode === "register" && isMinorCheck.checked;
     const body = mode === "register"
-      ? { email, password, name: name || undefined, admin_setup_token: adminSetupToken || undefined }
+      ? {
+          email, password,
+          name: name || undefined,
+          admin_setup_token: adminSetupToken || undefined,
+          is_minor: esMenor,
+          // Solo si lo es. El servidor lo descarta igualmente cuando
+          // is_minor es falso, pero no tiene por que llegar hasta alli.
+          guardian_email: esMenor ? form.guardianEmail.value.trim() : undefined,
+        }
       : { email, password };
 
     try {

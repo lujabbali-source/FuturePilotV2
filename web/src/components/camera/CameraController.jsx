@@ -7,7 +7,8 @@ import * as THREE from "three";
 // que se vean sus alrededores, o el vuelo no comunica nada.
 export default function CameraController({ target, controlsRef, onFocusComplete, distance = 2.15 }) {
 
-    const { camera } = useThree();
+    const camera = useThree((estado) => estado.camera);
+    const controls = useThree((estado) => estado.controls);
 
     const destination = useRef(new THREE.Vector3());
     const lookAt = useRef(new THREE.Vector3());
@@ -25,11 +26,43 @@ export default function CameraController({ target, controlsRef, onFocusComplete,
 
         destination.current.copy(dir).multiplyScalar(distance);
 
-        lookAt.current.copy(dir).multiplyScalar(0.35);
+        // El pivote se queda en el centro de la Tierra, SIEMPRE.
+        //
+        // Antes se movia al pais (dir * 0.35, un punto dentro del globo) y
+        // ahi se quedaba. OrbitControls orbita alrededor de su target, asi
+        // que a partir de ese momento arrastrar giraba la camara alrededor
+        // del pais elegido: se quedaba clavado en el centro de la pantalla y
+        // el globo ya no se podia explorar. Tambien torcia el zoom, que tira
+        // hacia el target, y la rotacion automatica.
+        //
+        // No cambia el encuadre. La camara acaba en dir * distance y el pais
+        // esta en dir * 1: los dos puntos y el origen estan en la MISMA
+        // recta, asi que mirar al origen deja el pais igual de centrado. Lo
+        // unico que cambia es alrededor de que se gira despues.
+        lookAt.current.set(0, 0, 0);
         isAnimating.current = true;
         hasCompleted.current = false;
 
     }, [target, distance]);
+
+    // El vuelo se cancela en cuanto el usuario agarra el globo.
+    //
+    // Sin esto, arrastrar durante el vuelo era una pelea que el usuario no
+    // podia ganar: cada frame devolvia la camara al pais. Y como el propio
+    // arrastre impedia que llegara al destino, `cameraSettled` no se cumplia
+    // NUNCA y la animacion se quedaba encendida para siempre - el pais
+    // quedaba clavado en el centro y el globo dejaba de explorarse hasta
+    // recargar la pagina.
+    //
+    // El evento "start" de OrbitControls solo lo dispara la entrada del
+    // usuario (raton, rueda, tacto). Las llamadas a update() de aqui abajo
+    // no lo disparan, asi que la animacion no se cancela a si misma.
+    useEffect(() => {
+        if (!controls) return undefined;
+        const soltar = () => { isAnimating.current = false; };
+        controls.addEventListener("start", soltar);
+        return () => controls.removeEventListener("start", soltar);
+    }, [controls]);
 
     useFrame((_, delta) => {
 
