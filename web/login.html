@@ -89,6 +89,16 @@
       <h1 class="login-card__title" id="cardTitle">Bienvenido<span> de nuevo</span></h1>
       <p class="login-card__subtitle" id="cardSubtitle">Tu camino hacia la carrera de tus sueños empieza aquí.</p>
 
+      <!-- Solo aparece si `next` señala una pagina que pide cuenta (ver
+           RUTAS_PRIVADAS en sessionGuard.js). Sin esto, alguien que hace clic
+           en "Explorar el globo" y aterriza aqui no tiene ninguna pista de
+           por que: el login se siente un muro seco en vez de un paso mas
+           del camino. -->
+      <p class="login-card__gate" id="cardGate" hidden>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6.5v5c0 4.5 3.2 8.4 8 9.5 4.8-1.1 8-5 8-9.5v-5L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9.5 12 1.8 1.8L15 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="cardGateText"></span>
+      </p>
+
       <div class="login-divider login-divider--top"><span></span></div>
 
       <form id="loginForm" class="login-form" novalidate>

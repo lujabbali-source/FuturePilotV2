@@ -7,6 +7,14 @@
     "blurb": "Find the career that fits you, explore universities across the continent and build the map to your future — guided by AI."
   },
   "badge": "FUTUREPILOT / ACCESS",
+  "gate": {
+    "prefix": "You need an account",
+    "globe": "to explore the interactive globe.",
+    "careers": "to explore careers.",
+    "journey": "to see your route.",
+    "flightplan": "to build your flight plan.",
+    "passport": "to see your passport."
+  },
   "mode": {
     "loginTitle": "Welcome",
     "loginTitleAccent": " back",

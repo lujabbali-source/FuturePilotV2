@@ -248,6 +248,21 @@ svg { display: block; }
   transition: opacity .2s ease;
 }
 
+.login-card__gate {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 0 0 22px;
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 255, 179, .25);
+  border-radius: 12px;
+  background: rgba(0, 255, 179, .06);
+  color: var(--fp-muted);
+  font-size: .82rem;
+  line-height: 1.5;
+}
+.login-card__gate svg { flex: none; width: 19px; height: 19px; color: var(--fp-green); }
+
 .login-divider {
   display: flex;
   align-items: center;

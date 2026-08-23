@@ -7,6 +7,14 @@
     "blurb": "Descubre tu carrera ideal, explora universidades en todo el continente y construye el mapa hacia tu futuro — guiado por IA."
   },
   "badge": "FUTUREPILOT / ACCESO",
+  "gate": {
+    "prefix": "Necesitas una cuenta",
+    "globe": "para explorar el globo interactivo.",
+    "careers": "para explorar las carreras.",
+    "journey": "para ver tu ruta.",
+    "flightplan": "para armar tu plan de vuelo.",
+    "passport": "para ver tu pasaporte."
+  },
   "mode": {
     "loginTitle": "Bienvenido",
     "loginTitleAccent": " de nuevo",

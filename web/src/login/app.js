@@ -28,6 +28,27 @@ function destinoTrasEntrar() {
   return destinoSeguro(pedido) || "/assessment";
 }
 
+/**
+ * Por que aterrizo aqui, si vino de una pagina que pide cuenta.
+ *
+ * `next` ya trae el destino (para volver alli tras entrar); esto solo
+ * traduce ese mismo valor a la razon que se le muestra ANTES de que
+ * escriba nada, para que el login deje de sentirse un muro seco.
+ */
+const RAZONES_ACCESO = {
+  "/globe": "globe",
+  "/careers": "careers",
+  "/journey": "journey",
+  "/flightplan": "flightplan",
+  "/passport": "passport",
+};
+
+function razonDeAcceso() {
+  const pedido = new URLSearchParams(window.location.search).get("next");
+  const destino = destinoSeguro(pedido);
+  return (destino && RAZONES_ACCESO[destino]) || null;
+}
+
 function main() {
 
   // Si ya hay una sesion guardada, mostrar el formulario de login de nuevo
@@ -46,6 +67,9 @@ function main() {
   const passwordField = document.getElementById("passwordField");
   const cardTitle = document.getElementById("cardTitle");
   const cardSubtitle = document.getElementById("cardSubtitle");
+  const cardGate = document.getElementById("cardGate");
+  const cardGateText = document.getElementById("cardGateText");
+  const gateReason = razonDeAcceso();
   const loginOptions = document.getElementById("loginOptions");
   const minorField = document.getElementById("minorField");
   const isMinorCheck = document.getElementById("isMinorCheck");
@@ -139,6 +163,11 @@ function main() {
 
     form.password.autocomplete = mode === "register" ? "new-password" : "current-password";
     hideMessages();
+  }
+
+  function applyGate() {
+    if (!gateReason) return;
+    cardGateText.textContent = `${tl("gate.prefix")} ${tl(`gate.${gateReason}`)}`;
   }
 
   function showError(message) {
@@ -368,6 +397,10 @@ function main() {
   });
 
   applyMode();
+  if (gateReason) {
+    cardGate.hidden = false;
+    applyGate();
+  }
 
   // El titulo, el subtitulo y el boton los escribe JavaScript segun el modo
   // (login / registro / recuperar), asi que traducir el markup estatico no
@@ -378,6 +411,7 @@ function main() {
   onLanguageChange(() => {
     const errorVisible = errorBox.hidden ? null : errorBox.textContent;
     applyMode();
+    applyGate();
     if (errorVisible) showError(errorVisible);
   });
 }
