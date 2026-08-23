@@ -13,5 +13,5 @@ export default defineCity({
         monthlyEstimate: {"min": 380, "max": 600, "currency": "USD"},
         studentBudget: {"min": 380, "max": 600, "currency": "USD"},
     },
-    jobs: { mainIndustries: ["Livestock & Beef Exports", "Agriculture", "River Commerce"] },
+    jobs: { mainIndustries: [{"es": "Ganadería y exportación de carne", "en": "Livestock & Beef Exports"}, {"es": "Agricultura", "en": "Agriculture"}, {"es": "Comercio fluvial", "en": "River Commerce"}] },
 });

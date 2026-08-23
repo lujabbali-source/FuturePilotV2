@@ -7,7 +7,7 @@ export default defineCity({ id: "pasto", name: "Pasto", coordinates: { lat: 1.21
         monthlyEstimate: {"min": 350, "max": 550, "currency": "USD"},
         studentBudget: {"min": 350, "max": 550, "currency": "USD"},
     },
-    jobs: { mainIndustries: ["Agriculture", "Dairy Production", "Handicrafts"] },
+    jobs: { mainIndustries: [{"es": "Agricultura", "en": "Agriculture"}, {"es": "Producción lechera", "en": "Dairy Production"}, {"es": "Artesanías", "en": "Handicrafts"}] },
     living: {
         culture: [{"es": "Carnaval de Negros y Blancos (Patrimonio de la Humanidad de la Unesco), Laguna de la Cocha, Santuario de Las Lajas (Ipiales).", "en": "Carnaval de Negros y Blancos (UNESCO World Heritage), Laguna de la Cocha, Las Lajas Sanctuary (Ipiales)."}],
     },

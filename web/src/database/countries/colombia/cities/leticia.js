@@ -24,16 +24,16 @@ export default defineCity({
   statistics: {
     population: "~50.000 habitantes",
     safety: null,
-    weather: null,
+    weather: "~26 °C, selva ecuatorial en la triple frontera",
     language: "Español",
     currency: "Peso colombiano (COP)",
     internetSpeed: null,
-    qualityOfLife: null,
+    qualityOfLife: "Media",
     studentSatisfaction: null,
   },
   jobs: {
     averageSalary: null,
-    mainIndustries: ["Ecotourism", "Amazon River Logistics", "Artisanal Fishing", "Indigenous Crafts"],
+    mainIndustries: [{"es": "Ecoturismo", "en": "Ecotourism"}, {"es": "Logística fluvial del Amazonas", "en": "Amazon River Logistics"}, {"es": "Pesca artesanal", "en": "Artisanal Fishing"}, {"es": "Artesanía indígena", "en": "Indigenous Crafts"}],
     studentJobs: [], remoteOpportunities: [], internships: [], employmentRate: null,
   },
     living: {

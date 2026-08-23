@@ -24,16 +24,16 @@ export default defineCity({
   statistics: {
     population: "~130.000 habitantes",
     safety: null,
-    weather: null,
+    weather: "~27 °C, selva tropical (de las ciudades más lluviosas del mundo)",
     language: "Español",
     currency: "Peso colombiano (COP)",
     internetSpeed: null,
-    qualityOfLife: null,
+    qualityOfLife: "Media",
     studentSatisfaction: null,
   },
   jobs: {
     averageSalary: null,
-    mainIndustries: ["Gold & Platinum Mining trade", "Public Sector", "Forestry", "River Transportation along Atrato River"],
+    mainIndustries: [{"es": "Comercio de oro y platino", "en": "Gold & Platinum Mining trade"}, {"es": "Sector público", "en": "Public Sector"}, {"es": "Silvicultura", "en": "Forestry"}, {"es": "Transporte fluvial por el río Atrato", "en": "River Transportation along Atrato River"}],
     studentJobs: [], remoteOpportunities: [], internships: [], employmentRate: null,
   },
     living: {

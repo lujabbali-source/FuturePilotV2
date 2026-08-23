@@ -7,7 +7,7 @@ export default defineCity({ id: "villavicencio", name: "Villavicencio", coordina
         monthlyEstimate: {"min": 450, "max": 700, "currency": "USD"},
         studentBudget: {"min": 450, "max": 700, "currency": "USD"},
     },
-    jobs: { mainIndustries: ["Cattle Ranching", "Agribusiness"] },
+    jobs: { mainIndustries: [{"es": "Ganadería extensiva", "en": "Cattle Ranching"}, {"es": "Agroindustria", "en": "Agribusiness"}] },
     living: {
         culture: [{"es": "Música y baile de joropo, coleo, gastronomía de carnes (ternera a la llanera).", "en": "Joropo music and dance, Coleo, Meat gastronomy (Ternera a la Llanera)."}],
     },

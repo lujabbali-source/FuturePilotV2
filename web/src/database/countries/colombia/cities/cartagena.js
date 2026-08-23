@@ -17,7 +17,7 @@ export default defineCity({
         transportation: {"min": 25, "max": 35, "currency": "USD"},
         utilities: {"min": 55, "max": 95, "currency": "USD"},
     },
-    jobs: { averageSalary: 3500000, mainIndustries: ["Tourism & Hospitality", "Petrochemicals"] },
+    jobs: { averageSalary: 3500000, mainIndustries: [{"es": "Turismo y hotelería", "en": "Tourism & Hospitality"}, {"es": "Petroquímica", "en": "Petrochemicals"}] },
     living: {
         bestNeighborhoods: [{"es": "Bocagrande, Castillogrande, Manga, Getsemaní, Zona Norte.", "en": "Bocagrande, Castillogrande, Manga, Getsemaní, Zona Norte."}],
         tourism: [{"es": "Ciudad Amurallada, Castillo San Felipe de Barajas, Islas del Rosario, Barú.", "en": "Walled City (Ciudad Amurallada), Castillo San Felipe de Barajas, Rosario Islands, Baru."}],

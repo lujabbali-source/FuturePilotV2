@@ -14,7 +14,7 @@ export default defineCity({
         studentBudget: {"min": 1200000, "max": 1700000, "currency": "COP"},
         rent: {"min": 250, "max": 400, "currency": "USD"},
     },
-    jobs: { mainIndustries: ["Coffee Production & Export", "Higher Education", "Call Centers/BPO", "Agro-industry", "Metalworking"] },
+    jobs: { mainIndustries: [{"es": "Producción y exportación de café", "en": "Coffee Production & Export"}, {"es": "Educación superior", "en": "Higher Education"}, {"es": "Call centers y BPO", "en": "Call Centers/BPO"}, {"es": "Agroindustria", "en": "Agro-industry"}, {"es": "Metalmecánica", "en": "Metalworking"}] },
     living: {
         bestNeighborhoods: [{"es": "El Cable, Palermo, La Estrella, Chipre, Milán.", "en": "El Cable, Palermo, La Estrella, Chipre, Milán."}],
         tourism: [{"es": "Parque Nacional Natural Los Nevados, Termales San Vicente y del Otoño, Catedral Basílica de Nuestra Señora del Rosario, Cable Aéreo.", "en": "Los Nevados National Natural Park, Termales San Vicente / Otoño, Cathedral Basilica of Our Lady of Rosary, Cable Aéreo transit."}],

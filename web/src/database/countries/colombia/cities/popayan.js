@@ -7,7 +7,7 @@ export default defineCity({ id: "popayan", name: "Popayán", coordinates: { lat:
         monthlyEstimate: {"min": 380, "max": 580, "currency": "USD"},
         studentBudget: {"min": 380, "max": 580, "currency": "USD"},
     },
-    jobs: { mainIndustries: ["Higher Education"] },
+    jobs: { mainIndustries: [{"es": "Educación superior", "en": "Higher Education"}] },
     living: {
         culture: [{"es": "Ciudad Unesco de la Gastronomía, procesiones de Semana Santa.", "en": "UNESCO City of Gastronomy, Holy Week processions ( Semana Santa )."}],
     },

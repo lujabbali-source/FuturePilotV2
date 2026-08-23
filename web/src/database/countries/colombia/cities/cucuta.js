@@ -13,7 +13,7 @@ export default defineCity({
         monthlyEstimate: {"min": 380, "max": 600, "currency": "USD"},
         studentBudget: {"min": 380, "max": 600, "currency": "USD"},
     },
-    jobs: { mainIndustries: ["Border Trade with Venezuela", "Textiles", "Clay & Ceramic Manufacturing", "Mining"] },
+    jobs: { mainIndustries: [{"es": "Comercio fronterizo con Venezuela", "en": "Border Trade with Venezuela"}, {"es": "Textiles", "en": "Textiles"}, {"es": "Arcilla y cerámica", "en": "Clay & Ceramic Manufacturing"}, {"es": "Minería", "en": "Mining"}] },
     outlook: {
         strengths: {"es": "Precios de vivienda bajos y condición de centro de intercambio comercial.", "en": "Low housing prices, commercial exchange hub."},
     },

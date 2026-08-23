@@ -17,7 +17,7 @@ export default defineCity({
         transportation: {"min": 100000, "max": 160000, "currency": "COP"},
         utilities: {"min": 140000, "max": 260000, "currency": "COP"},
     },
-    jobs: { mainIndustries: ["Technology & Innovation", "Textiles & Fashion", "Financial Services", "Health Tourism", "BPO"] },
+    jobs: { mainIndustries: [{"es": "Tecnología e innovación", "en": "Technology & Innovation"}, {"es": "Textiles y moda", "en": "Textiles & Fashion"}, {"es": "Servicios financieros", "en": "Financial Services"}, {"es": "Turismo de salud", "en": "Health Tourism"}, {"es": "BPO", "en": "BPO"}] },
     living: {
         bestNeighborhoods: [{"es": "El Poblado / Provenza (estrato 6), Laureles - Estadio (estratos 4–5), Envigado (estratos 4–5), Sabaneta (estratos 3–4).", "en": "El Poblado / Provenza (Estrato 6), Laureles - Estadio (Estrato 4–5), Envigado (Estrato 4–5), Sabaneta (Estrato 3–4)."}],
         healthcare: [{"es": "De primer nivel. Hospital Pablo Tobón Uribe, Clínica Las Américas.", "en": "World-class. Hospital Pablo Tobón Uribe, Clínica Las Américas."}],

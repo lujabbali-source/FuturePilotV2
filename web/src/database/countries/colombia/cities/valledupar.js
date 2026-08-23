@@ -24,16 +24,16 @@ export default defineCity({
   statistics: {
     population: "~500.000 habitantes",
     safety: null,
-    weather: null,
+    weather: "~29 °C, tropical cálido al pie de la Sierra Nevada",
     language: "Español",
     currency: "Peso colombiano (COP)",
     internetSpeed: null,
-    qualityOfLife: null,
+    qualityOfLife: "Media",
     studentSatisfaction: null,
   },
   jobs: {
     averageSalary: null,
-    mainIndustries: ["Coal Mining Logistics", "Cattle Livestock", "Cotton & Agribusiness", "Vallenato Culture"],
+    mainIndustries: [{"es": "Logística del carbón", "en": "Coal Mining Logistics"}, {"es": "Ganadería", "en": "Cattle Livestock"}, {"es": "Algodón y agroindustria", "en": "Cotton & Agribusiness"}, {"es": "Cultura vallenata", "en": "Vallenato Culture"}],
     studentJobs: [], remoteOpportunities: [], internships: [], employmentRate: null,
   },
     living: {

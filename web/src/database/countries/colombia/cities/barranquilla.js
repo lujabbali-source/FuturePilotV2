@@ -17,7 +17,7 @@ export default defineCity({
         transportation: {"min": 100000, "max": 140000, "currency": "COP"},
         utilities: {"min": 200000, "max": 360000, "currency": "COP"},
     },
-    jobs: { mainIndustries: ["Logistics & Maritime Freight", "Industrial Manufacturing", "Construction", "BPO", "Commerce"] },
+    jobs: { mainIndustries: [{"es": "Logística y carga marítima", "en": "Logistics & Maritime Freight"}, {"es": "Manufactura industrial", "en": "Industrial Manufacturing"}, {"es": "Construcción", "en": "Construction"}, {"es": "BPO", "en": "BPO"}, {"es": "Comercio", "en": "Commerce"}] },
     living: {
         bestNeighborhoods: [{"es": "Alto Prado, Riomar, Villa Santos, El Prado, Bellavista.", "en": "Alto Prado, Riomar, Villa Santos, El Prado, Bellavista."}],
         healthcare: [{"es": "Excelente (Clínica Portoazul, Clínica Iberoamérica).", "en": "Excellent (Clínica Portoazul, Clínica Iberoamérica)."}],

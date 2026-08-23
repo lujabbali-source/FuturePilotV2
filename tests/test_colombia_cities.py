@@ -410,3 +410,98 @@ def test_the_student_budget_note_is_translated_too():
             assert par.get("es") and par.get("en"), f"{cid}: nota en un solo idioma"
             assert par["es"] != par["en"], f"{cid}: la nota no se tradujo"
     assert con_nota >= 3, f"solo {con_nota} notas; se esperaban 3"
+
+
+# ---------------------------------------------------------------------------
+# Industrias y clima
+# ---------------------------------------------------------------------------
+STATS_PY = RAIZ / "web" / "scripts" / "colombia_stats_es.py"
+
+
+def _industrias(ficha):
+    """El array de industrias, contando corchetes.
+
+    Un `.*?` hasta el primer `]` no sirve: en Bogotá la lista va seguida de
+    `, studentJobs: []` en la misma linea, y el recorte devolvia algo que no
+    parseaba. El test se saltaba esa ciudad en silencio en vez de fallar - la
+    version anterior contaba 17 de 18 y nadie habria mirado por que.
+    """
+    texto = ficha.read_text(encoding="utf-8")
+    i = texto.find("mainIndustries:")
+    if i == -1:
+        return None
+    inicio = texto.find("[", i)
+    if inicio == -1:
+        return None
+    profundidad = 0
+    for j in range(inicio, len(texto)):
+        if texto[j] == "[":
+            profundidad += 1
+        elif texto[j] == "]":
+            profundidad -= 1
+            if profundidad == 0:
+                try:
+                    return json.loads(texto[inicio:j + 1])
+                except ValueError:
+                    return None
+    return None
+
+
+def test_the_industries_are_bilingual():
+    """`mainIndustries` es lo que se lee en la pestaña de empleo, y venia del
+    documento en ingles: "Technology & Innovation" dentro de una interfaz en
+    castellano, en las 18 ciudades."""
+    con_industrias = 0
+    for ficha in fichas():
+        lista = _industrias(ficha)
+        if not lista:
+            continue
+        con_industrias += 1
+        for entrada in lista:
+            assert isinstance(entrada, dict), \
+                f"{ficha.stem}: industria como texto suelto -> {entrada!r}"
+            assert entrada.get("es") and entrada.get("en"), \
+                f"{ficha.stem}: industria en un solo idioma -> {entrada}"
+    assert con_industrias >= 18, f"solo {con_industrias} ciudades con industrias"
+
+
+def test_every_industry_in_the_document_has_a_translation():
+    """Mira el diccionario, no el resultado: si el documento crece y nadie
+    traduce la industria nueva, el importador la salta y esa ciudad se queda
+    sin la lista entera - sin error, solo un campo vacio."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("st", STATS_PY)
+    modulo = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(modulo)
+
+    del_documento = set()
+    for ficha in fichas():
+        for entrada in _industrias(ficha) or []:
+            if isinstance(entrada, dict) and entrada.get("en"):
+                del_documento.add(entrada["en"])
+    faltan = sorted(del_documento - set(modulo.INDUSTRIAS_ES))
+    assert not faltan, f"industrias sin traduccion: {faltan}"
+    assert len(del_documento) >= 40, \
+        f"solo se revisaron {len(del_documento)} industrias; el recorrido no encuentra las listas"
+
+
+def test_no_industry_was_left_in_english_on_the_spanish_side():
+    DELATORES = ("manufacturing", "trade", "services", "tourism", "logistics",
+                 "production", "mining", "education", "commerce", "operations")
+    culpables = []
+    for ficha in fichas():
+        for entrada in _industrias(ficha) or []:
+            if not isinstance(entrada, dict):
+                continue
+            es = (entrada.get("es") or "").lower()
+            if any(d in es for d in DELATORES):
+                culpables.append(f"{ficha.stem}: {entrada['es']}")
+    assert not culpables, "industrias sin traducir:\n  " + "\n  ".join(culpables[:8])
+
+
+def test_curated_weather_was_not_replaced():
+    """Manizales ya traia "14°C a 26°C" curado a mano. El documento dice
+    "~16 °C, subtropical de montaña" y no debe pisarlo: el importador rellena
+    huecos, no reescribe."""
+    texto = (CIUDADES / "manizales.js").read_text(encoding="utf-8")
+    assert '"14°C a 26°C"' in texto, "se sobrescribio el clima curado de Manizales"
