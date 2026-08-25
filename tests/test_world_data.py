@@ -274,3 +274,33 @@ def test_a_country_without_cities_says_so():
         assert catalogo.get("noCities", {}).get("title"), f"falta el aviso en {lang}"
         assert catalogo["noCities"].get("imported"), f"falta el texto de pais importado en {lang}"
         assert catalogo["noCities"].get("unknown"), f"falta el texto de territorio sin datos en {lang}"
+
+
+def test_the_city_count_on_the_landing_page_is_real():
+    """La portada decia "500+ recursos de aprendizaje" con 28 en
+    resources.json. Una cifra que el visitante puede desmentir en dos clics
+    se lleva por delante la credibilidad de las que si son ciertas.
+
+    El numero de carreras ya se resuelve contra la API por este mismo motivo
+    (ver careerCountStat). El de ciudades no puede: viven como modulos de
+    JavaScript, no detras de un endpoint. Asi que se escribe a mano y se
+    vigila desde aqui.
+    """
+    import re
+    from pathlib import Path
+
+    raiz = Path(__file__).resolve().parent.parent
+    ciudades = list((raiz / "web" / "src" / "database" / "countries" / "colombia"
+                     / "cities").glob("*.js"))
+    # index.js es el barril que las reune, no una ciudad.
+    reales = [c for c in ciudades if c.stem != "index"]
+
+    portada = (raiz / "web" / "index.html").read_text(encoding="utf-8")
+    bloque = re.search(r'<h3>(\d+)</h3>\s*<p data-i18n="hero\.stat2"', portada)
+    assert bloque, "no se encontro la cifra de ciudades en la portada"
+
+    mostrado = int(bloque.group(1))
+    assert mostrado == len(reales), (
+        f"la portada dice {mostrado} ciudades y hay {len(reales)} archivos. "
+        "Actualiza el <h3> de hero.stat2 en web/index.html."
+    )

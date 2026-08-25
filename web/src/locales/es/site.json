@@ -11,14 +11,14 @@
     "admin": "Panel"
   },
   "hero": {
-    "badge": "🚀 Tu futuro empieza aquí",
-    "title": "Navega tu futuro.<br>Construye tu destino.",
-    "subtitle": "Deja de adivinar tu siguiente paso. Descubre caminos de carrera, roadmaps personalizados y oportunidades diseñadas para estudiantes ambiciosos.",
-    "ctaPrimary": "Crear mi plan de vuelo",
-    "ctaSecondary": "Explorar el Globo",
-    "stat1": "Caminos de carrera",
-    "stat2": "Recursos de aprendizaje",
-    "stat3": "Posibilidades"
+    "badge": "Gratis · para estudiantes de bachillerato",
+    "title": "¿No sabes qué estudiar?<br>Estás en el lugar correcto.",
+    "subtitle": "Responde un test y descubre qué carreras encajan contigo, en qué universidades de Colombia puedes estudiarlas y cuánto cuesta vivir en cada ciudad. Sin costo, y en unos 10 minutos.",
+    "ctaPrimary": "Descubrir mi carrera",
+    "ctaSecondary": "Ver cómo funciona",
+    "stat1": "Carreras",
+    "stat2": "Ciudades de Colombia",
+    "stat3": "Lo que cuesta usarlo"
   },
   "features": {
     "heading": "Qué encuentras en FuturePilot",
@@ -75,18 +75,18 @@
     }
   },
   "howitworks": {
-    "heading": "Cómo funciona FuturePilot",
+    "heading": "Cómo funciona",
     "discover": {
-      "title": "Descubre",
-      "desc": "Toma el Future Assessment y descubre carreras que encajan contigo."
+      "title": "1. Responde el test",
+      "desc": "Preguntas sobre lo que te gusta y lo que se te da bien. No hay respuestas correctas ni incorrectas, y puedes saltar las que no te digan nada."
     },
     "plan": {
-      "title": "Planea",
-      "desc": "Recibe un Flight Plan personalizado construido alrededor de tus metas."
+      "title": "2. Mira qué carreras encajan",
+      "desc": "Te mostramos las que más se parecen a tu perfil, ordenadas por qué tanto encajan contigo. No es un veredicto: es un punto de partida para pensarlo."
     },
     "achieve": {
-      "title": "Logra",
-      "desc": "Aprende, construye proyectos y sigue tu progreso."
+      "title": "3. Descubre dónde estudiarlas",
+      "desc": "Universidades y ciudades de Colombia sobre un globo que puedes girar, con lo que cuesta vivir en cada una, en pesos."
     }
   },
   "footer": {

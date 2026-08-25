@@ -11,14 +11,14 @@
     "admin": "Admin"
   },
   "hero": {
-    "badge": "🚀 Your Future Starts Here",
-    "title": "Navigate Your Future.<br>Build Your Destination.",
-    "subtitle": "Stop guessing your next step. Discover career paths, personalized roadmaps, and opportunities designed for ambitious students.",
-    "ctaPrimary": "Build My Flight Plan",
-    "ctaSecondary": "Explore the Globe",
-    "stat1": "Career Paths",
-    "stat2": "Learning Resources",
-    "stat3": "Possibilities"
+    "badge": "Free · for secondary school students",
+    "title": "Not sure what to study?<br>You are in the right place.",
+    "subtitle": "Take the assessment and find out which careers fit you, which universities in Colombia teach them, and what it costs to live in each city. Free, in about 10 minutes.",
+    "ctaPrimary": "Find my career",
+    "ctaSecondary": "See how it works",
+    "stat1": "Careers",
+    "stat2": "Colombian cities",
+    "stat3": "What it costs to use"
   },
   "features": {
     "heading": "What's Inside FuturePilot",
@@ -75,18 +75,18 @@
     }
   },
   "howitworks": {
-    "heading": "How FuturePilot Works",
+    "heading": "How it works",
     "discover": {
-      "title": "Discover",
-      "desc": "Take the Future Assessment and discover careers that fit you."
+      "title": "1. Take the assessment",
+      "desc": "Questions about what you enjoy and what you are good at. There are no right or wrong answers, and you can skip the ones that say nothing to you."
     },
     "plan": {
-      "title": "Plan",
-      "desc": "Receive a personalized Flight Plan built around your goals."
+      "title": "2. See which careers fit",
+      "desc": "We show the ones closest to your profile, ranked by how well they fit. It is not a verdict: it is a starting point for thinking it through."
     },
     "achieve": {
-      "title": "Achieve",
-      "desc": "Learn, build projects and track your progress."
+      "title": "3. Find where to study them",
+      "desc": "Universities and cities across Colombia on a globe you can spin, with what it costs to live in each one, in pesos."
     }
   },
   "footer": {

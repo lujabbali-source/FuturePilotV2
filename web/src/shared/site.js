@@ -14,7 +14,10 @@ import { currentLanguage, t } from "./i18next.js";
     fetch(`/api/v1/careers?lang=${currentLanguage()}`)
       .then((response) => (response.ok ? response.json() : null))
       .then((data) => {
-        if (data && data.total) careerCountEl.textContent = `${data.total}+`;
+        // Sin el "+": son 73 exactas, y un "73+" insinua que hay mas. Las
+        // otras dos cifras del hero son literales, y una sola inflada
+        // pone en duda a las tres.
+        if (data && data.total) careerCountEl.textContent = String(data.total);
       })
       .catch(() => {});
   }
