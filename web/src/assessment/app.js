@@ -13,6 +13,7 @@ import * as questionTypes from "./questionTypes.js";
 import { claimPendingAndCelebrate, pendingResultId } from "../shared/resultClaim.js";
 import { sendAssessmentToPythonAI } from "../shared/apiConnector.js";
 import { t, currentLanguage, onLanguageChange } from "../shared/i18next.js";
+import { rebarajar } from "./shuffle.js";
 import { renderDashboard } from "./dashboard.js";
 import "./dashboard.css";
 import { radarMarkup, wireRadar } from "./radar.js";
@@ -187,11 +188,15 @@ function bindQuestionEvents(format) {
   }));
   const slider = app.querySelector("[data-slider]");
   if (slider) slider.addEventListener("input", (event) => {
-    const value = Number(event.target.value);
-    setAnswer(value);
-    const label = t(`slider.level${value}`);
-    app.querySelector("#slider-value").textContent = label;
-    app.querySelectorAll(".slider-dot").forEach((dot, index) => dot.classList.toggle("is-active", index === value));
+    // La posicion de la barra ya no es el indice de la respuesta. data-slider-map
+    // trae los indices canonicos ordenados de menos a mas puntos, asi que
+    // "Nada" a la izquierda es de verdad la respuesta que menos puntua.
+    const posicion = Number(event.target.value);
+    const mapa = (event.target.dataset.sliderMap || "").split(",").map(Number);
+    setAnswer(mapa[posicion]);
+    app.querySelector("#slider-value").textContent = t(`slider.level${posicion}`);
+    app.querySelectorAll(".slider-dot").forEach((dot) =>
+      dot.classList.toggle("is-active", Number(dot.dataset.sliderPos) === posicion));
     app.querySelector('[data-action="next"]').disabled = false;
   });
   app.querySelectorAll("[data-rank-move]").forEach((button) => button.addEventListener("click", () => {
@@ -400,6 +405,10 @@ function startAssessment(restart = false) {
     answers = [];
     results = assessmentEngine.createInitialResults();
     localStorage.removeItem(STORAGE_KEY);
+    // Orden nuevo: repetir el test no deberia repetir la misma baraja. Solo
+    // al reiniciar - dentro de un intento el orden tiene que quedarse quieto,
+    // o volver atras enseñaria las opciones movidas de sitio.
+    rebarajar();
   }
   screen = "question";
   render();

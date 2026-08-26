@@ -434,3 +434,43 @@ def test_hub_career_tags_point_at_real_careers(client):
     for hub in CareerEngine.GLOBAL_HUBS:
         desconocidos = set(hub.get("careers") or []) - ids
         assert not desconocidos, f"{hub['name']} apunta a carreras inexistentes: {desconocidos}"
+
+
+def test_the_options_are_shuffled_before_they_are_shown(app_module):
+    """En las 50 preguntas la respuesta que mas puntua esta en la posicion 0.
+    Eso no es un fallo del JSON - el motor necesita un orden canonico para
+    que answer_index signifique algo - pero convierte la posicion en la
+    respuesta: pulsando siempre la primera opcion se sacaba 10 sobre 10 en
+    los ocho ejes. Se comprobo recorriendo el test entero.
+
+    Lo unico que lo evita es que el front baraje antes de pintar. Este test
+    vigila las dos mitades del trato: que el dato siga teniendo el orden que
+    el motor espera, y que la pantalla no lo enseñe tal cual.
+    """
+    from pathlib import Path
+
+    primeras = [
+        p["answers"].index(max(p["answers"], key=lambda a: a.get("points", 0)))
+        for p in app_module.questions_db
+    ]
+    assert set(primeras) == {0}, (
+        "el orden canonico cambio. Si la mejor respuesta ya no es siempre la "
+        "primera, revisa que el barajado del front siga haciendo falta."
+    )
+
+    tipos = (Path(__file__).resolve().parent.parent / "web" / "src" / "assessment"
+             / "questionTypes.js").read_text(encoding="utf-8")
+    assert "ordenDeOpciones" in tipos, (
+        "questionTypes.js dejo de barajar: la primera opcion vuelve a ser "
+        "siempre la que mas puntua."
+    )
+
+    # Los subtitulos por posicion cantaban la respuesta: "Se parece mucho a
+    # ti" bajo la primera opcion, que era la de 4 puntos. Barajadas, ademas,
+    # describirian una posicion al azar.
+    renderizado = "\n".join(l for l in tipos.splitlines() if not l.strip().startswith("//"))
+    for filtrada in ("option.match", "option.icon"):
+        assert filtrada not in renderizado, (
+            f"{filtrada}* volvio a pintarse: es una etiqueta pegada a la "
+            "posicion, no a la opcion."
+        )
