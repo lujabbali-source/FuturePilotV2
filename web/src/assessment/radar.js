@@ -58,7 +58,12 @@ function anclaje(indice) {
   return x > CENTRO ? "start" : "end";
 }
 
-export function radarMarkup(vector, evidencia) {
+/**
+ * `encabezado: false` lo pinta sin titulo ni pista. Lo usa el panel de cuenta,
+ * que ya trae los suyos alrededor de esta seccion: con los dos salian dos
+ * titulos seguidos diciendo lo mismo con otras palabras.
+ */
+export function radarMarkup(vector, evidencia, { encabezado = true } = {}) {
   if (!vector) return "";
 
   const valores = EJES.map((eje) => Number(vector[eje]) || 0);
@@ -97,8 +102,8 @@ export function radarMarkup(vector, evidencia) {
 
   return `
     <section class="radar-section">
-      <div class="section-label"><span>${t("radar.title")}</span></div>
-      <p class="radar-hint">${t("radar.hint")}</p>
+      ${encabezado ? `<div class="section-label"><span>${t("radar.title")}</span></div>
+      <p class="radar-hint">${t("radar.hint")}</p>` : ""}
       <div class="radar-wrap">
         <svg class="radar" viewBox="0 0 340 340" role="img" aria-label="${t("radar.title")}">
           <defs>

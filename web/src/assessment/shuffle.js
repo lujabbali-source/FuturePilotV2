@@ -98,13 +98,21 @@ export function ordenDeOpciones(question, indicePregunta, formato) {
 
   const aleatorio = generador(`${semillaActual()}:${indicePregunta}`);
 
-  // Versus enseña solo dos opciones (answers.slice(0, 2)). Barajar las
-  // cuatro cambiaria CUALES se enseñan, que ya no es presentacion sino otra
-  // pregunta. Se conservan las dos de siempre y solo se decide cual va como
-  // A y cual como B, que es donde estaba el sesgo.
+  // Versus enseña dos opciones y esconde las otras dos. Enseñaba las dos
+  // PRIMERAS, y como todas las preguntas son una escala de acuerdo ordenada
+  // de mas a menos, eso significaba ofrecer "Muy de acuerdo" (4 puntos)
+  // contra "De acuerdo" (3): no se podia estar en desacuerdo, y esas seis
+  // preguntas garantizaban al menos 3 de 4 puntos pasara lo que pasara.
+  //
+  // Ahora enfrenta los dos EXTREMOS - la que mas puntua contra la que menos -
+  // que es la unica pareja que hace de esto una eleccion de verdad. Cual sale
+  // como A y cual como B se sortea, que ahi si habia sesgo de posicion.
   if (formato === "versus") {
-    const dos = indices.slice(0, 2);
-    return aleatorio() < 0.5 ? dos : [dos[1], dos[0]];
+    const porPuntos = [...indices].sort(
+      (a, b) => (question.answers[b].points || 0) - (question.answers[a].points || 0)
+    );
+    const extremos = [porPuntos[0], porPuntos[porPuntos.length - 1]];
+    return aleatorio() < 0.5 ? extremos : [extremos[1], extremos[0]];
   }
 
   return barajar(indices, aleatorio);

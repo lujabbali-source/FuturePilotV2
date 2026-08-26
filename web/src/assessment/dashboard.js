@@ -100,7 +100,7 @@ function renderDna(vector, evidence) {
   return `
     <section class="dash-dna">
       <p class="dash-label">${td("dna.label")}</p>
-      ${radarMarkup(vector, evidence)}
+      ${radarMarkup(vector, evidence, { encabezado: false })}
       <div class="dna-rows">${filas}</div>
       <p class="dash-hint">${td("dna.hint")}</p>
     </section>`;
