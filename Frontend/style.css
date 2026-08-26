@@ -45,10 +45,12 @@ body{
     width:900px;
     height:900px;
 
+    /* Bajado de .18/.12 a la mitad. Sigue dando profundidad a la esquina,
+       pero ya no ilumina la pagina entera como un foco de escenario. */
     background:radial-gradient(
         circle,
-        rgba(var(--fp-primary-rgb),.18),
-        rgba(var(--fp-secondary-rgb),.12),
+        rgba(var(--fp-primary-rgb),.09),
+        rgba(var(--fp-secondary-rgb),.06),
         transparent
     );
 
@@ -105,9 +107,13 @@ body{
    alcanzaba al <nav> interno de la cabecera nueva y la dejaba en 105px de
    alto. */
 
+/* Centrado desde que el planeta salio de la portada. Estaba pensado para dos
+   columnas - texto a la izquierda, ilustracion a la derecha - y al quitar la
+   segunda quedaban 540px vacios a la derecha en una pantalla grande: no se
+   leia como espacio, se leia como que algo no habia cargado. */
 .hero{
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
 
     min-height:85vh;
@@ -120,8 +126,21 @@ body{
 /* Hero Content */
 
 .hero-content{
-    max-width:900px;
+    max-width:820px;
     min-width:0;
+    text-align:center;
+}
+
+.hero-content .buttons,
+.hero-content .hero-stats{
+    justify-content:center;
+}
+
+/* Sin esto el parrafo conserva su max-width pero pegado a la izquierda, y
+   el bloque entero se ve torcido dentro de un hero centrado. */
+.hero-content p{
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .badge{
@@ -199,9 +218,10 @@ body{
         var(--fp-button)
     );
 
-    box-shadow:
-    0 0 20px var(--fp-secondary),
-    0 0 50px rgba(var(--fp-glow-rgb),.5);
+    /* Era un halo de 50px a todo alrededor: se leia como boton de videojuego,
+       no como el boton principal de una herramienta. Ahora la sombra cae
+       hacia abajo, que es de donde viene la luz en el resto de la interfaz. */
+    box-shadow:0 6px 22px rgba(var(--fp-glow-rgb),.30);
 
     transition:.3s;
 }
@@ -209,9 +229,7 @@ body{
 .primary-btn:hover{
     transform:translateY(-4px);
 
-    box-shadow:
-    0 0 30px var(--fp-secondary),
-    0 0 70px rgba(var(--fp-glow-rgb),.8);
+    box-shadow:0 10px 30px rgba(var(--fp-glow-rgb),.42);
 }
 
 .secondary-btn{
@@ -233,8 +251,7 @@ body{
 .secondary-btn:hover{
     border-color:var(--fp-accent);
 
-    box-shadow:
-    0 0 20px rgba(var(--fp-glow-rgb),.4);
+    box-shadow:0 6px 18px rgba(var(--fp-glow-rgb),.18);
 }
 
 /* Progress bar - usado por flightplan.html */
@@ -346,6 +363,26 @@ body{
         font-size:4rem;
     }
 
+}
+
+/* En un movil de 375px, 4rem daban un titular de siete lineas que ocupaba el
+   58% de la pantalla: el estudiante veia el titular y nada mas - ni la frase
+   que explica la app, ni el boton - sin hacer scroll. */
+@media(max-width:640px){
+
+    .hero h1{
+        font-size:2.6rem;
+    }
+
+    .hero p{
+        font-size:1.05rem;
+        line-height:1.7;
+    }
+
+    .hero-stats{
+        gap:24px;
+    }
+
     /* no cabe junto al texto en una columna centrada, y en movil el
        protagonismo es del texto y los botones. */
     .planet-wrap{
@@ -404,6 +441,11 @@ body{
     margin-top:5px;
 }
 
+/* NOTA: el marcado de este planeta ya NO esta en la portada - se quito
+   a peticion del diseño. Los estilos se conservan porque el bloque es
+   autonomo y se puede reutilizar en otra pagina pegando su <div
+   class="planet-wrap">; el HTML esta en el historial de git.
+
 /* --- El planeta del hero -------------------------------------------------
  * Puramente decorativo: llena el espacio vacio a la derecha del hero en
  * escritorio. El "giro" no rota el dibujo en redondo (eso se lee como una
@@ -456,7 +498,10 @@ body{
     border-radius:50%;
     overflow:hidden;
     background:#040b14;
-    animation:planet-breathe 5s ease-in-out infinite;
+    /* Sin `planet-breathe`: un resplandor que crecia y menguaba cada 5s tiraba
+       del ojo mientras se intenta leer el titular. El planeta ya se mueve - la
+       malla gira - y con eso basta. El halo se queda fijo y mas contenido. */
+    box-shadow:0 -14px 40px rgba(0,212,255,.20), 0 18px 44px rgba(0,255,179,.20);
 }
 .planet svg{ position:absolute; inset:0; width:100%; height:100%; }
 .planet .scroll-group{ animation:globe-scroll 22s linear infinite; }
@@ -464,11 +509,6 @@ body{
 .planet .twinkle{ animation:star-twinkle 3.4s ease-in-out infinite; }
 @keyframes star-twinkle{ 0%,100%{ opacity:.35; } 50%{ opacity:1; } }
 .planet .rim{ fill:none; stroke:rgba(200,240,255,.35); stroke-width:2; stroke-linecap:round; }
-@keyframes planet-breathe{
-    0%,100%{ box-shadow:0 -18px 55px rgba(0,212,255,.3), 0 22px 60px rgba(0,255,179,.3); }
-    50%{ box-shadow:0 -18px 75px rgba(0,212,255,.45), 0 22px 82px rgba(0,255,179,.45); }
-}
-
 @media (prefers-reduced-motion: reduce){
     .orbit--a, .orbit--b, .sat, .planet, .planet .scroll-group, .planet .twinkle{
         animation:none;
