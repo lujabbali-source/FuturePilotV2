@@ -15,6 +15,8 @@ import { sendAssessmentToPythonAI } from "../shared/apiConnector.js";
 import { t, currentLanguage, onLanguageChange } from "../shared/i18next.js";
 import { renderDashboard } from "./dashboard.js";
 import "./dashboard.css";
+import { radarMarkup, wireRadar } from "./radar.js";
+import "./radar.css";
 
 // Estado que solo vive en la pantalla de cuenta: que carrera esta desplegada,
 // si hay un formulario abierto y el ultimo mensaje. Se guarda aparte del
@@ -333,6 +335,8 @@ function renderFullResults() {
   if (dashData) {
     app.innerHTML = renderDashboard({ data: dashData, user, estado: dashState });
     applyFills();
+    const guardado = dashData.latest?.results || {};
+    wireRadar(app, guardado.user_vector, guardado.cluster_evidence);
     return;
   }
 
@@ -347,6 +351,7 @@ function renderFullResults() {
       <h1>${user && user.name ? escapeHtml(user.name) + "," : ""} ${t("full.title")}<br><span>${t("full.titleAccent")}</span></h1>
       <p>${t("full.archetype")}: <strong>${escapeHtml(aiResult.personality || "")}</strong> · ${t("full.learningStyle")}: <strong>${escapeHtml(aiResult.learning_style || "")}</strong> · ${t("full.confidence")}: <strong>${Math.round((aiResult.confidence || 0) * 100)}%</strong></p>
     </section>
+    ${radarMarkup(aiResult.user_vector, aiResult.cluster_evidence)}
     <section class="strengths-section">
       <div class="section-label"><span>${t("full.strengths")}</span></div>
       <div class="chip-row">${strengths.length ? strengths.map((s) => `<span class="chip chip--strength">${escapeHtml(s)}</span>`).join("") : `<span class="chip chip--strength">${t("full.noStrengths")}</span>`}</div>
@@ -363,6 +368,7 @@ function renderFullResults() {
     <button type="button" class="text-action" data-action="retake-test">${t("full.retake")}</button>
   </main>`;
   applyFills();
+  wireRadar(app, aiResult.user_vector, aiResult.cluster_evidence);
 }
 
 function goNext() {

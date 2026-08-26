@@ -1,0 +1,151 @@
+/* Radar del perfil. Todo por clases: la CSP prohibe `style=` en el HTML, y
+   un grafico pintado con estilos en linea saldria en blanco en produccion
+   sin avisar. Los atributos de presentacion de SVG (fill, stroke) si valen. */
+
+.radar-section {
+  margin: 44px 0 8px;
+}
+
+.radar-hint {
+  margin: -6px 0 14px;
+  color: var(--fp-text-muted, #B8C4D4);
+  font-size: .9rem;
+}
+
+.radar-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.radar {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  overflow: visible;
+}
+
+/* La rejilla se ve, pero no compite con los datos. */
+.radar__ring {
+  fill: none;
+  stroke: rgba(255, 255, 255, .10);
+  stroke-width: 1;
+}
+
+.radar__ring--outer {
+  stroke: rgba(255, 255, 255, .22);
+}
+
+.radar__spoke {
+  stroke: rgba(255, 255, 255, .08);
+  stroke-width: 1;
+}
+
+.radar__area {
+  stroke: #00FFB3;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.radar__dot {
+  fill: var(--fp-bg, #07111F);
+  stroke: #00FFB3;
+  stroke-width: 2;
+  cursor: pointer;
+  transition: r .18s ease, stroke .18s ease;
+}
+
+.radar__label {
+  fill: var(--fp-text-muted, #B8C4D4);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: fill .18s ease;
+}
+
+.radar__label:hover,
+.radar__dot:hover {
+  fill: var(--fp-text, #fff);
+  stroke: #00D4FF;
+}
+
+.radar__label:hover {
+  stroke: none;
+}
+
+/* El eje abierto. El cambio tiene que notarse sin depender del color: quien
+   no distinga el cian del verde ve igualmente un punto mas grande y una
+   etiqueta mas clara. */
+.radar__label.is-selected {
+  fill: #00FFB3;
+}
+
+.radar__dot.is-selected {
+  r: 7;
+  fill: #00FFB3;
+  stroke: #00D4FF;
+  stroke-width: 3;
+}
+
+.radar__label:focus-visible,
+.radar__dot:focus-visible {
+  outline: 2px solid #00D4FF;
+  outline-offset: 3px;
+}
+
+.radar-detail {
+  margin-top: 18px;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .04);
+  min-height: 132px;
+}
+
+.radar-detail__prompt {
+  margin: 0;
+  color: var(--fp-text-muted, #B8C4D4);
+}
+
+.radar-detail__title {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+
+.radar-detail__score {
+  margin: 0 0 10px;
+  color: #00FFB3;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.radar-detail__score span {
+  color: var(--fp-text-muted, #B8C4D4);
+  font-size: 1rem;
+}
+
+.radar-detail__what {
+  margin: 0 0 8px;
+  line-height: 1.6;
+}
+
+/* La procedencia del numero va en otro tono: es un dato sobre el dato, no
+   una afirmacion mas sobre el estudiante. */
+.radar-detail__how {
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, .07);
+  color: var(--fp-text-muted, #B8C4D4);
+  font-size: .88rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 520px) {
+  .radar__label { font-size: 11px; }
+  .radar { max-width: 100%; }
+}
+
+/* Quien pidió menos animacion no quiere que un punto crezca al tocarlo. */
+@media (prefers-reduced-motion: reduce) {
+  .radar__dot,
+  .radar__label { transition: none; }
+}

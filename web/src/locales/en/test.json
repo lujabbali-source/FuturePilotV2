@@ -302,5 +302,32 @@
       "cancel": "Cancel",
       "error": "We could not complete that. Check the details and try again."
     }
+  },
+  "radar": {
+    "title": "Your profile, axis by axis",
+    "hint": "Tap any axis to see what it measures and where the number comes from.",
+    "prompt": "Tap an axis on the chart to see how it was measured.",
+    "measured": "How it was measured: {{answered}} of your answers scored on this axis, and you gathered {{points}} of the {{max}} points available in them. The value above is that proportion on a 0 to 10 scale, so every axis can be compared even though they do not all have the same number of questions.",
+    "notMeasured": "How it was measured: none of the questions you answered scored on this axis. If you skipped a lot, this value says more about what you left blank than about you.",
+    "axis": {
+      "ANALYTICAL": "Analytical thinking",
+      "SCIENTIFIC": "Scientific reasoning",
+      "TECHNICAL": "Technical skill",
+      "PRACTICAL": "Hands-on work",
+      "ENTREPRENEURIAL": "Entrepreneurial drive",
+      "LEADERSHIP": "Leadership",
+      "SOCIAL": "Working with people",
+      "CREATIVE": "Creativity"
+    },
+    "desc": {
+      "ANALYTICAL": "Taking a problem apart and seeing what causes it. It shows up in people who enjoy finding the pattern behind a pile of loose data.",
+      "SCIENTIFIC": "Asking why things happen and wanting to check it rather than assume it. The kind of curiosity that is not satisfied by the first explanation.",
+      "TECHNICAL": "Handling tools, systems and machines, and understanding how they work inside. That includes digital things, but not only those.",
+      "PRACTICAL": "Building with your hands and seeing the finished result. Preferring to make something real over talking about how it would be made.",
+      "ENTREPRENEURIAL": "Spotting an opportunity and starting without being asked. Coping well with the uncertainty of having no path already laid out.",
+      "LEADERSHIP": "Organising a group towards something and owning whether it lands. It is not bossing people: it is everyone knowing what to do and why.",
+      "SOCIAL": "Understanding people, listening and helping. You can tell by whether others come to you when they have a problem.",
+      "CREATIVE": "Imagining something that does not exist yet and giving it shape. It works in art as much as in engineering: proposing a way out nobody had seen."
+    }
   }
 }

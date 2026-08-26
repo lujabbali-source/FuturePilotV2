@@ -17,6 +17,7 @@
 //   quien soy -> que hago ahora -> que me encaja -> por donde voy -> mi cuenta
 
 import { t, currentLanguage } from "../shared/i18next.js";
+import { radarMarkup } from "./radar.js";
 
 const td = (key, params) => t(`dash.${key}`, params);
 
@@ -99,6 +100,7 @@ function renderDna(vector, evidence) {
   return `
     <section class="dash-dna">
       <p class="dash-label">${td("dna.label")}</p>
+      ${radarMarkup(vector, evidence)}
       <div class="dna-rows">${filas}</div>
       <p class="dash-hint">${td("dna.hint")}</p>
     </section>`;

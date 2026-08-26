@@ -302,5 +302,32 @@
       "cancel": "Cancelar",
       "error": "No pudimos completar la acción. Revisa los datos e intenta de nuevo."
     }
+  },
+  "radar": {
+    "title": "Tu perfil, eje por eje",
+    "hint": "Toca cualquier eje para ver qué mide y de dónde sale el número.",
+    "prompt": "Toca un eje del gráfico para ver cómo se midió.",
+    "measured": "Cómo se midió: {{answered}} de tus respuestas puntuaron en este eje, y sumaste {{points}} de los {{max}} puntos que podías sacar en ellas. El valor de arriba es esa proporción llevada a una escala de 0 a 10, para que todos los ejes se puedan comparar aunque no tengan el mismo número de preguntas.",
+    "notMeasured": "Cómo se midió: ninguna de las preguntas que respondiste puntuaba en este eje. Si saltaste muchas, este valor dice más sobre lo que dejaste en blanco que sobre ti.",
+    "axis": {
+      "ANALYTICAL": "Pensamiento analítico",
+      "SCIENTIFIC": "Razonamiento científico",
+      "TECHNICAL": "Habilidad técnica",
+      "PRACTICAL": "Trabajo manual",
+      "ENTREPRENEURIAL": "Iniciativa emprendedora",
+      "LEADERSHIP": "Liderazgo",
+      "SOCIAL": "Trato con personas",
+      "CREATIVE": "Creatividad"
+    },
+    "desc": {
+      "ANALYTICAL": "Desarmar un problema en partes y ver qué lo causa. Aparece en quien disfruta encontrando el patrón detrás de un montón de datos sueltos.",
+      "SCIENTIFIC": "Preguntarte por qué pasan las cosas y querer comprobarlo, no solo suponerlo. Es la curiosidad que no se conforma con la primera explicación.",
+      "TECHNICAL": "Manejar herramientas, sistemas y máquinas, y entender cómo funcionan por dentro. Incluye lo digital, pero no solo eso.",
+      "PRACTICAL": "Construir con las manos y ver el resultado terminado. Preferir hacer algo real antes que hablar de cómo se haría.",
+      "ENTREPRENEURIAL": "Ver una oportunidad y arrancar sin que nadie te lo pida. Aguantar bien la incertidumbre de que no haya un camino ya trazado.",
+      "LEADERSHIP": "Organizar a un grupo hacia algo y hacerte responsable de que salga. No es mandar: es que los demás sepan qué hacer y por qué.",
+      "SOCIAL": "Entender a la gente, escuchar y ayudar. Se te nota en si las personas te buscan cuando tienen un problema.",
+      "CREATIVE": "Imaginar algo que todavía no existe y darle forma. Sirve igual en arte que en ingeniería: es proponer una salida que nadie había visto."
+    }
   }
 }
