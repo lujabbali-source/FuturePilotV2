@@ -328,6 +328,10 @@
       "LEADERSHIP": "Organizar a un grupo hacia algo y hacerte responsable de que salga. No es mandar: es que los demás sepan qué hacer y por qué.",
       "SOCIAL": "Entender a la gente, escuchar y ayudar. Se te nota en si las personas te buscan cuando tienen un problema.",
       "CREATIVE": "Imaginar algo que todavía no existe y darle forma. Sirve igual en arte que en ingeniería: es proponer una salida que nadie había visto."
-    }
+    },
+    "noteFlatHigh": "Ojo con este resultado: te sale parecido y alto en los ocho ejes. Eso no significa que se te dé bien todo — significa que estuviste de acuerdo con casi todas las frases, y así el test no puede distinguir en qué destacas. Las frases están escritas en positivo y es fácil verse en todas. Si repites el test y te obligas a marcar desacuerdo donde de verdad lo haya, la forma del gráfico te va a decir mucho más que esta.",
+    "noteFlatLow": "Ojo con este resultado: te sale parecido y bajo en los ocho ejes, porque estuviste en desacuerdo con casi todas las frases. Eso no dice que no se te dé bien nada: dice que el test no encontró en qué te reconoces. Si lo repites marcando de acuerdo donde sí te veas, aunque sea poco, la forma empieza a significar algo.",
+    "noteFlatMid": "Ojo con este resultado: los ocho ejes te salen casi iguales, así que el gráfico es casi un círculo y no señala ninguna dirección. Suele pasar cuando se responde parecido a todo. Repetirlo tomándote más tiempo en cada frase, y separando las que sí de las que no, da un perfil más útil.",
+    "noteFew": "Este perfil se calculó con solo {{answered}} respuestas, así que tómalo como un boceto. Cada eje se mide con las preguntas que lo tocan: con pocas, una sola respuesta mueve mucho el resultado. Completar el test entero lo vuelve mucho más fiable."
   }
 }

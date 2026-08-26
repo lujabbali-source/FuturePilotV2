@@ -119,10 +119,48 @@ export function radarMarkup(vector, evidencia, { encabezado = true } = {}) {
           ${etiquetas}
         </svg>
       </div>
+      ${aviso(vector, evidencia)}
       <div class="radar-detail" data-radar-detail>
         <p class="radar-detail__prompt">${t("radar.prompt")}</p>
       </div>
     </section>`;
+}
+
+/**
+ * El aviso cuando el perfil no distingue nada.
+ *
+ * Un octagono lleno se lee como un boletin de notas perfecto, y no lo es: las
+ * 50 frases del test estan escritas en positivo ("disfruto resolviendo
+ * problemas dificiles"), asi que estar de acuerdo con todas es facil y da 10
+ * en los ocho ejes. Ese 10 no dice "se te da bien todo", dice "el test no
+ * pudo distinguir". Callarselo seria dejar que alguien de 16 años saque una
+ * conclusion sobre si mismo que sus propios datos no sostienen.
+ *
+ * El umbral es el mismo que usa el motor para bajar la confianza del analisis
+ * (profile_definition en ai_engine.py): desviacion tipica sobre 5, y por
+ * debajo de 0.24 el perfil se considera plano.
+ */
+function aviso(vector, evidencia) {
+  const valores = EJES.map((eje) => Number(vector[eje]) || 0);
+  const media = valores.reduce((a, b) => a + b, 0) / valores.length;
+  const desviacion = Math.sqrt(
+    valores.reduce((suma, v) => suma + (v - media) ** 2, 0) / valores.length
+  );
+
+  const respondidas = EJES.reduce(
+    (suma, eje) => suma + ((evidencia && evidencia[eje] && evidencia[eje].answered) || 0), 0);
+
+  // Pocas respuestas explican cualquier forma rara, asi que ese aviso manda
+  // sobre el de perfil plano: no tiene sentido decirle que fue poco selectivo
+  // a quien apenas contesto.
+  if (respondidas > 0 && respondidas < 15) {
+    return `<p class="radar-note">${t("radar.noteFew", { answered: respondidas })}</p>`;
+  }
+
+  if (desviacion / 5 >= 0.24) return "";
+
+  const clave = media >= 7 ? "noteFlatHigh" : media <= 3 ? "noteFlatLow" : "noteFlatMid";
+  return `<p class="radar-note">${t(`radar.${clave}`)}</p>`;
 }
 
 /** Lo que se ve al abrir un eje: que mide, cuanto sacaste, y de donde sale

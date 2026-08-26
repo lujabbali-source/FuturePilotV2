@@ -328,6 +328,10 @@
       "LEADERSHIP": "Organising a group towards something and owning whether it lands. It is not bossing people: it is everyone knowing what to do and why.",
       "SOCIAL": "Understanding people, listening and helping. You can tell by whether others come to you when they have a problem.",
       "CREATIVE": "Imagining something that does not exist yet and giving it shape. It works in art as much as in engineering: proposing a way out nobody had seen."
-    }
+    },
+    "noteFlatHigh": "Read this one carefully: you score similarly and high on all eight axes. That does not mean you are good at everything — it means you agreed with almost every statement, so the assessment cannot tell what you stand out in. The statements are written positively and it is easy to see yourself in all of them. If you retake it and make yourself disagree where you genuinely do, the shape will tell you far more than this one.",
+    "noteFlatLow": "Read this one carefully: you score similarly and low on all eight axes, because you disagreed with almost every statement. That does not say you are good at nothing: it says the assessment did not find what you recognise yourself in. Retaking it and agreeing where you do see yourself, even a little, makes the shape mean something.",
+    "noteFlatMid": "Read this one carefully: all eight axes come out nearly equal, so the chart is almost a circle and points nowhere. That usually happens when everything is answered much the same way. Retaking it, spending longer on each statement and separating the yes from the no, gives a more useful profile.",
+    "noteFew": "This profile was calculated from only {{answered}} answers, so treat it as a sketch. Each axis is measured with the questions that touch it: with few of them, a single answer moves the result a lot. Completing the whole assessment makes it far more solid."
   }
 }

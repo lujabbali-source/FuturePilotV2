@@ -149,3 +149,19 @@
   .radar__dot,
   .radar__label { transition: none; }
 }
+
+/* El aviso de perfil plano. Va entre el grafico y el detalle, que es donde
+   cae la mirada despues de ver la forma. En ambar y no en rojo a proposito:
+   no es un error del estudiante ni algo que haya hecho mal, es una nota sobre
+   lo que este resultado puede y no puede decirle. */
+.radar-note {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 190, 90, .28);
+  border-left-width: 3px;
+  border-radius: 12px;
+  background: rgba(255, 190, 90, .07);
+  color: var(--fp-text, #fff);
+  font-size: .92rem;
+  line-height: 1.6;
+}
