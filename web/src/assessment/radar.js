@@ -127,6 +127,46 @@ export function radarMarkup(vector, evidencia, { encabezado = true } = {}) {
 }
 
 /**
+ * Cuanto se puede fiar el estudiante de este resultado, dicho con datos suyos.
+ *
+ * Aqui habia un "Confianza del analisis: 80%". Ese numero salia de
+ * 0.4 + respondidas*0.3 + definicion*0.3 (ai_engine.py), o sea que NUNCA
+ * bajaba del 40%: quien contestara cinco preguntas al azar veia un 47%. Un
+ * porcentaje con esa pinta se lee como una probabilidad de acertar, y no lo
+ * era - era un indice inventado por la casa, sin nada en pantalla que dijera
+ * de que se componia.
+ *
+ * Se sustituye por las dos cosas reales de las que dependia, que ademas el
+ * estudiante puede comprobar: cuantas preguntas respondio, y si su perfil
+ * marca diferencias entre ejes. Una palabra en vez de un decimal, y los
+ * numeros que la sostienen al lado.
+ */
+export function fiabilidad(vector, evidencia, totalPreguntas) {
+  const respondidas = EJES.reduce(
+    (suma, eje) => suma + ((evidencia && evidencia[eje] && evidencia[eje].answered) || 0), 0);
+
+  const valores = EJES.map((eje) => Number((vector || {})[eje]) || 0);
+  const media = valores.reduce((a, b) => a + b, 0) / (valores.length || 1);
+  const desviacion = Math.sqrt(
+    valores.reduce((suma, v) => suma + (v - media) ** 2, 0) / (valores.length || 1));
+
+  const cobertura = totalPreguntas ? respondidas / totalPreguntas : 0;
+  const definicion = desviacion / 5;
+
+  // Las dos condiciones tienen que cumplirse: responderlo entero sin mostrar
+  // ninguna inclinacion no es un resultado fiable, y un perfil muy marcado
+  // sacado de seis respuestas, tampoco.
+  const nivel = cobertura >= 0.8 && definicion >= 0.24 ? "high"
+    : cobertura >= 0.5 && definicion >= 0.15 ? "mid"
+    : "low";
+
+  return {
+    nivel,
+    texto: t(`reliability.${nivel}`, { answered: respondidas, total: totalPreguntas || 0 }),
+  };
+}
+
+/**
  * El aviso cuando el perfil no distingue nada.
  *
  * Un octagono lleno se lee como un boletin de notas perfecto, y no lo es: las

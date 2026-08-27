@@ -17,7 +17,7 @@ import { rebarajar } from "./shuffle.js";
 import { senalQueCuenta } from "./multiSignal.js";
 import { renderDashboard } from "./dashboard.js";
 import "./dashboard.css";
-import { radarMarkup, wireRadar } from "./radar.js";
+import { radarMarkup, wireRadar, fiabilidad } from "./radar.js";
 import "./radar.css";
 
 // Estado que solo vive en la pantalla de cuenta: que carrera esta desplegada,
@@ -358,7 +358,8 @@ function renderFullResults() {
     <section class="results-intro">
       <p class="eyebrow"><span class="eyebrow-dot"></span> ${t("full.eyebrow")}</p>
       <h1>${user && user.name ? escapeHtml(user.name) + "," : ""} ${t("full.title")}<br><span>${t("full.titleAccent")}</span></h1>
-      <p>${t("full.archetype")}: <strong>${escapeHtml(aiResult.personality || "")}</strong> · ${t("full.learningStyle")}: <strong>${escapeHtml(aiResult.learning_style || "")}</strong> · ${t("full.confidence")}: <strong>${Math.round((aiResult.confidence || 0) * 100)}%</strong></p>
+      <p>${t("full.archetype")}: <strong>${escapeHtml(aiResult.personality || "")}</strong> · ${t("full.learningStyle")}: <strong>${escapeHtml(aiResult.learning_style || "")}</strong></p>
+      <p class="reliability reliability--${fiabilidad(aiResult.user_vector, aiResult.cluster_evidence, questionCount()).nivel}">${t("reliability.label")}: ${fiabilidad(aiResult.user_vector, aiResult.cluster_evidence, questionCount()).texto}</p>
     </section>
     ${radarMarkup(aiResult.user_vector, aiResult.cluster_evidence)}
     <section class="strengths-section">

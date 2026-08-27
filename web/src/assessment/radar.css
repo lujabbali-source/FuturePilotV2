@@ -165,3 +165,18 @@
   font-size: .92rem;
   line-height: 1.6;
 }
+
+/* Fiabilidad del resultado. Sustituye al "Confianza del analisis: 80%", que
+   era un indice inventado con suelo del 40% presentado como porcentaje. El
+   color acompaña a la palabra pero no la sustituye: quien no distinga verde
+   de ambar lee igual "Alta" o "Baja". */
+.reliability {
+  margin: 10px 0 0;
+  font-size: .92rem;
+  line-height: 1.55;
+  color: var(--fp-text-muted, #B8C4D4);
+}
+
+.reliability--high { border-left: 3px solid #00FFB3; padding-left: 12px; }
+.reliability--mid  { border-left: 3px solid rgba(255, 190, 90, .7); padding-left: 12px; }
+.reliability--low  { border-left: 3px solid rgba(255, 130, 120, .7); padding-left: 12px; }

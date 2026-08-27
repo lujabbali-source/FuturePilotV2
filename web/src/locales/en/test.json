@@ -333,5 +333,11 @@
     "noteFlatLow": "Read this one carefully: you score similarly and low on all eight axes, because you disagreed with almost every statement. That does not say you are good at nothing: it says the assessment did not find what you recognise yourself in. Retaking it and agreeing where you do see yourself, even a little, makes the shape mean something.",
     "noteFlatMid": "Read this one carefully: all eight axes come out nearly equal, so the chart is almost a circle and points nowhere. That usually happens when everything is answered much the same way. Retaking it, spending longer on each statement and separating the yes from the no, gives a more useful profile.",
     "noteFew": "This profile was calculated from only {{answered}} answers, so treat it as a sketch. Each axis is measured with the questions that touch it: with few of them, a single answer moves the result a lot. Completing the whole assessment makes it far more solid."
+  },
+  "reliability": {
+    "label": "How much to trust this",
+    "high": "High — you answered {{answered}} of {{total}} questions and your profile shows clear differences between axes.",
+    "mid": "Medium — you answered {{answered}} of {{total}} questions. Take it as a pointer, not a conclusion.",
+    "low": "Low — with {{answered}} of {{total}} questions answered, or with axes too similar to each other, this does not tell much apart. Retaking the whole assessment makes it far more useful."
   }
 }

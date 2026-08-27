@@ -17,7 +17,12 @@
 //   quien soy -> que hago ahora -> que me encaja -> por donde voy -> mi cuenta
 
 import { t, currentLanguage } from "../shared/i18next.js";
-import { radarMarkup } from "./radar.js";
+import { radarMarkup, fiabilidad } from "./radar.js";
+
+// El panel lee un resultado guardado y no tiene el banco cargado, asi que
+// no puede preguntar cuantas preguntas hay. 50 es el tamaño del banco; si
+// cambia, esta cifra solo afecta al texto de fiabilidad, no a la puntuacion.
+const TOTAL_PREGUNTAS = 50;
 
 const td = (key, params) => t(`dash.${key}`, params);
 
@@ -341,7 +346,8 @@ export function renderDashboard({ data, user, estado }) {
       ${results.personality ? `
         <p>${t("full.archetype")}: <strong>${escapeHtml(results.personality)}</strong>
            · ${t("full.learningStyle")}: <strong>${escapeHtml(results.learning_style || "")}</strong>
-           · ${t("full.confidence")}: <strong>${Math.round((results.confidence || 0) * 100)}%</strong></p>` : ""}
+           </p>
+        <p class="reliability reliability--${fiabilidad(vector, evidence, TOTAL_PREGUNTAS).nivel}">${t("reliability.label")}: ${fiabilidad(vector, evidence, TOTAL_PREGUNTAS).texto}</p>` : ""}
     </section>
 
     ${renderNextStep(data.journey)}
