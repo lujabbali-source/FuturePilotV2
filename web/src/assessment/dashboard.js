@@ -332,6 +332,14 @@ export function renderDashboard({ data, user, estado }) {
   const results = latest?.results || {};
   const nombre = user?.name || data.account?.name;
 
+  // Se calcula UNA vez y con los datos de este resultado. Estaba escrito como
+  // fiabilidad(vector, evidence, ...) dentro de la plantilla, pero esos dos
+  // nombres solo existen dentro de renderDna: aqui lanzaban ReferenceError, y
+  // como render() se llama dentro de un try en init(), el fallo se tragaba y
+  // el usuario acababa en "No pudimos cargar tu exploracion". Le pasaba a
+  // cualquier cuenta con un resultado guardado.
+  const fiab = fiabilidad(results.user_vector, results.cluster_evidence, TOTAL_PREGUNTAS);
+
   return `<main class="results-screen dash screen-enter">
     <div class="results-topline">
       <span class="brand">
@@ -347,7 +355,7 @@ export function renderDashboard({ data, user, estado }) {
         <p>${t("full.archetype")}: <strong>${escapeHtml(results.personality)}</strong>
            · ${t("full.learningStyle")}: <strong>${escapeHtml(results.learning_style || "")}</strong>
            </p>
-        <p class="reliability reliability--${fiabilidad(vector, evidence, TOTAL_PREGUNTAS).nivel}">${t("reliability.label")}: ${fiabilidad(vector, evidence, TOTAL_PREGUNTAS).texto}</p>` : ""}
+        <p class="reliability reliability--${fiab.nivel}">${t("reliability.label")}: ${fiab.texto}</p>` : ""}
     </section>
 
     ${renderNextStep(data.journey)}
