@@ -78,7 +78,7 @@
   },
   "multi": {
     "badge": "Selección múltiple",
-    "hint": "Elige hasta 2 señales que más se parezcan a ti."
+    "hint": "Marca hasta 2 señales que sean verdad. Si marcas dos, cuenta la que más dice de ti."
   },
   "ranking": {
     "badge": "Ranking",

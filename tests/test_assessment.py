@@ -43,11 +43,12 @@ def _answers_favouring(questions: list, clusters: set) -> list:
     """Construye un set de respuestas que marca fuerte los clusters dados y
     flojo el resto.
 
-    Cada pregunta de questions.json es un item Likert de UN solo cluster:
-    el indice 0 es "Strongly Agree" (4 puntos) y el ultimo "Strongly
-    Disagree" (0). Responder el mismo indice a todo NO produce un perfil
-    inclinado - produce uno plano, porque cada pregunta apunta a un cluster
-    distinto. Hay que elegir el indice segun el cluster de cada pregunta.
+    Cada pregunta de questions.json mide UN solo cluster con cuatro
+    opciones de contenido: el indice 0 es la que mas lo indica (4 puntos)
+    y el ultimo la que menos (0). Responder el mismo indice a todo NO
+    produce un perfil inclinado - produce uno plano, porque cada pregunta
+    apunta a un cluster distinto. Hay que elegir el indice segun el
+    cluster de cada pregunta.
     """
     answers = []
     for index, question in enumerate(questions):

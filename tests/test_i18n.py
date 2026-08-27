@@ -119,9 +119,16 @@ def test_results_are_stored_untranslated_and_read_in_any_language(client, sample
     assert not any(s.isupper() for s in en["strengths"]), en["strengths"]
 
     # Ni como clave de plantilla sin resolver.
-    for texto in [es["top_choice"]["justification"], en["top_choice"]["justification"],
-                  *es["future_predictions"], *en["future_predictions"]]:
+    for texto in [es["top_choice"]["justification"], en["top_choice"]["justification"]]:
         assert " " in texto, f"clave sin redactar: {texto}"
+
+    # future_predictions ya no existe: eran dos frases fijas que afirmaban un
+    # crecimiento del 15% en seis meses y una comparacion con "la mayoria",
+    # ninguna de las dos calculada. Este test las daba por buenas mientras
+    # estuvieran traducidas, que es exactamente el problema.
+    for datos in (es, en):
+        assert "future_predictions" not in datos, (
+            "volvieron las predicciones inventadas al resultado")
 
     # El roadmap tambien: es lo que lee Journey.
     for datos in (es, en):
@@ -211,7 +218,6 @@ def test_legacy_results_can_still_be_read_in_both_languages(app_module, client, 
             {"step": 2, "title": "Nivelación en ANALYTICAL", "reward_xp": 250,
              "description": "Fortalecimiento de áreas de oportunidad."},
         ]},
-        "future_predictions": ["Con práctica constante, ...", "Tu alineación con ..."],
         "recommended_hubs": [{"name": "París (Francia)", "category": "Arts",
                               "desc": "Escena artística, editorial y audiovisual histórica."}],
     }

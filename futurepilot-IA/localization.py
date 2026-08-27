@@ -138,14 +138,6 @@ TEMPLATES: Dict[str, Dict[str, str]] = {
             "{career}, thanks to {strengths}."
         ),
         "justification.noStrengths": "your overall profile",
-        "prediction.growth": (
-            "With steady practice, your analytical ability can grow by around 15% "
-            "over the next six months."
-        ),
-        "prediction.projects": (
-            "Your fit with {career} means you can take on intermediate-level projects "
-            "sooner than most."
-        ),
         "roadmap.gapsFallback": "advanced skills",
         "roadmap.step1.title": "Fundamentals and key concepts",
         "roadmap.step1.desc": "The groundwork {career} is built on.",
@@ -219,14 +211,6 @@ TEMPLATES: Dict[str, Dict[str, str]] = {
             "fuerza en {career}, gracias a {strengths}."
         ),
         "justification.noStrengths": "tu perfil general",
-        "prediction.growth": (
-            "Con práctica constante, tu capacidad analítica puede crecer alrededor de "
-            "un 15% en los próximos seis meses."
-        ),
-        "prediction.projects": (
-            "Tu afinidad con {career} te permite abordar proyectos de nivel intermedio "
-            "antes que la mayoría."
-        ),
         "roadmap.gapsFallback": "habilidades avanzadas",
         "roadmap.step1.title": "Fundamentos y conceptos clave",
         "roadmap.step1.desc": "Las bases sobre las que se sostiene {career}.",

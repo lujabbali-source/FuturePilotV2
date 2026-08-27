@@ -14,6 +14,7 @@ import { claimPendingAndCelebrate, pendingResultId } from "../shared/resultClaim
 import { sendAssessmentToPythonAI } from "../shared/apiConnector.js";
 import { t, currentLanguage, onLanguageChange } from "../shared/i18next.js";
 import { rebarajar } from "./shuffle.js";
+import { senalQueCuenta } from "./multiSignal.js";
 import { renderDashboard } from "./dashboard.js";
 import "./dashboard.css";
 import { radarMarkup, wireRadar } from "./radar.js";
@@ -174,8 +175,11 @@ function bindQuestionEvents(format) {
       const selected = new Set(currentAnswer().selectedIndices || []);
       if (selected.has(index)) selected.delete(index);
       else if (selected.size < 2) selected.add(index);
+      // De las señales marcadas cuenta la que MAS puntua, elegida por
+      // puntos y no por su posicion en el array: son niveles de evidencia,
+      // y el mas alto que marques es el tuyo de verdad (ver multiSignal.js).
       const selectedIndices = [...selected].sort((a, b) => a - b);
-      setAnswer(selectedIndices.length ? selectedIndices[0] : null, { selectedIndices });
+      setAnswer(senalQueCuenta(questions[currentQuestion], selectedIndices), { selectedIndices });
     } else {
       setAnswer(index);
     }

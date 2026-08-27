@@ -61,7 +61,7 @@ async function sendAssessmentToPythonAI(rawAnswers) {
   // Las preguntas saltadas ("Aun no lo se", ver skipQuestion en
   // assessment.js) quedan con answerIndex null y se OMITEN del payload.
   // Antes se mandaban como answer_index: 0, que en questions.json es
-  // "Strongly Agree" (4 puntos, el maximo): saltar una pregunta sumaba
+  // siempre la opcion de 4 puntos (el maximo): saltar una pregunta sumaba
   // en silencio la respuesta mas fuerte posible y corrompia el perfil.
   // question_index se toma del indice real en el array, no de la
   // posicion tras filtrar, para que siga apuntando a la pregunta

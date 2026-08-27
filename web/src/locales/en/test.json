@@ -78,7 +78,7 @@
   },
   "multi": {
     "badge": "Multiple choice",
-    "hint": "Pick up to 2 signals that sound most like you."
+    "hint": "Tick up to 2 signals that are true for you. If you tick two, the one that says most about you counts."
   },
   "ranking": {
     "badge": "Ranking",

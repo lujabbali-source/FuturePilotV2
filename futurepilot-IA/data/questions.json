@@ -1,1552 +1,1552 @@
 [
-  {
-    "type": "personality",
-    "question": "I enjoy finding logical solutions to difficult problems.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ANALYTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ANALYTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto encontrando soluciones lógicas a problemas difíciles."
-  },
-  {
-    "type": "personality",
-    "question": "I like expressing my ideas through art, writing, music or design.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "CREATIVE",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "CREATIVE",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "CREATIVE",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "CREATIVE",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Me gusta expresar mis ideas a través del arte, la escritura, la música o el diseño."
-  },
-  {
-    "type": "personality",
-    "question": "Helping other people gives me satisfaction.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "SOCIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "SOCIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "SOCIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "SOCIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Ayudar a otras personas me produce satisfacción."
-  },
-  {
-    "type": "personality",
-    "question": "I naturally take the lead when working in a group.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "LEADERSHIP",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "LEADERSHIP",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "LEADERSHIP",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "LEADERSHIP",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Cuando trabajo en grupo, tiendo a tomar la iniciativa."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy learning how technology works.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "TECHNICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "TECHNICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "TECHNICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "TECHNICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto aprendiendo cómo funciona la tecnología."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy discovering how nature and science explain the world.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "SCIENTIFIC",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "SCIENTIFIC",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "SCIENTIFIC",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "SCIENTIFIC",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto descubriendo cómo la naturaleza y la ciencia explican el mundo."
-  },
-  {
-    "type": "personality",
-    "question": "I prefer building or repairing things instead of only talking about them.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "PRACTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "PRACTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "PRACTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "PRACTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Prefiero construir o reparar cosas antes que solo hablar de ellas."
-  },
-  {
-    "type": "personality",
-    "question": "I often think about creating my own business or project.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "A menudo pienso en crear mi propio negocio o proyecto."
-  },
-  {
-    "type": "personality",
-    "question": "Before making a decision, I like to carefully analyze the available information.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ANALYTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ANALYTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Antes de decidir, me gusta analizar con cuidado la información disponible."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy turning new ideas into real projects.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto convirtiendo ideas nuevas en proyectos reales."
-  },
-  {
-    "type": "interest",
-    "question": "I enjoy finding patterns in data, puzzles, or complex information.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ANALYTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ANALYTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto encontrando patrones en datos, acertijos o información compleja."
-  },
-  {
-    "type": "interest",
-    "question": "I enjoy creating original ideas that others would not think of.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "CREATIVE",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "CREATIVE",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "CREATIVE",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "CREATIVE",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto creando ideas originales que a otros no se les ocurrirían."
-  },
-  {
-    "type": "interest",
-    "question": "I enjoy listening to people's problems and helping them find solutions.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "SOCIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "SOCIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "SOCIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "SOCIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto escuchando los problemas de la gente y ayudándoles a encontrar soluciones."
-  },
-  {
-    "type": "interest",
-    "question": "I feel comfortable making decisions for a group.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "LEADERSHIP",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "LEADERSHIP",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "LEADERSHIP",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "LEADERSHIP",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Me siento cómodo tomando decisiones para un grupo."
-  },
-  {
-    "type": "interest",
-    "question": "I enjoy exploring new software, apps, or digital tools.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "TECHNICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "TECHNICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "TECHNICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "TECHNICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto explorando software, aplicaciones o herramientas digitales nuevas."
-  },
-  {
-    "type": "interest",
-    "question": "I enjoy conducting experiments to discover how things work.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "SCIENTIFIC",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "SCIENTIFIC",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "SCIENTIFIC",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "SCIENTIFIC",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto haciendo experimentos para descubrir cómo funcionan las cosas."
-  },
-  {
-    "type": "interest",
-    "question": "I prefer hands-on activities over theoretical discussions.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "PRACTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "PRACTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "PRACTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "PRACTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Prefiero las actividades prácticas a las discusiones teóricas."
-  },
-  {
-    "type": "interest",
-    "question": "I enjoy identifying opportunities that others might overlook.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto detectando oportunidades que a otros se les pasan por alto."
-  },
-  {
-    "type": "interest",
-    "question": "I enjoy breaking large problems into smaller steps.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ANALYTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ANALYTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto dividiendo problemas grandes en pasos más pequeños."
-  },
-  {
-    "type": "interest",
-    "question": "I enjoy launching new ideas and seeing them become reality.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto lanzando ideas nuevas y viéndolas hacerse realidad."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy comparing different ideas before making a decision.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ANALYTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ANALYTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto comparando distintas ideas antes de tomar una decisión."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy imagining new products, stories, or designs.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "CREATIVE",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "CREATIVE",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "CREATIVE",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "CREATIVE",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto imaginando productos, historias o diseños nuevos."
-  },
-  {
-    "type": "personality",
-    "question": "I feel energized when I can support someone who needs help.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "SOCIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "SOCIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "SOCIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "SOCIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Me llena de energía poder apoyar a alguien que necesita ayuda."
-  },
-  {
-    "type": "personality",
-    "question": "People often trust me to organize projects or activities.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "LEADERSHIP",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "LEADERSHIP",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "LEADERSHIP",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "LEADERSHIP",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "La gente suele confiar en mí para organizar proyectos o actividades."
-  },
-  {
-    "type": "personality",
-    "question": "I like discovering how computers and devices work.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "TECHNICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "TECHNICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "TECHNICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "TECHNICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Me gusta descubrir cómo funcionan los ordenadores y los dispositivos."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy reading or watching content about scientific discoveries.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "SCIENTIFIC",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "SCIENTIFIC",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "SCIENTIFIC",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "SCIENTIFIC",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto leyendo o viendo contenido sobre descubrimientos científicos."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy assembling, fixing, or building things.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "PRACTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "PRACTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "PRACTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "PRACTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto montando, arreglando o construyendo cosas."
-  },
-  {
-    "type": "personality",
-    "question": "I like finding ways to improve products or services.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Me gusta encontrar formas de mejorar productos o servicios."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy solving challenges that require careful thinking.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ANALYTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ANALYTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto resolviendo retos que exigen pensar con calma."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy turning ideas into projects that create value for others.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto convirtiendo ideas en proyectos que aportan valor a otros."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy identifying mistakes that others often overlook.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ANALYTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ANALYTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto detectando errores que a otros se les suelen escapar."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy expressing myself through creative projects.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "CREATIVE",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "CREATIVE",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "CREATIVE",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "CREATIVE",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto expresándome a través de proyectos creativos."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy working with people from different backgrounds.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "SOCIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "SOCIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "SOCIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "SOCIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto trabajando con personas de orígenes distintos al mío."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy motivating people to achieve a common goal.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "LEADERSHIP",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "LEADERSHIP",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "LEADERSHIP",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "LEADERSHIP",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto motivando a la gente para alcanzar un objetivo común."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy learning about new technologies before most people.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "TECHNICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "TECHNICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "TECHNICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "TECHNICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto conociendo tecnologías nuevas antes que la mayoría."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy asking questions about why things happen.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "SCIENTIFIC",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "SCIENTIFIC",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "SCIENTIFIC",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "SCIENTIFIC",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto preguntándome por qué ocurren las cosas."
-  },
-  {
-    "type": "personality",
-    "question": "I prefer learning by doing instead of just reading.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "PRACTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "PRACTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "PRACTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "PRACTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Prefiero aprender haciendo en vez de solo leyendo."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy taking calculated risks to achieve my goals.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto asumiendo riesgos calculados para alcanzar mis metas."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy organizing information before starting a task.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ANALYTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ANALYTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto organizando la información antes de empezar una tarea."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy convincing others to support a new idea.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto convenciendo a otros para que apoyen una idea nueva."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy evaluating different solutions before choosing the best one.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ANALYTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ANALYTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto evaluando distintas soluciones antes de elegir la mejor."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy coming up with unique solutions to everyday problems.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "CREATIVE",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "CREATIVE",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "CREATIVE",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "CREATIVE",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto ideando soluciones originales a problemas cotidianos."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy encouraging others to reach their full potential.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "SOCIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "SOCIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "SOCIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "SOCIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto animando a otros a desarrollar todo su potencial."
-  },
-  {
-    "type": "personality",
-    "question": "I feel confident making important decisions under pressure.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "LEADERSHIP",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "LEADERSHIP",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "LEADERSHIP",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "LEADERSHIP",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Me siento seguro tomando decisiones importantes bajo presión."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy solving technical problems with computers or devices.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "TECHNICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "TECHNICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "TECHNICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "TECHNICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto resolviendo problemas técnicos con ordenadores o dispositivos."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy learning through observation and experimentation.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "SCIENTIFIC",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "SCIENTIFIC",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "SCIENTIFIC",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "SCIENTIFIC",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto aprendiendo mediante la observación y la experimentación."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy working with tools, machines, or physical materials.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "PRACTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "PRACTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "PRACTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "PRACTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto trabajando con herramientas, máquinas o materiales físicos."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy finding new ways to create value from an idea.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto encontrando formas nuevas de sacarle valor a una idea."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy making plans based on facts rather than assumptions.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ANALYTICAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ANALYTICAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ANALYTICAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto haciendo planes basados en hechos y no en suposiciones."
-  },
-  {
-    "type": "personality",
-    "question": "I enjoy starting projects without waiting for someone to tell me what to do.",
-    "answers": [
-      {
-        "text": "Strongly Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 4,
-        "text_es": "Muy de acuerdo"
-      },
-      {
-        "text": "Agree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 3,
-        "text_es": "De acuerdo"
-      },
-      {
-        "text": "Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 1,
-        "text_es": "En desacuerdo"
-      },
-      {
-        "text": "Strongly Disagree",
-        "cluster": "ENTREPRENEURIAL",
-        "points": 0,
-        "text_es": "Muy en desacuerdo"
-      }
-    ],
-    "question_es": "Disfruto empezando proyectos sin esperar a que alguien me diga qué hacer."
-  }
+    {
+        "type": "personality",
+        "question": "When something doesn't add up, I go back over the data until I understand why.",
+        "answers": [
+            {
+                "text": "A lot",
+                "cluster": "ANALYTICAL",
+                "points": 4,
+                "text_es": "Much\u00edsimo"
+            },
+            {
+                "text": "Quite a bit",
+                "cluster": "ANALYTICAL",
+                "points": 3,
+                "text_es": "Bastante"
+            },
+            {
+                "text": "A little",
+                "cluster": "ANALYTICAL",
+                "points": 1,
+                "text_es": "Un poco"
+            },
+            {
+                "text": "Not at all",
+                "cluster": "ANALYTICAL",
+                "points": 0,
+                "text_es": "Nada"
+            }
+        ],
+        "question_es": "Cuando algo no me cuadra, reviso los datos o los n\u00fameros hasta entender por qu\u00e9."
+    },
+    {
+        "type": "personality",
+        "question": "You get to choose how to hand in a class project. You hand it in...",
+        "answers": [
+            {
+                "text": "In a format nobody used: a comic, a model, a video",
+                "cluster": "CREATIVE",
+                "points": 4,
+                "text_es": "En un formato que nadie ha usado: un c\u00f3mic, una maqueta, un v\u00eddeo"
+            },
+            {
+                "text": "In the usual format, but with a twist that's mine",
+                "cluster": "CREATIVE",
+                "points": 3,
+                "text_es": "Con el formato de siempre, pero con un giro que es m\u00edo"
+            },
+            {
+                "text": "Following last year's template, with a careful layout",
+                "cluster": "CREATIVE",
+                "points": 1,
+                "text_es": "Siguiendo el modelo del a\u00f1o pasado y cuidando la presentaci\u00f3n"
+            },
+            {
+                "text": "Exactly as the teacher asked: what counts is the content",
+                "cluster": "CREATIVE",
+                "points": 0,
+                "text_es": "Tal y como lo pide el profesor: lo que cuenta es el contenido"
+            }
+        ],
+        "question_es": "Te dejan elegir c\u00f3mo entregar un trabajo de clase. Lo entregas..."
+    },
+    {
+        "type": "personality",
+        "question": "In a new group, which role do you end up in?",
+        "answers": [
+            {
+                "text": "The one who notices who's being left out",
+                "cluster": "SOCIAL",
+                "points": 4,
+                "text_es": "El que nota qui\u00e9n se est\u00e1 quedando fuera"
+            },
+            {
+                "text": "The one who gets people talking to each other",
+                "cluster": "SOCIAL",
+                "points": 3,
+                "text_es": "El que hace que la gente hable entre s\u00ed"
+            },
+            {
+                "text": "The one who gets on with everyone but stays out of it",
+                "cluster": "SOCIAL",
+                "points": 1,
+                "text_es": "El que se lleva bien con todos pero no se mete"
+            },
+            {
+                "text": "The one who'd rather be left alone to work",
+                "cluster": "SOCIAL",
+                "points": 0,
+                "text_es": "El que prefiere que le dejen trabajar solo"
+            }
+        ],
+        "question_es": "En un grupo nuevo, \u00bfqu\u00e9 papel acabas ocupando?"
+    },
+    {
+        "type": "personality",
+        "question": "The shelf in your room has broken.",
+        "answers": [
+            {
+                "text": "I grab tools and fix it myself this afternoon",
+                "cluster": "PRACTICAL",
+                "points": 4,
+                "text_es": "Cojo herramientas y la arreglo yo esta misma tarde"
+            },
+            {
+                "text": "I look up a tutorial and give it a go",
+                "cluster": "PRACTICAL",
+                "points": 3,
+                "text_es": "Busco un tutorial y lo intento"
+            },
+            {
+                "text": "I leave it as it is until someone can take a look",
+                "cluster": "PRACTICAL",
+                "points": 1,
+                "text_es": "La dejo as\u00ed hasta que alguien pueda mirarlo"
+            },
+            {
+                "text": "I find someone who knows how and ask them",
+                "cluster": "PRACTICAL",
+                "points": 0,
+                "text_es": "Busco a quien sepa hacerlo y se lo pido"
+            }
+        ],
+        "question_es": "Se ha roto la estanter\u00eda de tu cuarto."
+    },
+    {
+        "type": "personality",
+        "question": "If a device or a program breaks, I try to fix it myself before asking for help.",
+        "answers": [
+            {
+                "text": "A lot",
+                "cluster": "TECHNICAL",
+                "points": 4,
+                "text_es": "Much\u00edsimo"
+            },
+            {
+                "text": "Quite a bit",
+                "cluster": "TECHNICAL",
+                "points": 3,
+                "text_es": "Bastante"
+            },
+            {
+                "text": "A little",
+                "cluster": "TECHNICAL",
+                "points": 1,
+                "text_es": "Un poco"
+            },
+            {
+                "text": "Not at all",
+                "cluster": "TECHNICAL",
+                "points": 0,
+                "text_es": "Nada"
+            }
+        ],
+        "question_es": "Si un aparato o un programa falla, intento arreglarlo yo antes de pedir ayuda."
+    },
+    {
+        "type": "personality",
+        "question": "A documentary starts. Which one do you stay for?",
+        "answers": [
+            {
+                "text": "How we proved the universe is expanding",
+                "cluster": "SCIENTIFIC",
+                "points": 4,
+                "text_es": "C\u00f3mo se demostr\u00f3 que el universo se expande"
+            },
+            {
+                "text": "Why some people get ill and others don't",
+                "cluster": "SCIENTIFIC",
+                "points": 3,
+                "text_es": "Por qu\u00e9 unas personas enferman y otras no"
+            },
+            {
+                "text": "The story of a city and its people",
+                "cluster": "SCIENTIFIC",
+                "points": 1,
+                "text_es": "La historia de una ciudad y su gente"
+            },
+            {
+                "text": "How your favourite film was shot",
+                "cluster": "SCIENTIFIC",
+                "points": 0,
+                "text_es": "C\u00f3mo se rod\u00f3 tu pel\u00edcula favorita"
+            }
+        ],
+        "question_es": "Empieza un documental. \u00bfCu\u00e1l te quedas viendo?"
+    },
+    {
+        "type": "personality",
+        "question": "The group project is running late and nobody has done anything.",
+        "answers": [
+            {
+                "text": "I split up the tasks and put a date on each one",
+                "cluster": "LEADERSHIP",
+                "points": 4,
+                "text_es": "Reparto tareas y pongo una fecha para cada una"
+            },
+            {
+                "text": "I suggest a plan and ask who takes what",
+                "cluster": "LEADERSHIP",
+                "points": 3,
+                "text_es": "Propongo un plan y pregunto qui\u00e9n se apunta a qu\u00e9"
+            },
+            {
+                "text": "I do my part well and say I'm on track",
+                "cluster": "LEADERSHIP",
+                "points": 1,
+                "text_es": "Hago mi parte bien y aviso de que voy a tiempo"
+            },
+            {
+                "text": "I wait and see what the group decides",
+                "cluster": "LEADERSHIP",
+                "points": 0,
+                "text_es": "Espero a ver qu\u00e9 decide el grupo"
+            }
+        ],
+        "question_es": "El trabajo en grupo va tarde y nadie ha hecho nada."
+    },
+    {
+        "type": "personality",
+        "question": "You're given 200 euros and three months. What do you do?",
+        "answers": [
+            {
+                "text": "I set up something small to sell",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 4,
+                "text_es": "Monto algo peque\u00f1o para vender"
+            },
+            {
+                "text": "I buy materials for a project of my own",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 3,
+                "text_es": "Compro material para un proyecto m\u00edo"
+            },
+            {
+                "text": "I keep it for a course or a trip",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 1,
+                "text_es": "Los guardo para un curso o un viaje"
+            },
+            {
+                "text": "I just save it",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 0,
+                "text_es": "Los ahorro sin m\u00e1s"
+            }
+        ],
+        "question_es": "Te dan 200 euros y tres meses. \u00bfQu\u00e9 haces?"
+    },
+    {
+        "type": "personality",
+        "question": "When someone around me is going through a hard time, I'm one of the people they turn to.",
+        "answers": [
+            {
+                "text": "A lot",
+                "cluster": "SOCIAL",
+                "points": 4,
+                "text_es": "Much\u00edsimo"
+            },
+            {
+                "text": "Quite a bit",
+                "cluster": "SOCIAL",
+                "points": 3,
+                "text_es": "Bastante"
+            },
+            {
+                "text": "A little",
+                "cluster": "SOCIAL",
+                "points": 1,
+                "text_es": "Un poco"
+            },
+            {
+                "text": "Not at all",
+                "cluster": "SOCIAL",
+                "points": 0,
+                "text_es": "Nada"
+            }
+        ],
+        "question_es": "Cuando alguien de mi entorno lo pasa mal, soy de las personas a las que acude."
+    },
+    {
+        "type": "personality",
+        "question": "You're finishing the project at home and the wifi starts dropping.",
+        "answers": [
+            {
+                "text": "I get into the router settings and change the channel",
+                "cluster": "TECHNICAL",
+                "points": 4,
+                "text_es": "Entro en la configuraci\u00f3n del router y cambio el canal"
+            },
+            {
+                "text": "I reboot, try a cable, and track down the fault",
+                "cluster": "TECHNICAL",
+                "points": 3,
+                "text_es": "Reinicio, pruebo por cable y busco d\u00f3nde falla"
+            },
+            {
+                "text": "I move closer to the router and cross my fingers",
+                "cluster": "TECHNICAL",
+                "points": 1,
+                "text_es": "Me acerco al router y cruzo los dedos"
+            },
+            {
+                "text": "I call someone or go somewhere with a signal",
+                "cluster": "TECHNICAL",
+                "points": 0,
+                "text_es": "Llamo a alguien o me voy a otro sitio con red"
+            }
+        ],
+        "question_es": "Est\u00e1s terminando el proyecto en casa y la wifi empieza a fallar."
+    },
+    {
+        "type": "interest",
+        "question": "A problem feels too big for you. What are you best at?",
+        "answers": [
+            {
+                "text": "Breaking it into small steps and ordering them",
+                "cluster": "ANALYTICAL",
+                "points": 4,
+                "text_es": "Partirlo en pasos peque\u00f1os y ordenarlos"
+            },
+            {
+                "text": "Finding the missing piece of data before giving an opinion",
+                "cluster": "ANALYTICAL",
+                "points": 3,
+                "text_es": "Buscar el dato que falta antes de opinar"
+            },
+            {
+                "text": "Going with the solution that worked last time",
+                "cluster": "ANALYTICAL",
+                "points": 1,
+                "text_es": "Tirar por la soluci\u00f3n que ya funcion\u00f3 otra vez"
+            },
+            {
+                "text": "Starting somewhere and correcting as I go",
+                "cluster": "ANALYTICAL",
+                "points": 0,
+                "text_es": "Empezar por alg\u00fan lado y corregir sobre la marcha"
+            }
+        ],
+        "question_es": "Un problema se te hace demasiado grande. \u00bfQu\u00e9 se te da mejor?"
+    },
+    {
+        "type": "interest",
+        "question": "A free Saturday and two plans.",
+        "answers": [
+            {
+                "text": "Being there for a friend who needs to talk",
+                "cluster": "SOCIAL",
+                "points": 4,
+                "text_es": "Acompa\u00f1ar a un amigo que necesita hablar"
+            },
+            {
+                "text": "Meeting up with people I don't know yet",
+                "cluster": "SOCIAL",
+                "points": 3,
+                "text_es": "Quedar con gente que no conozco todav\u00eda"
+            },
+            {
+                "text": "Going out with the usual crowd",
+                "cluster": "SOCIAL",
+                "points": 1,
+                "text_es": "Salir con los de siempre"
+            },
+            {
+                "text": "A whole day to myself without seeing anyone",
+                "cluster": "SOCIAL",
+                "points": 0,
+                "text_es": "Un d\u00eda entero para m\u00ed sin quedar con nadie"
+            }
+        ],
+        "question_es": "S\u00e1bado libre y dos planes."
+    },
+    {
+        "type": "interest",
+        "question": "What do you do when you're bored?",
+        "answers": [
+            {
+                "text": "I draw, write or make music",
+                "cluster": "CREATIVE",
+                "points": 4,
+                "text_es": "Dibujo, escribo o hago m\u00fasica"
+            },
+            {
+                "text": "I look for references for something I want to make",
+                "cluster": "CREATIVE",
+                "points": 3,
+                "text_es": "Busco referencias para algo que quiero crear"
+            },
+            {
+                "text": "I watch shows or videos",
+                "cluster": "CREATIVE",
+                "points": 1,
+                "text_es": "Veo series o v\u00eddeos"
+            },
+            {
+                "text": "I tidy up or get ahead on pending tasks",
+                "cluster": "CREATIVE",
+                "points": 0,
+                "text_es": "Ordeno cosas o adelanto tareas pendientes"
+            }
+        ],
+        "question_es": "\u00bfQu\u00e9 haces cuando te aburres?"
+    },
+    {
+        "type": "interest",
+        "question": "Which of these screens would you open first?",
+        "answers": [
+            {
+                "text": "An app's code, to see how it's built",
+                "cluster": "TECHNICAL",
+                "points": 4,
+                "text_es": "El c\u00f3digo de una app, para ver c\u00f3mo est\u00e1 hecha"
+            },
+            {
+                "text": "The advanced settings of a new program",
+                "cluster": "TECHNICAL",
+                "points": 3,
+                "text_es": "Los ajustes avanzados de un programa nuevo"
+            },
+            {
+                "text": "A phone comparison",
+                "cluster": "TECHNICAL",
+                "points": 1,
+                "text_es": "Una comparativa de m\u00f3viles"
+            },
+            {
+                "text": "The group chat",
+                "cluster": "TECHNICAL",
+                "points": 0,
+                "text_es": "El chat del grupo"
+            }
+        ],
+        "question_es": "\u00bfCu\u00e1l de estas pantallas abrir\u00edas primero?"
+    },
+    {
+        "type": "interest",
+        "question": "When something is presented to you as fact, what do you usually do?",
+        "answers": [
+            {
+                "text": "I check whether what I'm told has evidence behind it",
+                "cluster": "SCIENTIFIC",
+                "points": 4,
+                "text_es": "Compruebo si lo que me cuentan tiene pruebas detr\u00e1s"
+            },
+            {
+                "text": "I question things everyone else takes for granted",
+                "cluster": "SCIENTIFIC",
+                "points": 3,
+                "text_es": "Me pregunto cosas que los dem\u00e1s dan por hechas"
+            },
+            {
+                "text": "I trust whoever has already studied the subject",
+                "cluster": "SCIENTIFIC",
+                "points": 1,
+                "text_es": "Me f\u00edo de quien ya ha estudiado el tema"
+            },
+            {
+                "text": "I go with what's practical: if it works, it works",
+                "cluster": "SCIENTIFIC",
+                "points": 0,
+                "text_es": "Me quedo con lo pr\u00e1ctico: si funciona, me vale"
+            }
+        ],
+        "question_es": "Ante algo que te dan por cierto, \u00bfqu\u00e9 sueles hacer?"
+    },
+    {
+        "type": "interest",
+        "question": "A new project starts. Where do you begin?",
+        "answers": [
+            {
+                "text": "Building a rough prototype with whatever's around",
+                "cluster": "PRACTICAL",
+                "points": 4,
+                "text_es": "Haciendo un prototipo con lo que tenga a mano"
+            },
+            {
+                "text": "Trying things until I see what works",
+                "cluster": "PRACTICAL",
+                "points": 3,
+                "text_es": "Probando cosas hasta ver qu\u00e9 funciona"
+            },
+            {
+                "text": "Reading how other people have done it",
+                "cluster": "PRACTICAL",
+                "points": 1,
+                "text_es": "Leyendo c\u00f3mo lo ha hecho otra gente"
+            },
+            {
+                "text": "Planning the whole thing before touching anything",
+                "cluster": "PRACTICAL",
+                "points": 0,
+                "text_es": "Planific\u00e1ndolo entero antes de tocar nada"
+            }
+        ],
+        "question_es": "Empieza un proyecto nuevo. \u00bfPor d\u00f3nde arrancas?"
+    },
+    {
+        "type": "interest",
+        "question": "A decision has to be made and the group is split.",
+        "answers": [
+            {
+                "text": "I make the call and take what comes",
+                "cluster": "LEADERSHIP",
+                "points": 4,
+                "text_es": "Tomo la decisi\u00f3n y asumo lo que venga"
+            },
+            {
+                "text": "I propose a vote and run it",
+                "cluster": "LEADERSHIP",
+                "points": 3,
+                "text_es": "Propongo una votaci\u00f3n y la organizo"
+            },
+            {
+                "text": "I give my opinion and wait",
+                "cluster": "LEADERSHIP",
+                "points": 1,
+                "text_es": "Doy mi opini\u00f3n y espero"
+            },
+            {
+                "text": "I go with whatever the majority decides",
+                "cluster": "LEADERSHIP",
+                "points": 0,
+                "text_es": "Me apunto a lo que decida la mayor\u00eda"
+            }
+        ],
+        "question_es": "Hay que decidir algo y el grupo est\u00e1 dividido."
+    },
+    {
+        "type": "interest",
+        "question": "Which of these signals describe you?",
+        "answers": [
+            {
+                "text": "I've been paid for something I made or sold",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 4,
+                "text_es": "He cobrado por algo que hice o vend\u00ed"
+            },
+            {
+                "text": "I have a business idea written down somewhere",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 3,
+                "text_es": "Tengo apuntada alguna idea de negocio"
+            },
+            {
+                "text": "I'm curious about how companies make money",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 1,
+                "text_es": "Me interesa c\u00f3mo ganan dinero las empresas"
+            },
+            {
+                "text": "I'd rather have a steady salary and peace of mind",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 0,
+                "text_es": "Prefiero un sueldo fijo y tranquilidad"
+            }
+        ],
+        "question_es": "\u00bfCu\u00e1les de estas se\u00f1ales te describen?"
+    },
+    {
+        "type": "interest",
+        "question": "What actually convinces you of something?",
+        "answers": [
+            {
+                "text": "A figure I can check",
+                "cluster": "ANALYTICAL",
+                "points": 4,
+                "text_es": "Un dato que puedo comprobar"
+            },
+            {
+                "text": "An argument that holds up step by step",
+                "cluster": "ANALYTICAL",
+                "points": 3,
+                "text_es": "Un razonamiento que se sostiene paso a paso"
+            },
+            {
+                "text": "The experience of someone who's been through it",
+                "cluster": "ANALYTICAL",
+                "points": 1,
+                "text_es": "La experiencia de alguien que ya lo vivi\u00f3"
+            },
+            {
+                "text": "The feeling that it fits",
+                "cluster": "ANALYTICAL",
+                "points": 0,
+                "text_es": "La sensaci\u00f3n de que encaja"
+            }
+        ],
+        "question_es": "\u00bfQu\u00e9 te convence de verdad de algo?"
+    },
+    {
+        "type": "interest",
+        "question": "A new device arrives at home.",
+        "answers": [
+            {
+                "text": "I open it, poke around and find out what else it does",
+                "cluster": "TECHNICAL",
+                "points": 4,
+                "text_es": "Lo abro, lo cacharreo y descubro qu\u00e9 m\u00e1s hace"
+            },
+            {
+                "text": "I read the whole manual before using it",
+                "cluster": "TECHNICAL",
+                "points": 3,
+                "text_es": "Leo el manual entero antes de usarlo"
+            },
+            {
+                "text": "I use the basics and that's it",
+                "cluster": "TECHNICAL",
+                "points": 1,
+                "text_es": "Uso lo b\u00e1sico y ya est\u00e1"
+            },
+            {
+                "text": "Someone else sets it up and leaves it ready for me",
+                "cluster": "TECHNICAL",
+                "points": 0,
+                "text_es": "Que me lo configure otro y me lo deje listo"
+            }
+        ],
+        "question_es": "Llega un aparato nuevo a casa."
+    },
+    {
+        "type": "personality",
+        "question": "I have half-finished ideas saved on my phone or in a notebook: drawings, lyrics, designs.",
+        "answers": [
+            {
+                "text": "A lot",
+                "cluster": "CREATIVE",
+                "points": 4,
+                "text_es": "Much\u00edsimo"
+            },
+            {
+                "text": "Quite a bit",
+                "cluster": "CREATIVE",
+                "points": 3,
+                "text_es": "Bastante"
+            },
+            {
+                "text": "A little",
+                "cluster": "CREATIVE",
+                "points": 1,
+                "text_es": "Un poco"
+            },
+            {
+                "text": "Not at all",
+                "cluster": "CREATIVE",
+                "points": 0,
+                "text_es": "Nada"
+            }
+        ],
+        "question_es": "Tengo ideas a medio hacer guardadas en el m\u00f3vil o en un cuaderno: dibujos, letras, dise\u00f1os."
+    },
+    {
+        "type": "personality",
+        "question": "Which scene feels most like you?",
+        "answers": [
+            {
+                "text": "Explaining something to someone until they get it",
+                "cluster": "SOCIAL",
+                "points": 4,
+                "text_es": "Explicarle algo a alguien hasta que le sale"
+            },
+            {
+                "text": "Introducing two people who can help each other",
+                "cluster": "SOCIAL",
+                "points": 3,
+                "text_es": "Presentar a dos personas que pueden ayudarse"
+            },
+            {
+                "text": "Being in the group, listening",
+                "cluster": "SOCIAL",
+                "points": 1,
+                "text_es": "Estar en el grupo escuchando"
+            },
+            {
+                "text": "Working with headphones on",
+                "cluster": "SOCIAL",
+                "points": 0,
+                "text_es": "Trabajar con los cascos puestos"
+            }
+        ],
+        "question_es": "\u00bfQu\u00e9 escena te resulta m\u00e1s tuya?"
+    },
+    {
+        "type": "personality",
+        "question": "Two sources say the opposite about your project.",
+        "answers": [
+            {
+                "text": "I compare where each one gets its data",
+                "cluster": "ANALYTICAL",
+                "points": 4,
+                "text_es": "Comparo de d\u00f3nde saca cada una sus datos"
+            },
+            {
+                "text": "I look for a third source to break the tie",
+                "cluster": "ANALYTICAL",
+                "points": 3,
+                "text_es": "Busco una tercera fuente que desempate"
+            },
+            {
+                "text": "I go with the one that looks more serious",
+                "cluster": "ANALYTICAL",
+                "points": 1,
+                "text_es": "Me quedo con la que me parece m\u00e1s seria"
+            },
+            {
+                "text": "I pick the one that matches what I already thought",
+                "cluster": "ANALYTICAL",
+                "points": 0,
+                "text_es": "Elijo la que encaja con lo que ya pensaba"
+            }
+        ],
+        "question_es": "Dos fuentes dicen lo contrario sobre tu proyecto."
+    },
+    {
+        "type": "personality",
+        "question": "What do people usually ask you to do on a team?",
+        "answers": [
+            {
+                "text": "Decide",
+                "cluster": "LEADERSHIP",
+                "points": 4,
+                "text_es": "Que decida"
+            },
+            {
+                "text": "Organise",
+                "cluster": "LEADERSHIP",
+                "points": 3,
+                "text_es": "Que organice"
+            },
+            {
+                "text": "Review",
+                "cluster": "LEADERSHIP",
+                "points": 1,
+                "text_es": "Que revise"
+            },
+            {
+                "text": "Execute",
+                "cluster": "LEADERSHIP",
+                "points": 0,
+                "text_es": "Que ejecute"
+            }
+        ],
+        "question_es": "\u00bfQu\u00e9 te suelen pedir en un equipo?"
+    },
+    {
+        "type": "personality",
+        "question": "I keep turning over why something happens even when nobody asked me to.",
+        "answers": [
+            {
+                "text": "A lot",
+                "cluster": "SCIENTIFIC",
+                "points": 4,
+                "text_es": "Much\u00edsimo"
+            },
+            {
+                "text": "Quite a bit",
+                "cluster": "SCIENTIFIC",
+                "points": 3,
+                "text_es": "Bastante"
+            },
+            {
+                "text": "A little",
+                "cluster": "SCIENTIFIC",
+                "points": 1,
+                "text_es": "Un poco"
+            },
+            {
+                "text": "Not at all",
+                "cluster": "SCIENTIFIC",
+                "points": 0,
+                "text_es": "Nada"
+            }
+        ],
+        "question_es": "Me quedo d\u00e1ndole vueltas a por qu\u00e9 ocurre algo aunque nadie me lo haya preguntado."
+    },
+    {
+        "type": "personality",
+        "question": "You have to learn something new for the project.",
+        "answers": [
+            {
+                "text": "I get it wrong five times until it works",
+                "cluster": "PRACTICAL",
+                "points": 4,
+                "text_es": "Lo hago mal cinco veces hasta que me sale"
+            },
+            {
+                "text": "I find a video and follow along as I go",
+                "cluster": "PRACTICAL",
+                "points": 3,
+                "text_es": "Busco un v\u00eddeo y voy haciendo a la vez"
+            },
+            {
+                "text": "I read first and practise afterwards",
+                "cluster": "PRACTICAL",
+                "points": 1,
+                "text_es": "Leo primero y practico despu\u00e9s"
+            },
+            {
+                "text": "I take a proper course from the start",
+                "cluster": "PRACTICAL",
+                "points": 0,
+                "text_es": "Hago un curso ordenado desde el principio"
+            }
+        ],
+        "question_es": "Tienes que aprender algo nuevo para el proyecto."
+    },
+    {
+        "type": "personality",
+        "question": "Which question comes out of you most often?",
+        "answers": [
+            {
+                "text": "Why does this happen?",
+                "cluster": "SCIENTIFIC",
+                "points": 4,
+                "text_es": "\u00bfPor qu\u00e9 pasa esto?"
+            },
+            {
+                "text": "How do we know that's true?",
+                "cluster": "SCIENTIFIC",
+                "points": 3,
+                "text_es": "\u00bfC\u00f3mo se sabe que es as\u00ed?"
+            },
+            {
+                "text": "What's it for?",
+                "cluster": "SCIENTIFIC",
+                "points": 1,
+                "text_es": "\u00bfPara qu\u00e9 sirve?"
+            },
+            {
+                "text": "When is it due?",
+                "cluster": "SCIENTIFIC",
+                "points": 0,
+                "text_es": "\u00bfCu\u00e1ndo hay que entregarlo?"
+            }
+        ],
+        "question_es": "\u00bfQu\u00e9 pregunta te sale m\u00e1s a menudo?"
+    },
+    {
+        "type": "personality",
+        "question": "Two internships, the same pay.",
+        "answers": [
+            {
+                "text": "A project starting from scratch that could fail",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 4,
+                "text_es": "Un proyecto que empieza de cero y puede salir mal"
+            },
+            {
+                "text": "A small company where you'll do a bit of everything",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 3,
+                "text_es": "Una empresa peque\u00f1a donde har\u00e1s de todo"
+            },
+            {
+                "text": "A big company with a well-defined role",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 1,
+                "text_es": "Una empresa grande con un puesto definido"
+            },
+            {
+                "text": "A stable place where you know what each day holds",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 0,
+                "text_es": "Un sitio estable donde sabes qu\u00e9 esperar cada d\u00eda"
+            }
+        ],
+        "question_es": "Dos pr\u00e1cticas, el mismo sueldo."
+    },
+    {
+        "type": "personality",
+        "question": "Before an important decision, I write the options down to compare them.",
+        "answers": [
+            {
+                "text": "A lot",
+                "cluster": "ANALYTICAL",
+                "points": 4,
+                "text_es": "Much\u00edsimo"
+            },
+            {
+                "text": "Quite a bit",
+                "cluster": "ANALYTICAL",
+                "points": 3,
+                "text_es": "Bastante"
+            },
+            {
+                "text": "A little",
+                "cluster": "ANALYTICAL",
+                "points": 1,
+                "text_es": "Un poco"
+            },
+            {
+                "text": "Not at all",
+                "cluster": "ANALYTICAL",
+                "points": 0,
+                "text_es": "Nada"
+            }
+        ],
+        "question_es": "Antes de decidir algo importante, escribo o enumero las opciones para compararlas."
+    },
+    {
+        "type": "personality",
+        "question": "What appeals to you most here?",
+        "answers": [
+            {
+                "text": "Inventing a world that doesn't exist",
+                "cluster": "CREATIVE",
+                "points": 4,
+                "text_es": "Inventar un mundo que no existe"
+            },
+            {
+                "text": "Putting a new spin on something that exists",
+                "cluster": "CREATIVE",
+                "points": 3,
+                "text_es": "Darle una vuelta a algo que ya existe"
+            },
+            {
+                "text": "Choosing well among what's already out there",
+                "cluster": "CREATIVE",
+                "points": 1,
+                "text_es": "Elegir bien entre lo que ya hay"
+            },
+            {
+                "text": "Making it clear and tidy",
+                "cluster": "CREATIVE",
+                "points": 0,
+                "text_es": "Que quede claro y ordenado"
+            }
+        ],
+        "question_es": "\u00bfQu\u00e9 te llama m\u00e1s de esta lista?"
+    },
+    {
+        "type": "personality",
+        "question": "The project needs a tool nobody has used before.",
+        "answers": [
+            {
+                "text": "I install it and start testing it tonight",
+                "cluster": "TECHNICAL",
+                "points": 4,
+                "text_es": "La instalo y me pongo a probarla esta noche"
+            },
+            {
+                "text": "I read the docs and build a small example",
+                "cluster": "TECHNICAL",
+                "points": 3,
+                "text_es": "Busco la documentaci\u00f3n y hago un ejemplo peque\u00f1o"
+            },
+            {
+                "text": "I wait for someone to learn it and explain it",
+                "cluster": "TECHNICAL",
+                "points": 1,
+                "text_es": "Espero a que alguien la aprenda y me lo cuente"
+            },
+            {
+                "text": "I suggest using something we already know",
+                "cluster": "TECHNICAL",
+                "points": 0,
+                "text_es": "Propongo usar algo que ya sepamos"
+            }
+        ],
+        "question_es": "El proyecto necesita una herramienta que nadie ha usado."
+    },
+    {
+        "type": "personality",
+        "question": "Someone in the group is falling behind.",
+        "answers": [
+            {
+                "text": "I sit down with that person",
+                "cluster": "SOCIAL",
+                "points": 4,
+                "text_es": "Me siento con esa persona"
+            },
+            {
+                "text": "I message them privately",
+                "cluster": "SOCIAL",
+                "points": 3,
+                "text_es": "Le escribo por privado"
+            },
+            {
+                "text": "I bring it up with the group",
+                "cluster": "SOCIAL",
+                "points": 1,
+                "text_es": "Lo comento con el grupo"
+            },
+            {
+                "text": "I tell whoever is coordinating",
+                "cluster": "SOCIAL",
+                "points": 0,
+                "text_es": "Aviso a quien coordine"
+            }
+        ],
+        "question_es": "Alguien del grupo se est\u00e1 quedando atr\u00e1s."
+    },
+    {
+        "type": "personality",
+        "question": "I'd rather spend an afternoon building or fixing something by hand than reading about it.",
+        "answers": [
+            {
+                "text": "A lot",
+                "cluster": "PRACTICAL",
+                "points": 4,
+                "text_es": "Much\u00edsimo"
+            },
+            {
+                "text": "Quite a bit",
+                "cluster": "PRACTICAL",
+                "points": 3,
+                "text_es": "Bastante"
+            },
+            {
+                "text": "A little",
+                "cluster": "PRACTICAL",
+                "points": 1,
+                "text_es": "Un poco"
+            },
+            {
+                "text": "Not at all",
+                "cluster": "PRACTICAL",
+                "points": 0,
+                "text_es": "Nada"
+            }
+        ],
+        "question_es": "Prefiero pasar la tarde montando o arreglando algo con las manos que leyendo sobre ello."
+    },
+    {
+        "type": "personality",
+        "question": "The project's results come out better than expected.",
+        "answers": [
+            {
+                "text": "I check for a mistake before celebrating",
+                "cluster": "ANALYTICAL",
+                "points": 4,
+                "text_es": "Reviso si hay un error antes de celebrarlo"
+            },
+            {
+                "text": "I check what they're being compared against",
+                "cluster": "ANALYTICAL",
+                "points": 3,
+                "text_es": "Compruebo con qu\u00e9 se est\u00e1n comparando"
+            },
+            {
+                "text": "I take it as good news and move on",
+                "cluster": "ANALYTICAL",
+                "points": 1,
+                "text_es": "Lo doy por bueno y sigo"
+            },
+            {
+                "text": "I celebrate: for once something went well",
+                "cluster": "ANALYTICAL",
+                "points": 0,
+                "text_es": "Lo celebro: por una vez que sale bien"
+            }
+        ],
+        "question_es": "Los resultados del proyecto salen mejor de lo esperado."
+    },
+    {
+        "type": "personality",
+        "question": "A surprising headline. How do you decide whether to believe it?",
+        "answers": [
+            {
+                "text": "I look for the original study",
+                "cluster": "SCIENTIFIC",
+                "points": 4,
+                "text_es": "Busco el estudio original"
+            },
+            {
+                "text": "I check who published it and with what data",
+                "cluster": "SCIENTIFIC",
+                "points": 3,
+                "text_es": "Miro qui\u00e9n lo publica y con qu\u00e9 datos"
+            },
+            {
+                "text": "I ask someone who knows the field",
+                "cluster": "SCIENTIFIC",
+                "points": 1,
+                "text_es": "Pregunto a alguien que sepa del tema"
+            },
+            {
+                "text": "If people I trust share it, that's enough for me",
+                "cluster": "SCIENTIFIC",
+                "points": 0,
+                "text_es": "Si lo comparte gente de fiar, me vale"
+            }
+        ],
+        "question_es": "Un titular sorprendente. \u00bfC\u00f3mo decides si te lo crees?"
+    },
+    {
+        "type": "personality",
+        "question": "The team has to deliver and something will have to be dropped.",
+        "answers": [
+            {
+                "text": "I front it and decide what gets cut",
+                "cluster": "LEADERSHIP",
+                "points": 4,
+                "text_es": "Doy la cara yo y decido qu\u00e9 se recorta"
+            },
+            {
+                "text": "I get the group together to decide it together",
+                "cluster": "LEADERSHIP",
+                "points": 3,
+                "text_es": "Re\u00fano al grupo para decidirlo entre todos"
+            },
+            {
+                "text": "I deliver my part and flag it early",
+                "cluster": "LEADERSHIP",
+                "points": 1,
+                "text_es": "Cumplo con mi parte y aviso pronto"
+            },
+            {
+                "text": "I'd rather whoever leads the project decides",
+                "cluster": "LEADERSHIP",
+                "points": 0,
+                "text_es": "Prefiero que decida quien lleve el proyecto"
+            }
+        ],
+        "question_es": "El equipo tiene que entregar y algo va a quedar fuera."
+    },
+    {
+        "type": "personality",
+        "question": "I come up with ways to get paid for things I already know how to do.",
+        "answers": [
+            {
+                "text": "A lot",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 4,
+                "text_es": "Much\u00edsimo"
+            },
+            {
+                "text": "Quite a bit",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 3,
+                "text_es": "Bastante"
+            },
+            {
+                "text": "A little",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 1,
+                "text_es": "Un poco"
+            },
+            {
+                "text": "Not at all",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 0,
+                "text_es": "Nada"
+            }
+        ],
+        "question_es": "Se me ocurren formas de cobrar por cosas que ya s\u00e9 hacer."
+    },
+    {
+        "type": "personality",
+        "question": "Which afternoon sounds better?",
+        "answers": [
+            {
+                "text": "A workshop: tools and dirty hands",
+                "cluster": "PRACTICAL",
+                "points": 4,
+                "text_es": "Un taller: herramientas y manos sucias"
+            },
+            {
+                "text": "Assembling something you bought in parts",
+                "cluster": "PRACTICAL",
+                "points": 3,
+                "text_es": "Montar algo que compraste por piezas"
+            },
+            {
+                "text": "Watching someone else do it",
+                "cluster": "PRACTICAL",
+                "points": 1,
+                "text_es": "Ver c\u00f3mo lo hace otra persona"
+            },
+            {
+                "text": "Reading about how it's done",
+                "cluster": "PRACTICAL",
+                "points": 0,
+                "text_es": "Leer sobre c\u00f3mo se hace"
+            }
+        ],
+        "question_es": "\u00bfQu\u00e9 tarde te apetece m\u00e1s?"
+    },
+    {
+        "type": "personality",
+        "question": "You realise your project would solve a real problem for a lot of people.",
+        "answers": [
+            {
+                "text": "I think about taking it beyond class and who'd pay for it",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 4,
+                "text_es": "Pienso c\u00f3mo sacarlo de clase y qui\u00e9n pagar\u00eda por \u00e9l"
+            },
+            {
+                "text": "I look for someone to help me push it forward",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 3,
+                "text_es": "Busco a alguien que me ayude a sacarlo adelante"
+            },
+            {
+                "text": "I mention it in case anyone's interested",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 1,
+                "text_es": "Lo comento por si a alguien le interesa"
+            },
+            {
+                "text": "I hand it in and move on to the next thing",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 0,
+                "text_es": "Lo entrego y paso a lo siguiente"
+            }
+        ],
+        "question_es": "Descubres que tu proyecto le resolver\u00eda un problema real a mucha gente."
+    },
+    {
+        "type": "personality",
+        "question": "What's the first thing you look at in a chart?",
+        "answers": [
+            {
+                "text": "What each axis actually measures",
+                "cluster": "ANALYTICAL",
+                "points": 4,
+                "text_es": "Qu\u00e9 mide exactamente cada eje"
+            },
+            {
+                "text": "Whether the trend holds up",
+                "cluster": "ANALYTICAL",
+                "points": 3,
+                "text_es": "Si la tendencia se sostiene"
+            },
+            {
+                "text": "The headline next to it",
+                "cluster": "ANALYTICAL",
+                "points": 1,
+                "text_es": "El titular que lo acompa\u00f1a"
+            },
+            {
+                "text": "Whether it looks good and reads clearly",
+                "cluster": "ANALYTICAL",
+                "points": 0,
+                "text_es": "Si es bonito y se entiende"
+            }
+        ],
+        "question_es": "\u00bfQu\u00e9 es lo primero que miras en un gr\u00e1fico?"
+    },
+    {
+        "type": "personality",
+        "question": "I change things that already work just because I thought of a better version.",
+        "answers": [
+            {
+                "text": "A lot",
+                "cluster": "CREATIVE",
+                "points": 4,
+                "text_es": "Much\u00edsimo"
+            },
+            {
+                "text": "Quite a bit",
+                "cluster": "CREATIVE",
+                "points": 3,
+                "text_es": "Bastante"
+            },
+            {
+                "text": "A little",
+                "cluster": "CREATIVE",
+                "points": 1,
+                "text_es": "Un poco"
+            },
+            {
+                "text": "Not at all",
+                "cluster": "CREATIVE",
+                "points": 0,
+                "text_es": "Nada"
+            }
+        ],
+        "question_es": "Cambio cosas que ya funcionan solo porque se me ha ocurrido una versi\u00f3n mejor."
+    },
+    {
+        "type": "personality",
+        "question": "Two people on the team have argued and the mood is off.",
+        "answers": [
+            {
+                "text": "I talk to each of them separately",
+                "cluster": "SOCIAL",
+                "points": 4,
+                "text_es": "Hablo con cada una por separado"
+            },
+            {
+                "text": "I suggest the three of us sit down",
+                "cluster": "SOCIAL",
+                "points": 3,
+                "text_es": "Propongo sentarnos los tres"
+            },
+            {
+                "text": "I keep the work moving and let it blow over",
+                "cluster": "SOCIAL",
+                "points": 1,
+                "text_es": "Intento que el trabajo siga y ya se les pasar\u00e1"
+            },
+            {
+                "text": "I stay out of it: it's their business",
+                "cluster": "SOCIAL",
+                "points": 0,
+                "text_es": "No me meto: es cosa suya"
+            }
+        ],
+        "question_es": "Dos personas del equipo han discutido y el ambiente est\u00e1 raro."
+    },
+    {
+        "type": "personality",
+        "question": "You're handed a blank sheet of paper.",
+        "answers": [
+            {
+                "text": "I fill it with loose ideas",
+                "cluster": "CREATIVE",
+                "points": 4,
+                "text_es": "Lo lleno de ideas sueltas"
+            },
+            {
+                "text": "I draw or write something without thinking",
+                "cluster": "CREATIVE",
+                "points": 3,
+                "text_es": "Dibujo o escribo algo sin pensar"
+            },
+            {
+                "text": "I write a to-do list",
+                "cluster": "CREATIVE",
+                "points": 1,
+                "text_es": "Escribo una lista de tareas"
+            },
+            {
+                "text": "I leave it blank: I'd rather see an example",
+                "cluster": "CREATIVE",
+                "points": 0,
+                "text_es": "Lo dejo en blanco: prefiero un ejemplo"
+            }
+        ],
+        "question_es": "Te dan un folio en blanco."
+    },
+    {
+        "type": "personality",
+        "question": "Two electives, the same time slot.",
+        "answers": [
+            {
+                "text": "Lab: setting up experiments and measuring",
+                "cluster": "SCIENTIFIC",
+                "points": 4,
+                "text_es": "Laboratorio: montar experimentos y medir"
+            },
+            {
+                "text": "A seminar on how research is done",
+                "cluster": "SCIENTIFIC",
+                "points": 3,
+                "text_es": "Un seminario sobre c\u00f3mo se investiga"
+            },
+            {
+                "text": "A workshop on practical applications",
+                "cluster": "SCIENTIFIC",
+                "points": 1,
+                "text_es": "Un taller de aplicaciones pr\u00e1cticas"
+            },
+            {
+                "text": "A course with a closed, clear syllabus",
+                "cluster": "SCIENTIFIC",
+                "points": 0,
+                "text_es": "Un curso con el temario cerrado y claro"
+            }
+        ],
+        "question_es": "Dos optativas, el mismo horario."
+    },
+    {
+        "type": "personality",
+        "question": "In a group with no direction, I end up being the one handing out the tasks.",
+        "answers": [
+            {
+                "text": "A lot",
+                "cluster": "LEADERSHIP",
+                "points": 4,
+                "text_es": "Much\u00edsimo"
+            },
+            {
+                "text": "Quite a bit",
+                "cluster": "LEADERSHIP",
+                "points": 3,
+                "text_es": "Bastante"
+            },
+            {
+                "text": "A little",
+                "cluster": "LEADERSHIP",
+                "points": 1,
+                "text_es": "Un poco"
+            },
+            {
+                "text": "Not at all",
+                "cluster": "LEADERSHIP",
+                "points": 0,
+                "text_es": "Nada"
+            }
+        ],
+        "question_es": "En un grupo sin rumbo, acabo siendo yo quien reparte las tareas."
+    },
+    {
+        "type": "personality",
+        "question": "Which of these challenges would you take?",
+        "answers": [
+            {
+                "text": "Automating something you do by hand every week",
+                "cluster": "TECHNICAL",
+                "points": 4,
+                "text_es": "Automatizar algo que haces a mano cada semana"
+            },
+            {
+                "text": "Setting up the group's kit on your own",
+                "cluster": "TECHNICAL",
+                "points": 3,
+                "text_es": "Configurar t\u00fa solo el equipo del grupo"
+            },
+            {
+                "text": "Learning a new program if it's needed",
+                "cluster": "TECHNICAL",
+                "points": 1,
+                "text_es": "Aprender un programa nuevo si hace falta"
+            },
+            {
+                "text": "Using what's already set up",
+                "cluster": "TECHNICAL",
+                "points": 0,
+                "text_es": "Usar lo que ya est\u00e1 montado"
+            }
+        ],
+        "question_es": "\u00bfCu\u00e1l de estos retos aceptar\u00edas?"
+    },
+    {
+        "type": "personality",
+        "question": "The project goes well and you're offered another year to continue it.",
+        "answers": [
+            {
+                "text": "I say yes and start looking for funding",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 4,
+                "text_es": "Digo que s\u00ed y busco c\u00f3mo financiarlo"
+            },
+            {
+                "text": "I say yes if I find the right people",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 3,
+                "text_es": "Digo que s\u00ed si encuentro a las personas adecuadas"
+            },
+            {
+                "text": "I'll carry on if someone organises it for me",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 1,
+                "text_es": "Sigo si me lo organizan"
+            },
+            {
+                "text": "I'd rather stop here: it did its job",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 0,
+                "text_es": "Prefiero dejarlo aqu\u00ed: ya cumpli\u00f3 su funci\u00f3n"
+            }
+        ],
+        "question_es": "El proyecto sale bien y os proponen continuarlo un a\u00f1o m\u00e1s."
+    },
+    {
+        "type": "personality",
+        "question": "A team decision turns out badly.",
+        "answers": [
+            {
+                "text": "I own it in front of the group",
+                "cluster": "LEADERSHIP",
+                "points": 4,
+                "text_es": "La asumo delante del grupo"
+            },
+            {
+                "text": "I propose how to fix it",
+                "cluster": "LEADERSHIP",
+                "points": 3,
+                "text_es": "Propongo c\u00f3mo arreglarla"
+            },
+            {
+                "text": "I explain which part was mine",
+                "cluster": "LEADERSHIP",
+                "points": 1,
+                "text_es": "Explico qu\u00e9 parte era m\u00eda"
+            },
+            {
+                "text": "I wait to hear from whoever decided",
+                "cluster": "LEADERSHIP",
+                "points": 0,
+                "text_es": "Espero a ver qu\u00e9 dice quien decidi\u00f3"
+            }
+        ],
+        "question_es": "Una decisi\u00f3n del equipo sale mal."
+    },
+    {
+        "type": "personality",
+        "question": "I've started something on my own without being asked: a channel, a sale, a project.",
+        "answers": [
+            {
+                "text": "A lot",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 4,
+                "text_es": "Much\u00edsimo"
+            },
+            {
+                "text": "Quite a bit",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 3,
+                "text_es": "Bastante"
+            },
+            {
+                "text": "A little",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 1,
+                "text_es": "Un poco"
+            },
+            {
+                "text": "Not at all",
+                "cluster": "ENTREPRENEURIAL",
+                "points": 0,
+                "text_es": "Nada"
+            }
+        ],
+        "question_es": "He empezado algo por mi cuenta sin que nadie me lo pidiera: un canal, una venta, un proyecto."
+    },
+    {
+        "type": "personality",
+        "question": "The prototype is two millimetres off.",
+        "answers": [
+            {
+                "text": "I sand it, adjust it and carry on",
+                "cluster": "PRACTICAL",
+                "points": 4,
+                "text_es": "Lo lijo, lo ajusto y sigo"
+            },
+            {
+                "text": "I remake the part with the corrected measurement",
+                "cluster": "PRACTICAL",
+                "points": 3,
+                "text_es": "Rehago la pieza con la medida corregida"
+            },
+            {
+                "text": "I ask how it's usually solved",
+                "cluster": "PRACTICAL",
+                "points": 1,
+                "text_es": "Pregunto c\u00f3mo se soluciona"
+            },
+            {
+                "text": "I go back to the drawing to find the error",
+                "cluster": "PRACTICAL",
+                "points": 0,
+                "text_es": "Vuelvo al plano a ver d\u00f3nde est\u00e1 el error"
+            }
+        ],
+        "question_es": "El prototipo no encaja por dos mil\u00edmetros."
+    }
 ]

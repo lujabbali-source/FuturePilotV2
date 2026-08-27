@@ -84,7 +84,7 @@ class BrainResponse:
     top_career: Optional[Dict[str, Any]]
     top_matches: List[Dict[str, Any]]
     roadmap: Optional[Dict[str, Any]]
-    # `reasoning`, `next_actions` y `future_predictions` viajan como
+    # `reasoning` y `next_actions` viajan como
     # {key, params} sin redactar: el texto se arma en app.py, en el idioma
     # que pida la peticion. Ver localization.py.
     reasoning: Dict[str, Any]
@@ -95,7 +95,6 @@ class BrainResponse:
     archetype_key: str
     memory_updates: Dict[str, Any]
     next_actions: List[Dict[str, Any]]
-    future_predictions: List[Dict[str, Any]]
 
     def to_dict(self) -> Dict[str, Any]:
         """Convierte la respuesta cognitiva a un diccionario explícito."""
@@ -631,16 +630,19 @@ class RoadmapPlanner:
         return {"key": "levelling", "items": items} if items else None
 
 
-class LearningEngine:
-    """
-    Módulo de Aprendizaje Continuo y Predicción de Evolución.
-    """
-    def predict_growth(self, vector: Dict[str, float], career_id: Optional[str]) -> List[Dict[str, Any]]:
-        """Predicciones sin redactar, igual que el resto del motor."""
-        return [
-            {"key": "prediction.growth", "params": {}},
-            {"key": "prediction.projects", "params": {}, "career_id": career_id},
-        ]
+# Aqui vivia LearningEngine.predict_growth, que devolvia dos "predicciones"
+# para todo el mundo: que la capacidad analitica del estudiante creceria "un
+# 15% en los proximos seis meses", y que su afinidad con la carrera le
+# permitiria abordar proyectos "antes que la mayoria".
+#
+# Ninguna de las dos salia de ningun calculo. Eran cadenas fijas: el 15%, los
+# seis meses y la comparacion con "la mayoria" estaban escritos a mano. La
+# primera hablaba de la capacidad analitica aunque fuera el eje mas flojo del
+# estudiante, y la segunda comparaba contra una poblacion que no existe -
+# FuturePilot no tiene datos de nadie mas con quien comparar.
+#
+# Se eliminaron enteras. Los terminos del servicio dicen que esto no predice
+# el futuro de nadie, y el codigo tenia que decir lo mismo.
 
 
 class ResponseBuilder:
@@ -659,7 +661,6 @@ class ResponseBuilder:
         hubs: List[Dict[str, Any]],
         archetype_key: str,
         memory_updates: Dict[str, Any],
-        predictions: List[Dict[str, Any]]
     ) -> BrainResponse:
         return BrainResponse(
             top_career=top_career,
@@ -677,7 +678,6 @@ class ResponseBuilder:
                 {"key": "action.hubs"},
                 {"key": "action.practice"},
             ],
-            future_predictions=predictions
         )
 
 
@@ -1159,7 +1159,6 @@ class FuturePilotBrain:
         self.decision = DecisionEngine()
         self.career_engine = CareerEngine()
         self.planner = RoadmapPlanner(roadmaps_data)
-        self.learning = LearningEngine()
         self.builder = ResponseBuilder()
 
     def run_cognitive_cycle(self, raw_answers: List[Dict[str, Any]], user_id: str = "default_user") -> BrainResponse:
@@ -1225,11 +1224,6 @@ class FuturePilotBrain:
             "gaps": gaps,
         }
 
-        # Paso 8: Predicciones de Crecimiento
-        predictions = self.learning.predict_growth(
-            user_vector, top_match.get("career_id") if top_match else None
-        )
-
         # Actualizar la Memoria del Usuario. Antes esta entrada solo
         # guardaba {timestamp, vector, top_choice} - el MentorEngine no
         # tenia forma de referenciar el roadmap real, la lista completa de
@@ -1263,7 +1257,6 @@ class FuturePilotBrain:
             hubs=recommended_hubs,
             archetype_key=archetype_key,
             memory_updates={"assessments_count": user_memory["assessments_count"]},
-            predictions=predictions
         )
 
 
@@ -1378,7 +1371,7 @@ class FuturePilotAIEcosystem:
 
         # Formato esperado por el API anterior, mas los campos que ya calcula
         # FuturePilotBrain (arquetipo, strengths/weaknesses, confidence,
-        # recommended_hubs, future_predictions) y que antes se descartaban
+        # recommended_hubs) y que antes se descartaban
         # aqui - necesarios para la vista de resultados completos.
         #
         # Lo que sale de aqui es la forma SIN TRADUCIR: claves de texto,
@@ -1398,7 +1391,6 @@ class FuturePilotAIEcosystem:
             "weaknesses": response.weaknesses,
             "confidence": response.confidence,
             "recommended_hubs": response.recommended_hubs,
-            "future_predictions": response.future_predictions,
             "next_actions": response.next_actions,
             "recommended_careers": recommended_careers,
             "top_choice": {

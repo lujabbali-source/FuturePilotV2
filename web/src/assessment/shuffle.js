@@ -86,10 +86,10 @@ export function ordenDeOpciones(question, indicePregunta, formato) {
   // Se ordena por puntos ASCENDENTE para que la izquierda ("Nada") sea la
   // respuesta que menos puntua y la derecha ("Muchisimo") la que mas.
   //
-  // Estaba al reves. Como las respuestas venian con la de 4 puntos primero,
-  // arrastrar a "Nada" enviaba answer_index 0, o sea "Muy de acuerdo", y
-  // daba la puntuacion maxima del rasgo. "Muchisimo" daba cero. Un cuarto de
-  // las preguntas de personalidad se puntuaba invertido, en silencio.
+  // Estaba al reves. Como las respuestas vienen con la de 4 puntos primero,
+  // arrastrar a "Nada" enviaba answer_index 0, que es la que MAS puntua, y
+  // daba el maximo del rasgo. "Muchisimo" daba cero. Un cuarto de las
+  // preguntas de personalidad se puntuaba invertido, en silencio.
   if (formato === "slider") {
     return [...indices].sort(
       (a, b) => (question.answers[a].points || 0) - (question.answers[b].points || 0)
@@ -99,10 +99,10 @@ export function ordenDeOpciones(question, indicePregunta, formato) {
   const aleatorio = generador(`${semillaActual()}:${indicePregunta}`);
 
   // Versus enseña dos opciones y esconde las otras dos. Enseñaba las dos
-  // PRIMERAS, y como todas las preguntas son una escala de acuerdo ordenada
-  // de mas a menos, eso significaba ofrecer "Muy de acuerdo" (4 puntos)
-  // contra "De acuerdo" (3): no se podia estar en desacuerdo, y esas seis
-  // preguntas garantizaban al menos 3 de 4 puntos pasara lo que pasara.
+  // PRIMERAS, y como el banco venia ordenado de mas a menos puntos, eso
+  // significaba enfrentar la opcion de 4 puntos contra la de 3: la de 0 no
+  // se llegaba a ver nunca, y esas seis preguntas garantizaban al menos 3
+  // de 4 puntos pasara lo que pasara.
   //
   // Ahora enfrenta los dos EXTREMOS - la que mas puntua contra la que menos -
   // que es la unica pareja que hace de esto una eleccion de verdad. Cual sale
