@@ -327,3 +327,28 @@ def test_the_landing_page_answers_a_head_request(client):
     """La otra URL que se monitoriza por defecto es la raiz del sitio."""
     assert client.get("/").status_code == 200
     assert client.head("/").status_code == 200
+
+
+def test_email_links_do_not_trust_the_host_header(app_module, monkeypatch):
+    """El enlace de recuperacion es el token mas sensible que sale de aqui, y
+    se armaba con str(request.base_url): o sea, con la cabecera Host que manda
+    quien llama.
+
+    Eso permite el envenenamiento clasico del reset - pedir la recuperacion de
+    la cuenta de otra persona con un Host falsificado, para que el correo que
+    le llega a la victima apunte al servidor del atacante con un token valido
+    dentro - y ademas detras de un proxy el esquema salia http, con lo que el
+    token viajaba en claro en el primer salto.
+
+    Con PUBLIC_BASE_URL puesta, el enlace deja de depender de la peticion.
+    """
+    class PeticionFalsa:
+        base_url = "http://host-del-atacante.example/"
+
+    monkeypatch.setattr(app_module, "PUBLIC_BASE_URL", "https://futurepilot.example")
+    assert app_module.base_publica(PeticionFalsa()) == "https://futurepilot.example"
+
+    # Sin la variable se cae a la peticion, que es lo que hace falta en
+    # desarrollo: ahi el host cambia (localhost, 127.0.0.1, la IP de la red).
+    monkeypatch.setattr(app_module, "PUBLIC_BASE_URL", "")
+    assert app_module.base_publica(PeticionFalsa()) == "http://host-del-atacante.example"

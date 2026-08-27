@@ -42,4 +42,9 @@ COPY Frontend/ ./Frontend/
 COPY --from=frontend /src/web/dist ./web/dist
 
 # $PORT lo inyecta la plataforma; el 8000 es solo para correr la imagen a mano.
-CMD ["sh", "-c", "uvicorn app:app --app-dir futurepilot-IA --host 0.0.0.0 --port ${PORT:-8000}"]
+# --proxy-headers con --forwarded-allow-ips=*: detras de Render la aplicacion
+# solo es accesible a traves de su proxy, asi que confiar en sus cabeceras
+# X-Forwarded es lo correcto. Sin esto uvicorn cree que toda peticion llego
+# por http, y cualquier URL que construya el servidor sale con el esquema
+# equivocado.
+CMD ["sh", "-c", "uvicorn app:app --app-dir futurepilot-IA --host 0.0.0.0 --port ${PORT:-8000} --proxy-headers --forwarded-allow-ips=*"]

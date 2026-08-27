@@ -55,6 +55,11 @@ services:
       # - key: BACKUP_DIR
       #   value: /var/data/backups
 
+      # Sin esto los enlaces que salen por correo se arman con la cabecera
+      # Host de quien llama y con esquema http. Ver base_publica() en app.py.
+      - key: PUBLIC_BASE_URL
+        value: https://futurepilot-hp0v.onrender.com
+
       # El barrido de los 30 dias corre dentro de este mismo servicio, en un
       # hilo, porque los cron jobs de Render no pueden montar el disco. En
       # free se queda apagado: sin persistencia no hay ningun expediente que

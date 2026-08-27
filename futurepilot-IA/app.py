@@ -798,7 +798,7 @@ def _notificar_acudiente(user: dict, consent_token: str, request: Request) -> bo
     desarrollo el cuerpo se imprime en consola, en produccion ni eso, porque
     el mensaje lleva el token dentro.
     """
-    enlace = f"{str(request.base_url).rstrip('/')}/consent/{consent_token}"
+    enlace = f"{base_publica(request)}/consent/{consent_token}"
     nombre = (user.get("name") or "").strip() or user["email"]
     try:
         return mailer.send_email(
@@ -828,6 +828,34 @@ def login(payload: LoginRequest, request: Request):
     return {"success": True, "token": token, "user": user}
 
 
+# --------------------------------------------------------------------------
+# La URL publica del sitio, para los enlaces que viajan por correo.
+#
+# Se usaba str(request.base_url), que se arma con lo que manda el CLIENTE: la
+# cabecera Host y el esquema que uvicorn crea ver. Dos problemas detras de un
+# proxy como el de Render:
+#
+#   - El esquema salia http, porque uvicorn ignora las cabeceras X-Forwarded
+#     salvo que se le diga que confie en el proxy. El enlace de recuperacion
+#     acababa siendo http://..., y aunque Render redirige a https, el token
+#     viaja en claro en ese primer salto.
+#
+#   - Y el Host lo pone quien llama. Es el envenenamiento clasico del reset:
+#     alguien pide recuperar la contraseña de otra persona con un Host
+#     falsificado, y el correo que le llega a la victima lleva un enlace al
+#     servidor del atacante, con un token valido dentro.
+#
+# Con PUBLIC_BASE_URL puesta, los enlaces dejan de depender de la peticion.
+# Sin ella se cae al comportamiento anterior, que es lo que hace falta en
+# desarrollo, donde el host cambia (localhost, 127.0.0.1, la IP de la red).
+PUBLIC_BASE_URL = (os.environ.get("PUBLIC_BASE_URL") or "").strip().rstrip("/")
+
+
+def base_publica(request: Request) -> str:
+    """Raiz absoluta del sitio para construir un enlace que sale por correo."""
+    return PUBLIC_BASE_URL or str(request.base_url).rstrip("/")
+
+
 @app.post("/api/v1/auth/forgot-password", status_code=status.HTTP_200_OK)
 def forgot_password(payload: ForgotPasswordRequest, request: Request):
     password_reset_rate_limiter.check(client_ip(request))
@@ -845,7 +873,7 @@ def forgot_password(payload: ForgotPasswordRequest, request: Request):
         return generic_response
 
     token = users_store.create_password_reset(user_id)
-    reset_link = f"{str(request.base_url).rstrip('/')}/reset-password?token={token}"
+    reset_link = f"{base_publica(request)}/reset-password?token={token}"
     mailer.send_email(
         to_email=payload.email.strip().lower(),
         subject="Recupera tu contraseña de FuturePilot",
