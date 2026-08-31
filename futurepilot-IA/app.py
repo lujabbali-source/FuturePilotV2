@@ -61,7 +61,7 @@ for _path in (REPO_ROOT, BASE_DIR):
         sys.path.insert(0, str(_path))
 
 import localization  # noqa: E402
-from ai_engine import FuturePilotAIEcosystem  # noqa: E402
+from ai_engine import FuturePilotAIEcosystem, fortalezas_y_brechas  # noqa: E402
 from backend.config_store import delete_json, read_json, write_json  # noqa: E402
 from backend import mailer  # noqa: E402
 from backend.rate_limiter import RateLimiter, client_ip  # noqa: E402
@@ -2075,18 +2075,14 @@ def _refresh_match_details(results: Dict[str, Any]) -> Dict[str, Any]:
         if not requisitos:
             continue
 
-        sobrantes = sorted(
-            ((c, vector[c] - requisitos.get(c, 5.0)) for c in vector
-             if vector[c] >= requisitos.get(c, 5.0)),
-            key=lambda par: par[1], reverse=True,
-        )
-        faltantes = sorted(
-            ((c, requisitos.get(c, 5.0) - vector[c]) for c in vector
-             if requisitos.get(c, 5.0) - vector[c] > 2.0),
-            key=lambda par: par[1], reverse=True,
-        )
-        match["strengths"] = [c for c, _ in sobrantes[:3]]
-        match["skill_gaps"] = [c for c, _ in faltantes[:3]]
+        # La misma funcion que usa el motor al calcular por primera vez.
+        # Aqui habia una segunda copia de la regla, y como esto corre al
+        # LEER, su version era la que acababa viendo el estudiante: el
+        # resultado guardado se recalculaba con la formula vieja y pisaba
+        # la del motor.
+        fortalezas, brechas = fortalezas_y_brechas(vector, requisitos)
+        match["strengths"] = fortalezas
+        match["skill_gaps"] = brechas
         match["justification"] = ai_system._build_career_justification(match)
 
     top = results.get("top_choice")

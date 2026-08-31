@@ -475,3 +475,68 @@ def test_the_options_are_shuffled_before_they_are_shown(app_module):
             f"{filtrada}* volvio a pintarse: es una etiqueta pegada a la "
             "posicion, no a la opcion."
         )
+
+
+# --------------------------------------------------------------------------
+# Coherencia entre el porcentaje y las fortalezas
+#
+# El porcentaje sale de un coseno CENTRADO EN LA MEDIA (compara la forma del
+# perfil), y las fortalezas se calculaban con el nivel crudo. Eran dos varas
+# de medir distintas presentadas juntas, y se contradecian: un perfil por
+# debajo del requisito en los ocho ejes salia con "95.8% de compatibilidad" y
+# la lista de fortalezas vacia.
+# --------------------------------------------------------------------------
+
+def test_un_match_alto_siempre_nombra_alguna_fortaleza():
+    """Si el motor afirma que encajas, tiene que poder decir en que.
+
+    Este es el caso que fallaba: un estudiante por debajo del requisito en
+    TODOS los ejes, pero con la forma del perfil correcta. El porcentaje
+    salia altisimo y no habia ni una fortaleza que enseñar.
+    """
+    from ai_engine import fortalezas_y_brechas
+
+    # Product Management pide mucho de todo; este perfil tiene su forma pero
+    # no su altura: esta por debajo en los ocho ejes.
+    requisitos = {
+        "ANALYTICAL": 8.5, "CREATIVE": 7.5, "SOCIAL": 8.0, "LEADERSHIP": 9.0,
+        "TECHNICAL": 7.0, "SCIENTIFIC": 4.0, "PRACTICAL": 6.5, "ENTREPRENEURIAL": 9.0,
+    }
+    vector = {
+        "ANALYTICAL": 5.0, "CREATIVE": 6.2, "SOCIAL": 6.2, "LEADERSHIP": 7.9,
+        "TECHNICAL": 5.4, "SCIENTIFIC": 1.7, "PRACTICAL": 4.6, "ENTREPRENEURIAL": 6.8,
+    }
+    assert all(vector[c] < requisitos[c] for c in vector), "el caso perdio su gracia"
+
+    fortalezas, _ = fortalezas_y_brechas(vector, requisitos)
+    assert fortalezas, "match alto sin ninguna fortaleza que enseñar"
+
+
+def test_ningun_eje_es_fortaleza_y_brecha_a_la_vez():
+    """Decirle a alguien que destaca en algo y que le falta eso mismo es la
+    frase que mas rapido destruye la confianza en un resultado: el
+    estudiante sabe que no puede ser verdad."""
+    from ai_engine import fortalezas_y_brechas
+    import itertools
+    import random
+
+    random.seed(20260830)
+    clusters = CLUSTERS
+    for _ in range(400):
+        vector = {c: round(random.uniform(0, 10), 1) for c in clusters}
+        requisitos = {c: round(random.uniform(3, 9.5), 1) for c in clusters}
+        fortalezas, brechas = fortalezas_y_brechas(vector, requisitos)
+        solape = set(fortalezas) & set(brechas)
+        assert not solape, f"{solape} sale como fortaleza y como brecha a la vez"
+        assert len(fortalezas) <= 3 and len(brechas) <= 3
+
+
+def test_la_regla_de_fortalezas_vive_en_un_solo_sitio():
+    """`_refresh_match_details` en app.py tenia su propia copia de esta
+    regla, y como corre al LEER un resultado guardado, su version pisaba la
+    del motor: arreglar ai_engine.py no cambiaba nada de lo que veia el
+    estudiante. Dos copias de la misma regla acaban divergiendo siempre."""
+    import ai_engine
+    import app
+
+    assert app.fortalezas_y_brechas is ai_engine.fortalezas_y_brechas

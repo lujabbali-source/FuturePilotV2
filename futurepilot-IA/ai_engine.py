@@ -385,6 +385,69 @@ class ReasoningEngine:
 TOP_MATCHES_RETURNED = 8
 
 
+def fortalezas_y_brechas(vector, requisitos, clusters=None):
+    """Que destaca y que falta en un perfil frente a una carrera.
+
+    UNA SOLA implementacion, a proposito. Esta regla vivia duplicada en
+    DecisionEngine.rank_careers y en _refresh_match_details (app.py), y la
+    de app.py pisaba a la otra al leer un resultado guardado: arreglar el
+    motor no cambiaba nada de lo que veia el estudiante. Dos copias de la
+    misma regla siempre acaban divergiendo; la unica forma de que no vuelva
+    a pasar es que solo haya una.
+
+    LAS FORTALEZAS SE MIDEN EN LA MISMA ESCALA QUE EL PORCENTAJE.
+
+    El porcentaje sale de profile_similarity, que centra los dos vectores en
+    su media: compara la FORMA del perfil, no su altura. Las fortalezas se
+    calculaban con el nivel crudo (vector[c] >= requisitos[c]), que es otra
+    vara de medir, y las dos se contradecian en pantalla. Un estudiante por
+    debajo del requisito en los ocho ejes pero con la forma correcta veia
+    "95.8% de compatibilidad" y NINGUNA fortaleza: pasaba en el 11% de los
+    perfiles, y en el 7% con un match de 85% o mas.
+
+    Centrando tambien aqui, una fortaleza significa lo que el porcentaje ya
+    dice: "en este eje destacas MAS de lo que esta carrera pide, comparado
+    con el resto de tu propio perfil".
+    """
+    clusters = list(clusters if clusters is not None else vector.keys())
+    if not clusters:
+        return [], []
+
+    valores_usuario = [vector[c] for c in clusters]
+    valores_carrera = [requisitos.get(c, 5.0) for c in clusters]
+    media_usuario = sum(valores_usuario) / len(valores_usuario)
+    media_carrera = sum(valores_carrera) / len(valores_carrera)
+
+    ventajas = sorted(
+        ((c, (vector[c] - media_usuario) - (requisitos.get(c, 5.0) - media_carrera))
+         for c in clusters),
+        key=lambda par: par[1], reverse=True,
+    )
+    # Solo las 3 mayores, y solo si de verdad son ventaja. Antes se devolvia
+    # TODO cluster que llegara al requisito: para una carrera poco exigente
+    # eso son los 8, y la pantalla listaba los ocho como "fortalezas". Decir
+    # que destacas en todo es no decir nada.
+    fortalezas = [c for c, ventaja in ventajas[:3] if ventaja > 0]
+
+    # Las brechas SI se quedan en nivel absoluto, a proposito: de ellas sale
+    # el roadmap, y un roadmap se construye sobre lo que te falta de verdad
+    # para ejercer, no sobre lo que te falta en comparacion contigo mismo.
+    faltantes = sorted(
+        ((c, requisitos.get(c, 5.0) - vector[c])
+         for c in clusters
+         if requisitos.get(c, 5.0) - vector[c] > 2.0
+         # Nada puede ser fortaleza y brecha a la vez. Mezclar las dos
+         # escalas hacia justo eso: al 16% de los perfiles se le listaba
+         # como "a reforzar" uno de sus tres ejes mas altos, que es la frase
+         # que mas rapido destruye la confianza en un resultado - el
+         # estudiante sabe que eso no es verdad.
+         and c not in fortalezas),
+        key=lambda par: par[1], reverse=True,
+    )
+    brechas = [c for c, _ in faltantes[:3]]
+    return fortalezas, brechas
+
+
 class DecisionEngine:
     """
     Módulo de Toma de Decisiones y Coincidencia Vectorial.
@@ -447,31 +510,7 @@ class DecisionEngine:
             sim = self.profile_similarity(u_vals, c_vals)
             pct = self.to_match_percentage(sim)
 
-            # Las 3 ventajas mas grandes, de mayor a menor. Antes se
-            # devolvia TODO cluster que llegara al requisito: para una
-            # carrera poco exigente eso son los 8, y la pantalla de
-            # resultados listaba los ocho como "fortalezas". Decir que
-            # destacas en todo es no decir nada.
-            surpluses = [
-                (c, user_vector[c] - reqs.get(c, 5.0))
-                for c in clusters
-                if user_vector[c] >= reqs.get(c, 5.0)
-            ]
-            surpluses.sort(key=lambda item: item[1], reverse=True)
-            strengths = [cluster for cluster, _ in surpluses[:3]]
-
-            # Solo las 3 brechas mas grandes, de mayor a menor. Antes se
-            # devolvian TODAS las que superaran el umbral: para un perfil
-            # muy marcado eso son 6 de los 8 clusters, y la justificacion
-            # acababa diciendo "conviene reforzar" seguido de media lista,
-            # que no le sirve de nada al estudiante.
-            deficits = [
-                (c, reqs.get(c, 5.0) - user_vector[c])
-                for c in clusters
-                if reqs.get(c, 5.0) - user_vector[c] > 2.0
-            ]
-            deficits.sort(key=lambda item: item[1], reverse=True)
-            gaps = [cluster for cluster, _ in deficits[:3]]
+            strengths, gaps = fortalezas_y_brechas(user_vector, reqs, clusters)
 
             matches.append({
                 "career_id": career.get("id"),
