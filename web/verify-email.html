@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#040a08">
+  <meta name="robots" content="noindex, nofollow">
+  <title data-i18n="login:verify.pageTitle">Confirma tu correo · FuturePilot</title>
+  <link rel="stylesheet" href="/Frontend/login.css">
+</head>
+<body>
+
+  <div class="aurora-bg" aria-hidden="true">
+    <span class="aurora-stars"></span>
+
+    <svg class="aurora-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <filter id="auroraTurb1" x="-60%" y="-60%" width="220%" height="220%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.006 0.014" numOctaves="2" seed="5" result="n1"/>
+          <feDisplacementMap in="SourceGraphic" in2="n1" scale="170" xChannelSelector="R" yChannelSelector="G"/>
+          <feGaussianBlur stdDeviation="24"/>
+        </filter>
+        <filter id="auroraTurb2" x="-60%" y="-60%" width="220%" height="220%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="2" seed="11" result="n2"/>
+          <feDisplacementMap in="SourceGraphic" in2="n2" scale="130" xChannelSelector="R" yChannelSelector="G"/>
+          <feGaussianBlur stdDeviation="36"/>
+        </filter>
+        <filter id="auroraTurb3" x="-60%" y="-60%" width="220%" height="220%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.026" numOctaves="2" seed="19" result="n3"/>
+          <feDisplacementMap in="SourceGraphic" in2="n3" scale="95" xChannelSelector="R" yChannelSelector="G"/>
+          <feGaussianBlur stdDeviation="14"/>
+        </filter>
+        <filter id="auroraTurbFaint" x="-60%" y="-60%" width="220%" height="220%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.007 0.016" numOctaves="2" seed="27" result="n4"/>
+          <feDisplacementMap in="SourceGraphic" in2="n4" scale="140" xChannelSelector="R" yChannelSelector="G"/>
+          <feGaussianBlur stdDeviation="28"/>
+        </filter>
+        <radialGradient id="auroraCore" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#00ffb3" stop-opacity=".38"/>
+          <stop offset="45%" stop-color="#00c896" stop-opacity=".2"/>
+          <stop offset="100%" stop-color="#00c896" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="auroraMid" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#00d4ff" stop-opacity=".26"/>
+          <stop offset="50%" stop-color="#00d4ff" stop-opacity=".12"/>
+          <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="auroraOuter" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#baffe8" stop-opacity=".2"/>
+          <stop offset="100%" stop-color="#baffe8" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="auroraFaint" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#00c896" stop-opacity=".14"/>
+          <stop offset="100%" stop-color="#00c896" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <g class="aurora-zone aurora-zone--main">
+        <ellipse class="aurora-cloud aurora-cloud--a" cx="1120" cy="300" rx="480" ry="260" fill="url(#auroraOuter)" filter="url(#auroraTurb1)"/>
+        <ellipse class="aurora-cloud aurora-cloud--b" cx="1200" cy="260" rx="340" ry="200" fill="url(#auroraMid)" filter="url(#auroraTurb2)"/>
+        <ellipse class="aurora-cloud aurora-cloud--c" cx="1040" cy="340" rx="260" ry="150" fill="url(#auroraCore)" filter="url(#auroraTurb3)"/>
+      </g>
+
+      <g class="aurora-zone aurora-zone--secondary">
+        <ellipse class="aurora-cloud aurora-cloud--d" cx="280" cy="650" rx="320" ry="180" fill="url(#auroraFaint)" filter="url(#auroraTurbFaint)"/>
+      </g>
+    </svg>
+  </div>
+
+  <main class="login-shell">
+
+    <section class="login-brand">
+      <a href="/" class="login-brand__logo">
+        <img src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot">
+        <span class="login-brand__name">Future<span>Pilot</span></span>
+      </a>
+      <p class="login-brand__slogan" data-i18n="login:aside.kicker">Build Your Future</p>
+      <div class="login-brand__rule"><span></span></div>
+      <p class="login-brand__copy" data-i18n="login:aside.blurb">Descubre tu carrera ideal, explora universidades en todo el continente y construye el mapa hacia tu futuro — guiado por IA.</p>
+    </section>
+
+    <section class="login-card" id="verifyCard">
+      <p class="login-card__eyebrow"><span></span> <span data-i18n="login:badge">FUTUREPILOT / ACCESO</span></p>
+      <h1 class="login-card__title"><span data-i18n="login:verify.title">Confirmando</span><span data-i18n="login:verify.titleAccent"> tu correo</span></h1>
+      <p class="login-card__subtitle" id="verifySubtitle" data-i18n="login:verify.checking">Un momento, estamos comprobando tu enlace.</p>
+
+      <div class="login-divider login-divider--top"><span></span></div>
+
+      <p class="login-error" id="verifyError" hidden></p>
+      <p class="login-info" id="verifyInfo" hidden></p>
+
+      <!-- Se dice en la propia pantalla que la cuenta no depende de esto.
+           Quien llega aqui desde un enlace caducado tiene que poder irse
+           tranquilo: no ha perdido el acceso a nada. -->
+      <p class="login-card__subtitle" id="verifyNote" data-i18n="login:verify.notBlocking" hidden>Tu cuenta funciona igual, con el correo confirmado o sin confirmar. Confirmarlo sirve para que puedas recuperar el acceso si olvidas tu contraseña.</p>
+
+      <div id="verifyActions" hidden>
+        <button type="button" class="login-submit" id="verifyResend" hidden>
+          <span data-i18n="login:verify.resend">Reenviar el correo de confirmación</span>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="login-switch"><a href="/passport" class="login-link login-link--strong" data-i18n="login:verify.goHome">Ir a mi cuenta</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="/src/login/verifyEmailMain.js"></script>
+</body>
+</html>

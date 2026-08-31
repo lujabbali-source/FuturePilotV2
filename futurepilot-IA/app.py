@@ -119,6 +119,21 @@ password_reset_rate_limiter = RateLimiter(max_requests=5, window_seconds=300)
 # El limite esta por si alguien lo intenta igual, y para que un bot que
 # recorra /consent/... no consuma el servidor entero.
 consent_rate_limiter = RateLimiter(max_requests=30, window_seconds=300)
+# Confirmar y reenviar tienen limites distintos porque cuestan cosas
+# distintas, y meterlos en el mismo cubo tenia una consecuencia concreta:
+# el limitador cuenta POR IP, y un colegio entero sale por una sola. Con 5
+# cada 5 minutos, el sexto alumno que pulsara su enlace de confirmacion se
+# encontraba un "demasiados intentos" sin haber hecho nada raro - y el
+# publico al que se quiere vender esto es justo un colegio.
+#
+# Confirmar no manda ningun correo y el token es de 32 bytes: adivinarlo es
+# inviable, asi que el limite solo esta para que un bot no consuma el
+# servidor. Mismo criterio - y mismo numero - que el enlace del acudiente.
+verify_email_rate_limiter = RateLimiter(max_requests=30, window_seconds=300)
+# Reenviar SI manda un correo por peticion, asi que aqui el limite protege
+# el buzon de quien se registro y la reputacion del remitente: sin el,
+# cualquiera con sesion convierte esto en una manguera contra su direccion.
+resend_verification_rate_limiter = RateLimiter(max_requests=5, window_seconds=300)
 
 # Origenes permitidos por CORS: configurables via env (coma-separada) para
 # no tener que tocar codigo por cada entorno (dev/staging/produccion). Los
@@ -533,6 +548,15 @@ def reset_password_page():
     return _web_page("reset-password.html")
 
 
+@app.get("/verify-email")
+def verify_email_page():
+    # El token viaja en la query y lo lee la propia pagina, igual que en
+    # /reset-password. El servidor no lo mira aqui: quien decide si vale es
+    # /api/v1/auth/verify-email, y asi esta ruta no tiene forma de filtrar
+    # por respuesta si un token existe o no.
+    return _web_page("verify-email.html")
+
+
 @app.get("/careers")
 def careers_page():
     return _web_page("careers.html")
@@ -692,6 +716,10 @@ class ForgotPasswordRequest(BaseModel):
     email: str = Field(..., description="Email de la cuenta a recuperar")
 
 
+class VerifyEmailRequest(BaseModel):
+    token: str = Field(..., description="Token recibido en el correo de verificacion")
+
+
 class ResetPasswordRequest(BaseModel):
     token: str = Field(..., description="Token recibido por correo")
     new_password: str = Field(..., min_length=8, description="Nueva contrasena, minimo 8 caracteres")
@@ -783,8 +811,51 @@ def register(payload: RegisterRequest, request: Request):
             user["id"], user["guardian_email"])
         _notificar_acudiente(user, consent_token, request)
 
+    # Verificar el correo tampoco bloquea nada: la sesion se crea igual y la
+    # cuenta funciona entera. Lo que se consigue aqui es una direccion en la
+    # que se pueda confiar mas adelante, y que un correo mal tecleado se note
+    # ahora - cuando tiene arreglo - y no el dia que alguien pida recuperar
+    # una contraseña que ya no puede recibir.
+    verificacion = users_store.create_email_verification(user["id"])
+    _enviar_verificacion(user, verificacion, request)
+
     token = users_store.create_session(user["id"])
     return {"success": True, "token": token, "user": user}
+
+
+def _enviar_verificacion(user: dict, token: str, request: Request) -> bool:
+    """Manda el enlace de verificacion. No propaga el fallo.
+
+    Que el correo no salga no puede tumbar un registro que ya se completo,
+    igual que con el aviso al acudiente. El token queda guardado y hay un
+    endpoint para reenviarlo.
+
+    Sin SMTP configurado esto no envia nada (ver backend/mailer.py): en
+    desarrollo el cuerpo se imprime en consola, en produccion ni eso, porque
+    el mensaje lleva el token dentro.
+    """
+    enlace = f"{base_publica(request)}/verify-email?token={token}"
+    nombre = (user.get("name") or "").strip()
+    saludo = f"Hola {nombre}," if nombre else "Hola,"
+    try:
+        return mailer.send_email(
+            to_email=user["email"],
+            subject="Confirma tu correo de FuturePilot",
+            body=(
+                f"{saludo}\n\n"
+                "Creaste una cuenta en FuturePilot. Confirma que esta direccion es "
+                "tuya abriendo este enlace (valido por 7 dias):\n\n"
+                f"    {enlace}\n\n"
+                "Tu cuenta ya funciona: no hace falta que confirmes para usar el "
+                "test ni el globo. Confirmarlo sirve para que puedas recuperar el "
+                "acceso si olvidas tu contrasena.\n\n"
+                "Si no creaste ninguna cuenta, ignora este mensaje.\n\n"
+                "- FuturePilot"
+            ),
+        )
+    except Exception as error:  # noqa: BLE001
+        print(f"[FuturePilot] No se pudo enviar la verificacion de correo: {error}")
+        return False
 
 
 def _notificar_acudiente(user: dict, consent_token: str, request: Request) -> bool:
@@ -884,6 +955,79 @@ def forgot_password(payload: ForgotPasswordRequest, request: Request):
         ),
     )
     return generic_response
+
+
+@app.post("/api/v1/auth/verify-email", status_code=status.HTTP_200_OK)
+def verify_email(payload: VerifyEmailRequest, request: Request):
+    """Confirma la direccion a partir del enlace del correo.
+
+    No exige sesion a proposito: el enlace se abre a menudo desde el movil o
+    desde el cliente de correo, donde no hay token de sesion. La prueba es el
+    enlace, que solo pudo llegarle a quien tiene ese buzon.
+
+    Pulsarlo dos veces devuelve exito, no un error. Es el caso normal - el
+    correo se queda en la bandeja y se abre otra vez desde otro sitio - y
+    responder "invalido" a quien SI esta verificado es mentirle sobre el
+    estado de su cuenta. Misma leccion que el claim del resultado del test.
+    """
+    verify_email_rate_limiter.check(client_ip(request))
+
+    estado, _ = users_store.consume_email_verification(payload.token)
+    if estado in ("verificado", "ya_estaba"):
+        return {
+            "success": True,
+            "estado": estado,
+            "detail": (
+                "Tu correo quedo confirmado."
+                if estado == "verificado"
+                else "Tu correo ya estaba confirmado."
+            ),
+        }
+    if estado == "caducado":
+        # 410 y no 400: el enlace fue valido, se le paso el plazo. La
+        # diferencia importa porque aqui si hay algo que ofrecer - iniciar
+        # sesion y pedir otro - y en el caso invalido no hay nada.
+        raise HTTPException(
+            status_code=status.HTTP_410_GONE,
+            detail="Este enlace caduco. Inicia sesion y pide uno nuevo.",
+        )
+    raise HTTPException(
+        status_code=status.HTTP_400_BAD_REQUEST,
+        detail="Este enlace de confirmacion no es valido.",
+    )
+
+
+@app.post("/api/v1/auth/resend-verification", status_code=status.HTTP_200_OK)
+def resend_verification(
+    request: Request,
+    current_user: dict = Depends(get_current_user_required),
+):
+    """Reenvia el enlace a la direccion de la cuenta que pide.
+
+    Exige sesion, y manda SIEMPRE al correo del usuario autenticado: no
+    acepta una direccion en el cuerpo. Si la aceptara, cualquiera con una
+    cuenta podria usar este endpoint para mandar correos con la marca de
+    FuturePilot a quien quisiera.
+    """
+    resend_verification_rate_limiter.check(client_ip(request))
+
+    if current_user.get("email_verified"):
+        # No se gasta un correo ni se emite un token nuevo por algo que ya
+        # esta hecho. Y se responde exito, no error: para quien pregunta, el
+        # resultado que queria ya se cumple.
+        return {"success": True, "enviado": False, "detail": "Tu correo ya estaba confirmado."}
+
+    token = users_store.create_email_verification(current_user["id"])
+    enviado = _enviar_verificacion(current_user, token, request)
+    return {
+        "success": True,
+        "enviado": enviado,
+        "detail": (
+            "Te enviamos un enlace de confirmacion."
+            if enviado
+            else "No pudimos enviar el correo en este momento. Intentalo mas tarde."
+        ),
+    }
 
 
 @app.post("/api/v1/auth/reset-password", status_code=status.HTTP_200_OK)
@@ -1667,7 +1811,7 @@ def _check_frontend_pages() -> Dict[str, Any]:
     required = [
         "index.html", "assessment.html", "careers.html", "journey.html",
         "flightplan.html", "passport.html", "login.html", "reset-password.html",
-        "terms.html", "privacy.html", "globe.html",
+        "verify-email.html", "terms.html", "privacy.html", "globe.html",
     ]
     missing = [name for name in required if not (WEB_DIST_DIR / name).exists()]
     if missing:

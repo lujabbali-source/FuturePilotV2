@@ -36,6 +36,7 @@
     "email": "tu@email.com",
     "password": "Mínimo 8 caracteres",
     "adminToken": "Token de configuración del administrador",
+    "adminAccess": "Acceso administrador",
     "remember": "Recordarme",
     "forgot": "¿Olvidaste tu contraseña?",
     "showPassword": "Mostrar contraseña",
@@ -80,5 +81,23 @@
     "notLinked": "{{entrada}}, pero no pudimos vincular tu resultado todavía. No te preocupes: tus respuestas siguen guardadas.",
     "retry": "Intentar de nuevo",
     "skip": "Continuar sin vincular"
+  },
+  "verify": {
+    "pageTitle": "Confirma tu correo · FuturePilot",
+    "title": "Confirmando",
+    "titleAccent": " tu correo",
+    "checking": "Un momento, estamos comprobando tu enlace.",
+    "done": "Listo: tu correo quedó confirmado.",
+    "already": "Tu correo ya estaba confirmado. No hace falta hacer nada más.",
+    "expired": "Este enlace caducó. Inicia sesión y pide uno nuevo desde tu cuenta.",
+    "invalid": "Este enlace de confirmación no es válido.",
+    "noToken": "Este enlace no incluye ningún token.",
+    "network": "No pudimos conectar con el servidor. Vuelve a intentarlo.",
+    "notBlocking": "Tu cuenta funciona igual, con el correo confirmado o sin confirmar. Confirmarlo sirve para que puedas recuperar el acceso si olvidas tu contraseña.",
+    "goHome": "Ir a mi cuenta",
+    "resend": "Reenviar el correo de confirmación",
+    "resendSent": "Te enviamos un enlace nuevo. Revisa tu bandeja.",
+    "resendFailed": "No pudimos enviar el correo ahora mismo. Inténtalo más tarde.",
+    "pending": "Tu correo todavía no está confirmado."
   }
 }

@@ -76,6 +76,28 @@ CREATE TABLE IF NOT EXISTS password_resets (
 
 CREATE INDEX IF NOT EXISTS idx_password_resets_user ON password_resets(user_id);
 
+-- Verificacion de que el correo existe y es de quien se registro.
+--
+-- Mismo patron que password_resets: se guarda el hash del token, nunca el
+-- token. La diferencia esta en `used_at`, y es deliberada.
+--
+-- Los tokens de reset se BORRAN al usarse, asi que pulsar el enlace dos
+-- veces da "no existe". Para un reset da igual - la contraseña ya cambio y
+-- se nota. Aqui no: el segundo clic es lo normal (el correo se queda en la
+-- bandeja, se pulsa de nuevo desde otro dispositivo), y decirle "enlace
+-- invalido" a alguien que SI esta verificado es mentir. Marcando en vez de
+-- borrar se puede distinguir "ya estabas verificado" de "este token no vale",
+-- que es la misma leccion que enseño el claim del resultado del test.
+CREATE TABLE IF NOT EXISTS email_verifications (
+    token_hash TEXT PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    expires_at TEXT NOT NULL,
+    used_at TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_email_verifications_user ON email_verifications(user_id);
+
 CREATE TABLE IF NOT EXISTS test_results (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
@@ -165,6 +187,11 @@ PASSWORD_RESET_LIFETIME = timedelta(hours=1)
 # primer minuto. El plazo existe para que la espera no sea infinita - sin el,
 # los datos de un menor cuyo padre nunca respondio se quedarian para siempre.
 GUARDIAN_CONSENT_LIFETIME = timedelta(days=30)
+# Mas largo que el de reset (1h) a proposito: un reset lo pide alguien que
+# esta delante de la pantalla esperando el correo, y una verificacion la
+# recibe alguien que quiza no abra ese buzon hasta el fin de semana. Un
+# enlace caducado obliga a un reenvio que no aporta nada de seguridad.
+EMAIL_VERIFICATION_LIFETIME = timedelta(days=7)
 
 # Los estados por los que pasa un expediente. PENDING no bloquea nada.
 CONSENT_STATES = ("PENDING", "AUTHORIZED", "DENIED", "REVOKED", "EXPIRED")
@@ -229,6 +256,7 @@ class UsersStore:
             self._ensure_preferences_column(connection)
             self._ensure_stamp_columns(connection)
             self._ensure_guardian_columns(connection)
+            self._ensure_email_verified_column(connection)
 
     @staticmethod
     def _ensure_admin_column(connection: sqlite3.Connection) -> None:
@@ -238,6 +266,23 @@ class UsersStore:
         columns = {row["name"] for row in connection.execute("PRAGMA table_info(users)")}
         if "is_admin" not in columns:
             connection.execute("ALTER TABLE users ADD COLUMN is_admin INTEGER NOT NULL DEFAULT 0")
+
+    @staticmethod
+    def _ensure_email_verified_column(connection: sqlite3.Connection) -> None:
+        """Cuando se comprobo que el correo existe. NULL = todavia no.
+
+        Una fecha y no un booleano, por el mismo motivo que el expediente del
+        acudiente es una tabla y no una columna: verificar es un HECHO que
+        ocurre en un momento, y el cuando es justo lo que hara falta el dia
+        que haya que demostrar que se aviso a una direccion real.
+
+        Las cuentas que ya existian quedan en NULL, que es lo correcto: nadie
+        les verifico el correo nunca. Marcarlas como verificadas de golpe
+        seria inventarse un hecho que no ocurrio.
+        """
+        columns = {row["name"] for row in connection.execute("PRAGMA table_info(users)")}
+        if "email_verified_at" not in columns:
+            connection.execute("ALTER TABLE users ADD COLUMN email_verified_at TEXT")
 
     @staticmethod
     def _ensure_guardian_columns(connection: sqlite3.Connection) -> None:
@@ -442,6 +487,93 @@ class UsersStore:
             connection.execute("DELETE FROM password_resets WHERE token_hash = ?", (token_hash,))
         return row["user_id"]
 
+    # ----------------------------------------------------------------
+    # Verificacion del correo
+    #
+    # NADA DE ESTO BLOQUEA AL ESTUDIANTE, igual que el expediente del
+    # acudiente. La cuenta funciona entera desde el primer minuto, este el
+    # correo verificado o no. Dejar a un chaval de 15 años fuera de su test
+    # vocacional porque el filtro del colegio se comio un mensaje no protege
+    # a nadie de nada.
+    #
+    # Lo que esto da es una direccion en la que se puede confiar: hace falta
+    # antes de cobrarle a alguien, antes de mandar un recibo y antes de dejar
+    # que un correo mal tecleado se convierta en una cuenta irrecuperable.
+    # ----------------------------------------------------------------
+
+    def create_email_verification(self, user_id: int) -> str:
+        """Un enlace nuevo invalida los anteriores de esa cuenta.
+
+        Se limpian de paso los caducados de todo el mundo: esta tabla solo
+        crece, y sin esto un reenvio cada tanto la deja llena de tokens que
+        ya no valen para nada.
+        """
+        token = secrets.token_urlsafe(32)
+        expires_at = (utc_now() + EMAIL_VERIFICATION_LIFETIME).isoformat()
+        with self.connect() as connection:
+            connection.execute(
+                "DELETE FROM email_verifications WHERE expires_at < ?", (utc_now_iso(),))
+            connection.execute(
+                "DELETE FROM email_verifications WHERE user_id = ?", (user_id,))
+            connection.execute(
+                "INSERT INTO email_verifications (token_hash, user_id, expires_at) "
+                "VALUES (?, ?, ?)",
+                (hash_token(token), user_id, expires_at),
+            )
+        return token
+
+    def consume_email_verification(self, token: str) -> tuple[str, Optional[int]]:
+        """Valida el enlace y marca el correo como verificado.
+
+        Devuelve (estado, user_id) con cuatro desenlaces distintos en vez de
+        un booleano, por la misma razon que claim_test_result: pulsar el
+        enlace dos veces es lo NORMAL - el correo sigue en la bandeja, se
+        abre desde el movil despues de haberlo abierto en el portatil - y
+        responder "enlace invalido" a alguien que si esta verificado es
+        mentirle sobre el estado de su propia cuenta.
+
+            verificado  - valia, y acaba de quedar verificado
+            ya_estaba   - el token es suyo y su correo ya constaba verificado
+            caducado    - existio, pero pasaron los 7 dias
+            invalido    - no existe
+
+        `ya_estaba` se trata como exito arriba. `caducado` se distingue de
+        `invalido` porque llevan a mensajes distintos: uno ofrece reenviar,
+        el otro no tiene nada que ofrecer.
+        """
+        token_hash = hash_token(token)
+        with self.connect() as connection:
+            row = connection.execute(
+                "SELECT user_id, expires_at, used_at FROM email_verifications "
+                "WHERE token_hash = ?",
+                (token_hash,),
+            ).fetchone()
+            if row is None:
+                return ("invalido", None)
+
+            user_id = row["user_id"]
+            ya = connection.execute(
+                "SELECT email_verified_at FROM users WHERE id = ?", (user_id,)
+            ).fetchone()
+            if ya is not None and ya["email_verified_at"] is not None:
+                return ("ya_estaba", user_id)
+
+            # El vencimiento se comprueba DESPUES de mirar si ya estaba
+            # verificado: a quien ya lo esta no se le dice que su enlace
+            # caduco, porque no le sirvio de nada saberlo.
+            if row["expires_at"] < utc_now_iso():
+                return ("caducado", user_id)
+
+            ahora = utc_now_iso()
+            connection.execute(
+                "UPDATE users SET email_verified_at = ? WHERE id = ?", (ahora, user_id))
+            connection.execute(
+                "UPDATE email_verifications SET used_at = ? WHERE token_hash = ?",
+                (ahora, token_hash),
+            )
+            connection.commit()
+        return ("verificado", user_id)
+
     def set_password(self, user_id: int, new_password: str) -> None:
         salt = secrets.token_bytes(16)
         password_hash = hash_password(new_password, salt)
@@ -474,6 +606,10 @@ class UsersStore:
             # esto no habria forma de corregir un correo mal tecleado.
             "is_minor": bool(row["is_minor"]),
             "guardian_email": row["guardian_email"],
+            # El estudiante tiene que poder ver que su correo esta sin
+            # verificar, o no hay forma de que sepa que le toca hacer algo.
+            "email_verified": row["email_verified_at"] is not None,
+            "email_verified_at": row["email_verified_at"],
         }
 
     # ----------------------------------------------------------------
@@ -777,7 +913,8 @@ class UsersStore:
         with self.connect() as connection:
             self._scrub_result_owner(connection, user_id)
             connection.execute("UPDATE test_results SET user_id = NULL WHERE user_id = ?", (user_id,))
-            for tabla in ("sessions", "password_resets", "passport_profiles",
+            for tabla in ("sessions", "password_resets", "email_verifications",
+                          "passport_profiles",
                           "passport_events", "passport_stamps"):
                 connection.execute(f"DELETE FROM {tabla} WHERE user_id = ?", (user_id,))
             connection.execute("DELETE FROM users WHERE id = ?", (user_id,))

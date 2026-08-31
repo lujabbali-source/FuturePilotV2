@@ -63,7 +63,9 @@ def _reset_rate_limiters():
     test que dispara el limite (a proposito, para probarlo) dejaria
     "envenenados" con 429 a todos los tests que corran despues."""
     for limiter in (fp_app.login_rate_limiter, fp_app.register_rate_limiter,
-                    fp_app.password_reset_rate_limiter, fp_app.consent_rate_limiter):
+                    fp_app.password_reset_rate_limiter, fp_app.consent_rate_limiter,
+                    fp_app.verify_email_rate_limiter,
+                    fp_app.resend_verification_rate_limiter):
         limiter._hits.clear()
     yield
 

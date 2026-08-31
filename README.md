@@ -67,7 +67,7 @@ desarrollo. Las que importan:
 | `ADMIN_EMAIL` | Email de la **única** cuenta con acceso a `/admin`. Reclamarla requiere el token de primer arranque (ver despliegue). Vacío = nadie tiene acceso |
 | `ADMIN_SETUP_TOKEN` | Fija el token de reclamación en vez de dejar que el servidor lo genere. Solo para despliegues automatizados |
 | `CORS_ORIGINS` | Orígenes extra permitidos, separados por coma. El sitio servido por este mismo backend no lo necesita (mismo origen) |
-| `SMTP_*` | Envío real del correo de recuperación de contraseña. Sin configurar, el link se imprime en la consola del servidor |
+| `SMTP_*` | Envío real de los correos: recuperación de contraseña, verificación de la dirección al registrarse y aviso al acudiente. Sin configurar, el contenido se imprime en la consola del servidor |
 | `USERS_DB_PATH` | Ruta de la base SQLite. Útil para apuntar a un disco persistente en producción |
 | `FUTUREPILOT_MEMORY_DIR` | Dónde vive la memoria del AI Mentor por estudiante |
 

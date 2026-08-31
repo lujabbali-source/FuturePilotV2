@@ -27,6 +27,7 @@ export default defineConfig({
         assessment: resolve(import.meta.dirname, 'assessment.html'),
         login: resolve(import.meta.dirname, 'login.html'),
         'reset-password': resolve(import.meta.dirname, 'reset-password.html'),
+        'verify-email': resolve(import.meta.dirname, 'verify-email.html'),
         passport: resolve(import.meta.dirname, 'passport.html'),
         journey: resolve(import.meta.dirname, 'journey.html'),
         flightplan: resolve(import.meta.dirname, 'flightplan.html'),
