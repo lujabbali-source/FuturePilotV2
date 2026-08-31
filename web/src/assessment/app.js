@@ -13,7 +13,7 @@ import * as questionTypes from "./questionTypes.js";
 import { claimPendingAndCelebrate, pendingResultId } from "../shared/resultClaim.js";
 import { sendAssessmentToPythonAI } from "../shared/apiConnector.js";
 import { t, currentLanguage, onLanguageChange } from "../shared/i18next.js";
-import { rebarajar } from "./shuffle.js";
+import { rebarajar, ordenDeOpciones } from "./shuffle.js";
 import { senalQueCuenta } from "./multiSignal.js";
 import { renderDashboard } from "./dashboard.js";
 import "./dashboard.css";
@@ -204,7 +204,17 @@ function bindQuestionEvents(format) {
     app.querySelector('[data-action="next"]').disabled = false;
   });
   app.querySelectorAll("[data-rank-move]").forEach((button) => button.addEventListener("click", () => {
-    const order = [...(currentAnswer().rankOrder || questions[currentQuestion].answers.map((_, index) => index))];
+    // El orden de partida tiene que ser EL MISMO que se pinto. renderRanking
+    // cae en `ordenDeOpciones` (el barajado) cuando aun no hay respuesta, y
+    // aqui se caia en el orden canonico [0,1,2,3]. Con los dos desalineados,
+    // "subir" y "bajar" reordenaban una lista que el estudiante no estaba
+    // viendo: la flecha de la fila de arriba no hacia nada, la de otra fila
+    // tampoco, y el indice que se guardaba (order[0]) no era el que habia
+    // quedado primero en pantalla. ordenDeOpciones es determinista para la
+    // misma semilla y pregunta, asi que llamarla aqui devuelve exactamente
+    // la permutacion que se pinto.
+    const order = [...(currentAnswer().rankOrder
+      || ordenDeOpciones(questions[currentQuestion], currentQuestion, "ranking"))];
     const from = order.indexOf(Number(button.dataset.rankIndex));
     const to = button.dataset.rankMove === "up" ? from - 1 : from + 1;
     if (to < 0 || to >= order.length) return;
