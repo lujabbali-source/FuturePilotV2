@@ -531,6 +531,83 @@ def test_ningun_eje_es_fortaleza_y_brecha_a_la_vez():
         assert len(fortalezas) <= 3 and len(brechas) <= 3
 
 
+def test_un_eje_en_cero_nunca_es_una_fortaleza():
+    """Segundo intento de esta regla, y el error que introdujo.
+
+    Al medir centrado en la media - igual que el porcentaje - un eje donde
+    el estudiante saca CERO salia como fortaleza si la carrera pedia poco de
+    ese eje. Un perfil puramente tecnico recibia "fortalezas: tecnica,
+    trabajar con gente, liderazgo", con un cero detras de las dos ultimas.
+    """
+    from ai_engine import fortalezas_y_brechas
+
+    vector = dict.fromkeys(CLUSTERS, 0.0)
+    vector["TECHNICAL"] = 10.0
+    # Una carrera que pide poco de lo social: es la que disparaba el fallo.
+    requisitos = {
+        "ANALYTICAL": 8.0, "CREATIVE": 6.0, "SOCIAL": 3.0, "LEADERSHIP": 3.5,
+        "TECHNICAL": 9.5, "SCIENTIFIC": 5.0, "PRACTICAL": 6.0, "ENTREPRENEURIAL": 4.0,
+    }
+    fortalezas, _ = fortalezas_y_brechas(vector, requisitos)
+
+    assert fortalezas == ["TECHNICAL"], fortalezas
+    for c in fortalezas:
+        assert vector[c] > 0, f"{c} sale como fortaleza con un {vector[c]}"
+
+
+def test_dos_ejes_con_la_misma_nota_no_caen_en_listas_opuestas():
+    """Salian ejes con identica puntuacion, unos como fortaleza y otros como
+    carencia. Da igual cual sea la regla: si dos ejes valen lo mismo para el
+    estudiante, no pueden contarse cosas opuestas sobre ellos."""
+    from ai_engine import fortalezas_y_brechas
+    import random
+
+    random.seed(20260831)
+    for _ in range(300):
+        vector = {c: round(random.uniform(0, 10), 1) for c in CLUSTERS}
+        requisitos = {c: round(random.uniform(3, 9.5), 1) for c in CLUSTERS}
+        fortalezas, brechas = fortalezas_y_brechas(vector, requisitos)
+        for f in fortalezas:
+            for b in brechas:
+                assert vector[f] != vector[b], (
+                    f"{f} y {b} valen {vector[f]} los dos, y uno es fortaleza "
+                    f"y el otro carencia"
+                )
+
+
+def test_el_perfil_que_sale_corresponde_a_lo_que_se_respondio(client):
+    """Coherencia de punta a punta, que es lo que ve el estudiante.
+
+    Responde el test ocho veces, cada una como una persona maximamente de un
+    perfil (la mejor opcion en las preguntas de ese eje, la peor en el
+    resto), y exige que el eje dominante del resultado sea justo ese. Sin
+    esto, el motor podria estar bien por dentro y aun asi devolver el perfil
+    equivocado por un desajuste de indices entre la pregunta y su cluster.
+    """
+    preguntas = client.get("/api/v1/questions").json()["questions"]
+    cluster_de = [q["answers"][0]["cluster"] for q in preguntas]
+
+    for objetivo in CLUSTERS:
+        # indice 0 = 4 puntos; indice 3 = 0 puntos (las 50 puntuan igual)
+        respuestas = [
+            {"question_index": i, "answer_index": 0 if c == objetivo else 3}
+            for i, c in enumerate(cluster_de)
+        ]
+        datos = client.post(
+            "/api/v1/assess",
+            json={"anon_id": f"coherencia-{objetivo.lower()}", "answers": respuestas},
+        ).json()["data"]
+
+        vector = datos["user_vector"]
+        dominante = max(vector, key=vector.get)
+        assert dominante == objetivo, (
+            f"respondi como {objetivo} y el perfil dominante salio {dominante}"
+        )
+        # Y nada de lo que se afirma sobre el puede tener un cero detras.
+        for fortaleza in datos["recommended_careers"][0]["strengths"]:
+            assert fortaleza, "fortaleza vacia"
+
+
 def test_la_regla_de_fortalezas_vive_en_un_solo_sitio():
     """`_refresh_match_details` en app.py tenia su propia copia de esta
     regla, y como corre al LEER un resultado guardado, su version pisaba la

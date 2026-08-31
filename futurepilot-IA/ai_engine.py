@@ -395,19 +395,32 @@ def fortalezas_y_brechas(vector, requisitos, clusters=None):
     misma regla siempre acaban divergiendo; la unica forma de que no vuelva
     a pasar es que solo haya una.
 
-    LAS FORTALEZAS SE MIDEN EN LA MISMA ESCALA QUE EL PORCENTAJE.
+    UNA FORTALEZA ES ALGO QUE EL ESTUDIANTE TIENE Y LA CARRERA PIDE.
 
-    El porcentaje sale de profile_similarity, que centra los dos vectores en
-    su media: compara la FORMA del perfil, no su altura. Las fortalezas se
-    calculaban con el nivel crudo (vector[c] >= requisitos[c]), que es otra
-    vara de medir, y las dos se contradecian en pantalla. Un estudiante por
-    debajo del requisito en los ocho ejes pero con la forma correcta veia
-    "95.8% de compatibilidad" y NINGUNA fortaleza: pasaba en el 11% de los
-    perfiles, y en el 7% con un match de 85% o mas.
+    Las dos mitades de esa frase hacen falta, y cada una arregla un error
+    distinto que este codigo ya cometio:
 
-    Centrando tambien aqui, una fortaleza significa lo que el porcentaje ya
-    dice: "en este eje destacas MAS de lo que esta carrera pide, comparado
-    con el resto de tu propio perfil".
+    1. Se midio en nivel crudo (vector[c] >= requisitos[c]). Eso contradecia
+       al porcentaje, que sale de profile_similarity y compara la FORMA del
+       perfil: un estudiante por debajo del requisito en los ocho ejes pero
+       con la forma correcta veia "95.8% de compatibilidad" y NINGUNA
+       fortaleza. Pasaba en el 11% de los perfiles.
+
+    2. Se midio entonces centrado en la media, igual que el porcentaje. Peor:
+       un eje donde el estudiante saca CERO salia como fortaleza si la
+       carrera pedia poco de ese eje. Un perfil puramente tecnico (TECHNICAL
+       10, el resto 0) recibia "fortalezas: tecnica, trabajar con gente,
+       liderazgo" - dos de ellas con un cero detras. Y ejes con la MISMA nota
+       salian unos como fortaleza y otros como carencia.
+
+    La regla que queda no usa ninguna de las dos escalas anteriores, sino las
+    dos condiciones que el estudiante espera al leer la palabra:
+
+        - esta arriba en SU perfil (>= su media, y nunca un cero), y
+        - la carrera lo pide de verdad (>= la media de lo que pide).
+
+    Se ordenan por el nivel del estudiante, no por la diferencia: la pantalla
+    responde "de lo que esta carrera necesita, esto es lo que mejor tienes".
     """
     clusters = list(clusters if clusters is not None else vector.keys())
     if not clusters:
@@ -418,16 +431,18 @@ def fortalezas_y_brechas(vector, requisitos, clusters=None):
     media_usuario = sum(valores_usuario) / len(valores_usuario)
     media_carrera = sum(valores_carrera) / len(valores_carrera)
 
-    ventajas = sorted(
-        ((c, (vector[c] - media_usuario) - (requisitos.get(c, 5.0) - media_carrera))
-         for c in clusters),
-        key=lambda par: par[1], reverse=True,
-    )
-    # Solo las 3 mayores, y solo si de verdad son ventaja. Antes se devolvia
-    # TODO cluster que llegara al requisito: para una carrera poco exigente
-    # eso son los 8, y la pantalla listaba los ocho como "fortalezas". Decir
-    # que destacas en todo es no decir nada.
-    fortalezas = [c for c, ventaja in ventajas[:3] if ventaja > 0]
+    candidatas = [
+        c for c in clusters
+        # Un cero no es una fortaleza por mucho que la carrera pida poco.
+        if vector[c] > 0
+        and vector[c] >= media_usuario
+        and requisitos.get(c, 5.0) >= media_carrera
+    ]
+    # Solo las 3 mayores. Antes se devolvia TODO cluster que llegara al
+    # requisito: para una carrera poco exigente eso son los 8, y la pantalla
+    # listaba los ocho como "fortalezas". Decir que destacas en todo es no
+    # decir nada.
+    fortalezas = sorted(candidatas, key=lambda c: vector[c], reverse=True)[:3]
 
     # Las brechas SI se quedan en nivel absoluto, a proposito: de ellas sale
     # el roadmap, y un roadmap se construye sobre lo que te falta de verdad
