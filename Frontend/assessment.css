@@ -230,8 +230,15 @@ h1 span, .results-intro h1 span, .unlock-screen h1 span { color: var(--fp-green)
 .slider-value { display: flex; justify-content: space-between; margin-bottom: 30px; color: #92a4b4; font-size: .8rem; }
 .slider-value strong { color: var(--fp-green); }
 .intensity-slider { width: 100%; accent-color: var(--fp-green); cursor: pointer; }
-.slider-labels { display: flex; justify-content: space-between; margin-top: 12px; color: #627487; font-family: 'DM Mono', monospace; font-size: .63rem; }
+/* Los puntos van pegados a la barra (por eso el margen negativo: suben a
+   montarse sobre ella) y las etiquetas debajo de los puntos. Estaban al
+   reves en el DOM, asi que ese -7px no subia los puntos a la barra: los
+   subia encima del texto, y los cuatro circulos tapaban "Nada", "Un poco",
+   "Bastante" y "Muchisimo" con 7px de solape en las 11 preguntas de este
+   formato. El orden del DOM es lo que arregla esto; aqui solo queda la
+   separacion. */
 .slider-track-dots { display: flex; justify-content: space-between; margin-top: -7px; pointer-events: none; }
+.slider-labels { display: flex; justify-content: space-between; margin-top: 10px; color: #627487; font-family: 'DM Mono', monospace; font-size: .63rem; }
 .slider-dot { width: 14px; height: 14px; padding: 0; border: 2px solid #536579; border-radius: 50%; background: var(--fp-black); pointer-events: auto; transition: .25s ease; }
 .slider-dot.is-active { border-color: var(--fp-green); background: var(--fp-green); box-shadow: 0 0 16px var(--fp-green); }
 .ranking-list { display: grid; gap: 9px; max-width: 680px; }

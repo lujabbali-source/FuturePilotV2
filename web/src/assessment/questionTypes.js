@@ -63,8 +63,8 @@ function renderSlider(question, state, orden) {
   return `<div class="slider-question">
     <div class="slider-value"><span>${t("slider.prompt")}</span><strong id="slider-value">${labels[value]}</strong></div>
     <input class="intensity-slider" type="range" min="0" max="${orden.length - 1}" step="1" value="${value}" data-slider="true" data-slider-map="${orden.join(",")}" aria-label="${t("slider.aria")}">
-    <div class="slider-labels">${labels.map((label) => `<span>${label}</span>`).join("")}</div>
     <div class="slider-track-dots">${labels.map((label, posicion) => `<button type="button" class="slider-dot ${value === posicion ? "is-active" : ""}" data-slider-value="${orden[posicion]}" data-slider-pos="${posicion}" aria-label="${label}"></button>`).join("")}</div>
+    <div class="slider-labels">${labels.map((label) => `<span>${label}</span>`).join("")}</div>
   </div>`;
 }
 
