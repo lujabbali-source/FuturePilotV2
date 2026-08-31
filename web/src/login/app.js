@@ -83,6 +83,7 @@ function main() {
   const switchPrompt = document.getElementById("switchPrompt");
   const switchAction = document.getElementById("switchAction");
   const loginSwitchRow = switchAction.closest(".login-switch");
+  const adminAccessRow = document.getElementById("adminAccessRow");
 
   // /assessment redirige aca (con ?mode=register o ?mode=login) cuando el
   // usuario viene de "desbloquear" sus resultados tras el test - este es
@@ -155,6 +156,11 @@ function main() {
     loginOptions.style.display = isForgot || mode === "register" ? "none" : "flex";
     backToLoginLink.hidden = !isForgot;
     loginSwitchRow.hidden = isForgot;
+
+    // El enlace al panel de admin solo tiene sentido en el modo de
+    // entrar. Al crear cuenta no sirve (el asiento de admin se reclama
+    // con el token, no desde ahi) y al recuperar la contrasena estorba.
+    adminAccessRow.hidden = mode !== "login";
 
     if (!isForgot) {
       switchPrompt.textContent = copy.prompt;
