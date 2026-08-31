@@ -1,6 +1,8 @@
 """Autorizacion del panel de administrador y sus herramientas (System
 Health, reparaciones, audit log), y lo que se retiro de el."""
 
+import os
+
 import pytest
 
 ADMIN_EMAIL = "admin@test.local"  # debe coincidir con conftest.py
@@ -350,3 +352,81 @@ def test_every_health_check_has_a_label_in_the_panel(client, admin_headers):
         f"checks que el panel nunca muestra: {sorted(invisibles)}. "
         "Anade su etiqueta en LABELS (web/src/admin/system-health.js)."
     )
+
+
+# --------------------------------------------------------------------------
+# ADMIN_PASSWORD: la cuenta de admin sin pasar por el token de consola.
+# --------------------------------------------------------------------------
+@pytest.fixture()
+def seed_env(app_module, monkeypatch):
+    """Fija ADMIN_EMAIL/ADMIN_PASSWORD como si vinieran del entorno.
+
+    Se parchean sobre el modulo y no sobre os.environ porque app.py los
+    resuelve una sola vez al importarse (ver conftest): a estas alturas
+    tocar el entorno ya no cambiaria nada.
+    """
+    def _apply(email: str, password: str) -> None:
+        monkeypatch.setattr(app_module, "ADMIN_EMAIL", email)
+        monkeypatch.setattr(app_module, "ADMIN_PASSWORD", password)
+
+    yield _apply
+
+    # sync_admin_email deja is_admin en UNA sola cuenta, asi que sin esto el
+    # email de admin de la suite se quedaria degradado para los tests que
+    # corran despues.
+    app_module.users_store.sync_admin_email(ADMIN_EMAIL)
+
+
+def test_seed_does_nothing_without_a_password(app_module, seed_env):
+    """Sin ADMIN_PASSWORD el comportamiento es el de siempre: solo token."""
+    seed_env("nadie@test.local", "")
+    assert app_module.seed_admin_account() == "sin-configurar"
+    assert app_module.users_store.find_user_id_by_email("nadie@test.local") is None
+
+
+def test_seed_rejects_a_password_weaker_than_a_students(app_module, seed_env):
+    """8 caracteres es el minimo que RegisterRequest le exige a un
+    estudiante. El admin no puede entrar por un liston mas bajo."""
+    seed_env("corta@test.local", "1234567")
+    assert app_module.seed_admin_account() == "invalida"
+    assert app_module.users_store.find_user_id_by_email("corta@test.local") is None
+
+
+def test_seed_creates_the_admin_account_ready_to_log_in(client, app_module, seed_env):
+    email = f"seed-{os.urandom(4).hex()}@test.local"
+    seed_env(email, "SeedPass123")
+
+    assert app_module.seed_admin_account() == "creada"
+
+    login = client.post("/api/v1/auth/login", json={"email": email, "password": "SeedPass123"})
+    assert login.status_code == 200
+    assert login.json()["user"]["is_admin"] is True
+
+
+def test_seed_never_overwrites_an_existing_password(client, app_module, seed_env):
+    """Si el sembrado pisara la contraseña, cambiarla desde la app duraria
+    hasta el siguiente reinicio - y una variable olvidada en el panel del
+    PaaS revertiria en silencio una contraseña que se cambio por filtrada."""
+    email = f"seed-{os.urandom(4).hex()}@test.local"
+    seed_env(email, "LaPrimera123")
+    assert app_module.seed_admin_account() == "creada"
+
+    seed_env(email, "OtraDistinta456")
+    assert app_module.seed_admin_account() == "ya-existia"
+
+    rechazada = client.post("/api/v1/auth/login", json={"email": email, "password": "OtraDistinta456"})
+    assert rechazada.status_code == 401
+    sigue_valiendo = client.post("/api/v1/auth/login", json={"email": email, "password": "LaPrimera123"})
+    assert sigue_valiendo.status_code == 200
+
+
+def test_a_short_admin_password_is_reported_as_a_config_problem(app_module, seed_env, monkeypatch):
+    """El sembrado se calla cuando la cuenta ya existia, asi que una
+    ADMIN_PASSWORD corta pasaria inadvertida hasta el dia que la base se
+    pierda y toque crearla de verdad."""
+    monkeypatch.setattr(app_module, "IS_PRODUCTION", True)
+    seed_env(ADMIN_EMAIL, "corta")
+
+    problemas = app_module.check_production_config()
+
+    assert any("ADMIN_PASSWORD" in p for p in problemas), problemas

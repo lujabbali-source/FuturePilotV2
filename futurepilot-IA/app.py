@@ -83,6 +83,13 @@ FRONTEND_DIR = REPO_ROOT / "Frontend"
 # admin. Ver .env.example para instrucciones.
 ADMIN_EMAIL = (os.environ.get("ADMIN_EMAIL") or "").strip()
 
+# Contrasena con la que se crea la cuenta de administrador si todavia no
+# existe (ver seed_admin_account). Existe por un motivo muy concreto: en un
+# contenedor sin disco persistente la base se pierde en cada reinicio, y sin
+# esto habria que reclamar el asiento con el token de consola despues de
+# CADA despliegue. Vacia = comportamiento de siempre, solo token.
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD") or ""
+
 # --------------------------------------------------------------------------
 # Entorno de ejecucion. Por defecto "development" a proposito: un despliegue
 # real tiene que declararse explicitamente, no heredarse por descuido. Lo
@@ -358,6 +365,53 @@ def clear_admin_setup_token() -> None:
     """Se llama cuando la cuenta queda reclamada: el token ya no sirve para
     nada y no tiene por que seguir en disco."""
     delete_json(ADMIN_SETUP_PATH)
+
+
+# La alternativa al token, para despliegues cuya base no sobrevive al
+# reinicio: si ADMIN_EMAIL y ADMIN_PASSWORD estan puestos y el asiento esta
+# libre, la cuenta se crea sola al arrancar.
+#
+# Solo siembra cuando NO existe. Nunca pisa la contrasena de una cuenta que
+# ya esta ahi: si lo hiciera, cambiarla desde la app duraria hasta el
+# siguiente reinicio, y una variable de entorno olvidada en el panel podria
+# revertir en silencio una contrasena que se cambio justo porque se filtro.
+#
+# El precio de usar esto es real y conviene tenerlo presente: la contrasena
+# del admin queda en texto plano en la configuracion del entorno. Con disco
+# persistente no hace falta - se reclama el asiento una vez y ya.
+def seed_admin_account() -> str:
+    """Crea la cuenta admin desde el entorno. Devuelve que paso, para los tests.
+
+    Nunca imprime ni registra la contrasena.
+    """
+    if not ADMIN_EMAIL or not ADMIN_PASSWORD:
+        return "sin-configurar"
+
+    # El mismo minimo que exige RegisterRequest. Sembrar una contrasena mas
+    # debil que la que se le pide a un estudiante no tendria ningun sentido.
+    if len(ADMIN_PASSWORD) < 8:
+        print(
+            "[FuturePilot] ADMIN_PASSWORD tiene menos de 8 caracteres: "
+            "la cuenta de administrador NO se creo."
+        )
+        return "invalida"
+
+    if admin_seat_is_claimed():
+        # Ni error ni aviso a gritos: es el caso normal en cada reinicio de
+        # un despliegue que si conserva su base.
+        return "ya-existia"
+
+    try:
+        users_store.register(ADMIN_EMAIL, ADMIN_PASSWORD)
+    except DuplicateEmailError:
+        # Otro proceso la creo entre la comprobacion y el insert.
+        return "ya-existia"
+
+    users_store.sync_admin_email(ADMIN_EMAIL)
+    # El asiento ya esta ocupado, asi que el token no tiene nada que reclamar.
+    clear_admin_setup_token()
+    print(f"[FuturePilot] Cuenta de administrador creada desde ADMIN_PASSWORD: {ADMIN_EMAIL}")
+    return "creada"
 
 
 # Bandera por pais para los sellos del Pasaporte - mismos ids que
@@ -2780,8 +2834,17 @@ def check_production_config() -> List[str]:
     elif not admin_seat_is_claimed():
         problems.append(
             f"La cuenta admin ({ADMIN_EMAIL}) todavia no existe. Reclamala en "
-            "/login con el token que aparece arriba, como primer paso del "
-            "despliegue."
+            "/login con el token que aparece arriba, o pon ADMIN_PASSWORD para "
+            "que se cree sola en cada arranque."
+        )
+
+    # Se comprueba aparte del sembrado porque el sembrado no dice nada cuando
+    # la cuenta ya existia: una ADMIN_PASSWORD corta se quedaria callada hasta
+    # el dia que la base se pierda y toque crearla de verdad.
+    if ADMIN_PASSWORD and len(ADMIN_PASSWORD) < 8:
+        problems.append(
+            "ADMIN_PASSWORD tiene menos de 8 caracteres: no sirve para crear "
+            "la cuenta de administrador."
         )
 
     if not mailer.is_configured():
@@ -2839,6 +2902,10 @@ def report_production_config() -> None:
     for problem in problems:
         print(f"  - {problem}")
 
+
+# Antes de informar: si esto crea la cuenta, el informe de abajo ya no tiene
+# que pedir que se reclame el asiento ni imprimir ningun token.
+seed_admin_account()
 
 report_production_config()
 

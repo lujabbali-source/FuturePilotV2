@@ -72,6 +72,13 @@ services:
       # repositorio.
       - key: ADMIN_EMAIL
         sync: false
+
+      # Solo hace falta mientras el plan sea free: sin disco, cada reinicio
+      # borra la cuenta de admin y habria que reclamarla con el token de
+      # consola cada vez. Al pasar a starter con disco, BORRA esta variable
+      # del panel - deja de ser necesaria y es una contraseña en texto plano.
+      - key: ADMIN_PASSWORD
+        sync: false
       - key: SMTP_HOST
         sync: false
       - key: SMTP_PORT
