@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { supportedLanguages } from "../i18n";
+import { defaultLanguage, supportedLanguages } from "../i18n";
 import "./LanguageSwitcher.css";
 
 const languageMeta = {
@@ -9,8 +9,8 @@ const languageMeta = {
 
 export default function LanguageSwitcher() {
   const { i18n, t } = useTranslation("common");
-  const currentLanguage = i18n.resolvedLanguage?.split("-")[0] || "en";
-  const current = languageMeta[currentLanguage] || languageMeta.en;
+  const currentLanguage = i18n.resolvedLanguage?.split("-")[0] || defaultLanguage;
+  const current = languageMeta[currentLanguage] || languageMeta[defaultLanguage];
 
   const handleChange = (event) => {
     void i18n.changeLanguage(event.target.value);
@@ -22,7 +22,7 @@ export default function LanguageSwitcher() {
       <span className="language-switcher__label">{t("language.label")}</span>
       <select
         aria-label={t("language.switchTo")}
-        value={supportedLanguages.includes(currentLanguage) ? currentLanguage : "en"}
+        value={supportedLanguages.includes(currentLanguage) ? currentLanguage : defaultLanguage}
         onChange={handleChange}
       >
         {supportedLanguages.map((language) => (

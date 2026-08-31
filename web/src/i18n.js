@@ -1,6 +1,11 @@
 import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
+import {
+  LANGUAGE_STORAGE_KEY,
+  defaultLanguage,
+  supportedLanguages,
+} from "./shared/language.js";
 import commonEn from "./locales/en/common.json";
 import testEn from "./locales/en/test.json";
 import globeEn from "./locales/en/globe.json";
@@ -20,8 +25,9 @@ import loginEs from "./locales/es/login.json";
 import resultsEs from "./locales/es/results.json";
 import siteEs from "./locales/es/site.json";
 
-export const supportedLanguages = ["en", "es"];
-export const defaultLanguage = "en";
+// Declarados en shared/language.js, no aqui: este modulo y el de las
+// paginas vanilla tenian cada uno su copia y ya habian divergido.
+export { supportedLanguages, defaultLanguage };
 
 const resources = {
   en: { common: commonEn, test: testEn, globe: globeEn, roadmap: roadmapEn, cities: citiesEn, login: loginEn, results: resultsEn, site: siteEn },
@@ -39,9 +45,15 @@ i18n
     load: "languageOnly",
     ns: ["common", "test", "globe", "roadmap", "cities", "login", "results", "site"],
     defaultNS: "common",
+    // Solo la eleccion guardada. `navigator` se quito a proposito: era lo
+    // unico que diferenciaba a este motor del de las paginas vanilla, que
+    // nunca lo miro, asi que con un Chrome en castellano el globo salia en
+    // castellano y la portada en ingles. Y para este publico el idioma del
+    // navegador es mala señal: en Colombia es muy comun tener el sistema en
+    // ingles y hablar castellano. Sin nada guardado manda defaultLanguage.
     detection: {
-      order: ["localStorage", "navigator"],
-      lookupLocalStorage: "futurepilotLanguage",
+      order: ["localStorage"],
+      lookupLocalStorage: LANGUAGE_STORAGE_KEY,
       caches: ["localStorage"],
     },
     interpolation: { escapeValue: false },

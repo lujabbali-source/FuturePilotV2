@@ -16,6 +16,13 @@
 
 import i18next from "i18next";
 
+import {
+  LANGUAGE_STORAGE_KEY,
+  defaultLanguage,
+  storedLanguage,
+  supportedLanguages,
+} from "./language.js";
+
 import commonEn from "../locales/en/common.json";
 import testEn from "../locales/en/test.json";
 import resultsEn from "../locales/en/results.json";
@@ -29,8 +36,11 @@ import siteEs from "../locales/es/site.json";
 import passportEs from "../locales/es/passport.json";
 import loginEs from "../locales/es/login.json";
 
-export const supportedLanguages = ["en", "es"];
-const STORAGE_KEY = "futurepilotLanguage";
+// La lista, el idioma por defecto y la clave de almacenamiento viven en
+// shared/language.js: los declaraban por separado este modulo y el del
+// globo, y ya habian divergido.
+export { supportedLanguages };
+const STORAGE_KEY = LANGUAGE_STORAGE_KEY;
 
 const instance = i18next.createInstance();
 
@@ -41,8 +51,11 @@ instance.init({
     es: { common: commonEs, test: testEs, results: resultsEs, site: siteEs,
           passport: passportEs, login: loginEs },
   },
-  lng: localStorage.getItem(STORAGE_KEY) || undefined,
-  fallbackLng: "en",
+  // Sin eleccion guardada, castellano. Antes se dejaba en undefined y
+  // mandaba fallbackLng, que era "en": la portada abria en ingles para
+  // preguntarle a un estudiante colombiano que quiere estudiar.
+  lng: storedLanguage() || defaultLanguage,
+  fallbackLng: defaultLanguage,
   supportedLngs: supportedLanguages,
   nonExplicitSupportedLngs: true,
   load: "languageOnly",
@@ -64,8 +77,8 @@ export const t = instance.t.bind(instance);
 /** Idioma activo, normalizado a dos letras ("es-CO" -> "es"). Es lo que
  *  hay que mandarle a la API en ?lang=. */
 export function currentLanguage() {
-  const language = (instance.language || "en").slice(0, 2);
-  return supportedLanguages.includes(language) ? language : "en";
+  const language = (instance.language || defaultLanguage).slice(0, 2);
+  return supportedLanguages.includes(language) ? language : defaultLanguage;
 }
 
 /** Traduce el HTML estatico de la pagina.
@@ -107,7 +120,12 @@ export function applyTranslations(root = document) {
 /** Cambia el idioma, lo recuerda y repinta el markup estatico. */
 export async function setLanguage(language) {
   if (!supportedLanguages.includes(language)) return;
-  localStorage.setItem(STORAGE_KEY, language);
+  try {
+    localStorage.setItem(STORAGE_KEY, language);
+  } catch {
+    // Almacenamiento bloqueado: el idioma cambia igual, solo que no se
+    // recuerda al recargar. Peor seria que el selector no hiciera nada.
+  }
   await instance.changeLanguage(language);
   applyTranslations();
 }
