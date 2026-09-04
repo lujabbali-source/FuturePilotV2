@@ -404,3 +404,33 @@ h1 span, .results-intro h1 span, .unlock-screen h1 span { color: var(--fp-green)
     justify-content: flex-end;
     gap: 16px;
 }
+
+/* ==========================================================================
+   Repaso antes de calcular
+   ==========================================================================
+   Solo aparece si quedaron preguntas sin responder. Existe porque saltar era
+   gratis y no se notaba hasta el final: se podia pulsar "Aun no lo se" en
+   treinta y nueve de cincuenta y recibir igualmente un radar completo con sus
+   ocho ejes, calculado con once respuestas. El aviso de fiabilidad llegaba
+   despues, cuando arreglarlo ya era repetir el test entero. */
+.review-screen { display:flex; flex-direction:column; align-items:center; width:min(620px, calc(100% - 40px)); min-height:100vh; margin:auto; padding:11vh 0 40px; text-align:center; }
+.review-screen h1 { margin:20px 0 26px; color:#fff; font-size:clamp(2.1rem, 5.5vw, 3.2rem); line-height:1.08; letter-spacing:-.05em; }
+
+/* El numero grande, no un parrafo. "Saltaste algunas" no significa nada;
+   "39" si, y por eso es lo primero que se lee. */
+.review-count { display:flex; flex-direction:column; align-items:center; gap:4px; padding:22px 34px; border:1px solid rgba(255,255,255,.12); border-radius:18px; background:rgba(255,255,255,.04); }
+.review-count__big { margin:0; font-size:3.4rem; font-weight:800; line-height:1; letter-spacing:-.04em; }
+.review-count__label { margin:0; color:#aebdcc; font-size:.92rem; }
+
+/* Ambar y no rojo: saltar no es un error del estudiante. Es una decision
+   suya con una consecuencia que tiene derecho a conocer antes de tomarla. */
+.review-count--ok .review-count__big { color:var(--fp-green); }
+.review-count--low { border-color:rgba(255,190,90,.32); background:rgba(255,190,90,.07); }
+.review-count--low .review-count__big { color:#FFBE5A; }
+
+.review-copy { max-width:520px; margin:24px 0 0; color:#aebdcc; font-size:1rem; line-height:1.7; }
+.review-warning { max-width:520px; margin:16px 0 0; padding:14px 16px; border-left:3px solid rgba(255,190,90,.7); border-radius:10px; background:rgba(255,190,90,.06); color:#fff; font-size:.94rem; line-height:1.6; text-align:left; }
+.review-actions { display:flex; flex-direction:column; align-items:center; gap:14px; margin-top:32px; }
+
+/* El recuento de saltadas, junto al boton que las produce. */
+.skip-count { display:block; margin-top:6px; color:#FFBE5A; font-family:'DM Mono', monospace; font-size:.72rem; letter-spacing:.04em; }

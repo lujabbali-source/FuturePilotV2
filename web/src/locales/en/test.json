@@ -21,7 +21,9 @@
     "next": "Next",
     "finish": "See my profile",
     "skip": "Not sure yet",
-    "autosaved": "Saved automatically"
+    "autosaved": "Saved automatically",
+    "skipped_one": "{{count}} skipped",
+    "skipped_other": "{{count}} skipped"
   },
   "progress": {
     "eyebrow": "Your journey",
@@ -436,5 +438,16 @@
       "cta": "Unlock my report",
       "soon": "Online payment is not available yet."
     }
+  },
+  "review": {
+    "eyebrow": "BEFORE WE WORK OUT YOUR PROFILE",
+    "title": "Some questions are",
+    "titleAccent": "still unanswered.",
+    "skipped_one": "question skipped out of {{total}}",
+    "skipped_other": "questions skipped out of {{total}}",
+    "body": "Your profile would be worked out from only {{answered}} of {{total}} answers. Skipped questions do not count as zero: they simply are not measured, so the axes that lost the most questions will swing on a single answer.",
+    "warning": "With less than half answered, the result stops telling one career apart from another. It is worth going back.",
+    "answer": "Answer the ones left",
+    "continue": "Work it out anyway"
   }
 }

@@ -21,7 +21,9 @@
     "next": "Siguiente",
     "finish": "Ver mi perfil",
     "skip": "Aún no lo sé",
-    "autosaved": "Guardado automáticamente"
+    "autosaved": "Guardado automáticamente",
+    "skipped_one": "{{count}} saltada",
+    "skipped_other": "{{count}} saltadas"
   },
   "progress": {
     "eyebrow": "Tu recorrido",
@@ -436,5 +438,16 @@
       "cta": "Desbloquear mi informe",
       "soon": "El pago en línea todavía no está disponible."
     }
+  },
+  "review": {
+    "eyebrow": "ANTES DE CALCULAR TU PERFIL",
+    "title": "Quedaron preguntas",
+    "titleAccent": "sin responder.",
+    "skipped_one": "pregunta saltada de {{total}}",
+    "skipped_other": "preguntas saltadas de {{total}}",
+    "body": "Tu perfil se calcularía solo con {{answered}} de {{total}} respuestas. Las saltadas no cuentan como cero: sencillamente no se miden, así que los ejes que perdieron más preguntas se moverán entero con una sola respuesta.",
+    "warning": "Con menos de la mitad respondida, el resultado deja de distinguir bien entre unas carreras y otras. Merece la pena volver.",
+    "answer": "Responder las que faltan",
+    "continue": "Calcular así de todos modos"
   }
 }

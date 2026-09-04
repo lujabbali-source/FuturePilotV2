@@ -112,6 +112,7 @@ function applyFills() {
 function render() {
   if (screen === "welcome") return renderWelcome();
   if (screen === "question") return renderQuestion();
+  if (screen === "review") return renderReview();
   if (screen === "analysis") return renderAnalysis();
   if (screen === "partial") return renderPartialResults();
   if (screen === "unlock") return renderUnlock();
@@ -145,6 +146,9 @@ function renderQuestion() {
   const perPhase = Math.max(1, Math.ceil(questionCount() / PHASE_COUNT));
   const phaseIndex = Math.min(Math.floor(currentQuestion / perPhase), PHASE_COUNT - 1);
   const phase = phaseName(phaseIndex);
+  // Solo las que ya quedaron atras: contar las de mas adelante seria
+  // contar preguntas que todavia no ha visto nadie.
+  const saltadasHastaAqui = saltadas().filter((i) => i < currentQuestion).length;
   const phaseTrack = Array.from({ length: PHASE_COUNT }, (_, i) => phaseName(i)).map((name, index) => `<span class="phase-dot ${index < phaseIndex ? "is-done" : ""} ${index === phaseIndex ? "is-current" : ""}" title="${escapeHtml(name)}"></span>`).join("");
 
   app.innerHTML = `<main class="test-shell screen-enter">
@@ -169,7 +173,13 @@ function renderQuestion() {
     </section>
     <footer class="question-footer">
       <button type="button" class="secondary-action" data-action="back" ${currentQuestion === 0 ? "disabled" : ""}>← <span>${t("nav.back")}</span></button>
-      <div class="footer-center"><button type="button" class="skip-action" data-action="skip">${t("nav.skip")}</button></div>
+      <div class="footer-center">
+        <button type="button" class="skip-action" data-action="skip">${t("nav.skip")}</button>
+        <!-- El recuento va PEGADO al boton que lo produce. Antes no habia
+             ninguna señal de cuantas llevabas saltadas hasta el final del
+             test, cuando ya no se podia hacer nada con esa informacion. -->
+        ${saltadasHastaAqui ? `<span class="skip-count">${t("nav.skipped", { count: saltadasHastaAqui })}</span>` : ""}
+      </div>
       <button type="button" class="primary-action" data-action="next" ${hasCurrentAnswer() ? "" : "disabled"}>${currentQuestion === questionCount() - 1 ? t("nav.finish") : t("nav.next")}<span>→</span></button>
     </footer>
   </main>`;
@@ -633,6 +643,8 @@ app.addEventListener("click", (event) => {
     const mode = event.target.closest("[data-action]")?.dataset.mode || "register";
     window.location.href = "/login?mode=" + mode;
   }
+  if (action === "review-answer") irAPrimeraSaltada();
+  if (action === "review-continue") { screen = "analysis"; render(); }
   if (action === "retry-analysis") { screen = "analysis"; render(); }
 
   // --- Pantalla de cuenta -------------------------------------------------
