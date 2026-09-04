@@ -60,3 +60,53 @@ test("mover la primera fila hacia abajo cambia quien va primero", () => {
   [orden[desde], orden[hasta]] = [orden[hasta], orden[desde]];
   assert.notEqual(orden[0], primeraFila, "bajar la primera fila no cambio nada");
 });
+
+// ---------------------------------------------------------------------------
+// EL SEGUNDO FALLO: no habia forma de responder sin reordenar
+// ---------------------------------------------------------------------------
+// El orden de partida es el barajado y NO cuenta como respuesta - eso es
+// deliberado, porque darla por buena seria puntuar por el estudiante. Pero el
+// unico gesto que registraba respuesta era mover una fila con las flechas, asi
+// que quien miraba la lista y estaba de acuerdo con el orden que veia se
+// quedaba con el boton "Siguiente" apagado y sin nada que pulsar.
+//
+// El test se cortaba ahi. La primera pregunta de ranking es la 11 de 50, de
+// modo que el perfil se calculaba con diez respuestas en vez de con cincuenta:
+// cada eje del radar medido con una o dos preguntas en lugar de seis o siete.
+//
+// La correccion: pulsar una fila la manda al primer puesto. Lo que sigue
+// reproduce esa operacion tal como la hace app.js.
+
+/** Pulsar una fila: sale de donde este y entra la primera, y las demas
+ *  conservan su orden relativo. */
+function ponerArriba(orden, elegida) {
+  return [elegida, ...orden.filter((indice) => indice !== elegida)];
+}
+
+test("pulsar una fila la pone primera y deja respuesta", () => {
+  const orden = ordenDeOpciones(pregunta, 11, "ranking");
+
+  for (const elegida of orden) {
+    const nuevo = ponerArriba(orden, elegida);
+    assert.equal(nuevo[0], elegida, "la fila pulsada tiene que quedar primera");
+    assert.deepEqual([...nuevo].sort(), [0, 1, 2, 3], "se perdio o duplico una opcion");
+  }
+});
+
+test("pulsar la fila que YA esta arriba tambien deja respuesta", () => {
+  // El caso que bloqueaba el test: el estudiante esta de acuerdo con el orden
+  // que ve. Antes no tenia gesto; ahora pulsa la de arriba y responde sin que
+  // la lista se mueva.
+  const orden = ordenDeOpciones(pregunta, 11, "ranking");
+  const nuevo = ponerArriba(orden, orden[0]);
+
+  assert.deepEqual(nuevo, [...orden], "pulsar la primera no debe reordenar nada");
+  assert.equal(nuevo[0], orden[0], "y tiene que seguir siendo la respuesta");
+});
+
+test("el resto conserva su orden relativo al subir una fila", () => {
+  // Si el resto se rebarajara, el estudiante veria saltar filas que no toco.
+  const orden = [3, 1, 0, 2];
+  assert.deepEqual(ponerArriba(orden, 0), [0, 3, 1, 2]);
+  assert.deepEqual(ponerArriba(orden, 2), [2, 3, 1, 0]);
+});

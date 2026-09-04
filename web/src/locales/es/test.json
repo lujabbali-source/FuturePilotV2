@@ -82,7 +82,9 @@
   },
   "ranking": {
     "badge": "Ranking",
-    "hint": "Ordena de más a menos parecido a ti."
+    "hint": "Pulsa la que más te representa para ponerla arriba. Puedes ordenar el resto con las flechas.",
+    "moveUp": "Subir una posición",
+    "moveDown": "Bajar una posición"
   },
   "scenario": {
     "badge": "ESCENARIO",
@@ -134,6 +136,14 @@
     "listLabel": "TUS DIMENSIONES DOMINANTES",
     "listScore": "PESO",
     "fallbackError": "No pudimos completar el análisis. Tus respuestas siguen guardadas.",
+    "errorNetwork": "No pudimos conectar con el servidor. Tus respuestas siguen guardadas: revisa tu conexión y vuelve a intentarlo.",
+    "errorServer": "El servidor no pudo completar el análisis (error {{status}}). Tus respuestas siguen guardadas; inténtalo en un minuto.",
+    "errorRejected": "El servidor rechazó estas respuestas (error {{status}}). Si vuelve a pasar, repite el test.",
+    "errorMalformed": "El análisis llegó incompleto. Tus respuestas siguen guardadas: vuelve a intentarlo.",
+    "errorEmpty": "No quedó ninguna respuesta que analizar: saltaste todas las preguntas. Hazlo de nuevo y responde al menos unas cuantas.",
+    "emptyTitle": "Nos faltan",
+    "emptyTitleAccent": "tus respuestas.",
+    "restart": "Hacer el test de nuevo",
     "retry": "Completar mi análisis"
   },
   "unlock": {

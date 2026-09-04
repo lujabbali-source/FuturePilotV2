@@ -32,6 +32,16 @@ export function escapeHtml(value) {
     .replaceAll('"', "&quot;").replaceAll("'", "&#039;");
 }
 
+/** Un porcentaje de compatibilidad con UN decimal.
+ *
+ *  Mismo motivo que en el informe imprimible: la justificacion de debajo
+ *  dice "Con un 89.0% de compatibilidad" y el numero grande decia "89%",
+ *  porque 89.0 se serializa como 89. Dos precisiones para el mismo dato en
+ *  la misma tarjeta. */
+function porcentaje(valor) {
+  return `${(Number(valor) || 0).toFixed(1)}%`;
+}
+
 function formatDate(iso) {
   if (!iso) return "—";
   const date = new Date(iso.endsWith("Z") || iso.includes("+") ? iso : `${iso}Z`);
@@ -182,7 +192,7 @@ function renderCareers(careers, abierta) {
               </div>` : ""}
           </div>
           <span class="career-score">
-            <strong>${career.match_percentage}%</strong>
+            <strong>${porcentaje(career.match_percentage)}</strong>
             <span class="mini-bar"><i data-fill="${career.match_percentage}"></i></span>
           </span>
         </div>`;
@@ -250,7 +260,7 @@ function renderHistory(history, latest) {
       <li>
         <span class="history-when">${actual ? td("history.current") : escapeHtml(shortDate(entrada.created_at))}</span>
         <span class="history-what">${escapeHtml(r.personality || "")}</span>
-        <span class="history-top">${top ? `${escapeHtml(top.title)} · ${top.match_percentage}%` : ""}</span>
+        <span class="history-top">${top ? `${escapeHtml(top.title)} · ${porcentaje(top.match_percentage)}` : ""}</span>
       </li>`;
   };
 

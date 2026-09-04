@@ -53,6 +53,18 @@ function fechaLarga(iso) {
   });
 }
 
+/** Un porcentaje de compatibilidad con UN decimal, siempre.
+ *
+ *  La justificacion que redacta el servidor ya dice "Con un 89.0% de
+ *  compatibilidad...", pero el numero grande de al lado salia de
+ *  `${match_percentage}%`, y 89.0 se serializa como 89: la misma tarjeta
+ *  imprimia "89%" arriba y "89.0%" dos lineas mas abajo. En una columna de
+ *  cifras alineadas eso se lee como dos precisiones distintas del mismo
+ *  dato. */
+function porcentaje(valor) {
+  return `${(Number(valor) || 0).toFixed(1)}%`;
+}
+
 /** Las barras se rellenan por CSSOM y no con `style=`: la CSP del sitio
  *  prohibe los estilos en linea, y un informe lleno de barras vacias no
  *  avisaria de nada - saldria simplemente mal impreso. */
@@ -266,7 +278,7 @@ function renderCarreras(carreras) {
             <div class="rep-career__head">
               <span class="rep-career__rank">${String(indice + 1).padStart(2, "0")}</span>
               <h3 class="rep-career__name">${escapeHtml(carrera.title)}</h3>
-              <span class="rep-career__score">${puntuacion}%</span>
+              <span class="rep-career__score">${porcentaje(puntuacion)}</span>
             </div>
             <span class="rep-career__bar"><i data-fill="${puntuacion}"></i></span>
             ${carrera.justification

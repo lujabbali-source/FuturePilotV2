@@ -47,6 +47,10 @@ let screen = "welcome";
 
 let aiResult = null;
 let aiError = "";
+// Que fallo exactamente en el ultimo intento de analisis. No es lo mismo
+// "el servidor no contesto" (reintentar es lo correcto) que "no quedo
+// ninguna respuesta que analizar" (reintentar no puede funcionar nunca).
+let aiErrorCode = null;
 
 // Se resuelven en cada render, no una vez al cargar: si no, quedarian
 // congeladas en el idioma inicial al cambiar de idioma a mitad del test.
@@ -63,8 +67,17 @@ function savedAssessment() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch { return null; }
 }
 
-function saveProgress() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({ currentQuestion, answers, results }));
+/** Guarda el progreso del test.
+ *
+ *  `completed` marca que ya no falta ninguna pregunta y lo unico pendiente
+ *  es el analisis. Al terminar el test se BORRABA esta entrada antes de
+ *  llamar al servidor: si el analisis fallaba, la pantalla decia "tus
+ *  respuestas siguen guardadas" y era mentira - recargar dejaba al
+ *  estudiante en la bienvenida, con las 50 preguntas por delante otra vez.
+ *  Ahora se borra cuando el analisis SALE BIEN, que es cuando el resultado
+ *  ya vive en el servidor. */
+function saveProgress(completed = false) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ currentQuestion, answers, results, completed }));
 }
 
 function setAnswer(answerIndex, extra = {}) {
@@ -203,6 +216,23 @@ function bindQuestionEvents(format) {
       dot.classList.toggle("is-active", Number(dot.dataset.sliderPos) === posicion));
     app.querySelector('[data-action="next"]').disabled = false;
   });
+  // Pulsar una fila la manda al primer puesto, que es la respuesta.
+  //
+  // Es el unico gesto de este formato que significa "esta es la que mas me
+  // representa" sin obligar a reordenar nada. Sin el, quien estuviera de
+  // acuerdo con el orden barajado que veia no tenia forma de responder y el
+  // test se quedaba clavado en esa pregunta (ver renderRanking).
+  app.querySelectorAll("[data-rank-pick]").forEach((button) => button.addEventListener("click", () => {
+    const elegida = Number(button.dataset.rankPick);
+    const order = [...(currentAnswer().rankOrder
+      || ordenDeOpciones(questions[currentQuestion], currentQuestion, "ranking"))];
+    // Sale de donde este y entra la primera; las demas conservan su orden
+    // relativo, asi que la lista no se baraja bajo los dedos del estudiante.
+    const resto = order.filter((indice) => indice !== elegida);
+    setAnswer(elegida, { rankOrder: [elegida, ...resto] });
+    renderQuestion();
+  }));
+
   app.querySelectorAll("[data-rank-move]").forEach((button) => button.addEventListener("click", () => {
     // El orden de partida tiene que ser EL MISMO que se pinto. renderRanking
     // cae en `ordenDeOpciones` (el barajado) cuando aun no hay respuesta, y
@@ -223,6 +253,49 @@ function bindQuestionEvents(format) {
     renderQuestion();
   }));
 }
+/** El repaso: solo aparece si quedaron preguntas sin responder.
+ *
+ *  Dice el numero exacto y con cuantas se va a calcular el perfil, porque
+ *  "saltaste algunas" no significa nada y "39 de 50" si. La accion que
+ *  destaca es volver a ellas; calcular igualmente sigue estando ahi, en
+ *  segundo plano, porque saltar tiene que seguir siendo una salida legitima
+ *  para quien de verdad no sabe que responder - lo que no puede es pasar
+ *  inadvertido.
+ *
+ *  No bloquea: nadie se queda encerrado en esta pantalla. */
+function renderReview() {
+  const huecos = saltadas();
+  const total = questionCount();
+  const respondidas = total - huecos.length;
+  // Con menos de la mitad, el perfil deja de ser un boceto y pasa a ser otra
+  // cosa. Se dice con el mismo criterio que usa `fiabilidad` para el nivel
+  // "low", para que la pantalla y el resultado no se contradigan.
+  const critico = respondidas / total < 0.5;
+
+  app.innerHTML = `<main class="review-screen screen-enter">
+    <p class="eyebrow"><span class="eyebrow-dot"></span> ${t("review.eyebrow")}</p>
+    <h1>${t("review.title")}<br><span>${t("review.titleAccent")}</span></h1>
+
+    <div class="review-count review-count--${critico ? "low" : "ok"}">
+      <p class="review-count__big">${huecos.length}</p>
+      <p class="review-count__label">${t("review.skipped", { count: huecos.length, total })}</p>
+    </div>
+
+    <p class="review-copy">${t("review.body", { answered: respondidas, total })}</p>
+    ${critico ? `<p class="review-warning">${t("review.warning")}</p>` : ""}
+
+    <div class="review-actions">
+      <button type="button" class="primary-action" data-action="review-answer">
+        ${t("review.answer")}<span>→</span>
+      </button>
+      <button type="button" class="text-action" data-action="review-continue">
+        ${t("review.continue")}
+      </button>
+    </div>
+  </main>`;
+  applyFills();
+}
+
 function renderAnalysis() {
   app.innerHTML = `<main class="analysis-screen screen-enter"><div class="analysis-card"><div class="analysis-mark"><span></span><span></span><span></span></div><p class="eyebrow">${t("analysis.eyebrow")}</p><h1>${t("analysis.title")}<br><span>${t("analysis.titleAccent")}</span></h1><div class="analysis-lines"><p class="is-active">${t("analysis.line1")} <span>✓</span></p><p>${t("analysis.line2")} <span>✓</span></p><p>${t("analysis.line3")} <span>✓</span></p><p>${t("analysis.line4")} <span>✓</span></p></div><div class="analysis-loader"><span></span></div><small>${t("analysis.wait")}</small></div></main>`;
   const lines = [...app.querySelectorAll(".analysis-lines p")];
@@ -235,15 +308,69 @@ function renderAnalysis() {
   // se espera la promesa real y se guarda el resultado (o el error) antes
   // de avanzar. minDelay conserva la animacion aunque la respuesta llegue
   // rapido.
-  const minDelay = new Promise((resolve) => setTimeout(resolve, 3400));
-  const aiCall = sendAssessmentToPythonAI(answers);
-
-  Promise.all([minDelay, aiCall]).then(([, data]) => {
-    aiResult = data;
-    aiError = data ? "" : t("unavailable.fallbackError");
+  // Sin este catch, cualquier excepcion inesperada dentro del analisis
+  // dejaba la pantalla de carga girando para siempre, sin error y sin
+  // salida: exactamente lo que se ve como "se queda cargando".
+  runAnalysis().catch((error) => {
+    console.error("[FuturePilot] El analisis fallo de forma inesperada:", error);
+    aiResult = null;
+    aiError = mensajeDeError({ code: "network" });
+    aiErrorCode = "network";
     screen = "partial";
     render();
   });
+}
+
+const esperar = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// Cuanto se espera antes de cada reintento automatico. Un corte de red de un
+// segundo o un backend que acaba de arrancar (el servicio se reinicia solo al
+// desplegar, y el primer arranque tarda) devolvian al estudiante a una
+// pantalla de error que le pedia pulsar un boton para repetir exactamente la
+// misma peticion. Eso lo hace la maquina, no la persona: dos reintentos
+// cubren de sobra un arranque en frio.
+const REINTENTOS_MS = [1200, 4000];
+
+/** Traduce el motivo real del fallo a algo que el estudiante pueda leer. */
+function mensajeDeError(error) {
+  if (!error) return t("unavailable.fallbackError");
+  if (error.code === "empty") return t("unavailable.errorEmpty");
+  if (error.code === "network") return t("unavailable.errorNetwork");
+  if (error.code === "malformed") return t("unavailable.errorMalformed");
+  return t(error.code === "server" ? "unavailable.errorServer" : "unavailable.errorRejected",
+    { status: error.status || "" });
+}
+
+/** Manda las respuestas al servidor y decide a que pantalla se va.
+ *
+ *  Reintenta solo lo que tiene sentido reintentar (red caida, 5xx) y deja
+ *  el motivo en aiError/aiErrorCode para que la pantalla de fallo diga que
+ *  paso de verdad en vez del mismo mensaje generico para todo. */
+async function runAnalysis() {
+  const minDelay = esperar(3400);
+  let outcome;
+
+  for (let intento = 0; ; intento += 1) {
+    try {
+      outcome = await sendAssessmentToPythonAI(answers);
+    } catch (error) {
+      outcome = { data: null, error: { code: "network", detail: String(error) } };
+    }
+    const transitorio = outcome.error && (outcome.error.code === "network" || outcome.error.code === "server");
+    if (!outcome.error || !transitorio || intento >= REINTENTOS_MS.length) break;
+    await esperar(REINTENTOS_MS[intento]);
+  }
+
+  await minDelay;
+  aiResult = outcome.data;
+  aiError = outcome.data ? "" : mensajeDeError(outcome.error);
+  aiErrorCode = outcome.data ? null : (outcome.error?.code || "network");
+  // El progreso guardado deja de hacer falta cuando el resultado ya esta en
+  // el servidor. Mientras el analisis no salga bien se conserva: es lo unico
+  // que impide que una recarga borre un test entero de 50 preguntas.
+  if (outcome.data) localStorage.removeItem(STORAGE_KEY);
+  screen = "partial";
+  render();
 }
 function renderPartialResults() {
   const assessmentResult = assessmentEngine.buildAssessmentResult(results);
@@ -311,6 +438,25 @@ function renderUnlock() {
  *  ocho clusters del backend) y se ofrece reintentar. Preferimos decir
  *  menos a decir algo que luego se contradice. */
 function renderPartialUnavailable(assessmentResult) {
+  // Sin ninguna respuesta que mandar no hay nada que reintentar, y las
+  // dimensiones que se pintarian abajo no serian de este test: el motor
+  // local conserva el perfil anterior cuando el intento actual llega vacio
+  // (ver calculateResults), asi que se enseñaria el resultado de otro test
+  // como si fuera el recien hecho. Aqui se dice lo que pasa y se ofrece lo
+  // unico que puede arreglarlo: volver a hacerlo.
+  if (aiErrorCode === "empty") {
+    app.innerHTML = `<main class="results-screen screen-enter">
+      <div class="results-topline"><span class="brand"><img class="brand-mark" src="/Frontend/futurepilot-logo-transparent.png" alt="FuturePilot"> Future<span>Pilot</span></span></div>
+      <section class="results-intro">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> ${t("error.resultsEyebrow")}</p>
+        <h1>${t("unavailable.emptyTitle")}<br><span>${t("unavailable.emptyTitleAccent")}</span></h1>
+        <p>${escapeHtml(aiError || t("unavailable.errorEmpty"))}</p>
+        <button type="button" class="primary-action primary-action--wide" data-action="restart">${t("unavailable.restart")} <span>→</span></button>
+      </section>
+    </main>`;
+    return;
+  }
+
   const dims = assessmentResult.topThree
     .map(([cluster]) => ({ label: t(`cluster.${cluster}`, { defaultValue: cluster }), pct: assessmentResult.clusterPercentages[cluster] || 0 }));
 
@@ -391,13 +537,42 @@ function renderFullResults() {
   wireRadar(app, aiResult.user_vector, aiResult.cluster_evidence);
 }
 
+/** Las preguntas que quedaron sin responder, por su indice real.
+ *
+ *  Una pregunta saltada es un hueco de verdad en el perfil: no se envia al
+ *  motor (ver sendAssessmentToPythonAI), asi que su cluster se queda con una
+ *  respuesta menos en el denominador. Saltar diez de las cincuenta no baja el
+ *  resultado un 20%: concentra el perfil en las que quedaron, y los ejes que
+ *  perdieron mas preguntas empiezan a moverse entero con una sola respuesta. */
+function saltadas() {
+  const huecos = [];
+  for (let i = 0; i < questionCount(); i += 1) {
+    const respuesta = answers[i];
+    if (!respuesta || respuesta.answerIndex === null || respuesta.answerIndex === undefined) {
+      huecos.push(i);
+    }
+  }
+  return huecos;
+}
+
+/** Termina el test: a repasar si quedaron huecos, o directo al analisis.
+ *
+ *  El repaso existe porque saltar era gratis y no se notaba hasta el final.
+ *  Un estudiante podia pulsar "Aun no lo se" en treinta y nueve preguntas y
+ *  recibir igualmente un radar con ocho ejes y unas carreras con su
+ *  porcentaje - calculado con once respuestas. El aviso de fiabilidad salia
+ *  DESPUES, cuando arreglarlo ya significaba repetir el test entero. */
+function terminarTest() {
+  results = assessmentEngine.calculateResults(questions, answers, results);
+  saveProgress(true);
+  screen = saltadas().length ? "review" : "analysis";
+  render();
+}
+
 function goNext() {
   if (!hasCurrentAnswer()) return;
   if (currentQuestion === questionCount() - 1) {
-    results = assessmentEngine.calculateResults(questions, answers, results);
-    localStorage.removeItem(STORAGE_KEY);
-    screen = "analysis";
-    render();
+    terminarTest();
     return;
   }
   currentQuestion += 1;
@@ -407,10 +582,23 @@ function goNext() {
 
 function skipQuestion() {
   setAnswer(null);
-  if (currentQuestion === questionCount() - 1) {
-    localStorage.removeItem(STORAGE_KEY);
+  if (currentQuestion === questionCount() - 1) terminarTest();
+  else {
+    currentQuestion += 1;
+    saveProgress();
+    render();
+  }
+}
+
+/** Lleva a la primera pregunta sin responder. */
+function irAPrimeraSaltada() {
+  const huecos = saltadas();
+  if (!huecos.length) {
     screen = "analysis";
-  } else currentQuestion += 1;
+  } else {
+    currentQuestion = huecos[0];
+    screen = "question";
+  }
   render();
 }
 
@@ -419,6 +607,9 @@ function startAssessment(restart = false) {
     currentQuestion = 0;
     answers = [];
     results = assessmentEngine.createInitialResults();
+    aiResult = null;
+    aiError = "";
+    aiErrorCode = null;
     localStorage.removeItem(STORAGE_KEY);
     // Orden nuevo: repetir el test no deberia repetir la misma baraja. Solo
     // al reiniciar - dentro de un intento el orden tiene que quedarse quieto,
@@ -480,6 +671,7 @@ app.addEventListener("click", (event) => {
     results = assessmentEngine.createInitialResults();
     aiResult = null;
     aiError = "";
+    aiErrorCode = null;
     localStorage.removeItem(STORAGE_KEY);
     screen = "question";
     render();
@@ -689,6 +881,11 @@ async function init() {
     currentQuestion = Math.min(saved.currentQuestion || 0, questions.length - 1);
     answers = saved.answers || [];
     results = saved.results || assessmentEngine.createInitialResults();
+    // El test estaba terminado y lo unico que quedo pendiente fue el
+    // analisis (se cayo la red, el servidor se estaba reiniciando). Se
+    // retoma ahi: recargar la pagina no puede costarle al estudiante
+    // repetir las 50 preguntas.
+    if (saved.completed) screen = "analysis";
   }
   render();
 }

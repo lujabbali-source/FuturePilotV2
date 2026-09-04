@@ -68,14 +68,35 @@ function renderSlider(question, state, orden) {
   </div>`;
 }
 
+/** El ranking: ordenar las opciones, con la de arriba como respuesta.
+ *
+ *  CADA FILA ES PULSABLE, y pulsarla la manda al primer puesto. Sin eso, este
+ *  formato no tenia forma de responderse: el orden inicial es el barajado y no
+ *  cuenta como respuesta (a proposito - regalarla seria puntuar por el
+ *  estudiante), asi que el unico gesto disponible era mover una fila con las
+ *  flechas. Quien mirara la lista y estuviera de acuerdo con el orden que ya
+ *  veia se quedaba con el boton "Siguiente" apagado y sin nada que pulsar que
+ *  significara "asi esta bien". El test se cortaba ahi - en la pregunta 11 - y
+ *  el perfil se calculaba con las diez primeras en vez de con las cincuenta.
+ *
+ *  Poner arriba es ademas EXACTAMENTE lo que el motor usa: de todo el orden
+ *  solo se puntua la primera (ver el manejador en app.js). Antes se le pedia
+ *  al estudiante ordenar cuatro cosas para usar una; ahora lo que se le pide
+ *  es lo que se usa, y reordenar el resto sigue disponible para quien quiera.
+ *
+ *  La fila marcada sale SOLO si ya hay respuesta: si se marcara la primera de
+ *  entrada, la lista barajada aparentaria venir ya contestada. */
 function renderRanking(question, state, orden) {
   // El orden inicial es el barajado. Antes salia el canonico, que empieza por
   // la respuesta de mas puntos: quien no tocara nada la dejaba primera.
   const order = state?.rankOrder || orden;
+  const elegida = state?.answerIndex;
   return `<div class="format-hint"><span>${t("ranking.badge")}</span> ${t("ranking.hint")}</div>
-    <div class="ranking-list">${order.map((answerIndex, position) => `<div class="ranking-row" data-rank-index="${answerIndex}">
-      <span class="rank-number">0${position + 1}</span><span class="rank-label">${escapeHtml(question.answers[answerIndex].text)}</span>
-      <span class="rank-actions"><button type="button" data-rank-move="up" data-rank-index="${answerIndex}" ${position === 0 ? "disabled" : ""}>↑</button><button type="button" data-rank-move="down" data-rank-index="${answerIndex}" ${position === order.length - 1 ? "disabled" : ""}>↓</button></span>
+    <div class="ranking-list">${order.map((answerIndex, position) => `<div class="ranking-row ${elegida === answerIndex ? "is-picked" : ""}">
+      <button type="button" class="rank-pick" data-rank-pick="${answerIndex}" aria-pressed="${elegida === answerIndex}">
+        <span class="rank-number">0${position + 1}</span><span class="rank-label">${escapeHtml(question.answers[answerIndex].text)}</span>
+      </button>
+      <span class="rank-actions"><button type="button" data-rank-move="up" data-rank-index="${answerIndex}" ${position === 0 ? "disabled" : ""} aria-label="${t("ranking.moveUp")}">↑</button><button type="button" data-rank-move="down" data-rank-index="${answerIndex}" ${position === order.length - 1 ? "disabled" : ""} aria-label="${t("ranking.moveDown")}">↓</button></span>
     </div>`).join("")}</div>`;
 }
 

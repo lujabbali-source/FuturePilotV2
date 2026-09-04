@@ -50,10 +50,25 @@ function getAnonId() {
 // =============================================================================
 // 1. ENVIAR RESPUESTAS DEL TEST A LA API EN PYTHON
 // =============================================================================
+/**
+ * Devuelve SIEMPRE `{ data, error }`, nunca un null pelado.
+ *
+ * Antes devolvia `null` para las cuatro cosas que pueden salir mal - no hay
+ * respuestas que mandar, no hubo red, el servidor contesto 500, el cuerpo
+ * vino raro - y la pantalla de resultados las traducia todas al mismo
+ * "No pudimos completar el analisis". Con eso, el boton de reintentar
+ * repetia la MISMA peticion contra la MISMA causa: si el fallo era
+ * permanente (no queda ninguna respuesta que analizar) el estudiante daba
+ * vueltas para siempre, y si era transitorio nadie podia saberlo.
+ *
+ * `error.code` distingue lo que se puede reintentar solo ("network",
+ * "server") de lo que no ("empty", "rejected", "malformed"), y `error.status`
+ * lleva el codigo HTTP real para poder decirlo en pantalla.
+ */
 async function sendAssessmentToPythonAI(rawAnswers) {
   if (!rawAnswers || !Array.isArray(rawAnswers)) {
     console.warn("[FuturePilot AI] No hay respuestas formateadas para enviar.");
-    return null;
+    return { data: null, error: { code: "empty" } };
   }
 
   // Formatear payload para app.py (question_index y answer_index).
@@ -72,7 +87,7 @@ async function sendAssessmentToPythonAI(rawAnswers) {
 
   if (!formattedAnswers.length) {
     console.warn("[FuturePilot AI] Todas las preguntas quedaron sin responder.");
-    return null;
+    return { data: null, error: { code: "empty" } };
   }
 
   // Si ya hay sesion, el token viaja con el test: el backend
@@ -95,7 +110,12 @@ async function sendAssessmentToPythonAI(rawAnswers) {
     });
 
     if (!response.ok) {
-      throw new Error("Respuesta de error recibida del servidor FastAPI.");
+      console.error(`[FuturePilot AI Error] /api/v1/assess respondio ${response.status}.`);
+      // 5xx, 408 y 429 son "vuelve a intentarlo": el servidor esta
+      // arrancando, se reinicio o va saturado. Un 4xx cualquiera es un
+      // rechazo de la peticion en si, y repetirla tal cual da lo mismo.
+      const transitorio = response.status >= 500 || response.status === 408 || response.status === 429;
+      return { data: null, error: { code: transitorio ? "server" : "rejected", status: response.status } };
     }
 
     const result = await response.json();
@@ -106,12 +126,14 @@ async function sendAssessmentToPythonAI(rawAnswers) {
       // assessment.js pueda reclamarlo tras el login sin tener que
       // parsear/tocar AI_STORAGE_KEY.
       if (result.result_id) localStorage.setItem(RESULT_ID_KEY, String(result.result_id));
-      return result.data;
+      return { data: result.data, error: null };
     }
+    console.error("[FuturePilot AI Error] La respuesta llego sin diagnostico dentro.");
+    return { data: null, error: { code: "malformed" } };
   } catch (error) {
     console.error("[FuturePilot AI Error] No se pudo comunicar con la API de Python:", error);
+    return { data: null, error: { code: "network", detail: String(error?.message || error) } };
   }
-  return null;
 }
 
 // =============================================================================
