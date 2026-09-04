@@ -1,32 +1,269 @@
 // Egipto — importado, no curado.
 //
 // Trae lo que las fuentes abiertas pueden verificar: nombre, capital, moneda,
-// idioma, poblacion y las universidades con su sitio oficial. Todo lo demas
-// (ciudades, costo de vida, salarios, cultura) esta vacio a proposito. Ver
-// web/scripts/import_world.py.
+// idioma, poblacion, las ciudades con universidad y las universidades con su
+// sitio oficial. Todo lo demas (costo de vida, salarios, cultura) esta vacio
+// a proposito. Ver web/scripts/import_world.py.
 //
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry, defineUniversity } from "../schema";
+import { defineCity, defineCountry } from "../schema.js";
+
+const countryId = "egipto";
+const countryName = "Egipto";
+
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/egipto.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
+const cities = [
+    defineCity({
+      id: "egipto-ash-shaykh-zayid",
+      name: "Ash-Shaykh Zāyid",
+      coordinates: {"lat": 30.02, "lng": 31.0},
+      isCapital: false,
+      universityCount: 10,
+      statistics: { population: 95854 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-new-cairo",
+      name: "New Cairo",
+      coordinates: {"lat": 30.03, "lng": 31.47},
+      isCapital: false,
+      universityCount: 9,
+      statistics: { population: 313139 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-madinat-an-nasr",
+      name: "Madīnat an Naşr",
+      coordinates: {"lat": 30.06667, "lng": 31.3},
+      isCapital: false,
+      universityCount: 7,
+      statistics: { population: 668413 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-badr",
+      name: "Badr",
+      coordinates: {"lat": 30.136, "lng": 31.715},
+      isCapital: false,
+      universityCount: 6,
+      statistics: { population: 32940 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-dumyat-al-jadidah",
+      name: "Dumyāţ al Jadīdah",
+      coordinates: {"lat": 31.43482, "lng": 31.67506},
+      isCapital: false,
+      universityCount: 5,
+      statistics: { population: 54508 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-bulaq-abu-al-ila",
+      name: "Būlāq Abū al ‘Ilā",
+      coordinates: {"lat": 30.06041, "lng": 31.23147},
+      isCapital: false,
+      universityCount: 4,
+      statistics: { population: 51741 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-sohag",
+      name: "Sohag",
+      coordinates: {"lat": 26.55695, "lng": 31.69478},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 266944 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-al-ashir-min-ramadan",
+      name: "Al ‘Āshir min Ramaḑān",
+      coordinates: {"lat": 30.29636, "lng": 31.74633},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 246148 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-halwan",
+      name: "Ḩalwān",
+      coordinates: {"lat": 29.84144, "lng": 31.30084},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 230000 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-giza",
+      name: "Giza",
+      coordinates: {"lat": 30.00944, "lng": 31.20861},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 4367343 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-alexandria",
+      name: "Alexandria",
+      coordinates: {"lat": 31.20176, "lng": 29.91582},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 5263542 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-abu-qir",
+      name: "Abū Qīr",
+      coordinates: {"lat": 31.31104, "lng": 30.06121},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 37997 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-burj-al-arab-al-jadidah",
+      name: "Burj al ‘Arab al Jadīdah",
+      coordinates: {"lat": 30.88525, "lng": 29.57721},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 45865 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-an-nasiriyah",
+      name: "An Nāşirīyah",
+      coordinates: {"lat": 27.20583, "lng": 31.19639},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 22435 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-el-shorouk",
+      name: "El Shorouk",
+      coordinates: {"lat": 30.13806, "lng": 31.61556},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 91899 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-al-minya-al-jadidah",
+      name: "Al-Minyā al-Jadīdah",
+      coordinates: {"lat": 28.08639, "lng": 30.81464},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 17470 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-qina",
+      name: "Qina",
+      coordinates: {"lat": 26.16418, "lng": 32.72671},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 252883 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-hada-iq-al-qubbah",
+      name: "Ḩadā’iq al Qubbah",
+      coordinates: {"lat": 30.08843, "lng": 31.28351},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 339612 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-assiut",
+      name: "Assiut",
+      coordinates: {"lat": 27.18096, "lng": 31.18368},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 528669 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-al-fayyum",
+      name: "Al Fayyum",
+      coordinates: {"lat": 29.30995, "lng": 30.8418},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 519047 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-arish",
+      name: "Arīsh",
+      coordinates: {"lat": 31.13159, "lng": 33.79844},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 199243 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-al-ubur",
+      name: "Al-'Ubūr",
+      coordinates: {"lat": 30.22886, "lng": 31.48149},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 138987 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "egipto-new-bani-sewif-city",
+      name: "New Bani Sewif City",
+      coordinates: {"lat": 29.03556, "lng": 31.11792},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 29117 },
+      countryId,
+      countryName,
+    }),
+];
 
 export default defineCountry({
-  id: "egipto",
-  name: "Egipto",
+  id: countryId,
+  name: countryName,
   nameEn: "Egypt",
   capital: "Cairo",
   currency: "EGP",
-  language: "Arabic",
+  language: "árabe",
   continent: "África",
   population: 118365995,
-  // Sin ciudades: la fuente de universidades trae provincia en solo el 14% de
-  // los casos, y provincia no es ciudad. Inventar el reparto por ciudades
-  // seria la peor clase de dato falso, porque parece preciso.
-  cities: [],
+  cities,
   // Las universidades no van aqui: viven en ./universities/egipto.js
   // y se cargan solo al abrir el pais (ver getNationalUniversities).
   universityCount: 44,
   aliases: ["egipto", "egypt"],
   dataStatus: "source-open-dataset",
-  sources: ["Hipo/university-domains-list (MIT)", "mledoze/countries (ODbL-1.0)", "Banco Mundial, SP.POP.TOTL"],
+  sources: ["Hipo/university-domains-list (MIT)", "GeoNames (CC BY 4.0)", "Wikidata (CC0)", "Banco Mundial, SP.POP.TOTL"],
 });

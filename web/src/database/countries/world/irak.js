@@ -1,32 +1,269 @@
 // Irak — importado, no curado.
 //
 // Trae lo que las fuentes abiertas pueden verificar: nombre, capital, moneda,
-// idioma, poblacion y las universidades con su sitio oficial. Todo lo demas
-// (ciudades, costo de vida, salarios, cultura) esta vacio a proposito. Ver
-// web/scripts/import_world.py.
+// idioma, poblacion, las ciudades con universidad y las universidades con su
+// sitio oficial. Todo lo demas (costo de vida, salarios, cultura) esta vacio
+// a proposito. Ver web/scripts/import_world.py.
 //
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry, defineUniversity } from "../schema";
+import { defineCity, defineCountry } from "../schema.js";
+
+const countryId = "irak";
+const countryName = "Irak";
+
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/irak.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
+const cities = [
+    defineCity({
+      id: "irak-baghdad",
+      name: "Baghdad",
+      coordinates: {"lat": 33.34058, "lng": 44.40088},
+      isCapital: true,
+      universityCount: 33,
+      statistics: { population: 7216000 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-karbala",
+      name: "Karbala",
+      coordinates: {"lat": 32.61603, "lng": 44.02488},
+      isCapital: false,
+      universityCount: 5,
+      statistics: { population: 1218732 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-najaf",
+      name: "Najaf",
+      coordinates: {"lat": 32.02594, "lng": 44.34625},
+      isCapital: false,
+      universityCount: 4,
+      statistics: { population: 482576 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-mosul",
+      name: "Mosul",
+      coordinates: {"lat": 36.335, "lng": 43.11889},
+      isCapital: false,
+      universityCount: 5,
+      statistics: { population: 1683000 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-basrah",
+      name: "Basrah",
+      coordinates: {"lat": 30.50852, "lng": 47.7804},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 1326564 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-nasiriyah",
+      name: "Nasiriyah",
+      coordinates: {"lat": 31.05799, "lng": 46.25726},
+      isCapital: false,
+      universityCount: 4,
+      statistics: { population: 558400 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-al-hillah",
+      name: "Al Hillah",
+      coordinates: {"lat": 32.46367, "lng": 44.41963},
+      isCapital: false,
+      universityCount: 4,
+      statistics: { population: 455700 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-abu-ghurayb",
+      name: "Abū Ghurayb",
+      coordinates: {"lat": 33.30563, "lng": 44.18477},
+      isCapital: false,
+      universityCount: 4,
+      statistics: { population: 900000 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-simele",
+      name: "Simele",
+      coordinates: {"lat": 36.85833, "lng": 42.8501},
+      isCapital: false,
+      universityCount: 4,
+      statistics: { population: 152512 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-kirkuk",
+      name: "Kirkuk",
+      coordinates: {"lat": 35.46806, "lng": 44.39222},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 1031000 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-erbil",
+      name: "Erbil",
+      coordinates: {"lat": 36.19117, "lng": 44.00943},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 1612700 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-baqubah",
+      name: "Baqubah",
+      coordinates: {"lat": 33.75403, "lng": 44.60518},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 152550 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-sulaymaniyah",
+      name: "Sulaymaniyah",
+      coordinates: {"lat": 35.56496, "lng": 45.4329},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 878146 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-ramadi",
+      name: "Ramadi",
+      coordinates: {"lat": 33.42056, "lng": 43.30778},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 223500 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-al-kut",
+      name: "Al-Kut",
+      coordinates: {"lat": 32.5128, "lng": 45.81817},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 315162 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-al-hindiyah",
+      name: "Al Hindīyah",
+      coordinates: {"lat": 32.54193, "lng": 44.22469},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 139578 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-dihok",
+      name: "Dihok",
+      coordinates: {"lat": 36.86608, "lng": 42.9879},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 340900 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-as-samawah",
+      name: "As Samawah",
+      coordinates: {"lat": 31.33198, "lng": 45.2944},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 152890 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-al-harithah",
+      name: "Al Hārithah",
+      coordinates: {"lat": 30.58481, "lng": 47.76114},
+      isCapital: false,
+      universityCount: 1,
+      statistics: { population: 92395 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-al-fallujah",
+      name: "Al Fallūjah",
+      coordinates: {"lat": 33.34913, "lng": 43.78599},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 190159 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-al-amarah",
+      name: "Al ‘Amārah",
+      coordinates: {"lat": 31.83561, "lng": 47.14483},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 323302 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-al-diwaniyah",
+      name: "Al Diwaniyah",
+      coordinates: {"lat": 31.99289, "lng": 44.92552},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 318801 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "irak-al-alam",
+      name: "Al-'Alam",
+      coordinates: {"lat": 34.70896, "lng": 43.6951},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 25662 },
+      countryId,
+      countryName,
+    }),
+];
 
 export default defineCountry({
-  id: "irak",
-  name: "Irak",
+  id: countryId,
+  name: countryName,
   nameEn: "Iraq",
   capital: "Baghdad",
   currency: "IQD",
-  language: "Arabic",
+  language: "árabe",
   continent: "Asia",
   population: 47020774,
-  // Sin ciudades: la fuente de universidades trae provincia en solo el 14% de
-  // los casos, y provincia no es ciudad. Inventar el reparto por ciudades
-  // seria la peor clase de dato falso, porque parece preciso.
-  cities: [],
+  cities,
   // Las universidades no van aqui: viven en ./universities/irak.js
   // y se cargan solo al abrir el pais (ver getNationalUniversities).
   universityCount: 47,
   aliases: ["irak", "iraq"],
   dataStatus: "source-open-dataset",
-  sources: ["Hipo/university-domains-list (MIT)", "mledoze/countries (ODbL-1.0)", "Banco Mundial, SP.POP.TOTL"],
+  sources: ["Hipo/university-domains-list (MIT)", "GeoNames (CC BY 4.0)", "Wikidata (CC0)", "Banco Mundial, SP.POP.TOTL"],
 });

@@ -141,14 +141,27 @@
         <!-- Solo en modo registro. La app no sabia la edad de nadie, asi que
              no podia saber a quien pedirle permiso. Es un booleano y no una
              fecha de nacimiento a proposito: basta para decidir y es un dato
-             menos sobre un menor. -->
-        <div class="login-minor" id="minorField" hidden>
+             menos sobre un menor.
+
+             Son DOS opciones y ninguna viene marcada. Antes era una sola
+             casilla "soy menor", y una casilla sin marcar es una respuesta
+             -"soy mayor de edad"- que nadie llego a dar: quien tenia prisa
+             quedaba registrado como adulto sin decirlo, y ese es justo el
+             caso que el expediente del acudiente existe para evitar. Ahora
+             el formulario no se puede enviar sin contestar. -->
+        <fieldset class="login-age" id="minorField" hidden>
+          <legend data-i18n="login:fields.ageLegend">¿Qué edad tienes?</legend>
           <label class="login-remember">
-            <input type="checkbox" name="isMinor" id="isMinorCheck">
-            <span class="login-remember__box"></span>
+            <input type="radio" name="ageGroup" value="adult" id="ageAdultRadio">
+            <span class="login-remember__box login-remember__box--radio"></span>
+            <span data-i18n="login:fields.isAdult">Soy mayor de 18 años</span>
+          </label>
+          <label class="login-remember">
+            <input type="radio" name="ageGroup" value="minor" id="ageMinorRadio">
+            <span class="login-remember__box login-remember__box--radio"></span>
             <span data-i18n="login:fields.isMinor">Soy menor de 18 años</span>
           </label>
-        </div>
+        </fieldset>
 
         <label class="login-field" id="guardianField" hidden>
           <span class="login-field__icon">
@@ -157,6 +170,27 @@
           <input type="email" name="guardianEmail" autocomplete="off" spellcheck="false" data-i18n-placeholder="login:fields.guardianEmail" placeholder="Correo de tu padre, madre o acudiente">
         </label>
         <p class="login-hint" id="guardianHint" hidden data-i18n="login:fields.guardianHint">Le escribiremos para contarle que usas FuturePilot y pedirle su permiso. Tu cuenta funciona desde ya.</p>
+
+        <!-- Aceptacion expresa, solo al crear cuenta. Los enlaces abren en
+             otra pestaña a proposito: leer la politica no puede costarle a
+             nadie el formulario a medio llenar.
+
+             La frase va partida en trozos porque data-i18n escribe
+             textContent, no HTML (ver applyTranslations en i18next.js): un
+             solo texto con los enlaces dentro los imprimiria como etiquetas
+             en vez de dibujarlos. -->
+        <div class="login-terms" id="termsField" hidden>
+          <label class="login-remember">
+            <input type="checkbox" name="acceptTerms" id="acceptTermsCheck">
+            <span class="login-remember__box"></span>
+            <span class="login-terms__text">
+              <span data-i18n="login:fields.acceptPrefix">Acepto los</span>
+              <a href="/terms" target="_blank" rel="noopener" data-i18n="login:fields.termsLink">términos y condiciones</a>
+              <span data-i18n="login:fields.acceptAnd">y la</span>
+              <a href="/privacy" target="_blank" rel="noopener" data-i18n="login:fields.privacyLink">política de privacidad</a>
+            </span>
+          </label>
+        </div>
 
         <div class="login-row" id="loginOptions">
           <label class="login-remember">

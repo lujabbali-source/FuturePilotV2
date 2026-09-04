@@ -44,7 +44,13 @@
     "backToLogin": "← Volver a iniciar sesión",
     "isMinor": "Soy menor de 18 años",
     "guardianEmail": "Correo de tu padre, madre o acudiente",
-    "guardianHint": "Le escribiremos para contarle que usas FuturePilot y pedirle su permiso. Tu cuenta funciona desde ya."
+    "guardianHint": "Le escribiremos para contarle que usas FuturePilot y pedirle su permiso. Tu cuenta funciona desde ya.",
+    "ageLegend": "¿Qué edad tienes?",
+    "isAdult": "Soy mayor de 18 años",
+    "acceptPrefix": "Acepto los",
+    "termsLink": "términos y condiciones",
+    "acceptAnd": "y la",
+    "privacyLink": "política de privacidad"
   },
   "status": {
     "working": "Un momento...",
@@ -58,7 +64,9 @@
     "generic": "No pudimos procesar tu solicitud. Intenta de nuevo.",
     "network": "No pudimos conectar con el servidor. Verifica tu conexión e intenta de nuevo.",
     "guardianEmail": "Necesitamos un correo válido de tu padre, madre o acudiente.",
-    "guardianSame": "El correo de tu acudiente tiene que ser distinto del tuyo."
+    "guardianSame": "El correo de tu acudiente tiene que ser distinto del tuyo.",
+    "age": "Dinos si eres mayor o menor de 18 años para continuar.",
+    "terms": "Para crear tu cuenta tienes que aceptar los términos y la política de privacidad."
   },
   "recover": {
     "sent": "Si existe una cuenta con ese email, enviamos instrucciones para recuperar el acceso."

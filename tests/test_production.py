@@ -89,7 +89,7 @@ def test_config_check_is_quiet_when_things_are_fine(app_module, client, monkeypa
     # justamente de cuando NO existe. Se registra aqui en vez de confiar en
     # que otro test la haya creado antes.
     correo = "admin-config-ok@example.com"
-    client.post("/api/v1/auth/register", json={"email": correo, "password": "password123"})
+    client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, "email": correo, "password": "password123"})
 
     monkeypatch.setattr(app_module, "IS_PRODUCTION", True)
     monkeypatch.setattr(app_module, "ADMIN_EMAIL", correo)
@@ -147,7 +147,7 @@ def test_startup_check_flags_an_unclaimed_admin_account(app_module, client, monk
 
     # Con la cuenta ya registrada, deja de avisar.
     correo = "admin-ya-registrado@example.com"
-    client.post("/api/v1/auth/register", json={"email": correo, "password": "password123"})
+    client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, "email": correo, "password": "password123"})
     monkeypatch.setattr(app_module, "ADMIN_EMAIL", correo)
     assert "todavia no existe" not in " | ".join(app_module.check_production_config())
 
@@ -170,11 +170,11 @@ def test_admin_email_cannot_be_registered_without_the_setup_token(
     correo = "jefe@futurepilot.app"
     _fresh_admin_env(app_module, monkeypatch, tmp_path, correo)
 
-    sin_token = client.post("/api/v1/auth/register", json={"email": correo, "password": "password123"})
+    sin_token = client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, "email": correo, "password": "password123"})
     assert sin_token.status_code == 403
     assert "token" in sin_token.json()["detail"].lower()
 
-    malo = client.post("/api/v1/auth/register", json={
+    malo = client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, 
         "email": correo, "password": "password123", "admin_setup_token": "no-es-el-token",
     })
     assert malo.status_code == 403
@@ -190,7 +190,7 @@ def test_the_setup_token_claims_the_seat_once(client, app_module, monkeypatch, t
     token = app_module.admin_setup_token()
     assert token, "sin cuenta admin deberia haber token"
 
-    creada = client.post("/api/v1/auth/register", json={
+    creada = client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, 
         "email": correo, "password": "password123", "admin_setup_token": token,
     })
     assert creada.status_code == 201
@@ -231,7 +231,7 @@ def test_other_accounts_register_normally(client, app_module, monkeypatch, tmp_p
     """El candado es solo para el email de administrador; el registro normal
     de estudiantes no cambia."""
     _fresh_admin_env(app_module, monkeypatch, tmp_path, "jefe2@futurepilot.app")
-    r = client.post("/api/v1/auth/register", json={
+    r = client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, 
         "email": "estudiante-normal@example.com", "password": "password123",
     })
     assert r.status_code == 201

@@ -355,7 +355,14 @@ export function renderDashboard({ data, user, estado }) {
         <p>${t("full.archetype")}: <strong>${escapeHtml(results.personality)}</strong>
            · ${t("full.learningStyle")}: <strong>${escapeHtml(results.learning_style || "")}</strong>
            </p>
-        <p class="reliability reliability--${fiab.nivel}">${t("reliability.label")}: ${fiab.texto}</p>` : ""}
+        <p class="reliability reliability--${fiab.nivel}">${t("reliability.label")}: ${fiab.texto}</p>
+        <!-- Va aqui, junto al resultado, y no entre los ajustes de la cuenta:
+             el momento en que a alguien se le ocurre llevarse esto en papel es
+             justo cuando acaba de leer que carrera le salio. Solo aparece si
+             hay resultado, que es la misma condicion de este bloque. -->
+        <a class="secondary-action dash-report" href="/informe">
+          ${t("report.openCta")} <span aria-hidden="true">→</span>
+        </a>` : ""}
     </section>
 
     ${renderNextStep(data.journey)}

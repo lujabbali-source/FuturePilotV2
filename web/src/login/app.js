@@ -72,7 +72,10 @@ function main() {
   const gateReason = razonDeAcceso();
   const loginOptions = document.getElementById("loginOptions");
   const minorField = document.getElementById("minorField");
-  const isMinorCheck = document.getElementById("isMinorCheck");
+  const ageAdultRadio = document.getElementById("ageAdultRadio");
+  const ageMinorRadio = document.getElementById("ageMinorRadio");
+  const termsField = document.getElementById("termsField");
+  const acceptTermsCheck = document.getElementById("acceptTermsCheck");
   const guardianField = document.getElementById("guardianField");
   const guardianHint = document.getElementById("guardianHint");
   const backToLoginLink = document.getElementById("backToLoginLink");
@@ -128,7 +131,7 @@ function main() {
    * servidor lo ignoraria, pero habria viajado igual.
    */
   function aplicarAcudiente() {
-    const visible = mode === "register" && isMinorCheck.checked;
+    const visible = mode === "register" && ageMinorRadio.checked;
     guardianField.hidden = !visible;
     guardianHint.hidden = !visible;
     if (!visible) form.guardianEmail.value = "";
@@ -147,8 +150,17 @@ function main() {
 
     // La edad solo se pregunta al crear la cuenta. En login no hace falta:
     // ya se guardo, y volver a preguntarla invitaria a cambiarla.
+    //
+    // Al salir del registro se DESMARCAN las dos opciones, no se deja una
+    // puesta: volver a entrar tiene que encontrar la pregunta sin contestar,
+    // igual que la primera vez.
     minorField.hidden = !esRegistro;
-    if (!esRegistro) isMinorCheck.checked = false;
+    termsField.hidden = !esRegistro;
+    if (!esRegistro) {
+      ageAdultRadio.checked = false;
+      ageMinorRadio.checked = false;
+      acceptTermsCheck.checked = false;
+    }
     aplicarAcudiente();
     adminTokenField.hidden = true;
     passwordField.hidden = isForgot;
@@ -274,7 +286,10 @@ function main() {
     }
   });
 
-  isMinorCheck.addEventListener("change", aplicarAcudiente);
+  // En las dos: pasar de "menor" a "mayor" tiene que ocultar y limpiar el
+  // campo del acudiente, no solo marcarlo al reves.
+  ageMinorRadio.addEventListener("change", aplicarAcudiente);
+  ageAdultRadio.addEventListener("change", aplicarAcudiente);
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -293,10 +308,23 @@ function main() {
       return;
     }
 
-    // El correo del acudiente, si la casilla esta marcada. Se valida aqui y
+    // La edad y los terminos, antes que nada. El formulario lleva
+    // `novalidate`, asi que el navegador no exige nada por su cuenta: si esto
+    // no estuviera, la unica señal seria un 422 del servidor, que a un chico
+    // de 15 años no le dice absolutamente nada.
+    if (mode === "register" && !ageAdultRadio.checked && !ageMinorRadio.checked) {
+      showError(tl("errors.age"));
+      return;
+    }
+    if (mode === "register" && !acceptTermsCheck.checked) {
+      showError(tl("errors.terms"));
+      return;
+    }
+
+    // El correo del acudiente, si declaro ser menor. Se valida aqui y
     // no solo en el servidor porque el formulario lleva `novalidate`: sin
     // esto el unico aviso seria un 422, que no dice nada util a un chico.
-    if (mode === "register" && isMinorCheck.checked) {
+    if (mode === "register" && ageMinorRadio.checked) {
       const acudiente = form.guardianEmail.value.trim();
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(acudiente)) {
         showError(tl("errors.guardianEmail"));
@@ -333,13 +361,14 @@ function main() {
 
     const endpoint = mode === "register" ? "/api/v1/auth/register" : "/api/v1/auth/login";
     const adminSetupToken = form.adminSetupToken?.value.trim();
-    const esMenor = mode === "register" && isMinorCheck.checked;
+    const esMenor = mode === "register" && ageMinorRadio.checked;
     const body = mode === "register"
       ? {
           email, password,
           name: name || undefined,
           admin_setup_token: adminSetupToken || undefined,
           is_minor: esMenor,
+          accepted_terms: true,
           // Solo si lo es. El servidor lo descarta igualmente cuando
           // is_minor es falso, pero no tiene por que llegar hasta alli.
           guardian_email: esMenor ? form.guardianEmail.value.trim() : undefined,

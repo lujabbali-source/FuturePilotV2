@@ -34,6 +34,7 @@ desktop.ini
 
 # Descargas del importador del mundo: se regeneran solas y pesan 12 MB.
 web/scripts/.cache-world/
+web/scripts/.cache-censo/
 
 # Copias de seguridad: son la base entera, con correos, hashes y las fotos
 # del pasaporte. `backend/data/*.sqlite3` no cubre subcarpetas, y sin esto la

@@ -71,7 +71,7 @@ function main() {
       card.innerHTML = `
         <div class="health-card__head">
           <span class="health-dot status-${check.status}"></span>
-          <span class="health-card__title">${STATUS_ICON[check.status]} ${LABELS[key]}</span>
+          <span class="health-card__title">${LABELS[key]}</span>
         </div>
         <p class="health-card__detail">${check.detail}</p>
         ${repairButton}

@@ -91,6 +91,29 @@ ADMIN_EMAIL = (os.environ.get("ADMIN_EMAIL") or "").strip()
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD") or ""
 
 # --------------------------------------------------------------------------
+# El muro del informe
+# --------------------------------------------------------------------------
+# Lo que se vende es el INFORME (/informe), no el analisis. El analisis ya
+# esta prometido gratis en la pantalla de resultados ("El acceso completo es
+# gratuito", "Sin tarjeta de credito") y ponerle precio obligaria a
+# desdecirse. El informe no ha prometido nada todavia, y llega en un momento
+# mejor: cuando la persona ya vio su ruta y sus universidades y lo que compra
+# es el documento para ensenarselo a su familia o llevarlo a un orientador.
+#
+# PAYWALL_ENABLED es un interruptor y no un despliegue. Apagado -el valor por
+# defecto- el informe se desbloquea igual, gratis, y la pantalla lo dice. El
+# dia que haya pasarela se enciende sin tocar codigo. Se deja apagado a
+# proposito hasta despues del piloto del colegio.
+PAYWALL_PRODUCT = "informe"
+PAYWALL_ENABLED = (os.environ.get("PAYWALL_ENABLED") or "").strip().lower() in (
+    "1", "true", "yes", "si", "sí", "on")
+# En centavos y con la moneda aparte para no arrastrar decimales flotantes en
+# dinero. 2260000 = 22.600 COP.
+PAYWALL_AMOUNT_CENTS = int(os.environ.get("PAYWALL_AMOUNT_CENTS") or "2260000")
+PAYWALL_CURRENCY = (os.environ.get("PAYWALL_CURRENCY") or "COP").strip().upper()
+
+
+# --------------------------------------------------------------------------
 # Entorno de ejecucion. Por defecto "development" a proposito: un despliegue
 # real tiene que declararse explicitamente, no heredarse por descuido. Lo
 # que cambia con FUTUREPILOT_ENV=production:
@@ -641,6 +664,24 @@ def passport_page():
     return _web_page("passport.html")
 
 
+@app.get("/informe")
+def report_page():
+    """El resultado del test como documento imprimible.
+
+    La pagina es un cascaron: los datos los pide ella a
+    /api/v1/me/dashboard con el token de la sesion, igual que el resto del
+    sitio. No hay ningun endpoint de "informe" en el servidor porque no hace
+    falta ninguno - ese ya devuelve el ultimo resultado traducido, la cuenta
+    y las metas del pasaporte en una sola peticion.
+
+    El PDF tampoco se genera aqui: lo hace el navegador desde el mismo CSS
+    que se ve en pantalla (ver web/src/report/page.css). Asi no hay una
+    segunda maqueta que mantener sincronizada con la primera, ni una
+    dependencia de sistema que instalar en el contenedor.
+    """
+    return _web_page("informe.html")
+
+
 @app.get("/consent/{token}")
 def consent_page(token: str):
     """Centro para Padres. Publica a proposito: el acudiente no tiene cuenta
@@ -694,6 +735,17 @@ def admin_system_health_page():
     return _web_page("system-health.html")
 
 
+@app.get("/admin/informe")
+def admin_report_page():
+    """Informe general de resultados, imprimible.
+
+    Mismo trato que el resto del panel: la pagina esta vacia y los datos solo
+    salen por GET /api/v1/admin/report, que si comprueba la sesion en el
+    servidor. Servir este HTML no filtra nada.
+    """
+    return _web_page("admin-informe.html")
+
+
 # --------------------------------------------------------------------------
 # Autenticación
 # --------------------------------------------------------------------------
@@ -713,9 +765,24 @@ class RegisterRequest(BaseModel):
         ),
     )
 
-    is_minor: bool = Field(
+    is_minor: Optional[bool] = Field(
+        default=None,
+        description=(
+            "El estudiante declara si es menor de 18 anos. Obligatorio y SIN "
+            "valor por defecto: mientras fue una casilla que por omision "
+            "valia 'mayor de edad', no contestar producia una cuenta de "
+            "adulto sin que nadie lo hubiera dicho - justo el caso que el "
+            "expediente del acudiente existe para evitar. Ahora hay que "
+            "declararlo."
+        ),
+    )
+    accepted_terms: bool = Field(
         default=False,
-        description="El estudiante declara ser menor de 18 anos.",
+        description=(
+            "Aceptacion expresa de los terminos y la politica de privacidad. "
+            "Se exige aqui y no solo en el formulario: una casilla que solo "
+            "vive en el navegador no es constancia de nada."
+        ),
     )
     guardian_email: Optional[str] = Field(
         default=None,
@@ -735,14 +802,26 @@ class RegisterRequest(BaseModel):
 
     @model_validator(mode="after")
     def validate_guardian(self) -> "RegisterRequest":
-        """El correo del acudiente solo se exige - y solo se acepta - cuando
-        hace falta.
+        """La edad declarada, la aceptacion de terminos y, si procede, el
+        correo del acudiente.
 
-        La comprobacion de que no sea el suyo propio no detecta a un menor
-        deshonesto: puede poner cualquier otra direccion. Detecta el atajo
-        obvio, el que se toma sin pensarlo, y de paso el error de teclear dos
-        veces el mismo correo sin darse cuenta.
+        La edad se comprueba antes que nada porque de ella depende todo lo
+        demas, y se exige explicita: `None` significa que nadie contesto, y
+        eso no puede resolverse suponiendo que es mayor de edad.
+
+        La comprobacion de que el correo del acudiente no sea el suyo propio
+        no detecta a un menor deshonesto: puede poner cualquier otra
+        direccion. Detecta el atajo obvio, el que se toma sin pensarlo, y de
+        paso el error de teclear dos veces el mismo correo sin darse cuenta.
         """
+        if self.is_minor is None:
+            raise ValueError(
+                "Falta declarar si eres mayor o menor de 18 anos."
+            )
+        if not self.accepted_terms:
+            raise ValueError(
+                "Hay que aceptar los terminos y la politica de privacidad."
+            )
         if not self.is_minor:
             self.guardian_email = None
             return self
@@ -841,7 +920,8 @@ def register(payload: RegisterRequest, request: Request):
     try:
         user = users_store.register(
             payload.email, payload.password, payload.name,
-            is_minor=payload.is_minor, guardian_email=payload.guardian_email,
+            is_minor=bool(payload.is_minor), guardian_email=payload.guardian_email,
+            accepted_terms=payload.accepted_terms,
         )
     except DuplicateEmailError:
         raise HTTPException(
@@ -1213,6 +1293,37 @@ def _build_journey(profile: Dict[str, Any], progress: Dict[str, Any]) -> List[Di
     return journey
 
 
+def _report_access(user_id: int) -> dict:
+    """Si esta cuenta puede abrir su informe, y por que motivo.
+
+    Devuelve el motivo y no solo un booleano porque la pantalla tiene que
+    poder explicarse, y porque no es lo mismo un informe abierto porque
+    alguien pago que uno abierto porque el muro esta apagado. Confundirlos
+    haria imposible saber, el dia que se encienda, a quien habia que cobrar.
+    """
+    if not PAYWALL_ENABLED:
+        return {"unlocked": True, "reason": "launch_free", "price": None}
+    if users_store.has_purchase(user_id, PAYWALL_PRODUCT):
+        return {"unlocked": True, "reason": "purchased", "price": None}
+    return {
+        "unlocked": False,
+        "reason": "locked",
+        "price": {
+            "amount_cents": PAYWALL_AMOUNT_CENTS,
+            "currency": PAYWALL_CURRENCY,
+        },
+        # Todavia no hay pasarela, asi que no hay a donde mandar a nadie a
+        # pagar. Va como None y no como un boton muerto a proposito: una
+        # pantalla que pide dinero con un boton que no hace nada es peor que
+        # una que dice que aun no se puede pagar por aqui. Mientras tanto se
+        # cobra por fuera y se abre con /api/v1/admin/users/{id}/unlock-report.
+        #
+        # El dia que exista la integracion, esto pasa a ser su URL y la
+        # pantalla dibuja el boton sola: no hay que tocar el frontal.
+        "checkout_url": None,
+    }
+
+
 @app.get("/api/v1/me/dashboard", status_code=status.HTTP_200_OK)
 def get_my_dashboard(
     lang: Optional[str] = None,
@@ -1266,6 +1377,16 @@ def get_my_dashboard(
         "stamps": users_store.list_passport_stamps(user_id)[-6:],
         "recent_activity": users_store.list_passport_events(user_id, limit=8),
         "goals": profile.get("goals") or {},
+        # Si esta cuenta puede abrir su informe, y por que. Viaja aqui y no
+        # en una peticion aparte porque el informe ya pide este endpoint y
+        # nada mas: preguntarlo por separado seria una segunda ida y vuelta
+        # para pintar la misma pagina.
+        #
+        # `unlocked` es la respuesta; los otros dos campos existen para que
+        # la pantalla pueda explicarse. Con el muro apagado todo el mundo lo
+        # tiene abierto, y `reason` lo dice - asi un informe que se abrio
+        # porque el muro estaba apagado no se confunde con uno pagado.
+        "report_access": _report_access(user_id),
     }
 
 
@@ -1786,6 +1907,167 @@ def admin_dashboard(current_admin: dict = Depends(get_current_admin_required)):
     }
 
 
+# --------------------------------------------------------------------------
+# Informe general de resultados
+# --------------------------------------------------------------------------
+# El panel de arriba enseña un top 5 y unos contadores: sirve para mirar como
+# va la plataforma hoy. Esto es otra cosa - un documento que responde "que le
+# esta saliendo a la gente", con el reparto completo y no solo la cabeza.
+#
+# Todo lo que devuelve sale de filas reales de test_results. Lo que no se
+# puede saber (cuantos estudiantes distintos hay detras de N tests anonimos)
+# se dice que no se sabe, en vez de estimarlo.
+
+# Tope de resultados que se leen y parsean para las medias. Ver
+# results_json_for_stats: el recuento de carreras es exacto porque se hace en
+# SQL, pero el arquetipo y el vector viven dentro del JSON y hay que abrirlos
+# uno a uno. Si se alcanza, la respuesta lo dice y el informe lo imprime.
+REPORT_SAMPLE_LIMIT = 3000
+
+
+def _report_period(days: Optional[int]) -> Optional[str]:
+    """El corte temporal, o None para "desde el principio"."""
+    if not days or days <= 0:
+        return None
+    return (utc_now() - timedelta(days=days)).isoformat()
+
+
+def _aggregate_results(muestra: List[str], lang: str) -> Dict[str, Any]:
+    """Arquetipos y perfil medio de la poblacion, leidos de los JSON.
+
+    El perfil medio es la media de cada eje sobre todos los resultados. Dice
+    algo que ningun test individual dice: hacia donde se inclina la gente que
+    usa esto. Un colegio con la media de "Trato con personas" por las nubes y
+    la de "Habilidad tecnica" por los suelos esta viendo algo real sobre sus
+    alumnos - o sobre como redacto sus preguntas el test.
+    """
+    arquetipos: Dict[str, int] = {}
+    sumas: Dict[str, float] = {}
+    contados = 0
+
+    for crudo in muestra:
+        try:
+            datos = json.loads(crudo)
+        except (ValueError, TypeError):
+            # Una fila corrupta no puede tumbar el informe entero: se salta y
+            # deja de contar, que es lo unico honesto que se puede hacer con
+            # ella.
+            continue
+
+        clave = datos.get("archetype_key")
+        if clave:
+            arquetipos[clave] = arquetipos.get(clave, 0) + 1
+
+        vector = datos.get("user_vector") or {}
+        if vector:
+            contados += 1
+            for eje, valor in vector.items():
+                try:
+                    sumas[eje] = sumas.get(eje, 0.0) + float(valor)
+                except (TypeError, ValueError):
+                    continue
+
+    perfil_medio = [
+        {
+            "cluster": eje,
+            "label": localization.cluster_labels([eje], lang)[0],
+            "average": round(total / contados, 2),
+        }
+        for eje, total in sorted(sumas.items(), key=lambda par: -par[1])
+    ] if contados else []
+
+    top_arquetipos = [
+        {"key": clave, "name": localization.archetype(clave, lang)["name"], "total": total}
+        for clave, total in sorted(arquetipos.items(), key=lambda par: (-par[1], par[0]))
+    ]
+
+    return {
+        "archetypes": top_arquetipos,
+        "average_profile": perfil_medio,
+        "profiles_counted": contados,
+    }
+
+
+@app.get("/api/v1/admin/report", status_code=status.HTTP_200_OK)
+def admin_report(
+    days: Optional[int] = None,
+    lang: Optional[str] = None,
+    current_admin: dict = Depends(get_current_admin_required),
+):
+    """El informe general de resultados, en datos.
+
+    `days` acota el periodo (30, 90, 365...); sin el, es el historico
+    completo. La pagina que lo imprime es /admin/informe.
+    """
+    lang = _resolve_lang(lang)
+    desde = _report_period(days)
+
+    distribucion = users_store.career_distribution(since_iso=desde)
+    total_tests = sum(fila["total"] for fila in distribucion)
+
+    # El porcentaje se calcula aqui, una sola vez y sobre el total real. Si lo
+    # calculara la pagina, cada vista tendria que decidir sobre que divide - y
+    # dividir sobre "tests completados" en vez de sobre "tests con carrera
+    # asignada" da numeros que no suman 100.
+    catalogo = {career["id"]: career for career in careers_db}
+    por_categoria: Dict[str, int] = {}
+    carreras = []
+    for fila in distribucion:
+        career = catalogo.get(fila["career_id"] or "")
+        categoria = localization.career_field(career, "category", lang) if career else ""
+        if categoria:
+            por_categoria[categoria] = por_categoria.get(categoria, 0) + fila["total"]
+        carreras.append({
+            "career_id": fila["career_id"],
+            # El nombre se relee del catalogo para que salga en el idioma
+            # pedido: top_career_name se guardo con el idioma que tenia el
+            # estudiante el dia del test, asi que la tabla venia mezclada.
+            "name": (localization.career_field(career, "title", lang) if career
+                     else fila["name"]),
+            "total": fila["total"],
+            "percent": round(100 * fila["total"] / total_tests, 1) if total_tests else 0,
+        })
+
+    muestra = users_store.results_json_for_stats(since_iso=desde, limit=REPORT_SAMPLE_LIMIT)
+
+    return {
+        "success": True,
+        "lang": lang,
+        "generated_at": utc_now_iso(),
+        "period": {
+            "days": days if days and days > 0 else None,
+            "since": desde,
+        },
+        "totals": {
+            "users": users_store.count_users(),
+            "users_with_results": users_store.count_users_with_results(),
+            "tests_total": users_store.count_test_results(),
+            "tests_in_period": total_tests,
+            "tests_anonymous": users_store.count_anonymous_results(since_iso=desde),
+            "careers_represented": len(carreras),
+            "careers_in_catalog": len(careers_db),
+        },
+        "careers": carreras,
+        "categories": [
+            {
+                "name": nombre,
+                "total": total,
+                "percent": round(100 * total / total_tests, 1) if total_tests else 0,
+            }
+            for nombre, total in sorted(por_categoria.items(), key=lambda par: (-par[1], par[0]))
+        ],
+        **_aggregate_results(muestra, lang),
+        # Lo unico que hace creible al resto: si la muestra se corto, el
+        # informe tiene que decirlo donde se lea, no en un log.
+        "sample": {
+            "size": len(muestra),
+            "limit": REPORT_SAMPLE_LIMIT,
+            "truncated": len(muestra) >= REPORT_SAMPLE_LIMIT,
+        },
+        "top_countries": users_store.top_countries(limit=10),
+    }
+
+
 
 
 # --------------------------------------------------------------------------
@@ -1866,6 +2148,8 @@ def _check_frontend_pages() -> Dict[str, Any]:
         "index.html", "assessment.html", "careers.html", "journey.html",
         "flightplan.html", "passport.html", "login.html", "reset-password.html",
         "verify-email.html", "terms.html", "privacy.html", "globe.html",
+        "informe.html",
+        "admin-informe.html",
     ]
     missing = [name for name in required if not (WEB_DIST_DIR / name).exists()]
     if missing:
@@ -2035,6 +2319,60 @@ def admin_audit_log(current_admin: dict = Depends(get_current_admin_required)):
     conserva porque el registro en si vale para reconstruir que paso, y
     este endpoint es la unica forma de leerlo sin abrir el SQLite a mano."""
     return {"success": True, "entries": users_store.list_admin_audit_log(limit=50)}
+
+
+class UnlockReportRequest(BaseModel):
+    note: Optional[str] = Field(
+        default=None,
+        description=(
+            "Por que se desbloquea a mano. Se guarda con la compra: sin esto, "
+            "dentro de tres meses nadie sabra si aquello fue un pago por Nequi, "
+            "una cortesia o una prueba."
+        ),
+        max_length=280,
+    )
+
+
+@app.post("/api/v1/admin/users/{user_id}/unlock-report",
+          status_code=status.HTTP_200_OK)
+def admin_unlock_report(
+    user_id: int,
+    payload: UnlockReportRequest,
+    current_admin: dict = Depends(get_current_admin_required),
+):
+    """Abre el informe de una cuenta sin pasar por ninguna pasarela.
+
+    No es un parche a la espera de la pasarela: sigue haciendo falta despues.
+    Permite cobrar antes de tener integracion -alguien transfiere por Nequi y
+    se le abre a mano- y es la salida cuando un pago real se queda a medias,
+    que pasa. Sin esto, la unica respuesta a "pague y no se me abrio" seria
+    editar el SQLite a mano.
+
+    Queda como una compra normal con provider='manual' y el id del admin que
+    la concedio, para que al mirar la tabla se distinga de un cobro de
+    verdad. Y se anota en el registro de auditoria: desbloquear algo que
+    vale dinero es exactamente el tipo de accion que tiene que dejar rastro.
+    """
+    cuenta = users_store.get_user_by_id(user_id)
+    if not cuenta:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No existe ninguna cuenta con ese id.",
+        )
+
+    compra = users_store.record_purchase(
+        user_id, PAYWALL_PRODUCT,
+        provider="manual",
+        granted_by=current_admin["id"],
+        note=(payload.note or "").strip() or None,
+    )
+    users_store.record_admin_action(
+        current_admin["id"], "unlock_report",
+        {"user_id": user_id, "purchase_id": compra["id"],
+         "note": compra.get("note")},
+    )
+    return {"success": True, "purchase": compra,
+            "report_access": _report_access(user_id)}
 
 
 # --------------------------------------------------------------------------
@@ -2985,6 +3323,72 @@ def start_consent_sweep() -> bool:
 
 
 start_consent_sweep()
+
+
+# --------------------------------------------------------------------------
+# Copia de seguridad diaria, dentro de este mismo proceso.
+#
+# No es un Cron Job aparte, y no por comodidad: en Render un disco solo se
+# adjunta a un web service, un private service o un background worker. Un Cron
+# Job no puede montarlo, asi que un cron externo no veria la base que tiene que
+# copiar. El hilo tiene que vivir donde vive el disco.
+#
+# Mismo trato que el barrido de consentimientos: apagado por defecto y
+# diciendo por consola en cual de los dos estados esta, porque un respaldo que
+# se cree activo y no lo esta es peor que no tener ninguno.
+# --------------------------------------------------------------------------
+BACKUP_ENABLED = (os.environ.get("BACKUP_ENABLED") or "").strip().lower() in (
+    "1", "true", "yes", "si", "sí", "on")
+BACKUP_INTERVAL_HOURS = float(os.environ.get("BACKUP_INTERVAL_HOURS") or "24")
+
+
+def run_backup() -> Optional[str]:
+    """Una copia, verificada y con las antiguas rotadas.
+
+    Devuelve el nombre del archivo, o None si no se pudo crear.
+    """
+    from backend import backup as backup_mod
+
+    try:
+        archivo = backup_mod.crear()
+    except SystemExit as error:
+        # crear() aborta con SystemExit porque nacio como script de linea de
+        # comandos. SystemExit NO hereda de Exception: sin capturarlo aparte se
+        # llevaria el hilo por delante y las copias dejarian de hacerse en
+        # silencio, que es justo el fallo que esto viene a evitar.
+        print(f"[backup] La copia NO se creo: {error}")
+        return None
+
+    borradas = backup_mod.rotar()
+    extra = f", rotadas {len(borradas)} antigua(s)" if borradas else ""
+    print(f"[backup] Copia creada y verificada: {archivo.name}{extra}")
+    return archivo.name
+
+
+def _backup_loop() -> None:
+    while True:
+        try:
+            run_backup()
+        except Exception as error:  # noqa: BLE001
+            print(f"[backup] ERROR inesperado: {error}")
+        time.sleep(BACKUP_INTERVAL_HOURS * 3600)
+
+
+def start_backup_scheduler() -> bool:
+    """Arranca el hilo si esta activado. Devuelve si lo arranco."""
+    if not BACKUP_ENABLED:
+        print("[backup] Copias automaticas APAGADAS. Sin disco persistente no "
+              "servirian de nada: la copia se borraria con el mismo reinicio "
+              "que se lleva la base. Con disco montado, pon BACKUP_ENABLED=1.")
+        return False
+
+    hilo = threading.Thread(target=_backup_loop, name="backup", daemon=True)
+    hilo.start()
+    print(f"[backup] Copias automaticas activas, cada {BACKUP_INTERVAL_HOURS:g} h.")
+    return True
+
+
+start_backup_scheduler()
 
 
 # --------------------------------------------------------------------------

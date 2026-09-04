@@ -19,9 +19,79 @@
 
 .radar {
   width: 100%;
-  max-width: 420px;
+  /* Mas ancho que antes: la rueda añadio corona y numeros fuera de la zona de
+     datos, y con 420 los nombres largos ("Iniciativa emprendedora") se comian
+     el dibujo. */
+  max-width: 480px;
   height: auto;
   overflow: visible;
+}
+
+/* --- La rueda -------------------------------------------------------------
+   Los ocho tonos de la corona. Van de cian a verde y VUELVEN a cian, porque
+   la corona es un circulo: si el degradado fuera lineal, el segmento 8 y el 1
+   quedarian pegados con el salto de color mas brusco de todo el grafico.
+   Se declaran como variables para poder repintarlas enteras en la hoja del
+   informe, donde manda la paleta de papel (ver web/src/report/page.css). */
+.radar {
+  --radar-arc-0: #00D4FF;
+  --radar-arc-1: #00E0E8;
+  --radar-arc-2: #00ECD0;
+  --radar-arc-3: #00F8BC;
+  --radar-arc-4: #00FFB3;
+  --radar-arc-5: #00F0C8;
+  --radar-arc-6: #00E2DC;
+  --radar-arc-7: #00D8EE;
+}
+
+.radar__arc {
+  cursor: pointer;
+  opacity: .72;
+  transition: opacity .18s ease;
+}
+
+.radar__arc--0 { fill: var(--radar-arc-0); }
+.radar__arc--1 { fill: var(--radar-arc-1); }
+.radar__arc--2 { fill: var(--radar-arc-2); }
+.radar__arc--3 { fill: var(--radar-arc-3); }
+.radar__arc--4 { fill: var(--radar-arc-4); }
+.radar__arc--5 { fill: var(--radar-arc-5); }
+.radar__arc--6 { fill: var(--radar-arc-6); }
+.radar__arc--7 { fill: var(--radar-arc-7); }
+
+.radar__arc:hover {
+  opacity: .85;
+}
+
+/* El segmento del eje abierto se enciende del todo y se separa del resto. */
+.radar__arc.is-selected {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 179, .55));
+}
+
+/* Atenuar, no apagar. A .3 los ocho tonos de la corona se volvian el mismo
+   verde oscuro y se perdia justo lo que la corona aporta: que cada dimension
+   tenga un color reconocible aunque no sea la que estas mirando. */
+.radar.is-focused .radar__arc:not(.is-selected) {
+  opacity: .48;
+}
+
+/* El numero dentro de cada segmento. Sobre el color de la corona, siempre en
+   el azul oscuro del fondo: es el unico que contrasta con los ocho tonos. */
+.radar__num {
+  fill: #07111F;
+  font-size: 13px;
+  font-weight: 800;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* El nucleo: donde cae un cero. */
+.radar__core {
+  fill: rgba(255, 255, 255, .05);
+  stroke: rgba(255, 255, 255, .1);
+  stroke-width: 1;
+  pointer-events: none;
 }
 
 /* La rejilla se ve, pero no compite con los datos. */
@@ -40,10 +110,82 @@
   stroke-width: 1;
 }
 
+/* La zona sensible de cada eje: su porcion de tarta, invisible.
+   Sin esto lo unico pulsable dentro del grafico era el vertice, y el vertice
+   vive a la distancia que marque la puntuacion - un eje con 0 pone su punto
+   en el centro exacto, asi que todos los ejes bajos se amontonaban en el
+   mismo pixel y solo respondia el ultimo. Ahora la superficie sensible no
+   depende de la puntuacion: cada eje tiene su sector entero, valga 0 o 10. */
+.radar__hit {
+  fill: transparent;
+  /* `visiblePainted` no basta: el relleno transparente cuenta como no
+     pintado en algunos motores y el sector se volveria sordo. */
+  pointer-events: all;
+  cursor: pointer;
+}
+
+/* El sector del eje abierto se tiñe. Es la respuesta a "que estoy mirando":
+   sin esto, pulsar un eje bajo cambiaba el texto de debajo y en el grafico no
+   se movia nada visible, porque su vertice esta en el centro y crecer de 5 a
+   7 pixeles ahi no se aprecia. */
+.radar__hit.is-selected {
+  fill: rgba(0, 255, 179, .07);
+}
+
+/* Todo lo que se dibuja ENCIMA de los sectores y no es pulsable tiene que
+   dejar pasar el clic. El poligono del perfil es el que importa: cubre la
+   parte central del grafico, y sin esto se tragaba los clics de los ejes mas
+   bajos - justo los que este arreglo viene a rescatar. */
+.radar__area,
+.radar__ring,
+.radar__spoke {
+  pointer-events: none;
+}
+
 .radar__area {
   stroke: #00FFB3;
   stroke-width: 2;
   stroke-linejoin: round;
+}
+
+/* --- El nivel del eje abierto ---------------------------------------------
+   Las dos marcas que responden a "cuanto saque en ESTE eje", puestas encima
+   del perfil sin tocarlo: el anillo a la altura de la puntuacion y el radio
+   encendido. Nacen vacios (sin `points`, y con el radio de longitud cero) y
+   los rellena wireRadar; mientras no haya ningun eje abierto no se ve nada. */
+.radar__level {
+  fill: none;
+  stroke: #00FFB3;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 5;
+  opacity: .8;
+  pointer-events: none;
+}
+
+/* El radio encendido. Es la marca que mas brilla del grafico a proposito: es
+   lo que dice de un vistazo cual de los ocho estas mirando. */
+.radar__ray {
+  stroke: #00FFB3;
+  stroke-width: 3;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 179, .85));
+  pointer-events: none;
+}
+
+/* Con un eje abierto, el resto baja un punto de intensidad. Un punto solo:
+   atenuar de mas convierte "mira este" en "olvida los otros siete", y la
+   gracia del radar es justo poder comparar. */
+.radar.is-focused .radar__area {
+  opacity: .72;
+  transition: opacity .18s ease;
+}
+
+.radar.is-focused .radar__label:not(.is-selected) {
+  opacity: .55;
+}
+
+.radar.is-focused .radar__dot:not(.is-selected) {
+  opacity: .5;
 }
 
 .radar__dot {
@@ -84,6 +226,14 @@
   fill: #00FFB3;
   stroke: #00D4FF;
   stroke-width: 3;
+  /* El halo. Sin el, un vertice abierto en un eje bajo -que queda casi en el
+     centro, entre los demas- no se distinguia de sus vecinos. */
+  filter: drop-shadow(0 0 7px rgba(0, 255, 179, .9));
+}
+
+.radar__label.is-selected {
+  font-weight: 800;
+  opacity: 1;
 }
 
 .radar__label:focus-visible,
@@ -180,3 +330,9 @@
 .reliability--high { border-left: 3px solid #00FFB3; padding-left: 12px; }
 .reliability--mid  { border-left: 3px solid rgba(255, 190, 90, .7); padding-left: 12px; }
 .reliability--low  { border-left: 3px solid rgba(255, 130, 120, .7); padding-left: 12px; }
+
+/* El mismo resalte, en la hoja del informe: alli la paleta es la de papel
+   (ver web/src/report/page.css) y el verde de pantalla se iria de tono. */
+.rep-sheet .radar__hit.is-selected {
+  fill: rgba(0, 169, 124, .08);
+}

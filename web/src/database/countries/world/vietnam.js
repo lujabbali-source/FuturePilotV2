@@ -1,32 +1,249 @@
 // Vietnam — importado, no curado.
 //
 // Trae lo que las fuentes abiertas pueden verificar: nombre, capital, moneda,
-// idioma, poblacion y las universidades con su sitio oficial. Todo lo demas
-// (ciudades, costo de vida, salarios, cultura) esta vacio a proposito. Ver
-// web/scripts/import_world.py.
+// idioma, poblacion, las ciudades con universidad y las universidades con su
+// sitio oficial. Todo lo demas (costo de vida, salarios, cultura) esta vacio
+// a proposito. Ver web/scripts/import_world.py.
 //
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry, defineUniversity } from "../schema";
+import { defineCity, defineCountry } from "../schema.js";
+
+const countryId = "vietnam";
+const countryName = "Vietnam";
+
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/vietnam.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
+const cities = [
+    defineCity({
+      id: "vietnam-thu-uc",
+      name: "Thủ Đức",
+      coordinates: {"lat": 10.84863, "lng": 106.77209},
+      isCapital: false,
+      universityCount: 9,
+      statistics: { population: 524670 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-quan-ba",
+      name: "Quận Ba",
+      coordinates: {"lat": 10.77494, "lng": 106.68628},
+      isCapital: false,
+      universityCount: 6,
+      statistics: { population: 220375 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-quan-bon",
+      name: "Quận Bốn",
+      coordinates: {"lat": 10.76684, "lng": 106.70574},
+      isCapital: false,
+      universityCount: 5,
+      statistics: { population: 199329 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-bien-hoa",
+      name: "Biên Hòa",
+      coordinates: {"lat": 10.94469, "lng": 106.82432},
+      isCapital: false,
+      universityCount: 4,
+      statistics: { population: 1272235 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-haiphong",
+      name: "Haiphong",
+      coordinates: {"lat": 20.86481, "lng": 106.68345},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 2625200 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-binh-thanh",
+      name: "Bình Thạnh",
+      coordinates: {"lat": 10.811, "lng": 106.706},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 552164 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-thanh-xuan",
+      name: "Thanh Xuân",
+      coordinates: {"lat": 20.99472, "lng": 105.79977},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 293292 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-quan-nam",
+      name: "Quận Năm",
+      coordinates: {"lat": 10.75567, "lng": 106.66745},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 187510 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-vinh",
+      name: "Vinh",
+      coordinates: {"lat": 18.67337, "lng": 105.69232},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 790000 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-tra-vinh",
+      name: "Trà Vinh",
+      coordinates: {"lat": 9.94719, "lng": 106.34225},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 160310 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-nha-trang",
+      name: "Nha Trang",
+      coordinates: {"lat": 12.24507, "lng": 109.19432},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 579000 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-nghia-o",
+      name: "Nghĩa Đô",
+      coordinates: {"lat": 21.05, "lng": 105.8},
+      isCapital: false,
+      universityCount: 1,
+      statistics: { population: 96418 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-mai-dich",
+      name: "Mai Dịch",
+      coordinates: {"lat": 21.03333, "lng": 105.78333},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 40527 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-ha-ong",
+      name: "Hà Đông",
+      coordinates: {"lat": 20.97136, "lng": 105.77876},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 50877 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-da-nang",
+      name: "Da Nang",
+      coordinates: {"lat": 16.06778, "lng": 108.22083},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 1276000 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-cao-lanh",
+      name: "Cao Lãnh",
+      coordinates: {"lat": 10.46017, "lng": 105.63294},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 211912 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-cau-dien",
+      name: "Cầu Diễn",
+      coordinates: {"lat": 21.03929, "lng": 105.76659},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 27017 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-ong-a",
+      name: "Đống Đa",
+      coordinates: {"lat": 21.013, "lng": 105.825},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 371606 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-hai-ba-trung",
+      name: "Hai Bà Trưng",
+      coordinates: {"lat": 21.01341, "lng": 105.84772},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 303586 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-vinhomes-ocean-park",
+      name: "Vinhomes Ocean Park",
+      coordinates: {"lat": 20.9948, "lng": 105.9465},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 60000 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "vietnam-kien-hung",
+      name: "Kiến Hưng",
+      coordinates: {"lat": 20.95833, "lng": 105.78972},
+      isCapital: false,
+      universityCount: 1,
+      statistics: { population: 70833 },
+      countryId,
+      countryName,
+    }),
+];
 
 export default defineCountry({
-  id: "vietnam",
-  name: "Vietnam",
+  id: countryId,
+  name: countryName,
   nameEn: "Vietnam",
   capital: "Hanoi",
   currency: "VND",
-  language: "Vietnamese",
+  language: "vietnamita",
   continent: "Asia",
   population: 101598527,
-  // Sin ciudades: la fuente de universidades trae provincia en solo el 14% de
-  // los casos, y provincia no es ciudad. Inventar el reparto por ciudades
-  // seria la peor clase de dato falso, porque parece preciso.
-  cities: [],
+  cities,
   // Las universidades no van aqui: viven en ./universities/vietnam.js
   // y se cargan solo al abrir el pais (ver getNationalUniversities).
   universityCount: 59,
   aliases: ["vietnam"],
   dataStatus: "source-open-dataset",
-  sources: ["Hipo/university-domains-list (MIT)", "mledoze/countries (ODbL-1.0)", "Banco Mundial, SP.POP.TOTL"],
+  sources: ["Hipo/university-domains-list (MIT)", "GeoNames (CC BY 4.0)", "Wikidata (CC0)", "Banco Mundial, SP.POP.TOTL"],
 });

@@ -27,7 +27,7 @@ def test_una_cuenta_nueva_nace_sin_verificar(client):
     inventarse un hecho que no ocurrio."""
     r = client.post(
         "/api/v1/auth/register",
-        json={"email": "verif-nueva@example.com", "password": "password123", "name": "Ana"},
+        json={"is_minor": False, "accepted_terms": True, "email": "verif-nueva@example.com", "password": "password123", "name": "Ana"},
     )
     assert r.status_code == 201
     assert r.json()["user"]["email_verified"] is False
@@ -38,7 +38,7 @@ def test_registrarse_no_queda_bloqueado_por_el_correo(client, sample_answers):
     pasaporte, con el correo sin confirmar."""
     r = client.post(
         "/api/v1/auth/register",
-        json={"email": "verif-nobloquea@example.com", "password": "password123"},
+        json={"is_minor": False, "accepted_terms": True, "email": "verif-nobloquea@example.com", "password": "password123"},
     )
     headers = {"Authorization": f"Bearer {r.json()['token']}"}
 
@@ -52,7 +52,7 @@ def test_registrarse_no_queda_bloqueado_por_el_correo(client, sample_answers):
 def test_el_enlace_confirma_el_correo(client, app_module):
     r = client.post(
         "/api/v1/auth/register",
-        json={"email": "verif-ok@example.com", "password": "password123"},
+        json={"is_minor": False, "accepted_terms": True, "email": "verif-ok@example.com", "password": "password123"},
     )
     user_id = r.json()["user"]["id"]
     headers = {"Authorization": f"Bearer {r.json()['token']}"}
@@ -72,7 +72,7 @@ def test_pulsar_el_enlace_dos_veces_no_es_un_error(client, app_module):
     leccion que el claim del resultado del test."""
     r = client.post(
         "/api/v1/auth/register",
-        json={"email": "verif-doble@example.com", "password": "password123"},
+        json={"is_minor": False, "accepted_terms": True, "email": "verif-doble@example.com", "password": "password123"},
     )
     token = _token_de(app_module, r.json()["user"]["id"])
 
@@ -96,7 +96,7 @@ def test_un_enlace_caducado_se_distingue_de_uno_invalido(client, app_module):
 
     r = client.post(
         "/api/v1/auth/register",
-        json={"email": "verif-caducado@example.com", "password": "password123"},
+        json={"is_minor": False, "accepted_terms": True, "email": "verif-caducado@example.com", "password": "password123"},
     )
     user_id = r.json()["user"]["id"]
     token = _token_de(app_module, user_id)
@@ -121,7 +121,7 @@ def test_un_token_nuevo_invalida_el_anterior(client, app_module):
     """Si no, cada reenvio dejaria otro enlace valido flotando por ahi."""
     r = client.post(
         "/api/v1/auth/register",
-        json={"email": "verif-rotacion@example.com", "password": "password123"},
+        json={"is_minor": False, "accepted_terms": True, "email": "verif-rotacion@example.com", "password": "password123"},
     )
     user_id = r.json()["user"]["id"]
 
@@ -143,7 +143,7 @@ def test_el_reenvio_no_acepta_una_direccion_del_cliente(client, app_module):
     otra direccion no puede cambiar el destinatario."""
     r = client.post(
         "/api/v1/auth/register",
-        json={"email": "verif-destino@example.com", "password": "password123"},
+        json={"is_minor": False, "accepted_terms": True, "email": "verif-destino@example.com", "password": "password123"},
     )
     headers = {"Authorization": f"Bearer {r.json()['token']}"}
 
@@ -171,7 +171,7 @@ def test_el_reenvio_no_acepta_una_direccion_del_cliente(client, app_module):
 def test_reenviar_cuando_ya_esta_verificado_no_gasta_un_correo(client, app_module):
     r = client.post(
         "/api/v1/auth/register",
-        json={"email": "verif-yaesta@example.com", "password": "password123"},
+        json={"is_minor": False, "accepted_terms": True, "email": "verif-yaesta@example.com", "password": "password123"},
     )
     headers = {"Authorization": f"Bearer {r.json()['token']}"}
     token = _token_de(app_module, r.json()["user"]["id"])
@@ -236,7 +236,7 @@ def test_borrar_la_cuenta_se_lleva_sus_tokens(client, app_module):
 
     r = client.post(
         "/api/v1/auth/register",
-        json={"email": "verif-borrado@example.com", "password": "password123"},
+        json={"is_minor": False, "accepted_terms": True, "email": "verif-borrado@example.com", "password": "password123"},
     )
     user_id = r.json()["user"]["id"]
     token = _token_de(app_module, user_id)

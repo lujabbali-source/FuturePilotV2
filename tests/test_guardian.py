@@ -20,7 +20,11 @@ RAIZ = Path(__file__).resolve().parent.parent
 
 def _registrar(client, **extra):
     cuerpo = {"email": extra.pop("email", "menor@example.com"),
-              "password": "password123", "name": "Ana"}
+              "password": "password123", "name": "Ana",
+              # El registro exige declarar la edad y aceptar los terminos.
+              # Van como valores por defecto para que cada test solo escriba
+              # lo que de verdad esta probando; `extra` los pisa si hace falta.
+              "is_minor": False, "accepted_terms": True}
     cuerpo.update(extra)
     return client.post("/api/v1/auth/register", json=cuerpo)
 
@@ -85,19 +89,79 @@ def test_the_guardian_email_is_lowercased_like_the_others(client):
     assert r.json()["user"]["guardian_email"] == "padre@example.com"
 
 
+def test_registering_without_declaring_an_age_is_refused(client):
+    """El servidor no supone mayoria de edad cuando nadie contesta.
+
+    Es el mismo agujero que el `checked` del formulario, un piso mas abajo:
+    si el campo pudiera omitirse y valer False, bastaria con no mandarlo
+    para crear cuentas de menores sin expediente de acudiente."""
+    r = client.post("/api/v1/auth/register", json={
+        "email": "sin-edad@example.com", "password": "password123",
+        "accepted_terms": True,
+    })
+    assert r.status_code == 422, r.text
+    assert "18" in r.text, f"el 422 no es por la edad: {r.text}"
+
+
+def test_registering_without_accepting_the_terms_is_refused(client):
+    """Una casilla que solo vive en el navegador no es constancia de nada:
+    se comprueba tambien en el servidor, que es quien guarda la fecha."""
+    r = client.post("/api/v1/auth/register", json={
+        "email": "sin-terminos@example.com", "password": "password123",
+        "is_minor": False,
+    })
+    assert r.status_code == 422, r.text
+    assert "terminos" in r.text.lower(), f"el 422 no es por los terminos: {r.text}"
+
+
+def test_accepting_the_terms_is_recorded_with_a_date(client):
+    """Sin fecha guardada, la casilla no prueba nada el dia que haga falta
+    demostrar que alguien acepto."""
+    r = _registrar(client, email="con-terminos@example.com")
+    assert r.status_code == 201, r.text
+    import app as fp_app
+    cuenta = fp_app.users_store.get_user_by_id(r.json()["user"]["id"])
+    assert cuenta["terms_accepted_at"], "no quedo constancia de la aceptacion"
+
+
 # --- La pantalla ----------------------------------------------------------
 
 def test_the_question_is_actually_on_the_form():
     """El backend puede estar perfecto y la pregunta no aparecer nunca."""
     html = (RAIZ / "web" / "login.html").read_text(encoding="utf-8")
-    assert 'id="isMinorCheck"' in html, "no hay casilla de menor de edad en el formulario"
+    assert 'id="ageMinorRadio"' in html, "no hay opcion de menor de edad en el formulario"
+    assert 'id="ageAdultRadio"' in html, "no hay opcion de mayor de edad en el formulario"
     assert 'name="guardianEmail"' in html, "no hay campo para el correo del acudiente"
+
+
+def test_no_age_option_comes_preselected():
+    """Lo que vigila este test es el caso del auditorio: alguien con prisa
+    que no toca la pregunta.
+
+    Mientras la edad fue una casilla suelta, no tocarla significaba "soy
+    mayor de edad" y la cuenta se creaba sin acudiente al que pedirle
+    permiso. Un `checked` de mas en el HTML devolveria ese agujero sin que
+    nada mas se rompa, asi que se comprueba aqui."""
+    html = (RAIZ / "web" / "login.html").read_text(encoding="utf-8")
+    bloque = html.split('id="minorField"', 1)[1].split("</fieldset>", 1)[0]
+    assert "checked" not in bloque, "una opcion de edad viene marcada por defecto"
+
+
+def test_the_form_links_the_terms_and_the_privacy_policy():
+    """Aceptar algo que no se puede abrir no es aceptar nada. Las dos
+    paginas existen y se sirven en /terms y /privacy (ver app.py)."""
+    html = (RAIZ / "web" / "login.html").read_text(encoding="utf-8")
+    assert 'id="acceptTermsCheck"' in html, "no hay casilla de aceptacion de terminos"
+    assert 'href="/terms"' in html, "la casilla no enlaza los terminos"
+    assert 'href="/privacy"' in html, "la casilla no enlaza la politica de privacidad"
 
 
 def test_both_languages_have_the_new_texts():
     """Un texto que falta sale como su clave cruda en pantalla."""
-    claves_campos = ("isMinor", "guardianEmail", "guardianHint")
-    claves_errores = ("guardianEmail", "guardianSame")
+    claves_campos = ("isMinor", "isAdult", "ageLegend", "guardianEmail",
+                     "guardianHint", "acceptPrefix", "termsLink", "acceptAnd",
+                     "privacyLink")
+    claves_errores = ("guardianEmail", "guardianSame", "age", "terms")
     for idioma in ("es", "en"):
         d = json.loads((RAIZ / "web" / "src" / "locales" / idioma / "login.json")
                        .read_text(encoding="utf-8"))

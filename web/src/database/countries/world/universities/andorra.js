@@ -1,7 +1,7 @@
 // Universidades de Andorra. Generado; no editar a mano.
 // Se carga bajo demanda: ver getNationalUniversities en countryService.
 
-import { defineUniversity } from "../../schema";
+import { defineUniversity } from "../../schema.js";
 
 export default [
     defineUniversity({

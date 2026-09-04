@@ -70,8 +70,13 @@ def test_every_imported_country_says_it_is_imported():
 
 
 def test_every_imported_country_credits_its_sources():
-    """Una de las fuentes es ODbL, que exige atribucion. Y aunque no la
-    exigiera: quien lea el dato tiene derecho a saber de donde salio."""
+    """GeoNames y el Banco Mundial son CC BY y exigen atribucion. Y aunque no
+    la exigieran: quien lea el dato tiene derecho a saber de donde salio.
+
+    (Antes esta nota decia "una de las fuentes es ODbL". Ya ninguna lo es: esa
+    licencia obliga a compartir-igual las bases derivadas, y `world/` es una,
+    lo que la volvia un riesgo en cuanto FuturePilot cobrara. Ver
+    world/FUENTES.md.)"""
     sin_fuente = [
         f.name for f in paises_mundo()
         if '"Hipo/university-domains-list (MIT)"' not in f.read_text(encoding="utf-8")
@@ -79,24 +84,45 @@ def test_every_imported_country_credits_its_sources():
     assert not sin_fuente, f"paises sin atribucion: {sin_fuente[:10]}"
 
 
-def test_imported_countries_invent_no_cities():
-    """La fuente trae provincia en el 14% de los casos, y provincia no es
-    ciudad. Repartir universidades entre ciudades adivinadas seria la peor
-    clase de dato falso: el que parece preciso."""
-    con_ciudades = [
-        f.name for f in paises_mundo()
-        if not re.search(r"cities:\s*\[\s*\]", f.read_text(encoding="utf-8"))
-    ]
-    assert not con_ciudades, f"paises importados con ciudades: {con_ciudades[:10]}"
+def test_imported_cities_invent_nothing_beyond_where_they_are():
+    """Este test decia lo contrario: que un pais importado no podia tener NI
+    UNA ciudad. Tenia razon mientras la unica pista era la provincia que trae
+    Hipolabs en el 14% de los casos - repartir universidades entre ciudades
+    adivinadas es la peor clase de dato falso, el que parece preciso.
+
+    Desde septiembre de 2026 las ciudades no se adivinan: censo_ciudades.py
+    cruza GeoNames (ciudades con lat/lng) con Wikidata (universidades con
+    lat/lng) y mide la distancia. Lo que cambio no es la regla, es que ahora
+    hay una fuente. La regla sigue igual y es lo que se comprueba aqui: una
+    ciudad importada puede decir DONDE esta y cuantas universidades tiene, y
+    nada mas. Ni alquiler, ni clima, ni seguridad, ni satisfaccion.
+    """
+    inventado = []
+    for pais in paises_mundo():
+        texto = pais.read_text(encoding="utf-8")
+        for campo in ("costOfLiving", "rent", "safety", "weather",
+                      "qualityOfLife", "studentSatisfaction", "internetSpeed",
+                      "scholarships", "bestNeighborhoods", "averageSalary"):
+            if re.search(rf"\b{campo}\s*:", texto):
+                inventado.append(f"{pais.name}: trae {campo}")
+    assert not inventado, "\n  ".join(inventado[:10])
 
 
 def test_the_count_matches_the_list():
     """`universityCount` se lee sin cargar la lista, asi que si los dos se
-    desincronizan la pantalla promete un numero que luego no aparece."""
+    desincronizan la pantalla promete un numero que luego no aparece.
+
+    Ojo con el regex: desde que hay ciudades, cada una trae tambien su propio
+    `universityCount` y aparece ANTES en el archivo. Buscar el primero daba el
+    de la ciudad mas grande - Alemania "decia 22" porque 22 son las de Munich.
+    El del pais es el que esta dentro de defineCountry.
+    """
     desajustes = []
     for pais in paises_mundo():
         texto = pais.read_text(encoding="utf-8")
-        m = re.search(r"universityCount:\s*(\d+)", texto)
+        cuerpo = texto.split("defineCountry(", 1)
+        assert len(cuerpo) == 2, f"{pais.name}: sin defineCountry"
+        m = re.search(r"universityCount:\s*(\d+)", cuerpo[1])
         assert m, f"{pais.name}: sin universityCount"
         lista = MUNDO / "universities" / pais.name
         real = lista.read_text(encoding="utf-8").count("defineUniversity(")

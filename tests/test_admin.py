@@ -7,22 +7,9 @@ import pytest
 
 ADMIN_EMAIL = "admin@test.local"  # debe coincidir con conftest.py
 
-
-@pytest.fixture()
-def admin_headers(client, app_module):
-    # Reclamar la cuenta admin exige el token de primer arranque (ver
-    # admin_setup_token en app.py). Se pide igual que lo haria el operador
-    # leyendolo de la consola del servidor.
-    client.post("/api/v1/auth/register", json={
-        "email": ADMIN_EMAIL,
-        "password": "AdminPass123",
-        "name": "Admin",
-        "admin_setup_token": app_module.admin_setup_token(),
-    })
-    login = client.post("/api/v1/auth/login", json={"email": ADMIN_EMAIL, "password": "AdminPass123"})
-    data = login.json()
-    assert data["user"]["is_admin"] is True
-    return {"Authorization": f"Bearer {data['token']}"}
+# El fixture `admin_headers` vive en conftest.py desde que tambien lo usa
+# tests/test_report.py: duplicarlo dejaria dos formas de reclamar la cuenta
+# de administrador que divergirian a la primera que alguien tocara.
 
 
 def test_admin_routes_require_authentication(client):
@@ -145,8 +132,8 @@ def test_admin_actions_are_audited(client, admin_headers):
 
 ALL_PAGES = [
     "/", "/assessment", "/globe", "/login", "/reset-password", "/passport",
-    "/journey", "/flightplan", "/careers", "/terms", "/privacy",
-    "/admin", "/admin/login", "/admin/system-health",
+    "/journey", "/flightplan", "/careers", "/informe", "/terms", "/privacy",
+    "/admin", "/admin/login", "/admin/system-health", "/admin/informe",
 ]
 
 
@@ -430,3 +417,37 @@ def test_a_short_admin_password_is_reported_as_a_config_problem(app_module, seed
     problemas = app_module.check_production_config()
 
     assert any("ADMIN_PASSWORD" in p for p in problemas), problemas
+
+
+# --------------------------------------------------------------------------
+# Copia de seguridad automatica en proceso.
+# --------------------------------------------------------------------------
+def test_backup_scheduler_is_off_unless_asked(app_module, monkeypatch):
+    """Apagada por defecto: sin disco persistente una copia se borra con el
+    mismo reinicio que se lleva la base que pretendia respaldar."""
+    monkeypatch.setattr(app_module, "BACKUP_ENABLED", False)
+    assert app_module.start_backup_scheduler() is False
+
+
+def test_run_backup_creates_a_verified_copy(app_module, tmp_path, monkeypatch):
+    monkeypatch.setenv("BACKUP_DIR", str(tmp_path))
+
+    nombre = app_module.run_backup()
+
+    assert nombre is not None
+    copias = list(tmp_path.glob("users-*.sqlite3"))
+    assert len(copias) == 1 and copias[0].name == nombre
+    from backend import backup as backup_mod
+    ok, detalle = backup_mod.verificar(copias[0])
+    assert ok, detalle
+
+
+def test_a_failed_backup_does_not_kill_the_thread(app_module, tmp_path, monkeypatch):
+    """crear() aborta con SystemExit, que NO hereda de Exception. Sin
+    capturarlo aparte, el hilo moriria y las copias dejarian de hacerse en
+    silencio - el fallo exacto que este respaldo viene a evitar."""
+    monkeypatch.setenv("USERS_DB_PATH", str(tmp_path / "no-existe.sqlite3"))
+    monkeypatch.setenv("BACKUP_DIR", str(tmp_path))
+
+    assert app_module.run_backup() is None
+    assert list(tmp_path.glob("users-*.sqlite3")) == []

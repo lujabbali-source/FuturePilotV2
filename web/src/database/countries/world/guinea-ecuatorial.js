@@ -1,32 +1,59 @@
 // Guinea Ecuatorial — importado, no curado.
 //
 // Trae lo que las fuentes abiertas pueden verificar: nombre, capital, moneda,
-// idioma, poblacion y las universidades con su sitio oficial. Todo lo demas
-// (ciudades, costo de vida, salarios, cultura) esta vacio a proposito. Ver
-// web/scripts/import_world.py.
+// idioma, poblacion, las ciudades con universidad y las universidades con su
+// sitio oficial. Todo lo demas (costo de vida, salarios, cultura) esta vacio
+// a proposito. Ver web/scripts/import_world.py.
 //
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry, defineUniversity } from "../schema";
+import { defineCity, defineCountry } from "../schema.js";
+
+const countryId = "guinea-ecuatorial";
+const countryName = "Guinea Ecuatorial";
+
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/guinea-ecuatorial.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
+const cities = [
+    defineCity({
+      id: "guinea-ecuatorial-malabo",
+      name: "Malabo",
+      coordinates: {"lat": 3.75578, "lng": 8.78166},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 155963 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "guinea-ecuatorial-bata",
+      name: "Bata",
+      coordinates: {"lat": 1.86391, "lng": 9.76582},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 173046 },
+      countryId,
+      countryName,
+    }),
+];
 
 export default defineCountry({
-  id: "guinea-ecuatorial",
-  name: "Guinea Ecuatorial",
+  id: countryId,
+  name: countryName,
   nameEn: "Equatorial Guinea",
-  capital: "Malabo",
+  capital: "Ciudad de la Paz",
   currency: "XAF",
-  language: "French",
+  language: "español",
   continent: "África",
   population: 1938431,
-  // Sin ciudades: la fuente de universidades trae provincia en solo el 14% de
-  // los casos, y provincia no es ciudad. Inventar el reparto por ciudades
-  // seria la peor clase de dato falso, porque parece preciso.
-  cities: [],
+  cities,
   // Las universidades no van aqui: viven en ./universities/guinea-ecuatorial.js
   // y se cargan solo al abrir el pais (ver getNationalUniversities).
   universityCount: 1,
   aliases: ["equatorial-guinea", "guinea-ecuatorial"],
   dataStatus: "source-open-dataset",
-  sources: ["Hipo/university-domains-list (MIT)", "mledoze/countries (ODbL-1.0)", "Banco Mundial, SP.POP.TOTL"],
+  sources: ["Hipo/university-domains-list (MIT)", "GeoNames (CC BY 4.0)", "Wikidata (CC0)", "Banco Mundial, SP.POP.TOTL"],
 });

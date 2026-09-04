@@ -1,32 +1,59 @@
 // Catar — importado, no curado.
 //
 // Trae lo que las fuentes abiertas pueden verificar: nombre, capital, moneda,
-// idioma, poblacion y las universidades con su sitio oficial. Todo lo demas
-// (ciudades, costo de vida, salarios, cultura) esta vacio a proposito. Ver
-// web/scripts/import_world.py.
+// idioma, poblacion, las ciudades con universidad y las universidades con su
+// sitio oficial. Todo lo demas (costo de vida, salarios, cultura) esta vacio
+// a proposito. Ver web/scripts/import_world.py.
 //
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry, defineUniversity } from "../schema";
+import { defineCity, defineCountry } from "../schema.js";
+
+const countryId = "catar";
+const countryName = "Catar";
+
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/catar.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
+const cities = [
+    defineCity({
+      id: "catar-ar-rayyan",
+      name: "Ar Rayyān",
+      coordinates: {"lat": 25.29194, "lng": 51.42444},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 272465 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "catar-umm-lakhba",
+      name: "Umm Lakhbā",
+      coordinates: {"lat": 25.34157, "lng": 51.4706},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 16993 },
+      countryId,
+      countryName,
+    }),
+];
 
 export default defineCountry({
-  id: "catar",
-  name: "Catar",
+  id: countryId,
+  name: countryName,
   nameEn: "Qatar",
   capital: "Doha",
   currency: "QAR",
-  language: "Arabic",
+  language: "árabe",
   continent: "Asia",
   population: 2972215,
-  // Sin ciudades: la fuente de universidades trae provincia en solo el 14% de
-  // los casos, y provincia no es ciudad. Inventar el reparto por ciudades
-  // seria la peor clase de dato falso, porque parece preciso.
-  cities: [],
+  cities,
   // Las universidades no van aqui: viven en ./universities/catar.js
   // y se cargan solo al abrir el pais (ver getNationalUniversities).
   universityCount: 5,
   aliases: ["catar", "qatar"],
   dataStatus: "source-open-dataset",
-  sources: ["Hipo/university-domains-list (MIT)", "mledoze/countries (ODbL-1.0)", "Banco Mundial, SP.POP.TOTL"],
+  sources: ["Hipo/university-domains-list (MIT)", "GeoNames (CC BY 4.0)", "Wikidata (CC0)", "Banco Mundial, SP.POP.TOTL"],
 });

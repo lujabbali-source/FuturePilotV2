@@ -44,7 +44,13 @@
     "backToLogin": "← Back to sign in",
     "isMinor": "I am under 18",
     "guardianEmail": "Your parent or guardian's email",
-    "guardianHint": "We'll write to them to say you're using FuturePilot and ask for their permission. Your account works right away."
+    "guardianHint": "We'll write to them to say you're using FuturePilot and ask for their permission. Your account works right away.",
+    "ageLegend": "How old are you?",
+    "isAdult": "I am 18 or over",
+    "acceptPrefix": "I accept the",
+    "termsLink": "terms and conditions",
+    "acceptAnd": "and the",
+    "privacyLink": "privacy policy"
   },
   "status": {
     "working": "One moment...",
@@ -58,7 +64,9 @@
     "generic": "We couldn't process your request. Please try again.",
     "network": "We couldn't reach the server. Check your connection and try again.",
     "guardianEmail": "We need a valid email for your parent or guardian.",
-    "guardianSame": "Your guardian's email has to be different from yours."
+    "guardianSame": "Your guardian's email has to be different from yours.",
+    "age": "Tell us whether you are over or under 18 to continue.",
+    "terms": "To create your account you must accept the terms and the privacy policy."
   },
   "recover": {
     "sent": "If an account exists for that email, we've sent instructions to recover access."

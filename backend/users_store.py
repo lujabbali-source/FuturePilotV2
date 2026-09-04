@@ -167,6 +167,46 @@ CREATE TABLE IF NOT EXISTS passport_stamps (
 -- cuando. ON DELETE SET NULL en vez de CASCADE a proposito: si la cuenta
 -- admin se borra algun dia, el historial de lo que hizo debe seguir
 -- existiendo (queda con admin_user_id=NULL) en vez de desaparecer con ella.
+-- Compras. Hoy solo hay un producto -el informe- pero la tabla lleva
+-- `product` desde el principio: la alternativa era una columna booleana en
+-- `users`, y una compra no es un atributo de la cuenta. Es un HECHO con
+-- fecha, importe y una referencia de la pasarela, exactamente igual que
+-- guardian_consents es un hecho y no un campo.
+--
+-- user_id admite NULL con ON DELETE SET NULL, igual que test_results: si
+-- alguien ejerce su derecho a que se borren sus datos, la persona
+-- desaparece pero el asiento contable no. Un cobro que se esfuma al borrar
+-- una cuenta deja de poder cuadrarse con lo que la pasarela dice que cobro.
+--
+-- El indice unico sobre (provider, provider_ref) es lo que hace idempotente
+-- el webhook: una pasarela puede entregar el MISMO evento dos veces -es
+-- normal, reintenta cuando no le contestas rapido- y sin esto la segunda
+-- entrega crearia una compra duplicada. Es parcial porque los desbloqueos
+-- hechos a mano no traen referencia, y varios NULL no pueden chocar entre si.
+CREATE TABLE IF NOT EXISTS purchases (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
+    product TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'PAID',
+    amount_cents INTEGER,
+    currency TEXT,
+    -- De donde viene: el nombre de la pasarela, o 'manual' cuando lo
+    -- desbloqueo un administrador.
+    provider TEXT NOT NULL,
+    provider_ref TEXT,
+    -- Quien lo concedio a mano, si fue a mano. Sin esto un desbloqueo
+    -- manual no se distingue de un cobro real al mirar la tabla.
+    granted_by INTEGER REFERENCES users(id) ON DELETE SET NULL,
+    note TEXT,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_purchases_user ON purchases(user_id, product);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_purchases_provider_ref
+    ON purchases(provider, provider_ref)
+    WHERE provider_ref IS NOT NULL;
+
 CREATE TABLE IF NOT EXISTS admin_audit_log (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     admin_user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
@@ -257,6 +297,7 @@ class UsersStore:
             self._ensure_stamp_columns(connection)
             self._ensure_guardian_columns(connection)
             self._ensure_email_verified_column(connection)
+            self._ensure_terms_column(connection)
 
     @staticmethod
     def _ensure_admin_column(connection: sqlite3.Connection) -> None:
@@ -283,6 +324,23 @@ class UsersStore:
         columns = {row["name"] for row in connection.execute("PRAGMA table_info(users)")}
         if "email_verified_at" not in columns:
             connection.execute("ALTER TABLE users ADD COLUMN email_verified_at TEXT")
+
+    @staticmethod
+    def _ensure_terms_column(connection: sqlite3.Connection) -> None:
+        """Cuando acepto los terminos y la politica de privacidad.
+
+        Se guarda la FECHA y no un booleano: "acepto" sin cuando no prueba
+        nada el dia que haya que demostrarlo, y es el mismo criterio que ya
+        sigue email_verified_at.
+
+        Las cuentas anteriores a esta columna quedan en NULL a proposito. No
+        aceptaron nada - no habia nada que aceptar en el formulario - y
+        rellenarlo con la fecha de la migracion seria inventar un
+        consentimiento que nadie dio.
+        """
+        columns = {row["name"] for row in connection.execute("PRAGMA table_info(users)")}
+        if "terms_accepted_at" not in columns:
+            connection.execute("ALTER TABLE users ADD COLUMN terms_accepted_at TEXT")
 
     @staticmethod
     def _ensure_guardian_columns(connection: sqlite3.Connection) -> None:
@@ -356,12 +414,18 @@ class UsersStore:
             """)
 
     def register(self, email: str, password: str, name: str | None = None,
-                 is_minor: bool = False, guardian_email: str | None = None) -> dict:
+                 is_minor: bool = False, guardian_email: str | None = None,
+                 accepted_terms: bool = False) -> dict:
         """Crea la cuenta.
 
         `guardian_email` solo se guarda si `is_minor`: quien dice ser mayor de
         edad no deja el correo de nadie mas. Guardarlo "por si acaso" seria
         justo lo contrario de pedir lo minimo.
+
+        `accepted_terms` se traduce a una fecha, no se guarda como bandera.
+        Si es falso la columna queda en NULL: una cuenta creada por otra via
+        (la tienda directamente, en pruebas o en un script) no debe constar
+        como que alguien acepto algo.
         """
         normalized_email = email.strip().lower()
         acudiente = (guardian_email or "").strip().lower() or None
@@ -369,17 +433,18 @@ class UsersStore:
             acudiente = None
         salt = secrets.token_bytes(16)
         password_hash = hash_password(password, salt)
+        aceptacion = utc_now_iso() if accepted_terms else None
 
         with self.connect() as connection:
             try:
                 cursor = connection.execute(
                     """
                     INSERT INTO users (email, password_hash, password_salt, name,
-                                       is_minor, guardian_email)
-                    VALUES (?, ?, ?, ?, ?, ?)
+                                       is_minor, guardian_email, terms_accepted_at)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
                     """,
                     (normalized_email, password_hash, salt.hex(), name,
-                     1 if is_minor else 0, acudiente),
+                     1 if is_minor else 0, acudiente, aceptacion),
                 )
             except sqlite3.IntegrityError as error:
                 raise DuplicateEmailError(normalized_email) from error
@@ -446,8 +511,20 @@ class UsersStore:
         with self.connect() as connection:
             connection.execute("DELETE FROM sessions WHERE token_hash = ?", (token_hash,))
 
-    def get_user_by_id(self, user_id: int) -> dict:
-        return self._get_user_by_id(user_id)
+    def get_user_by_id(self, user_id: int) -> dict | None:
+        """La cuenta, o None si no existe.
+
+        Devuelve None y no revienta -a diferencia de `_get_user_by_id`, que
+        se usa justo despues de un INSERT y ahi la fila existe seguro-
+        porque este metodo si recibe ids que vienen de fuera, como el de la
+        URL de una ruta de administracion. Un id que nadie tiene es una
+        peticion equivocada, no un error del servidor.
+        """
+        with self.connect() as connection:
+            row = connection.execute(
+                "SELECT * FROM users WHERE id = ?", (user_id,)
+            ).fetchone()
+        return self._row_to_user(row) if row is not None else None
 
     def find_user_id_by_email(self, email: str) -> Optional[int]:
         normalized_email = email.strip().lower()
@@ -610,6 +687,10 @@ class UsersStore:
             # verificar, o no hay forma de que sepa que le toca hacer algo.
             "email_verified": row["email_verified_at"] is not None,
             "email_verified_at": row["email_verified_at"],
+            # Cuando acepto los terminos y la politica. Se expone porque es
+            # SUYO: quien pide sus datos tiene derecho a ver que acepto y
+            # cuando. En las cuentas anteriores a esa casilla vale None.
+            "terms_accepted_at": row["terms_accepted_at"],
         }
 
     # ----------------------------------------------------------------
@@ -1016,6 +1097,164 @@ class UsersStore:
                 (limit,),
             ).fetchall()
         return [{"name": row["name"], "total": row["total"]} for row in rows]
+
+    # ----------------------------------------------------------------------
+    # Agregados del informe general (ver GET /api/v1/admin/report)
+    # ----------------------------------------------------------------------
+    # top_careers() de arriba se queda: el panel enseña un top 5 en pantalla
+    # y no necesita mas. Lo de aqui abajo es para el DOCUMENTO, que es otra
+    # cosa - un informe con cinco filas no dice nada sobre una poblacion.
+    def count_users_with_results(self) -> int:
+        """Cuentas que han completado al menos un test.
+
+        No es lo mismo que count_test_results(): uno solo estudiante puede
+        repetir el test cinco veces, y hay filas anonimas que no pertenecen a
+        ninguna cuenta. Sin este numero al lado, "312 tests" se lee como
+        "312 estudiantes", que puede ser falso por un factor de tres.
+        """
+        with self.connect() as connection:
+            return connection.execute(
+                "SELECT COUNT(DISTINCT user_id) FROM test_results WHERE user_id IS NOT NULL"
+            ).fetchone()[0]
+
+    # ----------------------------------------------------------------
+    # Compras
+    #
+    # Nada de esto cobra ni habla con ninguna pasarela: aqui solo se
+    # apunta que una compra ocurrio y se responde si existe. Quien la
+    # confirme -un webhook, o un administrador a mano- es cosa de app.py.
+    # ----------------------------------------------------------------
+
+    def record_purchase(self, user_id: int, product: str, *, provider: str,
+                        provider_ref: str | None = None,
+                        amount_cents: int | None = None,
+                        currency: str | None = None,
+                        granted_by: int | None = None,
+                        note: str | None = None) -> dict:
+        """Apunta una compra. Idempotente cuando trae `provider_ref`.
+
+        Que sea idempotente no es un lujo: las pasarelas reintentan el
+        webhook cuando no se les contesta a tiempo, asi que el MISMO pago
+        llega dos veces con normalidad. Si el segundo intento creara otra
+        fila, la tabla diria que alguien pago dos veces algo que compro una.
+
+        Devuelve la compra: la que se acaba de crear, o la que ya estaba.
+        """
+        with self.connect() as connection:
+            if provider_ref:
+                existente = connection.execute(
+                    "SELECT * FROM purchases WHERE provider = ? AND provider_ref = ?",
+                    (provider, provider_ref),
+                ).fetchone()
+                if existente is not None:
+                    return dict(existente)
+            cursor = connection.execute(
+                """
+                INSERT INTO purchases (user_id, product, provider, provider_ref,
+                                       amount_cents, currency, granted_by, note)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (user_id, product, provider, provider_ref, amount_cents,
+                 currency, granted_by, note),
+            )
+            fila = connection.execute(
+                "SELECT * FROM purchases WHERE id = ?", (cursor.lastrowid,)
+            ).fetchone()
+        return dict(fila)
+
+    def has_purchase(self, user_id: int, product: str) -> bool:
+        """Si esta cuenta compro este producto.
+
+        Se comprueba `status = 'PAID'` y no la mera existencia de la fila:
+        una compra iniciada y no confirmada tambien deja rastro aqui, y no
+        debe abrir nada.
+        """
+        with self.connect() as connection:
+            fila = connection.execute(
+                """
+                SELECT 1 FROM purchases
+                WHERE user_id = ? AND product = ? AND status = 'PAID'
+                LIMIT 1
+                """,
+                (user_id, product),
+            ).fetchone()
+        return fila is not None
+
+    def list_purchases(self, user_id: int) -> list[dict]:
+        """Las compras de una cuenta, la mas reciente primero. Para el panel
+        de admin y para que el propio usuario pueda ver lo que pago."""
+        with self.connect() as connection:
+            filas = connection.execute(
+                "SELECT * FROM purchases WHERE user_id = ? ORDER BY created_at DESC, id DESC",
+                (user_id,),
+            ).fetchall()
+        return [dict(f) for f in filas]
+
+    def count_anonymous_results(self, since_iso: str | None = None) -> int:
+        """Tests hechos sin cuenta. El test se puede completar antes de
+        registrarse, asi que estas filas existen y cuentan para el agregado -
+        pero el informe tiene que poder decir cuantas son."""
+        consulta = "SELECT COUNT(*) FROM test_results WHERE user_id IS NULL"
+        parametros: tuple = ()
+        if since_iso:
+            consulta += " AND created_at >= ?"
+            parametros = (since_iso,)
+        with self.connect() as connection:
+            return connection.execute(consulta, parametros).fetchone()[0]
+
+    def career_distribution(self, since_iso: str | None = None) -> list[dict]:
+        """TODAS las carreras que han salido primeras, con su recuento.
+
+        Sin LIMIT a proposito, y se cuenta en SQL en vez de en Python: el
+        recuento tiene que ser exacto sobre la tabla entera, porque el
+        porcentaje que se imprime en el informe se calcula sobre el. Una
+        muestra daria un porcentaje que parece un censo.
+        """
+        consulta = """
+            SELECT top_career_id AS career_id,
+                   top_career_name AS name,
+                   COUNT(*) AS total
+            FROM test_results
+            WHERE top_career_name IS NOT NULL
+        """
+        parametros: tuple = ()
+        if since_iso:
+            consulta += " AND created_at >= ?"
+            parametros = (since_iso,)
+        consulta += " GROUP BY top_career_name ORDER BY total DESC, name ASC"
+
+        with self.connect() as connection:
+            rows = connection.execute(consulta, parametros).fetchall()
+        return [
+            {"career_id": row["career_id"], "name": row["name"], "total": row["total"]}
+            for row in rows
+        ]
+
+    def results_json_for_stats(self, since_iso: str | None = None,
+                               limit: int = 3000) -> list[str]:
+        """Los resultados en bruto, para lo que no se puede contar en SQL.
+
+        El arquetipo y el vector de ocho dimensiones viven DENTRO de
+        results_json, asi que sacar su media obliga a leer y parsear filas.
+        Lleva limite - y quien llama tiene que decir en el informe si lo
+        alcanzo - porque esto crece con el uso: el dia que haya cien mil
+        tests, cargarlos todos en memoria para pintar ocho medias seria una
+        forma tonta de tumbar el servidor.
+
+        Se piden los mas RECIENTES: si hay que quedarse con una parte, que
+        sea la que describe a la poblacion de ahora.
+        """
+        consulta = "SELECT results_json FROM test_results WHERE results_json IS NOT NULL"
+        parametros: list = []
+        if since_iso:
+            consulta += " AND created_at >= ?"
+            parametros.append(since_iso)
+        consulta += " ORDER BY created_at DESC, id DESC LIMIT ?"
+        parametros.append(limit)
+
+        with self.connect() as connection:
+            rows = connection.execute(consulta, tuple(parametros)).fetchall()
+        return [row["results_json"] for row in rows]
 
     def top_countries(self, limit: int = 5) -> list[dict]:
         # Cuenta usuarios distintos, no eventos crudos - un mismo estudiante

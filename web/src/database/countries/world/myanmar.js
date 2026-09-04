@@ -1,32 +1,259 @@
 // Myanmar — importado, no curado.
 //
 // Trae lo que las fuentes abiertas pueden verificar: nombre, capital, moneda,
-// idioma, poblacion y las universidades con su sitio oficial. Todo lo demas
-// (ciudades, costo de vida, salarios, cultura) esta vacio a proposito. Ver
-// web/scripts/import_world.py.
+// idioma, poblacion, las ciudades con universidad y las universidades con su
+// sitio oficial. Todo lo demas (costo de vida, salarios, cultura) esta vacio
+// a proposito. Ver web/scripts/import_world.py.
 //
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry, defineUniversity } from "../schema";
+import { defineCity, defineCountry } from "../schema.js";
+
+const countryId = "myanmar";
+const countryName = "Myanmar";
+
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/myanmar.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
+const cities = [
+    defineCity({
+      id: "myanmar-mandalay",
+      name: "Mandalay",
+      coordinates: {"lat": 21.97473, "lng": 96.08359},
+      isCapital: false,
+      universityCount: 8,
+      statistics: { population: 1208099 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-myenigon",
+      name: "Myenigon",
+      coordinates: {"lat": 16.80623, "lng": 96.13506},
+      isCapital: false,
+      universityCount: 6,
+      statistics: { population: 18614 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-pyinmana",
+      name: "Pyinmana",
+      coordinates: {"lat": 19.7381, "lng": 96.20742},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 97409 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-pyay",
+      name: "Pyay",
+      coordinates: {"lat": 18.81996, "lng": 95.21562},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 135308 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-monywa",
+      name: "Monywa",
+      coordinates: {"lat": 22.10856, "lng": 95.13583},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 182011 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-pyin-oo-lwin",
+      name: "Pyin Oo Lwin",
+      coordinates: {"lat": 22.03501, "lng": 96.45683},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 117303 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-taungoo",
+      name: "Taungoo",
+      coordinates: {"lat": 18.94291, "lng": 96.43408},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 106945 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-taunggyi",
+      name: "Taunggyi",
+      coordinates: {"lat": 20.78919, "lng": 97.03776},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 160115 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-thanlyin",
+      name: "Thanlyin",
+      coordinates: {"lat": 16.76887, "lng": 96.24503},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 69448 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-sittwe",
+      name: "Sittwe",
+      coordinates: {"lat": 20.14624, "lng": 92.89835},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 177743 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-sagaing",
+      name: "Sagaing",
+      coordinates: {"lat": 21.8787, "lng": 95.97965},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 78739 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-pazundaung",
+      name: "Pazundaung",
+      coordinates: {"lat": 16.79574, "lng": 96.17493},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 40690 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-nansang",
+      name: "Nansang",
+      coordinates: {"lat": 20.89184, "lng": 97.71672},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 23792 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-myitkyina",
+      name: "Myitkyina",
+      coordinates: {"lat": 25.38327, "lng": 97.39637},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 90894 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-mawlamyine",
+      name: "Mawlamyine",
+      coordinates: {"lat": 16.49051, "lng": 97.62825},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 438861 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-myeik",
+      name: "Myeik",
+      coordinates: {"lat": 12.43954, "lng": 98.60028},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 173298 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-meiktila",
+      name: "Meiktila",
+      coordinates: {"lat": 20.87776, "lng": 95.85844},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 177442 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-loikaw",
+      name: "Loikaw",
+      coordinates: {"lat": 19.67798, "lng": 97.20975},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 17293 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-lashio",
+      name: "Lashio",
+      coordinates: {"lat": 22.9359, "lng": 97.7498},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 131000 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-san-chaung",
+      name: "San Chaung",
+      coordinates: {"lat": 17.0953, "lng": 96.0992},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 99619 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-kyo-kone-east",
+      name: "Kyo Kone East",
+      coordinates: {"lat": 16.88578, "lng": 96.11463},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 16270 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "myanmar-saw-bwar-gyi-kone",
+      name: "Saw Bwar Gyi Kone",
+      coordinates: {"lat": 16.88644, "lng": 96.12818},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 20811 },
+      countryId,
+      countryName,
+    }),
+];
 
 export default defineCountry({
-  id: "myanmar",
-  name: "Myanmar",
+  id: countryId,
+  name: countryName,
   nameEn: "Myanmar",
-  capital: "Naypyidaw",
+  capital: "Nay Pyi Taw",
   currency: "MMK",
-  language: "Burmese",
+  language: "idioma birmano",
   continent: "Asia",
   population: 54850648,
-  // Sin ciudades: la fuente de universidades trae provincia en solo el 14% de
-  // los casos, y provincia no es ciudad. Inventar el reparto por ciudades
-  // seria la peor clase de dato falso, porque parece preciso.
-  cities: [],
+  cities,
   // Las universidades no van aqui: viven en ./universities/myanmar.js
   // y se cargan solo al abrir el pais (ver getNationalUniversities).
   universityCount: 5,
   aliases: ["myanmar"],
   dataStatus: "source-open-dataset",
-  sources: ["Hipo/university-domains-list (MIT)", "mledoze/countries (ODbL-1.0)", "Banco Mundial, SP.POP.TOTL"],
+  sources: ["Hipo/university-domains-list (MIT)", "GeoNames (CC BY 4.0)", "Wikidata (CC0)", "Banco Mundial, SP.POP.TOTL"],
 });

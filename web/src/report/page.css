@@ -1,0 +1,1392 @@
+/* Informe de orientacion vocacional.
+ *
+ * LA DECISION DE DISENO DE ESTE ARCHIVO: el documento es CLARO tambien en
+ * pantalla, sobre el fondo oscuro de FuturePilot.
+ *
+ * La tentacion era pintarlo oscuro como el resto del sitio y aclararlo solo
+ * al imprimir. Dos motivos para no hacerlo. El primero es practico y es
+ * decisivo: los navegadores NO imprimen fondos por defecto, asi que un
+ * informe oscuro sale en papel como texto blanco sobre blanco - invisible, y
+ * sin que nada avise. El segundo es que asi lo que se ve en pantalla es
+ * exactamente lo que va a salir del "Guardar como PDF": no hay sorpresa al
+ * pulsar imprimir, que es el momento en que peor sienta una.
+ *
+ * El estilo FuturePilot no se pierde por ser claro. Lo llevan la tipografia
+ * (Manrope para el texto, DM Mono para los datos), el verde y el cian de la
+ * marca en los acentos, y el fondo oscuro que enmarca la hoja en pantalla.
+ * Lo que cambia es el soporte: esto es papel, no una pantalla.
+ *
+ * Ni un `style=` en el JavaScript que rellena las barras: la CSP del sitio
+ * prohibe los estilos en linea (ver _build_csp en futurepilot-IA/app.py) y
+ * un informe con las barras vacias no fallaria - solo saldria mal impreso,
+ * que es peor.
+ */
+
+/* Los colores del documento. Van en un ambito propio y no en :root para no
+   competir con las variables del sitio, que siguen mandando fuera de la
+   hoja. */
+.rep-sheet,
+.rep-empty,
+.rep-lock {
+  --doc-ink: #0B1A2B;          /* el azul de la marca, casi negro, para leer */
+  --doc-ink-soft: #56657A;
+  --doc-line: #DFE5EC;
+  --doc-paper: #FFFFFF;
+  --doc-wash: #F4F7FA;
+  --doc-accent: #00A97C;       /* el verde de marca, oscurecido para papel */
+  --doc-accent-soft: #E4F7F0;
+  --doc-cyan: #0089B8;
+}
+
+/* --------------------------------------------------------------------------
+   La pagina alrededor de la hoja
+   -------------------------------------------------------------------------- */
+.rep-page {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+}
+
+.rep-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.rep-toolbar__hint {
+  flex: 1 1 260px;
+  margin: 0;
+  color: var(--fp-text-muted, #B8C4D4);
+  font-size: .86rem;
+  line-height: 1.5;
+}
+
+.rep-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--fp-primary, #00FFB3);
+  color: #06202C;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.rep-action:hover {
+  filter: brightness(1.08);
+}
+
+.rep-action--ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .18);
+  color: var(--fp-text, #fff);
+  font-weight: 600;
+}
+
+.rep-action:focus-visible {
+  outline: 2px solid var(--fp-secondary, #00D4FF);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   La hoja
+   -------------------------------------------------------------------------- */
+/* 21cm de ancho: la hoja en pantalla mide lo que va a medir en papel, asi
+   que los saltos de pagina que se ven aqui son los que van a salir. */
+.rep-sheet {
+  max-width: 21cm;
+  margin: 0 auto;
+  padding: 26mm 20mm 20mm;
+  border-radius: 4px;
+  background: var(--doc-paper);
+  color: var(--doc-ink);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+  counter-reset: rep-section;
+  line-height: 1.62;
+}
+
+/* --------------------------------------------------------------------------
+   Portada
+   -------------------------------------------------------------------------- */
+/* La portada ocupa la hoja entera.
+   24cm entran de sobra en el alto util de un A4 con los margenes de @page
+   (29.7 - 1.4 - 1.5 = 26.8cm), y en pantalla dan la misma proporcion, asi que
+   lo que se ve al desplazarse es lo que va a salir impreso. Las tres piezas
+   -marca, dibujo con los titulos, y datos- se reparten el alto en vez de
+   apilarse arriba: una portada con todo pegado al borde superior y medio folio
+   en blanco debajo parece una pagina que se corto. */
+.rep-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 24cm;
+  padding-bottom: 26px;
+}
+
+.rep-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 30px;
+  font-weight: 800;
+  font-size: 1.12rem;
+  letter-spacing: -.01em;
+}
+
+.rep-brand span {
+  color: var(--doc-accent);
+}
+
+.rep-brand__mark {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.rep-kicker {
+  margin: 0 0 6px;
+  color: var(--doc-accent);
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: .74rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.rep-name {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+}
+
+.rep-archetype {
+  margin: 10px 0 0;
+  color: var(--doc-ink-soft);
+  font-size: 1.02rem;
+}
+
+.rep-archetype strong {
+  color: var(--doc-ink);
+}
+
+/* --------------------------------------------------------------------------
+   El dibujo de la portada: un avion de papel despegando
+   --------------------------------------------------------------------------
+   Todo son trazos sobre el papel, sin una sola imagen: se imprime como vector
+   y pesa lo que ocupa este texto. La animacion es solo para la pantalla; en
+   papel el avion llega ya al final de su estela (ver @media print). */
+/* El dibujo y el titulo, como un bloque. Es el centro de la portada y se
+   reparte el folio con la marca (arriba) y los datos (abajo). */
+.cover-middle {
+  display: flex;
+  flex-direction: column;
+}
+
+.cover-art {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 560px;
+}
+
+.cover-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Las paradas del degradado, con las variables del documento. */
+.cover-stop--start { stop-color: var(--doc-cyan); stop-opacity: 0; }
+.cover-stop--mid   { stop-color: var(--doc-cyan); stop-opacity: .7; }
+.cover-stop--end   { stop-color: var(--doc-accent); stop-opacity: 1; }
+
+/* El horizonte. Apenas se ve, y esa es su gracia: da un suelo del que
+   despegar sin competir con nada. */
+.cover-horizon {
+  fill: none;
+  /* Un tono mas presente que --doc-line: a 1.5px de gris clarito sobre blanco
+     el horizonte desaparecia, y con el se iba el suelo del que despega. */
+  stroke: #C9D4E0;
+  stroke-width: 1.6;
+}
+
+/* La estela. Discontinua a proposito - una linea continua se lee como un
+   cable del que cuelga el avion; a trazos se lee como un rastro. */
+.cover-trail {
+  fill: none;
+  stroke: url(#coverTrail);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 9 11;
+}
+
+/* De donde sale. Un punto y nada mas: es el origen del viaje. */
+.cover-origin {
+  fill: var(--doc-paper);
+  stroke: var(--doc-cyan);
+  stroke-width: 2.5;
+}
+
+/* El avion. Dos triangulos: el ala en el verde de marca y el cuerpo en un
+   tono mas oscuro, que es lo que le da el pliegue de papel doblado. */
+.cover-plane__wing {
+  fill: var(--doc-accent);
+}
+
+.cover-plane__body {
+  fill: var(--doc-ink);
+}
+
+/* El avion viaja por la MISMA curva que dibuja la estela.
+   El `path()` de aqui abajo es una copia literal de RUTA_AVION en app.js:
+   CSS no sabe leer el `d` de un elemento, y pasarlo desde JavaScript pediria
+   un `style=` que la CSP prohibe. Hay un test que compara las dos copias
+   (tests/test_report.py) para que tocar una sin la otra falle en vez de dejar
+   al avion volando por fuera de su rastro.
+
+   Fuera del @supports el avion se coloca al final de la curva con un
+   transform, que es donde tiene que quedarse en un navegador sin offset-path
+   (y en papel). Dentro, el transform se retira y manda el rail. */
+.cover-plane {
+  transform: translate(556px, 54px) rotate(-32deg);
+}
+
+@supports (offset-path: path("M 0 0 L 1 1")) {
+  .cover-plane {
+    transform: none;
+    offset-path: path("M 44 242 C 152 236, 248 212, 330 172 C 412 132, 492 86, 556 54");
+    offset-rotate: auto;
+    offset-distance: 100%;
+  }
+}
+
+/* El despegue. Una sola pasada al abrir la pagina y se queda arriba: un avion
+   dando vueltas en bucle sobre un informe vocacional distrae de lo unico que
+   importa aqui, que es lo que pone debajo. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (offset-path: path("M 0 0 L 1 1")) {
+    .cover-plane {
+      animation: cover-takeoff 2.2s cubic-bezier(.33, .1, .2, 1) .25s both;
+    }
+  }
+
+  .cover-trail {
+    stroke-dashoffset: 620;
+    animation: cover-draw 2.2s cubic-bezier(.33, .1, .2, 1) .25s both;
+  }
+
+  .cover-origin {
+    animation: cover-fade .5s ease .2s both;
+  }
+}
+
+@keyframes cover-takeoff {
+  from { offset-distance: 0%; }
+  to   { offset-distance: 100%; }
+}
+
+@keyframes cover-draw {
+  from { stroke-dashoffset: 620; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes cover-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   Los titulos de la portada
+   -------------------------------------------------------------------------- */
+.cover-titles {
+  margin-top: 30px;
+}
+
+.cover-title {
+  margin: 4px 0 0;
+  font-size: 3.1rem;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -.035em;
+}
+
+/* "Análisis" en el verde de marca: parte el nombre del producto de lo que es
+   el documento sin necesidad de una segunda linea ni de un guion. */
+.cover-title span {
+  color: var(--doc-accent);
+}
+
+.cover-for {
+  margin: 18px 0 0;
+  color: var(--doc-ink-soft);
+  font-size: 1.05rem;
+}
+
+.cover-for strong {
+  display: block;
+  margin-top: 2px;
+  color: var(--doc-ink);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -.015em;
+}
+
+/* Los datos de cabecera en monoespaciada: son identificadores y fechas, no
+   prosa, y asi se distinguen de un vistazo de todo lo demas. */
+/* Los datos de cabecera, repartidos a lo ancho del pie de la portada.
+   Apilados a la izquierda dejaban media linea en blanco bajo un filete que
+   cruza la hoja entera, y el filete quedaba sin sostener nada por la derecha.
+   En columnas iguales el pie se lee como el pie de un documento. */
+.rep-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9em, 1fr));
+  gap: 14px 24px;
+  margin: 26px 0 0;
+  padding-top: 18px;
+  border-top: 2px solid var(--doc-ink);
+}
+
+.rep-meta dt {
+  color: var(--doc-ink-soft);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.rep-meta dd {
+  margin: 2px 0 0;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: .92rem;
+}
+
+/* La entradilla ya no vive en la portada: abre la segunda pagina. */
+.rep-lead {
+  margin: 40px 0 0;
+  padding: 16px 18px;
+  border-left: 3px solid var(--doc-accent);
+  background: var(--doc-wash);
+  color: var(--doc-ink-soft);
+  font-size: .93rem;
+  line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   Secciones
+   -------------------------------------------------------------------------- */
+.rep-section {
+  margin-top: 34px;
+}
+
+/* El numero lo pone el contador y no el texto traducido: reordenar dos
+   secciones no puede obligar a renumerar ocho cadenas en dos idiomas. */
+.rep-section__title {
+  counter-increment: rep-section;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 16px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--doc-line);
+  font-size: 1.24rem;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+.rep-section__title::before {
+  content: counter(rep-section, decimal-leading-zero);
+  color: var(--doc-accent);
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: .88rem;
+  font-weight: 500;
+}
+
+.rep-card {
+  padding: 18px 20px;
+  border: 1px solid var(--doc-line);
+  border-radius: 10px;
+  background: var(--doc-wash);
+}
+
+.rep-card__label {
+  margin: 0;
+  color: var(--doc-ink-soft);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.rep-card__label--sep {
+  margin-top: 16px;
+}
+
+.rep-card__value {
+  margin: 4px 0 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.rep-card__value--small {
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+/* La fiabilidad reusa las clases de radar.css, que estan pensadas para fondo
+   oscuro. Aqui solo se reajusta el color del texto: la barrita lateral de
+   color (verde / ambar / rojo) ya funciona igual sobre papel. */
+.rep-sheet .reliability {
+  margin-top: 14px;
+  color: var(--doc-ink-soft);
+}
+
+.rep-note {
+  margin: 14px 0 0;
+  color: var(--doc-ink-soft);
+  font-size: .87rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   El radar, sobre papel
+   -------------------------------------------------------------------------- */
+/* radar.css pinta la rejilla en blancos translucidos porque vive sobre el
+   fondo oscuro del sitio. Sobre la hoja eso es invisible, asi que se
+   reescriben los trazos - y solo los trazos: la forma, los angulos y el area
+   siguen saliendo del mismo modulo que la pantalla de cuenta. */
+.rep-sheet .radar-section {
+  margin: 0 0 22px;
+}
+
+.rep-sheet .radar__ring {
+  stroke: rgba(11, 26, 43, .13);
+}
+
+.rep-sheet .radar__ring--outer {
+  stroke: rgba(11, 26, 43, .3);
+}
+
+.rep-sheet .radar__spoke {
+  stroke: rgba(11, 26, 43, .1);
+}
+
+.rep-sheet .radar__area {
+  stroke: var(--doc-accent);
+}
+
+.rep-sheet .radar__dot {
+  fill: var(--doc-paper);
+  stroke: var(--doc-accent);
+}
+
+.rep-sheet .radar__label {
+  fill: var(--doc-ink-soft);
+}
+
+.rep-sheet .radar__label.is-selected,
+.rep-sheet .radar__dot.is-selected {
+  fill: var(--doc-accent);
+}
+
+.rep-sheet .radar__dot.is-selected {
+  stroke: var(--doc-cyan);
+}
+
+/* La corona de la rueda, en la paleta de papel. Los ocho tonos de pantalla
+   son luminosos sobre fondo oscuro y en blanco quedan lavados, asi que aqui
+   se repiten oscurecidos: el mismo recorrido cian -> verde -> cian, pero con
+   suficiente densidad para sobrevivir a una impresora. */
+.rep-sheet .radar {
+  --radar-arc-0: #0089B8;
+  --radar-arc-1: #009DAF;
+  --radar-arc-2: #00A79A;
+  --radar-arc-3: #00AE88;
+  --radar-arc-4: #00A97C;
+  --radar-arc-5: #00A98E;
+  --radar-arc-6: #009FA4;
+  --radar-arc-7: #0092B0;
+}
+
+.rep-sheet .radar__arc {
+  opacity: .8;
+}
+
+.rep-sheet .radar__arc.is-selected {
+  opacity: 1;
+  filter: none;
+}
+
+/* Papel: la corona no se apaga. En pantalla atenuar los otros siete ayuda a
+   fijar la vista; en un PDF, que se lee entero de una vez, dejaria siete
+   dimensiones descoloridas para siempre porque una quedo abierta. */
+.rep-sheet .radar.is-focused .radar__arc:not(.is-selected) {
+  opacity: .8;
+}
+
+/* El numero va sobre el color del segmento: en blanco, no en el azul del
+   fondo oscuro, que sobre estos tonos impresos se emborrona. */
+.rep-sheet .radar__num {
+  fill: #FFFFFF;
+}
+
+.rep-sheet .radar__core {
+  fill: var(--doc-wash);
+  stroke: var(--doc-line);
+}
+
+/* El nivel del eje abierto, en la paleta de papel. En pantalla el brillo lo
+   da un drop-shadow verde sobre fondo oscuro; sobre blanco eso no se ve y
+   ademas no se imprime, asi que aqui el "brilla mas" se consigue con grosor y
+   con un color saturado, que si sobrevive a una impresora. */
+.rep-sheet .radar__level {
+  stroke: var(--doc-accent);
+  opacity: .85;
+}
+
+.rep-sheet .radar__ray {
+  stroke: var(--doc-accent);
+  stroke-width: 3.5;
+  filter: none;
+}
+
+.rep-sheet .radar__dot.is-selected {
+  fill: var(--doc-accent);
+  stroke: var(--doc-cyan);
+  filter: none;
+}
+
+.rep-sheet .radar__label.is-selected {
+  fill: var(--doc-accent);
+}
+
+/* En papel no se atenua el perfil. En pantalla la atenuacion ayuda a fijar la
+   vista, pero un PDF se lee entero de una vez: dejar siete ejes descoloridos
+   para siempre porque uno quedo abierto seria empeorar el documento. */
+.rep-sheet .radar.is-focused .radar__area,
+.rep-sheet .radar.is-focused .radar__dot:not(.is-selected),
+.rep-sheet .radar.is-focused .radar__label:not(.is-selected) {
+  opacity: 1;
+}
+
+.rep-sheet .radar-detail {
+  border-color: var(--doc-line);
+  background: var(--doc-wash);
+}
+
+.rep-sheet .radar-detail__prompt,
+.rep-sheet .radar-detail__how {
+  color: var(--doc-ink-soft);
+}
+
+.rep-sheet .radar-detail__how {
+  border-top-color: var(--doc-line);
+}
+
+.rep-sheet .radar-detail__score {
+  color: var(--doc-accent);
+}
+
+.rep-sheet .radar-detail__score span {
+  color: var(--doc-ink-soft);
+}
+
+.rep-sheet .radar-note {
+  border-color: rgba(180, 120, 20, .35);
+  background: rgba(255, 190, 90, .12);
+  color: var(--doc-ink);
+}
+
+/* --------------------------------------------------------------------------
+   Los ocho ejes
+   -------------------------------------------------------------------------- */
+.rep-axes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Rejilla de cuatro columnas: nombre, barra, nota y - encima de la barra -
+   la puntuacion. La nota ocupa la fila de abajo para que el nombre y el
+   numero queden alineados en vertical de fila a fila. */
+.rep-axis {
+  display: grid;
+  grid-template-columns: 10.5em 1fr 3em;
+  align-items: center;
+  gap: 2px 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--doc-line);
+}
+
+.rep-axis:last-child {
+  border-bottom: 0;
+}
+
+.rep-axis__name {
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+.rep-axis__track {
+  display: block;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--doc-line);
+  overflow: hidden;
+}
+
+.rep-axis__track i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--doc-cyan), var(--doc-accent));
+}
+
+.rep-axis__score {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: .95rem;
+  text-align: right;
+}
+
+/* Que mide la dimension y de donde sale su numero, debajo y a todo lo ancho.
+   Es lo que en pantalla hay que ir abriendo eje por eje; en papel no hay
+   donde pulsar, asi que viene impreso para las ocho. */
+.rep-axis__what {
+  grid-column: 1 / -1;
+  margin: 4px 0 0;
+  font-size: .86rem;
+  line-height: 1.55;
+}
+
+/* La procedencia del numero, en gris: es un dato sobre el dato, no una
+   afirmacion mas sobre el estudiante. */
+.rep-axis__how {
+  grid-column: 1 / -1;
+  margin: 5px 0 0;
+  padding-top: 5px;
+  border-top: 1px solid var(--doc-line);
+  color: var(--doc-ink-soft);
+  font-size: .78rem;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Fortalezas y areas por desarrollar
+   -------------------------------------------------------------------------- */
+.rep-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.rep-chips {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.rep-chip {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--doc-line);
+  border-left-width: 3px;
+  border-radius: 8px;
+  font-size: .93rem;
+  font-weight: 600;
+}
+
+.rep-chip b {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-weight: 500;
+}
+
+.rep-chip--strength {
+  border-left-color: var(--doc-accent);
+  background: var(--doc-accent-soft);
+}
+
+.rep-chip--gap {
+  border-left-color: var(--doc-cyan);
+  background: var(--doc-wash);
+}
+
+/* --------------------------------------------------------------------------
+   Carreras
+   -------------------------------------------------------------------------- */
+.rep-careers {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Una carrera no se parte entre dos paginas: media justificacion al pie de
+   una hoja y el resto al principio de la siguiente se lee como dos cosas. */
+.rep-career {
+  padding: 16px 0 18px;
+  border-bottom: 1px solid var(--doc-line);
+  break-inside: avoid;
+}
+
+.rep-career:last-child {
+  border-bottom: 0;
+}
+
+.rep-career__head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.rep-career__rank {
+  color: var(--doc-ink-soft);
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: .82rem;
+}
+
+.rep-career__name {
+  flex: 1;
+  margin: 0;
+  font-size: 1.06rem;
+  font-weight: 700;
+}
+
+.rep-career__score {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 1.06rem;
+  font-weight: 500;
+  color: var(--doc-accent);
+}
+
+.rep-career__bar {
+  display: block;
+  height: 5px;
+  margin: 8px 0 10px;
+  border-radius: 999px;
+  background: var(--doc-line);
+  overflow: hidden;
+}
+
+.rep-career__bar i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--doc-cyan), var(--doc-accent));
+}
+
+.rep-career__why {
+  margin: 0;
+  font-size: .95rem;
+}
+
+.rep-career__detail {
+  margin: 10px 0 0;
+  display: grid;
+  gap: 5px;
+}
+
+.rep-career__detail div {
+  display: grid;
+  grid-template-columns: 8.5em 1fr;
+  gap: 12px;
+}
+
+.rep-career__detail dt {
+  color: var(--doc-ink-soft);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+
+.rep-career__detail dd {
+  margin: 0;
+  font-size: .9rem;
+}
+
+/* --------------------------------------------------------------------------
+   La ruta
+   -------------------------------------------------------------------------- */
+.rep-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 16px;
+}
+
+.rep-step {
+  padding: 15px 18px;
+  border: 1px solid var(--doc-line);
+  border-radius: 10px;
+  break-inside: avoid;
+}
+
+.rep-step__title {
+  display: flex;
+  align-items: baseline;
+  gap: 11px;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.rep-step__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--doc-accent-soft);
+  color: var(--doc-accent);
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: .78rem;
+}
+
+.rep-step__desc {
+  margin: 7px 0 0;
+  color: var(--doc-ink-soft);
+  font-size: .9rem;
+}
+
+.rep-tasks {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 4px;
+  font-size: .9rem;
+}
+
+/* --------------------------------------------------------------------------
+   Que hacer ahora
+   -------------------------------------------------------------------------- */
+.rep-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+  font-size: .95rem;
+}
+
+.rep-hubs {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.rep-hubs li {
+  padding: 10px 14px;
+  border: 1px solid var(--doc-line);
+  border-radius: 8px;
+}
+
+.rep-hubs strong {
+  display: block;
+  font-size: .95rem;
+}
+
+.rep-hubs span {
+  color: var(--doc-ink-soft);
+  font-size: .87rem;
+}
+
+.rep-goals {
+  margin: 8px 0 0;
+  display: grid;
+  gap: 6px;
+}
+
+.rep-goals div {
+  display: grid;
+  grid-template-columns: 11em 1fr;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--doc-line);
+}
+
+.rep-goals dt {
+  color: var(--doc-ink-soft);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+
+.rep-goals dd {
+  margin: 0;
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Metodo y pie
+   -------------------------------------------------------------------------- */
+.rep-method {
+  margin: 0 0 10px;
+  color: var(--doc-ink-soft);
+  font-size: .87rem;
+  line-height: 1.65;
+}
+
+.rep-method--stamp {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--doc-line);
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: .8rem;
+}
+
+.rep-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+  margin-top: 34px;
+  padding-top: 12px;
+  border-top: 2px solid var(--doc-ink);
+  color: var(--doc-ink-soft);
+  font-size: .76rem;
+}
+
+.rep-foot span:first-child {
+  font-family: 'DM Mono', ui-monospace, monospace;
+}
+
+/* --------------------------------------------------------------------------
+   Sin informe todavia
+   -------------------------------------------------------------------------- */
+.rep-empty {
+  max-width: 560px;
+  margin: 60px auto;
+  padding: 40px 34px;
+  border-radius: 16px;
+  background: var(--doc-paper);
+  color: var(--doc-ink);
+  text-align: center;
+}
+
+.rep-empty h1 {
+  margin: 6px 0 12px;
+  font-size: 1.6rem;
+}
+
+.rep-empty p {
+  margin: 0 0 22px;
+  color: var(--doc-ink-soft);
+}
+
+.rep-empty .rep-action {
+  background: var(--doc-accent);
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   El muro
+   --------------------------------------------------------------------------
+   Reusa la hoja blanca de .rep-empty en vez de inventarse una pantalla: lo
+   que hay detras es un documento, y que el muro ya tenga su aspecto es parte
+   de lo que explica que se compra. */
+.rep-lock {
+  max-width: 560px;
+  margin: 60px auto;
+  padding: 40px 34px;
+  border-radius: 16px;
+  background: var(--doc-paper);
+  color: var(--doc-ink);
+  text-align: center;
+}
+
+.rep-lock h1 {
+  margin: 6px 0 12px;
+  font-size: 1.6rem;
+}
+
+.rep-lock__lead {
+  margin: 0 0 22px;
+  color: var(--doc-ink-soft);
+  line-height: 1.55;
+}
+
+/* Alineada a la izquierda dentro de una tarjeta centrada a proposito: una
+   lista centrada se lee peor, y esta es la parte que la persona repasa
+   punto por punto antes de decidir. */
+.rep-lock__list {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.rep-lock__list li {
+  position: relative;
+  padding: 8px 0 8px 26px;
+  border-top: 1px solid var(--doc-line);
+  font-size: .92rem;
+}
+
+.rep-lock__list li:first-child { border-top: 0; }
+
+.rep-lock__list li::before {
+  content: "✓";
+  position: absolute;
+  left: 2px;
+  color: var(--doc-accent);
+  font-weight: 700;
+}
+
+.rep-lock__price {
+  margin: 0 0 18px;
+  font-size: 1.5rem;
+  color: var(--doc-ink);
+}
+
+.rep-lock__price span {
+  font-size: .82rem;
+  color: var(--doc-ink-soft);
+}
+
+/* El sustituto del boton mientras no hay pasarela. Se ve como un aviso y no
+   como algo pulsable: fingir un boton apagado invitaria a pulsarlo. */
+.rep-lock__soon {
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--doc-wash);
+  color: var(--doc-ink-soft);
+  font-size: .85rem;
+}
+
+.rep-lock .rep-action {
+  background: var(--doc-accent);
+  color: #fff;
+}
+
+.rep-lock .rep-action--ghost {
+  display: inline-block;
+  margin-top: 14px;
+  background: transparent;
+  color: var(--doc-ink-soft);
+}
+
+/* --------------------------------------------------------------------------
+   Pantallas estrechas
+   -------------------------------------------------------------------------- */
+@media (max-width: 720px) {
+  .rep-page { padding: 18px 12px 60px; }
+  .rep-sheet { padding: 24px 18px; }
+  .rep-name { font-size: 1.9rem; }
+
+  /* La portada deja de reservar un folio entero. En papel sigue midiendo 24cm
+     (lo refija el bloque @media print del final), pero en un movil de 812px de
+     alto ese aire repartido entre tres bloques deja huecos enormes: se leia
+     como una pagina medio vacia en vez de como una portada. */
+  .rep-cover {
+    min-height: auto;
+    justify-content: flex-start;
+    gap: 34px;
+    padding-bottom: 8px;
+  }
+
+  .cover-title { font-size: 2.5rem; }
+  .cover-for strong { font-size: 1.45rem; }
+  .rep-split { grid-template-columns: 1fr; }
+  .rep-axis { grid-template-columns: 1fr 3em; }
+  .rep-axis__track { grid-column: 1 / -1; order: 3; }
+  .rep-axis__note { grid-column: 1 / -1; order: 4; }
+  .rep-career__detail div,
+  .rep-goals div { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* --------------------------------------------------------------------------
+   Solo para el informe general de administracion
+   --------------------------------------------------------------------------
+   Estas clases no las usa el informe del estudiante. Viven aqui igualmente
+   porque los dos documentos comparten la hoja - misma portada, mismas
+   secciones numeradas, mismo pie, mismo bloque de impresion - y separarlas en
+   un archivo propio obligaria a mantener dos veces las variables de color y
+   la geometria de la pagina. */
+
+/* El selector de periodo. Va en la barra, asi que no se imprime. */
+.rep-periods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.rep-chip-btn {
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--fp-text-muted, #B8C4D4);
+  font: inherit;
+  font-size: .85rem;
+  cursor: pointer;
+}
+
+.rep-chip-btn:hover {
+  border-color: var(--fp-primary, #00FFB3);
+  color: var(--fp-text, #fff);
+}
+
+.rep-chip-btn.is-active {
+  border-color: var(--fp-primary, #00FFB3);
+  background: rgba(0, 255, 179, .12);
+  color: var(--fp-text, #fff);
+  font-weight: 700;
+}
+
+.rep-loading {
+  max-width: 21cm;
+  margin: 40px auto;
+  color: var(--fp-text-muted, #B8C4D4);
+  text-align: center;
+}
+
+/* Las cifras del resumen. Todas al mismo tamano a proposito: destacar una
+   sola seria decidir por quien lee cual importa, y el sentido de ponerlas
+   juntas es justo que se comparen entre si. */
+.rep-figures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--doc-line);
+  border: 1px solid var(--doc-line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rep-figure {
+  padding: 16px 18px;
+  background: var(--doc-paper);
+}
+
+.rep-figure__value {
+  margin: 0;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--doc-ink);
+}
+
+.rep-figure__label {
+  margin: 6px 0 0;
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+.rep-figure__hint {
+  margin: 3px 0 0;
+  color: var(--doc-ink-soft);
+  font-size: .74rem;
+  line-height: 1.45;
+}
+
+/* Los rankings: posicion, nombre, barra, recuento y porcentaje.
+   Una sola rejilla para los cuatro (carreras, areas, arquetipos, paises) para
+   que las columnas queden alineadas de seccion a seccion. */
+.rep-rank {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rep-rank__row {
+  display: grid;
+  /* La ultima columna cabe "100.0%" en monoespaciada: con menos, la
+     carrera que se lleva todo el reparto se imprime con el porcentaje
+     partido, que es justo la fila que alguien va a mirar. */
+  grid-template-columns: 2.2em minmax(7em, 14em) 1fr 3.4em 4.3em;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--doc-line);
+}
+
+.rep-rank__row:last-child {
+  border-bottom: 0;
+}
+
+.rep-rank__pos {
+  color: var(--doc-ink-soft);
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: .78rem;
+}
+
+.rep-rank__name {
+  font-size: .92rem;
+  font-weight: 600;
+}
+
+.rep-rank__track {
+  display: block;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--doc-wash);
+  overflow: hidden;
+}
+
+.rep-rank__track i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--doc-cyan), var(--doc-accent));
+}
+
+.rep-rank__count,
+.rep-rank__pct {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: .86rem;
+  text-align: right;
+}
+
+.rep-rank__pct {
+  color: var(--doc-accent);
+}
+
+@media (max-width: 720px) {
+  .rep-figures { grid-template-columns: repeat(2, 1fr); }
+  .rep-rank__row { grid-template-columns: 2.2em 1fr 3.4em 4.3em; }
+  .rep-rank__track { grid-column: 1 / -1; }
+}
+
+/* ==========================================================================
+   PAPEL
+   ==========================================================================
+   Aqui es donde esto se convierte en un PDF. El navegador imprime la misma
+   hoja que ya se esta viendo; lo unico que hace este bloque es quitar el
+   sitio de alrededor y fijar la geometria de la pagina.
+   ========================================================================== */
+@page {
+  size: A4;
+  margin: 14mm 13mm 15mm;
+}
+
+@media print {
+  /* Sin fondo oscuro ni sombras: gastan tinta y no aportan nada en papel. */
+  html,
+  body {
+    background: #fff !important;
+    color: var(--doc-ink);
+  }
+
+  /* Lo que es interfaz no es documento. La cabecera del sitio, el selector
+     de idioma, el chat del mentor y la propia barra de "Descargar PDF" se
+     quedan fuera: un boton de descarga impreso DENTRO del PDF es justo el
+     detalle que delata que el documento es la captura de una pantalla. */
+  .rep-toolbar,
+  .fp-header,
+  #fpMentorBubble,
+  #fpMentorPanel,
+  #fpStampToastLayer {
+    display: none !important;
+  }
+
+  .rep-page {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .rep-sheet {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    /* Sin esto los navegadores descartan TODOS los fondos al imprimir: las
+       barras de puntuacion saldrian vacias, los distintivos sin color y la
+       marca de agua de la portada sin su franja. Es la unica linea del
+       archivo que decide si el PDF se parece o no a lo que se ve. */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* La portada es una hoja y solo una: lo que viene detras empieza en la
+     siguiente, pase lo que pase. */
+  .rep-cover {
+    min-height: 24cm;
+    break-after: page;
+  }
+
+  /* En papel no hay despegue que valga: el avion ya ha llegado y la estela
+     esta entera. Sin esto, imprimir a media animacion congela el avion donde
+     estuviera y sale un rastro cortado por la mitad. */
+  .cover-plane {
+    animation: none !important;
+    offset-distance: 100% !important;
+  }
+
+  .cover-trail {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+
+  .cover-origin {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Las secciones largas empiezan en hoja nueva. Se marcan desde el
+     JavaScript (corteDePagina) y no aqui, porque cuales son depende de que
+     secciones existan en ESTE informe: sin roadmap, la ruta no se pinta y su
+     salto sobraria. */
+  .rep-section--break {
+    break-before: page;
+  }
+
+  /* Un titulo no se queda solo al pie de una hoja. */
+  .rep-section__title,
+  .rep-step__title,
+  .rep-career__head {
+    break-after: avoid;
+  }
+
+  .rep-section,
+  .rep-card,
+  .rep-axis,
+  .rep-chip,
+  .rep-hubs li {
+    break-inside: avoid;
+  }
+
+  /* El panel de "pulsa un eje" no pinta nada en un PDF: no hay donde pulsar,
+     y su contenido -que mide y como se calculo- ya viene impreso para las
+     ocho dimensiones en la lista de abajo. Dejarlo repetiria una de ellas al
+     azar (la que quedara abierta) justo debajo del grafico. */
+  .radar-detail {
+    display: none;
+  }
+
+  /* El radar cabe entero o se va a la hoja siguiente: partido por la mitad
+     no es un grafico. */
+  .radar-section,
+  .rep-axes {
+    break-inside: avoid;
+  }
+
+  /* Los enlaces del informe se imprimen como texto normal: en papel un
+     subrayado azul no lleva a ninguna parte. */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

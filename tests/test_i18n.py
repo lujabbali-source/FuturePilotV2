@@ -300,8 +300,19 @@ def test_every_translation_key_used_in_code_exists():
             for m in re.finditer(rf'\b{atajo}\(\s*"([\w.]+)"', codigo):
                 usos.append((ns, prefijo + m.group(1)))
 
+        # Una clave con plural vive en el catalogo partida en dos
+        # (`dash.dna.evidence_one` / `_other`) y el codigo la pide entera,
+        # porque de elegir la forma se encarga i18next con el {{count}}. Sin
+        # esto, usar una clave plural correcta se contaba como usar una que
+        # no existe.
+        def esta_definida(ns, clave):
+            return clave in catalogo[ns] or any(
+                f"{clave}_{forma}" in catalogo[ns]
+                for forma in ("zero", "one", "two", "few", "many", "other")
+            )
+
         for ns, clave in usos:
-            if ns in catalogo and clave not in catalogo[ns]:
+            if ns in catalogo and not esta_definida(ns, clave):
                 faltan.append(f"{modulo.relative_to(src)}: {ns}:{clave}")
 
     assert not faltan, "claves usadas y no definidas:\n  " + "\n  ".join(sorted(set(faltan)))

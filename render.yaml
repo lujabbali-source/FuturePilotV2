@@ -1,42 +1,39 @@
 # Despliegue en Render. Es un Blueprint: no toca ningun servicio que ya
 # exista en la cuenta hasta que se crea explicitamente desde este archivo.
 #
-# Va en plan FREE para que se pueda desplegar sin tarjeta. Eso tiene un precio
-# concreto y conviene saberlo antes de enseñarle esto a nadie:
+# Va en plan STARTER con disco persistente. Eso cuesta dinero al mes y es
+# deliberado: en free no hay disco, la base SQLite vive dentro del contenedor
+# y cada reinicio -Render los hace solo, al desplegar y tras un rato sin
+# visitas- borraba TODAS las cuentas sin que fallara nada visible. Con eso no
+# se puede pedirle a un acudiente que autorice nada, ni entregarle a un
+# colegio un informe de resultados una semana despues, ni cobrar.
 #
-#   - NO HAY DISCO. El plan gratuito no lo admite, asi que la base SQLite vive
-#     dentro del contenedor. Render lo reinicia por su cuenta, al desplegar y
-#     tras un rato de inactividad, y en cada reinicio SE PIERDEN TODAS LAS
-#     CUENTAS. La aplicacion arranca tan contenta con una base vacia: no falla
-#     nada visible.
-#   - El servicio se duerme. Un acudiente que abra su enlace despues de un
-#     rato sin visitas espera ~50s a que despierte, y puede que su expediente
-#     ya no exista por lo de arriba.
+# Lo que el disco sostiene, y por eso esta activado todo junto:
 #
-# O sea: sirve para enseñar el sitio y las paginas publicas (/parents,
-# /privacy, /terms funcionan perfectamente, no guardan nada). NO sirve para
-# cuentas de estudiantes reales.
+#   - Las cuentas y los expedientes de consentimiento sobreviven al reinicio.
+#   - El barrido de los 30 dias (CONSENT_SWEEP_ENABLED) tiene sentido: hay
+#     expedientes que llegan a cumplirlos.
+#   - La copia diaria (BACKUP_ENABLED) escribe donde no se borra sola.
 #
-# Para pasarlo a serio hace falta tarjeta y son cuatro lineas:
-#   1. plan: starter
-#   2. descomentar el bloque `disk`
-#   3. descomentar USERS_DB_PATH, FUTUREPILOT_MEMORY_DIR y BACKUP_DIR
-#   4. CONSENT_SWEEP_ENABLED a "1"
+# Al pasar a starter deja de hacer falta ADMIN_PASSWORD. Ver su comentario
+# mas abajo: hay que borrarla del panel, pero solo DESPUES de comprobar que
+# la cuenta de administrador sobrevive a un reinicio.
 
 services:
   - type: web
     name: futurepilot
     runtime: docker
-    plan: free
+    plan: starter
     region: oregon
     healthCheckPath: /healthz
 
-    # Descomentar junto con `plan: starter`. En free, Render rechaza el
-    # Blueprint entero si esto esta presente.
-    # disk:
-    #   name: datos
-    #   mountPath: /var/data
-    #   sizeGB: 1
+    # Todo lo que tiene que sobrevivir a un reinicio vive aqui debajo. 1 GB
+    # es holgado para una SQLite de cuentas y sus copias; subirlo despues se
+    # puede, bajarlo no.
+    disk:
+      name: datos
+      mountPath: /var/data
+      sizeGB: 1
 
     envVars:
       # Esta importa aunque no haya disco, y es gratis. Sin ella: /docs y
@@ -46,14 +43,15 @@ services:
       - key: FUTUREPILOT_ENV
         value: production
 
-      # Solo tienen sentido con disco montado. En free no hay donde apuntar:
-      # cualquier ruta que se ponga vive en el contenedor y se va con el.
-      # - key: USERS_DB_PATH
-      #   value: /var/data/users.sqlite3
-      # - key: FUTUREPILOT_MEMORY_DIR
-      #   value: /var/data/mentor
-      # - key: BACKUP_DIR
-      #   value: /var/data/backups
+      # Las tres apuntan dentro del disco de arriba. Si alguna se quedara
+      # fuera de /var/data volveria a vivir en el contenedor y se iria con el
+      # siguiente reinicio, en silencio y sin que nada fallara.
+      - key: USERS_DB_PATH
+        value: /var/data/users.sqlite3
+      - key: FUTUREPILOT_MEMORY_DIR
+        value: /var/data/mentor
+      - key: BACKUP_DIR
+        value: /var/data/backups
 
       # Sin esto los enlaces que salen por correo se arman con la cabecera
       # Host de quien llama y con esquema http. Ver base_publica() en app.py.
@@ -61,11 +59,22 @@ services:
         value: https://futurepilot-hp0v.onrender.com
 
       # El barrido de los 30 dias corre dentro de este mismo servicio, en un
-      # hilo, porque los cron jobs de Render no pueden montar el disco. En
-      # free se queda apagado: sin persistencia no hay ningun expediente que
-      # sobreviva 30 dias, asi que solo seria ruido en los logs.
+      # hilo, porque los cron jobs de Render no pueden montar el disco.
+      #
+      # Encendido. Es lo que cumple la promesa que se le hace al acudiente en
+      # su correo: si no responde, los datos del menor se borran. Apagado, esa
+      # frase seria falsa, y ademas nadie se enteraria - un borrado que no
+      # ocurre no da ningun error. Por eso /admin/system-health lo vigila y se
+      # pone en rojo si deja de correr.
       - key: CONSENT_SWEEP_ENABLED
-        value: ""
+        value: "1"
+
+      # La copia diaria corre en el mismo hilo-y-servicio y por el mismo
+      # motivo. Encendida: escribe en BACKUP_DIR, que ahora esta dentro del
+      # disco, asi que la copia ya no se borra con el mismo reinicio del que
+      # pretende proteger.
+      - key: BACKUP_ENABLED
+        value: "1"
 
       # sync: false = Render las pide en el panel y no se guardan aqui. La
       # SMTP key y el correo del admin no pueden vivir en un archivo del
@@ -73,10 +82,21 @@ services:
       - key: ADMIN_EMAIL
         sync: false
 
-      # Solo hace falta mientras el plan sea free: sin disco, cada reinicio
-      # borra la cuenta de admin y habria que reclamarla con el token de
-      # consola cada vez. Al pasar a starter con disco, BORRA esta variable
-      # del panel - deja de ser necesaria y es una contraseña en texto plano.
+      # YA NO HACE FALTA, y hay que borrarla del panel: es una contraseña en
+      # texto plano en la configuracion del despliegue. Existia porque sin
+      # disco cada reinicio borraba la cuenta de admin y habia que volver a
+      # crearla sola al arrancar.
+      #
+      # El orden importa, para no quedarse fuera: primero despliega con disco,
+      # entra al panel de admin y comprueba que la cuenta sigue ahi despues de
+      # un reinicio; SOLO ENTONCES borra la variable. Si se borrase antes y el
+      # disco arrancara vacio, reclamar el asiento exigiria leer el token de
+      # primer arranque en los logs de Render (ver admin_setup_token en
+      # app.py) - se puede, pero es un mal rato evitable.
+      #
+      # La linea se deja aqui a proposito mientras tanto: quitarla del
+      # Blueprint antes de tiempo no borra el valor del panel, solo hace que
+      # deje de constar de donde salia.
       - key: ADMIN_PASSWORD
         sync: false
       - key: SMTP_HOST

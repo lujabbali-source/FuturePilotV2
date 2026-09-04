@@ -24,7 +24,7 @@ def _registrar_menor(client, email=None, acudiente="madre@example.com"):
     abajo, disfrazado de KeyError.
     """
     _CONTADOR["n"] += 1
-    return client.post("/api/v1/auth/register", json={
+    return client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, 
         "email": email or f"hijo{_CONTADOR['n']}@example.com",
         "password": "password123", "name": "Ana",
         "is_minor": True, "guardian_email": acudiente,
@@ -62,7 +62,7 @@ def test_the_file_is_opened_when_a_minor_registers(client, app_module):
 def test_no_file_is_opened_for_an_adult(client, app_module):
     """Sin acudiente no hay expediente que abrir, y abrir uno vacio dejaria a
     un mayor de edad con un reloj de borrado encima."""
-    r = client.post("/api/v1/auth/register", json={
+    r = client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, 
         "email": "mayor-sin-expediente@example.com", "password": "password123", "name": "Luis"})
     assert app_module.users_store.get_consent_for_user(r.json()["user"]["id"]) is None
 

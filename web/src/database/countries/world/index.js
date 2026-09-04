@@ -1,198 +1,198 @@
 // Generado por web/scripts/import_world.py. No editar a mano.
 // 192 paises importados de fuentes abiertas.
 
-import afganistan from "./afganistan";
-import albania from "./albania";
-import argelia from "./argelia";
-import andorra from "./andorra";
-import angola from "./angola";
-import antigua_y_barbuda from "./antigua-y-barbuda";
-import armenia from "./armenia";
-import australia from "./australia";
-import austria from "./austria";
-import azerbaiyan from "./azerbaiyan";
-import bahamas from "./bahamas";
-import bahrein from "./bahrein";
-import bangladesh from "./bangladesh";
-import barbados from "./barbados";
-import bielorrusia from "./bielorrusia";
-import belgica from "./belgica";
-import belice from "./belice";
-import benin from "./benin";
-import bermudas from "./bermudas";
-import butan from "./butan";
-import bosnia_y_herzegovina from "./bosnia-y-herzegovina";
-import botswana from "./botswana";
-import islas_virgenes_del_reino_unido from "./islas-virgenes-del-reino-unido";
-import brunei from "./brunei";
-import bulgaria from "./bulgaria";
-import burkina_faso from "./burkina-faso";
-import burundi from "./burundi";
-import camboya from "./camboya";
-import camerun from "./camerun";
-import cabo_verde from "./cabo-verde";
-import islas_caiman from "./islas-caiman";
-import republica_centroafricana from "./republica-centroafricana";
-import chad from "./chad";
-import china from "./china";
-import comoras from "./comoras";
-import congo from "./congo";
-import croacia from "./croacia";
-import chipre from "./chipre";
-import chequia from "./chequia";
-import congo_rep_dem from "./congo-rep-dem";
-import dinamarca from "./dinamarca";
-import djibouti from "./djibouti";
-import dominica from "./dominica";
-import egipto from "./egipto";
-import guinea_ecuatorial from "./guinea-ecuatorial";
-import eritrea from "./eritrea";
-import estonia from "./estonia";
-import esuatini from "./esuatini";
-import etiopia from "./etiopia";
-import islas_faroe from "./islas-faroe";
-import fiyi from "./fiyi";
-import finlandia from "./finlandia";
-import francia from "./francia";
-import guayana_francesa from "./guayana-francesa";
-import polinesia_francesa from "./polinesia-francesa";
-import gabon from "./gabon";
-import gambia from "./gambia";
-import georgia from "./georgia";
-import alemania from "./alemania";
-import ghana from "./ghana";
-import grecia from "./grecia";
-import groenlandia from "./groenlandia";
-import grenada from "./grenada";
-import guadalupe from "./guadalupe";
-import guam from "./guam";
-import guinea from "./guinea";
-import guinea_bisau from "./guinea-bisau";
-import guyana from "./guyana";
-import hong_kong from "./hong-kong";
-import hungria from "./hungria";
-import islandia from "./islandia";
-import india from "./india";
-import indonesia from "./indonesia";
-import iran from "./iran";
-import irak from "./irak";
-import irlanda from "./irlanda";
-import israel from "./israel";
-import italia from "./italia";
-import costa_de_marfil from "./costa-de-marfil";
-import jamaica from "./jamaica";
-import japon from "./japon";
-import jordania from "./jordania";
-import kazajistan from "./kazajistan";
-import kenia from "./kenia";
-import kiribati from "./kiribati";
-import kosovo from "./kosovo";
-import kuwait from "./kuwait";
-import kirguizistan from "./kirguizistan";
-import laos from "./laos";
-import letonia from "./letonia";
-import libano from "./libano";
-import lesotho from "./lesotho";
-import liberia from "./liberia";
-import libia from "./libia";
-import liechtenstein from "./liechtenstein";
-import lituania from "./lituania";
-import luxemburgo from "./luxemburgo";
-import macao from "./macao";
-import madagascar from "./madagascar";
-import malawi from "./malawi";
-import malasia from "./malasia";
-import maldivas from "./maldivas";
-import mali from "./mali";
-import malta from "./malta";
-import islas_marshall from "./islas-marshall";
-import mauritania from "./mauritania";
-import mauricio from "./mauricio";
-import micronesia from "./micronesia";
-import moldavia from "./moldavia";
-import monaco from "./monaco";
-import mongolia from "./mongolia";
-import montenegro from "./montenegro";
-import montserrat from "./montserrat";
-import marruecos from "./marruecos";
-import mozambique from "./mozambique";
-import myanmar from "./myanmar";
-import namibia from "./namibia";
-import nauru from "./nauru";
-import nepal from "./nepal";
-import paises_bajos from "./paises-bajos";
-import nueva_caledonia from "./nueva-caledonia";
-import nueva_zelanda from "./nueva-zelanda";
-import niger from "./niger";
-import nigeria from "./nigeria";
-import niue from "./niue";
-import corea_del_norte from "./corea-del-norte";
-import macedonia_del_norte from "./macedonia-del-norte";
-import noruega from "./noruega";
-import oman from "./oman";
-import pakistan from "./pakistan";
-import palau from "./palau";
-import palestina from "./palestina";
-import papua_nueva_guinea from "./papua-nueva-guinea";
-import filipinas from "./filipinas";
-import polonia from "./polonia";
-import portugal from "./portugal";
-import catar from "./catar";
-import rumania from "./rumania";
-import rusia from "./rusia";
-import ruanda from "./ruanda";
-import reunion from "./reunion";
-import san_cristobal_y_nieves from "./san-cristobal-y-nieves";
-import santa_lucia from "./santa-lucia";
-import san_vicente_y_granadinas from "./san-vicente-y-granadinas";
-import samoa from "./samoa";
-import san_marino from "./san-marino";
-import arabia_saudi from "./arabia-saudi";
-import senegal from "./senegal";
-import serbia from "./serbia";
-import seychelles from "./seychelles";
-import sierra_leone from "./sierra-leone";
-import singapur from "./singapur";
-import eslovaquia from "./eslovaquia";
-import eslovenia from "./eslovenia";
-import islas_salomon from "./islas-salomon";
-import somalia from "./somalia";
-import sudafrica from "./sudafrica";
-import corea_del_sur from "./corea-del-sur";
-import sudan_del_sur from "./sudan-del-sur";
-import espana from "./espana";
-import sri_lanka from "./sri-lanka";
-import sudan from "./sudan";
-import surinam from "./surinam";
-import suecia from "./suecia";
-import suiza from "./suiza";
-import siria from "./siria";
-import santo_tome_y_principe from "./santo-tome-y-principe";
-import taiwan from "./taiwan";
-import tayikistan from "./tayikistan";
-import tanzania from "./tanzania";
-import tailandia from "./tailandia";
-import timor_oriental from "./timor-oriental";
-import togo from "./togo";
-import tonga from "./tonga";
-import trinidad_y_tobago from "./trinidad-y-tobago";
-import tunez from "./tunez";
-import turkmenistan from "./turkmenistan";
-import islas_turks_y_caicos from "./islas-turks-y-caicos";
-import tuvalu from "./tuvalu";
-import turquia from "./turquia";
-import uganda from "./uganda";
-import ucrania from "./ucrania";
-import emiratos_arabes_unidos from "./emiratos-arabes-unidos";
-import reino_unido from "./reino-unido";
-import uzbekistan from "./uzbekistan";
-import vanuatu from "./vanuatu";
-import ciudad_del_vaticano from "./ciudad-del-vaticano";
-import venezuela from "./venezuela";
-import vietnam from "./vietnam";
-import yemen from "./yemen";
-import zambia from "./zambia";
-import zimbabue from "./zimbabue";
+import afganistan from "./afganistan.js";
+import albania from "./albania.js";
+import argelia from "./argelia.js";
+import andorra from "./andorra.js";
+import angola from "./angola.js";
+import antigua_y_barbuda from "./antigua-y-barbuda.js";
+import armenia from "./armenia.js";
+import australia from "./australia.js";
+import austria from "./austria.js";
+import azerbaiyan from "./azerbaiyan.js";
+import bahamas from "./bahamas.js";
+import barein from "./barein.js";
+import banglades from "./banglades.js";
+import barbados from "./barbados.js";
+import bielorrusia from "./bielorrusia.js";
+import belgica from "./belgica.js";
+import belice from "./belice.js";
+import benin from "./benin.js";
+import bermudas from "./bermudas.js";
+import butan from "./butan.js";
+import bosnia_y_herzegovina from "./bosnia-y-herzegovina.js";
+import botsuana from "./botsuana.js";
+import islas_virgenes_britanicas from "./islas-virgenes-britanicas.js";
+import brunei from "./brunei.js";
+import bulgaria from "./bulgaria.js";
+import burkina_faso from "./burkina-faso.js";
+import burundi from "./burundi.js";
+import cabo_verde from "./cabo-verde.js";
+import camboya from "./camboya.js";
+import camerun from "./camerun.js";
+import islas_caiman from "./islas-caiman.js";
+import republica_centroafricana from "./republica-centroafricana.js";
+import chad from "./chad.js";
+import china from "./china.js";
+import comoras from "./comoras.js";
+import croacia from "./croacia.js";
+import chipre from "./chipre.js";
+import republica_checa from "./republica-checa.js";
+import republica_democratica_del_congo from "./republica-democratica-del-congo.js";
+import dinamarca from "./dinamarca.js";
+import yibuti from "./yibuti.js";
+import dominica from "./dominica.js";
+import egipto from "./egipto.js";
+import guinea_ecuatorial from "./guinea-ecuatorial.js";
+import eritrea from "./eritrea.js";
+import estonia from "./estonia.js";
+import esuatini from "./esuatini.js";
+import etiopia from "./etiopia.js";
+import islas_feroe from "./islas-feroe.js";
+import fiyi from "./fiyi.js";
+import finlandia from "./finlandia.js";
+import francia from "./francia.js";
+import guayana_francesa from "./guayana-francesa.js";
+import polinesia_francesa from "./polinesia-francesa.js";
+import gabon from "./gabon.js";
+import gambia from "./gambia.js";
+import georgia from "./georgia.js";
+import alemania from "./alemania.js";
+import ghana from "./ghana.js";
+import grecia from "./grecia.js";
+import groenlandia from "./groenlandia.js";
+import granada from "./granada.js";
+import guadalupe from "./guadalupe.js";
+import guam from "./guam.js";
+import guinea from "./guinea.js";
+import guinea_bisau from "./guinea-bisau.js";
+import guyana from "./guyana.js";
+import hong_kong from "./hong-kong.js";
+import hungria from "./hungria.js";
+import islandia from "./islandia.js";
+import india from "./india.js";
+import indonesia from "./indonesia.js";
+import iran from "./iran.js";
+import irak from "./irak.js";
+import irlanda from "./irlanda.js";
+import israel from "./israel.js";
+import italia from "./italia.js";
+import costa_de_marfil from "./costa-de-marfil.js";
+import jamaica from "./jamaica.js";
+import japon from "./japon.js";
+import jordania from "./jordania.js";
+import kazajistan from "./kazajistan.js";
+import kenia from "./kenia.js";
+import kiribati from "./kiribati.js";
+import kosovo from "./kosovo.js";
+import kuwait from "./kuwait.js";
+import kirguistan from "./kirguistan.js";
+import laos from "./laos.js";
+import letonia from "./letonia.js";
+import libano from "./libano.js";
+import lesoto from "./lesoto.js";
+import liberia from "./liberia.js";
+import libia from "./libia.js";
+import liechtenstein from "./liechtenstein.js";
+import lituania from "./lituania.js";
+import luxemburgo from "./luxemburgo.js";
+import macao from "./macao.js";
+import madagascar from "./madagascar.js";
+import malaui from "./malaui.js";
+import malasia from "./malasia.js";
+import maldivas from "./maldivas.js";
+import mali from "./mali.js";
+import malta from "./malta.js";
+import islas_marshall from "./islas-marshall.js";
+import mauritania from "./mauritania.js";
+import mauricio from "./mauricio.js";
+import micronesia from "./micronesia.js";
+import moldavia from "./moldavia.js";
+import monaco from "./monaco.js";
+import mongolia from "./mongolia.js";
+import montenegro from "./montenegro.js";
+import montserrat from "./montserrat.js";
+import marruecos from "./marruecos.js";
+import mozambique from "./mozambique.js";
+import myanmar from "./myanmar.js";
+import namibia from "./namibia.js";
+import nauru from "./nauru.js";
+import nepal from "./nepal.js";
+import nueva_caledonia from "./nueva-caledonia.js";
+import nueva_zelanda from "./nueva-zelanda.js";
+import niger from "./niger.js";
+import nigeria from "./nigeria.js";
+import niue from "./niue.js";
+import corea_del_norte from "./corea-del-norte.js";
+import macedonia_del_norte from "./macedonia-del-norte.js";
+import noruega from "./noruega.js";
+import oman from "./oman.js";
+import pakistan from "./pakistan.js";
+import palaos from "./palaos.js";
+import palestina from "./palestina.js";
+import papua_nueva_guinea from "./papua-nueva-guinea.js";
+import filipinas from "./filipinas.js";
+import polonia from "./polonia.js";
+import portugal from "./portugal.js";
+import catar from "./catar.js";
+import congo from "./congo.js";
+import reunion from "./reunion.js";
+import rumania from "./rumania.js";
+import rusia from "./rusia.js";
+import ruanda from "./ruanda.js";
+import san_cristobal_y_nieves from "./san-cristobal-y-nieves.js";
+import santa_lucia from "./santa-lucia.js";
+import san_vicente_y_las_granadinas from "./san-vicente-y-las-granadinas.js";
+import samoa from "./samoa.js";
+import san_marino from "./san-marino.js";
+import santo_tome_y_principe from "./santo-tome-y-principe.js";
+import arabia_saudi from "./arabia-saudi.js";
+import senegal from "./senegal.js";
+import serbia from "./serbia.js";
+import seychelles from "./seychelles.js";
+import sierra_leona from "./sierra-leona.js";
+import singapur from "./singapur.js";
+import eslovaquia from "./eslovaquia.js";
+import eslovenia from "./eslovenia.js";
+import islas_salomon from "./islas-salomon.js";
+import somalia from "./somalia.js";
+import sudafrica from "./sudafrica.js";
+import corea_del_sur from "./corea-del-sur.js";
+import sudan_del_sur from "./sudan-del-sur.js";
+import espana from "./espana.js";
+import sri_lanka from "./sri-lanka.js";
+import sudan from "./sudan.js";
+import surinam from "./surinam.js";
+import suecia from "./suecia.js";
+import suiza from "./suiza.js";
+import siria from "./siria.js";
+import taiwan from "./taiwan.js";
+import tayikistan from "./tayikistan.js";
+import tanzania from "./tanzania.js";
+import tailandia from "./tailandia.js";
+import paises_bajos from "./paises-bajos.js";
+import timor_oriental from "./timor-oriental.js";
+import togo from "./togo.js";
+import tonga from "./tonga.js";
+import trinidad_y_tobago from "./trinidad-y-tobago.js";
+import tunez from "./tunez.js";
+import turquia from "./turquia.js";
+import turkmenistan from "./turkmenistan.js";
+import islas_turcas_y_caicos from "./islas-turcas-y-caicos.js";
+import tuvalu from "./tuvalu.js";
+import uganda from "./uganda.js";
+import ucrania from "./ucrania.js";
+import emiratos_arabes_unidos from "./emiratos-arabes-unidos.js";
+import reino_unido from "./reino-unido.js";
+import uzbekistan from "./uzbekistan.js";
+import vanuatu from "./vanuatu.js";
+import ciudad_del_vaticano from "./ciudad-del-vaticano.js";
+import venezuela from "./venezuela.js";
+import vietnam from "./vietnam.js";
+import yemen from "./yemen.js";
+import zambia from "./zambia.js";
+import zimbabue from "./zimbabue.js";
 
 export const countries = {
   "afganistan": afganistan,
@@ -206,8 +206,8 @@ export const countries = {
   "austria": austria,
   "azerbaiyan": azerbaiyan,
   "bahamas": bahamas,
-  "bahrein": bahrein,
-  "bangladesh": bangladesh,
+  "barein": barein,
+  "banglades": banglades,
   "barbados": barbados,
   "bielorrusia": bielorrusia,
   "belgica": belgica,
@@ -216,27 +216,26 @@ export const countries = {
   "bermudas": bermudas,
   "butan": butan,
   "bosnia-y-herzegovina": bosnia_y_herzegovina,
-  "botswana": botswana,
-  "islas-virgenes-del-reino-unido": islas_virgenes_del_reino_unido,
+  "botsuana": botsuana,
+  "islas-virgenes-britanicas": islas_virgenes_britanicas,
   "brunei": brunei,
   "bulgaria": bulgaria,
   "burkina-faso": burkina_faso,
   "burundi": burundi,
+  "cabo-verde": cabo_verde,
   "camboya": camboya,
   "camerun": camerun,
-  "cabo-verde": cabo_verde,
   "islas-caiman": islas_caiman,
   "republica-centroafricana": republica_centroafricana,
   "chad": chad,
   "china": china,
   "comoras": comoras,
-  "congo": congo,
   "croacia": croacia,
   "chipre": chipre,
-  "chequia": chequia,
-  "congo-rep-dem": congo_rep_dem,
+  "republica-checa": republica_checa,
+  "republica-democratica-del-congo": republica_democratica_del_congo,
   "dinamarca": dinamarca,
-  "djibouti": djibouti,
+  "yibuti": yibuti,
   "dominica": dominica,
   "egipto": egipto,
   "guinea-ecuatorial": guinea_ecuatorial,
@@ -244,7 +243,7 @@ export const countries = {
   "estonia": estonia,
   "esuatini": esuatini,
   "etiopia": etiopia,
-  "islas-faroe": islas_faroe,
+  "islas-feroe": islas_feroe,
   "fiyi": fiyi,
   "finlandia": finlandia,
   "francia": francia,
@@ -257,7 +256,7 @@ export const countries = {
   "ghana": ghana,
   "grecia": grecia,
   "groenlandia": groenlandia,
-  "grenada": grenada,
+  "granada": granada,
   "guadalupe": guadalupe,
   "guam": guam,
   "guinea": guinea,
@@ -282,11 +281,11 @@ export const countries = {
   "kiribati": kiribati,
   "kosovo": kosovo,
   "kuwait": kuwait,
-  "kirguizistan": kirguizistan,
+  "kirguistan": kirguistan,
   "laos": laos,
   "letonia": letonia,
   "libano": libano,
-  "lesotho": lesotho,
+  "lesoto": lesoto,
   "liberia": liberia,
   "libia": libia,
   "liechtenstein": liechtenstein,
@@ -294,7 +293,7 @@ export const countries = {
   "luxemburgo": luxemburgo,
   "macao": macao,
   "madagascar": madagascar,
-  "malawi": malawi,
+  "malaui": malaui,
   "malasia": malasia,
   "maldivas": maldivas,
   "mali": mali,
@@ -314,7 +313,6 @@ export const countries = {
   "namibia": namibia,
   "nauru": nauru,
   "nepal": nepal,
-  "paises-bajos": paises_bajos,
   "nueva-caledonia": nueva_caledonia,
   "nueva-zelanda": nueva_zelanda,
   "niger": niger,
@@ -325,27 +323,29 @@ export const countries = {
   "noruega": noruega,
   "oman": oman,
   "pakistan": pakistan,
-  "palau": palau,
+  "palaos": palaos,
   "palestina": palestina,
   "papua-nueva-guinea": papua_nueva_guinea,
   "filipinas": filipinas,
   "polonia": polonia,
   "portugal": portugal,
   "catar": catar,
+  "congo": congo,
+  "reunion": reunion,
   "rumania": rumania,
   "rusia": rusia,
   "ruanda": ruanda,
-  "reunion": reunion,
   "san-cristobal-y-nieves": san_cristobal_y_nieves,
   "santa-lucia": santa_lucia,
-  "san-vicente-y-granadinas": san_vicente_y_granadinas,
+  "san-vicente-y-las-granadinas": san_vicente_y_las_granadinas,
   "samoa": samoa,
   "san-marino": san_marino,
+  "santo-tome-y-principe": santo_tome_y_principe,
   "arabia-saudi": arabia_saudi,
   "senegal": senegal,
   "serbia": serbia,
   "seychelles": seychelles,
-  "sierra-leone": sierra_leone,
+  "sierra-leona": sierra_leona,
   "singapur": singapur,
   "eslovaquia": eslovaquia,
   "eslovenia": eslovenia,
@@ -361,20 +361,20 @@ export const countries = {
   "suecia": suecia,
   "suiza": suiza,
   "siria": siria,
-  "santo-tome-y-principe": santo_tome_y_principe,
   "taiwan": taiwan,
   "tayikistan": tayikistan,
   "tanzania": tanzania,
   "tailandia": tailandia,
+  "paises-bajos": paises_bajos,
   "timor-oriental": timor_oriental,
   "togo": togo,
   "tonga": tonga,
   "trinidad-y-tobago": trinidad_y_tobago,
   "tunez": tunez,
-  "turkmenistan": turkmenistan,
-  "islas-turks-y-caicos": islas_turks_y_caicos,
-  "tuvalu": tuvalu,
   "turquia": turquia,
+  "turkmenistan": turkmenistan,
+  "islas-turcas-y-caicos": islas_turcas_y_caicos,
+  "tuvalu": tuvalu,
   "uganda": uganda,
   "ucrania": ucrania,
   "emiratos-arabes-unidos": emiratos_arabes_unidos,

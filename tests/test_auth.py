@@ -4,7 +4,7 @@
 def test_register_and_login(client):
     r = client.post(
         "/api/v1/auth/register",
-        json={"email": "auth-basic@example.com", "password": "password123", "name": "Ana"},
+        json={"is_minor": False, "accepted_terms": True, "email": "auth-basic@example.com", "password": "password123", "name": "Ana"},
     )
     assert r.status_code == 201
     body = r.json()
@@ -18,13 +18,13 @@ def test_register_and_login(client):
 
 
 def test_duplicate_email_rejected(client):
-    client.post("/api/v1/auth/register", json={"email": "dup@example.com", "password": "password123"})
-    r = client.post("/api/v1/auth/register", json={"email": "dup@example.com", "password": "password123"})
+    client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, "email": "dup@example.com", "password": "password123"})
+    r = client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, "email": "dup@example.com", "password": "password123"})
     assert r.status_code == 409
 
 
 def test_wrong_password_rejected(client):
-    client.post("/api/v1/auth/register", json={"email": "wrongpw@example.com", "password": "password123"})
+    client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, "email": "wrongpw@example.com", "password": "password123"})
     r = client.post("/api/v1/auth/login", json={"email": "wrongpw@example.com", "password": "nope12345"})
     assert r.status_code == 401
 
@@ -62,7 +62,7 @@ def test_login_rate_limit_blocks_after_threshold(client):
 
 
 def test_forgot_password_never_reveals_account_existence(client, monkeypatch, app_module):
-    client.post("/api/v1/auth/register", json={"email": "reset-target@example.com", "password": "OldPass123"})
+    client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, "email": "reset-target@example.com", "password": "OldPass123"})
 
     captured = {}
 
@@ -82,7 +82,7 @@ def test_forgot_password_never_reveals_account_existence(client, monkeypatch, ap
 def test_reset_password_full_cycle(client, monkeypatch, app_module):
     import re
 
-    client.post("/api/v1/auth/register", json={"email": "reset-cycle@example.com", "password": "OldPass123"})
+    client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, "email": "reset-cycle@example.com", "password": "OldPass123"})
 
     captured = {}
     monkeypatch.setattr(

@@ -32,7 +32,10 @@ const aliases = {
 // porque no son destinos donde alguien pueda estudiar, y el mapa las pinta sin
 // ficha, que es lo correcto.
 const mapQuirks = {
-    "dem-rep-congo": "congo-rep-dem",
+    "dem-rep-congo": "republica-democratica-del-congo",
+    // GeoNames lo llama "Palestinian Territory" y el mapa "Palestine": no hay
+    // variante automática que los junte, así que va aquí como el resto.
+    palestine: "palestina",
     "dominican-rep": "republica-dominicana",
     "cote-d-ivoire": "costa-de-marfil",
     "central-african-rep": "republica-centroafricana",

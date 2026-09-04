@@ -494,3 +494,44 @@ svg { display: block; }
   font-size: .74rem;
   line-height: 1.45;
 }
+
+/* La edad, al crear cuenta. Es un fieldset y no un div suelto porque las dos
+   opciones son una sola pregunta: un lector de pantalla anuncia la leyenda
+   antes de cada opcion, y sin eso "soy mayor de 18" se oye sin saber que se
+   esta preguntando. */
+.login-age {
+  margin: 2px 0 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: .82rem;
+}
+.login-age legend {
+  padding: 0;
+  margin-bottom: 3px;
+  color: var(--fp-muted);
+  font-size: .78rem;
+}
+/* Redondo, para que se lea como "elige una" y no como "marca las que
+   quieras". Es la unica diferencia con la casilla; el estado marcado lo
+   pinta la misma regla de .login-remember. */
+.login-remember__box--radio { border-radius: 50%; }
+
+/* Aceptacion de terminos. `align-items: flex-start` porque el texto lleva
+   dos enlaces y en pantalla estrecha ocupa dos lineas: centrado, la casilla
+   quedaria flotando a media altura del parrafo. */
+.login-terms {
+  margin: 2px 0 0;
+  font-size: .78rem;
+}
+.login-terms .login-remember { align-items: flex-start; }
+.login-terms .login-remember__box { margin-top: 1px; flex: 0 0 auto; }
+.login-terms__text { line-height: 1.45; }
+.login-terms a {
+  color: var(--fp-cyan);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.login-terms a:hover { color: var(--fp-green); }

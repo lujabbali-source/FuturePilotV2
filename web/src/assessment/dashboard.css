@@ -405,3 +405,11 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* El enlace al informe imprimible. Va suelto bajo la fiabilidad, con aire
+   por encima: es una accion sobre el resultado que se acaba de leer, no
+   una linea mas del parrafo. */
+.dash-report {
+  margin-top: 20px;
+  text-decoration: none;
+}

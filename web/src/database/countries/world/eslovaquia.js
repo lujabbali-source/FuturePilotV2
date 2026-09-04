@@ -1,32 +1,99 @@
 // Eslovaquia — importado, no curado.
 //
 // Trae lo que las fuentes abiertas pueden verificar: nombre, capital, moneda,
-// idioma, poblacion y las universidades con su sitio oficial. Todo lo demas
-// (ciudades, costo de vida, salarios, cultura) esta vacio a proposito. Ver
-// web/scripts/import_world.py.
+// idioma, poblacion, las ciudades con universidad y las universidades con su
+// sitio oficial. Todo lo demas (costo de vida, salarios, cultura) esta vacio
+// a proposito. Ver web/scripts/import_world.py.
 //
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry, defineUniversity } from "../schema";
+import { defineCity, defineCountry } from "../schema.js";
+
+const countryId = "eslovaquia";
+const countryName = "Eslovaquia";
+
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/eslovaquia.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
+const cities = [
+    defineCity({
+      id: "eslovaquia-kosice",
+      name: "Košice",
+      coordinates: {"lat": 48.71441, "lng": 21.25802},
+      isCapital: false,
+      universityCount: 9,
+      statistics: { population: 225044 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "eslovaquia-bratislava",
+      name: "Bratislava",
+      coordinates: {"lat": 48.14816, "lng": 17.10674},
+      isCapital: true,
+      universityCount: 6,
+      statistics: { population: 423737 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "eslovaquia-presov",
+      name: "Prešov",
+      coordinates: {"lat": 48.99923, "lng": 21.2355},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 82927 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "eslovaquia-zvolen",
+      name: "Zvolen",
+      coordinates: {"lat": 48.57442, "lng": 19.15324},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 39844 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "eslovaquia-trnava",
+      name: "Trnava",
+      coordinates: {"lat": 48.37773, "lng": 17.58603},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 62806 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "eslovaquia-ruzomberok",
+      name: "Ružomberok",
+      coordinates: {"lat": 49.0748, "lng": 19.30751},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 26671 },
+      countryId,
+      countryName,
+    }),
+];
 
 export default defineCountry({
-  id: "eslovaquia",
-  name: "Eslovaquia",
+  id: countryId,
+  name: countryName,
   nameEn: "Slovakia",
   capital: "Bratislava",
   currency: "EUR",
-  language: "Slovak",
+  language: "eslovaco",
   continent: "Europa",
   population: 5413813,
-  // Sin ciudades: la fuente de universidades trae provincia en solo el 14% de
-  // los casos, y provincia no es ciudad. Inventar el reparto por ciudades
-  // seria la peor clase de dato falso, porque parece preciso.
-  cities: [],
+  cities,
   // Las universidades no van aqui: viven en ./universities/eslovaquia.js
   // y se cargan solo al abrir el pais (ver getNationalUniversities).
   universityCount: 31,
   aliases: ["eslovaquia", "slovakia"],
   dataStatus: "source-open-dataset",
-  sources: ["Hipo/university-domains-list (MIT)", "mledoze/countries (ODbL-1.0)", "Banco Mundial, SP.POP.TOTL"],
+  sources: ["Hipo/university-domains-list (MIT)", "GeoNames (CC BY 4.0)", "Wikidata (CC0)", "Banco Mundial, SP.POP.TOTL"],
 });

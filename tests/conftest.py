@@ -74,6 +74,31 @@ def _reset_rate_limiters():
 def app_module():
     return fp_app
 
+# Debe coincidir con el ADMIN_EMAIL que se fija arriba, antes de importar
+# app.py. Vive aqui porque el fixture de abajo lo usan ya varios archivos
+# de test: el panel de administracion y el informe general.
+ADMIN_EMAIL = "admin@test.local"
+
+
+@pytest.fixture()
+def admin_headers(client, app_module):
+    """Cabeceras de una sesion de administrador real.
+
+    Reclamar la cuenta admin exige el token de primer arranque (ver
+    admin_setup_token en app.py). Se pide igual que lo haria el operador
+    leyendolo de la consola del servidor."""
+    client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, 
+        "email": ADMIN_EMAIL,
+        "password": "AdminPass123",
+        "name": "Admin",
+        "admin_setup_token": app_module.admin_setup_token(),
+    })
+    login = client.post("/api/v1/auth/login",
+                        json={"email": ADMIN_EMAIL, "password": "AdminPass123"})
+    data = login.json()
+    assert data["user"]["is_admin"] is True
+    return {"Authorization": f"Bearer {data['token']}"}
+
 
 @pytest.fixture()
 def register_and_login(client):
@@ -85,7 +110,7 @@ def register_and_login(client):
     def _make(email: str | None = None, password: str = "password123", name: str = "QA"):
         counter["n"] += 1
         email = email or f"qa-{counter['n']}-{os.urandom(4).hex()}@example.com"
-        client.post("/api/v1/auth/register", json={"email": email, "password": password, "name": name})
+        client.post("/api/v1/auth/register", json={"is_minor": False, "accepted_terms": True, "email": email, "password": password, "name": name})
         login = client.post("/api/v1/auth/login", json={"email": email, "password": password})
         data = login.json()
         headers = {"Authorization": f"Bearer {data['token']}"}

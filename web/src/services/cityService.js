@@ -10,6 +10,15 @@ const cityLoaders = import.meta.glob(
     { import: "default" }
 );
 
+// Las universidades de las ciudades importadas, un archivo por pais. Van
+// aparte por lo mismo que las nacionales: son 11.269 registros, y meterlos en
+// el resumen que lee el globo al arrancar costaba ~400 kB comprimidos para un
+// dato que solo se mira al abrir una ciudad concreta.
+const worldCityLoaders = import.meta.glob(
+    "../database/countries/world/cities/*.js",
+    { import: "default" }
+);
+
 const emptyCity = {
     image: null,
     costOfLiving: {},
@@ -39,9 +48,33 @@ export function getCitySummary(cityId) {
     return null;
 }
 
+/** Las universidades de una ciudad importada, si las tiene en su archivo.
+ *
+ *  Un pais sin archivo no es un error: sencillamente no tiene ninguna ciudad
+ *  con universidades situadas. Mismo criterio que getNationalUniversities. */
+async function loadWorldUniversities(city) {
+    const loader = worldCityLoaders[
+        `../database/countries/world/cities/${city.countryId}.js`
+    ];
+    if (!loader) return [];
+    try {
+        return (await loader())?.[city.id] || [];
+    } catch {
+        return [];
+    }
+}
+
 export async function loadCity(cityId) {
     const catalogCity = getCitySummary(cityId);
-    if (catalogCity && catalogCity.countryId !== "colombia") return catalogCity;
+    if (catalogCity && catalogCity.countryId !== "colombia") {
+        // Los paises curados a mano ya las traen dentro de la ciudad; los
+        // importados las tienen en el archivo diferido.
+        if (catalogCity.universities?.length) return catalogCity;
+        return {
+            ...catalogCity,
+            universities: await loadWorldUniversities(catalogCity),
+        };
+    }
 
     const loader = getLoader(cityId);
     if (!loader) return null;

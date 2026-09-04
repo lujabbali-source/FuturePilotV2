@@ -339,5 +339,92 @@
     "high": "Alta — respondiste {{answered}} de {{total}} preguntas y tu perfil marca diferencias claras entre unos ejes y otros.",
     "mid": "Media — respondiste {{answered}} de {{total}} preguntas. Tómalo como una orientación, no como una conclusión.",
     "low": "Baja — con {{answered}} de {{total}} preguntas respondidas, o con ejes demasiado parecidos entre sí, esto no distingue lo suficiente. Repetir el test entero le da mucho más valor."
+  },
+  "report": {
+    "kicker": "Informe de orientación vocacional",
+    "noName": "Estudiante FuturePilot",
+    "learningStyle": "Estilo de aprendizaje",
+    "lead": "Este informe recoge el resultado de tu test vocacional: cómo se reparte tu perfil entre las ocho dimensiones que mide FuturePilot, qué carreras encajan con él y por qué, y qué puedes hacer a partir de ahora. No es un diagnóstico ni una decisión tomada: es un punto de partida para conversarlo con tu familia, tu colegio o un orientador.",
+    "backToAccount": "Volver a mi cuenta",
+    "download": "Descargar PDF",
+    "printHint": "Se abre el diálogo de impresión de tu navegador: elige «Guardar como PDF» como destino.",
+    "footNote": "Generado por el estudiante desde su cuenta de FuturePilot.",
+    "meta": {
+      "passportId": "Pasaporte",
+      "testDate": "Test realizado el",
+      "issued": "Informe emitido el"
+    },
+    "sections": {
+      "profile": "Tu perfil",
+      "dna": "Tu ADN vocacional",
+      "strengths": "Fortalezas y áreas por desarrollar",
+      "careers": "Carreras que encajan contigo",
+      "path": "Tu ruta",
+      "now": "Qué puedes hacer ahora",
+      "method": "Cómo se calculó este informe"
+    },
+    "profile": {
+      "archetype": "Arquetipo",
+      "learningStyle": "Estilo de aprendizaje"
+    },
+    "dna": {
+      "note": "Cada puntuación va de 0 a 10 y sale únicamente de tus respuestas. Debajo de cada barra está de cuántas preguntas se calculó: una dimensión medida con dos respuestas dice menos que una medida con ocho, y por eso el número no viaja solo."
+    },
+    "strengths": {
+      "top": "Donde más destacas",
+      "grow": "Terreno por recorrer",
+      "note": "Las tres de la derecha no son defectos: son las dimensiones donde tu perfil tiene más margen. A tu edad eso suele decir más sobre a qué has tenido ocasión de dedicarle tiempo que sobre lo que se te da bien."
+    },
+    "careers": {
+      "strongOn": "Encajas en",
+      "workOn": "Conviene reforzar",
+      "whatYouDo": "En qué consiste"
+    },
+    "now": {
+      "actions": "Siguientes pasos",
+      "hubs": "Destinos recomendados",
+      "goals": "Tus objetivos"
+    },
+    "goals": {
+      "university": "Universidad soñada",
+      "career": "Carrera deseada",
+      "country": "País objetivo",
+      "languages": "Idiomas por aprender"
+    },
+    "method": {
+      "how": "Las puntuaciones salen de tus respuestas al test de FuturePilot, que reparte cada pregunta entre ocho dimensiones vocacionales. El porcentaje de compatibilidad de cada carrera compara tu perfil con lo que esa carrera pide en esas mismas ocho dimensiones. No interviene ningún dato tuyo que no hayas introducido tú.",
+      "limits": "Un porcentaje alto significa que tu perfil se parece al que pide esa carrera, no que vayas a tener éxito en ella ni que las demás queden descartadas. El test no mide inteligencia, ni esfuerzo, ni vocación: mide las preferencias que declaraste un día concreto.",
+      "retake": "Puedes repetir el test cuando quieras. Cada intento se guarda por separado y ninguno borra al anterior, así que puedes comparar cómo cambia tu perfil con el tiempo.",
+      "dated": "Perfil medido el {{date}}. Este documento describe ese resultado, no uno posterior."
+    },
+    "empty": {
+      "title": "Todavía no hay informe",
+      "body": "Un informe vocacional se construye con el resultado de tu test, y todavía no has completado ninguno con esta cuenta.",
+      "cta": "Hacer el test"
+    },
+    "error": {
+      "title": "No pudimos cargar tu informe",
+      "body": "No conseguimos recuperar tus resultados. Comprueba tu conexión e inténtalo de nuevo.",
+      "cta": "Volver a mi cuenta"
+    },
+    "gone": {
+      "title": "Tu sesión ha caducado",
+      "body": "Vuelve a iniciar sesión para generar tu informe.",
+      "cta": "Iniciar sesión"
+    },
+    "openCta": "Descargar mi informe en PDF",
+    "analysis": "Análisis",
+    "preparedFor": "Preparado para",
+    "lock": {
+      "title": "Tu informe está listo",
+      "body": "Ya viste tu perfil, tus carreras y tu ruta dentro de FuturePilot. El informe es todo eso convertido en un documento: se lee entero, en orden, y termina explicando de dónde sale cada número. Es lo que le enseñas a tu familia o llevas a una cita con un orientador.",
+      "item1": "Tu perfil por áreas, con el gráfico y de dónde sale cada eje",
+      "item2": "Tus carreras compatibles, explicadas una a una",
+      "item3": "Tu ruta de preparación, paso a paso",
+      "item4": "Listo para imprimir o guardar como PDF",
+      "once": "pago único",
+      "cta": "Desbloquear mi informe",
+      "soon": "El pago en línea todavía no está disponible."
+    }
   }
 }
