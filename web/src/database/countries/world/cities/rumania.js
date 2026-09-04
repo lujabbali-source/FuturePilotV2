@@ -30,14 +30,6 @@ export default {
         // Situada a 1.9 km del centro de Bucharest (Wikidata).
       }),
       defineUniversity({
-        id: "rumania-bucharest-bucharest-university-of-economic-studies",
-        name: "Bucharest University of Economic Studies",
-        cityId: "rumania-bucharest",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Bucharest (Wikidata).
-      }),
-      defineUniversity({
         id: "rumania-bucharest-bucharest-national-university-of-arts",
         name: "Bucharest National University of Arts",
         cityId: "rumania-bucharest",
@@ -60,14 +52,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.5 km del centro de Bucharest (Wikidata).
-      }),
-      defineUniversity({
-        id: "rumania-bucharest-carol-davila-university-of-medicine-and-pharmacy",
-        name: "Carol Davila University of Medicine and Pharmacy",
-        cityId: "rumania-bucharest",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Bucharest (Wikidata).
       }),
       defineUniversity({
         id: "rumania-bucharest-carol-davila-university-of-medicine-and-pharmacy",
@@ -110,22 +94,6 @@ export default {
         // Situada a 2.1 km del centro de Bucharest (Wikidata).
       }),
       defineUniversity({
-        id: "rumania-bucharest-dimitrie-cantemir-christian-university",
-        name: "Dimitrie Cantemir Christian University",
-        cityId: "rumania-bucharest",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Bucharest (Wikidata).
-      }),
-      defineUniversity({
-        id: "rumania-bucharest-carol-i-national-defence-university",
-        name: "Carol I National Defence University",
-        cityId: "rumania-bucharest",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Bucharest (Wikidata).
-      }),
-      defineUniversity({
         id: "rumania-bucharest-carol-i-national-defence-university",
         name: "Carol I National Defence University",
         cityId: "rumania-bucharest",
@@ -147,30 +115,6 @@ export default {
         cityId: "rumania-bucharest",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Bucharest (Wikidata).
-      }),
-      defineUniversity({
-        id: "rumania-bucharest-military-technical-academy",
-        name: "Military Technical Academy",
-        cityId: "rumania-bucharest",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Bucharest (Wikidata).
-      }),
-      defineUniversity({
-        id: "rumania-bucharest-military-technical-academy",
-        name: "Military Technical Academy",
-        cityId: "rumania-bucharest",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Bucharest (Wikidata).
-      }),
-      defineUniversity({
-        id: "rumania-bucharest-military-technical-academy",
-        name: "Military Technical Academy",
-        cityId: "rumania-bucharest",
-        website: null,
-        source: "open-dataset",
         // Situada a 2.4 km del centro de Bucharest (Wikidata).
       }),
       defineUniversity({
@@ -180,6 +124,70 @@ export default {
         website: "https://www.uauim.ro/",
         source: "open-dataset",
         // Situada a 0.7 km del centro de Bucharest (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-bucharest-the-higher-school-of-journalism-in-bucharest",
+        name: "The Higher School of Journalism in Bucharest",
+        cityId: "rumania-bucharest",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bucharest (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-bucharest-artifex-university",
+        name: "Artifex University",
+        cityId: "rumania-bucharest",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bucharest (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-bucharest-alexandru-ioan-cuza-police-academy",
+        name: "Alexandru Ioan Cuza Police Academy",
+        cityId: "rumania-bucharest",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bucharest (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-bucharest-national-intelligence-academy",
+        name: "National Intelligence Academy",
+        cityId: "rumania-bucharest",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bucharest (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-bucharest-national-college-of-defence",
+        name: "National College of Defence",
+        cityId: "rumania-bucharest",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bucharest (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-bucharest-ecological-university-of-bucharest",
+        name: "Ecological University of Bucharest",
+        cityId: "rumania-bucharest",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bucharest (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-bucharest-people-s-art-school-bucharest",
+        name: "People's Art School Bucharest",
+        cityId: "rumania-bucharest",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bucharest (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-bucharest-university-of-wales-romania",
+        name: "University of Wales, Romania",
+        cityId: "rumania-bucharest",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bucharest (Wikidata).
       }),
   ],
   "rumania-cluj-napoca": [
@@ -214,14 +222,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.8 km del centro de Cluj-Napoca (Wikidata).
-      }),
-      defineUniversity({
-        id: "rumania-cluj-napoca-babes-bolyai-university",
-        name: "Babeș-Bolyai University",
-        cityId: "rumania-cluj-napoca",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Cluj-Napoca (Wikidata).
       }),
       defineUniversity({
         id: "rumania-cluj-napoca-babes-bolyai-university",
@@ -272,23 +272,63 @@ export default {
         // Situada a 2.0 km del centro de Cluj-Napoca (Wikidata).
       }),
       defineUniversity({
-        id: "rumania-cluj-napoca-art-and-design-university-of-cluj-napoca",
-        name: "Art and Design University of Cluj-Napoca",
+        id: "rumania-cluj-napoca-franz-joseph-university",
+        name: "Franz Joseph University",
         cityId: "rumania-cluj-napoca",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Cluj-Napoca (Wikidata).
+        // Situada a None km del centro de Cluj-Napoca (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-cluj-napoca-carol-ii-university",
+        name: "Carol II University",
+        cityId: "rumania-cluj-napoca",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cluj-Napoca (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-cluj-napoca-upper-dacia-university",
+        name: "Upper Dacia University",
+        cityId: "rumania-cluj-napoca",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cluj-Napoca (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-cluj-napoca-bogdan-voda-university",
+        name: "Bogdan Voda University",
+        cityId: "rumania-cluj-napoca",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cluj-Napoca (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-cluj-napoca-faculty-of-roman-catholic-theology-in-babes-bolyai-university",
+        name: "Faculty of Roman Catholic Theology in Babeș-Bolyai University",
+        cityId: "rumania-cluj-napoca",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cluj-Napoca (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-cluj-napoca-faculty-of-greek-catholic-theology-of-babes-bolyai-university",
+        name: "Faculty of Greek Catholic Theology of Babeș-Bolyai University",
+        cityId: "rumania-cluj-napoca",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cluj-Napoca (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-cluj-napoca-faculty-of-roman-catholic-theology-of-babes-bolyai-university",
+        name: "Faculty of Roman Catholic Theology of Babeș-Bolyai University",
+        cityId: "rumania-cluj-napoca",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cluj-Napoca (Wikidata).
       }),
   ],
   "rumania-iasi": [
-      defineUniversity({
-        id: "rumania-iasi-alexandru-ioan-cuza-university",
-        name: "Alexandru Ioan Cuza University",
-        cityId: "rumania-iasi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Iaşi (Wikidata).
-      }),
       defineUniversity({
         id: "rumania-iasi-alexandru-ioan-cuza-university",
         name: "Alexandru Ioan Cuza University",
@@ -304,14 +344,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.0 km del centro de Iaşi (Wikidata).
-      }),
-      defineUniversity({
-        id: "rumania-iasi-grigore-t-popa-university-of-medicine-and-pharmacy",
-        name: "Grigore T. Popa University of Medicine and Pharmacy",
-        cityId: "rumania-iasi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Iaşi (Wikidata).
       }),
       defineUniversity({
         id: "rumania-iasi-grigore-t-popa-university-of-medicine-and-pharmacy",
@@ -346,12 +378,52 @@ export default {
         // Situada a 1.4 km del centro de Iaşi (Wikidata).
       }),
       defineUniversity({
-        id: "rumania-iasi-gheorghe-asachi-technical-university-of-iasi",
-        name: "Gheorghe Asachi Technical University of Iași",
+        id: "rumania-iasi-princely-academy-of-iasi",
+        name: "Princely Academy of Iași",
         cityId: "rumania-iasi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Iaşi (Wikidata).
+        // Situada a None km del centro de Iaşi (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-iasi-petre-andrei-university",
+        name: "Petre Andrei University",
+        cityId: "rumania-iasi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Iaşi (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-iasi-gheorghe-zane-university",
+        name: "Gheorghe Zane University",
+        cityId: "rumania-iasi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Iaşi (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-iasi-mihail-kogalniceanu-university-of-iasi",
+        name: "Mihail Kogălniceanu University of Iași",
+        cityId: "rumania-iasi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Iaşi (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-iasi-roman-catholic-theological-institute-of-iasi",
+        name: "Roman Catholic Theological Institute of Iași",
+        cityId: "rumania-iasi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Iaşi (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-iasi-the-faculty-of-roman-catholic-theology-of-the-alexandru-ioan-cuza-university-of-iasi",
+        name: "The Faculty of Roman Catholic Theology of the \"Alexandru Ioan Cuza\" University of Iași",
+        cityId: "rumania-iasi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Iaşi (Wikidata).
       }),
   ],
   "rumania-timisoara": [
@@ -388,23 +460,49 @@ export default {
         // Situada a 0.9 km del centro de Timişoara (Wikidata).
       }),
       defineUniversity({
-        id: "rumania-timisoara-victor-babes-university-of-medicine-and-pharmacy",
-        name: "Victor Babeș University of Medicine and Pharmacy",
+        id: "rumania-timisoara-tibiscus-university-of-timisoara",
+        name: "Tibiscus University of Timișoara",
         cityId: "rumania-timisoara",
         website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Timişoara (Wikidata).
+        // Situada a None km del centro de Timişoara (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-timisoara-mihai-eminescu-university",
+        name: "Mihai Eminescu University",
+        cityId: "rumania-timisoara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Timişoara (Wikidata).
+      }),
+  ],
+  "rumania-sibiu": [
+      defineUniversity({
+        id: "rumania-sibiu-nicolae-balcescu-academy-of-land-forces",
+        name: "Nicolae Bălcescu Academy of Land Forces",
+        cityId: "rumania-sibiu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Sibiu (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-sibiu-lucian-blaga-university-of-sibiu",
+        name: "Lucian Blaga University of Sibiu",
+        cityId: "rumania-sibiu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Sibiu (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-sibiu-romanian-german-university-of-sibiu",
+        name: "Romanian-German University of Sibiu",
+        cityId: "rumania-sibiu",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sibiu (Wikidata).
       }),
   ],
   "rumania-oradea": [
-      defineUniversity({
-        id: "rumania-oradea-university-of-oradea",
-        name: "University of Oradea",
-        cityId: "rumania-oradea",
-        website: "http://www.uoradea.ro/",
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de Oradea (Wikidata).
-      }),
       defineUniversity({
         id: "rumania-oradea-university-of-oradea",
         name: "University of Oradea",
@@ -429,39 +527,49 @@ export default {
         source: "open-dataset",
         // Situada a 1.3 km del centro de Oradea (Wikidata).
       }),
+  ],
+  "rumania-constanta": [
       defineUniversity({
-        id: "rumania-oradea-partium-christian-university",
-        name: "Partium Christian University",
-        cityId: "rumania-oradea",
+        id: "rumania-constanta-mircea-cel-batran-naval-academy",
+        name: "Mircea cel Bătrân Naval Academy",
+        cityId: "rumania-constanta",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Oradea (Wikidata).
+        // Situada a 1.3 km del centro de Constanţa (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-constanta-maritime-university",
+        name: "Maritime University",
+        cityId: "rumania-constanta",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Constanţa (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-constanta-andrei-saguna-university",
+        name: "Andrei Saguna University",
+        cityId: "rumania-constanta",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Constanţa (Wikidata).
       }),
   ],
-  "rumania-sibiu": [
+  "rumania-brasov": [
       defineUniversity({
-        id: "rumania-sibiu-nicolae-balcescu-academy-of-land-forces",
-        name: "Nicolae Bălcescu Academy of Land Forces",
-        cityId: "rumania-sibiu",
+        id: "rumania-brasov-transilvania-university-of-brasov",
+        name: "Transilvania University of Brașov",
+        cityId: "rumania-brasov",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Sibiu (Wikidata).
+        // Situada a 1.4 km del centro de Braşov (Wikidata).
       }),
       defineUniversity({
-        id: "rumania-sibiu-nicolae-balcescu-academy-of-land-forces",
-        name: "Nicolae Bălcescu Academy of Land Forces",
-        cityId: "rumania-sibiu",
+        id: "rumania-brasov-henri-coanda-air-force-academy",
+        name: "Henri Coanda Air Force Academy",
+        cityId: "rumania-brasov",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Sibiu (Wikidata).
-      }),
-      defineUniversity({
-        id: "rumania-sibiu-lucian-blaga-university-of-sibiu",
-        name: "Lucian Blaga University of Sibiu",
-        cityId: "rumania-sibiu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Sibiu (Wikidata).
+        // Situada a None km del centro de Braşov (Wikidata).
       }),
   ],
   "rumania-sector-1": [
@@ -506,6 +614,42 @@ export default {
         website: "http://www.upm.ro/",
         source: "open-dataset",
         // Situada a 1.0 km del centro de Târgu Mureş (Wikidata).
+      }),
+  ],
+  "rumania-targoviste": [
+      defineUniversity({
+        id: "rumania-targoviste-ferdinand-i-cavalry-officers-school",
+        name: "\"Ferdinand I\" Cavalry Officers School",
+        cityId: "rumania-targoviste",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Târgovişte (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-targoviste-valahia-university-of-targoviste",
+        name: "Valahia University of Târgoviște",
+        cityId: "rumania-targoviste",
+        website: "http://www.valahia.ro/",
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Târgovişte (Wikidata).
+      }),
+  ],
+  "rumania-resita": [
+      defineUniversity({
+        id: "rumania-resita-university-eftimie-murgu-of-resita",
+        name: "University \"Eftimie Murgu\" of Reșița",
+        cityId: "rumania-resita",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Reşiţa (Wikidata).
+      }),
+      defineUniversity({
+        id: "rumania-resita-eftimie-murgu-university-of-resita",
+        name: "Eftimie Murgu University of Resita",
+        cityId: "rumania-resita",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Reşiţa (Wikidata).
       }),
   ],
   "rumania-pitesti": [

@@ -23,7 +23,7 @@ const cities = [
       name: "Suva",
       coordinates: {"lat": -18.13683, "lng": 178.42531},
       isCapital: true,
-      universityCount: 4,
+      universityCount: 3,
       statistics: { population: 77366 },
       countryId,
       countryName,

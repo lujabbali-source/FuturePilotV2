@@ -23,7 +23,7 @@ const cities = [
       name: "N'Djamena",
       coordinates: {"lat": 12.10672, "lng": 15.0444},
       isCapital: true,
-      universityCount: 4,
+      universityCount: 5,
       statistics: { population: 1359526 },
       countryId,
       countryName,

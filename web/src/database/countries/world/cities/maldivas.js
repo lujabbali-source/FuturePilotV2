@@ -37,5 +37,13 @@ export default {
         source: "open-dataset",
         // Situada a 0.5 km del centro de Male (Wikidata).
       }),
+      defineUniversity({
+        id: "maldivas-male-islamic-university-of-maldives",
+        name: "Islamic University of Maldives",
+        cityId: "maldivas-male",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Male (Wikidata).
+      }),
   ],
 };

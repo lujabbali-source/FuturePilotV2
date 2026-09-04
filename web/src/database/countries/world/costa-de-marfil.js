@@ -19,22 +19,22 @@ const countryName = "Costa de Marfil";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
+      id: "costa-de-marfil-abidjan",
+      name: "Abidjan",
+      coordinates: {"lat": 5.35444, "lng": -4.00167},
+      isCapital: false,
+      universityCount: 11,
+      statistics: { population: 6321017 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
       id: "costa-de-marfil-san-pedro",
       name: "San-Pédro",
       coordinates: {"lat": 4.74851, "lng": -6.6363},
       isCapital: false,
       universityCount: 1,
       statistics: { population: 390654 },
-      countryId,
-      countryName,
-    }),
-    defineCity({
-      id: "costa-de-marfil-abobo",
-      name: "Abobo",
-      coordinates: {"lat": 5.41613, "lng": -4.0159},
-      isCapital: false,
-      universityCount: 2,
-      statistics: { population: 1340083 },
       countryId,
       countryName,
     }),

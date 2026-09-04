@@ -45,6 +45,72 @@ export default {
         source: "open-dataset",
         // Situada a 3.6 km del centro de Ouagadougou (Wikidata).
       }),
+      defineUniversity({
+        id: "burkina-faso-ouagadougou-universite-du-faso",
+        name: "Université du Faso",
+        cityId: "burkina-faso-ouagadougou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ouagadougou (Wikidata).
+      }),
+      defineUniversity({
+        id: "burkina-faso-ouagadougou-university-of-united-popular-nations",
+        name: "University of United Popular Nations",
+        cityId: "burkina-faso-ouagadougou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ouagadougou (Wikidata).
+      }),
+      defineUniversity({
+        id: "burkina-faso-ouagadougou-universite-libre-du-burkina",
+        name: "Université Libre du Burkina",
+        cityId: "burkina-faso-ouagadougou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ouagadougou (Wikidata).
+      }),
+      defineUniversity({
+        id: "burkina-faso-ouagadougou-universite-thomas-sankara",
+        name: "Université Thomas-Sankara",
+        cityId: "burkina-faso-ouagadougou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ouagadougou (Wikidata).
+      }),
+  ],
+  "burkina-faso-bobo-dioulasso": [
+      defineUniversity({
+        id: "burkina-faso-bobo-dioulasso-universite-nazi-boni",
+        name: "Université Nazi Boni",
+        cityId: "burkina-faso-bobo-dioulasso",
+        website: null,
+        source: "open-dataset",
+        // Situada a 13.9 km del centro de Bobo-Dioulasso (Wikidata).
+      }),
+      defineUniversity({
+        id: "burkina-faso-bobo-dioulasso-universite-catholique-de-l-afrique-de-l-ouest-burkina-faso",
+        name: "Université Catholique de l'Afrique de l'Ouest - Burkina Faso",
+        cityId: "burkina-faso-bobo-dioulasso",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bobo-Dioulasso (Wikidata).
+      }),
+      defineUniversity({
+        id: "burkina-faso-bobo-dioulasso-institut-sciences-campus",
+        name: "Institut Sciences Campus",
+        cityId: "burkina-faso-bobo-dioulasso",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bobo-Dioulasso (Wikidata).
+      }),
+      defineUniversity({
+        id: "burkina-faso-bobo-dioulasso-universite-catholique-de-l-afrique-de-l-ouest-burkina-faso",
+        name: "Université Catholique de l'Afrique de l'Ouest, Burkina Faso",
+        cityId: "burkina-faso-bobo-dioulasso",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bobo-Dioulasso (Wikidata).
+      }),
   ],
   "burkina-faso-nioko-i": [
       defineUniversity({
@@ -80,6 +146,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 5.8 km del centro de Saonré (Wikidata).
+      }),
+  ],
+  "burkina-faso-koudougou": [
+      defineUniversity({
+        id: "burkina-faso-koudougou-universite-norbert-zongo",
+        name: "Université Norbert Zongo",
+        cityId: "burkina-faso-koudougou",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.7 km del centro de Koudougou (Wikidata).
+      }),
+      defineUniversity({
+        id: "burkina-faso-koudougou-burkina-institute-of-technology",
+        name: "Burkina Institute of Technology",
+        cityId: "burkina-faso-koudougou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Koudougou (Wikidata).
       }),
   ],
 };

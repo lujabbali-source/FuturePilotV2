@@ -101,23 +101,121 @@ export default {
         source: "open-dataset",
         // Situada a 6.6 km del centro de Addis Ababa (Wikidata).
       }),
-  ],
-  "etiopia-metu": [
       defineUniversity({
-        id: "etiopia-metu-mattu-university",
-        name: "Mattu University",
-        cityId: "etiopia-metu",
+        id: "etiopia-addis-ababa-st-francis-institute-of-philosophy-and-theology",
+        name: "St. Francis Institute of Philosophy and Theology",
+        cityId: "etiopia-addis-ababa",
         website: null,
         source: "open-dataset",
-        // Situada a 3.4 km del centro de Metu (Wikidata).
+        // Situada a None km del centro de Addis Ababa (Wikidata).
       }),
       defineUniversity({
-        id: "etiopia-metu-mattu-university",
-        name: "Mattu University",
-        cityId: "etiopia-metu",
+        id: "etiopia-addis-ababa-kunuz-college",
+        name: "Kunuz College",
+        cityId: "etiopia-addis-ababa",
         website: null,
         source: "open-dataset",
-        // Situada a 3.4 km del centro de Metu (Wikidata).
+        // Situada a None km del centro de Addis Ababa (Wikidata).
+      }),
+      defineUniversity({
+        id: "etiopia-addis-ababa-hilcoe-college",
+        name: "HiLCoE College",
+        cityId: "etiopia-addis-ababa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Addis Ababa (Wikidata).
+      }),
+      defineUniversity({
+        id: "etiopia-addis-ababa-new-generation-university-college",
+        name: "New Generation University College",
+        cityId: "etiopia-addis-ababa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Addis Ababa (Wikidata).
+      }),
+      defineUniversity({
+        id: "etiopia-addis-ababa-dandii-boruu-university-college",
+        name: "Dandii Boruu University College",
+        cityId: "etiopia-addis-ababa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Addis Ababa (Wikidata).
+      }),
+      defineUniversity({
+        id: "etiopia-addis-ababa-infonet-college",
+        name: "Infonet College",
+        cityId: "etiopia-addis-ababa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Addis Ababa (Wikidata).
+      }),
+      defineUniversity({
+        id: "etiopia-addis-ababa-international-leadership-institute",
+        name: "International Leadership Institute",
+        cityId: "etiopia-addis-ababa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Addis Ababa (Wikidata).
+      }),
+      defineUniversity({
+        id: "etiopia-addis-ababa-jethro-leadership-management-institute",
+        name: "Jethro Leadership Management Institute",
+        cityId: "etiopia-addis-ababa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Addis Ababa (Wikidata).
+      }),
+      defineUniversity({
+        id: "etiopia-addis-ababa-urban-planning-college",
+        name: "Urban Planning College",
+        cityId: "etiopia-addis-ababa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Addis Ababa (Wikidata).
+      }),
+      defineUniversity({
+        id: "etiopia-addis-ababa-zega-business-college",
+        name: "Zega Business College",
+        cityId: "etiopia-addis-ababa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Addis Ababa (Wikidata).
+      }),
+  ],
+  "etiopia-gonder": [
+      defineUniversity({
+        id: "etiopia-gonder-university-of-gondar",
+        name: "University of Gondar",
+        cityId: "etiopia-gonder",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Gonder (Wikidata).
+      }),
+      defineUniversity({
+        id: "etiopia-gonder-gondar-university",
+        name: "Gondar University",
+        cityId: "etiopia-gonder",
+        website: "http://www.uog.edu.et/",
+        source: "open-dataset",
+        // Situada a None km del centro de Gonder (Wikidata).
+      }),
+  ],
+  "etiopia-awasa": [
+      defineUniversity({
+        id: "etiopia-awasa-africa-beza-college",
+        name: "Africa Beza College",
+        cityId: "etiopia-awasa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Awasa (Wikidata).
+      }),
+      defineUniversity({
+        id: "etiopia-awasa-hawassa-university",
+        name: "Hawassa University",
+        cityId: "etiopia-awasa",
+        website: "http://www.hu.edu.et/",
+        source: "open-dataset",
+        // Situada a None km del centro de Awasa (Wikidata).
       }),
   ],
 };

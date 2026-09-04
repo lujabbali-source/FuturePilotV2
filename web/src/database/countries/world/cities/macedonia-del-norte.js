@@ -122,22 +122,4 @@ export default {
         // Situada a 2.4 km del centro de Čair (Wikidata).
       }),
   ],
-  "macedonia-del-norte-struga": [
-      defineUniversity({
-        id: "macedonia-del-norte-struga-international-university-of-struga",
-        name: "International University of Struga",
-        cityId: "macedonia-del-norte-struga",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Struga (Wikidata).
-      }),
-      defineUniversity({
-        id: "macedonia-del-norte-struga-international-university-of-struga",
-        name: "International University of Struga",
-        cityId: "macedonia-del-norte-struga",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Struga (Wikidata).
-      }),
-  ],
 };

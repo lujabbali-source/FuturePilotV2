@@ -22,14 +22,6 @@ export default {
         // Situada a 17.1 km del centro de Sarajevo (Wikidata).
       }),
       defineUniversity({
-        id: "bosnia-y-herzegovina-sarajevo-faculty-of-philosophy-university-of-east-sarajevo",
-        name: "Faculty of Philosophy, University of East Sarajevo",
-        cityId: "bosnia-y-herzegovina-sarajevo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 17.1 km del centro de Sarajevo (Wikidata).
-      }),
-      defineUniversity({
         id: "bosnia-y-herzegovina-sarajevo-academy-of-performing-arts-in-sarajevo",
         name: "Academy of Performing Arts in Sarajevo",
         cityId: "bosnia-y-herzegovina-sarajevo",
@@ -60,6 +52,30 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 5.6 km del centro de Sarajevo (Wikidata).
+      }),
+      defineUniversity({
+        id: "bosnia-y-herzegovina-sarajevo-faculty-of-political-science-in-sarajevo",
+        name: "Faculty of Political Science in Sarajevo",
+        cityId: "bosnia-y-herzegovina-sarajevo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sarajevo (Wikidata).
+      }),
+      defineUniversity({
+        id: "bosnia-y-herzegovina-sarajevo-sarajevo-graduate-school-of-business",
+        name: "Sarajevo Graduate School of Business",
+        cityId: "bosnia-y-herzegovina-sarajevo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sarajevo (Wikidata).
+      }),
+      defineUniversity({
+        id: "bosnia-y-herzegovina-sarajevo-sarajevo-school-of-science-and-technology",
+        name: "Sarajevo School of Science and Technology",
+        cityId: "bosnia-y-herzegovina-sarajevo",
+        website: "https://ssst.edu.ba/",
+        source: "open-dataset",
+        // Situada a None km del centro de Sarajevo (Wikidata).
       }),
   ],
   "bosnia-y-herzegovina-mostar": [
@@ -94,6 +110,38 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.3 km del centro de Mostar (Wikidata).
+      }),
+      defineUniversity({
+        id: "bosnia-y-herzegovina-mostar-faculty-of-human-sciences-humanities-university-dzemal-bijedic-of-mostar",
+        name: "Faculty of Human Sciences/Humanities, University Džemal Bijedić of Mostar",
+        cityId: "bosnia-y-herzegovina-mostar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mostar (Wikidata).
+      }),
+      defineUniversity({
+        id: "bosnia-y-herzegovina-mostar-agromediterranean-faculty-university-dzemal-bijedic-of-mostar",
+        name: "Agromediterranean Faculty, University Džemal Bijedić of Mostar",
+        cityId: "bosnia-y-herzegovina-mostar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mostar (Wikidata).
+      }),
+      defineUniversity({
+        id: "bosnia-y-herzegovina-mostar-faculty-of-business-management-university-dzemal-bijedic-of-mostar",
+        name: "Faculty of Business Management, University Džemal Bijedić of Mostar",
+        cityId: "bosnia-y-herzegovina-mostar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mostar (Wikidata).
+      }),
+      defineUniversity({
+        id: "bosnia-y-herzegovina-mostar-teachers-faculty-university-dzemal-bijedic-of-mostar",
+        name: "Teachers Faculty, University Džemal Bijedić of Mostar",
+        cityId: "bosnia-y-herzegovina-mostar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mostar (Wikidata).
       }),
   ],
   "bosnia-y-herzegovina-banja-luka": [
@@ -148,24 +196,6 @@ export default {
         // Situada a 1.1 km del centro de Tuzla (Wikidata).
       }),
   ],
-  "bosnia-y-herzegovina-ilidza": [
-      defineUniversity({
-        id: "bosnia-y-herzegovina-ilidza-international-university-of-sarajevo",
-        name: "International University of Sarajevo",
-        cityId: "bosnia-y-herzegovina-ilidza",
-        website: "http://www.ius.edu.ba/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Ilidža (Wikidata).
-      }),
-      defineUniversity({
-        id: "bosnia-y-herzegovina-ilidza-international-burch-university",
-        name: "International Burch University",
-        cityId: "bosnia-y-herzegovina-ilidza",
-        website: "http://www.ibu.edu.ba/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Ilidža (Wikidata).
-      }),
-  ],
   "bosnia-y-herzegovina-bijeljina": [
       defineUniversity({
         id: "bosnia-y-herzegovina-bijeljina-university-sinergija",
@@ -182,6 +212,32 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.0 km del centro de Bijeljina (Wikidata).
+      }),
+      defineUniversity({
+        id: "bosnia-y-herzegovina-bijeljina-slobomir-university",
+        name: "Slobomir University",
+        cityId: "bosnia-y-herzegovina-bijeljina",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bijeljina (Wikidata).
+      }),
+  ],
+  "bosnia-y-herzegovina-ilidza": [
+      defineUniversity({
+        id: "bosnia-y-herzegovina-ilidza-international-university-of-sarajevo",
+        name: "International University of Sarajevo",
+        cityId: "bosnia-y-herzegovina-ilidza",
+        website: "http://www.ius.edu.ba/",
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Ilidža (Wikidata).
+      }),
+      defineUniversity({
+        id: "bosnia-y-herzegovina-ilidza-international-burch-university",
+        name: "International Burch University",
+        cityId: "bosnia-y-herzegovina-ilidza",
+        website: "http://www.ibu.edu.ba/",
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Ilidža (Wikidata).
       }),
   ],
 };

@@ -14,14 +14,6 @@ import { defineUniversity } from "../../schema.js";
 export default {
   "liechtenstein-vaduz": [
       defineUniversity({
-        id: "liechtenstein-vaduz-international-academy-of-philosophy",
-        name: "International Academy of Philosophy",
-        cityId: "liechtenstein-vaduz",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.8 km del centro de Vaduz (Wikidata).
-      }),
-      defineUniversity({
         id: "liechtenstein-vaduz-private-university-in-the-principality-of-liechtenstein",
         name: "Private University in the Principality of Liechtenstein",
         cityId: "liechtenstein-vaduz",

@@ -19,12 +19,12 @@ const countryName = "Gambia";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
-      id: "gambia-latri-kunda",
-      name: "Latri Kunda",
-      coordinates: {"lat": 13.44861, "lng": -16.68528},
+      id: "gambia-new-jeshwang",
+      name: "New Jeshwang",
+      coordinates: {"lat": 13.44735, "lng": -16.665},
       isCapital: false,
-      universityCount: 2,
-      statistics: { population: 23724 },
+      universityCount: 10,
+      statistics: { population: 20878 },
       countryId,
       countryName,
     }),

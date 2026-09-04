@@ -62,30 +62,84 @@ export default {
         // Situada a 2.2 km del centro de Dakar (Wikidata).
       }),
       defineUniversity({
-        id: "senegal-dakar-universite-cheikh-anta-diop",
-        name: "Université Cheikh Anta Diop",
+        id: "senegal-dakar-universite-des-sciences-de-la-sante-de-dakar",
+        name: "Université des Sciences de la Santé de Dakar",
         cityId: "senegal-dakar",
-        website: "http://www.ucad.sn/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Dakar (Wikidata).
-      }),
-  ],
-  "senegal-ziguinchor": [
-      defineUniversity({
-        id: "senegal-ziguinchor-assane-seck-university",
-        name: "Assane Seck University",
-        cityId: "senegal-ziguinchor",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Ziguinchor (Wikidata).
+        // Situada a None km del centro de Dakar (Wikidata).
       }),
       defineUniversity({
-        id: "senegal-ziguinchor-assane-seck-university",
-        name: "Assane Seck University",
-        cityId: "senegal-ziguinchor",
+        id: "senegal-dakar-institut-polytechnique-panafricain",
+        name: "Institut Polytechnique Panafricain",
+        cityId: "senegal-dakar",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Ziguinchor (Wikidata).
+        // Situada a None km del centro de Dakar (Wikidata).
+      }),
+      defineUniversity({
+        id: "senegal-dakar-institut-africain-de-management",
+        name: "Institut Africain de Management",
+        cityId: "senegal-dakar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dakar (Wikidata).
+      }),
+      defineUniversity({
+        id: "senegal-dakar-institut-superieur-d-informatique",
+        name: "Institut Supérieur d'Informatique",
+        cityId: "senegal-dakar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dakar (Wikidata).
+      }),
+      defineUniversity({
+        id: "senegal-dakar-institut-superieur-de-droit-de-dakar",
+        name: "Institut Supérieur de Droit de Dakar",
+        cityId: "senegal-dakar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dakar (Wikidata).
+      }),
+      defineUniversity({
+        id: "senegal-dakar-euromed-universite",
+        name: "EUROMED Université",
+        cityId: "senegal-dakar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dakar (Wikidata).
+      }),
+      defineUniversity({
+        id: "senegal-dakar-icagi-amadou-mahtar-mbow",
+        name: "ICAGI Amadou Mahtar Mbow",
+        cityId: "senegal-dakar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dakar (Wikidata).
+      }),
+      defineUniversity({
+        id: "senegal-dakar-hec-dakar-business-school",
+        name: "HEC Dakar Business School",
+        cityId: "senegal-dakar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dakar (Wikidata).
+      }),
+      defineUniversity({
+        id: "senegal-dakar-inseps-ucad",
+        name: "INSEPS UCAD",
+        cityId: "senegal-dakar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dakar (Wikidata).
+      }),
+      defineUniversity({
+        id: "senegal-dakar-isfad-ucad",
+        name: "ISFAD UCAD",
+        cityId: "senegal-dakar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dakar (Wikidata).
       }),
   ],
   "senegal-saint-louis": [
@@ -140,6 +194,16 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.2 km del centro de Diamniadio (Wikidata).
+      }),
+  ],
+  "senegal-le-plateau": [
+      defineUniversity({
+        id: "senegal-le-plateau-brighton-international-university",
+        name: "Brighton International University",
+        cityId: "senegal-le-plateau",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Le Plateau (Wikidata).
       }),
   ],
 };

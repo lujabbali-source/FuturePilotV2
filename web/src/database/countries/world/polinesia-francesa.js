@@ -8,17 +8,26 @@
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry } from "../schema.js";
+import { defineCity, defineCountry } from "../schema.js";
 
 const countryId = "polinesia-francesa";
 const countryName = "Polinesia Francesa";
 
-// Sin ciudades: Hipolabs le ve 1 universidades, pero
-// Wikidata solo situa 0 ciudad(es) que llegue(n) al minimo
-// de 2. Es un hueco de la fuente, NO que el pais no tenga
-// universidades. Se cura a mano o con otra fuente.
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/polinesia-francesa.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
-
+    defineCity({
+      id: "polinesia-francesa-faaa",
+      name: "Faaa",
+      coordinates: {"lat": -17.55933, "lng": -149.60352},
+      isCapital: false,
+      universityCount: 1,
+      statistics: { population: 29851 },
+      countryId,
+      countryName,
+    }),
 ];
 
 export default defineCountry({

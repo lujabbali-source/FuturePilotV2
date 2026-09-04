@@ -8,17 +8,26 @@
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry } from "../schema.js";
+import { defineCity, defineCountry } from "../schema.js";
 
 const countryId = "republica-centroafricana";
 const countryName = "República Centroafricana";
 
-// Sin ciudades: Hipolabs le ve 1 universidades, pero
-// Wikidata solo situa 1 ciudad(es) que llegue(n) al minimo
-// de 2. Es un hueco de la fuente, NO que el pais no tenga
-// universidades. Se cura a mano o con otra fuente.
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/republica-centroafricana.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
-
+    defineCity({
+      id: "republica-centroafricana-bangui",
+      name: "Bangui",
+      coordinates: {"lat": 4.36122, "lng": 18.55496},
+      isCapital: true,
+      universityCount: 20,
+      statistics: { population: 812407 },
+      countryId,
+      countryName,
+    }),
 ];
 
 export default defineCountry({

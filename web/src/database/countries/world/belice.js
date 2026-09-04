@@ -19,6 +19,16 @@ const countryName = "Belice";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
+      id: "belice-san-pedro",
+      name: "San Pedro",
+      coordinates: {"lat": 17.91598, "lng": -87.9659},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 17429 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
       id: "belice-orange-walk",
       name: "Orange Walk",
       coordinates: {"lat": 18.08124, "lng": -88.56328},

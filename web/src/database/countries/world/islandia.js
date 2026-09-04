@@ -23,7 +23,7 @@ const cities = [
       name: "Reykjavík",
       coordinates: {"lat": 64.13548, "lng": -21.89541},
       isCapital: true,
-      universityCount: 2,
+      universityCount: 4,
       statistics: { population: 118918 },
       countryId,
       countryName,

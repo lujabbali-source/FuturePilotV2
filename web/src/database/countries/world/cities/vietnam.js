@@ -12,6 +12,284 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
+  "vietnam-hanoi": [
+      defineUniversity({
+        id: "vietnam-hanoi-hanoi-college-of-fine-arts",
+        name: "Hanoi College of Fine Arts",
+        cityId: "vietnam-hanoi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.3 km del centro de Hanoi (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hanoi-hanoi-college-of-technology-and-commerce",
+        name: "Hanoi College of Technology and Commerce",
+        cityId: "vietnam-hanoi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hanoi (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hanoi-thanh-tay-university",
+        name: "Thanh Tay University",
+        cityId: "vietnam-hanoi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hanoi (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hanoi-dai-nam-university",
+        name: "Dai Nam University",
+        cityId: "vietnam-hanoi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hanoi (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hanoi-trade-union-university",
+        name: "Trade Union University",
+        cityId: "vietnam-hanoi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hanoi (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hanoi-viet-hung-industrial-university",
+        name: "Viet-Hung Industrial University",
+        cityId: "vietnam-hanoi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hanoi (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hanoi-mica-institute",
+        name: "MICA Institute",
+        cityId: "vietnam-hanoi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hanoi (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hanoi-university-of-transport-technology",
+        name: "University of Transport Technology",
+        cityId: "vietnam-hanoi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hanoi (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hanoi-university-of-fire-fighting-and-prevention",
+        name: "University of Fire Fighting and Prevention",
+        cityId: "vietnam-hanoi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hanoi (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hanoi-hanoi-pedagogical-university-2",
+        name: "Hanoi Pedagogical University 2",
+        cityId: "vietnam-hanoi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hanoi (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hanoi-hanoi-university-of-public-health",
+        name: "Hanoi University Of Public Health",
+        cityId: "vietnam-hanoi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hanoi (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hanoi-hanoi-national-university-of-education",
+        name: "Hanoi National University of Education",
+        cityId: "vietnam-hanoi",
+        website: "https://hnue.edu.vn/",
+        source: "open-dataset",
+        // Situada a None km del centro de Hanoi (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hanoi-university-of-civil-engineering-of-vietnam",
+        name: "University of Civil Engineering of Vietnam",
+        cityId: "vietnam-hanoi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hanoi (Wikidata).
+      }),
+  ],
+  "vietnam-quan-bon": [
+      defineUniversity({
+        id: "vietnam-quan-bon-ho-chi-minh-city-open-university",
+        name: "Ho Chi Minh City Open University",
+        cityId: "vietnam-quan-bon",
+        website: "http://www.ou.edu.vn/",
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-ton-uc-thang-university",
+        name: "Tôn Đức Thắng University",
+        cityId: "vietnam-quan-bon",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-vietnam-national-university-ho-chi-minh-city-university-of-social-sciences-and-humanities-vnuhcm-ussh",
+        name: "Vietnam National University Ho Chi Minh City, University of Social Sciences and Humanities (VNUHCM-USSH)",
+        cityId: "vietnam-quan-bon",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-ho-chi-minh-city-university-of-law",
+        name: "Ho Chi Minh City University of Law",
+        cityId: "vietnam-quan-bon",
+        website: "http://www.hcmulaw.edu.vn/",
+        source: "open-dataset",
+        // Situada a 0.1 km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-van-lang-university",
+        name: "Van Lang University",
+        cityId: "vietnam-quan-bon",
+        website: "https://www.vlu.edu.vn/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-ho-chi-minh-national-academy-of-politics",
+        name: "Ho Chi Minh National Academy of Politics",
+        cityId: "vietnam-quan-bon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-ho-chi-minh-city-university-of-economics-and-law",
+        name: "Ho Chi Minh City University of Economics and Law",
+        cityId: "vietnam-quan-bon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-university-of-tran-dai-nghia",
+        name: "University of Tran Dai Nghia",
+        cityId: "vietnam-quan-bon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-vietnam-japan-institute-of-technology",
+        name: "Vietnam–Japan Institute of Technology",
+        cityId: "vietnam-quan-bon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-international-school-of-business",
+        name: "International School of Business",
+        cityId: "vietnam-quan-bon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-vietnam-aviation-academy",
+        name: "Vietnam Aviation Academy",
+        cityId: "vietnam-quan-bon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-saigon-university",
+        name: "Saigon University",
+        cityId: "vietnam-quan-bon",
+        website: "http://www.sgu.edu.vn/",
+        source: "open-dataset",
+        // Situada a None km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-ho-chi-minh-city-university-of-foreign-languages-and-information-technology",
+        name: "Ho Chi Minh City University of Foreign Languages and Information Technology",
+        cityId: "vietnam-quan-bon",
+        website: "http://www.huflit.vnn.vn/",
+        source: "open-dataset",
+        // Situada a None km del centro de Quận Bốn (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-quan-bon-hong-bang-university",
+        name: "Hong Bang University",
+        cityId: "vietnam-quan-bon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Quận Bốn (Wikidata).
+      }),
+  ],
+  "vietnam-da-nang": [
+      defineUniversity({
+        id: "vietnam-da-nang-duy-tan-university",
+        name: "Duy Tan University",
+        cityId: "vietnam-da-nang",
+        website: "https://duytan.edu.vn/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Da Nang (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-da-nang-university-of-da-nang",
+        name: "University of Da Nang",
+        cityId: "vietnam-da-nang",
+        website: "https://www.udn.vn/",
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Da Nang (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-da-nang-danang-university-of-medicine-and-pharmacy-technology",
+        name: "Danang University of Medicine and Pharmacy Technology",
+        cityId: "vietnam-da-nang",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Da Nang (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-da-nang-vietnam-korea-university-of-information-and-communications",
+        name: "Vietnam-Korea University of Information and Communications",
+        cityId: "vietnam-da-nang",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Da Nang (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-da-nang-da-nang-university-of-architecture",
+        name: "Da Nang University of Architecture",
+        cityId: "vietnam-da-nang",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Da Nang (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-da-nang-da-nang-university-of-science-and-technology",
+        name: "Da Nang University of Science and Technology",
+        cityId: "vietnam-da-nang",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Da Nang (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-da-nang-the-american-university-of-vietnam",
+        name: "The American University of Vietnam",
+        cityId: "vietnam-da-nang",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Da Nang (Wikidata).
+      }),
+  ],
   "vietnam-thu-uc": [
       defineUniversity({
         id: "vietnam-thu-uc-the-saigon-international-university",
@@ -20,30 +298,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.4 km del centro de Thủ Đức (Wikidata).
-      }),
-      defineUniversity({
-        id: "vietnam-thu-uc-ho-chi-minh-city-university-of-technology-and-engineering",
-        name: "Ho Chi Minh City University of Technology and Engineering",
-        cityId: "vietnam-thu-uc",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Thủ Đức (Wikidata).
-      }),
-      defineUniversity({
-        id: "vietnam-thu-uc-ho-chi-minh-city-university-of-technology-and-engineering",
-        name: "Ho Chi Minh City University of Technology and Engineering",
-        cityId: "vietnam-thu-uc",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de Thủ Đức (Wikidata).
-      }),
-      defineUniversity({
-        id: "vietnam-thu-uc-ho-chi-minh-city-university-of-technology-and-engineering",
-        name: "Ho Chi Minh City University of Technology and Engineering",
-        cityId: "vietnam-thu-uc",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de Thủ Đức (Wikidata).
       }),
       defineUniversity({
         id: "vietnam-thu-uc-ho-chi-minh-city-university-of-technology-and-engineering",
@@ -136,46 +390,38 @@ export default {
         // Situada a 1.3 km del centro de Quận Ba (Wikidata).
       }),
   ],
-  "vietnam-quan-bon": [
+  "vietnam-nha-trang": [
       defineUniversity({
-        id: "vietnam-quan-bon-ho-chi-minh-city-open-university",
-        name: "Ho Chi Minh City Open University",
-        cityId: "vietnam-quan-bon",
-        website: "http://www.ou.edu.vn/",
+        id: "vietnam-nha-trang-nha-trang-university",
+        name: "Nha Trang University",
+        cityId: "vietnam-nha-trang",
+        website: "https://ntu.edu.vn/",
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Quận Bốn (Wikidata).
+        // Situada a 2.9 km del centro de Nha Trang (Wikidata).
       }),
       defineUniversity({
-        id: "vietnam-quan-bon-ton-uc-thang-university",
-        name: "Tôn Đức Thắng University",
-        cityId: "vietnam-quan-bon",
+        id: "vietnam-nha-trang-vietnam-naval-academy",
+        name: "Vietnam Naval Academy",
+        cityId: "vietnam-nha-trang",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Quận Bốn (Wikidata).
+        // Situada a 3.6 km del centro de Nha Trang (Wikidata).
       }),
       defineUniversity({
-        id: "vietnam-quan-bon-vietnam-national-university-ho-chi-minh-city-university-of-social-sciences-and-humanities-vnuhcm-ussh",
-        name: "Vietnam National University Ho Chi Minh City, University of Social Sciences and Humanities (VNUHCM-USSH)",
-        cityId: "vietnam-quan-bon",
+        id: "vietnam-nha-trang-university-of-khanh-hoa",
+        name: "University of Khanh Hoa",
+        cityId: "vietnam-nha-trang",
         website: null,
         source: "open-dataset",
-        // Situada a 2.3 km del centro de Quận Bốn (Wikidata).
+        // Situada a None km del centro de Nha Trang (Wikidata).
       }),
       defineUniversity({
-        id: "vietnam-quan-bon-ho-chi-minh-city-university-of-law",
-        name: "Ho Chi Minh City University of Law",
-        cityId: "vietnam-quan-bon",
-        website: "http://www.hcmulaw.edu.vn/",
+        id: "vietnam-nha-trang-thai-binh-duong-university",
+        name: "Thai Binh Duong University",
+        cityId: "vietnam-nha-trang",
+        website: null,
         source: "open-dataset",
-        // Situada a 0.1 km del centro de Quận Bốn (Wikidata).
-      }),
-      defineUniversity({
-        id: "vietnam-quan-bon-van-lang-university",
-        name: "Van Lang University",
-        cityId: "vietnam-quan-bon",
-        website: "https://www.vlu.edu.vn/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Quận Bốn (Wikidata).
+        // Situada a None km del centro de Nha Trang (Wikidata).
       }),
   ],
   "vietnam-bien-hoa": [
@@ -210,6 +456,58 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.7 km del centro de Biên Hòa (Wikidata).
+      }),
+  ],
+  "vietnam-vinh": [
+      defineUniversity({
+        id: "vietnam-vinh-vinh-medical-university",
+        name: "Vinh medical university",
+        cityId: "vietnam-vinh",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Vinh (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-vinh-van-xuan-university-of-technology",
+        name: "Van Xuan University of Technology",
+        cityId: "vietnam-vinh",
+        website: null,
+        source: "open-dataset",
+        // Situada a 13.2 km del centro de Vinh (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-vinh-nghe-an-university",
+        name: "Nghe An University",
+        cityId: "vietnam-vinh",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Vinh (Wikidata).
+      }),
+  ],
+  "vietnam-thai-nguyen": [
+      defineUniversity({
+        id: "vietnam-thai-nguyen-thai-nguyen-university-of-technology",
+        name: "Thai Nguyen University of Technology",
+        cityId: "vietnam-thai-nguyen",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Thái Nguyên (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-thai-nguyen-thai-nguyen-university-of-medicine-and-pharmacy",
+        name: "Thai Nguyen University of Medicine and Pharmacy",
+        cityId: "vietnam-thai-nguyen",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Thái Nguyên (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-thai-nguyen-thai-nguyen-university",
+        name: "Thai Nguyen University",
+        cityId: "vietnam-thai-nguyen",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Thái Nguyên (Wikidata).
       }),
   ],
   "vietnam-haiphong": [
@@ -316,22 +614,32 @@ export default {
         // Situada a 2.1 km del centro de Quận Năm (Wikidata).
       }),
   ],
-  "vietnam-vinh": [
+  "vietnam-vinh-long": [
       defineUniversity({
-        id: "vietnam-vinh-vinh-medical-university",
-        name: "Vinh medical university",
-        cityId: "vietnam-vinh",
+        id: "vietnam-vinh-long-vinh-long-university-of-technology-and-education",
+        name: "Vinh Long University of Technology and Education",
+        cityId: "vietnam-vinh-long",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Vinh (Wikidata).
+        // Situada a 1.2 km del centro de Vĩnh Long (Wikidata).
       }),
       defineUniversity({
-        id: "vietnam-vinh-van-xuan-university-of-technology",
-        name: "Van Xuan University of Technology",
-        cityId: "vietnam-vinh",
+        id: "vietnam-vinh-long-mien-tay-construction-university",
+        name: "Mien Tay Construction University",
+        cityId: "vietnam-vinh-long",
         website: null,
         source: "open-dataset",
-        // Situada a 13.2 km del centro de Vinh (Wikidata).
+        // Situada a None km del centro de Vĩnh Long (Wikidata).
+      }),
+  ],
+  "vietnam-viet-tri": [
+      defineUniversity({
+        id: "vietnam-viet-tri-hung-vuong-university",
+        name: "Hung Vuong University",
+        cityId: "vietnam-viet-tri",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Việt Trì (Wikidata).
       }),
   ],
   "vietnam-tra-vinh": [
@@ -350,24 +658,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.8 km del centro de Trà Vinh (Wikidata).
-      }),
-  ],
-  "vietnam-nha-trang": [
-      defineUniversity({
-        id: "vietnam-nha-trang-nha-trang-university",
-        name: "Nha Trang University",
-        cityId: "vietnam-nha-trang",
-        website: "https://ntu.edu.vn/",
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Nha Trang (Wikidata).
-      }),
-      defineUniversity({
-        id: "vietnam-nha-trang-vietnam-naval-academy",
-        name: "Vietnam Naval Academy",
-        cityId: "vietnam-nha-trang",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Nha Trang (Wikidata).
       }),
   ],
   "vietnam-nghia-o": [
@@ -398,6 +688,24 @@ export default {
         // Situada a 0.7 km del centro de Mai Dịch (Wikidata).
       }),
   ],
+  "vietnam-hue": [
+      defineUniversity({
+        id: "vietnam-hue-phu-xuan-university",
+        name: "Phu Xuan University",
+        cityId: "vietnam-hue",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Huế (Wikidata).
+      }),
+      defineUniversity({
+        id: "vietnam-hue-hue-university",
+        name: "Hue University",
+        cityId: "vietnam-hue",
+        website: "http://www.hueuni.edu.vn/",
+        source: "open-dataset",
+        // Situada a None km del centro de Huế (Wikidata).
+      }),
+  ],
   "vietnam-ha-ong": [
       defineUniversity({
         id: "vietnam-ha-ong-posts-and-telecommunications-institute-of-technology",
@@ -414,42 +722,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.5 km del centro de Hà Đông (Wikidata).
-      }),
-  ],
-  "vietnam-da-nang": [
-      defineUniversity({
-        id: "vietnam-da-nang-duy-tan-university",
-        name: "Duy Tan University",
-        cityId: "vietnam-da-nang",
-        website: "https://duytan.edu.vn/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Da Nang (Wikidata).
-      }),
-      defineUniversity({
-        id: "vietnam-da-nang-university-of-da-nang",
-        name: "University of Da Nang",
-        cityId: "vietnam-da-nang",
-        website: "https://www.udn.vn/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Da Nang (Wikidata).
-      }),
-  ],
-  "vietnam-cao-lanh": [
-      defineUniversity({
-        id: "vietnam-cao-lanh-dong-thap-university",
-        name: "Dong Thap University",
-        cityId: "vietnam-cao-lanh",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Cao Lãnh (Wikidata).
-      }),
-      defineUniversity({
-        id: "vietnam-cao-lanh-dong-thap-university",
-        name: "Dong Thap University",
-        cityId: "vietnam-cao-lanh",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Cao Lãnh (Wikidata).
       }),
   ],
   "vietnam-cau-dien": [

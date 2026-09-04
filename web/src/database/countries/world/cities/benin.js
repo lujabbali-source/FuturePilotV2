@@ -46,14 +46,6 @@ export default {
         // Situada a 3.6 km del centro de Cotonou (Wikidata).
       }),
       defineUniversity({
-        id: "benin-cotonou-esep-le-berger",
-        name: "Esep Le Berger",
-        cityId: "benin-cotonou",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Cotonou (Wikidata).
-      }),
-      defineUniversity({
         id: "benin-cotonou-universite-irgib-africa",
         name: "Université IRGIB Africa",
         cityId: "benin-cotonou",
@@ -61,49 +53,119 @@ export default {
         source: "open-dataset",
         // Situada a 2.7 km del centro de Cotonou (Wikidata).
       }),
+      defineUniversity({
+        id: "benin-cotonou-adonai-institute-of-management-studies",
+        name: "Adonai Institute of Management Studies",
+        cityId: "benin-cotonou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cotonou (Wikidata).
+      }),
+      defineUniversity({
+        id: "benin-cotonou-african-cooperative-development-university",
+        name: "African Cooperative Development University",
+        cityId: "benin-cotonou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cotonou (Wikidata).
+      }),
+      defineUniversity({
+        id: "benin-cotonou-african-university-of-benin",
+        name: "African University of Benin",
+        cityId: "benin-cotonou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cotonou (Wikidata).
+      }),
+      defineUniversity({
+        id: "benin-cotonou-afriford-university",
+        name: "Afriford University",
+        cityId: "benin-cotonou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cotonou (Wikidata).
+      }),
+      defineUniversity({
+        id: "benin-cotonou-benin-school-of-management",
+        name: "Benin School of Management",
+        cityId: "benin-cotonou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cotonou (Wikidata).
+      }),
+      defineUniversity({
+        id: "benin-cotonou-houdegbe-north-american-university",
+        name: "Houdegbe North American University",
+        cityId: "benin-cotonou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cotonou (Wikidata).
+      }),
+      defineUniversity({
+        id: "benin-cotonou-institut-international-de-management-de-cotonou",
+        name: "Institut International de Management de Cotonou",
+        cityId: "benin-cotonou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cotonou (Wikidata).
+      }),
+      defineUniversity({
+        id: "benin-cotonou-institut-superieur-des-metiers-de-l-audiovisuel",
+        name: "Institut Supérieur des Métiers de l'Audiovisuel",
+        cityId: "benin-cotonou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cotonou (Wikidata).
+      }),
+      defineUniversity({
+        id: "benin-cotonou-university-institute-of-benin",
+        name: "University Institute of Benin",
+        cityId: "benin-cotonou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cotonou (Wikidata).
+      }),
+      defineUniversity({
+        id: "benin-cotonou-universite-catholique-de-l-afrique-de-l-ouest-benin",
+        name: "Université Catholique de l'Afrique de l'Ouest - Benin",
+        cityId: "benin-cotonou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cotonou (Wikidata).
+      }),
+      defineUniversity({
+        id: "benin-cotonou-universite-polytechnique-internationale-obiang-nguema-mbasogo",
+        name: "Université Polytechnique Internationale Obiang Nguema Mbasogo",
+        cityId: "benin-cotonou",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cotonou (Wikidata).
+      }),
   ],
-  "benin-godome": [
+  "benin-porto-novo": [
       defineUniversity({
-        id: "benin-godome-seme-city",
-        name: "Sèmè City",
-        cityId: "benin-godome",
+        id: "benin-porto-novo-universite-des-sciences-appliquee-et-management",
+        name: "Universite des Sciences Appliquée et Management",
+        cityId: "benin-porto-novo",
         website: null,
         source: "open-dataset",
-        // Situada a 3.3 km del centro de Godomè (Wikidata).
+        // Situada a 4.6 km del centro de Porto-Novo (Wikidata).
       }),
       defineUniversity({
-        id: "benin-godome-institut-superieur-des-metiers-de-l-audiovisuel",
-        name: "Institut Supérieur des Métiers de l’Audiovisuel",
-        cityId: "benin-godome",
+        id: "benin-porto-novo-university-of-porto-novo",
+        name: "University of Porto-Novo",
+        cityId: "benin-porto-novo",
         website: null,
         source: "open-dataset",
-        // Situada a 4.5 km del centro de Godomè (Wikidata).
+        // Situada a None km del centro de Porto-Novo (Wikidata).
       }),
       defineUniversity({
-        id: "benin-godome-institut-superieur-des-metiers-de-l-audiovisuel",
-        name: "Institut Supérieur des Métiers de l’Audiovisuel",
-        cityId: "benin-godome",
+        id: "benin-porto-novo-universite-protestante-d-afrique-de-l-ouest",
+        name: "Université Protestante d'Afrique de l'Ouest",
+        cityId: "benin-porto-novo",
         website: null,
         source: "open-dataset",
-        // Situada a 4.5 km del centro de Godomè (Wikidata).
-      }),
-  ],
-  "benin-ketou": [
-      defineUniversity({
-        id: "benin-ketou-national-university-of-agriculture",
-        name: "National University of Agriculture",
-        cityId: "benin-ketou",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Kétou (Wikidata).
-      }),
-      defineUniversity({
-        id: "benin-ketou-universite-d-agriculture-de-ketou",
-        name: "Université d'Agriculture de Kétou",
-        cityId: "benin-ketou",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Kétou (Wikidata).
+        // Situada a None km del centro de Porto-Novo (Wikidata).
       }),
   ],
   "benin-abomey-calavi": [
@@ -124,22 +186,40 @@ export default {
         // Situada a 0.9 km del centro de Abomey-Calavi (Wikidata).
       }),
   ],
-  "benin-abomey": [
+  "benin-ketou": [
       defineUniversity({
-        id: "benin-abomey-national-university-of-sciences-technologies-engineering-and-mathematics",
-        name: "National University of Sciences, Technologies, Engineering and Mathematics",
-        cityId: "benin-abomey",
+        id: "benin-ketou-national-university-of-agriculture",
+        name: "National University of Agriculture",
+        cityId: "benin-ketou",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Abomey (Wikidata).
+        // Situada a 2.6 km del centro de Kétou (Wikidata).
       }),
       defineUniversity({
-        id: "benin-abomey-national-university-of-sciences-technologies-engineering-and-mathematics",
-        name: "National University of Sciences, Technologies, Engineering and Mathematics",
-        cityId: "benin-abomey",
+        id: "benin-ketou-universite-d-agriculture-de-ketou",
+        name: "Université d'Agriculture de Kétou",
+        cityId: "benin-ketou",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Abomey (Wikidata).
+        // Situada a 0.5 km del centro de Kétou (Wikidata).
+      }),
+  ],
+  "benin-godome": [
+      defineUniversity({
+        id: "benin-godome-seme-city",
+        name: "Sèmè City",
+        cityId: "benin-godome",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Godomè (Wikidata).
+      }),
+      defineUniversity({
+        id: "benin-godome-institut-superieur-des-metiers-de-l-audiovisuel",
+        name: "Institut Supérieur des Métiers de l’Audiovisuel",
+        cityId: "benin-godome",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Godomè (Wikidata).
       }),
   ],
 };

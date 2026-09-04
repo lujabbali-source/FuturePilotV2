@@ -28,6 +28,16 @@ const cities = [
       countryId,
       countryName,
     }),
+    defineCity({
+      id: "cabo-verde-mindelo",
+      name: "Mindelo",
+      coordinates: {"lat": 16.89014, "lng": -24.98042},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 69013 },
+      countryId,
+      countryName,
+    }),
 ];
 
 export default defineCountry({

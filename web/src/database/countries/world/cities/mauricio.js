@@ -45,13 +45,5 @@ export default {
         source: "open-dataset",
         // Situada a 3.5 km del centro de Beau Bassin-Rose Hill (Wikidata).
       }),
-      defineUniversity({
-        id: "mauricio-beau-bassin-rose-hill-open-university-of-mauritius",
-        name: "Open University of Mauritius",
-        cityId: "mauricio-beau-bassin-rose-hill",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Beau Bassin-Rose Hill (Wikidata).
-      }),
   ],
 };

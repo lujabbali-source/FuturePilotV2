@@ -104,38 +104,46 @@ export default {
         // Situada a 12.2 km del centro de Chiang Mai (Wikidata).
       }),
   ],
-  "tailandia-thon-buri": [
+  "tailandia-nakhon-ratchasima": [
       defineUniversity({
-        id: "tailandia-thon-buri-dhonburi-rajabhat-university",
-        name: "Dhonburi Rajabhat University",
-        cityId: "tailandia-thon-buri",
+        id: "tailandia-nakhon-ratchasima-nakhon-ratchasima-rajabhat-university",
+        name: "Nakhon Ratchasima Rajabhat University",
+        cityId: "tailandia-nakhon-ratchasima",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Thon Buri (Wikidata).
+        // Situada a 2.0 km del centro de Nakhon Ratchasima (Wikidata).
       }),
       defineUniversity({
-        id: "tailandia-thon-buri-dhonburi-rajabhat-university",
-        name: "Dhonburi Rajabhat University",
-        cityId: "tailandia-thon-buri",
-        website: null,
+        id: "tailandia-nakhon-ratchasima-vongchavalitkul-university",
+        name: "Vongchavalitkul University",
+        cityId: "tailandia-nakhon-ratchasima",
+        website: "https://www.vu.ac.th/",
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Thon Buri (Wikidata).
+        // Situada a 3.9 km del centro de Nakhon Ratchasima (Wikidata).
       }),
       defineUniversity({
-        id: "tailandia-thon-buri-bansomdejchaopraya-rajabhat-university",
-        name: "Bansomdejchaopraya Rajabhat University",
-        cityId: "tailandia-thon-buri",
-        website: null,
+        id: "tailandia-nakhon-ratchasima-suranaree-university-of-technology",
+        name: "Suranaree University of Technology",
+        cityId: "tailandia-nakhon-ratchasima",
+        website: "http://www.sut.ac.th/",
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Thon Buri (Wikidata).
+        // Situada a 13.7 km del centro de Nakhon Ratchasima (Wikidata).
       }),
       defineUniversity({
-        id: "tailandia-thon-buri-bansomdejchaopraya-rajabhat-university",
-        name: "Bansomdejchaopraya Rajabhat University",
-        cityId: "tailandia-thon-buri",
+        id: "tailandia-nakhon-ratchasima-mahachulalongkornrajavidyalaya-university-nakhon-ratchasima-campus",
+        name: "Mahachulalongkornrajavidyalaya University Nakhon Ratchasima Campus",
+        cityId: "tailandia-nakhon-ratchasima",
         website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Thon Buri (Wikidata).
+        // Situada a None km del centro de Nakhon Ratchasima (Wikidata).
+      }),
+      defineUniversity({
+        id: "tailandia-nakhon-ratchasima-rajamangala-university-of-technology-isan",
+        name: "Rajamangala University of Technology Isan",
+        cityId: "tailandia-nakhon-ratchasima",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nakhon Ratchasima (Wikidata).
       }),
   ],
   "tailandia-thawi-watthana": [
@@ -232,30 +240,56 @@ export default {
         // Situada a 0.7 km del centro de Songkhla (Wikidata).
       }),
   ],
-  "tailandia-nakhon-ratchasima": [
+  "tailandia-nakhon-pathom": [
       defineUniversity({
-        id: "tailandia-nakhon-ratchasima-nakhon-ratchasima-rajabhat-university",
-        name: "Nakhon Ratchasima Rajabhat University",
-        cityId: "tailandia-nakhon-ratchasima",
+        id: "tailandia-nakhon-pathom-silpakorn-university-sanam-chandra-palace-campus",
+        name: "Silpakorn University - Sanam Chandra Palace Campus",
+        cityId: "tailandia-nakhon-pathom",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Nakhon Ratchasima (Wikidata).
+        // Situada a 0.4 km del centro de Nakhon Pathom (Wikidata).
       }),
       defineUniversity({
-        id: "tailandia-nakhon-ratchasima-vongchavalitkul-university",
-        name: "Vongchavalitkul University",
-        cityId: "tailandia-nakhon-ratchasima",
-        website: "https://www.vu.ac.th/",
+        id: "tailandia-nakhon-pathom-nakhon-pathom-rajabhat-university",
+        name: "Nakhon Pathom Rajabhat University",
+        cityId: "tailandia-nakhon-pathom",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Nakhon Ratchasima (Wikidata).
+        // Situada a 2.6 km del centro de Nakhon Pathom (Wikidata).
       }),
       defineUniversity({
-        id: "tailandia-nakhon-ratchasima-suranaree-university-of-technology",
-        name: "Suranaree University of Technology",
-        cityId: "tailandia-nakhon-ratchasima",
-        website: "http://www.sut.ac.th/",
+        id: "tailandia-nakhon-pathom-christian-university-of-thailand",
+        name: "Christian University of Thailand",
+        cityId: "tailandia-nakhon-pathom",
+        website: null,
         source: "open-dataset",
-        // Situada a 13.7 km del centro de Nakhon Ratchasima (Wikidata).
+        // Situada a None km del centro de Nakhon Pathom (Wikidata).
+      }),
+  ],
+  "tailandia-sathorn": [
+      defineUniversity({
+        id: "tailandia-sathorn-pathumwan-institute-of-technology",
+        name: "Pathumwan Institute of Technology",
+        cityId: "tailandia-sathorn",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Sathorn (Wikidata).
+      }),
+      defineUniversity({
+        id: "tailandia-sathorn-western-university",
+        name: "Western University",
+        cityId: "tailandia-sathorn",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sathorn (Wikidata).
+      }),
+      defineUniversity({
+        id: "tailandia-sathorn-college-of-internet-distance-education",
+        name: "College of Internet Distance Education",
+        cityId: "tailandia-sathorn",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sathorn (Wikidata).
       }),
   ],
   "tailandia-bang-yi-khan": [
@@ -282,32 +316,6 @@ export default {
         website: "https://www.su.ac.th/",
         source: "open-dataset",
         // Situada a 1.1 km del centro de Bang Yi Khan (Wikidata).
-      }),
-  ],
-  "tailandia-lat-yao": [
-      defineUniversity({
-        id: "tailandia-lat-yao-dhurakij-pundit-university",
-        name: "Dhurakij Pundit University",
-        cityId: "tailandia-lat-yao",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Lat Yao (Wikidata).
-      }),
-      defineUniversity({
-        id: "tailandia-lat-yao-kasetsart-university",
-        name: "Kasetsart University",
-        cityId: "tailandia-lat-yao",
-        website: "https://www.ku.ac.th/",
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Lat Yao (Wikidata).
-      }),
-      defineUniversity({
-        id: "tailandia-lat-yao-kasetsart-university",
-        name: "Kasetsart University",
-        cityId: "tailandia-lat-yao",
-        website: "https://www.ku.ac.th/",
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Lat Yao (Wikidata).
       }),
   ],
   "tailandia-surat-thani": [
@@ -382,22 +390,22 @@ export default {
         // Situada a 1.3 km del centro de Yala (Wikidata).
       }),
   ],
-  "tailandia-phitsanulok": [
+  "tailandia-thon-buri": [
       defineUniversity({
-        id: "tailandia-phitsanulok-pibulsongkram-rajabhat-university",
-        name: "Pibulsongkram Rajabhat University",
-        cityId: "tailandia-phitsanulok",
+        id: "tailandia-thon-buri-dhonburi-rajabhat-university",
+        name: "Dhonburi Rajabhat University",
+        cityId: "tailandia-thon-buri",
         website: null,
         source: "open-dataset",
-        // Situada a 5.7 km del centro de Phitsanulok (Wikidata).
+        // Situada a 1.2 km del centro de Thon Buri (Wikidata).
       }),
       defineUniversity({
-        id: "tailandia-phitsanulok-pibulsongkram-rajabhat-university",
-        name: "Pibulsongkram Rajabhat University",
-        cityId: "tailandia-phitsanulok",
+        id: "tailandia-thon-buri-bansomdejchaopraya-rajabhat-university",
+        name: "Bansomdejchaopraya Rajabhat University",
+        cityId: "tailandia-thon-buri",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Phitsanulok (Wikidata).
+        // Situada a 0.9 km del centro de Thon Buri (Wikidata).
       }),
   ],
   "tailandia-nakhon-sawan": [
@@ -416,24 +424,6 @@ export default {
         website: "http://www.cpu.ac.th/",
         source: "open-dataset",
         // Situada a 9.2 km del centro de Nakhon Sawan (Wikidata).
-      }),
-  ],
-  "tailandia-nakhon-pathom": [
-      defineUniversity({
-        id: "tailandia-nakhon-pathom-silpakorn-university-sanam-chandra-palace-campus",
-        name: "Silpakorn University - Sanam Chandra Palace Campus",
-        cityId: "tailandia-nakhon-pathom",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Nakhon Pathom (Wikidata).
-      }),
-      defineUniversity({
-        id: "tailandia-nakhon-pathom-nakhon-pathom-rajabhat-university",
-        name: "Nakhon Pathom Rajabhat University",
-        cityId: "tailandia-nakhon-pathom",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Nakhon Pathom (Wikidata).
       }),
   ],
   "tailandia-nakhon-nayok": [
@@ -472,22 +462,14 @@ export default {
         // Situada a 8.7 km del centro de Maha Sarakham (Wikidata).
       }),
   ],
-  "tailandia-kaeng-khoi": [
+  "tailandia-khon-kaen": [
       defineUniversity({
-        id: "tailandia-kaeng-khoi-asia-pacific-international-university",
-        name: "Asia-Pacific International University",
-        cityId: "tailandia-kaeng-khoi",
-        website: "https://www.apiu.edu/",
+        id: "tailandia-khon-kaen-khon-kaen-university",
+        name: "Khon Kaen University",
+        cityId: "tailandia-khon-kaen",
+        website: "https://www.kku.ac.th/",
         source: "open-dataset",
-        // Situada a 21.6 km del centro de Kaeng Khoi (Wikidata).
-      }),
-      defineUniversity({
-        id: "tailandia-kaeng-khoi-asia-pacific-international-university",
-        name: "Asia-Pacific International University",
-        cityId: "tailandia-kaeng-khoi",
-        website: "https://www.apiu.edu/",
-        source: "open-dataset",
-        // Situada a 21.6 km del centro de Kaeng Khoi (Wikidata).
+        // Situada a 3.3 km del centro de Khon Kaen (Wikidata).
       }),
   ],
   "tailandia-hat-yai": [
@@ -634,22 +616,22 @@ export default {
         // Situada a 1.2 km del centro de Suan Luang (Wikidata).
       }),
   ],
-  "tailandia-khwaeng-bang-plat": [
+  "tailandia-lat-yao": [
       defineUniversity({
-        id: "tailandia-khwaeng-bang-plat-navamindradhiraj-university",
-        name: "Navamindradhiraj University",
-        cityId: "tailandia-khwaeng-bang-plat",
+        id: "tailandia-lat-yao-dhurakij-pundit-university",
+        name: "Dhurakij Pundit University",
+        cityId: "tailandia-lat-yao",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Khwaeng Bang Plat (Wikidata).
+        // Situada a 3.0 km del centro de Lat Yao (Wikidata).
       }),
       defineUniversity({
-        id: "tailandia-khwaeng-bang-plat-navamindradhiraj-university",
-        name: "Navamindradhiraj University",
-        cityId: "tailandia-khwaeng-bang-plat",
-        website: null,
+        id: "tailandia-lat-yao-kasetsart-university",
+        name: "Kasetsart University",
+        cityId: "tailandia-lat-yao",
+        website: "https://www.ku.ac.th/",
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Khwaeng Bang Plat (Wikidata).
+        // Situada a 0.5 km del centro de Lat Yao (Wikidata).
       }),
   ],
   "tailandia-sena-nikhom": [

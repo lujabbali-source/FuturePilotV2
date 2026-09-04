@@ -113,7 +113,7 @@ export default {
         id: "bulgaria-sofia-sofia-university",
         name: "Sofia University",
         cityId: "bulgaria-sofia",
-        website: null,
+        website: "https://www.sofia.edu/",
         source: "open-dataset",
         // Situada a 1.0 km del centro de Sofia (Wikidata).
       }),
@@ -134,14 +134,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.7 km del centro de Veliko Tŭrnovo (Wikidata).
-      }),
-      defineUniversity({
-        id: "bulgaria-veliko-turnovo-vasil-levski-national-military-university",
-        name: "Vasil Levski National Military University",
-        cityId: "bulgaria-veliko-turnovo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Veliko Tŭrnovo (Wikidata).
       }),
       defineUniversity({
         id: "bulgaria-veliko-turnovo-vasil-levski-national-military-university",
@@ -202,14 +194,6 @@ export default {
         // Situada a 1.2 km del centro de Varna (Wikidata).
       }),
       defineUniversity({
-        id: "bulgaria-varna-medical-university-of-varna",
-        name: "Medical University of Varna",
-        cityId: "bulgaria-varna",
-        website: "http://www.mu-varna.bg/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Varna (Wikidata).
-      }),
-      defineUniversity({
         id: "bulgaria-varna-nikola-vaptsarov-naval-academy",
         name: "Nikola Vaptsarov Naval Academy",
         cityId: "bulgaria-varna",
@@ -228,28 +212,12 @@ export default {
         // Situada a 1.5 km del centro de Plovdiv (Wikidata).
       }),
       defineUniversity({
-        id: "bulgaria-plovdiv-university-of-food-technologies",
-        name: "University of Food Technologies",
-        cityId: "bulgaria-plovdiv",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Plovdiv (Wikidata).
-      }),
-      defineUniversity({
         id: "bulgaria-plovdiv-agricultural-university-plovdiv",
         name: "Agricultural University Plovdiv",
         cityId: "bulgaria-plovdiv",
         website: "http://www.au-plovdiv.bg/",
         source: "open-dataset",
         // Situada a 2.5 km del centro de Plovdiv (Wikidata).
-      }),
-      defineUniversity({
-        id: "bulgaria-plovdiv-agricultural-university-plovdiv",
-        name: "Agricultural University Plovdiv",
-        cityId: "bulgaria-plovdiv",
-        website: "http://www.au-plovdiv.bg/",
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Plovdiv (Wikidata).
       }),
       defineUniversity({
         id: "bulgaria-plovdiv-plovdiv-medical-university",
@@ -283,15 +251,15 @@ export default {
         cityId: "bulgaria-burgas",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Burgas (Wikidata).
+        // Situada a 2.9 km del centro de Burgas (Wikidata).
       }),
       defineUniversity({
-        id: "bulgaria-burgas-prof-dr-assen-zlatarov-university",
-        name: "\"Prof. Dr. Assen Zlatarov\" University",
+        id: "bulgaria-burgas-college-of-economics-bourgas",
+        name: "College of Economics – Bourgas",
         cityId: "bulgaria-burgas",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Burgas (Wikidata).
+        // Situada a None km del centro de Burgas (Wikidata).
       }),
   ],
   "bulgaria-blagoevgrad": [
@@ -302,14 +270,6 @@ export default {
         website: "http://www.swu.bg/",
         source: "open-dataset",
         // Situada a 1.7 km del centro de Blagoevgrad (Wikidata).
-      }),
-      defineUniversity({
-        id: "bulgaria-blagoevgrad-south-west-university-neofit-rilski",
-        name: "South-West University \"Neofit Rilski\"",
-        cityId: "bulgaria-blagoevgrad",
-        website: "http://www.swu.bg/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Blagoevgrad (Wikidata).
       }),
       defineUniversity({
         id: "bulgaria-blagoevgrad-american-university-in-bulgaria",

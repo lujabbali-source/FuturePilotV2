@@ -12,42 +12,6 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
-  "malaui-zomba": [
-      defineUniversity({
-        id: "malaui-zomba-zomba-theological-college",
-        name: "Zomba Theological College",
-        cityId: "malaui-zomba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Zomba (Wikidata).
-      }),
-      defineUniversity({
-        id: "malaui-zomba-university-of-malawi",
-        name: "University of Malawi",
-        cityId: "malaui-zomba",
-        website: "http://www.unima.ac.mw/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Zomba (Wikidata).
-      }),
-  ],
-  "malaui-mzuzu": [
-      defineUniversity({
-        id: "malaui-mzuzu-mzuzu-university",
-        name: "Mzuzu University",
-        cityId: "malaui-mzuzu",
-        website: "http://www.mzuni.ac.mw/",
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Mzuzu (Wikidata).
-      }),
-      defineUniversity({
-        id: "malaui-mzuzu-mzuzu-university",
-        name: "Mzuzu University",
-        cityId: "malaui-mzuzu",
-        website: "http://www.mzuni.ac.mw/",
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Mzuzu (Wikidata).
-      }),
-  ],
   "malaui-lilongwe": [
       defineUniversity({
         id: "malaui-lilongwe-malawi-adventist-university",
@@ -58,12 +22,84 @@ export default {
         // Situada a 9.5 km del centro de Lilongwe (Wikidata).
       }),
       defineUniversity({
-        id: "malaui-lilongwe-malawi-adventist-university",
-        name: "Malawi Adventist University",
+        id: "malaui-lilongwe-african-bible-college",
+        name: "African Bible College",
         cityId: "malaui-lilongwe",
         website: null,
         source: "open-dataset",
-        // Situada a 9.5 km del centro de Lilongwe (Wikidata).
+        // Situada a None km del centro de Lilongwe (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-lilongwe-daeyang-university",
+        name: "Daeyang University",
+        cityId: "malaui-lilongwe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lilongwe (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-lilongwe-jubilee-university",
+        name: "Jubilee University",
+        cityId: "malaui-lilongwe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lilongwe (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-lilongwe-malawi-assemblies-of-god-university",
+        name: "Malawi Assemblies of God University",
+        cityId: "malaui-lilongwe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lilongwe (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-lilongwe-nkhoma-university",
+        name: "Nkhoma University",
+        cityId: "malaui-lilongwe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lilongwe (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-lilongwe-pentecostal-life-university",
+        name: "Pentecostal Life University",
+        cityId: "malaui-lilongwe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lilongwe (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-lilongwe-shareworld-open-university-malawi",
+        name: "ShareWorld Open University Malawi",
+        cityId: "malaui-lilongwe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lilongwe (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-lilongwe-unicaf-university",
+        name: "UNICAF University",
+        cityId: "malaui-lilongwe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lilongwe (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-lilongwe-university-of-lilongwe",
+        name: "University of Lilongwe",
+        cityId: "malaui-lilongwe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lilongwe (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-lilongwe-african-bible-colleges",
+        name: "African Bible Colleges",
+        cityId: "malaui-lilongwe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lilongwe (Wikidata).
       }),
   ],
   "malaui-blantyre": [
@@ -82,6 +118,56 @@ export default {
         website: "http://www.must.ac.mw/",
         source: "open-dataset",
         // Situada a 25.8 km del centro de Blantyre (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-blantyre-blantyre-international-university",
+        name: "Blantyre International University",
+        cityId: "malaui-blantyre",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Blantyre (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-blantyre-central-christian-university",
+        name: "Central Christian University",
+        cityId: "malaui-blantyre",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Blantyre (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-blantyre-malawi-college-of-accountancy",
+        name: "Malawi College of Accountancy",
+        cityId: "malaui-blantyre",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Blantyre (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-blantyre-university-of-blantyre-synod",
+        name: "University of Blantyre Synod",
+        cityId: "malaui-blantyre",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Blantyre (Wikidata).
+      }),
+  ],
+  "malaui-zomba": [
+      defineUniversity({
+        id: "malaui-zomba-zomba-theological-college",
+        name: "Zomba Theological College",
+        cityId: "malaui-zomba",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Zomba (Wikidata).
+      }),
+      defineUniversity({
+        id: "malaui-zomba-university-of-malawi",
+        name: "University of Malawi",
+        cityId: "malaui-zomba",
+        website: "http://www.unima.ac.mw/",
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Zomba (Wikidata).
       }),
   ],
 };

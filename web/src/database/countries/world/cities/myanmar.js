@@ -128,6 +128,32 @@ export default {
         // Situada a 1.6 km del centro de Myenigon (Wikidata).
       }),
   ],
+  "myanmar-yangon": [
+      defineUniversity({
+        id: "myanmar-yangon-myanmar-imperial-university",
+        name: "Myanmar Imperial University",
+        cityId: "myanmar-yangon",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Yangon (Wikidata).
+      }),
+      defineUniversity({
+        id: "myanmar-yangon-british-university-college",
+        name: "British University College",
+        cityId: "myanmar-yangon",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Yangon (Wikidata).
+      }),
+      defineUniversity({
+        id: "myanmar-yangon-yangon-international-educare-center",
+        name: "Yangon International Educare Center",
+        cityId: "myanmar-yangon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Yangon (Wikidata).
+      }),
+  ],
   "myanmar-pyinmana": [
       defineUniversity({
         id: "myanmar-pyinmana-national-defence-college",
@@ -206,30 +232,30 @@ export default {
         // Situada a 10.1 km del centro de Monywa (Wikidata).
       }),
   ],
-  "myanmar-pyin-oo-lwin": [
+  "myanmar-meiktila": [
       defineUniversity({
-        id: "myanmar-pyin-oo-lwin-defence-services-academy",
-        name: "Defence Services Academy",
-        cityId: "myanmar-pyin-oo-lwin",
+        id: "myanmar-meiktila-myanmar-aerospace-engineering-university",
+        name: "Myanmar Aerospace Engineering University",
+        cityId: "myanmar-meiktila",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Pyin Oo Lwin (Wikidata).
+        // Situada a 4.2 km del centro de Meiktila (Wikidata).
       }),
       defineUniversity({
-        id: "myanmar-pyin-oo-lwin-defence-services-technological-academy",
-        name: "Defence Services Technological Academy",
-        cityId: "myanmar-pyin-oo-lwin",
+        id: "myanmar-meiktila-technological-university-meiktila",
+        name: "Technological University, Meiktila",
+        cityId: "myanmar-meiktila",
         website: null,
         source: "open-dataset",
-        // Situada a 4.8 km del centro de Pyin Oo Lwin (Wikidata).
+        // Situada a 3.9 km del centro de Meiktila (Wikidata).
       }),
       defineUniversity({
-        id: "myanmar-pyin-oo-lwin-defence-services-technological-academy",
-        name: "Defence Services Technological Academy",
-        cityId: "myanmar-pyin-oo-lwin",
+        id: "myanmar-meiktila-gti-pyin-oo-lwin",
+        name: "GTI Pyin Oo Lwin",
+        cityId: "myanmar-meiktila",
         website: null,
         source: "open-dataset",
-        // Situada a 4.8 km del centro de Pyin Oo Lwin (Wikidata).
+        // Situada a None km del centro de Meiktila (Wikidata).
       }),
   ],
   "myanmar-taungoo": [
@@ -340,6 +366,24 @@ export default {
         // Situada a 5.6 km del centro de Pazundaung (Wikidata).
       }),
   ],
+  "myanmar-hpa-an": [
+      defineUniversity({
+        id: "myanmar-hpa-an-technological-university-hpa-an",
+        name: "Technological University, Hpa-An",
+        cityId: "myanmar-hpa-an",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.3 km del centro de Hpa-An (Wikidata).
+      }),
+      defineUniversity({
+        id: "myanmar-hpa-an-hpa-an-university",
+        name: "Hpa-An University",
+        cityId: "myanmar-hpa-an",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hpa-An (Wikidata).
+      }),
+  ],
   "myanmar-nansang": [
       defineUniversity({
         id: "myanmar-nansang-panglong-university",
@@ -412,22 +456,22 @@ export default {
         // Situada a 15.0 km del centro de Myeik (Wikidata).
       }),
   ],
-  "myanmar-meiktila": [
+  "myanmar-pyin-oo-lwin": [
       defineUniversity({
-        id: "myanmar-meiktila-myanmar-aerospace-engineering-university",
-        name: "Myanmar Aerospace Engineering University",
-        cityId: "myanmar-meiktila",
+        id: "myanmar-pyin-oo-lwin-defence-services-academy",
+        name: "Defence Services Academy",
+        cityId: "myanmar-pyin-oo-lwin",
         website: null,
         source: "open-dataset",
-        // Situada a 4.2 km del centro de Meiktila (Wikidata).
+        // Situada a 1.5 km del centro de Pyin Oo Lwin (Wikidata).
       }),
       defineUniversity({
-        id: "myanmar-meiktila-technological-university-meiktila",
-        name: "Technological University, Meiktila",
-        cityId: "myanmar-meiktila",
+        id: "myanmar-pyin-oo-lwin-defence-services-technological-academy",
+        name: "Defence Services Technological Academy",
+        cityId: "myanmar-pyin-oo-lwin",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Meiktila (Wikidata).
+        // Situada a 4.8 km del centro de Pyin Oo Lwin (Wikidata).
       }),
   ],
   "myanmar-loikaw": [
@@ -482,6 +526,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 10.6 km del centro de San Chaung (Wikidata).
+      }),
+  ],
+  "myanmar-nay-pyi-taw": [
+      defineUniversity({
+        id: "myanmar-nay-pyi-taw-naypyitaw-state-academy",
+        name: "Naypyitaw State Academy",
+        cityId: "myanmar-nay-pyi-taw",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.0 km del centro de Nay Pyi Taw (Wikidata).
+      }),
+      defineUniversity({
+        id: "myanmar-nay-pyi-taw-naypyitaw-state-polytechnic-university",
+        name: "Naypyitaw State Polytechnic University",
+        cityId: "myanmar-nay-pyi-taw",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nay Pyi Taw (Wikidata).
       }),
   ],
   "myanmar-kyo-kone-east": [

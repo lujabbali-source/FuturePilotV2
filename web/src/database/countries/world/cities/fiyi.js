@@ -22,14 +22,6 @@ export default {
         // Situada a 2.4 km del centro de Suva (Wikidata).
       }),
       defineUniversity({
-        id: "fiyi-suva-university-of-the-south-pacific",
-        name: "University of the South Pacific",
-        cityId: "fiyi-suva",
-        website: "http://www.usp.ac.fj/",
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Suva (Wikidata).
-      }),
-      defineUniversity({
         id: "fiyi-suva-fiji-national-university",
         name: "Fiji National University",
         cityId: "fiyi-suva",

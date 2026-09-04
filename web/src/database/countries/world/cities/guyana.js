@@ -45,5 +45,21 @@ export default {
         source: "open-dataset",
         // Situada a 1.0 km del centro de Georgetown (Wikidata).
       }),
+      defineUniversity({
+        id: "guyana-georgetown-the-business-school-guyana",
+        name: "The Business School Guyana",
+        cityId: "guyana-georgetown",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Georgetown (Wikidata).
+      }),
+      defineUniversity({
+        id: "guyana-georgetown-the-international-university-guyana",
+        name: "The International University-Guyana",
+        cityId: "guyana-georgetown",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.3 km del centro de Georgetown (Wikidata).
+      }),
   ],
 };

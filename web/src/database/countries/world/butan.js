@@ -23,7 +23,7 @@ const cities = [
       name: "Thimphu",
       coordinates: {"lat": 27.46609, "lng": 89.64191},
       isCapital: true,
-      universityCount: 2,
+      universityCount: 4,
       statistics: { population: 98676 },
       countryId,
       countryName,

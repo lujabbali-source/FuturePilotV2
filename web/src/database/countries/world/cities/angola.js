@@ -12,22 +12,72 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
-  "angola-kilamba": [
+  "angola-luanda": [
       defineUniversity({
-        id: "angola-kilamba-catholic-university-of-angola",
-        name: "Catholic University of Angola",
-        cityId: "angola-kilamba",
+        id: "angola-luanda-independent-university-of-angola",
+        name: "Independent University of Angola",
+        cityId: "angola-luanda",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Kilamba (Wikidata).
+        // Situada a None km del centro de Luanda (Wikidata).
       }),
       defineUniversity({
-        id: "angola-kilamba-catholic-university-of-angola",
-        name: "Catholic University of Angola",
-        cityId: "angola-kilamba",
+        id: "angola-luanda-methodist-university-of-angola",
+        name: "Methodist University of Angola",
+        cityId: "angola-luanda",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Kilamba (Wikidata).
+        // Situada a None km del centro de Luanda (Wikidata).
+      }),
+      defineUniversity({
+        id: "angola-luanda-universidade-gregorio-semedo",
+        name: "Universidade Gregório Semedo",
+        cityId: "angola-luanda",
+        website: "http://www.ugs.ed.ao/",
+        source: "open-dataset",
+        // Situada a None km del centro de Luanda (Wikidata).
+      }),
+      defineUniversity({
+        id: "angola-luanda-universidade-oscar-ribas",
+        name: "Universidade Óscar Ribas",
+        cityId: "angola-luanda",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Luanda (Wikidata).
+      }),
+      defineUniversity({
+        id: "angola-luanda-belas-university",
+        name: "Belas University",
+        cityId: "angola-luanda",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Luanda (Wikidata).
+      }),
+      defineUniversity({
+        id: "angola-luanda-private-university-of-angola",
+        name: "Private University of Angola",
+        cityId: "angola-luanda",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Luanda (Wikidata).
+      }),
+  ],
+  "angola-vila-flor": [
+      defineUniversity({
+        id: "angola-vila-flor-universidade-metropolitana",
+        name: "Universidade Metropolitana",
+        cityId: "angola-vila-flor",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Vila Flor (Wikidata).
+      }),
+      defineUniversity({
+        id: "angola-vila-flor-universidade-de-belas",
+        name: "Universidade de Belas",
+        cityId: "angola-vila-flor",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Vila Flor (Wikidata).
       }),
   ],
 };

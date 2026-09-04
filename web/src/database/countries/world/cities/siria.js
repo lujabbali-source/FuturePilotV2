@@ -12,6 +12,48 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
+  "siria-damascus": [
+      defineUniversity({
+        id: "siria-damascus-higher-institute-of-business-administration-damascus",
+        name: "Higher Institute of Business Administration (Damascus)",
+        cityId: "siria-damascus",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.6 km del centro de Damascus (Wikidata).
+      }),
+      defineUniversity({
+        id: "siria-damascus-higher-institute-of-dramatic-arts-damascus",
+        name: "Higher Institute of Dramatic Arts (Damascus)",
+        cityId: "siria-damascus",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Damascus (Wikidata).
+      }),
+      defineUniversity({
+        id: "siria-damascus-damascus-university",
+        name: "Damascus University",
+        cityId: "siria-damascus",
+        website: "http://www.damascusuniversity.edu.sy/",
+        source: "open-dataset",
+        // Situada a 0.1 km del centro de Damascus (Wikidata).
+      }),
+      defineUniversity({
+        id: "siria-damascus-faculty-of-law-damascus-university",
+        name: "Faculty of Law Damascus University",
+        cityId: "siria-damascus",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Damascus (Wikidata).
+      }),
+      defineUniversity({
+        id: "siria-damascus-syrian-virtual-university",
+        name: "Syrian Virtual University",
+        cityId: "siria-damascus",
+        website: "http://www.svuonline.org/",
+        source: "open-dataset",
+        // Situada a None km del centro de Damascus (Wikidata).
+      }),
+  ],
   "siria-as-sanamayn": [
       defineUniversity({
         id: "siria-as-sanamayn-qasyoun-private-university",
@@ -54,32 +96,6 @@ export default {
         // Situada a 15.5 km del centro de Aş Şanamayn (Wikidata).
       }),
   ],
-  "siria-damascus": [
-      defineUniversity({
-        id: "siria-damascus-higher-institute-of-business-administration-damascus",
-        name: "Higher Institute of Business Administration (Damascus)",
-        cityId: "siria-damascus",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.6 km del centro de Damascus (Wikidata).
-      }),
-      defineUniversity({
-        id: "siria-damascus-higher-institute-of-dramatic-arts-damascus",
-        name: "Higher Institute of Dramatic Arts (Damascus)",
-        cityId: "siria-damascus",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Damascus (Wikidata).
-      }),
-      defineUniversity({
-        id: "siria-damascus-damascus-university",
-        name: "Damascus University",
-        cityId: "siria-damascus",
-        website: "http://www.damascusuniversity.edu.sy/",
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de Damascus (Wikidata).
-      }),
-  ],
   "siria-homs": [
       defineUniversity({
         id: "siria-homs-homs-military-academy",
@@ -96,6 +112,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.0 km del centro de Homs (Wikidata).
+      }),
+  ],
+  "siria-hamah": [
+      defineUniversity({
+        id: "siria-hamah-hama-university",
+        name: "Hama University",
+        cityId: "siria-hamah",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Ḩamāh (Wikidata).
+      }),
+      defineUniversity({
+        id: "siria-hamah-arab-private-university-for-science-and-technology",
+        name: "Arab Private University for Science and Technology",
+        cityId: "siria-hamah",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ḩamāh (Wikidata).
       }),
   ],
   "siria-aleppo": [

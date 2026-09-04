@@ -37,6 +37,14 @@ export default {
         source: "open-dataset",
         // Situada a 2.7 km del centro de Juba (Wikidata).
       }),
+      defineUniversity({
+        id: "sudan-del-sur-juba-ramciel-university",
+        name: "Ramciel University",
+        cityId: "sudan-del-sur-juba",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Juba (Wikidata).
+      }),
   ],
   "sudan-del-sur-wau": [
       defineUniversity({

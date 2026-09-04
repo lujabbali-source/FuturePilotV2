@@ -23,7 +23,7 @@ const cities = [
       name: "Dili",
       coordinates: {"lat": -8.55861, "lng": 125.57361},
       isCapital: true,
-      universityCount: 6,
+      universityCount: 9,
       statistics: { population: 150000 },
       countryId,
       countryName,

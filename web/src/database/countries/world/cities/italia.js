@@ -22,70 +22,6 @@ export default {
         // Situada a 0.9 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-rome-pontifical-north-american-college",
-        name: "Pontifical North American College",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontifical-north-american-college",
-        name: "Pontifical North American College",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-universita-europea-di-roma",
-        name: "Università Europea di Roma",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.7 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-john-cabot-university",
-        name: "John Cabot University",
-        cityId: "italia-rome",
-        website: "http://www.johncabot.edu/",
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-libera-universita-maria-ss-assunta",
-        name: "Libera Università Maria SS. Assunta",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontifical-athenaeum-regina-apostolorum",
-        name: "Pontifical Athenaeum Regina Apostolorum",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.7 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontifical-athenaeum-regina-apostolorum",
-        name: "Pontifical Athenaeum Regina Apostolorum",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.7 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-papai-magyar-intezet",
-        name: "Pápai Magyar Intézet",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
         id: "italia-rome-collegium-russicum",
         name: "Collegium Russicum",
         cityId: "italia-rome",
@@ -94,60 +30,12 @@ export default {
         // Situada a 1.0 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-rome-korean-pontifical-college",
-        name: "Korean Pontifical College",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontifical-theological-faculty-teresianum",
-        name: "Pontifical Theological Faculty Teresianum",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.7 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-marianum",
-        name: "Marianum",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
         id: "italia-rome-pontificio-collegio-beda",
         name: "Pontificio Collegio Beda",
         cityId: "italia-rome",
         website: null,
         source: "open-dataset",
         // Situada a 5.0 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontificio-collegio-beda",
-        name: "Pontificio Collegio Beda",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontificio-collegio-beda",
-        name: "Pontificio Collegio Beda",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontificio-collegio-beda",
-        name: "Pontificio Collegio Beda",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
         id: "italia-rome-papieskie-kolegium-polskie-w-rzymie",
@@ -166,22 +54,6 @@ export default {
         // Situada a 1.1 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-rome-pontifical-minor-roman-seminary",
-        name: "Pontifical Minor Roman Seminary",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.6 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontifical-minor-roman-seminary",
-        name: "Pontifical Minor Roman Seminary",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.6 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
         id: "italia-rome-pontifical-university-antonianum",
         name: "Pontifical University Antonianum",
         cityId: "italia-rome",
@@ -190,44 +62,12 @@ export default {
         // Situada a 0.7 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-rome-romanian-pontifical-college",
-        name: "Romanian Pontifical College",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
         id: "italia-rome-pontifical-john-paul-ii-institute-for-studies-on-marriage-and-family",
         name: "Pontifical John Paul II Institute for Studies on Marriage and Family",
         cityId: "italia-rome",
         website: null,
         source: "open-dataset",
         // Situada a 1.0 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontifical-urbaniana-university",
-        name: "Pontifical Urbaniana University",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pio-pontificio-collegio-brasiliano",
-        name: "Pio pontificio collegio brasiliano",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontifical-french-seminary",
-        name: "Pontifical French Seminary",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
         id: "italia-rome-pontifical-institute-of-christian-archaeology",
@@ -246,30 +86,6 @@ export default {
         // Situada a 1.6 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-rome-collegio-pontificio-di-sant-efram",
-        name: "collegio pontificio di Sant'Efram",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.7 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontificio-colegio-espanol-de-san-jose",
-        name: "Pontificio Colegio Español de San José",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-collegio-pio-latino-americano-pontificio",
-        name: "Collegio Pio-Latino-Americano Pontificio",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.4 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
         id: "italia-rome-universita-degli-studi-roma-tre",
         name: "Università degli Studi Roma Tre",
         cityId: "italia-rome",
@@ -278,12 +94,12 @@ export default {
         // Situada a 4.2 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-rome-universita-degli-studi-niccolo-cusano",
-        name: "Università degli Studi Niccolò Cusano",
+        id: "italia-rome-pontifical-university-of-saint-thomas-aquinas",
+        name: "Pontifical University of Saint Thomas Aquinas",
         cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 10.0 km del centro de Rome (Wikidata).
+        // Situada a 2.0 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
         id: "italia-rome-pontificio-seminario-lombardo-in-roma",
@@ -294,60 +110,12 @@ export default {
         // Situada a 1.1 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-rome-pontificio-seminario-lombardo-in-roma",
-        name: "Pontificio Seminario lombardo in Roma",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-universita-universitas-mercatorum",
-        name: "Università \"Universitas Mercatorum\"",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-universita-telematica-san-raffaele",
-        name: "Università telematica San Raffaele",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.4 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-universita-telematica-san-raffaele",
-        name: "Università telematica San Raffaele",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.9 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
         id: "italia-rome-pontifical-gregorian-university",
         name: "Pontifical Gregorian University",
         cityId: "italia-rome",
         website: null,
         source: "open-dataset",
         // Situada a 2.3 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontifical-gregorian-university",
-        name: "Pontifical Gregorian University",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-american-university-of-rome",
-        name: "American University of Rome",
-        cityId: "italia-rome",
-        website: "https://aur.edu/",
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
         id: "italia-rome-pontificio-ateneo-sant-anselmo",
@@ -358,72 +126,8 @@ export default {
         // Situada a 2.9 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-rome-pontificio-ateneo-sant-anselmo",
-        name: "Pontificio Ateneo Sant Anselmo",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontifical-institute-of-arab-and-islamic-studies",
-        name: "Pontifical Institute of Arab and Islamic Studies",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-higher-institute-for-artistic-industries-roma",
-        name: "Higher Institute for Artistic Industries Roma",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-almo-collegio-capranica",
-        name: "Almo Collegio Capranica",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontifical-university-of-the-holy-cross",
-        name: "Pontifical University of the Holy Cross",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontifical-university-of-the-holy-cross",
-        name: "Pontifical University of the Holy Cross",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.4 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-ukrainian-pontifical-college-of-saint-josaphat",
-        name: "Ukrainian Pontifical College of Saint Josaphat",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-belgian-pontifical-college",
-        name: "Belgian Pontifical College",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.2 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-pontifical-roman-seminary",
-        name: "Pontifical Roman Seminary",
+        id: "italia-rome-pontifical-lateran-university",
+        name: "Pontifical Lateran University",
         cityId: "italia-rome",
         website: null,
         source: "open-dataset",
@@ -436,14 +140,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.0 km del centro de Rome (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-rome-st-clement-ukrainian-catholic-university-in-rome",
-        name: "St. Clement Ukrainian Catholic University in Rome",
-        cityId: "italia-rome",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.7 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
         id: "italia-rome-universita-degli-studi-internazionali-di-roma-unint",
@@ -462,185 +158,175 @@ export default {
         // Situada a 2.4 km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-rome-pontifical-ecclesiastical-academy",
-        name: "Pontifical Ecclesiastical Academy",
+        id: "italia-rome-pontifical-institute-santa-maria-dell-anima",
+        name: "Pontifical Institute Santa Maria dell' Anima",
         cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Rome (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-rome-pontificio-collegio-portoghese",
-        name: "Pontificio Collegio Portoghese",
+        id: "italia-rome-faculty-of-theology-of-the-pontifical-gregorian-university",
+        name: "Faculty of Theology of the Pontifical Gregorian University",
         cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Rome (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-rome-english-college",
-        name: "English College",
+        id: "italia-rome-faculty-of-theology-of-the-pontifical-lateran-university",
+        name: "Faculty of Theology of the Pontifical Lateran University",
         cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 3.4 km del centro de Rome (Wikidata).
-      }),
-  ],
-  "italia-esquilino": [
-      defineUniversity({
-        id: "italia-esquilino-luiss-university",
-        name: "Luiss University",
-        cityId: "italia-esquilino",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-temple-university-rome",
-        name: "Temple University Rome",
-        cityId: "italia-esquilino",
+        id: "italia-rome-faculty-of-theology-of-the-pontifical-salesian-university",
+        name: "Faculty of Theology of the Pontifical Salesian University",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 3.8 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-pontificio-collegio-armeno",
-        name: "Pontificio Collegio Armeno",
-        cityId: "italia-esquilino",
+        id: "italia-rome-faculty-of-theology-of-the-pontifical-university-of-saint-thomas-aquinas",
+        name: "Faculty of Theology of the Pontifical University of Saint Thomas Aquinas",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-greek-pontifical-college-of-saint-athanasius",
-        name: "Greek Pontifical College of Saint Athanasius",
-        cityId: "italia-esquilino",
+        id: "italia-rome-universita-telematica-pegaso-sede-di-roma",
+        name: "Università Telematica Pegaso sede di Roma",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-sapienza-university-of-rome",
-        name: "Sapienza University of Rome",
-        cityId: "italia-esquilino",
+        id: "italia-rome-temple-university-abroad-rome-campus",
+        name: "Temple University Abroad. Rome Campus",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-collegio-pontificio-canadese",
-        name: "collegio pontificio canadese",
-        cityId: "italia-esquilino",
+        id: "italia-rome-institute-of-anthropology-interdisciplinary-studies-on-human-dignity-and-care",
+        name: "Institute of Anthropology: Interdisciplinary Studies on Human Dignity and Care",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 4.3 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-maronite-college-in-rome",
-        name: "Maronite College in Rome",
-        cityId: "italia-esquilino",
+        id: "italia-rome-rome-business-school",
+        name: "Rome Business School",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-rome-university-of-fine-arts",
-        name: "Rome University of Fine Arts",
-        cityId: "italia-esquilino",
+        id: "italia-rome-slovak-institute-of-saints-cyril-and-methodius",
+        name: "Slovak Institute of Saints Cyril and Methodius",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-accademia-nazionale-d-arte-drammatica-silvio-d-amico",
-        name: "Accademia Nazionale d'Arte Drammatica Silvio D'Amico",
-        cityId: "italia-esquilino",
+        id: "italia-rome-link-campus-university",
+        name: "Link Campus University",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-accademia-nazionale-d-arte-drammatica-silvio-d-amico",
-        name: "Accademia Nazionale d'Arte Drammatica Silvio D'Amico",
-        cityId: "italia-esquilino",
+        id: "italia-rome-pontificio-seminario-romano-dei-santi-apostoli-pietro-e-paolo-per-le-missioni-estere",
+        name: "Pontificio seminario romano dei santi apostoli Pietro e Paolo per le missioni estere",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 2.8 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-foro-italico-university-of-rome",
-        name: "Foro Italico University of Rome",
-        cityId: "italia-esquilino",
+        id: "italia-rome-scuola-di-ingegneria-aerospaziale",
+        name: "Scuola di Ingegneria Aerospaziale",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 5.9 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-universita-degli-studi-guglielmo-marconi",
-        name: "Università degli Studi ''Guglielmo Marconi''",
-        cityId: "italia-esquilino",
+        id: "italia-rome-graduate-school-of-health-economics-and-management",
+        name: "Graduate School of Health Economics and Management",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 4.4 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-universita-degli-studi-guglielmo-marconi",
-        name: "Università degli Studi ''Guglielmo Marconi''",
-        cityId: "italia-esquilino",
+        id: "italia-rome-history-curriculum-at-the-gregorian-university",
+        name: "History Curriculum at the Gregorian University",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 4.4 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-universita-degli-studi-di-roma-unitelma-sapienza",
-        name: "Università degli Studi di Roma \"Unitelma Sapienza\"",
-        cityId: "italia-esquilino",
+        id: "italia-rome-scuola-vaticana-di-biblioteconomia",
+        name: "Scuola vaticana di biblioteconomia",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-universita-telematica-internazionale-uninettuno",
-        name: "Università telematica internazionale UniNettuno",
-        cityId: "italia-esquilino",
+        id: "italia-rome-lay-centre-at-foyer-unitas",
+        name: "Lay Centre at Foyer Unitas",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-pontifical-croatian-college-of-st-jerome",
-        name: "Pontifical Croatian College of St. Jerome",
-        cityId: "italia-esquilino",
+        id: "italia-rome-faculty-of-theology-of-the-pontifical-university-of-the-holy-cross",
+        name: "Faculty of Theology of the Pontifical University of the Holy Cross",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-john-felice-rome-center",
-        name: "John Felice Rome Center",
-        cityId: "italia-esquilino",
+        id: "italia-rome-istituto-superiore-di-scienze-religiose-all-apollinare-pontificia-universita-della-santa-croce",
+        name: "Istituto Superiore di Scienze Religiose all'Apollinare, pontificia Università della Santa Croce",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 7.2 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
       defineUniversity({
-        id: "italia-esquilino-the-scots-college",
-        name: "The Scots College",
-        cityId: "italia-esquilino",
+        id: "italia-rome-mediterranean-universities-union",
+        name: "Mediterranean Universities Union",
+        cityId: "italia-rome",
         website: null,
         source: "open-dataset",
-        // Situada a 8.0 km del centro de Esquilino (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-esquilino-collegium-germanicum-et-hungaricum",
-        name: "Collegium Germanicum et Hungaricum",
-        cityId: "italia-esquilino",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Esquilino (Wikidata).
+        // Situada a None km del centro de Rome (Wikidata).
       }),
   ],
   "italia-florence": [
+      defineUniversity({
+        id: "italia-florence-yorker-international-university",
+        name: "Yorker International University",
+        cityId: "italia-florence",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Florence (Wikidata).
+      }),
       defineUniversity({
         id: "italia-florence-accademia-italiana",
         name: "Accademia italiana",
@@ -690,6 +376,14 @@ export default {
         // Situada a 1.0 km del centro de Florence (Wikidata).
       }),
       defineUniversity({
+        id: "italia-florence-florentine-studium",
+        name: "Florentine Studium",
+        cityId: "italia-florence",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Florence (Wikidata).
+      }),
+      defineUniversity({
         id: "italia-florence-higher-institute-for-artistic-industries-firenze",
         name: "Higher Institute for Artistic Industries Firenze",
         cityId: "italia-florence",
@@ -705,105 +399,45 @@ export default {
         source: "open-dataset",
         // Situada a 1.1 km del centro de Florence (Wikidata).
       }),
-  ],
-  "italia-verona": [
       defineUniversity({
-        id: "italia-verona-cignaroli-academy-and-brenzoni-school-of-painting-and-sculpture",
-        name: "Cignaroli Academy and Brenzoni School of Painting and Sculpture",
-        cityId: "italia-verona",
+        id: "italia-florence-libera-accademia-di-belle-arti",
+        name: "Libera Accademia di Belle Arti",
+        cityId: "italia-florence",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Verona (Wikidata).
+        // Situada a None km del centro de Florence (Wikidata).
       }),
       defineUniversity({
-        id: "italia-verona-national-observatory-of-outsider-art",
-        name: "National Observatory of Outsider Art",
-        cityId: "italia-verona",
+        id: "italia-florence-istituto-di-studi-superiori-di-firenze",
+        name: "Istituto di Studi Superiori di Firenze",
+        cityId: "italia-florence",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Verona (Wikidata).
+        // Situada a None km del centro de Florence (Wikidata).
       }),
       defineUniversity({
-        id: "italia-verona-former-seminary-of-verona",
-        name: "former seminary of Verona",
-        cityId: "italia-verona",
+        id: "italia-florence-polo-delle-scienze-sociali-di-novoli",
+        name: "Polo delle Scienze Sociali di Novoli",
+        cityId: "italia-florence",
         website: null,
         source: "open-dataset",
-        // Situada a 5.2 km del centro de Verona (Wikidata).
+        // Situada a None km del centro de Florence (Wikidata).
       }),
       defineUniversity({
-        id: "italia-verona-university-of-verona",
-        name: "University of Verona",
-        cityId: "italia-verona",
-        website: "http://www.univr.it/",
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Verona (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-verona-academy-of-fine-arts-verona",
-        name: "Academy of Fine Arts, Verona",
-        cityId: "italia-verona",
+        id: "italia-florence-universita-telematica-degli-studi-iul",
+        name: "Università Telematica degli Studi IUL",
+        cityId: "italia-florence",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Verona (Wikidata).
+        // Situada a None km del centro de Florence (Wikidata).
       }),
       defineUniversity({
-        id: "italia-verona-seminario-maggiore-di-verona",
-        name: "Seminario maggiore di Verona",
-        cityId: "italia-verona",
+        id: "italia-florence-polimoda",
+        name: "Polimoda",
+        cityId: "italia-florence",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Verona (Wikidata).
-      }),
-  ],
-  "italia-pavia": [
-      defineUniversity({
-        id: "italia-pavia-university-of-pavia",
-        name: "University of Pavia",
-        cityId: "italia-pavia",
-        website: "http://www.unipv.it/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Pavia (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-pavia-scuola-superiore-studi-pavia-iuss",
-        name: "Scuola Superiore Studi Pavia IUSS",
-        cityId: "italia-pavia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Pavia (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-pavia-seminario-vescovile",
-        name: "Seminario vescovile",
-        cityId: "italia-pavia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Pavia (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-pavia-seminario-vescovile",
-        name: "Seminario vescovile",
-        cityId: "italia-pavia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Pavia (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-pavia-ghislieri-college",
-        name: "Ghislieri College",
-        cityId: "italia-pavia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Pavia (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-pavia-ghislieri-college",
-        name: "Ghislieri College",
-        cityId: "italia-pavia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Pavia (Wikidata).
+        // Situada a None km del centro de Florence (Wikidata).
       }),
   ],
   "italia-milan": [
@@ -855,6 +489,202 @@ export default {
         source: "open-dataset",
         // Situada a 1.6 km del centro de Milan (Wikidata).
       }),
+      defineUniversity({
+        id: "italia-milan-pontificio-istituto-ambrosiano-di-musica-sacra",
+        name: "Pontificio istituto ambrosiano di musica sacra",
+        cityId: "italia-milan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Milan (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-milan-seminario-della-canonica",
+        name: "Seminario della Canonica",
+        cityId: "italia-milan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Milan (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-milan-accademia-di-belle-arti-europea-dei-media",
+        name: "Accademia di belle arti europea dei media",
+        cityId: "italia-milan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Milan (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-milan-graduate-school-of-media-communication-and-performing-arts",
+        name: "Graduate School of Media Communication and Performing Arts",
+        cityId: "italia-milan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Milan (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-milan-altis-postgraduate-school-business-society",
+        name: "ALTIS – Postgraduate School Business & Society",
+        cityId: "italia-milan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Milan (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-milan-postgraduate-school-of-psychology-agostino-gemelli",
+        name: "Postgraduate School of Psychology Agostino Gemelli",
+        cityId: "italia-milan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Milan (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-milan-graduate-school-of-economics-and-international-relations",
+        name: "Graduate School of Economics and International Relations",
+        cityId: "italia-milan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Milan (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-milan-institute-for-international-political-studies",
+        name: "Institute for International Political Studies",
+        cityId: "italia-milan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Milan (Wikidata).
+      }),
+  ],
+  "italia-esquilino": [
+      defineUniversity({
+        id: "italia-esquilino-luiss-university",
+        name: "Luiss University",
+        cityId: "italia-esquilino",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Esquilino (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-esquilino-pontificio-collegio-armeno",
+        name: "Pontificio Collegio Armeno",
+        cityId: "italia-esquilino",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.0 km del centro de Esquilino (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-esquilino-sapienza-university-of-rome",
+        name: "Sapienza University of Rome",
+        cityId: "italia-esquilino",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Esquilino (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-esquilino-maronite-college-in-rome",
+        name: "Maronite College in Rome",
+        cityId: "italia-esquilino",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Esquilino (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-esquilino-rome-university-of-fine-arts",
+        name: "Rome University of Fine Arts",
+        cityId: "italia-esquilino",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Esquilino (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-esquilino-accademia-nazionale-d-arte-drammatica-silvio-d-amico",
+        name: "Accademia Nazionale d'Arte Drammatica Silvio D'Amico",
+        cityId: "italia-esquilino",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Esquilino (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-esquilino-universita-degli-studi-di-roma-unitelma-sapienza",
+        name: "Università degli Studi di Roma \"Unitelma Sapienza\"",
+        cityId: "italia-esquilino",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Esquilino (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-esquilino-universita-telematica-internazionale-uninettuno",
+        name: "Università telematica internazionale UniNettuno",
+        cityId: "italia-esquilino",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Esquilino (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-esquilino-collegium-germanicum-et-hungaricum",
+        name: "Collegium Germanicum et Hungaricum",
+        cityId: "italia-esquilino",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.0 km del centro de Esquilino (Wikidata).
+      }),
+  ],
+  "italia-verona": [
+      defineUniversity({
+        id: "italia-verona-cignaroli-academy-and-brenzoni-school-of-painting-and-sculpture",
+        name: "Cignaroli Academy and Brenzoni School of Painting and Sculpture",
+        cityId: "italia-verona",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Verona (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-verona-national-observatory-of-outsider-art",
+        name: "National Observatory of Outsider Art",
+        cityId: "italia-verona",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Verona (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-verona-former-seminary-of-verona",
+        name: "former seminary of Verona",
+        cityId: "italia-verona",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.2 km del centro de Verona (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-verona-university-of-verona",
+        name: "University of Verona",
+        cityId: "italia-verona",
+        website: "http://www.univr.it/",
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Verona (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-verona-academy-of-fine-arts-verona",
+        name: "Academy of Fine Arts, Verona",
+        cityId: "italia-verona",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Verona (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-verona-seminario-maggiore-di-verona",
+        name: "Seminario maggiore di Verona",
+        cityId: "italia-verona",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Verona (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-verona-accademia-filotima",
+        name: "Accademia Filotima",
+        cityId: "italia-verona",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Verona (Wikidata).
+      }),
   ],
   "italia-venice": [
       defineUniversity({
@@ -890,88 +720,130 @@ export default {
         // Situada a 1.5 km del centro de Venice (Wikidata).
       }),
       defineUniversity({
-        id: "italia-venice-iuav-university-of-venice",
-        name: "IUAV University of Venice",
+        id: "italia-venice-centro-di-studi-teologici-germano-pattaro",
+        name: "Centro di studi teologici Germano Pattaro",
         cityId: "italia-venice",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Venice (Wikidata).
+        // Situada a None km del centro de Venice (Wikidata).
       }),
   ],
-  "italia-spinaceto": [
+  "italia-pavia": [
       defineUniversity({
-        id: "italia-spinaceto-collegium-seraphicum-rome",
-        name: "Collegium Seraphicum - Rome",
-        cityId: "italia-spinaceto",
+        id: "italia-pavia-university-of-pavia",
+        name: "University of Pavia",
+        cityId: "italia-pavia",
+        website: "http://www.unipv.it/",
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Pavia (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-pavia-scuola-superiore-studi-pavia-iuss",
+        name: "Scuola Superiore Studi Pavia IUSS",
+        cityId: "italia-pavia",
         website: null,
         source: "open-dataset",
-        // Situada a 6.6 km del centro de Spinaceto (Wikidata).
+        // Situada a 0.9 km del centro de Pavia (Wikidata).
       }),
       defineUniversity({
-        id: "italia-spinaceto-collegium-seraphicum-rome",
-        name: "Collegium Seraphicum - Rome",
-        cityId: "italia-spinaceto",
+        id: "italia-pavia-seminario-vescovile",
+        name: "Seminario vescovile",
+        cityId: "italia-pavia",
         website: null,
         source: "open-dataset",
-        // Situada a 6.6 km del centro de Spinaceto (Wikidata).
+        // Situada a 1.1 km del centro de Pavia (Wikidata).
       }),
       defineUniversity({
-        id: "italia-spinaceto-collegium-seraphicum-rome",
-        name: "Collegium Seraphicum - Rome",
-        cityId: "italia-spinaceto",
+        id: "italia-pavia-ghislieri-college",
+        name: "Ghislieri College",
+        cityId: "italia-pavia",
         website: null,
         source: "open-dataset",
-        // Situada a 6.6 km del centro de Spinaceto (Wikidata).
+        // Situada a 0.7 km del centro de Pavia (Wikidata).
       }),
       defineUniversity({
-        id: "italia-spinaceto-campus-bio-medico-university-of-rome",
-        name: "Campus Bio Medico University of Rome",
-        cityId: "italia-spinaceto",
-        website: "http://www.unicampus.it/",
+        id: "italia-pavia-scuola-di-pavia",
+        name: "Scuola di Pavia",
+        cityId: "italia-pavia",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Spinaceto (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-spinaceto-campus-bio-medico-university-of-rome",
-        name: "Campus Bio Medico University of Rome",
-        cityId: "italia-spinaceto",
-        website: "http://www.unicampus.it/",
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Spinaceto (Wikidata).
+        // Situada a None km del centro de Pavia (Wikidata).
       }),
   ],
-  "italia-modena": [
+  "italia-bologna": [
       defineUniversity({
-        id: "italia-modena-seminario-metropolitano",
-        name: "Seminario Metropolitano",
-        cityId: "italia-modena",
-        website: null,
+        id: "italia-bologna-university-of-bologna",
+        name: "University of Bologna",
+        cityId: "italia-bologna",
+        website: "http://www.unibo.it/",
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Modena (Wikidata).
+        // Situada a 0.3 km del centro de Bologna (Wikidata).
       }),
       defineUniversity({
-        id: "italia-modena-university-of-modena-and-reggio-emilia",
-        name: "University of Modena and Reggio Emilia",
-        cityId: "italia-modena",
+        id: "italia-bologna-facolta-teologica-dell-emilia-romagna",
+        name: "Facoltà teologica dell'Emilia-Romagna",
+        cityId: "italia-bologna",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Modena (Wikidata).
+        // Situada a 1.7 km del centro de Bologna (Wikidata).
       }),
       defineUniversity({
-        id: "italia-modena-military-academy-of-modena",
-        name: "Military Academy of Modena",
-        cityId: "italia-modena",
-        website: null,
+        id: "italia-bologna-the-johns-hopkins-university-sais-bologna-center",
+        name: "The Johns Hopkins University SAIS Bologna Center",
+        cityId: "italia-bologna",
+        website: "http://www.jhubc.it/",
         source: "open-dataset",
-        // Situada a 0.3 km del centro de Modena (Wikidata).
+        // Situada a 1.3 km del centro de Bologna (Wikidata).
       }),
       defineUniversity({
-        id: "italia-modena-military-academy-of-modena",
-        name: "Military Academy of Modena",
-        cityId: "italia-modena",
+        id: "italia-bologna-pontificio-seminario-regionale-flaminio-benedetto-xv",
+        name: "pontificio seminario regionale flaminio \"Benedetto XV",
+        cityId: "italia-bologna",
         website: null,
         source: "open-dataset",
-        // Situada a 0.3 km del centro de Modena (Wikidata).
+        // Situada a None km del centro de Bologna (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-bologna-regia-scuola-d-applicazione-per-gl-ingegneri-di-bologna",
+        name: "Regia scuola d'applicazione per gl'ingegneri di Bologna",
+        cityId: "italia-bologna",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bologna (Wikidata).
+      }),
+  ],
+  "italia-genoa": [
+      defineUniversity({
+        id: "italia-genoa-accademia-italiana-della-marina-mercantile",
+        name: "Accademia italiana della marina mercantile",
+        cityId: "italia-genoa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Genoa (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-genoa-seminario-arcivescovile-di-genova",
+        name: "Seminario Arcivescovile di Genova",
+        cityId: "italia-genoa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Genoa (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-genoa-university-of-genoa",
+        name: "University of Genoa",
+        cityId: "italia-genoa",
+        website: "http://www.unige.it/",
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Genoa (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-genoa-royal-school-of-navy-of-genoa",
+        name: "Royal School of Navy of Genoa",
+        cityId: "italia-genoa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Genoa (Wikidata).
       }),
   ],
   "italia-benevento": [
@@ -1008,38 +880,38 @@ export default {
         // Situada a 2.1 km del centro de Benevento (Wikidata).
       }),
   ],
-  "italia-casal-de-pazzi": [
+  "italia-san-ferdinando": [
       defineUniversity({
-        id: "italia-casal-de-pazzi-facolta-di-lettere-cristiane-e-classiche",
-        name: "Facoltà di Lettere Cristiane e Classiche",
-        cityId: "italia-casal-de-pazzi",
+        id: "italia-san-ferdinando-parthenope-university-of-naples",
+        name: "Parthenope University of Naples",
+        cityId: "italia-san-ferdinando",
         website: null,
         source: "open-dataset",
-        // Situada a 4.9 km del centro de Casal de' Pazzi (Wikidata).
+        // Situada a 0.7 km del centro de San Ferdinando (Wikidata).
       }),
       defineUniversity({
-        id: "italia-casal-de-pazzi-facolta-di-lettere-cristiane-e-classiche",
-        name: "Facoltà di Lettere Cristiane e Classiche",
-        cityId: "italia-casal-de-pazzi",
+        id: "italia-san-ferdinando-nunziatella-military-academy",
+        name: "Nunziatella military academy",
+        cityId: "italia-san-ferdinando",
         website: null,
         source: "open-dataset",
-        // Situada a 4.9 km del centro de Casal de' Pazzi (Wikidata).
+        // Situada a 0.3 km del centro de San Ferdinando (Wikidata).
       }),
       defineUniversity({
-        id: "italia-casal-de-pazzi-salesian-pontifical-university",
-        name: "Salesian Pontifical University",
-        cityId: "italia-casal-de-pazzi",
+        id: "italia-san-ferdinando-regia-scuola-di-ingegneria",
+        name: "Regia Scuola di Ingegneria",
+        cityId: "italia-san-ferdinando",
         website: null,
         source: "open-dataset",
-        // Situada a 5.1 km del centro de Casal de' Pazzi (Wikidata).
+        // Situada a None km del centro de San Ferdinando (Wikidata).
       }),
       defineUniversity({
-        id: "italia-casal-de-pazzi-saint-camillus-international-university-of-health-and-medical-sciences",
-        name: "Saint Camillus International University of Health and Medical Sciences",
-        cityId: "italia-casal-de-pazzi",
+        id: "italia-san-ferdinando-regia-scuola-d-applicazione-per-gl-ingegneri-di-napoli",
+        name: "Regia scuola d'applicazione per gl'ingegneri di Napoli",
+        cityId: "italia-san-ferdinando",
         website: null,
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Casal de' Pazzi (Wikidata).
+        // Situada a None km del centro de San Ferdinando (Wikidata).
       }),
   ],
   "italia-reggio-calabria": [
@@ -1068,6 +940,32 @@ export default {
         // Situada a 1.9 km del centro de Reggio Calabria (Wikidata).
       }),
   ],
+  "italia-palermo": [
+      defineUniversity({
+        id: "italia-palermo-university-of-palermo",
+        name: "University of Palermo",
+        cityId: "italia-palermo",
+        website: "http://www.unipa.it/",
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Palermo (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-palermo-pontificia-facolta-teologica-di-sicilia-san-giovanni-evangelista",
+        name: "Pontificia Facoltà Teologica di Sicilia \"San Giovanni Evangelista",
+        cityId: "italia-palermo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Palermo (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-palermo-istituto-superiore-per-imprenditori-e-dirigenti-di-azienda",
+        name: "Istituto Superiore per Imprenditori e Dirigenti di Azienda",
+        cityId: "italia-palermo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Palermo (Wikidata).
+      }),
+  ],
   "italia-cagliari": [
       defineUniversity({
         id: "italia-cagliari-seminario-arcivescovile-di-cagliari",
@@ -1092,6 +990,58 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.6 km del centro de Cagliari (Wikidata).
+      }),
+  ],
+  "italia-vicenza": [
+      defineUniversity({
+        id: "italia-vicenza-seminario-vescovile",
+        name: "Seminario vescovile",
+        cityId: "italia-vicenza",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Vicenza (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-vicenza-universita-a-vicenza",
+        name: "Università a Vicenza",
+        cityId: "italia-vicenza",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Vicenza (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-vicenza-university-of-vicenza",
+        name: "University of Vicenza",
+        cityId: "italia-vicenza",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Vicenza (Wikidata).
+      }),
+  ],
+  "italia-udine": [
+      defineUniversity({
+        id: "italia-udine-university-of-udine",
+        name: "University of Udine",
+        cityId: "italia-udine",
+        website: "http://www.uniud.it/",
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Udine (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-udine-civica-accademia-d-arte-drammatica-nico-pepe",
+        name: "Civica Accademia d'arte drammatica Nico Pepe",
+        cityId: "italia-udine",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Udine (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-udine-toppo-wassermann-college",
+        name: "Toppo Wassermann College",
+        cityId: "italia-udine",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Udine (Wikidata).
       }),
   ],
   "italia-trento": [
@@ -1146,108 +1096,160 @@ export default {
         // Situada a 0.3 km del centro de Perugia (Wikidata).
       }),
   ],
-  "italia-genoa": [
+  "italia-padua": [
       defineUniversity({
-        id: "italia-genoa-accademia-italiana-della-marina-mercantile",
-        name: "Accademia italiana della marina mercantile",
-        cityId: "italia-genoa",
+        id: "italia-padua-seminario-maggiore-di-padova",
+        name: "seminario maggiore di Padova",
+        cityId: "italia-padua",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Genoa (Wikidata).
+        // Situada a 1.3 km del centro de Padua (Wikidata).
       }),
       defineUniversity({
-        id: "italia-genoa-seminario-arcivescovile-di-genova",
-        name: "Seminario Arcivescovile di Genova",
-        cityId: "italia-genoa",
+        id: "italia-padua-regia-scuola-d-applicazione-per-gl-ingegneri-di-padova",
+        name: "Regia scuola d'applicazione per gl'ingegneri di Padova",
+        cityId: "italia-padua",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Genoa (Wikidata).
+        // Situada a None km del centro de Padua (Wikidata).
       }),
       defineUniversity({
-        id: "italia-genoa-university-of-genoa",
-        name: "University of Genoa",
-        cityId: "italia-genoa",
-        website: "http://www.unige.it/",
+        id: "italia-padua-scuola-italiana-design",
+        name: "Scuola Italiana Design",
+        cityId: "italia-padua",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Genoa (Wikidata).
+        // Situada a None km del centro de Padua (Wikidata).
       }),
   ],
-  "italia-como": [
+  "italia-modena": [
       defineUniversity({
-        id: "italia-como-collegio-gallio",
-        name: "Collegio Gallio",
-        cityId: "italia-como",
+        id: "italia-modena-seminario-metropolitano",
+        name: "Seminario Metropolitano",
+        cityId: "italia-modena",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Como (Wikidata).
+        // Situada a 0.6 km del centro de Modena (Wikidata).
       }),
       defineUniversity({
-        id: "italia-como-centro-socio-pastorale-cardinal-ferrari",
-        name: "Centro socio-pastorale Cardinal Ferrari",
-        cityId: "italia-como",
+        id: "italia-modena-university-of-modena-and-reggio-emilia",
+        name: "University of Modena and Reggio Emilia",
+        cityId: "italia-modena",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Como (Wikidata).
+        // Situada a 0.4 km del centro de Modena (Wikidata).
       }),
       defineUniversity({
-        id: "italia-como-centro-socio-pastorale-cardinal-ferrari",
-        name: "Centro socio-pastorale Cardinal Ferrari",
-        cityId: "italia-como",
+        id: "italia-modena-military-academy-of-modena",
+        name: "Military Academy of Modena",
+        cityId: "italia-modena",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Como (Wikidata).
+        // Situada a 0.3 km del centro de Modena (Wikidata).
       }),
   ],
-  "italia-bologna": [
+  "italia-livorno": [
       defineUniversity({
-        id: "italia-bologna-university-of-bologna",
-        name: "University of Bologna",
-        cityId: "italia-bologna",
-        website: "http://www.unibo.it/",
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Bologna (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-bologna-facolta-teologica-dell-emilia-romagna",
-        name: "Facoltà teologica dell'Emilia-Romagna",
-        cityId: "italia-bologna",
+        id: "italia-livorno-seminary-livorno",
+        name: "Seminary (Livorno)",
+        cityId: "italia-livorno",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Bologna (Wikidata).
+        // Situada a 1.2 km del centro de Livorno (Wikidata).
       }),
       defineUniversity({
-        id: "italia-bologna-the-johns-hopkins-university-sais-bologna-center",
-        name: "The Johns Hopkins University SAIS Bologna Center",
-        cityId: "italia-bologna",
-        website: "http://www.jhubc.it/",
+        id: "italia-livorno-italian-naval-academy",
+        name: "Italian Naval Academy",
+        cityId: "italia-livorno",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Bologna (Wikidata).
+        // Situada a 2.4 km del centro de Livorno (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-livorno-istituto-superiore-di-studi-musicali-pietro-mascagni",
+        name: "Istituto superiore di studi musicali Pietro Mascagni",
+        cityId: "italia-livorno",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Livorno (Wikidata).
       }),
   ],
-  "italia-bergamo": [
+  "italia-brescia": [
       defineUniversity({
-        id: "italia-bergamo-university-of-bergamo",
-        name: "University of Bergamo",
-        cityId: "italia-bergamo",
-        website: "http://www.unibg.it/",
+        id: "italia-brescia-university-of-brescia",
+        name: "University of Brescia",
+        cityId: "italia-brescia",
+        website: "http://www.unibs.it/",
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Bergamo (Wikidata).
+        // Situada a 0.4 km del centro de Brescia (Wikidata).
       }),
       defineUniversity({
-        id: "italia-bergamo-seminario-di-bergamo",
-        name: "Seminario di Bergamo",
-        cityId: "italia-bergamo",
+        id: "italia-brescia-free-academy-of-fine-arts-laba",
+        name: "Free Academy of Fine Arts (LABA)",
+        cityId: "italia-brescia",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Bergamo (Wikidata).
+        // Situada a None km del centro de Brescia (Wikidata).
       }),
       defineUniversity({
-        id: "italia-bergamo-seminario-di-bergamo",
-        name: "Seminario di Bergamo",
-        cityId: "italia-bergamo",
+        id: "italia-brescia-postgraduate-school-for-environmental-studies",
+        name: "Postgraduate School for Environmental Studies",
+        cityId: "italia-brescia",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Bergamo (Wikidata).
+        // Situada a None km del centro de Brescia (Wikidata).
+      }),
+  ],
+  "italia-porta-palazzo": [
+      defineUniversity({
+        id: "italia-porta-palazzo-collegio-carlo-alberto",
+        name: "Collegio Carlo Alberto",
+        cityId: "italia-porta-palazzo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Porta Palazzo (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-porta-palazzo-regia-scuola-d-applicazione-per-gl-ingegneri-di-torino",
+        name: "Regia scuola d'applicazione per gl'ingegneri di Torino",
+        cityId: "italia-porta-palazzo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Porta Palazzo (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-porta-palazzo-turin-school-of-development",
+        name: "Turin School of Development",
+        cityId: "italia-porta-palazzo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Porta Palazzo (Wikidata).
+      }),
+  ],
+  "italia-casal-de-pazzi": [
+      defineUniversity({
+        id: "italia-casal-de-pazzi-facolta-di-lettere-cristiane-e-classiche",
+        name: "Facoltà di Lettere Cristiane e Classiche",
+        cityId: "italia-casal-de-pazzi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.9 km del centro de Casal de' Pazzi (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-casal-de-pazzi-salesian-pontifical-university",
+        name: "Salesian Pontifical University",
+        cityId: "italia-casal-de-pazzi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.1 km del centro de Casal de' Pazzi (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-casal-de-pazzi-saint-camillus-international-university-of-health-and-medical-sciences",
+        name: "Saint Camillus International University of Health and Medical Sciences",
+        cityId: "italia-casal-de-pazzi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Casal de' Pazzi (Wikidata).
       }),
   ],
   "italia-circoiscrizione-i": [
@@ -1274,24 +1276,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.6 km del centro de Circoiscrizione I (Wikidata).
-      }),
-  ],
-  "italia-palermo": [
-      defineUniversity({
-        id: "italia-palermo-university-of-palermo",
-        name: "University of Palermo",
-        cityId: "italia-palermo",
-        website: "http://www.unipa.it/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Palermo (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-palermo-pontificia-facolta-teologica-di-sicilia-san-giovanni-evangelista",
-        name: "Pontificia Facoltà Teologica di Sicilia \"San Giovanni Evangelista",
-        cityId: "italia-palermo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Palermo (Wikidata).
       }),
   ],
   "italia-messina": [
@@ -1328,6 +1312,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 3.3 km del centro de Trieste (Wikidata).
+      }),
+  ],
+  "italia-tradate": [
+      defineUniversity({
+        id: "italia-tradate-seminario",
+        name: "Seminario",
+        cityId: "italia-tradate",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Tradate (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-tradate-archiepiscopal-seminary-of-milan",
+        name: "Archiepiscopal seminary of Milan",
+        cityId: "italia-tradate",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tradate (Wikidata).
       }),
   ],
   "italia-turin": [
@@ -1384,22 +1386,22 @@ export default {
         // Situada a 0.2 km del centro de Prato (Wikidata).
       }),
   ],
-  "italia-piacenza": [
+  "italia-pisa": [
       defineUniversity({
-        id: "italia-piacenza-collegio-alberoni",
-        name: "Collegio Alberoni",
-        cityId: "italia-piacenza",
-        website: null,
+        id: "italia-pisa-university-of-pisa",
+        name: "University of Pisa",
+        cityId: "italia-pisa",
+        website: "http://www.unipi.it/",
         source: "open-dataset",
-        // Situada a 3.2 km del centro de Piacenza (Wikidata).
+        // Situada a 1.0 km del centro de Pisa (Wikidata).
       }),
       defineUniversity({
-        id: "italia-piacenza-collegio-alberoni",
-        name: "Collegio Alberoni",
-        cityId: "italia-piacenza",
+        id: "italia-pisa-pisa-university-system",
+        name: "Pisa University System",
+        cityId: "italia-pisa",
         website: null,
         source: "open-dataset",
-        // Situada a 3.2 km del centro de Piacenza (Wikidata).
+        // Situada a None km del centro de Pisa (Wikidata).
       }),
   ],
   "italia-mantua": [
@@ -1412,30 +1414,12 @@ export default {
         // Situada a 0.1 km del centro de Mantua (Wikidata).
       }),
       defineUniversity({
-        id: "italia-mantua-seminario-vescovile",
-        name: "Seminario vescovile",
+        id: "italia-mantua-university-of-mantua",
+        name: "University of Mantua",
         cityId: "italia-mantua",
         website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de Mantua (Wikidata).
-      }),
-  ],
-  "italia-livorno": [
-      defineUniversity({
-        id: "italia-livorno-seminary-livorno",
-        name: "Seminary (Livorno)",
-        cityId: "italia-livorno",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Livorno (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-livorno-italian-naval-academy",
-        name: "Italian Naval Academy",
-        cityId: "italia-livorno",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Livorno (Wikidata).
+        // Situada a None km del centro de Mantua (Wikidata).
       }),
   ],
   "italia-lido": [
@@ -1456,6 +1440,70 @@ export default {
         // Situada a 1.6 km del centro de Lido (Wikidata).
       }),
   ],
+  "italia-lecce": [
+      defineUniversity({
+        id: "italia-lecce-university-of-salento",
+        name: "University of Salento",
+        cityId: "italia-lecce",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Lecce (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-lecce-istituto-superiore-di-scienze-religiose-metropolitano-don-tonino-bello",
+        name: "Istituto Superiore di Scienze Religiose Metropolitano \"Don Tonino Bello\"",
+        cityId: "italia-lecce",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lecce (Wikidata).
+      }),
+  ],
+  "italia-gorizia": [
+      defineUniversity({
+        id: "italia-gorizia-university-of-nova-gorica",
+        name: "University of Nova Gorica",
+        cityId: "italia-gorizia",
+        website: "http://www.ung.si/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Gorizia (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-gorizia-new-university",
+        name: "New University",
+        cityId: "italia-gorizia",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gorizia (Wikidata).
+      }),
+  ],
+  "italia-como": [
+      defineUniversity({
+        id: "italia-como-collegio-gallio",
+        name: "Collegio Gallio",
+        cityId: "italia-como",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Como (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-como-centro-socio-pastorale-cardinal-ferrari",
+        name: "Centro socio-pastorale Cardinal Ferrari",
+        cityId: "italia-como",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Como (Wikidata).
+      }),
+  ],
+  "italia-colleferro": [
+      defineUniversity({
+        id: "italia-colleferro-collegio-apostolico-leoniano",
+        name: "Collegio Apostolico Leoniano",
+        cityId: "italia-colleferro",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Colleferro (Wikidata).
+      }),
+  ],
   "italia-chieti": [
       defineUniversity({
         id: "italia-chieti-universita-leonardo-da-vinci",
@@ -1466,12 +1514,12 @@ export default {
         // Situada a 5.1 km del centro de Chieti (Wikidata).
       }),
       defineUniversity({
-        id: "italia-chieti-universita-leonardo-da-vinci",
-        name: "Università Leonardo da Vinci",
+        id: "italia-chieti-pontifical-regional-seminary-of-abruzzo-molise",
+        name: "Pontifical regional seminary of Abruzzo-Molise",
         cityId: "italia-chieti",
         website: null,
         source: "open-dataset",
-        // Situada a 5.1 km del centro de Chieti (Wikidata).
+        // Situada a None km del centro de Chieti (Wikidata).
       }),
   ],
   "italia-cattolica": [
@@ -1492,6 +1540,24 @@ export default {
         // Situada a 27.8 km del centro de Cattolica (Wikidata).
       }),
   ],
+  "italia-brindisi": [
+      defineUniversity({
+        id: "italia-brindisi-seminario-arcivescovile-di-brindisi",
+        name: "Seminario Arcivescovile di Brindisi",
+        cityId: "italia-brindisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Brindisi (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-brindisi-niccolo-tommaseo-naval-college",
+        name: "Niccolò Tommaseo Naval College",
+        cityId: "italia-brindisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Brindisi (Wikidata).
+      }),
+  ],
   "italia-bolzano": [
       defineUniversity({
         id: "italia-bolzano-free-university-of-bozen-bolzano",
@@ -1508,6 +1574,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.2 km del centro de Bolzano (Wikidata).
+      }),
+  ],
+  "italia-bergamo": [
+      defineUniversity({
+        id: "italia-bergamo-university-of-bergamo",
+        name: "University of Bergamo",
+        cityId: "italia-bergamo",
+        website: "http://www.unibg.it/",
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Bergamo (Wikidata).
+      }),
+      defineUniversity({
+        id: "italia-bergamo-seminario-di-bergamo",
+        name: "Seminario di Bergamo",
+        cityId: "italia-bergamo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Bergamo (Wikidata).
       }),
   ],
   "italia-bari": [
@@ -1528,22 +1612,22 @@ export default {
         // Situada a 0.1 km del centro de Bari (Wikidata).
       }),
   ],
-  "italia-aosta": [
+  "italia-spinaceto": [
       defineUniversity({
-        id: "italia-aosta-aosta-valley-university",
-        name: "Aosta Valley University",
-        cityId: "italia-aosta",
+        id: "italia-spinaceto-collegium-seraphicum-rome",
+        name: "Collegium Seraphicum - Rome",
+        cityId: "italia-spinaceto",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Aosta (Wikidata).
+        // Situada a 6.6 km del centro de Spinaceto (Wikidata).
       }),
       defineUniversity({
-        id: "italia-aosta-aosta-valley-university",
-        name: "Aosta Valley University",
-        cityId: "italia-aosta",
-        website: null,
+        id: "italia-spinaceto-campus-bio-medico-university-of-rome",
+        name: "Campus Bio Medico University of Rome",
+        cityId: "italia-spinaceto",
+        website: "http://www.unicampus.it/",
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Aosta (Wikidata).
+        // Situada a 2.6 km del centro de Spinaceto (Wikidata).
       }),
   ],
   "italia-brera": [
@@ -1582,24 +1666,6 @@ export default {
         // Situada a 3.6 km del centro de Campo di Marte (Wikidata).
       }),
   ],
-  "italia-san-ferdinando": [
-      defineUniversity({
-        id: "italia-san-ferdinando-parthenope-university-of-naples",
-        name: "Parthenope University of Naples",
-        cityId: "italia-san-ferdinando",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de San Ferdinando (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-san-ferdinando-nunziatella-military-academy",
-        name: "Nunziatella military academy",
-        cityId: "italia-san-ferdinando",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de San Ferdinando (Wikidata).
-      }),
-  ],
   "italia-pendino": [
       defineUniversity({
         id: "italia-pendino-naples-eastern-university",
@@ -1634,24 +1700,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.8 km del centro de Montecalvario (Wikidata).
-      }),
-  ],
-  "italia-centro": [
-      defineUniversity({
-        id: "italia-centro-theological-university-of-northern-italy-turin-campus",
-        name: "Theological University of Northern Italy – Turin Campus",
-        cityId: "italia-centro",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Centro (Wikidata).
-      }),
-      defineUniversity({
-        id: "italia-centro-theological-university-of-northern-italy-turin-campus",
-        name: "Theological University of Northern Italy – Turin Campus",
-        cityId: "italia-centro",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Centro (Wikidata).
       }),
   ],
 };

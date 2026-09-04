@@ -8,15 +8,26 @@
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry } from "../schema.js";
+import { defineCity, defineCountry } from "../schema.js";
 
 const countryId = "comoras";
 const countryName = "Comoras";
 
-// Sin ciudades: la fuente no le conoce ninguna universidad
-// a este pais. No es que no las tenga; es que no constan.
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/comoras.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
-
+    defineCity({
+      id: "comoras-moroni",
+      name: "Moroni",
+      coordinates: {"lat": -11.70216, "lng": 43.25506},
+      isCapital: true,
+      universityCount: 2,
+      statistics: { population: 74749 },
+      countryId,
+      countryName,
+    }),
 ];
 
 export default defineCountry({

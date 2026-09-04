@@ -22,6 +22,14 @@ export default {
         // Situada a 3.6 km del centro de Basseterre (Wikidata).
       }),
       defineUniversity({
+        id: "san-cristobal-y-nieves-basseterre-medical-university-of-the-americas-nevis",
+        name: "Medical University of the Americas – Nevis",
+        cityId: "san-cristobal-y-nieves-basseterre",
+        website: null,
+        source: "open-dataset",
+        // Situada a 20.8 km del centro de Basseterre (Wikidata).
+      }),
+      defineUniversity({
         id: "san-cristobal-y-nieves-basseterre-university-of-medicine-and-health-sciences",
         name: "University of Medicine and Health Sciences",
         cityId: "san-cristobal-y-nieves-basseterre",

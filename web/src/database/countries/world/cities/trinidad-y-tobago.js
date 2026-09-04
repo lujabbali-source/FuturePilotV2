@@ -22,12 +22,12 @@ export default {
         // Situada a 5.0 km del centro de Tunapuna (Wikidata).
       }),
       defineUniversity({
-        id: "trinidad-y-tobago-tunapuna-university-of-the-southern-caribbean",
-        name: "University of the Southern Caribbean",
+        id: "trinidad-y-tobago-tunapuna-seminary-and-theological-institute-of-st-john-vianney-and-the-uganda-martyrs",
+        name: "Seminary and Theological Institute of St John Vianney and the Uganda Martyrs",
         cityId: "trinidad-y-tobago-tunapuna",
-        website: "http://www.usc.edu.tt/",
+        website: null,
         source: "open-dataset",
-        // Situada a 5.0 km del centro de Tunapuna (Wikidata).
+        // Situada a None km del centro de Tunapuna (Wikidata).
       }),
   ],
 };

@@ -29,6 +29,22 @@ export default {
         source: "open-dataset",
         // Situada a 22.3 km del centro de Thimphu (Wikidata).
       }),
+      defineUniversity({
+        id: "butan-thimphu-royal-university-of-bhutan",
+        name: "Royal University of Bhutan",
+        cityId: "butan-thimphu",
+        website: "http://www.rub.edu.bt/",
+        source: "open-dataset",
+        // Situada a None km del centro de Thimphu (Wikidata).
+      }),
+      defineUniversity({
+        id: "butan-thimphu-khesar-gyalpo-university-of-medical-sciences-of-bhutan",
+        name: "Khesar Gyalpo University of Medical Sciences of Bhutan",
+        cityId: "butan-thimphu",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Thimphu (Wikidata).
+      }),
   ],
   "butan-phuntsholing": [
       defineUniversity({

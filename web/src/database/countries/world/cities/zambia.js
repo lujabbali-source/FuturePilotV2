@@ -53,16 +53,16 @@ export default {
         source: "open-dataset",
         // Situada a 4.6 km del centro de Lusaka (Wikidata).
       }),
-  ],
-  "zambia-kitwe": [
       defineUniversity({
-        id: "zambia-kitwe-zambia-forestry-college",
-        name: "Zambia Forestry College",
-        cityId: "zambia-kitwe",
+        id: "zambia-lusaka-united-nations-institute-for-namibia",
+        name: "United Nations Institute for Namibia",
+        cityId: "zambia-lusaka",
         website: null,
         source: "open-dataset",
-        // Situada a 16.6 km del centro de Kitwe (Wikidata).
+        // Situada a None km del centro de Lusaka (Wikidata).
       }),
+  ],
+  "zambia-kitwe": [
       defineUniversity({
         id: "zambia-kitwe-zambia-forestry-college",
         name: "Zambia Forestry College",
@@ -87,23 +87,29 @@ export default {
         source: "open-dataset",
         // Situada a 3.0 km del centro de Kitwe (Wikidata).
       }),
-  ],
-  "zambia-monze": [
       defineUniversity({
-        id: "zambia-monze-rusangu-university",
-        name: "Rusangu University",
-        cityId: "zambia-monze",
-        website: "http://www.rusangu-university.edu.zm/",
+        id: "zambia-kitwe-central-african-baptist-university",
+        name: "Central African Baptist University",
+        cityId: "zambia-kitwe",
+        website: null,
         source: "open-dataset",
-        // Situada a 8.0 km del centro de Monze (Wikidata).
+        // Situada a None km del centro de Kitwe (Wikidata).
       }),
       defineUniversity({
-        id: "zambia-monze-rusangu-university",
-        name: "Rusangu University",
-        cityId: "zambia-monze",
-        website: "http://www.rusangu-university.edu.zm/",
+        id: "zambia-kitwe-copperstone-university",
+        name: "Copperstone University",
+        cityId: "zambia-kitwe",
+        website: null,
         source: "open-dataset",
-        // Situada a 8.0 km del centro de Monze (Wikidata).
+        // Situada a None km del centro de Kitwe (Wikidata).
+      }),
+      defineUniversity({
+        id: "zambia-kitwe-mindolo-ecumenical-centre",
+        name: "Mindolo Ecumenical Centre",
+        cityId: "zambia-kitwe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kitwe (Wikidata).
       }),
   ],
   "zambia-kabwe": [
@@ -122,24 +128,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.7 km del centro de Kabwe (Wikidata).
-      }),
-  ],
-  "zambia-madido": [
-      defineUniversity({
-        id: "zambia-madido-levy-mwanawasa-medical-university",
-        name: "Levy Mwanawasa Medical University",
-        cityId: "zambia-madido",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Madido (Wikidata).
-      }),
-      defineUniversity({
-        id: "zambia-madido-levy-mwanawasa-medical-university",
-        name: "Levy Mwanawasa Medical University",
-        cityId: "zambia-madido",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Madido (Wikidata).
       }),
   ],
 };

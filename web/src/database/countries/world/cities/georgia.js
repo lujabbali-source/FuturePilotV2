@@ -33,17 +33,9 @@ export default {
         id: "georgia-tbilisi-the-university-of-georgia",
         name: "The University of Georgia",
         cityId: "georgia-tbilisi",
-        website: null,
+        website: "http://www.uga.edu/",
         source: "open-dataset",
         // Situada a 5.9 km del centro de Tbilisi (Wikidata).
-      }),
-      defineUniversity({
-        id: "georgia-tbilisi-grigol-robakidze-university",
-        name: "Grigol Robakidze University",
-        cityId: "georgia-tbilisi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 12.2 km del centro de Tbilisi (Wikidata).
       }),
       defineUniversity({
         id: "georgia-tbilisi-agricultural-university-of-georgia",
@@ -126,6 +118,14 @@ export default {
         // Situada a 3.1 km del centro de Tbilisi (Wikidata).
       }),
       defineUniversity({
+        id: "georgia-tbilisi-tiflis-mikhailovskoe-infantry-school",
+        name: "Tiflis Mikhailovskoe infantry school",
+        cityId: "georgia-tbilisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.4 km del centro de Tbilisi (Wikidata).
+      }),
+      defineUniversity({
         id: "georgia-tbilisi-caucasus-university",
         name: "Caucasus University",
         cityId: "georgia-tbilisi",
@@ -181,6 +181,104 @@ export default {
         source: "open-dataset",
         // Situada a 4.7 km del centro de Tbilisi (Wikidata).
       }),
+      defineUniversity({
+        id: "georgia-tbilisi-new-vision-university",
+        name: "New Vision University",
+        cityId: "georgia-tbilisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tbilisi (Wikidata).
+      }),
+      defineUniversity({
+        id: "georgia-tbilisi-tbilisi-humanitarian-teaching-university",
+        name: "Tbilisi Humanitarian Teaching University",
+        cityId: "georgia-tbilisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tbilisi (Wikidata).
+      }),
+      defineUniversity({
+        id: "georgia-tbilisi-georgian-aviation-university",
+        name: "Georgian Aviation University",
+        cityId: "georgia-tbilisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tbilisi (Wikidata).
+      }),
+      defineUniversity({
+        id: "georgia-tbilisi-american-university-for-humanities",
+        name: "American University for Humanities",
+        cityId: "georgia-tbilisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tbilisi (Wikidata).
+      }),
+      defineUniversity({
+        id: "georgia-tbilisi-david-tvildiani-medical-university",
+        name: "David Tvildiani Medical University",
+        cityId: "georgia-tbilisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tbilisi (Wikidata).
+      }),
+      defineUniversity({
+        id: "georgia-tbilisi-sulkhan-saba-orbeliani-university",
+        name: "Sulkhan-Saba Orbeliani University",
+        cityId: "georgia-tbilisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tbilisi (Wikidata).
+      }),
+      defineUniversity({
+        id: "georgia-tbilisi-pr-school",
+        name: "PR School",
+        cityId: "georgia-tbilisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tbilisi (Wikidata).
+      }),
+  ],
+  "georgia-kutaisi": [
+      defineUniversity({
+        id: "georgia-kutaisi-georgian-state-university-of-subtropical-agriculture",
+        name: "Georgian State University of Subtropical Agriculture",
+        cityId: "georgia-kutaisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Kutaisi (Wikidata).
+      }),
+      defineUniversity({
+        id: "georgia-kutaisi-akaki-tsereteli-state-university",
+        name: "Akaki Tsereteli State University",
+        cityId: "georgia-kutaisi",
+        website: "http://www.atsu.edu.ge/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Kutaisi (Wikidata).
+      }),
+      defineUniversity({
+        id: "georgia-kutaisi-n-muskhelishvili-kutaisi-state-technical-university",
+        name: "N. Muskhelishvili Kutaisi State Technical University",
+        cityId: "georgia-kutaisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kutaisi (Wikidata).
+      }),
+      defineUniversity({
+        id: "georgia-kutaisi-central-university-of-europe",
+        name: "Central University of Europe",
+        cityId: "georgia-kutaisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kutaisi (Wikidata).
+      }),
+      defineUniversity({
+        id: "georgia-kutaisi-kutaisi-institute-of-medicine",
+        name: "Kutaisi Institute of Medicine",
+        cityId: "georgia-kutaisi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kutaisi (Wikidata).
+      }),
   ],
   "georgia-batumi": [
       defineUniversity({
@@ -206,24 +304,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.0 km del centro de Batumi (Wikidata).
-      }),
-  ],
-  "georgia-kutaisi": [
-      defineUniversity({
-        id: "georgia-kutaisi-georgian-state-university-of-subtropical-agriculture",
-        name: "Georgian State University of Subtropical Agriculture",
-        cityId: "georgia-kutaisi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Kutaisi (Wikidata).
-      }),
-      defineUniversity({
-        id: "georgia-kutaisi-akaki-tsereteli-state-university",
-        name: "Akaki Tsereteli State University",
-        cityId: "georgia-kutaisi",
-        website: "http://www.atsu.edu.ge/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Kutaisi (Wikidata).
       }),
   ],
   "georgia-gori": [

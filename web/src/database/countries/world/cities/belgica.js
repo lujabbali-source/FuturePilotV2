@@ -30,14 +30,6 @@ export default {
         // Situada a 0.2 km del centro de Leuven (Wikidata).
       }),
       defineUniversity({
-        id: "belgica-leuven-state-university-of-leuven",
-        name: "State University of Leuven",
-        cityId: "belgica-leuven",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Leuven (Wikidata).
-      }),
-      defineUniversity({
         id: "belgica-leuven-faculty-of-theology-catholic-university-of-louvain",
         name: "Faculty of Theology, Catholic University of Louvain",
         cityId: "belgica-leuven",
@@ -54,23 +46,23 @@ export default {
         // Situada a 0.2 km del centro de Leuven (Wikidata).
       }),
       defineUniversity({
-        id: "belgica-leuven-catholic-university-of-leuven-1834-1968",
-        name: "Catholic University of Leuven (1834–1968)",
+        id: "belgica-leuven-old-university-of-leuven",
+        name: "Old University of Leuven",
         cityId: "belgica-leuven",
         website: null,
         source: "open-dataset",
         // Situada a 0.2 km del centro de Leuven (Wikidata).
       }),
+      defineUniversity({
+        id: "belgica-leuven-katholieke-universiteit-leuven",
+        name: "Katholieke Universiteit Leuven",
+        cityId: "belgica-leuven",
+        website: "https://www.kuleuven.be/",
+        source: "open-dataset",
+        // Situada a None km del centro de Leuven (Wikidata).
+      }),
   ],
   "belgica-gent": [
-      defineUniversity({
-        id: "belgica-gent-ghent-university",
-        name: "Ghent University",
-        cityId: "belgica-gent",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Gent (Wikidata).
-      }),
       defineUniversity({
         id: "belgica-gent-ghent-university",
         name: "Ghent University",
@@ -87,6 +79,64 @@ export default {
         source: "open-dataset",
         // Situada a 0.8 km del centro de Gent (Wikidata).
       }),
+      defineUniversity({
+        id: "belgica-gent-vlaamsche-hoogeschool",
+        name: "Vlaamsche Hoogeschool",
+        cityId: "belgica-gent",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gent (Wikidata).
+      }),
+      defineUniversity({
+        id: "belgica-gent-reformed-academy-in-ghent",
+        name: "Reformed Academy in Ghent",
+        cityId: "belgica-gent",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gent (Wikidata).
+      }),
+  ],
+  "belgica-brussels": [
+      defineUniversity({
+        id: "belgica-brussels-new-university-of-brussels",
+        name: "New University of Brussels",
+        cityId: "belgica-brussels",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Brussels (Wikidata).
+      }),
+      defineUniversity({
+        id: "belgica-brussels-ecole-superieure-des-arts-de-l-image-le-75",
+        name: "École Supérieure des Arts de l'Image Le 75",
+        cityId: "belgica-brussels",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Brussels (Wikidata).
+      }),
+      defineUniversity({
+        id: "belgica-brussels-ecole-polytechnique-de-bruxelles",
+        name: "École polytechnique de Bruxelles",
+        cityId: "belgica-brussels",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Brussels (Wikidata).
+      }),
+      defineUniversity({
+        id: "belgica-brussels-brussels-school-of-international-studies",
+        name: "Brussels School of International Studies",
+        cityId: "belgica-brussels",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Brussels (Wikidata).
+      }),
+      defineUniversity({
+        id: "belgica-brussels-royal-military-and-mathematics-academy-of-brussels",
+        name: "Royal Military and Mathematics Academy of Brussels",
+        cityId: "belgica-brussels",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Brussels (Wikidata).
+      }),
   ],
   "belgica-etterbeek": [
       defineUniversity({
@@ -96,14 +146,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.2 km del centro de Etterbeek (Wikidata).
-      }),
-      defineUniversity({
-        id: "belgica-etterbeek-royal-military-academy",
-        name: "Royal Military Academy",
-        cityId: "belgica-etterbeek",
-        website: "http://www.rma.ac.be/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Etterbeek (Wikidata).
       }),
       defineUniversity({
         id: "belgica-etterbeek-royal-military-academy",
@@ -148,28 +190,20 @@ export default {
         // Situada a 0.5 km del centro de Namur (Wikidata).
       }),
       defineUniversity({
-        id: "belgica-namur-university-of-namur",
-        name: "University of Namur",
-        cityId: "belgica-namur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Namur (Wikidata).
-      }),
-      defineUniversity({
-        id: "belgica-namur-university-of-namur",
-        name: "University of Namur",
-        cityId: "belgica-namur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Namur (Wikidata).
-      }),
-      defineUniversity({
         id: "belgica-namur-cerefim",
         name: "CeReFiM",
         cityId: "belgica-namur",
         website: null,
         source: "open-dataset",
         // Situada a 0.7 km del centro de Namur (Wikidata).
+      }),
+      defineUniversity({
+        id: "belgica-namur-haute-ecole-de-la-province-de-namur",
+        name: "Haute Ecole de la Province de Namur",
+        cityId: "belgica-namur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Namur (Wikidata).
       }),
   ],
   "belgica-mons": [
@@ -197,15 +231,47 @@ export default {
         source: "open-dataset",
         // Situada a 0.3 km del centro de Mons (Wikidata).
       }),
-  ],
-  "belgica-heverlee": [
       defineUniversity({
-        id: "belgica-heverlee-evangelical-theological-faculty",
-        name: "Evangelical Theological Faculty",
-        cityId: "belgica-heverlee",
+        id: "belgica-mons-university-of-mons",
+        name: "University of Mons",
+        cityId: "belgica-mons",
         website: null,
         source: "open-dataset",
-        // Situada a 2.3 km del centro de Heverlee (Wikidata).
+        // Situada a None km del centro de Mons (Wikidata).
+      }),
+  ],
+  "belgica-antwerp": [
+      defineUniversity({
+        id: "belgica-antwerp-university-of-antwerp",
+        name: "University of Antwerp",
+        cityId: "belgica-antwerp",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Antwerp (Wikidata).
+      }),
+      defineUniversity({
+        id: "belgica-antwerp-saint-ignatius-university-centre-antwerp",
+        name: "Saint Ignatius University Centre, Antwerp",
+        cityId: "belgica-antwerp",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Antwerp (Wikidata).
+      }),
+      defineUniversity({
+        id: "belgica-antwerp-universitaire-faculteiten-sint-ignatius-antwerpen",
+        name: "Universitaire Faculteiten Sint-Ignatius Antwerpen",
+        cityId: "belgica-antwerp",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Antwerp (Wikidata).
+      }),
+      defineUniversity({
+        id: "belgica-antwerp-rijksuniversitair-centrum-antwerpen",
+        name: "Rijksuniversitair Centrum Antwerpen",
+        cityId: "belgica-antwerp",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Antwerp (Wikidata).
       }),
   ],
   "belgica-mechelen": [
@@ -224,6 +290,44 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.5 km del centro de Mechelen (Wikidata).
+      }),
+      defineUniversity({
+        id: "belgica-mechelen-catholic-university-of-mechlin",
+        name: "Catholic University of Mechlin",
+        cityId: "belgica-mechelen",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mechelen (Wikidata).
+      }),
+  ],
+  "belgica-heverlee": [
+      defineUniversity({
+        id: "belgica-heverlee-evangelical-theological-faculty",
+        name: "Evangelical Theological Faculty",
+        cityId: "belgica-heverlee",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Heverlee (Wikidata).
+      }),
+  ],
+  "belgica-woluwe-saint-lambert": [
+      defineUniversity({
+        id: "belgica-woluwe-saint-lambert-ecole-pratique-des-hautes-etudes-commerciales",
+        name: "École pratique des hautes études commerciales",
+        cityId: "belgica-woluwe-saint-lambert",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Woluwe-Saint-Lambert (Wikidata).
+      }),
+  ],
+  "belgica-tournai": [
+      defineUniversity({
+        id: "belgica-tournai-seminary-of-tournai",
+        name: "Seminary of Tournai",
+        cityId: "belgica-tournai",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Tournai (Wikidata).
       }),
   ],
   "belgica-louvain-la-neuve": [
@@ -252,24 +356,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.3 km del centro de Liège (Wikidata).
-      }),
-  ],
-  "belgica-antwerp": [
-      defineUniversity({
-        id: "belgica-antwerp-university-of-antwerp",
-        name: "University of Antwerp",
-        cityId: "belgica-antwerp",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Antwerp (Wikidata).
-      }),
-      defineUniversity({
-        id: "belgica-antwerp-saint-ignatius-university-centre-antwerp",
-        name: "Saint Ignatius University Centre, Antwerp",
-        cityId: "belgica-antwerp",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Antwerp (Wikidata).
       }),
   ],
 };

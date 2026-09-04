@@ -12,6 +12,114 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
+  "republica-checa-prague": [
+      defineUniversity({
+        id: "republica-checa-prague-german-university-in-prague",
+        name: "German University in Prague",
+        cityId: "republica-checa-prague",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Prague (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-checa-prague-charles-university",
+        name: "Charles University",
+        cityId: "republica-checa-prague",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Prague (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-checa-prague-academy-of-performing-arts",
+        name: "Academy of Performing Arts",
+        cityId: "republica-checa-prague",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Prague (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-checa-prague-russian-institute-for-agricultural-cooperation",
+        name: "Russian Institute for Agricultural Cooperation",
+        cityId: "republica-checa-prague",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Prague (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-checa-prague-russian-free-university",
+        name: "Russian Free University",
+        cityId: "republica-checa-prague",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Prague (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-checa-prague-czech-college",
+        name: "Czech College",
+        cityId: "republica-checa-prague",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Prague (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-checa-prague-police-academy-of-the-czech-republic",
+        name: "Police Academy of the Czech Republic",
+        cityId: "republica-checa-prague",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Prague (Wikidata).
+      }),
+  ],
+  "republica-checa-brno": [
+      defineUniversity({
+        id: "republica-checa-brno-brno-university-of-technology",
+        name: "Brno University of Technology",
+        cityId: "republica-checa-brno",
+        website: "https://www.vutbr.cz/",
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Brno (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-checa-brno-german-technical-university-in-brno",
+        name: "German Technical University in Brno",
+        cityId: "republica-checa-brno",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Brno (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-checa-brno-janacek-academy-of-music-and-performing-arts",
+        name: "Janáček Academy of Music and Performing Arts",
+        cityId: "republica-checa-brno",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Brno (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-checa-brno-masaryk-university",
+        name: "Masaryk University",
+        cityId: "republica-checa-brno",
+        website: "https://www.muni.cz/",
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Brno (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-checa-brno-jesuit-college-in-brno",
+        name: "Jesuit college in Brno",
+        cityId: "republica-checa-brno",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Brno (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-checa-brno-university-of-veterinary-sciences-brno",
+        name: "University of Veterinary Sciences Brno",
+        cityId: "republica-checa-brno",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Brno (Wikidata).
+      }),
+  ],
   "republica-checa-olomouc": [
       defineUniversity({
         id: "republica-checa-olomouc-jesuit-college-building-in-olomouc",
@@ -46,90 +154,38 @@ export default {
         // Situada a 0.2 km del centro de Olomouc (Wikidata).
       }),
   ],
-  "republica-checa-brno": [
+  "republica-checa-dejvice": [
       defineUniversity({
-        id: "republica-checa-brno-brno-university-of-technology",
-        name: "Brno University of Technology",
-        cityId: "republica-checa-brno",
-        website: "https://www.vutbr.cz/",
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Brno (Wikidata).
-      }),
-      defineUniversity({
-        id: "republica-checa-brno-janacek-academy-of-music-and-performing-arts",
-        name: "Janáček Academy of Music and Performing Arts",
-        cityId: "republica-checa-brno",
+        id: "republica-checa-dejvice-catholic-theological-faculty-of-charles-university",
+        name: "Catholic Theological Faculty of Charles University",
+        cityId: "republica-checa-dejvice",
         website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de Brno (Wikidata).
+        // Situada a 0.3 km del centro de Dejvice (Wikidata).
       }),
       defineUniversity({
-        id: "republica-checa-brno-masaryk-university",
-        name: "Masaryk University",
-        cityId: "republica-checa-brno",
-        website: "https://www.muni.cz/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Brno (Wikidata).
-      }),
-      defineUniversity({
-        id: "republica-checa-brno-jesuit-college-in-brno",
-        name: "Jesuit college in Brno",
-        cityId: "republica-checa-brno",
+        id: "republica-checa-dejvice-czech-technical-university-in-prague",
+        name: "Czech Technical University in Prague",
+        cityId: "republica-checa-dejvice",
         website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de Brno (Wikidata).
-      }),
-  ],
-  "republica-checa-zizkov": [
-      defineUniversity({
-        id: "republica-checa-zizkov-prague-university-of-economics-and-business",
-        name: "Prague University of Economics and Business",
-        cityId: "republica-checa-zizkov",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Žižkov (Wikidata).
+        // Situada a 0.2 km del centro de Dejvice (Wikidata).
       }),
       defineUniversity({
-        id: "republica-checa-zizkov-prague-university-of-economics-and-business",
-        name: "Prague University of Economics and Business",
-        cityId: "republica-checa-zizkov",
+        id: "republica-checa-dejvice-university-of-chemistry-and-technology",
+        name: "University of Chemistry and Technology",
+        cityId: "republica-checa-dejvice",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Žižkov (Wikidata).
+        // Situada a 0.3 km del centro de Dejvice (Wikidata).
       }),
       defineUniversity({
-        id: "republica-checa-zizkov-unicorn-university",
-        name: "Unicorn University",
-        cityId: "republica-checa-zizkov",
+        id: "republica-checa-dejvice-war-college",
+        name: "War College",
+        cityId: "republica-checa-dejvice",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Žižkov (Wikidata).
-      }),
-  ],
-  "republica-checa-prague": [
-      defineUniversity({
-        id: "republica-checa-prague-charles-university",
-        name: "Charles University",
-        cityId: "republica-checa-prague",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Prague (Wikidata).
-      }),
-      defineUniversity({
-        id: "republica-checa-prague-charles-university",
-        name: "Charles University",
-        cityId: "republica-checa-prague",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Prague (Wikidata).
-      }),
-      defineUniversity({
-        id: "republica-checa-prague-academy-of-performing-arts",
-        name: "Academy of Performing Arts",
-        cityId: "republica-checa-prague",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Prague (Wikidata).
+        // Situada a 1.0 km del centro de Dejvice (Wikidata).
       }),
   ],
   "republica-checa-nove-mesto": [
@@ -184,32 +240,6 @@ export default {
         // Situada a 0.1 km del centro de Jihlava (Wikidata).
       }),
   ],
-  "republica-checa-dejvice": [
-      defineUniversity({
-        id: "republica-checa-dejvice-catholic-theological-faculty-of-charles-university",
-        name: "Catholic Theological Faculty of Charles University",
-        cityId: "republica-checa-dejvice",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Dejvice (Wikidata).
-      }),
-      defineUniversity({
-        id: "republica-checa-dejvice-czech-technical-university-in-prague",
-        name: "Czech Technical University in Prague",
-        cityId: "republica-checa-dejvice",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Dejvice (Wikidata).
-      }),
-      defineUniversity({
-        id: "republica-checa-dejvice-university-of-chemistry-and-technology",
-        name: "University of Chemistry and Technology",
-        cityId: "republica-checa-dejvice",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Dejvice (Wikidata).
-      }),
-  ],
   "republica-checa-ceske-budejovice": [
       defineUniversity({
         id: "republica-checa-ceske-budejovice-university-of-south-bohemia-in-ceske-budejovice",
@@ -236,6 +266,24 @@ export default {
         // Situada a 21.5 km del centro de České Budějovice (Wikidata).
       }),
   ],
+  "republica-checa-zizkov": [
+      defineUniversity({
+        id: "republica-checa-zizkov-prague-university-of-economics-and-business",
+        name: "Prague University of Economics and Business",
+        cityId: "republica-checa-zizkov",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Žižkov (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-checa-zizkov-unicorn-university",
+        name: "Unicorn University",
+        cityId: "republica-checa-zizkov",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Žižkov (Wikidata).
+      }),
+  ],
   "republica-checa-pilsen": [
       defineUniversity({
         id: "republica-checa-pilsen-university-of-west-bohemia",
@@ -246,12 +294,22 @@ export default {
         // Situada a 3.6 km del centro de Pilsen (Wikidata).
       }),
       defineUniversity({
-        id: "republica-checa-pilsen-university-of-west-bohemia",
-        name: "University of West Bohemia",
+        id: "republica-checa-pilsen-school-of-mechanical-and-electrical-engineering-in-plzen",
+        name: "School of Mechanical and Electrical Engineering in Plzeň",
         cityId: "republica-checa-pilsen",
-        website: "http://www.zcu.cz/",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.6 km del centro de Pilsen (Wikidata).
+        // Situada a None km del centro de Pilsen (Wikidata).
+      }),
+  ],
+  "republica-checa-opava": [
+      defineUniversity({
+        id: "republica-checa-opava-silesian-university-in-opava",
+        name: "Silesian University in Opava",
+        cityId: "republica-checa-opava",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Opava (Wikidata).
       }),
   ],
   "republica-checa-jindrichuv-hradec": [

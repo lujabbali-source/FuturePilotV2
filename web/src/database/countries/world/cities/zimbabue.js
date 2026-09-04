@@ -30,14 +30,6 @@ export default {
         // Situada a 4.9 km del centro de Harare (Wikidata).
       }),
       defineUniversity({
-        id: "zimbabue-harare-harare-institute-of-technology",
-        name: "Harare Institute of Technology",
-        cityId: "zimbabue-harare",
-        website: "http://www.hit.ac.zw/",
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Harare (Wikidata).
-      }),
-      defineUniversity({
         id: "zimbabue-harare-university-of-zimbabwe",
         name: "University of Zimbabwe",
         cityId: "zimbabue-harare",
@@ -60,6 +52,14 @@ export default {
         website: "http://www.zou.ac.zw/",
         source: "open-dataset",
         // Situada a 5.0 km del centro de Harare (Wikidata).
+      }),
+      defineUniversity({
+        id: "zimbabue-harare-women-s-university-in-africa",
+        name: "Women's University in Africa",
+        cityId: "zimbabue-harare",
+        website: "http://www.wua.ac.zw/",
+        source: "open-dataset",
+        // Situada a None km del centro de Harare (Wikidata).
       }),
   ],
   "zimbabue-masvingo": [
@@ -96,6 +96,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 6.3 km del centro de Bulawayo (Wikidata).
+      }),
+  ],
+  "zimbabue-bindura": [
+      defineUniversity({
+        id: "zimbabue-bindura-bindura-university-of-science-education",
+        name: "Bindura University of Science Education",
+        cityId: "zimbabue-bindura",
+        website: "http://www.buse.ac.zw/",
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Bindura (Wikidata).
+      }),
+      defineUniversity({
+        id: "zimbabue-bindura-zimbabwe-ezekiel-guti-university",
+        name: "Zimbabwe Ezekiel Guti University",
+        cityId: "zimbabue-bindura",
+        website: "http://www.zegu.ac.zw/",
+        source: "open-dataset",
+        // Situada a None km del centro de Bindura (Wikidata).
       }),
   ],
 };

@@ -46,20 +46,20 @@ export default {
         // Situada a 12.7 km del centro de Chattogram (Wikidata).
       }),
       defineUniversity({
+        id: "banglades-chattogram-jamiatul-uloom-al-islamia-lalkhan-bazar",
+        name: "Jamiatul Uloom Al-Islamia Lalkhan Bazar",
+        cityId: "banglades-chattogram",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Chattogram (Wikidata).
+      }),
+      defineUniversity({
         id: "banglades-chattogram-chittagong-independent-university",
         name: "Chittagong Independent University",
         cityId: "banglades-chattogram",
         website: null,
         source: "open-dataset",
         // Situada a 0.9 km del centro de Chattogram (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-chattogram-chittagong-medical-university",
-        name: "Chittagong Medical University",
-        cityId: "banglades-chattogram",
-        website: "https://cmu.edu.bd/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Chattogram (Wikidata).
       }),
       defineUniversity({
         id: "banglades-chattogram-chittagong-medical-university",
@@ -126,6 +126,14 @@ export default {
         // Situada a 2.8 km del centro de Chattogram (Wikidata).
       }),
       defineUniversity({
+        id: "banglades-chattogram-chittagong-mohila-polytechnic-institute",
+        name: "Chittagong Mohila Polytechnic Institute",
+        cityId: "banglades-chattogram",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.8 km del centro de Chattogram (Wikidata).
+      }),
+      defineUniversity({
         id: "banglades-chattogram-jamia-darul-ma-arif-al-islamia",
         name: "Jamia Darul Ma'arif Al-Islamia",
         cityId: "banglades-chattogram",
@@ -166,14 +174,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.6 km del centro de Dhanmondi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-dhanmondi-islamic-arabic-university",
-        name: "Islamic Arabic University",
-        cityId: "banglades-dhanmondi",
-        website: "http://iau.edu.bd/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Dhanmondi (Wikidata).
       }),
       defineUniversity({
         id: "banglades-dhanmondi-islamic-arabic-university",
@@ -267,7 +267,7 @@ export default {
         id: "banglades-dhanmondi-university-of-asia-pacific",
         name: "University of Asia Pacific",
         cityId: "banglades-dhanmondi",
-        website: null,
+        website: "http://www.uap.edu.ph/",
         source: "open-dataset",
         // Situada a 1.7 km del centro de Dhanmondi (Wikidata).
       }),
@@ -295,6 +295,22 @@ export default {
         source: "open-dataset",
         // Situada a 1.2 km del centro de Dhanmondi (Wikidata).
       }),
+      defineUniversity({
+        id: "banglades-dhanmondi-international-islami-university-of-science-and-technology-bangladesh",
+        name: "International Islami University of Science and Technology Bangladesh",
+        cityId: "banglades-dhanmondi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dhanmondi (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-dhanmondi-america-bangladesh-university",
+        name: "America Bangladesh University",
+        cityId: "banglades-dhanmondi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dhanmondi (Wikidata).
+      }),
   ],
   "banglades-kafrul": [
       defineUniversity({
@@ -314,8 +330,8 @@ export default {
         // Situada a 0.9 km del centro de Kafrul (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-kafrul-dhaka-central-university",
-        name: "Dhaka Central University",
+        id: "banglades-kafrul-dhaka-mohila-polytechnic-institute",
+        name: "Dhaka Mohila Polytechnic Institute",
         cityId: "banglades-kafrul",
         website: null,
         source: "open-dataset",
@@ -416,112 +432,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.9 km del centro de Kafrul (Wikidata).
-      }),
-  ],
-  "banglades-tungi": [
-      defineUniversity({
-        id: "banglades-tungi-tagore-university-of-creative-arts",
-        name: "Tagore University of Creative Arts",
-        cityId: "banglades-tungi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Tungi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-tungi-aeronautical-college-of-bangladesh",
-        name: "Aeronautical College of Bangladesh",
-        cityId: "banglades-tungi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Tungi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-tungi-asian-university-of-bangladesh",
-        name: "Asian University of Bangladesh",
-        cityId: "banglades-tungi",
-        website: "http://www.aub-bd.org/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Tungi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-tungi-atish-dipankar-university-of-science-and-technology",
-        name: "Atish Dipankar University of Science and Technology",
-        cityId: "banglades-tungi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Tungi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-tungi-bgmea-university-of-fashion-technology",
-        name: "BGMEA University of Fashion & Technology",
-        cityId: "banglades-tungi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Tungi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-tungi-college-of-aviation-technology",
-        name: "College of Aviation & Technology",
-        cityId: "banglades-tungi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Tungi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-tungi-international-university-of-business-agriculture-and-technology",
-        name: "International University of Business Agriculture and Technology",
-        cityId: "banglades-tungi",
-        website: "http://www.iubat.edu/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Tungi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-tungi-islamic-university-of-technology",
-        name: "Islamic University of Technology",
-        cityId: "banglades-tungi",
-        website: "http://www.iutoic-dhaka.edu/",
-        source: "open-dataset",
-        // Situada a 6.7 km del centro de Tungi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-tungi-islamic-university-of-technology",
-        name: "Islamic University of Technology",
-        cityId: "banglades-tungi",
-        website: "http://www.iutoic-dhaka.edu/",
-        source: "open-dataset",
-        // Situada a 6.7 km del centro de Tungi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-tungi-northern-university-bangladesh",
-        name: "Northern University Bangladesh",
-        cityId: "banglades-tungi",
-        website: "http://www.nub.ac.bd/",
-        source: "open-dataset",
-        // Situada a 5.2 km del centro de Tungi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-tungi-shanto-mariam-university-of-creative-technology",
-        name: "Shanto-Mariam University of Creative Technology",
-        cityId: "banglades-tungi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Tungi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-tungi-uttara-university",
-        name: "Uttara University",
-        cityId: "banglades-tungi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Tungi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-tungi-uttara-university",
-        name: "Uttara University",
-        cityId: "banglades-tungi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Tungi (Wikidata).
       }),
   ],
   "banglades-bhatara": [
@@ -630,94 +540,94 @@ export default {
         // Situada a 2.7 km del centro de Bhatara (Wikidata).
       }),
   ],
-  "banglades-sylhet": [
+  "banglades-tungi": [
       defineUniversity({
-        id: "banglades-sylhet-north-east-university-bangladesh",
-        name: "North East University Bangladesh",
-        cityId: "banglades-sylhet",
-        website: "http://www.neub.edu.bd/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Sylhet (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-sylhet-shahjalal-university-of-science-and-technology",
-        name: "Shahjalal University of Science and Technology",
-        cityId: "banglades-sylhet",
-        website: "http://www.sust.edu/",
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Sylhet (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-sylhet-sylhet-medical-university",
-        name: "Sylhet Medical University",
-        cityId: "banglades-sylhet",
+        id: "banglades-tungi-tagore-university-of-creative-arts",
+        name: "Tagore University of Creative Arts",
+        cityId: "banglades-tungi",
         website: null,
         source: "open-dataset",
-        // Situada a 9.6 km del centro de Sylhet (Wikidata).
+        // Situada a 2.7 km del centro de Tungi (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-sylhet-sylhet-medical-university",
-        name: "Sylhet Medical University",
-        cityId: "banglades-sylhet",
+        id: "banglades-tungi-aeronautical-college-of-bangladesh",
+        name: "Aeronautical College of Bangladesh",
+        cityId: "banglades-tungi",
         website: null,
         source: "open-dataset",
-        // Situada a 9.6 km del centro de Sylhet (Wikidata).
+        // Situada a 2.4 km del centro de Tungi (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-sylhet-jamia-madania-angura-mohammadpur",
-        name: "Jamia Madania Angura Mohammadpur",
-        cityId: "banglades-sylhet",
+        id: "banglades-tungi-asian-university-of-bangladesh",
+        name: "Asian University of Bangladesh",
+        cityId: "banglades-tungi",
+        website: "http://www.aub-bd.org/",
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Tungi (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-tungi-atish-dipankar-university-of-science-and-technology",
+        name: "Atish Dipankar University of Science and Technology",
+        cityId: "banglades-tungi",
         website: null,
         source: "open-dataset",
-        // Situada a 25.2 km del centro de Sylhet (Wikidata).
+        // Situada a 3.7 km del centro de Tungi (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-sylhet-jamia-tawakkulia-renga-madrasah",
-        name: "Jamia Tawakkulia Renga Madrasah",
-        cityId: "banglades-sylhet",
+        id: "banglades-tungi-bgmea-university-of-fashion-technology",
+        name: "BGMEA University of Fashion & Technology",
+        cityId: "banglades-tungi",
         website: null,
         source: "open-dataset",
-        // Situada a 12.8 km del centro de Sylhet (Wikidata).
+        // Situada a 2.0 km del centro de Tungi (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-sylhet-leading-university",
-        name: "Leading University",
-        cityId: "banglades-sylhet",
-        website: "http://www.lus.ac.bd/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Sylhet (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-sylhet-metropolitan-university",
-        name: "Metropolitan University",
-        cityId: "banglades-sylhet",
-        website: "http://www.metrouni.edu.bd/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Sylhet (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-sylhet-sylhet-agricultural-university",
-        name: "Sylhet Agricultural University",
-        cityId: "banglades-sylhet",
-        website: "http://www.sau.ac.bd/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Sylhet (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-sylhet-sylhet-government-polytechnic-institute",
-        name: "Sylhet Government Polytechnic Institute",
-        cityId: "banglades-sylhet",
+        id: "banglades-tungi-college-of-aviation-technology",
+        name: "College of Aviation & Technology",
+        cityId: "banglades-tungi",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Sylhet (Wikidata).
+        // Situada a 2.1 km del centro de Tungi (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-sylhet-sylhet-international-university",
-        name: "Sylhet International University",
-        cityId: "banglades-sylhet",
-        website: "http://www.siu.edu.bd/",
+        id: "banglades-tungi-international-university-of-business-agriculture-and-technology",
+        name: "International University of Business Agriculture and Technology",
+        cityId: "banglades-tungi",
+        website: "http://www.iubat.edu/",
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Sylhet (Wikidata).
+        // Situada a 1.2 km del centro de Tungi (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-tungi-islamic-university-of-technology",
+        name: "Islamic University of Technology",
+        cityId: "banglades-tungi",
+        website: "http://www.iutoic-dhaka.edu/",
+        source: "open-dataset",
+        // Situada a 6.7 km del centro de Tungi (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-tungi-northern-university-bangladesh",
+        name: "Northern University Bangladesh",
+        cityId: "banglades-tungi",
+        website: "http://www.nub.ac.bd/",
+        source: "open-dataset",
+        // Situada a 5.2 km del centro de Tungi (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-tungi-shanto-mariam-university-of-creative-technology",
+        name: "Shanto-Mariam University of Creative Technology",
+        cityId: "banglades-tungi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Tungi (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-tungi-uttara-university",
+        name: "Uttara University",
+        cityId: "banglades-tungi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Tungi (Wikidata).
       }),
   ],
   "banglades-khulna": [
@@ -794,89 +704,105 @@ export default {
         // Situada a 1.3 km del centro de Khulna (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-khulna-khulna-medical-university",
-        name: "Khulna Medical University",
+        id: "banglades-khulna-khulna-city-medical-college-hospital",
+        name: "Khulna City Medical College Hospital",
         cityId: "banglades-khulna",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Khulna (Wikidata).
+        // Situada a None km del centro de Khulna (Wikidata).
       }),
   ],
-  "banglades-gazipur": [
+  "banglades-sylhet": [
       defineUniversity({
-        id: "banglades-gazipur-shariatpur-agricultural-university",
-        name: "Shariatpur Agricultural University",
-        cityId: "banglades-gazipur",
+        id: "banglades-sylhet-north-east-university-bangladesh",
+        name: "North East University Bangladesh",
+        cityId: "banglades-sylhet",
+        website: "http://www.neub.edu.bd/",
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Sylhet (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-sylhet-shahjalal-university-of-science-and-technology",
+        name: "Shahjalal University of Science and Technology",
+        cityId: "banglades-sylhet",
+        website: "http://www.sust.edu/",
+        source: "open-dataset",
+        // Situada a 4.3 km del centro de Sylhet (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-sylhet-sylhet-medical-university",
+        name: "Sylhet Medical University",
+        cityId: "banglades-sylhet",
         website: null,
         source: "open-dataset",
-        // Situada a 5.0 km del centro de Gazipur (Wikidata).
+        // Situada a 9.6 km del centro de Sylhet (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-gazipur-dhaka-university-of-engineering-technology",
-        name: "Dhaka University of Engineering & Technology",
-        cityId: "banglades-gazipur",
-        website: "http://www.duet.ac.bd/",
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Gazipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-gazipur-gazipur-agricultural-university",
-        name: "Gazipur Agricultural University",
-        cityId: "banglades-gazipur",
-        website: "https://gau.edu.bd/",
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Gazipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-gazipur-national-university",
-        name: "National University",
-        cityId: "banglades-gazipur",
-        website: "http://www.nu.edu.bd/",
-        source: "open-dataset",
-        // Situada a 6.4 km del centro de Gazipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-gazipur-national-university",
-        name: "National University",
-        cityId: "banglades-gazipur",
-        website: "http://www.nu.edu.bd/",
-        source: "open-dataset",
-        // Situada a 6.4 km del centro de Gazipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-gazipur-national-university",
-        name: "National University",
-        cityId: "banglades-gazipur",
-        website: "http://www.nu.edu.bd/",
-        source: "open-dataset",
-        // Situada a 6.4 km del centro de Gazipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-gazipur-bangladesh-open-university",
-        name: "Bangladesh Open University",
-        cityId: "banglades-gazipur",
-        website: "http://www.bou.edu.bd/",
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Gazipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-gazipur-bangladesh-open-university",
-        name: "Bangladesh Open University",
-        cityId: "banglades-gazipur",
-        website: "http://www.bou.edu.bd/",
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Gazipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-gazipur-german-university-bangladesh",
-        name: "German University Bangladesh",
-        cityId: "banglades-gazipur",
+        id: "banglades-sylhet-jamia-tawakkulia-renga-madrasah",
+        name: "Jamia Tawakkulia Renga Madrasah",
+        cityId: "banglades-sylhet",
         website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Gazipur (Wikidata).
+        // Situada a 12.8 km del centro de Sylhet (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-sylhet-leading-university",
+        name: "Leading University",
+        cityId: "banglades-sylhet",
+        website: "http://www.lus.ac.bd/",
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Sylhet (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-sylhet-metropolitan-university",
+        name: "Metropolitan University",
+        cityId: "banglades-sylhet",
+        website: "http://www.metrouni.edu.bd/",
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Sylhet (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-sylhet-sylhet-agricultural-university",
+        name: "Sylhet Agricultural University",
+        cityId: "banglades-sylhet",
+        website: "http://www.sau.ac.bd/",
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Sylhet (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-sylhet-sylhet-government-polytechnic-institute",
+        name: "Sylhet Government Polytechnic Institute",
+        cityId: "banglades-sylhet",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Sylhet (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-sylhet-sylhet-international-university",
+        name: "Sylhet International University",
+        cityId: "banglades-sylhet",
+        website: "http://www.siu.edu.bd/",
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Sylhet (Wikidata).
       }),
   ],
   "banglades-rajshahi": [
+      defineUniversity({
+        id: "banglades-rajshahi-nibedita-institute-of-technology",
+        name: "Nibedita Institute of Technology",
+        cityId: "banglades-rajshahi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 20.9 km del centro de Rajshahi (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-rajshahi-paradise-institute-of-technology",
+        name: "Paradise Institute of Technology",
+        cityId: "banglades-rajshahi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 20.8 km del centro de Rajshahi (Wikidata).
+      }),
       defineUniversity({
         id: "banglades-rajshahi-varendra-university",
         name: "Varendra University",
@@ -926,86 +852,12 @@ export default {
         // Situada a 1.7 km del centro de Rajshahi (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-rajshahi-rajshahi-medical-university",
-        name: "Rajshahi Medical University",
-        cityId: "banglades-rajshahi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Rajshahi (Wikidata).
-      }),
-      defineUniversity({
         id: "banglades-rajshahi-rajshahi-university-of-engineering-technology",
         name: "Rajshahi University of Engineering & Technology",
         cityId: "banglades-rajshahi",
         website: "http://www.ruet.ac.bd/",
         source: "open-dataset",
         // Situada a 3.0 km del centro de Rajshahi (Wikidata).
-      }),
-  ],
-  "banglades-pallabi": [
-      defineUniversity({
-        id: "banglades-pallabi-bangladesh-maritime-university",
-        name: "Bangladesh Maritime University",
-        cityId: "banglades-pallabi",
-        website: "https://bmu.edu.bd/",
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Pallabi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-pallabi-bangladesh-maritime-university",
-        name: "Bangladesh Maritime University",
-        cityId: "banglades-pallabi",
-        website: "https://bmu.edu.bd/",
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Pallabi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-pallabi-defence-services-command-and-staff-college-bangladesh",
-        name: "Defence Services Command and Staff College (Bangladesh)",
-        cityId: "banglades-pallabi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Pallabi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-pallabi-defence-services-command-and-staff-college-bangladesh",
-        name: "Defence Services Command and Staff College (Bangladesh)",
-        cityId: "banglades-pallabi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Pallabi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-pallabi-bangladesh-university-of-professionals",
-        name: "Bangladesh University of Professionals",
-        cityId: "banglades-pallabi",
-        website: "http://www.bup.edu.bd/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Pallabi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-pallabi-daffodil-international-university",
-        name: "Daffodil International University",
-        cityId: "banglades-pallabi",
-        website: "http://www.daffodilvarsity.edu.bd/",
-        source: "open-dataset",
-        // Situada a 7.7 km del centro de Pallabi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-pallabi-military-institute-of-science-and-technology",
-        name: "Military Institute of Science and Technology",
-        cityId: "banglades-pallabi",
-        website: "http://www.mist.ac.bd/",
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Pallabi (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-pallabi-world-university-of-bangladesh",
-        name: "World University of Bangladesh",
-        cityId: "banglades-pallabi",
-        website: "http://www.wub.edu/",
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Pallabi (Wikidata).
       }),
   ],
   "banglades-comilla": [
@@ -1058,54 +910,104 @@ export default {
         // Situada a 6.8 km del centro de Comilla (Wikidata).
       }),
   ],
-  "banglades-kushtia": [
+  "banglades-gazipur": [
       defineUniversity({
-        id: "banglades-kushtia-rabindra-maitree-university",
-        name: "Rabindra Maitree University",
-        cityId: "banglades-kushtia",
+        id: "banglades-gazipur-shariatpur-agricultural-university",
+        name: "Shariatpur Agricultural University",
+        cityId: "banglades-gazipur",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Kushtia (Wikidata).
+        // Situada a 5.0 km del centro de Gazipur (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-kushtia-lalon-university-of-science-and-arts",
-        name: "Lalon University of Science and Arts",
-        cityId: "banglades-kushtia",
-        website: null,
+        id: "banglades-gazipur-dhaka-university-of-engineering-technology",
+        name: "Dhaka University of Engineering & Technology",
+        cityId: "banglades-gazipur",
+        website: "http://www.duet.ac.bd/",
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Kushtia (Wikidata).
+        // Situada a 2.4 km del centro de Gazipur (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-kushtia-justice-abu-jafor-siddiqui-university-of-science-and-technology",
-        name: "Justice Abu Jafor Siddiqui University of Science and Technology",
-        cityId: "banglades-kushtia",
-        website: null,
+        id: "banglades-gazipur-gazipur-agricultural-university",
+        name: "Gazipur Agricultural University",
+        cityId: "banglades-gazipur",
+        website: "https://gau.edu.bd/",
         source: "open-dataset",
-        // Situada a 4.4 km del centro de Kushtia (Wikidata).
+        // Situada a 5.0 km del centro de Gazipur (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-kushtia-kushtia-polytechnic-institute",
-        name: "Kushtia Polytechnic Institute",
-        cityId: "banglades-kushtia",
-        website: null,
+        id: "banglades-gazipur-national-university",
+        name: "National University",
+        cityId: "banglades-gazipur",
+        website: "http://www.nu.edu.bd/",
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Kushtia (Wikidata).
+        // Situada a 6.4 km del centro de Gazipur (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-kushtia-islamic-university-bangladesh",
-        name: "Islamic University, Bangladesh",
-        cityId: "banglades-kushtia",
-        website: null,
+        id: "banglades-gazipur-bangladesh-open-university",
+        name: "Bangladesh Open University",
+        cityId: "banglades-gazipur",
+        website: "http://www.bou.edu.bd/",
         source: "open-dataset",
-        // Situada a 20.4 km del centro de Kushtia (Wikidata).
+        // Situada a 6.8 km del centro de Gazipur (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-kushtia-islamic-university-bangladesh",
-        name: "Islamic University, Bangladesh",
-        cityId: "banglades-kushtia",
+        id: "banglades-gazipur-german-university-bangladesh",
+        name: "German University Bangladesh",
+        cityId: "banglades-gazipur",
         website: null,
         source: "open-dataset",
-        // Situada a 20.4 km del centro de Kushtia (Wikidata).
+        // Situada a 4.0 km del centro de Gazipur (Wikidata).
+      }),
+  ],
+  "banglades-pallabi": [
+      defineUniversity({
+        id: "banglades-pallabi-bangladesh-maritime-university",
+        name: "Bangladesh Maritime University",
+        cityId: "banglades-pallabi",
+        website: "https://bmu.edu.bd/",
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Pallabi (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-pallabi-defence-services-command-and-staff-college-bangladesh",
+        name: "Defence Services Command and Staff College (Bangladesh)",
+        cityId: "banglades-pallabi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Pallabi (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-pallabi-bangladesh-university-of-professionals",
+        name: "Bangladesh University of Professionals",
+        cityId: "banglades-pallabi",
+        website: "http://www.bup.edu.bd/",
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Pallabi (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-pallabi-daffodil-international-university",
+        name: "Daffodil International University",
+        cityId: "banglades-pallabi",
+        website: "http://www.daffodilvarsity.edu.bd/",
+        source: "open-dataset",
+        // Situada a 7.7 km del centro de Pallabi (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-pallabi-military-institute-of-science-and-technology",
+        name: "Military Institute of Science and Technology",
+        cityId: "banglades-pallabi",
+        website: "http://www.mist.ac.bd/",
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Pallabi (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-pallabi-world-university-of-bangladesh",
+        name: "World University of Bangladesh",
+        cityId: "banglades-pallabi",
+        website: "http://www.wub.edu/",
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Pallabi (Wikidata).
       }),
   ],
   "banglades-paltan": [
@@ -1156,6 +1058,48 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.1 km del centro de Paltan (Wikidata).
+      }),
+  ],
+  "banglades-kushtia": [
+      defineUniversity({
+        id: "banglades-kushtia-rabindra-maitree-university",
+        name: "Rabindra Maitree University",
+        cityId: "banglades-kushtia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Kushtia (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-kushtia-lalon-university-of-science-and-arts",
+        name: "Lalon University of Science and Arts",
+        cityId: "banglades-kushtia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Kushtia (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-kushtia-justice-abu-jafor-siddiqui-university-of-science-and-technology",
+        name: "Justice Abu Jafor Siddiqui University of Science and Technology",
+        cityId: "banglades-kushtia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.4 km del centro de Kushtia (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-kushtia-kushtia-polytechnic-institute",
+        name: "Kushtia Polytechnic Institute",
+        cityId: "banglades-kushtia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Kushtia (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-kushtia-islamic-university-bangladesh",
+        name: "Islamic University, Bangladesh",
+        cityId: "banglades-kushtia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 20.4 km del centro de Kushtia (Wikidata).
       }),
   ],
   "banglades-barishal": [
@@ -1242,48 +1186,6 @@ export default {
         // Situada a 4.1 km del centro de Savar (Wikidata).
       }),
   ],
-  "banglades-hathazari": [
-      defineUniversity({
-        id: "banglades-hathazari-al-jameatul-islamia-qasemul-uloom-charia",
-        name: "Al-Jameatul-Islamia Qasemul Uloom Charia",
-        cityId: "banglades-hathazari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Hāthazāri (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-hathazari-international-islamic-university-chittagong",
-        name: "International Islamic University Chittagong",
-        cityId: "banglades-hathazari",
-        website: "http://www.iiuc.ac.bd/",
-        source: "open-dataset",
-        // Situada a 9.5 km del centro de Hāthazāri (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-hathazari-international-islamic-university-chittagong",
-        name: "International Islamic University Chittagong",
-        cityId: "banglades-hathazari",
-        website: "http://www.iiuc.ac.bd/",
-        source: "open-dataset",
-        // Situada a 9.5 km del centro de Hāthazāri (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-hathazari-university-of-chittagong",
-        name: "University of Chittagong",
-        cityId: "banglades-hathazari",
-        website: "http://www.cu.ac.bd/",
-        source: "open-dataset",
-        // Situada a 4.6 km del centro de Hāthazāri (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-hathazari-university-of-chittagong",
-        name: "University of Chittagong",
-        cityId: "banglades-hathazari",
-        website: "http://www.cu.ac.bd/",
-        source: "open-dataset",
-        // Situada a 4.6 km del centro de Hāthazāri (Wikidata).
-      }),
-  ],
   "banglades-rangpur": [
       defineUniversity({
         id: "banglades-rangpur-rangpur-carmichael-university",
@@ -1316,6 +1218,40 @@ export default {
         website: "http://www.brur.ac.bd/",
         source: "open-dataset",
         // Situada a 3.5 km del centro de Rangpur (Wikidata).
+      }),
+  ],
+  "banglades-ramna-maidan": [
+      defineUniversity({
+        id: "banglades-ramna-maidan-bangladesh-medical-university",
+        name: "Bangladesh Medical University",
+        cityId: "banglades-ramna-maidan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Ramna Maidan (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-ramna-maidan-anwer-khan-modern-university",
+        name: "Anwer Khan Modern University",
+        cityId: "banglades-ramna-maidan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ramna Maidan (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-ramna-maidan-grameen-university",
+        name: "Grameen University",
+        cityId: "banglades-ramna-maidan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ramna Maidan (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-ramna-maidan-police-staff-college-bangladesh",
+        name: "Police Staff College, Bangladesh",
+        cityId: "banglades-ramna-maidan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ramna Maidan (Wikidata).
       }),
   ],
   "banglades-jessore": [
@@ -1386,38 +1322,30 @@ export default {
         // Situada a 1.4 km del centro de Azimpur (Wikidata).
       }),
   ],
-  "banglades-motijheel": [
+  "banglades-narayanganj": [
       defineUniversity({
-        id: "banglades-motijheel-notre-dame-university-bangladesh",
-        name: "Notre Dame University Bangladesh",
-        cityId: "banglades-motijheel",
+        id: "banglades-narayanganj-munshiganj-polytechnic-institute",
+        name: "Munshiganj Polytechnic Institute",
+        cityId: "banglades-narayanganj",
         website: null,
         source: "open-dataset",
-        // Situada a 0.3 km del centro de Motijheel (Wikidata).
+        // Situada a 5.2 km del centro de Narayanganj (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-motijheel-notre-dame-university-bangladesh",
-        name: "Notre Dame University Bangladesh",
-        cityId: "banglades-motijheel",
+        id: "banglades-narayanganj-ranada-prasad-shaha-university",
+        name: "Ranada Prasad Shaha University",
+        cityId: "banglades-narayanganj",
         website: null,
         source: "open-dataset",
-        // Situada a 0.3 km del centro de Motijheel (Wikidata).
+        // Situada a 1.5 km del centro de Narayanganj (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-motijheel-bangladesh-islami-university",
-        name: "Bangladesh Islami University",
-        cityId: "banglades-motijheel",
+        id: "banglades-narayanganj-narayanganj-science-and-technology-university",
+        name: "Narayanganj Science and Technology University",
+        cityId: "banglades-narayanganj",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Motijheel (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-motijheel-central-women-s-university",
-        name: "Central Women's University",
-        cityId: "banglades-motijheel",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Motijheel (Wikidata).
+        // Situada a None km del centro de Narayanganj (Wikidata).
       }),
   ],
   "banglades-mymensingh": [
@@ -1524,30 +1452,30 @@ export default {
         // Situada a 0.8 km del centro de Kishorganj (Wikidata).
       }),
   ],
-  "banglades-patuakhali": [
+  "banglades-hathazari": [
       defineUniversity({
-        id: "banglades-patuakhali-patuakhali-polytechnic-institute",
-        name: "Patuakhali Polytechnic Institute",
-        cityId: "banglades-patuakhali",
+        id: "banglades-hathazari-al-jameatul-islamia-qasemul-uloom-charia",
+        name: "Al-Jameatul-Islamia Qasemul Uloom Charia",
+        cityId: "banglades-hathazari",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Patuakhali (Wikidata).
+        // Situada a 3.6 km del centro de Hāthazāri (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-patuakhali-patuakhali-polytechnic-institute",
-        name: "Patuakhali Polytechnic Institute",
-        cityId: "banglades-patuakhali",
-        website: null,
+        id: "banglades-hathazari-international-islamic-university-chittagong",
+        name: "International Islamic University Chittagong",
+        cityId: "banglades-hathazari",
+        website: "http://www.iiuc.ac.bd/",
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Patuakhali (Wikidata).
+        // Situada a 9.5 km del centro de Hāthazāri (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-patuakhali-patuakhali-science-and-technology-university",
-        name: "Patuakhali Science and Technology University",
-        cityId: "banglades-patuakhali",
-        website: "http://www.pstu.ac.bd/",
+        id: "banglades-hathazari-university-of-chittagong",
+        name: "University of Chittagong",
+        cityId: "banglades-hathazari",
+        website: "http://www.cu.ac.bd/",
         source: "open-dataset",
-        // Situada a 11.3 km del centro de Patuakhali (Wikidata).
+        // Situada a 4.6 km del centro de Hāthazāri (Wikidata).
       }),
   ],
   "banglades-mirpur-model-thana": [
@@ -1574,6 +1502,50 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.9 km del centro de Mirpur Model Thana (Wikidata).
+      }),
+  ],
+  "banglades-motijheel": [
+      defineUniversity({
+        id: "banglades-motijheel-notre-dame-university-bangladesh",
+        name: "Notre Dame University Bangladesh",
+        cityId: "banglades-motijheel",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.3 km del centro de Motijheel (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-motijheel-bangladesh-islami-university",
+        name: "Bangladesh Islami University",
+        cityId: "banglades-motijheel",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Motijheel (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-motijheel-central-women-s-university",
+        name: "Central Women's University",
+        cityId: "banglades-motijheel",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Motijheel (Wikidata).
+      }),
+  ],
+  "banglades-thakurgaon": [
+      defineUniversity({
+        id: "banglades-thakurgaon-thakurgaon-polytechnic-institute",
+        name: "Thakurgaon Polytechnic Institute",
+        cityId: "banglades-thakurgaon",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.8 km del centro de Thākurgaon (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-thakurgaon-thakurgaon-university",
+        name: "Thakurgaon University",
+        cityId: "banglades-thakurgaon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Thākurgaon (Wikidata).
       }),
   ],
   "banglades-jamalpur": [
@@ -1612,22 +1584,22 @@ export default {
         // Situada a 0.6 km del centro de Shāhzādpur (Wikidata).
       }),
   ],
-  "banglades-narayanganj": [
+  "banglades-nageswari": [
       defineUniversity({
-        id: "banglades-narayanganj-munshiganj-polytechnic-institute",
-        name: "Munshiganj Polytechnic Institute",
-        cityId: "banglades-narayanganj",
+        id: "banglades-nageswari-kurigram-government-polytechnic-institute",
+        name: "Kurigram Government Polytechnic Institute",
+        cityId: "banglades-nageswari",
         website: null,
         source: "open-dataset",
-        // Situada a 5.2 km del centro de Narayanganj (Wikidata).
+        // Situada a 19.3 km del centro de Nageswari (Wikidata).
       }),
       defineUniversity({
-        id: "banglades-narayanganj-ranada-prasad-shaha-university",
-        name: "Ranada Prasad Shaha University",
-        cityId: "banglades-narayanganj",
+        id: "banglades-nageswari-kurigram-polytechnic-institute",
+        name: "Kurigram Polytechnic Institute",
+        cityId: "banglades-nageswari",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Narayanganj (Wikidata).
+        // Situada a 19.3 km del centro de Nageswari (Wikidata).
       }),
   ],
   "banglades-kaliganj": [
@@ -1684,42 +1656,6 @@ export default {
         // Situada a 2.3 km del centro de Feni (Wikidata).
       }),
   ],
-  "banglades-ramna-maidan": [
-      defineUniversity({
-        id: "banglades-ramna-maidan-bangladesh-medical-university",
-        name: "Bangladesh Medical University",
-        cityId: "banglades-ramna-maidan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Ramna Maidan (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-ramna-maidan-bangladesh-medical-university",
-        name: "Bangladesh Medical University",
-        cityId: "banglades-ramna-maidan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Ramna Maidan (Wikidata).
-      }),
-  ],
-  "banglades-bandarban": [
-      defineUniversity({
-        id: "banglades-bandarban-bandarban-university",
-        name: "Bandarban University",
-        cityId: "banglades-bandarban",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Bāndarban (Wikidata).
-      }),
-      defineUniversity({
-        id: "banglades-bandarban-bandarban-university",
-        name: "Bandarban University",
-        cityId: "banglades-bandarban",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.7 km del centro de Bāndarban (Wikidata).
-      }),
-  ],
   "banglades-sarishabari": [
       defineUniversity({
         id: "banglades-sarishabari-madarganj-abdul-ali-mirza-kasem-kamil-madrasah",
@@ -1754,6 +1690,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.7 km del centro de Pār Naogaon (Wikidata).
+      }),
+  ],
+  "banglades-lakshmipur": [
+      defineUniversity({
+        id: "banglades-lakshmipur-lakshmipur-polytechnic-institute",
+        name: "Lakshmipur Polytechnic Institute",
+        cityId: "banglades-lakshmipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Lakshmīpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-lakshmipur-lakshmipur-science-and-technology-university",
+        name: "Lakshmipur Science and Technology University",
+        cityId: "banglades-lakshmipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lakshmīpur (Wikidata).
       }),
   ],
   "banglades-faridpur": [
@@ -1916,6 +1870,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.6 km del centro de Natore (Wikidata).
+      }),
+  ],
+  "banglades-patuakhali": [
+      defineUniversity({
+        id: "banglades-patuakhali-patuakhali-polytechnic-institute",
+        name: "Patuakhali Polytechnic Institute",
+        cityId: "banglades-patuakhali",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Patuakhali (Wikidata).
+      }),
+      defineUniversity({
+        id: "banglades-patuakhali-patuakhali-science-and-technology-university",
+        name: "Patuakhali Science and Technology University",
+        cityId: "banglades-patuakhali",
+        website: "http://www.pstu.ac.bd/",
+        source: "open-dataset",
+        // Situada a 11.3 km del centro de Patuakhali (Wikidata).
       }),
   ],
 };

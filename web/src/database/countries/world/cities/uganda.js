@@ -17,7 +17,7 @@ export default {
         id: "uganda-kampala-aga-khan-university",
         name: "Aga Khan University",
         cityId: "uganda-kampala",
-        website: null,
+        website: "http://www.aku.edu/",
         source: "open-dataset",
         // Situada a 1.6 km del centro de Kampala (Wikidata).
       }),
@@ -145,7 +145,7 @@ export default {
         id: "uganda-kampala-st-lawrence-university",
         name: "St. Lawrence University",
         cityId: "uganda-kampala",
-        website: null,
+        website: "http://www.stlawu.edu/",
         source: "open-dataset",
         // Situada a 2.8 km del centro de Kampala (Wikidata).
       }),
@@ -173,39 +173,21 @@ export default {
         source: "open-dataset",
         // Situada a 2.5 km del centro de Kampala (Wikidata).
       }),
-  ],
-  "uganda-ishaka": [
       defineUniversity({
-        id: "uganda-ishaka-kyambogo-university-bushenyi-learning-centre",
-        name: "Kyambogo University Bushenyi Learning Centre",
-        cityId: "uganda-ishaka",
+        id: "uganda-kampala-king-ceasor-university",
+        name: "King Ceasor University",
+        cityId: "uganda-kampala",
         website: null,
         source: "open-dataset",
-        // Situada a 7.4 km del centro de Ishaka (Wikidata).
+        // Situada a None km del centro de Kampala (Wikidata).
       }),
       defineUniversity({
-        id: "uganda-ishaka-valley-university-of-science-and-technology",
-        name: "Valley University of Science and Technology",
-        cityId: "uganda-ishaka",
+        id: "uganda-kampala-inter-university-council-for-east-africa",
+        name: "Inter-University Council for East Africa",
+        cityId: "uganda-kampala",
         website: null,
         source: "open-dataset",
-        // Situada a 7.2 km del centro de Ishaka (Wikidata).
-      }),
-      defineUniversity({
-        id: "uganda-ishaka-valley-university-of-science-and-technology",
-        name: "Valley University of Science and Technology",
-        cityId: "uganda-ishaka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.2 km del centro de Ishaka (Wikidata).
-      }),
-      defineUniversity({
-        id: "uganda-ishaka-kampala-international-university-school-of-health-sciences",
-        name: "Kampala International University School of Health Sciences",
-        cityId: "uganda-ishaka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Ishaka (Wikidata).
+        // Situada a None km del centro de Kampala (Wikidata).
       }),
   ],
   "uganda-masaka": [
@@ -223,15 +205,15 @@ export default {
         cityId: "uganda-masaka",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Masaka (Wikidata).
+        // Situada a 1.6 km del centro de Masaka (Wikidata).
       }),
       defineUniversity({
-        id: "uganda-masaka-muteesa-i-royal-university",
-        name: "Muteesa I Royal University",
+        id: "uganda-masaka-equator-university-of-science-and-technology",
+        name: "Equator University of Science and Technology",
         cityId: "uganda-masaka",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Masaka (Wikidata).
+        // Situada a None km del centro de Masaka (Wikidata).
       }),
   ],
   "uganda-lira": [
@@ -286,48 +268,30 @@ export default {
         // Situada a 2.6 km del centro de Gulu (Wikidata).
       }),
   ],
-  "uganda-bombo": [
+  "uganda-ishaka": [
       defineUniversity({
-        id: "uganda-bombo-ndejje-university",
-        name: "Ndejje University",
-        cityId: "uganda-bombo",
-        website: "http://www.ndejjeuniversity.ac.ug/",
+        id: "uganda-ishaka-kyambogo-university-bushenyi-learning-centre",
+        name: "Kyambogo University Bushenyi Learning Centre",
+        cityId: "uganda-ishaka",
+        website: null,
         source: "open-dataset",
-        // Situada a 6.0 km del centro de Bombo (Wikidata).
+        // Situada a 7.4 km del centro de Ishaka (Wikidata).
       }),
       defineUniversity({
-        id: "uganda-bombo-bugema-university",
-        name: "Bugema University",
-        cityId: "uganda-bombo",
-        website: "https://bugemauniv.ac.ug/",
+        id: "uganda-ishaka-valley-university-of-science-and-technology",
+        name: "Valley University of Science and Technology",
+        cityId: "uganda-ishaka",
+        website: null,
         source: "open-dataset",
-        // Situada a 14.1 km del centro de Bombo (Wikidata).
+        // Situada a 7.2 km del centro de Ishaka (Wikidata).
       }),
       defineUniversity({
-        id: "uganda-bombo-bugema-university",
-        name: "Bugema University",
-        cityId: "uganda-bombo",
-        website: "https://bugemauniv.ac.ug/",
+        id: "uganda-ishaka-kampala-international-university-school-of-health-sciences",
+        name: "Kampala International University School of Health Sciences",
+        cityId: "uganda-ishaka",
+        website: null,
         source: "open-dataset",
-        // Situada a 14.1 km del centro de Bombo (Wikidata).
-      }),
-  ],
-  "uganda-mukono": [
-      defineUniversity({
-        id: "uganda-mukono-uganda-christian-university",
-        name: "Uganda Christian University",
-        cityId: "uganda-mukono",
-        website: "http://www.ucu.ac.ug/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Mukono (Wikidata).
-      }),
-      defineUniversity({
-        id: "uganda-mukono-uganda-christian-university",
-        name: "Uganda Christian University",
-        cityId: "uganda-mukono",
-        website: "http://www.ucu.ac.ug/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Mukono (Wikidata).
+        // Situada a 0.4 km del centro de Ishaka (Wikidata).
       }),
   ],
   "uganda-mbarara": [
@@ -384,6 +348,24 @@ export default {
         // Situada a 2.7 km del centro de Lugazi (Wikidata).
       }),
   ],
+  "uganda-kireka": [
+      defineUniversity({
+        id: "uganda-kireka-kyambogo-university",
+        name: "Kyambogo University",
+        cityId: "uganda-kireka",
+        website: "http://www.kyu.ac.ug/",
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Kireka (Wikidata).
+      }),
+      defineUniversity({
+        id: "uganda-kireka-clarke-international-university",
+        name: "Clarke International University",
+        cityId: "uganda-kireka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kireka (Wikidata).
+      }),
+  ],
   "uganda-fort-portal": [
       defineUniversity({
         id: "uganda-fort-portal-mountains-of-the-moon-university",
@@ -402,22 +384,22 @@ export default {
         // Situada a 1.0 km del centro de Fort Portal (Wikidata).
       }),
   ],
-  "uganda-bunamwaya": [
+  "uganda-bombo": [
       defineUniversity({
-        id: "uganda-bunamwaya-african-bible-college",
-        name: "African Bible College",
-        cityId: "uganda-bunamwaya",
-        website: null,
+        id: "uganda-bombo-ndejje-university",
+        name: "Ndejje University",
+        cityId: "uganda-bombo",
+        website: "http://www.ndejjeuniversity.ac.ug/",
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Bunamwaya (Wikidata).
+        // Situada a 6.0 km del centro de Bombo (Wikidata).
       }),
       defineUniversity({
-        id: "uganda-bunamwaya-african-bible-college",
-        name: "African Bible College",
-        cityId: "uganda-bunamwaya",
-        website: null,
+        id: "uganda-bombo-bugema-university",
+        name: "Bugema University",
+        cityId: "uganda-bombo",
+        website: "https://bugemauniv.ac.ug/",
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Bunamwaya (Wikidata).
+        // Situada a 14.1 km del centro de Bombo (Wikidata).
       }),
   ],
   "uganda-arua": [

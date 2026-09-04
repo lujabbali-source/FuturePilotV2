@@ -12,6 +12,24 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
+  "esuatini-mbabane": [
+      defineUniversity({
+        id: "esuatini-mbabane-limkokwing-university-of-creative-technology-swaziland",
+        name: "Limkokwing University of Creative Technology Swaziland",
+        cityId: "esuatini-mbabane",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Mbabane (Wikidata).
+      }),
+      defineUniversity({
+        id: "esuatini-mbabane-rutherford-university",
+        name: "Rutherford University",
+        cityId: "esuatini-mbabane",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mbabane (Wikidata).
+      }),
+  ],
   "esuatini-manzini": [
       defineUniversity({
         id: "esuatini-manzini-university-of-eswatini",

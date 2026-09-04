@@ -326,22 +326,6 @@ export default {
         // Situada a 24.9 km del centro de Ilorin (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-ilorin-kwara-state-university-malete",
-        name: "Kwara State University, Malete",
-        cityId: "nigeria-ilorin",
-        website: null,
-        source: "open-dataset",
-        // Situada a 24.9 km del centro de Ilorin (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ilorin-jimoh-babalola-university-kwara",
-        name: "Jimoh Babalola University, kwara",
-        cityId: "nigeria-ilorin",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.6 km del centro de Ilorin (Wikidata).
-      }),
-      defineUniversity({
         id: "nigeria-ilorin-jimoh-babalola-university-kwara",
         name: "Jimoh Babalola University, kwara",
         cityId: "nigeria-ilorin",
@@ -366,44 +350,12 @@ export default {
         // Situada a 12.1 km del centro de Ilorin (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-ilorin-kwara-state-polytechnic",
-        name: "Kwara State Polytechnic",
-        cityId: "nigeria-ilorin",
-        website: null,
-        source: "open-dataset",
-        // Situada a 16.9 km del centro de Ilorin (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ilorin-kwara-state-polytechnic",
-        name: "Kwara State Polytechnic",
-        cityId: "nigeria-ilorin",
-        website: null,
-        source: "open-dataset",
-        // Situada a 16.9 km del centro de Ilorin (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ilorin-kwara-state-polytechnic",
-        name: "Kwara State Polytechnic",
-        cityId: "nigeria-ilorin",
-        website: null,
-        source: "open-dataset",
-        // Situada a 12.1 km del centro de Ilorin (Wikidata).
-      }),
-      defineUniversity({
         id: "nigeria-ilorin-al-hikmah-university-ilorin",
         name: "Al-Hikmah University, Ilorin",
         cityId: "nigeria-ilorin",
         website: null,
         source: "open-dataset",
         // Situada a 4.2 km del centro de Ilorin (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ilorin-university-of-ilorin",
-        name: "University of Ilorin",
-        cityId: "nigeria-ilorin",
-        website: "http://www.unilorin.edu.ng/",
-        source: "open-dataset",
-        // Situada a 14.3 km del centro de Ilorin (Wikidata).
       }),
       defineUniversity({
         id: "nigeria-ilorin-university-of-ilorin",
@@ -454,14 +406,6 @@ export default {
         website: "https://miva.university/",
         source: "open-dataset",
         // Situada a 6.5 km del centro de Abuja (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-abuja-margret-lawrence-university",
-        name: "Margret Lawrence University",
-        cityId: "nigeria-abuja",
-        website: null,
-        source: "open-dataset",
-        // Situada a 13.7 km del centro de Abuja (Wikidata).
       }),
       defineUniversity({
         id: "nigeria-abuja-african-school-of-economics-abuja-campus",
@@ -520,28 +464,12 @@ export default {
         // Situada a 9.4 km del centro de Abuja (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-abuja-european-university-of-nigeria-duboyi",
-        name: "European University of Nigeria, Duboyi",
-        cityId: "nigeria-abuja",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Abuja (Wikidata).
-      }),
-      defineUniversity({
         id: "nigeria-abuja-canadian-university-of-nigeria",
         name: "Canadian University of Nigeria",
         cityId: "nigeria-abuja",
         website: null,
         source: "open-dataset",
         // Situada a 7.5 km del centro de Abuja (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-abuja-eranova-university",
-        name: "Eranova University",
-        cityId: "nigeria-abuja",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.9 km del centro de Abuja (Wikidata).
       }),
       defineUniversity({
         id: "nigeria-abuja-eranova-university",
@@ -574,14 +502,6 @@ export default {
         website: "http://www.aust-abuja.org/",
         source: "open-dataset",
         // Situada a 10.2 km del centro de Abuja (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-abuja-african-university-of-science-and-technology",
-        name: "African University of Science and Technology",
-        cityId: "nigeria-abuja",
-        website: "http://www.aust-abuja.org/",
-        source: "open-dataset",
-        // Situada a 10.1 km del centro de Abuja (Wikidata).
       }),
       defineUniversity({
         id: "nigeria-abuja-baze-university",
@@ -623,14 +543,6 @@ export default {
         source: "open-dataset",
         // Situada a 27.3 km del centro de Abuja (Wikidata).
       }),
-      defineUniversity({
-        id: "nigeria-abuja-veritas-university",
-        name: "Veritas University",
-        cityId: "nigeria-abuja",
-        website: "http://www.veritas.edu.ng/",
-        source: "open-dataset",
-        // Situada a 27.3 km del centro de Abuja (Wikidata).
-      }),
   ],
   "nigeria-kano": [
       defineUniversity({
@@ -648,14 +560,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.2 km del centro de Kano (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kano-nigeria-police-academy",
-        name: "Nigeria Police Academy",
-        cityId: "nigeria-kano",
-        website: null,
-        source: "open-dataset",
-        // Situada a 19.3 km del centro de Kano (Wikidata).
       }),
       defineUniversity({
         id: "nigeria-kano-skyline-university",
@@ -754,14 +658,6 @@ export default {
         // Situada a 4.6 km del centro de Kano (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-kano-bayero-university-kano",
-        name: "Bayero University, Kano",
-        cityId: "nigeria-kano",
-        website: "http://www.buk.edu.ng/",
-        source: "open-dataset",
-        // Situada a 4.6 km del centro de Kano (Wikidata).
-      }),
-      defineUniversity({
         id: "nigeria-kano-northwest-university",
         name: "Northwest University",
         cityId: "nigeria-kano",
@@ -792,258 +688,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 3.7 km del centro de Kano (Wikidata).
-      }),
-  ],
-  "nigeria-enugu": [
-      defineUniversity({
-        id: "nigeria-enugu-enugu-state-college-of-education",
-        name: "Enugu State College of Education",
-        cityId: "nigeria-enugu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-peaceland-university-enugu",
-        name: "Peaceland University Enugu",
-        cityId: "nigeria-enugu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-godfrey-okoye-university",
-        name: "Godfrey Okoye University",
-        cityId: "nigeria-enugu",
-        website: "http://www.gouni.edu.ng/",
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-bigard-memorial-seminary",
-        name: "Bigard Memorial Seminary",
-        cityId: "nigeria-enugu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-enugu-state-polytechnic",
-        name: "Enugu State Polytechnic",
-        cityId: "nigeria-enugu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 24.0 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-caritas-university",
-        name: "Caritas University",
-        cityId: "nigeria-enugu",
-        website: "http://www.caritasuni.edu.ng/",
-        source: "open-dataset",
-        // Situada a 10.3 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-caritas-university",
-        name: "Caritas University",
-        cityId: "nigeria-enugu",
-        website: "http://www.caritasuni.edu.ng/",
-        source: "open-dataset",
-        // Situada a 10.5 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-caritas-university",
-        name: "Caritas University",
-        cityId: "nigeria-enugu",
-        website: "http://www.caritasuni.edu.ng/",
-        source: "open-dataset",
-        // Situada a 10.3 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-caritas-university",
-        name: "Caritas University",
-        cityId: "nigeria-enugu",
-        website: "http://www.caritasuni.edu.ng/",
-        source: "open-dataset",
-        // Situada a 10.5 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-caritas-university",
-        name: "Caritas University",
-        cityId: "nigeria-enugu",
-        website: "http://www.caritasuni.edu.ng/",
-        source: "open-dataset",
-        // Situada a 10.3 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-caritas-university",
-        name: "Caritas University",
-        cityId: "nigeria-enugu",
-        website: "http://www.caritasuni.edu.ng/",
-        source: "open-dataset",
-        // Situada a 10.5 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-institute-of-management-technology-enugu",
-        name: "Institute of Management Technology, Enugu",
-        cityId: "nigeria-enugu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-coal-city-university",
-        name: "Coal City University",
-        cityId: "nigeria-enugu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.8 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-enugu-state-university-of-science-and-technology",
-        name: "Enugu State University of Science and Technology",
-        cityId: "nigeria-enugu",
-        website: "http://www.esut.edu.ng/",
-        source: "open-dataset",
-        // Situada a 14.9 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-our-saviour-institute-of-science-and-technology",
-        name: "Our Saviour Institute of Science and Technology",
-        cityId: "nigeria-enugu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-renaissance-university",
-        name: "Renaissance University",
-        cityId: "nigeria-enugu",
-        website: "http://www.rnu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 16.0 km del centro de Enugu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-enugu-renaissance-university",
-        name: "Renaissance University",
-        cityId: "nigeria-enugu",
-        website: "http://www.rnu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 16.0 km del centro de Enugu (Wikidata).
-      }),
-  ],
-  "nigeria-owerri": [
-      defineUniversity({
-        id: "nigeria-owerri-claretian-university-of-nigeria",
-        name: "Claretian University of Nigeria",
-        cityId: "nigeria-owerri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-claretian-university-of-nigeria",
-        name: "Claretian University of Nigeria",
-        cityId: "nigeria-owerri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.8 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-claretian-university-of-nigeria",
-        name: "Claretian University of Nigeria",
-        cityId: "nigeria-owerri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-claretian-university-of-nigeria",
-        name: "Claretian University of Nigeria",
-        cityId: "nigeria-owerri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-claretian-university-of-nigeria",
-        name: "Claretian University of Nigeria",
-        cityId: "nigeria-owerri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-claretian-university-of-nigeria",
-        name: "Claretian University of Nigeria",
-        cityId: "nigeria-owerri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.8 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-imo-state-polytechnic-umuagwo",
-        name: "Imo State Polytechnic, Umuagwo",
-        cityId: "nigeria-owerri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 22.0 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-university-of-agriculture-and-environmental-sciences",
-        name: "University of Agriculture and Environmental Sciences",
-        cityId: "nigeria-owerri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 22.1 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-university-of-agriculture-and-environmental-sciences",
-        name: "University of Agriculture and Environmental Sciences",
-        cityId: "nigeria-owerri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 21.6 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-nigerian-army-school-of-education-nase-ilorin",
-        name: "Nigerian Army School of Education (NASE), Ilorin",
-        cityId: "nigeria-owerri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.7 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-imo-state-university-of-innovation-science-and-technology",
-        name: "Imo State University of Innovation, Science and Technology",
-        cityId: "nigeria-owerri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-federal-polytechnic-nekede",
-        name: "Federal Polytechnic, Nekede",
-        cityId: "nigeria-owerri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-federal-university-of-technology-owerri",
-        name: "Federal University of Technology Owerri",
-        cityId: "nigeria-owerri",
-        website: "http://www.futo.edu.ng/",
-        source: "open-dataset",
-        // Situada a 11.3 km del centro de Owerri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-owerri-imo-state-university",
-        name: "Imo State University",
-        cityId: "nigeria-owerri",
-        website: "http://www.imsu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Owerri (Wikidata).
       }),
   ],
   "nigeria-kaduna": [
@@ -1104,26 +748,10 @@ export default {
         // Situada a 1.7 km del centro de Kaduna (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-kaduna-kaduna-state-university-kaduna-state",
-        name: "Kaduna state university, Kaduna state",
-        cityId: "nigeria-kaduna",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Kaduna (Wikidata).
-      }),
-      defineUniversity({
         id: "nigeria-kaduna-air-force-institute-of-technology",
         name: "Air Force Institute of Technology",
         cityId: "nigeria-kaduna",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.3 km del centro de Kaduna (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kaduna-air-force-institute-of-technology",
-        name: "Air Force Institute of Technology",
-        cityId: "nigeria-kaduna",
-        website: null,
+        website: "http://www.afit.edu/",
         source: "open-dataset",
         // Situada a 8.3 km del centro de Kaduna (Wikidata).
       }),
@@ -1144,20 +772,176 @@ export default {
         // Situada a 2.6 km del centro de Kaduna (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-kaduna-kaduna-state-university",
-        name: "Kaduna State University",
-        cityId: "nigeria-kaduna",
-        website: "http://www.kasuportal.net/",
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Kaduna (Wikidata).
-      }),
-      defineUniversity({
         id: "nigeria-kaduna-nigerian-defence-academy",
         name: "Nigerian Defence Academy",
         cityId: "nigeria-kaduna",
         website: "http://www.nda.edu.ng/",
         source: "open-dataset",
         // Situada a 12.7 km del centro de Kaduna (Wikidata).
+      }),
+  ],
+  "nigeria-enugu": [
+      defineUniversity({
+        id: "nigeria-enugu-enugu-state-college-of-education",
+        name: "Enugu State College of Education",
+        cityId: "nigeria-enugu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Enugu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-enugu-peaceland-university-enugu",
+        name: "Peaceland University Enugu",
+        cityId: "nigeria-enugu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Enugu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-enugu-godfrey-okoye-university",
+        name: "Godfrey Okoye University",
+        cityId: "nigeria-enugu",
+        website: "http://www.gouni.edu.ng/",
+        source: "open-dataset",
+        // Situada a 5.0 km del centro de Enugu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-enugu-bigard-memorial-seminary",
+        name: "Bigard Memorial Seminary",
+        cityId: "nigeria-enugu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Enugu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-enugu-enugu-state-polytechnic",
+        name: "Enugu State Polytechnic",
+        cityId: "nigeria-enugu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 24.0 km del centro de Enugu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-enugu-caritas-university",
+        name: "Caritas University",
+        cityId: "nigeria-enugu",
+        website: "http://www.caritasuni.edu.ng/",
+        source: "open-dataset",
+        // Situada a 10.3 km del centro de Enugu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-enugu-institute-of-management-technology-enugu",
+        name: "Institute of Management Technology, Enugu",
+        cityId: "nigeria-enugu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Enugu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-enugu-coal-city-university",
+        name: "Coal City University",
+        cityId: "nigeria-enugu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.8 km del centro de Enugu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-enugu-enugu-state-university-of-science-and-technology",
+        name: "Enugu State University of Science and Technology",
+        cityId: "nigeria-enugu",
+        website: "http://www.esut.edu.ng/",
+        source: "open-dataset",
+        // Situada a 14.9 km del centro de Enugu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-enugu-our-saviour-institute-of-science-and-technology",
+        name: "Our Saviour Institute of Science and Technology",
+        cityId: "nigeria-enugu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Enugu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-enugu-renaissance-university",
+        name: "Renaissance University",
+        cityId: "nigeria-enugu",
+        website: "http://www.rnu.edu.ng/",
+        source: "open-dataset",
+        // Situada a 16.0 km del centro de Enugu (Wikidata).
+      }),
+  ],
+  "nigeria-ibadan": [
+      defineUniversity({
+        id: "nigeria-ibadan-dominion-university",
+        name: "Dominion University",
+        cityId: "nigeria-ibadan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 23.8 km del centro de Ibadan (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ibadan-dominican-university",
+        name: "Dominican University",
+        cityId: "nigeria-ibadan",
+        website: "https://www.dom.edu/",
+        source: "open-dataset",
+        // Situada a 6.3 km del centro de Ibadan (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ibadan-precious-cornerstone-university",
+        name: "Precious Cornerstone University",
+        cityId: "nigeria-ibadan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.8 km del centro de Ibadan (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ibadan-precious-cornerstone-university",
+        name: "Precious Cornerstone University",
+        cityId: "nigeria-ibadan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Ibadan (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ibadan-university-of-ibadan",
+        name: "University of Ibadan",
+        cityId: "nigeria-ibadan",
+        website: "http://www.ui.edu.ng/",
+        source: "open-dataset",
+        // Situada a 7.3 km del centro de Ibadan (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ibadan-saints-peter-and-paul-major-seminary",
+        name: "Saints Peter and Paul major seminary",
+        cityId: "nigeria-ibadan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Ibadan (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ibadan-lead-city-university",
+        name: "Lead City University",
+        cityId: "nigeria-ibadan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.4 km del centro de Ibadan (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ibadan-the-polytechnic-ibadan",
+        name: "The Polytechnic, Ibadan",
+        cityId: "nigeria-ibadan",
+        website: "http://www.polyibadan.edu.ng/",
+        source: "open-dataset",
+        // Situada a 10.6 km del centro de Ibadan (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ibadan-first-technical-university",
+        name: "First Technical University",
+        cityId: "nigeria-ibadan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 17.9 km del centro de Ibadan (Wikidata).
       }),
   ],
   "nigeria-benin-city": [
@@ -1202,38 +986,6 @@ export default {
         // Situada a 7.8 km del centro de Benin City (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-benin-city-wellspring-university-evbuobanos",
-        name: "Wellspring University, Evbuobanos",
-        cityId: "nigeria-benin-city",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.8 km del centro de Benin City (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-benin-city-benson-idahosa-university",
-        name: "Benson Idahosa University",
-        cityId: "nigeria-benin-city",
-        website: "http://www.biu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Benin City (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-benin-city-benson-idahosa-university",
-        name: "Benson Idahosa University",
-        cityId: "nigeria-benin-city",
-        website: "http://www.biu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Benin City (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-benin-city-benson-idahosa-university",
-        name: "Benson Idahosa University",
-        cityId: "nigeria-benin-city",
-        website: "http://www.biu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Benin City (Wikidata).
-      }),
-      defineUniversity({
         id: "nigeria-benin-city-benson-idahosa-university",
         name: "Benson Idahosa University",
         cityId: "nigeria-benin-city",
@@ -1264,448 +1016,6 @@ export default {
         website: "http://www.wellspringuniversity.edu.ng/",
         source: "open-dataset",
         // Situada a 7.8 km del centro de Benin City (Wikidata).
-      }),
-  ],
-  "nigeria-aba": [
-      defineUniversity({
-        id: "nigeria-aba-nigerian-british-university",
-        name: "Nigerian British University",
-        cityId: "nigeria-aba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 25.5 km del centro de Aba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-aba-lux-mundi-university",
-        name: "Lux mundi University",
-        cityId: "nigeria-aba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Aba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-aba-lux-mundi-university",
-        name: "Lux mundi University",
-        cityId: "nigeria-aba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Aba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-aba-covenant-polytechnic-aba",
-        name: "Covenant Polytechnic, Aba",
-        cityId: "nigeria-aba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Aba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-aba-abia-state-polytechnic-aba",
-        name: "Abia State Polytechnic, Aba",
-        cityId: "nigeria-aba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Aba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-aba-clifford-university",
-        name: "Clifford University",
-        cityId: "nigeria-aba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 21.8 km del centro de Aba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-aba-clifford-university",
-        name: "Clifford University",
-        cityId: "nigeria-aba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 21.8 km del centro de Aba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-aba-clifford-university",
-        name: "Clifford University",
-        cityId: "nigeria-aba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 21.8 km del centro de Aba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-aba-abia-state-polytechnic",
-        name: "Abia State Polytechnic",
-        cityId: "nigeria-aba",
-        website: "http://www.abiapoly.edu.ng/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Aba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-aba-obong-university",
-        name: "Obong University",
-        cityId: "nigeria-aba",
-        website: "http://www.obonguniversity.net/",
-        source: "open-dataset",
-        // Situada a 28.5 km del centro de Aba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-aba-obong-university",
-        name: "Obong University",
-        cityId: "nigeria-aba",
-        website: "http://www.obonguniversity.net/",
-        source: "open-dataset",
-        // Situada a 28.5 km del centro de Aba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-aba-rhema-university",
-        name: "Rhema University",
-        cityId: "nigeria-aba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Aba (Wikidata).
-      }),
-  ],
-  "nigeria-yenagoa": [
-      defineUniversity({
-        id: "nigeria-yenagoa-bayelsa-medical-university",
-        name: "Bayelsa Medical University",
-        cityId: "nigeria-yenagoa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Yenagoa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-yenagoa-university-of-africa-toru-orua",
-        name: "University of Africa, Toru-Orua",
-        cityId: "nigeria-yenagoa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Yenagoa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-yenagoa-university-of-africa-toru-orua",
-        name: "University of Africa, Toru-Orua",
-        cityId: "nigeria-yenagoa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Yenagoa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-yenagoa-hensard-university",
-        name: "Hensard University",
-        cityId: "nigeria-yenagoa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 29.9 km del centro de Yenagoa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-yenagoa-hensard-university",
-        name: "Hensard University",
-        cityId: "nigeria-yenagoa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 29.8 km del centro de Yenagoa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-yenagoa-hensard-university",
-        name: "Hensard University",
-        cityId: "nigeria-yenagoa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 29.8 km del centro de Yenagoa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-yenagoa-hensard-university",
-        name: "Hensard University",
-        cityId: "nigeria-yenagoa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 29.9 km del centro de Yenagoa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-yenagoa-yenagoa-polytechnic",
-        name: "Yenagoa Polytechnic",
-        cityId: "nigeria-yenagoa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.8 km del centro de Yenagoa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-yenagoa-federal-university-otuoke",
-        name: "Federal University, Otuoke",
-        cityId: "nigeria-yenagoa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.5 km del centro de Yenagoa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-yenagoa-federal-university-otuoke",
-        name: "Federal University, Otuoke",
-        cityId: "nigeria-yenagoa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.5 km del centro de Yenagoa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-yenagoa-niger-delta-university",
-        name: "Niger Delta University",
-        cityId: "nigeria-yenagoa",
-        website: "http://www.ndu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 18.8 km del centro de Yenagoa (Wikidata).
-      }),
-  ],
-  "nigeria-kuje": [
-      defineUniversity({
-        id: "nigeria-kuje-philomath-university",
-        name: "Philomath University",
-        cityId: "nigeria-kuje",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Kuje (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kuje-prime-university-abuja",
-        name: "Prime University, Abuja",
-        cityId: "nigeria-kuje",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.0 km del centro de Kuje (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kuje-prime-university-abuja",
-        name: "Prime University, Abuja",
-        cityId: "nigeria-kuje",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.0 km del centro de Kuje (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kuje-amaj-university-kwali",
-        name: "Amaj University, Kwali",
-        cityId: "nigeria-kuje",
-        website: null,
-        source: "open-dataset",
-        // Situada a 23.0 km del centro de Kuje (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kuje-abuja-leadership-centre",
-        name: "Abuja Leadership Centre",
-        cityId: "nigeria-kuje",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Kuje (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kuje-leadership-university",
-        name: "Leadership University",
-        cityId: "nigeria-kuje",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Kuje (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kuje-leadership-university",
-        name: "Leadership University",
-        cityId: "nigeria-kuje",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Kuje (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kuje-african-university-of-science-and-technology-galadima",
-        name: "African University of Science and Technology Galadima",
-        cityId: "nigeria-kuje",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.5 km del centro de Kuje (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kuje-prime-university-kuje",
-        name: "Prime University, Kuje",
-        cityId: "nigeria-kuje",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Kuje (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kuje-university-of-abuja",
-        name: "University of Abuja",
-        cityId: "nigeria-kuje",
-        website: "http://www.unibuja.edu.ng/",
-        source: "open-dataset",
-        // Situada a 12.4 km del centro de Kuje (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kuje-university-of-abuja",
-        name: "University of Abuja",
-        cityId: "nigeria-kuje",
-        website: "http://www.unibuja.edu.ng/",
-        source: "open-dataset",
-        // Situada a 12.4 km del centro de Kuje (Wikidata).
-      }),
-  ],
-  "nigeria-ikot-ekpene": [
-      defineUniversity({
-        id: "nigeria-ikot-ekpene-federal-polytechnic-ukana",
-        name: "Federal Polytechnic, Ukana",
-        cityId: "nigeria-ikot-ekpene",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.4 km del centro de Ikot Ekpene (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ikot-ekpene-federal-polytechnic-ukana",
-        name: "Federal Polytechnic, Ukana",
-        cityId: "nigeria-ikot-ekpene",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.4 km del centro de Ikot Ekpene (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ikot-ekpene-topfaith-university",
-        name: "Topfaith University",
-        cityId: "nigeria-ikot-ekpene",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.2 km del centro de Ikot Ekpene (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ikot-ekpene-topfaith-university",
-        name: "Topfaith University",
-        cityId: "nigeria-ikot-ekpene",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.2 km del centro de Ikot Ekpene (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ikot-ekpene-topfaith-university",
-        name: "Topfaith University",
-        cityId: "nigeria-ikot-ekpene",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.2 km del centro de Ikot Ekpene (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ikot-ekpene-topfaith-university",
-        name: "Topfaith University",
-        cityId: "nigeria-ikot-ekpene",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.2 km del centro de Ikot Ekpene (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ikot-ekpene-ritman-university",
-        name: "Ritman University",
-        cityId: "nigeria-ikot-ekpene",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.0 km del centro de Ikot Ekpene (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ikot-ekpene-foundation-college-of-technology",
-        name: "Foundation College of Technology",
-        cityId: "nigeria-ikot-ekpene",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Ikot Ekpene (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ikot-ekpene-ritman-university",
-        name: "Ritman University",
-        cityId: "nigeria-ikot-ekpene",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Ikot Ekpene (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ikot-ekpene-akwa-ibom-state-polytechnic",
-        name: "Akwa Ibom State Polytechnic",
-        cityId: "nigeria-ikot-ekpene",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Ikot Ekpene (Wikidata).
-      }),
-  ],
-  "nigeria-ibadan": [
-      defineUniversity({
-        id: "nigeria-ibadan-dominion-university",
-        name: "Dominion University",
-        cityId: "nigeria-ibadan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 23.8 km del centro de Ibadan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ibadan-dominican-university",
-        name: "Dominican University",
-        cityId: "nigeria-ibadan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.3 km del centro de Ibadan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ibadan-precious-cornerstone-university",
-        name: "Precious Cornerstone University",
-        cityId: "nigeria-ibadan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.8 km del centro de Ibadan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ibadan-precious-cornerstone-university",
-        name: "Precious Cornerstone University",
-        cityId: "nigeria-ibadan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Ibadan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ibadan-university-of-ibadan",
-        name: "University of Ibadan",
-        cityId: "nigeria-ibadan",
-        website: "http://www.ui.edu.ng/",
-        source: "open-dataset",
-        // Situada a 7.3 km del centro de Ibadan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ibadan-university-of-ibadan",
-        name: "University of Ibadan",
-        cityId: "nigeria-ibadan",
-        website: "http://www.ui.edu.ng/",
-        source: "open-dataset",
-        // Situada a 7.3 km del centro de Ibadan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ibadan-saints-peter-and-paul-major-seminary",
-        name: "Saints Peter and Paul major seminary",
-        cityId: "nigeria-ibadan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Ibadan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ibadan-lead-city-university",
-        name: "Lead City University",
-        cityId: "nigeria-ibadan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.4 km del centro de Ibadan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ibadan-the-polytechnic-ibadan",
-        name: "The Polytechnic, Ibadan",
-        cityId: "nigeria-ibadan",
-        website: "http://www.polyibadan.edu.ng/",
-        source: "open-dataset",
-        // Situada a 10.6 km del centro de Ibadan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ibadan-first-technical-university",
-        name: "First Technical University",
-        cityId: "nigeria-ibadan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 17.9 km del centro de Ibadan (Wikidata).
       }),
   ],
   "nigeria-ado-ekiti": [
@@ -1771,14 +1081,6 @@ export default {
         cityId: "nigeria-ado-ekiti",
         website: "http://www.abuad.edu.ng/",
         source: "open-dataset",
-        // Situada a 10.9 km del centro de Ado-Ekiti (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ado-ekiti-afe-babalola-university",
-        name: "Afe Babalola University",
-        cityId: "nigeria-ado-ekiti",
-        website: "http://www.abuad.edu.ng/",
-        source: "open-dataset",
         // Situada a 9.2 km del centro de Ado-Ekiti (Wikidata).
       }),
       defineUniversity({
@@ -1790,640 +1092,202 @@ export default {
         // Situada a 11.6 km del centro de Ado-Ekiti (Wikidata).
       }),
   ],
-  "nigeria-sokoto": [
+  "nigeria-owerri": [
       defineUniversity({
-        id: "nigeria-sokoto-iconic-open-university-sokoto",
-        name: "Iconic Open University, Sokoto",
-        cityId: "nigeria-sokoto",
+        id: "nigeria-owerri-claretian-university-of-nigeria",
+        name: "Claretian University of Nigeria",
+        cityId: "nigeria-owerri",
         website: null,
         source: "open-dataset",
-        // Situada a 12.4 km del centro de Sokoto (Wikidata).
+        // Situada a 3.2 km del centro de Owerri (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-sokoto-iconic-open-university-sokoto",
-        name: "Iconic Open University, Sokoto",
-        cityId: "nigeria-sokoto",
+        id: "nigeria-owerri-imo-state-polytechnic-umuagwo",
+        name: "Imo State Polytechnic, Umuagwo",
+        cityId: "nigeria-owerri",
         website: null,
         source: "open-dataset",
-        // Situada a 12.4 km del centro de Sokoto (Wikidata).
+        // Situada a 22.0 km del centro de Owerri (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-sokoto-northwest-university-sokoto",
-        name: "Northwest University, Sokoto",
-        cityId: "nigeria-sokoto",
+        id: "nigeria-owerri-university-of-agriculture-and-environmental-sciences",
+        name: "University of Agriculture and Environmental Sciences",
+        cityId: "nigeria-owerri",
         website: null,
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Sokoto (Wikidata).
+        // Situada a 21.6 km del centro de Owerri (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-sokoto-northwest-university-sokoto",
-        name: "Northwest University, Sokoto",
-        cityId: "nigeria-sokoto",
+        id: "nigeria-owerri-nigerian-army-school-of-education-nase-ilorin",
+        name: "Nigerian Army School of Education (NASE), Ilorin",
+        cityId: "nigeria-owerri",
         website: null,
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Sokoto (Wikidata).
+        // Situada a 8.7 km del centro de Owerri (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-sokoto-northwest-university-sokoto",
-        name: "Northwest University, Sokoto",
-        cityId: "nigeria-sokoto",
+        id: "nigeria-owerri-imo-state-university-of-innovation-science-and-technology",
+        name: "Imo State University of Innovation, Science and Technology",
+        cityId: "nigeria-owerri",
         website: null,
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Sokoto (Wikidata).
+        // Situada a 2.5 km del centro de Owerri (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-sokoto-northwest-university-sokoto",
-        name: "Northwest University, Sokoto",
-        cityId: "nigeria-sokoto",
+        id: "nigeria-owerri-federal-polytechnic-nekede",
+        name: "Federal Polytechnic, Nekede",
+        cityId: "nigeria-owerri",
         website: null,
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Sokoto (Wikidata).
+        // Situada a 5.8 km del centro de Owerri (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-sokoto-sokoto-state-university",
-        name: "Sokoto State University",
-        cityId: "nigeria-sokoto",
-        website: "http://www.ssu.edu.ng/",
+        id: "nigeria-owerri-federal-university-of-technology-owerri",
+        name: "Federal University of Technology Owerri",
+        cityId: "nigeria-owerri",
+        website: "http://www.futo.edu.ng/",
         source: "open-dataset",
-        // Situada a 14.6 km del centro de Sokoto (Wikidata).
+        // Situada a 11.3 km del centro de Owerri (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-sokoto-usmanu-danfodiyo-university",
-        name: "Usmanu Danfodiyo University",
-        cityId: "nigeria-sokoto",
-        website: null,
+        id: "nigeria-owerri-imo-state-university",
+        name: "Imo State University",
+        cityId: "nigeria-owerri",
+        website: "http://www.imsu.edu.ng/",
         source: "open-dataset",
-        // Situada a 8.4 km del centro de Sokoto (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-sokoto-usmanu-danfodiyo-university",
-        name: "Usmanu Danfodiyo University",
-        cityId: "nigeria-sokoto",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.4 km del centro de Sokoto (Wikidata).
+        // Situada a 2.8 km del centro de Owerri (Wikidata).
       }),
   ],
-  "nigeria-katsina": [
+  "nigeria-kuje": [
       defineUniversity({
-        id: "nigeria-katsina-federal-college-of-education-katsina",
-        name: "Federal College of Education, Katsina",
-        cityId: "nigeria-katsina",
+        id: "nigeria-kuje-philomath-university",
+        name: "Philomath University",
+        cityId: "nigeria-kuje",
         website: null,
         source: "open-dataset",
-        // Situada a 6.7 km del centro de Katsina (Wikidata).
+        // Situada a 4.0 km del centro de Kuje (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-katsina-yusuf-bala-usman-college-of-legal-and-general-studies",
-        name: "Yusuf Bala Usman College of Legal and General Studies",
-        cityId: "nigeria-katsina",
+        id: "nigeria-kuje-prime-university-abuja",
+        name: "Prime University, Abuja",
+        cityId: "nigeria-kuje",
         website: null,
         source: "open-dataset",
-        // Situada a 2.4 km del centro de Katsina (Wikidata).
+        // Situada a 7.0 km del centro de Kuje (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-katsina-umaru-musa-yar-adua-university",
-        name: "Umaru Musa Yar'adua University",
-        cityId: "nigeria-katsina",
-        website: "http://www.umyu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 12.1 km del centro de Katsina (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-katsina-hassan-usman-katsina-polytechnic",
-        name: "Hassan Usman Katsina Polytechnic",
-        cityId: "nigeria-katsina",
+        id: "nigeria-kuje-amaj-university-kwali",
+        name: "Amaj University, Kwali",
+        cityId: "nigeria-kuje",
         website: null,
         source: "open-dataset",
-        // Situada a 7.5 km del centro de Katsina (Wikidata).
+        // Situada a 23.0 km del centro de Kuje (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-katsina-hassan-usman-katsina-polytechnic",
-        name: "Hassan Usman Katsina Polytechnic",
-        cityId: "nigeria-katsina",
+        id: "nigeria-kuje-abuja-leadership-centre",
+        name: "Abuja Leadership Centre",
+        cityId: "nigeria-kuje",
         website: null,
         source: "open-dataset",
-        // Situada a 7.1 km del centro de Katsina (Wikidata).
+        // Situada a 0.7 km del centro de Kuje (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-katsina-al-qalam-university-katsina",
-        name: "Al-Qalam University, Katsina",
-        cityId: "nigeria-katsina",
+        id: "nigeria-kuje-leadership-university",
+        name: "Leadership University",
+        cityId: "nigeria-kuje",
         website: null,
         source: "open-dataset",
-        // Situada a 5.2 km del centro de Katsina (Wikidata).
+        // Situada a 0.7 km del centro de Kuje (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-katsina-al-qalam-university-katsina",
-        name: "Al-Qalam University, Katsina",
-        cityId: "nigeria-katsina",
+        id: "nigeria-kuje-african-university-of-science-and-technology-galadima",
+        name: "African University of Science and Technology Galadima",
+        cityId: "nigeria-kuje",
         website: null,
         source: "open-dataset",
-        // Situada a 5.5 km del centro de Katsina (Wikidata).
+        // Situada a 10.5 km del centro de Kuje (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-katsina-al-qalam-university-katsina",
-        name: "Al-Qalam University, Katsina",
-        cityId: "nigeria-katsina",
+        id: "nigeria-kuje-prime-university-kuje",
+        name: "Prime University, Kuje",
+        cityId: "nigeria-kuje",
         website: null,
         source: "open-dataset",
-        // Situada a 5.2 km del centro de Katsina (Wikidata).
+        // Situada a 0.6 km del centro de Kuje (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-katsina-al-qalam-university-katsina",
-        name: "Al-Qalam University, Katsina",
-        cityId: "nigeria-katsina",
-        website: null,
+        id: "nigeria-kuje-university-of-abuja",
+        name: "University of Abuja",
+        cityId: "nigeria-kuje",
+        website: "http://www.unibuja.edu.ng/",
         source: "open-dataset",
-        // Situada a 5.5 km del centro de Katsina (Wikidata).
+        // Situada a 12.4 km del centro de Kuje (Wikidata).
       }),
   ],
-  "nigeria-umuahia": [
+  "nigeria-aba": [
       defineUniversity({
-        id: "nigeria-umuahia-imo-state-college-of-education",
-        name: "Imo State College of Education",
-        cityId: "nigeria-umuahia",
+        id: "nigeria-aba-nigerian-british-university",
+        name: "Nigerian British University",
+        cityId: "nigeria-aba",
         website: null,
         source: "open-dataset",
-        // Situada a 20.1 km del centro de Umuahia (Wikidata).
+        // Situada a 25.5 km del centro de Aba (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-umuahia-bridget-university",
-        name: "Bridget University",
-        cityId: "nigeria-umuahia",
+        id: "nigeria-aba-lux-mundi-university",
+        name: "Lux mundi University",
+        cityId: "nigeria-aba",
         website: null,
         source: "open-dataset",
-        // Situada a 23.0 km del centro de Umuahia (Wikidata).
+        // Situada a 6.2 km del centro de Aba (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-umuahia-bridget-university",
-        name: "Bridget University",
-        cityId: "nigeria-umuahia",
+        id: "nigeria-aba-covenant-polytechnic-aba",
+        name: "Covenant Polytechnic, Aba",
+        cityId: "nigeria-aba",
         website: null,
         source: "open-dataset",
-        // Situada a 23.0 km del centro de Umuahia (Wikidata).
+        // Situada a 3.3 km del centro de Aba (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-umuahia-lux-mundi-university-umuahia",
-        name: "Lux Mundi University, Umuahia",
-        cityId: "nigeria-umuahia",
+        id: "nigeria-aba-abia-state-polytechnic-aba",
+        name: "Abia State Polytechnic, Aba",
+        cityId: "nigeria-aba",
         website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Umuahia (Wikidata).
+        // Situada a 2.5 km del centro de Aba (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-umuahia-lux-mundi-university-umuahia",
-        name: "Lux Mundi University, Umuahia",
-        cityId: "nigeria-umuahia",
+        id: "nigeria-aba-clifford-university",
+        name: "Clifford University",
+        cityId: "nigeria-aba",
         website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Umuahia (Wikidata).
+        // Situada a 21.8 km del centro de Aba (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-umuahia-amadeus-university-amizi-abia-state",
-        name: "Amadeus University, Amizi, Abia State",
-        cityId: "nigeria-umuahia",
+        id: "nigeria-aba-abia-state-polytechnic",
+        name: "Abia State Polytechnic",
+        cityId: "nigeria-aba",
+        website: "http://www.abiapoly.edu.ng/",
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Aba (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-aba-obong-university",
+        name: "Obong University",
+        cityId: "nigeria-aba",
+        website: "http://www.obonguniversity.net/",
+        source: "open-dataset",
+        // Situada a 28.5 km del centro de Aba (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-aba-rhema-university",
+        name: "Rhema University",
+        cityId: "nigeria-aba",
         website: null,
         source: "open-dataset",
-        // Situada a 19.8 km del centro de Umuahia (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-umuahia-michael-okpara-university-of-agriculture-umudike",
-        name: "Michael Okpara University of Agriculture Umudike",
-        cityId: "nigeria-umuahia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de Umuahia (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-umuahia-michael-okpara-university-of-agriculture-umudike",
-        name: "Michael Okpara University of Agriculture Umudike",
-        cityId: "nigeria-umuahia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de Umuahia (Wikidata).
-      }),
-  ],
-  "nigeria-offa": [
-      defineUniversity({
-        id: "nigeria-offa-summit-university",
-        name: "Summit University",
-        cityId: "nigeria-offa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Offa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-offa-summit-university",
-        name: "Summit University",
-        cityId: "nigeria-offa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Offa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-offa-kwara-state-college-of-education-oro",
-        name: "Kwara State College of Education, Oro",
-        cityId: "nigeria-offa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 20.0 km del centro de Offa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-offa-moje-college-of-education",
-        name: "Moje College Of Education",
-        cityId: "nigeria-offa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Offa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-offa-moje-college-of-education",
-        name: "Moje College Of Education",
-        cityId: "nigeria-offa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Offa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-offa-lens-polytechnic-offa",
-        name: "Lens Polytechnic Offa",
-        cityId: "nigeria-offa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Offa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-offa-lens-university",
-        name: "Lens University",
-        cityId: "nigeria-offa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.8 km del centro de Offa (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-offa-federal-polytechnic-offa",
-        name: "Federal Polytechnic, Offa",
-        cityId: "nigeria-offa",
-        website: "http://www.fedpoffa.edu.ng/",
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Offa (Wikidata).
-      }),
-  ],
-  "nigeria-maiduguri": [
-      defineUniversity({
-        id: "nigeria-maiduguri-kashim-ibrahim-college-of-education",
-        name: "Kashim Ibrahim College of Education",
-        cityId: "nigeria-maiduguri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Maiduguri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-maiduguri-al-ansar-university-maiduguri",
-        name: "Al Ansar UNIVERSITY Maiduguri",
-        cityId: "nigeria-maiduguri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Maiduguri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-maiduguri-al-ansar-university-maiduguri",
-        name: "Al Ansar UNIVERSITY Maiduguri",
-        cityId: "nigeria-maiduguri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Maiduguri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-maiduguri-national-open-university-of-nigeria-maiduguri",
-        name: "National Open University of Nigeria Maiduguri",
-        cityId: "nigeria-maiduguri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.1 km del centro de Maiduguri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-maiduguri-al-ansar-university-maiduguri",
-        name: "Al-Ansar University Maiduguri",
-        cityId: "nigeria-maiduguri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Maiduguri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-maiduguri-university-of-maiduguri",
-        name: "University of Maiduguri",
-        cityId: "nigeria-maiduguri",
-        website: "http://www.unimaid.edu.ng/",
-        source: "open-dataset",
-        // Situada a 6.4 km del centro de Maiduguri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-maiduguri-ramat-polytechnic-maiduguri",
-        name: "Ramat Polytechnic Maiduguri",
-        cityId: "nigeria-maiduguri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Maiduguri (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-maiduguri-ramat-polytechnic-maiduguri",
-        name: "Ramat Polytechnic Maiduguri",
-        cityId: "nigeria-maiduguri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Maiduguri (Wikidata).
-      }),
-  ],
-  "nigeria-ondo": [
-      defineUniversity({
-        id: "nigeria-ondo-federal-polytechnic-ile-oluji-ondo-state",
-        name: "Federal Polytechnic, Ile-Oluji, ondo state",
-        cityId: "nigeria-ondo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 12.5 km del centro de Ondo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ondo-federal-polytechnic-ile-oluji-ondo-state",
-        name: "Federal Polytechnic, Ile-Oluji, ondo state",
-        cityId: "nigeria-ondo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 12.5 km del centro de Ondo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ondo-wesley-university",
-        name: "Wesley University",
-        cityId: "nigeria-ondo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.9 km del centro de Ondo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ondo-adeyemi-college-of-education",
-        name: "Adeyemi College of Education",
-        cityId: "nigeria-ondo",
-        website: "http://www.aceondo-ng.com/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Ondo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ondo-adeyemi-college-of-education",
-        name: "Adeyemi College of Education",
-        cityId: "nigeria-ondo",
-        website: "http://www.aceondo-ng.com/",
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Ondo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ondo-wesley-university",
-        name: "Wesley University",
-        cityId: "nigeria-ondo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Ondo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ondo-wesley-university",
-        name: "Wesley University",
-        cityId: "nigeria-ondo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Ondo (Wikidata).
-      }),
-  ],
-  "nigeria-oke-ila": [
-      defineUniversity({
-        id: "nigeria-oke-ila-igbajo-polytechnic",
-        name: "Igbajo Polytechnic",
-        cityId: "nigeria-oke-ila",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.7 km del centro de Oke Ila (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-oke-ila-landmark-university",
-        name: "Landmark University",
-        cityId: "nigeria-oke-ila",
-        website: "http://www.lmu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 22.1 km del centro de Oke Ila (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-oke-ila-landmark-university",
-        name: "Landmark University",
-        cityId: "nigeria-oke-ila",
-        website: "http://www.lmu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 22.1 km del centro de Oke Ila (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-oke-ila-landmark-university",
-        name: "Landmark University",
-        cityId: "nigeria-oke-ila",
-        website: "http://www.lmu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 22.1 km del centro de Oke Ila (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-oke-ila-landmark-university",
-        name: "Landmark University",
-        cityId: "nigeria-oke-ila",
-        website: "http://www.lmu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 22.1 km del centro de Oke Ila (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-oke-ila-landmark-university",
-        name: "Landmark University",
-        cityId: "nigeria-oke-ila",
-        website: "http://www.lmu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 22.1 km del centro de Oke Ila (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-oke-ila-landmark-university",
-        name: "Landmark University",
-        cityId: "nigeria-oke-ila",
-        website: "http://www.lmu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 22.1 km del centro de Oke Ila (Wikidata).
-      }),
-  ],
-  "nigeria-iwo": [
-      defineUniversity({
-        id: "nigeria-iwo-westland-university-iwo",
-        name: "Westland University Iwo",
-        cityId: "nigeria-iwo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.3 km del centro de Iwo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-iwo-westland-university-iwo",
-        name: "Westland University, Iwo",
-        cityId: "nigeria-iwo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Iwo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-iwo-westland-university-iwo",
-        name: "Westland University, Iwo",
-        cityId: "nigeria-iwo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Iwo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-iwo-wolex-polytechnic-iwo-osun-state",
-        name: "Wolex Polytechnic, Iwo, Osun State",
-        cityId: "nigeria-iwo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.9 km del centro de Iwo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-iwo-iwo-city-polytechnic",
-        name: "Iwo City Polytechnic",
-        cityId: "nigeria-iwo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Iwo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-iwo-mercy-medical-university",
-        name: "Mercy Medical University",
-        cityId: "nigeria-iwo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.1 km del centro de Iwo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-iwo-bowen-university",
-        name: "Bowen University",
-        cityId: "nigeria-iwo",
-        website: "http://bowenuniversity-edu.org/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Iwo (Wikidata).
-      }),
-  ],
-  "nigeria-ebute-ikorodu": [
-      defineUniversity({
-        id: "nigeria-ebute-ikorodu-lagos-state-university-of-science-and-technology",
-        name: "Lagos State University of Science and Technology",
-        cityId: "nigeria-ebute-ikorodu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.9 km del centro de Ebute Ikorodu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ebute-ikorodu-caleb-university",
-        name: "Caleb University",
-        cityId: "nigeria-ebute-ikorodu",
-        website: "http://www.calebuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 18.3 km del centro de Ebute Ikorodu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ebute-ikorodu-caleb-university",
-        name: "Caleb University",
-        cityId: "nigeria-ebute-ikorodu",
-        website: "http://www.calebuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 18.3 km del centro de Ebute Ikorodu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ebute-ikorodu-caleb-university",
-        name: "Caleb University",
-        cityId: "nigeria-ebute-ikorodu",
-        website: "http://www.calebuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 18.3 km del centro de Ebute Ikorodu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ebute-ikorodu-caleb-university",
-        name: "Caleb University",
-        cityId: "nigeria-ebute-ikorodu",
-        website: "http://www.calebuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 18.3 km del centro de Ebute Ikorodu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ebute-ikorodu-caleb-university",
-        name: "Caleb University",
-        cityId: "nigeria-ebute-ikorodu",
-        website: "http://www.calebuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 18.3 km del centro de Ebute Ikorodu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ebute-ikorodu-caleb-university",
-        name: "Caleb University",
-        cityId: "nigeria-ebute-ikorodu",
-        website: "http://www.calebuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 18.3 km del centro de Ebute Ikorodu (Wikidata).
-      }),
-  ],
-  "nigeria-calabar": [
-      defineUniversity({
-        id: "nigeria-calabar-university-of-cross-river-state",
-        name: "University of Cross River State",
-        cityId: "nigeria-calabar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Calabar (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-calabar-the-duke-medical-university",
-        name: "The Duke Medical University",
-        cityId: "nigeria-calabar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Calabar (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-calabar-the-duke-medical-university",
-        name: "The Duke Medical University",
-        cityId: "nigeria-calabar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Calabar (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-calabar-hope-waddell-training-institution",
-        name: "Hope Waddell Training Institution",
-        cityId: "nigeria-calabar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Calabar (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-calabar-university-of-calabar",
-        name: "University of Calabar",
-        cityId: "nigeria-calabar",
-        website: "http://www.unical.edu.ng/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Calabar (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-calabar-arthur-jarvis-university",
-        name: "Arthur Jarvis University",
-        cityId: "nigeria-calabar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.5 km del centro de Calabar (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-calabar-arthur-jarvis-university",
-        name: "Arthur Jarvis University",
-        cityId: "nigeria-calabar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 14.4 km del centro de Calabar (Wikidata).
+        // Situada a 5.0 km del centro de Aba (Wikidata).
       }),
   ],
   "nigeria-bauchi": [
@@ -2484,62 +1348,54 @@ export default {
         // Situada a 8.1 km del centro de Bauchi (Wikidata).
       }),
   ],
-  "nigeria-awka": [
+  "nigeria-yenagoa": [
       defineUniversity({
-        id: "nigeria-awka-st-johnbosco-major-seminary-isuaniocha",
-        name: "St. Johnbosco Major Seminary Isuaniocha",
-        cityId: "nigeria-awka",
+        id: "nigeria-yenagoa-bayelsa-medical-university",
+        name: "Bayelsa Medical University",
+        cityId: "nigeria-yenagoa",
         website: null,
         source: "open-dataset",
-        // Situada a 7.5 km del centro de Awka (Wikidata).
+        // Situada a 9.4 km del centro de Yenagoa (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-awka-nnamdi-azikiwe-university",
-        name: "Nnamdi Azikiwe University",
-        cityId: "nigeria-awka",
-        website: "http://www.unizik.edu.ng/",
-        source: "open-dataset",
-        // Situada a 6.5 km del centro de Awka (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-awka-nnamdi-azikiwe-university",
-        name: "Nnamdi Azikiwe University",
-        cityId: "nigeria-awka",
-        website: "http://www.unizik.edu.ng/",
-        source: "open-dataset",
-        // Situada a 6.1 km del centro de Awka (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-awka-nnamdi-azikiwe-university",
-        name: "Nnamdi Azikiwe University",
-        cityId: "nigeria-awka",
-        website: "http://www.unizik.edu.ng/",
-        source: "open-dataset",
-        // Situada a 6.5 km del centro de Awka (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-awka-anambra-state-polytechnic-mgbakwu",
-        name: "Anambra state polytechnic, Mgbakwu",
-        cityId: "nigeria-awka",
+        id: "nigeria-yenagoa-university-of-africa-toru-orua",
+        name: "University of Africa, Toru-Orua",
+        cityId: "nigeria-yenagoa",
         website: null,
         source: "open-dataset",
-        // Situada a 7.5 km del centro de Awka (Wikidata).
+        // Situada a 1.0 km del centro de Yenagoa (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-awka-psychology-department-in-nnamdi-azikiwe-university",
-        name: "Psychology department in Nnamdi Azikiwe University",
-        cityId: "nigeria-awka",
+        id: "nigeria-yenagoa-hensard-university",
+        name: "Hensard University",
+        cityId: "nigeria-yenagoa",
         website: null,
         source: "open-dataset",
-        // Situada a 6.7 km del centro de Awka (Wikidata).
+        // Situada a 29.8 km del centro de Yenagoa (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-awka-paul-university",
-        name: "Paul University",
-        cityId: "nigeria-awka",
-        website: "http://www.pauluniversity.edu.ng/",
+        id: "nigeria-yenagoa-yenagoa-polytechnic",
+        name: "Yenagoa Polytechnic",
+        cityId: "nigeria-yenagoa",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Awka (Wikidata).
+        // Situada a 9.8 km del centro de Yenagoa (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-yenagoa-federal-university-otuoke",
+        name: "Federal University, Otuoke",
+        cityId: "nigeria-yenagoa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 15.5 km del centro de Yenagoa (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-yenagoa-niger-delta-university",
+        name: "Niger Delta University",
+        cityId: "nigeria-yenagoa",
+        website: "http://www.ndu.edu.ng/",
+        source: "open-dataset",
+        // Situada a 18.8 km del centro de Yenagoa (Wikidata).
       }),
   ],
   "nigeria-port-harcourt": [
@@ -2634,212 +1490,312 @@ export default {
         // Situada a 1.8 km del centro de Oyo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-oyo-ajayi-crowther-university",
-        name: "Ajayi Crowther University",
+        id: "nigeria-oyo-emanuel-alayande-university-of-education-oyo",
+        name: "Emanuel Alayande University of Education Oyo",
         cityId: "nigeria-oyo",
-        website: "http://www.acu.edu.ng/",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Oyo (Wikidata).
+        // Situada a None km del centro de Oyo (Wikidata).
       }),
   ],
-  "nigeria-minna": [
+  "nigeria-offa": [
       defineUniversity({
-        id: "nigeria-minna-niger-state-college-of-education",
-        name: "Niger State College of Education",
-        cityId: "nigeria-minna",
+        id: "nigeria-offa-summit-university",
+        name: "Summit University",
+        cityId: "nigeria-offa",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Minna (Wikidata).
+        // Situada a 1.0 km del centro de Offa (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-minna-abdulkadir-kure-university",
-        name: "Abdulkadir Kure University",
-        cityId: "nigeria-minna",
+        id: "nigeria-offa-kwara-state-college-of-education-oro",
+        name: "Kwara State College of Education, Oro",
+        cityId: "nigeria-offa",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Minna (Wikidata).
+        // Situada a 20.0 km del centro de Offa (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-minna-newgate-university-minna",
-        name: "Newgate University Minna",
-        cityId: "nigeria-minna",
+        id: "nigeria-offa-moje-college-of-education",
+        name: "Moje College Of Education",
+        cityId: "nigeria-offa",
         website: null,
         source: "open-dataset",
-        // Situada a 23.4 km del centro de Minna (Wikidata).
+        // Situada a 5.5 km del centro de Offa (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-minna-newgate-university-minna",
-        name: "Newgate University Minna",
-        cityId: "nigeria-minna",
+        id: "nigeria-offa-lens-polytechnic-offa",
+        name: "Lens Polytechnic Offa",
+        cityId: "nigeria-offa",
         website: null,
         source: "open-dataset",
-        // Situada a 23.4 km del centro de Minna (Wikidata).
+        // Situada a 2.0 km del centro de Offa (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-minna-el-amin-university-minna",
-        name: "El-Amin University, Minna",
-        cityId: "nigeria-minna",
+        id: "nigeria-offa-lens-university",
+        name: "Lens University",
+        cityId: "nigeria-offa",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Minna (Wikidata).
+        // Situada a 4.8 km del centro de Offa (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-minna-federal-university-of-technology-minna",
-        name: "Federal University of Technology Minna",
-        cityId: "nigeria-minna",
-        website: "http://www.futminna.edu.ng/",
+        id: "nigeria-offa-federal-polytechnic-offa",
+        name: "Federal Polytechnic, Offa",
+        cityId: "nigeria-offa",
+        website: "http://www.fedpoffa.edu.ng/",
         source: "open-dataset",
-        // Situada a 3.5 km del centro de Minna (Wikidata).
+        // Situada a 2.1 km del centro de Offa (Wikidata).
       }),
   ],
-  "nigeria-epe": [
+  "nigeria-maiduguri": [
       defineUniversity({
-        id: "nigeria-epe-government-techincal-college",
-        name: "GOVERNMENT TECHINCAL COLLEGE",
-        cityId: "nigeria-epe",
+        id: "nigeria-maiduguri-kashim-ibrahim-college-of-education",
+        name: "Kashim Ibrahim College of Education",
+        cityId: "nigeria-maiduguri",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Epe (Wikidata).
+        // Situada a 4.2 km del centro de Maiduguri (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-epe-maranatha-university-lagos",
-        name: "Maranatha University, Lagos",
-        cityId: "nigeria-epe",
+        id: "nigeria-maiduguri-al-ansar-university-maiduguri",
+        name: "Al Ansar UNIVERSITY Maiduguri",
+        cityId: "nigeria-maiduguri",
         website: null,
         source: "open-dataset",
-        // Situada a 21.0 km del centro de Epe (Wikidata).
+        // Situada a 4.1 km del centro de Maiduguri (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-epe-augustine-university-ilara-epe",
-        name: "Augustine University Ilara-Epe",
-        cityId: "nigeria-epe",
+        id: "nigeria-maiduguri-national-open-university-of-nigeria-maiduguri",
+        name: "National Open University of Nigeria Maiduguri",
+        cityId: "nigeria-maiduguri",
         website: null,
         source: "open-dataset",
-        // Situada a 0.0 km del centro de Epe (Wikidata).
+        // Situada a 6.1 km del centro de Maiduguri (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-epe-augustine-university-ilara-epe",
-        name: "Augustine University Ilara-Epe",
-        cityId: "nigeria-epe",
+        id: "nigeria-maiduguri-al-ansar-university-maiduguri",
+        name: "Al-Ansar University Maiduguri",
+        cityId: "nigeria-maiduguri",
         website: null,
         source: "open-dataset",
-        // Situada a 0.0 km del centro de Epe (Wikidata).
+        // Situada a 4.1 km del centro de Maiduguri (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-epe-pan-atlantic-university",
-        name: "Pan-Atlantic University",
-        cityId: "nigeria-epe",
-        website: null,
+        id: "nigeria-maiduguri-university-of-maiduguri",
+        name: "University of Maiduguri",
+        cityId: "nigeria-maiduguri",
+        website: "http://www.unimaid.edu.ng/",
         source: "open-dataset",
-        // Situada a 17.8 km del centro de Epe (Wikidata).
+        // Situada a 6.4 km del centro de Maiduguri (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-epe-pan-atlantic-university",
-        name: "Pan-Atlantic University",
-        cityId: "nigeria-epe",
+        id: "nigeria-maiduguri-ramat-polytechnic-maiduguri",
+        name: "Ramat Polytechnic Maiduguri",
+        cityId: "nigeria-maiduguri",
         website: null,
         source: "open-dataset",
-        // Situada a 19.4 km del centro de Epe (Wikidata).
+        // Situada a 3.0 km del centro de Maiduguri (Wikidata).
       }),
   ],
-  "nigeria-ede": [
+  "nigeria-katsina": [
       defineUniversity({
-        id: "nigeria-ede-adeleke-university",
-        name: "Adeleke University",
-        cityId: "nigeria-ede",
-        website: "http://www.adelekeuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Ede (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ede-adeleke-university",
-        name: "Adeleke University",
-        cityId: "nigeria-ede",
-        website: "http://www.adelekeuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Ede (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ede-adeleke-university",
-        name: "Adeleke University",
-        cityId: "nigeria-ede",
-        website: "http://www.adelekeuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Ede (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ede-federal-polytechnic-ede",
-        name: "Federal Polytechnic, Ede",
-        cityId: "nigeria-ede",
+        id: "nigeria-katsina-federal-college-of-education-katsina",
+        name: "Federal College of Education, Katsina",
+        cityId: "nigeria-katsina",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Ede (Wikidata).
+        // Situada a 6.7 km del centro de Katsina (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-ede-redeemer-s-university",
-        name: "Redeemer's University",
-        cityId: "nigeria-ede",
+        id: "nigeria-katsina-yusuf-bala-usman-college-of-legal-and-general-studies",
+        name: "Yusuf Bala Usman College of Legal and General Studies",
+        cityId: "nigeria-katsina",
         website: null,
         source: "open-dataset",
-        // Situada a 6.6 km del centro de Ede (Wikidata).
+        // Situada a 2.4 km del centro de Katsina (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-ede-redeemer-s-university",
-        name: "Redeemer's University",
-        cityId: "nigeria-ede",
+        id: "nigeria-katsina-ksitm-katsina-state-institute-of-technology-and-management",
+        name: "KSITM KATSINA STATE INSTITUTE OF TECHNOLOGY AND MANAGEMENT",
+        cityId: "nigeria-katsina",
         website: null,
         source: "open-dataset",
-        // Situada a 6.6 km del centro de Ede (Wikidata).
+        // Situada a 5.0 km del centro de Katsina (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-katsina-umaru-musa-yar-adua-university",
+        name: "Umaru Musa Yar'adua University",
+        cityId: "nigeria-katsina",
+        website: "http://www.umyu.edu.ng/",
+        source: "open-dataset",
+        // Situada a 12.1 km del centro de Katsina (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-katsina-hassan-usman-katsina-polytechnic",
+        name: "Hassan Usman Katsina Polytechnic",
+        cityId: "nigeria-katsina",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.5 km del centro de Katsina (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-katsina-al-qalam-university-katsina",
+        name: "Al-Qalam University, Katsina",
+        cityId: "nigeria-katsina",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.2 km del centro de Katsina (Wikidata).
       }),
   ],
-  "nigeria-azare": [
+  "nigeria-iwo": [
       defineUniversity({
-        id: "nigeria-azare-aminu-saleh-college-of-education",
-        name: "Aminu Saleh College of Education",
-        cityId: "nigeria-azare",
+        id: "nigeria-iwo-westland-university-iwo",
+        name: "Westland University Iwo",
+        cityId: "nigeria-iwo",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Azare (Wikidata).
+        // Situada a 8.3 km del centro de Iwo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-azare-federal-university-of-health-sciences-azare",
-        name: "Federal University of Health Sciences, Azare",
-        cityId: "nigeria-azare",
+        id: "nigeria-iwo-westland-university-iwo",
+        name: "Westland University, Iwo",
+        cityId: "nigeria-iwo",
         website: null,
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Azare (Wikidata).
+        // Situada a 1.6 km del centro de Iwo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-azare-federal-university-of-health-sciences-azare",
-        name: "Federal University of Health Sciences, Azare",
-        cityId: "nigeria-azare",
+        id: "nigeria-iwo-wolex-polytechnic-iwo-osun-state",
+        name: "Wolex Polytechnic, Iwo, Osun State",
+        cityId: "nigeria-iwo",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Azare (Wikidata).
+        // Situada a 6.9 km del centro de Iwo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-azare-federal-university-of-health-sciences-azare",
-        name: "Federal University of Health Sciences, Azare",
-        cityId: "nigeria-azare",
+        id: "nigeria-iwo-iwo-city-polytechnic",
+        name: "Iwo City Polytechnic",
+        cityId: "nigeria-iwo",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Azare (Wikidata).
+        // Situada a 2.6 km del centro de Iwo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-azare-federal-university-of-health-sciences-azare",
-        name: "Federal University of Health Sciences, Azare",
-        cityId: "nigeria-azare",
+        id: "nigeria-iwo-mercy-medical-university",
+        name: "Mercy Medical University",
+        cityId: "nigeria-iwo",
         website: null,
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Azare (Wikidata).
+        // Situada a 10.1 km del centro de Iwo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-azare-bauchi-state-university",
-        name: "Bauchi State University",
-        cityId: "nigeria-azare",
+        id: "nigeria-iwo-bowen-university",
+        name: "Bowen University",
+        cityId: "nigeria-iwo",
+        website: "http://bowenuniversity-edu.org/",
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Iwo (Wikidata).
+      }),
+  ],
+  "nigeria-ikot-ekpene": [
+      defineUniversity({
+        id: "nigeria-ikot-ekpene-federal-polytechnic-ukana",
+        name: "Federal Polytechnic, Ukana",
+        cityId: "nigeria-ikot-ekpene",
         website: null,
         source: "open-dataset",
-        // Situada a 17.3 km del centro de Azare (Wikidata).
+        // Situada a 15.4 km del centro de Ikot Ekpene (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ikot-ekpene-topfaith-university",
+        name: "Topfaith University",
+        cityId: "nigeria-ikot-ekpene",
+        website: null,
+        source: "open-dataset",
+        // Situada a 15.2 km del centro de Ikot Ekpene (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ikot-ekpene-ritman-university",
+        name: "Ritman University",
+        cityId: "nigeria-ikot-ekpene",
+        website: null,
+        source: "open-dataset",
+        // Situada a 15.0 km del centro de Ikot Ekpene (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ikot-ekpene-foundation-college-of-technology",
+        name: "Foundation College of Technology",
+        cityId: "nigeria-ikot-ekpene",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Ikot Ekpene (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ikot-ekpene-ritman-university",
+        name: "Ritman University",
+        cityId: "nigeria-ikot-ekpene",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Ikot Ekpene (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ikot-ekpene-akwa-ibom-state-polytechnic",
+        name: "Akwa Ibom State Polytechnic",
+        cityId: "nigeria-ikot-ekpene",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.7 km del centro de Ikot Ekpene (Wikidata).
+      }),
+  ],
+  "nigeria-awka": [
+      defineUniversity({
+        id: "nigeria-awka-st-johnbosco-major-seminary-isuaniocha",
+        name: "St. Johnbosco Major Seminary Isuaniocha",
+        cityId: "nigeria-awka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.5 km del centro de Awka (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-awka-nnamdi-azikiwe-university",
+        name: "Nnamdi Azikiwe University",
+        cityId: "nigeria-awka",
+        website: "http://www.unizik.edu.ng/",
+        source: "open-dataset",
+        // Situada a 6.1 km del centro de Awka (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-awka-anambra-state-polytechnic-mgbakwu",
+        name: "Anambra state polytechnic, Mgbakwu",
+        cityId: "nigeria-awka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.5 km del centro de Awka (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-awka-psychology-department-in-nnamdi-azikiwe-university",
+        name: "Psychology department in Nnamdi Azikiwe University",
+        cityId: "nigeria-awka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.7 km del centro de Awka (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-awka-paul-university",
+        name: "Paul University",
+        cityId: "nigeria-awka",
+        website: "http://www.pauluniversity.edu.ng/",
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Awka (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-awka-forestry-and-wildlife-management-department-of-nnamdi-azikiwe-university",
+        name: "Forestry and wildlife management department of Nnamdi Azikiwe University",
+        cityId: "nigeria-awka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Awka (Wikidata).
       }),
   ],
   "nigeria-abeokuta": [
@@ -2892,6 +1848,48 @@ export default {
         // Situada a 13.3 km del centro de Abeokuta (Wikidata).
       }),
   ],
+  "nigeria-umuahia": [
+      defineUniversity({
+        id: "nigeria-umuahia-imo-state-college-of-education",
+        name: "Imo State College of Education",
+        cityId: "nigeria-umuahia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 20.1 km del centro de Umuahia (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-umuahia-bridget-university",
+        name: "Bridget University",
+        cityId: "nigeria-umuahia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 23.0 km del centro de Umuahia (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-umuahia-lux-mundi-university-umuahia",
+        name: "Lux Mundi University, Umuahia",
+        cityId: "nigeria-umuahia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de Umuahia (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-umuahia-amadeus-university-amizi-abia-state",
+        name: "Amadeus University, Amizi, Abia State",
+        cityId: "nigeria-umuahia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 19.8 km del centro de Umuahia (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-umuahia-michael-okpara-university-of-agriculture-umudike",
+        name: "Michael Okpara University of Agriculture Umudike",
+        cityId: "nigeria-umuahia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.5 km del centro de Umuahia (Wikidata).
+      }),
+  ],
   "nigeria-ughelli": [
       defineUniversity({
         id: "nigeria-ughelli-michael-and-cecilia-university",
@@ -2934,172 +1932,46 @@ export default {
         // Situada a 23.8 km del centro de Ughelli (Wikidata).
       }),
   ],
-  "nigeria-shagamu": [
+  "nigeria-minna": [
       defineUniversity({
-        id: "nigeria-shagamu-anchor-university",
-        name: "Anchor University",
-        cityId: "nigeria-shagamu",
+        id: "nigeria-minna-niger-state-college-of-education",
+        name: "Niger State College of Education",
+        cityId: "nigeria-minna",
         website: null,
         source: "open-dataset",
-        // Situada a 19.0 km del centro de Shagamu (Wikidata).
+        // Situada a 2.2 km del centro de Minna (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-shagamu-christopher-university",
-        name: "Christopher University",
-        cityId: "nigeria-shagamu",
+        id: "nigeria-minna-abdulkadir-kure-university",
+        name: "Abdulkadir Kure University",
+        cityId: "nigeria-minna",
         website: null,
         source: "open-dataset",
-        // Situada a 19.0 km del centro de Shagamu (Wikidata).
+        // Situada a 3.0 km del centro de Minna (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-shagamu-christopher-university",
-        name: "Christopher University",
-        cityId: "nigeria-shagamu",
+        id: "nigeria-minna-newgate-university-minna",
+        name: "Newgate University Minna",
+        cityId: "nigeria-minna",
         website: null,
         source: "open-dataset",
-        // Situada a 19.0 km del centro de Shagamu (Wikidata).
+        // Situada a 23.4 km del centro de Minna (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-shagamu-christopher-university",
-        name: "Christopher University",
-        cityId: "nigeria-shagamu",
+        id: "nigeria-minna-el-amin-university-minna",
+        name: "El-Amin University, Minna",
+        cityId: "nigeria-minna",
         website: null,
         source: "open-dataset",
-        // Situada a 19.0 km del centro de Shagamu (Wikidata).
+        // Situada a 3.0 km del centro de Minna (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-shagamu-christopher-university",
-        name: "Christopher University",
-        cityId: "nigeria-shagamu",
-        website: null,
+        id: "nigeria-minna-federal-university-of-technology-minna",
+        name: "Federal University of Technology Minna",
+        cityId: "nigeria-minna",
+        website: "http://www.futminna.edu.ng/",
         source: "open-dataset",
-        // Situada a 19.0 km del centro de Shagamu (Wikidata).
-      }),
-  ],
-  "nigeria-sapele": [
-      defineUniversity({
-        id: "nigeria-sapele-admiralty-university-of-nigeria",
-        name: "Admiralty University of Nigeria",
-        cityId: "nigeria-sapele",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.4 km del centro de Sapele (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-sapele-sapele-community-study-centre",
-        name: "Sapele Community Study Centre",
-        cityId: "nigeria-sapele",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Sapele (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-sapele-delta-state-polytechnic-otefe-oghara",
-        name: "Delta State Polytechnic, Otefe-Oghara",
-        cityId: "nigeria-sapele",
-        website: null,
-        source: "open-dataset",
-        // Situada a 13.8 km del centro de Sapele (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-sapele-western-delta-university",
-        name: "Western Delta University",
-        cityId: "nigeria-sapele",
-        website: "http://www.wdu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 11.6 km del centro de Sapele (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-sapele-western-delta-university",
-        name: "Western Delta University",
-        cityId: "nigeria-sapele",
-        website: "http://www.wdu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 11.6 km del centro de Sapele (Wikidata).
-      }),
-  ],
-  "nigeria-osogbo": [
-      defineUniversity({
-        id: "nigeria-osogbo-fountain-university",
-        name: "Fountain University",
-        cityId: "nigeria-osogbo",
-        website: "http://www.fountainuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Osogbo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-osogbo-syeion-university-oshogbo",
-        name: "SYEION UNIVERSITY OSHOGBO",
-        cityId: "nigeria-osogbo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Osogbo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-osogbo-fountain-university",
-        name: "Fountain University",
-        cityId: "nigeria-osogbo",
-        website: "http://www.fountainuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Osogbo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-osogbo-osun-state-university",
-        name: "Osun State University",
-        cityId: "nigeria-osogbo",
-        website: "http://www.uniosun.edu.ng/",
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Osogbo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-osogbo-osun-state-university",
-        name: "Osun State University",
-        cityId: "nigeria-osogbo",
-        website: "http://www.uniosun.edu.ng/",
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Osogbo (Wikidata).
-      }),
-  ],
-  "nigeria-ogwashi-uku": [
-      defineUniversity({
-        id: "nigeria-ogwashi-uku-admiralty-university-of-nigeria",
-        name: "Admiralty University of Nigeria",
-        cityId: "nigeria-ogwashi-uku",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Ogwashi-Uku (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ogwashi-uku-margret-lawrence-university",
-        name: "Margret Lawrence University",
-        cityId: "nigeria-ogwashi-uku",
-        website: null,
-        source: "open-dataset",
-        // Situada a 19.9 km del centro de Ogwashi-Uku (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ogwashi-uku-sports-university-of-nigeria",
-        name: "Sports University of Nigeria",
-        cityId: "nigeria-ogwashi-uku",
-        website: null,
-        source: "open-dataset",
-        // Situada a 23.6 km del centro de Ogwashi-Uku (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ogwashi-uku-delta-state-polytechnic-ogwashi-uku",
-        name: "Delta state Polytechnic Ogwashi-Uku",
-        cityId: "nigeria-ogwashi-uku",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.7 km del centro de Ogwashi-Uku (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ogwashi-uku-delta-state-polytechnic",
-        name: "Delta State Polytechnic",
-        cityId: "nigeria-ogwashi-uku",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.7 km del centro de Ogwashi-Uku (Wikidata).
+        // Situada a 3.5 km del centro de Minna (Wikidata).
       }),
   ],
   "nigeria-keffi": [
@@ -3144,256 +2016,46 @@ export default {
         // Situada a 0.5 km del centro de Keffi (Wikidata).
       }),
   ],
-  "nigeria-igbara-odo": [
+  "nigeria-calabar": [
       defineUniversity({
-        id: "nigeria-igbara-odo-college-of-natural-agricultural-sciences",
-        name: "College Of Natural & Agricultural Sciences",
-        cityId: "nigeria-igbara-odo",
+        id: "nigeria-calabar-university-of-cross-river-state",
+        name: "University of Cross River State",
+        cityId: "nigeria-calabar",
         website: null,
         source: "open-dataset",
-        // Situada a 14.0 km del centro de Igbara-Odo (Wikidata).
+        // Situada a 3.6 km del centro de Calabar (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-igbara-odo-sam-maris-university",
-        name: "Sam-maris University",
-        cityId: "nigeria-igbara-odo",
+        id: "nigeria-calabar-the-duke-medical-university",
+        name: "The Duke Medical University",
+        cityId: "nigeria-calabar",
         website: null,
         source: "open-dataset",
-        // Situada a 12.6 km del centro de Igbara-Odo (Wikidata).
+        // Situada a 3.0 km del centro de Calabar (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-igbara-odo-sam-maris-university",
-        name: "Sam-maris University",
-        cityId: "nigeria-igbara-odo",
+        id: "nigeria-calabar-hope-waddell-training-institution",
+        name: "Hope Waddell Training Institution",
+        cityId: "nigeria-calabar",
         website: null,
         source: "open-dataset",
-        // Situada a 12.6 km del centro de Igbara-Odo (Wikidata).
+        // Situada a 1.7 km del centro de Calabar (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-igbara-odo-elizade-university",
-        name: "Elizade University",
-        cityId: "nigeria-igbara-odo",
+        id: "nigeria-calabar-university-of-calabar",
+        name: "University of Calabar",
+        cityId: "nigeria-calabar",
+        website: "http://www.unical.edu.ng/",
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Calabar (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-calabar-arthur-jarvis-university",
+        name: "Arthur Jarvis University",
+        cityId: "nigeria-calabar",
         website: null,
         source: "open-dataset",
-        // Situada a 15.8 km del centro de Igbara-Odo (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-igbara-odo-joseph-ayo-babalola-university",
-        name: "Joseph Ayo Babalola University",
-        cityId: "nigeria-igbara-odo",
-        website: "http://www.jabu.edu.ng/",
-        source: "open-dataset",
-        // Situada a 14.1 km del centro de Igbara-Odo (Wikidata).
-      }),
-  ],
-  "nigeria-gbongan": [
-      defineUniversity({
-        id: "nigeria-gbongan-kings-university-ode-omu",
-        name: "Kings University, Ode Omu",
-        cityId: "nigeria-gbongan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.5 km del centro de Gbongan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gbongan-oduduwa-university",
-        name: "Oduduwa University",
-        cityId: "nigeria-gbongan",
-        website: "http://www.oduduwauniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 11.3 km del centro de Gbongan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gbongan-oduduwa-university",
-        name: "Oduduwa University",
-        cityId: "nigeria-gbongan",
-        website: "http://www.oduduwauniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 11.3 km del centro de Gbongan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gbongan-kings-university",
-        name: "Kings University",
-        cityId: "nigeria-gbongan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.4 km del centro de Gbongan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gbongan-kings-university",
-        name: "Kings University",
-        cityId: "nigeria-gbongan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.4 km del centro de Gbongan (Wikidata).
-      }),
-  ],
-  "nigeria-gboko": [
-      defineUniversity({
-        id: "nigeria-gboko-fidei-polytechnic-gboko",
-        name: "Fidei Polytechnic, Gboko",
-        cityId: "nigeria-gboko",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Gboko (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gboko-harry-pass-polytechnic",
-        name: "Harry Pass Polytechnic",
-        cityId: "nigeria-gboko",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Gboko (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gboko-gboko-polytechnic-gboko",
-        name: "Gboko Polytechnic Gboko",
-        cityId: "nigeria-gboko",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Gboko (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gboko-gboko-polytechnic-gboko",
-        name: "Gboko Polytechnic Gboko",
-        cityId: "nigeria-gboko",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Gboko (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gboko-federal-polytechnic-wannune",
-        name: "Federal Polytechnic, Wannune",
-        cityId: "nigeria-gboko",
-        website: null,
-        source: "open-dataset",
-        // Situada a 26.0 km del centro de Gboko (Wikidata).
-      }),
-  ],
-  "nigeria-gashua": [
-      defineUniversity({
-        id: "nigeria-gashua-umar-suleiman-college-of-education",
-        name: "Umar Suleiman College of Education",
-        cityId: "nigeria-gashua",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Gashua (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gashua-federal-university-gashua",
-        name: "Federal University Gashua",
-        cityId: "nigeria-gashua",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Gashua (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gashua-federal-university-gashua",
-        name: "Federal University Gashua",
-        cityId: "nigeria-gashua",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Gashua (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gashua-federal-university-gashua",
-        name: "Federal University Gashua",
-        cityId: "nigeria-gashua",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Gashua (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gashua-federal-university-gashua",
-        name: "Federal University Gashua",
-        cityId: "nigeria-gashua",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Gashua (Wikidata).
-      }),
-  ],
-  "nigeria-birnin-kebbi": [
-      defineUniversity({
-        id: "nigeria-birnin-kebbi-waziri-umaru-federal-polytechnic-birnin-kebbi",
-        name: "Waziri Umaru Federal Polytechnic, Birnin Kebbi",
-        cityId: "nigeria-birnin-kebbi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Birnin Kebbi (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-birnin-kebbi-waziri-umaru-federal-polytechnic-birnin-kebbi",
-        name: "Waziri Umaru Federal Polytechnic, Birnin Kebbi",
-        cityId: "nigeria-birnin-kebbi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.9 km del centro de Birnin Kebbi (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-birnin-kebbi-rayhaan-university",
-        name: "Rayhaan University",
-        cityId: "nigeria-birnin-kebbi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Birnin Kebbi (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-birnin-kebbi-federal-university-birnin-kebbi",
-        name: "Federal University, Birnin Kebbi",
-        cityId: "nigeria-birnin-kebbi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Birnin Kebbi (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-birnin-kebbi-federal-university-birnin-kebbi",
-        name: "Federal University, Birnin Kebbi",
-        cityId: "nigeria-birnin-kebbi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Birnin Kebbi (Wikidata).
-      }),
-  ],
-  "nigeria-alasia": [
-      defineUniversity({
-        id: "nigeria-alasia-eko-university-of-medical-and-health-sciences-ijanikin-lagos",
-        name: "Eko University of Medical and Health Sciences Ijanikin Lagos",
-        cityId: "nigeria-alasia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Alasia (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-alasia-eko-university-of-medical-and-health-sciences-ijanikin-lagos",
-        name: "Eko University of Medical and Health Sciences Ijanikin Lagos",
-        cityId: "nigeria-alasia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.3 km del centro de Alasia (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-alasia-crawford-university",
-        name: "Crawford University",
-        cityId: "nigeria-alasia",
-        website: "http://www.crawforduniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 7.0 km del centro de Alasia (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-alasia-lagos-state-university",
-        name: "Lagos State University",
-        cityId: "nigeria-alasia",
-        website: "http://www.lasunigeria.org/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Alasia (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-alasia-lagos-state-university",
-        name: "Lagos State University",
-        cityId: "nigeria-alasia",
-        website: "http://www.lasunigeria.org/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Alasia (Wikidata).
+        // Situada a 15.5 km del centro de Calabar (Wikidata).
       }),
   ],
   "nigeria-akure": [
@@ -3480,242 +2142,174 @@ export default {
         // Situada a 4.5 km del centro de Agege (Wikidata).
       }),
   ],
-  "nigeria-zaria": [
+  "nigeria-sokoto": [
       defineUniversity({
-        id: "nigeria-zaria-tazkiyah-university",
-        name: "Tazkiyah University",
-        cityId: "nigeria-zaria",
+        id: "nigeria-sokoto-iconic-open-university-sokoto",
+        name: "Iconic Open University, Sokoto",
+        cityId: "nigeria-sokoto",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Zaria (Wikidata).
+        // Situada a 12.4 km del centro de Sokoto (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-zaria-tazkiyah-university",
-        name: "Tazkiyah University",
-        cityId: "nigeria-zaria",
+        id: "nigeria-sokoto-northwest-university-sokoto",
+        name: "Northwest University, Sokoto",
+        cityId: "nigeria-sokoto",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Zaria (Wikidata).
+        // Situada a 5.8 km del centro de Sokoto (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-zaria-ahmadu-bello-university",
-        name: "Ahmadu Bello University",
-        cityId: "nigeria-zaria",
-        website: "http://www.abu.edu.ng/",
+        id: "nigeria-sokoto-sokoto-state-university",
+        name: "Sokoto State University",
+        cityId: "nigeria-sokoto",
+        website: "http://www.ssu.edu.ng/",
         source: "open-dataset",
-        // Situada a 9.0 km del centro de Zaria (Wikidata).
+        // Situada a 14.6 km del centro de Sokoto (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-zaria-federal-college-of-education-zaria",
-        name: "Federal College of Education, Zaria",
-        cityId: "nigeria-zaria",
+        id: "nigeria-sokoto-usmanu-danfodiyo-university",
+        name: "Usmanu Danfodiyo University",
+        cityId: "nigeria-sokoto",
         website: null,
         source: "open-dataset",
-        // Situada a 3.2 km del centro de Zaria (Wikidata).
+        // Situada a 8.4 km del centro de Sokoto (Wikidata).
       }),
   ],
-  "nigeria-wukari": [
+  "nigeria-sapele": [
       defineUniversity({
-        id: "nigeria-wukari-federal-university-wukari",
-        name: "Federal University, Wukari",
-        cityId: "nigeria-wukari",
+        id: "nigeria-sapele-admiralty-university-of-nigeria",
+        name: "Admiralty University of Nigeria",
+        cityId: "nigeria-sapele",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Wukari (Wikidata).
+        // Situada a 3.4 km del centro de Sapele (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-wukari-federal-university-wukari",
-        name: "Federal University, Wukari",
-        cityId: "nigeria-wukari",
+        id: "nigeria-sapele-sapele-community-study-centre",
+        name: "Sapele Community Study Centre",
+        cityId: "nigeria-sapele",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Wukari (Wikidata).
+        // Situada a 1.3 km del centro de Sapele (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-wukari-kwararafa-university-wukari",
-        name: "Kwararafa University Wukari",
-        cityId: "nigeria-wukari",
+        id: "nigeria-sapele-delta-state-polytechnic-otefe-oghara",
+        name: "Delta State Polytechnic, Otefe-Oghara",
+        cityId: "nigeria-sapele",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Wukari (Wikidata).
+        // Situada a 13.8 km del centro de Sapele (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-wukari-kwararafa-university",
-        name: "Kwararafa University",
-        cityId: "nigeria-wukari",
-        website: "http://www.kwararafauniversity.edu.ng/",
+        id: "nigeria-sapele-western-delta-university",
+        name: "Western Delta University",
+        cityId: "nigeria-sapele",
+        website: "http://www.wdu.edu.ng/",
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Wukari (Wikidata).
+        // Situada a 11.6 km del centro de Sapele (Wikidata).
       }),
   ],
-  "nigeria-suleja": [
+  "nigeria-osogbo": [
       defineUniversity({
-        id: "nigeria-suleja-jefap-university",
-        name: "JEFAP University",
-        cityId: "nigeria-suleja",
-        website: null,
+        id: "nigeria-osogbo-fountain-university",
+        name: "Fountain University",
+        cityId: "nigeria-osogbo",
+        website: "http://www.fountainuniversity.edu.ng/",
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Suleja (Wikidata).
+        // Situada a 3.2 km del centro de Osogbo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-suleja-dorben-polytechnic",
-        name: "Dorben Polytechnic",
-        cityId: "nigeria-suleja",
+        id: "nigeria-osogbo-syeion-university-oshogbo",
+        name: "SYEION UNIVERSITY OSHOGBO",
+        cityId: "nigeria-osogbo",
         website: null,
         source: "open-dataset",
-        // Situada a 24.1 km del centro de Suleja (Wikidata).
+        // Situada a 1.0 km del centro de Osogbo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-suleja-fct-college-of-education",
-        name: "FCT College of Education",
-        cityId: "nigeria-suleja",
-        website: null,
+        id: "nigeria-osogbo-fountain-university",
+        name: "Fountain University",
+        cityId: "nigeria-osogbo",
+        website: "http://www.fountainuniversity.edu.ng/",
         source: "open-dataset",
-        // Situada a 11.1 km del centro de Suleja (Wikidata).
+        // Situada a 3.3 km del centro de Osogbo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-suleja-fct-college-of-education",
-        name: "FCT College of Education",
-        cityId: "nigeria-suleja",
-        website: null,
+        id: "nigeria-osogbo-osun-state-university",
+        name: "Osun State University",
+        cityId: "nigeria-osogbo",
+        website: "http://www.uniosun.edu.ng/",
         source: "open-dataset",
-        // Situada a 11.3 km del centro de Suleja (Wikidata).
+        // Situada a 5.0 km del centro de Osogbo (Wikidata).
       }),
   ],
-  "nigeria-patigi": [
+  "nigeria-ondo": [
       defineUniversity({
-        id: "nigeria-patigi-ahman-pategi-university-kwara-state",
-        name: "Ahman Pategi University, Kwara State",
-        cityId: "nigeria-patigi",
+        id: "nigeria-ondo-federal-polytechnic-ile-oluji-ondo-state",
+        name: "Federal Polytechnic, Ile-Oluji, ondo state",
+        cityId: "nigeria-ondo",
         website: null,
         source: "open-dataset",
-        // Situada a 3.5 km del centro de Patigi (Wikidata).
+        // Situada a 12.5 km del centro de Ondo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-patigi-ahman-pategi-university-patigi",
-        name: "Ahman Pategi University, Patigi",
-        cityId: "nigeria-patigi",
+        id: "nigeria-ondo-wesley-university",
+        name: "Wesley University",
+        cityId: "nigeria-ondo",
         website: null,
         source: "open-dataset",
-        // Situada a 3.6 km del centro de Patigi (Wikidata).
+        // Situada a 3.9 km del centro de Ondo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-patigi-ahman-pategi-university-patigi",
-        name: "Ahman Pategi University, Patigi",
-        cityId: "nigeria-patigi",
-        website: null,
+        id: "nigeria-ondo-adeyemi-college-of-education",
+        name: "Adeyemi College of Education",
+        cityId: "nigeria-ondo",
+        website: "http://www.aceondo-ng.com/",
         source: "open-dataset",
-        // Situada a 3.6 km del centro de Patigi (Wikidata).
+        // Situada a 3.1 km del centro de Ondo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-patigi-ahman-pategi-university-patigi",
-        name: "Ahman Pategi University, Patigi",
-        cityId: "nigeria-patigi",
+        id: "nigeria-ondo-wesley-university",
+        name: "Wesley University",
+        cityId: "nigeria-ondo",
         website: null,
         source: "open-dataset",
-        // Situada a 3.6 km del centro de Patigi (Wikidata).
+        // Situada a 2.7 km del centro de Ondo (Wikidata).
       }),
   ],
-  "nigeria-okigwe": [
+  "nigeria-ogwashi-uku": [
       defineUniversity({
-        id: "nigeria-okigwe-spiritan-university",
-        name: "Spiritan University",
-        cityId: "nigeria-okigwe",
+        id: "nigeria-ogwashi-uku-margret-lawrence-university",
+        name: "Margret Lawrence University",
+        cityId: "nigeria-ogwashi-uku",
         website: null,
         source: "open-dataset",
-        // Situada a 13.8 km del centro de Okigwe (Wikidata).
+        // Situada a 19.9 km del centro de Ogwashi-Uku (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-okigwe-spiritan-university",
-        name: "Spiritan University",
-        cityId: "nigeria-okigwe",
+        id: "nigeria-ogwashi-uku-sports-university-of-nigeria",
+        name: "Sports University of Nigeria",
+        cityId: "nigeria-ogwashi-uku",
         website: null,
         source: "open-dataset",
-        // Situada a 13.8 km del centro de Okigwe (Wikidata).
+        // Situada a 23.6 km del centro de Ogwashi-Uku (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-okigwe-gregory-university",
-        name: "Gregory University",
-        cityId: "nigeria-okigwe",
+        id: "nigeria-ogwashi-uku-delta-state-polytechnic-ogwashi-uku",
+        name: "Delta state Polytechnic Ogwashi-Uku",
+        cityId: "nigeria-ogwashi-uku",
         website: null,
         source: "open-dataset",
-        // Situada a 7.6 km del centro de Okigwe (Wikidata).
+        // Situada a 6.7 km del centro de Ogwashi-Uku (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-okigwe-abia-state-university-uturu",
-        name: "Abia State University, Uturu",
-        cityId: "nigeria-okigwe",
+        id: "nigeria-ogwashi-uku-delta-state-polytechnic",
+        name: "Delta State Polytechnic",
+        cityId: "nigeria-ogwashi-uku",
         website: null,
         source: "open-dataset",
-        // Situada a 5.0 km del centro de Okigwe (Wikidata).
-      }),
-  ],
-  "nigeria-nkpor": [
-      defineUniversity({
-        id: "nigeria-nkpor-tansian-university",
-        name: "Tansian University",
-        cityId: "nigeria-nkpor",
-        website: "http://www.tansianuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 9.0 km del centro de Nkpor (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-nkpor-all-hallows-seminary",
-        name: "All Hallows Seminary",
-        cityId: "nigeria-nkpor",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Nkpor (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-nkpor-tansian-university",
-        name: "Tansian University",
-        cityId: "nigeria-nkpor",
-        website: "http://www.tansianuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 9.0 km del centro de Nkpor (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-nkpor-tansian-university",
-        name: "Tansian University",
-        cityId: "nigeria-nkpor",
-        website: "http://www.tansianuniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 9.0 km del centro de Nkpor (Wikidata).
-      }),
-  ],
-  "nigeria-makoko": [
-      defineUniversity({
-        id: "nigeria-makoko-trinity-university",
-        name: "Trinity University",
-        cityId: "nigeria-makoko",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Makoko (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-makoko-delta-state-university-abraka",
-        name: "Delta State University, Abraka",
-        cityId: "nigeria-makoko",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Makoko (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-makoko-delta-state-university-abraka",
-        name: "Delta State University, Abraka",
-        cityId: "nigeria-makoko",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Makoko (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-makoko-university-of-lagos",
-        name: "University of Lagos",
-        cityId: "nigeria-makoko",
-        website: "http://www.unilag.edu.ng/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Makoko (Wikidata).
+        // Situada a 6.7 km del centro de Ogwashi-Uku (Wikidata).
       }),
   ],
   "nigeria-lokoja": [
@@ -3752,106 +2346,106 @@ export default {
         // Situada a 8.7 km del centro de Lokoja (Wikidata).
       }),
   ],
-  "nigeria-jalingo": [
+  "nigeria-igbara-odo": [
       defineUniversity({
-        id: "nigeria-jalingo-federal-polytechnic-bali",
-        name: "Federal Polytechnic Bali",
-        cityId: "nigeria-jalingo",
+        id: "nigeria-igbara-odo-college-of-natural-agricultural-sciences",
+        name: "College Of Natural & Agricultural Sciences",
+        cityId: "nigeria-igbara-odo",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Jalingo (Wikidata).
+        // Situada a 14.0 km del centro de Igbara-Odo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-jalingo-greenland-university-jigawa",
-        name: "Greenland University, Jigawa",
-        cityId: "nigeria-jalingo",
+        id: "nigeria-igbara-odo-sam-maris-university",
+        name: "Sam-maris University",
+        cityId: "nigeria-igbara-odo",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Jalingo (Wikidata).
+        // Situada a 12.6 km del centro de Igbara-Odo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-jalingo-greenland-university-jigawa",
-        name: "Greenland University, Jigawa",
-        cityId: "nigeria-jalingo",
+        id: "nigeria-igbara-odo-elizade-university",
+        name: "Elizade University",
+        cityId: "nigeria-igbara-odo",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Jalingo (Wikidata).
+        // Situada a 15.8 km del centro de Igbara-Odo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-jalingo-taraba-state-university",
-        name: "Taraba State University",
-        cityId: "nigeria-jalingo",
-        website: "http://www.tsuniversity.edu.ng/",
+        id: "nigeria-igbara-odo-joseph-ayo-babalola-university",
+        name: "Joseph Ayo Babalola University",
+        cityId: "nigeria-igbara-odo",
+        website: "http://www.jabu.edu.ng/",
         source: "open-dataset",
-        // Situada a 4.8 km del centro de Jalingo (Wikidata).
+        // Situada a 14.1 km del centro de Igbara-Odo (Wikidata).
       }),
   ],
-  "nigeria-iperu": [
+  "nigeria-gboko": [
       defineUniversity({
-        id: "nigeria-iperu-mcpherson-university",
-        name: "Mcpherson University",
-        cityId: "nigeria-iperu",
+        id: "nigeria-gboko-fidei-polytechnic-gboko",
+        name: "Fidei Polytechnic, Gboko",
+        cityId: "nigeria-gboko",
         website: null,
         source: "open-dataset",
-        // Situada a 25.3 km del centro de Iperu (Wikidata).
+        // Situada a 3.2 km del centro de Gboko (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-iperu-mcpherson-university",
-        name: "McPherson University",
-        cityId: "nigeria-iperu",
+        id: "nigeria-gboko-harry-pass-polytechnic",
+        name: "Harry Pass Polytechnic",
+        cityId: "nigeria-gboko",
         website: null,
         source: "open-dataset",
-        // Situada a 25.3 km del centro de Iperu (Wikidata).
+        // Situada a 0.6 km del centro de Gboko (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-iperu-babcock-university",
-        name: "Babcock University",
-        cityId: "nigeria-iperu",
-        website: "http://www.babcockuni.edu.ng/",
+        id: "nigeria-gboko-gboko-polytechnic-gboko",
+        name: "Gboko Polytechnic Gboko",
+        cityId: "nigeria-gboko",
+        website: null,
         source: "open-dataset",
-        // Situada a 6.1 km del centro de Iperu (Wikidata).
+        // Situada a 2.0 km del centro de Gboko (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-iperu-babcock-university",
-        name: "Babcock University",
-        cityId: "nigeria-iperu",
-        website: "http://www.babcockuni.edu.ng/",
+        id: "nigeria-gboko-federal-polytechnic-wannune",
+        name: "Federal Polytechnic, Wannune",
+        cityId: "nigeria-gboko",
+        website: null,
         source: "open-dataset",
-        // Situada a 6.1 km del centro de Iperu (Wikidata).
+        // Situada a 26.0 km del centro de Gboko (Wikidata).
       }),
   ],
-  "nigeria-gombe": [
+  "nigeria-epe": [
       defineUniversity({
-        id: "nigeria-gombe-north-eastern-university-gombe",
-        name: "North-Eastern University, Gombe",
-        cityId: "nigeria-gombe",
+        id: "nigeria-epe-government-techincal-college",
+        name: "GOVERNMENT TECHINCAL COLLEGE",
+        cityId: "nigeria-epe",
         website: null,
         source: "open-dataset",
-        // Situada a 12.4 km del centro de Gombe (Wikidata).
+        // Situada a 1.6 km del centro de Epe (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-gombe-jewel-university",
-        name: "Jewel University",
-        cityId: "nigeria-gombe",
+        id: "nigeria-epe-maranatha-university-lagos",
+        name: "Maranatha University, Lagos",
+        cityId: "nigeria-epe",
         website: null,
         source: "open-dataset",
-        // Situada a 8.6 km del centro de Gombe (Wikidata).
+        // Situada a 21.0 km del centro de Epe (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-gombe-gombe-state-university",
-        name: "Gombe State University",
-        cityId: "nigeria-gombe",
-        website: "http://www.gsu.edu.ng/",
+        id: "nigeria-epe-augustine-university-ilara-epe",
+        name: "Augustine University Ilara-Epe",
+        cityId: "nigeria-epe",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Gombe (Wikidata).
+        // Situada a 0.0 km del centro de Epe (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-gombe-gombe-state-university",
-        name: "Gombe State University",
-        cityId: "nigeria-gombe",
-        website: "http://www.gsu.edu.ng/",
+        id: "nigeria-epe-pan-atlantic-university",
+        name: "Pan-Atlantic University",
+        cityId: "nigeria-epe",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Gombe (Wikidata).
+        // Situada a 19.4 km del centro de Epe (Wikidata).
       }),
   ],
   "nigeria-bukuru": [
@@ -3888,6 +2482,40 @@ export default {
         // Situada a 16.6 km del centro de Bukuru (Wikidata).
       }),
   ],
+  "nigeria-azare": [
+      defineUniversity({
+        id: "nigeria-azare-aminu-saleh-college-of-education",
+        name: "Aminu Saleh College of Education",
+        cityId: "nigeria-azare",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Azare (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-azare-adamu-adamu-college-of-nursing-and-midwifery-azare",
+        name: "Adamu Adamu College of Nursing and Midwifery Azare",
+        cityId: "nigeria-azare",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Azare (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-azare-federal-university-of-health-sciences-azare",
+        name: "Federal University of Health Sciences, Azare",
+        cityId: "nigeria-azare",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Azare (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-azare-bauchi-state-university",
+        name: "Bauchi State University",
+        cityId: "nigeria-azare",
+        website: null,
+        source: "open-dataset",
+        // Situada a 17.3 km del centro de Azare (Wikidata).
+      }),
+  ],
   "nigeria-auchi": [
       defineUniversity({
         id: "nigeria-auchi-auchi-polytechnic",
@@ -3920,6 +2548,58 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.5 km del centro de Auchi (Wikidata).
+      }),
+  ],
+  "nigeria-zaria": [
+      defineUniversity({
+        id: "nigeria-zaria-tazkiyah-university",
+        name: "Tazkiyah University",
+        cityId: "nigeria-zaria",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Zaria (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-zaria-ahmadu-bello-university",
+        name: "Ahmadu Bello University",
+        cityId: "nigeria-zaria",
+        website: "http://www.abu.edu.ng/",
+        source: "open-dataset",
+        // Situada a 9.0 km del centro de Zaria (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-zaria-federal-college-of-education-zaria",
+        name: "Federal College of Education, Zaria",
+        cityId: "nigeria-zaria",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Zaria (Wikidata).
+      }),
+  ],
+  "nigeria-wukari": [
+      defineUniversity({
+        id: "nigeria-wukari-federal-university-wukari",
+        name: "Federal University, Wukari",
+        cityId: "nigeria-wukari",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Wukari (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-wukari-kwararafa-university-wukari",
+        name: "Kwararafa University Wukari",
+        cityId: "nigeria-wukari",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Wukari (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-wukari-kwararafa-university",
+        name: "Kwararafa University",
+        cityId: "nigeria-wukari",
+        website: "http://www.kwararafauniversity.edu.ng/",
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Wukari (Wikidata).
       }),
   ],
   "nigeria-warri": [
@@ -3974,6 +2654,58 @@ export default {
         // Situada a 4.3 km del centro de Uyo (Wikidata).
       }),
   ],
+  "nigeria-suleja": [
+      defineUniversity({
+        id: "nigeria-suleja-jefap-university",
+        name: "JEFAP University",
+        cityId: "nigeria-suleja",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Suleja (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-suleja-dorben-polytechnic",
+        name: "Dorben Polytechnic",
+        cityId: "nigeria-suleja",
+        website: null,
+        source: "open-dataset",
+        // Situada a 24.1 km del centro de Suleja (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-suleja-fct-college-of-education",
+        name: "FCT College of Education",
+        cityId: "nigeria-suleja",
+        website: null,
+        source: "open-dataset",
+        // Situada a 11.1 km del centro de Suleja (Wikidata).
+      }),
+  ],
+  "nigeria-patigi": [
+      defineUniversity({
+        id: "nigeria-patigi-ahman-pategi-university-kwara-state",
+        name: "Ahman Pategi University, Kwara State",
+        cityId: "nigeria-patigi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.5 km del centro de Patigi (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-patigi-ahman-pategi-university-patigi",
+        name: "Ahman Pategi University, Patigi",
+        cityId: "nigeria-patigi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Patigi (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-patigi-ahman-pategi-university-patigi",
+        name: "Ahman Pategi University, Patigi",
+        cityId: "nigeria-patigi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Patigi (Wikidata).
+      }),
+  ],
   "nigeria-owo": [
       defineUniversity({
         id: "nigeria-owo-achievers-university-owo",
@@ -4000,30 +2732,30 @@ export default {
         // Situada a 5.2 km del centro de Owo (Wikidata).
       }),
   ],
-  "nigeria-ogbomoso": [
+  "nigeria-okigwe": [
       defineUniversity({
-        id: "nigeria-ogbomoso-federal-polytechnic-ayede",
-        name: "Federal Polytechnic Ayede",
-        cityId: "nigeria-ogbomoso",
+        id: "nigeria-okigwe-spiritan-university",
+        name: "Spiritan University",
+        cityId: "nigeria-okigwe",
         website: null,
         source: "open-dataset",
-        // Situada a 14.4 km del centro de Ogbomoso (Wikidata).
+        // Situada a 13.8 km del centro de Okigwe (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-ogbomoso-ladoke-akintola-university-of-technology",
-        name: "Ladoke Akintola University of Technology",
-        cityId: "nigeria-ogbomoso",
-        website: "http://www.lautech.edu.ng/",
+        id: "nigeria-okigwe-gregory-university",
+        name: "Gregory University",
+        cityId: "nigeria-okigwe",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Ogbomoso (Wikidata).
+        // Situada a 7.6 km del centro de Okigwe (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-ogbomoso-ladoke-akintola-university-of-technology",
-        name: "Ladoke Akintola University of Technology",
-        cityId: "nigeria-ogbomoso",
-        website: "http://www.lautech.edu.ng/",
+        id: "nigeria-okigwe-abia-state-university-uturu",
+        name: "Abia State University, Uturu",
+        cityId: "nigeria-okigwe",
+        website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Ogbomoso (Wikidata).
+        // Situada a 5.0 km del centro de Okigwe (Wikidata).
       }),
   ],
   "nigeria-nkwerre": [
@@ -4052,6 +2784,32 @@ export default {
         // Situada a 4.2 km del centro de Nkwerre (Wikidata).
       }),
   ],
+  "nigeria-nkpor": [
+      defineUniversity({
+        id: "nigeria-nkpor-tansian-university",
+        name: "Tansian University",
+        cityId: "nigeria-nkpor",
+        website: "http://www.tansianuniversity.edu.ng/",
+        source: "open-dataset",
+        // Situada a 9.0 km del centro de Nkpor (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-nkpor-all-hallows-seminary",
+        name: "All Hallows Seminary",
+        cityId: "nigeria-nkpor",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Nkpor (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-nkpor-tansian-university",
+        name: "Tansian University",
+        cityId: "nigeria-nkpor",
+        website: "http://www.tansianuniversity.edu.ng/",
+        source: "open-dataset",
+        // Situada a 9.0 km del centro de Nkpor (Wikidata).
+      }),
+  ],
   "nigeria-makurdi": [
       defineUniversity({
         id: "nigeria-makurdi-nigerian-army-institute-of-technology-and-environmental-science-naites-makurdi",
@@ -4078,30 +2836,56 @@ export default {
         // Situada a 2.0 km del centro de Makurdi (Wikidata).
       }),
   ],
-  "nigeria-river-atuwara": [
+  "nigeria-makoko": [
       defineUniversity({
-        id: "nigeria-river-atuwara-bells-university-of-technology-otta",
-        name: "Bells University of Technology, Otta",
-        cityId: "nigeria-river-atuwara",
-        website: null,
+        id: "nigeria-makoko-trinity-university",
+        name: "Trinity University",
+        cityId: "nigeria-makoko",
+        website: "http://www.trinity.edu/",
         source: "open-dataset",
-        // Situada a 6.0 km del centro de River Atuwara (Wikidata).
+        // Situada a 1.1 km del centro de Makoko (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-river-atuwara-bells-university-of-technology-otta",
-        name: "Bells University of Technology, Otta",
-        cityId: "nigeria-river-atuwara",
+        id: "nigeria-makoko-delta-state-university-abraka",
+        name: "Delta State University, Abraka",
+        cityId: "nigeria-makoko",
         website: null,
         source: "open-dataset",
-        // Situada a 6.0 km del centro de River Atuwara (Wikidata).
+        // Situada a 2.3 km del centro de Makoko (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-river-atuwara-covenant-university",
-        name: "Covenant University",
-        cityId: "nigeria-river-atuwara",
-        website: "http://www.covenantuniversity.edu.ng/",
+        id: "nigeria-makoko-university-of-lagos",
+        name: "University of Lagos",
+        cityId: "nigeria-makoko",
+        website: "http://www.unilag.edu.ng/",
         source: "open-dataset",
-        // Situada a 2.1 km del centro de River Atuwara (Wikidata).
+        // Situada a 2.3 km del centro de Makoko (Wikidata).
+      }),
+  ],
+  "nigeria-iperu": [
+      defineUniversity({
+        id: "nigeria-iperu-mcpherson-university",
+        name: "Mcpherson University",
+        cityId: "nigeria-iperu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 25.3 km del centro de Iperu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-iperu-mcpherson-university",
+        name: "McPherson University",
+        cityId: "nigeria-iperu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 25.3 km del centro de Iperu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-iperu-babcock-university",
+        name: "Babcock University",
+        cityId: "nigeria-iperu",
+        website: "http://www.babcockuni.edu.ng/",
+        source: "open-dataset",
+        // Situada a 6.1 km del centro de Iperu (Wikidata).
       }),
   ],
   "nigeria-ijebu-ode": [
@@ -4130,82 +2914,56 @@ export default {
         // Situada a 3.3 km del centro de Ijebu Ode (Wikidata).
       }),
   ],
-  "nigeria-idah": [
+  "nigeria-gombe": [
       defineUniversity({
-        id: "nigeria-idah-unique-open-university-lagos",
-        name: "Unique Open University, Lagos",
-        cityId: "nigeria-idah",
+        id: "nigeria-gombe-north-eastern-university-gombe",
+        name: "North-Eastern University, Gombe",
+        cityId: "nigeria-gombe",
         website: null,
         source: "open-dataset",
-        // Situada a 3.4 km del centro de Idah (Wikidata).
+        // Situada a 12.4 km del centro de Gombe (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-idah-unique-open-university-lagos",
-        name: "Unique Open University, Lagos",
-        cityId: "nigeria-idah",
+        id: "nigeria-gombe-jewel-university",
+        name: "Jewel University",
+        cityId: "nigeria-gombe",
         website: null,
         source: "open-dataset",
-        // Situada a 3.4 km del centro de Idah (Wikidata).
+        // Situada a 8.6 km del centro de Gombe (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-idah-federal-polytechnic-idah",
-        name: "Federal Polytechnic, Idah",
-        cityId: "nigeria-idah",
-        website: null,
+        id: "nigeria-gombe-gombe-state-university",
+        name: "Gombe State University",
+        cityId: "nigeria-gombe",
+        website: "http://www.gsu.edu.ng/",
         source: "open-dataset",
-        // Situada a 6.7 km del centro de Idah (Wikidata).
-      }),
-  ],
-  "nigeria-gusau": [
-      defineUniversity({
-        id: "nigeria-gusau-huda-university-gusau",
-        name: "Huda University, Gusau",
-        cityId: "nigeria-gusau",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.4 km del centro de Gusau (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gusau-huda-university-gusau",
-        name: "Huda University, Gusau",
-        cityId: "nigeria-gusau",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.4 km del centro de Gusau (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-gusau-federal-university-gusau",
-        name: "Federal University Gusau",
-        cityId: "nigeria-gusau",
-        website: null,
-        source: "open-dataset",
-        // Situada a 13.5 km del centro de Gusau (Wikidata).
+        // Situada a 1.6 km del centro de Gombe (Wikidata).
       }),
   ],
-  "nigeria-elele": [
+  "nigeria-gbongan": [
       defineUniversity({
-        id: "nigeria-elele-wigwe-university",
-        name: "Wigwe university",
-        cityId: "nigeria-elele",
+        id: "nigeria-gbongan-kings-university-ode-omu",
+        name: "Kings University, Ode Omu",
+        cityId: "nigeria-gbongan",
         website: null,
         source: "open-dataset",
-        // Situada a 16.2 km del centro de Elele (Wikidata).
+        // Situada a 11.5 km del centro de Gbongan (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-elele-wigwe-university",
-        name: "Wigwe university",
-        cityId: "nigeria-elele",
+        id: "nigeria-gbongan-oduduwa-university",
+        name: "Oduduwa University",
+        cityId: "nigeria-gbongan",
+        website: "http://www.oduduwauniversity.edu.ng/",
+        source: "open-dataset",
+        // Situada a 11.3 km del centro de Gbongan (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-gbongan-kings-university",
+        name: "Kings University",
+        cityId: "nigeria-gbongan",
         website: null,
         source: "open-dataset",
-        // Situada a 16.2 km del centro de Elele (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-elele-madonna-university",
-        name: "Madonna University",
-        cityId: "nigeria-elele",
-        website: "http://www.madonnauniversity.edu.ng/",
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Elele (Wikidata).
+        // Situada a 11.4 km del centro de Gbongan (Wikidata).
       }),
   ],
   "nigeria-ekpoma": [
@@ -4232,6 +2990,84 @@ export default {
         website: "http://www.aauekpoma.edu.ng/",
         source: "open-dataset",
         // Situada a 6.2 km del centro de Ekpoma (Wikidata).
+      }),
+  ],
+  "nigeria-ede": [
+      defineUniversity({
+        id: "nigeria-ede-adeleke-university",
+        name: "Adeleke University",
+        cityId: "nigeria-ede",
+        website: "http://www.adelekeuniversity.edu.ng/",
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de Ede (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ede-federal-polytechnic-ede",
+        name: "Federal Polytechnic, Ede",
+        cityId: "nigeria-ede",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Ede (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ede-redeemer-s-university",
+        name: "Redeemer's University",
+        cityId: "nigeria-ede",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.6 km del centro de Ede (Wikidata).
+      }),
+  ],
+  "nigeria-birnin-kebbi": [
+      defineUniversity({
+        id: "nigeria-birnin-kebbi-waziri-umaru-federal-polytechnic-birnin-kebbi",
+        name: "Waziri Umaru Federal Polytechnic, Birnin Kebbi",
+        cityId: "nigeria-birnin-kebbi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Birnin Kebbi (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-birnin-kebbi-rayhaan-university",
+        name: "Rayhaan University",
+        cityId: "nigeria-birnin-kebbi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.0 km del centro de Birnin Kebbi (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-birnin-kebbi-federal-university-birnin-kebbi",
+        name: "Federal University, Birnin Kebbi",
+        cityId: "nigeria-birnin-kebbi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Birnin Kebbi (Wikidata).
+      }),
+  ],
+  "nigeria-alasia": [
+      defineUniversity({
+        id: "nigeria-alasia-eko-university-of-medical-and-health-sciences-ijanikin-lagos",
+        name: "Eko University of Medical and Health Sciences Ijanikin Lagos",
+        cityId: "nigeria-alasia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Alasia (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-alasia-crawford-university",
+        name: "Crawford University",
+        cityId: "nigeria-alasia",
+        website: "http://www.crawforduniversity.edu.ng/",
+        source: "open-dataset",
+        // Situada a 7.0 km del centro de Alasia (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-alasia-lagos-state-university",
+        name: "Lagos State University",
+        cityId: "nigeria-alasia",
+        website: "http://www.lasunigeria.org/",
+        source: "open-dataset",
+        // Situada a 3.7 km del centro de Alasia (Wikidata).
       }),
   ],
   "nigeria-agbor": [
@@ -4286,24 +3122,6 @@ export default {
         // Situada a 1.8 km del centro de Abakaliki (Wikidata).
       }),
   ],
-  "nigeria-yola": [
-      defineUniversity({
-        id: "nigeria-yola-american-university-of-nigeria",
-        name: "American University of Nigeria",
-        cityId: "nigeria-yola",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Yola (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-yola-american-university-of-nigeria",
-        name: "American University of Nigeria",
-        cityId: "nigeria-yola",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Yola (Wikidata).
-      }),
-  ],
   "nigeria-wudil": [
       defineUniversity({
         id: "nigeria-wudil-nigeria-police-academy",
@@ -4320,24 +3138,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 3.1 km del centro de Wudil (Wikidata).
-      }),
-  ],
-  "nigeria-wamba": [
-      defineUniversity({
-        id: "nigeria-wamba-university-of-mkar",
-        name: "University of Mkar",
-        cityId: "nigeria-wamba",
-        website: "http://www.unimkar.edu.ng/",
-        source: "open-dataset",
-        // Situada a 17.5 km del centro de Wamba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-wamba-university-of-mkar",
-        name: "University of Mkar",
-        cityId: "nigeria-wamba",
-        website: "http://www.unimkar.edu.ng/",
-        source: "open-dataset",
-        // Situada a 17.5 km del centro de Wamba (Wikidata).
       }),
   ],
   "nigeria-uromi": [
@@ -4358,24 +3158,6 @@ export default {
         // Situada a 25.3 km del centro de Uromi (Wikidata).
       }),
   ],
-  "nigeria-talata-mafara": [
-      defineUniversity({
-        id: "nigeria-talata-mafara-zamfara-state-university",
-        name: "Zamfara State University",
-        cityId: "nigeria-talata-mafara",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Talata Mafara (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-talata-mafara-zamfara-state-university",
-        name: "Zamfara State University",
-        cityId: "nigeria-talata-mafara",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Talata Mafara (Wikidata).
-      }),
-  ],
   "nigeria-surulere": [
       defineUniversity({
         id: "nigeria-surulere-grace-polytechnic-lagos",
@@ -4394,58 +3176,40 @@ export default {
         // Situada a 1.9 km del centro de Surulere (Wikidata).
       }),
   ],
-  "nigeria-saki": [
+  "nigeria-oke-ila": [
       defineUniversity({
-        id: "nigeria-saki-the-oke-ogun-polytechnic-saki",
-        name: "The Oke-Ogun Polytechnic, Saki",
-        cityId: "nigeria-saki",
+        id: "nigeria-oke-ila-igbajo-polytechnic",
+        name: "Igbajo Polytechnic",
+        cityId: "nigeria-oke-ila",
         website: null,
         source: "open-dataset",
-        // Situada a 4.4 km del centro de Saki (Wikidata).
+        // Situada a 9.7 km del centro de Oke Ila (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-saki-the-oke-ogun-polytechnic-saki",
-        name: "The Oke-Ogun Polytechnic, Saki",
-        cityId: "nigeria-saki",
-        website: null,
+        id: "nigeria-oke-ila-landmark-university",
+        name: "Landmark University",
+        cityId: "nigeria-oke-ila",
+        website: "http://www.lmu.edu.ng/",
         source: "open-dataset",
-        // Situada a 4.4 km del centro de Saki (Wikidata).
-      }),
-  ],
-  "nigeria-ota": [
-      defineUniversity({
-        id: "nigeria-ota-vision-university",
-        name: "Vision University",
-        cityId: "nigeria-ota",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Ota (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ota-vision-university",
-        name: "Vision University",
-        cityId: "nigeria-ota",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Ota (Wikidata).
+        // Situada a 22.1 km del centro de Oke Ila (Wikidata).
       }),
   ],
-  "nigeria-okene": [
+  "nigeria-ogbomoso": [
       defineUniversity({
-        id: "nigeria-okene-federal-college-of-education-okene",
-        name: "Federal College of Education, Okene",
-        cityId: "nigeria-okene",
+        id: "nigeria-ogbomoso-federal-polytechnic-ayede",
+        name: "Federal Polytechnic Ayede",
+        cityId: "nigeria-ogbomoso",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Okene (Wikidata).
+        // Situada a 14.4 km del centro de Ogbomoso (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-okene-federal-college-of-education-okene",
-        name: "Federal College of Education, Okene",
-        cityId: "nigeria-okene",
-        website: null,
+        id: "nigeria-ogbomoso-ladoke-akintola-university-of-technology",
+        name: "Ladoke Akintola University of Technology",
+        cityId: "nigeria-ogbomoso",
+        website: "http://www.lautech.edu.ng/",
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Okene (Wikidata).
+        // Situada a 0.5 km del centro de Ogbomoso (Wikidata).
       }),
   ],
   "nigeria-ogaminana": [
@@ -4610,42 +3374,6 @@ export default {
         // Situada a 3.6 km del centro de Kontagora (Wikidata).
       }),
   ],
-  "nigeria-kagoro": [
-      defineUniversity({
-        id: "nigeria-kagoro-kaduna-state-college-of-education-gidan-waya-kafanchan",
-        name: "Kaduna State College of Education, Gidan-Waya, Kafanchan",
-        cityId: "nigeria-kagoro",
-        website: null,
-        source: "open-dataset",
-        // Situada a 19.9 km del centro de Kagoro (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kagoro-kaduna-state-college-of-education-gidan-waya-kafanchan",
-        name: "Kaduna State College of Education, Gidan-Waya, Kafanchan",
-        cityId: "nigeria-kagoro",
-        website: null,
-        source: "open-dataset",
-        // Situada a 14.2 km del centro de Kagoro (Wikidata).
-      }),
-  ],
-  "nigeria-kafanchan": [
-      defineUniversity({
-        id: "nigeria-kafanchan-venite-university",
-        name: "Venite University",
-        cityId: "nigeria-kafanchan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 20.7 km del centro de Kafanchan (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-kafanchan-venite-university",
-        name: "Venite University",
-        cityId: "nigeria-kafanchan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 20.7 km del centro de Kafanchan (Wikidata).
-      }),
-  ],
   "nigeria-kachia": [
       defineUniversity({
         id: "nigeria-kachia-nok-university-kachia",
@@ -4700,22 +3428,22 @@ export default {
         // Situada a 4.6 km del centro de Jos (Wikidata).
       }),
   ],
-  "nigeria-jimeta": [
+  "nigeria-jalingo": [
       defineUniversity({
-        id: "nigeria-jimeta-modibbo-adama-university-yola",
-        name: "Modibbo Adama University, Yola",
-        cityId: "nigeria-jimeta",
+        id: "nigeria-jalingo-greenland-university-jigawa",
+        name: "Greenland University, Jigawa",
+        cityId: "nigeria-jalingo",
         website: null,
         source: "open-dataset",
-        // Situada a 9.2 km del centro de Jimeta (Wikidata).
+        // Situada a 2.0 km del centro de Jalingo (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-jimeta-modibbo-adama-university-yola",
-        name: "Modibbo Adama University, Yola",
-        cityId: "nigeria-jimeta",
-        website: null,
+        id: "nigeria-jalingo-taraba-state-university",
+        name: "Taraba State University",
+        cityId: "nigeria-jalingo",
+        website: "http://www.tsuniversity.edu.ng/",
         source: "open-dataset",
-        // Situada a 9.2 km del centro de Jimeta (Wikidata).
+        // Situada a 4.8 km del centro de Jalingo (Wikidata).
       }),
   ],
   "nigeria-iyesi": [
@@ -4736,42 +3464,6 @@ export default {
         // Situada a 2.6 km del centro de Iyesi (Wikidata).
       }),
   ],
-  "nigeria-ilaro": [
-      defineUniversity({
-        id: "nigeria-ilaro-federal-polytechnic-ilaro",
-        name: "Federal Polytechnic, Ilaro",
-        cityId: "nigeria-ilaro",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Ilaro (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ilaro-federal-polytechnic-ilaro",
-        name: "Federal Polytechnic, Ilaro",
-        cityId: "nigeria-ilaro",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Ilaro (Wikidata).
-      }),
-  ],
-  "nigeria-ila-orangun": [
-      defineUniversity({
-        id: "nigeria-ila-orangun-federal-university-of-health-sciences",
-        name: "Federal University of Health Sciences",
-        cityId: "nigeria-ila-orangun",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Ila Orangun (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-ila-orangun-federal-university-of-health-sciences",
-        name: "Federal University of Health Sciences",
-        cityId: "nigeria-ila-orangun",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Ila Orangun (Wikidata).
-      }),
-  ],
   "nigeria-ikirun": [
       defineUniversity({
         id: "nigeria-ikirun-osun-state-polytechnic-iree",
@@ -4788,6 +3480,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 6.4 km del centro de Ikirun (Wikidata).
+      }),
+  ],
+  "nigeria-river-atuwara": [
+      defineUniversity({
+        id: "nigeria-river-atuwara-bells-university-of-technology-otta",
+        name: "Bells University of Technology, Otta",
+        cityId: "nigeria-river-atuwara",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.0 km del centro de River Atuwara (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-river-atuwara-covenant-university",
+        name: "Covenant University",
+        cityId: "nigeria-river-atuwara",
+        website: "http://www.covenantuniversity.edu.ng/",
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de River Atuwara (Wikidata).
       }),
   ],
   "nigeria-ijebu-igbo": [
@@ -4844,6 +3554,42 @@ export default {
         // Situada a 1.9 km del centro de Ile-Ife (Wikidata).
       }),
   ],
+  "nigeria-idah": [
+      defineUniversity({
+        id: "nigeria-idah-unique-open-university-lagos",
+        name: "Unique Open University, Lagos",
+        cityId: "nigeria-idah",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.4 km del centro de Idah (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-idah-federal-polytechnic-idah",
+        name: "Federal Polytechnic, Idah",
+        cityId: "nigeria-idah",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.7 km del centro de Idah (Wikidata).
+      }),
+  ],
+  "nigeria-gusau": [
+      defineUniversity({
+        id: "nigeria-gusau-huda-university-gusau",
+        name: "Huda University, Gusau",
+        cityId: "nigeria-gusau",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.4 km del centro de Gusau (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-gusau-federal-university-gusau",
+        name: "Federal University Gusau",
+        cityId: "nigeria-gusau",
+        website: null,
+        source: "open-dataset",
+        // Situada a 13.5 km del centro de Gusau (Wikidata).
+      }),
+  ],
   "nigeria-geidam": [
       defineUniversity({
         id: "nigeria-geidam-mai-idris-alooma-polytechnic",
@@ -4860,6 +3606,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.7 km del centro de Geidam (Wikidata).
+      }),
+  ],
+  "nigeria-gashua": [
+      defineUniversity({
+        id: "nigeria-gashua-umar-suleiman-college-of-education",
+        name: "Umar Suleiman College of Education",
+        cityId: "nigeria-gashua",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Gashua (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-gashua-federal-university-gashua",
+        name: "Federal University Gashua",
+        cityId: "nigeria-gashua",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Gashua (Wikidata).
       }),
   ],
   "nigeria-fiditi": [
@@ -4916,22 +3680,40 @@ export default {
         // Situada a 4.2 km del centro de Enugu-Ukwu (Wikidata).
       }),
   ],
-  "nigeria-dutse": [
+  "nigeria-elele": [
       defineUniversity({
-        id: "nigeria-dutse-jigawa-state-polytechnic-dutse",
-        name: "Jigawa State Polytechnic, Dutse",
-        cityId: "nigeria-dutse",
+        id: "nigeria-elele-wigwe-university",
+        name: "Wigwe university",
+        cityId: "nigeria-elele",
         website: null,
         source: "open-dataset",
-        // Situada a 4.7 km del centro de Dutse (Wikidata).
+        // Situada a 16.2 km del centro de Elele (Wikidata).
       }),
       defineUniversity({
-        id: "nigeria-dutse-jigawa-state-polytechnic-dutse",
-        name: "Jigawa State Polytechnic, Dutse",
-        cityId: "nigeria-dutse",
+        id: "nigeria-elele-madonna-university",
+        name: "Madonna University",
+        cityId: "nigeria-elele",
+        website: "http://www.madonnauniversity.edu.ng/",
+        source: "open-dataset",
+        // Situada a 4.1 km del centro de Elele (Wikidata).
+      }),
+  ],
+  "nigeria-ebute-ikorodu": [
+      defineUniversity({
+        id: "nigeria-ebute-ikorodu-lagos-state-university-of-science-and-technology",
+        name: "Lagos State University of Science and Technology",
+        cityId: "nigeria-ebute-ikorodu",
         website: null,
         source: "open-dataset",
-        // Situada a 4.7 km del centro de Dutse (Wikidata).
+        // Situada a 5.9 km del centro de Ebute Ikorodu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nigeria-ebute-ikorodu-caleb-university",
+        name: "Caleb University",
+        cityId: "nigeria-ebute-ikorodu",
+        website: "http://www.calebuniversity.edu.ng/",
+        source: "open-dataset",
+        // Situada a 18.3 km del centro de Ebute Ikorodu (Wikidata).
       }),
   ],
   "nigeria-daura": [
@@ -4968,24 +3750,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 7.8 km del centro de Damaturu (Wikidata).
-      }),
-  ],
-  "nigeria-biu": [
-      defineUniversity({
-        id: "nigeria-biu-nigerian-army-university-biu",
-        name: "Nigerian Army University Biu",
-        cityId: "nigeria-biu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Biu (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-biu-nigerian-army-university-biu",
-        name: "Nigerian Army University Biu",
-        cityId: "nigeria-biu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Biu (Wikidata).
       }),
   ],
   "nigeria-biliri": [
@@ -5058,24 +3822,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.0 km del centro de Awgu (Wikidata).
-      }),
-  ],
-  "nigeria-asaba": [
-      defineUniversity({
-        id: "nigeria-asaba-dennis-osadebe-university-asaba",
-        name: "Dennis Osadebe University, Asaba",
-        cityId: "nigeria-asaba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Asaba (Wikidata).
-      }),
-      defineUniversity({
-        id: "nigeria-asaba-dennis-osadebe-university-asaba",
-        name: "Dennis Osadebe University, Asaba",
-        cityId: "nigeria-asaba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Asaba (Wikidata).
       }),
   ],
   "nigeria-aku": [

@@ -19,22 +19,22 @@ const countryName = "Camboya";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
-      id: "camboya-boeng-kak-pir",
-      name: "Boeng Kak Pir",
-      coordinates: {"lat": 11.57269, "lng": 104.89022},
-      isCapital: false,
-      universityCount: 8,
-      statistics: { population: 24937 },
-      countryId,
-      countryName,
-    }),
-    defineCity({
       id: "camboya-phnom-penh",
       name: "Phnom Penh",
       coordinates: {"lat": 11.56245, "lng": 104.91601},
       isCapital: true,
-      universityCount: 7,
+      universityCount: 15,
       statistics: { population: 1573544 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "camboya-boeng-kak-pir",
+      name: "Boeng Kak Pir",
+      coordinates: {"lat": 11.57269, "lng": 104.89022},
+      isCapital: false,
+      universityCount: 7,
+      statistics: { population: 24937 },
       countryId,
       countryName,
     }),

@@ -19,12 +19,22 @@ const countryName = "Angola";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
-      id: "angola-kilamba",
-      name: "Kilamba",
-      coordinates: {"lat": -8.84861, "lng": 13.275},
+      id: "angola-luanda",
+      name: "Luanda",
+      coordinates: {"lat": -8.83682, "lng": 13.23432},
+      isCapital: true,
+      universityCount: 6,
+      statistics: { population: 2776168 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "angola-vila-flor",
+      name: "Vila Flor",
+      coordinates: {"lat": -8.98007, "lng": 13.30781},
       isCapital: false,
       universityCount: 2,
-      statistics: { population: 237528 },
+      statistics: { population: 256066 },
       countryId,
       countryName,
     }),

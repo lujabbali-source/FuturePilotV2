@@ -8,15 +8,26 @@
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry } from "../schema.js";
+import { defineCity, defineCountry } from "../schema.js";
 
 const countryId = "micronesia";
 const countryName = "Micronesia";
 
-// Sin ciudades: la fuente no le conoce ninguna universidad
-// a este pais. No es que no las tenga; es que no constan.
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/micronesia.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
-
+    defineCity({
+      id: "micronesia-palikir",
+      name: "Palikir",
+      coordinates: {"lat": 6.92477, "lng": 158.16109},
+      isCapital: true,
+      universityCount: 1,
+      statistics: { population: 6942 },
+      countryId,
+      countryName,
+    }),
 ];
 
 export default defineCountry({

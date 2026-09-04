@@ -133,6 +133,38 @@ export default {
         source: "open-dataset",
         // Situada a 5.5 km del centro de Pyongyang (Wikidata).
       }),
+      defineUniversity({
+        id: "corea-del-norte-pyongyang-university-of-international-affairs",
+        name: "University of International Affairs",
+        cityId: "corea-del-norte-pyongyang",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pyongyang (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-norte-pyongyang-pyongyang-jang-chol-gu-university-of-commerce",
+        name: "Pyongyang Jang Chol-gu University of Commerce",
+        cityId: "corea-del-norte-pyongyang",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pyongyang (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-norte-pyongyang-pyongyang-agricultural-college",
+        name: "Pyongyang Agricultural College",
+        cityId: "corea-del-norte-pyongyang",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pyongyang (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-norte-pyongyang-kim-il-sung-university-of-politics",
+        name: "Kim Il-sung University of Politics",
+        cityId: "corea-del-norte-pyongyang",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pyongyang (Wikidata).
+      }),
   ],
   "corea-del-norte-man-gyongdae-ri": [
       defineUniversity({

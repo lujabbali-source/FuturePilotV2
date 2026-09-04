@@ -78,22 +78,6 @@ export default {
         // Situada a 1.4 km del centro de Paco (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-paco-philippine-christian-university",
-        name: "Philippine Christian University",
-        cityId: "filipinas-paco",
-        website: "http://www.pcu.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Paco (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-paco-technological-university-of-the-philippines",
-        name: "Technological University of the Philippines",
-        cityId: "filipinas-paco",
-        website: "http://www.tup.edu.ph/",
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Paco (Wikidata).
-      }),
-      defineUniversity({
         id: "filipinas-paco-technological-university-of-the-philippines",
         name: "Technological University of the Philippines",
         cityId: "filipinas-paco",
@@ -214,12 +198,60 @@ export default {
         // Situada a 1.4 km del centro de Paco (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-paco-university-of-the-philippines-manila",
-        name: "University of the Philippines Manila",
+        id: "filipinas-paco-university-of-the-east-graduate-school",
+        name: "University of the East Graduate School",
         cityId: "filipinas-paco",
-        website: "http://www.upm.edu.ph/",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Paco (Wikidata).
+        // Situada a None km del centro de Paco (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-paco-de-la-salle-university-college-of-education",
+        name: "De La Salle University College of Education",
+        cityId: "filipinas-paco",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Paco (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-paco-de-la-salle-university-college-of-law",
+        name: "De La Salle University College of Law",
+        cityId: "filipinas-paco",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Paco (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-paco-de-la-salle-university-college-of-science",
+        name: "De La Salle University College of Science",
+        cityId: "filipinas-paco",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Paco (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-paco-university-of-perpetual-help-system-jonelta-gma-campus",
+        name: "University of Perpetual Help System JONELTA - GMA Campus",
+        cityId: "filipinas-paco",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Paco (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-paco-university-of-the-east-college-of-computer-studies-and-system",
+        name: "University of the East College of Computer Studies and System",
+        cityId: "filipinas-paco",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Paco (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-paco-university-of-the-east-college-of-dentistry",
+        name: "University of the East College of Dentistry",
+        cityId: "filipinas-paco",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Paco (Wikidata).
       }),
   ],
   "filipinas-quezon-city": [
@@ -288,14 +320,6 @@ export default {
         // Situada a 2.6 km del centro de Quezon City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-quezon-city-university-of-the-philippines",
-        name: "University of the Philippines",
-        cityId: "filipinas-quezon-city",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Quezon City (Wikidata).
-      }),
-      defineUniversity({
         id: "filipinas-quezon-city-up-diliman-electrical-and-electronics-engineering-institute",
         name: "UP Diliman Electrical and Electronics Engineering Institute",
         cityId: "filipinas-quezon-city",
@@ -343,127 +367,143 @@ export default {
         source: "open-dataset",
         // Situada a 2.6 km del centro de Quezon City (Wikidata).
       }),
+      defineUniversity({
+        id: "filipinas-quezon-city-loyola-schools",
+        name: "Loyola Schools",
+        cityId: "filipinas-quezon-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Quezon City (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-quezon-city-roosevelt-college-quirino",
+        name: "Roosevelt College Quirino",
+        cityId: "filipinas-quezon-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Quezon City (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-quezon-city-up-diliman-institute-of-civil-engineering",
+        name: "UP Diliman Institute of Civil Engineering",
+        cityId: "filipinas-quezon-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Quezon City (Wikidata).
+      }),
   ],
-  "filipinas-cebu-city": [
+  "filipinas-iloilo": [
       defineUniversity({
-        id: "filipinas-cebu-city-university-of-the-visayas",
-        name: "University of the Visayas",
-        cityId: "filipinas-cebu-city",
-        website: "http://www.uv.edu.ph/",
+        id: "filipinas-iloilo-central-philippine-university",
+        name: "Central Philippine University",
+        cityId: "filipinas-iloilo",
+        website: "http://www.cpuic.edu/",
         source: "open-dataset",
-        // Situada a 2.4 km del centro de Cebu City (Wikidata).
+        // Situada a 4.1 km del centro de Iloilo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-cebu-city-university-of-cebu",
-        name: "University of Cebu",
-        cityId: "filipinas-cebu-city",
-        website: "http://www.universityofcebu.edu.ph/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Cebu City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-cebu-city-asian-college-of-technology",
-        name: "Asian College of Technology",
-        cityId: "filipinas-cebu-city",
+        id: "filipinas-iloilo-iloilo-science-and-technology-university",
+        name: "Iloilo Science and Technology University",
+        cityId: "filipinas-iloilo",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Cebu City (Wikidata).
+        // Situada a 2.0 km del centro de Iloilo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-cebu-city-cebu-institute-of-technology-university",
-        name: "Cebu Institute of Technology – University",
-        cityId: "filipinas-cebu-city",
+        id: "filipinas-iloilo-west-visayas-state-university",
+        name: "West Visayas State University",
+        cityId: "filipinas-iloilo",
+        website: "http://www.wvsu.edu.ph/",
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Iloilo (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-iloilo-saint-paul-university-iloilo",
+        name: "Saint Paul University Iloilo",
+        cityId: "filipinas-iloilo",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Cebu City (Wikidata).
+        // Situada a 0.6 km del centro de Iloilo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-cebu-city-cebu-normal-university",
-        name: "Cebu Normal University",
-        cityId: "filipinas-cebu-city",
+        id: "filipinas-iloilo-guimaras-state-university",
+        name: "Guimaras State University",
+        cityId: "filipinas-iloilo",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Cebu City (Wikidata).
+        // Situada a 9.5 km del centro de Iloilo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-cebu-city-cebu-normal-university",
-        name: "Cebu Normal University",
-        cityId: "filipinas-cebu-city",
+        id: "filipinas-iloilo-john-b-lacson-foundation-maritime-university",
+        name: "John B. Lacson Foundation Maritime University",
+        cityId: "filipinas-iloilo",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Cebu City (Wikidata).
+        // Situada a 1.3 km del centro de Iloilo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-cebu-city-cebu-technological-university",
-        name: "Cebu Technological University",
-        cityId: "filipinas-cebu-city",
+        id: "filipinas-iloilo-acsi-college",
+        name: "ACSI College",
+        cityId: "filipinas-iloilo",
         website: null,
         source: "open-dataset",
-        // Situada a 2.8 km del centro de Cebu City (Wikidata).
+        // Situada a 0.7 km del centro de Iloilo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-cebu-city-college-of-technological-sciences-cebu",
-        name: "College of Technological Sciences–Cebu",
-        cityId: "filipinas-cebu-city",
+        id: "filipinas-iloilo-angelicum-school-iloilo",
+        name: "Angelicum School Iloilo",
+        cityId: "filipinas-iloilo",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Cebu City (Wikidata).
+        // Situada a 3.9 km del centro de Iloilo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-cebu-city-saint-mary-s-academy-of-san-nicolas-cebu-city",
-        name: "Saint Mary's Academy of San Nicolas, Cebu City",
-        cityId: "filipinas-cebu-city",
+        id: "filipinas-iloilo-cabalum-western-college",
+        name: "Cabalum Western College",
+        cityId: "filipinas-iloilo",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Cebu City (Wikidata).
+        // Situada a 0.7 km del centro de Iloilo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-cebu-city-saint-theresa-s-college-of-cebu-city",
-        name: "Saint Theresa's College of Cebu City",
-        cityId: "filipinas-cebu-city",
+        id: "filipinas-iloilo-saint-vincent-ferrer-seminary",
+        name: "Saint Vincent Ferrer Seminary",
+        cityId: "filipinas-iloilo",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Cebu City (Wikidata).
+        // Situada a 2.9 km del centro de Iloilo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-cebu-city-southwestern-university",
-        name: "Southwestern University",
-        cityId: "filipinas-cebu-city",
-        website: "http://www.swu.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Cebu City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-cebu-city-university-of-san-jose-recoletos",
-        name: "University of San Jose–Recoletos",
-        cityId: "filipinas-cebu-city",
-        website: "http://www.usjr.edu.ph/",
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Cebu City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-cebu-city-university-of-the-philippines-cebu",
-        name: "University of the Philippines Cebu",
-        cityId: "filipinas-cebu-city",
+        id: "filipinas-iloilo-university-of-iloilo",
+        name: "University of Iloilo",
+        cityId: "filipinas-iloilo",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Cebu City (Wikidata).
+        // Situada a 0.8 km del centro de Iloilo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-cebu-city-university-of-san-carlos",
-        name: "University of San Carlos",
-        cityId: "filipinas-cebu-city",
-        website: "http://www.usc.edu.ph/",
+        id: "filipinas-iloilo-university-of-san-agustin",
+        name: "University of San Agustin",
+        cityId: "filipinas-iloilo",
+        website: "http://www.usa.edu.ph/",
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Cebu City (Wikidata).
+        // Situada a 0.3 km del centro de Iloilo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-cebu-city-university-of-san-carlos",
-        name: "University of San Carlos",
-        cityId: "filipinas-cebu-city",
-        website: "http://www.usc.edu.ph/",
+        id: "filipinas-iloilo-acsi-college-iloilo",
+        name: "ACSI College-Iloilo",
+        cityId: "filipinas-iloilo",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Cebu City (Wikidata).
+        // Situada a None km del centro de Iloilo (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-iloilo-st-therese-mtc-colleges",
+        name: "St. Therese – MTC colleges",
+        cityId: "filipinas-iloilo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Iloilo (Wikidata).
       }),
   ],
   "filipinas-davao": [
@@ -580,274 +620,192 @@ export default {
         // Situada a 1.4 km del centro de Davao (Wikidata).
       }),
   ],
-  "filipinas-iloilo": [
+  "filipinas-cebu-city": [
       defineUniversity({
-        id: "filipinas-iloilo-central-philippine-university",
-        name: "Central Philippine University",
-        cityId: "filipinas-iloilo",
-        website: "http://www.cpuic.edu/",
+        id: "filipinas-cebu-city-university-of-the-visayas",
+        name: "University of the Visayas",
+        cityId: "filipinas-cebu-city",
+        website: "http://www.uv.edu.ph/",
         source: "open-dataset",
-        // Situada a 4.1 km del centro de Iloilo (Wikidata).
+        // Situada a 2.4 km del centro de Cebu City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-iloilo-central-philippine-university",
-        name: "Central Philippine University",
-        cityId: "filipinas-iloilo",
-        website: "http://www.cpuic.edu/",
+        id: "filipinas-cebu-city-university-of-cebu",
+        name: "University of Cebu",
+        cityId: "filipinas-cebu-city",
+        website: "http://www.universityofcebu.edu.ph/",
         source: "open-dataset",
-        // Situada a 4.1 km del centro de Iloilo (Wikidata).
+        // Situada a 2.3 km del centro de Cebu City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-iloilo-iloilo-science-and-technology-university",
-        name: "Iloilo Science and Technology University",
-        cityId: "filipinas-iloilo",
+        id: "filipinas-cebu-city-asian-college-of-technology",
+        name: "Asian College of Technology",
+        cityId: "filipinas-cebu-city",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Iloilo (Wikidata).
+        // Situada a 2.1 km del centro de Cebu City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-iloilo-west-visayas-state-university",
-        name: "West Visayas State University",
-        cityId: "filipinas-iloilo",
-        website: "http://www.wvsu.edu.ph/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Iloilo (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-iloilo-saint-paul-university-iloilo",
-        name: "Saint Paul University Iloilo",
-        cityId: "filipinas-iloilo",
+        id: "filipinas-cebu-city-cebu-institute-of-technology-university",
+        name: "Cebu Institute of Technology – University",
+        cityId: "filipinas-cebu-city",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Iloilo (Wikidata).
+        // Situada a 2.7 km del centro de Cebu City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-iloilo-guimaras-state-university",
-        name: "Guimaras State University",
-        cityId: "filipinas-iloilo",
+        id: "filipinas-cebu-city-cebu-normal-university",
+        name: "Cebu Normal University",
+        cityId: "filipinas-cebu-city",
         website: null,
         source: "open-dataset",
-        // Situada a 9.5 km del centro de Iloilo (Wikidata).
+        // Situada a 1.8 km del centro de Cebu City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-iloilo-john-b-lacson-foundation-maritime-university",
-        name: "John B. Lacson Foundation Maritime University",
-        cityId: "filipinas-iloilo",
+        id: "filipinas-cebu-city-cebu-technological-university",
+        name: "Cebu Technological University",
+        cityId: "filipinas-cebu-city",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Iloilo (Wikidata).
+        // Situada a 2.8 km del centro de Cebu City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-iloilo-acsi-college",
-        name: "ACSI College",
-        cityId: "filipinas-iloilo",
+        id: "filipinas-cebu-city-college-of-technological-sciences-cebu",
+        name: "College of Technological Sciences–Cebu",
+        cityId: "filipinas-cebu-city",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Iloilo (Wikidata).
+        // Situada a 2.1 km del centro de Cebu City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-iloilo-angelicum-school-iloilo",
-        name: "Angelicum School Iloilo",
-        cityId: "filipinas-iloilo",
+        id: "filipinas-cebu-city-saint-mary-s-academy-of-san-nicolas-cebu-city",
+        name: "Saint Mary's Academy of San Nicolas, Cebu City",
+        cityId: "filipinas-cebu-city",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Iloilo (Wikidata).
+        // Situada a 2.6 km del centro de Cebu City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-iloilo-cabalum-western-college",
-        name: "Cabalum Western College",
-        cityId: "filipinas-iloilo",
+        id: "filipinas-cebu-city-saint-theresa-s-college-of-cebu-city",
+        name: "Saint Theresa's College of Cebu City",
+        cityId: "filipinas-cebu-city",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Iloilo (Wikidata).
+        // Situada a 0.8 km del centro de Cebu City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-iloilo-saint-vincent-ferrer-seminary",
-        name: "Saint Vincent Ferrer Seminary",
-        cityId: "filipinas-iloilo",
+        id: "filipinas-cebu-city-southwestern-university",
+        name: "Southwestern University",
+        cityId: "filipinas-cebu-city",
+        website: "http://www.swu.edu.ph/",
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Cebu City (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-cebu-city-university-of-san-jose-recoletos",
+        name: "University of San Jose–Recoletos",
+        cityId: "filipinas-cebu-city",
+        website: "http://www.usjr.edu.ph/",
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Cebu City (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-cebu-city-university-of-the-philippines-cebu",
+        name: "University of the Philippines Cebu",
+        cityId: "filipinas-cebu-city",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Iloilo (Wikidata).
+        // Situada a 1.1 km del centro de Cebu City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-iloilo-university-of-iloilo",
-        name: "University of Iloilo",
-        cityId: "filipinas-iloilo",
-        website: null,
+        id: "filipinas-cebu-city-university-of-san-carlos",
+        name: "University of San Carlos",
+        cityId: "filipinas-cebu-city",
+        website: "http://www.usc.edu.ph/",
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Iloilo (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-iloilo-university-of-san-agustin",
-        name: "University of San Agustin",
-        cityId: "filipinas-iloilo",
-        website: "http://www.usa.edu.ph/",
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Iloilo (Wikidata).
+        // Situada a 2.1 km del centro de Cebu City (Wikidata).
       }),
   ],
-  "filipinas-zamboanga": [
+  "filipinas-bacolod-city": [
       defineUniversity({
-        id: "filipinas-zamboanga-universidad-de-zamboanga",
-        name: "Universidad de Zamboanga",
-        cityId: "filipinas-zamboanga",
+        id: "filipinas-bacolod-city-university-of-st-la-salle",
+        name: "University of St. La Salle",
+        cityId: "filipinas-bacolod-city",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Zamboanga (Wikidata).
+        // Situada a 1.9 km del centro de Bacolod City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-zamboanga-ateneo-de-zamboanga-university",
-        name: "Ateneo de Zamboanga University",
-        cityId: "filipinas-zamboanga",
-        website: "http://www.adzu.edu.ph/",
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Zamboanga (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-zamboanga-western-mindanao-state-university",
-        name: "Western Mindanao State University",
-        cityId: "filipinas-zamboanga",
-        website: "http://www.wmsu.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Zamboanga (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-zamboanga-western-mindanao-state-university",
-        name: "Western Mindanao State University",
-        cityId: "filipinas-zamboanga",
-        website: "http://www.wmsu.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Zamboanga (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-zamboanga-pilar-college",
-        name: "Pilar College",
-        cityId: "filipinas-zamboanga",
+        id: "filipinas-bacolod-city-bacolod-city-college",
+        name: "Bacolod City College",
+        cityId: "filipinas-bacolod-city",
         website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Zamboanga (Wikidata).
+        // Situada a 1.3 km del centro de Bacolod City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-zamboanga-university-of-saint-louis-tuguegarao",
-        name: "University of Saint Louis Tuguegarao",
-        cityId: "filipinas-zamboanga",
+        id: "filipinas-bacolod-city-carlos-hilado-memorial-state-college",
+        name: "Carlos Hilado Memorial State College",
+        cityId: "filipinas-bacolod-city",
         website: null,
         source: "open-dataset",
-        // Situada a 4.9 km del centro de Zamboanga (Wikidata).
+        // Situada a 2.9 km del centro de Bacolod City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-zamboanga-zamboanga-peninsula-polytechnic-state-university",
-        name: "Zamboanga Peninsula Polytechnic State University",
-        cityId: "filipinas-zamboanga",
+        id: "filipinas-bacolod-city-colegio-san-agustin-bacolod",
+        name: "Colegio San Agustin–Bacolod",
+        cityId: "filipinas-bacolod-city",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Zamboanga (Wikidata).
+        // Situada a 2.9 km del centro de Bacolod City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-zamboanga-zamboanga-peninsula-polytechnic-state-university",
-        name: "Zamboanga Peninsula Polytechnic State University",
-        cityId: "filipinas-zamboanga",
+        id: "filipinas-bacolod-city-john-b-lacson-colleges-foundation-bacolod-inc",
+        name: "John B. Lacson Colleges Foundation – Bacolod, Inc.",
+        cityId: "filipinas-bacolod-city",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Zamboanga (Wikidata).
+        // Situada a 3.3 km del centro de Bacolod City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-zamboanga-zamboanga-peninsula-polytechnic-state-university",
-        name: "Zamboanga Peninsula Polytechnic State University",
-        cityId: "filipinas-zamboanga",
+        id: "filipinas-bacolod-city-la-consolacion-college-bacolod",
+        name: "La Consolacion College–Bacolod",
+        cityId: "filipinas-bacolod-city",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Zamboanga (Wikidata).
+        // Situada a 0.5 km del centro de Bacolod City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-zamboanga-zamboanga-state-college-of-marine-sciences-and-technology",
-        name: "Zamboanga State College of Marine Sciences and Technology",
-        cityId: "filipinas-zamboanga",
+        id: "filipinas-bacolod-city-riverside-college-inc",
+        name: "Riverside College, Inc.",
+        cityId: "filipinas-bacolod-city",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Zamboanga (Wikidata).
+        // Situada a 2.1 km del centro de Bacolod City (Wikidata).
       }),
-  ],
-  "filipinas-los-banos": [
       defineUniversity({
-        id: "filipinas-los-banos-university-of-the-philippines-los-banos",
-        name: "University of the Philippines Los Baños",
-        cityId: "filipinas-los-banos",
-        website: "http://www.uplb.edu.ph/",
+        id: "filipinas-bacolod-city-university-of-negros-occidental-recoletos",
+        name: "University of Negros Occidental – Recoletos",
+        cityId: "filipinas-bacolod-city",
+        website: "http://www.uno-r.edu.ph/",
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Los Baños (Wikidata).
+        // Situada a 1.2 km del centro de Bacolod City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-los-banos-university-of-the-philippines-los-banos",
-        name: "University of the Philippines Los Baños",
-        cityId: "filipinas-los-banos",
-        website: "http://www.uplb.edu.ph/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Los Baños (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-los-banos-university-of-the-philippines-los-banos",
-        name: "University of the Philippines Los Baños",
-        cityId: "filipinas-los-banos",
-        website: "http://www.uplb.edu.ph/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Los Baños (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-los-banos-university-of-the-philippines-los-banos-college-of-agriculture-and-food-science",
-        name: "University of the Philippines Los Baños College of Agriculture and Food Science",
-        cityId: "filipinas-los-banos",
+        id: "filipinas-bacolod-city-west-negros-university",
+        name: "West Negros University",
+        cityId: "filipinas-bacolod-city",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Los Baños (Wikidata).
+        // Situada a 0.9 km del centro de Bacolod City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-los-banos-university-of-the-philippines-los-banos-college-of-forestry-and-natural-resources",
-        name: "University of the Philippines Los Baños College of Forestry and Natural Resources",
-        cityId: "filipinas-los-banos",
+        id: "filipinas-bacolod-city-our-lady-of-mercy-college-bacolod",
+        name: "Our Lady of Mercy College – Bacolod",
+        cityId: "filipinas-bacolod-city",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Los Baños (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-los-banos-university-of-the-philippines-open-university",
-        name: "University of the Philippines Open University",
-        cityId: "filipinas-los-banos",
-        website: "http://www.upou.org/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Los Baños (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-los-banos-university-of-the-philippines-open-university",
-        name: "University of the Philippines Open University",
-        cityId: "filipinas-los-banos",
-        website: "http://www.upou.org/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Los Baños (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-los-banos-university-of-the-philippines-open-university",
-        name: "University of the Philippines Open University",
-        cityId: "filipinas-los-banos",
-        website: "http://www.upou.org/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Los Baños (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-los-banos-university-of-the-philippines-open-university",
-        name: "University of the Philippines Open University",
-        cityId: "filipinas-los-banos",
-        website: "http://www.upou.org/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Los Baños (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-los-banos-university-of-the-philippines-open-university",
-        name: "University of the Philippines Open University",
-        cityId: "filipinas-los-banos",
-        website: "http://www.upou.org/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Los Baños (Wikidata).
+        // Situada a None km del centro de Bacolod City (Wikidata).
       }),
   ],
   "filipinas-san-juan": [
@@ -924,78 +882,136 @@ export default {
         // Situada a 1.0 km del centro de San Juan (Wikidata).
       }),
   ],
-  "filipinas-bacolod-city": [
+  "filipinas-quiapo": [
       defineUniversity({
-        id: "filipinas-bacolod-city-university-of-st-la-salle",
-        name: "University of St. La Salle",
-        cityId: "filipinas-bacolod-city",
-        website: null,
+        id: "filipinas-quiapo-lyceum-of-the-philippines-university",
+        name: "Lyceum of the Philippines University",
+        cityId: "filipinas-quiapo",
+        website: "http://www.lpu.edu.ph/",
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Bacolod City (Wikidata).
+        // Situada a 1.1 km del centro de Quiapo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-bacolod-city-bacolod-city-college",
-        name: "Bacolod City College",
-        cityId: "filipinas-bacolod-city",
-        website: null,
+        id: "filipinas-quiapo-feati-university",
+        name: "FEATI University",
+        cityId: "filipinas-quiapo",
+        website: "http://www.featiu.edu.ph/",
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Bacolod City (Wikidata).
+        // Situada a 0.3 km del centro de Quiapo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-bacolod-city-carlos-hilado-memorial-state-college",
-        name: "Carlos Hilado Memorial State College",
-        cityId: "filipinas-bacolod-city",
+        id: "filipinas-quiapo-pmi-colleges",
+        name: "PMI Colleges",
+        cityId: "filipinas-quiapo",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Bacolod City (Wikidata).
+        // Situada a 0.6 km del centro de Quiapo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-bacolod-city-colegio-san-agustin-bacolod",
-        name: "Colegio San Agustin–Bacolod",
-        cityId: "filipinas-bacolod-city",
+        id: "filipinas-quiapo-centro-escolar-university",
+        name: "Centro Escolar University",
+        cityId: "filipinas-quiapo",
+        website: "http://www.ceu.edu.ph/",
+        source: "open-dataset",
+        // Situada a None km del centro de Quiapo (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-quiapo-far-eastern-university-institute-of-nursing",
+        name: "Far Eastern University - Institute of Nursing",
+        cityId: "filipinas-quiapo",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Bacolod City (Wikidata).
+        // Situada a None km del centro de Quiapo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-bacolod-city-john-b-lacson-colleges-foundation-bacolod-inc",
-        name: "John B. Lacson Colleges Foundation – Bacolod, Inc.",
-        cityId: "filipinas-bacolod-city",
+        id: "filipinas-quiapo-far-eastern-university-institute-of-architecture-and-fine-arts",
+        name: "Far Eastern University - Institute of Architecture and Fine Arts",
+        cityId: "filipinas-quiapo",
         website: null,
         source: "open-dataset",
-        // Situada a 3.3 km del centro de Bacolod City (Wikidata).
+        // Situada a None km del centro de Quiapo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-bacolod-city-la-consolacion-college-bacolod",
-        name: "La Consolacion College–Bacolod",
-        cityId: "filipinas-bacolod-city",
+        id: "filipinas-quiapo-plm-college-of-law",
+        name: "PLM College of Law",
+        cityId: "filipinas-quiapo",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Bacolod City (Wikidata).
+        // Situada a None km del centro de Quiapo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-bacolod-city-riverside-college-inc",
-        name: "Riverside College, Inc.",
-        cityId: "filipinas-bacolod-city",
+        id: "filipinas-quiapo-philippine-college-of-health-sciences",
+        name: "Philippine College of Health Sciences",
+        cityId: "filipinas-quiapo",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Bacolod City (Wikidata).
+        // Situada a None km del centro de Quiapo (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-bacolod-city-university-of-negros-occidental-recoletos",
-        name: "University of Negros Occidental – Recoletos",
-        cityId: "filipinas-bacolod-city",
-        website: "http://www.uno-r.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Bacolod City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-bacolod-city-west-negros-university",
-        name: "West Negros University",
-        cityId: "filipinas-bacolod-city",
+        id: "filipinas-quiapo-polytechnic-university-of-the-philippines-open-university",
+        name: "Polytechnic University of the Philippines Open University",
+        cityId: "filipinas-quiapo",
         website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Bacolod City (Wikidata).
+        // Situada a None km del centro de Quiapo (Wikidata).
+      }),
+  ],
+  "filipinas-zamboanga": [
+      defineUniversity({
+        id: "filipinas-zamboanga-universidad-de-zamboanga",
+        name: "Universidad de Zamboanga",
+        cityId: "filipinas-zamboanga",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Zamboanga (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-zamboanga-ateneo-de-zamboanga-university",
+        name: "Ateneo de Zamboanga University",
+        cityId: "filipinas-zamboanga",
+        website: "http://www.adzu.edu.ph/",
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Zamboanga (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-zamboanga-western-mindanao-state-university",
+        name: "Western Mindanao State University",
+        cityId: "filipinas-zamboanga",
+        website: "http://www.wmsu.edu.ph/",
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Zamboanga (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-zamboanga-pilar-college",
+        name: "Pilar College",
+        cityId: "filipinas-zamboanga",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Zamboanga (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-zamboanga-university-of-saint-louis-tuguegarao",
+        name: "University of Saint Louis Tuguegarao",
+        cityId: "filipinas-zamboanga",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.9 km del centro de Zamboanga (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-zamboanga-zamboanga-peninsula-polytechnic-state-university",
+        name: "Zamboanga Peninsula Polytechnic State University",
+        cityId: "filipinas-zamboanga",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Zamboanga (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-zamboanga-zamboanga-state-college-of-marine-sciences-and-technology",
+        name: "Zamboanga State College of Marine Sciences and Technology",
+        cityId: "filipinas-zamboanga",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Zamboanga (Wikidata).
       }),
   ],
   "filipinas-roxas-city": [
@@ -1014,14 +1030,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.6 km del centro de Roxas City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-roxas-city-filamer-christian-university",
-        name: "Filamer Christian University",
-        cityId: "filipinas-roxas-city",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Roxas City (Wikidata).
       }),
       defineUniversity({
         id: "filipinas-roxas-city-filamer-christian-university",
@@ -1062,6 +1070,56 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.0 km del centro de Roxas City (Wikidata).
+      }),
+  ],
+  "filipinas-pagadian": [
+      defineUniversity({
+        id: "filipinas-pagadian-holy-child-academy",
+        name: "Holy Child Academy",
+        cityId: "filipinas-pagadian",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Pagadian (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-pagadian-zamboanga-del-sur-state-university",
+        name: "Zamboanga del Sur State University",
+        cityId: "filipinas-pagadian",
+        website: null,
+        source: "open-dataset",
+        // Situada a 20.6 km del centro de Pagadian (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-pagadian-saint-columban-college",
+        name: "Saint Columban College",
+        cityId: "filipinas-pagadian",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Pagadian (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-pagadian-southern-mindanao-colleges",
+        name: "Southern Mindanao Colleges",
+        cityId: "filipinas-pagadian",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Pagadian (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-pagadian-josefina-h-cerilles-polytechnic-college",
+        name: "Josefina H. Cerilles Polytechnic College",
+        cityId: "filipinas-pagadian",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pagadian (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-pagadian-mendero-college",
+        name: "Mendero College",
+        cityId: "filipinas-pagadian",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pagadian (Wikidata).
       }),
   ],
   "filipinas-naga": [
@@ -1113,24 +1171,58 @@ export default {
         source: "open-dataset",
         // Situada a 1.1 km del centro de Naga (Wikidata).
       }),
+  ],
+  "filipinas-los-banos": [
       defineUniversity({
-        id: "filipinas-naga-holy-rosary-seminary",
-        name: "Holy Rosary Seminary",
-        cityId: "filipinas-naga",
+        id: "filipinas-los-banos-university-of-the-philippines-los-banos",
+        name: "University of the Philippines Los Baños",
+        cityId: "filipinas-los-banos",
+        website: "http://www.uplb.edu.ph/",
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Los Baños (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-los-banos-university-of-the-philippines-los-banos-college-of-agriculture-and-food-science",
+        name: "University of the Philippines Los Baños College of Agriculture and Food Science",
+        cityId: "filipinas-los-banos",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Naga (Wikidata).
+        // Situada a 0.4 km del centro de Los Baños (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-los-banos-university-of-the-philippines-los-banos-college-of-forestry-and-natural-resources",
+        name: "University of the Philippines Los Baños College of Forestry and Natural Resources",
+        cityId: "filipinas-los-banos",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Los Baños (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-los-banos-university-of-the-philippines-open-university",
+        name: "University of the Philippines Open University",
+        cityId: "filipinas-los-banos",
+        website: "http://www.upou.org/",
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Los Baños (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-los-banos-university-of-the-philippines-los-banos-graduate-school",
+        name: "University of the Philippines Los Baños Graduate School",
+        cityId: "filipinas-los-banos",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Los Baños (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-los-banos-university-of-the-philippines-los-banos-limnological-research-station",
+        name: "University of the Philippines Los Baños Limnological Research Station",
+        cityId: "filipinas-los-banos",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Los Baños (Wikidata).
       }),
   ],
   "filipinas-dumaguete": [
-      defineUniversity({
-        id: "filipinas-dumaguete-silliman-university",
-        name: "Silliman University",
-        cityId: "filipinas-dumaguete",
-        website: "http://www.su.edu.ph/",
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Dumaguete (Wikidata).
-      }),
       defineUniversity({
         id: "filipinas-dumaguete-silliman-university",
         name: "Silliman University",
@@ -1180,104 +1272,54 @@ export default {
         // Situada a 0.9 km del centro de Dumaguete (Wikidata).
       }),
   ],
-  "filipinas-pasay": [
+  "filipinas-dagupan": [
       defineUniversity({
-        id: "filipinas-pasay-manila-adventist-medical-center-and-colleges",
-        name: "Manila Adventist Medical Center and Colleges",
-        cityId: "filipinas-pasay",
+        id: "filipinas-dagupan-university-of-luzon",
+        name: "University of Luzon",
+        cityId: "filipinas-dagupan",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Pasay (Wikidata).
+        // Situada a 0.5 km del centro de Dagupan (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-pasay-manila-adventist-medical-center-and-colleges",
-        name: "Manila Adventist Medical Center and Colleges",
-        cityId: "filipinas-pasay",
+        id: "filipinas-dagupan-colegio-de-dagupan",
+        name: "Colegio de Dagupan",
+        cityId: "filipinas-dagupan",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Pasay (Wikidata).
+        // Situada a 1.2 km del centro de Dagupan (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-pasay-asia-pacific-college",
-        name: "Asia Pacific College",
-        cityId: "filipinas-pasay",
+        id: "filipinas-dagupan-escuela-de-nuestra-senora-de-la-salette",
+        name: "Escuela de Nuestra Señora de La Salette",
+        cityId: "filipinas-dagupan",
         website: null,
         source: "open-dataset",
-        // Situada a 2.3 km del centro de Pasay (Wikidata).
+        // Situada a 0.9 km del centro de Dagupan (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-pasay-asian-institute-of-maritime-studies",
-        name: "Asian Institute of Maritime Studies",
-        cityId: "filipinas-pasay",
+        id: "filipinas-dagupan-lyceum-northwestern-university",
+        name: "Lyceum-Northwestern University",
+        cityId: "filipinas-dagupan",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Pasay (Wikidata).
+        // Situada a 0.9 km del centro de Dagupan (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-pasay-city-university-of-pasay",
-        name: "City University of Pasay",
-        cityId: "filipinas-pasay",
+        id: "filipinas-dagupan-st-john-s-cathedral-school",
+        name: "St. John's Cathedral School",
+        cityId: "filipinas-dagupan",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Pasay (Wikidata).
+        // Situada a 0.2 km del centro de Dagupan (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-pasay-national-aviation-academy-of-the-philippines",
-        name: "National Aviation Academy of the Philippines",
-        cityId: "filipinas-pasay",
-        website: null,
+        id: "filipinas-dagupan-university-of-pangasinan",
+        name: "University of Pangasinan",
+        cityId: "filipinas-dagupan",
+        website: "http://www.upang.edu.ph/",
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Pasay (Wikidata).
-      }),
-  ],
-  "filipinas-manila": [
-      defineUniversity({
-        id: "filipinas-manila-university-of-santo-tomas",
-        name: "University of Santo Tomas",
-        cityId: "filipinas-manila",
-        website: "http://www.ust.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Manila (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-manila-university-of-santo-tomas",
-        name: "University of Santo Tomas",
-        cityId: "filipinas-manila",
-        website: "http://www.ust.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Manila (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-manila-metropolitan-hospital-college-of-nursing",
-        name: "Metropolitan Hospital College of Nursing",
-        cityId: "filipinas-manila",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Manila (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-manila-angelicum-college",
-        name: "Angelicum College",
-        cityId: "filipinas-manila",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.9 km del centro de Manila (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-manila-far-eastern-university-institute-of-technology",
-        name: "Far Eastern University – Institute of Technology",
-        cityId: "filipinas-manila",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Manila (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-manila-university-of-perpetual-help-system-jonelta-manila-campus",
-        name: "University of Perpetual Help System JONELTA – Manila Campus",
-        cityId: "filipinas-manila",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Manila (Wikidata).
+        // Situada a 1.0 km del centro de Dagupan (Wikidata).
       }),
   ],
   "filipinas-cagayan-de-oro": [
@@ -1330,54 +1372,96 @@ export default {
         // Situada a 0.8 km del centro de Cagayan de Oro (Wikidata).
       }),
   ],
-  "filipinas-baguio": [
+  "filipinas-cabuyao": [
       defineUniversity({
-        id: "filipinas-baguio-university-of-the-cordilleras",
-        name: "University of the Cordilleras",
-        cityId: "filipinas-baguio",
-        website: "http://www.uc-bcf.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Baguio (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-baguio-university-of-the-philippines-baguio",
-        name: "University of the Philippines Baguio",
-        cityId: "filipinas-baguio",
-        website: "http://www.upb.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Baguio (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-baguio-university-of-the-philippines-baguio",
-        name: "University of the Philippines Baguio",
-        cityId: "filipinas-baguio",
-        website: "http://www.upb.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Baguio (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-baguio-baguio-central-university",
-        name: "Baguio Central University",
-        cityId: "filipinas-baguio",
+        id: "filipinas-cabuyao-mcl-mapua-institute-of-technology-at-laguna",
+        name: "MCL Mapúa Institute of Technology at Laguna",
+        cityId: "filipinas-cabuyao",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Baguio (Wikidata).
+        // Situada a 3.5 km del centro de Cabuyao (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-baguio-saint-louis-university",
-        name: "Saint Louis University",
-        cityId: "filipinas-baguio",
-        website: "http://www.slu.edu.ph/",
+        id: "filipinas-cabuyao-malayan-colleges-laguna",
+        name: "Malayan Colleges Laguna",
+        cityId: "filipinas-cabuyao",
+        website: "https://mcl.edu.ph/",
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Baguio (Wikidata).
+        // Situada a 3.6 km del centro de Cabuyao (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-baguio-university-of-baguio",
-        name: "University of Baguio",
-        cityId: "filipinas-baguio",
-        website: "http://www.ubaguio.edu/",
+        id: "filipinas-cabuyao-our-lady-of-assumption-college-santa-rosa",
+        name: "Our Lady of Assumption College, Santa Rosa",
+        cityId: "filipinas-cabuyao",
+        website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Baguio (Wikidata).
+        // Situada a 2.7 km del centro de Cabuyao (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-cabuyao-pamantasan-ng-cabuyao",
+        name: "Pamantasan ng Cabuyao",
+        cityId: "filipinas-cabuyao",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Cabuyao (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-cabuyao-mcl-college-of-arts-and-science",
+        name: "MCL College of Arts and Science",
+        cityId: "filipinas-cabuyao",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cabuyao (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-cabuyao-mcl-e-t-yuchengco-college-of-business-at-laguna",
+        name: "MCL E.T. Yuchengco College of Business at Laguna",
+        cityId: "filipinas-cabuyao",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cabuyao (Wikidata).
+      }),
+  ],
+  "filipinas-tuguegarao": [
+      defineUniversity({
+        id: "filipinas-tuguegarao-medical-colleges-of-northern-philippines",
+        name: "Medical Colleges of Northern Philippines",
+        cityId: "filipinas-tuguegarao",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.0 km del centro de Tuguegarao (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-tuguegarao-international-school-of-asia-and-the-pacific",
+        name: "International School of Asia and the Pacific",
+        cityId: "filipinas-tuguegarao",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.1 km del centro de Tuguegarao (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-tuguegarao-st-paul-university-philippines",
+        name: "St. Paul University Philippines",
+        cityId: "filipinas-tuguegarao",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Tuguegarao (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-tuguegarao-cagayan-state-university",
+        name: "Cagayan State University",
+        cityId: "filipinas-tuguegarao",
+        website: "http://www.csu.edu.ph/",
+        source: "open-dataset",
+        // Situada a None km del centro de Tuguegarao (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-tuguegarao-san-jacinto-seminary",
+        name: "San Jacinto Seminary",
+        cityId: "filipinas-tuguegarao",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tuguegarao (Wikidata).
       }),
   ],
   "filipinas-tagbilaran-city": [
@@ -1464,88 +1548,214 @@ export default {
         // Situada a 1.0 km del centro de Santa Cruz (Wikidata).
       }),
   ],
-  "filipinas-ozamiz-city": [
+  "filipinas-port-area": [
       defineUniversity({
-        id: "filipinas-ozamiz-city-medina-college-ozamiz",
-        name: "Medina College-Ozamiz",
-        cityId: "filipinas-ozamiz-city",
+        id: "filipinas-port-area-university-of-the-city-of-manila",
+        name: "University of the City of Manila",
+        cityId: "filipinas-port-area",
+        website: "http://www.plm.edu.ph/",
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Port Area (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-port-area-mapua-university",
+        name: "Mapúa University",
+        cityId: "filipinas-port-area",
+        website: "https://mapua.edu.ph/",
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Port Area (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-port-area-plm-emeritus-college",
+        name: "PLM Emeritus College",
+        cityId: "filipinas-port-area",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Ozamiz City (Wikidata).
+        // Situada a None km del centro de Port Area (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-ozamiz-city-la-salle-university",
-        name: "La Salle University",
-        cityId: "filipinas-ozamiz-city",
-        website: "http://www.dlsu.edu.ph/",
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Ozamiz City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-ozamiz-city-misamis-institute-of-technology",
-        name: "Misamis Institute of Technology",
-        cityId: "filipinas-ozamiz-city",
+        id: "filipinas-port-area-plm-graduate-school-of-law",
+        name: "PLM Graduate School of Law",
+        cityId: "filipinas-port-area",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Ozamiz City (Wikidata).
+        // Situada a None km del centro de Port Area (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-ozamiz-city-misamis-institute-of-technology",
-        name: "Misamis Institute of Technology",
-        cityId: "filipinas-ozamiz-city",
+        id: "filipinas-port-area-university-of-saint-ignatius",
+        name: "University of Saint Ignatius",
+        cityId: "filipinas-port-area",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Ozamiz City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-ozamiz-city-misamis-university",
-        name: "Misamis University",
-        cityId: "filipinas-ozamiz-city",
-        website: "http://www.mu.fapenet.org/",
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Ozamiz City (Wikidata).
+        // Situada a None km del centro de Port Area (Wikidata).
       }),
   ],
-  "filipinas-dagupan": [
+  "filipinas-pasay": [
       defineUniversity({
-        id: "filipinas-dagupan-university-of-luzon",
-        name: "University of Luzon",
-        cityId: "filipinas-dagupan",
+        id: "filipinas-pasay-manila-adventist-medical-center-and-colleges",
+        name: "Manila Adventist Medical Center and Colleges",
+        cityId: "filipinas-pasay",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Dagupan (Wikidata).
+        // Situada a 2.1 km del centro de Pasay (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-dagupan-colegio-de-dagupan",
-        name: "Colegio de Dagupan",
-        cityId: "filipinas-dagupan",
+        id: "filipinas-pasay-asia-pacific-college",
+        name: "Asia Pacific College",
+        cityId: "filipinas-pasay",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Dagupan (Wikidata).
+        // Situada a 2.3 km del centro de Pasay (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-dagupan-escuela-de-nuestra-senora-de-la-salette",
-        name: "Escuela de Nuestra Señora de La Salette",
-        cityId: "filipinas-dagupan",
+        id: "filipinas-pasay-asian-institute-of-maritime-studies",
+        name: "Asian Institute of Maritime Studies",
+        cityId: "filipinas-pasay",
         website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Dagupan (Wikidata).
+        // Situada a 1.4 km del centro de Pasay (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-dagupan-lyceum-northwestern-university",
-        name: "Lyceum-Northwestern University",
-        cityId: "filipinas-dagupan",
+        id: "filipinas-pasay-city-university-of-pasay",
+        name: "City University of Pasay",
+        cityId: "filipinas-pasay",
         website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Dagupan (Wikidata).
+        // Situada a 1.0 km del centro de Pasay (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-dagupan-university-of-pangasinan",
-        name: "University of Pangasinan",
-        cityId: "filipinas-dagupan",
-        website: "http://www.upang.edu.ph/",
+        id: "filipinas-pasay-national-aviation-academy-of-the-philippines",
+        name: "National Aviation Academy of the Philippines",
+        cityId: "filipinas-pasay",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Dagupan (Wikidata).
+        // Situada a 2.7 km del centro de Pasay (Wikidata).
+      }),
+  ],
+  "filipinas-manila": [
+      defineUniversity({
+        id: "filipinas-manila-university-of-santo-tomas",
+        name: "University of Santo Tomas",
+        cityId: "filipinas-manila",
+        website: "http://www.ust.edu.ph/",
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Manila (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-manila-metropolitan-hospital-college-of-nursing",
+        name: "Metropolitan Hospital College of Nursing",
+        cityId: "filipinas-manila",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Manila (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-manila-angelicum-college",
+        name: "Angelicum College",
+        cityId: "filipinas-manila",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Manila (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-manila-far-eastern-university-institute-of-technology",
+        name: "Far Eastern University – Institute of Technology",
+        cityId: "filipinas-manila",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Manila (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-manila-university-of-perpetual-help-system-jonelta-manila-campus",
+        name: "University of Perpetual Help System JONELTA – Manila Campus",
+        cityId: "filipinas-manila",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Manila (Wikidata).
+      }),
+  ],
+  "filipinas-lipa-city": [
+      defineUniversity({
+        id: "filipinas-lipa-city-padre-vicente-garcia-memorial-academy",
+        name: "Padre Vicente Garcia Memorial Academy",
+        cityId: "filipinas-lipa-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a 11.5 km del centro de Lipa City (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-lipa-city-lipa-city-colleges",
+        name: "Lipa City Colleges",
+        cityId: "filipinas-lipa-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Lipa City (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-lipa-city-de-la-salle-lipa",
+        name: "De La Salle Lipa",
+        cityId: "filipinas-lipa-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Lipa City (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-lipa-city-de-la-salle-lipa-college-of-law",
+        name: "De La Salle Lipa College of Law",
+        cityId: "filipinas-lipa-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Lipa City (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-lipa-city-the-mabini-academy",
+        name: "The Mabini Academy",
+        cityId: "filipinas-lipa-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Lipa City (Wikidata).
+      }),
+  ],
+  "filipinas-dasmarinas": [
+      defineUniversity({
+        id: "filipinas-dasmarinas-technological-university-of-the-philippines-cavite-campus",
+        name: "Technological University of the Philippines-Cavite Campus",
+        cityId: "filipinas-dasmarinas",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Dasmariñas (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-dasmarinas-pntc-colleges",
+        name: "PNTC Colleges",
+        cityId: "filipinas-dasmarinas",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Dasmariñas (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-dasmarinas-de-la-salle-university-dasmarinas",
+        name: "De La Salle University – Dasmariñas",
+        cityId: "filipinas-dasmarinas",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Dasmariñas (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-dasmarinas-st-jude-college-dasmarinas-cavite",
+        name: "St. Jude College Dasmariñas Cavite",
+        cityId: "filipinas-dasmarinas",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Dasmariñas (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-dasmarinas-national-college-of-science-and-technology",
+        name: "National College of Science and Technology",
+        cityId: "filipinas-dasmarinas",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dasmariñas (Wikidata).
       }),
   ],
   "filipinas-cabanatuan-city": [
@@ -1590,6 +1800,48 @@ export default {
         // Situada a 1.0 km del centro de Cabanatuan City (Wikidata).
       }),
   ],
+  "filipinas-baguio": [
+      defineUniversity({
+        id: "filipinas-baguio-university-of-the-cordilleras",
+        name: "University of the Cordilleras",
+        cityId: "filipinas-baguio",
+        website: "http://www.uc-bcf.edu.ph/",
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Baguio (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-baguio-university-of-the-philippines-baguio",
+        name: "University of the Philippines Baguio",
+        cityId: "filipinas-baguio",
+        website: "http://www.upb.edu.ph/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Baguio (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-baguio-baguio-central-university",
+        name: "Baguio Central University",
+        cityId: "filipinas-baguio",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Baguio (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-baguio-saint-louis-university",
+        name: "Saint Louis University",
+        cityId: "filipinas-baguio",
+        website: "http://www.slu.edu.ph/",
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Baguio (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-baguio-university-of-baguio",
+        name: "University of Baguio",
+        cityId: "filipinas-baguio",
+        website: "http://www.ubaguio.edu/",
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Baguio (Wikidata).
+      }),
+  ],
   "filipinas-vigan": [
       defineUniversity({
         id: "filipinas-vigan-university-of-ilocos-philippines",
@@ -1624,38 +1876,72 @@ export default {
         // Situada a 0.3 km del centro de Vigan (Wikidata).
       }),
   ],
-  "filipinas-pulong-santa-cruz": [
+  "filipinas-teresa": [
       defineUniversity({
-        id: "filipinas-pulong-santa-cruz-university-of-santo-tomas-santa-rosa",
-        name: "University of Santo Tomas Santa Rosa",
-        cityId: "filipinas-pulong-santa-cruz",
+        id: "filipinas-teresa-la-salle-college-antipolo",
+        name: "La Salle College Antipolo",
+        cityId: "filipinas-teresa",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Pulong Santa Cruz (Wikidata).
+        // Situada a 4.9 km del centro de Teresa (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-pulong-santa-cruz-adventist-university-of-the-philippines",
-        name: "Adventist University of the Philippines",
-        cityId: "filipinas-pulong-santa-cruz",
-        website: "http://www.aup.edu.ph/",
-        source: "open-dataset",
-        // Situada a 7.3 km del centro de Pulong Santa Cruz (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-pulong-santa-cruz-adventist-university-of-the-philippines",
-        name: "Adventist University of the Philippines",
-        cityId: "filipinas-pulong-santa-cruz",
-        website: "http://www.aup.edu.ph/",
-        source: "open-dataset",
-        // Situada a 7.3 km del centro de Pulong Santa Cruz (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-pulong-santa-cruz-de-la-salle-canlubang",
-        name: "De La Salle Canlubang",
-        cityId: "filipinas-pulong-santa-cruz",
+        id: "filipinas-teresa-john-paul-ii-minor-seminary",
+        name: "John Paul II Minor Seminary",
+        cityId: "filipinas-teresa",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Pulong Santa Cruz (Wikidata).
+        // Situada a 5.1 km del centro de Teresa (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-teresa-skill-power-institute",
+        name: "Skill Power Institute",
+        cityId: "filipinas-teresa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Teresa (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-teresa-southeast-asia-interdisciplinary-development-institute-saidi",
+        name: "Southeast Asia Interdisciplinary Development Institute (SAIDI)",
+        cityId: "filipinas-teresa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Teresa (Wikidata).
+      }),
+  ],
+  "filipinas-santa-rosa": [
+      defineUniversity({
+        id: "filipinas-santa-rosa-canossa-school-of-santa-rosa",
+        name: "Canossa School of Santa Rosa",
+        cityId: "filipinas-santa-rosa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Santa Rosa (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-santa-rosa-maranatha-living-hope-academy",
+        name: "Maranatha Living Hope Academy",
+        cityId: "filipinas-santa-rosa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Santa Rosa (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-santa-rosa-polytechnic-university-of-the-philippines-santa-rosa",
+        name: "Polytechnic University of the Philippines, Santa Rosa",
+        cityId: "filipinas-santa-rosa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Santa Rosa (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-santa-rosa-dominican-college-of-santa-rosa",
+        name: "Dominican College of Santa Rosa",
+        cityId: "filipinas-santa-rosa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Santa Rosa (Wikidata).
       }),
   ],
   "filipinas-passi": [
@@ -1692,72 +1978,38 @@ export default {
         // Situada a 18.2 km del centro de Passi (Wikidata).
       }),
   ],
-  "filipinas-pagadian": [
+  "filipinas-ozamiz-city": [
       defineUniversity({
-        id: "filipinas-pagadian-holy-child-academy",
-        name: "Holy Child Academy",
-        cityId: "filipinas-pagadian",
+        id: "filipinas-ozamiz-city-medina-college-ozamiz",
+        name: "Medina College-Ozamiz",
+        cityId: "filipinas-ozamiz-city",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Pagadian (Wikidata).
+        // Situada a 2.9 km del centro de Ozamiz City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-pagadian-zamboanga-del-sur-state-university",
-        name: "Zamboanga del Sur State University",
-        cityId: "filipinas-pagadian",
-        website: null,
+        id: "filipinas-ozamiz-city-la-salle-university",
+        name: "La Salle University",
+        cityId: "filipinas-ozamiz-city",
+        website: "http://www.dlsu.edu.ph/",
         source: "open-dataset",
-        // Situada a 20.6 km del centro de Pagadian (Wikidata).
+        // Situada a 0.7 km del centro de Ozamiz City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-pagadian-saint-columban-college",
-        name: "Saint Columban College",
-        cityId: "filipinas-pagadian",
+        id: "filipinas-ozamiz-city-misamis-institute-of-technology",
+        name: "Misamis Institute of Technology",
+        cityId: "filipinas-ozamiz-city",
         website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de Pagadian (Wikidata).
+        // Situada a 1.9 km del centro de Ozamiz City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-pagadian-southern-mindanao-colleges",
-        name: "Southern Mindanao Colleges",
-        cityId: "filipinas-pagadian",
-        website: null,
+        id: "filipinas-ozamiz-city-misamis-university",
+        name: "Misamis University",
+        cityId: "filipinas-ozamiz-city",
+        website: "http://www.mu.fapenet.org/",
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Pagadian (Wikidata).
-      }),
-  ],
-  "filipinas-lipa-city": [
-      defineUniversity({
-        id: "filipinas-lipa-city-lipa-city-colleges",
-        name: "Lipa City Colleges",
-        cityId: "filipinas-lipa-city",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Lipa City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-lipa-city-de-la-salle-lipa",
-        name: "De La Salle Lipa",
-        cityId: "filipinas-lipa-city",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Lipa City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-lipa-city-de-la-salle-lipa-college-of-law",
-        name: "De La Salle Lipa College of Law",
-        cityId: "filipinas-lipa-city",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Lipa City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-lipa-city-the-mabini-academy",
-        name: "The Mabini Academy",
-        cityId: "filipinas-lipa-city",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Lipa City (Wikidata).
+        // Situada a 0.2 km del centro de Ozamiz City (Wikidata).
       }),
   ],
   "filipinas-iligan": [
@@ -1820,148 +2072,80 @@ export default {
         // Situada a 3.0 km del centro de General Santos (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-general-santos-ramon-magsaysay-memorial-colleges",
-        name: "Ramon Magsaysay Memorial Colleges",
+        id: "filipinas-general-santos-notre-dame-of-dadiangas-university",
+        name: "Notre Dame of Dadiangas University",
         cityId: "filipinas-general-santos",
         website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de General Santos (Wikidata).
+        // Situada a None km del centro de General Santos (Wikidata).
       }),
   ],
-  "filipinas-dipolog": [
+  "filipinas-upper-bicutan": [
       defineUniversity({
-        id: "filipinas-dipolog-andres-bonifacio-college",
-        name: "Andres Bonifacio College",
-        cityId: "filipinas-dipolog",
+        id: "filipinas-upper-bicutan-polytechnic-university-of-the-philippines-taguig",
+        name: "Polytechnic University of the Philippines, Taguig",
+        cityId: "filipinas-upper-bicutan",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Dipolog (Wikidata).
+        // Situada a 1.3 km del centro de Upper Bicutan (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-dipolog-jose-rizal-memorial-state-university-dipolog-campus",
-        name: "Jose Rizal Memorial State University - Dipolog Campus",
-        cityId: "filipinas-dipolog",
+        id: "filipinas-upper-bicutan-taguig-city-university",
+        name: "Taguig City University",
+        cityId: "filipinas-upper-bicutan",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Dipolog (Wikidata).
+        // Situada a 1.1 km del centro de Upper Bicutan (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-dipolog-jose-rizal-memorial-state-university-katipunan-campus",
-        name: "Jose Rizal Memorial State University - Katipunan Campus",
-        cityId: "filipinas-dipolog",
+        id: "filipinas-upper-bicutan-technological-university-of-the-philippines-taguig-campus",
+        name: "Technological University of the Philippines-Taguig Campus",
+        cityId: "filipinas-upper-bicutan",
         website: null,
         source: "open-dataset",
-        // Situada a 8.4 km del centro de Dipolog (Wikidata).
+        // Situada a None km del centro de Upper Bicutan (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-dipolog-jose-rizal-memorial-state-university-katipunan-campus",
-        name: "Jose Rizal Memorial State University - Katipunan Campus",
-        cityId: "filipinas-dipolog",
+        id: "filipinas-upper-bicutan-the-fisher-valley-college",
+        name: "The Fisher Valley College",
+        cityId: "filipinas-upper-bicutan",
         website: null,
         source: "open-dataset",
-        // Situada a 8.4 km del centro de Dipolog (Wikidata).
+        // Situada a None km del centro de Upper Bicutan (Wikidata).
       }),
   ],
-  "filipinas-dasmarinas": [
+  "filipinas-bel-air": [
       defineUniversity({
-        id: "filipinas-dasmarinas-technological-university-of-the-philippines-cavite-campus",
-        name: "Technological University of the Philippines-Cavite Campus",
-        cityId: "filipinas-dasmarinas",
+        id: "filipinas-bel-air-iacademy",
+        name: "iAcademy",
+        cityId: "filipinas-bel-air",
         website: null,
         source: "open-dataset",
-        // Situada a 3.6 km del centro de Dasmariñas (Wikidata).
+        // Situada a 1.9 km del centro de Bel Air (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-dasmarinas-pntc-colleges",
-        name: "PNTC Colleges",
-        cityId: "filipinas-dasmarinas",
+        id: "filipinas-bel-air-asian-institute-for-distance-education",
+        name: "Asian Institute for Distance Education",
+        cityId: "filipinas-bel-air",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Dasmariñas (Wikidata).
+        // Situada a 0.8 km del centro de Bel Air (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-dasmarinas-de-la-salle-university-dasmarinas",
-        name: "De La Salle University – Dasmariñas",
-        cityId: "filipinas-dasmarinas",
+        id: "filipinas-bel-air-cap-college-foundation",
+        name: "CAP College Foundation",
+        cityId: "filipinas-bel-air",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Dasmariñas (Wikidata).
+        // Situada a 1.3 km del centro de Bel Air (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-dasmarinas-st-jude-college-dasmarinas-cavite",
-        name: "St. Jude College Dasmariñas Cavite",
-        cityId: "filipinas-dasmarinas",
+        id: "filipinas-bel-air-saint-paul-college-of-makati",
+        name: "Saint Paul College of Makati",
+        cityId: "filipinas-bel-air",
         website: null,
         source: "open-dataset",
-        // Situada a 3.2 km del centro de Dasmariñas (Wikidata).
-      }),
-  ],
-  "filipinas-cabuyao": [
-      defineUniversity({
-        id: "filipinas-cabuyao-mcl-mapua-institute-of-technology-at-laguna",
-        name: "MCL Mapúa Institute of Technology at Laguna",
-        cityId: "filipinas-cabuyao",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Cabuyao (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-cabuyao-malayan-colleges-laguna",
-        name: "Malayan Colleges Laguna",
-        cityId: "filipinas-cabuyao",
-        website: "https://mcl.edu.ph/",
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Cabuyao (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-cabuyao-our-lady-of-assumption-college-santa-rosa",
-        name: "Our Lady of Assumption College, Santa Rosa",
-        cityId: "filipinas-cabuyao",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Cabuyao (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-cabuyao-pamantasan-ng-cabuyao",
-        name: "Pamantasan ng Cabuyao",
-        cityId: "filipinas-cabuyao",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Cabuyao (Wikidata).
-      }),
-  ],
-  "filipinas-angeles-city": [
-      defineUniversity({
-        id: "filipinas-angeles-city-angeles-university-foundation",
-        name: "Angeles University Foundation",
-        cityId: "filipinas-angeles-city",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Angeles City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-angeles-city-holy-angel-university",
-        name: "Holy Angel University",
-        cityId: "filipinas-angeles-city",
-        website: "http://www.hau.edu.ph/",
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Angeles City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-angeles-city-holy-angel-university",
-        name: "Holy Angel University",
-        cityId: "filipinas-angeles-city",
-        website: "http://www.hau.edu.ph/",
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Angeles City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-angeles-city-holy-angel-university",
-        name: "Holy Angel University",
-        cityId: "filipinas-angeles-city",
-        website: "http://www.hau.edu.ph/",
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Angeles City (Wikidata).
+        // Situada a 1.0 km del centro de Bel Air (Wikidata).
       }),
   ],
   "filipinas-pasig-city": [
@@ -2024,134 +2208,30 @@ export default {
         // Situada a 1.2 km del centro de Urdaneta (Wikidata).
       }),
   ],
-  "filipinas-tuguegarao": [
+  "filipinas-pulong-santa-cruz": [
       defineUniversity({
-        id: "filipinas-tuguegarao-medical-colleges-of-northern-philippines",
-        name: "Medical Colleges of Northern Philippines",
-        cityId: "filipinas-tuguegarao",
+        id: "filipinas-pulong-santa-cruz-university-of-santo-tomas-santa-rosa",
+        name: "University of Santo Tomas Santa Rosa",
+        cityId: "filipinas-pulong-santa-cruz",
         website: null,
         source: "open-dataset",
-        // Situada a 5.0 km del centro de Tuguegarao (Wikidata).
+        // Situada a 2.7 km del centro de Pulong Santa Cruz (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-tuguegarao-international-school-of-asia-and-the-pacific",
-        name: "International School of Asia and the Pacific",
-        cityId: "filipinas-tuguegarao",
+        id: "filipinas-pulong-santa-cruz-adventist-university-of-the-philippines",
+        name: "Adventist University of the Philippines",
+        cityId: "filipinas-pulong-santa-cruz",
+        website: "http://www.aup.edu.ph/",
+        source: "open-dataset",
+        // Situada a 7.3 km del centro de Pulong Santa Cruz (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-pulong-santa-cruz-de-la-salle-canlubang",
+        name: "De La Salle Canlubang",
+        cityId: "filipinas-pulong-santa-cruz",
         website: null,
         source: "open-dataset",
-        // Situada a 5.1 km del centro de Tuguegarao (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-tuguegarao-st-paul-university-philippines",
-        name: "St. Paul University Philippines",
-        cityId: "filipinas-tuguegarao",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Tuguegarao (Wikidata).
-      }),
-  ],
-  "filipinas-teresa": [
-      defineUniversity({
-        id: "filipinas-teresa-la-salle-college-antipolo",
-        name: "La Salle College Antipolo",
-        cityId: "filipinas-teresa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Teresa (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-teresa-john-paul-ii-minor-seminary",
-        name: "John Paul II Minor Seminary",
-        cityId: "filipinas-teresa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Teresa (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-teresa-john-paul-ii-minor-seminary",
-        name: "John Paul II Minor Seminary",
-        cityId: "filipinas-teresa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Teresa (Wikidata).
-      }),
-  ],
-  "filipinas-santa-rosa": [
-      defineUniversity({
-        id: "filipinas-santa-rosa-canossa-school-of-santa-rosa",
-        name: "Canossa School of Santa Rosa",
-        cityId: "filipinas-santa-rosa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Santa Rosa (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-santa-rosa-maranatha-living-hope-academy",
-        name: "Maranatha Living Hope Academy",
-        cityId: "filipinas-santa-rosa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Santa Rosa (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-santa-rosa-polytechnic-university-of-the-philippines-santa-rosa",
-        name: "Polytechnic University of the Philippines, Santa Rosa",
-        cityId: "filipinas-santa-rosa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Santa Rosa (Wikidata).
-      }),
-  ],
-  "filipinas-quiapo": [
-      defineUniversity({
-        id: "filipinas-quiapo-lyceum-of-the-philippines-university",
-        name: "Lyceum of the Philippines University",
-        cityId: "filipinas-quiapo",
-        website: "http://www.lpu.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Quiapo (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-quiapo-feati-university",
-        name: "FEATI University",
-        cityId: "filipinas-quiapo",
-        website: "http://www.featiu.edu.ph/",
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Quiapo (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-quiapo-pmi-colleges",
-        name: "PMI Colleges",
-        cityId: "filipinas-quiapo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Quiapo (Wikidata).
-      }),
-  ],
-  "filipinas-port-area": [
-      defineUniversity({
-        id: "filipinas-port-area-university-of-the-city-of-manila",
-        name: "University of the City of Manila",
-        cityId: "filipinas-port-area",
-        website: "http://www.plm.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Port Area (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-port-area-mapua-university",
-        name: "Mapúa University",
-        cityId: "filipinas-port-area",
-        website: "https://mapua.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Port Area (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-port-area-mapua-university",
-        name: "Mapúa University",
-        cityId: "filipinas-port-area",
-        website: "https://mapua.edu.ph/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Port Area (Wikidata).
+        // Situada a 3.9 km del centro de Pulong Santa Cruz (Wikidata).
       }),
   ],
   "filipinas-paranaque-city": [
@@ -2180,30 +2260,56 @@ export default {
         // Situada a 3.2 km del centro de Paranaque City (Wikidata).
       }),
   ],
-  "filipinas-legaspi": [
+  "filipinas-marikina-city": [
       defineUniversity({
-        id: "filipinas-legaspi-university-of-santo-tomas-legazpi",
-        name: "University of Santo Tomas–Legazpi",
-        cityId: "filipinas-legaspi",
+        id: "filipinas-marikina-city-pamantasan-ng-lungsod-ng-marikina",
+        name: "Pamantasan ng Lungsod ng Marikina",
+        cityId: "filipinas-marikina-city",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Legaspi (Wikidata).
+        // Situada a 0.9 km del centro de Marikina City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-legaspi-university-of-santo-tomas-legazpi",
-        name: "University of Santo Tomas–Legazpi",
-        cityId: "filipinas-legaspi",
+        id: "filipinas-marikina-city-marikina-polytechnic-college",
+        name: "Marikina Polytechnic College",
+        cityId: "filipinas-marikina-city",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Legaspi (Wikidata).
+        // Situada a None km del centro de Marikina City (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-legaspi-bicol-university",
-        name: "Bicol University",
-        cityId: "filipinas-legaspi",
-        website: "http://www.bicol-u.edu.ph/",
+        id: "filipinas-marikina-city-mother-of-divine-providence-school",
+        name: "Mother of Divine Providence School",
+        cityId: "filipinas-marikina-city",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Legaspi (Wikidata).
+        // Situada a None km del centro de Marikina City (Wikidata).
+      }),
+  ],
+  "filipinas-las-pinas": [
+      defineUniversity({
+        id: "filipinas-las-pinas-university-of-perpetual-help-system-dalta",
+        name: "University of Perpetual Help System DALTA",
+        cityId: "filipinas-las-pinas",
+        website: "http://www.perpetualdalta.edu.ph/",
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Las Piñas (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-las-pinas-university-of-perpetual-help-system-dalta-molino-campus",
+        name: "University of Perpetual Help System DALTA – Molino Campus",
+        cityId: "filipinas-las-pinas",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.3 km del centro de Las Piñas (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-las-pinas-saint-francis-of-assisi-college-las-pinas",
+        name: "Saint Francis of Assisi College Las Piñas",
+        cityId: "filipinas-las-pinas",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Las Piñas (Wikidata).
       }),
   ],
   "filipinas-laoag": [
@@ -2219,7 +2325,7 @@ export default {
         id: "filipinas-laoag-northwestern-university",
         name: "Northwestern University",
         cityId: "filipinas-laoag",
-        website: null,
+        website: "http://www.northwestern.edu/",
         source: "open-dataset",
         // Situada a 3.3 km del centro de Laoag (Wikidata).
       }),
@@ -2258,56 +2364,56 @@ export default {
         // Situada a 0.3 km del centro de Kalibo (Wikidata).
       }),
   ],
-  "filipinas-jolo": [
+  "filipinas-dipolog": [
       defineUniversity({
-        id: "filipinas-jolo-mindanao-state-university-sulu",
-        name: "Mindanao State University-Sulu",
-        cityId: "filipinas-jolo",
+        id: "filipinas-dipolog-andres-bonifacio-college",
+        name: "Andres Bonifacio College",
+        cityId: "filipinas-dipolog",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Jolo (Wikidata).
+        // Situada a 1.7 km del centro de Dipolog (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-jolo-mindanao-state-university-sulu",
-        name: "Mindanao State University-Sulu",
-        cityId: "filipinas-jolo",
+        id: "filipinas-dipolog-jose-rizal-memorial-state-university-dipolog-campus",
+        name: "Jose Rizal Memorial State University - Dipolog Campus",
+        cityId: "filipinas-dipolog",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Jolo (Wikidata).
+        // Situada a 2.5 km del centro de Dipolog (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-jolo-notre-dame-of-jolo-college",
-        name: "Notre Dame of Jolo College",
-        cityId: "filipinas-jolo",
+        id: "filipinas-dipolog-jose-rizal-memorial-state-university-katipunan-campus",
+        name: "Jose Rizal Memorial State University - Katipunan Campus",
+        cityId: "filipinas-dipolog",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Jolo (Wikidata).
+        // Situada a 8.4 km del centro de Dipolog (Wikidata).
       }),
   ],
-  "filipinas-calumpang": [
+  "filipinas-cotabato": [
       defineUniversity({
-        id: "filipinas-calumpang-ateneo-de-manila-university",
-        name: "Ateneo de Manila University",
-        cityId: "filipinas-calumpang",
-        website: "https://ateneo.edu/",
+        id: "filipinas-cotabato-notre-dame-university",
+        name: "Notre Dame University",
+        cityId: "filipinas-cotabato",
+        website: "http://www.ndu.fapenet.org/",
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Calumpang (Wikidata).
+        // Situada a 1.0 km del centro de Cotabato (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-calumpang-ateneo-de-manila-university",
-        name: "Ateneo de Manila University",
-        cityId: "filipinas-calumpang",
-        website: "https://ateneo.edu/",
+        id: "filipinas-cotabato-notre-dame-rvm-college-of-cotabato",
+        name: "Notre Dame – RVM College of Cotabato",
+        cityId: "filipinas-cotabato",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Calumpang (Wikidata).
+        // Situada a 1.0 km del centro de Cotabato (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-calumpang-ateneo-de-manila-university",
-        name: "Ateneo de Manila University",
-        cityId: "filipinas-calumpang",
-        website: "https://ateneo.edu/",
+        id: "filipinas-cotabato-notre-dame-educational-association",
+        name: "Notre Dame Educational Association",
+        cityId: "filipinas-cotabato",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Calumpang (Wikidata).
+        // Situada a None km del centro de Cotabato (Wikidata).
       }),
   ],
   "filipinas-calamba": [
@@ -2414,6 +2520,42 @@ export default {
         // Situada a 1.5 km del centro de Bagong Pagasa (Wikidata).
       }),
   ],
+  "filipinas-tarlac-city": [
+      defineUniversity({
+        id: "filipinas-tarlac-city-don-bosco-technical-institute-tarlac",
+        name: "Don Bosco Technical Institute, Tarlac",
+        cityId: "filipinas-tarlac-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Tarlac City (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-tarlac-city-tarlac-state-university",
+        name: "Tarlac State University",
+        cityId: "filipinas-tarlac-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tarlac City (Wikidata).
+      }),
+  ],
+  "filipinas-tanjay": [
+      defineUniversity({
+        id: "filipinas-tanjay-diaz-college",
+        name: "Diaz College",
+        cityId: "filipinas-tanjay",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Tanjay (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-tanjay-villaflores-college",
+        name: "Villaflores College",
+        cityId: "filipinas-tanjay",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Tanjay (Wikidata).
+      }),
+  ],
   "filipinas-tacurong": [
       defineUniversity({
         id: "filipinas-tacurong-notre-dame-of-tacurong-college",
@@ -2448,24 +2590,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.0 km del centro de Tacloban (Wikidata).
-      }),
-  ],
-  "filipinas-tabuk": [
-      defineUniversity({
-        id: "filipinas-tabuk-kalinga-state-university",
-        name: "Kalinga State University",
-        cityId: "filipinas-tabuk",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.6 km del centro de Tabuk (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-tabuk-kalinga-state-university",
-        name: "Kalinga State University",
-        cityId: "filipinas-tabuk",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.6 km del centro de Tabuk (Wikidata).
       }),
   ],
   "filipinas-surallah": [
@@ -2540,6 +2664,24 @@ export default {
         // Situada a 0.2 km del centro de Santa Cruz (Wikidata).
       }),
   ],
+  "filipinas-san-pedro": [
+      defineUniversity({
+        id: "filipinas-san-pedro-jesus-the-risen-savior-school",
+        name: "Jesus the Risen Savior School",
+        cityId: "filipinas-san-pedro",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de San Pedro (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-san-pedro-polytechnic-university-of-the-philippines-san-pedro",
+        name: "Polytechnic University of the Philippines, San Pedro",
+        cityId: "filipinas-san-pedro",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.4 km del centro de San Pedro (Wikidata).
+      }),
+  ],
   "filipinas-san-jose": [
       defineUniversity({
         id: "filipinas-san-jose-divine-word-college-of-san-jose",
@@ -2576,22 +2718,40 @@ export default {
         // Situada a 1.9 km del centro de San Ildefonso (Wikidata).
       }),
   ],
-  "filipinas-pagalungan": [
+  "filipinas-puerto-princesa": [
       defineUniversity({
-        id: "filipinas-pagalungan-mindanao-state-university-maguindanao",
-        name: "Mindanao State University – Maguindanao",
-        cityId: "filipinas-pagalungan",
-        website: null,
+        id: "filipinas-puerto-princesa-palawan-state-university",
+        name: "Palawan State University",
+        cityId: "filipinas-puerto-princesa",
+        website: "http://psu.palawan.edu.ph/",
         source: "open-dataset",
-        // Situada a 15.5 km del centro de Pagaluñgan (Wikidata).
+        // Situada a 4.3 km del centro de Puerto Princesa (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-pagalungan-mindanao-state-university-maguindanao",
-        name: "Mindanao State University – Maguindanao",
-        cityId: "filipinas-pagalungan",
+        id: "filipinas-puerto-princesa-holy-trinity-university",
+        name: "Holy Trinity University",
+        cityId: "filipinas-puerto-princesa",
         website: null,
         source: "open-dataset",
-        // Situada a 15.5 km del centro de Pagaluñgan (Wikidata).
+        // Situada a None km del centro de Puerto Princesa (Wikidata).
+      }),
+  ],
+  "filipinas-patuto": [
+      defineUniversity({
+        id: "filipinas-patuto-divine-word-seminary",
+        name: "Divine Word Seminary",
+        cityId: "filipinas-patuto",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Patuto (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-patuto-saint-augustine-major-seminary",
+        name: "Saint Augustine Major Seminary",
+        cityId: "filipinas-patuto",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Patuto (Wikidata).
       }),
   ],
   "filipinas-olongapo": [
@@ -2684,6 +2844,24 @@ export default {
         // Situada a 1.2 km del centro de Lingayen (Wikidata).
       }),
   ],
+  "filipinas-legaspi": [
+      defineUniversity({
+        id: "filipinas-legaspi-university-of-santo-tomas-legazpi",
+        name: "University of Santo Tomas–Legazpi",
+        cityId: "filipinas-legaspi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Legaspi (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-legaspi-bicol-university",
+        name: "Bicol University",
+        cityId: "filipinas-legaspi",
+        website: "http://www.bicol-u.edu.ph/",
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Legaspi (Wikidata).
+      }),
+  ],
   "filipinas-la-trinidad": [
       defineUniversity({
         id: "filipinas-la-trinidad-philippine-nazarene-college",
@@ -2700,24 +2878,6 @@ export default {
         website: "http://www.bsu.edu.ph/",
         source: "open-dataset",
         // Situada a 0.5 km del centro de La Trinidad (Wikidata).
-      }),
-  ],
-  "filipinas-las-pinas": [
-      defineUniversity({
-        id: "filipinas-las-pinas-university-of-perpetual-help-system-dalta",
-        name: "University of Perpetual Help System DALTA",
-        cityId: "filipinas-las-pinas",
-        website: "http://www.perpetualdalta.edu.ph/",
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Las Piñas (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-las-pinas-university-of-perpetual-help-system-dalta-molino-campus",
-        name: "University of Perpetual Help System DALTA – Molino Campus",
-        cityId: "filipinas-las-pinas",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Las Piñas (Wikidata).
       }),
   ],
   "filipinas-kidapawan": [
@@ -2738,6 +2898,24 @@ export default {
         // Situada a 0.8 km del centro de Kidapawan (Wikidata).
       }),
   ],
+  "filipinas-jolo": [
+      defineUniversity({
+        id: "filipinas-jolo-mindanao-state-university-sulu",
+        name: "Mindanao State University-Sulu",
+        cityId: "filipinas-jolo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Jolo (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-jolo-notre-dame-of-jolo-college",
+        name: "Notre Dame of Jolo College",
+        cityId: "filipinas-jolo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Jolo (Wikidata).
+      }),
+  ],
   "filipinas-jasaan": [
       defineUniversity({
         id: "filipinas-jasaan-misamis-oriental-state-college-of-agriculture-and-technology",
@@ -2756,6 +2934,24 @@ export default {
         // Situada a 10.1 km del centro de Jasaan (Wikidata).
       }),
   ],
+  "filipinas-iriga-city": [
+      defineUniversity({
+        id: "filipinas-iriga-city-university-of-saint-anthony",
+        name: "University of Saint Anthony",
+        cityId: "filipinas-iriga-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Iriga City (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-iriga-city-la-consolacion-college-iriga-city",
+        name: "La Consolacion College-Iriga City",
+        cityId: "filipinas-iriga-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Iriga City (Wikidata).
+      }),
+  ],
   "filipinas-indang": [
       defineUniversity({
         id: "filipinas-indang-cavite-state-university",
@@ -2772,24 +2968,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.6 km del centro de Indang (Wikidata).
-      }),
-  ],
-  "filipinas-iligan-city": [
-      defineUniversity({
-        id: "filipinas-iligan-city-mindanao-sanitarium-and-hospital-college",
-        name: "Mindanao Sanitarium and Hospital College",
-        cityId: "filipinas-iligan-city",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.4 km del centro de Iligan City (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-iligan-city-mindanao-sanitarium-and-hospital-college",
-        name: "Mindanao Sanitarium and Hospital College",
-        cityId: "filipinas-iligan-city",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.4 km del centro de Iligan City (Wikidata).
       }),
   ],
   "filipinas-ilagan": [
@@ -2882,6 +3060,24 @@ export default {
         // Situada a 0.2 km del centro de Del Pilar (Wikidata).
       }),
   ],
+  "filipinas-dapitan": [
+      defineUniversity({
+        id: "filipinas-dapitan-jose-rizal-memorial-state-university-main-campus",
+        name: "Jose Rizal Memorial State University - Main Campus",
+        cityId: "filipinas-dapitan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.1 km del centro de Dapitan (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-dapitan-jose-rizal-memorial-state-university",
+        name: "Jose Rizal Memorial State University",
+        cityId: "filipinas-dapitan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.0 km del centro de Dapitan (Wikidata).
+      }),
+  ],
   "filipinas-daet": [
       defineUniversity({
         id: "filipinas-daet-camarines-norte-state-college",
@@ -2898,42 +3094,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.9 km del centro de Daet (Wikidata).
-      }),
-  ],
-  "filipinas-cotabato": [
-      defineUniversity({
-        id: "filipinas-cotabato-notre-dame-university",
-        name: "Notre Dame University",
-        cityId: "filipinas-cotabato",
-        website: "http://www.ndu.fapenet.org/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Cotabato (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-cotabato-notre-dame-rvm-college-of-cotabato",
-        name: "Notre Dame – RVM College of Cotabato",
-        cityId: "filipinas-cotabato",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Cotabato (Wikidata).
-      }),
-  ],
-  "filipinas-catarman": [
-      defineUniversity({
-        id: "filipinas-catarman-university-of-eastern-philippines",
-        name: "University of Eastern Philippines",
-        cityId: "filipinas-catarman",
-        website: "http://www.uep.educ.ph/",
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Catarman (Wikidata).
-      }),
-      defineUniversity({
-        id: "filipinas-catarman-university-of-eastern-philippines",
-        name: "University of Eastern Philippines",
-        cityId: "filipinas-catarman",
-        website: "http://www.uep.educ.ph/",
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Catarman (Wikidata).
       }),
   ],
   "filipinas-catanauan": [
@@ -2972,6 +3132,42 @@ export default {
         // Situada a 2.2 km del centro de Carmona (Wikidata).
       }),
   ],
+  "filipinas-caloocan": [
+      defineUniversity({
+        id: "filipinas-caloocan-university-of-caloocan-city",
+        name: "University of Caloocan City",
+        cityId: "filipinas-caloocan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Caloocan (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-caloocan-navotas-polytechnic-college",
+        name: "Navotas Polytechnic College",
+        cityId: "filipinas-caloocan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Caloocan (Wikidata).
+      }),
+  ],
+  "filipinas-calauan": [
+      defineUniversity({
+        id: "filipinas-calauan-polytechnic-university-of-the-philippines-calauan",
+        name: "Polytechnic University of the Philippines, Calauan",
+        cityId: "filipinas-calauan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Calauan (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-calauan-casa-del-nino-schools-system",
+        name: "Casa Del Niño Schools System",
+        cityId: "filipinas-calauan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Calauan (Wikidata).
+      }),
+  ],
   "filipinas-butuan": [
       defineUniversity({
         id: "filipinas-butuan-father-saturnino-urios-university",
@@ -2990,40 +3186,40 @@ export default {
         // Situada a 5.9 km del centro de Butuan (Wikidata).
       }),
   ],
-  "filipinas-upper-bicutan": [
+  "filipinas-bislig": [
       defineUniversity({
-        id: "filipinas-upper-bicutan-polytechnic-university-of-the-philippines-taguig",
-        name: "Polytechnic University of the Philippines, Taguig",
-        cityId: "filipinas-upper-bicutan",
+        id: "filipinas-bislig-recaredo-castillo-college",
+        name: "Recaredo Castillo College",
+        cityId: "filipinas-bislig",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Upper Bicutan (Wikidata).
+        // Situada a 5.0 km del centro de Bislig (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-upper-bicutan-taguig-city-university",
-        name: "Taguig City University",
-        cityId: "filipinas-upper-bicutan",
+        id: "filipinas-bislig-andres-soriano-college",
+        name: "Andres Soriano College",
+        cityId: "filipinas-bislig",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Upper Bicutan (Wikidata).
+        // Situada a None km del centro de Bislig (Wikidata).
       }),
   ],
-  "filipinas-bel-air": [
+  "filipinas-binan": [
       defineUniversity({
-        id: "filipinas-bel-air-iacademy",
-        name: "iAcademy",
-        cityId: "filipinas-bel-air",
+        id: "filipinas-binan-saint-michael-s-college-of-laguna",
+        name: "Saint Michael's College of Laguna",
+        cityId: "filipinas-binan",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Bel Air (Wikidata).
+        // Situada a 2.4 km del centro de Biñan (Wikidata).
       }),
       defineUniversity({
-        id: "filipinas-bel-air-saint-paul-college-of-makati",
-        name: "Saint Paul College of Makati",
-        cityId: "filipinas-bel-air",
+        id: "filipinas-binan-university-of-perpetual-help-system-laguna",
+        name: "University of Perpetual Help System Laguna",
+        cityId: "filipinas-binan",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Bel Air (Wikidata).
+        // Situada a None km del centro de Biñan (Wikidata).
       }),
   ],
   "filipinas-baybay": [
@@ -3078,6 +3274,42 @@ export default {
         website: "http://www.mcu.edu.ph/",
         source: "open-dataset",
         // Situada a 1.2 km del centro de Bagong Barrio (Wikidata).
+      }),
+  ],
+  "filipinas-baclaran": [
+      defineUniversity({
+        id: "filipinas-baclaran-manila-adventist-college",
+        name: "Manila Adventist College",
+        cityId: "filipinas-baclaran",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Baclaran (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-baclaran-manila-tytana-colleges",
+        name: "Manila Tytana Colleges",
+        cityId: "filipinas-baclaran",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Baclaran (Wikidata).
+      }),
+  ],
+  "filipinas-angeles-city": [
+      defineUniversity({
+        id: "filipinas-angeles-city-angeles-university-foundation",
+        name: "Angeles University Foundation",
+        cityId: "filipinas-angeles-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Angeles City (Wikidata).
+      }),
+      defineUniversity({
+        id: "filipinas-angeles-city-holy-angel-university",
+        name: "Holy Angel University",
+        cityId: "filipinas-angeles-city",
+        website: "http://www.hau.edu.ph/",
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Angeles City (Wikidata).
       }),
   ],
   "filipinas-commonwealth": [

@@ -41,7 +41,7 @@ export default {
         id: "kosovo-pristina-university-of-pristina",
         name: "University of Pristina",
         cityId: "kosovo-pristina",
-        website: null,
+        website: "http://www.pr.ac.rs/",
         source: "open-dataset",
         // Situada a 1.6 km del centro de Pristina (Wikidata).
       }),

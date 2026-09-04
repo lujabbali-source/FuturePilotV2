@@ -23,7 +23,7 @@ const cities = [
       name: "Brazzaville",
       coordinates: {"lat": -4.26613, "lng": 15.28318},
       isCapital: true,
-      universityCount: 2,
+      universityCount: 3,
       statistics: { population: 1982000 },
       countryId,
       countryName,

@@ -22,14 +22,6 @@ export default {
         // Situada a 8.5 km del centro de Kinshasa (Wikidata).
       }),
       defineUniversity({
-        id: "republica-democratica-del-congo-kinshasa-universite-chretienne-de-kinshasa",
-        name: "Université Chrétienne de Kinshasa",
-        cityId: "republica-democratica-del-congo-kinshasa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.5 km del centro de Kinshasa (Wikidata).
-      }),
-      defineUniversity({
         id: "republica-democratica-del-congo-kinshasa-kinshasa-war-school",
         name: "Kinshasa War School",
         cityId: "republica-democratica-del-congo-kinshasa",
@@ -133,39 +125,69 @@ export default {
         source: "open-dataset",
         // Situada a 2.7 km del centro de Kinshasa (Wikidata).
       }),
-  ],
-  "republica-democratica-del-congo-goma": [
       defineUniversity({
-        id: "republica-democratica-del-congo-goma-catholic-university-of-la-sapientia-of-goma",
-        name: "Catholic University of La Sapientia of Goma",
-        cityId: "republica-democratica-del-congo-goma",
+        id: "republica-democratica-del-congo-kinshasa-institut-superieur-des-arts-et-metiers",
+        name: "Institut supérieur des Arts et Métiers",
+        cityId: "republica-democratica-del-congo-kinshasa",
         website: null,
         source: "open-dataset",
-        // Situada a 6.9 km del centro de Goma (Wikidata).
+        // Situada a None km del centro de Kinshasa (Wikidata).
       }),
       defineUniversity({
-        id: "republica-democratica-del-congo-goma-university-of-goma",
-        name: "University of Goma",
-        cityId: "republica-democratica-del-congo-goma",
+        id: "republica-democratica-del-congo-kinshasa-university-of-saint-augustine-in-kinshasa",
+        name: "University of Saint Augustine in Kinshasa",
+        cityId: "republica-democratica-del-congo-kinshasa",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Goma (Wikidata).
+        // Situada a None km del centro de Kinshasa (Wikidata).
       }),
       defineUniversity({
-        id: "republica-democratica-del-congo-goma-universite-libre-des-pays-des-grands-lacs",
-        name: "Université libre des Pays des Grands Lacs",
-        cityId: "republica-democratica-del-congo-goma",
+        id: "republica-democratica-del-congo-kinshasa-universite-centrale-de-kinshasa",
+        name: "Université Centrale de Kinshasa",
+        cityId: "republica-democratica-del-congo-kinshasa",
         website: null,
         source: "open-dataset",
-        // Situada a 5.1 km del centro de Goma (Wikidata).
+        // Situada a None km del centro de Kinshasa (Wikidata).
       }),
       defineUniversity({
-        id: "republica-democratica-del-congo-goma-adventist-university-of-goma",
-        name: "Adventist University of Goma",
-        cityId: "republica-democratica-del-congo-goma",
+        id: "republica-democratica-del-congo-kinshasa-university-of-cepromad",
+        name: "University of Cepromad",
+        cityId: "republica-democratica-del-congo-kinshasa",
         website: null,
         source: "open-dataset",
-        // Situada a 3.3 km del centro de Goma (Wikidata).
+        // Situada a None km del centro de Kinshasa (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-kinshasa-african-institute-for-future-studies",
+        name: "African Institute for Future Studies",
+        cityId: "republica-democratica-del-congo-kinshasa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kinshasa (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-kinshasa-national-university-of-zaire",
+        name: "National University of Zaire",
+        cityId: "republica-democratica-del-congo-kinshasa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kinshasa (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-kinshasa-loyola-university-of-congo",
+        name: "Loyola University of Congo",
+        cityId: "republica-democratica-del-congo-kinshasa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kinshasa (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-kinshasa-canadian-university-in-congo",
+        name: "Canadian University in Congo",
+        cityId: "republica-democratica-del-congo-kinshasa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kinshasa (Wikidata).
       }),
   ],
   "republica-democratica-del-congo-butembo": [
@@ -202,15 +224,49 @@ export default {
         // Situada a 0.4 km del centro de Butembo (Wikidata).
       }),
   ],
-  "republica-democratica-del-congo-bukavu": [
+  "republica-democratica-del-congo-beni": [
       defineUniversity({
-        id: "republica-democratica-del-congo-bukavu-universite-du-cinquantenaire-de-lwiro",
-        name: "Université du Cinquantenaire de Lwiro",
-        cityId: "republica-democratica-del-congo-bukavu",
+        id: "republica-democratica-del-congo-beni-universite-officielle-de-semuliki",
+        name: "Université Officielle de Semuliki",
+        cityId: "republica-democratica-del-congo-beni",
         website: null,
         source: "open-dataset",
-        // Situada a 27.4 km del centro de Bukavu (Wikidata).
+        // Situada a 0.8 km del centro de Beni (Wikidata).
       }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-beni-christian-bilingual-university-of-congo",
+        name: "Christian Bilingual University of Congo",
+        cityId: "republica-democratica-del-congo-beni",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.9 km del centro de Beni (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-beni-semuliki-official-university",
+        name: "Semuliki Official University",
+        cityId: "republica-democratica-del-congo-beni",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Beni (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-beni-christian-bilingual-university-of-congo",
+        name: "Christian Bilingual University of Congo",
+        cityId: "republica-democratica-del-congo-beni",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.8 km del centro de Beni (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-beni-higher-institute-of-rural-development-of-beni",
+        name: "Higher Institute of Rural Development of Beni",
+        cityId: "republica-democratica-del-congo-beni",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Beni (Wikidata).
+      }),
+  ],
+  "republica-democratica-del-congo-bukavu": [
       defineUniversity({
         id: "republica-democratica-del-congo-bukavu-universite-catholique-de-bukavu",
         name: "Université catholique de Bukavu",
@@ -235,57 +291,143 @@ export default {
         source: "open-dataset",
         // Situada a 6.0 km del centro de Bukavu (Wikidata).
       }),
-  ],
-  "republica-democratica-del-congo-beni": [
       defineUniversity({
-        id: "republica-democratica-del-congo-beni-universite-officielle-de-semuliki",
-        name: "Université Officielle de Semuliki",
-        cityId: "republica-democratica-del-congo-beni",
+        id: "republica-democratica-del-congo-bukavu-simon-kimbangu-university-bukavu",
+        name: "Simon Kimbangu University Bukavu",
+        cityId: "republica-democratica-del-congo-bukavu",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Beni (Wikidata).
-      }),
-      defineUniversity({
-        id: "republica-democratica-del-congo-beni-christian-bilingual-university-of-congo",
-        name: "Christian Bilingual University of Congo",
-        cityId: "republica-democratica-del-congo-beni",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Beni (Wikidata).
-      }),
-      defineUniversity({
-        id: "republica-democratica-del-congo-beni-christian-bilingual-university-of-congo",
-        name: "Christian Bilingual University of Congo",
-        cityId: "republica-democratica-del-congo-beni",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.8 km del centro de Beni (Wikidata).
+        // Situada a None km del centro de Bukavu (Wikidata).
       }),
   ],
-  "republica-democratica-del-congo-masina": [
+  "republica-democratica-del-congo-kisangani": [
       defineUniversity({
-        id: "republica-democratica-del-congo-masina-universite-libre-de-kinshasa",
-        name: "Université Libre de Kinshasa",
-        cityId: "republica-democratica-del-congo-masina",
+        id: "republica-democratica-del-congo-kisangani-university-of-kisangani",
+        name: "University of Kisangani",
+        cityId: "republica-democratica-del-congo-kisangani",
         website: null,
         source: "open-dataset",
-        // Situada a 5.2 km del centro de Masina (Wikidata).
+        // Situada a 1.6 km del centro de Kisangani (Wikidata).
       }),
       defineUniversity({
-        id: "republica-democratica-del-congo-masina-university-of-kinshasa",
-        name: "University of Kinshasa",
-        cityId: "republica-democratica-del-congo-masina",
+        id: "republica-democratica-del-congo-kisangani-marist-university-of-the-congo",
+        name: "Marist University of the Congo",
+        cityId: "republica-democratica-del-congo-kisangani",
         website: null,
         source: "open-dataset",
-        // Situada a 9.9 km del centro de Masina (Wikidata).
+        // Situada a 1.2 km del centro de Kisangani (Wikidata).
       }),
       defineUniversity({
-        id: "republica-democratica-del-congo-masina-university-of-kinshasa",
-        name: "University of Kinshasa",
-        cityId: "republica-democratica-del-congo-masina",
+        id: "republica-democratica-del-congo-kisangani-faculty-institute-of-agricultural-sciences-of-yangambi",
+        name: "Faculty Institute of Agricultural Sciences of Yangambi",
+        cityId: "republica-democratica-del-congo-kisangani",
         website: null,
         source: "open-dataset",
-        // Situada a 9.9 km del centro de Masina (Wikidata).
+        // Situada a None km del centro de Kisangani (Wikidata).
+      }),
+  ],
+  "republica-democratica-del-congo-kindu": [
+      defineUniversity({
+        id: "republica-democratica-del-congo-kindu-universite-de-kindu",
+        name: "Université de Kindu",
+        cityId: "republica-democratica-del-congo-kindu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Kindu (Wikidata).
+      }),
+  ],
+  "republica-democratica-del-congo-kananga": [
+      defineUniversity({
+        id: "republica-democratica-del-congo-kananga-universite-de-kananga",
+        name: "Université de Kananga",
+        cityId: "republica-democratica-del-congo-kananga",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.2 km del centro de Kananga (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-kananga-universite-notre-dame-du-kasayi",
+        name: "Université Notre Dame du Kasayi",
+        cityId: "republica-democratica-del-congo-kananga",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kananga (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-kananga-universite-pedagogique-de-kananga",
+        name: "Université Pédagogique de Kananga",
+        cityId: "republica-democratica-del-congo-kananga",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kananga (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-kananga-university-of-notre-dame-du-kasayi",
+        name: "University of Notre Dame du Kasayi",
+        cityId: "republica-democratica-del-congo-kananga",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kananga (Wikidata).
+      }),
+  ],
+  "republica-democratica-del-congo-goma": [
+      defineUniversity({
+        id: "republica-democratica-del-congo-goma-catholic-university-of-la-sapientia-of-goma",
+        name: "Catholic University of La Sapientia of Goma",
+        cityId: "republica-democratica-del-congo-goma",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.9 km del centro de Goma (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-goma-university-of-goma",
+        name: "University of Goma",
+        cityId: "republica-democratica-del-congo-goma",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Goma (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-goma-universite-libre-des-pays-des-grands-lacs",
+        name: "Université libre des Pays des Grands Lacs",
+        cityId: "republica-democratica-del-congo-goma",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.1 km del centro de Goma (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-goma-adventist-university-of-goma",
+        name: "Adventist University of Goma",
+        cityId: "republica-democratica-del-congo-goma",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Goma (Wikidata).
+      }),
+  ],
+  "republica-democratica-del-congo-lubumbashi": [
+      defineUniversity({
+        id: "republica-democratica-del-congo-lubumbashi-new-horizons-university",
+        name: "New Horizons University",
+        cityId: "republica-democratica-del-congo-lubumbashi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Lubumbashi (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-lubumbashi-universite-de-lubumbashi",
+        name: "Université de Lubumbashi",
+        cityId: "republica-democratica-del-congo-lubumbashi",
+        website: "http://www.unilu.ac.cd/",
+        source: "open-dataset",
+        // Situada a 5.2 km del centro de Lubumbashi (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-lubumbashi-universite-protestante-de-lubumbashi",
+        name: "Université Protestante de Lubumbashi",
+        cityId: "republica-democratica-del-congo-lubumbashi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Lubumbashi (Wikidata).
       }),
   ],
   "republica-democratica-del-congo-mbuji-mayi": [
@@ -306,22 +448,40 @@ export default {
         // Situada a 2.8 km del centro de Mbuji-Mayi (Wikidata).
       }),
   ],
-  "republica-democratica-del-congo-kisangani": [
+  "republica-democratica-del-congo-lodja": [
       defineUniversity({
-        id: "republica-democratica-del-congo-kisangani-university-of-kisangani",
-        name: "University of Kisangani",
-        cityId: "republica-democratica-del-congo-kisangani",
+        id: "republica-democratica-del-congo-lodja-universite-des-sciences-et-technologies-de-lodja",
+        name: "Université des Sciences et Technologies de Lodja",
+        cityId: "republica-democratica-del-congo-lodja",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Kisangani (Wikidata).
+        // Situada a 0.6 km del centro de Lodja (Wikidata).
       }),
       defineUniversity({
-        id: "republica-democratica-del-congo-kisangani-marist-university-of-the-congo",
-        name: "Marist University of the Congo",
-        cityId: "republica-democratica-del-congo-kisangani",
+        id: "republica-democratica-del-congo-lodja-universite-de-lodja",
+        name: "Université de Lodja",
+        cityId: "republica-democratica-del-congo-lodja",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Kisangani (Wikidata).
+        // Situada a None km del centro de Lodja (Wikidata).
+      }),
+  ],
+  "republica-democratica-del-congo-kabinda": [
+      defineUniversity({
+        id: "republica-democratica-del-congo-kabinda-universite-notre-dame-de-lomami",
+        name: "Université Notre Dame de Lomami",
+        cityId: "republica-democratica-del-congo-kabinda",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Kabinda (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-kabinda-universite-de-kabinda",
+        name: "Université de Kabinda",
+        cityId: "republica-democratica-del-congo-kabinda",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kabinda (Wikidata).
       }),
   ],
   "republica-democratica-del-congo-bunia": [
@@ -342,22 +502,40 @@ export default {
         // Situada a 1.0 km del centro de Bunia (Wikidata).
       }),
   ],
-  "republica-democratica-del-congo-lubumbashi": [
+  "republica-democratica-del-congo-kolwezi": [
       defineUniversity({
-        id: "republica-democratica-del-congo-lubumbashi-universite-de-lubumbashi",
-        name: "Université de Lubumbashi",
-        cityId: "republica-democratica-del-congo-lubumbashi",
-        website: "http://www.unilu.ac.cd/",
-        source: "open-dataset",
-        // Situada a 5.2 km del centro de Lubumbashi (Wikidata).
-      }),
-      defineUniversity({
-        id: "republica-democratica-del-congo-lubumbashi-universite-protestante-de-lubumbashi",
-        name: "Université Protestante de Lubumbashi",
-        cityId: "republica-democratica-del-congo-lubumbashi",
+        id: "republica-democratica-del-congo-kolwezi-universite-de-moyen-lualaba",
+        name: "Université de Moyen Lualaba",
+        cityId: "republica-democratica-del-congo-kolwezi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Lubumbashi (Wikidata).
+        // Situada a None km del centro de Kolwezi (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-kolwezi-universite-de-kolwezi",
+        name: "Université de Kolwezi",
+        cityId: "republica-democratica-del-congo-kolwezi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kolwezi (Wikidata).
+      }),
+  ],
+  "republica-democratica-del-congo-masina": [
+      defineUniversity({
+        id: "republica-democratica-del-congo-masina-universite-libre-de-kinshasa",
+        name: "Université Libre de Kinshasa",
+        cityId: "republica-democratica-del-congo-masina",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.2 km del centro de Masina (Wikidata).
+      }),
+      defineUniversity({
+        id: "republica-democratica-del-congo-masina-university-of-kinshasa",
+        name: "University of Kinshasa",
+        cityId: "republica-democratica-del-congo-masina",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.9 km del centro de Masina (Wikidata).
       }),
   ],
 };

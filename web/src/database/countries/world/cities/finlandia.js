@@ -38,14 +38,6 @@ export default {
         // Situada a 0.8 km del centro de Helsinki (Wikidata).
       }),
       defineUniversity({
-        id: "finlandia-helsinki-university-of-helsinki",
-        name: "University of Helsinki",
-        cityId: "finlandia-helsinki",
-        website: "http://www.helsinki.fi/",
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Helsinki (Wikidata).
-      }),
-      defineUniversity({
         id: "finlandia-helsinki-university-of-the-arts-helsinki",
         name: "University of the Arts Helsinki",
         cityId: "finlandia-helsinki",
@@ -61,31 +53,29 @@ export default {
         source: "open-dataset",
         // Situada a 0.3 km del centro de Helsinki (Wikidata).
       }),
-  ],
-  "finlandia-turku": [
       defineUniversity({
-        id: "finlandia-turku-royal-academy-of-turku",
-        name: "Royal Academy of Turku",
-        cityId: "finlandia-turku",
+        id: "finlandia-helsinki-helsinki-polytechnic",
+        name: "Helsinki Polytechnic",
+        cityId: "finlandia-helsinki",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Turku (Wikidata).
+        // Situada a None km del centro de Helsinki (Wikidata).
       }),
       defineUniversity({
-        id: "finlandia-turku-university-of-turku",
-        name: "University of Turku",
-        cityId: "finlandia-turku",
-        website: "http://www.utu.fi/",
+        id: "finlandia-helsinki-helsinki-summer-university",
+        name: "Helsinki Summer University",
+        cityId: "finlandia-helsinki",
+        website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Turku (Wikidata).
+        // Situada a None km del centro de Helsinki (Wikidata).
       }),
       defineUniversity({
-        id: "finlandia-turku-abo-akademi-university",
-        name: "Åbo Akademi University",
-        cityId: "finlandia-turku",
-        website: "http://www.abo.fi/",
+        id: "finlandia-helsinki-imperial-alexander-university",
+        name: "Imperial Alexander University",
+        cityId: "finlandia-helsinki",
+        website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Turku (Wikidata).
+        // Situada a None km del centro de Helsinki (Wikidata).
       }),
   ],
   "finlandia-lappeenranta": [
@@ -113,23 +103,47 @@ export default {
         source: "open-dataset",
         // Situada a 0.7 km del centro de Lappeenranta (Wikidata).
       }),
-  ],
-  "finlandia-vaasa": [
       defineUniversity({
-        id: "finlandia-vaasa-hanken-school-of-economics",
-        name: "Hanken School of Economics",
-        cityId: "finlandia-vaasa",
+        id: "finlandia-lappeenranta-infantry-school",
+        name: "Infantry School",
+        cityId: "finlandia-lappeenranta",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Vaasa (Wikidata).
+        // Situada a None km del centro de Lappeenranta (Wikidata).
+      }),
+  ],
+  "finlandia-turku": [
+      defineUniversity({
+        id: "finlandia-turku-royal-academy-of-turku",
+        name: "Royal Academy of Turku",
+        cityId: "finlandia-turku",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Turku (Wikidata).
       }),
       defineUniversity({
-        id: "finlandia-vaasa-university-of-vaasa",
-        name: "University of Vaasa",
-        cityId: "finlandia-vaasa",
-        website: "http://www.uwasa.fi/",
+        id: "finlandia-turku-university-of-turku",
+        name: "University of Turku",
+        cityId: "finlandia-turku",
+        website: "http://www.utu.fi/",
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Vaasa (Wikidata).
+        // Situada a 0.9 km del centro de Turku (Wikidata).
+      }),
+      defineUniversity({
+        id: "finlandia-turku-abo-akademi-university",
+        name: "Åbo Akademi University",
+        cityId: "finlandia-turku",
+        website: "http://www.abo.fi/",
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Turku (Wikidata).
+      }),
+      defineUniversity({
+        id: "finlandia-turku-turku-summer-university",
+        name: "Turku Summer University",
+        cityId: "finlandia-turku",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Turku (Wikidata).
       }),
   ],
   "finlandia-tampere": [
@@ -142,12 +156,12 @@ export default {
         // Situada a 0.7 km del centro de Tampere (Wikidata).
       }),
       defineUniversity({
-        id: "finlandia-tampere-tampere-university",
-        name: "Tampere University",
+        id: "finlandia-tampere-tampere-college",
+        name: "Tampere College",
         cityId: "finlandia-tampere",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Tampere (Wikidata).
+        // Situada a None km del centro de Tampere (Wikidata).
       }),
   ],
   "finlandia-leppavaara": [
@@ -186,22 +200,40 @@ export default {
         // Situada a 2.2 km del centro de Kuopio (Wikidata).
       }),
   ],
-  "finlandia-kallio": [
+  "finlandia-jyvaskyla": [
       defineUniversity({
-        id: "finlandia-kallio-war-college",
-        name: "War College",
-        cityId: "finlandia-kallio",
-        website: null,
+        id: "finlandia-jyvaskyla-university-of-jyvaskyla",
+        name: "University of Jyväskylä",
+        cityId: "finlandia-jyvaskyla",
+        website: "http://www.jyu.fi/",
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Kallio (Wikidata).
+        // Situada a 0.8 km del centro de Jyväskylä (Wikidata).
       }),
       defineUniversity({
-        id: "finlandia-kallio-war-college",
-        name: "War College",
-        cityId: "finlandia-kallio",
+        id: "finlandia-jyvaskyla-air-force-academy",
+        name: "Air Force Academy",
+        cityId: "finlandia-jyvaskyla",
+        website: "http://www.hho.edu.tr/",
+        source: "open-dataset",
+        // Situada a None km del centro de Jyväskylä (Wikidata).
+      }),
+  ],
+  "finlandia-joensuu": [
+      defineUniversity({
+        id: "finlandia-joensuu-university-of-joensuu",
+        name: "University of Joensuu",
+        cityId: "finlandia-joensuu",
+        website: "http://www.joensuu.fi/",
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Joensuu (Wikidata).
+      }),
+      defineUniversity({
+        id: "finlandia-joensuu-summer-university-of-north-karelia",
+        name: "Summer University of North Karelia",
+        cityId: "finlandia-joensuu",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Kallio (Wikidata).
+        // Situada a None km del centro de Joensuu (Wikidata).
       }),
   ],
   "finlandia-hervanta": [

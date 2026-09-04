@@ -61,5 +61,29 @@ export default {
         source: "open-dataset",
         // Situada a 2.9 km del centro de Dili (Wikidata).
       }),
+      defineUniversity({
+        id: "timor-oriental-dili-dili-institute-of-technology",
+        name: "Dili Institute of Technology",
+        cityId: "timor-oriental-dili",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dili (Wikidata).
+      }),
+      defineUniversity({
+        id: "timor-oriental-dili-universidade-oriental-timor-lorosa-e",
+        name: "Universidade Oriental Timor Lorosa’e",
+        cityId: "timor-oriental-dili",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dili (Wikidata).
+      }),
+      defineUniversity({
+        id: "timor-oriental-dili-seminary-of-ss-peter-and-paul",
+        name: "Seminary of SS Peter and Paul",
+        cityId: "timor-oriental-dili",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dili (Wikidata).
+      }),
   ],
 };

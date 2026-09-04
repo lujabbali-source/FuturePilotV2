@@ -29,5 +29,13 @@ export default {
         source: "open-dataset",
         // Situada a 16.5 km del centro de Brazzaville (Wikidata).
       }),
+      defineUniversity({
+        id: "congo-brazzaville-free-university-of-congo",
+        name: "Free University of Congo",
+        cityId: "congo-brazzaville",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Brazzaville (Wikidata).
+      }),
   ],
 };

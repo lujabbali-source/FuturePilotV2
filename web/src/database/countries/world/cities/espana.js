@@ -12,6 +12,80 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
+  "espana-madrid": [
+      defineUniversity({
+        id: "espana-madrid-reales-estudios-de-san-isidro",
+        name: "Reales Estudios de San Isidro",
+        cityId: "espana-madrid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Madrid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-madrid-seminario-castrense-juan-pablo-ii",
+        name: "Seminario castrense Juan Pablo II",
+        cityId: "espana-madrid",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Madrid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-madrid-higher-institute-of-religious-sciences-san-damaso",
+        name: "Higher Institute of Religious Sciences “San Dámaso”",
+        cityId: "espana-madrid",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Madrid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-madrid-faculty-of-theology-of-the-comillas-pontifical-university",
+        name: "Faculty of Theology of the Comillas Pontifical University",
+        cityId: "espana-madrid",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Madrid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-madrid-minor-seminary-of-madrid",
+        name: "Minor Seminary of Madrid",
+        cityId: "espana-madrid",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Madrid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-madrid-international-institute-of-theology-of-madrid",
+        name: "International Institute of Theology of Madrid",
+        cityId: "espana-madrid",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Madrid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-madrid-universidad-europea",
+        name: "Universidad Europea",
+        cityId: "espana-madrid",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Madrid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-madrid-ces-cardenal-cisneros",
+        name: "CES Cardenal Cisneros",
+        cityId: "espana-madrid",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Madrid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-madrid-centro-universitario-villanueva",
+        name: "Centro Universitario Villanueva",
+        cityId: "espana-madrid",
+        website: "http://www.villanueva.edu/",
+        source: "open-dataset",
+        // Situada a None km del centro de Madrid (Wikidata).
+      }),
+  ],
   "espana-alcala-de-henares": [
       defineUniversity({
         id: "espana-alcala-de-henares-academy-of-military-engineering-of-alcala-de-henares",
@@ -40,22 +114,6 @@ export default {
       defineUniversity({
         id: "espana-alcala-de-henares-colegio-militar-de-caballeria-de-alcala-de-henares",
         name: "Colegio Militar de Caballería de Alcalá de Henares",
-        cityId: "espana-alcala-de-henares",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Alcalá de Henares (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-alcala-de-henares-colegio-militar-de-caballeria-de-alcala-de-henares",
-        name: "Colegio Militar de Caballería de Alcalá de Henares",
-        cityId: "espana-alcala-de-henares",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Alcalá de Henares (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-alcala-de-henares-university-of-alcala",
-        name: "University of Alcalá",
         cityId: "espana-alcala-de-henares",
         website: null,
         source: "open-dataset",
@@ -93,247 +151,63 @@ export default {
         source: "open-dataset",
         // Situada a 0.3 km del centro de Alcalá de Henares (Wikidata).
       }),
-  ],
-  "espana-segovia": [
       defineUniversity({
-        id: "espana-segovia-ie-university",
-        name: "IE University",
-        cityId: "espana-segovia",
-        website: "http://www.ie.edu/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Segovia (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-segovia-segovia-artillery-academy",
-        name: "Segovia Artillery Academy",
-        cityId: "espana-segovia",
+        id: "espana-alcala-de-henares-studium-generale-of-alcala",
+        name: "Studium Generale of Alcala",
+        cityId: "espana-alcala-de-henares",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Segovia (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-segovia-segovia-artillery-academy",
-        name: "Segovia Artillery Academy",
-        cityId: "espana-segovia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Segovia (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-segovia-segovia-artillery-academy",
-        name: "Segovia Artillery Academy",
-        cityId: "espana-segovia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Segovia (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-segovia-segovia-artillery-academy",
-        name: "Segovia Artillery Academy",
-        cityId: "espana-segovia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Segovia (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-segovia-segovia-artillery-academy",
-        name: "Segovia Artillery Academy",
-        cityId: "espana-segovia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Segovia (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-segovia-segovia-artillery-academy",
-        name: "Segovia Artillery Academy",
-        cityId: "espana-segovia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Segovia (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-segovia-real-academia-de-historia-y-arte-de-san-quirce",
-        name: "Real Academia de Historia y Arte de San Quirce",
-        cityId: "espana-segovia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Segovia (Wikidata).
+        // Situada a None km del centro de Alcalá de Henares (Wikidata).
       }),
   ],
-  "espana-valladolid": [
+  "espana-barri-gotic": [
       defineUniversity({
-        id: "espana-valladolid-cristo-rey-polytechnic-institute-valladolid",
-        name: "Cristo Rey Polytechnic Institute, Valladolid",
-        cityId: "espana-valladolid",
+        id: "espana-barri-gotic-higher-institute-of-religious-sciences-don-bosco",
+        name: "Higher Institute of Religious Sciences \"Don Bosco\"",
+        cityId: "espana-barri-gotic",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Valladolid (Wikidata).
+        // Situada a None km del centro de Barri Gòtic (Wikidata).
       }),
       defineUniversity({
-        id: "espana-valladolid-english-college-valladolid",
-        name: "English College, Valladolid",
-        cityId: "espana-valladolid",
+        id: "espana-barri-gotic-autonomous-university-of-barcelona-1933-1939",
+        name: "Autonomous University of Barcelona (1933–1939)",
+        cityId: "espana-barri-gotic",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Valladolid (Wikidata).
+        // Situada a None km del centro de Barri Gòtic (Wikidata).
       }),
       defineUniversity({
-        id: "espana-valladolid-academia-de-caballeria-de-valladolid",
-        name: "Academia de Caballería de Valladolid",
-        cityId: "espana-valladolid",
+        id: "espana-barri-gotic-universitat-de-l-estudi-general",
+        name: "Universitat de l'Estudi General",
+        cityId: "espana-barri-gotic",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Valladolid (Wikidata).
+        // Situada a None km del centro de Barri Gòtic (Wikidata).
       }),
       defineUniversity({
-        id: "espana-valladolid-academia-de-caballeria-de-valladolid",
-        name: "Academia de Caballería de Valladolid",
-        cityId: "espana-valladolid",
+        id: "espana-barri-gotic-estudi-general-de-barcelona",
+        name: "Estudi General de Barcelona",
+        cityId: "espana-barri-gotic",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Valladolid (Wikidata).
+        // Situada a None km del centro de Barri Gòtic (Wikidata).
       }),
       defineUniversity({
-        id: "espana-valladolid-universidad-europea-miguel-de-cervantes",
-        name: "Universidad Europea Miguel de Cervantes",
-        cityId: "espana-valladolid",
+        id: "espana-barri-gotic-higher-institute-of-religious-sciences-of-barcelona",
+        name: "Higher Institute of Religious Sciences of Barcelona",
+        cityId: "espana-barri-gotic",
         website: null,
         source: "open-dataset",
-        // Situada a 3.3 km del centro de Valladolid (Wikidata).
+        // Situada a None km del centro de Barri Gòtic (Wikidata).
       }),
       defineUniversity({
-        id: "espana-valladolid-university-of-valladolid",
-        name: "University of Valladolid",
-        cityId: "espana-valladolid",
+        id: "espana-barri-gotic-united-nations-university-institute-on-globalization-culture-and-mobility",
+        name: "United Nations University Institute on Globalization, Culture and Mobility",
+        cityId: "espana-barri-gotic",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Valladolid (Wikidata).
-      }),
-  ],
-  "espana-delicias": [
-      defineUniversity({
-        id: "espana-delicias-regional-center-for-theological-studies-of-aragon",
-        name: "Regional Center for Theological Studies of Aragon",
-        cityId: "espana-delicias",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Delicias (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-delicias-metropolitan-seminary-of-st-valerus-and-st-braulius",
-        name: "Metropolitan Seminary of St. Valerus and St. Braulius",
-        cityId: "espana-delicias",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Delicias (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-delicias-minor-seminary-of-aragon",
-        name: "minor seminary of Aragon",
-        cityId: "espana-delicias",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Delicias (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-delicias-university-of-zaragoza",
-        name: "University of Zaragoza",
-        cityId: "espana-delicias",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Delicias (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-delicias-university-of-zaragoza",
-        name: "University of Zaragoza",
-        cityId: "espana-delicias",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Delicias (Wikidata).
-      }),
-  ],
-  "espana-universidad": [
-      defineUniversity({
-        id: "espana-universidad-universidad-central",
-        name: "Universidad Central",
-        cityId: "espana-universidad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de Universidad (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-universidad-universidad-central",
-        name: "Universidad Central",
-        cityId: "espana-universidad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de Universidad (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-universidad-university-of-technology-and-business",
-        name: "University of Technology and Business",
-        cityId: "espana-universidad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Universidad (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-universidad-university-of-madrid",
-        name: "University of Madrid",
-        cityId: "espana-universidad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de Universidad (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-universidad-university-of-madrid",
-        name: "University of Madrid",
-        cityId: "espana-universidad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de Universidad (Wikidata).
-      }),
-  ],
-  "espana-vallehermoso": [
-      defineUniversity({
-        id: "espana-vallehermoso-ceu-san-pablo-university",
-        name: "CEU San Pablo University",
-        cityId: "espana-vallehermoso",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Vallehermoso (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-vallehermoso-ceu-san-pablo-university",
-        name: "CEU San Pablo University",
-        cityId: "espana-vallehermoso",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Vallehermoso (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-vallehermoso-ceu-san-pablo-university",
-        name: "CEU San Pablo University",
-        cityId: "espana-vallehermoso",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Vallehermoso (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-vallehermoso-saint-louis-university-madrid-campus",
-        name: "Saint Louis University Madrid Campus",
-        cityId: "espana-vallehermoso",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Vallehermoso (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-vallehermoso-diplomatic-school-of-spain",
-        name: "Diplomatic School of Spain",
-        cityId: "espana-vallehermoso",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Vallehermoso (Wikidata).
+        // Situada a None km del centro de Barri Gòtic (Wikidata).
       }),
   ],
   "espana-valencia": [
@@ -369,6 +243,64 @@ export default {
         source: "open-dataset",
         // Situada a 0.7 km del centro de Valencia (Wikidata).
       }),
+      defineUniversity({
+        id: "espana-valencia-higher-institute-of-religious-sciences-valencia",
+        name: "Higher Institute of Religious Sciences Valencia",
+        cityId: "espana-valencia",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Valencia (Wikidata).
+      }),
+  ],
+  "espana-sevilla": [
+      defineUniversity({
+        id: "espana-sevilla-university-of-seville",
+        name: "University of Seville",
+        cityId: "espana-sevilla",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Sevilla (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-sevilla-al-andalusia-islamic-university-of-spain",
+        name: "Al-Andalusía Islamic University of Spain",
+        cityId: "espana-sevilla",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Sevilla (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-sevilla-pablo-de-olavide-university",
+        name: "Pablo de Olavide University",
+        cityId: "espana-sevilla",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.4 km del centro de Sevilla (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-sevilla-theological-faculty-of-seville",
+        name: "Theological faculty of Seville",
+        cityId: "espana-sevilla",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sevilla (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-sevilla-higher-institute-of-religious-sciences-san-isidoro-y-san-leandror",
+        name: "Higher Institute of Religious Sciences “San Isidoro y San Leandror”",
+        cityId: "espana-sevilla",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sevilla (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-sevilla-universidad-ceu-fernando-iii",
+        name: "Universidad CEU Fernando III",
+        cityId: "espana-sevilla",
+        website: "https://uf3ceu.es/",
+        source: "open-dataset",
+        // Situada a None km del centro de Sevilla (Wikidata).
+      }),
   ],
   "espana-cordoba": [
       defineUniversity({
@@ -403,16 +335,184 @@ export default {
         source: "open-dataset",
         // Situada a 1.6 km del centro de Córdoba (Wikidata).
       }),
-  ],
-  "espana-salamanca": [
       defineUniversity({
-        id: "espana-salamanca-pontifical-university-of-salamanca",
-        name: "Pontifical University of Salamanca",
-        cityId: "espana-salamanca",
+        id: "espana-cordoba-universidad-libre-de-cordoba",
+        name: "Universidad Libre de Córdoba",
+        cityId: "espana-cordoba",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Salamanca (Wikidata).
+        // Situada a None km del centro de Córdoba (Wikidata).
       }),
+      defineUniversity({
+        id: "espana-cordoba-workers-university-of-cordoba",
+        name: "Workers' University of Córdoba",
+        cityId: "espana-cordoba",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Córdoba (Wikidata).
+      }),
+  ],
+  "espana-valladolid": [
+      defineUniversity({
+        id: "espana-valladolid-cristo-rey-polytechnic-institute-valladolid",
+        name: "Cristo Rey Polytechnic Institute, Valladolid",
+        cityId: "espana-valladolid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Valladolid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-valladolid-english-college-valladolid",
+        name: "English College, Valladolid",
+        cityId: "espana-valladolid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Valladolid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-valladolid-academia-de-caballeria-de-valladolid",
+        name: "Academia de Caballería de Valladolid",
+        cityId: "espana-valladolid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Valladolid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-valladolid-universidad-europea-miguel-de-cervantes",
+        name: "Universidad Europea Miguel de Cervantes",
+        cityId: "espana-valladolid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Valladolid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-valladolid-university-of-valladolid",
+        name: "University of Valladolid",
+        cityId: "espana-valladolid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Valladolid (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-valladolid-studium-theologicum-vallisoletanum-ordinis-sancti-augustini",
+        name: "Studium Theologicum Vallisoletanum Ordinis Sancti Augustini",
+        cityId: "espana-valladolid",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Valladolid (Wikidata).
+      }),
+  ],
+  "espana-zaragoza": [
+      defineUniversity({
+        id: "espana-zaragoza-san-jorge-university",
+        name: "San Jorge University",
+        cityId: "espana-zaragoza",
+        website: null,
+        source: "open-dataset",
+        // Situada a 11.8 km del centro de Zaragoza (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-zaragoza-general-military-academy",
+        name: "General Military Academy",
+        cityId: "espana-zaragoza",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.8 km del centro de Zaragoza (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-zaragoza-higher-institute-of-religious-sciences-nuestra-senora-del-pilar",
+        name: "Higher Institute of Religious Sciences “Nuestra Señora del Pilar”",
+        cityId: "espana-zaragoza",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Zaragoza (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-zaragoza-school-of-architecture-and-technology-in-the-san-jorge-university",
+        name: "School of Architecture and Technology in the San Jorge University",
+        cityId: "espana-zaragoza",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Zaragoza (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-zaragoza-studium-generale-civitatis-caesaraugustane",
+        name: "Studium Generale Civitatis Caesaraugustane",
+        cityId: "espana-zaragoza",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Zaragoza (Wikidata).
+      }),
+  ],
+  "espana-gasteiz-vitoria": [
+      defineUniversity({
+        id: "espana-gasteiz-vitoria-euneiz-university",
+        name: "EUNEIZ University",
+        cityId: "espana-gasteiz-vitoria",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Gasteiz / Vitoria (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-gasteiz-vitoria-school-of-art-and-higher-school-of-design",
+        name: "School of Art and Higher School of Design",
+        cityId: "espana-gasteiz-vitoria",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Gasteiz / Vitoria (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-gasteiz-vitoria-universidad-libre-de-vitoria",
+        name: "Universidad Libre de Vitoria",
+        cityId: "espana-gasteiz-vitoria",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gasteiz / Vitoria (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-gasteiz-vitoria-universidad-de-vitoria",
+        name: "Universidad de Vitoria",
+        cityId: "espana-gasteiz-vitoria",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gasteiz / Vitoria (Wikidata).
+      }),
+  ],
+  "espana-santiago-de-compostela": [
+      defineUniversity({
+        id: "espana-santiago-de-compostela-university-of-santiago-de-compostela",
+        name: "University of Santiago de Compostela",
+        cityId: "espana-santiago-de-compostela",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Santiago de Compostela (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-santiago-de-compostela-theological-institute-of-compostela",
+        name: "Theological Institute of Compostela",
+        cityId: "espana-santiago-de-compostela",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Santiago de Compostela (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-santiago-de-compostela-compostela-superior-institute-of-religious-sciences",
+        name: "Compostela Superior Institute of Religious Sciences",
+        cityId: "espana-santiago-de-compostela",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Santiago de Compostela (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-santiago-de-compostela-real-colegio-militar-de-santiago-de-compostela",
+        name: "Real Colegio Militar de Santiago de Compostela",
+        cityId: "espana-santiago-de-compostela",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Santiago de Compostela (Wikidata).
+      }),
+  ],
+  "espana-salamanca": [
       defineUniversity({
         id: "espana-salamanca-pontifical-university-of-salamanca",
         name: "Pontifical University of Salamanca",
@@ -437,125 +537,91 @@ export default {
         source: "open-dataset",
         // Situada a 1.3 km del centro de Salamanca (Wikidata).
       }),
-  ],
-  "espana-bilbao": [
       defineUniversity({
-        id: "espana-bilbao-university-of-deusto",
-        name: "University of Deusto",
-        cityId: "espana-bilbao",
+        id: "espana-salamanca-studium-generale-of-salamanca",
+        name: "Studium Generale of Salamanca",
+        cityId: "espana-salamanca",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Bilbao (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-bilbao-university-of-deusto",
-        name: "University of Deusto",
-        cityId: "espana-bilbao",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Bilbao (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-bilbao-university-of-deusto",
-        name: "University of Deusto",
-        cityId: "espana-bilbao",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Bilbao (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-bilbao-camarabilbao-university-business-school",
-        name: "Cámarabilbao University Business School",
-        cityId: "espana-bilbao",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Bilbao (Wikidata).
+        // Situada a None km del centro de Salamanca (Wikidata).
       }),
   ],
-  "espana-la-bonanova": [
+  "espana-delicias": [
       defineUniversity({
-        id: "espana-la-bonanova-university-ramon-llull",
-        name: "University Ramon Llull",
-        cityId: "espana-la-bonanova",
+        id: "espana-delicias-regional-center-for-theological-studies-of-aragon",
+        name: "Regional Center for Theological Studies of Aragon",
+        cityId: "espana-delicias",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de La Bonanova (Wikidata).
+        // Situada a 2.1 km del centro de Delicias (Wikidata).
       }),
       defineUniversity({
-        id: "espana-la-bonanova-abat-oliba-ceu-university",
-        name: "Abat Oliba CEU University",
-        cityId: "espana-la-bonanova",
+        id: "espana-delicias-metropolitan-seminary-of-st-valerus-and-st-braulius",
+        name: "Metropolitan Seminary of St. Valerus and St. Braulius",
+        cityId: "espana-delicias",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de La Bonanova (Wikidata).
+        // Situada a 2.2 km del centro de Delicias (Wikidata).
       }),
       defineUniversity({
-        id: "espana-la-bonanova-abat-oliba-ceu-university",
-        name: "Abat Oliba CEU University",
-        cityId: "espana-la-bonanova",
+        id: "espana-delicias-minor-seminary-of-aragon",
+        name: "minor seminary of Aragon",
+        cityId: "espana-delicias",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de La Bonanova (Wikidata).
+        // Situada a 2.2 km del centro de Delicias (Wikidata).
       }),
       defineUniversity({
-        id: "espana-la-bonanova-la-salle-campus-barcelona",
-        name: "La Salle Campus Barcelona",
-        cityId: "espana-la-bonanova",
+        id: "espana-delicias-university-of-zaragoza",
+        name: "University of Zaragoza",
+        cityId: "espana-delicias",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de La Bonanova (Wikidata).
-      }),
-  ],
-  "espana-sevilla": [
-      defineUniversity({
-        id: "espana-sevilla-university-of-seville",
-        name: "University of Seville",
-        cityId: "espana-sevilla",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Sevilla (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-sevilla-al-andalusia-islamic-university-of-spain",
-        name: "Al-Andalusía Islamic University of Spain",
-        cityId: "espana-sevilla",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Sevilla (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-sevilla-pablo-de-olavide-university",
-        name: "Pablo de Olavide University",
-        cityId: "espana-sevilla",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.4 km del centro de Sevilla (Wikidata).
+        // Situada a 1.0 km del centro de Delicias (Wikidata).
       }),
   ],
-  "espana-moncada": [
+  "espana-la-laguna": [
       defineUniversity({
-        id: "espana-moncada-university-ceu-cardenal-herrera",
-        name: "University CEU Cardenal Herrera",
-        cityId: "espana-moncada",
+        id: "espana-la-laguna-tech-universidad-tecnologica",
+        name: "TECH Universidad Tecnológica",
+        cityId: "espana-la-laguna",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Moncada (Wikidata).
+        // Situada a 4.6 km del centro de La Laguna (Wikidata).
       }),
       defineUniversity({
-        id: "espana-moncada-university-ceu-cardenal-herrera",
-        name: "University CEU Cardenal Herrera",
-        cityId: "espana-moncada",
+        id: "espana-la-laguna-university-of-la-laguna",
+        name: "University of La Laguna",
+        cityId: "espana-la-laguna",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Moncada (Wikidata).
+        // Situada a 0.5 km del centro de La Laguna (Wikidata).
       }),
       defineUniversity({
-        id: "espana-moncada-metropolitan-seminary-of-valencia",
-        name: "Metropolitan Seminary of Valencia",
-        cityId: "espana-moncada",
+        id: "espana-la-laguna-universidad-literaria-de-san-fernando",
+        name: "Universidad Literaria de San Fernando",
+        cityId: "espana-la-laguna",
         website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Moncada (Wikidata).
+        // Situada a None km del centro de La Laguna (Wikidata).
+      }),
+  ],
+  "espana-malaga": [
+      defineUniversity({
+        id: "espana-malaga-universidad-de-malaga",
+        name: "Universidad de Málaga",
+        cityId: "espana-malaga",
+        website: "http://www.uma.es/",
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Málaga (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-malaga-universidad-europea-de-andalucia",
+        name: "Universidad Europea de Andalucía",
+        cityId: "espana-malaga",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Málaga (Wikidata).
       }),
   ],
   "espana-granada": [
@@ -573,15 +639,113 @@ export default {
         cityId: "espana-granada",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Granada (Wikidata).
+        // Situada a 1.0 km del centro de Granada (Wikidata).
       }),
       defineUniversity({
-        id: "espana-granada-facultad-de-teologia-de-granada",
-        name: "Facultad de Teología de Granada",
+        id: "espana-granada-euroinnova-business-school-usa",
+        name: "Euroinnova Business School USA",
         cityId: "espana-granada",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Granada (Wikidata).
+        // Situada a None km del centro de Granada (Wikidata).
+      }),
+  ],
+  "espana-cartagena": [
+      defineUniversity({
+        id: "espana-cartagena-midshipman-school-of-cartagena",
+        name: "Midshipman School of Cartagena",
+        cityId: "espana-cartagena",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Cartagena (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-cartagena-universidad-politecnica-de-cartagena",
+        name: "Universidad Politécnica de Cartagena",
+        cityId: "espana-cartagena",
+        website: "http://www.upct.es/",
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Cartagena (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-cartagena-general-albacete-fuster-marine-corps-school-of-infantry",
+        name: "General Albacete Fuster Marine Corps School of Infantry",
+        cityId: "espana-cartagena",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cartagena (Wikidata).
+      }),
+  ],
+  "espana-badajoz": [
+      defineUniversity({
+        id: "espana-badajoz-university-of-extremadura",
+        name: "University of Extremadura",
+        cityId: "espana-badajoz",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Badajoz (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-badajoz-higher-institute-of-religious-sciences-santa-maria-de-guadalupe",
+        name: "Higher Institute of Religious Sciences “Santa María de Guadalupe”",
+        cityId: "espana-badajoz",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Badajoz (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-badajoz-university-of-extremadura-badajoz-campus",
+        name: "University of Extremadura - Badajoz Campus",
+        cityId: "espana-badajoz",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Badajoz (Wikidata).
+      }),
+  ],
+  "espana-almeria": [
+      defineUniversity({
+        id: "espana-almeria-university-of-almeria",
+        name: "University of Almería",
+        cityId: "espana-almeria",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.2 km del centro de Almería (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-almeria-escuela-superior-de-ingenieria-de-la-universidad-de-almeria",
+        name: "Escuela Superior de Ingeniería de la Universidad de Almería",
+        cityId: "espana-almeria",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.9 km del centro de Almería (Wikidata).
+      }),
+  ],
+  "espana-vigo": [
+      defineUniversity({
+        id: "espana-vigo-escola-municipal-de-artes-e-oficios-de-vigo",
+        name: "Escola Municipal de Artes e Oficios de Vigo",
+        cityId: "espana-vigo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Vigo (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-vigo-centro-universitario-de-la-defensa-vigo",
+        name: "Centro Universitario de la Defensa Vigo",
+        cityId: "espana-vigo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Vigo (Wikidata).
+      }),
+  ],
+  "espana-tarragona": [
+      defineUniversity({
+        id: "espana-tarragona-rovira-i-virgili-university",
+        name: "Rovira i Virgili University",
+        cityId: "espana-tarragona",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Tarragona (Wikidata).
       }),
   ],
   "espana-santander": [
@@ -610,6 +774,32 @@ export default {
         // Situada a 0.5 km del centro de Santander (Wikidata).
       }),
   ],
+  "espana-oviedo": [
+      defineUniversity({
+        id: "espana-oviedo-university-of-oviedo",
+        name: "University of Oviedo",
+        cityId: "espana-oviedo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Oviedo (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-oviedo-edificio-historico-de-la-universidad-de-oviedo",
+        name: "Edificio Historico de la Universidad de Oviedo",
+        cityId: "espana-oviedo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Oviedo (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-oviedo-higher-institute-of-religious-sciences-san-melchor-de-quiros",
+        name: "Higher Institute of Religious Sciences “San Melchor de Quirós”",
+        cityId: "espana-oviedo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Oviedo (Wikidata).
+      }),
+  ],
   "espana-mieres": [
       defineUniversity({
         id: "espana-mieres-mediateca-universidad-de-oviedo",
@@ -636,30 +826,160 @@ export default {
         // Situada a 1.2 km del centro de Mieres (Wikidata).
       }),
   ],
-  "espana-iturrama": [
+  "espana-lleida": [
       defineUniversity({
-        id: "espana-iturrama-theological-faculty-of-the-university-of-navarra",
-        name: "theological faculty of the University of Navarra",
-        cityId: "espana-iturrama",
+        id: "espana-lleida-seminari-diocesa-de-lleida",
+        name: "Seminari Diocesa de Lleida",
+        cityId: "espana-lleida",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Iturrama (Wikidata).
+        // Situada a 0.7 km del centro de Lleida (Wikidata).
       }),
       defineUniversity({
-        id: "espana-iturrama-university-of-navarre",
-        name: "University of Navarre",
-        cityId: "espana-iturrama",
+        id: "espana-lleida-university-of-lleida",
+        name: "University of Lleida",
+        cityId: "espana-lleida",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Iturrama (Wikidata).
+        // Situada a 0.3 km del centro de Lleida (Wikidata).
       }),
       defineUniversity({
-        id: "espana-iturrama-university-of-navarre",
-        name: "University of Navarre",
-        cityId: "espana-iturrama",
+        id: "espana-lleida-institute-of-research-and-religious-studies-of-lleida",
+        name: "Institute of Research and Religious Studies of Lleida",
+        cityId: "espana-lleida",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Iturrama (Wikidata).
+        // Situada a None km del centro de Lleida (Wikidata).
+      }),
+  ],
+  "espana-burgos": [
+      defineUniversity({
+        id: "espana-burgos-university-of-burgos",
+        name: "University of Burgos",
+        cityId: "espana-burgos",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Burgos (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-burgos-universidad-isabel-i",
+        name: "Universidad Isabel I",
+        cityId: "espana-burgos",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Burgos (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-burgos-higher-institute-of-religious-sciences-san-jeronimo",
+        name: "Higher Institute of Religious Sciences “San Jerónimo”",
+        cityId: "espana-burgos",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Burgos (Wikidata).
+      }),
+  ],
+  "espana-la-bonanova": [
+      defineUniversity({
+        id: "espana-la-bonanova-university-ramon-llull",
+        name: "University Ramon Llull",
+        cityId: "espana-la-bonanova",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de La Bonanova (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-la-bonanova-abat-oliba-ceu-university",
+        name: "Abat Oliba CEU University",
+        cityId: "espana-la-bonanova",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de La Bonanova (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-la-bonanova-la-salle-campus-barcelona",
+        name: "La Salle Campus Barcelona",
+        cityId: "espana-la-bonanova",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de La Bonanova (Wikidata).
+      }),
+  ],
+  "espana-centro": [
+      defineUniversity({
+        id: "espana-centro-hesperides-university",
+        name: "Hesperides University",
+        cityId: "espana-centro",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Centro (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-centro-universidad-del-atlantico-medio",
+        name: "Universidad del Atlántico Medio",
+        cityId: "espana-centro",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Centro (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-centro-universidad-politecnica-de-canarias",
+        name: "Universidad Politécnica de Canarias",
+        cityId: "espana-centro",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Centro (Wikidata).
+      }),
+  ],
+  "espana-universidad": [
+      defineUniversity({
+        id: "espana-universidad-universidad-central",
+        name: "Universidad Central",
+        cityId: "espana-universidad",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.1 km del centro de Universidad (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-universidad-university-of-technology-and-business",
+        name: "University of Technology and Business",
+        cityId: "espana-universidad",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Universidad (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-universidad-university-of-madrid",
+        name: "University of Madrid",
+        cityId: "espana-universidad",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.1 km del centro de Universidad (Wikidata).
+      }),
+  ],
+  "espana-vallehermoso": [
+      defineUniversity({
+        id: "espana-vallehermoso-ceu-san-pablo-university",
+        name: "CEU San Pablo University",
+        cityId: "espana-vallehermoso",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Vallehermoso (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-vallehermoso-saint-louis-university-madrid-campus",
+        name: "Saint Louis University Madrid Campus",
+        cityId: "espana-vallehermoso",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Vallehermoso (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-vallehermoso-diplomatic-school-of-spain",
+        name: "Diplomatic School of Spain",
+        cityId: "espana-vallehermoso",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Vallehermoso (Wikidata).
       }),
   ],
   "espana-ciudad-universitaria": [
@@ -688,24 +1008,6 @@ export default {
         // Situada a 1.2 km del centro de Ciudad Universitaria (Wikidata).
       }),
   ],
-  "espana-toledo": [
-      defineUniversity({
-        id: "espana-toledo-toledo-infantry-academy",
-        name: "Toledo Infantry Academy",
-        cityId: "espana-toledo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Toledo (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-toledo-toledo-infantry-academy",
-        name: "Toledo Infantry Academy",
-        cityId: "espana-toledo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Toledo (Wikidata).
-      }),
-  ],
   "espana-san-javier": [
       defineUniversity({
         id: "espana-san-javier-academia-general-del-aire",
@@ -716,12 +1018,12 @@ export default {
         // Situada a 3.4 km del centro de San Javier (Wikidata).
       }),
       defineUniversity({
-        id: "espana-san-javier-academia-general-del-aire",
-        name: "Academia General del Aire",
+        id: "espana-san-javier-centro-universitario-de-la-defensa-de-san-javier",
+        name: "Centro Universitario de la Defensa de San Javier",
         cityId: "espana-san-javier",
         website: null,
         source: "open-dataset",
-        // Situada a 3.4 km del centro de San Javier (Wikidata).
+        // Situada a None km del centro de San Javier (Wikidata).
       }),
   ],
   "espana-orihuela": [
@@ -742,14 +1044,58 @@ export default {
         // Situada a 0.6 km del centro de Orihuela (Wikidata).
       }),
   ],
-  "espana-malaga": [
+  "espana-murcia": [
       defineUniversity({
-        id: "espana-malaga-universidad-de-malaga",
-        name: "Universidad de Málaga",
-        cityId: "espana-malaga",
-        website: "http://www.uma.es/",
+        id: "espana-murcia-university-of-murcia",
+        name: "University of Murcia",
+        cityId: "espana-murcia",
+        website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Málaga (Wikidata).
+        // Situada a 4.9 km del centro de Murcia (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-murcia-studium-generale-of-murcia",
+        name: "Studium Generale of Murcia",
+        cityId: "espana-murcia",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Murcia (Wikidata).
+      }),
+  ],
+  "espana-moncada": [
+      defineUniversity({
+        id: "espana-moncada-university-ceu-cardenal-herrera",
+        name: "University CEU Cardenal Herrera",
+        cityId: "espana-moncada",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Moncada (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-moncada-metropolitan-seminary-of-valencia",
+        name: "Metropolitan Seminary of Valencia",
+        cityId: "espana-moncada",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Moncada (Wikidata).
+      }),
+  ],
+  "espana-marbella": [
+      defineUniversity({
+        id: "espana-marbella-marbella-international-university-centre",
+        name: "Marbella International University Centre",
+        cityId: "espana-marbella",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Marbella (Wikidata).
+      }),
+      defineUniversity({
+        id: "espana-marbella-les-roches-marbella-international-school-of-hotel-management",
+        name: "Les Roches Marbella International School of Hotel Management",
+        cityId: "espana-marbella",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Marbella (Wikidata).
       }),
   ],
   "espana-las-palmas-de-gran-canaria": [
@@ -788,24 +1134,6 @@ export default {
         // Situada a 0.5 km del centro de Jerez de la Frontera (Wikidata).
       }),
   ],
-  "espana-dos-hermanas": [
-      defineUniversity({
-        id: "espana-dos-hermanas-loyola-university-andalucia",
-        name: "Loyola University Andalucía",
-        cityId: "espana-dos-hermanas",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Dos Hermanas (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-dos-hermanas-loyola-university-andalucia",
-        name: "Loyola University Andalucía",
-        cityId: "espana-dos-hermanas",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Dos Hermanas (Wikidata).
-      }),
-  ],
   "espana-ciudad-real": [
       defineUniversity({
         id: "espana-ciudad-real-universidad-de-castilla-la-mancha",
@@ -824,94 +1152,22 @@ export default {
         // Situada a 1.1 km del centro de Ciudad Real (Wikidata).
       }),
   ],
-  "espana-castello-de-la-plana": [
+  "espana-albacete": [
       defineUniversity({
-        id: "espana-castello-de-la-plana-jaume-i-university",
-        name: "Jaume I University",
-        cityId: "espana-castello-de-la-plana",
+        id: "espana-albacete-seminario-diocesano-de-albacete",
+        name: "Seminario Diocesano de Albacete",
+        cityId: "espana-albacete",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Castelló de la Plana (Wikidata).
+        // Situada a 1.5 km del centro de Albacete (Wikidata).
       }),
       defineUniversity({
-        id: "espana-castello-de-la-plana-jaume-i-university",
-        name: "Jaume I University",
-        cityId: "espana-castello-de-la-plana",
+        id: "espana-albacete-universidad-laboral-de-albacete",
+        name: "Universidad Laboral de Albacete",
+        cityId: "espana-albacete",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Castelló de la Plana (Wikidata).
-      }),
-  ],
-  "espana-cartagena": [
-      defineUniversity({
-        id: "espana-cartagena-midshipman-school-of-cartagena",
-        name: "Midshipman School of Cartagena",
-        cityId: "espana-cartagena",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Cartagena (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-cartagena-universidad-politecnica-de-cartagena",
-        name: "Universidad Politécnica de Cartagena",
-        cityId: "espana-cartagena",
-        website: "http://www.upct.es/",
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Cartagena (Wikidata).
-      }),
-  ],
-  "espana-almeria": [
-      defineUniversity({
-        id: "espana-almeria-university-of-almeria",
-        name: "University of Almería",
-        cityId: "espana-almeria",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.2 km del centro de Almería (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-almeria-escuela-superior-de-ingenieria-de-la-universidad-de-almeria",
-        name: "Escuela Superior de Ingeniería de la Universidad de Almería",
-        cityId: "espana-almeria",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Almería (Wikidata).
-      }),
-  ],
-  "espana-zaragoza": [
-      defineUniversity({
-        id: "espana-zaragoza-san-jorge-university",
-        name: "San Jorge University",
-        cityId: "espana-zaragoza",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.8 km del centro de Zaragoza (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-zaragoza-general-military-academy",
-        name: "General Military Academy",
-        cityId: "espana-zaragoza",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.8 km del centro de Zaragoza (Wikidata).
-      }),
-  ],
-  "espana-gasteiz-vitoria": [
-      defineUniversity({
-        id: "espana-gasteiz-vitoria-euneiz-university",
-        name: "EUNEIZ University",
-        cityId: "espana-gasteiz-vitoria",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Gasteiz / Vitoria (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-gasteiz-vitoria-school-of-art-and-higher-school-of-design",
-        name: "School of Art and Higher School of Design",
-        cityId: "espana-gasteiz-vitoria",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Gasteiz / Vitoria (Wikidata).
+        // Situada a None km del centro de Albacete (Wikidata).
       }),
   ],
   "espana-villanueva-de-la-canada": [
@@ -932,40 +1188,32 @@ export default {
         // Situada a 0.1 km del centro de Villanueva de la Cañada (Wikidata).
       }),
   ],
-  "espana-tarrega": [
+  "espana-vic": [
       defineUniversity({
-        id: "espana-tarrega-university-of-cervera",
-        name: "University of Cervera",
-        cityId: "espana-tarrega",
+        id: "espana-vic-university-of-vic-central-university-of-catalonia",
+        name: "University of Vic - Central University of Catalonia",
+        cityId: "espana-vic",
         website: null,
         source: "open-dataset",
-        // Situada a 11.5 km del centro de Tàrrega (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-tarrega-university-of-cervera",
-        name: "University of Cervera",
-        cityId: "espana-tarrega",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.5 km del centro de Tàrrega (Wikidata).
+        // Situada a 0.8 km del centro de Vic (Wikidata).
       }),
   ],
-  "espana-tarragona": [
+  "espana-segovia": [
       defineUniversity({
-        id: "espana-tarragona-rovira-i-virgili-university",
-        name: "Rovira i Virgili University",
-        cityId: "espana-tarragona",
+        id: "espana-segovia-segovia-artillery-academy",
+        name: "Segovia Artillery Academy",
+        cityId: "espana-segovia",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Tarragona (Wikidata).
+        // Situada a 2.2 km del centro de Segovia (Wikidata).
       }),
       defineUniversity({
-        id: "espana-tarragona-rovira-i-virgili-university",
-        name: "Rovira i Virgili University",
-        cityId: "espana-tarragona",
+        id: "espana-segovia-real-academia-de-historia-y-arte-de-san-quirce",
+        name: "Real Academia de Historia y Arte de San Quirce",
+        cityId: "espana-segovia",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Tarragona (Wikidata).
+        // Situada a 0.6 km del centro de Segovia (Wikidata).
       }),
   ],
   "espana-pozuelo-de-alarcon": [
@@ -984,60 +1232,6 @@ export default {
         website: "http://www.ufv.es/",
         source: "open-dataset",
         // Situada a 2.0 km del centro de Pozuelo de Alarcón (Wikidata).
-      }),
-  ],
-  "espana-palencia": [
-      defineUniversity({
-        id: "espana-palencia-university-of-palencia",
-        name: "University of Palencia",
-        cityId: "espana-palencia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Palencia (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-palencia-university-of-palencia",
-        name: "University of Palencia",
-        cityId: "espana-palencia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Palencia (Wikidata).
-      }),
-  ],
-  "espana-oviedo": [
-      defineUniversity({
-        id: "espana-oviedo-university-of-oviedo",
-        name: "University of Oviedo",
-        cityId: "espana-oviedo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Oviedo (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-oviedo-edificio-historico-de-la-universidad-de-oviedo",
-        name: "Edificio Historico de la Universidad de Oviedo",
-        cityId: "espana-oviedo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Oviedo (Wikidata).
-      }),
-  ],
-  "espana-mostoles": [
-      defineUniversity({
-        id: "espana-mostoles-king-juan-carlos-university",
-        name: "King Juan Carlos University",
-        cityId: "espana-mostoles",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Móstoles (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-mostoles-king-juan-carlos-university",
-        name: "King Juan Carlos University",
-        cityId: "espana-mostoles",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Móstoles (Wikidata).
       }),
   ],
   "espana-arrasate-mondragon": [
@@ -1076,42 +1270,6 @@ export default {
         // Situada a 2.3 km del centro de Logroño (Wikidata).
       }),
   ],
-  "espana-lleida": [
-      defineUniversity({
-        id: "espana-lleida-seminari-diocesa-de-lleida",
-        name: "Seminari Diocesa de Lleida",
-        cityId: "espana-lleida",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Lleida (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-lleida-university-of-lleida",
-        name: "University of Lleida",
-        cityId: "espana-lleida",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Lleida (Wikidata).
-      }),
-  ],
-  "espana-leon": [
-      defineUniversity({
-        id: "espana-leon-university-of-leon",
-        name: "University of León",
-        cityId: "espana-leon",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de León (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-leon-university-of-leon",
-        name: "University of León",
-        cityId: "espana-leon",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de León (Wikidata).
-      }),
-  ],
   "espana-leioa": [
       defineUniversity({
         id: "espana-leioa-university-of-the-basque-country",
@@ -1128,42 +1286,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.3 km del centro de Leioa (Wikidata).
-      }),
-  ],
-  "espana-leganes": [
-      defineUniversity({
-        id: "espana-leganes-universidad-carlos-iii-de-madrid",
-        name: "Universidad Carlos III de Madrid",
-        cityId: "espana-leganes",
-        website: "http://www.uc3m.es/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Leganés (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-leganes-universidad-carlos-iii-de-madrid",
-        name: "Universidad Carlos III de Madrid",
-        cityId: "espana-leganes",
-        website: "http://www.uc3m.es/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Leganés (Wikidata).
-      }),
-  ],
-  "espana-getafe": [
-      defineUniversity({
-        id: "espana-getafe-universidad-carlos-iii-de-madrid",
-        name: "Universidad Carlos III de Madrid",
-        cityId: "espana-getafe",
-        website: "http://www.uc3m.es/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Getafe (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-getafe-universidad-carlos-iii-de-madrid",
-        name: "Universidad Carlos III de Madrid",
-        cityId: "espana-getafe",
-        website: "http://www.uc3m.es/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Getafe (Wikidata).
       }),
   ],
   "espana-girona": [
@@ -1184,40 +1306,22 @@ export default {
         // Situada a 0.2 km del centro de Girona (Wikidata).
       }),
   ],
-  "espana-galapagar": [
+  "espana-bilbao": [
       defineUniversity({
-        id: "espana-galapagar-universidad-carlos-iii-de-madrid",
-        name: "Universidad Carlos III de Madrid",
-        cityId: "espana-galapagar",
-        website: "http://www.uc3m.es/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Galapagar (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-galapagar-universidad-carlos-iii-de-madrid",
-        name: "Universidad Carlos III de Madrid",
-        cityId: "espana-galapagar",
-        website: "http://www.uc3m.es/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Galapagar (Wikidata).
-      }),
-  ],
-  "espana-burgos": [
-      defineUniversity({
-        id: "espana-burgos-university-of-burgos",
-        name: "University of Burgos",
-        cityId: "espana-burgos",
+        id: "espana-bilbao-university-of-deusto",
+        name: "University of Deusto",
+        cityId: "espana-bilbao",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Burgos (Wikidata).
+        // Situada a 1.3 km del centro de Bilbao (Wikidata).
       }),
       defineUniversity({
-        id: "espana-burgos-universidad-isabel-i",
-        name: "Universidad Isabel I",
-        cityId: "espana-burgos",
+        id: "espana-bilbao-camarabilbao-university-business-school",
+        name: "Cámarabilbao University Business School",
+        cityId: "espana-bilbao",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Burgos (Wikidata).
+        // Situada a 0.9 km del centro de Bilbao (Wikidata).
       }),
   ],
   "espana-avila": [
@@ -1256,76 +1360,22 @@ export default {
         // Situada a 0.3 km del centro de Eixample (Wikidata).
       }),
   ],
-  "espana-la-maternitat-i-sant-ramon": [
+  "espana-iturrama": [
       defineUniversity({
-        id: "espana-la-maternitat-i-sant-ramon-polytechnic-university-of-catalonia",
-        name: "Polytechnic University of Catalonia",
-        cityId: "espana-la-maternitat-i-sant-ramon",
+        id: "espana-iturrama-theological-faculty-of-the-university-of-navarra",
+        name: "theological faculty of the University of Navarra",
+        cityId: "espana-iturrama",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de la Maternitat i Sant Ramon (Wikidata).
+        // Situada a 1.0 km del centro de Iturrama (Wikidata).
       }),
       defineUniversity({
-        id: "espana-la-maternitat-i-sant-ramon-polytechnic-university-of-catalonia",
-        name: "Polytechnic University of Catalonia",
-        cityId: "espana-la-maternitat-i-sant-ramon",
+        id: "espana-iturrama-university-of-navarre",
+        name: "University of Navarre",
+        cityId: "espana-iturrama",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de la Maternitat i Sant Ramon (Wikidata).
-      }),
-  ],
-  "espana-justicia": [
-      defineUniversity({
-        id: "espana-justicia-national-university-of-distance-education",
-        name: "National University of Distance Education",
-        cityId: "espana-justicia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Justicia (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-justicia-national-university-of-distance-education",
-        name: "National University of Distance Education",
-        cityId: "espana-justicia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Justicia (Wikidata).
-      }),
-  ],
-  "espana-embajadores": [
-      defineUniversity({
-        id: "espana-embajadores-universidad-carlos-iii-de-madrid",
-        name: "Universidad Carlos III de Madrid",
-        cityId: "espana-embajadores",
-        website: "http://www.uc3m.es/",
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Embajadores (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-embajadores-universidad-carlos-iii-de-madrid",
-        name: "Universidad Carlos III de Madrid",
-        cityId: "espana-embajadores",
-        website: "http://www.uc3m.es/",
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Embajadores (Wikidata).
-      }),
-  ],
-  "espana-arapiles": [
-      defineUniversity({
-        id: "espana-arapiles-comillas-pontifical-university",
-        name: "Comillas Pontifical University",
-        cityId: "espana-arapiles",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Arapiles (Wikidata).
-      }),
-      defineUniversity({
-        id: "espana-arapiles-comillas-pontifical-university",
-        name: "Comillas Pontifical University",
-        cityId: "espana-arapiles",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Arapiles (Wikidata).
+        // Situada a 0.8 km del centro de Iturrama (Wikidata).
       }),
   ],
   "espana-palacio": [

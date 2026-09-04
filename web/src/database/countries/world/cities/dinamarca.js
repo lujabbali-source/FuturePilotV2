@@ -87,6 +87,92 @@ export default {
         source: "open-dataset",
         // Situada a 2.5 km del centro de Esbjerg (Wikidata).
       }),
+      defineUniversity({
+        id: "dinamarca-esbjerg-university-college-south-denmark",
+        name: "University College South Denmark",
+        cityId: "dinamarca-esbjerg",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Esbjerg (Wikidata).
+      }),
+  ],
+  "dinamarca-odense": [
+      defineUniversity({
+        id: "dinamarca-odense-university-of-southern-denmark",
+        name: "University of Southern Denmark",
+        cityId: "dinamarca-odense",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Odense (Wikidata).
+      }),
+      defineUniversity({
+        id: "dinamarca-odense-odense-university",
+        name: "Odense University",
+        cityId: "dinamarca-odense",
+        website: "http://www.ou.dk/",
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Odense (Wikidata).
+      }),
+      defineUniversity({
+        id: "dinamarca-odense-university-college-lillebaelt",
+        name: "University College Lillebaelt",
+        cityId: "dinamarca-odense",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Odense (Wikidata).
+      }),
+  ],
+  "dinamarca-copenhagen": [
+      defineUniversity({
+        id: "dinamarca-copenhagen-copenhagen-business-academy",
+        name: "Copenhagen Business Academy",
+        cityId: "dinamarca-copenhagen",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Copenhagen (Wikidata).
+      }),
+      defineUniversity({
+        id: "dinamarca-copenhagen-copenhagen-school-of-design-and-technology",
+        name: "Copenhagen School of Design and Technology",
+        cityId: "dinamarca-copenhagen",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Copenhagen (Wikidata).
+      }),
+      defineUniversity({
+        id: "dinamarca-copenhagen-european-cross-media-academy",
+        name: "European Cross Media Academy",
+        cityId: "dinamarca-copenhagen",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Copenhagen (Wikidata).
+      }),
+  ],
+  "dinamarca-charlottenlund": [
+      defineUniversity({
+        id: "dinamarca-charlottenlund-royal-danish-defence-college",
+        name: "Royal Danish Defence College",
+        cityId: "dinamarca-charlottenlund",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Charlottenlund (Wikidata).
+      }),
+      defineUniversity({
+        id: "dinamarca-charlottenlund-business-academy-copenhagen-north",
+        name: "Business Academy Copenhagen North",
+        cityId: "dinamarca-charlottenlund",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Charlottenlund (Wikidata).
+      }),
+      defineUniversity({
+        id: "dinamarca-charlottenlund-royal-danish-naval-academy",
+        name: "Royal Danish Naval Academy",
+        cityId: "dinamarca-charlottenlund",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Charlottenlund (Wikidata).
+      }),
   ],
   "dinamarca-aalborg": [
       defineUniversity({
@@ -114,24 +200,6 @@ export default {
         // Situada a 5.4 km del centro de Aalborg (Wikidata).
       }),
   ],
-  "dinamarca-virum": [
-      defineUniversity({
-        id: "dinamarca-virum-technical-university-of-denmark",
-        name: "Technical University of Denmark",
-        cityId: "dinamarca-virum",
-        website: "http://www.dtu.dk/",
-        source: "open-dataset",
-        // Situada a 4.6 km del centro de Virum (Wikidata).
-      }),
-      defineUniversity({
-        id: "dinamarca-virum-technical-university-of-denmark",
-        name: "Technical University of Denmark",
-        cityId: "dinamarca-virum",
-        website: "http://www.dtu.dk/",
-        source: "open-dataset",
-        // Situada a 4.6 km del centro de Virum (Wikidata).
-      }),
-  ],
   "dinamarca-valby": [
       defineUniversity({
         id: "dinamarca-valby-aalborg-university-copenhagen",
@@ -150,40 +218,22 @@ export default {
         // Situada a 0.9 km del centro de Valby (Wikidata).
       }),
   ],
-  "dinamarca-odense": [
+  "dinamarca-slagelse": [
       defineUniversity({
-        id: "dinamarca-odense-university-of-southern-denmark",
-        name: "University of Southern Denmark",
-        cityId: "dinamarca-odense",
+        id: "dinamarca-slagelse-selandia-center-for-business-education",
+        name: "Selandia - Center for Business Education",
+        cityId: "dinamarca-slagelse",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Odense (Wikidata).
+        // Situada a 1.1 km del centro de Slagelse (Wikidata).
       }),
       defineUniversity({
-        id: "dinamarca-odense-odense-university",
-        name: "Odense University",
-        cityId: "dinamarca-odense",
-        website: "http://www.ou.dk/",
-        source: "open-dataset",
-        // Situada a 3.9 km del centro de Odense (Wikidata).
-      }),
-  ],
-  "dinamarca-copenhagen": [
-      defineUniversity({
-        id: "dinamarca-copenhagen-copenhagen-business-academy",
-        name: "Copenhagen Business Academy",
-        cityId: "dinamarca-copenhagen",
+        id: "dinamarca-slagelse-university-college-absalon",
+        name: "University College Absalon",
+        cityId: "dinamarca-slagelse",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Copenhagen (Wikidata).
-      }),
-      defineUniversity({
-        id: "dinamarca-copenhagen-copenhagen-school-of-design-and-technology",
-        name: "Copenhagen School of Design and Technology",
-        cityId: "dinamarca-copenhagen",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Copenhagen (Wikidata).
+        // Situada a None km del centro de Slagelse (Wikidata).
       }),
   ],
   "dinamarca-kolding": [
@@ -204,22 +254,22 @@ export default {
         // Situada a 0.7 km del centro de Kolding (Wikidata).
       }),
   ],
-  "dinamarca-charlottenlund": [
+  "dinamarca-arhus": [
       defineUniversity({
-        id: "dinamarca-charlottenlund-business-academy-copenhagen-north",
-        name: "Business Academy Copenhagen North",
-        cityId: "dinamarca-charlottenlund",
-        website: null,
+        id: "dinamarca-arhus-aarhus-university",
+        name: "Aarhus University",
+        cityId: "dinamarca-arhus",
+        website: "http://www.au.dk/",
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Charlottenlund (Wikidata).
+        // Situada a 1.6 km del centro de Århus (Wikidata).
       }),
       defineUniversity({
-        id: "dinamarca-charlottenlund-royal-danish-naval-academy",
-        name: "Royal Danish Naval Academy",
-        cityId: "dinamarca-charlottenlund",
+        id: "dinamarca-arhus-folkeuniversitetet",
+        name: "Folkeuniversitetet",
+        cityId: "dinamarca-arhus",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Charlottenlund (Wikidata).
+        // Situada a None km del centro de Århus (Wikidata).
       }),
   ],
 };

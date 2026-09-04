@@ -141,6 +141,14 @@ export default {
         source: "open-dataset",
         // Situada a 0.6 km del centro de Bishkek (Wikidata).
       }),
+      defineUniversity({
+        id: "kirguistan-bishkek-ala-too-international-university",
+        name: "Ala-Too International University",
+        cityId: "kirguistan-bishkek",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bishkek (Wikidata).
+      }),
   ],
   "kirguistan-osh": [
       defineUniversity({
@@ -162,5 +170,23 @@ export default {
   ],
   "kirguistan-lebedinovka": [
 
+  ],
+  "kirguistan-manas": [
+      defineUniversity({
+        id: "kirguistan-manas-jalalabad-state-university",
+        name: "Jalalabad State University",
+        cityId: "kirguistan-manas",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Manas (Wikidata).
+      }),
+      defineUniversity({
+        id: "kirguistan-manas-university-of-economy-and-enterprise",
+        name: "University of Economy and Enterprise",
+        cityId: "kirguistan-manas",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Manas (Wikidata).
+      }),
   ],
 };

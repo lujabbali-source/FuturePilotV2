@@ -46,14 +46,6 @@ export default {
         // Situada a 6.4 km del centro de Tehran (Wikidata).
       }),
       defineUniversity({
-        id: "iran-tehran-sharif-university-of-technology",
-        name: "Sharif University of Technology",
-        cityId: "iran-tehran",
-        website: "http://www.sharif.ac.ir/",
-        source: "open-dataset",
-        // Situada a 6.4 km del centro de Tehran (Wikidata).
-      }),
-      defineUniversity({
         id: "iran-tehran-iran-university-of-art",
         name: "Iran University of Art",
         cityId: "iran-tehran",
@@ -126,22 +118,6 @@ export default {
         // Situada a 1.1 km del centro de Tehran (Wikidata).
       }),
       defineUniversity({
-        id: "iran-tehran-kharazmi-university",
-        name: "Kharazmi University",
-        cityId: "iran-tehran",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Tehran (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-tehran-university-of-applied-science-and-technology",
-        name: "University of Applied Science and Technology",
-        cityId: "iran-tehran",
-        website: "http://www.uast.ac.ir/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Tehran (Wikidata).
-      }),
-      defineUniversity({
         id: "iran-tehran-university-of-applied-science-and-technology",
         name: "University of Applied Science and Technology",
         cityId: "iran-tehran",
@@ -172,6 +148,94 @@ export default {
         website: "http://www.tums.ac.ir/",
         source: "open-dataset",
         // Situada a 2.8 km del centro de Tehran (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-tehran-institute-for-cognitive-science-studies",
+        name: "Institute for Cognitive Science Studies",
+        cityId: "iran-tehran",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tehran (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-tehran-mehr-alborz-university",
+        name: "Mehr Alborz University",
+        cityId: "iran-tehran",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tehran (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-tehran-khatam-al-anbia-air-defense-academy",
+        name: "Khatam al-Anbia Air Defense Academy",
+        cityId: "iran-tehran",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tehran (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-tehran-university-of-judicial-sciences-and-administrative-services",
+        name: "University of Judicial Sciences and Administrative Services",
+        cityId: "iran-tehran",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tehran (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-tehran-university-of-iranians",
+        name: "University of Iranians",
+        cityId: "iran-tehran",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tehran (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-tehran-institute-for-humanities-and-cultural-studies",
+        name: "Institute for Humanities and Cultural Studies",
+        cityId: "iran-tehran",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tehran (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-tehran-iranian-center-for-translation-studies",
+        name: "Iranian Center for Translation Studies",
+        cityId: "iran-tehran",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tehran (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-tehran-islamic-azad-university-dental-branch-of-tehran",
+        name: "Islamic Azad University Dental Branch of Tehran",
+        cityId: "iran-tehran",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tehran (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-tehran-islamic-azad-university-north-tehran-branch",
+        name: "Islamic Azad University North Tehran Branch",
+        cityId: "iran-tehran",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tehran (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-tehran-islamic-azad-university-of-malard",
+        name: "Islamic Azad University of Malard",
+        cityId: "iran-tehran",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tehran (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-tehran-university-of-tehran-department-of-mining-engineering",
+        name: "University of Tehran, Department of Mining Engineering",
+        cityId: "iran-tehran",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tehran (Wikidata).
       }),
   ],
   "iran-shahrak-e-qods": [
@@ -208,14 +272,6 @@ export default {
         // Situada a 1.8 km del centro de Shahrak-e Qods (Wikidata).
       }),
       defineUniversity({
-        id: "iran-shahrak-e-qods-alzahra-university",
-        name: "Alzahra University",
-        cityId: "iran-shahrak-e-qods",
-        website: "http://www.alzahra.ac.ir/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Shahrak-e Qods (Wikidata).
-      }),
-      defineUniversity({
         id: "iran-shahrak-e-qods-baqiyatallah-university-of-medical-sciences",
         name: "Baqiyatallah University of Medical Sciences",
         cityId: "iran-shahrak-e-qods",
@@ -240,14 +296,6 @@ export default {
         // Situada a 1.3 km del centro de Shahrak-e Qods (Wikidata).
       }),
       defineUniversity({
-        id: "iran-shahrak-e-qods-imam-sadiq-university",
-        name: "Imam Sadiq University",
-        cityId: "iran-shahrak-e-qods",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Shahrak-e Qods (Wikidata).
-      }),
-      defineUniversity({
         id: "iran-shahrak-e-qods-tarbiat-modares-university",
         name: "Tarbiat Modares University",
         cityId: "iran-shahrak-e-qods",
@@ -262,6 +310,80 @@ export default {
         website: "http://www.usc.ac.ir/",
         source: "open-dataset",
         // Situada a 3.9 km del centro de Shahrak-e Qods (Wikidata).
+      }),
+  ],
+  "iran-mashhad": [
+      defineUniversity({
+        id: "iran-mashhad-montazeri-technical-university-of-mashhad",
+        name: "Montazeri Technical University of Mashhad",
+        cityId: "iran-mashhad",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.4 km del centro de Mashhad (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-mashhad-ferdowsi-university-of-mashhad",
+        name: "Ferdowsi University of Mashhad",
+        cityId: "iran-mashhad",
+        website: "http://www.um.ac.ir/",
+        source: "open-dataset",
+        // Situada a 7.0 km del centro de Mashhad (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-mashhad-sadjad-university-of-technology",
+        name: "Sadjad University of Technology",
+        cityId: "iran-mashhad",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.4 km del centro de Mashhad (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-mashhad-islamic-azad-university-of-mashhad",
+        name: "Islamic Azad University of Mashhad",
+        cityId: "iran-mashhad",
+        website: "http://www.mshdiau.ac.ir/",
+        source: "open-dataset",
+        // Situada a 10.5 km del centro de Mashhad (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-mashhad-shahid-beheshti-teacher-training-college",
+        name: "Shahid Beheshti Teacher Training College",
+        cityId: "iran-mashhad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mashhad (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-mashhad-mashhad-university-of-medical-sciences",
+        name: "Mashhad University of Medical Sciences",
+        cityId: "iran-mashhad",
+        website: "http://www.mums.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Mashhad (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-mashhad-razavi-university-of-islamic-sciences",
+        name: "Razavi University of Islamic Sciences",
+        cityId: "iran-mashhad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mashhad (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-mashhad-imam-reza-international-university",
+        name: "Imam Reza International University",
+        cityId: "iran-mashhad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mashhad (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-mashhad-khayyam-institute-of-higher-education-mashhad",
+        name: "Khayyam Institute of Higher Education, Mashhad",
+        cityId: "iran-mashhad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mashhad (Wikidata).
       }),
   ],
   "iran-tajrish": [
@@ -322,14 +444,6 @@ export default {
         // Situada a 2.5 km del centro de Tajrīsh (Wikidata).
       }),
       defineUniversity({
-        id: "iran-tajrish-malek-ashtar-university-of-technology",
-        name: "Malek Ashtar University of Technology",
-        cityId: "iran-tajrish",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.5 km del centro de Tajrīsh (Wikidata).
-      }),
-      defineUniversity({
         id: "iran-tajrish-shahid-rajaee-teacher-training-university",
         name: "Shahid Rajaee Teacher Training University",
         cityId: "iran-tajrish",
@@ -387,63 +501,113 @@ export default {
         source: "open-dataset",
         // Situada a 7.6 km del centro de Shiraz (Wikidata).
       }),
+      defineUniversity({
+        id: "iran-shiraz-islamic-azad-university-fars-science-and-research-branch",
+        name: "Islamic Azad University, Fars Science and Research Branch",
+        cityId: "iran-shiraz",
+        website: "http://www.fsriau.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Shiraz (Wikidata).
+      }),
   ],
-  "iran-kermanshah": [
+  "iran-orumiyeh": [
       defineUniversity({
-        id: "iran-kermanshah-razi-university",
-        name: "Razi University",
-        cityId: "iran-kermanshah",
-        website: "http://www.razi.ac.ir/",
-        source: "open-dataset",
-        // Situada a 9.5 km del centro de Kermanshah (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-kermanshah-kermanshah-university-of-technology",
-        name: "Kermanshah University of Technology",
-        cityId: "iran-kermanshah",
-        website: "https://www.kut.ac.ir/",
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Kermanshah (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-kermanshah-kermanshah-university-of-technology",
-        name: "Kermanshah University of Technology",
-        cityId: "iran-kermanshah",
-        website: "https://www.kut.ac.ir/",
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Kermanshah (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-kermanshah-men-s-skill-national-university-of-kermanshah-no-1",
-        name: "Men's Skill National University of Kermanshah No. 1",
-        cityId: "iran-kermanshah",
+        id: "iran-orumiyeh-islamic-azad-university-of-urmia",
+        name: "Islamic Azad University Of Urmia",
+        cityId: "iran-orumiyeh",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Kermanshah (Wikidata).
+        // Situada a 5.1 km del centro de Orūmīyeh (Wikidata).
       }),
       defineUniversity({
-        id: "iran-kermanshah-islamic-azad-university-of-kermanshah",
-        name: "Islamic Azad University of Kermanshah",
-        cityId: "iran-kermanshah",
+        id: "iran-orumiyeh-urmia-university",
+        name: "Urmia University",
+        cityId: "iran-orumiyeh",
+        website: "http://www.urmia.ac.ir/",
+        source: "open-dataset",
+        // Situada a 3.5 km del centro de Orūmīyeh (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-orumiyeh-urmia-university-of-technology",
+        name: "Urmia University of Technology",
+        cityId: "iran-orumiyeh",
+        website: "http://www.uut.ac.ir/",
+        source: "open-dataset",
+        // Situada a 14.0 km del centro de Orūmīyeh (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-orumiyeh-urmia-university-of-medical-sciences",
+        name: "Urmia University of Medical Sciences",
+        cityId: "iran-orumiyeh",
+        website: "http://www.umsu.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Orūmīyeh (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-orumiyeh-najand-institute-of-higher-education",
+        name: "Najand Institute of Higher Education",
+        cityId: "iran-orumiyeh",
         website: null,
         source: "open-dataset",
-        // Situada a 4.6 km del centro de Kermanshah (Wikidata).
+        // Situada a None km del centro de Orūmīyeh (Wikidata).
       }),
       defineUniversity({
-        id: "iran-kermanshah-kermanshah-university-of-medical-sciences",
-        name: "Kermanshah University of Medical Sciences",
-        cityId: "iran-kermanshah",
-        website: "http://www.kums.ac.ir/",
+        id: "iran-orumiyeh-university-college-of-azarabadegan",
+        name: "University College of Azarabadegan",
+        cityId: "iran-orumiyeh",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.5 km del centro de Kermanshah (Wikidata).
+        // Situada a None km del centro de Orūmīyeh (Wikidata).
+      }),
+  ],
+  "iran-kerman": [
+      defineUniversity({
+        id: "iran-kerman-islamic-azad-university-jiroft-branch",
+        name: "Islamic Azad University, Jiroft Branch",
+        cityId: "iran-kerman",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.6 km del centro de Kerman (Wikidata).
       }),
       defineUniversity({
-        id: "iran-kermanshah-kermanshah-university-of-medical-sciences",
-        name: "Kermanshah University of Medical Sciences",
-        cityId: "iran-kermanshah",
-        website: "http://www.kums.ac.ir/",
+        id: "iran-kerman-besat-institute-of-higher-education-of-kerman",
+        name: "Besat Institute of Higher Education of Kerman",
+        cityId: "iran-kerman",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.5 km del centro de Kermanshah (Wikidata).
+        // Situada a 4.8 km del centro de Kerman (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-kerman-islamic-azad-university-of-kerman",
+        name: "Islamic Azad University of Kerman",
+        cityId: "iran-kerman",
+        website: "http://www.iauk.ac.ir/",
+        source: "open-dataset",
+        // Situada a 4.6 km del centro de Kerman (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-kerman-shahid-bahonar-university-of-kerman",
+        name: "Shahid Bahonar University of Kerman",
+        cityId: "iran-kerman",
+        website: "http://www.uk.ac.ir/",
+        source: "open-dataset",
+        // Situada a 4.4 km del centro de Kerman (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-kerman-kerman-medical-university",
+        name: "Kerman Medical University",
+        cityId: "iran-kerman",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kerman (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-kerman-islamic-azad-university-of-anar",
+        name: "Islamic Azad University of Anar",
+        cityId: "iran-kerman",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kerman (Wikidata).
       }),
   ],
   "iran-kazerun": [
@@ -494,6 +658,140 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.3 km del centro de Kāzerūn (Wikidata).
+      }),
+  ],
+  "iran-isfahan": [
+      defineUniversity({
+        id: "iran-isfahan-art-university-of-isfahan",
+        name: "Art University of Isfahan",
+        cityId: "iran-isfahan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Isfahan (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-isfahan-university-of-isfahan",
+        name: "University of Isfahan",
+        cityId: "iran-isfahan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Isfahan (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-isfahan-islamic-azad-university-of-khorasgan",
+        name: "Islamic Azad University of Khorasgan",
+        cityId: "iran-isfahan",
+        website: "http://www.khuisf.ac.ir/",
+        source: "open-dataset",
+        // Situada a 10.3 km del centro de Isfahan (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-isfahan-isfahan-university-of-medical-sciences",
+        name: "Isfahan University of Medical Sciences",
+        cityId: "iran-isfahan",
+        website: "http://www.mui.ac.ir/",
+        source: "open-dataset",
+        // Situada a 4.4 km del centro de Isfahan (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-isfahan-islamic-azad-university-of-majlesi",
+        name: "Islamic Azad University of Majlesi",
+        cityId: "iran-isfahan",
+        website: "http://www.iaumajlesi.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Isfahan (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-isfahan-sheikh-bahaei-university",
+        name: "Sheikh Bahaei University",
+        cityId: "iran-isfahan",
+        website: "http://www.shbu.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Isfahan (Wikidata).
+      }),
+  ],
+  "iran-qom": [
+      defineUniversity({
+        id: "iran-qom-islamic-azad-university-of-qom",
+        name: "Islamic Azad University of Qom",
+        cityId: "iran-qom",
+        website: "http://www.qom-iau.ac.ir/",
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Qom (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-qom-al-mustafa-international-university",
+        name: "Al-Mustafa International University",
+        cityId: "iran-qom",
+        website: "http://miu.ac.ir/",
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Qom (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-qom-qom-university-of-medical-sciences",
+        name: "Qom University of Medical Sciences",
+        cityId: "iran-qom",
+        website: "http://www.muq.ac.ir/",
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Qom (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-qom-mofid-university",
+        name: "Mofid University",
+        cityId: "iran-qom",
+        website: "http://www.mofidu.ac.ir/",
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Qom (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-qom-fatemiye-university-of-medical-sciences-qom",
+        name: "Fatemiye University of Medical Sciences, Qom",
+        cityId: "iran-qom",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Qom (Wikidata).
+      }),
+  ],
+  "iran-kermanshah": [
+      defineUniversity({
+        id: "iran-kermanshah-razi-university",
+        name: "Razi University",
+        cityId: "iran-kermanshah",
+        website: "http://www.razi.ac.ir/",
+        source: "open-dataset",
+        // Situada a 9.5 km del centro de Kermanshah (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-kermanshah-kermanshah-university-of-technology",
+        name: "Kermanshah University of Technology",
+        cityId: "iran-kermanshah",
+        website: "https://www.kut.ac.ir/",
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Kermanshah (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-kermanshah-men-s-skill-national-university-of-kermanshah-no-1",
+        name: "Men's Skill National University of Kermanshah No. 1",
+        cityId: "iran-kermanshah",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Kermanshah (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-kermanshah-islamic-azad-university-of-kermanshah",
+        name: "Islamic Azad University of Kermanshah",
+        cityId: "iran-kermanshah",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.6 km del centro de Kermanshah (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-kermanshah-kermanshah-university-of-medical-sciences",
+        name: "Kermanshah University of Medical Sciences",
+        cityId: "iran-kermanshah",
+        website: "http://www.kums.ac.ir/",
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Kermanshah (Wikidata).
       }),
   ],
   "iran-arak": [
@@ -622,6 +920,40 @@ export default {
         // Situada a 2.1 km del centro de Andīsheh (Wikidata).
       }),
   ],
+  "iran-yazd": [
+      defineUniversity({
+        id: "iran-yazd-islamic-azad-university-of-yazd",
+        name: "Islamic Azad University of Yazd",
+        cityId: "iran-yazd",
+        website: "http://www.iauyazd.ac.ir/",
+        source: "open-dataset",
+        // Situada a 6.7 km del centro de Yazd (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-yazd-university-of-yazd",
+        name: "University of Yazd",
+        cityId: "iran-yazd",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.9 km del centro de Yazd (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-yazd-university-of-science-and-arts-yazd",
+        name: "University of Science and Arts (Yazd)",
+        cityId: "iran-yazd",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Yazd (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-yazd-shahid-sadoughi-university-of-medical-sciences",
+        name: "Shahid Sadoughi University of Medical Sciences",
+        cityId: "iran-yazd",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Yazd (Wikidata).
+      }),
+  ],
   "iran-tabriz": [
       defineUniversity({
         id: "iran-tabriz-university-of-tabriz",
@@ -656,117 +988,177 @@ export default {
         // Situada a 9.3 km del centro de Tabriz (Wikidata).
       }),
   ],
-  "iran-qom": [
+  "iran-sari": [
       defineUniversity({
-        id: "iran-qom-islamic-azad-university-of-qom",
-        name: "Islamic Azad University of Qom",
-        cityId: "iran-qom",
-        website: "http://www.qom-iau.ac.ir/",
+        id: "iran-sari-islamic-azad-university-of-sari",
+        name: "Islamic Azad University of Sari",
+        cityId: "iran-sari",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Qom (Wikidata).
+        // Situada a 9.5 km del centro de Sari (Wikidata).
       }),
       defineUniversity({
-        id: "iran-qom-al-mustafa-international-university",
-        name: "Al-Mustafa International University",
-        cityId: "iran-qom",
-        website: "http://miu.ac.ir/",
+        id: "iran-sari-aryan-university-iran",
+        name: "Aryan University (Iran)",
+        cityId: "iran-sari",
+        website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Qom (Wikidata).
+        // Situada a None km del centro de Sari (Wikidata).
       }),
       defineUniversity({
-        id: "iran-qom-qom-university-of-medical-sciences",
-        name: "Qom University of Medical Sciences",
-        cityId: "iran-qom",
-        website: "http://www.muq.ac.ir/",
+        id: "iran-sari-sari-agricultural-sciences-and-natural-resources-university",
+        name: "Sari Agricultural Sciences and Natural Resources University",
+        cityId: "iran-sari",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Qom (Wikidata).
+        // Situada a None km del centro de Sari (Wikidata).
       }),
       defineUniversity({
-        id: "iran-qom-mofid-university",
-        name: "Mofid University",
-        cityId: "iran-qom",
-        website: "http://www.mofidu.ac.ir/",
+        id: "iran-sari-mazandaran-university-of-medical-sciences",
+        name: "Mazandaran University of Medical Sciences",
+        cityId: "iran-sari",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.5 km del centro de Qom (Wikidata).
+        // Situada a None km del centro de Sari (Wikidata).
       }),
   ],
-  "iran-mashhad": [
+  "iran-sanandaj": [
       defineUniversity({
-        id: "iran-mashhad-montazeri-technical-university-of-mashhad",
-        name: "Montazeri Technical University of Mashhad",
-        cityId: "iran-mashhad",
+        id: "iran-sanandaj-university-of-kurdistan",
+        name: "University of Kurdistan",
+        cityId: "iran-sanandaj",
+        website: "http://www.uok.ac.ir/",
+        source: "open-dataset",
+        // Situada a 4.1 km del centro de Sanandaj (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-sanandaj-kurdistan-university-of-medical-sciences",
+        name: "Kurdistan University of Medical Sciences",
+        cityId: "iran-sanandaj",
+        website: "http://www.muk.ac.ir/",
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Sanandaj (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-sanandaj-islamic-azad-university-kurdistan-province",
+        name: "Islamic Azad University Kurdistan Province",
+        cityId: "iran-sanandaj",
         website: null,
         source: "open-dataset",
-        // Situada a 5.4 km del centro de Mashhad (Wikidata).
+        // Situada a None km del centro de Sanandaj (Wikidata).
       }),
       defineUniversity({
-        id: "iran-mashhad-ferdowsi-university-of-mashhad",
-        name: "Ferdowsi University of Mashhad",
-        cityId: "iran-mashhad",
-        website: "http://www.um.ac.ir/",
-        source: "open-dataset",
-        // Situada a 7.0 km del centro de Mashhad (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-mashhad-sadjad-university-of-technology",
-        name: "Sadjad University of Technology",
-        cityId: "iran-mashhad",
+        id: "iran-sanandaj-islamic-azad-university-sanandaj-branch",
+        name: "Islamic Azad University, Sanandaj branch",
+        cityId: "iran-sanandaj",
         website: null,
         source: "open-dataset",
-        // Situada a 8.4 km del centro de Mashhad (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-mashhad-islamic-azad-university-of-mashhad",
-        name: "Islamic Azad University of Mashhad",
-        cityId: "iran-mashhad",
-        website: "http://www.mshdiau.ac.ir/",
-        source: "open-dataset",
-        // Situada a 10.5 km del centro de Mashhad (Wikidata).
+        // Situada a None km del centro de Sanandaj (Wikidata).
       }),
   ],
-  "iran-kerman": [
+  "iran-sabzevar": [
       defineUniversity({
-        id: "iran-kerman-islamic-azad-university-jiroft-branch",
-        name: "Islamic Azad University, Jiroft Branch",
-        cityId: "iran-kerman",
+        id: "iran-sabzevar-islamic-azad-university-of-sabzevar",
+        name: "Islamic Azad University of Sabzevar",
+        cityId: "iran-sabzevar",
         website: null,
         source: "open-dataset",
-        // Situada a 4.6 km del centro de Kerman (Wikidata).
+        // Situada a 1.3 km del centro de Sabzevar (Wikidata).
       }),
       defineUniversity({
-        id: "iran-kerman-besat-institute-of-higher-education-of-kerman",
-        name: "Besat Institute of Higher Education of Kerman",
-        cityId: "iran-kerman",
+        id: "iran-sabzevar-hakim-sabzevari-university",
+        name: "Hakim Sabzevari University",
+        cityId: "iran-sabzevar",
         website: null,
         source: "open-dataset",
-        // Situada a 4.8 km del centro de Kerman (Wikidata).
+        // Situada a 9.5 km del centro de Sabzevar (Wikidata).
       }),
       defineUniversity({
-        id: "iran-kerman-islamic-azad-university-of-kerman",
-        name: "Islamic Azad University of Kerman",
-        cityId: "iran-kerman",
-        website: "http://www.iauk.ac.ir/",
+        id: "iran-sabzevar-sabzevar-university-of-new-technology",
+        name: "Sabzevar University of New Technology",
+        cityId: "iran-sabzevar",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.6 km del centro de Kerman (Wikidata).
+        // Situada a 9.5 km del centro de Sabzevar (Wikidata).
       }),
       defineUniversity({
-        id: "iran-kerman-shahid-bahonar-university-of-kerman",
-        name: "Shahid Bahonar University of Kerman",
-        cityId: "iran-kerman",
-        website: "http://www.uk.ac.ir/",
+        id: "iran-sabzevar-sabzevar-university-of-medical-sciences",
+        name: "Sabzevar University of Medical Sciences",
+        cityId: "iran-sabzevar",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.4 km del centro de Kerman (Wikidata).
+        // Situada a None km del centro de Sabzevar (Wikidata).
+      }),
+  ],
+  "iran-rasht": [
+      defineUniversity({
+        id: "iran-rasht-gilan-university-of-medical-sciences",
+        name: "Gilan University of Medical Sciences",
+        cityId: "iran-rasht",
+        website: null,
+        source: "open-dataset",
+        // Situada a 11.4 km del centro de Rasht (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-rasht-islamic-azad-university-of-rasht",
+        name: "Islamic Azad University of Rasht",
+        cityId: "iran-rasht",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.7 km del centro de Rasht (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-rasht-islamic-azad-university-of-lahijan",
+        name: "Islamic Azad University of Lahijan",
+        cityId: "iran-rasht",
+        website: "http://www.iau-lahijan.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Rasht (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-rasht-university-of-guilan",
+        name: "University of Guilan",
+        cityId: "iran-rasht",
+        website: "http://www.guilan.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Rasht (Wikidata).
+      }),
+  ],
+  "iran-qazvin": [
+      defineUniversity({
+        id: "iran-qazvin-imam-khomeini-international-university",
+        name: "Imam Khomeini International University",
+        cityId: "iran-qazvin",
+        website: "http://www.ikiu.ac.ir/",
+        source: "open-dataset",
+        // Situada a 5.7 km del centro de Qazvin (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-qazvin-qazvin-university-of-medical-sciences",
+        name: "Qazvin University of Medical Sciences",
+        cityId: "iran-qazvin",
+        website: "http://www.qums.ac.ir/",
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Qazvin (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-qazvin-azad-university-at-qazvin",
+        name: "Azad University at Qazvin",
+        cityId: "iran-qazvin",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.5 km del centro de Qazvin (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-qazvin-ekbatan-institue-of-higher-education",
+        name: "Ekbatan Institue of Higher Education",
+        cityId: "iran-qazvin",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Qazvin (Wikidata).
       }),
   ],
   "iran-hamadan": [
-      defineUniversity({
-        id: "iran-hamadan-hamadan-university-of-technology",
-        name: "Hamadan University of Technology",
-        cityId: "iran-hamadan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Hamadān (Wikidata).
-      }),
       defineUniversity({
         id: "iran-hamadan-hamadan-university-of-technology",
         name: "Hamadan University of Technology",
@@ -790,6 +1182,14 @@ export default {
         website: "http://www.umsha.ac.ir/",
         source: "open-dataset",
         // Situada a 2.6 km del centro de Hamadān (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-hamadan-bu-ali-sina-university",
+        name: "Bu-Ali Sina University",
+        cityId: "iran-hamadan",
+        website: "http://www.basu.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Hamadān (Wikidata).
       }),
   ],
   "iran-gorgan": [
@@ -826,6 +1226,142 @@ export default {
         // Situada a 2.3 km del centro de Gorgān (Wikidata).
       }),
   ],
+  "iran-bushehr": [
+      defineUniversity({
+        id: "iran-bushehr-payame-noor-university-of-bushehr",
+        name: "Payame Noor University of Bushehr",
+        cityId: "iran-bushehr",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Bushehr (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-bushehr-islamic-azad-university-bushehr-branch",
+        name: "Islamic Azad University Bushehr Branch",
+        cityId: "iran-bushehr",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Bushehr (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-bushehr-persian-gulf-university",
+        name: "Persian Gulf University",
+        cityId: "iran-bushehr",
+        website: "http://www.pgu.ac.ir/",
+        source: "open-dataset",
+        // Situada a 6.8 km del centro de Bushehr (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-bushehr-bushehr-university-of-medical-sciences",
+        name: "Bushehr University of Medical Sciences",
+        cityId: "iran-bushehr",
+        website: "http://www.bpums.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Bushehr (Wikidata).
+      }),
+  ],
+  "iran-birjand": [
+      defineUniversity({
+        id: "iran-birjand-birjand-university-of-technology",
+        name: "Birjand University of Technology",
+        cityId: "iran-birjand",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Bīrjand (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-birjand-university-of-birjand",
+        name: "University of Birjand",
+        cityId: "iran-birjand",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.8 km del centro de Bīrjand (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-birjand-islamic-azad-university-of-birjand",
+        name: "Islamic Azad University of Birjand",
+        cityId: "iran-birjand",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bīrjand (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-birjand-birjand-university-of-medical-sciences",
+        name: "Birjand University of Medical Sciences",
+        cityId: "iran-birjand",
+        website: "http://www.bums.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Bīrjand (Wikidata).
+      }),
+  ],
+  "iran-ardabil": [
+      defineUniversity({
+        id: "iran-ardabil-ardabil-university-of-medical-sciences",
+        name: "Ardabil University of Medical Sciences",
+        cityId: "iran-ardabil",
+        website: "http://www.arums.ac.ir/",
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Ardabīl (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-ardabil-islamic-azad-university-of-ardabil",
+        name: "Islamic Azad University of Ardabil",
+        cityId: "iran-ardabil",
+        website: "http://www.iauardabil.ac.ir/",
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Ardabīl (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-ardabil-university-of-mohaghegh-ardabili",
+        name: "University of Mohaghegh Ardabili",
+        cityId: "iran-ardabil",
+        website: "http://www.uma.ac.ir/",
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Ardabīl (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-ardabil-ardabil-university-of-medical-sciences",
+        name: "Ardabil University of Medical Sciences",
+        cityId: "iran-ardabil",
+        website: "http://www.arums.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Ardabīl (Wikidata).
+      }),
+  ],
+  "iran-ahvaz": [
+      defineUniversity({
+        id: "iran-ahvaz-shahid-chamran-university-of-ahvaz",
+        name: "Shahid Chamran University of Ahvaz",
+        cityId: "iran-ahvaz",
+        website: "http://scu.ac.ir/",
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Ahvaz (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-ahvaz-ahvaz-jundishapur-university-of-medical-sciences",
+        name: "Ahvaz Jundishapur University of Medical Sciences",
+        cityId: "iran-ahvaz",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de Ahvaz (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-ahvaz-islamic-azad-university-ahvaz",
+        name: "Islamic Azad University, Ahvaz",
+        cityId: "iran-ahvaz",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ahvaz (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-ahvaz-ramin-university-of-agriculture-and-natural-resources",
+        name: "Ramin University of Agriculture and Natural Resources",
+        cityId: "iran-ahvaz",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ahvaz (Wikidata).
+      }),
+  ],
   "iran-vahidiyeh": [
       defineUniversity({
         id: "iran-vahidiyeh-shamsipour-technical-college",
@@ -860,66 +1396,6 @@ export default {
         // Situada a 10.0 km del centro de Vaḩīdīyeh (Wikidata).
       }),
   ],
-  "iran-isfahan": [
-      defineUniversity({
-        id: "iran-isfahan-art-university-of-isfahan",
-        name: "Art University of Isfahan",
-        cityId: "iran-isfahan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Isfahan (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-isfahan-university-of-isfahan",
-        name: "University of Isfahan",
-        cityId: "iran-isfahan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Isfahan (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-isfahan-islamic-azad-university-of-khorasgan",
-        name: "Islamic Azad University of Khorasgan",
-        cityId: "iran-isfahan",
-        website: "http://www.khuisf.ac.ir/",
-        source: "open-dataset",
-        // Situada a 10.3 km del centro de Isfahan (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-isfahan-isfahan-university-of-medical-sciences",
-        name: "Isfahan University of Medical Sciences",
-        cityId: "iran-isfahan",
-        website: "http://www.mui.ac.ir/",
-        source: "open-dataset",
-        // Situada a 4.4 km del centro de Isfahan (Wikidata).
-      }),
-  ],
-  "iran-lavasan": [
-      defineUniversity({
-        id: "iran-lavasan-imam-hossein-university",
-        name: "Imam Hossein University",
-        cityId: "iran-lavasan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Lavāsān (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-lavasan-imam-hossein-university",
-        name: "Imam Hossein University",
-        cityId: "iran-lavasan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Lavāsān (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-lavasan-imam-hossein-university",
-        name: "Imam Hossein University",
-        cityId: "iran-lavasan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Lavāsān (Wikidata).
-      }),
-  ],
   "iran-morteza-gerd": [
       defineUniversity({
         id: "iran-morteza-gerd-enghelab-e-eslami-technical-college",
@@ -944,6 +1420,84 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 8.0 km del centro de Morteẕá Gerd (Wikidata).
+      }),
+  ],
+  "iran-yasuj": [
+      defineUniversity({
+        id: "iran-yasuj-yasuj-university-of-medical-sciences",
+        name: "Yasuj University of Medical Sciences",
+        cityId: "iran-yasuj",
+        website: "http://www.yums.ac.ir/",
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Yasuj (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-yasuj-yasuj-university",
+        name: "Yasuj University",
+        cityId: "iran-yasuj",
+        website: "http://www.yu.ac.ir/",
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Yasuj (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-yasuj-islamic-azad-university-yasuj",
+        name: "Islamic Azad University Yasuj",
+        cityId: "iran-yasuj",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Yasuj (Wikidata).
+      }),
+  ],
+  "iran-zanjan": [
+      defineUniversity({
+        id: "iran-zanjan-institute-for-advanced-studies-in-basic-sciences",
+        name: "Institute for Advanced Studies in Basic Sciences",
+        cityId: "iran-zanjan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Zanjan (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-zanjan-zanjan-university-of-medical-sciences",
+        name: "Zanjan University of Medical Sciences",
+        cityId: "iran-zanjan",
+        website: "http://www.zums.ac.ir/",
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Zanjan (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-zanjan-islamic-azad-university-of-zanjan",
+        name: "Islamic Azad University of Zanjan",
+        cityId: "iran-zanjan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Zanjan (Wikidata).
+      }),
+  ],
+  "iran-shahr-e-kord": [
+      defineUniversity({
+        id: "iran-shahr-e-kord-islamic-azad-university-of-shahrekord",
+        name: "Islamic Azad University of Shahrekord",
+        cityId: "iran-shahr-e-kord",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.9 km del centro de Shahr-e Kord (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-shahr-e-kord-shahrekord-university-of-medical-sciences",
+        name: "Shahrekord University of Medical Sciences",
+        cityId: "iran-shahr-e-kord",
+        website: "http://www.skums.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Shahr-e Kord (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-shahr-e-kord-shahrekord-university",
+        name: "Shahrekord University",
+        cityId: "iran-shahr-e-kord",
+        website: "http://www.sku.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Shahr-e Kord (Wikidata).
       }),
   ],
   "iran-semnan": [
@@ -972,108 +1526,30 @@ export default {
         // Situada a 4.8 km del centro de Semnan (Wikidata).
       }),
   ],
-  "iran-sabzevar": [
+  "iran-karaj": [
       defineUniversity({
-        id: "iran-sabzevar-islamic-azad-university-of-sabzevar",
-        name: "Islamic Azad University of Sabzevar",
-        cityId: "iran-sabzevar",
+        id: "iran-karaj-alborz-university-of-medical-sciences",
+        name: "Alborz University of Medical Sciences",
+        cityId: "iran-karaj",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Sabzevar (Wikidata).
+        // Situada a 1.8 km del centro de Karaj (Wikidata).
       }),
       defineUniversity({
-        id: "iran-sabzevar-hakim-sabzevari-university",
-        name: "Hakim Sabzevari University",
-        cityId: "iran-sabzevar",
+        id: "iran-karaj-islamic-azad-university-of-karaj",
+        name: "Islamic Azad University of Karaj",
+        cityId: "iran-karaj",
+        website: "http://www.iaukb.ir/",
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Karaj (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-karaj-payame-noor-university-of-karaj",
+        name: "Payame Noor University of Karaj",
+        cityId: "iran-karaj",
         website: null,
         source: "open-dataset",
-        // Situada a 9.5 km del centro de Sabzevar (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-sabzevar-sabzevar-university-of-new-technology",
-        name: "Sabzevar University of New Technology",
-        cityId: "iran-sabzevar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.5 km del centro de Sabzevar (Wikidata).
-      }),
-  ],
-  "iran-qazvin": [
-      defineUniversity({
-        id: "iran-qazvin-imam-khomeini-international-university",
-        name: "Imam Khomeini International University",
-        cityId: "iran-qazvin",
-        website: "http://www.ikiu.ac.ir/",
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Qazvin (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-qazvin-qazvin-university-of-medical-sciences",
-        name: "Qazvin University of Medical Sciences",
-        cityId: "iran-qazvin",
-        website: "http://www.qums.ac.ir/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Qazvin (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-qazvin-azad-university-at-qazvin",
-        name: "Azad University at Qazvin",
-        cityId: "iran-qazvin",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.5 km del centro de Qazvin (Wikidata).
-      }),
-  ],
-  "iran-orumiyeh": [
-      defineUniversity({
-        id: "iran-orumiyeh-islamic-azad-university-of-urmia",
-        name: "Islamic Azad University Of Urmia",
-        cityId: "iran-orumiyeh",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Orūmīyeh (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-orumiyeh-urmia-university",
-        name: "Urmia University",
-        cityId: "iran-orumiyeh",
-        website: "http://www.urmia.ac.ir/",
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Orūmīyeh (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-orumiyeh-urmia-university-of-technology",
-        name: "Urmia University of Technology",
-        cityId: "iran-orumiyeh",
-        website: "http://www.uut.ac.ir/",
-        source: "open-dataset",
-        // Situada a 14.0 km del centro de Orūmīyeh (Wikidata).
-      }),
-  ],
-  "iran-meybod": [
-      defineUniversity({
-        id: "iran-meybod-meybod-university",
-        name: "Meybod University",
-        cityId: "iran-meybod",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Meybod (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-meybod-meybod-university",
-        name: "Meybod University",
-        cityId: "iran-meybod",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Meybod (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-meybod-islamic-azad-university-of-meybod",
-        name: "Islamic Azad University of Meybod",
-        cityId: "iran-meybod",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.9 km del centro de Meybod (Wikidata).
+        // Situada a None km del centro de Karaj (Wikidata).
       }),
   ],
   "iran-jahrom": [
@@ -1128,6 +1604,58 @@ export default {
         // Situada a 4.0 km del centro de Īlām (Wikidata).
       }),
   ],
+  "iran-gonabad": [
+      defineUniversity({
+        id: "iran-gonabad-islamic-azad-university-gonabad-branch",
+        name: "Islamic Azad University, Gonabad branch",
+        cityId: "iran-gonabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Gonābād (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-gonabad-gonabad-university-of-medical-sciences",
+        name: "Gonabad University of Medical Sciences",
+        cityId: "iran-gonabad",
+        website: "http://www.gmu.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Gonābād (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-gonabad-university-of-gonabad",
+        name: "University of Gonabad",
+        cityId: "iran-gonabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gonābād (Wikidata).
+      }),
+  ],
+  "iran-garmsar": [
+      defineUniversity({
+        id: "iran-garmsar-garmsar-university",
+        name: "Garmsar University",
+        cityId: "iran-garmsar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Garmsār (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-garmsar-amirkabir-university-of-technology-garmsar-branch",
+        name: "Amirkabir University of Technology, Garmsar branch",
+        cityId: "iran-garmsar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Garmsār (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-garmsar-islamic-azad-university-of-garmsar",
+        name: "Islamic Azad University of Garmsar",
+        cityId: "iran-garmsar",
+        website: "http://www.iau-garmsar.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Garmsār (Wikidata).
+      }),
+  ],
   "iran-shahrud": [
       defineUniversity({
         id: "iran-shahrud-shahrud-university-of-technology",
@@ -1154,56 +1682,134 @@ export default {
         // Situada a 6.5 km del centro de Shahrud (Wikidata).
       }),
   ],
-  "iran-bushehr": [
+  "iran-dezful": [
       defineUniversity({
-        id: "iran-bushehr-payame-noor-university-of-bushehr",
-        name: "Payame Noor University of Bushehr",
-        cityId: "iran-bushehr",
+        id: "iran-dezful-academy-of-gondishapur",
+        name: "Academy of Gondishapur",
+        cityId: "iran-dezful",
         website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Bushehr (Wikidata).
+        // Situada a 15.1 km del centro de Dezful (Wikidata).
       }),
       defineUniversity({
-        id: "iran-bushehr-islamic-azad-university-bushehr-branch",
-        name: "Islamic Azad University Bushehr Branch",
-        cityId: "iran-bushehr",
+        id: "iran-dezful-dezful-university-of-medical-sciences",
+        name: "Dezful University of Medical Sciences",
+        cityId: "iran-dezful",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Bushehr (Wikidata).
+        // Situada a None km del centro de Dezful (Wikidata).
       }),
       defineUniversity({
-        id: "iran-bushehr-persian-gulf-university",
-        name: "Persian Gulf University",
-        cityId: "iran-bushehr",
-        website: "http://www.pgu.ac.ir/",
+        id: "iran-dezful-islamic-azad-university-of-dezful",
+        name: "Islamic Azad University of Dezful",
+        cityId: "iran-dezful",
+        website: null,
         source: "open-dataset",
-        // Situada a 6.8 km del centro de Bushehr (Wikidata).
+        // Situada a None km del centro de Dezful (Wikidata).
       }),
   ],
-  "iran-ardabil": [
+  "iran-borujerd": [
       defineUniversity({
-        id: "iran-ardabil-ardabil-university-of-medical-sciences",
-        name: "Ardabil University of Medical Sciences",
-        cityId: "iran-ardabil",
-        website: "http://www.arums.ac.ir/",
+        id: "iran-borujerd-ayatollah-borujerdi-university",
+        name: "Ayatollah Borujerdi University",
+        cityId: "iran-borujerd",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Ardabīl (Wikidata).
+        // Situada a 8.7 km del centro de Borūjerd (Wikidata).
       }),
       defineUniversity({
-        id: "iran-ardabil-islamic-azad-university-of-ardabil",
-        name: "Islamic Azad University of Ardabil",
-        cityId: "iran-ardabil",
-        website: "http://www.iauardabil.ac.ir/",
+        id: "iran-borujerd-islamic-azad-university-of-borujerd",
+        name: "Islamic Azad University of Borujerd",
+        cityId: "iran-borujerd",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.2 km del centro de Ardabīl (Wikidata).
+        // Situada a 6.0 km del centro de Borūjerd (Wikidata).
       }),
       defineUniversity({
-        id: "iran-ardabil-university-of-mohaghegh-ardabili",
-        name: "University of Mohaghegh Ardabili",
-        cityId: "iran-ardabil",
-        website: "http://www.uma.ac.ir/",
+        id: "iran-borujerd-allameh-tabatabaei-university-ra",
+        name: "Allameh Tabatabaei University (RA)",
+        cityId: "iran-borujerd",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.5 km del centro de Ardabīl (Wikidata).
+        // Situada a None km del centro de Borūjerd (Wikidata).
+      }),
+  ],
+  "iran-bandar-abbas": [
+      defineUniversity({
+        id: "iran-bandar-abbas-islamic-azad-university-of-bandar-abbas",
+        name: "Islamic Azad University of Bandar Abbas",
+        cityId: "iran-bandar-abbas",
+        website: "http://www.iauba.ac.ir/",
+        source: "open-dataset",
+        // Situada a 6.0 km del centro de Bandar Abbas (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-bandar-abbas-hormozgan-university-of-medical-sciences",
+        name: "Hormozgan University of Medical Sciences",
+        cityId: "iran-bandar-abbas",
+        website: "http://www.hums.ac.ir/",
+        source: "open-dataset",
+        // Situada a 9.7 km del centro de Bandar Abbas (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-bandar-abbas-hormozgan-university",
+        name: "Hormozgan University",
+        cityId: "iran-bandar-abbas",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bandar Abbas (Wikidata).
+      }),
+  ],
+  "iran-babol": [
+      defineUniversity({
+        id: "iran-babol-babol-noshirvani-university-of-technology",
+        name: "Babol Noshirvani University of Technology",
+        cityId: "iran-babol",
+        website: "http://www.nit.ac.ir/",
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Bābol (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-babol-babol-university-of-medical-sciences",
+        name: "Babol University of Medical Sciences",
+        cityId: "iran-babol",
+        website: "http://www.mubabol.ac.ir/",
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Bābol (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-babol-mazandaran-university-of-science-and-technology",
+        name: "Mazandaran University of Science and Technology",
+        cityId: "iran-babol",
+        website: "http://www.ustmb.ac.ir/",
+        source: "open-dataset",
+        // Situada a None km del centro de Bābol (Wikidata).
+      }),
+  ],
+  "iran-amol": [
+      defineUniversity({
+        id: "iran-amol-islamic-azad-university-of-amol",
+        name: "Islamic Azad University of Amol",
+        cityId: "iran-amol",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.5 km del centro de Āmol (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-amol-shomal-university",
+        name: "Shomal University",
+        cityId: "iran-amol",
+        website: "http://www.shomal.ac.ir/",
+        source: "open-dataset",
+        // Situada a 7.6 km del centro de Āmol (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-amol-amol-university-of-special-modern-technologies",
+        name: "Amol University of Special Modern Technologies",
+        cityId: "iran-amol",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Āmol (Wikidata).
       }),
   ],
   "iran-mobarakeh": [
@@ -1258,58 +1864,22 @@ export default {
         // Situada a 0.8 km del centro de Zābol (Wikidata).
       }),
   ],
-  "iran-yasuj": [
+  "iran-torbat-e-heydariyeh": [
       defineUniversity({
-        id: "iran-yasuj-yasuj-university-of-medical-sciences",
-        name: "Yasuj University of Medical Sciences",
-        cityId: "iran-yasuj",
-        website: "http://www.yums.ac.ir/",
+        id: "iran-torbat-e-heydariyeh-torbat-heydarieh-university-of-medical-sciences",
+        name: "Torbat Heydarieh University of Medical Sciences",
+        cityId: "iran-torbat-e-heydariyeh",
+        website: "http://www.thums.ac.ir/",
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Yasuj (Wikidata).
+        // Situada a None km del centro de Torbat-e Ḩeydarīyeh (Wikidata).
       }),
       defineUniversity({
-        id: "iran-yasuj-yasuj-university",
-        name: "Yasuj University",
-        cityId: "iran-yasuj",
-        website: "http://www.yu.ac.ir/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Yasuj (Wikidata).
-      }),
-  ],
-  "iran-zanjan": [
-      defineUniversity({
-        id: "iran-zanjan-institute-for-advanced-studies-in-basic-sciences",
-        name: "Institute for Advanced Studies in Basic Sciences",
-        cityId: "iran-zanjan",
+        id: "iran-torbat-e-heydariyeh-university-of-torbat-heydarieh",
+        name: "University of Torbat Heydarieh",
+        cityId: "iran-torbat-e-heydariyeh",
         website: null,
         source: "open-dataset",
-        // Situada a 3.3 km del centro de Zanjan (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-zanjan-zanjan-university-of-medical-sciences",
-        name: "Zanjan University of Medical Sciences",
-        cityId: "iran-zanjan",
-        website: "http://www.zums.ac.ir/",
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Zanjan (Wikidata).
-      }),
-  ],
-  "iran-yazd": [
-      defineUniversity({
-        id: "iran-yazd-islamic-azad-university-of-yazd",
-        name: "Islamic Azad University of Yazd",
-        cityId: "iran-yazd",
-        website: "http://www.iauyazd.ac.ir/",
-        source: "open-dataset",
-        // Situada a 6.7 km del centro de Yazd (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-yazd-university-of-yazd",
-        name: "University of Yazd",
-        cityId: "iran-yazd",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.9 km del centro de Yazd (Wikidata).
+        // Situada a None km del centro de Torbat-e Ḩeydarīyeh (Wikidata).
       }),
   ],
   "iran-tafresh": [
@@ -1330,40 +1900,22 @@ export default {
         // Situada a 3.7 km del centro de Tafresh (Wikidata).
       }),
   ],
-  "iran-sanandaj": [
+  "iran-rudehen": [
       defineUniversity({
-        id: "iran-sanandaj-university-of-kurdistan",
-        name: "University of Kurdistan",
-        cityId: "iran-sanandaj",
-        website: "http://www.uok.ac.ir/",
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Sanandaj (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-sanandaj-kurdistan-university-of-medical-sciences",
-        name: "Kurdistan University of Medical Sciences",
-        cityId: "iran-sanandaj",
-        website: "http://www.muk.ac.ir/",
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Sanandaj (Wikidata).
-      }),
-  ],
-  "iran-rasht": [
-      defineUniversity({
-        id: "iran-rasht-gilan-university-of-medical-sciences",
-        name: "Gilan University of Medical Sciences",
-        cityId: "iran-rasht",
+        id: "iran-rudehen-islamic-azad-university-of-rudehen",
+        name: "Islamic Azad University of Rudehen",
+        cityId: "iran-rudehen",
         website: null,
         source: "open-dataset",
-        // Situada a 11.4 km del centro de Rasht (Wikidata).
+        // Situada a 1.7 km del centro de Rūdehen (Wikidata).
       }),
       defineUniversity({
-        id: "iran-rasht-islamic-azad-university-of-rasht",
-        name: "Islamic Azad University of Rasht",
-        cityId: "iran-rasht",
+        id: "iran-rudehen-faculty-of-agriculture-of-islamic-azad-university-roudehen-branch",
+        name: "Faculty of Agriculture of Islamic Azad university Roudehen Branch",
+        cityId: "iran-rudehen",
         website: null,
         source: "open-dataset",
-        // Situada a 3.7 km del centro de Rasht (Wikidata).
+        // Situada a None km del centro de Rūdehen (Wikidata).
       }),
   ],
   "iran-quchan": [
@@ -1402,6 +1954,60 @@ export default {
         // Situada a 4.6 km del centro de Neyshābūr (Wikidata).
       }),
   ],
+  "iran-meybod": [
+      defineUniversity({
+        id: "iran-meybod-meybod-university",
+        name: "Meybod University",
+        cityId: "iran-meybod",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.7 km del centro de Meybod (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-meybod-islamic-azad-university-of-meybod",
+        name: "Islamic Azad University of Meybod",
+        cityId: "iran-meybod",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.9 km del centro de Meybod (Wikidata).
+      }),
+  ],
+  "iran-maragheh": [
+      defineUniversity({
+        id: "iran-maragheh-university-of-maragheh",
+        name: "University of Maragheh",
+        cityId: "iran-maragheh",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Marāgheh (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-maragheh-maragheh-university-of-medical-sciences",
+        name: "Maragheh University of Medical Sciences",
+        cityId: "iran-maragheh",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Marāgheh (Wikidata).
+      }),
+  ],
+  "iran-lar": [
+      defineUniversity({
+        id: "iran-lar-islamic-azad-university-larestan-branch",
+        name: "Islamic Azad University, Larestan Branch",
+        cityId: "iran-lar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.1 km del centro de Lār (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-lar-larestan-university-of-medical-sciences",
+        name: "Larestan University of Medical Sciences",
+        cityId: "iran-lar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lār (Wikidata).
+      }),
+  ],
   "iran-kish": [
       defineUniversity({
         id: "iran-kish-islamic-azad-university-of-kish",
@@ -1420,40 +2026,22 @@ export default {
         // Situada a 1.5 km del centro de Kīsh (Wikidata).
       }),
   ],
-  "iran-karaj": [
+  "iran-kashan": [
       defineUniversity({
-        id: "iran-karaj-alborz-university-of-medical-sciences",
-        name: "Alborz University of Medical Sciences",
-        cityId: "iran-karaj",
+        id: "iran-kashan-university-of-kashan",
+        name: "University of Kashan",
+        cityId: "iran-kashan",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Karaj (Wikidata).
+        // Situada a 6.7 km del centro de Kashan (Wikidata).
       }),
       defineUniversity({
-        id: "iran-karaj-islamic-azad-university-of-karaj",
-        name: "Islamic Azad University of Karaj",
-        cityId: "iran-karaj",
-        website: "http://www.iaukb.ir/",
+        id: "iran-kashan-kashan-university-of-medical-sciences",
+        name: "Kashan University of Medical Sciences",
+        cityId: "iran-kashan",
+        website: "http://www.kaums.ac.ir/",
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Karaj (Wikidata).
-      }),
-  ],
-  "iran-garmsar": [
-      defineUniversity({
-        id: "iran-garmsar-garmsar-university",
-        name: "Garmsar University",
-        cityId: "iran-garmsar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Garmsār (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-garmsar-amirkabir-university-of-technology-garmsar-branch",
-        name: "Amirkabir University of Technology, Garmsar branch",
-        cityId: "iran-garmsar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Garmsār (Wikidata).
+        // Situada a None km del centro de Kashan (Wikidata).
       }),
   ],
   "iran-fasa": [
@@ -1492,40 +2080,22 @@ export default {
         // Situada a 5.0 km del centro de Dehāqān (Wikidata).
       }),
   ],
-  "iran-borujerd": [
+  "iran-bojnurd": [
       defineUniversity({
-        id: "iran-borujerd-ayatollah-borujerdi-university",
-        name: "Ayatollah Borujerdi University",
-        cityId: "iran-borujerd",
+        id: "iran-bojnurd-university-of-bojnord",
+        name: "University of Bojnord",
+        cityId: "iran-bojnurd",
         website: null,
         source: "open-dataset",
-        // Situada a 8.7 km del centro de Borūjerd (Wikidata).
+        // Situada a 5.3 km del centro de Bojnūrd (Wikidata).
       }),
       defineUniversity({
-        id: "iran-borujerd-islamic-azad-university-of-borujerd",
-        name: "Islamic Azad University of Borujerd",
-        cityId: "iran-borujerd",
+        id: "iran-bojnurd-islamic-azad-university-of-bojnord",
+        name: "Islamic Azad University of Bojnord",
+        cityId: "iran-bojnurd",
         website: null,
         source: "open-dataset",
-        // Situada a 6.0 km del centro de Borūjerd (Wikidata).
-      }),
-  ],
-  "iran-birjand": [
-      defineUniversity({
-        id: "iran-birjand-birjand-university-of-technology",
-        name: "Birjand University of Technology",
-        cityId: "iran-birjand",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Bīrjand (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-birjand-university-of-birjand",
-        name: "University of Birjand",
-        cityId: "iran-birjand",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Bīrjand (Wikidata).
+        // Situada a None km del centro de Bojnūrd (Wikidata).
       }),
   ],
   "iran-bandar-e-mahshahr": [
@@ -1546,24 +2116,6 @@ export default {
         // Situada a 2.3 km del centro de Bandar-e Māhshahr (Wikidata).
       }),
   ],
-  "iran-bandar-abbas": [
-      defineUniversity({
-        id: "iran-bandar-abbas-islamic-azad-university-of-bandar-abbas",
-        name: "Islamic Azad University of Bandar Abbas",
-        cityId: "iran-bandar-abbas",
-        website: "http://www.iauba.ac.ir/",
-        source: "open-dataset",
-        // Situada a 6.0 km del centro de Bandar Abbas (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-bandar-abbas-hormozgan-university-of-medical-sciences",
-        name: "Hormozgan University of Medical Sciences",
-        cityId: "iran-bandar-abbas",
-        website: "http://www.hums.ac.ir/",
-        source: "open-dataset",
-        // Situada a 9.7 km del centro de Bandar Abbas (Wikidata).
-      }),
-  ],
   "iran-babolsar": [
       defineUniversity({
         id: "iran-babolsar-payame-noor-university-of-bahnemir",
@@ -1582,58 +2134,22 @@ export default {
         // Situada a 0.4 km del centro de Bābolsar (Wikidata).
       }),
   ],
-  "iran-babol": [
+  "iran-shahin-shahr": [
       defineUniversity({
-        id: "iran-babol-babol-noshirvani-university-of-technology",
-        name: "Babol Noshirvani University of Technology",
-        cityId: "iran-babol",
-        website: "http://www.nit.ac.ir/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Bābol (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-babol-babol-university-of-medical-sciences",
-        name: "Babol University of Medical Sciences",
-        cityId: "iran-babol",
-        website: "http://www.mubabol.ac.ir/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Bābol (Wikidata).
-      }),
-  ],
-  "iran-amol": [
-      defineUniversity({
-        id: "iran-amol-islamic-azad-university-of-amol",
-        name: "Islamic Azad University of Amol",
-        cityId: "iran-amol",
+        id: "iran-shahin-shahr-malek-ashtar-university-of-technology",
+        name: "Malek Ashtar University of Technology",
+        cityId: "iran-shahin-shahr",
         website: null,
         source: "open-dataset",
-        // Situada a 9.5 km del centro de Āmol (Wikidata).
+        // Situada a 2.5 km del centro de Shāhīn Shahr (Wikidata).
       }),
       defineUniversity({
-        id: "iran-amol-shomal-university",
-        name: "Shomal University",
-        cityId: "iran-amol",
-        website: "http://www.shomal.ac.ir/",
-        source: "open-dataset",
-        // Situada a 7.6 km del centro de Āmol (Wikidata).
-      }),
-  ],
-  "iran-ahvaz": [
-      defineUniversity({
-        id: "iran-ahvaz-shahid-chamran-university-of-ahvaz",
-        name: "Shahid Chamran University of Ahvaz",
-        cityId: "iran-ahvaz",
-        website: "http://scu.ac.ir/",
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Ahvaz (Wikidata).
-      }),
-      defineUniversity({
-        id: "iran-ahvaz-ahvaz-jundishapur-university-of-medical-sciences",
-        name: "Ahvaz Jundishapur University of Medical Sciences",
-        cityId: "iran-ahvaz",
+        id: "iran-shahin-shahr-islamic-azad-university-of-shahinshahr",
+        name: "Islamic Azad University of Shahinshahr",
+        cityId: "iran-shahin-shahr",
         website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Ahvaz (Wikidata).
+        // Situada a None km del centro de Shāhīn Shahr (Wikidata).
       }),
   ],
   "iran-khomeyni-shahr": [
@@ -1654,6 +2170,24 @@ export default {
         // Situada a 6.1 km del centro de Khomeynī Shahr (Wikidata).
       }),
   ],
+  "iran-zahedan": [
+      defineUniversity({
+        id: "iran-zahedan-zahedan-university-of-medical-sciences",
+        name: "Zahedan University of Medical Sciences",
+        cityId: "iran-zahedan",
+        website: "http://www.zdmu.ac.ir/",
+        source: "open-dataset",
+        // Situada a 5.5 km del centro de Zahedan (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-zahedan-university-of-sistan-and-baluchestan",
+        name: "University of Sistan and Baluchestan",
+        cityId: "iran-zahedan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Zahedan (Wikidata).
+      }),
+  ],
   "iran-shahr-e-sadra": [
       defineUniversity({
         id: "iran-shahr-e-sadra-payam-noor-university-of-shiraz",
@@ -1670,6 +2204,24 @@ export default {
         website: "http://www.iaushiraz.ac.ir/",
         source: "open-dataset",
         // Situada a 4.5 km del centro de Shahr-e Ṣadrā (Wikidata).
+      }),
+  ],
+  "iran-jiroft": [
+      defineUniversity({
+        id: "iran-jiroft-jiroft-university",
+        name: "Jiroft University",
+        cityId: "iran-jiroft",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Jīroft (Wikidata).
+      }),
+      defineUniversity({
+        id: "iran-jiroft-jiroft-university-of-medical-sciences",
+        name: "Jiroft University of Medical Sciences",
+        cityId: "iran-jiroft",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Jīroft (Wikidata).
       }),
   ],
 };

@@ -23,7 +23,7 @@ const cities = [
       name: "Vatican City",
       coordinates: {"lat": 41.90268, "lng": 12.45414},
       isCapital: true,
-      universityCount: 8,
+      universityCount: 45,
       statistics: { population: 829 },
       countryId,
       countryName,

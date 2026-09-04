@@ -37,6 +37,22 @@ export default {
         source: "open-dataset",
         // Situada a 2.0 km del centro de Yaoundé (Wikidata).
       }),
+      defineUniversity({
+        id: "camerun-yaounde-university-of-yaounde",
+        name: "University of Yaoundé",
+        cityId: "camerun-yaounde",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Yaoundé (Wikidata).
+      }),
+      defineUniversity({
+        id: "camerun-yaounde-universite-protestante-d-afrique-centrale",
+        name: "Université Protestante d'Afrique Centrale",
+        cityId: "camerun-yaounde",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Yaoundé (Wikidata).
+      }),
   ],
   "camerun-bamenda": [
       defineUniversity({
@@ -63,23 +79,39 @@ export default {
         source: "open-dataset",
         // Situada a 1.5 km del centro de Bamenda (Wikidata).
       }),
-  ],
-  "camerun-nanga-eboko": [
       defineUniversity({
-        id: "camerun-nanga-eboko-universite-adventiste-cosendai",
-        name: "Université Adventiste Cosendai",
-        cityId: "camerun-nanga-eboko",
+        id: "camerun-bamenda-bambili-higher-teacher-training-college",
+        name: "Bambili Higher Teacher Training College",
+        cityId: "camerun-bamenda",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Nanga Eboko (Wikidata).
+        // Situada a None km del centro de Bamenda (Wikidata).
       }),
       defineUniversity({
-        id: "camerun-nanga-eboko-universite-adventiste-cosendai",
-        name: "Université Adventiste Cosendai",
-        cityId: "camerun-nanga-eboko",
+        id: "camerun-bamenda-bambili-higher-technical-teacher-training-college",
+        name: "Bambili Higher Technical Teacher Training College",
+        cityId: "camerun-bamenda",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Nanga Eboko (Wikidata).
+        // Situada a None km del centro de Bamenda (Wikidata).
+      }),
+  ],
+  "camerun-douala": [
+      defineUniversity({
+        id: "camerun-douala-universite-de-douala",
+        name: "Université de Douala",
+        cityId: "camerun-douala",
+        website: "http://www.univ-douala.com/",
+        source: "open-dataset",
+        // Situada a 3.4 km del centro de Douala (Wikidata).
+      }),
+      defineUniversity({
+        id: "camerun-douala-jacky-felly-nafack-hightech-university-institute",
+        name: "Jacky Felly Nafack Hightech University Institute",
+        cityId: "camerun-douala",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Douala (Wikidata).
       }),
   ],
 };

@@ -12,6 +12,24 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
+  "luxemburgo-luxembourg": [
+      defineUniversity({
+        id: "luxemburgo-luxembourg-sacred-heart-university-luxembourg",
+        name: "Sacred Heart University Luxembourg",
+        cityId: "luxemburgo-luxembourg",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Luxembourg (Wikidata).
+      }),
+      defineUniversity({
+        id: "luxemburgo-luxembourg-institut-universitaire-international-luxembourg",
+        name: "Institut universitaire international Luxembourg",
+        cityId: "luxemburgo-luxembourg",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Luxembourg (Wikidata).
+      }),
+  ],
   "luxemburgo-esch-sur-alzette": [
       defineUniversity({
         id: "luxemburgo-esch-sur-alzette-miami-university-dolibois-european-center",

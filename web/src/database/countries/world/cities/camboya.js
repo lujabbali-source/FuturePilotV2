@@ -12,72 +12,6 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
-  "camboya-boeng-kak-pir": [
-      defineUniversity({
-        id: "camboya-boeng-kak-pir-paragon-international-university",
-        name: "Paragon International University",
-        cityId: "camboya-boeng-kak-pir",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Boeng Kak Pir (Wikidata).
-      }),
-      defineUniversity({
-        id: "camboya-boeng-kak-pir-cambodia-university-of-specialties",
-        name: "Cambodia University Of Specialties",
-        cityId: "camboya-boeng-kak-pir",
-        website: "http://www.cus.edu.kh/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Boeng Kak Pir (Wikidata).
-      }),
-      defineUniversity({
-        id: "camboya-boeng-kak-pir-american-university-of-phnom-penh",
-        name: "American University of Phnom Penh",
-        cityId: "camboya-boeng-kak-pir",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Boeng Kak Pir (Wikidata).
-      }),
-      defineUniversity({
-        id: "camboya-boeng-kak-pir-royal-university-of-phnom-penh",
-        name: "Royal University of Phnom Penh",
-        cityId: "camboya-boeng-kak-pir",
-        website: "http://www.rupp.edu.kh/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Boeng Kak Pir (Wikidata).
-      }),
-      defineUniversity({
-        id: "camboya-boeng-kak-pir-international-university",
-        name: "International University",
-        cityId: "camboya-boeng-kak-pir",
-        website: "http://www.iu.edu.kh/",
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Boeng Kak Pir (Wikidata).
-      }),
-      defineUniversity({
-        id: "camboya-boeng-kak-pir-international-university",
-        name: "International University",
-        cityId: "camboya-boeng-kak-pir",
-        website: "http://www.iu.edu.kh/",
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Boeng Kak Pir (Wikidata).
-      }),
-      defineUniversity({
-        id: "camboya-boeng-kak-pir-cambodian-mekong-university",
-        name: "Cambodian Mekong University",
-        cityId: "camboya-boeng-kak-pir",
-        website: "http://www.mekong.edu.kh/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Boeng Kak Pir (Wikidata).
-      }),
-      defineUniversity({
-        id: "camboya-boeng-kak-pir-international-institute-of-cambodia",
-        name: "International Institute of Cambodia",
-        cityId: "camboya-boeng-kak-pir",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Boeng Kak Pir (Wikidata).
-      }),
-  ],
   "camboya-phnom-penh": [
       defineUniversity({
         id: "camboya-phnom-penh-preah-sihanouk-raja-buddhist-university",
@@ -134,6 +68,128 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.3 km del centro de Phnom Penh (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-phnom-penh-national-institute-of-education",
+        name: "National Institute of Education",
+        cityId: "camboya-phnom-penh",
+        website: "http://www.ine.edu.kh/",
+        source: "open-dataset",
+        // Situada a None km del centro de Phnom Penh (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-phnom-penh-institute-of-technology-of-cambodia",
+        name: "Institute of Technology of Cambodia",
+        cityId: "camboya-phnom-penh",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Phnom Penh (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-phnom-penh-pannasastra-university-of-cambodia",
+        name: "Paññāsāstra University of Cambodia",
+        cityId: "camboya-phnom-penh",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Phnom Penh (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-phnom-penh-asia-euro-university",
+        name: "Asia Euro University",
+        cityId: "camboya-phnom-penh",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Phnom Penh (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-phnom-penh-iic-university-of-technology",
+        name: "IIC University of Technology",
+        cityId: "camboya-phnom-penh",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Phnom Penh (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-phnom-penh-phnom-penh-international-university",
+        name: "Phnom Penh International University",
+        cityId: "camboya-phnom-penh",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Phnom Penh (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-phnom-penh-royal-academy-of-cambodia",
+        name: "Royal Academy of Cambodia",
+        cityId: "camboya-phnom-penh",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Phnom Penh (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-phnom-penh-university-of-puthisastra-and-norton-university",
+        name: "University of Puthisastra and Norton University",
+        cityId: "camboya-phnom-penh",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Phnom Penh (Wikidata).
+      }),
+  ],
+  "camboya-boeng-kak-pir": [
+      defineUniversity({
+        id: "camboya-boeng-kak-pir-paragon-international-university",
+        name: "Paragon International University",
+        cityId: "camboya-boeng-kak-pir",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Boeng Kak Pir (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-boeng-kak-pir-cambodia-university-of-specialties",
+        name: "Cambodia University Of Specialties",
+        cityId: "camboya-boeng-kak-pir",
+        website: "http://www.cus.edu.kh/",
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Boeng Kak Pir (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-boeng-kak-pir-american-university-of-phnom-penh",
+        name: "American University of Phnom Penh",
+        cityId: "camboya-boeng-kak-pir",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Boeng Kak Pir (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-boeng-kak-pir-royal-university-of-phnom-penh",
+        name: "Royal University of Phnom Penh",
+        cityId: "camboya-boeng-kak-pir",
+        website: "http://www.rupp.edu.kh/",
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Boeng Kak Pir (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-boeng-kak-pir-international-university",
+        name: "International University",
+        cityId: "camboya-boeng-kak-pir",
+        website: "http://www.iu.edu.kh/",
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Boeng Kak Pir (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-boeng-kak-pir-cambodian-mekong-university",
+        name: "Cambodian Mekong University",
+        cityId: "camboya-boeng-kak-pir",
+        website: "http://www.mekong.edu.kh/",
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Boeng Kak Pir (Wikidata).
+      }),
+      defineUniversity({
+        id: "camboya-boeng-kak-pir-international-institute-of-cambodia",
+        name: "International Institute of Cambodia",
+        cityId: "camboya-boeng-kak-pir",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Boeng Kak Pir (Wikidata).
       }),
   ],
   "camboya-siem-reap": [

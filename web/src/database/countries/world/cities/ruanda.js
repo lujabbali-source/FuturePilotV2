@@ -12,56 +12,6 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
-  "ruanda-ndera": [
-      defineUniversity({
-        id: "ruanda-ndera-kigali-institute-of-education",
-        name: "Kigali Institute of Education",
-        cityId: "ruanda-ndera",
-        website: "http://www.kie.ac.rw/",
-        source: "open-dataset",
-        // Situada a 5.3 km del centro de Ndera (Wikidata).
-      }),
-      defineUniversity({
-        id: "ruanda-ndera-adventist-university-of-central-africa",
-        name: "Adventist University of Central Africa",
-        cityId: "ruanda-ndera",
-        website: "http://www.auca.ac.rw/",
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Ndera (Wikidata).
-      }),
-      defineUniversity({
-        id: "ruanda-ndera-adventist-university-of-central-africa",
-        name: "Adventist University of Central Africa",
-        cityId: "ruanda-ndera",
-        website: "http://www.auca.ac.rw/",
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Ndera (Wikidata).
-      }),
-      defineUniversity({
-        id: "ruanda-ndera-african-leadership-university",
-        name: "African Leadership University",
-        cityId: "ruanda-ndera",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Ndera (Wikidata).
-      }),
-      defineUniversity({
-        id: "ruanda-ndera-african-leadership-university",
-        name: "African Leadership University",
-        cityId: "ruanda-ndera",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Ndera (Wikidata).
-      }),
-      defineUniversity({
-        id: "ruanda-ndera-kim-university",
-        name: "KIM University",
-        cityId: "ruanda-ndera",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Ndera (Wikidata).
-      }),
-  ],
   "ruanda-kigali": [
       defineUniversity({
         id: "ruanda-kigali-mount-kigali-university",
@@ -102,6 +52,48 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.6 km del centro de Kigali (Wikidata).
+      }),
+  ],
+  "ruanda-ndera": [
+      defineUniversity({
+        id: "ruanda-ndera-kigali-institute-of-education",
+        name: "Kigali Institute of Education",
+        cityId: "ruanda-ndera",
+        website: "http://www.kie.ac.rw/",
+        source: "open-dataset",
+        // Situada a 5.3 km del centro de Ndera (Wikidata).
+      }),
+      defineUniversity({
+        id: "ruanda-ndera-adventist-university-of-central-africa",
+        name: "Adventist University of Central Africa",
+        cityId: "ruanda-ndera",
+        website: "http://www.auca.ac.rw/",
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Ndera (Wikidata).
+      }),
+      defineUniversity({
+        id: "ruanda-ndera-african-leadership-university",
+        name: "African Leadership University",
+        cityId: "ruanda-ndera",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.8 km del centro de Ndera (Wikidata).
+      }),
+      defineUniversity({
+        id: "ruanda-ndera-kim-university",
+        name: "KIM University",
+        cityId: "ruanda-ndera",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Ndera (Wikidata).
+      }),
+      defineUniversity({
+        id: "ruanda-ndera-north-gate-university",
+        name: "North Gate University",
+        cityId: "ruanda-ndera",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ndera (Wikidata).
       }),
   ],
   "ruanda-butare": [

@@ -38,14 +38,6 @@ export default {
         // Situada a 0.2 km del centro de Kraków (Wikidata).
       }),
       defineUniversity({
-        id: "polonia-krakow-jagiellonian-university",
-        name: "Jagiellonian University",
-        cityId: "polonia-krakow",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Kraków (Wikidata).
-      }),
-      defineUniversity({
         id: "polonia-krakow-faculty-of-theology-of-the-pontifical-university-of-john-paul-ii",
         name: "Faculty of Theology of the Pontifical University of John Paul II",
         cityId: "polonia-krakow",
@@ -60,22 +52,6 @@ export default {
         website: "http://www.agh.edu.pl/",
         source: "open-dataset",
         // Situada a 1.0 km del centro de Kraków (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-krakow-agh-university-of-science-and-technology",
-        name: "AGH University of Science and Technology",
-        cityId: "polonia-krakow",
-        website: "http://www.agh.edu.pl/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Kraków (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-krakow-jesuit-university-of-philosophy-and-education-ignatianum",
-        name: "Jesuit University of Philosophy and Education Ignatianum",
-        cityId: "polonia-krakow",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Kraków (Wikidata).
       }),
       defineUniversity({
         id: "polonia-krakow-jesuit-university-of-philosophy-and-education-ignatianum",
@@ -124,6 +100,14 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.6 km del centro de Kraków (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-krakow-the-theological-institute-of-missionary-priests-in-krakow",
+        name: "The Theological Institute of Missionary Priests in Kraków",
+        cityId: "polonia-krakow",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kraków (Wikidata).
       }),
   ],
   "polonia-poznan": [
@@ -198,6 +182,80 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.7 km del centro de Poznań (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-poznan-wyzsza-szko-a-pilotow-w-awicy",
+        name: "Wyższa Szkoła Pilotów w Ławicy",
+        cityId: "polonia-poznan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Poznań (Wikidata).
+      }),
+  ],
+  "polonia-warsaw": [
+      defineUniversity({
+        id: "polonia-warsaw-wsb-university-in-warsaw",
+        name: "WSB University in Warsaw",
+        cityId: "polonia-warsaw",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Warsaw (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-warsaw-imperial-university-of-warsaw",
+        name: "Imperial University of Warsaw",
+        cityId: "polonia-warsaw",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Warsaw (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-warsaw-civitas-university",
+        name: "Civitas University",
+        cityId: "polonia-warsaw",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Warsaw (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-warsaw-wyzsza-szko-a-handlu-i-finansow-miedzynarodowych-im-fryderyka-skarbka",
+        name: "Wyższa Szkoła Handlu i Finansów Międzynarodowych im. Fryderyka Skarbka",
+        cityId: "polonia-warsaw",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Warsaw (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-warsaw-european-academy-of-diplomacy",
+        name: "European Academy of Diplomacy",
+        cityId: "polonia-warsaw",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Warsaw (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-warsaw-university-of-economics-and-human-sciences-in-warsaw",
+        name: "University of Economics and Human Sciences in Warsaw",
+        cityId: "polonia-warsaw",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Warsaw (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-warsaw-polish-open-university",
+        name: "Polish Open University",
+        cityId: "polonia-warsaw",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Warsaw (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-warsaw-wsb-merito-university-in-warsaw",
+        name: "WSB Merito University in Warsaw",
+        cityId: "polonia-warsaw",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Warsaw (Wikidata).
       }),
   ],
   "polonia-lublin": [
@@ -292,14 +350,6 @@ export default {
         // Situada a 2.8 km del centro de Łódź (Wikidata).
       }),
       defineUniversity({
-        id: "polonia-odz-odz-university-of-technology",
-        name: "Łódź University of Technology",
-        cityId: "polonia-odz",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Łódź (Wikidata).
-      }),
-      defineUniversity({
         id: "polonia-odz-academy-of-fine-arts-in-odz",
         name: "Academy of Fine Arts In Łódź",
         cityId: "polonia-odz",
@@ -315,63 +365,13 @@ export default {
         source: "open-dataset",
         // Situada a 1.4 km del centro de Łódź (Wikidata).
       }),
-  ],
-  "polonia-srodmiescie-758470": [
       defineUniversity({
-        id: "polonia-srodmiescie-758470-university-of-warsaw",
-        name: "University of Warsaw",
-        cityId: "polonia-srodmiescie-758470",
-        website: "http://www.uw.edu.pl/",
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Śródmieście (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-srodmiescie-758470-university-of-warsaw",
-        name: "University of Warsaw",
-        cityId: "polonia-srodmiescie-758470",
-        website: "http://www.uw.edu.pl/",
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Śródmieście (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-srodmiescie-758470-warsaw-medical-academy",
-        name: "Warsaw Medical Academy",
-        cityId: "polonia-srodmiescie-758470",
+        id: "polonia-odz-medical-academy-of-odz",
+        name: "Medical Academy of Łódź",
+        cityId: "polonia-odz",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Śródmieście (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-srodmiescie-758470-warsaw-university-of-technology",
-        name: "Warsaw University of Technology",
-        cityId: "polonia-srodmiescie-758470",
-        website: "http://www.pw.edu.pl/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Śródmieście (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-srodmiescie-758470-warsaw-university-of-technology",
-        name: "Warsaw University of Technology",
-        cityId: "polonia-srodmiescie-758470",
-        website: "http://www.pw.edu.pl/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Śródmieście (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-srodmiescie-758470-warsaw-university-of-technology",
-        name: "Warsaw University of Technology",
-        cityId: "polonia-srodmiescie-758470",
-        website: "http://www.pw.edu.pl/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Śródmieście (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-srodmiescie-758470-higher-school-of-journalism-in-warsaw",
-        name: "Higher School of Journalism in Warsaw",
-        cityId: "polonia-srodmiescie-758470",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Śródmieście (Wikidata).
+        // Situada a None km del centro de Łódź (Wikidata).
       }),
   ],
   "polonia-katowice": [
@@ -408,14 +408,6 @@ export default {
         // Situada a 4.1 km del centro de Katowice (Wikidata).
       }),
       defineUniversity({
-        id: "polonia-katowice-academy-of-silesia",
-        name: "Academy of Silesia",
-        cityId: "polonia-katowice",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Katowice (Wikidata).
-      }),
-      defineUniversity({
         id: "polonia-katowice-university-of-occupational-safety-management-in-katowice",
         name: "University of Occupational Safety Management in Katowice",
         cityId: "polonia-katowice",
@@ -430,56 +422,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.8 km del centro de Katowice (Wikidata).
-      }),
-  ],
-  "polonia-kielce": [
-      defineUniversity({
-        id: "polonia-kielce-kielce-university-of-technology",
-        name: "Kielce University of Technology",
-        cityId: "polonia-kielce",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Kielce (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-kielce-kielce-university-of-technology",
-        name: "Kielce University of Technology",
-        cityId: "polonia-kielce",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Kielce (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-kielce-jan-kochanowski-university",
-        name: "Jan Kochanowski University",
-        cityId: "polonia-kielce",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Kielce (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-kielce-jan-kochanowski-university",
-        name: "Jan Kochanowski University",
-        cityId: "polonia-kielce",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Kielce (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-kielce-lipinski-university",
-        name: "Lipinski University",
-        cityId: "polonia-kielce",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Kielce (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-kielce-wyzsza-szko-a-umiejetnosci-im-stanis-awa-staszica-w-kielcach",
-        name: "Wyższa Szkoła Umiejętności im. Stanisława Staszica w Kielcach",
-        cityId: "polonia-kielce",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Kielce (Wikidata).
       }),
   ],
   "polonia-bia-ystok": [
@@ -522,48 +464,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 6.0 km del centro de Białystok (Wikidata).
-      }),
-  ],
-  "polonia-czestochowa": [
-      defineUniversity({
-        id: "polonia-czestochowa-polonia-university",
-        name: "Polonia University",
-        cityId: "polonia-czestochowa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Częstochowa (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-czestochowa-czestochowa-university-of-technology",
-        name: "Częstochowa University of Technology",
-        cityId: "polonia-czestochowa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Częstochowa (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-czestochowa-jan-d-ugosz-university",
-        name: "Jan Długosz University",
-        cityId: "polonia-czestochowa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Częstochowa (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-czestochowa-jan-d-ugosz-university",
-        name: "Jan Długosz University",
-        cityId: "polonia-czestochowa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Częstochowa (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-czestochowa-university-college-of-social-sciences",
-        name: "University College of Social Sciences",
-        cityId: "polonia-czestochowa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Częstochowa (Wikidata).
       }),
   ],
   "polonia-ursynow": [
@@ -634,30 +534,38 @@ export default {
         // Situada a 1.9 km del centro de Wola (Wikidata).
       }),
   ],
-  "polonia-warsaw": [
+  "polonia-srodmiescie-758470": [
       defineUniversity({
-        id: "polonia-warsaw-wsb-university-in-warsaw",
-        name: "WSB University in Warsaw",
-        cityId: "polonia-warsaw",
-        website: null,
+        id: "polonia-srodmiescie-758470-university-of-warsaw",
+        name: "University of Warsaw",
+        cityId: "polonia-srodmiescie-758470",
+        website: "http://www.uw.edu.pl/",
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Warsaw (Wikidata).
+        // Situada a 1.3 km del centro de Śródmieście (Wikidata).
       }),
       defineUniversity({
-        id: "polonia-warsaw-civitas-university",
-        name: "Civitas University",
-        cityId: "polonia-warsaw",
+        id: "polonia-srodmiescie-758470-warsaw-medical-academy",
+        name: "Warsaw Medical Academy",
+        cityId: "polonia-srodmiescie-758470",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Warsaw (Wikidata).
+        // Situada a 1.4 km del centro de Śródmieście (Wikidata).
       }),
       defineUniversity({
-        id: "polonia-warsaw-wyzsza-szko-a-handlu-i-finansow-miedzynarodowych-im-fryderyka-skarbka",
-        name: "Wyższa Szkoła Handlu i Finansów Międzynarodowych im. Fryderyka Skarbka",
-        cityId: "polonia-warsaw",
+        id: "polonia-srodmiescie-758470-warsaw-university-of-technology",
+        name: "Warsaw University of Technology",
+        cityId: "polonia-srodmiescie-758470",
+        website: "http://www.pw.edu.pl/",
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Śródmieście (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-srodmiescie-758470-higher-school-of-journalism-in-warsaw",
+        name: "Higher School of Journalism in Warsaw",
+        cityId: "polonia-srodmiescie-758470",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Warsaw (Wikidata).
+        // Situada a 0.7 km del centro de Śródmieście (Wikidata).
       }),
   ],
   "polonia-olsztyn": [
@@ -720,38 +628,72 @@ export default {
         // Situada a 1.4 km del centro de Ochota (Wikidata).
       }),
   ],
-  "polonia-gdynia": [
+  "polonia-kielce": [
       defineUniversity({
-        id: "polonia-gdynia-polish-naval-academy",
-        name: "Polish Naval Academy",
-        cityId: "polonia-gdynia",
+        id: "polonia-kielce-kielce-university-of-technology",
+        name: "Kielce University of Technology",
+        cityId: "polonia-kielce",
         website: null,
         source: "open-dataset",
-        // Situada a 2.8 km del centro de Gdynia (Wikidata).
+        // Situada a 1.3 km del centro de Kielce (Wikidata).
       }),
       defineUniversity({
-        id: "polonia-gdynia-polish-naval-academy",
-        name: "Polish Naval Academy",
-        cityId: "polonia-gdynia",
+        id: "polonia-kielce-jan-kochanowski-university",
+        name: "Jan Kochanowski University",
+        cityId: "polonia-kielce",
         website: null,
         source: "open-dataset",
-        // Situada a 2.8 km del centro de Gdynia (Wikidata).
+        // Situada a 0.8 km del centro de Kielce (Wikidata).
       }),
       defineUniversity({
-        id: "polonia-gdynia-gdynia-maritime-university",
-        name: "Gdynia Maritime University",
-        cityId: "polonia-gdynia",
+        id: "polonia-kielce-lipinski-university",
+        name: "Lipinski University",
+        cityId: "polonia-kielce",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Gdynia (Wikidata).
+        // Situada a 1.8 km del centro de Kielce (Wikidata).
       }),
       defineUniversity({
-        id: "polonia-gdynia-szko-a-wyzsza-prawa-i-dyplomacji-w-gdyni",
-        name: "Szkoła Wyższa Prawa i Dyplomacji w Gdyni",
-        cityId: "polonia-gdynia",
+        id: "polonia-kielce-wyzsza-szko-a-umiejetnosci-im-stanis-awa-staszica-w-kielcach",
+        name: "Wyższa Szkoła Umiejętności im. Stanisława Staszica w Kielcach",
+        cityId: "polonia-kielce",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Gdynia (Wikidata).
+        // Situada a 0.8 km del centro de Kielce (Wikidata).
+      }),
+  ],
+  "polonia-czestochowa": [
+      defineUniversity({
+        id: "polonia-czestochowa-polonia-university",
+        name: "Polonia University",
+        cityId: "polonia-czestochowa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Częstochowa (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-czestochowa-czestochowa-university-of-technology",
+        name: "Częstochowa University of Technology",
+        cityId: "polonia-czestochowa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Częstochowa (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-czestochowa-jan-d-ugosz-university",
+        name: "Jan Długosz University",
+        cityId: "polonia-czestochowa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Częstochowa (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-czestochowa-university-college-of-social-sciences",
+        name: "University College of Social Sciences",
+        cityId: "polonia-czestochowa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Częstochowa (Wikidata).
       }),
   ],
   "polonia-bydgoszcz": [
@@ -772,20 +714,20 @@ export default {
         // Situada a 0.9 km del centro de Bydgoszcz (Wikidata).
       }),
       defineUniversity({
-        id: "polonia-bydgoszcz-university-of-technology-and-life-sciences-in-bydgoszcz",
-        name: "University of Technology and Life Sciences in Bydgoszcz",
-        cityId: "polonia-bydgoszcz",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Bydgoszcz (Wikidata).
-      }),
-      defineUniversity({
         id: "polonia-bydgoszcz-university-of-economy-in-bydgoszcz",
         name: "University of Economy in Bydgoszcz",
         cityId: "polonia-bydgoszcz",
         website: null,
         source: "open-dataset",
         // Situada a 0.9 km del centro de Bydgoszcz (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-bydgoszcz-bydgoszcz-university-of-science-and-technology",
+        name: "Bydgoszcz University of Science and Technology",
+        cityId: "polonia-bydgoszcz",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bydgoszcz (Wikidata).
       }),
   ],
   "polonia-bielany": [
@@ -876,6 +818,68 @@ export default {
         // Situada a 1.0 km del centro de Opole (Wikidata).
       }),
   ],
+  "polonia-gdynia": [
+      defineUniversity({
+        id: "polonia-gdynia-polish-naval-academy",
+        name: "Polish Naval Academy",
+        cityId: "polonia-gdynia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.8 km del centro de Gdynia (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-gdynia-gdynia-maritime-university",
+        name: "Gdynia Maritime University",
+        cityId: "polonia-gdynia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Gdynia (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-gdynia-szko-a-wyzsza-prawa-i-dyplomacji-w-gdyni",
+        name: "Szkoła Wyższa Prawa i Dyplomacji w Gdyni",
+        cityId: "polonia-gdynia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Gdynia (Wikidata).
+      }),
+  ],
+  "polonia-dabrowa-gornicza": [
+      defineUniversity({
+        id: "polonia-dabrowa-gornicza-wsb-university",
+        name: "WSB University",
+        cityId: "polonia-dabrowa-gornicza",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Dąbrowa Górnicza (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-dabrowa-gornicza-the-college-of-strategic-planning-in-dabrowa-gornicza",
+        name: "The College of Strategic Planning in Dąbrowa Górnicza",
+        cityId: "polonia-dabrowa-gornicza",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dąbrowa Górnicza (Wikidata).
+      }),
+  ],
+  "polonia-bielsko-biala": [
+      defineUniversity({
+        id: "polonia-bielsko-biala-university-of-bielsko-bia-a",
+        name: "University of Bielsko-Biała",
+        cityId: "polonia-bielsko-biala",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.4 km del centro de Bielsko-Biala (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-bielsko-biala-bielsko-biala-uniersity-of-applied-sciences",
+        name: "Bielsko-Biala Uniersity of Applied Sciences",
+        cityId: "polonia-bielsko-biala",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Bielsko-Biala (Wikidata).
+      }),
+  ],
   "polonia-rejon-placu-swietego-macieja": [
       defineUniversity({
         id: "polonia-rejon-placu-swietego-macieja-papieski-fakultet-teologiczny-we-wroc-awiu",
@@ -920,24 +924,6 @@ export default {
         // Situada a 1.0 km del centro de Żoliborz (Wikidata).
       }),
   ],
-  "polonia-targowek": [
-      defineUniversity({
-        id: "polonia-targowek-vistula-university",
-        name: "Vistula University",
-        cityId: "polonia-targowek",
-        website: "https://www.vistula.edu.pl/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Targówek (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-targowek-uczelnia-warszawska-im-marii-sk-odowskiej-curie",
-        name: "Uczelnia Warszawska im. Marii Skłodowskiej-Curie",
-        cityId: "polonia-targowek",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Targówek (Wikidata).
-      }),
-  ],
   "polonia-rzeszow": [
       defineUniversity({
         id: "polonia-rzeszow-rzeszow-university-of-technology",
@@ -954,24 +940,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.7 km del centro de Rzeszów (Wikidata).
-      }),
-  ],
-  "polonia-rembertow": [
-      defineUniversity({
-        id: "polonia-rembertow-national-defence-university-of-warsaw",
-        name: "National Defence University of Warsaw",
-        cityId: "polonia-rembertow",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Rembertów (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-rembertow-national-defence-university-of-warsaw",
-        name: "National Defence University of Warsaw",
-        cityId: "polonia-rembertow",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Rembertów (Wikidata).
       }),
   ],
   "polonia-radom": [
@@ -1010,8 +978,23 @@ export default {
         // Situada a 2.0 km del centro de Mokotów (Wikidata).
       }),
   ],
-  "polonia-jaros-aw": [
-
+  "polonia-deblin": [
+      defineUniversity({
+        id: "polonia-deblin-polish-air-force-university",
+        name: "Polish Air Force University",
+        cityId: "polonia-deblin",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Dęblin (Wikidata).
+      }),
+      defineUniversity({
+        id: "polonia-deblin-aviation-cadet-school-in-deblin",
+        name: "Aviation Cadet School in Dęblin",
+        cityId: "polonia-deblin",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dęblin (Wikidata).
+      }),
   ],
   "polonia-wrzeszcz": [
       defineUniversity({
@@ -1105,22 +1088,14 @@ export default {
         // Situada a 1.5 km del centro de Grzegórzki (Wikidata).
       }),
   ],
-  "polonia-bielsko-biala": [
+  "polonia-grudziadz": [
       defineUniversity({
-        id: "polonia-bielsko-biala-university-of-bielsko-bia-a",
-        name: "University of Bielsko-Biała",
-        cityId: "polonia-bielsko-biala",
+        id: "polonia-grudziadz-wyzsza-szko-a-pilotow-w-grudziadzu",
+        name: "Wyższa Szkoła Pilotów w Grudziądzu",
+        cityId: "polonia-grudziadz",
         website: null,
         source: "open-dataset",
-        // Situada a 4.4 km del centro de Bielsko-Biala (Wikidata).
-      }),
-      defineUniversity({
-        id: "polonia-bielsko-biala-bielsko-biala-uniersity-of-applied-sciences",
-        name: "Bielsko-Biala Uniersity of Applied Sciences",
-        cityId: "polonia-bielsko-biala",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Bielsko-Biala (Wikidata).
+        // Situada a None km del centro de Grudziądz (Wikidata).
       }),
   ],
   "polonia-praga-po-noc": [

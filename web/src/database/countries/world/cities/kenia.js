@@ -78,14 +78,6 @@ export default {
         // Situada a 3.1 km del centro de Nairobi (Wikidata).
       }),
       defineUniversity({
-        id: "kenia-nairobi-strathmore-university",
-        name: "Strathmore University",
-        cityId: "kenia-nairobi",
-        website: "http://www.strathmore.edu/",
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Nairobi (Wikidata).
-      }),
-      defineUniversity({
         id: "kenia-nairobi-technical-university-of-kenya",
         name: "Technical University of Kenya",
         cityId: "kenia-nairobi",
@@ -93,73 +85,61 @@ export default {
         source: "open-dataset",
         // Situada a 1.3 km del centro de Nairobi (Wikidata).
       }),
-  ],
-  "kenia-machakos": [
       defineUniversity({
-        id: "kenia-machakos-scott-christian-university",
-        name: "Scott Christian University",
-        cityId: "kenia-machakos",
-        website: "http://www.scott.ac.ke/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Machakos (Wikidata).
-      }),
-      defineUniversity({
-        id: "kenia-machakos-scott-christian-university",
-        name: "Scott Christian University",
-        cityId: "kenia-machakos",
-        website: "http://www.scott.ac.ke/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Machakos (Wikidata).
-      }),
-      defineUniversity({
-        id: "kenia-machakos-machakos-university",
-        name: "Machakos University",
-        cityId: "kenia-machakos",
+        id: "kenia-nairobi-international-leadership-university",
+        name: "International Leadership University",
+        cityId: "kenia-nairobi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Machakos (Wikidata).
+        // Situada a None km del centro de Nairobi (Wikidata).
       }),
       defineUniversity({
-        id: "kenia-machakos-machakos-institute-of-technology",
-        name: "Machakos Institute of Technology",
-        cityId: "kenia-machakos",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Machakos (Wikidata).
-      }),
-  ],
-  "kenia-lang-ata": [
-      defineUniversity({
-        id: "kenia-lang-ata-tangaza-university",
+        id: "kenia-nairobi-tangaza-university",
         name: "Tangaza University",
-        cityId: "kenia-lang-ata",
+        cityId: "kenia-nairobi",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Lang'ata (Wikidata).
+        // Situada a None km del centro de Nairobi (Wikidata).
       }),
       defineUniversity({
-        id: "kenia-lang-ata-the-catholic-university-of-eastern-africa",
-        name: "The Catholic University of Eastern Africa",
-        cityId: "kenia-lang-ata",
-        website: "http://www.cuea.edu/",
+        id: "kenia-nairobi-amref-international-university",
+        name: "Amref International University",
+        cityId: "kenia-nairobi",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.2 km del centro de Lang'ata (Wikidata).
+        // Situada a None km del centro de Nairobi (Wikidata).
       }),
       defineUniversity({
-        id: "kenia-lang-ata-adventist-university-of-africa",
-        name: "Adventist University of Africa",
-        cityId: "kenia-lang-ata",
-        website: "http://www.aua.ac.ke/",
+        id: "kenia-nairobi-international-leadership-university",
+        name: "International Leadership University",
+        cityId: "kenia-nairobi",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Lang'ata (Wikidata).
+        // Situada a None km del centro de Nairobi (Wikidata).
       }),
       defineUniversity({
-        id: "kenia-lang-ata-adventist-university-of-africa",
-        name: "Adventist University of Africa",
-        cityId: "kenia-lang-ata",
-        website: "http://www.aua.ac.ke/",
+        id: "kenia-nairobi-kabete-national-polytechnic",
+        name: "Kabete National Polytechnic",
+        cityId: "kenia-nairobi",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Lang'ata (Wikidata).
+        // Situada a None km del centro de Nairobi (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-nairobi-compit-educational-centre",
+        name: "Compit Educational Centre",
+        cityId: "kenia-nairobi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nairobi (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-nairobi-compugoal-technical-college",
+        name: "Compugoal Technical College",
+        cityId: "kenia-nairobi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nairobi (Wikidata).
       }),
   ],
   "kenia-thika": [
@@ -214,6 +194,58 @@ export default {
         // Situada a 8.6 km del centro de Ruiru (Wikidata).
       }),
   ],
+  "kenia-meru": [
+      defineUniversity({
+        id: "kenia-meru-kenya-methodist-university",
+        name: "Kenya Methodist University",
+        cityId: "kenia-meru",
+        website: "http://www.kemu.ac.ke/",
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Meru (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-meru-meru-university-of-science-and-technology",
+        name: "Meru University of Science and Technology",
+        cityId: "kenia-meru",
+        website: "http://www.must.ac.ke/",
+        source: "open-dataset",
+        // Situada a 11.5 km del centro de Meru (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-meru-meru-national-polytechnic",
+        name: "Meru National Polytechnic",
+        cityId: "kenia-meru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Meru (Wikidata).
+      }),
+  ],
+  "kenia-machakos": [
+      defineUniversity({
+        id: "kenia-machakos-scott-christian-university",
+        name: "Scott Christian University",
+        cityId: "kenia-machakos",
+        website: "http://www.scott.ac.ke/",
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Machakos (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-machakos-machakos-university",
+        name: "Machakos University",
+        cityId: "kenia-machakos",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Machakos (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-machakos-machakos-institute-of-technology",
+        name: "Machakos Institute of Technology",
+        cityId: "kenia-machakos",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Machakos (Wikidata).
+      }),
+  ],
   "kenia-kiambu": [
       defineUniversity({
         id: "kenia-kiambu-united-states-international-university-africa",
@@ -232,38 +264,38 @@ export default {
         // Situada a 7.4 km del centro de Kiambu (Wikidata).
       }),
       defineUniversity({
-        id: "kenia-kiambu-pan-africa-christian-university",
-        name: "Pan Africa Christian University",
+        id: "kenia-kiambu-kiambu-national-polytechnic",
+        name: "Kiambu National Polytechnic",
         cityId: "kenia-kiambu",
-        website: "http://www.pacuniversity.ac.ke/",
+        website: null,
         source: "open-dataset",
-        // Situada a 7.4 km del centro de Kiambu (Wikidata).
+        // Situada a None km del centro de Kiambu (Wikidata).
       }),
   ],
-  "kenia-kapsabet": [
+  "kenia-kericho": [
       defineUniversity({
-        id: "kenia-kapsabet-moi-university",
-        name: "Moi University",
-        cityId: "kenia-kapsabet",
-        website: "http://www.mu.ac.ke/",
+        id: "kenia-kericho-university-of-kabianga",
+        name: "University of Kabianga",
+        cityId: "kenia-kericho",
+        website: "http://www.kabianga.ac.ke/",
         source: "open-dataset",
-        // Situada a 22.9 km del centro de Kapsabet (Wikidata).
+        // Situada a 18.3 km del centro de Kericho (Wikidata).
       }),
       defineUniversity({
-        id: "kenia-kapsabet-university-of-eastern-africa-baraton",
-        name: "University of Eastern Africa, Baraton",
-        cityId: "kenia-kapsabet",
-        website: "http://www.ueab.ac.ke/",
+        id: "kenia-kericho-kenya-highlands-university",
+        name: "Kenya Highlands University",
+        cityId: "kenia-kericho",
+        website: null,
         source: "open-dataset",
-        // Situada a 6.3 km del centro de Kapsabet (Wikidata).
+        // Situada a 1.8 km del centro de Kericho (Wikidata).
       }),
       defineUniversity({
-        id: "kenia-kapsabet-university-of-eastern-africa-baraton",
-        name: "University of Eastern Africa, Baraton",
-        cityId: "kenia-kapsabet",
-        website: "http://www.ueab.ac.ke/",
+        id: "kenia-kericho-kenya-highlands-evangelical-university",
+        name: "Kenya Highlands Evangelical University",
+        cityId: "kenia-kericho",
+        website: null,
         source: "open-dataset",
-        // Situada a 6.3 km del centro de Kapsabet (Wikidata).
+        // Situada a None km del centro de Kericho (Wikidata).
       }),
   ],
   "kenia-kitengela": [
@@ -292,6 +324,32 @@ export default {
         // Situada a 20.5 km del centro de Kitengela (Wikidata).
       }),
   ],
+  "kenia-lang-ata": [
+      defineUniversity({
+        id: "kenia-lang-ata-tangaza-university",
+        name: "Tangaza University",
+        cityId: "kenia-lang-ata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Lang'ata (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-lang-ata-the-catholic-university-of-eastern-africa",
+        name: "The Catholic University of Eastern Africa",
+        cityId: "kenia-lang-ata",
+        website: "http://www.cuea.edu/",
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Lang'ata (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-lang-ata-adventist-university-of-africa",
+        name: "Adventist University of Africa",
+        cityId: "kenia-lang-ata",
+        website: "http://www.aua.ac.ke/",
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de Lang'ata (Wikidata).
+      }),
+  ],
   "kenia-rongo": [
       defineUniversity({
         id: "kenia-rongo-kamagambo-adventist-college",
@@ -308,6 +366,42 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.4 km del centro de Rongo (Wikidata).
+      }),
+  ],
+  "kenia-nyeri": [
+      defineUniversity({
+        id: "kenia-nyeri-dedan-kimathi-university-of-technology",
+        name: "Dedan Kimathi University of Technology",
+        cityId: "kenia-nyeri",
+        website: "http://www.dkut.ac.ke/",
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Nyeri (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-nyeri-nyeri-national-polytechnic",
+        name: "Nyeri National Polytechnic",
+        cityId: "kenia-nyeri",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nyeri (Wikidata).
+      }),
+  ],
+  "kenia-njoro": [
+      defineUniversity({
+        id: "kenia-njoro-egerton-university",
+        name: "Egerton University",
+        cityId: "kenia-njoro",
+        website: "http://www.egerton.ac.ke/",
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Njoro (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-njoro-nakuru-national-polytechnic",
+        name: "Nakuru National Polytechnic",
+        cityId: "kenia-njoro",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Njoro (Wikidata).
       }),
   ],
   "kenia-ngong": [
@@ -328,24 +422,6 @@ export default {
         // Situada a 6.5 km del centro de Ngong (Wikidata).
       }),
   ],
-  "kenia-meru": [
-      defineUniversity({
-        id: "kenia-meru-kenya-methodist-university",
-        name: "Kenya Methodist University",
-        cityId: "kenia-meru",
-        website: "http://www.kemu.ac.ke/",
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Meru (Wikidata).
-      }),
-      defineUniversity({
-        id: "kenia-meru-meru-university-of-science-and-technology",
-        name: "Meru University of Science and Technology",
-        cityId: "kenia-meru",
-        website: "http://www.must.ac.ke/",
-        source: "open-dataset",
-        // Situada a 11.5 km del centro de Meru (Wikidata).
-      }),
-  ],
   "kenia-ongata-rongai": [
       defineUniversity({
         id: "kenia-ongata-rongai-multimedia-university-of-kenya",
@@ -364,22 +440,94 @@ export default {
         // Situada a 3.0 km del centro de Ongata Rongai (Wikidata).
       }),
   ],
-  "kenia-kericho": [
+  "kenia-kisumu": [
       defineUniversity({
-        id: "kenia-kericho-university-of-kabianga",
-        name: "University of Kabianga",
-        cityId: "kenia-kericho",
-        website: "http://www.kabianga.ac.ke/",
+        id: "kenia-kisumu-great-lakes-university-of-kisumu",
+        name: "Great Lakes University of Kisumu",
+        cityId: "kenia-kisumu",
+        website: "http://www.gluk.ac.ke/",
         source: "open-dataset",
-        // Situada a 18.3 km del centro de Kericho (Wikidata).
+        // Situada a 0.9 km del centro de Kisumu (Wikidata).
       }),
       defineUniversity({
-        id: "kenia-kericho-kenya-highlands-university",
-        name: "Kenya Highlands University",
-        cityId: "kenia-kericho",
+        id: "kenia-kisumu-kisumu-national-polytechnic",
+        name: "Kisumu National Polytechnic",
+        cityId: "kenia-kisumu",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Kericho (Wikidata).
+        // Situada a None km del centro de Kisumu (Wikidata).
+      }),
+  ],
+  "kenia-kilifi": [
+      defineUniversity({
+        id: "kenia-kilifi-pwani-university",
+        name: "Pwani University",
+        cityId: "kenia-kilifi",
+        website: "http://www.pu.ac.ke/",
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Kilifi (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-kilifi-rabai-university",
+        name: "Rabai University",
+        cityId: "kenia-kilifi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kilifi (Wikidata).
+      }),
+  ],
+  "kenia-kapsabet": [
+      defineUniversity({
+        id: "kenia-kapsabet-moi-university",
+        name: "Moi University",
+        cityId: "kenia-kapsabet",
+        website: "http://www.mu.ac.ke/",
+        source: "open-dataset",
+        // Situada a 22.9 km del centro de Kapsabet (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-kapsabet-university-of-eastern-africa-baraton",
+        name: "University of Eastern Africa, Baraton",
+        cityId: "kenia-kapsabet",
+        website: "http://www.ueab.ac.ke/",
+        source: "open-dataset",
+        // Situada a 6.3 km del centro de Kapsabet (Wikidata).
+      }),
+  ],
+  "kenia-eldoret": [
+      defineUniversity({
+        id: "kenia-eldoret-university-of-eldoret",
+        name: "University of Eldoret",
+        cityId: "kenia-eldoret",
+        website: "http://www.uoeld.ac.ke/",
+        source: "open-dataset",
+        // Situada a 7.7 km del centro de Eldoret (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-eldoret-eldoret-national-polytechnic",
+        name: "Eldoret National Polytechnic",
+        cityId: "kenia-eldoret",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Eldoret (Wikidata).
+      }),
+  ],
+  "kenia-bungoma": [
+      defineUniversity({
+        id: "kenia-bungoma-kibabii-university",
+        name: "Kibabii University",
+        cityId: "kenia-bungoma",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.3 km del centro de Bungoma (Wikidata).
+      }),
+      defineUniversity({
+        id: "kenia-bungoma-bungoma-national-polytechnic",
+        name: "Bungoma National Polytechnic",
+        cityId: "kenia-bungoma",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bungoma (Wikidata).
       }),
   ],
   "kenia-juja": [

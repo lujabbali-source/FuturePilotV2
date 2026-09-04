@@ -13,10 +13,10 @@ import { defineCountry } from "../schema.js";
 const countryId = "bermudas";
 const countryName = "Bermudas";
 
-// Sin ciudades: Hipolabs le ve 1 universidades, pero
-// Wikidata solo situa 0 ciudad(es) que llegue(n) al minimo
-// de 2. Es un hueco de la fuente, NO que el pais no tenga
-// universidades. Se cura a mano o con otra fuente.
+// Sin ciudades: Hipolabs le ve 1 universidad, pero
+// Wikidata no situa ninguna - ni por coordenadas ni por el
+// municipio que declara. Es un hueco de la fuente, NO que el
+// pais no tenga universidades. Se cura a mano o con otra fuente.
 const cities = [
 
 ];

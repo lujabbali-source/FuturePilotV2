@@ -54,32 +54,6 @@ export default {
         // Situada a 0.6 km del centro de Auckland (Wikidata).
       }),
   ],
-  "nueva-zelanda-palmerston-north": [
-      defineUniversity({
-        id: "nueva-zelanda-palmerston-north-massey-university",
-        name: "Massey University",
-        cityId: "nueva-zelanda-palmerston-north",
-        website: "http://www.massey.ac.nz/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Palmerston North (Wikidata).
-      }),
-      defineUniversity({
-        id: "nueva-zelanda-palmerston-north-massey-university",
-        name: "Massey University",
-        cityId: "nueva-zelanda-palmerston-north",
-        website: "http://www.massey.ac.nz/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Palmerston North (Wikidata).
-      }),
-      defineUniversity({
-        id: "nueva-zelanda-palmerston-north-universal-college-of-learning",
-        name: "Universal College of Learning",
-        cityId: "nueva-zelanda-palmerston-north",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Palmerston North (Wikidata).
-      }),
-  ],
   "nueva-zelanda-christchurch": [
       defineUniversity({
         id: "nueva-zelanda-christchurch-ara-institute-of-canterbury",
@@ -106,22 +80,22 @@ export default {
         // Situada a 1.0 km del centro de Christchurch (Wikidata).
       }),
   ],
-  "nueva-zelanda-rolleston": [
+  "nueva-zelanda-palmerston-north": [
       defineUniversity({
-        id: "nueva-zelanda-rolleston-lincoln-university",
-        name: "Lincoln University",
-        cityId: "nueva-zelanda-rolleston",
-        website: "http://www.lincoln.ac.nz/",
+        id: "nueva-zelanda-palmerston-north-massey-university",
+        name: "Massey University",
+        cityId: "nueva-zelanda-palmerston-north",
+        website: "http://www.massey.ac.nz/",
         source: "open-dataset",
-        // Situada a 9.7 km del centro de Rolleston (Wikidata).
+        // Situada a 3.2 km del centro de Palmerston North (Wikidata).
       }),
       defineUniversity({
-        id: "nueva-zelanda-rolleston-lincoln-university",
-        name: "Lincoln University",
-        cityId: "nueva-zelanda-rolleston",
-        website: "http://www.lincoln.ac.nz/",
+        id: "nueva-zelanda-palmerston-north-universal-college-of-learning",
+        name: "Universal College of Learning",
+        cityId: "nueva-zelanda-palmerston-north",
+        website: null,
         source: "open-dataset",
-        // Situada a 9.7 km del centro de Rolleston (Wikidata).
+        // Situada a 0.5 km del centro de Palmerston North (Wikidata).
       }),
   ],
   "nueva-zelanda-lower-hutt": [

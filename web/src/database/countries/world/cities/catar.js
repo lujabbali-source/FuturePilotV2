@@ -37,6 +37,32 @@ export default {
         source: "open-dataset",
         // Situada a 3.1 km del centro de Ar Rayyān (Wikidata).
       }),
+      defineUniversity({
+        id: "catar-ar-rayyan-texas-a-m-university-at-qatar",
+        name: "Texas A&M University at Qatar",
+        cityId: "catar-ar-rayyan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ar Rayyān (Wikidata).
+      }),
+  ],
+  "catar-doha": [
+      defineUniversity({
+        id: "catar-doha-al-azhar-university-doha",
+        name: "Al-Azhar University – Doha",
+        cityId: "catar-doha",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Doha (Wikidata).
+      }),
+      defineUniversity({
+        id: "catar-doha-qatar-finance-and-business-academy",
+        name: "Qatar Finance and Business Academy",
+        cityId: "catar-doha",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Doha (Wikidata).
+      }),
   ],
   "catar-umm-lakhba": [
       defineUniversity({

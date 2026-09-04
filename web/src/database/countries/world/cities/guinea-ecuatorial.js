@@ -14,22 +14,6 @@ import { defineUniversity } from "../../schema.js";
 export default {
   "guinea-ecuatorial-malabo": [
       defineUniversity({
-        id: "guinea-ecuatorial-malabo-campus-uned-guinea-ecuatorial",
-        name: "Campus UNED Guinea Ecuatorial",
-        cityId: "guinea-ecuatorial-malabo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Malabo (Wikidata).
-      }),
-      defineUniversity({
-        id: "guinea-ecuatorial-malabo-campus-uned-guinea-ecuatorial",
-        name: "Campus UNED Guinea Ecuatorial",
-        cityId: "guinea-ecuatorial-malabo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Malabo (Wikidata).
-      }),
-      defineUniversity({
         id: "guinea-ecuatorial-malabo-national-university-of-equatorial-guinea",
         name: "National University of Equatorial Guinea",
         cityId: "guinea-ecuatorial-malabo",
@@ -47,13 +31,15 @@ export default {
         source: "open-dataset",
         // Situada a 0.5 km del centro de Bata (Wikidata).
       }),
+  ],
+  "guinea-ecuatorial-ciudad-de-la-paz": [
       defineUniversity({
-        id: "guinea-ecuatorial-bata-campus-uned-guinea-ecuatorial",
-        name: "Campus UNED Guinea Ecuatorial",
-        cityId: "guinea-ecuatorial-bata",
+        id: "guinea-ecuatorial-ciudad-de-la-paz-afro-american-university-of-central-africa",
+        name: "Afro-American University of Central Africa",
+        cityId: "guinea-ecuatorial-ciudad-de-la-paz",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Bata (Wikidata).
+        // Situada a 4.3 km del centro de Ciudad de la Paz (Wikidata).
       }),
   ],
 };

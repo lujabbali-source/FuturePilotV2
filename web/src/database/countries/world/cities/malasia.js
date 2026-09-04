@@ -12,6 +12,138 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
+  "malasia-kuala-lumpur": [
+      defineUniversity({
+        id: "malasia-kuala-lumpur-national-defence-university-of-malaysia",
+        name: "National Defence University of Malaysia",
+        cityId: "malasia-kuala-lumpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Kuala Lumpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-kuala-lumpur-open-university-malaysia",
+        name: "Open University Malaysia",
+        cityId: "malasia-kuala-lumpur",
+        website: "http://www.oum.edu.my/",
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Kuala Lumpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-kuala-lumpur-universiti-malaya-wales",
+        name: "Universiti Malaya-Wales",
+        cityId: "malasia-kuala-lumpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Kuala Lumpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-kuala-lumpur-asia-school-of-business",
+        name: "Asia School of Business",
+        cityId: "malasia-kuala-lumpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Kuala Lumpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-kuala-lumpur-international-centre-for-education-in-islamic-finance",
+        name: "International Centre for Education in Islamic Finance",
+        cityId: "malasia-kuala-lumpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Kuala Lumpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-kuala-lumpur-universiti-geomatika-malaysia",
+        name: "Universiti Geomatika Malaysia",
+        cityId: "malasia-kuala-lumpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kuala Lumpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-kuala-lumpur-asian-women-s-leadership-university-college",
+        name: "Asian Women’s Leadership University College",
+        cityId: "malasia-kuala-lumpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kuala Lumpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-kuala-lumpur-help-university",
+        name: "HELP University",
+        cityId: "malasia-kuala-lumpur",
+        website: "https://www.help.edu.my/",
+        source: "open-dataset",
+        // Situada a None km del centro de Kuala Lumpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-kuala-lumpur-kuala-lumpur-metropolitan-university-college",
+        name: "Kuala Lumpur Metropolitan University College",
+        cityId: "malasia-kuala-lumpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kuala Lumpur (Wikidata).
+      }),
+  ],
+  "malasia-shah-alam": [
+      defineUniversity({
+        id: "malasia-shah-alam-management-and-science-university",
+        name: "Management and Science University",
+        cityId: "malasia-shah-alam",
+        website: "http://www.msu.edu.my/",
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Shah Alam (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-shah-alam-universiti-teknologi-mara",
+        name: "Universiti Teknologi MARA",
+        cityId: "malasia-shah-alam",
+        website: "http://www.uitm.edu.my/",
+        source: "open-dataset",
+        // Situada a 3.7 km del centro de Shah Alam (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-shah-alam-uitm-faculty-of-civil-engineering",
+        name: "UiTM Faculty of Civil Engineering",
+        cityId: "malasia-shah-alam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.3 km del centro de Shah Alam (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-shah-alam-ptpl-college",
+        name: "PTPL College",
+        cityId: "malasia-shah-alam",
+        website: "http://www.ptpl.edu.my/",
+        source: "open-dataset",
+        // Situada a None km del centro de Shah Alam (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-shah-alam-uitm-faculty-of-law",
+        name: "UiTM Faculty of Law",
+        cityId: "malasia-shah-alam",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shah Alam (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-shah-alam-universiti-teknologi-mara-system",
+        name: "Universiti Teknologi MARA System",
+        cityId: "malasia-shah-alam",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shah Alam (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-shah-alam-university-of-selangor",
+        name: "University of Selangor",
+        cityId: "malasia-shah-alam",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shah Alam (Wikidata).
+      }),
+  ],
   "malasia-bandar-sunway": [
       defineUniversity({
         id: "malasia-bandar-sunway-asia-e-university",
@@ -70,72 +202,38 @@ export default {
         // Situada a 1.9 km del centro de Bandar Sunway (Wikidata).
       }),
   ],
-  "malasia-kuala-lumpur": [
+  "malasia-george-town": [
       defineUniversity({
-        id: "malasia-kuala-lumpur-national-defence-university-of-malaysia",
-        name: "National Defence University of Malaysia",
-        cityId: "malasia-kuala-lumpur",
+        id: "malasia-george-town-adventist-college-of-nursing-and-health-sciences",
+        name: "Adventist College of Nursing and Health Sciences",
+        cityId: "malasia-george-town",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Kuala Lumpur (Wikidata).
+        // Situada a 4.1 km del centro de George Town (Wikidata).
       }),
       defineUniversity({
-        id: "malasia-kuala-lumpur-open-university-malaysia",
-        name: "Open University Malaysia",
-        cityId: "malasia-kuala-lumpur",
-        website: "http://www.oum.edu.my/",
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Kuala Lumpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "malasia-kuala-lumpur-universiti-malaya-wales",
-        name: "Universiti Malaya-Wales",
-        cityId: "malasia-kuala-lumpur",
+        id: "malasia-george-town-disted-college",
+        name: "DISTED College",
+        cityId: "malasia-george-town",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Kuala Lumpur (Wikidata).
+        // Situada a 3.4 km del centro de George Town (Wikidata).
       }),
       defineUniversity({
-        id: "malasia-kuala-lumpur-asia-school-of-business",
-        name: "Asia School of Business",
-        cityId: "malasia-kuala-lumpur",
+        id: "malasia-george-town-st-george-s-girls-school",
+        name: "St. George's Girls' School",
+        cityId: "malasia-george-town",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Kuala Lumpur (Wikidata).
+        // Situada a 3.3 km del centro de George Town (Wikidata).
       }),
       defineUniversity({
-        id: "malasia-kuala-lumpur-international-centre-for-education-in-islamic-finance",
-        name: "International Centre for Education in Islamic Finance",
-        cityId: "malasia-kuala-lumpur",
-        website: null,
+        id: "malasia-george-town-wawasan-open-university",
+        name: "Wawasan Open University",
+        cityId: "malasia-george-town",
+        website: "http://www.wou.edu.my/",
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Kuala Lumpur (Wikidata).
-      }),
-  ],
-  "malasia-tanjong-malim": [
-      defineUniversity({
-        id: "malasia-tanjong-malim-sultan-idris-education-university",
-        name: "Sultan Idris Education University",
-        cityId: "malasia-tanjong-malim",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Tanjong Malim (Wikidata).
-      }),
-      defineUniversity({
-        id: "malasia-tanjong-malim-sultan-azlan-shah-polytechnic",
-        name: "Sultan Azlan Shah Polytechnic",
-        cityId: "malasia-tanjong-malim",
-        website: "http://www.psas.edu.my/",
-        source: "open-dataset",
-        // Situada a 12.6 km del centro de Tanjong Malim (Wikidata).
-      }),
-      defineUniversity({
-        id: "malasia-tanjong-malim-sultan-azlan-shah-polytechnic",
-        name: "Sultan Azlan Shah Polytechnic",
-        cityId: "malasia-tanjong-malim",
-        website: "http://www.psas.edu.my/",
-        source: "open-dataset",
-        // Situada a 12.6 km del centro de Tanjong Malim (Wikidata).
+        // Situada a None km del centro de George Town (Wikidata).
       }),
   ],
   "malasia-gelang-patah": [
@@ -164,32 +262,6 @@ export default {
         // Situada a 3.3 km del centro de Gelang Patah (Wikidata).
       }),
   ],
-  "malasia-shah-alam": [
-      defineUniversity({
-        id: "malasia-shah-alam-management-and-science-university",
-        name: "Management and Science University",
-        cityId: "malasia-shah-alam",
-        website: "http://www.msu.edu.my/",
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Shah Alam (Wikidata).
-      }),
-      defineUniversity({
-        id: "malasia-shah-alam-universiti-teknologi-mara",
-        name: "Universiti Teknologi MARA",
-        cityId: "malasia-shah-alam",
-        website: "http://www.uitm.edu.my/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Shah Alam (Wikidata).
-      }),
-      defineUniversity({
-        id: "malasia-shah-alam-uitm-faculty-of-civil-engineering",
-        name: "UiTM Faculty of Civil Engineering",
-        cityId: "malasia-shah-alam",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Shah Alam (Wikidata).
-      }),
-  ],
   "malasia-kota-kinabalu": [
       defineUniversity({
         id: "malasia-kota-kinabalu-universiti-malaysia-sabah",
@@ -214,58 +286,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 10.7 km del centro de Kota Kinabalu (Wikidata).
-      }),
-  ],
-  "malasia-george-town": [
-      defineUniversity({
-        id: "malasia-george-town-adventist-college-of-nursing-and-health-sciences",
-        name: "Adventist College of Nursing and Health Sciences",
-        cityId: "malasia-george-town",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de George Town (Wikidata).
-      }),
-      defineUniversity({
-        id: "malasia-george-town-disted-college",
-        name: "DISTED College",
-        cityId: "malasia-george-town",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.4 km del centro de George Town (Wikidata).
-      }),
-      defineUniversity({
-        id: "malasia-george-town-st-george-s-girls-school",
-        name: "St. George's Girls' School",
-        cityId: "malasia-george-town",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de George Town (Wikidata).
-      }),
-  ],
-  "malasia-taman-melati": [
-      defineUniversity({
-        id: "malasia-taman-melati-international-islamic-university-malaysia",
-        name: "International Islamic University Malaysia",
-        cityId: "malasia-taman-melati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de Taman Melati (Wikidata).
-      }),
-      defineUniversity({
-        id: "malasia-taman-melati-international-islamic-university-malaysia",
-        name: "International Islamic University Malaysia",
-        cityId: "malasia-taman-melati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de Taman Melati (Wikidata).
-      }),
-      defineUniversity({
-        id: "malasia-taman-melati-tunku-abdul-rahman-university-of-management-and-technology",
-        name: "Tunku Abdul Rahman University of Management and Technology",
-        cityId: "malasia-taman-melati",
-        website: "https://www.tarc.edu.my/",
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Taman Melati (Wikidata).
       }),
   ],
   "malasia-bandar-baru-salak-tinggi": [
@@ -320,22 +340,22 @@ export default {
         // Situada a 1.4 km del centro de Bukit Jalil (Wikidata).
       }),
   ],
-  "malasia-durian-tunggal": [
+  "malasia-tanjong-malim": [
       defineUniversity({
-        id: "malasia-durian-tunggal-universiti-teknikal-malaysia-melaka",
-        name: "Universiti Teknikal Malaysia Melaka",
-        cityId: "malasia-durian-tunggal",
-        website: "http://www.utem.edu.my/",
+        id: "malasia-tanjong-malim-sultan-idris-education-university",
+        name: "Sultan Idris Education University",
+        cityId: "malasia-tanjong-malim",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.5 km del centro de Durian Tunggal (Wikidata).
+        // Situada a 0.7 km del centro de Tanjong Malim (Wikidata).
       }),
       defineUniversity({
-        id: "malasia-durian-tunggal-universiti-teknikal-malaysia-melaka",
-        name: "Universiti Teknikal Malaysia Melaka",
-        cityId: "malasia-durian-tunggal",
-        website: "http://www.utem.edu.my/",
+        id: "malasia-tanjong-malim-sultan-azlan-shah-polytechnic",
+        name: "Sultan Azlan Shah Polytechnic",
+        cityId: "malasia-tanjong-malim",
+        website: "http://www.psas.edu.my/",
         source: "open-dataset",
-        // Situada a 4.2 km del centro de Durian Tunggal (Wikidata).
+        // Situada a 12.6 km del centro de Tanjong Malim (Wikidata).
       }),
   ],
   "malasia-bangi": [
@@ -354,6 +374,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.4 km del centro de Bangi (Wikidata).
+      }),
+  ],
+  "malasia-petaling-jaya": [
+      defineUniversity({
+        id: "malasia-petaling-jaya-vision-college",
+        name: "Vision College",
+        cityId: "malasia-petaling-jaya",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Petaling Jaya (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-petaling-jaya-segi-university-and-colleges",
+        name: "SEGi University and Colleges",
+        cityId: "malasia-petaling-jaya",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Petaling Jaya (Wikidata).
       }),
   ],
   "malasia-kota-bharu": [
@@ -392,6 +430,24 @@ export default {
         // Situada a 5.0 km del centro de Kampung Baharu Nilai (Wikidata).
       }),
   ],
+  "malasia-putrajaya": [
+      defineUniversity({
+        id: "malasia-putrajaya-perdana-university-and-royal-college-of-surgeons-in-ireland-school-of-medicine",
+        name: "Perdana University and Royal College of Surgeons in Ireland School of Medicine",
+        cityId: "malasia-putrajaya",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.1 km del centro de Putrajaya (Wikidata).
+      }),
+      defineUniversity({
+        id: "malasia-putrajaya-heriot-watt-university-malaysia",
+        name: "Heriot-Watt University Malaysia",
+        cityId: "malasia-putrajaya",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Putrajaya (Wikidata).
+      }),
+  ],
   "malasia-cyberjaya": [
       defineUniversity({
         id: "malasia-cyberjaya-university-of-cyberjaya",
@@ -410,22 +466,22 @@ export default {
         // Situada a 2.0 km del centro de Cyberjaya (Wikidata).
       }),
   ],
-  "malasia-bukit-bintang": [
+  "malasia-taman-melati": [
       defineUniversity({
-        id: "malasia-bukit-bintang-university-of-kuala-lumpur",
-        name: "University of Kuala Lumpur",
-        cityId: "malasia-bukit-bintang",
+        id: "malasia-taman-melati-international-islamic-university-malaysia",
+        name: "International Islamic University Malaysia",
+        cityId: "malasia-taman-melati",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Bukit Bintang (Wikidata).
+        // Situada a 3.8 km del centro de Taman Melati (Wikidata).
       }),
       defineUniversity({
-        id: "malasia-bukit-bintang-university-of-kuala-lumpur",
-        name: "University of Kuala Lumpur",
-        cityId: "malasia-bukit-bintang",
-        website: null,
+        id: "malasia-taman-melati-tunku-abdul-rahman-university-of-management-and-technology",
+        name: "Tunku Abdul Rahman University of Management and Technology",
+        cityId: "malasia-taman-melati",
+        website: "https://www.tarc.edu.my/",
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Bukit Bintang (Wikidata).
+        // Situada a 0.8 km del centro de Taman Melati (Wikidata).
       }),
   ],
   "malasia-bangsar": [

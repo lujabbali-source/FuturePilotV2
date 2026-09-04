@@ -23,7 +23,7 @@ const cities = [
       name: "Pyongyang",
       coordinates: {"lat": 39.03385, "lng": 125.75432},
       isCapital: true,
-      universityCount: 15,
+      universityCount: 19,
       statistics: { population: 3222000 },
       countryId,
       countryName,

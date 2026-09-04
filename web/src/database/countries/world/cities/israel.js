@@ -38,20 +38,38 @@ export default {
         // Situada a 2.1 km del centro de Nesher (Wikidata).
       }),
       defineUniversity({
-        id: "israel-nesher-the-william-davidson-faculty-of-industrial-engineering-management",
-        name: "The William Davidson Faculty of Industrial Engineering & Management",
-        cityId: "israel-nesher",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Nesher (Wikidata).
-      }),
-      defineUniversity({
         id: "israel-nesher-russell-berrie-nanotechnology-institute",
         name: "Russell Berrie Nanotechnology Institute",
         cityId: "israel-nesher",
         website: "http://rbni.technion.ac.il/",
         source: "open-dataset",
         // Situada a 2.5 km del centro de Nesher (Wikidata).
+      }),
+  ],
+  "israel-ariel": [
+      defineUniversity({
+        id: "israel-ariel-ariel-university",
+        name: "Ariel University",
+        cityId: "israel-ariel",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Ariel (Wikidata).
+      }),
+      defineUniversity({
+        id: "israel-ariel-al-quds-open-university-salfit",
+        name: "Al-Quds Open University, Salfit",
+        cityId: "israel-ariel",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Ariel (Wikidata).
+      }),
+      defineUniversity({
+        id: "israel-ariel-al-zaytona-university-of-science-and-technology",
+        name: "Al Zaytona University of Science and Technology",
+        cityId: "israel-ariel",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.3 km del centro de Ariel (Wikidata).
       }),
   ],
   "israel-jerusalem": [
@@ -70,24 +88,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.1 km del centro de Jerusalem (Wikidata).
-      }),
-  ],
-  "israel-ra-anana": [
-      defineUniversity({
-        id: "israel-ra-anana-open-university-of-israel",
-        name: "Open University of Israel",
-        cityId: "israel-ra-anana",
-        website: "http://www.openu.ac.il/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Ra'anana (Wikidata).
-      }),
-      defineUniversity({
-        id: "israel-ra-anana-open-university-of-israel",
-        name: "Open University of Israel",
-        cityId: "israel-ra-anana",
-        website: "http://www.openu.ac.il/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Ra'anana (Wikidata).
       }),
   ],
 };

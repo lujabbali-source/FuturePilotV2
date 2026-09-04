@@ -12,72 +12,6 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
-  "sudafrica-pretoria": [
-      defineUniversity({
-        id: "sudafrica-pretoria-tshwane-university-of-technology",
-        name: "Tshwane University of Technology",
-        cityId: "sudafrica-pretoria",
-        website: "http://www.tut.ac.za/",
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Pretoria (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-pretoria-tshwane-university-of-technology",
-        name: "Tshwane University of Technology",
-        cityId: "sudafrica-pretoria",
-        website: "http://www.tut.ac.za/",
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Pretoria (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-pretoria-st-john-vianney-seminary-pretoria",
-        name: "St John Vianney Seminary, Pretoria",
-        cityId: "sudafrica-pretoria",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.3 km del centro de Pretoria (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-pretoria-university-of-pretoria",
-        name: "University of Pretoria",
-        cityId: "sudafrica-pretoria",
-        website: "http://www.up.ac.za/",
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Pretoria (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-pretoria-university-of-pretoria",
-        name: "University of Pretoria",
-        cityId: "sudafrica-pretoria",
-        website: "http://www.up.ac.za/",
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Pretoria (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-pretoria-university-of-south-africa",
-        name: "University of South Africa",
-        cityId: "sudafrica-pretoria",
-        website: "http://www.unisa.ac.za/",
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Pretoria (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-pretoria-university-of-south-africa",
-        name: "University of South Africa",
-        cityId: "sudafrica-pretoria",
-        website: "http://www.unisa.ac.za/",
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Pretoria (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-pretoria-university-of-pretoria-faculty-of-veterinary-science",
-        name: "University of Pretoria Faculty of Veterinary Science",
-        cityId: "sudafrica-pretoria",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.5 km del centro de Pretoria (Wikidata).
-      }),
-  ],
   "sudafrica-johannesburg": [
       defineUniversity({
         id: "sudafrica-johannesburg-school-of-chemical-and-metallurgical-engineering",
@@ -120,14 +54,6 @@ export default {
         // Situada a 1.8 km del centro de Johannesburg (Wikidata).
       }),
       defineUniversity({
-        id: "sudafrica-johannesburg-university-of-the-witwatersrand",
-        name: "University of the Witwatersrand",
-        cityId: "sudafrica-johannesburg",
-        website: "http://www.wits.ac.za/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Johannesburg (Wikidata).
-      }),
-      defineUniversity({
         id: "sudafrica-johannesburg-faculty-of-engineering-and-the-built-environment",
         name: "Faculty of Engineering and the Built Environment",
         cityId: "sudafrica-johannesburg",
@@ -143,50 +69,124 @@ export default {
         source: "open-dataset",
         // Situada a 1.8 km del centro de Johannesburg (Wikidata).
       }),
+      defineUniversity({
+        id: "sudafrica-johannesburg-bunting-road-campus-auckland-park",
+        name: "Bunting Road Campus Auckland Park",
+        cityId: "sudafrica-johannesburg",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Johannesburg (Wikidata).
+      }),
+      defineUniversity({
+        id: "sudafrica-johannesburg-transvaal-university-college",
+        name: "Transvaal University College",
+        cityId: "sudafrica-johannesburg",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Johannesburg (Wikidata).
+      }),
   ],
-  "sudafrica-kuils-river": [
+  "sudafrica-pretoria": [
       defineUniversity({
-        id: "sudafrica-kuils-river-cape-peninsula-university-of-technology",
-        name: "Cape Peninsula University of Technology",
-        cityId: "sudafrica-kuils-river",
-        website: "http://www.cput.ac.za/",
+        id: "sudafrica-pretoria-tshwane-university-of-technology",
+        name: "Tshwane University of Technology",
+        cityId: "sudafrica-pretoria",
+        website: "http://www.tut.ac.za/",
         source: "open-dataset",
-        // Situada a 6.2 km del centro de Kuils River (Wikidata).
+        // Situada a 3.0 km del centro de Pretoria (Wikidata).
       }),
       defineUniversity({
-        id: "sudafrica-kuils-river-cape-peninsula-university-of-technology",
-        name: "Cape Peninsula University of Technology",
-        cityId: "sudafrica-kuils-river",
-        website: "http://www.cput.ac.za/",
+        id: "sudafrica-pretoria-st-john-vianney-seminary-pretoria",
+        name: "St John Vianney Seminary, Pretoria",
+        cityId: "sudafrica-pretoria",
+        website: null,
         source: "open-dataset",
-        // Situada a 6.2 km del centro de Kuils River (Wikidata).
+        // Situada a 5.3 km del centro de Pretoria (Wikidata).
       }),
       defineUniversity({
-        id: "sudafrica-kuils-river-university-of-the-western-cape",
-        name: "University of the Western Cape",
-        cityId: "sudafrica-kuils-river",
-        website: "http://www.uwc.ac.za/",
+        id: "sudafrica-pretoria-university-of-pretoria",
+        name: "University of Pretoria",
+        cityId: "sudafrica-pretoria",
+        website: "http://www.up.ac.za/",
         source: "open-dataset",
-        // Situada a 6.8 km del centro de Kuils River (Wikidata).
+        // Situada a 4.3 km del centro de Pretoria (Wikidata).
       }),
       defineUniversity({
-        id: "sudafrica-kuils-river-university-of-the-western-cape",
-        name: "University of the Western Cape",
-        cityId: "sudafrica-kuils-river",
-        website: "http://www.uwc.ac.za/",
+        id: "sudafrica-pretoria-university-of-south-africa",
+        name: "University of South Africa",
+        cityId: "sudafrica-pretoria",
+        website: "http://www.unisa.ac.za/",
         source: "open-dataset",
-        // Situada a 6.8 km del centro de Kuils River (Wikidata).
+        // Situada a 2.7 km del centro de Pretoria (Wikidata).
+      }),
+      defineUniversity({
+        id: "sudafrica-pretoria-university-of-pretoria-faculty-of-veterinary-science",
+        name: "University of Pretoria Faculty of Veterinary Science",
+        cityId: "sudafrica-pretoria",
+        website: null,
+        source: "open-dataset",
+        // Situada a 10.5 km del centro de Pretoria (Wikidata).
+      }),
+      defineUniversity({
+        id: "sudafrica-pretoria-the-open-window-school-of-visual-communication",
+        name: "The Open Window School Of Visual Communication",
+        cityId: "sudafrica-pretoria",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pretoria (Wikidata).
+      }),
+      defineUniversity({
+        id: "sudafrica-pretoria-vista-university",
+        name: "Vista University",
+        cityId: "sudafrica-pretoria",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pretoria (Wikidata).
+      }),
+  ],
+  "sudafrica-durban": [
+      defineUniversity({
+        id: "sudafrica-durban-university-of-kwazulu-natal",
+        name: "University of KwaZulu-Natal",
+        cityId: "sudafrica-durban",
+        website: "http://www.ukzn.ac.za/",
+        source: "open-dataset",
+        // Situada a 4.8 km del centro de Durban (Wikidata).
+      }),
+      defineUniversity({
+        id: "sudafrica-durban-durban-university-of-technology",
+        name: "Durban University of Technology",
+        cityId: "sudafrica-durban",
+        website: "http://www.dut.ac.za/",
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Durban (Wikidata).
+      }),
+      defineUniversity({
+        id: "sudafrica-durban-university-of-natal",
+        name: "University of Natal",
+        cityId: "sudafrica-durban",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Durban (Wikidata).
+      }),
+      defineUniversity({
+        id: "sudafrica-durban-ml-sultan-technikon",
+        name: "ML Sultan Technikon",
+        cityId: "sudafrica-durban",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Durban (Wikidata).
+      }),
+      defineUniversity({
+        id: "sudafrica-durban-technikon-natal",
+        name: "Technikon Natal",
+        cityId: "sudafrica-durban",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Durban (Wikidata).
       }),
   ],
   "sudafrica-gqeberha": [
-      defineUniversity({
-        id: "sudafrica-gqeberha-nelson-mandela-university",
-        name: "Nelson Mandela University",
-        cityId: "sudafrica-gqeberha",
-        website: "http://www.mandela.ac.za/",
-        source: "open-dataset",
-        // Situada a 7.8 km del centro de Gqeberha (Wikidata).
-      }),
       defineUniversity({
         id: "sudafrica-gqeberha-nelson-mandela-university",
         name: "Nelson Mandela University",
@@ -203,31 +203,13 @@ export default {
         source: "open-dataset",
         // Situada a 7.3 km del centro de Gqeberha (Wikidata).
       }),
-  ],
-  "sudafrica-butterworth": [
       defineUniversity({
-        id: "sudafrica-butterworth-walter-sisulu-university",
-        name: "Walter Sisulu University",
-        cityId: "sudafrica-butterworth",
+        id: "sudafrica-gqeberha-port-elizabeth-technikon",
+        name: "Port Elizabeth Technikon",
+        cityId: "sudafrica-gqeberha",
         website: null,
         source: "open-dataset",
-        // Situada a 6.2 km del centro de Butterworth (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-butterworth-walter-sisulu-university",
-        name: "Walter Sisulu University",
-        cityId: "sudafrica-butterworth",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Butterworth (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-butterworth-walter-sisulu-university",
-        name: "Walter Sisulu University",
-        cityId: "sudafrica-butterworth",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Butterworth (Wikidata).
+        // Situada a None km del centro de Gqeberha (Wikidata).
       }),
   ],
   "sudafrica-bloemfontein": [
@@ -248,12 +230,30 @@ export default {
         // Situada a 4.2 km del centro de Bloemfontein (Wikidata).
       }),
       defineUniversity({
-        id: "sudafrica-bloemfontein-university-of-the-free-state",
-        name: "University of the Free State",
+        id: "sudafrica-bloemfontein-qualitas-career-academy",
+        name: "Qualitas Career Academy",
         cityId: "sudafrica-bloemfontein",
-        website: "http://www.uovs.ac.za/",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.2 km del centro de Bloemfontein (Wikidata).
+        // Situada a None km del centro de Bloemfontein (Wikidata).
+      }),
+  ],
+  "sudafrica-kimberley": [
+      defineUniversity({
+        id: "sudafrica-kimberley-sol-plaatje-university",
+        name: "Sol Plaatje University",
+        cityId: "sudafrica-kimberley",
+        website: "http://www.spu.ac.za/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Kimberley (Wikidata).
+      }),
+      defineUniversity({
+        id: "sudafrica-kimberley-air-defence-artillery-school",
+        name: "Air Defence Artillery School",
+        cityId: "sudafrica-kimberley",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kimberley (Wikidata).
       }),
   ],
   "sudafrica-alice": [
@@ -272,86 +272,6 @@ export default {
         website: "http://www.ufh.ac.za/",
         source: "open-dataset",
         // Situada a 1.2 km del centro de Alice (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-alice-university-of-fort-hare",
-        name: "University of Fort Hare",
-        cityId: "sudafrica-alice",
-        website: "http://www.ufh.ac.za/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Alice (Wikidata).
-      }),
-  ],
-  "sudafrica-vanderbijlpark": [
-      defineUniversity({
-        id: "sudafrica-vanderbijlpark-vaal-university-of-technology",
-        name: "Vaal University of Technology",
-        cityId: "sudafrica-vanderbijlpark",
-        website: "http://www.vut.ac.za/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Vanderbijlpark (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-vanderbijlpark-vaal-university-of-technology",
-        name: "Vaal University of Technology",
-        cityId: "sudafrica-vanderbijlpark",
-        website: "http://www.vut.ac.za/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Vanderbijlpark (Wikidata).
-      }),
-  ],
-  "sudafrica-potchefstroom": [
-      defineUniversity({
-        id: "sudafrica-potchefstroom-north-west-university",
-        name: "North-West University",
-        cityId: "sudafrica-potchefstroom",
-        website: "http://www.nwu.ac.za/",
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Potchefstroom (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-potchefstroom-north-west-university",
-        name: "North-West University",
-        cityId: "sudafrica-potchefstroom",
-        website: "http://www.nwu.ac.za/",
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Potchefstroom (Wikidata).
-      }),
-  ],
-  "sudafrica-grahamstown": [
-      defineUniversity({
-        id: "sudafrica-grahamstown-rhodes-university",
-        name: "Rhodes University",
-        cityId: "sudafrica-grahamstown",
-        website: "http://www.ru.ac.za/",
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Grahamstown (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-grahamstown-rhodes-university",
-        name: "Rhodes University",
-        cityId: "sudafrica-grahamstown",
-        website: "http://www.ru.ac.za/",
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Grahamstown (Wikidata).
-      }),
-  ],
-  "sudafrica-durban": [
-      defineUniversity({
-        id: "sudafrica-durban-university-of-kwazulu-natal",
-        name: "University of KwaZulu-Natal",
-        cityId: "sudafrica-durban",
-        website: "http://www.ukzn.ac.za/",
-        source: "open-dataset",
-        // Situada a 4.8 km del centro de Durban (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-durban-durban-university-of-technology",
-        name: "Durban University of Technology",
-        cityId: "sudafrica-durban",
-        website: "http://www.dut.ac.za/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Durban (Wikidata).
       }),
   ],
   "sudafrica-centurion": [
@@ -390,6 +310,24 @@ export default {
         // Situada a 0.1 km del centro de Stellenbosch (Wikidata).
       }),
   ],
+  "sudafrica-kuils-river": [
+      defineUniversity({
+        id: "sudafrica-kuils-river-cape-peninsula-university-of-technology",
+        name: "Cape Peninsula University of Technology",
+        cityId: "sudafrica-kuils-river",
+        website: "http://www.cput.ac.za/",
+        source: "open-dataset",
+        // Situada a 6.2 km del centro de Kuils River (Wikidata).
+      }),
+      defineUniversity({
+        id: "sudafrica-kuils-river-university-of-the-western-cape",
+        name: "University of the Western Cape",
+        cityId: "sudafrica-kuils-river",
+        website: "http://www.uwc.ac.za/",
+        source: "open-dataset",
+        // Situada a 6.8 km del centro de Kuils River (Wikidata).
+      }),
+  ],
   "sudafrica-athlone": [
       defineUniversity({
         id: "sudafrica-athlone-college-of-cape-town",
@@ -406,24 +344,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 8.5 km del centro de Athlone (Wikidata).
-      }),
-  ],
-  "sudafrica-rondebosch": [
-      defineUniversity({
-        id: "sudafrica-rondebosch-university-of-cape-town",
-        name: "University of Cape Town",
-        cityId: "sudafrica-rondebosch",
-        website: "http://www.uct.ac.za/",
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Rondebosch (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudafrica-rondebosch-university-of-cape-town",
-        name: "University of Cape Town",
-        cityId: "sudafrica-rondebosch",
-        website: "http://www.uct.ac.za/",
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Rondebosch (Wikidata).
       }),
   ],
 };

@@ -37,6 +37,80 @@ export default {
         source: "open-dataset",
         // Situada a 0.9 km del centro de Lisbon (Wikidata).
       }),
+      defineUniversity({
+        id: "portugal-lisbon-technical-university-of-lisbon",
+        name: "Technical University of Lisbon",
+        cityId: "portugal-lisbon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lisbon (Wikidata).
+      }),
+      defineUniversity({
+        id: "portugal-lisbon-irish-college-at-lisbon",
+        name: "Irish College at Lisbon",
+        cityId: "portugal-lisbon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lisbon (Wikidata).
+      }),
+      defineUniversity({
+        id: "portugal-lisbon-escola-superior-de-enfermagem-sao-francisco-das-misericordias",
+        name: "Escola Superior de Enfermagem São Francisco das Misericórdias",
+        cityId: "portugal-lisbon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lisbon (Wikidata).
+      }),
+      defineUniversity({
+        id: "portugal-lisbon-english-college-lisbon",
+        name: "English College, Lisbon",
+        cityId: "portugal-lisbon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lisbon (Wikidata).
+      }),
+  ],
+  "portugal-porto": [
+      defineUniversity({
+        id: "portugal-porto-universidade-lusofona-do-porto",
+        name: "Universidade Lusófona do Porto",
+        cityId: "portugal-porto",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Porto (Wikidata).
+      }),
+      defineUniversity({
+        id: "portugal-porto-university-of-porto",
+        name: "University of Porto",
+        cityId: "portugal-porto",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Porto (Wikidata).
+      }),
+      defineUniversity({
+        id: "portugal-porto-academia-politecnica-e-escola-medico-cirurgica",
+        name: "Academia Politécnica e Escola Medico Cirúrgica",
+        cityId: "portugal-porto",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Porto (Wikidata).
+      }),
+      defineUniversity({
+        id: "portugal-porto-universidade-moderna",
+        name: "Universidade Moderna",
+        cityId: "portugal-porto",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Porto (Wikidata).
+      }),
+      defineUniversity({
+        id: "portugal-porto-academia-polytechnica-do-porto",
+        name: "Academia Polytechnica do Porto",
+        cityId: "portugal-porto",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Porto (Wikidata).
+      }),
   ],
   "portugal-funchal": [
       defineUniversity({
@@ -62,32 +136,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.0 km del centro de Funchal (Wikidata).
-      }),
-  ],
-  "portugal-viseu": [
-      defineUniversity({
-        id: "portugal-viseu-polytechnic-institute-of-viseu",
-        name: "Polytechnic Institute of Viseu",
-        cityId: "portugal-viseu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Viseu (Wikidata).
-      }),
-      defineUniversity({
-        id: "portugal-viseu-polytechnic-institute-of-viseu",
-        name: "Polytechnic Institute of Viseu",
-        cityId: "portugal-viseu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Viseu (Wikidata).
-      }),
-      defineUniversity({
-        id: "portugal-viseu-polytechnic-institute-of-viseu",
-        name: "Polytechnic Institute of Viseu",
-        cityId: "portugal-viseu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Viseu (Wikidata).
       }),
   ],
   "portugal-paranhos": [
@@ -168,42 +216,6 @@ export default {
         // Situada a 1.3 km del centro de São Jorge de Arroios (Wikidata).
       }),
   ],
-  "portugal-setubal": [
-      defineUniversity({
-        id: "portugal-setubal-polytechnic-institute-of-setubal",
-        name: "Polytechnic Institute of Setúbal",
-        cityId: "portugal-setubal",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Setúbal (Wikidata).
-      }),
-      defineUniversity({
-        id: "portugal-setubal-polytechnic-institute-of-setubal",
-        name: "Polytechnic Institute of Setúbal",
-        cityId: "portugal-setubal",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Setúbal (Wikidata).
-      }),
-  ],
-  "portugal-castelo-branco": [
-      defineUniversity({
-        id: "portugal-castelo-branco-polytechnic-university-of-castelo-branco",
-        name: "Polytechnic University of Castelo Branco",
-        cityId: "portugal-castelo-branco",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Castelo Branco (Wikidata).
-      }),
-      defineUniversity({
-        id: "portugal-castelo-branco-polytechnic-university-of-castelo-branco",
-        name: "Polytechnic University of Castelo Branco",
-        cityId: "portugal-castelo-branco",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Castelo Branco (Wikidata).
-      }),
-  ],
   "portugal-alcantara": [
       defineUniversity({
         id: "portugal-alcantara-european-university-of-lisbon",
@@ -220,24 +232,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.7 km del centro de Alcântara (Wikidata).
-      }),
-  ],
-  "portugal-porto": [
-      defineUniversity({
-        id: "portugal-porto-universidade-lusofona-do-porto",
-        name: "Universidade Lusófona do Porto",
-        cityId: "portugal-porto",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Porto (Wikidata).
-      }),
-      defineUniversity({
-        id: "portugal-porto-university-of-porto",
-        name: "University of Porto",
-        cityId: "portugal-porto",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Porto (Wikidata).
       }),
   ],
   "portugal-cidade-universitaria": [

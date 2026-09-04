@@ -12,88 +12,6 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
-  "egipto-ash-shaykh-zayid": [
-      defineUniversity({
-        id: "egipto-ash-shaykh-zayid-international-branch-of-cairo-university",
-        name: "International Branch of Cairo University",
-        cityId: "egipto-ash-shaykh-zayid",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Ash-Shaykh Zāyid (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-ash-shaykh-zayid-nile-university",
-        name: "Nile University",
-        cityId: "egipto-ash-shaykh-zayid",
-        website: "http://www.nileu.edu.eg/",
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Ash-Shaykh Zāyid (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-ash-shaykh-zayid-nile-university",
-        name: "Nile University",
-        cityId: "egipto-ash-shaykh-zayid",
-        website: "http://www.nileu.edu.eg/",
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Ash-Shaykh Zāyid (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-ash-shaykh-zayid-october-technological-university",
-        name: "October Technological University",
-        cityId: "egipto-ash-shaykh-zayid",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.2 km del centro de Ash-Shaykh Zāyid (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-ash-shaykh-zayid-cairo-national-university",
-        name: "Cairo National University",
-        cityId: "egipto-ash-shaykh-zayid",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Ash-Shaykh Zāyid (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-ash-shaykh-zayid-misr-university-for-science-and-technology",
-        name: "Misr University for Science and Technology",
-        cityId: "egipto-ash-shaykh-zayid",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Ash-Shaykh Zāyid (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-ash-shaykh-zayid-zewail-city-of-science-technology-and-innovation",
-        name: "Zewail City of Science, Technology and Innovation",
-        cityId: "egipto-ash-shaykh-zayid",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.9 km del centro de Ash-Shaykh Zāyid (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-ash-shaykh-zayid-october-6-university",
-        name: "October 6 University",
-        cityId: "egipto-ash-shaykh-zayid",
-        website: "http://www.o6u.edu.eg/",
-        source: "open-dataset",
-        // Situada a 7.0 km del centro de Ash-Shaykh Zāyid (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-ash-shaykh-zayid-ahram-canadian-university",
-        name: "Ahram Canadian University",
-        cityId: "egipto-ash-shaykh-zayid",
-        website: null,
-        source: "open-dataset",
-        // Situada a 14.7 km del centro de Ash-Shaykh Zāyid (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-ash-shaykh-zayid-msa-university",
-        name: "MSA University",
-        cityId: "egipto-ash-shaykh-zayid",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.1 km del centro de Ash-Shaykh Zāyid (Wikidata).
-      }),
-  ],
   "egipto-new-cairo": [
       defineUniversity({
         id: "egipto-new-cairo-new-cairo-technological-university",
@@ -167,6 +85,162 @@ export default {
         source: "open-dataset",
         // Situada a 8.1 km del centro de New Cairo (Wikidata).
       }),
+      defineUniversity({
+        id: "egipto-new-cairo-memphis-university",
+        name: "Memphis University",
+        cityId: "egipto-new-cairo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Cairo (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-new-cairo-arab-open-university-egypt-branch",
+        name: "Arab Open University Egypt Branch",
+        cityId: "egipto-new-cairo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Cairo (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-new-cairo-egyptian-russian-university",
+        name: "Egyptian Russian University",
+        cityId: "egipto-new-cairo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Cairo (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-new-cairo-faculty-of-commerce-ain-shams-university",
+        name: "Faculty of Commerce, Ain Shams University)",
+        cityId: "egipto-new-cairo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Cairo (Wikidata).
+      }),
+  ],
+  "egipto-ash-shaykh-zayid": [
+      defineUniversity({
+        id: "egipto-ash-shaykh-zayid-international-branch-of-cairo-university",
+        name: "International Branch of Cairo University",
+        cityId: "egipto-ash-shaykh-zayid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Ash-Shaykh Zāyid (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-ash-shaykh-zayid-nile-university",
+        name: "Nile University",
+        cityId: "egipto-ash-shaykh-zayid",
+        website: "http://www.nileu.edu.eg/",
+        source: "open-dataset",
+        // Situada a 5.7 km del centro de Ash-Shaykh Zāyid (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-ash-shaykh-zayid-october-technological-university",
+        name: "October Technological University",
+        cityId: "egipto-ash-shaykh-zayid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.2 km del centro de Ash-Shaykh Zāyid (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-ash-shaykh-zayid-cairo-national-university",
+        name: "Cairo National University",
+        cityId: "egipto-ash-shaykh-zayid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Ash-Shaykh Zāyid (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-ash-shaykh-zayid-misr-university-for-science-and-technology",
+        name: "Misr University for Science and Technology",
+        cityId: "egipto-ash-shaykh-zayid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Ash-Shaykh Zāyid (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-ash-shaykh-zayid-zewail-city-of-science-technology-and-innovation",
+        name: "Zewail City of Science, Technology and Innovation",
+        cityId: "egipto-ash-shaykh-zayid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 10.9 km del centro de Ash-Shaykh Zāyid (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-ash-shaykh-zayid-october-6-university",
+        name: "October 6 University",
+        cityId: "egipto-ash-shaykh-zayid",
+        website: "http://www.o6u.edu.eg/",
+        source: "open-dataset",
+        // Situada a 7.0 km del centro de Ash-Shaykh Zāyid (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-ash-shaykh-zayid-ahram-canadian-university",
+        name: "Ahram Canadian University",
+        cityId: "egipto-ash-shaykh-zayid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 14.7 km del centro de Ash-Shaykh Zāyid (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-ash-shaykh-zayid-msa-university",
+        name: "MSA University",
+        cityId: "egipto-ash-shaykh-zayid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.1 km del centro de Ash-Shaykh Zāyid (Wikidata).
+      }),
+  ],
+  "egipto-bulaq-abu-al-ila": [
+      defineUniversity({
+        id: "egipto-bulaq-abu-al-ila-arab-academy-for-management-banking-and-financial-sciences",
+        name: "Arab Academy for Management, Banking and Financial Sciences",
+        cityId: "egipto-bulaq-abu-al-ila",
+        website: "http://aambfs.edu.eg/",
+        source: "open-dataset",
+        // Situada a 4.6 km del centro de Būlāq Abū al ‘Ilā (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-bulaq-abu-al-ila-egyptian-e-learning-university",
+        name: "Egyptian e-Learning University",
+        cityId: "egipto-bulaq-abu-al-ila",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Būlāq Abū al ‘Ilā (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-bulaq-abu-al-ila-danish-egyptian-dialogue-institute",
+        name: "Danish Egyptian Dialogue Institute",
+        cityId: "egipto-bulaq-abu-al-ila",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Būlāq Abū al ‘Ilā (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-bulaq-abu-al-ila-institute-of-aviation-engineering-and-technology",
+        name: "Institute of Aviation Engineering and Technology",
+        cityId: "egipto-bulaq-abu-al-ila",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Būlāq Abū al ‘Ilā (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-bulaq-abu-al-ila-heliopolis-university",
+        name: "Heliopolis University",
+        cityId: "egipto-bulaq-abu-al-ila",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Būlāq Abū al ‘Ilā (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-bulaq-abu-al-ila-higher-institute-of-engineering",
+        name: "Higher Institute of Engineering",
+        cityId: "egipto-bulaq-abu-al-ila",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Būlāq Abū al ‘Ilā (Wikidata).
+      }),
   ],
   "egipto-madinat-an-nasr": [
       defineUniversity({
@@ -210,14 +284,6 @@ export default {
         // Situada a 2.5 km del centro de Madīnat an Naşr (Wikidata).
       }),
       defineUniversity({
-        id: "egipto-madinat-an-nasr-faculty-of-medicine-al-azhar-university-girls-branch-cairo",
-        name: "Faculty of Medicine Al-Azhar University Girls Branch Cairo",
-        cityId: "egipto-madinat-an-nasr",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Madīnat an Naşr (Wikidata).
-      }),
-      defineUniversity({
         id: "egipto-madinat-an-nasr-modern-academy-for-engineering-technology",
         name: "Modern Academy For Engineering & Technology",
         cityId: "egipto-madinat-an-nasr",
@@ -252,14 +318,6 @@ export default {
         // Situada a 18.6 km del centro de Badr (Wikidata).
       }),
       defineUniversity({
-        id: "egipto-badr-capital-university-egypt",
-        name: "Capital University (Egypt)",
-        cityId: "egipto-badr",
-        website: null,
-        source: "open-dataset",
-        // Situada a 18.6 km del centro de Badr (Wikidata).
-      }),
-      defineUniversity({
         id: "egipto-badr-badr-university-in-cairo",
         name: "Badr University in Cairo",
         cityId: "egipto-badr",
@@ -274,6 +332,14 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 11.9 km del centro de Badr (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-badr-royal-university-of-egypt",
+        name: "Royal University of Egypt",
+        cityId: "egipto-badr",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Badr (Wikidata).
       }),
   ],
   "egipto-dumyat-al-jadidah": [
@@ -309,47 +375,39 @@ export default {
         source: "open-dataset",
         // Situada a 2.3 km del centro de Dumyāţ al Jadīdah (Wikidata).
       }),
-      defineUniversity({
-        id: "egipto-dumyat-al-jadidah-horus-university",
-        name: "Horus University",
-        cityId: "egipto-dumyat-al-jadidah",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Dumyāţ al Jadīdah (Wikidata).
-      }),
   ],
-  "egipto-bulaq-abu-al-ila": [
+  "egipto-el-shorouk": [
       defineUniversity({
-        id: "egipto-bulaq-abu-al-ila-arab-academy-for-management-banking-and-financial-sciences",
-        name: "Arab Academy for Management, Banking and Financial Sciences",
-        cityId: "egipto-bulaq-abu-al-ila",
-        website: null,
+        id: "egipto-el-shorouk-el-shorouk-academy",
+        name: "El Shorouk Academy",
+        cityId: "egipto-el-shorouk",
+        website: "http://www.elshoroukacademy.edu.eg/",
         source: "open-dataset",
-        // Situada a 4.6 km del centro de Būlāq Abū al ‘Ilā (Wikidata).
+        // Situada a 1.9 km del centro de El Shorouk (Wikidata).
       }),
       defineUniversity({
-        id: "egipto-bulaq-abu-al-ila-egyptian-e-learning-university",
-        name: "Egyptian e-Learning University",
-        cityId: "egipto-bulaq-abu-al-ila",
+        id: "egipto-el-shorouk-british-university-in-egypt",
+        name: "British University in Egypt",
+        cityId: "egipto-el-shorouk",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Būlāq Abū al ‘Ilā (Wikidata).
+        // Situada a 2.4 km del centro de El Shorouk (Wikidata).
       }),
       defineUniversity({
-        id: "egipto-bulaq-abu-al-ila-danish-egyptian-dialogue-institute",
-        name: "Danish Egyptian Dialogue Institute",
-        cityId: "egipto-bulaq-abu-al-ila",
+        id: "egipto-el-shorouk-french-university-of-egypt",
+        name: "French University of Egypt",
+        cityId: "egipto-el-shorouk",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Būlāq Abū al ‘Ilā (Wikidata).
+        // Situada a 1.6 km del centro de El Shorouk (Wikidata).
       }),
       defineUniversity({
-        id: "egipto-bulaq-abu-al-ila-institute-of-aviation-engineering-and-technology",
-        name: "Institute of Aviation Engineering and Technology",
-        cityId: "egipto-bulaq-abu-al-ila",
+        id: "egipto-el-shorouk-elysium-university",
+        name: "Elysium University",
+        cityId: "egipto-el-shorouk",
         website: null,
         source: "open-dataset",
-        // Situada a 4.2 km del centro de Būlāq Abū al ‘Ilā (Wikidata).
+        // Situada a None km del centro de El Shorouk (Wikidata).
       }),
   ],
   "egipto-sohag": [
@@ -376,6 +434,32 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 12.8 km del centro de Sohag (Wikidata).
+      }),
+  ],
+  "egipto-qina": [
+      defineUniversity({
+        id: "egipto-qina-south-valley-national-university",
+        name: "South Valley National University",
+        cityId: "egipto-qina",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.7 km del centro de Qina (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-qina-qena-university",
+        name: "Qena University",
+        cityId: "egipto-qina",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Qina (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-qina-el-homaydat",
+        name: "El homaydat",
+        cityId: "egipto-qina",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Qina (Wikidata).
       }),
   ],
   "egipto-al-ashir-min-ramadan": [
@@ -428,32 +512,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 3.2 km del centro de Ḩalwān (Wikidata).
-      }),
-  ],
-  "egipto-giza": [
-      defineUniversity({
-        id: "egipto-giza-cairo-university",
-        name: "Cairo University",
-        cityId: "egipto-giza",
-        website: "http://www.cu.edu.eg/",
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Giza (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-giza-cairo-university",
-        name: "Cairo University",
-        cityId: "egipto-giza",
-        website: "http://www.cu.edu.eg/",
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Giza (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-giza-cairo-university-kasr-alainy-faculty-of-medicine",
-        name: "Cairo University Kasr Alainy  Faculty of Medicine",
-        cityId: "egipto-giza",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Giza (Wikidata).
       }),
   ],
   "egipto-alexandria": [
@@ -560,32 +618,6 @@ export default {
         // Situada a 10.3 km del centro de An Nāşirīyah (Wikidata).
       }),
   ],
-  "egipto-el-shorouk": [
-      defineUniversity({
-        id: "egipto-el-shorouk-el-shorouk-academy",
-        name: "El Shorouk Academy",
-        cityId: "egipto-el-shorouk",
-        website: "http://www.elshoroukacademy.edu.eg/",
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de El Shorouk (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-el-shorouk-british-university-in-egypt",
-        name: "British University in Egypt",
-        cityId: "egipto-el-shorouk",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de El Shorouk (Wikidata).
-      }),
-      defineUniversity({
-        id: "egipto-el-shorouk-french-university-of-egypt",
-        name: "French University of Egypt",
-        cityId: "egipto-el-shorouk",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de El Shorouk (Wikidata).
-      }),
-  ],
   "egipto-al-minya-al-jadidah": [
       defineUniversity({
         id: "egipto-al-minya-al-jadidah-minia-national-university",
@@ -612,40 +644,40 @@ export default {
         // Situada a 2.1 km del centro de Al-Minyā al-Jadīdah (Wikidata).
       }),
   ],
-  "egipto-qina": [
+  "egipto-tanta": [
       defineUniversity({
-        id: "egipto-qina-south-valley-national-university",
-        name: "South Valley National University",
-        cityId: "egipto-qina",
-        website: null,
+        id: "egipto-tanta-tanta-university",
+        name: "Tanta University",
+        cityId: "egipto-tanta",
+        website: "http://www.tanta.edu.eg/",
         source: "open-dataset",
-        // Situada a 4.7 km del centro de Qina (Wikidata).
+        // Situada a 0.5 km del centro de Tanta (Wikidata).
       }),
       defineUniversity({
-        id: "egipto-qina-qena-university",
-        name: "Qena University",
-        cityId: "egipto-qina",
+        id: "egipto-tanta-tanta-national-university",
+        name: "Tanta National University",
+        cityId: "egipto-tanta",
         website: null,
         source: "open-dataset",
-        // Situada a 3.6 km del centro de Qina (Wikidata).
+        // Situada a None km del centro de Tanta (Wikidata).
       }),
   ],
-  "egipto-hada-iq-al-qubbah": [
+  "egipto-talkha": [
       defineUniversity({
-        id: "egipto-hada-iq-al-qubbah-ain-shams-university",
-        name: "Ain Shams University",
-        cityId: "egipto-hada-iq-al-qubbah",
-        website: "https://www.asu.edu.eg/",
+        id: "egipto-talkha-mansoura-university",
+        name: "Mansoura University",
+        cityId: "egipto-talkha",
+        website: "http://www.mans.edu.eg/",
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Ḩadā’iq al Qubbah (Wikidata).
+        // Situada a None km del centro de Ţalkhā (Wikidata).
       }),
       defineUniversity({
-        id: "egipto-hada-iq-al-qubbah-ain-shams-university",
-        name: "Ain Shams University",
-        cityId: "egipto-hada-iq-al-qubbah",
-        website: "https://www.asu.edu.eg/",
+        id: "egipto-talkha-new-mansoura-university",
+        name: "New Mansoura University",
+        cityId: "egipto-talkha",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Ḩadā’iq al Qubbah (Wikidata).
+        // Situada a None km del centro de Ţalkhā (Wikidata).
       }),
   ],
   "egipto-assiut": [
@@ -664,6 +696,78 @@ export default {
         website: "http://www.aun.edu.eg/",
         source: "open-dataset",
         // Situada a 1.5 km del centro de Assiut (Wikidata).
+      }),
+  ],
+  "egipto-aswan": [
+      defineUniversity({
+        id: "egipto-aswan-aswan-university",
+        name: "Aswan University",
+        cityId: "egipto-aswan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 11.0 km del centro de Aswān (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-aswan-aswan-national-university",
+        name: "Aswan National University",
+        cityId: "egipto-aswan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Aswān (Wikidata).
+      }),
+  ],
+  "egipto-suez": [
+      defineUniversity({
+        id: "egipto-suez-suez-university",
+        name: "Suez University",
+        cityId: "egipto-suez",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.8 km del centro de Suez (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-suez-galala-university",
+        name: "Galala University",
+        cityId: "egipto-suez",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Suez (Wikidata).
+      }),
+  ],
+  "egipto-giza": [
+      defineUniversity({
+        id: "egipto-giza-cairo-university",
+        name: "Cairo University",
+        cityId: "egipto-giza",
+        website: "http://www.cu.edu.eg/",
+        source: "open-dataset",
+        // Situada a 2.0 km del centro de Giza (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-giza-cairo-university-kasr-alainy-faculty-of-medicine",
+        name: "Cairo University Kasr Alainy  Faculty of Medicine",
+        cityId: "egipto-giza",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.0 km del centro de Giza (Wikidata).
+      }),
+  ],
+  "egipto-ismailia": [
+      defineUniversity({
+        id: "egipto-ismailia-suez-canal-university",
+        name: "Suez Canal University",
+        cityId: "egipto-ismailia",
+        website: "http://www.suez.edu.eg/",
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Ismailia (Wikidata).
+      }),
+      defineUniversity({
+        id: "egipto-ismailia-suez-canal-national-university",
+        name: "Suez Canal National University",
+        cityId: "egipto-ismailia",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ismailia (Wikidata).
       }),
   ],
   "egipto-al-fayyum": [

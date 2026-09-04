@@ -19,22 +19,22 @@ const countryName = "Mozambique";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
-      id: "mozambique-nampula",
-      name: "Nampula",
-      coordinates: {"lat": -15.11646, "lng": 39.2666},
-      isCapital: false,
-      universityCount: 1,
-      statistics: { population: 770379 },
-      countryId,
-      countryName,
-    }),
-    defineCity({
       id: "mozambique-maputo",
       name: "Maputo",
       coordinates: {"lat": -25.96553, "lng": 32.58322},
       isCapital: true,
-      universityCount: 2,
+      universityCount: 4,
       statistics: { population: 1254837 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "mozambique-nampula",
+      name: "Nampula",
+      coordinates: {"lat": -15.11646, "lng": 39.2666},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 770379 },
       countryId,
       countryName,
     }),

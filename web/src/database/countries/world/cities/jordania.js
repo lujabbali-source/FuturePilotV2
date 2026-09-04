@@ -12,6 +12,56 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
+  "jordania-amman": [
+      defineUniversity({
+        id: "jordania-amman-luminus-technical-university-college",
+        name: "Luminus Technical University College",
+        cityId: "jordania-amman",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Amman (Wikidata).
+      }),
+      defineUniversity({
+        id: "jordania-amman-jordan-academy-for-maritime-studies",
+        name: "Jordan Academy for Maritime Studies",
+        cityId: "jordania-amman",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Amman (Wikidata).
+      }),
+      defineUniversity({
+        id: "jordania-amman-al-ahliyya-amman-university",
+        name: "Al-Ahliyya Amman University",
+        cityId: "jordania-amman",
+        website: "http://www.ammanu.edu.jo/",
+        source: "open-dataset",
+        // Situada a None km del centro de Amman (Wikidata).
+      }),
+      defineUniversity({
+        id: "jordania-amman-amman-arab-university",
+        name: "Amman Arab University",
+        cityId: "jordania-amman",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Amman (Wikidata).
+      }),
+      defineUniversity({
+        id: "jordania-amman-applied-science-private-university",
+        name: "Applied Science Private University",
+        cityId: "jordania-amman",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Amman (Wikidata).
+      }),
+      defineUniversity({
+        id: "jordania-amman-talal-abu-ghazaleh-graduate-school-of-business",
+        name: "Talal Abu-Ghazaleh Graduate School of Business",
+        cityId: "jordania-amman",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Amman (Wikidata).
+      }),
+  ],
   "jordania-al-jubayhah": [
       defineUniversity({
         id: "jordania-al-jubayhah-jordan-academy-of-music",
@@ -62,22 +112,46 @@ export default {
         // Situada a 2.5 km del centro de Al Jubayhah (Wikidata).
       }),
   ],
-  "jordania-madaba": [
+  "jordania-hayy-al-quwaysimah": [
       defineUniversity({
-        id: "jordania-madaba-american-university-of-madaba",
-        name: "American University of Madaba",
-        cityId: "jordania-madaba",
+        id: "jordania-hayy-al-quwaysimah-arab-open-university-jordan",
+        name: "Arab Open University - Jordan",
+        cityId: "jordania-hayy-al-quwaysimah",
         website: null,
         source: "open-dataset",
-        // Situada a 6.1 km del centro de Mādabā (Wikidata).
+        // Situada a None km del centro de Ḩayy al Quwaysimah (Wikidata).
       }),
       defineUniversity({
-        id: "jordania-madaba-american-university-of-madaba",
-        name: "American University of Madaba",
-        cityId: "jordania-madaba",
+        id: "jordania-hayy-al-quwaysimah-ibn-sina-university-for-medical-sciences",
+        name: "Ibn Sina University for Medical Sciences",
+        cityId: "jordania-hayy-al-quwaysimah",
         website: null,
         source: "open-dataset",
-        // Situada a 6.1 km del centro de Mādabā (Wikidata).
+        // Situada a None km del centro de Ḩayy al Quwaysimah (Wikidata).
+      }),
+      defineUniversity({
+        id: "jordania-hayy-al-quwaysimah-isra-university",
+        name: "Isra University",
+        cityId: "jordania-hayy-al-quwaysimah",
+        website: "http://www.isra.edu.pk/",
+        source: "open-dataset",
+        // Situada a None km del centro de Ḩayy al Quwaysimah (Wikidata).
+      }),
+      defineUniversity({
+        id: "jordania-hayy-al-quwaysimah-philadelphia-university",
+        name: "Philadelphia University",
+        cityId: "jordania-hayy-al-quwaysimah",
+        website: "http://www.philadelphia.edu.jo/",
+        source: "open-dataset",
+        // Situada a None km del centro de Ḩayy al Quwaysimah (Wikidata).
+      }),
+      defineUniversity({
+        id: "jordania-hayy-al-quwaysimah-world-islamic-sciences-and-education-university",
+        name: "World Islamic Sciences and Education University",
+        cityId: "jordania-hayy-al-quwaysimah",
+        website: "http://www.wise.edu.jo/",
+        source: "open-dataset",
+        // Situada a None km del centro de Ḩayy al Quwaysimah (Wikidata).
       }),
   ],
   "jordania-khuraybat-as-suq": [
@@ -96,6 +170,24 @@ export default {
         website: "http://www.meu.edu.jo/",
         source: "open-dataset",
         // Situada a 7.8 km del centro de Khuraybat as Sūq (Wikidata).
+      }),
+  ],
+  "jordania-irbid": [
+      defineUniversity({
+        id: "jordania-irbid-yarmouk-university",
+        name: "Yarmouk University",
+        cityId: "jordania-irbid",
+        website: "http://www.yu.edu.jo/",
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Irbid (Wikidata).
+      }),
+      defineUniversity({
+        id: "jordania-irbid-jadara-university",
+        name: "Jadara University",
+        cityId: "jordania-irbid",
+        website: "http://www.jadara.edu.jo/",
+        source: "open-dataset",
+        // Situada a None km del centro de Irbid (Wikidata).
       }),
   ],
   "jordania-ar-ramtha": [

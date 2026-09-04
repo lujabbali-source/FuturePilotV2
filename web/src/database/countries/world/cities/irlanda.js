@@ -22,20 +22,20 @@ export default {
         // Situada a 3.4 km del centro de Dublin (Wikidata).
       }),
       defineUniversity({
-        id: "irlanda-dublin-university-college-dublin",
-        name: "University College Dublin",
-        cityId: "irlanda-dublin",
-        website: "http://www.ucd.ie/",
-        source: "open-dataset",
-        // Situada a 3.4 km del centro de Dublin (Wikidata).
-      }),
-      defineUniversity({
         id: "irlanda-dublin-catholic-university-of-ireland",
         name: "Catholic University of Ireland",
         cityId: "irlanda-dublin",
         website: null,
         source: "open-dataset",
         // Situada a 1.6 km del centro de Dublin (Wikidata).
+      }),
+      defineUniversity({
+        id: "irlanda-dublin-medieval-university-of-dublin",
+        name: "Medieval University of Dublin",
+        cityId: "irlanda-dublin",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Dublin (Wikidata).
       }),
       defineUniversity({
         id: "irlanda-dublin-national-university-of-ireland",
@@ -125,6 +125,70 @@ export default {
         source: "open-dataset",
         // Situada a 0.9 km del centro de Dublin (Wikidata).
       }),
+      defineUniversity({
+        id: "irlanda-dublin-loyola-institute-for-catholic-theology-at-trinity-college",
+        name: "Loyola Institute for Catholic Theology at Trinity College",
+        cityId: "irlanda-dublin",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dublin (Wikidata).
+      }),
+      defineUniversity({
+        id: "irlanda-dublin-digital-skills-academy",
+        name: "Digital Skills Academy",
+        cityId: "irlanda-dublin",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dublin (Wikidata).
+      }),
+      defineUniversity({
+        id: "irlanda-dublin-dublin-institute-of-design",
+        name: "Dublin Institute of Design",
+        cityId: "irlanda-dublin",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dublin (Wikidata).
+      }),
+      defineUniversity({
+        id: "irlanda-dublin-albert-college",
+        name: "Albert College",
+        cityId: "irlanda-dublin",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dublin (Wikidata).
+      }),
+      defineUniversity({
+        id: "irlanda-dublin-higher-education-and-training-awards-council",
+        name: "Higher Education and Training Awards Council",
+        cityId: "irlanda-dublin",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dublin (Wikidata).
+      }),
+      defineUniversity({
+        id: "irlanda-dublin-irish-college-of-ophthalmologists",
+        name: "Irish College of Ophthalmologists",
+        cityId: "irlanda-dublin",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dublin (Wikidata).
+      }),
+      defineUniversity({
+        id: "irlanda-dublin-leinster-school-of-music-drama",
+        name: "Leinster School of Music & Drama",
+        cityId: "irlanda-dublin",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dublin (Wikidata).
+      }),
+      defineUniversity({
+        id: "irlanda-dublin-portobello-institute",
+        name: "Portobello Institute",
+        cityId: "irlanda-dublin",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dublin (Wikidata).
+      }),
   ],
   "irlanda-limerick": [
       defineUniversity({
@@ -167,6 +231,22 @@ export default {
         source: "open-dataset",
         // Situada a 1.7 km del centro de Limerick (Wikidata).
       }),
+      defineUniversity({
+        id: "irlanda-limerick-dominican-biblical-institute",
+        name: "Dominican Biblical Institute",
+        cityId: "irlanda-limerick",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Limerick (Wikidata).
+      }),
+      defineUniversity({
+        id: "irlanda-limerick-thomond-college-of-education-limerick",
+        name: "Thomond College of Education, Limerick",
+        cityId: "irlanda-limerick",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Limerick (Wikidata).
+      }),
   ],
   "irlanda-galway": [
       defineUniversity({
@@ -201,6 +281,40 @@ export default {
         source: "open-dataset",
         // Situada a 0.9 km del centro de Galway (Wikidata).
       }),
+      defineUniversity({
+        id: "irlanda-galway-queen-s-university-of-ireland",
+        name: "Queen's University of Ireland",
+        cityId: "irlanda-galway",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Galway (Wikidata).
+      }),
+  ],
+  "irlanda-waterford": [
+      defineUniversity({
+        id: "irlanda-waterford-south-east-technological-university",
+        name: "South East Technological University",
+        cityId: "irlanda-waterford",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Waterford (Wikidata).
+      }),
+      defineUniversity({
+        id: "irlanda-waterford-st-john-s-college-waterford",
+        name: "St. John's College, Waterford",
+        cityId: "irlanda-waterford",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Waterford (Wikidata).
+      }),
+      defineUniversity({
+        id: "irlanda-waterford-waterford-institute-of-technology",
+        name: "Waterford Institute of Technology",
+        cityId: "irlanda-waterford",
+        website: "http://www.wit.ie/",
+        source: "open-dataset",
+        // Situada a None km del centro de Waterford (Wikidata).
+      }),
   ],
   "irlanda-maynooth": [
       defineUniversity({
@@ -220,30 +334,12 @@ export default {
         // Situada a 0.5 km del centro de Maynooth (Wikidata).
       }),
       defineUniversity({
-        id: "irlanda-maynooth-st-patrick-s-college-maynooth",
-        name: "St Patrick's College, Maynooth",
+        id: "irlanda-maynooth-royal-university-of-ireland",
+        name: "Royal University of Ireland",
         cityId: "irlanda-maynooth",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Maynooth (Wikidata).
-      }),
-  ],
-  "irlanda-waterford": [
-      defineUniversity({
-        id: "irlanda-waterford-south-east-technological-university",
-        name: "South East Technological University",
-        cityId: "irlanda-waterford",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Waterford (Wikidata).
-      }),
-      defineUniversity({
-        id: "irlanda-waterford-st-john-s-college-waterford",
-        name: "St. John's College, Waterford",
-        cityId: "irlanda-waterford",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Waterford (Wikidata).
+        // Situada a None km del centro de Maynooth (Wikidata).
       }),
   ],
   "irlanda-tralee": [
@@ -334,6 +430,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.6 km del centro de Cork (Wikidata).
+      }),
+  ],
+  "irlanda-cluain-meala": [
+      defineUniversity({
+        id: "irlanda-cluain-meala-rockwell-college",
+        name: "Rockwell College",
+        cityId: "irlanda-cluain-meala",
+        website: null,
+        source: "open-dataset",
+        // Situada a 17.3 km del centro de Cluain Meala (Wikidata).
+      }),
+      defineUniversity({
+        id: "irlanda-cluain-meala-dungarvan-college",
+        name: "Dungarvan College",
+        cityId: "irlanda-cluain-meala",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cluain Meala (Wikidata).
       }),
   ],
   "irlanda-carlow": [

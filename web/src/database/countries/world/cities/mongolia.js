@@ -22,14 +22,6 @@ export default {
         // Situada a 6.8 km del centro de Ulan Bator (Wikidata).
       }),
       defineUniversity({
-        id: "mongolia-ulan-bator-mongolia-international-university",
-        name: "Mongolia International University",
-        cityId: "mongolia-ulan-bator",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Ulan Bator (Wikidata).
-      }),
-      defineUniversity({
         id: "mongolia-ulan-bator-citi-university",
         name: "CITI University",
         cityId: "mongolia-ulan-bator",
@@ -148,6 +140,54 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 3.7 km del centro de Ulan Bator (Wikidata).
+      }),
+      defineUniversity({
+        id: "mongolia-ulan-bator-ikh-zasag-international-university",
+        name: "Ikh Zasag International University",
+        cityId: "mongolia-ulan-bator",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ulan Bator (Wikidata).
+      }),
+      defineUniversity({
+        id: "mongolia-ulan-bator-otgontenger-university",
+        name: "Otgontenger University",
+        cityId: "mongolia-ulan-bator",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ulan Bator (Wikidata).
+      }),
+      defineUniversity({
+        id: "mongolia-ulan-bator-soyol-erdem-university",
+        name: "Soyol Erdem University",
+        cityId: "mongolia-ulan-bator",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ulan Bator (Wikidata).
+      }),
+      defineUniversity({
+        id: "mongolia-ulan-bator-shihihutug-university",
+        name: "Shihihutug University",
+        cityId: "mongolia-ulan-bator",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ulan Bator (Wikidata).
+      }),
+      defineUniversity({
+        id: "mongolia-ulan-bator-mongolian-university-of-pharmaceutical-sciences",
+        name: "Mongolian University of Pharmaceutical Sciences",
+        cityId: "mongolia-ulan-bator",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ulan Bator (Wikidata).
+      }),
+      defineUniversity({
+        id: "mongolia-ulan-bator-etugen-university",
+        name: "Etugen University",
+        cityId: "mongolia-ulan-bator",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ulan Bator (Wikidata).
       }),
   ],
 };

@@ -77,23 +77,29 @@ export default {
         source: "open-dataset",
         // Situada a 5.9 km del centro de Ashgabat (Wikidata).
       }),
-  ],
-  "turkmenistan-turkmenabat": [
       defineUniversity({
-        id: "turkmenistan-turkmenabat-turkmen-state-pedagogical-institute",
-        name: "Turkmen State Pedagogical Institute",
-        cityId: "turkmenistan-turkmenabat",
+        id: "turkmenistan-ashgabat-magtymguly-turkmen-state-university",
+        name: "Magtymguly Turkmen State University",
+        cityId: "turkmenistan-ashgabat",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Türkmenabat (Wikidata).
+        // Situada a None km del centro de Ashgabat (Wikidata).
       }),
       defineUniversity({
-        id: "turkmenistan-turkmenabat-turkmen-state-pedagogical-institute",
-        name: "Turkmen State Pedagogical Institute",
-        cityId: "turkmenistan-turkmenabat",
+        id: "turkmenistan-ashgabat-military-institute-of-the-ministry-of-defense-of-turkmenistan",
+        name: "Military Institute of the Ministry of Defense of Turkmenistan",
+        cityId: "turkmenistan-ashgabat",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Türkmenabat (Wikidata).
+        // Situada a None km del centro de Ashgabat (Wikidata).
+      }),
+      defineUniversity({
+        id: "turkmenistan-ashgabat-international-turkmen-turkish-university",
+        name: "International Turkmen-Turkish University",
+        cityId: "turkmenistan-ashgabat",
+        website: "http://www.ittu.edu.tm/",
+        source: "open-dataset",
+        // Situada a None km del centro de Ashgabat (Wikidata).
       }),
   ],
 };

@@ -19,21 +19,11 @@ const countryName = "Omán";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
-      id: "oman-ibra",
-      name: "Ibrā’",
-      coordinates: {"lat": 22.69057, "lng": 58.53337},
-      isCapital: false,
-      universityCount: 2,
-      statistics: { population: 25265 },
-      countryId,
-      countryName,
-    }),
-    defineCity({
       id: "oman-seeb",
       name: "Seeb",
       coordinates: {"lat": 23.67027, "lng": 58.18911},
       isCapital: false,
-      universityCount: 2,
+      universityCount: 3,
       statistics: { population: 470878 },
       countryId,
       countryName,

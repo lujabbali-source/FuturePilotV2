@@ -93,15 +93,153 @@ export default {
         source: "open-dataset",
         // Situada a 2.6 km del centro de Bujumbura (Wikidata).
       }),
+      defineUniversity({
+        id: "burundi-bujumbura-universite-chretienne-de-bujumbura",
+        name: "Université Chrétienne de Bujumbura",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-east-africa-star-university",
+        name: "East Africa Star University",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-olivia-university-of-bujumbura",
+        name: "Olivia University of Bujumbura",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-institut-superieur-de-gestion-des-entreprises",
+        name: "Institut Supérieur de Gestion des Entreprises",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-institut-superieur-agro-alimentaire",
+        name: "Institut Supérieur Agro Alimentaire",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-institut-superieur-d-entrepreunariat-du-burundi",
+        name: "Institut Supérieur d'Entrepreunariat du Burundi",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-institut-superieur-des-techniques-de-gestion",
+        name: "Institut Supérieur des Techniques de Gestion",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-initelematique",
+        name: "INITELEMATIQUE",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-institut-superieur-de-management",
+        name: "Institut Supérieur de Management",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-institut-superieur-d-enseignement-technique",
+        name: "Institut Supérieur d'Enseignement Technique",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-institut-superieur-de-gestion-et-d-informatique",
+        name: "Institut Supérieur de Gestion et d'Informatique",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-summit-international-institute",
+        name: "SUMMIT International Institute",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-universite-paix-et-reconciliation",
+        name: "Université Paix et Réconciliation",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-bujumbura-hills-university",
+        name: "Hills University",
+        cityId: "burundi-bujumbura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bujumbura (Wikidata).
+      }),
+  ],
+  "burundi-gitega": [
+      defineUniversity({
+        id: "burundi-gitega-universite-de-mwaro",
+        name: "Université de Mwaro",
+        cityId: "burundi-gitega",
+        website: null,
+        source: "open-dataset",
+        // Situada a 23.0 km del centro de Gitega (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-gitega-universite-polytechnique-de-gitega",
+        name: "Université Polytechnique de Gitega",
+        cityId: "burundi-gitega",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gitega (Wikidata).
+      }),
+      defineUniversity({
+        id: "burundi-gitega-institut-superieur-paramedical-de-gitega",
+        name: "Institut Supérieur Paramédical de Gitega",
+        cityId: "burundi-gitega",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gitega (Wikidata).
+      }),
   ],
   "burundi-ngozi": [
       defineUniversity({
-        id: "burundi-ngozi-universite-de-ngozi",
-        name: "Université de Ngozi",
+        id: "burundi-ngozi-kenya-institute-of-security-criminal-justice",
+        name: "Kenya Institute Of Security & Criminal Justice",
         cityId: "burundi-ngozi",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Ngozi (Wikidata).
+        // Situada a 18.2 km del centro de Ngozi (Wikidata).
       }),
       defineUniversity({
         id: "burundi-ngozi-universite-de-ngozi",
@@ -109,7 +247,7 @@ export default {
         cityId: "burundi-ngozi",
         website: null,
         source: "open-dataset",
-        // Situada a 0.3 km del centro de Ngozi (Wikidata).
+        // Situada a 0.4 km del centro de Ngozi (Wikidata).
       }),
   ],
 };

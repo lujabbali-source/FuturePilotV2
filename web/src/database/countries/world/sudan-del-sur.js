@@ -23,7 +23,7 @@ const cities = [
       name: "Juba",
       coordinates: {"lat": 4.85165, "lng": 31.58247},
       isCapital: true,
-      universityCount: 3,
+      universityCount: 4,
       statistics: { population: 450000 },
       countryId,
       countryName,

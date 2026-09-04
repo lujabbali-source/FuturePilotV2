@@ -30,14 +30,6 @@ export default {
         // Situada a 2.7 km del centro de Gaza (Wikidata).
       }),
       defineUniversity({
-        id: "palestina-gaza-al-aqsa-university",
-        name: "al-Aqsa University",
-        cityId: "palestina-gaza",
-        website: "http://www.alaqsa.edu.ps/",
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Gaza (Wikidata).
-      }),
-      defineUniversity({
         id: "palestina-gaza-islamic-university-of-gaza",
         name: "Islamic University of Gaza",
         cityId: "palestina-gaza",
@@ -57,9 +49,43 @@ export default {
         id: "palestina-gaza-isra-university",
         name: "Isra University",
         cityId: "palestina-gaza",
-        website: null,
+        website: "http://www.isra.edu.pk/",
         source: "open-dataset",
         // Situada a 2.8 km del centro de Gaza (Wikidata).
+      }),
+  ],
+  "palestina-east-jerusalem": [
+      defineUniversity({
+        id: "palestina-east-jerusalem-hebrew-university-of-jerusalem",
+        name: "Hebrew University of Jerusalem",
+        cityId: "palestina-east-jerusalem",
+        website: "http://www.huji.ac.il/",
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de East Jerusalem (Wikidata).
+      }),
+      defineUniversity({
+        id: "palestina-east-jerusalem-ibrahimieh-college",
+        name: "Ibrahimieh College",
+        cityId: "palestina-east-jerusalem",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de East Jerusalem (Wikidata).
+      }),
+      defineUniversity({
+        id: "palestina-east-jerusalem-st-george-s-college-jerusalem",
+        name: "St. George's College, Jerusalem",
+        cityId: "palestina-east-jerusalem",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de East Jerusalem (Wikidata).
+      }),
+      defineUniversity({
+        id: "palestina-east-jerusalem-studium-biblicum-franciscanum",
+        name: "Studium Biblicum Franciscanum",
+        cityId: "palestina-east-jerusalem",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de East Jerusalem (Wikidata).
       }),
   ],
   "palestina-tulkarm": [
@@ -114,6 +140,50 @@ export default {
         // Situada a 1.7 km del centro de Bethlehem (Wikidata).
       }),
   ],
+  "palestina-old-city": [
+      defineUniversity({
+        id: "palestina-old-city-institute-of-law-in-palestine",
+        name: "Institute of Law in palestine",
+        cityId: "palestina-old-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Old City (Wikidata).
+      }),
+      defineUniversity({
+        id: "palestina-old-city-wajdi-nihad-abu-gharbia-university-college-of-technology",
+        name: "Wajdi Nihad Abu Gharbia University College of Technology",
+        cityId: "palestina-old-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Old City (Wikidata).
+      }),
+      defineUniversity({
+        id: "palestina-old-city-studium-theologicum-salesianum",
+        name: "Studium Theologicum Salesianum",
+        cityId: "palestina-old-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Old City (Wikidata).
+      }),
+  ],
+  "palestina-nablus": [
+      defineUniversity({
+        id: "palestina-nablus-an-najah-national-university",
+        name: "An-Najah National University",
+        cityId: "palestina-nablus",
+        website: "http://www.najah.edu/",
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Nablus (Wikidata).
+      }),
+      defineUniversity({
+        id: "palestina-nablus-nablus-university-for-vocational-and-technical-education",
+        name: "Nablus University for Vocational and Technical Education",
+        cityId: "palestina-nablus",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nablus (Wikidata).
+      }),
+  ],
   "palestina-hebron": [
       defineUniversity({
         id: "palestina-hebron-hebron-university",
@@ -130,68 +200,6 @@ export default {
         website: "http://www.ppu.edu/",
         source: "open-dataset",
         // Situada a 0.6 km del centro de Hebron (Wikidata).
-      }),
-      defineUniversity({
-        id: "palestina-hebron-palestine-polytechnic-university",
-        name: "Palestine Polytechnic University",
-        cityId: "palestina-hebron",
-        website: "http://www.ppu.edu/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Hebron (Wikidata).
-      }),
-  ],
-  "palestina-ramallah": [
-      defineUniversity({
-        id: "palestina-ramallah-al-quds-open-university",
-        name: "Al-Quds Open University",
-        cityId: "palestina-ramallah",
-        website: "http://www.qou.edu/",
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Ramallah (Wikidata).
-      }),
-      defineUniversity({
-        id: "palestina-ramallah-al-quds-open-university",
-        name: "Al-Quds Open University",
-        cityId: "palestina-ramallah",
-        website: "http://www.qou.edu/",
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Ramallah (Wikidata).
-      }),
-  ],
-  "palestina-jericho": [
-      defineUniversity({
-        id: "palestina-jericho-al-istiqlal-university",
-        name: "Al-Istiqlal University",
-        cityId: "palestina-jericho",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Jericho (Wikidata).
-      }),
-      defineUniversity({
-        id: "palestina-jericho-al-istiqlal-university",
-        name: "Al-Istiqlal University",
-        cityId: "palestina-jericho",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Jericho (Wikidata).
-      }),
-  ],
-  "palestina-east-jerusalem": [
-      defineUniversity({
-        id: "palestina-east-jerusalem-ibrahimieh-college",
-        name: "Ibrahimieh College",
-        cityId: "palestina-east-jerusalem",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de East Jerusalem (Wikidata).
-      }),
-      defineUniversity({
-        id: "palestina-east-jerusalem-st-george-s-college-jerusalem",
-        name: "St. George's College, Jerusalem",
-        cityId: "palestina-east-jerusalem",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de East Jerusalem (Wikidata).
       }),
   ],
 };

@@ -22,20 +22,20 @@ export default {
         // Situada a 15.8 km del centro de Port Moresby (Wikidata).
       }),
       defineUniversity({
-        id: "papua-nueva-guinea-port-moresby-pacific-adventist-university",
-        name: "Pacific Adventist University",
-        cityId: "papua-nueva-guinea-port-moresby",
-        website: "http://www.pau.ac.pg/",
-        source: "open-dataset",
-        // Situada a 15.8 km del centro de Port Moresby (Wikidata).
-      }),
-      defineUniversity({
         id: "papua-nueva-guinea-port-moresby-university-of-papua-new-guinea",
         name: "University of Papua New Guinea",
         cityId: "papua-nueva-guinea-port-moresby",
         website: "http://www.upng.ac.pg/",
         source: "open-dataset",
         // Situada a 8.3 km del centro de Port Moresby (Wikidata).
+      }),
+      defineUniversity({
+        id: "papua-nueva-guinea-port-moresby-institute-of-business-studies",
+        name: "Institute of Business Studies",
+        cityId: "papua-nueva-guinea-port-moresby",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Port Moresby (Wikidata).
       }),
   ],
   "papua-nueva-guinea-kokopo": [

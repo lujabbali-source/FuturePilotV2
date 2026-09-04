@@ -19,6 +19,36 @@ const countryName = "Eslovenia";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
+      id: "eslovenia-novo-mesto",
+      name: "Novo Mesto",
+      coordinates: {"lat": 45.80397, "lng": 15.16886},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 24446 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "eslovenia-maribor",
+      name: "Maribor",
+      coordinates: {"lat": 46.55583, "lng": 15.64593},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 96209 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "eslovenia-ljubljana",
+      name: "Ljubljana",
+      coordinates: {"lat": 46.05108, "lng": 14.50513},
+      isCapital: true,
+      universityCount: 2,
+      statistics: { population: 272220 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
       id: "eslovenia-koper",
       name: "Koper",
       coordinates: {"lat": 45.5482, "lng": 13.72963},

@@ -53,6 +53,38 @@ export default {
         source: "open-dataset",
         // Situada a 0.8 km del centro de Riga (Wikidata).
       }),
+      defineUniversity({
+        id: "letonia-riga-riga-pedagogical-institute",
+        name: "Riga Pedagogical Institute",
+        cityId: "letonia-riga",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Riga (Wikidata).
+      }),
+      defineUniversity({
+        id: "letonia-riga-eka-university-of-applied-sciences",
+        name: "EKA University of Applied Sciences",
+        cityId: "letonia-riga",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Riga (Wikidata).
+      }),
+      defineUniversity({
+        id: "letonia-riga-state-police-college",
+        name: "State Police College",
+        cityId: "letonia-riga",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Riga (Wikidata).
+      }),
+      defineUniversity({
+        id: "letonia-riga-riga-nakhimov-naval-school",
+        name: "Riga Nakhimov Naval School",
+        cityId: "letonia-riga",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Riga (Wikidata).
+      }),
   ],
   "letonia-darzciems": [
       defineUniversity({
@@ -86,6 +118,14 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.3 km del centro de Dārzciems (Wikidata).
+      }),
+      defineUniversity({
+        id: "letonia-darzciems-riga-higher-military-aviation-engineering-school",
+        name: "Riga Higher Military Aviation Engineering School",
+        cityId: "letonia-darzciems",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.4 km del centro de Dārzciems (Wikidata).
       }),
   ],
 };

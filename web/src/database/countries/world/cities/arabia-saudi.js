@@ -53,6 +53,54 @@ export default {
         source: "open-dataset",
         // Situada a 17.7 km del centro de Riyadh (Wikidata).
       }),
+      defineUniversity({
+        id: "arabia-saudi-riyadh-knowledge-international-university",
+        name: "Knowledge International University",
+        cityId: "arabia-saudi-riyadh",
+        website: "http://www.almaarifah.com/",
+        source: "open-dataset",
+        // Situada a None km del centro de Riyadh (Wikidata).
+      }),
+      defineUniversity({
+        id: "arabia-saudi-riyadh-dar-al-uloom-university",
+        name: "Dar Al Uloom University",
+        cityId: "arabia-saudi-riyadh",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Riyadh (Wikidata).
+      }),
+      defineUniversity({
+        id: "arabia-saudi-riyadh-king-saud-university-college-of-medicine",
+        name: "King Saud University College of Medicine",
+        cityId: "arabia-saudi-riyadh",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Riyadh (Wikidata).
+      }),
+      defineUniversity({
+        id: "arabia-saudi-riyadh-dar-al-uloom-colleges",
+        name: "Dar Al-Uloom Colleges",
+        cityId: "arabia-saudi-riyadh",
+        website: "http://www.dau.edu.sa/",
+        source: "open-dataset",
+        // Situada a None km del centro de Riyadh (Wikidata).
+      }),
+      defineUniversity({
+        id: "arabia-saudi-riyadh-prince-sultan-university",
+        name: "Prince Sultan University",
+        cityId: "arabia-saudi-riyadh",
+        website: "http://www.psu.edu.sa/",
+        source: "open-dataset",
+        // Situada a None km del centro de Riyadh (Wikidata).
+      }),
+      defineUniversity({
+        id: "arabia-saudi-riyadh-saudi-electronic-university",
+        name: "Saudi Electronic University",
+        cityId: "arabia-saudi-riyadh",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Riyadh (Wikidata).
+      }),
   ],
   "arabia-saudi-jeddah": [
       defineUniversity({
@@ -87,31 +135,47 @@ export default {
         source: "open-dataset",
         // Situada a 2.9 km del centro de Jeddah (Wikidata).
       }),
+      defineUniversity({
+        id: "arabia-saudi-jeddah-college-of-business-administration",
+        name: "College of Business Administration",
+        cityId: "arabia-saudi-jeddah",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Jeddah (Wikidata).
+      }),
+      defineUniversity({
+        id: "arabia-saudi-jeddah-prince-sultan-aviation-academy",
+        name: "Prince Sultan Aviation Academy",
+        cityId: "arabia-saudi-jeddah",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Jeddah (Wikidata).
+      }),
   ],
-  "arabia-saudi-irqah": [
+  "arabia-saudi-dammam": [
       defineUniversity({
-        id: "arabia-saudi-irqah-riyadh-university-of-arts",
-        name: "Riyadh University of Arts",
-        cityId: "arabia-saudi-irqah",
-        website: null,
+        id: "arabia-saudi-dammam-imam-abdulrahman-bin-faisal-university",
+        name: "Imam Abdulrahman Bin Faisal University",
+        cityId: "arabia-saudi-dammam",
+        website: "https://iau.edu.sa/",
         source: "open-dataset",
-        // Situada a 2.9 km del centro de ‘Irqah (Wikidata).
+        // Situada a 10.0 km del centro de Dammam (Wikidata).
       }),
       defineUniversity({
-        id: "arabia-saudi-irqah-riyadh-university-of-arts",
-        name: "Riyadh University of Arts",
-        cityId: "arabia-saudi-irqah",
+        id: "arabia-saudi-dammam-dammam-college-of-technology",
+        name: "Dammam College of Technology",
+        cityId: "arabia-saudi-dammam",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de ‘Irqah (Wikidata).
+        // Situada a 5.6 km del centro de Dammam (Wikidata).
       }),
       defineUniversity({
-        id: "arabia-saudi-irqah-king-saud-university",
-        name: "King Saud University",
-        cityId: "arabia-saudi-irqah",
-        website: "http://www.ksu.edu.sa/",
+        id: "arabia-saudi-dammam-college-of-dentistry-university-of-dammam",
+        name: "College of Dentistry University of Dammam",
+        cityId: "arabia-saudi-dammam",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.9 km del centro de ‘Irqah (Wikidata).
+        // Situada a None km del centro de Dammam (Wikidata).
       }),
   ],
   "arabia-saudi-tabuk": [
@@ -150,6 +214,52 @@ export default {
         // Situada a 4.1 km del centro de Sulţānah (Wikidata).
       }),
   ],
+  "arabia-saudi-makkah": [
+      defineUniversity({
+        id: "arabia-saudi-makkah-umm-al-qura-university",
+        name: "Umm al-Qura University",
+        cityId: "arabia-saudi-makkah",
+        website: "http://www.uqu.edu.sa/",
+        source: "open-dataset",
+        // Situada a None km del centro de Makkah (Wikidata).
+      }),
+  ],
+  "arabia-saudi-irqah": [
+      defineUniversity({
+        id: "arabia-saudi-irqah-riyadh-university-of-arts",
+        name: "Riyadh University of Arts",
+        cityId: "arabia-saudi-irqah",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de ‘Irqah (Wikidata).
+      }),
+      defineUniversity({
+        id: "arabia-saudi-irqah-king-saud-university",
+        name: "King Saud University",
+        cityId: "arabia-saudi-irqah",
+        website: "http://www.ksu.edu.sa/",
+        source: "open-dataset",
+        // Situada a 4.9 km del centro de ‘Irqah (Wikidata).
+      }),
+  ],
+  "arabia-saudi-buraydah": [
+      defineUniversity({
+        id: "arabia-saudi-buraydah-qassim-university",
+        name: "Qassim University",
+        cityId: "arabia-saudi-buraydah",
+        website: "http://www.qu.edu.sa/",
+        source: "open-dataset",
+        // Situada a 20.9 km del centro de Buraydah (Wikidata).
+      }),
+      defineUniversity({
+        id: "arabia-saudi-buraydah-college-of-food-and-environment-technology-in-buraydah",
+        name: "College of Food and Environment Technology in Buraydah",
+        cityId: "arabia-saudi-buraydah",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Buraydah (Wikidata).
+      }),
+  ],
   "arabia-saudi-ta-if": [
       defineUniversity({
         id: "arabia-saudi-ta-if-taif-university",
@@ -160,22 +270,14 @@ export default {
         // Situada a 19.8 km del centro de Ta’if (Wikidata).
       }),
   ],
-  "arabia-saudi-dammam": [
+  "arabia-saudi-al-hufuf": [
       defineUniversity({
-        id: "arabia-saudi-dammam-imam-abdulrahman-bin-faisal-university",
-        name: "Imam Abdulrahman Bin Faisal University",
-        cityId: "arabia-saudi-dammam",
-        website: "https://iau.edu.sa/",
+        id: "arabia-saudi-al-hufuf-king-faisal-university",
+        name: "King Faisal University",
+        cityId: "arabia-saudi-al-hufuf",
+        website: "http://www.kfu.edu.sa/",
         source: "open-dataset",
-        // Situada a 10.0 km del centro de Dammam (Wikidata).
-      }),
-      defineUniversity({
-        id: "arabia-saudi-dammam-dammam-college-of-technology",
-        name: "Dammam College of Technology",
-        cityId: "arabia-saudi-dammam",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.6 km del centro de Dammam (Wikidata).
+        // Situada a 3.0 km del centro de Al Hufūf (Wikidata).
       }),
   ],
   "arabia-saudi-thuwal": [

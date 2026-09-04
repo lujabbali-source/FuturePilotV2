@@ -12,6 +12,48 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
+  "mauritania-nouakchott": [
+      defineUniversity({
+        id: "mauritania-nouakchott-faculte-des-sciences-juridiques-et-economiques",
+        name: "Faculté des Sciences Juridiques et Economiques",
+        cityId: "mauritania-nouakchott",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Nouakchott (Wikidata).
+      }),
+      defineUniversity({
+        id: "mauritania-nouakchott-graduate-school-of-education",
+        name: "Graduate School of Education",
+        cityId: "mauritania-nouakchott",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nouakchott (Wikidata).
+      }),
+      defineUniversity({
+        id: "mauritania-nouakchott-higher-school-of-education",
+        name: "Higher School of Education",
+        cityId: "mauritania-nouakchott",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nouakchott (Wikidata).
+      }),
+      defineUniversity({
+        id: "mauritania-nouakchott-nouakchott-business-school",
+        name: "Nouakchott Business School",
+        cityId: "mauritania-nouakchott",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nouakchott (Wikidata).
+      }),
+      defineUniversity({
+        id: "mauritania-nouakchott-al-aasriya-university-of-nouakchott",
+        name: "Al Aasriya University of Nouakchott",
+        cityId: "mauritania-nouakchott",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nouakchott (Wikidata).
+      }),
+  ],
   "mauritania-ksar": [
       defineUniversity({
         id: "mauritania-ksar-universite-libanaise-internationale-en-mauritanie",

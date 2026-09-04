@@ -19,6 +19,16 @@ const countryName = "Mauritania";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
+      id: "mauritania-nouakchott",
+      name: "Nouakchott",
+      coordinates: {"lat": 18.08581, "lng": -15.9785},
+      isCapital: true,
+      universityCount: 5,
+      statistics: { population: 1184530 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
       id: "mauritania-ksar",
       name: "Ksar",
       coordinates: {"lat": 18.0995, "lng": -15.9574},

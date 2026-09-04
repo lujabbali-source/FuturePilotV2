@@ -23,7 +23,7 @@ const cities = [
       name: "Libreville",
       coordinates: {"lat": 0.39241, "lng": 9.45356},
       isCapital: true,
-      universityCount: 4,
+      universityCount: 11,
       statistics: { population: 846090 },
       countryId,
       countryName,

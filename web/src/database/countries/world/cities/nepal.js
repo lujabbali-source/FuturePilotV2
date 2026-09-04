@@ -53,6 +53,46 @@ export default {
         source: "open-dataset",
         // Situada a 0.9 km del centro de Kathmandu (Wikidata).
       }),
+      defineUniversity({
+        id: "nepal-kathmandu-everest-college",
+        name: "Everest College",
+        cityId: "nepal-kathmandu",
+        website: "http://www.everest.edu/",
+        source: "open-dataset",
+        // Situada a None km del centro de Kathmandu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nepal-kathmandu-deerwalk-institute-of-technology",
+        name: "Deerwalk Institute of Technology",
+        cityId: "nepal-kathmandu",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kathmandu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nepal-kathmandu-national-college-of-computer-studies",
+        name: "National College of Computer Studies",
+        cityId: "nepal-kathmandu",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kathmandu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nepal-kathmandu-prime-college",
+        name: "Prime College",
+        cityId: "nepal-kathmandu",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kathmandu (Wikidata).
+      }),
+      defineUniversity({
+        id: "nepal-kathmandu-thapathali-campus",
+        name: "Thapathali Campus",
+        cityId: "nepal-kathmandu",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kathmandu (Wikidata).
+      }),
   ],
   "nepal-pokhara": [
       defineUniversity({
@@ -78,6 +118,30 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 3.7 km del centro de Pokhara (Wikidata).
+      }),
+      defineUniversity({
+        id: "nepal-pokhara-gandaki-university",
+        name: "Gandaki University",
+        cityId: "nepal-pokhara",
+        website: "https://www.gandakiuniversity.edu.np/",
+        source: "open-dataset",
+        // Situada a None km del centro de Pokhara (Wikidata).
+      }),
+      defineUniversity({
+        id: "nepal-pokhara-manipal-teaching-hospital",
+        name: "Manipal Teaching Hospital",
+        cityId: "nepal-pokhara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pokhara (Wikidata).
+      }),
+      defineUniversity({
+        id: "nepal-pokhara-la-grandee-international-college",
+        name: "LA GRANDEE International College",
+        cityId: "nepal-pokhara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pokhara (Wikidata).
       }),
   ],
   "nepal-madhyapur-thimi": [
@@ -105,6 +169,48 @@ export default {
         source: "open-dataset",
         // Situada a 5.2 km del centro de Madhyapur Thimi (Wikidata).
       }),
+      defineUniversity({
+        id: "nepal-madhyapur-thimi-modern-college-of-management",
+        name: "Modern College of Management",
+        cityId: "nepal-madhyapur-thimi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Madhyapur Thimi (Wikidata).
+      }),
+      defineUniversity({
+        id: "nepal-madhyapur-thimi-siddhartha-university",
+        name: "Siddhartha University",
+        cityId: "nepal-madhyapur-thimi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Madhyapur Thimi (Wikidata).
+      }),
+  ],
+  "nepal-patan": [
+      defineUniversity({
+        id: "nepal-patan-universal-engineering-science-college",
+        name: "Universal Engineering & Science College",
+        cityId: "nepal-patan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Pātan (Wikidata).
+      }),
+      defineUniversity({
+        id: "nepal-patan-kathmandu-college-of-management",
+        name: "Kathmandu College of Management",
+        cityId: "nepal-patan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pātan (Wikidata).
+      }),
+      defineUniversity({
+        id: "nepal-patan-patan-academy-of-health-sciences",
+        name: "Patan Academy of Health Sciences",
+        cityId: "nepal-patan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pātan (Wikidata).
+      }),
   ],
   "nepal-rajbiraj": [
       defineUniversity({
@@ -122,24 +228,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.8 km del centro de Rājbirāj (Wikidata).
-      }),
-  ],
-  "nepal-nepalgunj": [
-      defineUniversity({
-        id: "nepal-nepalgunj-lumbini-technological-university",
-        name: "Lumbini Technological University",
-        cityId: "nepal-nepalgunj",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Nepalgunj (Wikidata).
-      }),
-      defineUniversity({
-        id: "nepal-nepalgunj-lumbini-technological-university",
-        name: "Lumbini Technological University",
-        cityId: "nepal-nepalgunj",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Nepalgunj (Wikidata).
       }),
   ],
 };

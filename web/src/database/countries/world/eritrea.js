@@ -23,7 +23,7 @@ const cities = [
       name: "Asmara",
       coordinates: {"lat": 15.33805, "lng": 38.93184},
       isCapital: true,
-      universityCount: 4,
+      universityCount: 14,
       statistics: { population: 563930 },
       countryId,
       countryName,

@@ -29,5 +29,21 @@ export default {
         source: "open-dataset",
         // Situada a 0.4 km del centro de Reykjavík (Wikidata).
       }),
+      defineUniversity({
+        id: "islandia-reykjavik-iceland-university-of-the-arts",
+        name: "Iceland University of the Arts",
+        cityId: "islandia-reykjavik",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Reykjavík (Wikidata).
+      }),
+      defineUniversity({
+        id: "islandia-reykjavik-technical-university-of-iceland",
+        name: "Technical University of Iceland",
+        cityId: "islandia-reykjavik",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Reykjavík (Wikidata).
+      }),
   ],
 };

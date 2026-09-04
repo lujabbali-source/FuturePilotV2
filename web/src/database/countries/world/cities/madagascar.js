@@ -37,23 +37,21 @@ export default {
         source: "open-dataset",
         // Situada a 3.3 km del centro de Antananarivo (Wikidata).
       }),
-  ],
-  "madagascar-antsirabe": [
       defineUniversity({
-        id: "madagascar-antsirabe-military-academy-of-antsirabe",
-        name: "Military Academy of Antsirabe",
-        cityId: "madagascar-antsirabe",
+        id: "madagascar-antananarivo-institut-superieur-polytechnique-arsenal-ispa",
+        name: "Institut Supérieur Polytechnique Arsenal ISPA",
+        cityId: "madagascar-antananarivo",
         website: null,
         source: "open-dataset",
-        // Situada a 0.1 km del centro de Antsirabe (Wikidata).
+        // Situada a None km del centro de Antananarivo (Wikidata).
       }),
       defineUniversity({
-        id: "madagascar-antsirabe-military-academy-of-antsirabe",
-        name: "Military Academy of Antsirabe",
-        cityId: "madagascar-antsirabe",
+        id: "madagascar-antananarivo-universite-catholique-de-madagascar",
+        name: "Université Catholique de Madagascar",
+        cityId: "madagascar-antananarivo",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Antsirabe (Wikidata).
+        // Situada a None km del centro de Antananarivo (Wikidata).
       }),
   ],
 };

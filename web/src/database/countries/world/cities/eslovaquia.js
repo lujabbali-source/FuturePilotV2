@@ -14,12 +14,12 @@ import { defineUniversity } from "../../schema.js";
 export default {
   "eslovaquia-kosice": [
       defineUniversity({
-        id: "eslovaquia-kosice-university-of-veterinary-medicine-and-pharmacy-in-kosice",
-        name: "University of Veterinary Medicine and Pharmacy in Košice",
+        id: "eslovaquia-kosice-royal-academy-in-kosice",
+        name: "Royal Academy in Košice",
         cityId: "eslovaquia-kosice",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Košice (Wikidata).
+        // Situada a 0.7 km del centro de Košice (Wikidata).
       }),
       defineUniversity({
         id: "eslovaquia-kosice-university-of-veterinary-medicine-and-pharmacy-in-kosice",
@@ -46,20 +46,20 @@ export default {
         // Situada a 2.1 km del centro de Košice (Wikidata).
       }),
       defineUniversity({
-        id: "eslovaquia-kosice-technical-university-of-kosice",
-        name: "Technical University of Košice",
-        cityId: "eslovaquia-kosice",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Košice (Wikidata).
-      }),
-      defineUniversity({
         id: "eslovaquia-kosice-pavol-jozef-safarik-university-in-kosice",
         name: "Pavol Jozef Šafárik University in Košice",
         cityId: "eslovaquia-kosice",
         website: "http://www.upjs.sk/",
         source: "open-dataset",
         // Situada a 0.8 km del centro de Košice (Wikidata).
+      }),
+      defineUniversity({
+        id: "eslovaquia-kosice-university-of-kosice",
+        name: "University of Košice",
+        cityId: "eslovaquia-kosice",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Košice (Wikidata).
       }),
       defineUniversity({
         id: "eslovaquia-kosice-university-of-security-management-in-kosice",
@@ -85,15 +85,23 @@ export default {
         source: "open-dataset",
         // Situada a 1.8 km del centro de Košice (Wikidata).
       }),
+      defineUniversity({
+        id: "eslovaquia-kosice-horthy-miklos-air-force-academy",
+        name: "\"Horthy Miklós\" Air Force Academy",
+        cityId: "eslovaquia-kosice",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Košice (Wikidata).
+      }),
   ],
   "eslovaquia-bratislava": [
       defineUniversity({
-        id: "eslovaquia-bratislava-slovak-university-of-technology-in-bratislava",
-        name: "Slovak University of Technology in Bratislava",
+        id: "eslovaquia-bratislava-erzsebet-university",
+        name: "Erzsébet University",
         cityId: "eslovaquia-bratislava",
-        website: "http://www.stuba.sk/",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Bratislava (Wikidata).
+        // Situada a 0.5 km del centro de Bratislava (Wikidata).
       }),
       defineUniversity({
         id: "eslovaquia-bratislava-slovak-university-of-technology-in-bratislava",
@@ -136,42 +144,6 @@ export default {
         // Situada a 0.6 km del centro de Bratislava (Wikidata).
       }),
   ],
-  "eslovaquia-presov": [
-      defineUniversity({
-        id: "eslovaquia-presov-university-of-presov",
-        name: "University of Prešov",
-        cityId: "eslovaquia-presov",
-        website: "http://www.unipo.sk/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Prešov (Wikidata).
-      }),
-      defineUniversity({
-        id: "eslovaquia-presov-university-of-presov",
-        name: "University of Prešov",
-        cityId: "eslovaquia-presov",
-        website: "http://www.unipo.sk/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Prešov (Wikidata).
-      }),
-  ],
-  "eslovaquia-zvolen": [
-      defineUniversity({
-        id: "eslovaquia-zvolen-technical-university-in-zvolen",
-        name: "Technical University in Zvolen",
-        cityId: "eslovaquia-zvolen",
-        website: "http://www.tuzvo.sk/",
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Zvolen (Wikidata).
-      }),
-      defineUniversity({
-        id: "eslovaquia-zvolen-technical-university-in-zvolen",
-        name: "Technical University in Zvolen",
-        cityId: "eslovaquia-zvolen",
-        website: "http://www.tuzvo.sk/",
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Zvolen (Wikidata).
-      }),
-  ],
   "eslovaquia-trnava": [
       defineUniversity({
         id: "eslovaquia-trnava-trnava-university-in-trnava",
@@ -189,23 +161,49 @@ export default {
         source: "open-dataset",
         // Situada a 0.7 km del centro de Trnava (Wikidata).
       }),
-  ],
-  "eslovaquia-ruzomberok": [
       defineUniversity({
-        id: "eslovaquia-ruzomberok-catholic-university-in-ruzomberok",
-        name: "Catholic University in Ružomberok",
-        cityId: "eslovaquia-ruzomberok",
-        website: "http://www.ku.sk/",
+        id: "eslovaquia-trnava-university-of-trnava",
+        name: "University of Trnava",
+        cityId: "eslovaquia-trnava",
+        website: "http://www.truni.sk/",
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Ružomberok (Wikidata).
+        // Situada a 0.7 km del centro de Trnava (Wikidata).
+      }),
+  ],
+  "eslovaquia-trencin": [
+      defineUniversity({
+        id: "eslovaquia-trencin-alexander-dubcek-university-in-trencin",
+        name: "Alexander Dubcek University in Trencin",
+        cityId: "eslovaquia-trencin",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Trenčín (Wikidata).
       }),
       defineUniversity({
-        id: "eslovaquia-ruzomberok-catholic-university-in-ruzomberok",
-        name: "Catholic University in Ružomberok",
-        cityId: "eslovaquia-ruzomberok",
-        website: "http://www.ku.sk/",
+        id: "eslovaquia-trencin-the-school-of-management",
+        name: "The School of Management",
+        cityId: "eslovaquia-trencin",
+        website: "http://www.vsm.sk/",
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Ružomberok (Wikidata).
+        // Situada a None km del centro de Trenčín (Wikidata).
+      }),
+  ],
+  "eslovaquia-nitra": [
+      defineUniversity({
+        id: "eslovaquia-nitra-university-of-constantine-the-philosopher",
+        name: "University of Constantine the Philosopher",
+        cityId: "eslovaquia-nitra",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Nitra (Wikidata).
+      }),
+      defineUniversity({
+        id: "eslovaquia-nitra-slovak-university-of-agriculture",
+        name: "Slovak University of Agriculture",
+        cityId: "eslovaquia-nitra",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nitra (Wikidata).
       }),
   ],
 };

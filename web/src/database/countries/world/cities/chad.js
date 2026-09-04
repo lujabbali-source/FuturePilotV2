@@ -45,6 +45,14 @@ export default {
         source: "open-dataset",
         // Situada a 3.9 km del centro de N'Djamena (Wikidata).
       }),
+      defineUniversity({
+        id: "chad-n-djamena-king-faisal-university",
+        name: "King Faisal University",
+        cityId: "chad-n-djamena",
+        website: "http://www.kfu.edu.sa/",
+        source: "open-dataset",
+        // Situada a None km del centro de N'Djamena (Wikidata).
+      }),
   ],
   "chad-sarh": [
       defineUniversity({

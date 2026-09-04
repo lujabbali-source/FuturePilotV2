@@ -12,169 +12,193 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
-  "japon-kamigyo-ku": [
+  "japon-tokyo": [
       defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-institute-of-technology",
-        name: "Kyoto Institute of Technology",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.kit.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Kamigyō-ku (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-institute-of-technology",
-        name: "Kyoto Institute of Technology",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.kit.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Kamigyō-ku (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kamigyo-ku-college-of-medical-technology-kyoto-prefectural-university-of-medicine",
-        name: "College of Medical Technology, Kyoto Prefectural University of Medicine",
-        cityId: "japon-kamigyo-ku",
+        id: "japon-tokyo-tokyo-online-university",
+        name: "Tokyo Online University",
+        cityId: "japon-tokyo",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Kamigyō-ku (Wikidata).
+        // Situada a 0.5 km del centro de Tokyo (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kamigyo-ku-ritsumeikan-university",
-        name: "Ritsumeikan University",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.ritsumei.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Kamigyō-ku (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-prefectural-university-of-medicine",
-        name: "Kyoto Prefectural University of Medicine",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.kpu-m.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Kamigyō-ku (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-university-of-the-arts-and-design",
-        name: "Kyoto University of the Arts and Design",
-        cityId: "japon-kamigyo-ku",
+        id: "japon-tokyo-tokyo-polytechnic-university",
+        name: "Tokyo Polytechnic University",
+        cityId: "japon-tokyo",
         website: null,
         source: "open-dataset",
-        // Situada a 3.3 km del centro de Kamigyō-ku (Wikidata).
+        // Situada a 1.0 km del centro de Tokyo (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-sangyo-university",
-        name: "Kyoto Sangyo University",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.kyoto-su.ac.jp/",
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Kamigyō-ku (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-university",
-        name: "Kyoto University",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.kyoto-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Kamigyō-ku (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-university",
-        name: "Kyoto University",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.kyoto-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Kamigyō-ku (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-university",
-        name: "Kyoto University",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.kyoto-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Kamigyō-ku (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kamigyo-ku-otani-university",
-        name: "Ōtani University",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.otani.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Kamigyō-ku (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kamigyo-ku-bukkyo-university",
-        name: "Bukkyo University",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.bukkyo-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Kamigyō-ku (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kamigyo-ku-doshisha-women-s-college-of-liberal-arts",
-        name: "Doshisha Women's College of Liberal Arts",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.dwc.doshisha.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Kamigyō-ku (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-college-of-graduate-studies-for-informatics",
-        name: "Kyoto College of Graduate Studies for Informatics",
-        cityId: "japon-kamigyo-ku",
+        id: "japon-tokyo-bunka-gakuen-university",
+        name: "Bunka Gakuen University",
+        cityId: "japon-tokyo",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Kamigyō-ku (Wikidata).
+        // Situada a 0.5 km del centro de Tokyo (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-notre-dame-university",
-        name: "Kyoto Notre Dame University",
-        cityId: "japon-kamigyo-ku",
-        website: "https://www.notredame.ac.jp/",
+        id: "japon-tokyo-kogakuin-university",
+        name: "Kogakuin University",
+        cityId: "japon-tokyo",
+        website: "http://www.kogakuin.ac.jp/",
         source: "open-dataset",
-        // Situada a 2.8 km del centro de Kamigyō-ku (Wikidata).
+        // Situada a 0.4 km del centro de Tokyo (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-notre-dame-university",
-        name: "Kyoto Notre Dame University",
-        cityId: "japon-kamigyo-ku",
-        website: "https://www.notredame.ac.jp/",
+        id: "japon-tokyo-professional-institute-of-international-fashion",
+        name: "Professional Institute of International Fashion",
+        cityId: "japon-tokyo",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.8 km del centro de Kamigyō-ku (Wikidata).
+        // Situada a 0.5 km del centro de Tokyo (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-prefectural-university",
-        name: "Kyoto Prefectural University",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.kpu.ac.jp/",
+        id: "japon-tokyo-international-professional-university-of-technology-in-tokyo",
+        name: "International Professional University of Technology in Tokyo",
+        cityId: "japon-tokyo",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Kamigyō-ku (Wikidata).
+        // Situada a 0.5 km del centro de Tokyo (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kamigyo-ku-kyoto-seika-university",
-        name: "Kyoto Seika University",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.kyoto-seika.ac.jp/",
+        id: "japon-tokyo-tokyo-isen",
+        name: "Tokyo Isen",
+        cityId: "japon-tokyo",
+        website: null,
         source: "open-dataset",
-        // Situada a 5.0 km del centro de Kamigyō-ku (Wikidata).
+        // Situada a None km del centro de Tokyo (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kamigyo-ku-doshisha-university",
-        name: "Doshisha University",
-        cityId: "japon-kamigyo-ku",
-        website: "http://www.doshisha.ac.jp/",
+        id: "japon-tokyo-lec-graduate-school",
+        name: "LEC Graduate School",
+        cityId: "japon-tokyo",
+        website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Kamigyō-ku (Wikidata).
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-graduate-school-of-management-globis-university",
+        name: "Graduate School of Management, Globis University",
+        cityId: "japon-tokyo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-kaetsu-university",
+        name: "Kaetsu University",
+        cityId: "japon-tokyo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-kokushikan-university",
+        name: "Kokushikan University",
+        cityId: "japon-tokyo",
+        website: "http://www.kokushikan.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-nippon-sport-science-university",
+        name: "Nippon Sport Science University",
+        cityId: "japon-tokyo",
+        website: "http://www.nittai.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-tokyo-women-s-college-of-physical-education",
+        name: "Tokyo Women's College of Physical Education",
+        cityId: "japon-tokyo",
+        website: "http://www.twcpe.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-tokyo-gakugei-university",
+        name: "Tokyo Gakugei University",
+        cityId: "japon-tokyo",
+        website: "http://www.u-gakugei.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-tokyo-college-of-music",
+        name: "Tokyo College of Music",
+        cityId: "japon-tokyo",
+        website: "http://www.tokyo-ondai.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-gakushuin-university",
+        name: "Gakushuin University",
+        cityId: "japon-tokyo",
+        website: "http://www.gakushuin.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-bunka-fashion-graduate-university",
+        name: "Bunka Fashion Graduate University",
+        cityId: "japon-tokyo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-national-graduate-institute-for-policy-studies",
+        name: "National Graduate Institute for Policy Studies",
+        cityId: "japon-tokyo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-tokyo-medical-and-dental-university",
+        name: "Tokyo Medical and Dental University",
+        cityId: "japon-tokyo",
+        website: "http://www.tmd.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-kyorin-university",
+        name: "Kyorin University",
+        cityId: "japon-tokyo",
+        website: "http://www.kyorin-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-imperial-japanese-army-academy",
+        name: "Imperial Japanese Army Academy",
+        cityId: "japon-tokyo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-shibuya-university-network",
+        name: "Shibuya University Network",
+        cityId: "japon-tokyo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokyo-tokyo-kasei-gakuin-university",
+        name: "Tokyo Kasei-Gakuin University",
+        cityId: "japon-tokyo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tokyo (Wikidata).
       }),
   ],
   "japon-sapporo": [
-      defineUniversity({
-        id: "japon-sapporo-hokkaido-university",
-        name: "Hokkaido University",
-        cityId: "japon-sapporo",
-        website: "http://www.hokudai.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Sapporo (Wikidata).
-      }),
       defineUniversity({
         id: "japon-sapporo-hokkaido-university",
         name: "Hokkaido University",
@@ -287,6 +311,354 @@ export default {
         source: "open-dataset",
         // Situada a 9.3 km del centro de Sapporo (Wikidata).
       }),
+      defineUniversity({
+        id: "japon-sapporo-hokkaido-imperial-university",
+        name: "Hokkaido Imperial University",
+        cityId: "japon-sapporo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sapporo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sapporo-hokkaido-institute-of-technology",
+        name: "Hokkaido Institute of Technology",
+        cityId: "japon-sapporo",
+        website: "http://www.hit.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Sapporo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sapporo-hokkaido-bunkyo-university",
+        name: "Hokkaido Bunkyo University",
+        cityId: "japon-sapporo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sapporo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sapporo-sapporo-school-of-the-arts",
+        name: "Sapporo School of the Arts",
+        cityId: "japon-sapporo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sapporo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sapporo-hokkaido-chitose-rehabilitation-university",
+        name: "Hokkaido Chitose Rehabilitation University",
+        cityId: "japon-sapporo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sapporo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sapporo-muroran-institute-of-technology",
+        name: "Muroran Institute of Technology",
+        cityId: "japon-sapporo",
+        website: "http://www.muroran-it.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Sapporo (Wikidata).
+      }),
+  ],
+  "japon-nagoya": [
+      defineUniversity({
+        id: "japon-nagoya-college-of-nagoya-bunri-university",
+        name: "College of Nagoya Bunri University",
+        cityId: "japon-nagoya",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-junior-college-aichi-gakuin-university",
+        name: "Junior College, Aichi Gakuin University",
+        cityId: "japon-nagoya",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.2 km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-nagoya-institute-of-technology",
+        name: "Nagoya Institute of Technology",
+        cityId: "japon-nagoya",
+        website: "http://www.nitech.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-nagoya-university",
+        name: "Nagoya University",
+        cityId: "japon-nagoya",
+        website: "http://www.nagoya-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 6.5 km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-chukyo-university",
+        name: "Chukyo University",
+        cityId: "japon-nagoya",
+        website: "http://www.chukyo-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 7.2 km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-aichi-university",
+        name: "Aichi University",
+        cityId: "japon-nagoya",
+        website: "http://www.aichi-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-nagoya-city-university",
+        name: "Nagoya City University",
+        cityId: "japon-nagoya",
+        website: "http://www.nagoya-cu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.4 km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-aichi-medical-college-for-physical-and-occupational-therapy",
+        name: "Aichi Medical College for Physical and Occupational Therapy",
+        cityId: "japon-nagoya",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.6 km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-nagoya-gakuin-university",
+        name: "Nagoya Gakuin University",
+        cityId: "japon-nagoya",
+        website: "http://www.ngu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.9 km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-nagoya-future-culture-college",
+        name: "Nagoya Future Culture College",
+        cityId: "japon-nagoya",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-nagoya-aoi-university",
+        name: "Nagoya Aoi University",
+        cityId: "japon-nagoya",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.2 km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-st-mary-s-college-nagoya",
+        name: "St. Mary's College, Nagoya",
+        cityId: "japon-nagoya",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-international-professional-university-of-technology-in-nagoya",
+        name: "International Professional University of Technology in Nagoya",
+        cityId: "japon-nagoya",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-nanzan-university",
+        name: "Nanzan University",
+        cityId: "japon-nagoya",
+        website: "http://www.nanzan-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-nagoya-junior-college-of-art-and-design",
+        name: "Nagoya Junior College of Art and Design",
+        cityId: "japon-nagoya",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-aichi-university-of-education",
+        name: "Aichi University of Education",
+        cityId: "japon-nagoya",
+        website: "http://www.aichi-edu.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-aichi-shukutoku-university",
+        name: "Aichi Shukutoku University",
+        cityId: "japon-nagoya",
+        website: "http://www.aasa.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-seijoh-university",
+        name: "Seijoh University",
+        cityId: "japon-nagoya",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nagoya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagoya-nagoya-ryujo-women-s-university",
+        name: "Nagoya Ryujo Women's University",
+        cityId: "japon-nagoya",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nagoya (Wikidata).
+      }),
+  ],
+  "japon-osaka": [
+      defineUniversity({
+        id: "japon-osaka-osaka-health-science-university",
+        name: "Osaka Health Science University",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-osaka-christian-college",
+        name: "Osaka Christian College",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.3 km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-osaka-jogakuin-college",
+        name: "Osaka Jogakuin College",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-osaka-metropolitan-university",
+        name: "Osaka Metropolitan University",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-international-professional-university-of-technology-in-osaka",
+        name: "International Professional University of Technology in Osaka",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-osaka-kyoiku-university",
+        name: "Osaka Kyoiku University",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-osaka-university-of-commerce",
+        name: "Osaka University of Commerce",
+        cityId: "japon-osaka",
+        website: "http://www.daishodai.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-osaka-seikei-university",
+        name: "Osaka Seikei University",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-osaka-meijo-women-s-college",
+        name: "Osaka Meijo Women's College",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-osaka-butsuryo-university",
+        name: "Osaka Butsuryo University",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-kansai-university-of-health-sciences",
+        name: "Kansai University of Health Sciences",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-senri-kinran-university",
+        name: "Senri Kinran University",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-osaka-city-university-college-of-nursing",
+        name: "Osaka City University College of Nursing",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-osaka-international-university",
+        name: "Osaka International University",
+        cityId: "japon-osaka",
+        website: "http://www.oiu.oiu.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-osaka-sangyo-university",
+        name: "Osaka Sangyo University",
+        cityId: "japon-osaka",
+        website: "http://www.osaka-sandai.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-takarazuka-university",
+        name: "Takarazuka University",
+        cityId: "japon-osaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-tezukayama-gakuin-university",
+        name: "Tezukayama Gakuin University",
+        cityId: "japon-osaka",
+        website: "http://www.tezuka-gu.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-osaka-setsunan-university",
+        name: "Setsunan University",
+        cityId: "japon-osaka",
+        website: "http://www.setsunan.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Osaka (Wikidata).
+      }),
   ],
   "japon-kyoto": [
       defineUniversity({
@@ -393,291 +765,29 @@ export default {
         source: "open-dataset",
         // Situada a 4.0 km del centro de Kyoto (Wikidata).
       }),
-  ],
-  "japon-nagoya": [
       defineUniversity({
-        id: "japon-nagoya-college-of-nagoya-bunri-university",
-        name: "College of Nagoya Bunri University",
-        cityId: "japon-nagoya",
+        id: "japon-kyoto-kyoto-imperial-university",
+        name: "Kyoto Imperial University",
+        cityId: "japon-kyoto",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Nagoya (Wikidata).
+        // Situada a None km del centro de Kyoto (Wikidata).
       }),
       defineUniversity({
-        id: "japon-nagoya-junior-college-aichi-gakuin-university",
-        name: "Junior College, Aichi Gakuin University",
-        cityId: "japon-nagoya",
+        id: "japon-kyoto-college-of-medical-technology-kyoto-university",
+        name: "College of Medical Technology, Kyoto University",
+        cityId: "japon-kyoto",
         website: null,
         source: "open-dataset",
-        // Situada a 5.2 km del centro de Nagoya (Wikidata).
+        // Situada a None km del centro de Kyoto (Wikidata).
       }),
       defineUniversity({
-        id: "japon-nagoya-nagoya-institute-of-technology",
-        name: "Nagoya Institute of Technology",
-        cityId: "japon-nagoya",
-        website: "http://www.nitech.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Nagoya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagoya-nagoya-institute-of-technology",
-        name: "Nagoya Institute of Technology",
-        cityId: "japon-nagoya",
-        website: "http://www.nitech.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Nagoya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagoya-nagoya-university",
-        name: "Nagoya University",
-        cityId: "japon-nagoya",
-        website: "http://www.nagoya-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.5 km del centro de Nagoya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagoya-chukyo-university",
-        name: "Chukyo University",
-        cityId: "japon-nagoya",
-        website: "http://www.chukyo-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 7.2 km del centro de Nagoya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagoya-aichi-university",
-        name: "Aichi University",
-        cityId: "japon-nagoya",
-        website: "http://www.aichi-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Nagoya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagoya-nagoya-city-university",
-        name: "Nagoya City University",
-        cityId: "japon-nagoya",
-        website: "http://www.nagoya-cu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.4 km del centro de Nagoya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagoya-aichi-medical-college-for-physical-and-occupational-therapy",
-        name: "Aichi Medical College for Physical and Occupational Therapy",
-        cityId: "japon-nagoya",
+        id: "japon-kyoto-kyoto-consortium-for-japanese-studies",
+        name: "Kyoto Consortium for Japanese Studies",
+        cityId: "japon-kyoto",
         website: null,
         source: "open-dataset",
-        // Situada a 6.6 km del centro de Nagoya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagoya-nagoya-gakuin-university",
-        name: "Nagoya Gakuin University",
-        cityId: "japon-nagoya",
-        website: "http://www.ngu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.9 km del centro de Nagoya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagoya-nagoya-future-culture-college",
-        name: "Nagoya Future Culture College",
-        cityId: "japon-nagoya",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Nagoya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagoya-nagoya-aoi-university",
-        name: "Nagoya Aoi University",
-        cityId: "japon-nagoya",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Nagoya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagoya-st-mary-s-college-nagoya",
-        name: "St. Mary's College, Nagoya",
-        cityId: "japon-nagoya",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Nagoya (Wikidata).
-      }),
-  ],
-  "japon-nonoichi": [
-      defineUniversity({
-        id: "japon-nonoichi-hokuriku-gakuin-university",
-        name: "Hokuriku Gakuin University",
-        cityId: "japon-nonoichi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.2 km del centro de Nonoichi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nonoichi-kanazawa-technical-college",
-        name: "Kanazawa Technical College",
-        cityId: "japon-nonoichi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Nonoichi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nonoichi-kanazawa-college-of-art",
-        name: "Kanazawa College of Art",
-        cityId: "japon-nonoichi",
-        website: "http://www.kanazawa-bidai.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.0 km del centro de Nonoichi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nonoichi-kanazawa-college-of-art",
-        name: "Kanazawa College of Art",
-        cityId: "japon-nonoichi",
-        website: "http://www.kanazawa-bidai.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.0 km del centro de Nonoichi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nonoichi-hokuriku-university",
-        name: "Hokuriku University",
-        cityId: "japon-nonoichi",
-        website: "http://www.hokuriku-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 8.2 km del centro de Nonoichi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nonoichi-kanazawa-gakuin-college",
-        name: "Kanazawa Gakuin College",
-        cityId: "japon-nonoichi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.3 km del centro de Nonoichi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nonoichi-kanazawa-gakuin-university",
-        name: "Kanazawa Gakuin University",
-        cityId: "japon-nonoichi",
-        website: "http://www.kanazawa-gu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 7.2 km del centro de Nonoichi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nonoichi-kanazawa-institute-of-technology",
-        name: "Kanazawa Institute of Technology",
-        cityId: "japon-nonoichi",
-        website: "http://www.kanazawa-it.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Nonoichi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nonoichi-kanazawa-institute-of-technology",
-        name: "Kanazawa Institute of Technology",
-        cityId: "japon-nonoichi",
-        website: "http://www.kanazawa-it.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Nonoichi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nonoichi-kanazawa-university",
-        name: "Kanazawa University",
-        cityId: "japon-nonoichi",
-        website: "http://www.kanazawa-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 8.4 km del centro de Nonoichi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nonoichi-kanazawa-university",
-        name: "Kanazawa University",
-        cityId: "japon-nonoichi",
-        website: "http://www.kanazawa-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 8.4 km del centro de Nonoichi (Wikidata).
-      }),
-  ],
-  "japon-niigata": [
-      defineUniversity({
-        id: "japon-niigata-niigata-college-of-technology",
-        name: "Niigata College of Technology",
-        cityId: "japon-niigata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.3 km del centro de Niigata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-niigata-niigata-university",
-        name: "Niigata University",
-        cityId: "japon-niigata",
-        website: "http://www.niigata-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 10.6 km del centro de Niigata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-niigata-niigata-university",
-        name: "Niigata University",
-        cityId: "japon-niigata",
-        website: "http://www.niigata-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 10.6 km del centro de Niigata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-niigata-college-of-biomedical-technology-niigata-university",
-        name: "College of Biomedical Technology Niigata University",
-        cityId: "japon-niigata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Niigata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-niigata-kaishi-innovation-university",
-        name: "Kaishi Innovation University",
-        cityId: "japon-niigata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Niigata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-niigata-meirin-college",
-        name: "Meirin College",
-        cityId: "japon-niigata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.1 km del centro de Niigata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-niigata-niigata-seiryo-university",
-        name: "Niigata Seiryo University",
-        cityId: "japon-niigata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Niigata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-niigata-the-nippon-dental-university",
-        name: "The Nippon Dental University",
-        cityId: "japon-niigata",
-        website: "http://www.ndu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Niigata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-niigata-the-nippon-dental-university-college-at-niigata",
-        name: "The Nippon Dental University College at Niigata",
-        cityId: "japon-niigata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Niigata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-niigata-kaishi-professional-university",
-        name: "Kaishi Professional University",
-        cityId: "japon-niigata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Niigata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-niigata-kaishi-professional-university",
-        name: "Kaishi Professional University",
-        cityId: "japon-niigata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Niigata (Wikidata).
+        // Situada a None km del centro de Kyoto (Wikidata).
       }),
   ],
   "japon-kobe": [
@@ -769,6 +879,54 @@ export default {
         source: "open-dataset",
         // Situada a 0.5 km del centro de Kobe (Wikidata).
       }),
+      defineUniversity({
+        id: "japon-kobe-newport-international-university-west-japan-school",
+        name: "Newport International University West Japan School",
+        cityId: "japon-kobe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kobe (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kobe-hyogo-university-of-health-sciences",
+        name: "Hyogo University of Health Sciences",
+        cityId: "japon-kobe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kobe (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kobe-shukugawa-gakuin-college",
+        name: "Shukugawa Gakuin College",
+        cityId: "japon-kobe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kobe (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kobe-kobe-university-of-commerce",
+        name: "Kobe University of Commerce",
+        cityId: "japon-kobe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kobe (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kobe-kansai-university-of-nursing-and-health-sciences",
+        name: "Kansai University of Nursing and Health Sciences",
+        cityId: "japon-kobe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kobe (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kobe-kobe-women-s-college-of-pharmacy",
+        name: "Kobe Women's College of Pharmacy",
+        cityId: "japon-kobe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kobe (Wikidata).
+      }),
   ],
   "japon-sendai": [
       defineUniversity({
@@ -859,87 +1017,673 @@ export default {
         source: "open-dataset",
         // Situada a 2.1 km del centro de Sendai (Wikidata).
       }),
+      defineUniversity({
+        id: "japon-sendai-tohoku-imperial-university",
+        name: "Tohoku Imperial University",
+        cityId: "japon-sendai",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sendai (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sendai-sendai-national-college-of-technology",
+        name: "Sendai National College of Technology",
+        cityId: "japon-sendai",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sendai (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sendai-tohoku-seikatsu-bunka-junior-college",
+        name: "Tohoku Seikatsu Bunka Junior College",
+        cityId: "japon-sendai",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sendai (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sendai-miyagi-university-of-education",
+        name: "Miyagi University of Education",
+        cityId: "japon-sendai",
+        website: "http://www.miyakyo-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Sendai (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sendai-tohoku-institute-of-technology",
+        name: "Tohoku Institute of Technology",
+        cityId: "japon-sendai",
+        website: "http://www.tohtech.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Sendai (Wikidata).
+      }),
   ],
-  "japon-asahikawa": [
+  "japon-kamigyo-ku": [
       defineUniversity({
-        id: "japon-asahikawa-national-institute-of-technology-asahikawa-college",
-        name: "National Institute of Technology, Asahikawa College",
-        cityId: "japon-asahikawa",
-        website: "https://asahikawa-nct.ac.jp/",
+        id: "japon-kamigyo-ku-kyoto-institute-of-technology",
+        name: "Kyoto Institute of Technology",
+        cityId: "japon-kamigyo-ku",
+        website: "http://www.kit.ac.jp/",
         source: "open-dataset",
-        // Situada a 4.8 km del centro de Asahikawa (Wikidata).
+        // Situada a 3.2 km del centro de Kamigyō-ku (Wikidata).
       }),
       defineUniversity({
-        id: "japon-asahikawa-asahikawa-city-university",
-        name: "Asahikawa City University",
-        cityId: "japon-asahikawa",
+        id: "japon-kamigyo-ku-college-of-medical-technology-kyoto-prefectural-university-of-medicine",
+        name: "College of Medical Technology, Kyoto Prefectural University of Medicine",
+        cityId: "japon-kamigyo-ku",
         website: null,
         source: "open-dataset",
-        // Situada a 8.3 km del centro de Asahikawa (Wikidata).
+        // Situada a 1.5 km del centro de Kamigyō-ku (Wikidata).
       }),
       defineUniversity({
-        id: "japon-asahikawa-asahikawa-city-university-junior-college",
-        name: "Asahikawa City University Junior College",
-        cityId: "japon-asahikawa",
+        id: "japon-kamigyo-ku-ritsumeikan-university",
+        name: "Ritsumeikan University",
+        cityId: "japon-kamigyo-ku",
+        website: "http://www.ritsumei.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Kamigyō-ku (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kamigyo-ku-kyoto-prefectural-university-of-medicine",
+        name: "Kyoto Prefectural University of Medicine",
+        cityId: "japon-kamigyo-ku",
+        website: "http://www.kpu-m.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Kamigyō-ku (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kamigyo-ku-kyoto-university-of-the-arts-and-design",
+        name: "Kyoto University of the Arts and Design",
+        cityId: "japon-kamigyo-ku",
         website: null,
         source: "open-dataset",
-        // Situada a 8.3 km del centro de Asahikawa (Wikidata).
+        // Situada a 3.3 km del centro de Kamigyō-ku (Wikidata).
       }),
       defineUniversity({
-        id: "japon-asahikawa-asahikawa-university-junior-college",
-        name: "Asahikawa University Junior College",
-        cityId: "japon-asahikawa",
+        id: "japon-kamigyo-ku-kyoto-sangyo-university",
+        name: "Kyoto Sangyo University",
+        cityId: "japon-kamigyo-ku",
+        website: "http://www.kyoto-su.ac.jp/",
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Kamigyō-ku (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kamigyo-ku-kyoto-university",
+        name: "Kyoto University",
+        cityId: "japon-kamigyo-ku",
+        website: "http://www.kyoto-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Kamigyō-ku (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kamigyo-ku-otani-university",
+        name: "Ōtani University",
+        cityId: "japon-kamigyo-ku",
+        website: "http://www.otani.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Kamigyō-ku (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kamigyo-ku-bukkyo-university",
+        name: "Bukkyo University",
+        cityId: "japon-kamigyo-ku",
+        website: "http://www.bukkyo-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Kamigyō-ku (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kamigyo-ku-doshisha-women-s-college-of-liberal-arts",
+        name: "Doshisha Women's College of Liberal Arts",
+        cityId: "japon-kamigyo-ku",
+        website: "http://www.dwc.doshisha.ac.jp/",
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Kamigyō-ku (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kamigyo-ku-kyoto-college-of-graduate-studies-for-informatics",
+        name: "Kyoto College of Graduate Studies for Informatics",
+        cityId: "japon-kamigyo-ku",
         website: null,
         source: "open-dataset",
-        // Situada a 8.3 km del centro de Asahikawa (Wikidata).
+        // Situada a 2.1 km del centro de Kamigyō-ku (Wikidata).
       }),
       defineUniversity({
-        id: "japon-asahikawa-asahikawa-university",
-        name: "Asahikawa University",
-        cityId: "japon-asahikawa",
-        website: "http://www.asahikawa-u.ac.jp/",
+        id: "japon-kamigyo-ku-kyoto-notre-dame-university",
+        name: "Kyoto Notre Dame University",
+        cityId: "japon-kamigyo-ku",
+        website: "https://www.notredame.ac.jp/",
         source: "open-dataset",
-        // Situada a 8.3 km del centro de Asahikawa (Wikidata).
+        // Situada a 2.8 km del centro de Kamigyō-ku (Wikidata).
       }),
       defineUniversity({
-        id: "japon-asahikawa-asahikawa-university",
-        name: "Asahikawa University",
-        cityId: "japon-asahikawa",
-        website: "http://www.asahikawa-u.ac.jp/",
+        id: "japon-kamigyo-ku-kyoto-prefectural-university",
+        name: "Kyoto Prefectural University",
+        cityId: "japon-kamigyo-ku",
+        website: "http://www.kpu.ac.jp/",
         source: "open-dataset",
-        // Situada a 8.3 km del centro de Asahikawa (Wikidata).
+        // Situada a 2.1 km del centro de Kamigyō-ku (Wikidata).
       }),
       defineUniversity({
-        id: "japon-asahikawa-asahikawa-medical-university",
-        name: "Asahikawa Medical University",
-        cityId: "japon-asahikawa",
+        id: "japon-kamigyo-ku-kyoto-seika-university",
+        name: "Kyoto Seika University",
+        cityId: "japon-kamigyo-ku",
+        website: "http://www.kyoto-seika.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.0 km del centro de Kamigyō-ku (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kamigyo-ku-doshisha-university",
+        name: "Doshisha University",
+        cityId: "japon-kamigyo-ku",
+        website: "http://www.doshisha.ac.jp/",
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Kamigyō-ku (Wikidata).
+      }),
+  ],
+  "japon-akihabara": [
+      defineUniversity({
+        id: "japon-akihabara-chuo-university",
+        name: "Chuo University",
+        cityId: "japon-akihabara",
+        website: "http://www.chuo-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Akihabara (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akihabara-ohara-graduate-school-of-accounting",
+        name: "Ōhara Graduate School of Accounting",
+        cityId: "japon-akihabara",
         website: null,
         source: "open-dataset",
-        // Situada a 5.0 km del centro de Asahikawa (Wikidata).
+        // Situada a 1.4 km del centro de Akihabara (Wikidata).
       }),
       defineUniversity({
-        id: "japon-asahikawa-asahikawa-medical-university",
-        name: "Asahikawa Medical University",
-        cityId: "japon-asahikawa",
+        id: "japon-akihabara-tokyo-management-university",
+        name: "Tokyo Management University",
+        cityId: "japon-akihabara",
         website: null,
         source: "open-dataset",
-        // Situada a 5.0 km del centro de Asahikawa (Wikidata).
+        // Situada a 1.5 km del centro de Akihabara (Wikidata).
       }),
       defineUniversity({
-        id: "japon-asahikawa-asahikawa-medical-university",
-        name: "Asahikawa Medical University",
-        cityId: "japon-asahikawa",
+        id: "japon-akihabara-tokyo-dental-college-junior-college",
+        name: "Tokyo Dental College Junior College",
+        cityId: "japon-akihabara",
         website: null,
         source: "open-dataset",
-        // Situada a 5.0 km del centro de Asahikawa (Wikidata).
+        // Situada a 1.6 km del centro de Akihabara (Wikidata).
       }),
       defineUniversity({
-        id: "japon-asahikawa-asahikawa-medical-university",
-        name: "Asahikawa Medical University",
-        cityId: "japon-asahikawa",
+        id: "japon-akihabara-juntendo-university",
+        name: "Juntendo University",
+        cityId: "japon-akihabara",
+        website: "http://www.juntendo.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Akihabara (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akihabara-toyo-gakuen-university",
+        name: "Toyo Gakuen University",
+        cityId: "japon-akihabara",
+        website: "http://www.toyogakuen-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Akihabara (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akihabara-shoheizaka-gakumonjo",
+        name: "Shōheizaka Gakumonjo",
+        cityId: "japon-akihabara",
         website: null,
         source: "open-dataset",
-        // Situada a 5.0 km del centro de Asahikawa (Wikidata).
+        // Situada a 0.6 km del centro de Akihabara (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akihabara-meiji-university",
+        name: "Meiji University",
+        cityId: "japon-akihabara",
+        website: "http://www.meiji.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Akihabara (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akihabara-digital-hollywood-university",
+        name: "Digital Hollywood University",
+        cityId: "japon-akihabara",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.1 km del centro de Akihabara (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akihabara-japan-professional-school-of-education",
+        name: "Japan Professional School of Education",
+        cityId: "japon-akihabara",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Akihabara (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akihabara-tokyo-university-of-commerce",
+        name: "Tokyo University of Commerce",
+        cityId: "japon-akihabara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Akihabara (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akihabara-tokyo-university",
+        name: "Tokyo University",
+        cityId: "japon-akihabara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Akihabara (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akihabara-tokyo-university-of-education",
+        name: "Tokyo University of Education",
+        cityId: "japon-akihabara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Akihabara (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akihabara-toyo-university-junior-college",
+        name: "Toyo University Junior College",
+        cityId: "japon-akihabara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Akihabara (Wikidata).
+      }),
+  ],
+  "japon-okayama": [
+      defineUniversity({
+        id: "japon-okayama-okayama-university",
+        name: "Okayama University",
+        cityId: "japon-okayama",
+        website: "http://www.okayama-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Okayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okayama-shujitsu-university",
+        name: "Shujitsu University",
+        cityId: "japon-okayama",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Okayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okayama-okayama-university-of-science",
+        name: "Okayama University of Science",
+        cityId: "japon-okayama",
+        website: "http://www.ous.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.2 km del centro de Okayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okayama-notre-dame-seishin-university",
+        name: "Notre Dame Seishin University",
+        cityId: "japon-okayama",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Okayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okayama-chugoku-gakuen-university",
+        name: "Chugoku Gakuen University",
+        cityId: "japon-okayama",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.6 km del centro de Okayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okayama-okayama-shoka-university",
+        name: "Okayama Shoka University",
+        cityId: "japon-okayama",
+        website: "http://www.osu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 4.7 km del centro de Okayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okayama-sanyo-gakuen-college",
+        name: "Sanyo Gakuen College",
+        cityId: "japon-okayama",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Okayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okayama-sanyo-gakuen-university",
+        name: "Sanyo Gakuen University",
+        cityId: "japon-okayama",
+        website: "http://www.sguc.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Okayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okayama-shujitsu-junior-college",
+        name: "Shujitsu Junior College",
+        cityId: "japon-okayama",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Okayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okayama-okayama-prefectural-junior-college",
+        name: "Okayama Prefectural Junior College",
+        cityId: "japon-okayama",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Okayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okayama-okayama-medical-college",
+        name: "Okayama Medical College",
+        cityId: "japon-okayama",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Okayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okayama-niimi-college",
+        name: "Niimi College",
+        cityId: "japon-okayama",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Okayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okayama-okayama-healthcare-professional-university",
+        name: "Okayama Healthcare Professional University",
+        cityId: "japon-okayama",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Okayama (Wikidata).
+      }),
+  ],
+  "japon-niigata": [
+      defineUniversity({
+        id: "japon-niigata-niigata-college-of-technology",
+        name: "Niigata College of Technology",
+        cityId: "japon-niigata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.3 km del centro de Niigata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-niigata-niigata-university",
+        name: "Niigata University",
+        cityId: "japon-niigata",
+        website: "http://www.niigata-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 10.6 km del centro de Niigata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-niigata-college-of-biomedical-technology-niigata-university",
+        name: "College of Biomedical Technology Niigata University",
+        cityId: "japon-niigata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Niigata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-niigata-kaishi-innovation-university",
+        name: "Kaishi Innovation University",
+        cityId: "japon-niigata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Niigata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-niigata-meirin-college",
+        name: "Meirin College",
+        cityId: "japon-niigata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.1 km del centro de Niigata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-niigata-niigata-seiryo-university",
+        name: "Niigata Seiryo University",
+        cityId: "japon-niigata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Niigata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-niigata-the-nippon-dental-university",
+        name: "The Nippon Dental University",
+        cityId: "japon-niigata",
+        website: "http://www.ndu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Niigata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-niigata-the-nippon-dental-university-college-at-niigata",
+        name: "The Nippon Dental University College at Niigata",
+        cityId: "japon-niigata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Niigata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-niigata-kaishi-professional-university",
+        name: "Kaishi Professional University",
+        cityId: "japon-niigata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Niigata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-niigata-sanjo-city-university",
+        name: "Sanjo City University",
+        cityId: "japon-niigata",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Niigata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-niigata-niigata-medical-college",
+        name: "Niigata Medical College",
+        cityId: "japon-niigata",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Niigata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-niigata-niigata-university-of-pharmacy-and-applied-life-sciences",
+        name: "Niigata University of Pharmacy and Applied Life Sciences",
+        cityId: "japon-niigata",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Niigata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-niigata-nagaoka-institute-of-design",
+        name: "Nagaoka Institute of Design",
+        cityId: "japon-niigata",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Niigata (Wikidata).
+      }),
+  ],
+  "japon-chiyoda": [
+      defineUniversity({
+        id: "japon-chiyoda-senshu-university",
+        name: "Senshu University",
+        cityId: "japon-chiyoda",
+        website: "http://www.senshu-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Chiyoda (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiyoda-tokyo-university-of-science",
+        name: "Tokyo University of Science",
+        cityId: "japon-chiyoda",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Chiyoda (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiyoda-business-breakthrough-university",
+        name: "Business Breakthrough University",
+        cityId: "japon-chiyoda",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Chiyoda (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiyoda-hosei-university",
+        name: "Hosei University",
+        cityId: "japon-chiyoda",
+        website: "http://www.hosei.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Chiyoda (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiyoda-nihon-university",
+        name: "Nihon University",
+        cityId: "japon-chiyoda",
+        website: "http://www.nihon-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Chiyoda (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiyoda-kyoritsu-women-s-university",
+        name: "Kyoritsu Women's University",
+        cityId: "japon-chiyoda",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Chiyoda (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiyoda-otsuma-women-s-university-junior-college-division",
+        name: "Otsuma Women's University Junior College Division",
+        cityId: "japon-chiyoda",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Chiyoda (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiyoda-otsuma-women-s-university",
+        name: "Otsuma Women's University",
+        cityId: "japon-chiyoda",
+        website: "http://www.otsuma.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Chiyoda (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiyoda-the-nippon-dental-university-college-at-tokyo",
+        name: "The Nippon Dental University College at Tokyo",
+        cityId: "japon-chiyoda",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Chiyoda (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiyoda-women-s-college-meiji-university",
+        name: "Women's College, Meiji University",
+        cityId: "japon-chiyoda",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chiyoda (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiyoda-army-cavalry-military-academy",
+        name: "Army Cavalry Military Academy",
+        cityId: "japon-chiyoda",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chiyoda (Wikidata).
+      }),
+  ],
+  "japon-shizuoka": [
+      defineUniversity({
+        id: "japon-shizuoka-junior-college-tokoha-university",
+        name: "Junior College, Tokoha University",
+        cityId: "japon-shizuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.5 km del centro de Shizuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shizuoka-shizuoka-university",
+        name: "Shizuoka University",
+        cityId: "japon-shizuoka",
+        website: "http://www.shizuoka.ac.jp/",
+        source: "open-dataset",
+        // Situada a 4.9 km del centro de Shizuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shizuoka-shizuoka-college-of-pharmacy",
+        name: "Shizuoka College of Pharmacy",
+        cityId: "japon-shizuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Shizuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shizuoka-tokoha-gakuen-junior-college",
+        name: "Tokoha Gakuen Junior College",
+        cityId: "japon-shizuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.2 km del centro de Shizuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shizuoka-university-of-shizuoka",
+        name: "University of Shizuoka",
+        cityId: "japon-shizuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.9 km del centro de Shizuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shizuoka-shizuoka-eiwa-gakuin-university",
+        name: "Shizuoka Eiwa Gakuin University",
+        cityId: "japon-shizuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.8 km del centro de Shizuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shizuoka-tokoha-university",
+        name: "Tokoha University",
+        cityId: "japon-shizuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.2 km del centro de Shizuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shizuoka-university-of-shizuoka-junior-college",
+        name: "University of Shizuoka, Junior College",
+        cityId: "japon-shizuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Shizuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shizuoka-shizuoka-graduate-university-of-public-health",
+        name: "Shizuoka Graduate University of Public Health",
+        cityId: "japon-shizuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shizuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shizuoka-tokoha-women-s-junior-college",
+        name: "Tokoha Women's Junior College",
+        cityId: "japon-shizuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shizuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shizuoka-shizuoka-women-s-university",
+        name: "Shizuoka Women's University",
+        cityId: "japon-shizuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shizuoka (Wikidata).
       }),
   ],
   "japon-akashi": [
@@ -1024,382 +1768,160 @@ export default {
         // Situada a 4.9 km del centro de Akashi (Wikidata).
       }),
   ],
-  "japon-akihabara": [
+  "japon-nonoichi": [
       defineUniversity({
-        id: "japon-akihabara-chuo-university",
-        name: "Chuo University",
-        cityId: "japon-akihabara",
-        website: "http://www.chuo-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Akihabara (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-akihabara-ohara-graduate-school-of-accounting",
-        name: "Ōhara Graduate School of Accounting",
-        cityId: "japon-akihabara",
+        id: "japon-nonoichi-hokuriku-gakuin-university",
+        name: "Hokuriku Gakuin University",
+        cityId: "japon-nonoichi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Akihabara (Wikidata).
+        // Situada a 5.2 km del centro de Nonoichi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-akihabara-tokyo-management-university",
-        name: "Tokyo Management University",
-        cityId: "japon-akihabara",
+        id: "japon-nonoichi-kanazawa-technical-college",
+        name: "Kanazawa Technical College",
+        cityId: "japon-nonoichi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Akihabara (Wikidata).
+        // Situada a 1.1 km del centro de Nonoichi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-akihabara-tokyo-dental-college-junior-college",
-        name: "Tokyo Dental College Junior College",
-        cityId: "japon-akihabara",
+        id: "japon-nonoichi-kanazawa-college-of-art",
+        name: "Kanazawa College of Art",
+        cityId: "japon-nonoichi",
+        website: "http://www.kanazawa-bidai.ac.jp/",
+        source: "open-dataset",
+        // Situada a 6.0 km del centro de Nonoichi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nonoichi-hokuriku-university",
+        name: "Hokuriku University",
+        cityId: "japon-nonoichi",
+        website: "http://www.hokuriku-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 8.2 km del centro de Nonoichi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nonoichi-kanazawa-gakuin-college",
+        name: "Kanazawa Gakuin College",
+        cityId: "japon-nonoichi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Akihabara (Wikidata).
+        // Situada a 7.3 km del centro de Nonoichi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-akihabara-juntendo-university",
-        name: "Juntendo University",
-        cityId: "japon-akihabara",
-        website: "http://www.juntendo.ac.jp/",
+        id: "japon-nonoichi-kanazawa-gakuin-university",
+        name: "Kanazawa Gakuin University",
+        cityId: "japon-nonoichi",
+        website: "http://www.kanazawa-gu.ac.jp/",
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Akihabara (Wikidata).
+        // Situada a 7.2 km del centro de Nonoichi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-akihabara-toyo-gakuen-university",
-        name: "Toyo Gakuen University",
-        cityId: "japon-akihabara",
-        website: "http://www.toyogakuen-u.ac.jp/",
+        id: "japon-nonoichi-kanazawa-institute-of-technology",
+        name: "Kanazawa Institute of Technology",
+        cityId: "japon-nonoichi",
+        website: "http://www.kanazawa-it.ac.jp/",
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Akihabara (Wikidata).
+        // Situada a 1.0 km del centro de Nonoichi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-akihabara-meiji-university",
-        name: "Meiji University",
-        cityId: "japon-akihabara",
-        website: "http://www.meiji.ac.jp/",
+        id: "japon-nonoichi-kanazawa-university",
+        name: "Kanazawa University",
+        cityId: "japon-nonoichi",
+        website: "http://www.kanazawa-u.ac.jp/",
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Akihabara (Wikidata).
+        // Situada a 8.4 km del centro de Nonoichi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-akihabara-digital-hollywood-university",
-        name: "Digital Hollywood University",
-        cityId: "japon-akihabara",
+        id: "japon-nonoichi-hokuriku-gakuin-junior-college",
+        name: "Hokuriku Gakuin Junior College",
+        cityId: "japon-nonoichi",
         website: null,
         source: "open-dataset",
-        // Situada a 0.1 km del centro de Akihabara (Wikidata).
+        // Situada a None km del centro de Nonoichi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-akihabara-digital-hollywood-university",
-        name: "Digital Hollywood University",
-        cityId: "japon-akihabara",
+        id: "japon-nonoichi-kanazawa-medical-college",
+        name: "Kanazawa Medical College",
+        cityId: "japon-nonoichi",
         website: null,
         source: "open-dataset",
-        // Situada a 0.1 km del centro de Akihabara (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-akihabara-japan-professional-school-of-education",
-        name: "Japan Professional School of Education",
-        cityId: "japon-akihabara",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Akihabara (Wikidata).
+        // Situada a None km del centro de Nonoichi (Wikidata).
       }),
   ],
-  "japon-shizuoka": [
+  "japon-kurashiki": [
       defineUniversity({
-        id: "japon-shizuoka-junior-college-tokoha-university",
-        name: "Junior College, Tokoha University",
-        cityId: "japon-shizuoka",
+        id: "japon-kurashiki-kawasaki-college-of-allied-health-professions",
+        name: "Kawasaki College of Allied Health Professions",
+        cityId: "japon-kurashiki",
         website: null,
         source: "open-dataset",
-        // Situada a 5.5 km del centro de Shizuoka (Wikidata).
+        // Situada a 7.1 km del centro de Kurashiki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-shizuoka-shizuoka-university",
-        name: "Shizuoka University",
-        cityId: "japon-shizuoka",
-        website: "http://www.shizuoka.ac.jp/",
+        id: "japon-kurashiki-kawasaki-medical-school",
+        name: "Kawasaki Medical School",
+        cityId: "japon-kurashiki",
+        website: "http://www.kawasaki-m.ac.jp/",
         source: "open-dataset",
-        // Situada a 4.9 km del centro de Shizuoka (Wikidata).
+        // Situada a 6.8 km del centro de Kurashiki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-shizuoka-shizuoka-college-of-pharmacy",
-        name: "Shizuoka College of Pharmacy",
-        cityId: "japon-shizuoka",
+        id: "japon-kurashiki-kawasaki-university-of-medical-welfare",
+        name: "Kawasaki University of Medical Welfare",
+        cityId: "japon-kurashiki",
         website: null,
         source: "open-dataset",
-        // Situada a 3.2 km del centro de Shizuoka (Wikidata).
+        // Situada a 7.0 km del centro de Kurashiki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-shizuoka-tokoha-gakuen-junior-college",
-        name: "Tokoha Gakuen Junior College",
-        cityId: "japon-shizuoka",
+        id: "japon-kurashiki-kurashiki-city-college",
+        name: "Kurashiki City College",
+        cityId: "japon-kurashiki",
         website: null,
         source: "open-dataset",
-        // Situada a 5.2 km del centro de Shizuoka (Wikidata).
+        // Situada a 10.3 km del centro de Kurashiki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-shizuoka-university-of-shizuoka",
-        name: "University of Shizuoka",
-        cityId: "japon-shizuoka",
+        id: "japon-kurashiki-kurashiki-sakuyo-university",
+        name: "Kurashiki Sakuyo University",
+        cityId: "japon-kurashiki",
+        website: "http://www.ksu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 8.2 km del centro de Kurashiki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kurashiki-kurashiki-university-of-science-and-the-arts",
+        name: "Kurashiki University of Science and the Arts",
+        cityId: "japon-kurashiki",
+        website: "http://www.kusa.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.9 km del centro de Kurashiki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kurashiki-okayama-gakuin-university",
+        name: "Okayama Gakuin University",
+        cityId: "japon-kurashiki",
         website: null,
         source: "open-dataset",
-        // Situada a 5.9 km del centro de Shizuoka (Wikidata).
+        // Situada a 3.2 km del centro de Kurashiki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-shizuoka-shizuoka-eiwa-gakuin-university",
-        name: "Shizuoka Eiwa Gakuin University",
-        cityId: "japon-shizuoka",
+        id: "japon-kurashiki-sakuyo-junior-college",
+        name: "Sakuyo Junior College",
+        cityId: "japon-kurashiki",
         website: null,
         source: "open-dataset",
-        // Situada a 4.8 km del centro de Shizuoka (Wikidata).
+        // Situada a None km del centro de Kurashiki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-shizuoka-tokoha-university",
-        name: "Tokoha University",
-        cityId: "japon-shizuoka",
+        id: "japon-kurashiki-okayama-college",
+        name: "Okayama College",
+        cityId: "japon-kurashiki",
         website: null,
         source: "open-dataset",
-        // Situada a 5.2 km del centro de Shizuoka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-shizuoka-tokoha-university",
-        name: "Tokoha University",
-        cityId: "japon-shizuoka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.2 km del centro de Shizuoka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-shizuoka-university-of-shizuoka-junior-college",
-        name: "University of Shizuoka, Junior College",
-        cityId: "japon-shizuoka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Shizuoka (Wikidata).
-      }),
-  ],
-  "japon-okayama": [
-      defineUniversity({
-        id: "japon-okayama-okayama-university",
-        name: "Okayama University",
-        cityId: "japon-okayama",
-        website: "http://www.okayama-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Okayama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-okayama-shujitsu-university",
-        name: "Shujitsu University",
-        cityId: "japon-okayama",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Okayama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-okayama-okayama-university-of-science",
-        name: "Okayama University of Science",
-        cityId: "japon-okayama",
-        website: "http://www.ous.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.2 km del centro de Okayama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-okayama-notre-dame-seishin-university",
-        name: "Notre Dame Seishin University",
-        cityId: "japon-okayama",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Okayama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-okayama-chugoku-gakuen-university",
-        name: "Chugoku Gakuen University",
-        cityId: "japon-okayama",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.6 km del centro de Okayama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-okayama-okayama-shoka-university",
-        name: "Okayama Shoka University",
-        cityId: "japon-okayama",
-        website: "http://www.osu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 4.7 km del centro de Okayama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-okayama-sanyo-gakuen-college",
-        name: "Sanyo Gakuen College",
-        cityId: "japon-okayama",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Okayama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-okayama-sanyo-gakuen-university",
-        name: "Sanyo Gakuen University",
-        cityId: "japon-okayama",
-        website: "http://www.sguc.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Okayama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-okayama-shujitsu-junior-college",
-        name: "Shujitsu Junior College",
-        cityId: "japon-okayama",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Okayama (Wikidata).
-      }),
-  ],
-  "japon-miyazaki": [
-      defineUniversity({
-        id: "japon-miyazaki-university-of-miyazaki",
-        name: "University of Miyazaki",
-        cityId: "japon-miyazaki",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Miyazaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-miyazaki-university-of-miyazaki",
-        name: "University of Miyazaki",
-        cityId: "japon-miyazaki",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.5 km del centro de Miyazaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-miyazaki-university-of-miyazaki",
-        name: "University of Miyazaki",
-        cityId: "japon-miyazaki",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.5 km del centro de Miyazaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-miyazaki-miyazaki-medical-college",
-        name: "Miyazaki Medical College",
-        cityId: "japon-miyazaki",
-        website: "http://www.miyazaki-med.ac.jp/",
-        source: "open-dataset",
-        // Situada a 8.7 km del centro de Miyazaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-miyazaki-miyazaki-prefectural-nursing-university",
-        name: "Miyazaki Prefectural Nursing University",
-        cityId: "japon-miyazaki",
-        website: "http://www.mpu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.4 km del centro de Miyazaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-miyazaki-minami-kyushu-university",
-        name: "Minami Kyushu University",
-        cityId: "japon-miyazaki",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Miyazaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-miyazaki-miyazaki-municipal-university",
-        name: "Miyazaki Municipal University",
-        cityId: "japon-miyazaki",
-        website: "http://www.miyazaki-mu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Miyazaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-miyazaki-miyazaki-international-college",
-        name: "Miyazaki International College",
-        cityId: "japon-miyazaki",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.5 km del centro de Miyazaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-miyazaki-miyazaki-sangyo-keiei-university",
-        name: "Miyazaki Sangyo-keiei University",
-        cityId: "japon-miyazaki",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de Miyazaki (Wikidata).
-      }),
-  ],
-  "japon-hiroshima": [
-      defineUniversity({
-        id: "japon-hiroshima-eikei-university-of-hiroshima",
-        name: "Eikei University of Hiroshima",
-        cityId: "japon-hiroshima",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Hiroshima (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hiroshima-eikei-university-of-hiroshima",
-        name: "Eikei University of Hiroshima",
-        cityId: "japon-hiroshima",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Hiroshima (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hiroshima-hiroshima-cosmopolitan-university",
-        name: "Hiroshima Cosmopolitan University",
-        cityId: "japon-hiroshima",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Hiroshima (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hiroshima-hiroshima-joshi-daigaku",
-        name: "Hiroshima Joshi Daigaku",
-        cityId: "japon-hiroshima",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Hiroshima (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hiroshima-hiroshima-university",
-        name: "Hiroshima University",
-        cityId: "japon-hiroshima",
-        website: "http://www.hiroshima-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Hiroshima (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hiroshima-hiroshima-university",
-        name: "Hiroshima University",
-        cityId: "japon-hiroshima",
-        website: "http://www.hiroshima-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Hiroshima (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hiroshima-elisabeth-university-of-music",
-        name: "Elisabeth University of Music",
-        cityId: "japon-hiroshima",
-        website: "http://www.eum.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Hiroshima (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hiroshima-hiroshima-shudo-university",
-        name: "Hiroshima Shudo University",
-        cityId: "japon-hiroshima",
-        website: "http://www.shudo-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Hiroshima (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hiroshima-prefectural-university-of-hiroshima",
-        name: "Prefectural University of Hiroshima",
-        cityId: "japon-hiroshima",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Hiroshima (Wikidata).
+        // Situada a None km del centro de Kurashiki (Wikidata).
       }),
   ],
   "japon-gion": [
@@ -1494,12 +2016,12 @@ export default {
         // Situada a 5.8 km del centro de Aihara (Wikidata).
       }),
       defineUniversity({
-        id: "japon-aihara-tokyo-metropolitan-university",
-        name: "Tokyo metropolitan university",
+        id: "japon-aihara-yamazaki-gakuen-university",
+        name: "Yamazaki Gakuen University",
         cityId: "japon-aihara",
-        website: "http://www.metro-u.ac.jp/",
+        website: null,
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Aihara (Wikidata).
+        // Situada a 5.3 km del centro de Aihara (Wikidata).
       }),
       defineUniversity({
         id: "japon-aihara-tokyo-zokei-university",
@@ -1542,276 +2064,532 @@ export default {
         // Situada a 3.6 km del centro de Aihara (Wikidata).
       }),
   ],
-  "japon-chiyoda": [
+  "japon-akita": [
       defineUniversity({
-        id: "japon-chiyoda-senshu-university",
-        name: "Senshu University",
-        cityId: "japon-chiyoda",
-        website: "http://www.senshu-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Chiyoda (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-chiyoda-tokyo-university-of-science",
-        name: "Tokyo University of Science",
-        cityId: "japon-chiyoda",
+        id: "japon-akita-the-japanese-red-cross-junior-college-of-akita",
+        name: "The Japanese Red Cross Junior College of Akita",
+        cityId: "japon-akita",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Chiyoda (Wikidata).
+        // Situada a 4.7 km del centro de Akita (Wikidata).
       }),
       defineUniversity({
-        id: "japon-chiyoda-business-breakthrough-university",
-        name: "Business Breakthrough University",
-        cityId: "japon-chiyoda",
+        id: "japon-akita-akita-university-of-art",
+        name: "Akita University of Art",
+        cityId: "japon-akita",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Chiyoda (Wikidata).
+        // Situada a 4.0 km del centro de Akita (Wikidata).
       }),
       defineUniversity({
-        id: "japon-chiyoda-hosei-university",
-        name: "Hosei University",
-        cityId: "japon-chiyoda",
-        website: "http://www.hosei.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Chiyoda (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-chiyoda-nihon-university",
-        name: "Nihon University",
-        cityId: "japon-chiyoda",
-        website: "http://www.nihon-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Chiyoda (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-chiyoda-kyoritsu-women-s-university",
-        name: "Kyoritsu Women's University",
-        cityId: "japon-chiyoda",
+        id: "japon-akita-national-institute-of-technology-akita-college",
+        name: "National Institute of Technology Akita College",
+        cityId: "japon-akita",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Chiyoda (Wikidata).
+        // Situada a 7.2 km del centro de Akita (Wikidata).
       }),
       defineUniversity({
-        id: "japon-chiyoda-otsuma-women-s-university-junior-college-division",
-        name: "Otsuma Women's University Junior College Division",
-        cityId: "japon-chiyoda",
+        id: "japon-akita-akita-university",
+        name: "Akita University",
+        cityId: "japon-akita",
+        website: "http://www.akita-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.0 km del centro de Akita (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akita-akita-international-university",
+        name: "Akita International University",
+        cityId: "japon-akita",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Chiyoda (Wikidata).
+        // Situada a 12.1 km del centro de Akita (Wikidata).
       }),
       defineUniversity({
-        id: "japon-chiyoda-otsuma-women-s-university",
-        name: "Otsuma Women's University",
-        cityId: "japon-chiyoda",
-        website: "http://www.otsuma.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Chiyoda (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-chiyoda-the-nippon-dental-university-college-at-tokyo",
-        name: "The Nippon Dental University College at Tokyo",
-        cityId: "japon-chiyoda",
+        id: "japon-akita-akita-municipal-junior-college-of-arts-and-crafts",
+        name: "Akita Municipal Junior College of Arts and Crafts",
+        cityId: "japon-akita",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Chiyoda (Wikidata).
+        // Situada a 4.0 km del centro de Akita (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akita-north-asia-university",
+        name: "North Asia University",
+        cityId: "japon-akita",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.5 km del centro de Akita (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akita-japanese-red-cross-tohoku-college-of-nursing",
+        name: "Japanese Red Cross Tohoku College of Nursing",
+        cityId: "japon-akita",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Akita (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-akita-college-of-allied-medical-science-akita-university",
+        name: "College of Allied Medical Science Akita University",
+        cityId: "japon-akita",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Akita (Wikidata).
       }),
   ],
-  "japon-tokyo": [
+  "japon-dazaifu": [
       defineUniversity({
-        id: "japon-tokyo-tokyo-online-university",
-        name: "Tokyo Online University",
-        cityId: "japon-tokyo",
+        id: "japon-dazaifu-fukuoka-international-college-of-music",
+        name: "Fukuoka International College of Music",
+        cityId: "japon-dazaifu",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Tokyo (Wikidata).
+        // Situada a 0.8 km del centro de Dazaifu (Wikidata).
       }),
       defineUniversity({
-        id: "japon-tokyo-tokyo-polytechnic-university",
-        name: "Tokyo Polytechnic University",
-        cityId: "japon-tokyo",
+        id: "japon-dazaifu-chikushi-jogakuen-university",
+        name: "Chikushi Jogakuen University",
+        cityId: "japon-dazaifu",
+        website: "http://www.chikushi.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Dazaifu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-dazaifu-fukuoka-international-university",
+        name: "Fukuoka International University",
+        cityId: "japon-dazaifu",
+        website: "http://www.fukuoka-int-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Dazaifu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-dazaifu-fukuoka-junior-college-for-kindergarten-teachers",
+        name: "Fukuoka Junior College for Kindergarten Teachers",
+        cityId: "japon-dazaifu",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Tokyo (Wikidata).
+        // Situada a 0.7 km del centro de Dazaifu (Wikidata).
       }),
       defineUniversity({
-        id: "japon-tokyo-bunka-gakuen-university",
-        name: "Bunka Gakuen University",
-        cityId: "japon-tokyo",
+        id: "japon-dazaifu-fukuoka-social-medical-welfare-university",
+        name: "Fukuoka Social Medical Welfare University",
+        cityId: "japon-dazaifu",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Tokyo (Wikidata).
+        // Situada a 0.7 km del centro de Dazaifu (Wikidata).
       }),
       defineUniversity({
-        id: "japon-tokyo-kogakuin-university",
-        name: "Kogakuin University",
-        cityId: "japon-tokyo",
-        website: "http://www.kogakuin.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Tokyo (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tokyo-professional-institute-of-international-fashion",
-        name: "Professional Institute of International Fashion",
-        cityId: "japon-tokyo",
+        id: "japon-dazaifu-japan-university-of-economics",
+        name: "Japan University of Economics",
+        cityId: "japon-dazaifu",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Tokyo (Wikidata).
+        // Situada a 0.8 km del centro de Dazaifu (Wikidata).
       }),
       defineUniversity({
-        id: "japon-tokyo-professional-institute-of-international-fashion",
-        name: "Professional Institute of International Fashion",
-        cityId: "japon-tokyo",
+        id: "japon-dazaifu-kyushu-institute-of-information-sciences",
+        name: "Kyushu Institute of Information Sciences",
+        cityId: "japon-dazaifu",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Tokyo (Wikidata).
+        // Situada a 2.0 km del centro de Dazaifu (Wikidata).
       }),
       defineUniversity({
-        id: "japon-tokyo-international-professional-university-of-technology-in-tokyo",
-        name: "International Professional University of Technology in Tokyo",
-        cityId: "japon-tokyo",
+        id: "japon-dazaifu-aso-fukuoka-junior-college",
+        name: "Aso Fukuoka Junior College",
+        cityId: "japon-dazaifu",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Tokyo (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tokyo-international-professional-university-of-technology-in-tokyo",
-        name: "International Professional University of Technology in Tokyo",
-        cityId: "japon-tokyo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Tokyo (Wikidata).
+        // Situada a None km del centro de Dazaifu (Wikidata).
       }),
   ],
-  "japon-takasaki": [
+  "japon-yokohama": [
       defineUniversity({
-        id: "japon-takasaki-gumma-paz-university",
-        name: "Gumma Paz University",
-        cityId: "japon-takasaki",
+        id: "japon-yokohama-yokohama-national-university",
+        name: "Yokohama National University",
+        cityId: "japon-yokohama",
+        website: "http://www.ynu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 7.1 km del centro de Yokohama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-yokohama-kanagawa-university",
+        name: "Kanagawa University",
+        cityId: "japon-yokohama",
+        website: "http://www.kanagawa-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 6.3 km del centro de Yokohama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-yokohama-institute-of-information-security",
+        name: "Institute of Information Security",
+        cityId: "japon-yokohama",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Takasaki (Wikidata).
+        // Situada a 4.6 km del centro de Yokohama (Wikidata).
       }),
       defineUniversity({
-        id: "japon-takasaki-gumma-paz-gakuen-college",
-        name: "Gumma Paz Gakuen College",
-        cityId: "japon-takasaki",
+        id: "japon-yokohama-yashima-gakuen-university",
+        name: "Yashima Gakuen University",
+        cityId: "japon-yokohama",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Takasaki (Wikidata).
+        // Situada a 3.7 km del centro de Yokohama (Wikidata).
       }),
       defineUniversity({
-        id: "japon-takasaki-gunma-university-of-social-welfare",
-        name: "Gunma University of Social Welfare",
-        cityId: "japon-takasaki",
+        id: "japon-yokohama-kyoritsu-women-s-bible-academy",
+        name: "Kyoritsu Women's Bible Academy",
+        cityId: "japon-yokohama",
         website: null,
         source: "open-dataset",
-        // Situada a 3.7 km del centro de Takasaki (Wikidata).
+        // Situada a None km del centro de Yokohama (Wikidata).
       }),
       defineUniversity({
-        id: "japon-takasaki-takasaki-university-of-commerce",
-        name: "Takasaki University of Commerce",
-        cityId: "japon-takasaki",
+        id: "japon-yokohama-toin-gakuen-technical-college",
+        name: "Toin Gakuen Technical College",
+        cityId: "japon-yokohama",
         website: null,
         source: "open-dataset",
-        // Situada a 5.5 km del centro de Takasaki (Wikidata).
+        // Situada a None km del centro de Yokohama (Wikidata).
       }),
       defineUniversity({
-        id: "japon-takasaki-takasaki-university-of-health-and-welfare",
-        name: "Takasaki University of Health and Welfare",
-        cityId: "japon-takasaki",
+        id: "japon-yokohama-shonan-institute-of-technology",
+        name: "Shonan Institute of Technology",
+        cityId: "japon-yokohama",
+        website: "http://www.shonan-it.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Yokohama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-yokohama-inter-university-center-for-japanese-language-studies",
+        name: "Inter-University Center for Japanese Language Studies",
+        cityId: "japon-yokohama",
         website: null,
         source: "open-dataset",
-        // Situada a 3.6 km del centro de Takasaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-takasaki-university-of-creation-art-music-social-work",
-        name: "University of Creation; Art, Music & Social Work",
-        cityId: "japon-takasaki",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Takasaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-takasaki-takasaki-city-university-of-economics",
-        name: "Takasaki City University of Economics",
-        cityId: "japon-takasaki",
-        website: "http://www.tcue.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Takasaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-takasaki-takasaki-city-university-of-economics",
-        name: "Takasaki City University of Economics",
-        cityId: "japon-takasaki",
-        website: "http://www.tcue.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Takasaki (Wikidata).
+        // Situada a None km del centro de Yokohama (Wikidata).
       }),
   ],
-  "japon-kurashiki": [
+  "japon-nara-shi": [
       defineUniversity({
-        id: "japon-kurashiki-kawasaki-college-of-allied-health-professions",
-        name: "Kawasaki College of Allied Health Professions",
-        cityId: "japon-kurashiki",
+        id: "japon-nara-shi-jasdf-officer-candidate-school",
+        name: "JASDF Officer Candidate School",
+        cityId: "japon-nara-shi",
         website: null,
         source: "open-dataset",
-        // Situada a 7.1 km del centro de Kurashiki (Wikidata).
+        // Situada a 1.6 km del centro de Nara-shi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kurashiki-kawasaki-medical-school",
-        name: "Kawasaki Medical School",
-        cityId: "japon-kurashiki",
-        website: "http://www.kawasaki-m.ac.jp/",
+        id: "japon-nara-shi-nara-university-of-education",
+        name: "Nara University of Education",
+        cityId: "japon-nara-shi",
+        website: "http://www.nara-edu.ac.jp/",
         source: "open-dataset",
-        // Situada a 6.8 km del centro de Kurashiki (Wikidata).
+        // Situada a 3.8 km del centro de Nara-shi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kurashiki-kawasaki-medical-school",
-        name: "Kawasaki Medical School",
-        cityId: "japon-kurashiki",
-        website: "http://www.kawasaki-m.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Kurashiki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kurashiki-kawasaki-university-of-medical-welfare",
-        name: "Kawasaki University of Medical Welfare",
-        cityId: "japon-kurashiki",
+        id: "japon-nara-shi-nara-prefectural-university",
+        name: "Nara Prefectural University",
+        cityId: "japon-nara-shi",
         website: null,
         source: "open-dataset",
-        // Situada a 7.0 km del centro de Kurashiki (Wikidata).
+        // Situada a 1.5 km del centro de Nara-shi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kurashiki-kurashiki-city-college",
-        name: "Kurashiki City College",
-        cityId: "japon-kurashiki",
+        id: "japon-nara-shi-nara-saho-college",
+        name: "Nara Saho College",
+        cityId: "japon-nara-shi",
         website: null,
         source: "open-dataset",
-        // Situada a 10.3 km del centro de Kurashiki (Wikidata).
+        // Situada a 4.3 km del centro de Nara-shi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kurashiki-kurashiki-sakuyo-university",
-        name: "Kurashiki Sakuyo University",
-        cityId: "japon-kurashiki",
-        website: "http://www.ksu.ac.jp/",
+        id: "japon-nara-shi-nara-university",
+        name: "Nara University",
+        cityId: "japon-nara-shi",
+        website: "http://www.nara-u.ac.jp/",
         source: "open-dataset",
-        // Situada a 8.2 km del centro de Kurashiki (Wikidata).
+        // Situada a 3.9 km del centro de Nara-shi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kurashiki-kurashiki-university-of-science-and-the-arts",
-        name: "Kurashiki University of Science and the Arts",
-        cityId: "japon-kurashiki",
-        website: "http://www.kusa.ac.jp/",
+        id: "japon-nara-shi-nara-women-s-university",
+        name: "Nara Women's University",
+        cityId: "japon-nara-shi",
+        website: "http://www.nara-wu.ac.jp/",
         source: "open-dataset",
-        // Situada a 5.9 km del centro de Kurashiki (Wikidata).
+        // Situada a None km del centro de Nara-shi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kurashiki-okayama-gakuin-university",
-        name: "Okayama Gakuin University",
-        cityId: "japon-kurashiki",
+        id: "japon-nara-shi-tezukayama-university",
+        name: "Tezukayama University",
+        cityId: "japon-nara-shi",
+        website: "http://www.tezukayama-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Nara-shi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nara-shi-nara-gakuen-university",
+        name: "Nara Gakuen University",
+        cityId: "japon-nara-shi",
         website: null,
         source: "open-dataset",
-        // Situada a 3.2 km del centro de Kurashiki (Wikidata).
+        // Situada a None km del centro de Nara-shi (Wikidata).
+      }),
+  ],
+  "japon-nagano": [
+      defineUniversity({
+        id: "japon-nagano-national-institute-of-technology-nagano-college",
+        name: "National Institute of Technology, Nagano College",
+        cityId: "japon-nagano",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.5 km del centro de Nagano (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagano-the-university-of-nagano",
+        name: "The University of Nagano",
+        cityId: "japon-nagano",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Nagano (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagano-nagano-prefectural-college",
+        name: "Nagano Prefectural College",
+        cityId: "japon-nagano",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Nagano (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagano-seisen-university",
+        name: "Seisen University",
+        cityId: "japon-nagano",
+        website: "http://www.seisen-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 6.2 km del centro de Nagano (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagano-seisen-university-junior-college",
+        name: "Seisen University Junior College",
+        cityId: "japon-nagano",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.3 km del centro de Nagano (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagano-suwa-university-of-science",
+        name: "Suwa University of Science",
+        cityId: "japon-nagano",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nagano (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagano-nagano-university",
+        name: "Nagano University",
+        cityId: "japon-nagano",
+        website: "http://www.nagano.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Nagano (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagano-nagano-university-of-health-and-medicine",
+        name: "Nagano University Of Health And Medicine",
+        cityId: "japon-nagano",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nagano (Wikidata).
+      }),
+  ],
+  "japon-maebashi": [
+      defineUniversity({
+        id: "japon-maebashi-gunma-university",
+        name: "Gunma University",
+        cityId: "japon-maebashi",
+        website: "http://www.gunma-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 4.8 km del centro de Maebashi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-maebashi-gunma-prefectural-college-of-health-sciences",
+        name: "Gunma Prefectural College of Health Sciences",
+        cityId: "japon-maebashi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Maebashi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-maebashi-maebashi-institute-of-technology",
+        name: "Maebashi Institute of Technology",
+        cityId: "japon-maebashi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de Maebashi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-maebashi-maebashi-kyoai-gakuen-college",
+        name: "Maebashi Kyoai Gakuen College",
+        cityId: "japon-maebashi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Maebashi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-maebashi-maebashi-medical-college",
+        name: "Maebashi Medical College",
+        cityId: "japon-maebashi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Maebashi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-maebashi-kanto-gakuen-university",
+        name: "Kanto Gakuen University",
+        cityId: "japon-maebashi",
+        website: "http://www.kanto-gakuen.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Maebashi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-maebashi-ikuei-university",
+        name: "Ikuei University",
+        cityId: "japon-maebashi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Maebashi (Wikidata).
+      }),
+  ],
+  "japon-hiroshima": [
+      defineUniversity({
+        id: "japon-hiroshima-eikei-university-of-hiroshima",
+        name: "Eikei University of Hiroshima",
+        cityId: "japon-hiroshima",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Hiroshima (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hiroshima-hiroshima-cosmopolitan-university",
+        name: "Hiroshima Cosmopolitan University",
+        cityId: "japon-hiroshima",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Hiroshima (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hiroshima-hiroshima-joshi-daigaku",
+        name: "Hiroshima Joshi Daigaku",
+        cityId: "japon-hiroshima",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.1 km del centro de Hiroshima (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hiroshima-hiroshima-university",
+        name: "Hiroshima University",
+        cityId: "japon-hiroshima",
+        website: "http://www.hiroshima-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Hiroshima (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hiroshima-elisabeth-university-of-music",
+        name: "Elisabeth University of Music",
+        cityId: "japon-hiroshima",
+        website: "http://www.eum.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Hiroshima (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hiroshima-hiroshima-shudo-university",
+        name: "Hiroshima Shudo University",
+        cityId: "japon-hiroshima",
+        website: "http://www.shudo-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.5 km del centro de Hiroshima (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hiroshima-prefectural-university-of-hiroshima",
+        name: "Prefectural University of Hiroshima",
+        cityId: "japon-hiroshima",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.1 km del centro de Hiroshima (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hiroshima-hiroshima-university-of-literature-and-science",
+        name: "Hiroshima University of Literature and Science",
+        cityId: "japon-hiroshima",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hiroshima (Wikidata).
+      }),
+  ],
+  "japon-fukuoka": [
+      defineUniversity({
+        id: "japon-fukuoka-seinan-gakuin-university",
+        name: "Seinan Gakuin University",
+        cityId: "japon-fukuoka",
+        website: "http://www.seinan-gu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.9 km del centro de Fukuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-fukuoka-daiichi-university-of-pharmacy",
+        name: "Daiichi University of Pharmacy",
+        cityId: "japon-fukuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de Fukuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-fukuoka-fukuoka-international-university-of-health-and-welfare",
+        name: "Fukuoka International University of Health and Welfare",
+        cityId: "japon-fukuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.3 km del centro de Fukuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-fukuoka-nakamura-gakuen-university",
+        name: "Nakamura Gakuen University",
+        cityId: "japon-fukuoka",
+        website: "http://www.nakamura-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.6 km del centro de Fukuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-fukuoka-kyushu-imperial-university",
+        name: "Kyushu Imperial University",
+        cityId: "japon-fukuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Fukuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-fukuoka-university-of-teacher-education-fukuoka",
+        name: "University of Teacher Education Fukuoka",
+        cityId: "japon-fukuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Fukuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-fukuoka-cyber-university",
+        name: "Cyber University",
+        cityId: "japon-fukuoka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Fukuoka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-fukuoka-tohwa-university",
+        name: "Tohwa University",
+        cityId: "japon-fukuoka",
+        website: "http://www.tohwa-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Fukuoka (Wikidata).
       }),
   ],
   "japon-ashiya": [
@@ -1880,194 +2658,62 @@ export default {
         // Situada a 1.8 km del centro de Ashiya (Wikidata).
       }),
   ],
-  "japon-akita": [
+  "japon-takasaki": [
       defineUniversity({
-        id: "japon-akita-the-japanese-red-cross-junior-college-of-akita",
-        name: "The Japanese Red Cross Junior College of Akita",
-        cityId: "japon-akita",
+        id: "japon-takasaki-gumma-paz-university",
+        name: "Gumma Paz University",
+        cityId: "japon-takasaki",
         website: null,
         source: "open-dataset",
-        // Situada a 4.7 km del centro de Akita (Wikidata).
+        // Situada a 1.9 km del centro de Takasaki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-akita-akita-university-of-art",
-        name: "Akita University of Art",
-        cityId: "japon-akita",
+        id: "japon-takasaki-gumma-paz-gakuen-college",
+        name: "Gumma Paz Gakuen College",
+        cityId: "japon-takasaki",
         website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Akita (Wikidata).
+        // Situada a 1.9 km del centro de Takasaki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-akita-national-institute-of-technology-akita-college",
-        name: "National Institute of Technology Akita College",
-        cityId: "japon-akita",
+        id: "japon-takasaki-gunma-university-of-social-welfare",
+        name: "Gunma University of Social Welfare",
+        cityId: "japon-takasaki",
         website: null,
         source: "open-dataset",
-        // Situada a 7.2 km del centro de Akita (Wikidata).
+        // Situada a 3.7 km del centro de Takasaki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-akita-akita-university",
-        name: "Akita University",
-        cityId: "japon-akita",
-        website: "http://www.akita-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Akita (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-akita-akita-university",
-        name: "Akita University",
-        cityId: "japon-akita",
-        website: "http://www.akita-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Akita (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-akita-akita-international-university",
-        name: "Akita International University",
-        cityId: "japon-akita",
+        id: "japon-takasaki-takasaki-university-of-commerce",
+        name: "Takasaki University of Commerce",
+        cityId: "japon-takasaki",
         website: null,
         source: "open-dataset",
-        // Situada a 12.1 km del centro de Akita (Wikidata).
+        // Situada a 5.5 km del centro de Takasaki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-akita-akita-municipal-junior-college-of-arts-and-crafts",
-        name: "Akita Municipal Junior College of Arts and Crafts",
-        cityId: "japon-akita",
+        id: "japon-takasaki-takasaki-university-of-health-and-welfare",
+        name: "Takasaki University of Health and Welfare",
+        cityId: "japon-takasaki",
         website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Akita (Wikidata).
+        // Situada a 3.6 km del centro de Takasaki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-akita-north-asia-university",
-        name: "North Asia University",
-        cityId: "japon-akita",
+        id: "japon-takasaki-university-of-creation-art-music-social-work",
+        name: "University of Creation; Art, Music & Social Work",
+        cityId: "japon-takasaki",
         website: null,
         source: "open-dataset",
-        // Situada a 3.5 km del centro de Akita (Wikidata).
-      }),
-  ],
-  "japon-dazaifu": [
-      defineUniversity({
-        id: "japon-dazaifu-fukuoka-international-college-of-music",
-        name: "Fukuoka International College of Music",
-        cityId: "japon-dazaifu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Dazaifu (Wikidata).
+        // Situada a 2.9 km del centro de Takasaki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-dazaifu-chikushi-jogakuen-university",
-        name: "Chikushi Jogakuen University",
-        cityId: "japon-dazaifu",
-        website: "http://www.chikushi.ac.jp/",
+        id: "japon-takasaki-takasaki-city-university-of-economics",
+        name: "Takasaki City University of Economics",
+        cityId: "japon-takasaki",
+        website: "http://www.tcue.ac.jp/",
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Dazaifu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-dazaifu-fukuoka-international-university",
-        name: "Fukuoka International University",
-        cityId: "japon-dazaifu",
-        website: "http://www.fukuoka-int-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Dazaifu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-dazaifu-fukuoka-junior-college-for-kindergarten-teachers",
-        name: "Fukuoka Junior College for Kindergarten Teachers",
-        cityId: "japon-dazaifu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Dazaifu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-dazaifu-fukuoka-social-medical-welfare-university",
-        name: "Fukuoka Social Medical Welfare University",
-        cityId: "japon-dazaifu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Dazaifu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-dazaifu-japan-university-of-economics",
-        name: "Japan University of Economics",
-        cityId: "japon-dazaifu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Dazaifu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-dazaifu-kyushu-institute-of-information-sciences",
-        name: "Kyushu Institute of Information Sciences",
-        cityId: "japon-dazaifu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Dazaifu (Wikidata).
-      }),
-  ],
-  "japon-nagakute": [
-      defineUniversity({
-        id: "japon-nagakute-aichi-prefectural-university-of-fine-arts-and-music",
-        name: "Aichi Prefectural University of Fine Arts and Music",
-        cityId: "japon-nagakute",
-        website: "http://www.aichi-fam-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Nagakute (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagakute-nagoya-university-of-foreign-studies",
-        name: "Nagoya University of Foreign Studies",
-        cityId: "japon-nagakute",
-        website: "http://www.nufs.nakanishi.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Nagakute (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagakute-aichi-gakuin-university",
-        name: "Aichi Gakuin University",
-        cityId: "japon-nagakute",
-        website: "http://www.aichi-gakuin.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Nagakute (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagakute-aichi-institute-of-technology",
-        name: "Aichi Institute of Technology",
-        cityId: "japon-nagakute",
-        website: "http://www.aitech.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Nagakute (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagakute-aichi-institute-of-technology",
-        name: "Aichi Institute of Technology",
-        cityId: "japon-nagakute",
-        website: "http://www.aitech.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Nagakute (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagakute-aichi-medical-university",
-        name: "Aichi Medical University",
-        cityId: "japon-nagakute",
-        website: "http://www.aichi-med-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Nagakute (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagakute-aichi-prefectural-university",
-        name: "Aichi Prefectural University",
-        cityId: "japon-nagakute",
-        website: "http://www.aichi-pu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Nagakute (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagakute-koryo-international-college",
-        name: "Koryo International College",
-        cityId: "japon-nagakute",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Nagakute (Wikidata).
+        // Situada a 3.7 km del centro de Takasaki (Wikidata).
       }),
   ],
   "japon-suita": [
@@ -2186,6 +2832,64 @@ export default {
         // Situada a 5.2 km del centro de Shingū (Wikidata).
       }),
   ],
+  "japon-miyazaki": [
+      defineUniversity({
+        id: "japon-miyazaki-university-of-miyazaki",
+        name: "University of Miyazaki",
+        cityId: "japon-miyazaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.5 km del centro de Miyazaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-miyazaki-miyazaki-medical-college",
+        name: "Miyazaki Medical College",
+        cityId: "japon-miyazaki",
+        website: "http://www.miyazaki-med.ac.jp/",
+        source: "open-dataset",
+        // Situada a 8.7 km del centro de Miyazaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-miyazaki-miyazaki-prefectural-nursing-university",
+        name: "Miyazaki Prefectural Nursing University",
+        cityId: "japon-miyazaki",
+        website: "http://www.mpu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 6.4 km del centro de Miyazaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-miyazaki-minami-kyushu-university",
+        name: "Minami Kyushu University",
+        cityId: "japon-miyazaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Miyazaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-miyazaki-miyazaki-municipal-university",
+        name: "Miyazaki Municipal University",
+        cityId: "japon-miyazaki",
+        website: "http://www.miyazaki-mu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Miyazaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-miyazaki-miyazaki-international-college",
+        name: "Miyazaki International College",
+        cityId: "japon-miyazaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.5 km del centro de Miyazaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-miyazaki-miyazaki-sangyo-keiei-university",
+        name: "Miyazaki Sangyo-keiei University",
+        cityId: "japon-miyazaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.8 km del centro de Miyazaki (Wikidata).
+      }),
+  ],
   "japon-kitakyushu": [
       defineUniversity({
         id: "japon-kitakyushu-kitakyushu-national-college-of-technology",
@@ -2262,14 +2966,6 @@ export default {
         // Situada a 0.7 km del centro de Kagoshima (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kagoshima-kagoshima-university",
-        name: "Kagoshima University",
-        cityId: "japon-kagoshima",
-        website: "http://www.kagoshima-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Kagoshima (Wikidata).
-      }),
-      defineUniversity({
         id: "japon-kagoshima-kagoshima-immaculate-heart-college",
         name: "Kagoshima Immaculate Heart College",
         cityId: "japon-kagoshima",
@@ -2302,62 +2998,328 @@ export default {
         // Situada a 9.5 km del centro de Kagoshima (Wikidata).
       }),
   ],
-  "japon-ebara": [
+  "japon-higashiosaka": [
       defineUniversity({
-        id: "japon-ebara-institute-of-science-tokyo",
-        name: "Institute of Science Tokyo",
-        cityId: "japon-ebara",
+        id: "japon-higashiosaka-higashiosaka-college",
+        name: "Higashiosaka College",
+        cityId: "japon-higashiosaka",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Ebara (Wikidata).
+        // Situada a 1.0 km del centro de Higashiosaka (Wikidata).
       }),
       defineUniversity({
-        id: "japon-ebara-institute-of-science-tokyo",
-        name: "Institute of Science Tokyo",
-        cityId: "japon-ebara",
+        id: "japon-higashiosaka-osaka-shoin-women-s-university",
+        name: "Osaka Shoin Women's University",
+        cityId: "japon-higashiosaka",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Ebara (Wikidata).
+        // Situada a 0.7 km del centro de Higashiosaka (Wikidata).
       }),
       defineUniversity({
-        id: "japon-ebara-institute-of-science-tokyo",
-        name: "Institute of Science Tokyo",
-        cityId: "japon-ebara",
+        id: "japon-higashiosaka-osaka-university-of-commerce",
+        name: "Osaka University of Commerce",
+        cityId: "japon-higashiosaka",
+        website: "http://www.daishodai.ac.jp/",
+        source: "open-dataset",
+        // Situada a 0.1 km del centro de Higashiosaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-higashiosaka-kindai-university",
+        name: "Kindai University",
+        cityId: "japon-higashiosaka",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Ebara (Wikidata).
+        // Situada a 1.7 km del centro de Higashiosaka (Wikidata).
       }),
       defineUniversity({
-        id: "japon-ebara-tokyo-institute-of-technology",
-        name: "Tokyo Institute of Technology",
-        cityId: "japon-ebara",
-        website: "http://www.titech.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Ebara (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-ebara-tokyo-institute-of-technology",
-        name: "Tokyo Institute of Technology",
-        cityId: "japon-ebara",
-        website: "http://www.titech.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Ebara (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-ebara-showa-medical-university",
-        name: "Showa Medical University",
-        cityId: "japon-ebara",
+        id: "japon-higashiosaka-higashiosaka-junior-college",
+        name: "Higashiosaka Junior College",
+        cityId: "japon-higashiosaka",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Ebara (Wikidata).
+        // Situada a None km del centro de Higashiosaka (Wikidata).
       }),
       defineUniversity({
-        id: "japon-ebara-showa-medical-university",
-        name: "Showa Medical University",
-        cityId: "japon-ebara",
+        id: "japon-higashiosaka-kindai-university-faculty-of-junior-college-divison",
+        name: "Kindai University Faculty of Junior College Divison",
+        cityId: "japon-higashiosaka",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Ebara (Wikidata).
+        // Situada a None km del centro de Higashiosaka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-higashiosaka-technical-junior-college-university-of-osaka-prefecture",
+        name: "Technical Junior College University of Osaka Prefecture",
+        cityId: "japon-higashiosaka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Higashiosaka (Wikidata).
+      }),
+  ],
+  "japon-hirosaki": [
+      defineUniversity({
+        id: "japon-hirosaki-hirosaki-university-of-health-and-welfare-junior-college",
+        name: "Hirosaki University of Health and Welfare Junior College",
+        cityId: "japon-hirosaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Hirosaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hirosaki-shibata-gakuen-university",
+        name: "Shibata Gakuen University",
+        cityId: "japon-hirosaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Hirosaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hirosaki-hirosaki-university",
+        name: "Hirosaki University",
+        cityId: "japon-hirosaki",
+        website: "http://www.hirosaki-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Hirosaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hirosaki-hirosaki-university-of-heath-and-welfare",
+        name: "Hirosaki University of Heath and Welfare",
+        cityId: "japon-hirosaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hirosaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hirosaki-hirosaki-gakuin-university",
+        name: "Hirosaki Gakuin University",
+        cityId: "japon-hirosaki",
+        website: "http://www.hirogaku-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Hirosaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hirosaki-school-of-allied-medical-sciences-hirosaki-university",
+        name: "School of Allied Medical Sciences, Hirosaki University",
+        cityId: "japon-hirosaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hirosaki (Wikidata).
+      }),
+  ],
+  "japon-asahikawa": [
+      defineUniversity({
+        id: "japon-asahikawa-national-institute-of-technology-asahikawa-college",
+        name: "National Institute of Technology, Asahikawa College",
+        cityId: "japon-asahikawa",
+        website: "https://asahikawa-nct.ac.jp/",
+        source: "open-dataset",
+        // Situada a 4.8 km del centro de Asahikawa (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-asahikawa-asahikawa-city-university",
+        name: "Asahikawa City University",
+        cityId: "japon-asahikawa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.3 km del centro de Asahikawa (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-asahikawa-asahikawa-city-university-junior-college",
+        name: "Asahikawa City University Junior College",
+        cityId: "japon-asahikawa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.3 km del centro de Asahikawa (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-asahikawa-asahikawa-university-junior-college",
+        name: "Asahikawa University Junior College",
+        cityId: "japon-asahikawa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.3 km del centro de Asahikawa (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-asahikawa-asahikawa-university",
+        name: "Asahikawa University",
+        cityId: "japon-asahikawa",
+        website: "http://www.asahikawa-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 8.3 km del centro de Asahikawa (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-asahikawa-asahikawa-medical-university",
+        name: "Asahikawa Medical University",
+        cityId: "japon-asahikawa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.0 km del centro de Asahikawa (Wikidata).
+      }),
+  ],
+  "japon-otsuka": [
+      defineUniversity({
+        id: "japon-otsuka-japan-women-s-university",
+        name: "Japan Women's University",
+        cityId: "japon-otsuka",
+        website: "http://www.jwu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Ōtsuka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-otsuka-toho-junior-college-of-music",
+        name: "Toho Junior College of Music",
+        cityId: "japon-otsuka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.3 km del centro de Ōtsuka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-otsuka-atomi-university",
+        name: "Atomi University",
+        cityId: "japon-otsuka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Ōtsuka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-otsuka-takushoku-university",
+        name: "Takushoku University",
+        cityId: "japon-otsuka",
+        website: "http://www.takushoku-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Ōtsuka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-otsuka-tokyo-university-of-social-welfare",
+        name: "Tokyo University of Social Welfare",
+        cityId: "japon-otsuka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Ōtsuka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-otsuka-ochanomizu-university",
+        name: "Ochanomizu University",
+        cityId: "japon-otsuka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ōtsuka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-otsuka-tokyo-university-of-literature-and-science",
+        name: "Tokyo University of Literature and Science",
+        cityId: "japon-otsuka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ōtsuka (Wikidata).
+      }),
+  ],
+  "japon-nagakute": [
+      defineUniversity({
+        id: "japon-nagakute-aichi-prefectural-university-of-fine-arts-and-music",
+        name: "Aichi Prefectural University of Fine Arts and Music",
+        cityId: "japon-nagakute",
+        website: "http://www.aichi-fam-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Nagakute (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagakute-nagoya-university-of-foreign-studies",
+        name: "Nagoya University of Foreign Studies",
+        cityId: "japon-nagakute",
+        website: "http://www.nufs.nakanishi.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Nagakute (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagakute-aichi-gakuin-university",
+        name: "Aichi Gakuin University",
+        cityId: "japon-nagakute",
+        website: "http://www.aichi-gakuin.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Nagakute (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagakute-aichi-institute-of-technology",
+        name: "Aichi Institute of Technology",
+        cityId: "japon-nagakute",
+        website: "http://www.aitech.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.1 km del centro de Nagakute (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagakute-aichi-medical-university",
+        name: "Aichi Medical University",
+        cityId: "japon-nagakute",
+        website: "http://www.aichi-med-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Nagakute (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagakute-aichi-prefectural-university",
+        name: "Aichi Prefectural University",
+        cityId: "japon-nagakute",
+        website: "http://www.aichi-pu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Nagakute (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nagakute-koryo-international-college",
+        name: "Koryo International College",
+        cityId: "japon-nagakute",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.1 km del centro de Nagakute (Wikidata).
+      }),
+  ],
+  "japon-yono": [
+      defineUniversity({
+        id: "japon-yono-saitama-university",
+        name: "Saitama University",
+        cityId: "japon-yono",
+        website: "http://www.saitama-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Yono (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-yono-omiya-law-school",
+        name: "Omiya Law School",
+        cityId: "japon-yono",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Yono (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-yono-institute-of-technologists",
+        name: "Institute of Technologists",
+        cityId: "japon-yono",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Yono (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-yono-josai-university",
+        name: "Josai University",
+        cityId: "japon-yono",
+        website: "http://www.josai.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Yono (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-yono-nihon-pharmaceutical-university",
+        name: "Nihon Pharmaceutical University",
+        cityId: "japon-yono",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Yono (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-yono-meikai-university",
+        name: "Meikai University",
+        cityId: "japon-yono",
+        website: "http://www.meikai.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Yono (Wikidata).
       }),
   ],
   "japon-takamatsu": [
@@ -2402,112 +3364,62 @@ export default {
         // Situada a 3.4 km del centro de Takamatsu (Wikidata).
       }),
       defineUniversity({
-        id: "japon-takamatsu-takamatsu-university",
-        name: "Takamatsu University",
+        id: "japon-takamatsu-setouchi-vocational-college-of-tourism",
+        name: "Setouchi Vocational College of Tourism",
         cityId: "japon-takamatsu",
-        website: "http://www.takamatsu-u.ac.jp/",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.4 km del centro de Takamatsu (Wikidata).
+        // Situada a None km del centro de Takamatsu (Wikidata).
       }),
   ],
-  "japon-nara-shi": [
+  "japon-nagasaki-1856177": [
       defineUniversity({
-        id: "japon-nara-shi-jasdf-officer-candidate-school",
-        name: "JASDF Officer Candidate School",
-        cityId: "japon-nara-shi",
+        id: "japon-nagasaki-1856177-seminary-of-nagasaki",
+        name: "Seminary of Nagasaki",
+        cityId: "japon-nagasaki-1856177",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Nara-shi (Wikidata).
+        // Situada a 3.4 km del centro de Nagasaki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-nara-shi-nara-university-of-education",
-        name: "Nara University of Education",
-        cityId: "japon-nara-shi",
-        website: "http://www.nara-edu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de Nara-shi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nara-shi-nara-university-of-education",
-        name: "Nara University of Education",
-        cityId: "japon-nara-shi",
-        website: "http://www.nara-edu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de Nara-shi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nara-shi-nara-prefectural-university",
-        name: "Nara Prefectural University",
-        cityId: "japon-nara-shi",
+        id: "japon-nagasaki-1856177-nagasaki-naval-training-center",
+        name: "Nagasaki Naval Training Center",
+        cityId: "japon-nagasaki-1856177",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Nara-shi (Wikidata).
+        // Situada a 1.1 km del centro de Nagasaki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-nara-shi-nara-saho-college",
-        name: "Nara Saho College",
-        cityId: "japon-nara-shi",
+        id: "japon-nagasaki-1856177-kwassui-college",
+        name: "Kwassui College",
+        cityId: "japon-nagasaki-1856177",
         website: null,
         source: "open-dataset",
-        // Situada a 4.3 km del centro de Nara-shi (Wikidata).
+        // Situada a 1.5 km del centro de Nagasaki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-nara-shi-nara-university",
-        name: "Nara University",
-        cityId: "japon-nara-shi",
-        website: "http://www.nara-u.ac.jp/",
+        id: "japon-nagasaki-1856177-nagasaki-institute-of-applied-science",
+        name: "Nagasaki Institute of Applied Science",
+        cityId: "japon-nagasaki-1856177",
+        website: "http://www.nias.ac.jp/",
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Nara-shi (Wikidata).
+        // Situada a 5.5 km del centro de Nagasaki (Wikidata).
       }),
-  ],
-  "japon-nagano": [
       defineUniversity({
-        id: "japon-nagano-national-institute-of-technology-nagano-college",
-        name: "National Institute of Technology, Nagano College",
-        cityId: "japon-nagano",
+        id: "japon-nagasaki-1856177-school-of-allied-medical-science-nagasaki-university",
+        name: "School of Allied Medical Science, Nagasaki University",
+        cityId: "japon-nagasaki-1856177",
         website: null,
         source: "open-dataset",
-        // Situada a 5.5 km del centro de Nagano (Wikidata).
+        // Situada a None km del centro de Nagasaki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-nagano-the-university-of-nagano",
-        name: "The University of Nagano",
-        cityId: "japon-nagano",
+        id: "japon-nagasaki-1856177-junior-college-of-commerce-nagasaki-university",
+        name: "Junior College of Commerce Nagasaki University",
+        cityId: "japon-nagasaki-1856177",
         website: null,
         source: "open-dataset",
-        // Situada a 2.3 km del centro de Nagano (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagano-the-university-of-nagano",
-        name: "The University of Nagano",
-        cityId: "japon-nagano",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Nagano (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagano-nagano-prefectural-college",
-        name: "Nagano Prefectural College",
-        cityId: "japon-nagano",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Nagano (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagano-seisen-university",
-        name: "Seisen University",
-        cityId: "japon-nagano",
-        website: "http://www.seisen-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Nagano (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagano-seisen-university-junior-college",
-        name: "Seisen University Junior College",
-        cityId: "japon-nagano",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.3 km del centro de Nagano (Wikidata).
+        // Situada a None km del centro de Nagasaki (Wikidata).
       }),
   ],
   "japon-muko": [
@@ -2610,54 +3522,54 @@ export default {
         // Situada a 4.9 km del centro de Matsubara (Wikidata).
       }),
   ],
-  "japon-maebashi": [
+  "japon-kochi": [
       defineUniversity({
-        id: "japon-maebashi-gunma-university",
-        name: "Gunma University",
-        cityId: "japon-maebashi",
-        website: "http://www.gunma-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 4.8 km del centro de Maebashi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-maebashi-gunma-university",
-        name: "Gunma University",
-        cityId: "japon-maebashi",
-        website: "http://www.gunma-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 4.8 km del centro de Maebashi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-maebashi-gunma-prefectural-college-of-health-sciences",
-        name: "Gunma Prefectural College of Health Sciences",
-        cityId: "japon-maebashi",
+        id: "japon-kochi-college-of-child-development-kochi-women-s-university",
+        name: "College of Child Development, Kochi Women's University",
+        cityId: "japon-kochi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Maebashi (Wikidata).
+        // Situada a 5.1 km del centro de Kochi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-maebashi-gunma-prefectural-college-of-health-sciences",
-        name: "Gunma Prefectural College of Health Sciences",
-        cityId: "japon-maebashi",
+        id: "japon-kochi-university-of-kochi",
+        name: "University of Kochi",
+        cityId: "japon-kochi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Maebashi (Wikidata).
+        // Situada a 5.1 km del centro de Kochi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-maebashi-maebashi-institute-of-technology",
-        name: "Maebashi Institute of Technology",
-        cityId: "japon-maebashi",
+        id: "japon-kochi-kochi-gakuen-college",
+        name: "Kochi Gakuen College",
+        cityId: "japon-kochi",
         website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Maebashi (Wikidata).
+        // Situada a 2.7 km del centro de Kochi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-maebashi-maebashi-institute-of-technology",
-        name: "Maebashi Institute of Technology",
-        cityId: "japon-maebashi",
+        id: "japon-kochi-kochi-university",
+        name: "Kōchi University",
+        cityId: "japon-kochi",
+        website: "http://www.kochi-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 4.4 km del centro de Kochi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kochi-university-of-kochi-health-sciences",
+        name: "University of Kochi Health Sciences",
+        cityId: "japon-kochi",
         website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Maebashi (Wikidata).
+        // Situada a None km del centro de Kochi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kochi-kochi-gakuen-university",
+        name: "Kochi Gakuen University",
+        cityId: "japon-kochi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kochi (Wikidata).
       }),
   ],
   "japon-ibaraki": [
@@ -2702,23 +3614,553 @@ export default {
         // Situada a 3.8 km del centro de Ibaraki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-ibaraki-university-of-osaka",
-        name: "University of Osaka",
+        id: "japon-ibaraki-otemon-gakuin-university",
+        name: "Otemon Gakuin University",
         cityId: "japon-ibaraki",
+        website: "http://www.otemon.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Ibaraki (Wikidata).
+      }),
+  ],
+  "japon-owariasahi": [
+      defineUniversity({
+        id: "japon-owariasahi-aichi-toho-university",
+        name: "Aichi Toho University",
+        cityId: "japon-owariasahi",
         website: null,
         source: "open-dataset",
-        // Situada a 3.8 km del centro de Ibaraki (Wikidata).
+        // Situada a 5.8 km del centro de Owariasahi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-owariasahi-nagoya-city-college-of-child-education",
+        name: "Nagoya City College of Child Education",
+        cityId: "japon-owariasahi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Owariasahi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-owariasahi-nagoya-sangyo-university",
+        name: "Nagoya Sangyo University",
+        cityId: "japon-owariasahi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Owariasahi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-owariasahi-tokai-gakuen-women-s-college",
+        name: "Tokai Gakuen Women's College",
+        cityId: "japon-owariasahi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Owariasahi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-owariasahi-kinjo-gakuin-university",
+        name: "Kinjo Gakuin University",
+        cityId: "japon-owariasahi",
+        website: "http://www.kinjo-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Owariasahi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-owariasahi-junior-college-kinjo-gakuin-university",
+        name: "Junior College, Kinjo Gakuin University",
+        cityId: "japon-owariasahi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Owariasahi (Wikidata).
+      }),
+  ],
+  "japon-toyama": [
+      defineUniversity({
+        id: "japon-toyama-junior-college-of-business-administration-toyama-university",
+        name: "Junior College of Business Administration, Toyama University",
+        cityId: "japon-toyama",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Toyama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-toyama-takaoka-national-college",
+        name: "Takaoka National College",
+        cityId: "japon-toyama",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Toyama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-toyama-university-of-toyama",
+        name: "University of Toyama",
+        cityId: "japon-toyama",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Toyama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-toyama-toyama-national-college-of-technology",
+        name: "Toyama National College of Technology",
+        cityId: "japon-toyama",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Toyama (Wikidata).
+      }),
+  ],
+  "japon-sakai-1853195": [
+      defineUniversity({
+        id: "japon-sakai-1853195-osaka-city-university",
+        name: "Osaka City University",
+        cityId: "japon-sakai-1853195",
+        website: "http://www.osaka-cu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Sakai (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sakai-1853195-morinomiya-university-of-medical-sciences",
+        name: "Morinomiya University of Medical Sciences",
+        cityId: "japon-sakai-1853195",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.2 km del centro de Sakai (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sakai-1853195-osaka-junior-college-of-social-health-and-welfare",
+        name: "Osaka Junior College of Social Health and Welfare",
+        cityId: "japon-sakai-1853195",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Sakai (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sakai-1853195-soai-university",
+        name: "Soai University",
+        cityId: "japon-sakai-1853195",
+        website: "http://www.soai.ac.jp/",
+        source: "open-dataset",
+        // Situada a 6.8 km del centro de Sakai (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sakai-1853195-osaka-women-s-university",
+        name: "Osaka Women's University",
+        cityId: "japon-sakai-1853195",
+        website: "http://www.osaka-wu.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Sakai (Wikidata).
+      }),
+  ],
+  "japon-moriguchi": [
+      defineUniversity({
+        id: "japon-moriguchi-osaka-shin-ai-gakuin-university",
+        name: "Osaka Shin-Ai Gakuin University",
+        cityId: "japon-moriguchi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Moriguchi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-moriguchi-kansai-medical-university",
+        name: "Kansai Medical University",
+        cityId: "japon-moriguchi",
+        website: "http://www.kmu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Moriguchi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-moriguchi-osaka-shin-ai-college",
+        name: "Osaka Shin-ai College",
+        cityId: "japon-moriguchi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Moriguchi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-moriguchi-osaka-institute-of-technology",
+        name: "Osaka Institute of Technology",
+        cityId: "japon-moriguchi",
+        website: "http://www.oit.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Moriguchi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-moriguchi-osaka-university-of-economics",
+        name: "Osaka University of Economics",
+        cityId: "japon-moriguchi",
+        website: "http://www.osaka-ue.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.8 km del centro de Moriguchi (Wikidata).
+      }),
+  ],
+  "japon-matsumoto": [
+      defineUniversity({
+        id: "japon-matsumoto-matsumoto-college-of-nursing",
+        name: "Matsumoto College of Nursing",
+        cityId: "japon-matsumoto",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.0 km del centro de Matsumoto (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-matsumoto-matsusho-gakuen-junior-college",
+        name: "Matsusho Gakuen Junior College",
+        cityId: "japon-matsumoto",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.0 km del centro de Matsumoto (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-matsumoto-shinshu-university",
+        name: "Shinshu University",
+        cityId: "japon-matsumoto",
+        website: "http://www.shinshu-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Matsumoto (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-matsumoto-matsumoto-university",
+        name: "Matsumoto University",
+        cityId: "japon-matsumoto",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.2 km del centro de Matsumoto (Wikidata).
+      }),
+  ],
+  "japon-kumamoto": [
+      defineUniversity({
+        id: "japon-kumamoto-kumamoto-university",
+        name: "Kumamoto University",
+        cityId: "japon-kumamoto",
+        website: "http://www.kumamoto-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.5 km del centro de Kumamoto (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kumamoto-kyushu-lutheran-college",
+        name: "Kyūshū Lutheran College",
+        cityId: "japon-kumamoto",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Kumamoto (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kumamoto-shokei-college",
+        name: "Shokei College",
+        cityId: "japon-kumamoto",
+        website: "http://www.shokei-gakuen.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Kumamoto (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kumamoto-sojo-university",
+        name: "Sojo University",
+        cityId: "japon-kumamoto",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.8 km del centro de Kumamoto (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kumamoto-kumamoto-medical-college",
+        name: "Kumamoto Medical College",
+        cityId: "japon-kumamoto",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kumamoto (Wikidata).
+      }),
+  ],
+  "japon-kawasaki": [
+      defineUniversity({
+        id: "japon-kawasaki-globiz-professional-university",
+        name: "Globiz Professional University",
+        cityId: "japon-kawasaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Kawasaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kawasaki-kawasaki-city-college-of-nursing",
+        name: "Kawasaki City College of Nursing",
+        cityId: "japon-kawasaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.6 km del centro de Kawasaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kawasaki-kawasaki-city-college-of-nursing",
+        name: "Kawasaki City College of Nursing",
+        cityId: "japon-kawasaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.6 km del centro de Kawasaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kawasaki-tsurumi-university",
+        name: "Tsurumi University",
+        cityId: "japon-kawasaki",
+        website: "http://www.tsurumi-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 4.3 km del centro de Kawasaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kawasaki-yokohama-college-of-commerce",
+        name: "Yokohama College of Commerce",
+        cityId: "japon-kawasaki",
+        website: "http://www.shodai.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.7 km del centro de Kawasaki (Wikidata).
+      }),
+  ],
+  "japon-hachioji": [
+      defineUniversity({
+        id: "japon-hachioji-national-institute-of-technology-tokyo-college",
+        name: "National Institute of Technology, Tokyo College",
+        cityId: "japon-hachioji",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Hachiōji (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hachioji-soka-university",
+        name: "Sōka University",
+        cityId: "japon-hachioji",
+        website: "http://www.soka.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Hachiōji (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hachioji-nihon-bunka-university",
+        name: "Nihon Bunka University",
+        cityId: "japon-hachioji",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.8 km del centro de Hachiōji (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hachioji-tokyo-junshin-university",
+        name: "Tokyo Junshin University",
+        cityId: "japon-hachioji",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.3 km del centro de Hachiōji (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hachioji-tokyo-metropolitan-university",
+        name: "Tokyo Metropolitan University",
+        cityId: "japon-hachioji",
+        website: "http://www.metro-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Hachiōji (Wikidata).
+      }),
+  ],
+  "japon-tsukuba": [
+      defineUniversity({
+        id: "japon-tsukuba-university-of-library-and-information-science",
+        name: "University of Library and Information Science",
+        cityId: "japon-tsukuba",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Tsukuba (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tsukuba-national-university-corporation-tsukuba-university-of-technology",
+        name: "National University Corporation Tsukuba University of Technology",
+        cityId: "japon-tsukuba",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Tsukuba (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tsukuba-tsukuba-gakuin-university",
+        name: "Tsukuba Gakuin University",
+        cityId: "japon-tsukuba",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Tsukuba (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tsukuba-university-of-tsukuba",
+        name: "University of Tsukuba",
+        cityId: "japon-tsukuba",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Tsukuba (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tsukuba-tsukuba-college-of-technology",
+        name: "Tsukuba College of Technology",
+        cityId: "japon-tsukuba",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tsukuba (Wikidata).
+      }),
+  ],
+  "japon-makuhari": [
+      defineUniversity({
+        id: "japon-makuhari-open-university-of-japan",
+        name: "Open University of Japan",
+        cityId: "japon-makuhari",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Makuhari (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-makuhari-kanda-university-of-international-studies",
+        name: "Kanda University of International Studies",
+        cityId: "japon-makuhari",
+        website: "http://www.kuis.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Makuhari (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-makuhari-chiba-prefectural-university-of-health-sciences",
+        name: "Chiba Prefectural University of Health Sciences",
+        cityId: "japon-makuhari",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.3 km del centro de Makuhari (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-makuhari-chiba-college-of-health-science",
+        name: "Chiba College of Health Science",
+        cityId: "japon-makuhari",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Makuhari (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-makuhari-chiba-meitoku-college",
+        name: "Chiba Meitoku College",
+        cityId: "japon-makuhari",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Makuhari (Wikidata).
+      }),
+  ],
+  "japon-chiba": [
+      defineUniversity({
+        id: "japon-chiba-chiba-university",
+        name: "Chiba University",
+        cityId: "japon-chiba",
+        website: "https://chiba-u.jp/",
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Chiba (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiba-chiba-keizai-university",
+        name: "Chiba Keizai University",
+        cityId: "japon-chiba",
+        website: "http://www.cku.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Chiba (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiba-shukutoku-university",
+        name: "Shukutoku University",
+        cityId: "japon-chiba",
+        website: "http://www.shukutoku.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Chiba (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiba-junior-college-of-engineering-chiba-university",
+        name: "Junior College of Engineering, Chiba University",
+        cityId: "japon-chiba",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chiba (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-chiba-chiba-medical-college",
+        name: "Chiba Medical College",
+        cityId: "japon-chiba",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chiba (Wikidata).
+      }),
+  ],
+  "japon-ebetsu": [
+      defineUniversity({
+        id: "japon-ebetsu-hokusho-college",
+        name: "Hokusho College",
+        cityId: "japon-ebetsu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.0 km del centro de Ebetsu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-ebetsu-hokusho-university",
+        name: "Hokusho University",
+        cityId: "japon-ebetsu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.8 km del centro de Ebetsu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-ebetsu-hokkaido-information-university",
+        name: "Hokkaido Information University",
+        cityId: "japon-ebetsu",
+        website: "http://www.do-johodai.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.5 km del centro de Ebetsu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-ebetsu-rakuno-gakuen-university",
+        name: "Rakuno Gakuen University",
+        cityId: "japon-ebetsu",
+        website: "http://www.rakuno.ac.jp/",
+        source: "open-dataset",
+        // Situada a 4.9 km del centro de Ebetsu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-ebetsu-sapporo-gakuin-university",
+        name: "Sapporo Gakuin University",
+        cityId: "japon-ebetsu",
+        website: "http://www.sgu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 6.5 km del centro de Ebetsu (Wikidata).
+      }),
+  ],
+  "japon-nisshin": [
+      defineUniversity({
+        id: "japon-nisshin-nagoya-university-of-commerce-business",
+        name: "Nagoya University of Commerce & Business",
+        cityId: "japon-nisshin",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.5 km del centro de Nisshin (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nisshin-sugiyama-jogakuen-university",
+        name: "Sugiyama Jogakuen University",
+        cityId: "japon-nisshin",
+        website: "http://www.sugiyama-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 6.5 km del centro de Nisshin (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nisshin-toyota-technological-institute",
+        name: "Toyota Technological Institute",
+        cityId: "japon-nisshin",
+        website: "http://www.toyota-ti.ac.jp/",
+        source: "open-dataset",
+        // Situada a 7.2 km del centro de Nisshin (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nisshin-meijo-university",
+        name: "Meijo University",
+        cityId: "japon-nisshin",
+        website: "http://www.meijo-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 6.9 km del centro de Nisshin (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-nisshin-nagoya-university-of-arts-and-sciences",
+        name: "Nagoya University of Arts and Sciences",
+        cityId: "japon-nisshin",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nisshin (Wikidata).
       }),
   ],
   "japon-aobadai": [
-      defineUniversity({
-        id: "japon-aobadai-yokohama-university-of-art-and-design",
-        name: "Yokohama University of Art and Design",
-        cityId: "japon-aobadai",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Aobadai (Wikidata).
-      }),
       defineUniversity({
         id: "japon-aobadai-yokohama-university-of-art-and-design",
         name: "Yokohama University of Art and Design",
@@ -2753,14 +4195,6 @@ export default {
       }),
   ],
   "japon-katanawa": [
-      defineUniversity({
-        id: "japon-katanawa-junshin-gakuen-university",
-        name: "Junshin Gakuen University",
-        cityId: "japon-katanawa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Katanawa (Wikidata).
-      }),
       defineUniversity({
         id: "japon-katanawa-junshin-gakuen-university",
         name: "Junshin Gakuen University",
@@ -2843,24 +4277,84 @@ export default {
         source: "open-dataset",
         // Situada a 0.9 km del centro de Taito (Wikidata).
       }),
+  ],
+  "japon-shibuya": [
       defineUniversity({
-        id: "japon-taito-ueno-gakuen-university",
-        name: "Ueno Gakuen University",
-        cityId: "japon-taito",
+        id: "japon-shibuya-united-nations-university",
+        name: "United Nations University",
+        cityId: "japon-shibuya",
+        website: "http://www.unu.edu/",
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Shibuya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shibuya-kokugakuin-university",
+        name: "Kokugakuin University",
+        cityId: "japon-shibuya",
+        website: "http://www.kokugakuin.ac.jp/",
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Shibuya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shibuya-aoyama-gakuin-university",
+        name: "Aoyama Gakuin University",
+        cityId: "japon-shibuya",
+        website: "http://www.aoyama.ac.jp/",
+        source: "open-dataset",
+        // Situada a 0.3 km del centro de Shibuya (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shibuya-yamazaki-professional-college-of-animal-health-technology",
+        name: "Yamazaki Professional College of Animal Health Technology",
+        cityId: "japon-shibuya",
         website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Taito (Wikidata).
+        // Situada a None km del centro de Shibuya (Wikidata).
+      }),
+  ],
+  "japon-minato-city": [
+      defineUniversity({
+        id: "japon-minato-city-toita-women-s-college",
+        name: "Toita Women's College",
+        cityId: "japon-minato-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Minato City (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-minato-city-international-college-for-postgraduate-buddhist-studies",
+        name: "International College for Postgraduate Buddhist Studies",
+        cityId: "japon-minato-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Minato City (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-minato-city-jikei-university-school-of-medicine",
+        name: "Jikei University School of Medicine",
+        cityId: "japon-minato-city",
+        website: "http://www.jikei.ac.jp/",
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Minato City (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-minato-city-keio-university",
+        name: "Keio University",
+        cityId: "japon-minato-city",
+        website: "https://www.keio.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Minato City (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-minato-city-tokyo-university-of-fisheries",
+        name: "Tokyo University of Fisheries",
+        cityId: "japon-minato-city",
+        website: "http://www.tokyo-u-fish.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Minato City (Wikidata).
       }),
   ],
   "japon-utsunomiya": [
-      defineUniversity({
-        id: "japon-utsunomiya-utsunomiya-university",
-        name: "Utsunomiya University",
-        cityId: "japon-utsunomiya",
-        website: "http://www.utsunomiya-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.4 km del centro de Utsunomiya (Wikidata).
-      }),
       defineUniversity({
         id: "japon-utsunomiya-utsunomiya-university",
         name: "Utsunomiya University",
@@ -2920,20 +4414,158 @@ export default {
         // Situada a 7.6 km del centro de Toyohashi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-toyohashi-toyohashi-university-of-technology",
-        name: "Toyohashi University of Technology",
-        cityId: "japon-toyohashi",
-        website: "http://www.tut.ac.jp/",
-        source: "open-dataset",
-        // Situada a 7.6 km del centro de Toyohashi (Wikidata).
-      }),
-      defineUniversity({
         id: "japon-toyohashi-toyohashi-sozo-university",
         name: "Toyohashi SOZO University",
         cityId: "japon-toyohashi",
         website: null,
         source: "open-dataset",
         // Situada a 2.6 km del centro de Toyohashi (Wikidata).
+      }),
+  ],
+  "japon-tokushima": [
+      defineUniversity({
+        id: "japon-tokushima-university-of-tokushima",
+        name: "University of Tokushima",
+        cityId: "japon-tokushima",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Tokushima (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tokushima-tokushima-bunri-university",
+        name: "Tokushima Bunri University",
+        cityId: "japon-tokushima",
+        website: "http://www.bunri-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Tokushima (Wikidata).
+      }),
+  ],
+  "japon-sasebo": [
+      defineUniversity({
+        id: "japon-sasebo-national-institute-of-technology-sasebo-college",
+        name: "National Institute of Technology, Sasebo College",
+        cityId: "japon-sasebo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Sasebo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sasebo-nagasaki-prefectural-university",
+        name: "Nagasaki Prefectural University",
+        cityId: "japon-sasebo",
+        website: "http://www.nagasakipu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.8 km del centro de Sasebo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sasebo-university-of-nagasaki",
+        name: "University of Nagasaki",
+        cityId: "japon-sasebo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.7 km del centro de Sasebo (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sasebo-nagasaki-international-university",
+        name: "Nagasaki International University",
+        cityId: "japon-sasebo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.5 km del centro de Sasebo (Wikidata).
+      }),
+  ],
+  "japon-otsu": [
+      defineUniversity({
+        id: "japon-otsu-kyoto-pharmaceutical-university",
+        name: "Kyoto Pharmaceutical University",
+        cityId: "japon-otsu",
+        website: "http://www.kyoto-phu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.3 km del centro de Ōtsu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-otsu-kyoto-tachibana-university",
+        name: "Kyoto Tachibana University",
+        cityId: "japon-otsu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.1 km del centro de Ōtsu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-otsu-biwako-professional-university-of-rehabilitation",
+        name: "Biwako Professional University of Rehabilitation",
+        cityId: "japon-otsu",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ōtsu (Wikidata).
+      }),
+  ],
+  "japon-okubo-naka": [
+      defineUniversity({
+        id: "japon-okubo-naka-osaka-kawasaki-rehabilitation-university",
+        name: "Osaka Kawasaki Rehabilitation University",
+        cityId: "japon-okubo-naka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Ōkubo-naka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okubo-naka-osaka-university-of-health-and-sport-sciences",
+        name: "Osaka University of Health and Sport Sciences",
+        cityId: "japon-okubo-naka",
+        website: "http://www.ouhs.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Ōkubo-naka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okubo-naka-osaka-university-of-tourism",
+        name: "Osaka University of Tourism",
+        cityId: "japon-okubo-naka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Ōkubo-naka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okubo-naka-osaka-university-of-health-sports-science-junior-college",
+        name: "Osaka University of Health＆Sports Science Junior College",
+        cityId: "japon-okubo-naka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ōkubo-naka (Wikidata).
+      }),
+  ],
+  "japon-okazaki": [
+      defineUniversity({
+        id: "japon-okazaki-okazaki-university",
+        name: "Okazaki University",
+        cityId: "japon-okazaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Okazaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okazaki-aichi-gakusen-college",
+        name: "Aichi Gakusen College",
+        cityId: "japon-okazaki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Okazaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okazaki-aichi-gakusen-university",
+        name: "Aichi Gakusen University",
+        cityId: "japon-okazaki",
+        website: "http://www.gakusen.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Okazaki (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-okazaki-aichi-sangyo-university",
+        name: "Aichi Sangyo University",
+        cityId: "japon-okazaki",
+        website: "http://www.asu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 6.1 km del centro de Okazaki (Wikidata).
       }),
   ],
   "japon-oita": [
@@ -2962,14 +4594,6 @@ export default {
         // Situada a 1.8 km del centro de Ōita (Wikidata).
       }),
       defineUniversity({
-        id: "japon-oita-oita-prefectural-college-of-arts-and-culture",
-        name: "Oita Prefectural College of Arts and Culture",
-        cityId: "japon-oita",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Ōita (Wikidata).
-      }),
-      defineUniversity({
         id: "japon-oita-oita-university-of-nursing-and-health-sciences",
         name: "Oita University of Nursing and Health Sciences",
         cityId: "japon-oita",
@@ -2979,14 +4603,6 @@ export default {
       }),
   ],
   "japon-obita": [
-      defineUniversity({
-        id: "japon-obita-nagasaki-university",
-        name: "Nagasaki University",
-        cityId: "japon-obita",
-        website: "http://www.nagasaki-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de Obita (Wikidata).
-      }),
       defineUniversity({
         id: "japon-obita-nagasaki-university",
         name: "Nagasaki University",
@@ -3038,14 +4654,6 @@ export default {
         // Situada a 6.9 km del centro de Nagaoka (Wikidata).
       }),
       defineUniversity({
-        id: "japon-nagaoka-nagaoka-university-of-technology",
-        name: "Nagaoka University of Technology",
-        cityId: "japon-nagaoka",
-        website: "http://www.nagaokaut.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.9 km del centro de Nagaoka (Wikidata).
-      }),
-      defineUniversity({
         id: "japon-nagaoka-nagaoka-sutoku-university",
         name: "Nagaoka Sutoku University",
         cityId: "japon-nagaoka",
@@ -3062,48 +4670,6 @@ export default {
         // Situada a 3.4 km del centro de Nagaoka (Wikidata).
       }),
   ],
-  "japon-moriguchi": [
-      defineUniversity({
-        id: "japon-moriguchi-osaka-shin-ai-gakuin-university",
-        name: "Osaka Shin-Ai Gakuin University",
-        cityId: "japon-moriguchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Moriguchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-moriguchi-kansai-medical-university",
-        name: "Kansai Medical University",
-        cityId: "japon-moriguchi",
-        website: "http://www.kmu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Moriguchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-moriguchi-osaka-shin-ai-college",
-        name: "Osaka Shin-ai College",
-        cityId: "japon-moriguchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Moriguchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-moriguchi-osaka-institute-of-technology",
-        name: "Osaka Institute of Technology",
-        cityId: "japon-moriguchi",
-        website: "http://www.oit.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Moriguchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-moriguchi-osaka-university-of-economics",
-        name: "Osaka University of Economics",
-        cityId: "japon-moriguchi",
-        website: "http://www.osaka-ue.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Moriguchi (Wikidata).
-      }),
-  ],
   "japon-machida": [
       defineUniversity({
         id: "japon-machida-wako-university",
@@ -3112,14 +4678,6 @@ export default {
         website: "http://www.wako.ac.jp/",
         source: "open-dataset",
         // Situada a 4.3 km del centro de Machida (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-machida-showa-pharmaceutical-university",
-        name: "Showa Pharmaceutical University",
-        cityId: "japon-machida",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Machida (Wikidata).
       }),
       defineUniversity({
         id: "japon-machida-showa-pharmaceutical-university",
@@ -3146,102 +4704,78 @@ export default {
         // Situada a 3.3 km del centro de Machida (Wikidata).
       }),
   ],
-  "japon-kawasaki": [
+  "japon-kurume": [
       defineUniversity({
-        id: "japon-kawasaki-globiz-professional-university",
-        name: "Globiz Professional University",
-        cityId: "japon-kawasaki",
+        id: "japon-kurume-kurume-national-college-of-technology",
+        name: "Kurume National College of Technology",
+        cityId: "japon-kurume",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Kawasaki (Wikidata).
+        // Situada a 2.2 km del centro de Kurume (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kawasaki-kawasaki-city-college-of-nursing",
-        name: "Kawasaki City College of Nursing",
-        cityId: "japon-kawasaki",
+        id: "japon-kurume-kurume-shin-ai-women-s-college",
+        name: "Kurume Shin-Ai Women's College",
+        cityId: "japon-kurume",
         website: null,
         source: "open-dataset",
-        // Situada a 4.6 km del centro de Kawasaki (Wikidata).
+        // Situada a 3.9 km del centro de Kurume (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kawasaki-kawasaki-city-college-of-nursing",
-        name: "Kawasaki City College of Nursing",
-        cityId: "japon-kawasaki",
+        id: "japon-kurume-st-mary-s-educational-foundation",
+        name: "St. Mary's Educational Foundation",
+        cityId: "japon-kurume",
         website: null,
         source: "open-dataset",
-        // Situada a 4.6 km del centro de Kawasaki (Wikidata).
+        // Situada a 1.5 km del centro de Kurume (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kawasaki-tsurumi-university",
-        name: "Tsurumi University",
-        cityId: "japon-kawasaki",
-        website: "http://www.tsurumi-u.ac.jp/",
+        id: "japon-kurume-kurume-university",
+        name: "Kurume University",
+        cityId: "japon-kurume",
+        website: "http://www.kurume-u.ac.jp/",
         source: "open-dataset",
-        // Situada a 4.3 km del centro de Kawasaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kawasaki-yokohama-college-of-commerce",
-        name: "Yokohama College of Commerce",
-        cityId: "japon-kawasaki",
-        website: "http://www.shodai.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Kawasaki (Wikidata).
+        // Situada a 1.4 km del centro de Kurume (Wikidata).
       }),
   ],
-  "japon-kashihara-shi": [
+  "japon-kameda-honcho": [
       defineUniversity({
-        id: "japon-kashihara-shi-nara-medical-university-college-of-nursing",
-        name: "Nara Medical University College of Nursing",
-        cityId: "japon-kashihara-shi",
+        id: "japon-kameda-honcho-niigata-university-of-health-and-welfare",
+        name: "Niigata University of Health and Welfare",
+        cityId: "japon-kameda-honcho",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Kashihara-shi (Wikidata).
+        // Situada a 12.4 km del centro de Kameda-honchō (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kashihara-shi-nara-medical-university",
-        name: "Nara Medical University",
-        cityId: "japon-kashihara-shi",
-        website: "http://www.naramed-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Kashihara-shi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kashihara-shi-nara-medical-university",
-        name: "Nara Medical University",
-        cityId: "japon-kashihara-shi",
-        website: "http://www.naramed-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Kashihara-shi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kashihara-shi-nara-medical-university",
-        name: "Nara Medical University",
-        cityId: "japon-kashihara-shi",
-        website: "http://www.naramed-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Kashihara-shi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kashihara-shi-nara-college-of-arts",
-        name: "Nara College of Arts",
-        cityId: "japon-kashihara-shi",
+        id: "japon-kameda-honcho-university-of-niigata-prefecture",
+        name: "University of Niigata Prefecture",
+        cityId: "japon-kameda-honcho",
         website: null,
         source: "open-dataset",
-        // Situada a 2.8 km del centro de Kashihara-shi (Wikidata).
+        // Situada a 5.9 km del centro de Kameda-honchō (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kameda-honcho-niigata-woman-s-college",
+        name: "Niigata Woman's College",
+        cityId: "japon-kameda-honcho",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.9 km del centro de Kameda-honchō (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kameda-honcho-niigata-agro-food-university",
+        name: "Niigata Agro-Food University",
+        cityId: "japon-kameda-honcho",
+        website: null,
+        source: "open-dataset",
+        // Situada a 12.7 km del centro de Kameda-honchō (Wikidata).
       }),
   ],
   "japon-ichinomiya": [
       defineUniversity({
         id: "japon-ichinomiya-aichi-kiwami-college-of-nursing",
         name: "Aichi Kiwami College of Nursing",
-        cityId: "japon-ichinomiya",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Ichinomiya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-ichinomiya-ichinomiya-kenshin-college",
-        name: "Ichinomiya Kenshin College",
         cityId: "japon-ichinomiya",
         website: null,
         source: "open-dataset",
@@ -3305,792 +4839,6 @@ export default {
         source: "open-dataset",
         // Situada a 4.1 km del centro de Hino (Wikidata).
       }),
-      defineUniversity({
-        id: "japon-hino-tokyo-university-of-pharmacy-and-life-sciences",
-        name: "Tokyo University of Pharmacy and Life Sciences",
-        cityId: "japon-hino",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Hino (Wikidata).
-      }),
-  ],
-  "japon-fukuoka": [
-      defineUniversity({
-        id: "japon-fukuoka-seinan-gakuin-university",
-        name: "Seinan Gakuin University",
-        cityId: "japon-fukuoka",
-        website: "http://www.seinan-gu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.9 km del centro de Fukuoka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-fukuoka-daiichi-university-of-pharmacy",
-        name: "Daiichi University of Pharmacy",
-        cityId: "japon-fukuoka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Fukuoka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-fukuoka-fukuoka-international-university-of-health-and-welfare",
-        name: "Fukuoka International University of Health and Welfare",
-        cityId: "japon-fukuoka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.3 km del centro de Fukuoka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-fukuoka-nakamura-gakuen-university",
-        name: "Nakamura Gakuen University",
-        cityId: "japon-fukuoka",
-        website: "http://www.nakamura-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.6 km del centro de Fukuoka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-fukuoka-nakamura-gakuen-university",
-        name: "Nakamura Gakuen University",
-        cityId: "japon-fukuoka",
-        website: "http://www.nakamura-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.6 km del centro de Fukuoka (Wikidata).
-      }),
-  ],
-  "japon-tsukuba": [
-      defineUniversity({
-        id: "japon-tsukuba-university-of-library-and-information-science",
-        name: "University of Library and Information Science",
-        cityId: "japon-tsukuba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Tsukuba (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tsukuba-national-university-corporation-tsukuba-university-of-technology",
-        name: "National University Corporation Tsukuba University of Technology",
-        cityId: "japon-tsukuba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Tsukuba (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tsukuba-tsukuba-gakuin-university",
-        name: "Tsukuba Gakuin University",
-        cityId: "japon-tsukuba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Tsukuba (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tsukuba-university-of-tsukuba",
-        name: "University of Tsukuba",
-        cityId: "japon-tsukuba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Tsukuba (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tsukuba-university-of-tsukuba",
-        name: "University of Tsukuba",
-        cityId: "japon-tsukuba",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Tsukuba (Wikidata).
-      }),
-  ],
-  "japon-makuhari": [
-      defineUniversity({
-        id: "japon-makuhari-open-university-of-japan",
-        name: "Open University of Japan",
-        cityId: "japon-makuhari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Makuhari (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-makuhari-kanda-university-of-international-studies",
-        name: "Kanda University of International Studies",
-        cityId: "japon-makuhari",
-        website: "http://www.kuis.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Makuhari (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-makuhari-chiba-prefectural-university-of-health-sciences",
-        name: "Chiba Prefectural University of Health Sciences",
-        cityId: "japon-makuhari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Makuhari (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-makuhari-chiba-college-of-health-science",
-        name: "Chiba College of Health Science",
-        cityId: "japon-makuhari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Makuhari (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-makuhari-chiba-meitoku-college",
-        name: "Chiba Meitoku College",
-        cityId: "japon-makuhari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Makuhari (Wikidata).
-      }),
-  ],
-  "japon-hakodate": [
-      defineUniversity({
-        id: "japon-hakodate-national-institute-of-technology-hakodate-college",
-        name: "National Institute of Technology, Hakodate College",
-        cityId: "japon-hakodate",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Hakodate (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hakodate-hakodate-otani-college",
-        name: "Hakodate Otani College",
-        cityId: "japon-hakodate",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Hakodate (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hakodate-hakodate-university",
-        name: "Hakodate University",
-        cityId: "japon-hakodate",
-        website: "http://www.hakodate-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.0 km del centro de Hakodate (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hakodate-future-university-hakodate",
-        name: "Future University Hakodate",
-        cityId: "japon-hakodate",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.8 km del centro de Hakodate (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hakodate-future-university-hakodate",
-        name: "Future University Hakodate",
-        cityId: "japon-hakodate",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.8 km del centro de Hakodate (Wikidata).
-      }),
-  ],
-  "japon-ebetsu": [
-      defineUniversity({
-        id: "japon-ebetsu-hokusho-college",
-        name: "Hokusho College",
-        cityId: "japon-ebetsu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.0 km del centro de Ebetsu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-ebetsu-hokusho-university",
-        name: "Hokusho University",
-        cityId: "japon-ebetsu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Ebetsu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-ebetsu-hokkaido-information-university",
-        name: "Hokkaido Information University",
-        cityId: "japon-ebetsu",
-        website: "http://www.do-johodai.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Ebetsu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-ebetsu-rakuno-gakuen-university",
-        name: "Rakuno Gakuen University",
-        cityId: "japon-ebetsu",
-        website: "http://www.rakuno.ac.jp/",
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Ebetsu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-ebetsu-sapporo-gakuin-university",
-        name: "Sapporo Gakuin University",
-        cityId: "japon-ebetsu",
-        website: "http://www.sgu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.5 km del centro de Ebetsu (Wikidata).
-      }),
-  ],
-  "japon-yamagata-6822213": [
-      defineUniversity({
-        id: "japon-yamagata-6822213-gifu-university",
-        name: "Gifu University",
-        cityId: "japon-yamagata-6822213",
-        website: "http://www.gifu-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Yamagata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-yamagata-6822213-gifu-university",
-        name: "Gifu University",
-        cityId: "japon-yamagata-6822213",
-        website: "http://www.gifu-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Yamagata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-yamagata-6822213-gifu-women-s-university",
-        name: "Gifu Women's University",
-        cityId: "japon-yamagata-6822213",
-        website: "http://www.gijodai.ac.jp/",
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Yamagata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-yamagata-6822213-heisei-college-of-health-sciences",
-        name: "Heisei College of Health Sciences",
-        cityId: "japon-yamagata-6822213",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.6 km del centro de Yamagata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-yamagata-6822213-gifu-pharmaceutical-university",
-        name: "Gifu Pharmaceutical University",
-        cityId: "japon-yamagata-6822213",
-        website: "http://www.gifu-pu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Yamagata (Wikidata).
-      }),
-  ],
-  "japon-otsuka": [
-      defineUniversity({
-        id: "japon-otsuka-japan-women-s-university",
-        name: "Japan Women's University",
-        cityId: "japon-otsuka",
-        website: "http://www.jwu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Ōtsuka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-otsuka-toho-junior-college-of-music",
-        name: "Toho Junior College of Music",
-        cityId: "japon-otsuka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Ōtsuka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-otsuka-atomi-university",
-        name: "Atomi University",
-        cityId: "japon-otsuka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Ōtsuka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-otsuka-takushoku-university",
-        name: "Takushoku University",
-        cityId: "japon-otsuka",
-        website: "http://www.takushoku-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Ōtsuka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-otsuka-tokyo-university-of-social-welfare",
-        name: "Tokyo University of Social Welfare",
-        cityId: "japon-otsuka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Ōtsuka (Wikidata).
-      }),
-  ],
-  "japon-shibuya": [
-      defineUniversity({
-        id: "japon-shibuya-united-nations-university",
-        name: "United Nations University",
-        cityId: "japon-shibuya",
-        website: "http://www.unu.edu/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Shibuya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-shibuya-united-nations-university",
-        name: "United Nations University",
-        cityId: "japon-shibuya",
-        website: "http://www.unu.edu/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Shibuya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-shibuya-kokugakuin-university",
-        name: "Kokugakuin University",
-        cityId: "japon-shibuya",
-        website: "http://www.kokugakuin.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Shibuya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-shibuya-kokugakuin-university",
-        name: "Kokugakuin University",
-        cityId: "japon-shibuya",
-        website: "http://www.kokugakuin.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Shibuya (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-shibuya-aoyama-gakuin-university",
-        name: "Aoyama Gakuin University",
-        cityId: "japon-shibuya",
-        website: "http://www.aoyama.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Shibuya (Wikidata).
-      }),
-  ],
-  "japon-yokohama": [
-      defineUniversity({
-        id: "japon-yokohama-yokohama-national-university",
-        name: "Yokohama National University",
-        cityId: "japon-yokohama",
-        website: "http://www.ynu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 7.1 km del centro de Yokohama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-yokohama-kanagawa-university",
-        name: "Kanagawa University",
-        cityId: "japon-yokohama",
-        website: "http://www.kanagawa-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.3 km del centro de Yokohama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-yokohama-institute-of-information-security",
-        name: "Institute of Information Security",
-        cityId: "japon-yokohama",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.6 km del centro de Yokohama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-yokohama-yashima-gakuen-university",
-        name: "Yashima Gakuen University",
-        cityId: "japon-yokohama",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Yokohama (Wikidata).
-      }),
-  ],
-  "japon-tsu": [
-      defineUniversity({
-        id: "japon-tsu-mie-university",
-        name: "Mie University",
-        cityId: "japon-tsu",
-        website: "http://www.mie-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Tsu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tsu-mie-university",
-        name: "Mie University",
-        cityId: "japon-tsu",
-        website: "http://www.mie-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Tsu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tsu-mie-prefectural-college-of-nursing",
-        name: "Mie Prefectural College of Nursing",
-        cityId: "japon-tsu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Tsu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tsu-tsu-city-college",
-        name: "Tsu City College",
-        cityId: "japon-tsu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Tsu (Wikidata).
-      }),
-  ],
-  "japon-toyosu": [
-      defineUniversity({
-        id: "japon-toyosu-tokyo-ariake-university-of-medical-and-health-sciences",
-        name: "Tokyo Ariake University of Medical and Health Sciences",
-        cityId: "japon-toyosu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Toyosu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-toyosu-tokyo-ariake-university-of-medical-and-health-sciences",
-        name: "Tokyo Ariake University of Medical and Health Sciences",
-        cityId: "japon-toyosu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Toyosu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-toyosu-shibaura-institute-of-technology",
-        name: "Shibaura Institute of Technology",
-        cityId: "japon-toyosu",
-        website: "http://www.shibaura-it.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Toyosu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-toyosu-ariake-junior-college-of-education-and-the-arts",
-        name: "Ariake Junior College of Education and the Arts",
-        cityId: "japon-toyosu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Toyosu (Wikidata).
-      }),
-  ],
-  "japon-sasebo": [
-      defineUniversity({
-        id: "japon-sasebo-national-institute-of-technology-sasebo-college",
-        name: "National Institute of Technology, Sasebo College",
-        cityId: "japon-sasebo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Sasebo (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-sasebo-nagasaki-prefectural-university",
-        name: "Nagasaki Prefectural University",
-        cityId: "japon-sasebo",
-        website: "http://www.nagasakipu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Sasebo (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-sasebo-university-of-nagasaki",
-        name: "University of Nagasaki",
-        cityId: "japon-sasebo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Sasebo (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-sasebo-nagasaki-international-university",
-        name: "Nagasaki International University",
-        cityId: "japon-sasebo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.5 km del centro de Sasebo (Wikidata).
-      }),
-  ],
-  "japon-sakai-1853195": [
-      defineUniversity({
-        id: "japon-sakai-1853195-osaka-city-university",
-        name: "Osaka City University",
-        cityId: "japon-sakai-1853195",
-        website: "http://www.osaka-cu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.9 km del centro de Sakai (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-sakai-1853195-morinomiya-university-of-medical-sciences",
-        name: "Morinomiya University of Medical Sciences",
-        cityId: "japon-sakai-1853195",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.2 km del centro de Sakai (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-sakai-1853195-osaka-junior-college-of-social-health-and-welfare",
-        name: "Osaka Junior College of Social Health and Welfare",
-        cityId: "japon-sakai-1853195",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Sakai (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-sakai-1853195-soai-university",
-        name: "Soai University",
-        cityId: "japon-sakai-1853195",
-        website: "http://www.soai.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Sakai (Wikidata).
-      }),
-  ],
-  "japon-okazaki": [
-      defineUniversity({
-        id: "japon-okazaki-okazaki-university",
-        name: "Okazaki University",
-        cityId: "japon-okazaki",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Okazaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-okazaki-aichi-gakusen-college",
-        name: "Aichi Gakusen College",
-        cityId: "japon-okazaki",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Okazaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-okazaki-aichi-gakusen-university",
-        name: "Aichi Gakusen University",
-        cityId: "japon-okazaki",
-        website: "http://www.gakusen.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Okazaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-okazaki-aichi-sangyo-university",
-        name: "Aichi Sangyo University",
-        cityId: "japon-okazaki",
-        website: "http://www.asu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.1 km del centro de Okazaki (Wikidata).
-      }),
-  ],
-  "japon-nagasaki-1856177": [
-      defineUniversity({
-        id: "japon-nagasaki-1856177-seminary-of-nagasaki",
-        name: "Seminary of Nagasaki",
-        cityId: "japon-nagasaki-1856177",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.4 km del centro de Nagasaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagasaki-1856177-nagasaki-naval-training-center",
-        name: "Nagasaki Naval Training Center",
-        cityId: "japon-nagasaki-1856177",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Nagasaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagasaki-1856177-kwassui-college",
-        name: "Kwassui College",
-        cityId: "japon-nagasaki-1856177",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Nagasaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nagasaki-1856177-nagasaki-institute-of-applied-science",
-        name: "Nagasaki Institute of Applied Science",
-        cityId: "japon-nagasaki-1856177",
-        website: "http://www.nias.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Nagasaki (Wikidata).
-      }),
-  ],
-  "japon-matsumoto": [
-      defineUniversity({
-        id: "japon-matsumoto-matsumoto-college-of-nursing",
-        name: "Matsumoto College of Nursing",
-        cityId: "japon-matsumoto",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.0 km del centro de Matsumoto (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-matsumoto-matsusho-gakuen-junior-college",
-        name: "Matsusho Gakuen Junior College",
-        cityId: "japon-matsumoto",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Matsumoto (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-matsumoto-shinshu-university",
-        name: "Shinshu University",
-        cityId: "japon-matsumoto",
-        website: "http://www.shinshu-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Matsumoto (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-matsumoto-matsumoto-university",
-        name: "Matsumoto University",
-        cityId: "japon-matsumoto",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.2 km del centro de Matsumoto (Wikidata).
-      }),
-  ],
-  "japon-kurume": [
-      defineUniversity({
-        id: "japon-kurume-kurume-national-college-of-technology",
-        name: "Kurume National College of Technology",
-        cityId: "japon-kurume",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Kurume (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kurume-kurume-shin-ai-women-s-college",
-        name: "Kurume Shin-Ai Women's College",
-        cityId: "japon-kurume",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.9 km del centro de Kurume (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kurume-st-mary-s-educational-foundation",
-        name: "St. Mary's Educational Foundation",
-        cityId: "japon-kurume",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Kurume (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kurume-kurume-university",
-        name: "Kurume University",
-        cityId: "japon-kurume",
-        website: "http://www.kurume-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Kurume (Wikidata).
-      }),
-  ],
-  "japon-kumamoto": [
-      defineUniversity({
-        id: "japon-kumamoto-kumamoto-university",
-        name: "Kumamoto University",
-        cityId: "japon-kumamoto",
-        website: "http://www.kumamoto-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Kumamoto (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kumamoto-kyushu-lutheran-college",
-        name: "Kyūshū Lutheran College",
-        cityId: "japon-kumamoto",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Kumamoto (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kumamoto-shokei-college",
-        name: "Shokei College",
-        cityId: "japon-kumamoto",
-        website: "http://www.shokei-gakuen.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Kumamoto (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kumamoto-sojo-university",
-        name: "Sojo University",
-        cityId: "japon-kumamoto",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Kumamoto (Wikidata).
-      }),
-  ],
-  "japon-kochi": [
-      defineUniversity({
-        id: "japon-kochi-college-of-child-development-kochi-women-s-university",
-        name: "College of Child Development, Kochi Women's University",
-        cityId: "japon-kochi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Kochi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kochi-university-of-kochi",
-        name: "University of Kochi",
-        cityId: "japon-kochi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Kochi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kochi-kochi-gakuen-college",
-        name: "Kochi Gakuen College",
-        cityId: "japon-kochi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Kochi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kochi-kochi-university",
-        name: "Kōchi University",
-        cityId: "japon-kochi",
-        website: "http://www.kochi-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 4.4 km del centro de Kochi (Wikidata).
-      }),
-  ],
-  "japon-kameda-honcho": [
-      defineUniversity({
-        id: "japon-kameda-honcho-niigata-university-of-health-and-welfare",
-        name: "Niigata University of Health and Welfare",
-        cityId: "japon-kameda-honcho",
-        website: null,
-        source: "open-dataset",
-        // Situada a 12.4 km del centro de Kameda-honchō (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kameda-honcho-university-of-niigata-prefecture",
-        name: "University of Niigata Prefecture",
-        cityId: "japon-kameda-honcho",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.9 km del centro de Kameda-honchō (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kameda-honcho-niigata-woman-s-college",
-        name: "Niigata Woman's College",
-        cityId: "japon-kameda-honcho",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.9 km del centro de Kameda-honchō (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kameda-honcho-niigata-agro-food-university",
-        name: "Niigata Agro-Food University",
-        cityId: "japon-kameda-honcho",
-        website: null,
-        source: "open-dataset",
-        // Situada a 12.7 km del centro de Kameda-honchō (Wikidata).
-      }),
-  ],
-  "japon-higashiosaka": [
-      defineUniversity({
-        id: "japon-higashiosaka-higashiosaka-college",
-        name: "Higashiosaka College",
-        cityId: "japon-higashiosaka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Higashiosaka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-higashiosaka-osaka-shoin-women-s-university",
-        name: "Osaka Shoin Women's University",
-        cityId: "japon-higashiosaka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Higashiosaka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-higashiosaka-osaka-university-of-commerce",
-        name: "Osaka University of Commerce",
-        cityId: "japon-higashiosaka",
-        website: "http://www.daishodai.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de Higashiosaka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-higashiosaka-kindai-university",
-        name: "Kindai University",
-        cityId: "japon-higashiosaka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Higashiosaka (Wikidata).
-      }),
   ],
   "japon-hatsukaichi": [
       defineUniversity({
@@ -4124,6 +4872,32 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.7 km del centro de Hatsukaichi (Wikidata).
+      }),
+  ],
+  "japon-hamamatsu": [
+      defineUniversity({
+        id: "japon-hamamatsu-shizuoka-university-of-art-and-culture",
+        name: "Shizuoka University of Art and Culture",
+        cityId: "japon-hamamatsu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Hamamatsu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hamamatsu-hamamatsu-gakuin-university",
+        name: "Hamamatsu Gakuin University",
+        cityId: "japon-hamamatsu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Hamamatsu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hamamatsu-shizuoka-women-s-college",
+        name: "Shizuoka Women's College",
+        cityId: "japon-hamamatsu",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hamamatsu (Wikidata).
       }),
   ],
   "japon-hamakita": [
@@ -4160,106 +4934,38 @@ export default {
         // Situada a 8.4 km del centro de Hamakita (Wikidata).
       }),
   ],
-  "japon-hachioji": [
+  "japon-wakayama": [
       defineUniversity({
-        id: "japon-hachioji-national-institute-of-technology-tokyo-college",
-        name: "National Institute of Technology, Tokyo College",
-        cityId: "japon-hachioji",
+        id: "japon-wakayama-wakayama-university",
+        name: "Wakayama University",
+        cityId: "japon-wakayama",
+        website: "http://www.wakayama-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Wakayama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-wakayama-wakayama-shin-ai-university",
+        name: "Wakayama Shin-ai University",
+        cityId: "japon-wakayama",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Hachiōji (Wikidata).
+        // Situada a 1.0 km del centro de Wakayama (Wikidata).
       }),
       defineUniversity({
-        id: "japon-hachioji-soka-university",
-        name: "Sōka University",
-        cityId: "japon-hachioji",
-        website: "http://www.soka.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Hachiōji (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hachioji-nihon-bunka-university",
-        name: "Nihon Bunka University",
-        cityId: "japon-hachioji",
+        id: "japon-wakayama-wakayama-professional-university-of-rehabilitation",
+        name: "Wakayama Professional University of Rehabilitation",
+        cityId: "japon-wakayama",
         website: null,
         source: "open-dataset",
-        // Situada a 2.8 km del centro de Hachiōji (Wikidata).
+        // Situada a None km del centro de Wakayama (Wikidata).
       }),
       defineUniversity({
-        id: "japon-hachioji-tokyo-junshin-university",
-        name: "Tokyo Junshin University",
-        cityId: "japon-hachioji",
+        id: "japon-wakayama-wakayama-college-of-science-studies",
+        name: "Wakayama College of Science Studies",
+        cityId: "japon-wakayama",
         website: null,
         source: "open-dataset",
-        // Situada a 4.3 km del centro de Hachiōji (Wikidata).
-      }),
-  ],
-  "japon-fukui-shi": [
-      defineUniversity({
-        id: "japon-fukui-shi-university-of-fukui",
-        name: "University of Fukui",
-        cityId: "japon-fukui-shi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Fukui-shi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-fukui-shi-university-of-fukui",
-        name: "University of Fukui",
-        cityId: "japon-fukui-shi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Fukui-shi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-fukui-shi-fukui-university-of-technology",
-        name: "Fukui University of Technology",
-        cityId: "japon-fukui-shi",
-        website: "http://www.fukui-ut.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Fukui-shi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-fukui-shi-jin-ai-women-s-college",
-        name: "Jin-ai Women's College",
-        cityId: "japon-fukui-shi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.4 km del centro de Fukui-shi (Wikidata).
-      }),
-  ],
-  "japon-akasaka": [
-      defineUniversity({
-        id: "japon-akasaka-sophia-university",
-        name: "Sophia University",
-        cityId: "japon-akasaka",
-        website: "http://www.sophia.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Akasaka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-akasaka-sophia-university",
-        name: "Sophia University",
-        cityId: "japon-akasaka",
-        website: "http://www.sophia.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Akasaka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-akasaka-hollywood-graduate-school-of-beauty-business",
-        name: "Hollywood Graduate School Of Beauty Business",
-        cityId: "japon-akasaka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Akasaka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-akasaka-hollywood-graduate-school-of-beauty-business",
-        name: "Hollywood Graduate School Of Beauty Business",
-        cityId: "japon-akasaka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Akasaka (Wikidata).
+        // Situada a None km del centro de Wakayama (Wikidata).
       }),
   ],
   "japon-matsuyama": [
@@ -4356,23 +5062,15 @@ export default {
         // Situada a 6.2 km del centro de Yamagata (Wikidata).
       }),
       defineUniversity({
-        id: "japon-yamagata-2110556-tohoku-bunkyo-junior-college",
-        name: "Tohoku Bunkyo Junior College",
+        id: "japon-yamagata-2110556-tohoku-bunkyo-college",
+        name: "Tohoku Bunkyo College",
         cityId: "japon-yamagata-2110556",
         website: null,
         source: "open-dataset",
-        // Situada a 6.2 km del centro de Yamagata (Wikidata).
+        // Situada a None km del centro de Yamagata (Wikidata).
       }),
   ],
   "japon-morioka": [
-      defineUniversity({
-        id: "japon-morioka-iwate-university",
-        name: "Iwate University",
-        cityId: "japon-morioka",
-        website: "http://www.iwate-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Morioka (Wikidata).
-      }),
       defineUniversity({
         id: "japon-morioka-iwate-university",
         name: "Iwate University",
@@ -4397,141 +5095,47 @@ export default {
         source: "open-dataset",
         // Situada a 0.6 km del centro de Morioka (Wikidata).
       }),
-  ],
-  "japon-fukushima": [
       defineUniversity({
-        id: "japon-fukushima-fukushima-university",
-        name: "Fukushima University",
-        cityId: "japon-fukushima",
-        website: "http://www.fukushima-u.ac.jp/",
+        id: "japon-morioka-morioka-college",
+        name: "Morioka College",
+        cityId: "japon-morioka",
+        website: "http://www.morioka-u.ac.jp/",
         source: "open-dataset",
-        // Situada a 7.5 km del centro de Fukushima (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-fukushima-fukushima-university",
-        name: "Fukushima University",
-        cityId: "japon-fukushima",
-        website: "http://www.fukushima-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de Fukushima (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-fukushima-fukushima-college",
-        name: "Fukushima College",
-        cityId: "japon-fukushima",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Fukushima (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-fukushima-fukushima-medical-university",
-        name: "Fukushima Medical University",
-        cityId: "japon-fukushima",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Fukushima (Wikidata).
+        // Situada a None km del centro de Morioka (Wikidata).
       }),
   ],
-  "japon-otaru": [
+  "japon-hakodate": [
       defineUniversity({
-        id: "japon-otaru-otaru-university-of-commerce",
-        name: "Otaru University of Commerce",
-        cityId: "japon-otaru",
-        website: "http://www.otaru-uc.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Otaru (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-otaru-otaru-university-of-commerce",
-        name: "Otaru University of Commerce",
-        cityId: "japon-otaru",
-        website: "http://www.otaru-uc.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Otaru (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-otaru-otaru-university-of-commerce",
-        name: "Otaru University of Commerce",
-        cityId: "japon-otaru",
-        website: "http://www.otaru-uc.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Otaru (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-otaru-hokkaido-college-of-pharmacy",
-        name: "Hokkaido College of Pharmacy",
-        cityId: "japon-otaru",
+        id: "japon-hakodate-national-institute-of-technology-hakodate-college",
+        name: "National Institute of Technology, Hakodate College",
+        cityId: "japon-hakodate",
         website: null,
         source: "open-dataset",
-        // Situada a 12.4 km del centro de Otaru (Wikidata).
+        // Situada a 5.5 km del centro de Hakodate (Wikidata).
       }),
-  ],
-  "japon-kitami": [
       defineUniversity({
-        id: "japon-kitami-japanese-red-cross-hokkaido-college-of-nursing",
-        name: "Japanese Red Cross Hokkaido College of Nursing",
-        cityId: "japon-kitami",
+        id: "japon-hakodate-hakodate-otani-college",
+        name: "Hakodate Otani College",
+        cityId: "japon-hakodate",
         website: null,
         source: "open-dataset",
-        // Situada a 3.3 km del centro de Kitami (Wikidata).
+        // Situada a 3.6 km del centro de Hakodate (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kitami-kitami-institute-of-technology",
-        name: "Kitami Institute of Technology",
-        cityId: "japon-kitami",
-        website: "http://www.kitami-it.ac.jp/",
+        id: "japon-hakodate-hakodate-university",
+        name: "Hakodate University",
+        cityId: "japon-hakodate",
+        website: "http://www.hakodate-u.ac.jp/",
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Kitami (Wikidata).
+        // Situada a 6.0 km del centro de Hakodate (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kitami-kitami-institute-of-technology",
-        name: "Kitami Institute of Technology",
-        cityId: "japon-kitami",
-        website: "http://www.kitami-it.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Kitami (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kitami-kitami-institute-of-technology",
-        name: "Kitami Institute of Technology",
-        cityId: "japon-kitami",
-        website: "http://www.kitami-it.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Kitami (Wikidata).
-      }),
-  ],
-  "japon-hirosaki": [
-      defineUniversity({
-        id: "japon-hirosaki-hirosaki-university-of-health-and-welfare-junior-college",
-        name: "Hirosaki University of Health and Welfare Junior College",
-        cityId: "japon-hirosaki",
+        id: "japon-hakodate-future-university-hakodate",
+        name: "Future University Hakodate",
+        cityId: "japon-hakodate",
         website: null,
         source: "open-dataset",
-        // Situada a 2.4 km del centro de Hirosaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hirosaki-shibata-gakuen-university",
-        name: "Shibata Gakuen University",
-        cityId: "japon-hirosaki",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Hirosaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hirosaki-hirosaki-university",
-        name: "Hirosaki University",
-        cityId: "japon-hirosaki",
-        website: "http://www.hirosaki-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Hirosaki (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hirosaki-hirosaki-university",
-        name: "Hirosaki University",
-        cityId: "japon-hirosaki",
-        website: "http://www.hirosaki-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Hirosaki (Wikidata).
+        // Situada a 7.8 km del centro de Hakodate (Wikidata).
       }),
   ],
   "japon-hachinohe": [
@@ -4602,40 +5206,6 @@ export default {
         // Situada a 7.7 km del centro de Aomori (Wikidata).
       }),
   ],
-  "japon-owariasahi": [
-      defineUniversity({
-        id: "japon-owariasahi-aichi-toho-university",
-        name: "Aichi Toho University",
-        cityId: "japon-owariasahi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Owariasahi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-owariasahi-nagoya-city-college-of-child-education",
-        name: "Nagoya City College of Child Education",
-        cityId: "japon-owariasahi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Owariasahi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-owariasahi-nagoya-sangyo-university",
-        name: "Nagoya Sangyo University",
-        cityId: "japon-owariasahi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Owariasahi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-owariasahi-tokai-gakuen-women-s-college",
-        name: "Tokai Gakuen Women's College",
-        cityId: "japon-owariasahi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Owariasahi (Wikidata).
-      }),
-  ],
   "japon-imizu": [
       defineUniversity({
         id: "japon-imizu-toyama-prefectural-university",
@@ -4670,40 +5240,6 @@ export default {
         // Situada a 5.4 km del centro de Imizu (Wikidata).
       }),
   ],
-  "japon-nisshin": [
-      defineUniversity({
-        id: "japon-nisshin-nagoya-university-of-commerce-business",
-        name: "Nagoya University of Commerce & Business",
-        cityId: "japon-nisshin",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Nisshin (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nisshin-sugiyama-jogakuen-university",
-        name: "Sugiyama Jogakuen University",
-        cityId: "japon-nisshin",
-        website: "http://www.sugiyama-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.5 km del centro de Nisshin (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nisshin-toyota-technological-institute",
-        name: "Toyota Technological Institute",
-        cityId: "japon-nisshin",
-        website: "http://www.toyota-ti.ac.jp/",
-        source: "open-dataset",
-        // Situada a 7.2 km del centro de Nisshin (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-nisshin-meijo-university",
-        name: "Meijo University",
-        cityId: "japon-nisshin",
-        website: "http://www.meijo-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 6.9 km del centro de Nisshin (Wikidata).
-      }),
-  ],
   "japon-toyoake": [
       defineUniversity({
         id: "japon-toyoake-fujita-health-university",
@@ -4730,72 +5266,64 @@ export default {
         // Situada a 3.3 km del centro de Toyoake (Wikidata).
       }),
   ],
-  "japon-joetsu": [
+  "japon-yamagata-6822213": [
       defineUniversity({
-        id: "japon-joetsu-joetsu-university-of-education",
-        name: "Joetsu University of Education",
-        cityId: "japon-joetsu",
-        website: "http://www.juen.ac.jp/",
+        id: "japon-yamagata-6822213-gifu-university",
+        name: "Gifu University",
+        cityId: "japon-yamagata-6822213",
+        website: "http://www.gifu-u.ac.jp/",
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Jōetsu (Wikidata).
+        // Situada a 3.3 km del centro de Yamagata (Wikidata).
       }),
       defineUniversity({
-        id: "japon-joetsu-joetsu-university-of-education",
-        name: "Joetsu University of Education",
-        cityId: "japon-joetsu",
-        website: "http://www.juen.ac.jp/",
+        id: "japon-yamagata-6822213-gifu-women-s-university",
+        name: "Gifu Women's University",
+        cityId: "japon-yamagata-6822213",
+        website: "http://www.gijodai.ac.jp/",
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Jōetsu (Wikidata).
+        // Situada a 4.2 km del centro de Yamagata (Wikidata).
       }),
       defineUniversity({
-        id: "japon-joetsu-niigata-college-of-nursing",
-        name: "Niigata College of Nursing",
-        cityId: "japon-joetsu",
+        id: "japon-yamagata-6822213-heisei-college-of-health-sciences",
+        name: "Heisei College of Health Sciences",
+        cityId: "japon-yamagata-6822213",
         website: null,
         source: "open-dataset",
-        // Situada a 5.5 km del centro de Jōetsu (Wikidata).
+        // Situada a 4.6 km del centro de Yamagata (Wikidata).
       }),
       defineUniversity({
-        id: "japon-joetsu-niigata-junior-college-of-nursing",
-        name: "Niigata Junior College of Nursing",
-        cityId: "japon-joetsu",
-        website: null,
+        id: "japon-yamagata-6822213-gifu-pharmaceutical-university",
+        name: "Gifu Pharmaceutical University",
+        cityId: "japon-yamagata-6822213",
+        website: "http://www.gifu-pu.ac.jp/",
         source: "open-dataset",
-        // Situada a 5.5 km del centro de Jōetsu (Wikidata).
+        // Situada a 3.7 km del centro de Yamagata (Wikidata).
       }),
   ],
-  "japon-hirai": [
+  "japon-togoshi": [
       defineUniversity({
-        id: "japon-hirai-tokyo-information-design-professional-university",
-        name: "Tokyo Information Design Professional University",
-        cityId: "japon-hirai",
-        website: null,
+        id: "japon-togoshi-rissho-university",
+        name: "Rissho University",
+        cityId: "japon-togoshi",
+        website: "http://www.ris.ac.jp/",
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Hirai (Wikidata).
+        // Situada a None km del centro de Togoshi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-hirai-tokyo-seiei-college",
-        name: "Tokyo Seiei College",
-        cityId: "japon-hirai",
+        id: "japon-togoshi-tokyo-metropolitan-technical-college",
+        name: "Tokyo Metropolitan Technical College",
+        cityId: "japon-togoshi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Hirai (Wikidata).
+        // Situada a None km del centro de Togoshi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-hirai-professional-university-of-information-and-management-for-innovation",
-        name: "Professional University of Information and Management for Innovation",
-        cityId: "japon-hirai",
+        id: "japon-togoshi-tokyo-metropolitan-college-of-industrial-technology",
+        name: "Tokyo Metropolitan College of Industrial Technology",
+        cityId: "japon-togoshi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Hirai (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hirai-professional-university-of-information-and-management-for-innovation",
-        name: "Professional University of Information and Management for Innovation",
-        cityId: "japon-hirai",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Hirai (Wikidata).
+        // Situada a None km del centro de Togoshi (Wikidata).
       }),
   ],
   "japon-sendagi": [
@@ -4830,6 +5358,32 @@ export default {
         website: "http://www.nms.ac.jp/",
         source: "open-dataset",
         // Situada a 0.8 km del centro de Sendagi (Wikidata).
+      }),
+  ],
+  "japon-koto": [
+      defineUniversity({
+        id: "japon-koto-kumamoto-gakuen-university",
+        name: "Kumamoto Gakuen University",
+        cityId: "japon-koto",
+        website: "http://www.kumagaku.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Kotō (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-koto-kyushu-tokai-university",
+        name: "Kyushu Tokai University",
+        cityId: "japon-koto",
+        website: "http://www.ktokai-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.7 km del centro de Kotō (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-koto-prefectural-university-of-kumamoto",
+        name: "Prefectural University of Kumamoto",
+        cityId: "japon-koto",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.5 km del centro de Kotō (Wikidata).
       }),
   ],
   "japon-bunkyo": [
@@ -4884,14 +5438,6 @@ export default {
         // Situada a 1.2 km del centro de Chūō (Wikidata).
       }),
       defineUniversity({
-        id: "japon-chuo-sbi-graduate-school",
-        name: "SBI Graduate School",
-        cityId: "japon-chuo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Chūō (Wikidata).
-      }),
-      defineUniversity({
         id: "japon-chuo-st-luke-s-international-university",
         name: "St. Luke's International University",
         cityId: "japon-chuo",
@@ -4899,65 +5445,31 @@ export default {
         source: "open-dataset",
         // Situada a 0.3 km del centro de Chūō (Wikidata).
       }),
-  ],
-  "japon-minato-city": [
       defineUniversity({
-        id: "japon-minato-city-toita-women-s-college",
-        name: "Toita Women's College",
-        cityId: "japon-minato-city",
+        id: "japon-chuo-soto-shu-university",
+        name: "Soto-shu University",
+        cityId: "japon-chuo",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Minato City (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-minato-city-international-college-for-postgraduate-buddhist-studies",
-        name: "International College for Postgraduate Buddhist Studies",
-        cityId: "japon-minato-city",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Minato City (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-minato-city-jikei-university-school-of-medicine",
-        name: "Jikei University School of Medicine",
-        cityId: "japon-minato-city",
-        website: "http://www.jikei.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Minato City (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-minato-city-keio-university",
-        name: "Keio University",
-        cityId: "japon-minato-city",
-        website: "https://www.keio.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Minato City (Wikidata).
+        // Situada a None km del centro de Chūō (Wikidata).
       }),
   ],
-  "japon-yono": [
+  "japon-atsugi": [
       defineUniversity({
-        id: "japon-yono-saitama-university",
-        name: "Saitama University",
-        cityId: "japon-yono",
-        website: "http://www.saitama-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Yono (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-yono-saitama-university",
-        name: "Saitama University",
-        cityId: "japon-yono",
-        website: "http://www.saitama-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Yono (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-yono-omiya-law-school",
-        name: "Omiya Law School",
-        cityId: "japon-yono",
+        id: "japon-atsugi-shoin-university",
+        name: "Shoin University",
+        cityId: "japon-atsugi",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Yono (Wikidata).
+        // Situada a 4.8 km del centro de Atsugi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-atsugi-shohoku-college",
+        name: "Shohoku College",
+        cityId: "japon-atsugi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Atsugi (Wikidata).
       }),
   ],
   "japon-ube": [
@@ -4986,48 +5498,100 @@ export default {
         // Situada a 4.4 km del centro de Ube (Wikidata).
       }),
   ],
-  "japon-tsuruga": [
+  "japon-tsu": [
       defineUniversity({
-        id: "japon-tsuruga-tsuruga-nursing-university",
-        name: "Tsuruga Nursing University",
-        cityId: "japon-tsuruga",
-        website: null,
+        id: "japon-tsu-mie-university",
+        name: "Mie University",
+        cityId: "japon-tsu",
+        website: "http://www.mie-u.ac.jp/",
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Tsuruga (Wikidata).
+        // Situada a 1.5 km del centro de Tsu (Wikidata).
       }),
       defineUniversity({
-        id: "japon-tsuruga-tsuruga-nursing-university",
-        name: "Tsuruga Nursing University",
-        cityId: "japon-tsuruga",
+        id: "japon-tsu-mie-prefectural-college-of-nursing",
+        name: "Mie Prefectural College of Nursing",
+        cityId: "japon-tsu",
         website: null,
         source: "open-dataset",
-        // Situada a 2.8 km del centro de Tsuruga (Wikidata).
+        // Situada a 4.0 km del centro de Tsu (Wikidata).
       }),
       defineUniversity({
-        id: "japon-tsuruga-tsuruga-college",
-        name: "Tsuruga College",
-        cityId: "japon-tsuruga",
+        id: "japon-tsu-tsu-city-college",
+        name: "Tsu City College",
+        cityId: "japon-tsu",
         website: null,
         source: "open-dataset",
-        // Situada a 2.8 km del centro de Tsuruga (Wikidata).
+        // Situada a 1.8 km del centro de Tsu (Wikidata).
       }),
   ],
-  "japon-toyama": [
+  "japon-toyota": [
       defineUniversity({
-        id: "japon-toyama-junior-college-of-business-administration-toyama-university",
-        name: "Junior College of Business Administration, Toyama University",
-        cityId: "japon-toyama",
+        id: "japon-toyota-aichi-mizuho-college",
+        name: "Aichi Mizuho College",
+        cityId: "japon-toyota",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Toyama (Wikidata).
+        // Situada a 5.8 km del centro de Toyota (Wikidata).
       }),
       defineUniversity({
-        id: "japon-toyama-takaoka-national-college",
-        name: "Takaoka National College",
-        cityId: "japon-toyama",
+        id: "japon-toyota-toyota-national-college-of-technology",
+        name: "Toyota National College of Technology",
+        cityId: "japon-toyota",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Toyama (Wikidata).
+        // Situada a 2.2 km del centro de Toyota (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-toyota-junior-college-of-toyota",
+        name: "Junior College of Toyota",
+        cityId: "japon-toyota",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Toyota (Wikidata).
+      }),
+  ],
+  "japon-toyosu": [
+      defineUniversity({
+        id: "japon-toyosu-tokyo-ariake-university-of-medical-and-health-sciences",
+        name: "Tokyo Ariake University of Medical and Health Sciences",
+        cityId: "japon-toyosu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Toyosu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-toyosu-shibaura-institute-of-technology",
+        name: "Shibaura Institute of Technology",
+        cityId: "japon-toyosu",
+        website: "http://www.shibaura-it.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Toyosu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-toyosu-ariake-junior-college-of-education-and-the-arts",
+        name: "Ariake Junior College of Education and the Arts",
+        cityId: "japon-toyosu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Toyosu (Wikidata).
+      }),
+  ],
+  "japon-tottori-shi": [
+      defineUniversity({
+        id: "japon-tottori-shi-tottori-university",
+        name: "Tottori University",
+        cityId: "japon-tottori-shi",
+        website: "http://www.tottori-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.8 km del centro de Tottori-shi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tottori-shi-tottori-college-of-nursing",
+        name: "Tottori College of Nursing",
+        cityId: "japon-tottori-shi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tottori-shi (Wikidata).
       }),
   ],
   "japon-tokuyama": [
@@ -5054,50 +5618,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.6 km del centro de Tokuyama (Wikidata).
-      }),
-  ],
-  "japon-tokushima": [
-      defineUniversity({
-        id: "japon-tokushima-university-of-tokushima",
-        name: "University of Tokushima",
-        cityId: "japon-tokushima",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Tokushima (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tokushima-tokushima-bunri-university",
-        name: "Tokushima Bunri University",
-        cityId: "japon-tokushima",
-        website: "http://www.bunri-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Tokushima (Wikidata).
-      }),
-  ],
-  "japon-tenri": [
-      defineUniversity({
-        id: "japon-tenri-tenri-university",
-        name: "Tenri University",
-        cityId: "japon-tenri",
-        website: "http://www.tenri-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Tenri (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tenri-tenri-university",
-        name: "Tenri University",
-        cityId: "japon-tenri",
-        website: "http://www.tenri-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Tenri (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tenri-tenri-health-care-university",
-        name: "Tenri Health Care University",
-        cityId: "japon-tenri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Tenri (Wikidata).
       }),
   ],
   "japon-takatsuki": [
@@ -5144,58 +5664,6 @@ export default {
         // Situada a 2.3 km del centro de Takarazuka (Wikidata).
       }),
   ],
-  "japon-takanawa": [
-      defineUniversity({
-        id: "japon-takanawa-tokyo-university-of-marine-science-and-technology",
-        name: "Tokyo University of Marine Science and Technology",
-        cityId: "japon-takanawa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Takanawa (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-takanawa-meiji-gakuin-university",
-        name: "Meiji Gakuin University",
-        cityId: "japon-takanawa",
-        website: "http://www.meijigakuin.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Takanawa (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-takanawa-meiji-gakuin-university",
-        name: "Meiji Gakuin University",
-        cityId: "japon-takanawa",
-        website: "http://www.meijigakuin.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Takanawa (Wikidata).
-      }),
-  ],
-  "japon-tagawa": [
-      defineUniversity({
-        id: "japon-tagawa-fukuoka-prefectural-university",
-        name: "Fukuoka Prefectural University",
-        cityId: "japon-tagawa",
-        website: "http://www.fukuoka-pu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Tagawa (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tagawa-fukuoka-prefectural-university",
-        name: "Fukuoka Prefectural University",
-        cityId: "japon-tagawa",
-        website: "http://www.fukuoka-pu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Tagawa (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-tagawa-fukuoka-junior-college-of-social-work-and-child-education",
-        name: "Fukuoka Junior College of Social Work and Child Education",
-        cityId: "japon-tagawa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Tagawa (Wikidata).
-      }),
-  ],
   "japon-shimonoseki": [
       defineUniversity({
         id: "japon-shimonoseki-baiko-gakuin-university",
@@ -5222,56 +5690,48 @@ export default {
         // Situada a 3.6 km del centro de Shimonoseki (Wikidata).
       }),
   ],
-  "japon-osaka": [
+  "japon-minoh": [
       defineUniversity({
-        id: "japon-osaka-osaka-health-science-university",
-        name: "Osaka Health Science University",
-        cityId: "japon-osaka",
+        id: "japon-minoh-osaka-aoyama-college",
+        name: "Osaka Aoyama College",
+        cityId: "japon-minoh",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Osaka (Wikidata).
+        // Situada a 1.5 km del centro de Minoh (Wikidata).
       }),
       defineUniversity({
-        id: "japon-osaka-osaka-christian-college",
-        name: "Osaka Christian College",
-        cityId: "japon-osaka",
-        website: null,
+        id: "japon-minoh-osaka-university-of-foreign-studies",
+        name: "Osaka University of Foreign Studies",
+        cityId: "japon-minoh",
+        website: "http://www.osaka-gaidai.ac.jp/",
         source: "open-dataset",
-        // Situada a 6.3 km del centro de Osaka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-osaka-osaka-jogakuin-college",
-        name: "Osaka Jogakuin College",
-        cityId: "japon-osaka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Osaka (Wikidata).
+        // Situada a None km del centro de Minoh (Wikidata).
       }),
   ],
-  "japon-okubo-naka": [
+  "japon-matsuto": [
       defineUniversity({
-        id: "japon-okubo-naka-osaka-kawasaki-rehabilitation-university",
-        name: "Osaka Kawasaki Rehabilitation University",
-        cityId: "japon-okubo-naka",
+        id: "japon-matsuto-ishikawa-prefectural-university",
+        name: "Ishikawa Prefectural University",
+        cityId: "japon-matsuto",
         website: null,
         source: "open-dataset",
-        // Situada a 4.2 km del centro de Ōkubo-naka (Wikidata).
+        // Situada a 2.9 km del centro de Matsutō (Wikidata).
       }),
       defineUniversity({
-        id: "japon-okubo-naka-osaka-university-of-health-and-sport-sciences",
-        name: "Osaka University of Health and Sport Sciences",
-        cityId: "japon-okubo-naka",
-        website: "http://www.ouhs.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Ōkubo-naka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-okubo-naka-osaka-university-of-tourism",
-        name: "Osaka University of Tourism",
-        cityId: "japon-okubo-naka",
+        id: "japon-matsuto-kinjo-university",
+        name: "Kinjo University",
+        cityId: "japon-matsuto",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Ōkubo-naka (Wikidata).
+        // Situada a 3.5 km del centro de Matsutō (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-matsuto-kinjo-university-junior-college",
+        name: "Kinjo University Junior College",
+        cityId: "japon-matsuto",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Matsutō (Wikidata).
       }),
   ],
   "japon-matsue": [
@@ -5298,24 +5758,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 5.1 km del centro de Matsue (Wikidata).
-      }),
-  ],
-  "japon-kofu": [
-      defineUniversity({
-        id: "japon-kofu-university-of-yamanashi",
-        name: "University of Yamanashi",
-        cityId: "japon-kofu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Kofu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kofu-university-of-yamanashi",
-        name: "University of Yamanashi",
-        cityId: "japon-kofu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Kofu (Wikidata).
       }),
   ],
   "japon-kasugai": [
@@ -5370,100 +5812,48 @@ export default {
         // Situada a 3.8 km del centro de Kashiwa (Wikidata).
       }),
   ],
-  "japon-kamirenjaku": [
+  "japon-kashihara-shi": [
       defineUniversity({
-        id: "japon-kamirenjaku-japan-lutheran-college",
-        name: "Japan Lutheran College",
-        cityId: "japon-kamirenjaku",
+        id: "japon-kashihara-shi-nara-medical-university-college-of-nursing",
+        name: "Nara Medical University College of Nursing",
+        cityId: "japon-kashihara-shi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Kamirenjaku (Wikidata).
+        // Situada a 0.5 km del centro de Kashihara-shi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kamirenjaku-japan-lutheran-college",
-        name: "Japan Lutheran College",
-        cityId: "japon-kamirenjaku",
-        website: null,
+        id: "japon-kashihara-shi-nara-medical-university",
+        name: "Nara Medical University",
+        cityId: "japon-kashihara-shi",
+        website: "http://www.naramed-u.ac.jp/",
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Kamirenjaku (Wikidata).
+        // Situada a 0.5 km del centro de Kashihara-shi (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kamirenjaku-tokyo-union-theological-seminary",
-        name: "Tokyo Union Theological Seminary",
-        cityId: "japon-kamirenjaku",
+        id: "japon-kashihara-shi-nara-college-of-arts",
+        name: "Nara College of Arts",
+        cityId: "japon-kashihara-shi",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Kamirenjaku (Wikidata).
+        // Situada a 2.8 km del centro de Kashihara-shi (Wikidata).
       }),
   ],
-  "japon-hirakata": [
+  "japon-kamakura": [
       defineUniversity({
-        id: "japon-hirakata-kansai-gaidai-university",
-        name: "Kansai Gaidai University",
-        cityId: "japon-hirakata",
-        website: "http://www.kansai-gaidai-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Hirakata (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hirakata-kansai-gaidai-college",
-        name: "Kansai Gaidai College",
-        cityId: "japon-hirakata",
+        id: "japon-kamakura-kamakura-women-s-university",
+        name: "Kamakura Women's University",
+        cityId: "japon-kamakura",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Hirakata (Wikidata).
+        // Situada a 4.7 km del centro de Kamakura (Wikidata).
       }),
       defineUniversity({
-        id: "japon-hirakata-kansai-medical-university",
-        name: "Kansai Medical University",
-        cityId: "japon-hirakata",
-        website: "http://www.kmu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Hirakata (Wikidata).
-      }),
-  ],
-  "japon-hamamatsu": [
-      defineUniversity({
-        id: "japon-hamamatsu-shizuoka-university-of-art-and-culture",
-        name: "Shizuoka University of Art and Culture",
-        cityId: "japon-hamamatsu",
+        id: "japon-kamakura-shonan-kamakura-university-of-medical-sciences",
+        name: "Shonan Kamakura University of Medical Sciences",
+        cityId: "japon-kamakura",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Hamamatsu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-hamamatsu-hamamatsu-gakuin-university",
-        name: "Hamamatsu Gakuin University",
-        cityId: "japon-hamamatsu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Hamamatsu (Wikidata).
-      }),
-  ],
-  "japon-higashigotanda": [
-      defineUniversity({
-        id: "japon-higashigotanda-seisen-university",
-        name: "Seisen University",
-        cityId: "japon-higashigotanda",
-        website: "http://www.seisen-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Higashigotanda (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-higashigotanda-seisen-university",
-        name: "Seisen University",
-        cityId: "japon-higashigotanda",
-        website: "http://www.seisen-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Higashigotanda (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-higashigotanda-tokyo-health-care-university",
-        name: "Tokyo Health Care University",
-        cityId: "japon-higashigotanda",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Higashigotanda (Wikidata).
+        // Situada a 4.0 km del centro de Kamakura (Wikidata).
       }),
   ],
   "japon-godo": [
@@ -5492,6 +5882,58 @@ export default {
         // Situada a 3.4 km del centro de Gōdo (Wikidata).
       }),
   ],
+  "japon-fukuyama": [
+      defineUniversity({
+        id: "japon-fukuyama-fukuyama-city-university",
+        name: "Fukuyama City University",
+        cityId: "japon-fukuyama",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Fukuyama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-fukuyama-fukuyama-city-junior-college-for-women",
+        name: "Fukuyama City Junior College for Women",
+        cityId: "japon-fukuyama",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Fukuyama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-fukuyama-fukuyama-university",
+        name: "Fukuyama University",
+        cityId: "japon-fukuyama",
+        website: "http://www.fukuyama-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Fukuyama (Wikidata).
+      }),
+  ],
+  "japon-fukui-shi": [
+      defineUniversity({
+        id: "japon-fukui-shi-university-of-fukui",
+        name: "University of Fukui",
+        cityId: "japon-fukui-shi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Fukui-shi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-fukui-shi-fukui-university-of-technology",
+        name: "Fukui University of Technology",
+        cityId: "japon-fukui-shi",
+        website: "http://www.fukui-ut.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Fukui-shi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-fukui-shi-jin-ai-women-s-college",
+        name: "Jin-ai Women's College",
+        cityId: "japon-fukui-shi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.4 km del centro de Fukui-shi (Wikidata).
+      }),
+  ],
   "japon-fukuchiyama": [
       defineUniversity({
         id: "japon-fukuchiyama-seibi-university-junior-college",
@@ -5518,6 +5960,24 @@ export default {
         // Situada a 2.0 km del centro de Fukuchiyama (Wikidata).
       }),
   ],
+  "japon-fukayacho": [
+      defineUniversity({
+        id: "japon-fukayacho-tohto-university",
+        name: "Tohto University",
+        cityId: "japon-fukayacho",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Fukayachō (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-fukayacho-saitama-institute-of-technology",
+        name: "Saitama Institute of Technology",
+        cityId: "japon-fukayacho",
+        website: "http://www.sit.ac.jp/",
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de Fukayachō (Wikidata).
+      }),
+  ],
   "japon-beppu": [
       defineUniversity({
         id: "japon-beppu-beppu-mizobe-gakuen-college",
@@ -5536,108 +5996,82 @@ export default {
         // Situada a 3.7 km del centro de Beppu (Wikidata).
       }),
   ],
-  "japon-shinjo": [
+  "japon-akasaka": [
       defineUniversity({
-        id: "japon-shinjo-college-of-agriculture-and-forestry-attached-to-tohoku-professional-university-of-agriculture-and-forestry",
-        name: "College of Agriculture and Forestry Attached to Tohoku Professional University of Agriculture and Forestry",
-        cityId: "japon-shinjo",
-        website: null,
+        id: "japon-akasaka-sophia-university",
+        name: "Sophia University",
+        cityId: "japon-akasaka",
+        website: "http://www.sophia.ac.jp/",
         source: "open-dataset",
-        // Situada a 3.3 km del centro de Shinjō (Wikidata).
+        // Situada a 1.4 km del centro de Akasaka (Wikidata).
       }),
       defineUniversity({
-        id: "japon-shinjo-college-of-agriculture-and-forestry-attached-to-tohoku-professional-university-of-agriculture-and-forestry",
-        name: "College of Agriculture and Forestry Attached to Tohoku Professional University of Agriculture and Forestry",
-        cityId: "japon-shinjo",
+        id: "japon-akasaka-hollywood-graduate-school-of-beauty-business",
+        name: "Hollywood Graduate School Of Beauty Business",
+        cityId: "japon-akasaka",
         website: null,
         source: "open-dataset",
-        // Situada a 3.3 km del centro de Shinjō (Wikidata).
+        // Situada a 1.2 km del centro de Akasaka (Wikidata).
       }),
       defineUniversity({
-        id: "japon-shinjo-tohoku-professional-university-of-agriculture-and-forestry",
-        name: "Tohoku Professional University of Agriculture and Forestry",
-        cityId: "japon-shinjo",
+        id: "japon-akasaka-army-war-college",
+        name: "Army War College",
+        cityId: "japon-akasaka",
         website: null,
         source: "open-dataset",
-        // Situada a 3.3 km del centro de Shinjō (Wikidata).
+        // Situada a 1.2 km del centro de Akasaka (Wikidata).
       }),
   ],
-  "japon-mito": [
+  "japon-iwaki": [
       defineUniversity({
-        id: "japon-mito-ibaraki-university",
-        name: "Ibaraki University",
-        cityId: "japon-mito",
-        website: "http://www.ibaraki.ac.jp/",
+        id: "japon-iwaki-higashi-nippon-international-university",
+        name: "Higashi Nippon International University",
+        cityId: "japon-iwaki",
+        website: "http://www.tonichi-kokusai-u.ac.jp/",
         source: "open-dataset",
-        // Situada a 5.7 km del centro de Mito (Wikidata).
+        // Situada a 2.3 km del centro de Iwaki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-mito-ibaraki-university",
-        name: "Ibaraki University",
-        cityId: "japon-mito",
-        website: "http://www.ibaraki.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Mito (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-mito-tokiwa-university",
-        name: "Tokiwa University",
-        cityId: "japon-mito",
-        website: "http://www.tokiwa.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Mito (Wikidata).
-      }),
-  ],
-  "japon-katsuura": [
-      defineUniversity({
-        id: "japon-katsuura-international-budo-university",
-        name: "International Budo University",
-        cityId: "japon-katsuura",
-        website: "http://www.budo-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Katsuura (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-katsuura-saniku-gakuin-college",
-        name: "Saniku Gakuin College",
-        cityId: "japon-katsuura",
+        id: "japon-iwaki-fukushima-national-college-of-technology",
+        name: "Fukushima National College of Technology",
+        cityId: "japon-iwaki",
         website: null,
         source: "open-dataset",
-        // Situada a 11.6 km del centro de Katsuura (Wikidata).
+        // Situada a 2.0 km del centro de Iwaki (Wikidata).
       }),
       defineUniversity({
-        id: "japon-katsuura-saniku-gakuin-college",
-        name: "Saniku Gakuin College",
-        cityId: "japon-katsuura",
+        id: "japon-iwaki-iryo-sosei-university",
+        name: "Iryo Sosei University",
+        cityId: "japon-iwaki",
         website: null,
         source: "open-dataset",
-        // Situada a 11.6 km del centro de Katsuura (Wikidata).
+        // Situada a None km del centro de Iwaki (Wikidata).
       }),
   ],
-  "japon-chiba": [
+  "japon-fukushima": [
       defineUniversity({
-        id: "japon-chiba-chiba-university",
-        name: "Chiba University",
-        cityId: "japon-chiba",
-        website: "https://chiba-u.jp/",
+        id: "japon-fukushima-fukushima-university",
+        name: "Fukushima University",
+        cityId: "japon-fukushima",
+        website: "http://www.fukushima-u.ac.jp/",
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Chiba (Wikidata).
+        // Situada a 7.5 km del centro de Fukushima (Wikidata).
       }),
       defineUniversity({
-        id: "japon-chiba-chiba-keizai-university",
-        name: "Chiba Keizai University",
-        cityId: "japon-chiba",
-        website: "http://www.cku.ac.jp/",
+        id: "japon-fukushima-fukushima-college",
+        name: "Fukushima College",
+        cityId: "japon-fukushima",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Chiba (Wikidata).
+        // Situada a 0.4 km del centro de Fukushima (Wikidata).
       }),
       defineUniversity({
-        id: "japon-chiba-shukutoku-university",
-        name: "Shukutoku University",
-        cityId: "japon-chiba",
-        website: "http://www.shukutoku.ac.jp/",
+        id: "japon-fukushima-fukushima-medical-university",
+        name: "Fukushima Medical University",
+        cityId: "japon-fukushima",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Chiba (Wikidata).
+        // Situada a 6.8 km del centro de Fukushima (Wikidata).
       }),
   ],
   "japon-abiko": [
@@ -5666,32 +6100,6 @@ export default {
         // Situada a 1.8 km del centro de Abiko (Wikidata).
       }),
   ],
-  "japon-ishikari": [
-      defineUniversity({
-        id: "japon-ishikari-hokkaido-university-of-education",
-        name: "Hokkaido University of Education",
-        cityId: "japon-ishikari",
-        website: "http://www.hokkyodai.ac.jp/",
-        source: "open-dataset",
-        // Situada a 8.6 km del centro de Ishikari (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-ishikari-hokkaido-university-of-education",
-        name: "Hokkaido University of Education",
-        cityId: "japon-ishikari",
-        website: "http://www.hokkyodai.ac.jp/",
-        source: "open-dataset",
-        // Situada a 8.6 km del centro de Ishikari (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-ishikari-christ-for-the-nations-japan",
-        name: "Christ for the Nations Japan",
-        cityId: "japon-ishikari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.4 km del centro de Ishikari (Wikidata).
-      }),
-  ],
   "japon-musashimurayama": [
       defineUniversity({
         id: "japon-musashimurayama-musashino-art-university",
@@ -5716,6 +6124,32 @@ export default {
         website: "http://www.kunitachi.ac.jp/",
         source: "open-dataset",
         // Situada a 1.8 km del centro de Musashimurayama (Wikidata).
+      }),
+  ],
+  "japon-joetsu": [
+      defineUniversity({
+        id: "japon-joetsu-joetsu-university-of-education",
+        name: "Joetsu University of Education",
+        cityId: "japon-joetsu",
+        website: "http://www.juen.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Jōetsu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-joetsu-niigata-college-of-nursing",
+        name: "Niigata College of Nursing",
+        cityId: "japon-joetsu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.5 km del centro de Jōetsu (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-joetsu-niigata-junior-college-of-nursing",
+        name: "Niigata Junior College of Nursing",
+        cityId: "japon-joetsu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.5 km del centro de Jōetsu (Wikidata).
       }),
   ],
   "japon-sayama": [
@@ -5744,56 +6178,56 @@ export default {
         // Situada a 1.7 km del centro de Sayama (Wikidata).
       }),
   ],
-  "japon-ikebukuro": [
+  "japon-yotsuya": [
       defineUniversity({
-        id: "japon-ikebukuro-rikkyo-university",
-        name: "Rikkyo University",
-        cityId: "japon-ikebukuro",
+        id: "japon-yotsuya-tokyo-women-s-medical-university",
+        name: "Tokyo Women's Medical University",
+        cityId: "japon-yotsuya",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Ikebukuro (Wikidata).
+        // Situada a 1.0 km del centro de Yotsuya (Wikidata).
       }),
       defineUniversity({
-        id: "japon-ikebukuro-rikkyo-university",
-        name: "Rikkyo University",
-        cityId: "japon-ikebukuro",
+        id: "japon-yotsuya-japanese-army-military-medical-school",
+        name: "Japanese Army Military Medical School",
+        cityId: "japon-yotsuya",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Ikebukuro (Wikidata).
+        // Situada a None km del centro de Yotsuya (Wikidata).
       }),
       defineUniversity({
-        id: "japon-ikebukuro-tokyo-college-of-transport-studies",
-        name: "Tokyo College of Transport Studies",
-        cityId: "japon-ikebukuro",
+        id: "japon-yotsuya-army-accounting-school",
+        name: "Army Accounting School",
+        cityId: "japon-yotsuya",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Ikebukuro (Wikidata).
+        // Situada a None km del centro de Yotsuya (Wikidata).
       }),
   ],
-  "japon-sekimachi-minami": [
+  "japon-ebara": [
       defineUniversity({
-        id: "japon-sekimachi-minami-tokyo-woman-s-christian-university",
-        name: "Tokyo Woman's Christian University",
-        cityId: "japon-sekimachi-minami",
-        website: "http://www.twcu.ac.jp/",
+        id: "japon-ebara-institute-of-science-tokyo",
+        name: "Institute of Science Tokyo",
+        cityId: "japon-ebara",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Sekimachi-minami (Wikidata).
+        // Situada a 1.9 km del centro de Ebara (Wikidata).
       }),
       defineUniversity({
-        id: "japon-sekimachi-minami-tokyo-woman-s-christian-university",
-        name: "Tokyo Woman's Christian University",
-        cityId: "japon-sekimachi-minami",
-        website: "http://www.twcu.ac.jp/",
+        id: "japon-ebara-tokyo-institute-of-technology",
+        name: "Tokyo Institute of Technology",
+        cityId: "japon-ebara",
+        website: "http://www.titech.ac.jp/",
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Sekimachi-minami (Wikidata).
+        // Situada a 2.0 km del centro de Ebara (Wikidata).
       }),
       defineUniversity({
-        id: "japon-sekimachi-minami-seikei-university",
-        name: "Seikei University",
-        cityId: "japon-sekimachi-minami",
-        website: "http://www.seikei.ac.jp/",
+        id: "japon-ebara-showa-medical-university",
+        name: "Showa Medical University",
+        cityId: "japon-ebara",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Sekimachi-minami (Wikidata).
+        // Situada a 0.4 km del centro de Ebara (Wikidata).
       }),
   ],
   "japon-koga": [
@@ -5848,58 +6282,6 @@ export default {
         // Situada a 3.4 km del centro de Azamino (Wikidata).
       }),
   ],
-  "japon-minami-oi": [
-      defineUniversity({
-        id: "japon-minami-oi-advanced-institute-of-industrial-technology",
-        name: "Advanced Institute of Industrial Technology",
-        cityId: "japon-minami-oi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Minami-ōi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-minami-oi-advanced-institute-of-industrial-technology",
-        name: "Advanced Institute of Industrial Technology",
-        cityId: "japon-minami-oi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Minami-ōi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-minami-oi-hoshi-university",
-        name: "Hoshi University",
-        cityId: "japon-minami-oi",
-        website: "http://www.hoshi.ac.jp/",
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Minami-ōi (Wikidata).
-      }),
-  ],
-  "japon-shimo-ochiai": [
-      defineUniversity({
-        id: "japon-shimo-ochiai-tokyo-fuji-university",
-        name: "Tokyo Fuji University",
-        cityId: "japon-shimo-ochiai",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Shimo’ochiai (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-shimo-ochiai-the-graduate-school-of-social-design",
-        name: "The Graduate School of Social Design",
-        cityId: "japon-shimo-ochiai",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Shimo’ochiai (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-shimo-ochiai-the-graduate-school-of-social-design",
-        name: "The Graduate School of Social Design",
-        cityId: "japon-shimo-ochiai",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Shimo’ochiai (Wikidata).
-      }),
-  ],
   "japon-ebisu": [
       defineUniversity({
         id: "japon-ebisu-kitasato-university",
@@ -5926,82 +6308,30 @@ export default {
         // Situada a 0.7 km del centro de Ebisu (Wikidata).
       }),
   ],
-  "japon-inokashira": [
+  "japon-hirai": [
       defineUniversity({
-        id: "japon-inokashira-japan-women-s-college-of-physical-education",
-        name: "Japan Women's College of Physical Education",
-        cityId: "japon-inokashira",
+        id: "japon-hirai-tokyo-information-design-professional-university",
+        name: "Tokyo Information Design Professional University",
+        cityId: "japon-hirai",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Inokashira (Wikidata).
+        // Situada a 1.6 km del centro de Hirai (Wikidata).
       }),
       defineUniversity({
-        id: "japon-inokashira-shirayuri-university",
-        name: "Shirayuri University",
-        cityId: "japon-inokashira",
+        id: "japon-hirai-tokyo-seiei-college",
+        name: "Tokyo Seiei College",
+        cityId: "japon-hirai",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Inokashira (Wikidata).
+        // Situada a 1.7 km del centro de Hirai (Wikidata).
       }),
       defineUniversity({
-        id: "japon-inokashira-shirayuri-university",
-        name: "Shirayuri University",
-        cityId: "japon-inokashira",
+        id: "japon-hirai-professional-university-of-information-and-management-for-innovation",
+        name: "Professional University of Information and Management for Innovation",
+        cityId: "japon-hirai",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Inokashira (Wikidata).
-      }),
-  ],
-  "japon-koto": [
-      defineUniversity({
-        id: "japon-koto-kumamoto-gakuen-university",
-        name: "Kumamoto Gakuen University",
-        cityId: "japon-koto",
-        website: "http://www.kumagaku.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Kotō (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-koto-kyushu-tokai-university",
-        name: "Kyushu Tokai University",
-        cityId: "japon-koto",
-        website: "http://www.ktokai-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Kotō (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-koto-prefectural-university-of-kumamoto",
-        name: "Prefectural University of Kumamoto",
-        cityId: "japon-koto",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Kotō (Wikidata).
-      }),
-  ],
-  "japon-kunitachi": [
-      defineUniversity({
-        id: "japon-kunitachi-hitotsubashi-university",
-        name: "Hitotsubashi University",
-        cityId: "japon-kunitachi",
-        website: "http://www.hit-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Kunitachi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kunitachi-hitotsubashi-university",
-        name: "Hitotsubashi University",
-        cityId: "japon-kunitachi",
-        website: "http://www.hit-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Kunitachi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-kunitachi-tokyo-women-s-junior-college-of-physical-education",
-        name: "Tokyo Women's Junior College of Physical Education",
-        cityId: "japon-kunitachi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Kunitachi (Wikidata).
+        // Situada a 1.8 km del centro de Hirai (Wikidata).
       }),
   ],
   "japon-nantan": [
@@ -6028,32 +6358,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 8.0 km del centro de Nantan (Wikidata).
-      }),
-  ],
-  "japon-koganei": [
-      defineUniversity({
-        id: "japon-koganei-international-christian-university",
-        name: "International Christian University",
-        cityId: "japon-koganei",
-        website: "http://www.icu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Koganei (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-koganei-international-christian-university",
-        name: "International Christian University",
-        cityId: "japon-koganei",
-        website: "http://www.icu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Koganei (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-koganei-tokyo-university-of-foreign-studies",
-        name: "Tokyo University of Foreign Studies",
-        cityId: "japon-koganei",
-        website: "http://www.tufs.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Koganei (Wikidata).
       }),
   ],
   "japon-komae": [
@@ -6100,24 +6404,6 @@ export default {
         // Situada a 2.5 km del centro de Ōharu (Wikidata).
       }),
   ],
-  "japon-atsugi": [
-      defineUniversity({
-        id: "japon-atsugi-shoin-university",
-        name: "Shoin University",
-        cityId: "japon-atsugi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.8 km del centro de Atsugi (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-atsugi-shohoku-college",
-        name: "Shohoku College",
-        cityId: "japon-atsugi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Atsugi (Wikidata).
-      }),
-  ],
   "japon-zushi": [
       defineUniversity({
         id: "japon-zushi-zen-university",
@@ -6134,6 +6420,34 @@ export default {
         website: "http://www.kanto-gakuin.ac.jp/",
         source: "open-dataset",
         // Situada a 5.2 km del centro de Zushi (Wikidata).
+      }),
+  ],
+  "japon-yonago": [
+      defineUniversity({
+        id: "japon-yonago-yonago-national-college-of-technology",
+        name: "Yonago National College of Technology",
+        cityId: "japon-yonago",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.6 km del centro de Yonago (Wikidata).
+      }),
+  ],
+  "japon-yokosuka": [
+      defineUniversity({
+        id: "japon-yokosuka-kanagawa-university-of-human-services",
+        name: "Kanagawa University of Human Services",
+        cityId: "japon-yokosuka",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Yokosuka (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-yokosuka-kanagawa-dental-university",
+        name: "Kanagawa Dental University",
+        cityId: "japon-yokosuka",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Yokosuka (Wikidata).
       }),
   ],
   "japon-yao": [
@@ -6226,58 +6540,40 @@ export default {
         // Situada a 3.5 km del centro de Tsurusaki (Wikidata).
       }),
   ],
-  "japon-tsurugi-asahimachi": [
+  "japon-tsuruga": [
       defineUniversity({
-        id: "japon-tsurugi-asahimachi-japan-advanced-institute-of-science-and-technology",
-        name: "Japan Advanced Institute of Science and Technology",
-        cityId: "japon-tsurugi-asahimachi",
-        website: "http://www.jaist.ac.jp/",
+        id: "japon-tsuruga-tsuruga-nursing-university",
+        name: "Tsuruga Nursing University",
+        cityId: "japon-tsuruga",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.7 km del centro de Tsurugi-asahimachi (Wikidata).
+        // Situada a 2.8 km del centro de Tsuruga (Wikidata).
       }),
       defineUniversity({
-        id: "japon-tsurugi-asahimachi-japan-advanced-institute-of-science-and-technology",
-        name: "Japan Advanced Institute of Science and Technology",
-        cityId: "japon-tsurugi-asahimachi",
-        website: "http://www.jaist.ac.jp/",
+        id: "japon-tsuruga-tsuruga-college",
+        name: "Tsuruga College",
+        cityId: "japon-tsuruga",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.7 km del centro de Tsurugi-asahimachi (Wikidata).
+        // Situada a 2.8 km del centro de Tsuruga (Wikidata).
       }),
   ],
-  "japon-toyota": [
+  "japon-toyonaka": [
       defineUniversity({
-        id: "japon-toyota-aichi-mizuho-college",
-        name: "Aichi Mizuho College",
-        cityId: "japon-toyota",
-        website: null,
+        id: "japon-toyonaka-osaka-college-of-music",
+        name: "Osaka College of Music",
+        cityId: "japon-toyonaka",
+        website: "http://www.daion.ac.jp/",
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Toyota (Wikidata).
+        // Situada a 3.2 km del centro de Toyonaka (Wikidata).
       }),
       defineUniversity({
-        id: "japon-toyota-toyota-national-college-of-technology",
-        name: "Toyota National College of Technology",
-        cityId: "japon-toyota",
+        id: "japon-toyonaka-osaka-junior-college-of-music",
+        name: "Osaka Junior College of Music",
+        cityId: "japon-toyonaka",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Toyota (Wikidata).
-      }),
-  ],
-  "japon-toyooka": [
-      defineUniversity({
-        id: "japon-toyooka-professional-college-of-arts-and-tourism",
-        name: "Professional College of Arts and Tourism",
-        cityId: "japon-toyooka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Toyooka (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-toyooka-professional-college-of-arts-and-tourism",
-        name: "Professional College of Arts and Tourism",
-        cityId: "japon-toyooka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Toyooka (Wikidata).
+        // Situada a None km del centro de Toyonaka (Wikidata).
       }),
   ],
   "japon-toyoda": [
@@ -6296,16 +6592,6 @@ export default {
         website: "http://www.yokkaichi-u.ac.jp/",
         source: "open-dataset",
         // Situada a 5.5 km del centro de Toyoda (Wikidata).
-      }),
-  ],
-  "japon-tottori-shi": [
-      defineUniversity({
-        id: "japon-tottori-shi-tottori-university",
-        name: "Tottori University",
-        cityId: "japon-tottori-shi",
-        website: "http://www.tottori-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Tottori-shi (Wikidata).
       }),
   ],
   "japon-tondabayashicho": [
@@ -6344,6 +6630,42 @@ export default {
         // Situada a 0.5 km del centro de Tokorozawa (Wikidata).
       }),
   ],
+  "japon-tenri": [
+      defineUniversity({
+        id: "japon-tenri-tenri-university",
+        name: "Tenri University",
+        cityId: "japon-tenri",
+        website: "http://www.tenri-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Tenri (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tenri-tenri-health-care-university",
+        name: "Tenri Health Care University",
+        cityId: "japon-tenri",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Tenri (Wikidata).
+      }),
+  ],
+  "japon-takanawa": [
+      defineUniversity({
+        id: "japon-takanawa-tokyo-university-of-marine-science-and-technology",
+        name: "Tokyo University of Marine Science and Technology",
+        cityId: "japon-takanawa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Takanawa (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-takanawa-meiji-gakuin-university",
+        name: "Meiji Gakuin University",
+        cityId: "japon-takanawa",
+        website: "http://www.meijigakuin.ac.jp/",
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Takanawa (Wikidata).
+      }),
+  ],
   "japon-takahashi": [
       defineUniversity({
         id: "japon-takahashi-kibi-international-university",
@@ -6360,6 +6682,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.5 km del centro de Takahashi (Wikidata).
+      }),
+  ],
+  "japon-tagawa": [
+      defineUniversity({
+        id: "japon-tagawa-fukuoka-prefectural-university",
+        name: "Fukuoka Prefectural University",
+        cityId: "japon-tagawa",
+        website: "http://www.fukuoka-pu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Tagawa (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tagawa-fukuoka-junior-college-of-social-work-and-child-education",
+        name: "Fukuoka Junior College of Social Work and Child Education",
+        cityId: "japon-tagawa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Tagawa (Wikidata).
       }),
   ],
   "japon-suzuka": [
@@ -6388,6 +6728,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.8 km del centro de Sumida (Wikidata).
+      }),
+  ],
+  "japon-soja": [
+      defineUniversity({
+        id: "japon-soja-okayama-prefectural-university",
+        name: "Okayama Prefectural University",
+        cityId: "japon-soja",
+        website: "http://www.oka-pu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.4 km del centro de Sōja (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-soja-okayama-prefectural-university-junior-college",
+        name: "Okayama Prefectural University-Junior College",
+        cityId: "japon-soja",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sōja (Wikidata).
       }),
   ],
   "japon-shinshiro": [
@@ -6460,24 +6818,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.5 km del centro de Saga (Wikidata).
-      }),
-  ],
-  "japon-otsu": [
-      defineUniversity({
-        id: "japon-otsu-kyoto-pharmaceutical-university",
-        name: "Kyoto Pharmaceutical University",
-        cityId: "japon-otsu",
-        website: "http://www.kyoto-phu.ac.jp/",
-        source: "open-dataset",
-        // Situada a 5.3 km del centro de Ōtsu (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-otsu-kyoto-tachibana-university",
-        name: "Kyoto Tachibana University",
-        cityId: "japon-otsu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Ōtsu (Wikidata).
       }),
   ],
   "japon-ogori-shimogo": [
@@ -6580,24 +6920,6 @@ export default {
         // Situada a 2.3 km del centro de Minamirinkan (Wikidata).
       }),
   ],
-  "japon-matsuto": [
-      defineUniversity({
-        id: "japon-matsuto-ishikawa-prefectural-university",
-        name: "Ishikawa Prefectural University",
-        cityId: "japon-matsuto",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Matsutō (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-matsuto-kinjo-university",
-        name: "Kinjo University",
-        cityId: "japon-matsuto",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Matsutō (Wikidata).
-      }),
-  ],
   "japon-maruoka": [
       defineUniversity({
         id: "japon-maruoka-fukui-medical-university",
@@ -6614,6 +6936,24 @@ export default {
         website: "http://www.fpu.ac.jp/",
         source: "open-dataset",
         // Situada a 4.9 km del centro de Maruoka (Wikidata).
+      }),
+  ],
+  "japon-kurihama": [
+      defineUniversity({
+        id: "japon-kurihama-national-defense-academy-of-japan",
+        name: "National Defense Academy of Japan",
+        cityId: "japon-kurihama",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.8 km del centro de Kurihama (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kurihama-kaigun-tsushin-gakko",
+        name: "Kaigun Tsūshin Gakkō",
+        cityId: "japon-kurihama",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kurihama (Wikidata).
       }),
   ],
   "japon-kure": [
@@ -6650,6 +6990,16 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 6.1 km del centro de Komatsu (Wikidata).
+      }),
+  ],
+  "japon-kofu": [
+      defineUniversity({
+        id: "japon-kofu-university-of-yamanashi",
+        name: "University of Yamanashi",
+        cityId: "japon-kofu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Kofu (Wikidata).
       }),
   ],
   "japon-kitahama": [
@@ -6778,22 +7128,40 @@ export default {
         // Situada a 3.1 km del centro de Kasamatsuchō (Wikidata).
       }),
   ],
-  "japon-kamakura": [
+  "japon-kanazawa": [
       defineUniversity({
-        id: "japon-kamakura-kamakura-women-s-university",
-        name: "Kamakura Women's University",
-        cityId: "japon-kamakura",
+        id: "japon-kanazawa-kanazawa-professional-university-of-food-management",
+        name: "Kanazawa Professional University of Food Management",
+        cityId: "japon-kanazawa",
         website: null,
         source: "open-dataset",
-        // Situada a 4.7 km del centro de Kamakura (Wikidata).
+        // Situada a None km del centro de Kanazawa (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kamakura-shonan-kamakura-university-of-medical-sciences",
-        name: "Shonan Kamakura University of Medical Sciences",
-        cityId: "japon-kamakura",
+        id: "japon-kanazawa-kanazawa-seiryo-university",
+        name: "Kanazawa Seiryo University",
+        cityId: "japon-kanazawa",
         website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Kamakura (Wikidata).
+        // Situada a None km del centro de Kanazawa (Wikidata).
+      }),
+  ],
+  "japon-kamirenjaku": [
+      defineUniversity({
+        id: "japon-kamirenjaku-japan-lutheran-college",
+        name: "Japan Lutheran College",
+        cityId: "japon-kamirenjaku",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Kamirenjaku (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kamirenjaku-tokyo-union-theological-seminary",
+        name: "Tokyo Union Theological Seminary",
+        cityId: "japon-kamirenjaku",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.0 km del centro de Kamirenjaku (Wikidata).
       }),
   ],
   "japon-kakamigahara": [
@@ -6824,24 +7192,6 @@ export default {
         // Situada a 6.4 km del centro de Kaitaichi (Wikidata).
       }),
   ],
-  "japon-izumo": [
-      defineUniversity({
-        id: "japon-izumo-shimane-medical-university",
-        name: "Shimane Medical University",
-        cityId: "japon-izumo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Izumo (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-izumo-shimane-medical-university",
-        name: "Shimane Medical University",
-        cityId: "japon-izumo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Izumo (Wikidata).
-      }),
-  ],
   "japon-iwata": [
       defineUniversity({
         id: "japon-iwata-shizuoka-professional-university-of-agriculture",
@@ -6852,12 +7202,12 @@ export default {
         // Situada a 3.4 km del centro de Iwata (Wikidata).
       }),
       defineUniversity({
-        id: "japon-iwata-shizuoka-professional-university-of-agriculture",
-        name: "Shizuoka Professional University of Agriculture",
+        id: "japon-iwata-shizuoka-prefectural-agriculture-and-forestry-college",
+        name: "Shizuoka Prefectural Agriculture and Forestry College",
         cityId: "japon-iwata",
         website: null,
         source: "open-dataset",
-        // Situada a 3.4 km del centro de Iwata (Wikidata).
+        // Situada a None km del centro de Iwata (Wikidata).
       }),
   ],
   "japon-itami": [
@@ -6914,24 +7264,6 @@ export default {
         // Situada a 2.1 km del centro de Isogo (Wikidata).
       }),
   ],
-  "japon-ise": [
-      defineUniversity({
-        id: "japon-ise-kogakkan-university",
-        name: "Kogakkan University",
-        cityId: "japon-ise",
-        website: "http://www.kogakkan-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Ise (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-ise-kogakkan-university",
-        name: "Kogakkan University",
-        cityId: "japon-ise",
-        website: "http://www.kogakkan-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Ise (Wikidata).
-      }),
-  ],
   "japon-isawa": [
       defineUniversity({
         id: "japon-isawa-yamanashi-eiwa-college",
@@ -6966,6 +7298,42 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.7 km del centro de Inazawa (Wikidata).
+      }),
+  ],
+  "japon-hirakata": [
+      defineUniversity({
+        id: "japon-hirakata-kansai-gaidai-university",
+        name: "Kansai Gaidai University",
+        cityId: "japon-hirakata",
+        website: "http://www.kansai-gaidai-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Hirakata (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-hirakata-kansai-gaidai-college",
+        name: "Kansai Gaidai College",
+        cityId: "japon-hirakata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Hirakata (Wikidata).
+      }),
+  ],
+  "japon-himeji": [
+      defineUniversity({
+        id: "japon-himeji-himeji-dokkyo-university",
+        name: "Himeji Dokkyo University",
+        cityId: "japon-himeji",
+        website: "http://www.himeji-du.ac.jp/",
+        source: "open-dataset",
+        // Situada a 6.3 km del centro de Himeji (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-himeji-himeji-college-of-hyogo",
+        name: "Himeji College of Hyōgo",
+        cityId: "japon-himeji",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Himeji (Wikidata).
       }),
   ],
   "japon-hikone": [
@@ -7004,22 +7372,50 @@ export default {
         // Situada a 1.5 km del centro de Ōkubo (Wikidata).
       }),
   ],
-  "japon-hagi": [
+  "japon-gotemba": [
       defineUniversity({
-        id: "japon-hagi-shiseikan-university",
-        name: "Shiseikan University",
-        cityId: "japon-hagi",
+        id: "japon-gotemba-seisa-university",
+        name: "Seisa University",
+        cityId: "japon-gotemba",
         website: null,
         source: "open-dataset",
-        // Situada a 3.5 km del centro de Hagi (Wikidata).
+        // Situada a 8.0 km del centro de Gotemba (Wikidata).
       }),
       defineUniversity({
-        id: "japon-hagi-shiseikan-university",
-        name: "Shiseikan University",
-        cityId: "japon-hagi",
+        id: "japon-gotemba-fuji-phoenix-college",
+        name: "Fuji Phoenix College",
+        cityId: "japon-gotemba",
         website: null,
         source: "open-dataset",
-        // Situada a 3.5 km del centro de Hagi (Wikidata).
+        // Situada a None km del centro de Gotemba (Wikidata).
+      }),
+  ],
+  "japon-higashigotanda": [
+      defineUniversity({
+        id: "japon-higashigotanda-seisen-university",
+        name: "Seisen University",
+        cityId: "japon-higashigotanda",
+        website: "http://www.seisen-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 0.3 km del centro de Higashigotanda (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-higashigotanda-tokyo-health-care-university",
+        name: "Tokyo Health Care University",
+        cityId: "japon-higashigotanda",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Higashigotanda (Wikidata).
+      }),
+  ],
+  "japon-gohyakkoku": [
+      defineUniversity({
+        id: "japon-gohyakkoku-toyama-university-of-international-studies",
+        name: "Toyama University of International Studies",
+        cityId: "japon-gohyakkoku",
+        website: "http://www.tuins.ac.jp/",
+        source: "open-dataset",
+        // Situada a 8.1 km del centro de Gohyakkoku (Wikidata).
       }),
   ],
   "japon-ginowan": [
@@ -7058,42 +7454,6 @@ export default {
         // Situada a 7.7 km del centro de Gamagōri (Wikidata).
       }),
   ],
-  "japon-fukuyama": [
-      defineUniversity({
-        id: "japon-fukuyama-fukuyama-city-university",
-        name: "Fukuyama City University",
-        cityId: "japon-fukuyama",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Fukuyama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-fukuyama-fukuyama-city-junior-college-for-women",
-        name: "Fukuyama City Junior College for Women",
-        cityId: "japon-fukuyama",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Fukuyama (Wikidata).
-      }),
-  ],
-  "japon-fukayacho": [
-      defineUniversity({
-        id: "japon-fukayacho-tohto-university",
-        name: "Tohto University",
-        cityId: "japon-fukayacho",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Fukayachō (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-fukayacho-saitama-institute-of-technology",
-        name: "Saitama Institute of Technology",
-        cityId: "japon-fukayacho",
-        website: "http://www.sit.ac.jp/",
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Fukayachō (Wikidata).
-      }),
-  ],
   "japon-toyo": [
       defineUniversity({
         id: "japon-toyo-tokyo-professional-university-of-health-sciences",
@@ -7104,12 +7464,12 @@ export default {
         // Situada a 0.6 km del centro de Tōyō (Wikidata).
       }),
       defineUniversity({
-        id: "japon-toyo-tokyo-professional-university-of-health-sciences",
-        name: "Tokyo Professional University of Health Sciences",
+        id: "japon-toyo-tokyo-university-of-mercantile-marine",
+        name: "Tokyo University of Mercantile Marine",
         cityId: "japon-toyo",
-        website: null,
+        website: "http://www.tosho-u.ac.jp/",
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Tōyō (Wikidata).
+        // Situada a None km del centro de Tōyō (Wikidata).
       }),
   ],
   "japon-den-enchofu": [
@@ -7166,24 +7526,6 @@ export default {
         // Situada a 4.1 km del centro de Amagasaki (Wikidata).
       }),
   ],
-  "japon-wakayama": [
-      defineUniversity({
-        id: "japon-wakayama-wakayama-university",
-        name: "Wakayama University",
-        cityId: "japon-wakayama",
-        website: "http://www.wakayama-u.ac.jp/",
-        source: "open-dataset",
-        // Situada a 3.9 km del centro de Wakayama (Wikidata).
-      }),
-      defineUniversity({
-        id: "japon-wakayama-wakayama-shin-ai-university",
-        name: "Wakayama Shin-ai University",
-        cityId: "japon-wakayama",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Wakayama (Wikidata).
-      }),
-  ],
   "japon-hojo": [
       defineUniversity({
         id: "japon-hojo-st-catherine-junior-college",
@@ -7220,22 +7562,50 @@ export default {
         // Situada a 6.6 km del centro de Tendō (Wikidata).
       }),
   ],
-  "japon-ryugasaki": [
+  "japon-shinjo": [
       defineUniversity({
-        id: "japon-ryugasaki-ryutsu-keizai-university",
-        name: "Ryutsu Keizai University",
-        cityId: "japon-ryugasaki",
-        website: "http://www.rku.ac.jp/",
+        id: "japon-shinjo-college-of-agriculture-and-forestry-attached-to-tohoku-professional-university-of-agriculture-and-forestry",
+        name: "College of Agriculture and Forestry Attached to Tohoku Professional University of Agriculture and Forestry",
+        cityId: "japon-shinjo",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Ryūgasaki (Wikidata).
+        // Situada a 3.3 km del centro de Shinjō (Wikidata).
       }),
       defineUniversity({
-        id: "japon-ryugasaki-ryutsu-keizai-university",
-        name: "Ryutsu Keizai University",
-        cityId: "japon-ryugasaki",
-        website: "http://www.rku.ac.jp/",
+        id: "japon-shinjo-tohoku-professional-university-of-agriculture-and-forestry",
+        name: "Tohoku Professional University of Agriculture and Forestry",
+        cityId: "japon-shinjo",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Ryūgasaki (Wikidata).
+        // Situada a 3.3 km del centro de Shinjō (Wikidata).
+      }),
+  ],
+  "japon-natori-shi": [
+      defineUniversity({
+        id: "japon-natori-shi-shokei-gakuin-university",
+        name: "Shokei Gakuin University",
+        cityId: "japon-natori-shi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.7 km del centro de Natori-shi (Wikidata).
+      }),
+  ],
+  "japon-mito": [
+      defineUniversity({
+        id: "japon-mito-ibaraki-university",
+        name: "Ibaraki University",
+        cityId: "japon-mito",
+        website: "http://www.ibaraki.ac.jp/",
+        source: "open-dataset",
+        // Situada a 5.7 km del centro de Mito (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-mito-tokiwa-university",
+        name: "Tokiwa University",
+        cityId: "japon-mito",
+        website: "http://www.tokiwa.ac.jp/",
+        source: "open-dataset",
+        // Situada a 3.7 km del centro de Mito (Wikidata).
       }),
   ],
   "japon-koriyama": [
@@ -7256,40 +7626,68 @@ export default {
         // Situada a 2.2 km del centro de Kōriyama (Wikidata).
       }),
   ],
-  "japon-kamogawa": [
+  "japon-katsuura": [
       defineUniversity({
-        id: "japon-kamogawa-kameda-college-of-health-sciences",
-        name: "Kameda College of Health Sciences",
-        cityId: "japon-kamogawa",
-        website: null,
+        id: "japon-katsuura-international-budo-university",
+        name: "International Budo University",
+        cityId: "japon-katsuura",
+        website: "http://www.budo-u.ac.jp/",
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Kamogawa (Wikidata).
+        // Situada a 1.7 km del centro de Katsuura (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kamogawa-kameda-college-of-health-sciences",
-        name: "Kameda College of Health Sciences",
-        cityId: "japon-kamogawa",
+        id: "japon-katsuura-saniku-gakuin-college",
+        name: "Saniku Gakuin College",
+        cityId: "japon-katsuura",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Kamogawa (Wikidata).
+        // Situada a 11.6 km del centro de Katsuura (Wikidata).
       }),
   ],
-  "japon-iwaki": [
+  "japon-ami": [
       defineUniversity({
-        id: "japon-iwaki-higashi-nippon-international-university",
-        name: "Higashi Nippon International University",
-        cityId: "japon-iwaki",
-        website: "http://www.tonichi-kokusai-u.ac.jp/",
+        id: "japon-ami-ibaraki-prefectural-university-of-health-sciences",
+        name: "Ibaraki Prefectural University of Health Sciences",
+        cityId: "japon-ami",
+        website: "http://www.ipu.ac.jp/",
         source: "open-dataset",
-        // Situada a 2.3 km del centro de Iwaki (Wikidata).
+        // Situada a 1.1 km del centro de Ami (Wikidata).
+      }),
+  ],
+  "japon-otaru": [
+      defineUniversity({
+        id: "japon-otaru-otaru-university-of-commerce",
+        name: "Otaru University of Commerce",
+        cityId: "japon-otaru",
+        website: "http://www.otaru-uc.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Otaru (Wikidata).
       }),
       defineUniversity({
-        id: "japon-iwaki-fukushima-national-college-of-technology",
-        name: "Fukushima National College of Technology",
-        cityId: "japon-iwaki",
+        id: "japon-otaru-hokkaido-college-of-pharmacy",
+        name: "Hokkaido College of Pharmacy",
+        cityId: "japon-otaru",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Iwaki (Wikidata).
+        // Situada a 12.4 km del centro de Otaru (Wikidata).
+      }),
+  ],
+  "japon-muroran": [
+      defineUniversity({
+        id: "japon-muroran-bunka-womens-university-muroran-junior-college",
+        name: "Bunka Womens University Muroran Junior College",
+        cityId: "japon-muroran",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.6 km del centro de Muroran (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-muroran-institute-of-algological-research",
+        name: "Institute of Algological Research",
+        cityId: "japon-muroran",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Muroran (Wikidata).
       }),
   ],
   "japon-kushiro": [
@@ -7308,6 +7706,42 @@ export default {
         website: "http://www.kushiro-pu.ac.jp/",
         source: "open-dataset",
         // Situada a 5.2 km del centro de Kushiro (Wikidata).
+      }),
+  ],
+  "japon-kitami": [
+      defineUniversity({
+        id: "japon-kitami-japanese-red-cross-hokkaido-college-of-nursing",
+        name: "Japanese Red Cross Hokkaido College of Nursing",
+        cityId: "japon-kitami",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Kitami (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kitami-kitami-institute-of-technology",
+        name: "Kitami Institute of Technology",
+        cityId: "japon-kitami",
+        website: "http://www.kitami-it.ac.jp/",
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Kitami (Wikidata).
+      }),
+  ],
+  "japon-ishikari": [
+      defineUniversity({
+        id: "japon-ishikari-hokkaido-university-of-education",
+        name: "Hokkaido University of Education",
+        cityId: "japon-ishikari",
+        website: "http://www.hokkyodai.ac.jp/",
+        source: "open-dataset",
+        // Situada a 8.6 km del centro de Ishikari (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-ishikari-christ-for-the-nations-japan",
+        name: "Christ for the Nations Japan",
+        cityId: "japon-ishikari",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.4 km del centro de Ishikari (Wikidata).
       }),
   ],
   "japon-kitahiroshima": [
@@ -7472,6 +7906,24 @@ export default {
         // Situada a 1.0 km del centro de Arashiyama (Wikidata).
       }),
   ],
+  "japon-ikebukuro": [
+      defineUniversity({
+        id: "japon-ikebukuro-rikkyo-university",
+        name: "Rikkyo University",
+        cityId: "japon-ikebukuro",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Ikebukuro (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-ikebukuro-tokyo-college-of-transport-studies",
+        name: "Tokyo College of Transport Studies",
+        cityId: "japon-ikebukuro",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Ikebukuro (Wikidata).
+      }),
+  ],
   "japon-sakai-8572855": [
       defineUniversity({
         id: "japon-sakai-8572855-asia-university",
@@ -7508,6 +7960,24 @@ export default {
         // Situada a 1.1 km del centro de Sakuradai (Wikidata).
       }),
   ],
+  "japon-sekimachi-minami": [
+      defineUniversity({
+        id: "japon-sekimachi-minami-tokyo-woman-s-christian-university",
+        name: "Tokyo Woman's Christian University",
+        cityId: "japon-sekimachi-minami",
+        website: "http://www.twcu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Sekimachi-minami (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sekimachi-minami-seikei-university",
+        name: "Seikei University",
+        cityId: "japon-sekimachi-minami",
+        website: "http://www.seikei.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Sekimachi-minami (Wikidata).
+      }),
+  ],
   "japon-nagasaki-8573184": [
       defineUniversity({
         id: "japon-nagasaki-8573184-mejiro-university",
@@ -7518,22 +7988,58 @@ export default {
         // Situada a 1.5 km del centro de Nagasaki (Wikidata).
       }),
   ],
-  "japon-yotsuya": [
+  "japon-nakano": [
       defineUniversity({
-        id: "japon-yotsuya-tokyo-women-s-medical-university",
-        name: "Tokyo Women's Medical University",
-        cityId: "japon-yotsuya",
+        id: "japon-nakano-hosen-college-of-childhood-education",
+        name: "Hosen College of Childhood Education",
+        cityId: "japon-nakano",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Yotsuya (Wikidata).
+        // Situada a 1.0 km del centro de Nakano (Wikidata).
       }),
       defineUniversity({
-        id: "japon-yotsuya-tokyo-women-s-medical-university",
-        name: "Tokyo Women's Medical University",
-        cityId: "japon-yotsuya",
+        id: "japon-nakano-hosen-gakuen-college",
+        name: "Hosen Gakuen College",
+        cityId: "japon-nakano",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Yotsuya (Wikidata).
+        // Situada a None km del centro de Nakano (Wikidata).
+      }),
+  ],
+  "japon-minami-oi": [
+      defineUniversity({
+        id: "japon-minami-oi-advanced-institute-of-industrial-technology",
+        name: "Advanced Institute of Industrial Technology",
+        cityId: "japon-minami-oi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Minami-ōi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-minami-oi-hoshi-university",
+        name: "Hoshi University",
+        cityId: "japon-minami-oi",
+        website: "http://www.hoshi.ac.jp/",
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Minami-ōi (Wikidata).
+      }),
+  ],
+  "japon-shimo-ochiai": [
+      defineUniversity({
+        id: "japon-shimo-ochiai-tokyo-fuji-university",
+        name: "Tokyo Fuji University",
+        cityId: "japon-shimo-ochiai",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Shimo’ochiai (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shimo-ochiai-the-graduate-school-of-social-design",
+        name: "The Graduate School of Social Design",
+        cityId: "japon-shimo-ochiai",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Shimo’ochiai (Wikidata).
       }),
   ],
   "japon-yoyogi": [
@@ -7552,6 +8058,42 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.7 km del centro de Yoyogi (Wikidata).
+      }),
+  ],
+  "japon-inokashira": [
+      defineUniversity({
+        id: "japon-inokashira-japan-women-s-college-of-physical-education",
+        name: "Japan Women's College of Physical Education",
+        cityId: "japon-inokashira",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Inokashira (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-inokashira-shirayuri-university",
+        name: "Shirayuri University",
+        cityId: "japon-inokashira",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Inokashira (Wikidata).
+      }),
+  ],
+  "japon-sugita": [
+      defineUniversity({
+        id: "japon-sugita-yokohama-city-university",
+        name: "Yokohama City University",
+        cityId: "japon-sugita",
+        website: "http://www.yokohama-cu.ac.jp/",
+        source: "open-dataset",
+        // Situada a 4.7 km del centro de Sugita (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-sugita-yokohama-city-university-college-of-nursing",
+        name: "Yokohama City University College of Nursing",
+        cityId: "japon-sugita",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sugita (Wikidata).
       }),
   ],
   "japon-takizawa": [
@@ -7590,6 +8132,24 @@ export default {
         // Situada a 1.1 km del centro de Munakata (Wikidata).
       }),
   ],
+  "japon-kunitachi": [
+      defineUniversity({
+        id: "japon-kunitachi-hitotsubashi-university",
+        name: "Hitotsubashi University",
+        cityId: "japon-kunitachi",
+        website: "http://www.hit-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Kunitachi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-kunitachi-tokyo-women-s-junior-college-of-physical-education",
+        name: "Tokyo Women's Junior College of Physical Education",
+        cityId: "japon-kunitachi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Kunitachi (Wikidata).
+      }),
+  ],
   "japon-sakai-11611626": [
       defineUniversity({
         id: "japon-sakai-11611626-fukui-health-science-university",
@@ -7618,12 +8178,12 @@ export default {
         // Situada a 1.8 km del centro de Kodaira (Wikidata).
       }),
       defineUniversity({
-        id: "japon-kodaira-tsuda-university",
-        name: "Tsuda University",
+        id: "japon-kodaira-musashino-art-university-junior-college-of-art-and-design",
+        name: "Musashino Art University Junior College of Art and Design",
         cityId: "japon-kodaira",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Kodaira (Wikidata).
+        // Situada a None km del centro de Kodaira (Wikidata).
       }),
   ],
   "japon-etajima": [
@@ -7644,6 +8204,24 @@ export default {
         // Situada a 0.9 km del centro de Etajima (Wikidata).
       }),
   ],
+  "japon-tosa": [
+      defineUniversity({
+        id: "japon-tosa-kochi-professional-university-of-rehabilitation",
+        name: "Kochi Professional University of Rehabilitation",
+        cityId: "japon-tosa",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Tosa (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-tosa-usa-marine-biological-institute",
+        name: "Usa Marine Biological Institute",
+        cityId: "japon-tosa",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tosa (Wikidata).
+      }),
+  ],
   "japon-miyoshi": [
       defineUniversity({
         id: "japon-miyoshi-japanese-red-cross-toyota-college-of-nursing",
@@ -7660,6 +8238,24 @@ export default {
         website: "http://www.tokaigakuen-u.ac.jp/",
         source: "open-dataset",
         // Situada a 4.2 km del centro de Miyoshi (Wikidata).
+      }),
+  ],
+  "japon-koshi": [
+      defineUniversity({
+        id: "japon-koshi-kumamoto-national-college-of-technology",
+        name: "Kumamoto National College of Technology",
+        cityId: "japon-koshi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Kōshi (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-koshi-kumamoto-denpa-industrial-college-of-technology",
+        name: "Kumamoto Denpa Industrial College of Technology",
+        cityId: "japon-koshi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kōshi (Wikidata).
       }),
   ],
   "japon-inagi": [
@@ -7680,22 +8276,22 @@ export default {
         // Situada a 3.6 km del centro de Inagi (Wikidata).
       }),
   ],
-  "japon-tokai": [
+  "japon-koganei": [
       defineUniversity({
-        id: "japon-tokai-ibaraki-christian-university",
-        name: "Ibaraki Christian University",
-        cityId: "japon-tokai",
-        website: null,
+        id: "japon-koganei-international-christian-university",
+        name: "International Christian University",
+        cityId: "japon-koganei",
+        website: "http://www.icu.ac.jp/",
         source: "open-dataset",
-        // Situada a 6.5 km del centro de Tokai (Wikidata).
+        // Situada a 2.2 km del centro de Koganei (Wikidata).
       }),
       defineUniversity({
-        id: "japon-tokai-ibaraki-christian-university",
-        name: "Ibaraki Christian University",
-        cityId: "japon-tokai",
-        website: null,
+        id: "japon-koganei-tokyo-university-of-foreign-studies",
+        name: "Tokyo University of Foreign Studies",
+        cityId: "japon-koganei",
+        website: "http://www.tufs.ac.jp/",
         source: "open-dataset",
-        // Situada a 6.5 km del centro de Tokai (Wikidata).
+        // Situada a 3.0 km del centro de Koganei (Wikidata).
       }),
   ],
   "japon-setagaya": [
@@ -7714,6 +8310,24 @@ export default {
         website: "http://www.komazawa-u.ac.jp/",
         source: "open-dataset",
         // Situada a 1.7 km del centro de Setagaya (Wikidata).
+      }),
+  ],
+  "japon-shinjuku": [
+      defineUniversity({
+        id: "japon-shinjuku-tokyo-medical-university",
+        name: "Tokyo Medical University",
+        cityId: "japon-shinjuku",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Shinjuku (Wikidata).
+      }),
+      defineUniversity({
+        id: "japon-shinjuku-keio-junior-college-of-nursing",
+        name: "Keio Junior College of Nursing",
+        cityId: "japon-shinjuku",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shinjuku (Wikidata).
       }),
   ],
   "japon-ichikawa": [

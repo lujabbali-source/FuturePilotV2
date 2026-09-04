@@ -23,7 +23,7 @@ const cities = [
       name: "Beirut",
       coordinates: {"lat": 33.89332, "lng": 35.50157},
       isCapital: true,
-      universityCount: 13,
+      universityCount: 18,
       statistics: { population: 1916100 },
       countryId,
       countryName,

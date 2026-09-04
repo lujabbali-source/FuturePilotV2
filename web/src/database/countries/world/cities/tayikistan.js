@@ -70,14 +70,6 @@ export default {
         // Situada a 1.9 km del centro de Dushanbe (Wikidata).
       }),
       defineUniversity({
-        id: "tayikistan-dushanbe-tajik-technical-university",
-        name: "Tajik Technical University",
-        cityId: "tayikistan-dushanbe",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.4 km del centro de Dushanbe (Wikidata).
-      }),
-      defineUniversity({
         id: "tayikistan-dushanbe-moscow-state-university-branch-in-dushanbe",
         name: "Moscow State University Branch in Dushanbe",
         cityId: "tayikistan-dushanbe",
@@ -100,6 +92,48 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 8.2 km del centro de Dushanbe (Wikidata).
+      }),
+      defineUniversity({
+        id: "tayikistan-dushanbe-tajikistan-national-institute-of-art",
+        name: "Tajikistan National Institute of Art",
+        cityId: "tayikistan-dushanbe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dushanbe (Wikidata).
+      }),
+      defineUniversity({
+        id: "tayikistan-dushanbe-tajikistan-russian-modern-university",
+        name: "Tajikistan–Russian Modern University",
+        cityId: "tayikistan-dushanbe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dushanbe (Wikidata).
+      }),
+      defineUniversity({
+        id: "tayikistan-dushanbe-institute-of-history-archaeology-and-ethnography-named-after-ahmad-donish-national-academy-of-sciences-of-tajikistan",
+        name: "Institute of History, Archaeology, and Ethnography named after Ahmad Donish, National Academy of Sciences of Tajikistan",
+        cityId: "tayikistan-dushanbe",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dushanbe (Wikidata).
+      }),
+  ],
+  "tayikistan-khujand": [
+      defineUniversity({
+        id: "tayikistan-khujand-tajikistan-state-university-of-law-business-politics",
+        name: "Tajikistan State University of Law, Business, & Politics",
+        cityId: "tayikistan-khujand",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Khujand (Wikidata).
+      }),
+      defineUniversity({
+        id: "tayikistan-khujand-khujand-state-university",
+        name: "Khujand State University",
+        cityId: "tayikistan-khujand",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Khujand (Wikidata).
       }),
   ],
 };

@@ -117,6 +117,104 @@ export default {
         source: "open-dataset",
         // Situada a 2.8 km del centro de Kabul (Wikidata).
       }),
+      defineUniversity({
+        id: "afganistan-kabul-higher-education-institute-of-karwan",
+        name: "Higher Education Institute of Karwan",
+        cityId: "afganistan-kabul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kabul (Wikidata).
+      }),
+      defineUniversity({
+        id: "afganistan-kabul-spinghar-institute-of-higher-education-kabul",
+        name: "Spinghar Institute of Higher Education, Kabul",
+        cityId: "afganistan-kabul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kabul (Wikidata).
+      }),
+      defineUniversity({
+        id: "afganistan-kabul-mili-university",
+        name: "Mili University",
+        cityId: "afganistan-kabul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kabul (Wikidata).
+      }),
+      defineUniversity({
+        id: "afganistan-kabul-national-military-academy-of-afghanistan",
+        name: "National Military Academy of Afghanistan",
+        cityId: "afganistan-kabul",
+        website: "http://www.nmaa.edu.af/",
+        source: "open-dataset",
+        // Situada a None km del centro de Kabul (Wikidata).
+      }),
+      defineUniversity({
+        id: "afganistan-kabul-bakhtar-institute-of-higher-education",
+        name: "Bakhtar Institute of Higher Education",
+        cityId: "afganistan-kabul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kabul (Wikidata).
+      }),
+      defineUniversity({
+        id: "afganistan-kabul-dawat-university",
+        name: "Dawat University",
+        cityId: "afganistan-kabul",
+        website: "http://www.dawat.edu.af/",
+        source: "open-dataset",
+        // Situada a None km del centro de Kabul (Wikidata).
+      }),
+      defineUniversity({
+        id: "afganistan-kabul-sharq-university",
+        name: "Sharq University",
+        cityId: "afganistan-kabul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kabul (Wikidata).
+      }),
+  ],
+  "afganistan-jalalabad": [
+      defineUniversity({
+        id: "afganistan-jalalabad-nangarhar-university",
+        name: "Nangarhar University",
+        cityId: "afganistan-jalalabad",
+        website: "http://www.nu.edu.af/",
+        source: "open-dataset",
+        // Situada a 9.1 km del centro de Jalālābād (Wikidata).
+      }),
+      defineUniversity({
+        id: "afganistan-jalalabad-spinghar-institute-of-higher-education",
+        name: "Spinghar Institute of Higher Education",
+        cityId: "afganistan-jalalabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Jalālābād (Wikidata).
+      }),
+      defineUniversity({
+        id: "afganistan-jalalabad-tabesh-university",
+        name: "Tabesh University",
+        cityId: "afganistan-jalalabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Jalālābād (Wikidata).
+      }),
+      defineUniversity({
+        id: "afganistan-jalalabad-rokhan-university",
+        name: "Rokhan University",
+        cityId: "afganistan-jalalabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Jalālābād (Wikidata).
+      }),
+      defineUniversity({
+        id: "afganistan-jalalabad-khurasan-university",
+        name: "Khurasan University",
+        cityId: "afganistan-jalalabad",
+        website: "http://www.kumsa.net/",
+        source: "open-dataset",
+        // Situada a None km del centro de Jalālābād (Wikidata).
+      }),
   ],
   "afganistan-shibirghan": [
       defineUniversity({
@@ -134,6 +232,14 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.1 km del centro de Shibirghān (Wikidata).
+      }),
+      defineUniversity({
+        id: "afganistan-shibirghan-tolo-e-saadat-university",
+        name: "Tolo-e-Saadat University",
+        cityId: "afganistan-shibirghan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shibirghān (Wikidata).
       }),
   ],
   "afganistan-khost": [
@@ -153,23 +259,31 @@ export default {
         source: "open-dataset",
         // Situada a 0.4 km del centro de Khōst (Wikidata).
       }),
-  ],
-  "afganistan-jalalabad": [
       defineUniversity({
-        id: "afganistan-jalalabad-nangarhar-university",
-        name: "Nangarhar University",
-        cityId: "afganistan-jalalabad",
-        website: "http://www.nu.edu.af/",
-        source: "open-dataset",
-        // Situada a 9.1 km del centro de Jalālābād (Wikidata).
-      }),
-      defineUniversity({
-        id: "afganistan-jalalabad-spinghar-institute-of-higher-education",
-        name: "Spinghar Institute of Higher Education",
-        cityId: "afganistan-jalalabad",
+        id: "afganistan-khost-hara-university",
+        name: "Hara University",
+        cityId: "afganistan-khost",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Jalālābād (Wikidata).
+        // Situada a None km del centro de Khōst (Wikidata).
+      }),
+  ],
+  "afganistan-herat": [
+      defineUniversity({
+        id: "afganistan-herat-herat-university",
+        name: "Herat University",
+        cityId: "afganistan-herat",
+        website: "http://www.hu.edu.af/",
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Herāt (Wikidata).
+      }),
+      defineUniversity({
+        id: "afganistan-herat-jami-university",
+        name: "Jami University",
+        cityId: "afganistan-herat",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Herāt (Wikidata).
       }),
   ],
 };

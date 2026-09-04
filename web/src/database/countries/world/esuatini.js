@@ -19,6 +19,16 @@ const countryName = "Esuatini";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
+      id: "esuatini-mbabane",
+      name: "Mbabane",
+      coordinates: {"lat": -26.31667, "lng": 31.13333},
+      isCapital: true,
+      universityCount: 2,
+      statistics: { population: 76218 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
       id: "esuatini-manzini",
       name: "Manzini",
       coordinates: {"lat": -26.49884, "lng": 31.38004},

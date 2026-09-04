@@ -54,14 +54,6 @@ export default {
         // Situada a 3.5 km del centro de Dubai Silicon Oasis (Wikidata).
       }),
       defineUniversity({
-        id: "emiratos-arabes-unidos-dubai-silicon-oasis-bits-pilani-dubai-campus",
-        name: "BITS Pilani, Dubai Campus",
-        cityId: "emiratos-arabes-unidos-dubai-silicon-oasis",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Dubai Silicon Oasis (Wikidata).
-      }),
-      defineUniversity({
         id: "emiratos-arabes-unidos-dubai-silicon-oasis-british-university-in-dubai",
         name: "British University in Dubai",
         cityId: "emiratos-arabes-unidos-dubai-silicon-oasis",
@@ -102,12 +94,12 @@ export default {
         // Situada a 2.0 km del centro de Dubai Silicon Oasis (Wikidata).
       }),
       defineUniversity({
-        id: "emiratos-arabes-unidos-dubai-silicon-oasis-zayed-university",
-        name: "Zayed University",
+        id: "emiratos-arabes-unidos-dubai-silicon-oasis-dubai-men-s-college",
+        name: "Dubai Men's College",
         cityId: "emiratos-arabes-unidos-dubai-silicon-oasis",
-        website: "http://www.zu.ac.ae/",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Dubai Silicon Oasis (Wikidata).
+        // Situada a None km del centro de Dubai Silicon Oasis (Wikidata).
       }),
   ],
   "emiratos-arabes-unidos-abu-dhabi": [
@@ -159,6 +151,22 @@ export default {
         source: "open-dataset",
         // Situada a 4.6 km del centro de Abu Dhabi (Wikidata).
       }),
+      defineUniversity({
+        id: "emiratos-arabes-unidos-abu-dhabi-abu-dhabi-school-of-management",
+        name: "Abu Dhabi School of Management",
+        cityId: "emiratos-arabes-unidos-abu-dhabi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Abu Dhabi (Wikidata).
+      }),
+      defineUniversity({
+        id: "emiratos-arabes-unidos-abu-dhabi-abu-dhabi-polytechnic",
+        name: "Abu Dhabi Polytechnic",
+        cityId: "emiratos-arabes-unidos-abu-dhabi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Abu Dhabi (Wikidata).
+      }),
   ],
   "emiratos-arabes-unidos-dubai-internet-city": [
       defineUniversity({
@@ -202,7 +210,49 @@ export default {
         // Situada a 1.0 km del centro de Dubai Internet City (Wikidata).
       }),
   ],
+  "emiratos-arabes-unidos-nayf": [
+      defineUniversity({
+        id: "emiratos-arabes-unidos-nayf-the-emirates-academy-of-hospitality-management",
+        name: "The Emirates Academy of Hospitality Management",
+        cityId: "emiratos-arabes-unidos-nayf",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nāyf (Wikidata).
+      }),
+      defineUniversity({
+        id: "emiratos-arabes-unidos-nayf-dubai-school-of-dental-medicine",
+        name: "Dubai School of Dental Medicine",
+        cityId: "emiratos-arabes-unidos-nayf",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nāyf (Wikidata).
+      }),
+      defineUniversity({
+        id: "emiratos-arabes-unidos-nayf-academy-of-technical-training",
+        name: "Academy of Technical Training",
+        cityId: "emiratos-arabes-unidos-nayf",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nāyf (Wikidata).
+      }),
+      defineUniversity({
+        id: "emiratos-arabes-unidos-nayf-canadian-university-dubai",
+        name: "Canadian University Dubai",
+        cityId: "emiratos-arabes-unidos-nayf",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nāyf (Wikidata).
+      }),
+  ],
   "emiratos-arabes-unidos-al-ain-city": [
+      defineUniversity({
+        id: "emiratos-arabes-unidos-al-ain-city-abu-dhabi-university-al-ain",
+        name: "Abu Dhabi University–Al Ain",
+        cityId: "emiratos-arabes-unidos-al-ain-city",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.4 km del centro de Al Ain City (Wikidata).
+      }),
       defineUniversity({
         id: "emiratos-arabes-unidos-al-ain-city-united-arab-emirates-university",
         name: "United Arab Emirates University",
@@ -210,14 +260,6 @@ export default {
         website: "http://www.uaeu.ac.ae/",
         source: "open-dataset",
         // Situada a 4.3 km del centro de Al Ain City (Wikidata).
-      }),
-      defineUniversity({
-        id: "emiratos-arabes-unidos-al-ain-city-al-ain-university",
-        name: "Al Ain University",
-        cityId: "emiratos-arabes-unidos-al-ain-city",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.8 km del centro de Al Ain City (Wikidata).
       }),
       defineUniversity({
         id: "emiratos-arabes-unidos-al-ain-city-al-ain-university",
@@ -254,22 +296,48 @@ export default {
         // Situada a 5.7 km del centro de Al Mizhar First (Wikidata).
       }),
   ],
-  "emiratos-arabes-unidos-khawr-fakkan": [
+  "emiratos-arabes-unidos-halwan": [
       defineUniversity({
-        id: "emiratos-arabes-unidos-khawr-fakkan-university-of-khorfakkan",
-        name: "University of Khorfakkan",
-        cityId: "emiratos-arabes-unidos-khawr-fakkan",
-        website: null,
+        id: "emiratos-arabes-unidos-halwan-american-university-of-sharjah",
+        name: "American University of Sharjah",
+        cityId: "emiratos-arabes-unidos-halwan",
+        website: "http://www.aus.edu/",
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Khawr Fakkān (Wikidata).
+        // Situada a 8.0 km del centro de Halwan (Wikidata).
       }),
       defineUniversity({
-        id: "emiratos-arabes-unidos-khawr-fakkan-university-of-khorfakkan",
-        name: "University of Khorfakkan",
-        cityId: "emiratos-arabes-unidos-khawr-fakkan",
+        id: "emiratos-arabes-unidos-halwan-etisalat-university-college",
+        name: "Etisalat University College",
+        cityId: "emiratos-arabes-unidos-halwan",
+        website: "http://www.ece.ac.ae/",
+        source: "open-dataset",
+        // Situada a 0.1 km del centro de Halwan (Wikidata).
+      }),
+      defineUniversity({
+        id: "emiratos-arabes-unidos-halwan-arabic-language-academy",
+        name: "Arabic language academy",
+        cityId: "emiratos-arabes-unidos-halwan",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Khawr Fakkān (Wikidata).
+        // Situada a None km del centro de Halwan (Wikidata).
+      }),
+  ],
+  "emiratos-arabes-unidos-sharjah": [
+      defineUniversity({
+        id: "emiratos-arabes-unidos-sharjah-sharjah-directorate-of-public-works",
+        name: "Sharjah Directorate of Public Works",
+        cityId: "emiratos-arabes-unidos-sharjah",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sharjah (Wikidata).
+      }),
+      defineUniversity({
+        id: "emiratos-arabes-unidos-sharjah-khalifa-university-of-science-technology-and-research-sharjah-campus",
+        name: "Khalifa University of Science Technology and Research - Sharjah Campus",
+        cityId: "emiratos-arabes-unidos-sharjah",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sharjah (Wikidata).
       }),
   ],
   "emiratos-arabes-unidos-al-karama": [
@@ -324,24 +392,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.4 km del centro de Dubai Marina (Wikidata).
-      }),
-  ],
-  "emiratos-arabes-unidos-halwan": [
-      defineUniversity({
-        id: "emiratos-arabes-unidos-halwan-american-university-of-sharjah",
-        name: "American University of Sharjah",
-        cityId: "emiratos-arabes-unidos-halwan",
-        website: "http://www.aus.edu/",
-        source: "open-dataset",
-        // Situada a 8.0 km del centro de Halwan (Wikidata).
-      }),
-      defineUniversity({
-        id: "emiratos-arabes-unidos-halwan-etisalat-university-college",
-        name: "Etisalat University College",
-        cityId: "emiratos-arabes-unidos-halwan",
-        website: "http://www.ece.ac.ae/",
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de Halwan (Wikidata).
       }),
   ],
 };

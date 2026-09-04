@@ -23,7 +23,7 @@ const cities = [
       name: "Windhoek",
       coordinates: {"lat": -22.55941, "lng": 17.08323},
       isCapital: true,
-      universityCount: 3,
+      universityCount: 4,
       statistics: { population: 386219 },
       countryId,
       countryName,

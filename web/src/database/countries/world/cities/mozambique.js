@@ -12,16 +12,6 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
-  "mozambique-nampula": [
-      defineUniversity({
-        id: "mozambique-nampula-lurio-university",
-        name: "Lúrio University",
-        cityId: "mozambique-nampula",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Nampula (Wikidata).
-      }),
-  ],
   "mozambique-maputo": [
       defineUniversity({
         id: "mozambique-maputo-maputo-university",
@@ -39,6 +29,40 @@ export default {
         source: "open-dataset",
         // Situada a 2.4 km del centro de Maputo (Wikidata).
       }),
+      defineUniversity({
+        id: "mozambique-maputo-joaquim-chissano-university",
+        name: "Joaquim Chissano University",
+        cityId: "mozambique-maputo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Maputo (Wikidata).
+      }),
+      defineUniversity({
+        id: "mozambique-maputo-universidade-tecnica-de-mocambique",
+        name: "Universidade Técnica de Moçambique",
+        cityId: "mozambique-maputo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Maputo (Wikidata).
+      }),
+  ],
+  "mozambique-nampula": [
+      defineUniversity({
+        id: "mozambique-nampula-lurio-university",
+        name: "Lúrio University",
+        cityId: "mozambique-nampula",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.9 km del centro de Nampula (Wikidata).
+      }),
+      defineUniversity({
+        id: "mozambique-nampula-universidade-rovuma",
+        name: "Universidade Rovuma",
+        cityId: "mozambique-nampula",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nampula (Wikidata).
+      }),
   ],
   "mozambique-chimoio": [
       defineUniversity({
@@ -50,12 +74,12 @@ export default {
         // Situada a 11.8 km del centro de Chimoio (Wikidata).
       }),
       defineUniversity({
-        id: "mozambique-chimoio-instituto-superior-politecnico-de-manica",
-        name: "Instituto Superior Politécnico de Manica",
+        id: "mozambique-chimoio-instituto-agrario-de-chimoio",
+        name: "Instituto Agrário de Chimoio",
         cityId: "mozambique-chimoio",
         website: null,
         source: "open-dataset",
-        // Situada a 11.8 km del centro de Chimoio (Wikidata).
+        // Situada a None km del centro de Chimoio (Wikidata).
       }),
   ],
   "mozambique-beira": [

@@ -12,6 +12,344 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
+  "india-bengaluru": [
+      defineUniversity({
+        id: "india-bengaluru-rv-university",
+        name: "RV University",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 11.5 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-karnataka-samskrit-university",
+        name: "Karnataka Samskrit University",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-pes-university",
+        name: "PES University",
+        cityId: "india-bengaluru",
+        website: "http://www.pes.edu/",
+        source: "open-dataset",
+        // Situada a 7.7 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-acharya-institute-of-management-and-sciences",
+        name: "Acharya Institute of Management and Sciences",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 10.8 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-rajarajeswari-medical-college-and-hospital",
+        name: "Rajarajeswari Medical College and Hospital",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 16.6 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-swami-vivekananda-yoga-anusandhana-samsthana",
+        name: "Swami Vivekananda Yoga Anusandhana Samsthana",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-dayananda-sagar-university",
+        name: "Dayananda Sagar University",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.8 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-m-s-ramaiah-university-of-applied-sciences",
+        name: "M S Ramaiah University of Applied Sciences",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.9 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-rajiv-gandhi-university-of-health-sciences",
+        name: "Rajiv Gandhi University of Health Sciences",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.1 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-national-law-school-of-india-university",
+        name: "National Law School of India University",
+        cityId: "india-bengaluru",
+        website: "http://www.nls.ac.in/",
+        source: "open-dataset",
+        // Situada a 8.5 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-bangalore-university",
+        name: "Bangalore University",
+        cityId: "india-bengaluru",
+        website: "http://bengaluruuniversity.com/",
+        source: "open-dataset",
+        // Situada a 10.2 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-acharya-pathasala-public-school",
+        name: "Acharya Pathasala Public School",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-al-ameen-college-of-education",
+        name: "Al-Ameen College of Education",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-al-ameen-pre-university-college",
+        name: "Al-Ameen Pre University College",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-garden-city-university",
+        name: "Garden City University",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.8 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-karnataka-state-law-university",
+        name: "Karnataka State Law University",
+        cityId: "india-bengaluru",
+        website: "http://www.kslu.ac.in/",
+        source: "open-dataset",
+        // Situada a 10.5 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-bengaluru-city-university",
+        name: "Bengaluru City University",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-mount-carmel-university",
+        name: "Mount Carmel University",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-st-joseph-s-college-bengaluru",
+        name: "St Joseph's College, Bengaluru",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-university-visvesvaraya-college-of-engineering",
+        name: "University Visvesvaraya College of Engineering",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-sjrc-arts-science-and-commerce-college",
+        name: "SJRC Arts, Science and Commerce College",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.2 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-bengaluru-dr-b-r-ambedkar-school-of-economics-university",
+        name: "Bengaluru Dr. B. R. Ambedkar School of Economics University",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.6 km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-atria-university",
+        name: "Atria University",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-international-centre-for-theoretical-sciences",
+        name: "International Centre for Theoretical Sciences",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-nettur-technical-training-foundation",
+        name: "Nettur Technical Training Foundation",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-alternative-law-forum",
+        name: "Alternative Law Forum",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-national-tuberculosis-institute",
+        name: "National Tuberculosis Institute",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-reva-university",
+        name: "REVA University",
+        cityId: "india-bengaluru",
+        website: "https://reva.edu.in/",
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-tifr-centre-for-applicable-mathematics",
+        name: "TIFR Centre for Applicable Mathematics",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-al-ameen-arts-science-and-commerce-degree-college",
+        name: "Al-Ameen Arts, Science and Commerce Degree College",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-al-ameen-institute-of-information-sciences",
+        name: "Al-Ameen Institute of Information Sciences",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-al-ameen-institute-of-management-studies",
+        name: "Al-Ameen Institute of Management Studies",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-amrutha-sinchana-spiritual-university",
+        name: "Amrutha Sinchana Spiritual University",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-bangalore-management-academy",
+        name: "Bangalore Management Academy",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-cmr-law-school",
+        name: "CMR Law School",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-christ-university",
+        name: "Christ University",
+        cityId: "india-bengaluru",
+        website: "http://www.christuniversity.in/",
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-indian-institute-of-journalism-new-media",
+        name: "Indian Institute of Journalism & New Media",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-institute-of-bioinformatics-and-applied-biotechnology",
+        name: "Institute of Bioinformatics and Applied Biotechnology",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-mobile-robotics-laboratory-at-iisc",
+        name: "Mobile Robotics Laboratory at IISc",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-st-peter-s-pontifical-seminary",
+        name: "St. Peter's Pontifical Seminary",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-the-indian-institute-of-world-culture",
+        name: "The Indian Institute of World Culture",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bengaluru-the-oxford-educational-institutions",
+        name: "The Oxford Educational Institutions",
+        cityId: "india-bengaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bengaluru (Wikidata).
+      }),
+  ],
   "india-jaipur": [
       defineUniversity({
         id: "india-jaipur-jaipur-national-university",
@@ -174,14 +512,6 @@ export default {
         // Situada a 14.5 km del centro de Jaipur (Wikidata).
       }),
       defineUniversity({
-        id: "india-jaipur-jagadguru-ramanandacharya-rajasthan-sanskrit-university",
-        name: "Jagadguru Ramanandacharya Rajasthan Sanskrit University",
-        cityId: "india-jaipur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 14.5 km del centro de Jaipur (Wikidata).
-      }),
-      defineUniversity({
         id: "india-jaipur-lnm-institute-of-information-technology",
         name: "LNM Institute of Information Technology",
         cityId: "india-jaipur",
@@ -214,14 +544,6 @@ export default {
         // Situada a 14.1 km del centro de Jaipur (Wikidata).
       }),
       defineUniversity({
-        id: "india-jaipur-rajasthan-university-of-health-sciences",
-        name: "Rajasthan University of Health Sciences",
-        cityId: "india-jaipur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 14.1 km del centro de Jaipur (Wikidata).
-      }),
-      defineUniversity({
         id: "india-jaipur-rajasthan-pharmacy-college",
         name: "Rajasthan pharmacy college",
         cityId: "india-jaipur",
@@ -238,222 +560,488 @@ export default {
         // Situada a 5.0 km del centro de Jaipur (Wikidata).
       }),
       defineUniversity({
-        id: "india-jaipur-university-of-rajasthan",
-        name: "University of Rajasthan",
+        id: "india-jaipur-university-of-technology-jaipur",
+        name: "University of Technology, Jaipur",
         cityId: "india-jaipur",
-        website: "http://www.uniraj.org/",
+        website: null,
         source: "open-dataset",
-        // Situada a 5.0 km del centro de Jaipur (Wikidata).
+        // Situada a None km del centro de Jaipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-jaipur-maharishi-arvind-institute-of-engineering-and-technology",
+        name: "Maharishi Arvind Institute of Engineering and Technology",
+        cityId: "india-jaipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Jaipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-jaipur-sri-karan-narendra-agriculture-university",
+        name: "Sri Karan Narendra Agriculture University",
+        cityId: "india-jaipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Jaipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-jaipur-maharishi-arvind-institute-of-science-management",
+        name: "Maharishi Arvind Institute of Science & Management",
+        cityId: "india-jaipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Jaipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-jaipur-r-a-podar-institute-of-management",
+        name: "R. A. Podar Institute of Management",
+        cityId: "india-jaipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Jaipur (Wikidata).
       }),
   ],
-  "india-bengaluru": [
+  "india-hyderabad": [
       defineUniversity({
-        id: "india-bengaluru-rv-university",
-        name: "RV University",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-madrasatul-huda-al-islamiyyah",
+        name: "Madrasatul Huda al-Islamiyyah",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 11.5 km del centro de Bengaluru (Wikidata).
+        // Situada a 2.0 km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-karnataka-samskrit-university",
-        name: "Karnataka Samskrit University",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-avinash-college-of-commerce",
+        name: "Avinash College of Commerce",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Bengaluru (Wikidata).
+        // Situada a 6.7 km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-karnataka-samskrit-university",
-        name: "Karnataka Samskrit University",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-sri-p-v-narasimha-rao-telangana-state-university-for-veterinary-animal-and-fishery-sciences",
+        name: "Sri P.V. Narasimha Rao Telangana State University for Veterinary, Animal and Fishery Sciences",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Bengaluru (Wikidata).
+        // Situada a 8.1 km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-pes-university",
-        name: "PES University",
-        cityId: "india-bengaluru",
-        website: "http://www.pes.edu/",
-        source: "open-dataset",
-        // Situada a 7.7 km del centro de Bengaluru (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bengaluru-acharya-institute-of-management-and-sciences",
-        name: "Acharya Institute of Management and Sciences",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-krishna-vishwa-vidyapeeth",
+        name: "Krishna Vishwa Vidyapeeth",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 10.8 km del centro de Bengaluru (Wikidata).
+        // Situada a 3.2 km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-rajarajeswari-medical-college-and-hospital",
-        name: "Rajarajeswari Medical College and Hospital",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-sri-konda-laxman-telangana-state-horticultural-university",
+        name: "Sri Konda Laxman Telangana State Horticultural University",
+        cityId: "india-hyderabad",
+        website: "https://www.skltshu.ac.in/",
+        source: "open-dataset",
+        // Situada a 7.0 km del centro de Hyderabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hyderabad-heh-nizam-and-alladin-technical-institute",
+        name: "HEH Nizam and Alladin Technical Institute",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 16.6 km del centro de Bengaluru (Wikidata).
+        // Situada a 3.2 km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-swami-vivekananda-yoga-anusandhana-samsthana",
-        name: "Swami Vivekananda Yoga Anusandhana Samsthana",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-jawaharlal-nehru-architecture-and-fine-arts-university",
+        name: "Jawaharlal Nehru Architecture and Fine Arts University",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 4.2 km del centro de Bengaluru (Wikidata).
+        // Situada a 2.1 km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-dayananda-sagar-university",
-        name: "Dayananda Sagar University",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-jesus-and-mary-college",
+        name: "Jesus and Mary College",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 7.8 km del centro de Bengaluru (Wikidata).
+        // Situada a 2.6 km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-m-s-ramaiah-university-of-applied-sciences",
-        name: "M S Ramaiah University of Applied Sciences",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-nizam-s-institute-of-medical-sciences",
+        name: "Nizam's Institute of Medical Sciences",
+        cityId: "india-hyderabad",
+        website: "https://www.nims.edu.in/",
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Hyderabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hyderabad-potti-sreeramulu-telugu-university",
+        name: "Potti Sreeramulu Telugu University",
+        cityId: "india-hyderabad",
+        website: "http://www.teluguuniversity.ac.in/",
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Hyderabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hyderabad-tata-institute-of-fundamental-research-hyderabad",
+        name: "Tata Institute of Fundamental Research Hyderabad",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 6.9 km del centro de Bengaluru (Wikidata).
+        // Situada a 12.1 km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-rajiv-gandhi-university-of-health-sciences",
-        name: "Rajiv Gandhi University of Health Sciences",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-university-college-for-women-koti",
+        name: "University College for Women, Koti",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 5.1 km del centro de Bengaluru (Wikidata).
+        // Situada a 3.3 km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-national-law-school-of-india-university",
-        name: "National Law School of India University",
-        cityId: "india-bengaluru",
-        website: "http://www.nls.ac.in/",
-        source: "open-dataset",
-        // Situada a 8.5 km del centro de Bengaluru (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bengaluru-bangalore-university",
-        name: "Bangalore University",
-        cityId: "india-bengaluru",
-        website: "http://bengaluruuniversity.com/",
-        source: "open-dataset",
-        // Situada a 10.2 km del centro de Bengaluru (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bengaluru-bangalore-university",
-        name: "Bangalore University",
-        cityId: "india-bengaluru",
-        website: "http://bengaluruuniversity.com/",
-        source: "open-dataset",
-        // Situada a 10.2 km del centro de Bengaluru (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bengaluru-acharya-pathasala-public-school",
-        name: "Acharya Pathasala Public School",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-indian-immunologicals-limited",
+        name: "Indian Immunologicals Limited",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 4.5 km del centro de Bengaluru (Wikidata).
+        // Situada a None km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-al-ameen-college-of-education",
-        name: "Al-Ameen College of Education",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-institute-of-genetics-and-hospital-for-genetic-diseases",
+        name: "Institute of Genetics and Hospital for Genetic Diseases",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 2.3 km del centro de Bengaluru (Wikidata).
+        // Situada a None km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-al-ameen-pre-university-college",
-        name: "Al-Ameen Pre University College",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-vishwa-vishwani-institute-of-systems-and-management",
+        name: "Vishwa Vishwani Institute of Systems and Management",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Bengaluru (Wikidata).
+        // Situada a None km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-garden-city-university",
-        name: "Garden City University",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-hyderabad-institute-of-arts-science-and-technology",
+        name: "Hyderabad Institute of Arts, Science and Technology",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 4.8 km del centro de Bengaluru (Wikidata).
+        // Situada a None km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-karnataka-state-law-university",
-        name: "Karnataka State Law University",
-        cityId: "india-bengaluru",
-        website: "http://www.kslu.ac.in/",
-        source: "open-dataset",
-        // Situada a 10.5 km del centro de Bengaluru (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bengaluru-karnataka-state-law-university",
-        name: "Karnataka State Law University",
-        cityId: "india-bengaluru",
-        website: "http://www.kslu.ac.in/",
-        source: "open-dataset",
-        // Situada a 10.5 km del centro de Bengaluru (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bengaluru-bengaluru-city-university",
-        name: "Bengaluru City University",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-institute-of-chartered-financial-analysts-of-india",
+        name: "Institute of Chartered Financial Analysts of India",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Bengaluru (Wikidata).
+        // Situada a None km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-mount-carmel-university",
-        name: "Mount Carmel University",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-telangana-police-academy",
+        name: "Telangana Police Academy",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 2.4 km del centro de Bengaluru (Wikidata).
+        // Situada a None km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-st-joseph-s-college-bengaluru",
-        name: "St Joseph's College, Bengaluru",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-atomic-minerals-directorate-for-exploration-and-research",
+        name: "Atomic Minerals Directorate for Exploration and Research",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Bengaluru (Wikidata).
+        // Situada a None km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-university-visvesvaraya-college-of-engineering",
-        name: "University Visvesvaraya College of Engineering",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-centre-for-dna-fingerprinting-and-diagnostics",
+        name: "Centre for DNA Fingerprinting and Diagnostics",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Bengaluru (Wikidata).
+        // Situada a None km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-sjrc-arts-science-and-commerce-college",
-        name: "SJRC Arts, Science and Commerce College",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-centre-for-urdu-language-literature-culture",
+        name: "Centre for Urdu Language, Literature & Culture",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 2.4 km del centro de Bengaluru (Wikidata).
+        // Situada a None km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-sjrc-arts-science-and-commerce-college",
-        name: "SJRC Arts, Science and Commerce College",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-institute-of-management-technology-hyderabad",
+        name: "Institute of Management Technology, Hyderabad",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 9.2 km del centro de Bengaluru (Wikidata).
+        // Situada a None km del centro de Hyderabad (Wikidata).
       }),
       defineUniversity({
-        id: "india-bengaluru-bengaluru-dr-b-r-ambedkar-school-of-economics-university",
-        name: "Bengaluru Dr. B. R. Ambedkar School of Economics University",
-        cityId: "india-bengaluru",
+        id: "india-hyderabad-institute-of-public-enterprise",
+        name: "Institute of Public Enterprise",
+        cityId: "india-hyderabad",
         website: null,
         source: "open-dataset",
-        // Situada a 8.6 km del centro de Bengaluru (Wikidata).
+        // Situada a None km del centro de Hyderabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hyderabad-mlr-institute-of-pharmacy",
+        name: "MLR institute of Pharmacy",
+        cityId: "india-hyderabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hyderabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hyderabad-maheshwara-institute-of-technology",
+        name: "Maheshwara Institute Of Technology",
+        cityId: "india-hyderabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hyderabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hyderabad-narsee-monjee-institute-of-management-studies-hyderabad",
+        name: "Narsee Monjee Institute of Management Studies, Hyderabad",
+        cityId: "india-hyderabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hyderabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hyderabad-national-academy-of-construction",
+        name: "National Academy of Construction",
+        cityId: "india-hyderabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hyderabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hyderabad-university-college-of-commerce-business-management",
+        name: "University College of Commerce & Business Management",
+        cityId: "india-hyderabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hyderabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hyderabad-vardhaman-college-of-engineering",
+        name: "Vardhaman College of Engineering",
+        cityId: "india-hyderabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hyderabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hyderabad-vignana-jyothi-institute-of-management",
+        name: "Vignana Jyothi Institute of Management",
+        cityId: "india-hyderabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hyderabad (Wikidata).
+      }),
+  ],
+  "india-new-delhi": [
+      defineUniversity({
+        id: "india-new-delhi-iilm-institute",
+        name: "IILM Institute",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-morarji-desai-national-institute-of-yoga",
+        name: "Morarji Desai National Institute of Yoga",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-national-museum-institute-of-the-history-of-art-conservation-and-museology",
+        name: "National Museum Institute of the History of Art, Conservation and Museology",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-college-of-art-delhi",
+        name: "College of Art, Delhi",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-dyal-singh-college-delhi",
+        name: "Dyal Singh College, Delhi",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.8 km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-indian-law-institute",
+        name: "Indian Law Institute",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-lady-irwin-college",
+        name: "Lady Irwin College",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-national-defence-college-india",
+        name: "National Defence College, India",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-south-asian-university",
+        name: "South Asian University",
+        cityId: "india-new-delhi",
+        website: "http://www.southasianuniversity.org/",
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-indian-institute-of-aeronautics",
+        name: "Indian Institute of Aeronautics",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-institute-of-informatics-and-communication",
+        name: "Institute of Informatics and Communication",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-institute-of-management-and-development-new-delhi",
+        name: "Institute of Management and Development, New Delhi",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-central-institute-of-educational-technology",
+        name: "Central Institute of Educational Technology",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-indian-institute-of-ecology-and-environment",
+        name: "Indian Institute of Ecology and Environment",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-institute-of-secretariat-training-and-management",
+        name: "Institute of Secretariat Training and Management",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-department-of-financial-studies",
+        name: "Department of financial studies",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-fore-school-of-management",
+        name: "Fore School of Management",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-great-mission-teacher-training-institute-delhi",
+        name: "Great Mission Teacher Training Institute, Delhi",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-indian-institute-of-mass-communication",
+        name: "Indian Institute of Mass Communication",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-nordic-centre-in-india",
+        name: "Nordic Centre in India",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-pearl-academy-of-fashion",
+        name: "Pearl Academy of Fashion",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-saarc-documentation-centre",
+        name: "SAARC Documentation Centre",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-school-of-convergence",
+        name: "School of convergence",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-shivaji-college",
+        name: "Shivaji College",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-new-delhi-theme-music-institute",
+        name: "Theme Music Institute",
+        cityId: "india-new-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de New Delhi (Wikidata).
       }),
   ],
   "india-lucknow": [
@@ -472,14 +1060,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 10.9 km del centro de Lucknow (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-lucknow-khwaja-moinuddin-chishti-urdu-arabi-farsi-university-lucknow",
-        name: "Khwaja Moinuddin Chishti Urdu, Arabi-Farsi University, Lucknow",
-        cityId: "india-lucknow",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.3 km del centro de Lucknow (Wikidata).
       }),
       defineUniversity({
         id: "india-lucknow-khwaja-moinuddin-chishti-urdu-arabi-farsi-university-lucknow",
@@ -538,14 +1118,6 @@ export default {
         // Situada a 6.4 km del centro de Lucknow (Wikidata).
       }),
       defineUniversity({
-        id: "india-lucknow-dr-ram-manohar-lohia-national-law-university",
-        name: "Dr. Ram Manohar Lohia National Law University",
-        cityId: "india-lucknow",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.4 km del centro de Lucknow (Wikidata).
-      }),
-      defineUniversity({
         id: "india-lucknow-atal-bihari-vajpayee-medical-university",
         name: "Atal Bihari Vajpayee Medical University",
         cityId: "india-lucknow",
@@ -560,14 +1132,6 @@ export default {
         website: "http://www.integraluniversity.ac.in/",
         source: "open-dataset",
         // Situada a 15.2 km del centro de Lucknow (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-lucknow-king-george-s-medical-university",
-        name: "King George's Medical University",
-        cityId: "india-lucknow",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Lucknow (Wikidata).
       }),
       defineUniversity({
         id: "india-lucknow-king-george-s-medical-university",
@@ -597,17 +1161,9 @@ export default {
         id: "india-lucknow-st-francis-college",
         name: "St. Francis' College",
         cityId: "india-lucknow",
-        website: null,
+        website: "https://www.sfc.edu/",
         source: "open-dataset",
         // Situada a 2.4 km del centro de Lucknow (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-lucknow-dr-a-p-j-abdul-kalam-technical-university",
-        name: "Dr. A. P. J. Abdul Kalam Technical University",
-        cityId: "india-lucknow",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.8 km del centro de Lucknow (Wikidata).
       }),
       defineUniversity({
         id: "india-lucknow-dr-a-p-j-abdul-kalam-technical-university",
@@ -632,6 +1188,224 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 8.4 km del centro de Lucknow (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-lucknow-maharishi-university-of-information-technology",
+        name: "Maharishi University of Information Technology",
+        cityId: "india-lucknow",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lucknow (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-lucknow-r-d-engineering-college-ghaziabad",
+        name: "R.D. Engineering College Ghaziabad",
+        cityId: "india-lucknow",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lucknow (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-lucknow-rani-lakshmi-bai-central-agricultural-university",
+        name: "Rani Lakshmi Bai Central Agricultural University",
+        cityId: "india-lucknow",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lucknow (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-lucknow-jamia-nazmia",
+        name: "Jamia Nazmia",
+        cityId: "india-lucknow",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lucknow (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-lucknow-kali-charan-inter-college-chowk-lucknow",
+        name: "Kali Charan Inter College,Chowk Lucknow",
+        cityId: "india-lucknow",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lucknow (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-lucknow-lucknow-institute-of-technology",
+        name: "Lucknow Institute of Technology",
+        cityId: "india-lucknow",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lucknow (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-lucknow-uttar-pradesh-board-of-technical-education",
+        name: "Uttar Pradesh Board of Technical Education",
+        cityId: "india-lucknow",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lucknow (Wikidata).
+      }),
+  ],
+  "india-pune": [
+      defineUniversity({
+        id: "india-pune-mes-garware-college-of-commerce",
+        name: "MES Garware College of Commerce",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-chandrashekhar-agashe-college-of-physical-education",
+        name: "Chandrashekhar Agashe College of Physical Education",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-aissms-college-of-polytechnic",
+        name: "AISSMS College of Polytechnic",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-ness-wadia-college-of-commerce",
+        name: "Ness Wadia College of Commerce",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-indian-institute-of-information-technology-pune",
+        name: "Indian Institute of Information Technology, Pune",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.7 km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-vishwakarma-university",
+        name: "Vishwakarma University",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.2 km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-bharati-vidyapeeth",
+        name: "Bharati Vidyapeeth",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.8 km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-gokhale-institute-of-politics-and-economics",
+        name: "Gokhale Institute of Politics and Economics",
+        cityId: "india-pune",
+        website: "http://www.gipe.ernet.in/",
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-national-institute-of-bank-management",
+        name: "National Institute of Bank Management",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.8 km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-tilak-maharashtra-vidyapeeth",
+        name: "Tilak Maharashtra Vidyapeeth",
+        cityId: "india-pune",
+        website: "http://www.tmv.edu.in/",
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-dr-p-a-inamdar-university",
+        name: "Dr. P. A. Inamdar University",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-pimpri-chinchwad-university",
+        name: "Pimpri Chinchwad University",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-mit-school-of-business",
+        name: "MIT School of Business",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-queen-mary-s-technical-institute",
+        name: "Queen Mary's Technical Institute",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-sinhgad-college-of-commerce",
+        name: "Sinhgad College of Commerce",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-indian-institute-of-aeronautical-engineering-information-technology",
+        name: "Indian Institute of Aeronautical Engineering & Information Technology",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-national-institute-of-construction-management-and-research",
+        name: "National Institute of Construction Management and Research",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-balaji-institute-of-modern-management-pune",
+        name: "Balaji Institute of Modern Management Pune",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-dnyaneshwar-vidyapeeth",
+        name: "Dnyaneshwar Vidyapeeth",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pune (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pune-national-school-of-leadership",
+        name: "National School of Leadership",
+        cityId: "india-pune",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pune (Wikidata).
       }),
   ],
   "india-bhubaneswar": [
@@ -672,14 +1446,6 @@ export default {
         name: "Indian Institute of Technology Bhubaneswar",
         cityId: "india-bhubaneswar",
         website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Bhubaneswar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bhubaneswar-utkal-university",
-        name: "Utkal University",
-        cityId: "india-bhubaneswar",
-        website: "http://www.utkaluniv.org/",
         source: "open-dataset",
         // Situada a 3.6 km del centro de Bhubaneswar (Wikidata).
       }),
@@ -740,14 +1506,6 @@ export default {
         // Situada a 2.4 km del centro de Bhubaneswar (Wikidata).
       }),
       defineUniversity({
-        id: "india-bhubaneswar-odisha-university-of-agriculture-and-technology",
-        name: "Odisha University of Agriculture and Technology",
-        cityId: "india-bhubaneswar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Bhubaneswar (Wikidata).
-      }),
-      defineUniversity({
         id: "india-bhubaneswar-rama-devi-women-s-university",
         name: "Rama Devi Women's University",
         cityId: "india-bhubaneswar",
@@ -779,403 +1537,29 @@ export default {
         source: "open-dataset",
         // Situada a 4.3 km del centro de Bhubaneswar (Wikidata).
       }),
-  ],
-  "india-hyderabad": [
       defineUniversity({
-        id: "india-hyderabad-madrasatul-huda-al-islamiyyah",
-        name: "Madrasatul Huda al-Islamiyyah",
-        cityId: "india-hyderabad",
+        id: "india-bhubaneswar-kalinga-institute-of-industrial-technology",
+        name: "Kalinga Institute of Industrial Technology",
+        cityId: "india-bhubaneswar",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Hyderabad (Wikidata).
+        // Situada a None km del centro de Bhubaneswar (Wikidata).
       }),
       defineUniversity({
-        id: "india-hyderabad-avinash-college-of-commerce",
-        name: "Avinash College of Commerce",
-        cityId: "india-hyderabad",
+        id: "india-bhubaneswar-college-of-basic-science-and-humanities-bhubaneswar",
+        name: "College of Basic Science and Humanities, Bhubaneswar",
+        cityId: "india-bhubaneswar",
         website: null,
         source: "open-dataset",
-        // Situada a 6.7 km del centro de Hyderabad (Wikidata).
+        // Situada a None km del centro de Bhubaneswar (Wikidata).
       }),
       defineUniversity({
-        id: "india-hyderabad-sri-p-v-narasimha-rao-telangana-state-university-for-veterinary-animal-and-fishery-sciences",
-        name: "Sri P.V. Narasimha Rao Telangana State University for Veterinary, Animal and Fishery Sciences",
-        cityId: "india-hyderabad",
+        id: "india-bhubaneswar-kiit-polytechnic",
+        name: "KIIT Polytechnic",
+        cityId: "india-bhubaneswar",
         website: null,
         source: "open-dataset",
-        // Situada a 8.1 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-sri-p-v-narasimha-rao-telangana-state-university-for-veterinary-animal-and-fishery-sciences",
-        name: "Sri P.V. Narasimha Rao Telangana State University for Veterinary, Animal and Fishery Sciences",
-        cityId: "india-hyderabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.1 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-krishna-vishwa-vidyapeeth",
-        name: "Krishna Vishwa Vidyapeeth",
-        cityId: "india-hyderabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-sri-konda-laxman-telangana-state-horticultural-university",
-        name: "Sri Konda Laxman Telangana State Horticultural University",
-        cityId: "india-hyderabad",
-        website: "https://www.skltshu.ac.in/",
-        source: "open-dataset",
-        // Situada a 7.0 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-sri-konda-laxman-telangana-state-horticultural-university",
-        name: "Sri Konda Laxman Telangana State Horticultural University",
-        cityId: "india-hyderabad",
-        website: "https://www.skltshu.ac.in/",
-        source: "open-dataset",
-        // Situada a 7.0 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-heh-nizam-and-alladin-technical-institute",
-        name: "HEH Nizam and Alladin Technical Institute",
-        cityId: "india-hyderabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-jawaharlal-nehru-architecture-and-fine-arts-university",
-        name: "Jawaharlal Nehru Architecture and Fine Arts University",
-        cityId: "india-hyderabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-jawaharlal-nehru-architecture-and-fine-arts-university",
-        name: "Jawaharlal Nehru Architecture and Fine Arts University",
-        cityId: "india-hyderabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-jesus-and-mary-college",
-        name: "Jesus and Mary College",
-        cityId: "india-hyderabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-nizam-s-institute-of-medical-sciences",
-        name: "Nizam's Institute of Medical Sciences",
-        cityId: "india-hyderabad",
-        website: "https://www.nims.edu.in/",
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-potti-sreeramulu-telugu-university",
-        name: "Potti Sreeramulu Telugu University",
-        cityId: "india-hyderabad",
-        website: "http://www.teluguuniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-potti-sreeramulu-telugu-university",
-        name: "Potti Sreeramulu Telugu University",
-        cityId: "india-hyderabad",
-        website: "http://www.teluguuniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-tata-institute-of-fundamental-research-hyderabad",
-        name: "Tata Institute of Fundamental Research Hyderabad",
-        cityId: "india-hyderabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 12.1 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-university-college-for-women-koti",
-        name: "University College for Women, Koti",
-        cityId: "india-hyderabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Hyderabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hyderabad-university-college-for-women-koti",
-        name: "University College for Women, Koti",
-        cityId: "india-hyderabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Hyderabad (Wikidata).
-      }),
-  ],
-  "india-ranchi": [
-      defineUniversity({
-        id: "india-ranchi-ranchi-women-s-college",
-        name: "Ranchi Women's College",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-doranda-college",
-        name: "Doranda College",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-j-n-college-dhurwa",
-        name: "J.N. College, Dhurwa",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-yogoda-satsanga-mahavidyalaya",
-        name: "Yogoda Satsanga Mahavidyalaya",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-ram-lakhan-singh-yadav-college",
-        name: "Ram Lakhan Singh Yadav College",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.0 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-nirmala-college-ranchi",
-        name: "Nirmala College, Ranchi",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-ranchi-university",
-        name: "Ranchi University",
-        cityId: "india-ranchi",
-        website: "http://www.ranchiuniversity.org.in/",
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-ranchi-university",
-        name: "Ranchi University",
-        cityId: "india-ranchi",
-        website: "http://www.ranchiuniversity.org.in/",
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-jharkhand-raksha-shakti-university",
-        name: "Jharkhand Raksha Shakti University",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.6 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-ybn-university",
-        name: "YBN University",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.0 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-sarala-birla-university",
-        name: "Sarala Birla University",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.9 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-usha-martin-university",
-        name: "Usha Martin University",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 14.0 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-amity-university-jharkhand",
-        name: "Amity University, Jharkhand",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-st-john-s-high-school-ranchi",
-        name: "St. John's High School, Ranchi",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-st-xavier-s-college-ranchi",
-        name: "St. Xavier's College, Ranchi",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Ranchi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ranchi-jharkhand-university-of-technology",
-        name: "Jharkhand University of Technology",
-        cityId: "india-ranchi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.4 km del centro de Ranchi (Wikidata).
-      }),
-  ],
-  "india-kolkata": [
-      defineUniversity({
-        id: "india-kolkata-dr-b-c-roy-post-graduate-institute-of-paediatric-sciences",
-        name: "Dr. B C Roy Post Graduate Institute of Paediatric Sciences",
-        cityId: "india-kolkata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-university-of-calcutta",
-        name: "University of Calcutta",
-        cityId: "india-kolkata",
-        website: "http://www.caluniv.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-university-of-calcutta",
-        name: "University of Calcutta",
-        cityId: "india-kolkata",
-        website: "http://www.caluniv.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-central-calcutta-polytechnic",
-        name: "Central Calcutta Polytechnic",
-        cityId: "india-kolkata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-jadavpur-university",
-        name: "Jadavpur University",
-        cityId: "india-kolkata",
-        website: "http://www.jadavpur.edu/",
-        source: "open-dataset",
-        // Situada a 7.1 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-jadavpur-university",
-        name: "Jadavpur University",
-        cityId: "india-kolkata",
-        website: "http://www.jadavpur.edu/",
-        source: "open-dataset",
-        // Situada a 7.1 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-presidency-university",
-        name: "Presidency University",
-        cityId: "india-kolkata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-baba-saheb-ambedkar-education-university",
-        name: "Baba Saheb Ambedkar Education University",
-        cityId: "india-kolkata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-indian-association-for-the-cultivation-of-science",
-        name: "Indian Association for the Cultivation of Science",
-        cityId: "india-kolkata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.1 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-indian-association-for-the-cultivation-of-science",
-        name: "Indian Association for the Cultivation of Science",
-        cityId: "india-kolkata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.1 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-rabindra-bharati-university",
-        name: "Rabindra Bharati University",
-        cityId: "india-kolkata",
-        website: "http://www.rabindrabharatiuniversity.net/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-rabindra-bharati-university",
-        name: "Rabindra Bharati University",
-        cityId: "india-kolkata",
-        website: "http://www.rabindrabharatiuniversity.net/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-women-s-polytechnic-kolkata",
-        name: "Women's Polytechnic, Kolkata",
-        cityId: "india-kolkata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.1 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-acharya-prafulla-chandra-ray-polytechnic",
-        name: "Acharya Prafulla Chandra Ray Polytechnic",
-        cityId: "india-kolkata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.9 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-national-institute-of-pharmaceutical-education-research-kolkata",
-        name: "National Institute of Pharmaceutical Education & Research, Kolkata",
-        cityId: "india-kolkata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Kolkata (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolkata-the-sanskrit-college-and-university",
-        name: "The Sanskrit College and University",
-        cityId: "india-kolkata",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Kolkata (Wikidata).
+        // Situada a None km del centro de Bhubaneswar (Wikidata).
       }),
   ],
   "india-ahmedabad": [
@@ -1210,14 +1594,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.9 km del centro de Ahmedabad (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ahmedabad-institute-of-infrastructure-technology-research-and-management",
-        name: "Institute of Infrastructure, Technology, Research and Management",
-        cityId: "india-ahmedabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Ahmedabad (Wikidata).
       }),
       defineUniversity({
         id: "india-ahmedabad-institute-of-infrastructure-technology-research-and-management",
@@ -1307,138 +1683,170 @@ export default {
         source: "open-dataset",
         // Situada a 9.0 km del centro de Ahmedabad (Wikidata).
       }),
+      defineUniversity({
+        id: "india-ahmedabad-lok-jagruti-kendra-university",
+        name: "Lok Jagruti Kendra University",
+        cityId: "india-ahmedabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ahmedabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-ahmedabad-transstadia-university",
+        name: "TransStadia University",
+        cityId: "india-ahmedabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ahmedabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-ahmedabad-l-j-institute-of-management-studies",
+        name: "L. J. Institute of Management Studies",
+        cityId: "india-ahmedabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ahmedabad (Wikidata).
+      }),
   ],
-  "india-patna": [
+  "india-ranchi": [
       defineUniversity({
-        id: "india-patna-bihar-university-of-health-sciences",
-        name: "Bihar University of Health Sciences",
-        cityId: "india-patna",
+        id: "india-ranchi-madrasa-hussainia-kadru",
+        name: "Madrasa Hussainia, Kadru",
+        cityId: "india-ranchi",
         website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de Patna (Wikidata).
+        // Situada a 0.6 km del centro de Ranchi (Wikidata).
       }),
       defineUniversity({
-        id: "india-patna-bihar-university-of-health-sciences",
-        name: "Bihar University of Health Sciences",
-        cityId: "india-patna",
+        id: "india-ranchi-ranchi-women-s-college",
+        name: "Ranchi Women's College",
+        cityId: "india-ranchi",
         website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de Patna (Wikidata).
+        // Situada a 4.3 km del centro de Ranchi (Wikidata).
       }),
       defineUniversity({
-        id: "india-patna-development-management-institute",
-        name: "Development Management Institute",
-        cityId: "india-patna",
+        id: "india-ranchi-doranda-college",
+        name: "Doranda College",
+        cityId: "india-ranchi",
         website: null,
         source: "open-dataset",
-        // Situada a 4.3 km del centro de Patna (Wikidata).
+        // Situada a 0.9 km del centro de Ranchi (Wikidata).
       }),
       defineUniversity({
-        id: "india-patna-aryabhatta-knowledge-university",
-        name: "Aryabhatta Knowledge University",
-        cityId: "india-patna",
+        id: "india-ranchi-j-n-college-dhurwa",
+        name: "J.N. College, Dhurwa",
+        cityId: "india-ranchi",
         website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de Patna (Wikidata).
+        // Situada a 4.9 km del centro de Ranchi (Wikidata).
       }),
       defineUniversity({
-        id: "india-patna-aryabhatta-knowledge-university",
-        name: "Aryabhatta Knowledge University",
-        cityId: "india-patna",
+        id: "india-ranchi-yogoda-satsanga-mahavidyalaya",
+        name: "Yogoda Satsanga Mahavidyalaya",
+        cityId: "india-ranchi",
         website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de Patna (Wikidata).
+        // Situada a 4.1 km del centro de Ranchi (Wikidata).
       }),
       defineUniversity({
-        id: "india-patna-patna-university",
-        name: "Patna University",
-        cityId: "india-patna",
-        website: "http://puonline.bih.nic.in/",
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Patna (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-patna-chanakya-national-law-university",
-        name: "Chanakya National Law University",
-        cityId: "india-patna",
+        id: "india-ranchi-ram-lakhan-singh-yadav-college",
+        name: "Ram Lakhan Singh Yadav College",
+        cityId: "india-ranchi",
         website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de Patna (Wikidata).
+        // Situada a 6.0 km del centro de Ranchi (Wikidata).
       }),
       defineUniversity({
-        id: "india-patna-patliputra-university",
-        name: "Patliputra University",
-        cityId: "india-patna",
+        id: "india-ranchi-nirmala-college-ranchi",
+        name: "Nirmala College, Ranchi",
+        cityId: "india-ranchi",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Patna (Wikidata).
+        // Situada a 1.0 km del centro de Ranchi (Wikidata).
       }),
       defineUniversity({
-        id: "india-patna-patliputra-university",
-        name: "Patliputra University",
-        cityId: "india-patna",
+        id: "india-ranchi-ranchi-university",
+        name: "Ranchi University",
+        cityId: "india-ranchi",
+        website: "http://www.ranchiuniversity.org.in/",
+        source: "open-dataset",
+        // Situada a 5.1 km del centro de Ranchi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-ranchi-jharkhand-raksha-shakti-university",
+        name: "Jharkhand Raksha Shakti University",
+        cityId: "india-ranchi",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Patna (Wikidata).
+        // Situada a 4.6 km del centro de Ranchi (Wikidata).
       }),
       defineUniversity({
-        id: "india-patna-maulana-mazharul-haque-arabic-and-persian-university",
-        name: "Maulana Mazharul Haque Arabic and Persian University",
-        cityId: "india-patna",
+        id: "india-ranchi-ybn-university",
+        name: "YBN University",
+        cityId: "india-ranchi",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Patna (Wikidata).
+        // Situada a 7.0 km del centro de Ranchi (Wikidata).
       }),
       defineUniversity({
-        id: "india-patna-maulana-mazharul-haque-arabic-and-persian-university",
-        name: "Maulana Mazharul Haque Arabic and Persian University",
-        cityId: "india-patna",
+        id: "india-ranchi-sarala-birla-university",
+        name: "Sarala Birla University",
+        cityId: "india-ranchi",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Patna (Wikidata).
+        // Situada a 10.9 km del centro de Ranchi (Wikidata).
       }),
       defineUniversity({
-        id: "india-patna-nalanda-open-university",
-        name: "Nalanda Open University",
-        cityId: "india-patna",
-        website: "http://www.nalandaopenuniversity.info/",
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Patna (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-patna-national-institute-of-technology-patna",
-        name: "National Institute of Technology, Patna",
-        cityId: "india-patna",
-        website: "http://www.nitp.ac.in/",
-        source: "open-dataset",
-        // Situada a 4.8 km del centro de Patna (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-patna-bihar-engineering-university",
-        name: "Bihar Engineering University",
-        cityId: "india-patna",
+        id: "india-ranchi-usha-martin-university",
+        name: "Usha Martin University",
+        cityId: "india-ranchi",
         website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de Patna (Wikidata).
+        // Situada a 14.0 km del centro de Ranchi (Wikidata).
       }),
       defineUniversity({
-        id: "india-patna-bihar-engineering-university",
-        name: "Bihar Engineering University",
-        cityId: "india-patna",
+        id: "india-ranchi-amity-university-jharkhand",
+        name: "Amity University, Jharkhand",
+        cityId: "india-ranchi",
         website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de Patna (Wikidata).
+        // Situada a 1.8 km del centro de Ranchi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-ranchi-st-john-s-high-school-ranchi",
+        name: "St. John's High School, Ranchi",
+        cityId: "india-ranchi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Ranchi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-ranchi-st-xavier-s-college-ranchi",
+        name: "St. Xavier's College, Ranchi",
+        cityId: "india-ranchi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Ranchi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-ranchi-jharkhand-university-of-technology",
+        name: "Jharkhand University of Technology",
+        cityId: "india-ranchi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.4 km del centro de Ranchi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-ranchi-indian-institute-of-natural-resins-and-gums",
+        name: "Indian Institute of Natural Resins and Gums",
+        cityId: "india-ranchi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ranchi (Wikidata).
       }),
   ],
   "india-gandhinagar": [
-      defineUniversity({
-        id: "india-gandhinagar-gujarat-national-law-university",
-        name: "Gujarat National Law University",
-        cityId: "india-gandhinagar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de Gandhinagar (Wikidata).
-      }),
       defineUniversity({
         id: "india-gandhinagar-gujarat-national-law-university",
         name: "Gujarat National Law University",
@@ -1470,14 +1878,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.8 km del centro de Gandhinagar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-gandhinagar-indian-institute-of-advanced-research",
-        name: "Indian Institute of Advanced Research",
-        cityId: "india-gandhinagar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.7 km del centro de Gandhinagar (Wikidata).
       }),
       defineUniversity({
         id: "india-gandhinagar-indian-institute-of-advanced-research",
@@ -1520,14 +1920,6 @@ export default {
         // Situada a 2.8 km del centro de Gandhinagar (Wikidata).
       }),
       defineUniversity({
-        id: "india-gandhinagar-central-university-of-gujarat",
-        name: "Central University of Gujarat",
-        cityId: "india-gandhinagar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Gandhinagar (Wikidata).
-      }),
-      defineUniversity({
         id: "india-gandhinagar-dhirubhai-ambani-university",
         name: "Dhirubhai Ambani University",
         cityId: "india-gandhinagar",
@@ -1551,6 +1943,30 @@ export default {
         source: "open-dataset",
         // Situada a 7.5 km del centro de Gandhinagar (Wikidata).
       }),
+      defineUniversity({
+        id: "india-gandhinagar-gandhinagar-university",
+        name: "Gandhinagar University",
+        cityId: "india-gandhinagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gandhinagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gandhinagar-gujarat-biotechnology-university",
+        name: "Gujarat Biotechnology University",
+        cityId: "india-gandhinagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gandhinagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gandhinagar-bhaskaracharya-institute-for-space-applications-and-geo-informatics",
+        name: "Bhaskaracharya Institute For Space Applications and Geo-Informatics",
+        cityId: "india-gandhinagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gandhinagar (Wikidata).
+      }),
   ],
   "india-dehradun": [
       defineUniversity({
@@ -1570,20 +1986,20 @@ export default {
         // Situada a 12.0 km del centro de Dehradun (Wikidata).
       }),
       defineUniversity({
-        id: "india-dehradun-dev-bhoomi-uttarakhand-university",
-        name: "Dev Bhoomi Uttarakhand University",
-        cityId: "india-dehradun",
-        website: null,
-        source: "open-dataset",
-        // Situada a 12.0 km del centro de Dehradun (Wikidata).
-      }),
-      defineUniversity({
         id: "india-dehradun-indian-institute-of-remote-sensing",
         name: "Indian Institute of Remote Sensing",
         cityId: "india-dehradun",
         website: null,
         source: "open-dataset",
         // Situada a 2.1 km del centro de Dehradun (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-dehradun-maya-devi-university",
+        name: "Maya Devi University",
+        cityId: "india-dehradun",
+        website: null,
+        source: "open-dataset",
+        // Situada a 18.1 km del centro de Dehradun (Wikidata).
       }),
       defineUniversity({
         id: "india-dehradun-dbs-global-university",
@@ -1624,14 +2040,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.0 km del centro de Dehradun (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-dehradun-hemwati-nandan-bahuguna-uttarakhand-medical-education-university",
-        name: "Hemwati Nandan Bahuguna Uttarakhand Medical Education University",
-        cityId: "india-dehradun",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Dehradun (Wikidata).
       }),
       defineUniversity({
         id: "india-dehradun-hemwati-nandan-bahuguna-uttarakhand-medical-education-university",
@@ -1764,14 +2172,6 @@ export default {
         // Situada a 4.5 km del centro de Jabalpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-jabalpur-jawaharlal-nehru-agricultural-university",
-        name: "Jawaharlal Nehru Agricultural University",
-        cityId: "india-jabalpur",
-        website: "http://www.jnkvv.nic.in/",
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Jabalpur (Wikidata).
-      }),
-      defineUniversity({
         id: "india-jabalpur-dharmashastra-national-law-university",
         name: "Dharmashastra National Law University",
         cityId: "india-jabalpur",
@@ -1788,576 +2188,110 @@ export default {
         // Situada a 3.0 km del centro de Jabalpur (Wikidata).
       }),
   ],
-  "india-imphal": [
+  "india-mumbai": [
       defineUniversity({
-        id: "india-imphal-national-institute-of-technology-manipur",
-        name: "National Institute of Technology, Manipur",
-        cityId: "india-imphal",
-        website: "http://www.nitmanipur.ac.in/",
+        id: "india-mumbai-international-institute-for-population-sciences",
+        name: "International Institute for Population Sciences",
+        cityId: "india-mumbai",
+        website: "http://www.iipsindia.org/",
         source: "open-dataset",
-        // Situada a 4.1 km del centro de Imphal (Wikidata).
+        // Situada a 4.3 km del centro de Mumbai (Wikidata).
       }),
       defineUniversity({
-        id: "india-imphal-indian-institute-of-information-technology-manipur",
-        name: "Indian Institute of Information Technology, Manipur",
-        cityId: "india-imphal",
+        id: "india-mumbai-narsee-monjee-institute-of-management-studies",
+        name: "Narsee Monjee Institute of Management Studies",
+        cityId: "india-mumbai",
+        website: "http://www.nmims.edu/",
+        source: "open-dataset",
+        // Situada a 5.9 km del centro de Mumbai (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mumbai-tata-institute-of-social-sciences",
+        name: "Tata Institute of Social Sciences",
+        cityId: "india-mumbai",
+        website: "http://www.tiss.edu/",
+        source: "open-dataset",
+        // Situada a 4.4 km del centro de Mumbai (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mumbai-homi-bhabha-national-institute",
+        name: "Homi Bhabha National Institute",
+        cityId: "india-mumbai",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Imphal (Wikidata).
+        // Situada a 6.3 km del centro de Mumbai (Wikidata).
       }),
       defineUniversity({
-        id: "india-imphal-national-sports-university-manipur",
-        name: "National Sports University, Manipur",
-        cityId: "india-imphal",
+        id: "india-mumbai-kohinoor-college-of-hotel-and-tourism-management",
+        name: "Kohinoor College of Hotel and Tourism Management",
+        cityId: "india-mumbai",
         website: null,
         source: "open-dataset",
-        // Situada a 15.2 km del centro de Imphal (Wikidata).
+        // Situada a 0.3 km del centro de Mumbai (Wikidata).
       }),
       defineUniversity({
-        id: "india-imphal-national-sports-university-manipur",
-        name: "National Sports University, Manipur",
-        cityId: "india-imphal",
+        id: "india-mumbai-somaiya-vidyavihar-university",
+        name: "Somaiya Vidyavihar University",
+        cityId: "india-mumbai",
         website: null,
         source: "open-dataset",
-        // Situada a 15.2 km del centro de Imphal (Wikidata).
+        // Situada a 1.6 km del centro de Mumbai (Wikidata).
       }),
       defineUniversity({
-        id: "india-imphal-manipur-university-of-culture",
-        name: "Manipur University of Culture",
-        cityId: "india-imphal",
+        id: "india-mumbai-institute-of-hotel-management-catering-technology-and-applied-nutrition",
+        name: "Institute of Hotel Management, Catering Technology and Applied Nutrition",
+        cityId: "india-mumbai",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Imphal (Wikidata).
+        // Situada a None km del centro de Mumbai (Wikidata).
       }),
       defineUniversity({
-        id: "india-imphal-manipur-technical-university",
-        name: "Manipur Technical University",
-        cityId: "india-imphal",
+        id: "india-mumbai-mukesh-patel-school-of-technology-management-and-engineering",
+        name: "Mukesh Patel School of Technology Management and Engineering",
+        cityId: "india-mumbai",
         website: null,
         source: "open-dataset",
-        // Situada a 4.2 km del centro de Imphal (Wikidata).
+        // Situada a None km del centro de Mumbai (Wikidata).
       }),
       defineUniversity({
-        id: "india-imphal-manipur-technical-university",
-        name: "Manipur Technical University",
-        cityId: "india-imphal",
+        id: "india-mumbai-itm-ifm",
+        name: "ITM-IFM",
+        cityId: "india-mumbai",
         website: null,
         source: "open-dataset",
-        // Situada a 4.2 km del centro de Imphal (Wikidata).
+        // Situada a None km del centro de Mumbai (Wikidata).
       }),
       defineUniversity({
-        id: "india-imphal-dhanamanjuri-university",
-        name: "Dhanamanjuri University",
-        cityId: "india-imphal",
+        id: "india-mumbai-itm-group-of-institutions",
+        name: "ITM Group of Institutions",
+        cityId: "india-mumbai",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Imphal (Wikidata).
+        // Situada a None km del centro de Mumbai (Wikidata).
       }),
       defineUniversity({
-        id: "india-imphal-central-agricultural-university",
-        name: "Central Agricultural University",
-        cityId: "india-imphal",
-        website: "http://www.cau.org.in/",
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Imphal (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-imphal-central-agricultural-university",
-        name: "Central Agricultural University",
-        cityId: "india-imphal",
-        website: "http://www.cau.org.in/",
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Imphal (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-imphal-manipur-international-university",
-        name: "Manipur International University",
-        cityId: "india-imphal",
+        id: "india-mumbai-kirti-m-doongursee-college",
+        name: "Kirti M.Doongursee College",
+        cityId: "india-mumbai",
         website: null,
         source: "open-dataset",
-        // Situada a 5.0 km del centro de Imphal (Wikidata).
+        // Situada a None km del centro de Mumbai (Wikidata).
       }),
       defineUniversity({
-        id: "india-imphal-manipur-university",
-        name: "Manipur University",
-        cityId: "india-imphal",
-        website: "https://www.manipuruniv.ac.in/",
-        source: "open-dataset",
-        // Situada a 6.3 km del centro de Imphal (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-imphal-manipur-university",
-        name: "Manipur University",
-        cityId: "india-imphal",
-        website: "https://www.manipuruniv.ac.in/",
-        source: "open-dataset",
-        // Situada a 6.3 km del centro de Imphal (Wikidata).
-      }),
-  ],
-  "india-greater-noida": [
-      defineUniversity({
-        id: "india-greater-noida-iilm-university-greater-noida",
-        name: "IILM University Greater Noida",
-        cityId: "india-greater-noida",
+        id: "india-mumbai-sndt-women-s-university",
+        name: "SNDT Women's University",
+        cityId: "india-mumbai",
         website: null,
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Greater Noida (Wikidata).
+        // Situada a None km del centro de Mumbai (Wikidata).
       }),
       defineUniversity({
-        id: "india-greater-noida-noida-international-university",
-        name: "Noida International University",
-        cityId: "india-greater-noida",
+        id: "india-mumbai-south-indians-welfare-society-college",
+        name: "South Indians' Welfare Society College",
+        cityId: "india-mumbai",
         website: null,
         source: "open-dataset",
-        // Situada a 13.8 km del centro de Greater Noida (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-greater-noida-bennett-university",
-        name: "Bennett University",
-        cityId: "india-greater-noida",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.0 km del centro de Greater Noida (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-greater-noida-dronacharya-group-of-institutions",
-        name: "Dronacharya Group of Institutions",
-        cityId: "india-greater-noida",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Greater Noida (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-greater-noida-galgotias-university",
-        name: "Galgotias University",
-        cityId: "india-greater-noida",
-        website: null,
-        source: "open-dataset",
-        // Situada a 14.6 km del centro de Greater Noida (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-greater-noida-gautam-buddha-university",
-        name: "Gautam Buddha University",
-        cityId: "india-greater-noida",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.7 km del centro de Greater Noida (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-greater-noida-gautam-buddha-university",
-        name: "Gautam Buddha University",
-        cityId: "india-greater-noida",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.7 km del centro de Greater Noida (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-greater-noida-gautam-buddha-university-school-of-biotechnology",
-        name: "Gautam Buddha University School of Biotechnology",
-        cityId: "india-greater-noida",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.7 km del centro de Greater Noida (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-greater-noida-gautam-buddha-university-school-of-management",
-        name: "Gautam Buddha University School of Management",
-        cityId: "india-greater-noida",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.7 km del centro de Greater Noida (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-greater-noida-iilm-gsm",
-        name: "IILM GSM",
-        cityId: "india-greater-noida",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Greater Noida (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-greater-noida-noida-institute-of-engineering-and-technology-greater-noida",
-        name: "Noida Institute of Engineering  and Technology, Greater Noida",
-        cityId: "india-greater-noida",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.5 km del centro de Greater Noida (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-greater-noida-sharda-university",
-        name: "Sharda University",
-        cityId: "india-greater-noida",
-        website: "https://www.sharda.ac.in/",
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Greater Noida (Wikidata).
-      }),
-  ],
-  "india-kolar-13353619": [
-      defineUniversity({
-        id: "india-kolar-13353619-atal-bihari-vajpayee-hindi-university",
-        name: "Atal Bihari Vajpayee Hindi University",
-        cityId: "india-kolar-13353619",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Kolar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-13353619-atal-bihari-vajpayee-hindi-university",
-        name: "Atal Bihari Vajpayee Hindi University",
-        cityId: "india-kolar-13353619",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Kolar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-13353619-sarvepalli-radhakrishnan-university",
-        name: "Sarvepalli Radhakrishnan University",
-        cityId: "india-kolar-13353619",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Kolar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-13353619-barkatullah-university",
-        name: "Barkatullah University",
-        cityId: "india-kolar-13353619",
-        website: "http://www.bubhopal.nic.in/",
-        source: "open-dataset",
-        // Situada a 5.6 km del centro de Kolar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-13353619-barkatullah-university",
-        name: "Barkatullah University",
-        cityId: "india-kolar-13353619",
-        website: "http://www.bubhopal.nic.in/",
-        source: "open-dataset",
-        // Situada a 5.6 km del centro de Kolar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-13353619-lnct-university",
-        name: "LNCT University",
-        cityId: "india-kolar-13353619",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Kolar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-13353619-bhabha-university",
-        name: "Bhabha University",
-        cityId: "india-kolar-13353619",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.4 km del centro de Kolar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-13353619-mansarovar-global-university",
-        name: "Mansarovar Global University",
-        cityId: "india-kolar-13353619",
-        website: null,
-        source: "open-dataset",
-        // Situada a 19.3 km del centro de Kolar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-13353619-madhya-pradesh-bhoj-open-university",
-        name: "Madhya Pradesh Bhoj Open University",
-        cityId: "india-kolar-13353619",
-        website: "http://www.mpbou.org/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Kolar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-13353619-national-law-institute-university-bhopal",
-        name: "National Law Institute University Bhopal",
-        cityId: "india-kolar-13353619",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Kolar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-13353619-national-law-institute-university-bhopal",
-        name: "National Law Institute University Bhopal",
-        cityId: "india-kolar-13353619",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Kolar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-13353619-madhyanchal-professional-university",
-        name: "Madhyanchal Professional University",
-        cityId: "india-kolar-13353619",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.8 km del centro de Kolar (Wikidata).
-      }),
-  ],
-  "india-raipur-1258980": [
-      defineUniversity({
-        id: "india-raipur-1258980-national-institute-of-technology-raipur",
-        name: "National Institute of Technology Raipur",
-        cityId: "india-raipur-1258980",
-        website: "http://www.nitrr.ac.in/",
-        source: "open-dataset",
-        // Situada a 3.4 km del centro de Raipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raipur-1258980-chhattisgarh-kamdhenu-vishwavidyalaya",
-        name: "Chhattisgarh Kamdhenu Vishwavidyalaya",
-        cityId: "india-raipur-1258980",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Raipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raipur-1258980-chhattisgarh-kamdhenu-vishwavidyalaya",
-        name: "Chhattisgarh Kamdhenu Vishwavidyalaya",
-        cityId: "india-raipur-1258980",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Raipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raipur-1258980-international-institute-of-information-technology",
-        name: "International Institute of Information Technology",
-        cityId: "india-raipur-1258980",
-        website: null,
-        source: "open-dataset",
-        // Situada a 18.0 km del centro de Raipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raipur-1258980-itm-university-raipur",
-        name: "ITM University, Raipur",
-        cityId: "india-raipur-1258980",
-        website: null,
-        source: "open-dataset",
-        // Situada a 18.4 km del centro de Raipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raipur-1258980-indira-gandhi-agricultural-university",
-        name: "Indira Gandhi Agricultural University",
-        cityId: "india-raipur-1258980",
-        website: "http://www.igau.edu.in/",
-        source: "open-dataset",
-        // Situada a 7.4 km del centro de Raipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raipur-1258980-indira-gandhi-agricultural-university",
-        name: "Indira Gandhi Agricultural University",
-        cityId: "india-raipur-1258980",
-        website: "http://www.igau.edu.in/",
-        source: "open-dataset",
-        // Situada a 7.4 km del centro de Raipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raipur-1258980-shri-rawatpura-sarkar-university",
-        name: "Shri Rawatpura Sarkar University",
-        cityId: "india-raipur-1258980",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.6 km del centro de Raipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raipur-1258980-kushabhau-thakre-patrakarita-avam-jansanchar-university",
-        name: "Kushabhau Thakre Patrakarita Avam Jansanchar University",
-        cityId: "india-raipur-1258980",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.7 km del centro de Raipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raipur-1258980-pandit-ravishankar-shukla-university",
-        name: "Pandit Ravishankar Shukla University",
-        cityId: "india-raipur-1258980",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Raipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raipur-1258980-pandit-ravishankar-shukla-university",
-        name: "Pandit Ravishankar Shukla University",
-        cityId: "india-raipur-1258980",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Raipur (Wikidata).
-      }),
-  ],
-  "india-new-delhi": [
-      defineUniversity({
-        id: "india-new-delhi-iilm-institute",
-        name: "IILM Institute",
-        cityId: "india-new-delhi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de New Delhi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-new-delhi-morarji-desai-national-institute-of-yoga",
-        name: "Morarji Desai National Institute of Yoga",
-        cityId: "india-new-delhi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de New Delhi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-new-delhi-national-museum-institute-of-the-history-of-art-conservation-and-museology",
-        name: "National Museum Institute of the History of Art, Conservation and Museology",
-        cityId: "india-new-delhi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de New Delhi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-new-delhi-college-of-art-delhi",
-        name: "College of Art, Delhi",
-        cityId: "india-new-delhi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de New Delhi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-new-delhi-dyal-singh-college-delhi",
-        name: "Dyal Singh College, Delhi",
-        cityId: "india-new-delhi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de New Delhi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-new-delhi-indian-law-institute",
-        name: "Indian Law Institute",
-        cityId: "india-new-delhi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de New Delhi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-new-delhi-lady-irwin-college",
-        name: "Lady Irwin College",
-        cityId: "india-new-delhi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de New Delhi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-new-delhi-national-defence-college-india",
-        name: "National Defence College, India",
-        cityId: "india-new-delhi",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de New Delhi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-new-delhi-south-asian-university",
-        name: "South Asian University",
-        cityId: "india-new-delhi",
-        website: "http://www.southasianuniversity.org/",
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de New Delhi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-new-delhi-south-asian-university",
-        name: "South Asian University",
-        cityId: "india-new-delhi",
-        website: "http://www.southasianuniversity.org/",
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de New Delhi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-new-delhi-south-asian-university",
-        name: "South Asian University",
-        cityId: "india-new-delhi",
-        website: "http://www.southasianuniversity.org/",
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de New Delhi (Wikidata).
-      }),
-  ],
-  "india-guwahati": [
-      defineUniversity({
-        id: "india-guwahati-esic-medical-college-hospital-beltola",
-        name: "ESIC Medical College & Hospital, Beltola",
-        cityId: "india-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Guwahati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-guwahati-srimanta-sankaradeva-university-of-health-sciences",
-        name: "Srimanta Sankaradeva University of Health Sciences",
-        cityId: "india-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Guwahati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-guwahati-srimanta-sankaradeva-university-of-health-sciences",
-        name: "Srimanta Sankaradeva University of Health Sciences",
-        cityId: "india-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Guwahati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-guwahati-university-of-science-and-technology-meghalaya",
-        name: "University of Science and Technology, Meghalaya",
-        cityId: "india-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 13.6 km del centro de Guwahati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-guwahati-royal-global-university",
-        name: "Royal Global University",
-        cityId: "india-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.3 km del centro de Guwahati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-guwahati-guwahati-college",
-        name: "Guwahati College",
-        cityId: "india-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Guwahati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-guwahati-omeo-kumar-das-institute-of-social-change-and-development",
-        name: "Omeo Kumar Das Institute of Social Change and Development",
-        cityId: "india-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.8 km del centro de Guwahati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-guwahati-cotton-university",
-        name: "Cotton University",
-        cityId: "india-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Guwahati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-guwahati-assam-don-bosco-university",
-        name: "Assam Don Bosco University",
-        cityId: "india-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 16.2 km del centro de Guwahati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-guwahati-assam-down-town-university",
-        name: "Assam down town University",
-        cityId: "india-guwahati",
-        website: "https://adtu.in/",
-        source: "open-dataset",
-        // Situada a 11.7 km del centro de Guwahati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-guwahati-mahatma-gandhi-university-meghalaya",
-        name: "Mahatma Gandhi University, Meghalaya",
-        cityId: "india-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 18.0 km del centro de Guwahati (Wikidata).
+        // Situada a None km del centro de Mumbai (Wikidata).
       }),
   ],
   "india-bhopal": [
@@ -2449,6 +2383,496 @@ export default {
         source: "open-dataset",
         // Situada a 4.4 km del centro de Bhopal (Wikidata).
       }),
+      defineUniversity({
+        id: "india-bhopal-central-institute-of-agricultural-engineering",
+        name: "Central Institute of Agricultural Engineering",
+        cityId: "india-bhopal",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bhopal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bhopal-indian-institute-of-soil-science",
+        name: "Indian Institute of Soil Science",
+        cityId: "india-bhopal",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bhopal (Wikidata).
+      }),
+  ],
+  "india-greater-noida": [
+      defineUniversity({
+        id: "india-greater-noida-iilm-university-greater-noida",
+        name: "IILM University Greater Noida",
+        cityId: "india-greater-noida",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.8 km del centro de Greater Noida (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-greater-noida-noida-international-university",
+        name: "Noida International University",
+        cityId: "india-greater-noida",
+        website: null,
+        source: "open-dataset",
+        // Situada a 13.8 km del centro de Greater Noida (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-greater-noida-bennett-university",
+        name: "Bennett University",
+        cityId: "india-greater-noida",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.0 km del centro de Greater Noida (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-greater-noida-dronacharya-group-of-institutions",
+        name: "Dronacharya Group of Institutions",
+        cityId: "india-greater-noida",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.8 km del centro de Greater Noida (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-greater-noida-galgotias-university",
+        name: "Galgotias University",
+        cityId: "india-greater-noida",
+        website: null,
+        source: "open-dataset",
+        // Situada a 14.6 km del centro de Greater Noida (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-greater-noida-gautam-buddha-university",
+        name: "Gautam Buddha University",
+        cityId: "india-greater-noida",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.7 km del centro de Greater Noida (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-greater-noida-gautam-buddha-university-school-of-biotechnology",
+        name: "Gautam Buddha University School of Biotechnology",
+        cityId: "india-greater-noida",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.7 km del centro de Greater Noida (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-greater-noida-gautam-buddha-university-school-of-management",
+        name: "Gautam Buddha University School of Management",
+        cityId: "india-greater-noida",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.7 km del centro de Greater Noida (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-greater-noida-iilm-gsm",
+        name: "IILM GSM",
+        cityId: "india-greater-noida",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.8 km del centro de Greater Noida (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-greater-noida-noida-institute-of-engineering-and-technology-greater-noida",
+        name: "Noida Institute of Engineering  and Technology, Greater Noida",
+        cityId: "india-greater-noida",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.5 km del centro de Greater Noida (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-greater-noida-sharda-university",
+        name: "Sharda University",
+        cityId: "india-greater-noida",
+        website: "https://www.sharda.ac.in/",
+        source: "open-dataset",
+        // Situada a 5.8 km del centro de Greater Noida (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-greater-noida-galgotia-s-college-of-engineering-and-technology",
+        name: "Galgotia's College of Engineering and Technology",
+        cityId: "india-greater-noida",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Greater Noida (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-greater-noida-iilm-ahl",
+        name: "IILM AHL",
+        cityId: "india-greater-noida",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Greater Noida (Wikidata).
+      }),
+  ],
+  "india-kolkata": [
+      defineUniversity({
+        id: "india-kolkata-dr-b-c-roy-post-graduate-institute-of-paediatric-sciences",
+        name: "Dr. B C Roy Post Graduate Institute of Paediatric Sciences",
+        cityId: "india-kolkata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.8 km del centro de Kolkata (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolkata-university-of-calcutta",
+        name: "University of Calcutta",
+        cityId: "india-kolkata",
+        website: "http://www.caluniv.ac.in/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Kolkata (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolkata-central-calcutta-polytechnic",
+        name: "Central Calcutta Polytechnic",
+        cityId: "india-kolkata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Kolkata (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolkata-jadavpur-university",
+        name: "Jadavpur University",
+        cityId: "india-kolkata",
+        website: "http://www.jadavpur.edu/",
+        source: "open-dataset",
+        // Situada a 7.1 km del centro de Kolkata (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolkata-presidency-university",
+        name: "Presidency University",
+        cityId: "india-kolkata",
+        website: "http://www.presidency.edu.bd/",
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Kolkata (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolkata-baba-saheb-ambedkar-education-university",
+        name: "Baba Saheb Ambedkar Education University",
+        cityId: "india-kolkata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.7 km del centro de Kolkata (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolkata-indian-association-for-the-cultivation-of-science",
+        name: "Indian Association for the Cultivation of Science",
+        cityId: "india-kolkata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.1 km del centro de Kolkata (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolkata-rabindra-bharati-university",
+        name: "Rabindra Bharati University",
+        cityId: "india-kolkata",
+        website: "http://www.rabindrabharatiuniversity.net/",
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Kolkata (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolkata-women-s-polytechnic-kolkata",
+        name: "Women's Polytechnic, Kolkata",
+        cityId: "india-kolkata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.1 km del centro de Kolkata (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolkata-acharya-prafulla-chandra-ray-polytechnic",
+        name: "Acharya Prafulla Chandra Ray Polytechnic",
+        cityId: "india-kolkata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.9 km del centro de Kolkata (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolkata-national-institute-of-pharmaceutical-education-research-kolkata",
+        name: "National Institute of Pharmaceutical Education & Research, Kolkata",
+        cityId: "india-kolkata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Kolkata (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolkata-the-sanskrit-college-and-university",
+        name: "The Sanskrit College and University",
+        cityId: "india-kolkata",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Kolkata (Wikidata).
+      }),
+  ],
+  "india-patna": [
+      defineUniversity({
+        id: "india-patna-bihar-university-of-health-sciences",
+        name: "Bihar University of Health Sciences",
+        cityId: "india-patna",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Patna (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-patna-development-management-institute",
+        name: "Development Management Institute",
+        cityId: "india-patna",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.3 km del centro de Patna (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-patna-aryabhatta-knowledge-university",
+        name: "Aryabhatta Knowledge University",
+        cityId: "india-patna",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Patna (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-patna-patna-university",
+        name: "Patna University",
+        cityId: "india-patna",
+        website: "http://puonline.bih.nic.in/",
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Patna (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-patna-chanakya-national-law-university",
+        name: "Chanakya National Law University",
+        cityId: "india-patna",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Patna (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-patna-patliputra-university",
+        name: "Patliputra University",
+        cityId: "india-patna",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Patna (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-patna-maulana-mazharul-haque-arabic-and-persian-university",
+        name: "Maulana Mazharul Haque Arabic and Persian University",
+        cityId: "india-patna",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Patna (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-patna-nalanda-open-university",
+        name: "Nalanda Open University",
+        cityId: "india-patna",
+        website: "http://www.nalandaopenuniversity.info/",
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Patna (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-patna-national-institute-of-technology-patna",
+        name: "National Institute of Technology, Patna",
+        cityId: "india-patna",
+        website: "http://www.nitp.ac.in/",
+        source: "open-dataset",
+        // Situada a 4.8 km del centro de Patna (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-patna-bihar-engineering-university",
+        name: "Bihar Engineering University",
+        cityId: "india-patna",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Patna (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-patna-cybotech-campus",
+        name: "Cybotech Campus",
+        cityId: "india-patna",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Patna (Wikidata).
+      }),
+  ],
+  "india-imphal": [
+      defineUniversity({
+        id: "india-imphal-churachandpur-medical-college",
+        name: "Churachandpur Medical College",
+        cityId: "india-imphal",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Imphal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-imphal-national-institute-of-technology-manipur",
+        name: "National Institute of Technology, Manipur",
+        cityId: "india-imphal",
+        website: "http://www.nitmanipur.ac.in/",
+        source: "open-dataset",
+        // Situada a 4.1 km del centro de Imphal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-imphal-indian-institute-of-information-technology-manipur",
+        name: "Indian Institute of Information Technology, Manipur",
+        cityId: "india-imphal",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Imphal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-imphal-national-sports-university-manipur",
+        name: "National Sports University, Manipur",
+        cityId: "india-imphal",
+        website: null,
+        source: "open-dataset",
+        // Situada a 15.2 km del centro de Imphal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-imphal-manipur-university-of-culture",
+        name: "Manipur University of Culture",
+        cityId: "india-imphal",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Imphal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-imphal-manipur-technical-university",
+        name: "Manipur Technical University",
+        cityId: "india-imphal",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Imphal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-imphal-dhanamanjuri-university",
+        name: "Dhanamanjuri University",
+        cityId: "india-imphal",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Imphal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-imphal-central-agricultural-university",
+        name: "Central Agricultural University",
+        cityId: "india-imphal",
+        website: "http://www.cau.org.in/",
+        source: "open-dataset",
+        // Situada a 5.5 km del centro de Imphal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-imphal-manipur-international-university",
+        name: "Manipur International University",
+        cityId: "india-imphal",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.0 km del centro de Imphal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-imphal-manipur-university",
+        name: "Manipur University",
+        cityId: "india-imphal",
+        website: "https://www.manipuruniv.ac.in/",
+        source: "open-dataset",
+        // Situada a 6.3 km del centro de Imphal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-imphal-khongnangthaba-university",
+        name: "Khongnangthaba University",
+        cityId: "india-imphal",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Imphal (Wikidata).
+      }),
+  ],
+  "india-shivaji-nagar": [
+      defineUniversity({
+        id: "india-shivaji-nagar-mit-world-peace-university",
+        name: "MIT World Peace University",
+        cityId: "india-shivaji-nagar",
+        website: "https://mitwpu.edu.in/",
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Shivaji Nagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shivaji-nagar-tuljaram-chaturchand-college",
+        name: "Tuljaram Chaturchand College",
+        cityId: "india-shivaji-nagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Shivaji Nagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shivaji-nagar-coep-technological-university",
+        name: "COEP Technological University",
+        cityId: "india-shivaji-nagar",
+        website: "https://www.coep.org.in/",
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Shivaji Nagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shivaji-nagar-cusrow-wadia-institute-of-technology",
+        name: "Cusrow Wadia Institute of Technology",
+        cityId: "india-shivaji-nagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Shivaji Nagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shivaji-nagar-government-polytechnic-pune",
+        name: "Government Polytechnic, Pune",
+        cityId: "india-shivaji-nagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Shivaji Nagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shivaji-nagar-jnana-deepa-vidyapeeth",
+        name: "Jnana-Deepa Vidyapeeth",
+        cityId: "india-shivaji-nagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Shivaji Nagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shivaji-nagar-papal-seminary",
+        name: "Papal Seminary",
+        cityId: "india-shivaji-nagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Shivaji Nagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shivaji-nagar-tata-management-training-centre",
+        name: "Tata Management Training Centre",
+        cityId: "india-shivaji-nagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Shivaji Nagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shivaji-nagar-jspm-university",
+        name: "JSPM University",
+        cityId: "india-shivaji-nagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shivaji Nagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shivaji-nagar-sri-balaji-university-pune",
+        name: "Sri Balaji University, Pune",
+        cityId: "india-shivaji-nagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shivaji Nagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shivaji-nagar-des-pune-university",
+        name: "DES Pune University",
+        cityId: "india-shivaji-nagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shivaji Nagar (Wikidata).
+      }),
   ],
   "india-udaipur": [
       defineUniversity({
@@ -2458,14 +2882,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.2 km del centro de Udaipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-udaipur-maharana-pratap-university-of-agriculture-and-technology",
-        name: "Maharana Pratap University of Agriculture and Technology",
-        cityId: "india-udaipur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Udaipur (Wikidata).
       }),
       defineUniversity({
         id: "india-udaipur-maharana-pratap-university-of-agriculture-and-technology",
@@ -2531,333 +2947,703 @@ export default {
         source: "open-dataset",
         // Situada a 2.1 km del centro de Udaipur (Wikidata).
       }),
-  ],
-  "india-pune": [
       defineUniversity({
-        id: "india-pune-mes-garware-college-of-commerce",
-        name: "MES Garware College of Commerce",
-        cityId: "india-pune",
+        id: "india-udaipur-pacific-university-udaipur",
+        name: "Pacific University Udaipur",
+        cityId: "india-udaipur",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Pune (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-pune-chandrashekhar-agashe-college-of-physical-education",
-        name: "Chandrashekhar Agashe College of Physical Education",
-        cityId: "india-pune",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Pune (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-pune-aissms-college-of-polytechnic",
-        name: "AISSMS College of Polytechnic",
-        cityId: "india-pune",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Pune (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-pune-ness-wadia-college-of-commerce",
-        name: "Ness Wadia College of Commerce",
-        cityId: "india-pune",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Pune (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-pune-indian-institute-of-information-technology-pune",
-        name: "Indian Institute of Information Technology, Pune",
-        cityId: "india-pune",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.7 km del centro de Pune (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-pune-vishwakarma-university",
-        name: "Vishwakarma University",
-        cityId: "india-pune",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.2 km del centro de Pune (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-pune-bharati-vidyapeeth",
-        name: "Bharati Vidyapeeth",
-        cityId: "india-pune",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Pune (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-pune-gokhale-institute-of-politics-and-economics",
-        name: "Gokhale Institute of Politics and Economics",
-        cityId: "india-pune",
-        website: "http://www.gipe.ernet.in/",
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Pune (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-pune-national-institute-of-bank-management",
-        name: "National Institute of Bank Management",
-        cityId: "india-pune",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Pune (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-pune-tilak-maharashtra-vidyapeeth",
-        name: "Tilak Maharashtra Vidyapeeth",
-        cityId: "india-pune",
-        website: "http://www.tmv.edu.in/",
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Pune (Wikidata).
+        // Situada a None km del centro de Udaipur (Wikidata).
       }),
   ],
-  "india-kanke": [
+  "india-thrissur": [
       defineUniversity({
-        id: "india-kanke-jharkhand-state-open-university",
-        name: "Jharkhand State Open University",
-        cityId: "india-kanke",
+        id: "india-thrissur-vimala-college",
+        name: "Vimala College",
+        cityId: "india-thrissur",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Kānke (Wikidata).
+        // Situada a 4.2 km del centro de Thrissur (Wikidata).
       }),
       defineUniversity({
-        id: "india-kanke-jharkhand-state-open-university",
-        name: "Jharkhand State Open University",
-        cityId: "india-kanke",
+        id: "india-thrissur-vadakke-madham-brahmaswam-vedic-research-centre",
+        name: "Vadakke Madham Brahmaswam Vedic Research Centre",
+        cityId: "india-thrissur",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Kānke (Wikidata).
+        // Situada a 1.1 km del centro de Thrissur (Wikidata).
       }),
       defineUniversity({
-        id: "india-kanke-birsa-agricultural-university",
-        name: "Birsa Agricultural University",
-        cityId: "india-kanke",
-        website: "http://www.bau.nic.in/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Kānke (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kanke-birsa-agricultural-university",
-        name: "Birsa Agricultural University",
-        cityId: "india-kanke",
-        website: "http://www.bau.nic.in/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Kānke (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kanke-birla-institute-of-technology-mesra",
-        name: "Birla Institute of Technology, Mesra",
-        cityId: "india-kanke",
+        id: "india-thrissur-maharaja-s-technological-institute",
+        name: "Maharaja's Technological Institute",
+        cityId: "india-thrissur",
         website: null,
         source: "open-dataset",
-        // Situada a 12.4 km del centro de Kānke (Wikidata).
+        // Situada a 1.7 km del centro de Thrissur (Wikidata).
       }),
       defineUniversity({
-        id: "india-kanke-sai-nath-university",
-        name: "Sai Nath University",
-        cityId: "india-kanke",
+        id: "india-thrissur-college-of-fine-arts-thrissur",
+        name: "College of Fine Arts, Thrissur",
+        cityId: "india-thrissur",
         website: null,
         source: "open-dataset",
-        // Situada a 10.7 km del centro de Kānke (Wikidata).
+        // Situada a 1.5 km del centro de Thrissur (Wikidata).
       }),
       defineUniversity({
-        id: "india-kanke-dr-shyama-prasad-mukherjee-university",
-        name: "Dr. Shyama Prasad Mukherjee University",
-        cityId: "india-kanke",
+        id: "india-thrissur-government-women-s-polytechnic-college-nedupuzha-thrissur",
+        name: "Government Women's Polytechnic College, Nedupuzha, Thrissur",
+        cityId: "india-thrissur",
         website: null,
         source: "open-dataset",
-        // Situada a 5.2 km del centro de Kānke (Wikidata).
+        // Situada a 3.0 km del centro de Thrissur (Wikidata).
       }),
       defineUniversity({
-        id: "india-kanke-national-university-of-study-and-research-in-law",
-        name: "National University of Study and Research in Law",
-        cityId: "india-kanke",
+        id: "india-thrissur-unnayi-warrier-smaraka-kalanilayam",
+        name: "Unnayi Warrier Smaraka Kalanilayam",
+        cityId: "india-thrissur",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Kānke (Wikidata).
+        // Situada a None km del centro de Thrissur (Wikidata).
       }),
       defineUniversity({
-        id: "india-kanke-national-university-of-study-and-research-in-law",
-        name: "National University of Study and Research in Law",
-        cityId: "india-kanke",
+        id: "india-thrissur-college-of-horticulture",
+        name: "College of Horticulture",
+        cityId: "india-thrissur",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Kānke (Wikidata).
+        // Situada a None km del centro de Thrissur (Wikidata).
       }),
       defineUniversity({
-        id: "india-kanke-rajendra-institute-of-medical-sciences",
-        name: "Rajendra Institute of Medical Sciences",
-        cityId: "india-kanke",
+        id: "india-thrissur-sree-rama-government-polytechnic-college-thriprayar",
+        name: "Sree Rama Government Polytechnic College,Thriprayar",
+        cityId: "india-thrissur",
         website: null,
         source: "open-dataset",
-        // Situada a 5.6 km del centro de Kānke (Wikidata).
+        // Situada a None km del centro de Thrissur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-thrissur-sri-c-achutha-menon-government-college",
+        name: "Sri C. Achutha Menon Government College",
+        cityId: "india-thrissur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Thrissur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-thrissur-st-mary-s-college-thrissur",
+        name: "St. Mary's College, Thrissur",
+        cityId: "india-thrissur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Thrissur (Wikidata).
       }),
   ],
-  "india-dam-dam": [
+  "india-guwahati": [
       defineUniversity({
-        id: "india-dam-dam-amity-university-kolkata",
-        name: "Amity University, Kolkata",
-        cityId: "india-dam-dam",
+        id: "india-guwahati-esic-medical-college-hospital-beltola",
+        name: "ESIC Medical College & Hospital, Beltola",
+        cityId: "india-guwahati",
         website: null,
         source: "open-dataset",
-        // Situada a 7.7 km del centro de Dam Dam (Wikidata).
+        // Situada a 9.4 km del centro de Guwahati (Wikidata).
       }),
       defineUniversity({
-        id: "india-dam-dam-university-of-engineering-management-kolkata",
-        name: "University of Engineering & Management, Kolkata",
-        cityId: "india-dam-dam",
+        id: "india-guwahati-srimanta-sankaradeva-university-of-health-sciences",
+        name: "Srimanta Sankaradeva University of Health Sciences",
+        cityId: "india-guwahati",
         website: null,
         source: "open-dataset",
-        // Situada a 10.7 km del centro de Dam Dam (Wikidata).
+        // Situada a 4.1 km del centro de Guwahati (Wikidata).
       }),
       defineUniversity({
-        id: "india-dam-dam-st-xavier-s-university",
-        name: "St. Xavier's University",
-        cityId: "india-dam-dam",
+        id: "india-guwahati-university-of-science-and-technology-meghalaya",
+        name: "University of Science and Technology, Meghalaya",
+        cityId: "india-guwahati",
         website: null,
         source: "open-dataset",
-        // Situada a 10.4 km del centro de Dam Dam (Wikidata).
+        // Situada a 13.6 km del centro de Guwahati (Wikidata).
       }),
       defineUniversity({
-        id: "india-dam-dam-maulana-abul-kalam-azad-university-of-technology",
-        name: "Maulana Abul Kalam Azad University of Technology",
-        cityId: "india-dam-dam",
+        id: "india-guwahati-royal-global-university",
+        name: "Royal Global University",
+        cityId: "india-guwahati",
         website: null,
         source: "open-dataset",
-        // Situada a 4.1 km del centro de Dam Dam (Wikidata).
+        // Situada a 8.3 km del centro de Guwahati (Wikidata).
       }),
       defineUniversity({
-        id: "india-dam-dam-aliah-university",
-        name: "Aliah University",
-        cityId: "india-dam-dam",
+        id: "india-guwahati-guwahati-college",
+        name: "Guwahati College",
+        cityId: "india-guwahati",
         website: null,
         source: "open-dataset",
-        // Situada a 8.2 km del centro de Dam Dam (Wikidata).
+        // Situada a 4.2 km del centro de Guwahati (Wikidata).
       }),
       defineUniversity({
-        id: "india-dam-dam-aliah-university",
-        name: "Aliah University",
-        cityId: "india-dam-dam",
+        id: "india-guwahati-omeo-kumar-das-institute-of-social-change-and-development",
+        name: "Omeo Kumar Das Institute of Social Change and Development",
+        cityId: "india-guwahati",
         website: null,
         source: "open-dataset",
-        // Situada a 8.2 km del centro de Dam Dam (Wikidata).
+        // Situada a 7.8 km del centro de Guwahati (Wikidata).
       }),
       defineUniversity({
-        id: "india-dam-dam-sister-nivedita-university",
-        name: "Sister Nivedita University",
-        cityId: "india-dam-dam",
-        website: "https://snuniv.ac.in/",
-        source: "open-dataset",
-        // Situada a 8.2 km del centro de Dam Dam (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-dam-dam-techno-india-university",
-        name: "Techno India University",
-        cityId: "india-dam-dam",
+        id: "india-guwahati-cotton-university",
+        name: "Cotton University",
+        cityId: "india-guwahati",
         website: null,
         source: "open-dataset",
-        // Situada a 6.4 km del centro de Dam Dam (Wikidata).
+        // Situada a 0.3 km del centro de Guwahati (Wikidata).
       }),
       defineUniversity({
-        id: "india-dam-dam-west-bengal-university-of-health-sciences",
-        name: "West Bengal University of Health Sciences",
-        cityId: "india-dam-dam",
+        id: "india-guwahati-assam-don-bosco-university",
+        name: "Assam Don Bosco University",
+        cityId: "india-guwahati",
         website: null,
         source: "open-dataset",
-        // Situada a 4.8 km del centro de Dam Dam (Wikidata).
+        // Situada a 16.2 km del centro de Guwahati (Wikidata).
       }),
       defineUniversity({
-        id: "india-dam-dam-west-bengal-university-of-health-sciences",
-        name: "West Bengal University of Health Sciences",
-        cityId: "india-dam-dam",
+        id: "india-guwahati-assam-down-town-university",
+        name: "Assam down town University",
+        cityId: "india-guwahati",
+        website: "https://adtu.in/",
+        source: "open-dataset",
+        // Situada a 11.7 km del centro de Guwahati (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-guwahati-mahatma-gandhi-university-meghalaya",
+        name: "Mahatma Gandhi University, Meghalaya",
+        cityId: "india-guwahati",
         website: null,
         source: "open-dataset",
-        // Situada a 4.8 km del centro de Dam Dam (Wikidata).
+        // Situada a 18.0 km del centro de Guwahati (Wikidata).
       }),
   ],
-  "india-bikaner": [
+  "india-prayagraj": [
       defineUniversity({
-        id: "india-bikaner-bikaner-technical-university",
-        name: "Bikaner Technical University",
-        cityId: "india-bikaner",
+        id: "india-prayagraj-dr-rajendra-prasad-national-law-university",
+        name: "Dr. Rajendra Prasad National Law University",
+        cityId: "india-prayagraj",
         website: null,
         source: "open-dataset",
-        // Situada a 6.0 km del centro de Bikaner (Wikidata).
+        // Situada a 9.1 km del centro de Prayagraj (Wikidata).
       }),
       defineUniversity({
-        id: "india-bikaner-bikaner-technical-university",
-        name: "Bikaner Technical University",
-        cityId: "india-bikaner",
+        id: "india-prayagraj-university-of-allahabad",
+        name: "University of Allahabad",
+        cityId: "india-prayagraj",
         website: null,
         source: "open-dataset",
-        // Situada a 6.0 km del centro de Bikaner (Wikidata).
+        // Situada a 3.0 km del centro de Prayagraj (Wikidata).
       }),
       defineUniversity({
-        id: "india-bikaner-maharaja-ganga-singh-university",
-        name: "Maharaja Ganga Singh University",
-        cityId: "india-bikaner",
+        id: "india-prayagraj-prof-rajendra-singh-rajju-bhaiya-university",
+        name: "Prof. Rajendra Singh (Rajju Bhaiya) University",
+        cityId: "india-prayagraj",
         website: null,
         source: "open-dataset",
-        // Situada a 5.7 km del centro de Bikaner (Wikidata).
+        // Situada a 0.7 km del centro de Prayagraj (Wikidata).
       }),
       defineUniversity({
-        id: "india-bikaner-maharaja-ganga-singh-university",
-        name: "Maharaja Ganga Singh University",
-        cityId: "india-bikaner",
+        id: "india-prayagraj-motilal-nehru-national-institute-of-technology-allahabad",
+        name: "Motilal Nehru National Institute of Technology, Allahabad",
+        cityId: "india-prayagraj",
         website: null,
         source: "open-dataset",
-        // Situada a 5.7 km del centro de Bikaner (Wikidata).
+        // Situada a 5.7 km del centro de Prayagraj (Wikidata).
       }),
       defineUniversity({
-        id: "india-bikaner-rnb-global-university",
-        name: "RNB Global University",
-        cityId: "india-bikaner",
+        id: "india-prayagraj-sam-higginbottom-institute-of-agriculture-technology-and-sciences",
+        name: "Sam Higginbottom Institute of Agriculture, Technology and Sciences",
+        cityId: "india-prayagraj",
         website: null,
         source: "open-dataset",
-        // Situada a 18.9 km del centro de Bikaner (Wikidata).
+        // Situada a 3.5 km del centro de Prayagraj (Wikidata).
       }),
       defineUniversity({
-        id: "india-bikaner-rajasthan-university-of-veterinary-and-animal-sciences",
-        name: "Rajasthan University of Veterinary and Animal Sciences",
-        cityId: "india-bikaner",
+        id: "india-prayagraj-uttar-pradesh-rajarshi-tandon-open-university",
+        name: "Uttar Pradesh Rajarshi Tandon Open University",
+        cityId: "india-prayagraj",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Bikaner (Wikidata).
+        // Situada a 10.8 km del centro de Prayagraj (Wikidata).
       }),
       defineUniversity({
-        id: "india-bikaner-dungar-college",
-        name: "Dungar College",
-        cityId: "india-bikaner",
+        id: "india-prayagraj-united-university",
+        name: "United University",
+        cityId: "india-prayagraj",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Bikaner (Wikidata).
+        // Situada a None km del centro de Prayagraj (Wikidata).
       }),
       defineUniversity({
-        id: "india-bikaner-swami-keshwanand-rajasthan-agricultural-university",
-        name: "Swami Keshwanand Rajasthan Agricultural University",
-        cityId: "india-bikaner",
+        id: "india-prayagraj-centre-for-social-forestry-and-eco-rehabilitation",
+        name: "Centre for Social Forestry and Eco-Rehabilitation",
+        cityId: "india-prayagraj",
         website: null,
         source: "open-dataset",
-        // Situada a 7.1 km del centro de Bikaner (Wikidata).
+        // Situada a None km del centro de Prayagraj (Wikidata).
       }),
       defineUniversity({
-        id: "india-bikaner-swami-keshwanand-rajasthan-agricultural-university",
-        name: "Swami Keshwanand Rajasthan Agricultural University",
-        cityId: "india-bikaner",
+        id: "india-prayagraj-institute-of-engineering-and-rural-technology-allahabad",
+        name: "Institute of Engineering and Rural Technology, Allahabad",
+        cityId: "india-prayagraj",
         website: null,
         source: "open-dataset",
-        // Situada a 7.1 km del centro de Bikaner (Wikidata).
+        // Situada a None km del centro de Prayagraj (Wikidata).
       }),
       defineUniversity({
-        id: "india-bikaner-veterinary-college-bikaner",
-        name: "Veterinary College, Bikaner",
-        cityId: "india-bikaner",
+        id: "india-prayagraj-pcit-institute-of-it-and-management",
+        name: "PCiT institute of IT and Management",
+        cityId: "india-prayagraj",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Bikaner (Wikidata).
+        // Situada a None km del centro de Prayagraj (Wikidata).
+      }),
+  ],
+  "india-nagpur": [
+      defineUniversity({
+        id: "india-nagpur-rashtrasant-tukadoji-maharaj-nagpur-university",
+        name: "Rashtrasant Tukadoji Maharaj Nagpur University",
+        cityId: "india-nagpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Nagpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nagpur-g-h-raisoni-institute-of-information-technology-nagpur",
+        name: "G H Raisoni Institute of Information Technology, Nagpur",
+        cityId: "india-nagpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Nagpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nagpur-g-h-raisoni-department-of-microbiology-and-biotechnology-ghriit-nagpur",
+        name: "G H Raisoni Department of Microbiology and Biotechnology, GHRIIT, Nagpur",
+        cityId: "india-nagpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Nagpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nagpur-laxminarayan-institute-of-technology",
+        name: "Laxminarayan Institute of Technology",
+        cityId: "india-nagpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de Nagpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nagpur-ramdeobaba-university",
+        name: "Ramdeobaba University",
+        cityId: "india-nagpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.1 km del centro de Nagpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nagpur-visvesvaraya-national-institute-of-technology-nagpur",
+        name: "Visvesvaraya National Institute of Technology, Nagpur",
+        cityId: "india-nagpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.1 km del centro de Nagpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nagpur-institute-of-management-technology-nagpur",
+        name: "Institute of Management Technology, Nagpur",
+        cityId: "india-nagpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nagpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nagpur-government-college-of-engineering-nagpur",
+        name: "Government College of Engineering, Nagpur",
+        cityId: "india-nagpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nagpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nagpur-national-academy-of-direct-taxes",
+        name: "National Academy of Direct Taxes",
+        cityId: "india-nagpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nagpur (Wikidata).
+      }),
+  ],
+  "india-mysuru": [
+      defineUniversity({
+        id: "india-mysuru-university-of-mysore",
+        name: "University of Mysore",
+        cityId: "india-mysuru",
+        website: "http://www.uni-mysore.ac.in/",
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Mysuru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mysuru-government-ayurveda-medical-college-and-hospital-mysore",
+        name: "Government Ayurveda Medical College and Hospital, Mysore",
+        cityId: "india-mysuru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Mysuru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mysuru-maharani-s-science-college-for-women-mysore",
+        name: "Maharani’s Science College for Women, Mysore",
+        cityId: "india-mysuru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Mysuru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mysuru-jss-academy-of-higher-education-research",
+        name: "JSS Academy of Higher Education & Research",
+        cityId: "india-mysuru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Mysuru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mysuru-karnataka-state-open-university",
+        name: "Karnataka State Open University",
+        cityId: "india-mysuru",
+        website: "http://www.karnatakastateopenuniversity.in/",
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Mysuru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mysuru-gsss-institute-of-management-science",
+        name: "GSSS Institute of Management Science",
+        cityId: "india-mysuru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mysuru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mysuru-karnataka-state-music-university-mysore",
+        name: "Karnataka State Music University, Mysore",
+        cityId: "india-mysuru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mysuru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mysuru-sadvidya-pathashala",
+        name: "Sadvidya Pathashala",
+        cityId: "india-mysuru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mysuru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mysuru-sri-jayachamarajendra-college-of-engineering",
+        name: "Sri Jayachamarajendra College of Engineering",
+        cityId: "india-mysuru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mysuru (Wikidata).
+      }),
+  ],
+  "india-chennai": [
+      defineUniversity({
+        id: "india-chennai-university-of-madras",
+        name: "University of Madras",
+        cityId: "india-chennai",
+        website: "http://www.unom.ac.in/",
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Chennai (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-chennai-institute-of-hotel-management",
+        name: "Institute of Hotel Management",
+        cityId: "india-chennai",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chennai (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-chennai-jeppiaar-university",
+        name: "Jeppiaar University",
+        cityId: "india-chennai",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chennai (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-chennai-vivekananda-educational-society",
+        name: "Vivekananda Educational Society",
+        cityId: "india-chennai",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chennai (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-chennai-central-institute-of-brackish-water-aquaculture",
+        name: "Central Institute of Brackish Water Aquaculture",
+        cityId: "india-chennai",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chennai (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-chennai-indian-statistical-institute-chennai-centre",
+        name: "Indian Statistical Institute Chennai Centre",
+        cityId: "india-chennai",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chennai (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-chennai-madras-institute-of-development-studies",
+        name: "Madras Institute of Development Studies",
+        cityId: "india-chennai",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chennai (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-chennai-madras-school-of-social-work",
+        name: "Madras School of Social Work",
+        cityId: "india-chennai",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chennai (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-chennai-srm-nightingale-school",
+        name: "SRM Nightingale School",
+        cityId: "india-chennai",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chennai (Wikidata).
+      }),
+  ],
+  "india-kalpatta": [
+      defineUniversity({
+        id: "india-kalpatta-government-college-mananthavady",
+        name: "Government College Mananthavady",
+        cityId: "india-kalpatta",
+        website: null,
+        source: "open-dataset",
+        // Situada a 27.9 km del centro de Kalpatta (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kalpatta-government-polytechnic-college-meenangadi",
+        name: "Government Polytechnic College Meenangadi",
+        cityId: "india-kalpatta",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.9 km del centro de Kalpatta (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kalpatta-govt-polytechnic-college-meppadi",
+        name: "Govt. Polytechnic College Meppadi",
+        cityId: "india-kalpatta",
+        website: null,
+        source: "open-dataset",
+        // Situada a 10.9 km del centro de Kalpatta (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kalpatta-kerala-veterinary-and-animal-sciences-university",
+        name: "Kerala Veterinary and Animal Sciences University",
+        cityId: "india-kalpatta",
+        website: null,
+        source: "open-dataset",
+        // Situada a 10.2 km del centro de Kalpatta (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kalpatta-sirajul-huda",
+        name: "Sirajul Huda",
+        cityId: "india-kalpatta",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kalpatta (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kalpatta-awh-polytechnic-college",
+        name: "AWH  Polytechnic College",
+        cityId: "india-kalpatta",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kalpatta (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kalpatta-government-polytechnic-college-mananthavady",
+        name: "Government Polytechnic College Mananthavady",
+        cityId: "india-kalpatta",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kalpatta (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kalpatta-kmct-polytechnic-college",
+        name: "Kmct Polytechnic College",
+        cityId: "india-kalpatta",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kalpatta (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kalpatta-m-dit-polytechnic-college",
+        name: "M-Dit Polytechnic College",
+        cityId: "india-kalpatta",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kalpatta (Wikidata).
+      }),
+  ],
+  "india-delhi": [
+      defineUniversity({
+        id: "india-delhi-indira-gandhi-delhi-technical-university-for-women",
+        name: "Indira Gandhi Delhi Technical University for Women",
+        cityId: "india-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-delhi-dr-b-r-ambedkar-university-delhi",
+        name: "Dr. B. R. Ambedkar University, Delhi",
+        cityId: "india-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-delhi-maulana-azad-medical-college",
+        name: "Maulana Azad Medical College",
+        cityId: "india-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-delhi-vidyajyoti-college-of-theology",
+        name: "Vidyajyoti College of Theology",
+        cityId: "india-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-delhi-board-of-technical-education",
+        name: "Board of Technical Education",
+        cityId: "india-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-delhi-institute-for-studies-in-industrial-development",
+        name: "Institute for Studies in Industrial Development",
+        cityId: "india-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-delhi-acharya-narendra-dev-college",
+        name: "Acharya Narendra Dev College",
+        cityId: "india-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-delhi-delhi-college-of-arts-and-commerce",
+        name: "Delhi College of Arts and Commerce",
+        cityId: "india-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Delhi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-delhi-mathematical-sciences-foundation",
+        name: "Mathematical Sciences Foundation",
+        cityId: "india-delhi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Delhi (Wikidata).
+      }),
+  ],
+  "india-kolar-13353619": [
+      defineUniversity({
+        id: "india-kolar-13353619-atal-bihari-vajpayee-hindi-university",
+        name: "Atal Bihari Vajpayee Hindi University",
+        cityId: "india-kolar-13353619",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.3 km del centro de Kolar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolar-13353619-sarvepalli-radhakrishnan-university",
+        name: "Sarvepalli Radhakrishnan University",
+        cityId: "india-kolar-13353619",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.0 km del centro de Kolar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolar-13353619-barkatullah-university",
+        name: "Barkatullah University",
+        cityId: "india-kolar-13353619",
+        website: "http://www.bubhopal.nic.in/",
+        source: "open-dataset",
+        // Situada a 5.6 km del centro de Kolar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolar-13353619-lnct-university",
+        name: "LNCT University",
+        cityId: "india-kolar-13353619",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.0 km del centro de Kolar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolar-13353619-bhabha-university",
+        name: "Bhabha University",
+        cityId: "india-kolar-13353619",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.4 km del centro de Kolar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolar-13353619-mansarovar-global-university",
+        name: "Mansarovar Global University",
+        cityId: "india-kolar-13353619",
+        website: null,
+        source: "open-dataset",
+        // Situada a 19.3 km del centro de Kolar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolar-13353619-madhya-pradesh-bhoj-open-university",
+        name: "Madhya Pradesh Bhoj Open University",
+        cityId: "india-kolar-13353619",
+        website: "http://www.mpbou.org/",
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Kolar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolar-13353619-national-law-institute-university-bhopal",
+        name: "National Law Institute University Bhopal",
+        cityId: "india-kolar-13353619",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.2 km del centro de Kolar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kolar-13353619-madhyanchal-professional-university",
+        name: "Madhyanchal Professional University",
+        cityId: "india-kolar-13353619",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.8 km del centro de Kolar (Wikidata).
       }),
   ],
   "india-yelahanka": [
@@ -2925,87 +3711,71 @@ export default {
         source: "open-dataset",
         // Situada a 3.0 km del centro de Yelahanka (Wikidata).
       }),
-      defineUniversity({
-        id: "india-yelahanka-university-of-agricultural-sciences-bengaluru",
-        name: "University of Agricultural Sciences, Bengaluru",
-        cityId: "india-yelahanka",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Yelahanka (Wikidata).
-      }),
   ],
-  "india-gwalior": [
+  "india-thiruvananthapuram": [
       defineUniversity({
-        id: "india-gwalior-raja-mansingh-tomar-music-arts-university",
-        name: "Raja Mansingh Tomar Music & Arts University",
-        cityId: "india-gwalior",
-        website: null,
+        id: "india-thiruvananthapuram-university-of-kerala",
+        name: "University of Kerala",
+        cityId: "india-thiruvananthapuram",
+        website: "http://www.keralauniversity.ac.in/",
         source: "open-dataset",
-        // Situada a 4.4 km del centro de Gwalior (Wikidata).
+        // Situada a 2.0 km del centro de Thiruvananthapuram (Wikidata).
       }),
       defineUniversity({
-        id: "india-gwalior-rajmata-vijayaraje-scindia-krishi-vishwavidyalaya",
-        name: "Rajmata Vijayaraje Scindia Krishi Vishwavidyalaya",
-        cityId: "india-gwalior",
+        id: "india-thiruvananthapuram-attakulangara-school",
+        name: "Attakulangara School",
+        cityId: "india-thiruvananthapuram",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Gwalior (Wikidata).
+        // Situada a 0.5 km del centro de Thiruvananthapuram (Wikidata).
       }),
       defineUniversity({
-        id: "india-gwalior-rajmata-vijayaraje-scindia-krishi-vishwavidyalaya",
-        name: "Rajmata Vijayaraje Scindia Krishi Vishwavidyalaya",
-        cityId: "india-gwalior",
+        id: "india-thiruvananthapuram-college-of-applied-science-dhanuvachapuram",
+        name: "College of Applied Science, Dhanuvachapuram",
+        cityId: "india-thiruvananthapuram",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Gwalior (Wikidata).
+        // Situada a 2.1 km del centro de Thiruvananthapuram (Wikidata).
       }),
       defineUniversity({
-        id: "india-gwalior-lakshmibai-national-university-of-physical-education",
-        name: "Lakshmibai National University of Physical Education",
-        cityId: "india-gwalior",
+        id: "india-thiruvananthapuram-government-womens-polytechnic-college-thiruvananthapuram",
+        name: "Government Womens Polytechnic College Thiruvananthapuram",
+        cityId: "india-thiruvananthapuram",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Gwalior (Wikidata).
+        // Situada a 3.0 km del centro de Thiruvananthapuram (Wikidata).
       }),
       defineUniversity({
-        id: "india-gwalior-gajara-raja-medical-college",
-        name: "Gajara Raja Medical College",
-        cityId: "india-gwalior",
+        id: "india-thiruvananthapuram-women-s-polytechnic-college-kaimanom",
+        name: "Women’s Polytechnic College Kaimanom",
+        cityId: "india-thiruvananthapuram",
         website: null,
         source: "open-dataset",
-        // Situada a 4.1 km del centro de Gwalior (Wikidata).
+        // Situada a None km del centro de Thiruvananthapuram (Wikidata).
       }),
       defineUniversity({
-        id: "india-gwalior-itm-university-gwalior",
-        name: "ITM University, Gwalior",
-        cityId: "india-gwalior",
+        id: "india-thiruvananthapuram-centre-for-development-studies",
+        name: "Centre for Development Studies",
+        cityId: "india-thiruvananthapuram",
         website: null,
         source: "open-dataset",
-        // Situada a 9.3 km del centro de Gwalior (Wikidata).
+        // Situada a None km del centro de Thiruvananthapuram (Wikidata).
       }),
       defineUniversity({
-        id: "india-gwalior-atal-bihari-vajpayee-indian-institute-of-information-technology-and-management-gwalior",
-        name: "Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior",
-        cityId: "india-gwalior",
-        website: "https://www.iiitm.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Gwalior (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-gwalior-jiwaji-university-gwalior",
-        name: "Jiwaji University, Gwalior",
-        cityId: "india-gwalior",
+        id: "india-thiruvananthapuram-m-g-m-polytechnic-college",
+        name: "M G M Polytechnic College",
+        cityId: "india-thiruvananthapuram",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Gwalior (Wikidata).
+        // Situada a None km del centro de Thiruvananthapuram (Wikidata).
       }),
       defineUniversity({
-        id: "india-gwalior-jiwaji-university-gwalior",
-        name: "Jiwaji University, Gwalior",
-        cityId: "india-gwalior",
+        id: "india-thiruvananthapuram-kerala-nurses-and-midwives-council",
+        name: "Kerala Nurses and Midwives Council",
+        cityId: "india-thiruvananthapuram",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Gwalior (Wikidata).
+        // Situada a None km del centro de Thiruvananthapuram (Wikidata).
       }),
   ],
   "india-rajkot": [
@@ -3074,6 +3844,72 @@ export default {
         // Situada a 7.6 km del centro de Rājkot (Wikidata).
       }),
   ],
+  "india-raipur-1258980": [
+      defineUniversity({
+        id: "india-raipur-1258980-national-institute-of-technology-raipur",
+        name: "National Institute of Technology Raipur",
+        cityId: "india-raipur-1258980",
+        website: "http://www.nitrr.ac.in/",
+        source: "open-dataset",
+        // Situada a 3.4 km del centro de Raipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-raipur-1258980-chhattisgarh-kamdhenu-vishwavidyalaya",
+        name: "Chhattisgarh Kamdhenu Vishwavidyalaya",
+        cityId: "india-raipur-1258980",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.0 km del centro de Raipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-raipur-1258980-international-institute-of-information-technology",
+        name: "International Institute of Information Technology",
+        cityId: "india-raipur-1258980",
+        website: null,
+        source: "open-dataset",
+        // Situada a 18.0 km del centro de Raipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-raipur-1258980-itm-university-raipur",
+        name: "ITM University, Raipur",
+        cityId: "india-raipur-1258980",
+        website: null,
+        source: "open-dataset",
+        // Situada a 18.4 km del centro de Raipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-raipur-1258980-indira-gandhi-agricultural-university",
+        name: "Indira Gandhi Agricultural University",
+        cityId: "india-raipur-1258980",
+        website: "http://www.igau.edu.in/",
+        source: "open-dataset",
+        // Situada a 7.4 km del centro de Raipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-raipur-1258980-shri-rawatpura-sarkar-university",
+        name: "Shri Rawatpura Sarkar University",
+        cityId: "india-raipur-1258980",
+        website: null,
+        source: "open-dataset",
+        // Situada a 10.6 km del centro de Raipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-raipur-1258980-kushabhau-thakre-patrakarita-avam-jansanchar-university",
+        name: "Kushabhau Thakre Patrakarita Avam Jansanchar University",
+        cityId: "india-raipur-1258980",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.7 km del centro de Raipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-raipur-1258980-pandit-ravishankar-shukla-university",
+        name: "Pandit Ravishankar Shukla University",
+        cityId: "india-raipur-1258980",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de Raipur (Wikidata).
+      }),
+  ],
   "india-jorhat": [
       defineUniversity({
         id: "india-jorhat-rain-forest-research-institute",
@@ -3082,14 +3918,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 9.5 km del centro de Jorhat (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jorhat-assam-women-s-university",
-        name: "Assam Women's University",
-        cityId: "india-jorhat",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.7 km del centro de Jorhat (Wikidata).
       }),
       defineUniversity({
         id: "india-jorhat-assam-women-s-university",
@@ -3116,14 +3944,6 @@ export default {
         // Situada a 3.9 km del centro de Jorhat (Wikidata).
       }),
       defineUniversity({
-        id: "india-jorhat-assam-agricultural-university",
-        name: "Assam Agricultural University",
-        cityId: "india-jorhat",
-        website: "http://www.aau.ac.in/",
-        source: "open-dataset",
-        // Situada a 3.9 km del centro de Jorhat (Wikidata).
-      }),
-      defineUniversity({
         id: "india-jorhat-jagannath-barooah-university",
         name: "Jagannath Barooah University",
         cityId: "india-jorhat",
@@ -3138,6 +3958,88 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 5.1 km del centro de Jorhat (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-jorhat-auniati-university",
+        name: "Auniati University",
+        cityId: "india-jorhat",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Jorhat (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-jorhat-jorhat-college",
+        name: "Jorhat College",
+        cityId: "india-jorhat",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Jorhat (Wikidata).
+      }),
+  ],
+  "india-dam-dam": [
+      defineUniversity({
+        id: "india-dam-dam-amity-university-kolkata",
+        name: "Amity University, Kolkata",
+        cityId: "india-dam-dam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.7 km del centro de Dam Dam (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-dam-dam-university-of-engineering-management-kolkata",
+        name: "University of Engineering & Management, Kolkata",
+        cityId: "india-dam-dam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 10.7 km del centro de Dam Dam (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-dam-dam-st-xavier-s-university",
+        name: "St. Xavier's University",
+        cityId: "india-dam-dam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 10.4 km del centro de Dam Dam (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-dam-dam-maulana-abul-kalam-azad-university-of-technology",
+        name: "Maulana Abul Kalam Azad University of Technology",
+        cityId: "india-dam-dam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.1 km del centro de Dam Dam (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-dam-dam-aliah-university",
+        name: "Aliah University",
+        cityId: "india-dam-dam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.2 km del centro de Dam Dam (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-dam-dam-sister-nivedita-university",
+        name: "Sister Nivedita University",
+        cityId: "india-dam-dam",
+        website: "https://snuniv.ac.in/",
+        source: "open-dataset",
+        // Situada a 8.2 km del centro de Dam Dam (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-dam-dam-techno-india-university",
+        name: "Techno India University",
+        cityId: "india-dam-dam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.4 km del centro de Dam Dam (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-dam-dam-west-bengal-university-of-health-sciences",
+        name: "West Bengal University of Health Sciences",
+        cityId: "india-dam-dam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.8 km del centro de Dam Dam (Wikidata).
       }),
   ],
   "india-sholinganallur": [
@@ -3206,246 +4108,6 @@ export default {
         // Situada a 2.1 km del centro de Sholinganallur (Wikidata).
       }),
   ],
-  "india-shivaji-nagar": [
-      defineUniversity({
-        id: "india-shivaji-nagar-mit-world-peace-university",
-        name: "MIT World Peace University",
-        cityId: "india-shivaji-nagar",
-        website: "https://mitwpu.edu.in/",
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Shivaji Nagar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-shivaji-nagar-tuljaram-chaturchand-college",
-        name: "Tuljaram Chaturchand College",
-        cityId: "india-shivaji-nagar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Shivaji Nagar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-shivaji-nagar-coep-technological-university",
-        name: "COEP Technological University",
-        cityId: "india-shivaji-nagar",
-        website: "https://www.coep.org.in/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Shivaji Nagar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-shivaji-nagar-cusrow-wadia-institute-of-technology",
-        name: "Cusrow Wadia Institute of Technology",
-        cityId: "india-shivaji-nagar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Shivaji Nagar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-shivaji-nagar-government-polytechnic-pune",
-        name: "Government Polytechnic, Pune",
-        cityId: "india-shivaji-nagar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Shivaji Nagar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-shivaji-nagar-jnana-deepa-vidyapeeth",
-        name: "Jnana-Deepa Vidyapeeth",
-        cityId: "india-shivaji-nagar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Shivaji Nagar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-shivaji-nagar-papal-seminary",
-        name: "Papal Seminary",
-        cityId: "india-shivaji-nagar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Shivaji Nagar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-shivaji-nagar-tata-management-training-centre",
-        name: "Tata Management Training Centre",
-        cityId: "india-shivaji-nagar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Shivaji Nagar (Wikidata).
-      }),
-  ],
-  "india-thanesar": [
-      defineUniversity({
-        id: "india-thanesar-indian-institute-of-information-technology-sonepat",
-        name: "Indian Institute of Information Technology, Sonepat",
-        cityId: "india-thanesar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Thānesar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-thanesar-national-institute-of-electronics-information-technology-kurukshetra",
-        name: "National Institute of Electronics & Information Technology, Kurukshetra",
-        cityId: "india-thanesar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Thānesar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-thanesar-govt-polytechnic-umri",
-        name: "Govt. Polytechnic, Umri",
-        cityId: "india-thanesar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Thānesar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-thanesar-shri-krishna-ayush-university",
-        name: "Shri Krishna AYUSH University",
-        cityId: "india-thanesar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.9 km del centro de Thānesar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-thanesar-shri-krishna-ayush-university",
-        name: "Shri Krishna AYUSH University",
-        cityId: "india-thanesar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.9 km del centro de Thānesar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-thanesar-kurukshetra-university",
-        name: "Kurukshetra University",
-        cityId: "india-thanesar",
-        website: "http://www.kukinfo.com/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Thānesar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-thanesar-national-institute-of-technology-kurukshetra",
-        name: "National Institute of Technology, Kurukshetra",
-        cityId: "india-thanesar",
-        website: "http://www.nitkkr.net/",
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Thānesar (Wikidata).
-      }),
-  ],
-  "india-solan": [
-      defineUniversity({
-        id: "india-solan-shoolini-university",
-        name: "Shoolini University",
-        cityId: "india-solan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Solan (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-solan-bahra-university",
-        name: "Bahra University",
-        cityId: "india-solan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.7 km del centro de Solan (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-solan-maharishi-markandeshwar-university-solan",
-        name: "Maharishi Markandeshwar University, Solan",
-        cityId: "india-solan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.7 km del centro de Solan (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-solan-dr-yashwant-singh-parmar-university-of-horticulture-and-forestry",
-        name: "Dr. Yashwant Singh Parmar University of Horticulture and Forestry",
-        cityId: "india-solan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.1 km del centro de Solan (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-solan-dr-yashwant-singh-parmar-university-of-horticulture-and-forestry",
-        name: "Dr. Yashwant Singh Parmar University of Horticulture and Forestry",
-        cityId: "india-solan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.1 km del centro de Solan (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-solan-jaypee-university-of-information-technology",
-        name: "Jaypee University of Information Technology",
-        cityId: "india-solan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 12.5 km del centro de Solan (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-solan-manav-bharti-university",
-        name: "Manav Bharti University",
-        cityId: "india-solan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Solan (Wikidata).
-      }),
-  ],
-  "india-rohtak": [
-      defineUniversity({
-        id: "india-rohtak-maharshi-dayanand-university",
-        name: "Maharshi Dayanand University",
-        cityId: "india-rohtak",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Rohtak (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-rohtak-maharshi-dayanand-university",
-        name: "Maharshi Dayanand University",
-        cityId: "india-rohtak",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Rohtak (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-rohtak-baba-mastnath-university",
-        name: "Baba Mastnath University",
-        cityId: "india-rohtak",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Rohtak (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-rohtak-state-university-of-performing-and-visual-arts",
-        name: "State University of Performing And Visual Arts",
-        cityId: "india-rohtak",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Rohtak (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-rohtak-state-university-of-performing-and-visual-arts",
-        name: "State University of Performing And Visual Arts",
-        cityId: "india-rohtak",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Rohtak (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-rohtak-pandit-bhagwat-dayal-sharma-university-of-health-sciences",
-        name: "Pandit Bhagwat Dayal Sharma University of Health Sciences",
-        cityId: "india-rohtak",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Rohtak (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-rohtak-indian-institute-of-management-rohtak",
-        name: "Indian Institute of Management Rohtak",
-        cityId: "india-rohtak",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.5 km del centro de Rohtak (Wikidata).
-      }),
-  ],
   "india-rourkela": [
       defineUniversity({
         id: "india-rourkela-school-of-management-nit-rourkela",
@@ -3496,418 +4158,70 @@ export default {
         // Situada a 5.3 km del centro de Rourkela (Wikidata).
       }),
       defineUniversity({
-        id: "india-rourkela-biju-patnaik-university-of-technology",
-        name: "Biju Patnaik University of Technology",
+        id: "india-rourkela-department-of-humanities-and-social-sciences-nit-rourkela",
+        name: "Department of Humanities and Social Sciences, NIT Rourkela",
         cityId: "india-rourkela",
         website: null,
         source: "open-dataset",
-        // Situada a 5.3 km del centro de Rourkela (Wikidata).
+        // Situada a None km del centro de Rourkela (Wikidata).
       }),
   ],
-  "india-patiala": [
+  "india-kanke": [
       defineUniversity({
-        id: "india-patiala-punjabi-university",
-        name: "Punjabi University",
-        cityId: "india-patiala",
+        id: "india-kanke-jharkhand-state-open-university",
+        name: "Jharkhand State Open University",
+        cityId: "india-kanke",
         website: null,
         source: "open-dataset",
-        // Situada a 6.1 km del centro de Patiāla (Wikidata).
+        // Situada a 1.7 km del centro de Kānke (Wikidata).
       }),
       defineUniversity({
-        id: "india-patiala-punjabi-university",
-        name: "Punjabi University",
-        cityId: "india-patiala",
+        id: "india-kanke-birsa-agricultural-university",
+        name: "Birsa Agricultural University",
+        cityId: "india-kanke",
+        website: "http://www.bau.nic.in/",
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Kānke (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kanke-birla-institute-of-technology-mesra",
+        name: "Birla Institute of Technology, Mesra",
+        cityId: "india-kanke",
         website: null,
         source: "open-dataset",
-        // Situada a 6.1 km del centro de Patiāla (Wikidata).
+        // Situada a 12.4 km del centro de Kānke (Wikidata).
       }),
       defineUniversity({
-        id: "india-patiala-maharaja-bhupinder-singh-punjab-sports-university-patiala",
-        name: "Maharaja Bhupinder Singh Punjab Sports University, Patiala",
-        cityId: "india-patiala",
+        id: "india-kanke-sai-nath-university",
+        name: "Sai Nath University",
+        cityId: "india-kanke",
         website: null,
         source: "open-dataset",
-        // Situada a 9.5 km del centro de Patiāla (Wikidata).
+        // Situada a 10.7 km del centro de Kānke (Wikidata).
       }),
       defineUniversity({
-        id: "india-patiala-rajiv-gandhi-national-university-of-law",
-        name: "Rajiv Gandhi National University of Law",
-        cityId: "india-patiala",
+        id: "india-kanke-dr-shyama-prasad-mukherjee-university",
+        name: "Dr. Shyama Prasad Mukherjee University",
+        cityId: "india-kanke",
         website: null,
         source: "open-dataset",
-        // Situada a 8.6 km del centro de Patiāla (Wikidata).
+        // Situada a 5.2 km del centro de Kānke (Wikidata).
       }),
       defineUniversity({
-        id: "india-patiala-rajiv-gandhi-national-university-of-law",
-        name: "Rajiv Gandhi National University of Law",
-        cityId: "india-patiala",
+        id: "india-kanke-national-university-of-study-and-research-in-law",
+        name: "National University of Study and Research in Law",
+        cityId: "india-kanke",
         website: null,
         source: "open-dataset",
-        // Situada a 8.6 km del centro de Patiāla (Wikidata).
+        // Situada a 2.0 km del centro de Kānke (Wikidata).
       }),
       defineUniversity({
-        id: "india-patiala-thapar-institute-of-engineering-and-technology",
-        name: "Thapar Institute of Engineering and Technology",
-        cityId: "india-patiala",
-        website: "http://www.tiet.ac.in/",
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Patiāla (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-patiala-jagat-guru-nanak-dev-punjab-state-open-university",
-        name: "Jagat Guru Nanak Dev Punjab State Open University",
-        cityId: "india-patiala",
+        id: "india-kanke-rajendra-institute-of-medical-sciences",
+        name: "Rajendra Institute of Medical Sciences",
+        cityId: "india-kanke",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Patiāla (Wikidata).
-      }),
-  ],
-  "india-north-guwahati": [
-      defineUniversity({
-        id: "india-north-guwahati-national-institute-of-pharmaceutical-education-and-research-guwahati",
-        name: "National Institute of Pharmaceutical Education and Research, Guwahati",
-        cityId: "india-north-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.4 km del centro de North Guwāhāti (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-north-guwahati-assam-science-and-technology-university",
-        name: "Assam Science and Technology University",
-        cityId: "india-north-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.2 km del centro de North Guwāhāti (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-north-guwahati-assam-science-and-technology-university",
-        name: "Assam Science and Technology University",
-        cityId: "india-north-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.2 km del centro de North Guwāhāti (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-north-guwahati-indian-institute-of-technology-guwahati",
-        name: "Indian Institute of Technology Guwahati",
-        cityId: "india-north-guwahati",
-        website: "http://www.iitg.ernet.in/",
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de North Guwāhāti (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-north-guwahati-gauhati-university",
-        name: "Gauhati University",
-        cityId: "india-north-guwahati",
-        website: "http://www.gu.nic.in/",
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de North Guwāhāti (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-north-guwahati-national-law-university-and-judicial-academy-assam",
-        name: "National Law University and Judicial Academy, Assam",
-        cityId: "india-north-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de North Guwāhāti (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-north-guwahati-national-law-university-and-judicial-academy-assam",
-        name: "National Law University and Judicial Academy, Assam",
-        cityId: "india-north-guwahati",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de North Guwāhāti (Wikidata).
-      }),
-  ],
-  "india-nagpur": [
-      defineUniversity({
-        id: "india-nagpur-rashtrasant-tukadoji-maharaj-nagpur-university",
-        name: "Rashtrasant Tukadoji Maharaj Nagpur University",
-        cityId: "india-nagpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Nagpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nagpur-g-h-raisoni-institute-of-information-technology-nagpur",
-        name: "G H Raisoni Institute of Information Technology, Nagpur",
-        cityId: "india-nagpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Nagpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nagpur-g-h-raisoni-department-of-microbiology-and-biotechnology-ghriit-nagpur",
-        name: "G H Raisoni Department of Microbiology and Biotechnology, GHRIIT, Nagpur",
-        cityId: "india-nagpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Nagpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nagpur-laxminarayan-institute-of-technology",
-        name: "Laxminarayan Institute of Technology",
-        cityId: "india-nagpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Nagpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nagpur-laxminarayan-institute-of-technology",
-        name: "Laxminarayan Institute of Technology",
-        cityId: "india-nagpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Nagpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nagpur-ramdeobaba-university",
-        name: "Ramdeobaba University",
-        cityId: "india-nagpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Nagpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nagpur-visvesvaraya-national-institute-of-technology-nagpur",
-        name: "Visvesvaraya National Institute of Technology, Nagpur",
-        cityId: "india-nagpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Nagpur (Wikidata).
-      }),
-  ],
-  "india-kukatpally": [
-      defineUniversity({
-        id: "india-kukatpally-nithm",
-        name: "Nithm",
-        cityId: "india-kukatpally",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.0 km del centro de Kukatpally (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kukatpally-dr-b-r-ambedkar-open-university",
-        name: "Dr. B. R. Ambedkar Open University",
-        cityId: "india-kukatpally",
-        website: "http://www.braou.ac.in/",
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Kukatpally (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kukatpally-jawaharlal-nehru-technological-university-hyderabad",
-        name: "Jawaharlal Nehru Technological University, Hyderabad",
-        cityId: "india-kukatpally",
-        website: "http://www.jntuh.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Kukatpally (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kukatpally-jawaharlal-nehru-technological-university-hyderabad",
-        name: "Jawaharlal Nehru Technological University, Hyderabad",
-        cityId: "india-kukatpally",
-        website: "http://www.jntuh.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Kukatpally (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kukatpally-maulana-azad-national-urdu-university",
-        name: "Maulana Azad National Urdu University",
-        cityId: "india-kukatpally",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.5 km del centro de Kukatpally (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kukatpally-maulana-azad-national-urdu-university",
-        name: "Maulana Azad National Urdu University",
-        cityId: "india-kukatpally",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.5 km del centro de Kukatpally (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kukatpally-niper-hyderabad",
-        name: "NIPER Hyderabad",
-        cityId: "india-kukatpally",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Kukatpally (Wikidata).
-      }),
-  ],
-  "india-kota": [
-      defineUniversity({
-        id: "india-kota-indian-institute-of-information-technology-kota",
-        name: "Indian Institute of Information Technology, Kota",
-        cityId: "india-kota",
-        website: "http://iiitkota.ac.in/",
-        source: "open-dataset",
-        // Situada a 14.9 km del centro de Kota (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kota-agriculture-university-kota",
-        name: "Agriculture University, Kota",
-        cityId: "india-kota",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Kota (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kota-rajasthan-technical-university",
-        name: "Rajasthan Technical University",
-        cityId: "india-kota",
-        website: "http://www.rtu.ac.in/",
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Kota (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kota-rajasthan-technical-university",
-        name: "Rajasthan Technical University",
-        cityId: "india-kota",
-        website: "http://www.rtu.ac.in/",
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Kota (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kota-university-of-kota",
-        name: "University of Kota",
-        cityId: "india-kota",
-        website: "http://www.uok.ac.in/",
-        source: "open-dataset",
-        // Situada a 7.6 km del centro de Kota (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kota-university-of-kota",
-        name: "University of Kota",
-        cityId: "india-kota",
-        website: "http://www.uok.ac.in/",
-        source: "open-dataset",
-        // Situada a 7.6 km del centro de Kota (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kota-vardhman-mahaveer-open-university",
-        name: "Vardhman Mahaveer Open University",
-        cityId: "india-kota",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.1 km del centro de Kota (Wikidata).
-      }),
-  ],
-  "india-kanpur": [
-      defineUniversity({
-        id: "india-kanpur-rama-university",
-        name: "Rama University",
-        cityId: "india-kanpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 17.4 km del centro de Kanpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kanpur-chandra-shekhar-azad-university-of-agriculture-and-technology",
-        name: "Chandra Shekhar Azad University of Agriculture and Technology",
-        cityId: "india-kanpur",
-        website: "http://www.csauk.ac.in/",
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Kanpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kanpur-chandra-shekhar-azad-university-of-agriculture-and-technology",
-        name: "Chandra Shekhar Azad University of Agriculture and Technology",
-        cityId: "india-kanpur",
-        website: "http://www.csauk.ac.in/",
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Kanpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kanpur-chhatrapati-shahu-ji-maharaj-university",
-        name: "Chhatrapati Shahu Ji Maharaj University",
-        cityId: "india-kanpur",
-        website: "http://www.kanpuruniversity.org/",
-        source: "open-dataset",
-        // Situada a 9.1 km del centro de Kanpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kanpur-chhatrapati-shahu-ji-maharaj-university",
-        name: "Chhatrapati Shahu Ji Maharaj University",
-        cityId: "india-kanpur",
-        website: "http://www.kanpuruniversity.org/",
-        source: "open-dataset",
-        // Situada a 9.1 km del centro de Kanpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kanpur-harcourt-butler-technical-university",
-        name: "Harcourt Butler Technical University",
-        cityId: "india-kanpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.3 km del centro de Kanpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kanpur-indian-institute-of-technology-kanpur",
-        name: "Indian Institute of Technology Kanpur",
-        cityId: "india-kanpur",
-        website: "http://www.iitk.ac.in/",
-        source: "open-dataset",
-        // Situada a 12.5 km del centro de Kanpur (Wikidata).
-      }),
-  ],
-  "india-kalpatta": [
-      defineUniversity({
-        id: "india-kalpatta-government-college-mananthavady",
-        name: "Government College Mananthavady",
-        cityId: "india-kalpatta",
-        website: null,
-        source: "open-dataset",
-        // Situada a 27.9 km del centro de Kalpatta (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalpatta-government-polytechnic-college-meenangadi",
-        name: "Government Polytechnic College Meenangadi",
-        cityId: "india-kalpatta",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.9 km del centro de Kalpatta (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalpatta-govt-polytechnic-college-meppadi",
-        name: "Govt. Polytechnic College Meppadi",
-        cityId: "india-kalpatta",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.9 km del centro de Kalpatta (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalpatta-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kalpatta",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 20.9 km del centro de Kalpatta (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalpatta-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kalpatta",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 20.9 km del centro de Kalpatta (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalpatta-kerala-veterinary-and-animal-sciences-university",
-        name: "Kerala Veterinary and Animal Sciences University",
-        cityId: "india-kalpatta",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.2 km del centro de Kalpatta (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalpatta-kerala-veterinary-and-animal-sciences-university",
-        name: "Kerala Veterinary and Animal Sciences University",
-        cityId: "india-kalpatta",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.2 km del centro de Kalpatta (Wikidata).
+        // Situada a 5.6 km del centro de Kānke (Wikidata).
       }),
   ],
   "india-hubballi": [
@@ -3960,12 +4274,70 @@ export default {
         // Situada a 22.4 km del centro de Hubballi (Wikidata).
       }),
       defineUniversity({
-        id: "india-hubballi-university-of-agricultural-sciences-dharwad",
-        name: "University of Agricultural Sciences, Dharwad",
+        id: "india-hubballi-jss-banashankari-arts-commerce-s-k-gubbi-science-college",
+        name: "JSS Banashankari Arts, Commerce & S.K.Gubbi Science College",
         cityId: "india-hubballi",
-        website: "http://www.uasd.net/",
+        website: null,
         source: "open-dataset",
-        // Situada a 22.4 km del centro de Hubballi (Wikidata).
+        // Situada a None km del centro de Hubballi (Wikidata).
+      }),
+  ],
+  "india-gwalior": [
+      defineUniversity({
+        id: "india-gwalior-raja-mansingh-tomar-music-arts-university",
+        name: "Raja Mansingh Tomar Music & Arts University",
+        cityId: "india-gwalior",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.4 km del centro de Gwalior (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gwalior-rajmata-vijayaraje-scindia-krishi-vishwavidyalaya",
+        name: "Rajmata Vijayaraje Scindia Krishi Vishwavidyalaya",
+        cityId: "india-gwalior",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Gwalior (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gwalior-lakshmibai-national-university-of-physical-education",
+        name: "Lakshmibai National University of Physical Education",
+        cityId: "india-gwalior",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Gwalior (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gwalior-gajara-raja-medical-college",
+        name: "Gajara Raja Medical College",
+        cityId: "india-gwalior",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.1 km del centro de Gwalior (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gwalior-itm-university-gwalior",
+        name: "ITM University, Gwalior",
+        cityId: "india-gwalior",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.3 km del centro de Gwalior (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gwalior-atal-bihari-vajpayee-indian-institute-of-information-technology-and-management-gwalior",
+        name: "Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior",
+        cityId: "india-gwalior",
+        website: "https://www.iiitm.ac.in/",
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Gwalior (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gwalior-jiwaji-university-gwalior",
+        name: "Jiwaji University, Gwalior",
+        cityId: "india-gwalior",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Gwalior (Wikidata).
       }),
   ],
   "india-dharavi": [
@@ -3976,14 +4348,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 6.0 km del centro de Dhārāvi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-dharavi-university-of-mumbai",
-        name: "University of Mumbai",
-        cityId: "india-dharavi",
-        website: "http://www.mu.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Dhārāvi (Wikidata).
       }),
       defineUniversity({
         id: "india-dharavi-university-of-mumbai",
@@ -4025,221 +4389,221 @@ export default {
         source: "open-dataset",
         // Situada a 9.4 km del centro de Dhārāvi (Wikidata).
       }),
-  ],
-  "india-cuttack": [
       defineUniversity({
-        id: "india-cuttack-bhubanananda-orissa-school-of-engineering-cuttack",
-        name: "Bhubanananda orissa school of engineering cuttack",
-        cityId: "india-cuttack",
+        id: "india-dharavi-maharashtra-state-skills-university",
+        name: "Maharashtra State Skills University",
+        cityId: "india-dharavi",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Cuttack (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-cuttack-national-law-university-odisha",
-        name: "National Law University Odisha",
-        cityId: "india-cuttack",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.6 km del centro de Cuttack (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-cuttack-national-law-university-odisha",
-        name: "National Law University Odisha",
-        cityId: "india-cuttack",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.6 km del centro de Cuttack (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-cuttack-ravenshaw-university",
-        name: "Ravenshaw University",
-        cityId: "india-cuttack",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Cuttack (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-cuttack-ravenshaw-university",
-        name: "Ravenshaw University",
-        cityId: "india-cuttack",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Cuttack (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-cuttack-sri-sri-university",
-        name: "Sri Sri University",
-        cityId: "india-cuttack",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.6 km del centro de Cuttack (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-cuttack-madhusudan-law-college",
-        name: "Madhusudan Law College",
-        cityId: "india-cuttack",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Cuttack (Wikidata).
+        // Situada a None km del centro de Dhārāvi (Wikidata).
       }),
   ],
-  "india-bolpur": [
+  "india-bikaner": [
       defineUniversity({
-        id: "india-bolpur-biswa-bangla-biswabidyalay",
-        name: "Biswa Bangla Biswabidyalay",
-        cityId: "india-bolpur",
+        id: "india-bikaner-bikaner-technical-university",
+        name: "Bikaner Technical University",
+        cityId: "india-bikaner",
         website: null,
         source: "open-dataset",
-        // Situada a 3.2 km del centro de Bolpur (Wikidata).
+        // Situada a 6.0 km del centro de Bikaner (Wikidata).
       }),
       defineUniversity({
-        id: "india-bolpur-visva-bharati-university",
-        name: "Visva-Bharati University",
-        cityId: "india-bolpur",
-        website: "http://www.visva-bharati.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Bolpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bolpur-visva-bharati-university",
-        name: "Visva-Bharati University",
-        cityId: "india-bolpur",
-        website: "http://www.visva-bharati.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Bolpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bolpur-seacom-skills-university",
-        name: "Seacom Skills University",
-        cityId: "india-bolpur",
+        id: "india-bikaner-maharaja-ganga-singh-university",
+        name: "Maharaja Ganga Singh University",
+        cityId: "india-bikaner",
         website: null,
         source: "open-dataset",
-        // Situada a 7.2 km del centro de Bolpur (Wikidata).
+        // Situada a 5.7 km del centro de Bikaner (Wikidata).
       }),
       defineUniversity({
-        id: "india-bolpur-kabi-joydeb-mahavidyalaya",
-        name: "Kabi Joydeb Mahavidyalaya",
-        cityId: "india-bolpur",
+        id: "india-bikaner-rnb-global-university",
+        name: "RNB Global University",
+        cityId: "india-bikaner",
         website: null,
         source: "open-dataset",
-        // Situada a 15.2 km del centro de Bolpur (Wikidata).
+        // Situada a 18.9 km del centro de Bikaner (Wikidata).
       }),
       defineUniversity({
-        id: "india-bolpur-purni-devi-chaudhuri-girls-college",
-        name: "Purni Devi Chaudhuri Girls' College",
-        cityId: "india-bolpur",
+        id: "india-bikaner-rajasthan-university-of-veterinary-and-animal-sciences",
+        name: "Rajasthan University of Veterinary and Animal Sciences",
+        cityId: "india-bikaner",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Bolpur (Wikidata).
+        // Situada a 2.2 km del centro de Bikaner (Wikidata).
       }),
       defineUniversity({
-        id: "india-bolpur-sambhunath-college",
-        name: "Sambhunath College",
-        cityId: "india-bolpur",
+        id: "india-bikaner-dungar-college",
+        name: "Dungar College",
+        cityId: "india-bikaner",
         website: null,
         source: "open-dataset",
-        // Situada a 19.2 km del centro de Bolpur (Wikidata).
+        // Situada a 2.5 km del centro de Bikaner (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bikaner-swami-keshwanand-rajasthan-agricultural-university",
+        name: "Swami Keshwanand Rajasthan Agricultural University",
+        cityId: "india-bikaner",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.1 km del centro de Bikaner (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bikaner-veterinary-college-bikaner",
+        name: "Veterinary College, Bikaner",
+        cityId: "india-bikaner",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Bikaner (Wikidata).
       }),
   ],
-  "india-varanasi": [
+  "india-thanesar": [
       defineUniversity({
-        id: "india-varanasi-national-school-of-drama-varanasi",
-        name: "National School of Drama, Varanasi",
-        cityId: "india-varanasi",
+        id: "india-thanesar-indian-institute-of-information-technology-sonepat",
+        name: "Indian Institute of Information Technology, Sonepat",
+        cityId: "india-thanesar",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Varanasi (Wikidata).
+        // Situada a 3.2 km del centro de Thānesar (Wikidata).
       }),
       defineUniversity({
-        id: "india-varanasi-central-institute-of-higher-tibetan-studies",
-        name: "Central Institute of Higher Tibetan Studies",
-        cityId: "india-varanasi",
-        website: "http://www.cihts.ac.in/",
-        source: "open-dataset",
-        // Situada a 5.6 km del centro de Varanasi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-varanasi-mahatma-gandhi-kashi-vidyapeeth",
-        name: "Mahatma Gandhi Kashi Vidyapeeth",
-        cityId: "india-varanasi",
+        id: "india-thanesar-national-institute-of-electronics-information-technology-kurukshetra",
+        name: "National Institute of Electronics & Information Technology, Kurukshetra",
+        cityId: "india-thanesar",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Varanasi (Wikidata).
+        // Situada a 1.0 km del centro de Thānesar (Wikidata).
       }),
       defineUniversity({
-        id: "india-varanasi-mahatma-gandhi-kashi-vidyapeeth",
-        name: "Mahatma Gandhi Kashi Vidyapeeth",
-        cityId: "india-varanasi",
+        id: "india-thanesar-govt-polytechnic-umri",
+        name: "Govt. Polytechnic, Umri",
+        cityId: "india-thanesar",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Varanasi (Wikidata).
+        // Situada a 1.0 km del centro de Thānesar (Wikidata).
       }),
       defineUniversity({
-        id: "india-varanasi-sampurnanand-sanskrit-university",
-        name: "Sampurnanand Sanskrit University",
-        cityId: "india-varanasi",
-        website: "http://ssvv.up.nic.in/",
+        id: "india-thanesar-shri-krishna-ayush-university",
+        name: "Shri Krishna AYUSH University",
+        cityId: "india-thanesar",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.3 km del centro de Varanasi (Wikidata).
+        // Situada a 3.9 km del centro de Thānesar (Wikidata).
       }),
       defineUniversity({
-        id: "india-varanasi-sampurnanand-sanskrit-university",
-        name: "Sampurnanand Sanskrit University",
-        cityId: "india-varanasi",
-        website: "http://ssvv.up.nic.in/",
+        id: "india-thanesar-kurukshetra-university",
+        name: "Kurukshetra University",
+        cityId: "india-thanesar",
+        website: "http://www.kukinfo.com/",
         source: "open-dataset",
-        // Situada a 2.3 km del centro de Varanasi (Wikidata).
+        // Situada a 2.3 km del centro de Thānesar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-thanesar-national-institute-of-technology-kurukshetra",
+        name: "National Institute of Technology, Kurukshetra",
+        cityId: "india-thanesar",
+        website: "http://www.nitkkr.net/",
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Thānesar (Wikidata).
       }),
   ],
-  "india-srinagar": [
+  "india-surat": [
       defineUniversity({
-        id: "india-srinagar-cluster-university-of-srinagar",
-        name: "Cluster University of Srinagar",
-        cityId: "india-srinagar",
+        id: "india-surat-veer-narmad-south-gujarat-university",
+        name: "Veer Narmad South Gujarat University",
+        cityId: "india-surat",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Srinagar (Wikidata).
+        // Situada a 6.6 km del centro de Surat (Wikidata).
       }),
       defineUniversity({
-        id: "india-srinagar-cluster-university-of-srinagar",
-        name: "Cluster University of Srinagar",
-        cityId: "india-srinagar",
+        id: "india-surat-indian-institute-of-information-technology-surat",
+        name: "Indian Institute of Information Technology, Surat",
+        cityId: "india-surat",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Srinagar (Wikidata).
+        // Situada a 5.8 km del centro de Surat (Wikidata).
       }),
       defineUniversity({
-        id: "india-srinagar-university-of-kashmir",
-        name: "University of Kashmir",
-        cityId: "india-srinagar",
-        website: "http://kashmiruniversity.net/",
-        source: "open-dataset",
-        // Situada a 6.0 km del centro de Srinagar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-srinagar-university-of-kashmir",
-        name: "University of Kashmir",
-        cityId: "india-srinagar",
-        website: "http://kashmiruniversity.net/",
-        source: "open-dataset",
-        // Situada a 6.0 km del centro de Srinagar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-srinagar-national-institute-of-technology-srinagar",
-        name: "National Institute of Technology, Srinagar",
-        cityId: "india-srinagar",
-        website: "http://www.nitsri.net/",
-        source: "open-dataset",
-        // Situada a 5.4 km del centro de Srinagar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-srinagar-sher-i-kashmir-institute-of-medical-sciences",
-        name: "Sher-i-Kashmir Institute of Medical Sciences",
-        cityId: "india-srinagar",
+        id: "india-surat-auro-university",
+        name: "AURO University",
+        cityId: "india-surat",
         website: null,
         source: "open-dataset",
-        // Situada a 5.6 km del centro de Srinagar (Wikidata).
+        // Situada a 10.0 km del centro de Surat (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-surat-sardar-vallabhbhai-national-institute-of-technology-surat",
+        name: "Sardar Vallabhbhai National Institute of Technology, Surat",
+        cityId: "india-surat",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.8 km del centro de Surat (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-surat-bhagwan-mahavir-university",
+        name: "Bhagwan Mahavir University",
+        cityId: "india-surat",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Surat (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-surat-metas-of-seventh-day-adventist-colleges",
+        name: "METAS of Seventh-day Adventist Colleges",
+        cityId: "india-surat",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Surat (Wikidata).
+      }),
+  ],
+  "india-solan": [
+      defineUniversity({
+        id: "india-solan-shoolini-university",
+        name: "Shoolini University",
+        cityId: "india-solan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.0 km del centro de Solan (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-solan-bahra-university",
+        name: "Bahra University",
+        cityId: "india-solan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 10.7 km del centro de Solan (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-solan-maharishi-markandeshwar-university-solan",
+        name: "Maharishi Markandeshwar University, Solan",
+        cityId: "india-solan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.7 km del centro de Solan (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-solan-dr-yashwant-singh-parmar-university-of-horticulture-and-forestry",
+        name: "Dr. Yashwant Singh Parmar University of Horticulture and Forestry",
+        cityId: "india-solan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.1 km del centro de Solan (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-solan-jaypee-university-of-information-technology",
+        name: "Jaypee University of Information Technology",
+        cityId: "india-solan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 12.5 km del centro de Solan (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-solan-manav-bharti-university",
+        name: "Manav Bharti University",
+        cityId: "india-solan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.0 km del centro de Solan (Wikidata).
       }),
   ],
   "india-roorkee": [
@@ -4292,6 +4656,56 @@ export default {
         // Situada a 4.1 km del centro de Roorkee (Wikidata).
       }),
   ],
+  "india-rohtak": [
+      defineUniversity({
+        id: "india-rohtak-maharshi-dayanand-university",
+        name: "Maharshi Dayanand University",
+        cityId: "india-rohtak",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.7 km del centro de Rohtak (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-rohtak-baba-mastnath-university",
+        name: "Baba Mastnath University",
+        cityId: "india-rohtak",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.7 km del centro de Rohtak (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-rohtak-state-university-of-performing-and-visual-arts",
+        name: "State University of Performing And Visual Arts",
+        cityId: "india-rohtak",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Rohtak (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-rohtak-pandit-bhagwat-dayal-sharma-university-of-health-sciences",
+        name: "Pandit Bhagwat Dayal Sharma University of Health Sciences",
+        cityId: "india-rohtak",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Rohtak (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-rohtak-indian-institute-of-management-rohtak",
+        name: "Indian Institute of Management Rohtak",
+        cityId: "india-rohtak",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.5 km del centro de Rohtak (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-rohtak-jat-education-society-rohtak",
+        name: "Jat Education Society Rohtak",
+        cityId: "india-rohtak",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Rohtak (Wikidata).
+      }),
+  ],
   "india-ramnagar": [
       defineUniversity({
         id: "india-ramnagar-faculty-of-ayurveda-banaras-hindu-university",
@@ -4342,156 +4756,6 @@ export default {
         // Situada a 3.9 km del centro de Rāmnagar (Wikidata).
       }),
   ],
-  "india-nashik": [
-      defineUniversity({
-        id: "india-nashik-sandip-university-nashik",
-        name: "Sandip University, Nashik",
-        cityId: "india-nashik",
-        website: null,
-        source: "open-dataset",
-        // Situada a 13.6 km del centro de Nashik (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nashik-maharashtra-university-of-health-sciences",
-        name: "Maharashtra University of Health Sciences",
-        cityId: "india-nashik",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.1 km del centro de Nashik (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nashik-maharashtra-university-of-health-sciences",
-        name: "Maharashtra University of Health Sciences",
-        cityId: "india-nashik",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.1 km del centro de Nashik (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nashik-ndmvp-s-college-of-engineering",
-        name: "NDMVP's College of Engineering",
-        cityId: "india-nashik",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Nashik (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nashik-sandip-foundation",
-        name: "Sandip Foundation",
-        cityId: "india-nashik",
-        website: null,
-        source: "open-dataset",
-        // Situada a 13.3 km del centro de Nashik (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nashik-yashwantrao-chavan-institute-of-science-satara-autonomous",
-        name: "Yashwantrao Chavan Institute of Science, Satara (Autonomous)",
-        cityId: "india-nashik",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.8 km del centro de Nashik (Wikidata).
-      }),
-  ],
-  "india-medinipur": [
-      defineUniversity({
-        id: "india-medinipur-midnapore-law-college",
-        name: "Midnapore Law College",
-        cityId: "india-medinipur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Medinīpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-medinipur-vidyasagar-shishu-niketan",
-        name: "Vidyasagar Shishu Niketan",
-        cityId: "india-medinipur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Medinīpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-medinipur-k-d-college-of-commerce-and-general-studies",
-        name: "K.D. College of Commerce and General Studies",
-        cityId: "india-medinipur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Medinīpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-medinipur-raja-narendra-lal-khan-women-s-college",
-        name: "Raja Narendra Lal Khan Women's College",
-        cityId: "india-medinipur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Medinīpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-medinipur-vidyasagar-university",
-        name: "Vidyasagar University",
-        cityId: "india-medinipur",
-        website: "http://www.vidyasagar.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Medinīpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-medinipur-vidyasagar-university",
-        name: "Vidyasagar University",
-        cityId: "india-medinipur",
-        website: "http://www.vidyasagar.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Medinīpur (Wikidata).
-      }),
-  ],
-  "india-kurnool": [
-      defineUniversity({
-        id: "india-kurnool-rayalaseema-university",
-        name: "Rayalaseema University",
-        cityId: "india-kurnool",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Kurnool (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kurnool-rayalaseema-university",
-        name: "Rayalaseema University",
-        cityId: "india-kurnool",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.8 km del centro de Kurnool (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kurnool-indian-institute-of-information-technology-design-and-manufacturing-kurnool",
-        name: "Indian Institute of Information Technology, Design and Manufacturing, Kurnool",
-        cityId: "india-kurnool",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de Kurnool (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kurnool-dr-abdul-haq-urdu-university",
-        name: "Dr Abdul Haq Urdu University",
-        cityId: "india-kurnool",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Kurnool (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kurnool-dr-abdul-haq-urdu-university",
-        name: "Dr Abdul Haq Urdu University",
-        cityId: "india-kurnool",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Kurnool (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kurnool-silver-jubilee-degree-college-autonomous-kurnool",
-        name: "Silver Jubilee Degree  College (autonomous), Kurnool",
-        cityId: "india-kurnool",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Kurnool (Wikidata).
-      }),
-  ],
   "india-jamshedpur": [
       defineUniversity({
         id: "india-jamshedpur-jamshedpur-co-operative-college",
@@ -4500,14 +4764,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.6 km del centro de Jamshedpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jamshedpur-jamshedpur-women-s-university",
-        name: "Jamshedpur Women's University",
-        cityId: "india-jamshedpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Jamshedpur (Wikidata).
       }),
       defineUniversity({
         id: "india-jamshedpur-jamshedpur-women-s-university",
@@ -4541,305 +4797,213 @@ export default {
         source: "open-dataset",
         // Situada a 1.3 km del centro de Jamshedpur (Wikidata).
       }),
-  ],
-  "india-dharamsala": [
       defineUniversity({
-        id: "india-dharamsala-rajiv-gandhi-government-engineering-college-kangra",
-        name: "Rajiv Gandhi Government Engineering College Kangra",
-        cityId: "india-dharamsala",
-        website: null,
+        id: "india-jamshedpur-national-institute-of-technology-jamshedpur",
+        name: "National Institute of Technology, Jamshedpur",
+        cityId: "india-jamshedpur",
+        website: "http://www.nitjsr.ac.in/",
         source: "open-dataset",
-        // Situada a 16.7 km del centro de Dharamsala (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-dharamsala-central-university-of-himachal-pradesh",
-        name: "Central University of Himachal Pradesh",
-        cityId: "india-dharamsala",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.4 km del centro de Dharamsala (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-dharamsala-central-university-of-himachal-pradesh",
-        name: "Central University of Himachal Pradesh",
-        cityId: "india-dharamsala",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.4 km del centro de Dharamsala (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-dharamsala-chaudhary-sarwan-kumar-himachal-pradesh-krishi-vishvavidyalaya",
-        name: "Chaudhary Sarwan Kumar Himachal Pradesh Krishi Vishvavidyalaya",
-        cityId: "india-dharamsala",
-        website: null,
-        source: "open-dataset",
-        // Situada a 25.1 km del centro de Dharamsala (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-dharamsala-chaudhary-sarwan-kumar-himachal-pradesh-krishi-vishvavidyalaya",
-        name: "Chaudhary Sarwan Kumar Himachal Pradesh Krishi Vishvavidyalaya",
-        cityId: "india-dharamsala",
-        website: null,
-        source: "open-dataset",
-        // Situada a 25.1 km del centro de Dharamsala (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-dharamsala-government-college-of-teacher-education-dharamsala",
-        name: "Government College of Teacher Education Dharamsala",
-        cityId: "india-dharamsala",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Dharamsala (Wikidata).
+        // Situada a None km del centro de Jamshedpur (Wikidata).
       }),
   ],
-  "india-mumbai": [
+  "india-indore": [
       defineUniversity({
-        id: "india-mumbai-international-institute-for-population-sciences",
-        name: "International Institute for Population Sciences",
-        cityId: "india-mumbai",
-        website: "http://www.iipsindia.org/",
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Mumbai (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-mumbai-narsee-monjee-institute-of-management-studies",
-        name: "Narsee Monjee Institute of Management Studies",
-        cityId: "india-mumbai",
-        website: "http://www.nmims.edu/",
-        source: "open-dataset",
-        // Situada a 5.9 km del centro de Mumbai (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-mumbai-tata-institute-of-social-sciences",
-        name: "Tata Institute of Social Sciences",
-        cityId: "india-mumbai",
-        website: "http://www.tiss.edu/",
-        source: "open-dataset",
-        // Situada a 4.4 km del centro de Mumbai (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-mumbai-homi-bhabha-national-institute",
-        name: "Homi Bhabha National Institute",
-        cityId: "india-mumbai",
+        id: "india-indore-shri-vaishnav-polytechnic-college-indore",
+        name: "Shri Vaishnav Polytechnic College, Indore",
+        cityId: "india-indore",
         website: null,
         source: "open-dataset",
-        // Situada a 6.3 km del centro de Mumbai (Wikidata).
+        // Situada a 1.4 km del centro de Indore (Wikidata).
       }),
       defineUniversity({
-        id: "india-mumbai-kohinoor-college-of-hotel-and-tourism-management",
-        name: "Kohinoor College of Hotel and Tourism Management",
-        cityId: "india-mumbai",
+        id: "india-indore-devi-ahilya-vishwavidyalaya",
+        name: "Devi Ahilya Vishwavidyalaya",
+        cityId: "india-indore",
         website: null,
         source: "open-dataset",
-        // Situada a 0.3 km del centro de Mumbai (Wikidata).
+        // Situada a 4.0 km del centro de Indore (Wikidata).
       }),
       defineUniversity({
-        id: "india-mumbai-somaiya-vidyavihar-university",
-        name: "Somaiya Vidyavihar University",
-        cityId: "india-mumbai",
+        id: "india-indore-holkar-science-college",
+        name: "Holkar Science College",
+        cityId: "india-indore",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Mumbai (Wikidata).
+        // Situada a None km del centro de Indore (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-indore-institute-of-management-studies",
+        name: "Institute of Management Studies",
+        cityId: "india-indore",
+        website: "http://www.nims.net.in/",
+        source: "open-dataset",
+        // Situada a None km del centro de Indore (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-indore-lnct-indore",
+        name: "LNCT Indore",
+        cityId: "india-indore",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Indore (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-indore-school-of-chemical-science",
+        name: "School of Chemical Science",
+        cityId: "india-indore",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Indore (Wikidata).
       }),
   ],
-  "india-bilaspur": [
+  "india-gangtok": [
       defineUniversity({
-        id: "india-bilaspur-atal-bihari-vajpayee-university",
-        name: "Atal Bihari Vajpayee University",
-        cityId: "india-bilaspur",
+        id: "india-gangtok-icfai-university-sikkim",
+        name: "ICFAI University, Sikkim",
+        cityId: "india-gangtok",
+        website: "https://www.iusikkim.edu.in/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Gangtok (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gangtok-sikkim-professional-university",
+        name: "Sikkim Professional University",
+        cityId: "india-gangtok",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Bilāspur (Wikidata).
+        // Situada a 2.4 km del centro de Gangtok (Wikidata).
       }),
       defineUniversity({
-        id: "india-bilaspur-c-m-dubey-postgraduate-college-bilaspur",
-        name: "C.M. Dubey Postgraduate College, Bilaspur",
-        cityId: "india-bilaspur",
+        id: "india-gangtok-sikkim-manipal-university",
+        name: "Sikkim Manipal University",
+        cityId: "india-gangtok",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Bilāspur (Wikidata).
+        // Situada a 1.7 km del centro de Gangtok (Wikidata).
       }),
       defineUniversity({
-        id: "india-bilaspur-pandit-sundarlal-sharma-open-university",
-        name: "Pandit Sundarlal Sharma (Open) University",
-        cityId: "india-bilaspur",
+        id: "india-gangtok-medhavi-skills-university",
+        name: "Medhavi Skills University",
+        cityId: "india-gangtok",
         website: null,
         source: "open-dataset",
-        // Situada a 7.1 km del centro de Bilāspur (Wikidata).
+        // Situada a None km del centro de Gangtok (Wikidata).
       }),
       defineUniversity({
-        id: "india-bilaspur-guru-ghasidas-university",
-        name: "Guru Ghasidas University",
-        cityId: "india-bilaspur",
-        website: "http://www.ggu.ac.in/",
-        source: "open-dataset",
-        // Situada a 6.0 km del centro de Bilāspur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bilaspur-guru-ghasidas-university",
-        name: "Guru Ghasidas University",
-        cityId: "india-bilaspur",
-        website: "http://www.ggu.ac.in/",
-        source: "open-dataset",
-        // Situada a 6.0 km del centro de Bilāspur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bilaspur-maharishi-university-of-management-and-technology",
-        name: "Maharishi University of Management and Technology",
-        cityId: "india-bilaspur",
+        id: "india-gangtok-sikkim-alpine-university",
+        name: "Sikkim Alpine University",
+        cityId: "india-gangtok",
         website: null,
         source: "open-dataset",
-        // Situada a 4.5 km del centro de Bilāspur (Wikidata).
+        // Situada a None km del centro de Gangtok (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gangtok-sikkim-university",
+        name: "Sikkim University",
+        cityId: "india-gangtok",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gangtok (Wikidata).
       }),
   ],
-  "india-bareilly": [
+  "india-cuttack": [
       defineUniversity({
-        id: "india-bareilly-rohilkhand-medical-college-and-hospital",
-        name: "Rohilkhand Medical College and Hospital",
-        cityId: "india-bareilly",
+        id: "india-cuttack-bhubanananda-orissa-school-of-engineering-cuttack",
+        name: "Bhubanananda orissa school of engineering cuttack",
+        cityId: "india-cuttack",
         website: null,
         source: "open-dataset",
-        // Situada a 3.3 km del centro de Bareilly (Wikidata).
+        // Situada a 2.0 km del centro de Cuttack (Wikidata).
       }),
       defineUniversity({
-        id: "india-bareilly-invertis-university",
-        name: "Invertis University",
-        cityId: "india-bareilly",
+        id: "india-cuttack-national-law-university-odisha",
+        name: "National Law University Odisha",
+        cityId: "india-cuttack",
         website: null,
         source: "open-dataset",
-        // Situada a 10.3 km del centro de Bareilly (Wikidata).
+        // Situada a 9.6 km del centro de Cuttack (Wikidata).
       }),
       defineUniversity({
-        id: "india-bareilly-bareilly-international-university",
-        name: "Bareilly International University",
-        cityId: "india-bareilly",
+        id: "india-cuttack-ravenshaw-university",
+        name: "Ravenshaw University",
+        cityId: "india-cuttack",
         website: null,
         source: "open-dataset",
-        // Situada a 3.4 km del centro de Bareilly (Wikidata).
+        // Situada a 1.8 km del centro de Cuttack (Wikidata).
       }),
       defineUniversity({
-        id: "india-bareilly-indian-veterinary-research-institute",
-        name: "Indian Veterinary Research Institute",
-        cityId: "india-bareilly",
-        website: "http://www.ivri.nic.in/",
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Bareilly (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bareilly-m-j-p-rohilkhand-university",
-        name: "M. J. P. Rohilkhand University",
-        cityId: "india-bareilly",
+        id: "india-cuttack-sri-sri-university",
+        name: "Sri Sri University",
+        cityId: "india-cuttack",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Bareilly (Wikidata).
+        // Situada a 8.6 km del centro de Cuttack (Wikidata).
       }),
       defineUniversity({
-        id: "india-bareilly-m-j-p-rohilkhand-university",
-        name: "M. J. P. Rohilkhand University",
-        cityId: "india-bareilly",
+        id: "india-cuttack-madhusudan-law-college",
+        name: "Madhusudan Law College",
+        cityId: "india-cuttack",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Bareilly (Wikidata).
+        // Situada a 1.8 km del centro de Cuttack (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-cuttack-biju-patnaik-film-and-television-institute-of-odisha",
+        name: "Biju Patnaik Film and Television Institute of Odisha",
+        cityId: "india-cuttack",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Cuttack (Wikidata).
       }),
   ],
-  "india-anantapur": [
+  "india-bolpur": [
       defineUniversity({
-        id: "india-anantapur-jawaharlal-nehru-technological-university-anantapur",
-        name: "Jawaharlal Nehru Technological University, Anantapur",
-        cityId: "india-anantapur",
+        id: "india-bolpur-biswa-bangla-biswabidyalay",
+        name: "Biswa Bangla Biswabidyalay",
+        cityId: "india-bolpur",
         website: null,
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Anantapur (Wikidata).
+        // Situada a 3.2 km del centro de Bolpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-anantapur-jawaharlal-nehru-technological-university-anantapur",
-        name: "Jawaharlal Nehru Technological University, Anantapur",
-        cityId: "india-anantapur",
+        id: "india-bolpur-visva-bharati-university",
+        name: "Visva-Bharati University",
+        cityId: "india-bolpur",
+        website: "http://www.visva-bharati.ac.in/",
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Bolpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bolpur-seacom-skills-university",
+        name: "Seacom Skills University",
+        cityId: "india-bolpur",
         website: null,
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Anantapur (Wikidata).
+        // Situada a 7.2 km del centro de Bolpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-anantapur-central-university-of-andhra-pradesh",
-        name: "Central University of Andhra Pradesh",
-        cityId: "india-anantapur",
+        id: "india-bolpur-kabi-joydeb-mahavidyalaya",
+        name: "Kabi Joydeb Mahavidyalaya",
+        cityId: "india-bolpur",
         website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Anantapur (Wikidata).
+        // Situada a 15.2 km del centro de Bolpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-anantapur-sri-krishnadevaraya-university",
-        name: "Sri Krishnadevaraya University",
-        cityId: "india-anantapur",
-        website: "http://skuniv.ap.nic.in/",
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Anantapur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-anantapur-sri-krishnadevaraya-university",
-        name: "Sri Krishnadevaraya University",
-        cityId: "india-anantapur",
-        website: "http://skuniv.ap.nic.in/",
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Anantapur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-anantapur-b-e-s-t-innovation-university",
-        name: "B.E.S.T Innovation University",
-        cityId: "india-anantapur",
+        id: "india-bolpur-purni-devi-chaudhuri-girls-college",
+        name: "Purni Devi Chaudhuri Girls' College",
+        cityId: "india-bolpur",
         website: null,
         source: "open-dataset",
-        // Situada a 9.8 km del centro de Anantapur (Wikidata).
-      }),
-  ],
-  "india-prayagraj": [
-      defineUniversity({
-        id: "india-prayagraj-dr-rajendra-prasad-national-law-university",
-        name: "Dr. Rajendra Prasad National Law University",
-        cityId: "india-prayagraj",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.1 km del centro de Prayagraj (Wikidata).
+        // Situada a 1.6 km del centro de Bolpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-prayagraj-university-of-allahabad",
-        name: "University of Allahabad",
-        cityId: "india-prayagraj",
+        id: "india-bolpur-sambhunath-college",
+        name: "Sambhunath College",
+        cityId: "india-bolpur",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Prayagraj (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-prayagraj-prof-rajendra-singh-rajju-bhaiya-university",
-        name: "Prof. Rajendra Singh (Rajju Bhaiya) University",
-        cityId: "india-prayagraj",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Prayagraj (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-prayagraj-motilal-nehru-national-institute-of-technology-allahabad",
-        name: "Motilal Nehru National Institute of Technology, Allahabad",
-        cityId: "india-prayagraj",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Prayagraj (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-prayagraj-sam-higginbottom-institute-of-agriculture-technology-and-sciences",
-        name: "Sam Higginbottom Institute of Agriculture, Technology and Sciences",
-        cityId: "india-prayagraj",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Prayagraj (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-prayagraj-uttar-pradesh-rajarshi-tandon-open-university",
-        name: "Uttar Pradesh Rajarshi Tandon Open University",
-        cityId: "india-prayagraj",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.8 km del centro de Prayagraj (Wikidata).
+        // Situada a 19.2 km del centro de Bolpur (Wikidata).
       }),
   ],
   "india-alandur": [
@@ -4890,56 +5054,6 @@ export default {
         website: "http://www.iitm.ac.in/",
         source: "open-dataset",
         // Situada a 3.2 km del centro de Alandur (Wikidata).
-      }),
-  ],
-  "india-naharlagun": [
-      defineUniversity({
-        id: "india-naharlagun-rajiv-gandhi-university",
-        name: "Rajiv Gandhi University",
-        cityId: "india-naharlagun",
-        website: "http://www.rgu.ac.in/",
-        source: "open-dataset",
-        // Situada a 8.5 km del centro de Naharlagun (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-naharlagun-rajiv-gandhi-university",
-        name: "Rajiv Gandhi University",
-        cityId: "india-naharlagun",
-        website: "http://www.rgu.ac.in/",
-        source: "open-dataset",
-        // Situada a 8.5 km del centro de Naharlagun (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-naharlagun-madhabdev-university",
-        name: "Madhabdev University",
-        cityId: "india-naharlagun",
-        website: null,
-        source: "open-dataset",
-        // Situada a 23.1 km del centro de Naharlagun (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-naharlagun-madhabdev-university",
-        name: "Madhabdev University",
-        cityId: "india-naharlagun",
-        website: null,
-        source: "open-dataset",
-        // Situada a 23.1 km del centro de Naharlagun (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-naharlagun-arunodaya-university",
-        name: "Arunodaya University",
-        cityId: "india-naharlagun",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Naharlagun (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-naharlagun-venkateshwara-open-university",
-        name: "Venkateshwara Open University",
-        cityId: "india-naharlagun",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Naharlagun (Wikidata).
       }),
   ],
   "india-bagru": [
@@ -5042,306 +5156,214 @@ export default {
         // Situada a 1.6 km del centro de Kundli (Wikidata).
       }),
   ],
-  "india-hashtsal": [
+  "india-warangal": [
       defineUniversity({
-        id: "india-hashtsal-delhi-skill-and-entrepreneurship-university",
-        name: "Delhi Skill and Entrepreneurship University",
-        cityId: "india-hashtsal",
-        website: null,
+        id: "india-warangal-kaloji-narayana-rao-university-of-health-sciences",
+        name: "Kaloji Narayana Rao University of Health Sciences",
+        cityId: "india-warangal",
+        website: "https://www.knruhs.telangana.gov.in/",
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Hashtsāl (Wikidata).
+        // Situada a 0.7 km del centro de Warangal (Wikidata).
       }),
       defineUniversity({
-        id: "india-hashtsal-delhi-skill-and-entrepreneurship-university",
-        name: "Delhi Skill and Entrepreneurship University",
-        cityId: "india-hashtsal",
+        id: "india-warangal-kakatiya-institute-of-technology-and-science",
+        name: "Kakatiya Institute of Technology and Science",
+        cityId: "india-warangal",
         website: null,
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Hashtsāl (Wikidata).
+        // Situada a 7.7 km del centro de Warangal (Wikidata).
       }),
       defineUniversity({
-        id: "india-hashtsal-lal-bahadur-shastri-institute-of-management",
-        name: "Lal Bahadur Shastri Institute of Management",
-        cityId: "india-hashtsal",
-        website: null,
+        id: "india-warangal-national-institute-of-technology-warangal",
+        name: "National Institute of Technology, Warangal",
+        cityId: "india-warangal",
+        website: "http://www.nitw.ernet.in/",
         source: "open-dataset",
-        // Situada a 5.1 km del centro de Hashtsāl (Wikidata).
+        // Situada a 5.8 km del centro de Warangal (Wikidata).
       }),
       defineUniversity({
-        id: "india-hashtsal-bhaskraycharya-college-of-applied-sciences",
-        name: "Bhaskraycharya College of Applied Sciences",
-        cityId: "india-hashtsal",
+        id: "india-warangal-sr-university",
+        name: "SR University",
+        cityId: "india-warangal",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Hashtsāl (Wikidata).
+        // Situada a None km del centro de Warangal (Wikidata).
       }),
       defineUniversity({
-        id: "india-hashtsal-maharaja-surajmal-institute-of-technology",
-        name: "Maharaja Surajmal Institute of Technology",
-        cityId: "india-hashtsal",
-        website: null,
+        id: "india-warangal-kakatiya-university",
+        name: "Kakatiya University",
+        cityId: "india-warangal",
+        website: "http://www.kuwarangal.com/",
         source: "open-dataset",
-        // Situada a 3.5 km del centro de Hashtsāl (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hashtsal-maharaja-surajmal-institute-of-technology",
-        name: "Maharaja Surajmal Institute of Technology",
-        cityId: "india-hashtsal",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Hashtsāl (Wikidata).
+        // Situada a None km del centro de Warangal (Wikidata).
       }),
   ],
-  "india-vepagunta": [
+  "india-vadodara": [
       defineUniversity({
-        id: "india-vepagunta-damodaram-sanjivayya-national-law-university",
-        name: "Damodaram Sanjivayya National Law University",
-        cityId: "india-vepagunta",
+        id: "india-vadodara-sigma-university",
+        name: "Sigma University",
+        cityId: "india-vadodara",
         website: null,
         source: "open-dataset",
-        // Situada a 11.3 km del centro de Vepagunta (Wikidata).
+        // Situada a 7.7 km del centro de Vadodara (Wikidata).
       }),
       defineUniversity({
-        id: "india-vepagunta-damodaram-sanjivayya-national-law-university",
-        name: "Damodaram Sanjivayya National Law University",
-        cityId: "india-vepagunta",
-        website: null,
+        id: "india-vadodara-maharaja-sayajirao-university-of-baroda",
+        name: "Maharaja Sayajirao University of Baroda",
+        cityId: "india-vadodara",
+        website: "http://www.msubaroda.ac.in/",
         source: "open-dataset",
-        // Situada a 11.3 km del centro de Vepagunta (Wikidata).
+        // Situada a 2.6 km del centro de Vadodara (Wikidata).
       }),
       defineUniversity({
-        id: "india-vepagunta-indian-institute-of-petroleum-and-energy",
-        name: "Indian Institute of Petroleum and Energy",
-        cityId: "india-vepagunta",
+        id: "india-vadodara-teamlease-skills-university",
+        name: "TeamLease Skills University",
+        cityId: "india-vadodara",
         website: null,
         source: "open-dataset",
-        // Situada a 14.7 km del centro de Vepagunta (Wikidata).
+        // Situada a 4.3 km del centro de Vadodara (Wikidata).
       }),
       defineUniversity({
-        id: "india-vepagunta-centurion-university-of-technology-and-management-andhra-pradesh",
-        name: "Centurion University of Technology and Management, Andhra Pradesh",
-        cityId: "india-vepagunta",
+        id: "india-vadodara-gati-shakti-vishwavidyalaya",
+        name: "Gati Shakti Vishwavidyalaya",
+        cityId: "india-vadodara",
         website: null,
         source: "open-dataset",
-        // Situada a 15.3 km del centro de Vepagunta (Wikidata).
+        // Situada a 2.1 km del centro de Vadodara (Wikidata).
       }),
       defineUniversity({
-        id: "india-vepagunta-st-john-s-regional-seminary",
-        name: "St. John's Regional Seminary",
-        cityId: "india-vepagunta",
+        id: "india-vadodara-drs-kiran-pallavi-patel-global-university-kpgu-vadodara",
+        name: "Drs. Kiran & Pallavi Patel Global University (KPGU), Vadodara",
+        cityId: "india-vadodara",
         website: null,
         source: "open-dataset",
-        // Situada a 15.0 km del centro de Vepagunta (Wikidata).
+        // Situada a None km del centro de Vadodara (Wikidata).
       }),
   ],
-  "india-ujjain": [
+  "india-patiala": [
       defineUniversity({
-        id: "india-ujjain-maharshi-panini-sanskrit-university",
-        name: "Maharshi Panini Sanskrit University",
-        cityId: "india-ujjain",
+        id: "india-patiala-punjabi-university",
+        name: "Punjabi University",
+        cityId: "india-patiala",
         website: null,
         source: "open-dataset",
-        // Situada a 7.9 km del centro de Ujjain (Wikidata).
+        // Situada a 6.1 km del centro de Patiāla (Wikidata).
       }),
       defineUniversity({
-        id: "india-ujjain-avantika-university",
-        name: "Avantika University",
-        cityId: "india-ujjain",
+        id: "india-patiala-maharaja-bhupinder-singh-punjab-sports-university-patiala",
+        name: "Maharaja Bhupinder Singh Punjab Sports University, Patiala",
+        cityId: "india-patiala",
         website: null,
         source: "open-dataset",
-        // Situada a 12.2 km del centro de Ujjain (Wikidata).
+        // Situada a 9.5 km del centro de Patiāla (Wikidata).
       }),
       defineUniversity({
-        id: "india-ujjain-mahakal-institute-of-technology",
-        name: "Mahakal Institute of Technology",
-        cityId: "india-ujjain",
+        id: "india-patiala-rajiv-gandhi-national-university-of-law",
+        name: "Rajiv Gandhi National University of Law",
+        cityId: "india-patiala",
         website: null,
         source: "open-dataset",
-        // Situada a 15.2 km del centro de Ujjain (Wikidata).
+        // Situada a 8.6 km del centro de Patiāla (Wikidata).
       }),
       defineUniversity({
-        id: "india-ujjain-vikram-university",
-        name: "Vikram University",
-        cityId: "india-ujjain",
-        website: "http://www.vikramuniversity.org/",
+        id: "india-patiala-thapar-institute-of-engineering-and-technology",
+        name: "Thapar Institute of Engineering and Technology",
+        cityId: "india-patiala",
+        website: "http://www.tiet.ac.in/",
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Ujjain (Wikidata).
+        // Situada a 3.3 km del centro de Patiāla (Wikidata).
       }),
       defineUniversity({
-        id: "india-ujjain-vikram-university",
-        name: "Vikram University",
-        cityId: "india-ujjain",
-        website: "http://www.vikramuniversity.org/",
+        id: "india-patiala-jagat-guru-nanak-dev-punjab-state-open-university",
+        name: "Jagat Guru Nanak Dev Punjab State Open University",
+        cityId: "india-patiala",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Ujjain (Wikidata).
+        // Situada a 2.2 km del centro de Patiāla (Wikidata).
       }),
   ],
-  "india-thrissur": [
+  "india-north-guwahati": [
       defineUniversity({
-        id: "india-thrissur-vimala-college",
-        name: "Vimala College",
-        cityId: "india-thrissur",
+        id: "india-north-guwahati-national-institute-of-pharmaceutical-education-and-research-guwahati",
+        name: "National Institute of Pharmaceutical Education and Research, Guwahati",
+        cityId: "india-north-guwahati",
         website: null,
         source: "open-dataset",
-        // Situada a 4.2 km del centro de Thrissur (Wikidata).
+        // Situada a 5.4 km del centro de North Guwāhāti (Wikidata).
       }),
       defineUniversity({
-        id: "india-thrissur-vadakke-madham-brahmaswam-vedic-research-centre",
-        name: "Vadakke Madham Brahmaswam Vedic Research Centre",
-        cityId: "india-thrissur",
+        id: "india-north-guwahati-assam-science-and-technology-university",
+        name: "Assam Science and Technology University",
+        cityId: "india-north-guwahati",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Thrissur (Wikidata).
+        // Situada a 8.2 km del centro de North Guwāhāti (Wikidata).
       }),
       defineUniversity({
-        id: "india-thrissur-maharaja-s-technological-institute",
-        name: "Maharaja's Technological Institute",
-        cityId: "india-thrissur",
-        website: null,
+        id: "india-north-guwahati-indian-institute-of-technology-guwahati",
+        name: "Indian Institute of Technology Guwahati",
+        cityId: "india-north-guwahati",
+        website: "http://www.iitg.ernet.in/",
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Thrissur (Wikidata).
+        // Situada a 3.1 km del centro de North Guwāhāti (Wikidata).
       }),
       defineUniversity({
-        id: "india-thrissur-college-of-fine-arts-thrissur",
-        name: "College of Fine Arts, Thrissur",
-        cityId: "india-thrissur",
-        website: null,
+        id: "india-north-guwahati-gauhati-university",
+        name: "Gauhati University",
+        cityId: "india-north-guwahati",
+        website: "http://www.gu.nic.in/",
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Thrissur (Wikidata).
+        // Situada a 7.5 km del centro de North Guwāhāti (Wikidata).
       }),
       defineUniversity({
-        id: "india-thrissur-government-women-s-polytechnic-college-nedupuzha-thrissur",
-        name: "Government Women's Polytechnic College, Nedupuzha, Thrissur",
-        cityId: "india-thrissur",
+        id: "india-north-guwahati-national-law-university-and-judicial-academy-assam",
+        name: "National Law University and Judicial Academy, Assam",
+        cityId: "india-north-guwahati",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Thrissur (Wikidata).
+        // Situada a 6.8 km del centro de North Guwāhāti (Wikidata).
       }),
   ],
-  "india-tirupati": [
+  "india-nashik": [
       defineUniversity({
-        id: "india-tirupati-sri-venkateswara-veterinary-university",
-        name: "Sri Venkateswara Veterinary University",
-        cityId: "india-tirupati",
+        id: "india-nashik-sandip-university-nashik",
+        name: "Sandip University, Nashik",
+        cityId: "india-nashik",
         website: null,
         source: "open-dataset",
-        // Situada a 3.6 km del centro de Tirupati (Wikidata).
+        // Situada a 13.6 km del centro de Nashik (Wikidata).
       }),
       defineUniversity({
-        id: "india-tirupati-national-sanskrit-university",
-        name: "National Sanskrit University",
-        cityId: "india-tirupati",
-        website: "http://www.sanskrit.nic.in/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Tirupati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-tirupati-sri-venkateswara-university",
-        name: "Sri Venkateswara University",
-        cityId: "india-tirupati",
-        website: "http://svuni.ap.nic.in/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Tirupati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-tirupati-sri-venkateswara-university",
-        name: "Sri Venkateswara University",
-        cityId: "india-tirupati",
-        website: "http://svuni.ap.nic.in/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Tirupati (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-tirupati-sri-venkateswara-institute-of-medical-sciences",
-        name: "Sri Venkateswara Institute of Medical Sciences",
-        cityId: "india-tirupati",
-        website: "http://svimstpt.ap.nic.in/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Tirupati (Wikidata).
-      }),
-  ],
-  "india-shahdol": [
-      defineUniversity({
-        id: "india-shahdol-uit-shahdol",
-        name: "UIT Shahdol",
-        cityId: "india-shahdol",
+        id: "india-nashik-maharashtra-university-of-health-sciences",
+        name: "Maharashtra University of Health Sciences",
+        cityId: "india-nashik",
         website: null,
         source: "open-dataset",
-        // Situada a 9.1 km del centro de Shahdol (Wikidata).
+        // Situada a 9.1 km del centro de Nashik (Wikidata).
       }),
       defineUniversity({
-        id: "india-shahdol-pandit-shambhu-nath-shukla-vishwavidyalaya",
-        name: "Pandit Shambhu Nath Shukla Vishwavidyalaya",
-        cityId: "india-shahdol",
+        id: "india-nashik-ndmvp-s-college-of-engineering",
+        name: "NDMVP's College of Engineering",
+        cityId: "india-nashik",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Shahdol (Wikidata).
+        // Situada a 3.7 km del centro de Nashik (Wikidata).
       }),
       defineUniversity({
-        id: "india-shahdol-pandit-shambhu-nath-shukla-vishwavidyalaya",
-        name: "Pandit Shambhu Nath Shukla Vishwavidyalaya",
-        cityId: "india-shahdol",
+        id: "india-nashik-sandip-foundation",
+        name: "Sandip Foundation",
+        cityId: "india-nashik",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Shahdol (Wikidata).
+        // Situada a 13.3 km del centro de Nashik (Wikidata).
       }),
       defineUniversity({
-        id: "india-shahdol-pandit-shambhu-nath-shukla-vishwavidyalaya",
-        name: "Pandit Shambhu Nath Shukla Vishwavidyalaya",
-        cityId: "india-shahdol",
+        id: "india-nashik-yashwantrao-chavan-institute-of-science-satara-autonomous",
+        name: "Yashwantrao Chavan Institute of Science, Satara (Autonomous)",
+        cityId: "india-nashik",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Shahdol (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-shahdol-pandit-shambhu-nath-shukla-vishwavidyalaya",
-        name: "Pandit Shambhu Nath Shukla Vishwavidyalaya",
-        cityId: "india-shahdol",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Shahdol (Wikidata).
-      }),
-  ],
-  "india-mysuru": [
-      defineUniversity({
-        id: "india-mysuru-university-of-mysore",
-        name: "University of Mysore",
-        cityId: "india-mysuru",
-        website: "http://www.uni-mysore.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Mysuru (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-mysuru-government-ayurveda-medical-college-and-hospital-mysore",
-        name: "Government Ayurveda Medical College and Hospital, Mysore",
-        cityId: "india-mysuru",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Mysuru (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-mysuru-maharani-s-science-college-for-women-mysore",
-        name: "Maharani’s Science College for Women, Mysore",
-        cityId: "india-mysuru",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Mysuru (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-mysuru-jss-academy-of-higher-education-research",
-        name: "JSS Academy of Higher Education & Research",
-        cityId: "india-mysuru",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Mysuru (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-mysuru-karnataka-state-open-university",
-        name: "Karnataka State Open University",
-        cityId: "india-mysuru",
-        website: "http://www.karnatakastateopenuniversity.in/",
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Mysuru (Wikidata).
+        // Situada a 10.8 km del centro de Nashik (Wikidata).
       }),
   ],
   "india-meerut": [
@@ -5370,14 +5392,6 @@ export default {
         // Situada a 3.6 km del centro de Meerut (Wikidata).
       }),
       defineUniversity({
-        id: "india-meerut-chaudhary-charan-singh-university",
-        name: "Chaudhary Charan Singh University",
-        cityId: "india-meerut",
-        website: "http://www.ccsuniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Meerut (Wikidata).
-      }),
-      defineUniversity({
         id: "india-meerut-meerut-college",
         name: "Meerut College",
         cityId: "india-meerut",
@@ -5385,47 +5399,223 @@ export default {
         source: "open-dataset",
         // Situada a 1.7 km del centro de Meerut (Wikidata).
       }),
+      defineUniversity({
+        id: "india-meerut-vidya-university",
+        name: "Vidya University",
+        cityId: "india-meerut",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Meerut (Wikidata).
+      }),
   ],
-  "india-koch-bihar": [
+  "india-medinipur": [
       defineUniversity({
-        id: "india-koch-bihar-cooch-behar-polytechnic",
-        name: "Cooch Behar Polytechnic",
-        cityId: "india-koch-bihar",
+        id: "india-medinipur-midnapore-law-college",
+        name: "Midnapore Law College",
+        cityId: "india-medinipur",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Koch Bihār (Wikidata).
+        // Situada a 2.1 km del centro de Medinīpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-koch-bihar-cooch-behar-panchanan-barma-university",
-        name: "Cooch Behar Panchanan Barma University",
-        cityId: "india-koch-bihar",
+        id: "india-medinipur-vidyasagar-shishu-niketan",
+        name: "Vidyasagar Shishu Niketan",
+        cityId: "india-medinipur",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Koch Bihār (Wikidata).
+        // Situada a 1.6 km del centro de Medinīpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-koch-bihar-cooch-behar-panchanan-barma-university",
-        name: "Cooch Behar Panchanan Barma University",
-        cityId: "india-koch-bihar",
+        id: "india-medinipur-k-d-college-of-commerce-and-general-studies",
+        name: "K.D. College of Commerce and General Studies",
+        cityId: "india-medinipur",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Koch Bihār (Wikidata).
+        // Situada a 0.7 km del centro de Medinīpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-koch-bihar-uttar-banga-krishi-viswavidyalaya",
-        name: "Uttar Banga Krishi Viswavidyalaya",
-        cityId: "india-koch-bihar",
+        id: "india-medinipur-raja-narendra-lal-khan-women-s-college",
+        name: "Raja Narendra Lal Khan Women's College",
+        cityId: "india-medinipur",
         website: null,
         source: "open-dataset",
-        // Situada a 10.7 km del centro de Koch Bihār (Wikidata).
+        // Situada a 3.3 km del centro de Medinīpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-koch-bihar-uttar-banga-krishi-viswavidyalaya",
-        name: "Uttar Banga Krishi Viswavidyalaya",
-        cityId: "india-koch-bihar",
+        id: "india-medinipur-vidyasagar-university",
+        name: "Vidyasagar University",
+        cityId: "india-medinipur",
+        website: "http://www.vidyasagar.ac.in/",
+        source: "open-dataset",
+        // Situada a 2.8 km del centro de Medinīpur (Wikidata).
+      }),
+  ],
+  "india-latur": [
+      defineUniversity({
+        id: "india-latur-shri-keshavraj-vidyalaya",
+        name: "Shri Keshavraj Vidyalaya",
+        cityId: "india-latur",
         website: null,
         source: "open-dataset",
-        // Situada a 10.7 km del centro de Koch Bihār (Wikidata).
+        // Situada a 1.1 km del centro de Latur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-latur-college-of-agriculture-latur",
+        name: "College of Agriculture, Latur",
+        cityId: "india-latur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.7 km del centro de Latur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-latur-maharashtra-institute-of-medical-science-and-research-latur",
+        name: "Maharashtra Institute of Medical Science and Research, Latur",
+        cityId: "india-latur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.8 km del centro de Latur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-latur-mahatma-basweshwar-college-latur",
+        name: "Mahatma Basweshwar College Latur",
+        cityId: "india-latur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Latur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-latur-rajarshi-shahu-college-latur",
+        name: "Rajarshi Shahu College, Latur",
+        cityId: "india-latur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Latur (Wikidata).
+      }),
+  ],
+  "india-kukatpally": [
+      defineUniversity({
+        id: "india-kukatpally-nithm",
+        name: "Nithm",
+        cityId: "india-kukatpally",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.0 km del centro de Kukatpally (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kukatpally-dr-b-r-ambedkar-open-university",
+        name: "Dr. B. R. Ambedkar Open University",
+        cityId: "india-kukatpally",
+        website: "http://www.braou.ac.in/",
+        source: "open-dataset",
+        // Situada a 6.2 km del centro de Kukatpally (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kukatpally-jawaharlal-nehru-technological-university-hyderabad",
+        name: "Jawaharlal Nehru Technological University, Hyderabad",
+        cityId: "india-kukatpally",
+        website: "http://www.jntuh.ac.in/",
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Kukatpally (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kukatpally-maulana-azad-national-urdu-university",
+        name: "Maulana Azad National Urdu University",
+        cityId: "india-kukatpally",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.5 km del centro de Kukatpally (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kukatpally-niper-hyderabad",
+        name: "NIPER Hyderabad",
+        cityId: "india-kukatpally",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.8 km del centro de Kukatpally (Wikidata).
+      }),
+  ],
+  "india-kozhikode": [
+      defineUniversity({
+        id: "india-kozhikode-kerala-government-polytechnic-college-kozhikode",
+        name: "Kerala Government Polytechnic College, Kozhikode",
+        cityId: "india-kozhikode",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Kozhikode (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kozhikode-dreamz-infotainments",
+        name: "Dreamz Infotainments",
+        cityId: "india-kozhikode",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kozhikode (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kozhikode-model-polytechnic-college-vadakara",
+        name: "Model Polytechnic College,Vadakara",
+        cityId: "india-kozhikode",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kozhikode (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kozhikode-women-s-polytechnic-college-kozhikode",
+        name: "Women's Polytechnic College, Kozhikode",
+        cityId: "india-kozhikode",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kozhikode (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kozhikode-markaz",
+        name: "Markaz",
+        cityId: "india-kozhikode",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kozhikode (Wikidata).
+      }),
+  ],
+  "india-kota": [
+      defineUniversity({
+        id: "india-kota-indian-institute-of-information-technology-kota",
+        name: "Indian Institute of Information Technology, Kota",
+        cityId: "india-kota",
+        website: "http://iiitkota.ac.in/",
+        source: "open-dataset",
+        // Situada a 14.9 km del centro de Kota (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kota-agriculture-university-kota",
+        name: "Agriculture University, Kota",
+        cityId: "india-kota",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.0 km del centro de Kota (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kota-rajasthan-technical-university",
+        name: "Rajasthan Technical University",
+        cityId: "india-kota",
+        website: "http://www.rtu.ac.in/",
+        source: "open-dataset",
+        // Situada a 5.8 km del centro de Kota (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kota-university-of-kota",
+        name: "University of Kota",
+        cityId: "india-kota",
+        website: "http://www.uok.ac.in/",
+        source: "open-dataset",
+        // Situada a 7.6 km del centro de Kota (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kota-vardhman-mahaveer-open-university",
+        name: "Vardhman Mahaveer Open University",
+        cityId: "india-kota",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.1 km del centro de Kota (Wikidata).
       }),
   ],
   "india-khadki": [
@@ -5470,130 +5660,214 @@ export default {
         // Situada a 2.7 km del centro de Khadki (Wikidata).
       }),
   ],
-  "india-jatani": [
+  "india-kanpur": [
       defineUniversity({
-        id: "india-jatani-xim-university",
-        name: "XIM University",
-        cityId: "india-jatani",
+        id: "india-kanpur-rama-university",
+        name: "Rama University",
+        cityId: "india-kanpur",
         website: null,
         source: "open-dataset",
-        // Situada a 7.5 km del centro de Jatani (Wikidata).
+        // Situada a 17.4 km del centro de Kanpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-jatani-xim-university",
-        name: "XIM University",
-        cityId: "india-jatani",
-        website: null,
+        id: "india-kanpur-chandra-shekhar-azad-university-of-agriculture-and-technology",
+        name: "Chandra Shekhar Azad University of Agriculture and Technology",
+        cityId: "india-kanpur",
+        website: "http://www.csauk.ac.in/",
         source: "open-dataset",
-        // Situada a 5.7 km del centro de Jatani (Wikidata).
+        // Situada a 5.1 km del centro de Kanpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-jatani-c-v-raman-college-of-engineering-bhubaneshwar",
-        name: "C. V. Raman College of Engineering, Bhubaneshwar",
-        cityId: "india-jatani",
-        website: null,
+        id: "india-kanpur-chhatrapati-shahu-ji-maharaj-university",
+        name: "Chhatrapati Shahu Ji Maharaj University",
+        cityId: "india-kanpur",
+        website: "http://www.kanpuruniversity.org/",
         source: "open-dataset",
-        // Situada a 7.4 km del centro de Jatani (Wikidata).
+        // Situada a 9.1 km del centro de Kanpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-jatani-utkal-university-of-culture",
-        name: "Utkal University of Culture",
-        cityId: "india-jatani",
+        id: "india-kanpur-harcourt-butler-technical-university",
+        name: "Harcourt Butler Technical University",
+        cityId: "india-kanpur",
         website: null,
         source: "open-dataset",
-        // Situada a 10.1 km del centro de Jatani (Wikidata).
+        // Situada a 5.3 km del centro de Kanpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-jatani-utkal-university-of-culture",
-        name: "Utkal University of Culture",
-        cityId: "india-jatani",
-        website: null,
+        id: "india-kanpur-indian-institute-of-technology-kanpur",
+        name: "Indian Institute of Technology Kanpur",
+        cityId: "india-kanpur",
+        website: "http://www.iitk.ac.in/",
         source: "open-dataset",
-        // Situada a 10.1 km del centro de Jatani (Wikidata).
-      }),
-  ],
-  "india-hisar": [
-      defineUniversity({
-        id: "india-hisar-chaudhary-charan-singh-haryana-agricultural-university",
-        name: "Chaudhary Charan Singh Haryana Agricultural University",
-        cityId: "india-hisar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Hisar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hisar-chaudhary-charan-singh-haryana-agricultural-university",
-        name: "Chaudhary Charan Singh Haryana Agricultural University",
-        cityId: "india-hisar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Hisar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hisar-lala-lajpat-rai-university-of-veterinary-and-animal-sciences",
-        name: "Lala Lajpat Rai University of Veterinary and Animal Sciences",
-        cityId: "india-hisar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.2 km del centro de Hisar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hisar-lala-lajpat-rai-university-of-veterinary-and-animal-sciences",
-        name: "Lala Lajpat Rai University of Veterinary and Animal Sciences",
-        cityId: "india-hisar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.2 km del centro de Hisar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hisar-om-sterling-global-university",
-        name: "Om Sterling Global University",
-        cityId: "india-hisar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.6 km del centro de Hisar (Wikidata).
+        // Situada a 12.5 km del centro de Kanpur (Wikidata).
       }),
   ],
-  "india-durg": [
+  "india-junagadh": [
       defineUniversity({
-        id: "india-durg-institute-of-engineering-and-science-ips-academy",
-        name: "Institute of Engineering and Science IPS Academy",
-        cityId: "india-durg",
+        id: "india-junagadh-noble-university",
+        name: "Noble University",
+        cityId: "india-junagadh",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Durg (Wikidata).
+        // Situada a 8.8 km del centro de Jūnāgadh (Wikidata).
       }),
       defineUniversity({
-        id: "india-durg-st-thomas-college-bhilai",
-        name: "St. Thomas College, Bhilai",
-        cityId: "india-durg",
+        id: "india-junagadh-directorate-of-groundnut-research",
+        name: "Directorate of Groundnut Research",
+        cityId: "india-junagadh",
         website: null,
         source: "open-dataset",
-        // Situada a 5.9 km del centro de Durg (Wikidata).
+        // Situada a 4.4 km del centro de Jūnāgadh (Wikidata).
       }),
       defineUniversity({
-        id: "india-durg-hemchand-yadav-vishwavidyalaya",
-        name: "Hemchand Yadav Vishwavidyalaya",
-        cityId: "india-durg",
+        id: "india-junagadh-bhakta-kavi-narsinh-mehta-university",
+        name: "Bhakta Kavi Narsinh Mehta University",
+        cityId: "india-junagadh",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Durg (Wikidata).
+        // Situada a 10.1 km del centro de Jūnāgadh (Wikidata).
       }),
       defineUniversity({
-        id: "india-durg-hemchand-yadav-vishwavidyalaya",
-        name: "Hemchand Yadav Vishwavidyalaya",
-        cityId: "india-durg",
+        id: "india-junagadh-junagadh-agricultural-university",
+        name: "Junagadh Agricultural University",
+        cityId: "india-junagadh",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Durg (Wikidata).
+        // Situada a 1.8 km del centro de Jūnāgadh (Wikidata).
       }),
       defineUniversity({
-        id: "india-durg-indian-institute-of-technology-bhilai",
-        name: "Indian Institute of Technology Bhilai",
-        cityId: "india-durg",
+        id: "india-junagadh-dr-subhash-university",
+        name: "Dr. Subhash University",
+        cityId: "india-junagadh",
         website: null,
         source: "open-dataset",
-        // Situada a 7.3 km del centro de Durg (Wikidata).
+        // Situada a None km del centro de Jūnāgadh (Wikidata).
+      }),
+  ],
+  "india-hajipur": [
+      defineUniversity({
+        id: "india-hajipur-d-c-college-hajipur",
+        name: "D.C. College, Hajipur",
+        cityId: "india-hajipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Hājīpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hajipur-jamuni-lal-college",
+        name: "Jamuni Lal College",
+        cityId: "india-hajipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Hājīpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hajipur-national-institute-of-pharmaceutical-education-and-research-hajipur",
+        name: "National Institute of Pharmaceutical Education and Research, Hajipur",
+        cityId: "india-hajipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hājīpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hajipur-vaishali-mahila-college",
+        name: "Vaishali Mahila College",
+        cityId: "india-hajipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hājīpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hajipur-raj-narain-college-hajipur",
+        name: "Raj Narain College, Hajipur",
+        cityId: "india-hajipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hājīpur (Wikidata).
+      }),
+  ],
+  "india-gurugram": [
+      defineUniversity({
+        id: "india-gurugram-shree-guru-gobind-singh-tricentenary-university",
+        name: "Shree Guru Gobind Singh Tricentenary University",
+        cityId: "india-gurugram",
+        website: null,
+        source: "open-dataset",
+        // Situada a 12.1 km del centro de Gurugram (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gurugram-gviet",
+        name: "GVIET",
+        cityId: "india-gurugram",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Gurugram (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gurugram-institute-of-energy-management-and-research",
+        name: "Institute of Energy Management and Research",
+        cityId: "india-gurugram",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gurugram (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gurugram-management-development-institute",
+        name: "Management Development Institute",
+        cityId: "india-gurugram",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gurugram (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gurugram-pearl-school-of-business",
+        name: "Pearl School of Business",
+        cityId: "india-gurugram",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gurugram (Wikidata).
+      }),
+  ],
+  "india-gorakhpur": [
+      defineUniversity({
+        id: "india-gorakhpur-mahayogi-guru-gorakhnath-ayush-university",
+        name: "Mahayogi Guru Gorakhnath AYUSH University",
+        cityId: "india-gorakhpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Gorakhpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gorakhpur-mahayogi-gorakhnath-university",
+        name: "Mahayogi Gorakhnath University",
+        cityId: "india-gorakhpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.6 km del centro de Gorakhpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gorakhpur-institute-of-technology-management-gorakhpur",
+        name: "Institute of Technology & Management, Gorakhpur",
+        cityId: "india-gorakhpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.8 km del centro de Gorakhpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gorakhpur-deen-dayal-upadhyay-gorakhpur-university",
+        name: "Deen Dayal Upadhyay Gorakhpur University",
+        cityId: "india-gorakhpur",
+        website: "http://www.ddugu.edu.in/",
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Gorakhpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-gorakhpur-madan-mohan-malaviya-university-of-technology",
+        name: "Madan Mohan Malaviya University of Technology",
+        cityId: "india-gorakhpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gorakhpur (Wikidata).
       }),
   ],
   "india-delhi-cantonment": [
@@ -5638,214 +5912,130 @@ export default {
         // Situada a 1.1 km del centro de Delhi Cantonment (Wikidata).
       }),
   ],
-  "india-delhi": [
+  "india-bilaspur": [
       defineUniversity({
-        id: "india-delhi-indira-gandhi-delhi-technical-university-for-women",
-        name: "Indira Gandhi Delhi Technical University for Women",
-        cityId: "india-delhi",
+        id: "india-bilaspur-atal-bihari-vajpayee-university",
+        name: "Atal Bihari Vajpayee University",
+        cityId: "india-bilaspur",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Delhi (Wikidata).
+        // Situada a 1.0 km del centro de Bilāspur (Wikidata).
       }),
       defineUniversity({
-        id: "india-delhi-indira-gandhi-delhi-technical-university-for-women",
-        name: "Indira Gandhi Delhi Technical University for Women",
-        cityId: "india-delhi",
+        id: "india-bilaspur-c-m-dubey-postgraduate-college-bilaspur",
+        name: "C.M. Dubey Postgraduate College, Bilaspur",
+        cityId: "india-bilaspur",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Delhi (Wikidata).
+        // Situada a 1.0 km del centro de Bilāspur (Wikidata).
       }),
       defineUniversity({
-        id: "india-delhi-dr-b-r-ambedkar-university-delhi",
-        name: "Dr. B. R. Ambedkar University, Delhi",
-        cityId: "india-delhi",
+        id: "india-bilaspur-pandit-sundarlal-sharma-open-university",
+        name: "Pandit Sundarlal Sharma (Open) University",
+        cityId: "india-bilaspur",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Delhi (Wikidata).
+        // Situada a 7.1 km del centro de Bilāspur (Wikidata).
       }),
       defineUniversity({
-        id: "india-delhi-maulana-azad-medical-college",
-        name: "Maulana Azad Medical College",
-        cityId: "india-delhi",
-        website: null,
+        id: "india-bilaspur-guru-ghasidas-university",
+        name: "Guru Ghasidas University",
+        cityId: "india-bilaspur",
+        website: "http://www.ggu.ac.in/",
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Delhi (Wikidata).
+        // Situada a 6.0 km del centro de Bilāspur (Wikidata).
       }),
       defineUniversity({
-        id: "india-delhi-vidyajyoti-college-of-theology",
-        name: "Vidyajyoti College of Theology",
-        cityId: "india-delhi",
+        id: "india-bilaspur-maharishi-university-of-management-and-technology",
+        name: "Maharishi University of Management and Technology",
+        cityId: "india-bilaspur",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Delhi (Wikidata).
+        // Situada a 4.5 km del centro de Bilāspur (Wikidata).
       }),
   ],
-  "india-darbhanga": [
+  "india-bareilly": [
       defineUniversity({
-        id: "india-darbhanga-kameshwar-singh-darbhanga-sanskrit-university",
-        name: "Kameshwar Singh Darbhanga Sanskrit University",
-        cityId: "india-darbhanga",
-        website: "http://www.ksdsu.edu.in/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Darbhanga (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-darbhanga-kameshwar-singh-darbhanga-sanskrit-university",
-        name: "Kameshwar Singh Darbhanga Sanskrit University",
-        cityId: "india-darbhanga",
-        website: "http://www.ksdsu.edu.in/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Darbhanga (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-darbhanga-lalit-narayan-mithila-university",
-        name: "Lalit Narayan Mithila University",
-        cityId: "india-darbhanga",
-        website: "http://lnmu.bih.nic.in/",
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Darbhanga (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-darbhanga-darul-uloom-ahmadia-salafia",
-        name: "Darul Uloom Ahmadia Salafia",
-        cityId: "india-darbhanga",
+        id: "india-bareilly-rohilkhand-medical-college-and-hospital",
+        name: "Rohilkhand Medical College and Hospital",
+        cityId: "india-bareilly",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Darbhanga (Wikidata).
+        // Situada a 3.3 km del centro de Bareilly (Wikidata).
       }),
       defineUniversity({
-        id: "india-darbhanga-marwari-college",
-        name: "Marwari College",
-        cityId: "india-darbhanga",
+        id: "india-bareilly-invertis-university",
+        name: "Invertis University",
+        cityId: "india-bareilly",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Darbhanga (Wikidata).
+        // Situada a 10.3 km del centro de Bareilly (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bareilly-bareilly-international-university",
+        name: "Bareilly International University",
+        cityId: "india-bareilly",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.4 km del centro de Bareilly (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bareilly-indian-veterinary-research-institute",
+        name: "Indian Veterinary Research Institute",
+        cityId: "india-bareilly",
+        website: "http://www.ivri.nic.in/",
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Bareilly (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-bareilly-m-j-p-rohilkhand-university",
+        name: "M. J. P. Rohilkhand University",
+        cityId: "india-bareilly",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Bareilly (Wikidata).
       }),
   ],
-  "india-clement-town": [
+  "india-anantapur": [
       defineUniversity({
-        id: "india-clement-town-graphic-era-hill-university",
-        name: "Graphic Era Hill University",
-        cityId: "india-clement-town",
+        id: "india-anantapur-jawaharlal-nehru-technological-university-anantapur",
+        name: "Jawaharlal Nehru Technological University, Anantapur",
+        cityId: "india-anantapur",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Clement Town (Wikidata).
+        // Situada a 3.1 km del centro de Anantapur (Wikidata).
       }),
       defineUniversity({
-        id: "india-clement-town-doon-university",
-        name: "Doon University",
-        cityId: "india-clement-town",
+        id: "india-anantapur-central-university-of-andhra-pradesh",
+        name: "Central University of Andhra Pradesh",
+        cityId: "india-anantapur",
         website: null,
         source: "open-dataset",
-        // Situada a 3.7 km del centro de Clement Town (Wikidata).
+        // Situada a 4.0 km del centro de Anantapur (Wikidata).
       }),
       defineUniversity({
-        id: "india-clement-town-doon-university",
-        name: "Doon University",
-        cityId: "india-clement-town",
+        id: "india-anantapur-sri-krishnadevaraya-university",
+        name: "Sri Krishnadevaraya University",
+        cityId: "india-anantapur",
+        website: "http://skuniv.ap.nic.in/",
+        source: "open-dataset",
+        // Situada a 9.4 km del centro de Anantapur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-anantapur-b-e-s-t-innovation-university",
+        name: "B.E.S.T Innovation University",
+        cityId: "india-anantapur",
         website: null,
         source: "open-dataset",
-        // Situada a 3.7 km del centro de Clement Town (Wikidata).
+        // Situada a 9.8 km del centro de Anantapur (Wikidata).
       }),
       defineUniversity({
-        id: "india-clement-town-graphic-era-deemed-to-be-university",
-        name: "Graphic Era (Deemed to be) University",
-        cityId: "india-clement-town",
+        id: "india-anantapur-smt-eashwaramma-english-medium-school",
+        name: "Smt Eashwaramma English Medium School",
+        cityId: "india-anantapur",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Clement Town (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-clement-town-graphic-era-deemed-to-be-university",
-        name: "Graphic Era (Deemed to be) University",
-        cityId: "india-clement-town",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Clement Town (Wikidata).
-      }),
-  ],
-  "india-bhagalpur": [
-      defineUniversity({
-        id: "india-bhagalpur-indian-institute-of-information-technology-bhagalpur",
-        name: "Indian Institute of Information Technology, Bhagalpur",
-        cityId: "india-bhagalpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.2 km del centro de Bhāgalpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bhagalpur-bihar-agricultural-university",
-        name: "Bihar Agricultural University",
-        cityId: "india-bhagalpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.0 km del centro de Bhāgalpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bhagalpur-bihar-agricultural-university",
-        name: "Bihar Agricultural University",
-        cityId: "india-bhagalpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.0 km del centro de Bhāgalpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bhagalpur-tilka-manjhi-bhagalpur-university",
-        name: "Tilka Manjhi Bhagalpur University",
-        cityId: "india-bhagalpur",
-        website: "http://www.tmbu.org/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Bhāgalpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bhagalpur-tilka-manjhi-bhagalpur-university",
-        name: "Tilka Manjhi Bhagalpur University",
-        cityId: "india-bhagalpur",
-        website: "http://www.tmbu.org/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Bhāgalpur (Wikidata).
-      }),
-  ],
-  "india-aizawl": [
-      defineUniversity({
-        id: "india-aizawl-helen-lowry-higher-secondary-school",
-        name: "Helen Lowry Higher Secondary School",
-        cityId: "india-aizawl",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Aizawl (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-aizawl-icfai-university-mizoram",
-        name: "ICFAI University, Mizoram",
-        cityId: "india-aizawl",
-        website: "https://www.iumizoram.edu.in/",
-        source: "open-dataset",
-        // Situada a 8.0 km del centro de Aizawl (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-aizawl-mizoram-university",
-        name: "Mizoram University",
-        cityId: "india-aizawl",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Aizawl (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-aizawl-mizoram-university",
-        name: "Mizoram University",
-        cityId: "india-aizawl",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Aizawl (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-aizawl-national-institute-of-technology-mizoram",
-        name: "National Institute of Technology Mizoram",
-        cityId: "india-aizawl",
-        website: "http://www.nitmz.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Aizawl (Wikidata).
+        // Situada a None km del centro de Anantapur (Wikidata).
       }),
   ],
   "india-mohali": [
@@ -5890,6 +6080,90 @@ export default {
         // Situada a 5.5 km del centro de Mohali (Wikidata).
       }),
   ],
+  "india-naharlagun": [
+      defineUniversity({
+        id: "india-naharlagun-rajiv-gandhi-university",
+        name: "Rajiv Gandhi University",
+        cityId: "india-naharlagun",
+        website: "http://www.rgu.ac.in/",
+        source: "open-dataset",
+        // Situada a 8.5 km del centro de Naharlagun (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-naharlagun-madhabdev-university",
+        name: "Madhabdev University",
+        cityId: "india-naharlagun",
+        website: null,
+        source: "open-dataset",
+        // Situada a 23.1 km del centro de Naharlagun (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-naharlagun-arunodaya-university",
+        name: "Arunodaya University",
+        cityId: "india-naharlagun",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Naharlagun (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-naharlagun-venkateshwara-open-university",
+        name: "Venkateshwara Open University",
+        cityId: "india-naharlagun",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Naharlagun (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-naharlagun-national-institute-of-technology-arunachal-pradesh",
+        name: "National Institute of Technology, Arunachal Pradesh",
+        cityId: "india-naharlagun",
+        website: "http://www.nitap.in/",
+        source: "open-dataset",
+        // Situada a None km del centro de Naharlagun (Wikidata).
+      }),
+  ],
+  "india-tighri": [
+      defineUniversity({
+        id: "india-tighri-shaheed-bhagat-singh-evening-college",
+        name: "Shaheed Bhagat Singh Evening College",
+        cityId: "india-tighri",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.8 km del centro de Tighri (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-tighri-indraprastha-institute-of-information-technology-delhi",
+        name: "Indraprastha Institute of Information Technology Delhi",
+        cityId: "india-tighri",
+        website: "http://www.iiitd.ac.in/",
+        source: "open-dataset",
+        // Situada a 4.7 km del centro de Tighri (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-tighri-delhi-pharmaceutical-science-and-research-university",
+        name: "Delhi Pharmaceutical Science and Research University",
+        cityId: "india-tighri",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Tighri (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-tighri-deshbandhu-college",
+        name: "Deshbandhu College",
+        cityId: "india-tighri",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.4 km del centro de Tighri (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-tighri-jamia-hamdard",
+        name: "Jamia Hamdard",
+        cityId: "india-tighri",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Tighri (Wikidata).
+      }),
+  ],
   "india-saiyad-ul-ajaib": [
       defineUniversity({
         id: "india-saiyad-ul-ajaib-indian-institute-of-technology-delhi",
@@ -5932,88 +6206,46 @@ export default {
         // Situada a 1.6 km del centro de Saiyad-ul-ajaib (Wikidata).
       }),
   ],
-  "india-kalliyassheri": [
+  "india-othukkungal": [
       defineUniversity({
-        id: "india-kalliyassheri-e-k-nayanar-memorial-model-polytechnic-college-kallyassery",
-        name: "E K  Nayanar Memorial Model Polytechnic College, Kallyassery",
-        cityId: "india-kalliyassheri",
+        id: "india-othukkungal-kmct-polytechnic-college",
+        name: "Kmct Polytechnic College",
+        cityId: "india-othukkungal",
         website: null,
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Kalliyasshēri (Wikidata).
+        // Situada a None km del centro de Othukkungal (Wikidata).
       }),
       defineUniversity({
-        id: "india-kalliyassheri-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kalliyassheri",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Kalliyasshēri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalliyassheri-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kalliyassheri",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Kalliyasshēri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalliyassheri-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kalliyassheri",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Kalliyasshēri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalliyassheri-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kalliyassheri",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Kalliyasshēri (Wikidata).
-      }),
-  ],
-  "india-nandri": [
-      defineUniversity({
-        id: "india-nandri-agriculture-university-jodhpur",
-        name: "Agriculture University, Jodhpur",
-        cityId: "india-nandri",
+        id: "india-othukkungal-madin-polytechnic-college",
+        name: "Madin Polytechnic College",
+        cityId: "india-othukkungal",
         website: null,
         source: "open-dataset",
-        // Situada a 7.1 km del centro de Nandri (Wikidata).
+        // Situada a None km del centro de Othukkungal (Wikidata).
       }),
       defineUniversity({
-        id: "india-nandri-sardar-patel-university-of-police-security-and-criminal-justice",
-        name: "Sardar Patel University of Police, Security and Criminal Justice",
-        cityId: "india-nandri",
+        id: "india-othukkungal-malabar-polytechnic-college-kottakkal",
+        name: "Malabar Polytechnic College, Kottakkal",
+        cityId: "india-othukkungal",
         website: null,
         source: "open-dataset",
-        // Situada a 10.2 km del centro de Nandri (Wikidata).
+        // Situada a None km del centro de Othukkungal (Wikidata).
       }),
       defineUniversity({
-        id: "india-nandri-dr-sarvepalli-radhakrishnan-rajasthan-ayurved-university",
-        name: "Dr. Sarvepalli Radhakrishnan Rajasthan Ayurved University",
-        cityId: "india-nandri",
+        id: "india-othukkungal-orphanage-polytechnic-college-edavanna",
+        name: "Orphanage Polytechnic College Edavanna",
+        cityId: "india-othukkungal",
         website: null,
         source: "open-dataset",
-        // Situada a 15.7 km del centro de Nandri (Wikidata).
+        // Situada a None km del centro de Othukkungal (Wikidata).
       }),
       defineUniversity({
-        id: "india-nandri-national-law-university-jodhpur",
-        name: "National Law University, Jodhpur",
-        cityId: "india-nandri",
+        id: "india-othukkungal-seethi-sahib-memorial-polytechnic-college-tirur",
+        name: "Seethi Sahib Memorial Polytechnic College, Tirur",
+        cityId: "india-othukkungal",
         website: null,
         source: "open-dataset",
-        // Situada a 7.2 km del centro de Nandri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nandri-national-law-university-jodhpur",
-        name: "National Law University, Jodhpur",
-        cityId: "india-nandri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.2 km del centro de Nandri (Wikidata).
+        // Situada a None km del centro de Othukkungal (Wikidata).
       }),
   ],
   "india-vizianagaram": [
@@ -6050,38 +6282,72 @@ export default {
         // Situada a 0.3 km del centro de Vizianagaram (Wikidata).
       }),
   ],
-  "india-vadodara": [
+  "india-vepagunta": [
       defineUniversity({
-        id: "india-vadodara-sigma-university",
-        name: "Sigma University",
-        cityId: "india-vadodara",
+        id: "india-vepagunta-damodaram-sanjivayya-national-law-university",
+        name: "Damodaram Sanjivayya National Law University",
+        cityId: "india-vepagunta",
         website: null,
         source: "open-dataset",
-        // Situada a 7.7 km del centro de Vadodara (Wikidata).
+        // Situada a 11.3 km del centro de Vepagunta (Wikidata).
       }),
       defineUniversity({
-        id: "india-vadodara-maharaja-sayajirao-university-of-baroda",
-        name: "Maharaja Sayajirao University of Baroda",
-        cityId: "india-vadodara",
-        website: "http://www.msubaroda.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Vadodara (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-vadodara-teamlease-skills-university",
-        name: "TeamLease Skills University",
-        cityId: "india-vadodara",
+        id: "india-vepagunta-indian-institute-of-petroleum-and-energy",
+        name: "Indian Institute of Petroleum and Energy",
+        cityId: "india-vepagunta",
         website: null,
         source: "open-dataset",
-        // Situada a 4.3 km del centro de Vadodara (Wikidata).
+        // Situada a 14.7 km del centro de Vepagunta (Wikidata).
       }),
       defineUniversity({
-        id: "india-vadodara-gati-shakti-vishwavidyalaya",
-        name: "Gati Shakti Vishwavidyalaya",
-        cityId: "india-vadodara",
+        id: "india-vepagunta-centurion-university-of-technology-and-management-andhra-pradesh",
+        name: "Centurion University of Technology and Management, Andhra Pradesh",
+        cityId: "india-vepagunta",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Vadodara (Wikidata).
+        // Situada a 15.3 km del centro de Vepagunta (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-vepagunta-st-john-s-regional-seminary",
+        name: "St. John's Regional Seminary",
+        cityId: "india-vepagunta",
+        website: null,
+        source: "open-dataset",
+        // Situada a 15.0 km del centro de Vepagunta (Wikidata).
+      }),
+  ],
+  "india-varanasi": [
+      defineUniversity({
+        id: "india-varanasi-national-school-of-drama-varanasi",
+        name: "National School of Drama, Varanasi",
+        cityId: "india-varanasi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Varanasi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-varanasi-central-institute-of-higher-tibetan-studies",
+        name: "Central Institute of Higher Tibetan Studies",
+        cityId: "india-varanasi",
+        website: "http://www.cihts.ac.in/",
+        source: "open-dataset",
+        // Situada a 5.6 km del centro de Varanasi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-varanasi-mahatma-gandhi-kashi-vidyapeeth",
+        name: "Mahatma Gandhi Kashi Vidyapeeth",
+        cityId: "india-varanasi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Varanasi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-varanasi-sampurnanand-sanskrit-university",
+        name: "Sampurnanand Sanskrit University",
+        cityId: "india-varanasi",
+        website: "http://ssvv.up.nic.in/",
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Varanasi (Wikidata).
       }),
   ],
   "india-uppal-kalan": [
@@ -6102,14 +6368,6 @@ export default {
         // Situada a 3.5 km del centro de Uppal Kalan (Wikidata).
       }),
       defineUniversity({
-        id: "india-uppal-kalan-osmania-university",
-        name: "Osmania University",
-        cityId: "india-uppal-kalan",
-        website: "http://www.osmania.ac.in/",
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Uppal Kalan (Wikidata).
-      }),
-      defineUniversity({
         id: "india-uppal-kalan-osmania-university-s-college-of-technology",
         name: "Osmania University's College of Technology",
         cityId: "india-uppal-kalan",
@@ -6117,107 +6375,115 @@ export default {
         source: "open-dataset",
         // Situada a 3.2 km del centro de Uppal Kalan (Wikidata).
       }),
-  ],
-  "india-udhampur": [
       defineUniversity({
-        id: "india-udhampur-government-medical-college-udhampur",
-        name: "Government Medical College, Udhampur",
-        cityId: "india-udhampur",
+        id: "india-uppal-kalan-st-john-s-regional-seminary",
+        name: "St. John's Regional Seminary",
+        cityId: "india-uppal-kalan",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Udhampur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-udhampur-government-degree-college-udhampur",
-        name: "Government Degree College, Udhampur",
-        cityId: "india-udhampur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Udhampur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-udhampur-shri-mata-vaishno-devi-university",
-        name: "Shri Mata Vaishno Devi University",
-        cityId: "india-udhampur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 17.1 km del centro de Udhampur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-udhampur-shri-mata-vaishno-devi-university",
-        name: "Shri Mata Vaishno Devi University",
-        cityId: "india-udhampur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 17.1 km del centro de Udhampur (Wikidata).
+        // Situada a None km del centro de Uppal Kalan (Wikidata).
       }),
   ],
-  "india-thiruvananthapuram": [
+  "india-ujjain": [
       defineUniversity({
-        id: "india-thiruvananthapuram-university-of-kerala",
-        name: "University of Kerala",
-        cityId: "india-thiruvananthapuram",
-        website: "http://www.keralauniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Thiruvananthapuram (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-thiruvananthapuram-attakulangara-school",
-        name: "Attakulangara School",
-        cityId: "india-thiruvananthapuram",
+        id: "india-ujjain-maharshi-panini-sanskrit-university",
+        name: "Maharshi Panini Sanskrit University",
+        cityId: "india-ujjain",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Thiruvananthapuram (Wikidata).
+        // Situada a 7.9 km del centro de Ujjain (Wikidata).
       }),
       defineUniversity({
-        id: "india-thiruvananthapuram-college-of-applied-science-dhanuvachapuram",
-        name: "College of Applied Science, Dhanuvachapuram",
-        cityId: "india-thiruvananthapuram",
+        id: "india-ujjain-avantika-university",
+        name: "Avantika University",
+        cityId: "india-ujjain",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Thiruvananthapuram (Wikidata).
+        // Situada a 12.2 km del centro de Ujjain (Wikidata).
       }),
       defineUniversity({
-        id: "india-thiruvananthapuram-government-womens-polytechnic-college-thiruvananthapuram",
-        name: "Government Womens Polytechnic College Thiruvananthapuram",
-        cityId: "india-thiruvananthapuram",
+        id: "india-ujjain-mahakal-institute-of-technology",
+        name: "Mahakal Institute of Technology",
+        cityId: "india-ujjain",
         website: null,
         source: "open-dataset",
-        // Situada a 3.0 km del centro de Thiruvananthapuram (Wikidata).
+        // Situada a 15.2 km del centro de Ujjain (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-ujjain-vikram-university",
+        name: "Vikram University",
+        cityId: "india-ujjain",
+        website: "http://www.vikramuniversity.org/",
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Ujjain (Wikidata).
       }),
   ],
-  "india-surat": [
+  "india-tirupati": [
       defineUniversity({
-        id: "india-surat-veer-narmad-south-gujarat-university",
-        name: "Veer Narmad South Gujarat University",
-        cityId: "india-surat",
+        id: "india-tirupati-sri-venkateswara-veterinary-university",
+        name: "Sri Venkateswara Veterinary University",
+        cityId: "india-tirupati",
         website: null,
         source: "open-dataset",
-        // Situada a 6.6 km del centro de Surat (Wikidata).
+        // Situada a 3.6 km del centro de Tirupati (Wikidata).
       }),
       defineUniversity({
-        id: "india-surat-indian-institute-of-information-technology-surat",
-        name: "Indian Institute of Information Technology, Surat",
-        cityId: "india-surat",
-        website: null,
+        id: "india-tirupati-national-sanskrit-university",
+        name: "National Sanskrit University",
+        cityId: "india-tirupati",
+        website: "http://www.sanskrit.nic.in/",
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Surat (Wikidata).
+        // Situada a 1.4 km del centro de Tirupati (Wikidata).
       }),
       defineUniversity({
-        id: "india-surat-auro-university",
-        name: "AURO University",
-        cityId: "india-surat",
-        website: null,
+        id: "india-tirupati-sri-venkateswara-university",
+        name: "Sri Venkateswara University",
+        cityId: "india-tirupati",
+        website: "http://svuni.ap.nic.in/",
         source: "open-dataset",
-        // Situada a 10.0 km del centro de Surat (Wikidata).
+        // Situada a 1.7 km del centro de Tirupati (Wikidata).
       }),
       defineUniversity({
-        id: "india-surat-sardar-vallabhbhai-national-institute-of-technology-surat",
-        name: "Sardar Vallabhbhai National Institute of Technology, Surat",
-        cityId: "india-surat",
+        id: "india-tirupati-sri-venkateswara-institute-of-medical-sciences",
+        name: "Sri Venkateswara Institute of Medical Sciences",
+        cityId: "india-tirupati",
+        website: "http://svimstpt.ap.nic.in/",
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Tirupati (Wikidata).
+      }),
+  ],
+  "india-srinagar-1255634": [
+      defineUniversity({
+        id: "india-srinagar-1255634-cluster-university-of-srinagar",
+        name: "Cluster University of Srinagar",
+        cityId: "india-srinagar-1255634",
         website: null,
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Surat (Wikidata).
+        // Situada a 2.7 km del centro de Srinagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-srinagar-1255634-university-of-kashmir",
+        name: "University of Kashmir",
+        cityId: "india-srinagar-1255634",
+        website: "http://kashmiruniversity.net/",
+        source: "open-dataset",
+        // Situada a 6.0 km del centro de Srinagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-srinagar-1255634-national-institute-of-technology-srinagar",
+        name: "National Institute of Technology, Srinagar",
+        cityId: "india-srinagar-1255634",
+        website: "http://www.nitsri.net/",
+        source: "open-dataset",
+        // Situada a 5.4 km del centro de Srinagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-srinagar-1255634-sher-i-kashmir-institute-of-medical-sciences",
+        name: "Sher-i-Kashmir Institute of Medical Sciences",
+        cityId: "india-srinagar-1255634",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.6 km del centro de Srinagar (Wikidata).
       }),
   ],
   "india-shimla": [
@@ -6252,6 +6518,74 @@ export default {
         website: "http://hpuniv.nic.in/",
         source: "open-dataset",
         // Situada a 2.7 km del centro de Shimla (Wikidata).
+      }),
+  ],
+  "india-silchar": [
+      defineUniversity({
+        id: "india-silchar-radhamadhab-college",
+        name: "Radhamadhab College",
+        cityId: "india-silchar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Silchar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-silchar-national-institute-of-technology-silchar",
+        name: "National Institute of Technology, Silchar",
+        cityId: "india-silchar",
+        website: "http://www.nits.ac.in/",
+        source: "open-dataset",
+        // Situada a 7.9 km del centro de Silchar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-silchar-government-dental-college-silchar",
+        name: "Government Dental College, Silchar",
+        cityId: "india-silchar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.1 km del centro de Silchar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-silchar-assam-university",
+        name: "Assam University",
+        cityId: "india-silchar",
+        website: "http://www.assamuniversity.nic.in/",
+        source: "open-dataset",
+        // Situada a None km del centro de Silchar (Wikidata).
+      }),
+  ],
+  "india-shillong": [
+      defineUniversity({
+        id: "india-shillong-william-carey-university-meghalaya",
+        name: "William Carey University, Meghalaya",
+        cityId: "india-shillong",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Shillong (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shillong-martin-luther-christian-university",
+        name: "Martin Luther Christian University",
+        cityId: "india-shillong",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.0 km del centro de Shillong (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shillong-north-east-centre-for-technology-application-and-reach",
+        name: "North East Centre for Technology Application and Reach",
+        cityId: "india-shillong",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shillong (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shillong-national-law-university-meghalaya",
+        name: "National Law University Meghalaya",
+        cityId: "india-shillong",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shillong (Wikidata).
       }),
   ],
   "india-ratu": [
@@ -6322,6 +6656,108 @@ export default {
         // Situada a 2.5 km del centro de Pethāpur (Wikidata).
       }),
   ],
+  "india-pathanamthitta": [
+      defineUniversity({
+        id: "india-pathanamthitta-sree-buddha-college-of-engineering-elavumthitta",
+        name: "Sree Buddha College of Engineering, Elavumthitta",
+        cityId: "india-pathanamthitta",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.5 km del centro de Pathanāmthitta (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pathanamthitta-government-polytechnic-college-vechoochira",
+        name: "Government Polytechnic College, Vechoochira",
+        cityId: "india-pathanamthitta",
+        website: null,
+        source: "open-dataset",
+        // Situada a 18.2 km del centro de Pathanāmthitta (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pathanamthitta-mahakavi-vennikulam-gopalakurup-memmorial-government-polytechnic-college-vennikulam",
+        name: "Mahakavi Vennikulam Gopalakurup Memmorial Government Polytechnic College Vennikulam",
+        cityId: "india-pathanamthitta",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pathanāmthitta (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-pathanamthitta-nss-polytechnic-college-pandalam",
+        name: "NSS Polytechnic College Pandalam",
+        cityId: "india-pathanamthitta",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pathanāmthitta (Wikidata).
+      }),
+  ],
+  "india-palakkad": [
+      defineUniversity({
+        id: "india-palakkad-lead-college-of-management",
+        name: "LEAD College of Management",
+        cityId: "india-palakkad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Palakkad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-palakkad-malabar-polytechnic-campus",
+        name: "Malabar Polytechnic Campus",
+        cityId: "india-palakkad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Palakkad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-palakkad-model-residential-polytechnic-college-kuzhalmannam",
+        name: "Model Residential Polytechnic College Kuzhalmannam",
+        cityId: "india-palakkad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Palakkad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-palakkad-st-mary-s-polytechnic-college",
+        name: "St. Mary'S Polytechnic College",
+        cityId: "india-palakkad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Palakkad (Wikidata).
+      }),
+  ],
+  "india-nagaon": [
+      defineUniversity({
+        id: "india-nagaon-nagaon-medical-college-and-hospital",
+        name: "Nagaon Medical College and Hospital",
+        cityId: "india-nagaon",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.1 km del centro de Nagaon (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nagaon-mahapurusha-srimanta-sankaradeva-viswavidyalaya",
+        name: "Mahapurusha Srimanta Sankaradeva Viswavidyalaya",
+        cityId: "india-nagaon",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Nagaon (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nagaon-nagaon-gndg-commerce-college",
+        name: "Nagaon GNDG Commerce College",
+        cityId: "india-nagaon",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de Nagaon (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nagaon-nagaon-university",
+        name: "Nagaon University",
+        cityId: "india-nagaon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nagaon (Wikidata).
+      }),
+  ],
   "india-murshidabad": [
       defineUniversity({
         id: "india-murshidabad-dumkal-college",
@@ -6356,38 +6792,38 @@ export default {
         // Situada a 6.7 km del centro de Murshidābād (Wikidata).
       }),
   ],
-  "india-medchal": [
+  "india-moradabad": [
       defineUniversity({
-        id: "india-medchal-air-force-academy",
-        name: "Air Force Academy",
-        cityId: "india-medchal",
+        id: "india-moradabad-teerthanker-mahaveer-university",
+        name: "Teerthanker Mahaveer University",
+        cityId: "india-moradabad",
         website: null,
         source: "open-dataset",
-        // Situada a 8.3 km del centro de Medchal (Wikidata).
+        // Situada a 11.7 km del centro de Morādābād (Wikidata).
       }),
       defineUniversity({
-        id: "india-medchal-institute-of-aeronautical-engineering",
-        name: "Institute of Aeronautical Engineering",
-        cityId: "india-medchal",
+        id: "india-moradabad-iftm-university",
+        name: "IFTM University",
+        cityId: "india-moradabad",
         website: null,
         source: "open-dataset",
-        // Situada a 7.7 km del centro de Medchal (Wikidata).
+        // Situada a 13.3 km del centro de Morādābād (Wikidata).
       }),
       defineUniversity({
-        id: "india-medchal-nalsar-university-of-law",
-        name: "Nalsar University of Law",
-        cityId: "india-medchal",
+        id: "india-moradabad-guru-jambheshwar-university-moradabad",
+        name: "Guru Jambheshwar University, Moradabad",
+        cityId: "india-moradabad",
         website: null,
         source: "open-dataset",
-        // Situada a 7.5 km del centro de Medchal (Wikidata).
+        // Situada a None km del centro de Morādābād (Wikidata).
       }),
       defineUniversity({
-        id: "india-medchal-nalsar-university-of-law",
-        name: "Nalsar University of Law",
-        cityId: "india-medchal",
+        id: "india-moradabad-kedar-nath-girdharilal-khatri-pg-college-moradabad",
+        name: "Kedar Nath Girdharilal Khatri PG College Moradabad",
+        cityId: "india-moradabad",
         website: null,
         source: "open-dataset",
-        // Situada a 7.5 km del centro de Medchal (Wikidata).
+        // Situada a None km del centro de Morādābād (Wikidata).
       }),
   ],
   "india-manoharpur": [
@@ -6424,6 +6860,108 @@ export default {
         // Situada a 14.8 km del centro de Manoharpur (Wikidata).
       }),
   ],
+  "india-mangaluru": [
+      defineUniversity({
+        id: "india-mangaluru-government-first-grade-college-carstreet",
+        name: "Government First Grade College, Carstreet",
+        cityId: "india-mangaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.5 km del centro de Mangaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mangaluru-st-aloysius-university",
+        name: "St. Aloysius University",
+        cityId: "india-mangaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.0 km del centro de Mangaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mangaluru-sri-ramakrishna-p-u-college",
+        name: "Sri Ramakrishna P. U. College",
+        cityId: "india-mangaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mangaluru (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mangaluru-manipal-college-of-dental-sciences-mangalore",
+        name: "Manipal College of Dental Sciences, Mangalore",
+        cityId: "india-mangaluru",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mangaluru (Wikidata).
+      }),
+  ],
+  "india-kurnool": [
+      defineUniversity({
+        id: "india-kurnool-rayalaseema-university",
+        name: "Rayalaseema University",
+        cityId: "india-kurnool",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.8 km del centro de Kurnool (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kurnool-indian-institute-of-information-technology-design-and-manufacturing-kurnool",
+        name: "Indian Institute of Information Technology, Design and Manufacturing, Kurnool",
+        cityId: "india-kurnool",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.5 km del centro de Kurnool (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kurnool-dr-abdul-haq-urdu-university",
+        name: "Dr Abdul Haq Urdu University",
+        cityId: "india-kurnool",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Kurnool (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kurnool-silver-jubilee-degree-college-autonomous-kurnool",
+        name: "Silver Jubilee Degree  College (autonomous), Kurnool",
+        cityId: "india-kurnool",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Kurnool (Wikidata).
+      }),
+  ],
+  "india-kokrajhar": [
+      defineUniversity({
+        id: "india-kokrajhar-kokrajhar-medical-college-and-hospital",
+        name: "Kokrajhar Medical College and Hospital",
+        cityId: "india-kokrajhar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.1 km del centro de Kokrajhar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kokrajhar-bodoland-university",
+        name: "Bodoland University",
+        cityId: "india-kokrajhar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.0 km del centro de Kokrajhar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kokrajhar-central-institute-of-technology-kokrajhar",
+        name: "Central Institute of Technology, Kokrajhar",
+        cityId: "india-kokrajhar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.1 km del centro de Kokrajhar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kokrajhar-kokrajhar-university",
+        name: "Kokrajhar University",
+        cityId: "india-kokrajhar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kokrajhar (Wikidata).
+      }),
+  ],
   "india-kharakvasla": [
       defineUniversity({
         id: "india-kharakvasla-flame-university",
@@ -6456,40 +6994,6 @@ export default {
         website: "http://www.siu.edu.in/",
         source: "open-dataset",
         // Situada a 11.5 km del centro de Kharakvasla (Wikidata).
-      }),
-  ],
-  "india-kalyani": [
-      defineUniversity({
-        id: "india-kalyani-bidhan-chandra-krishi-viswavidyalaya",
-        name: "Bidhan Chandra Krishi Viswavidyalaya",
-        cityId: "india-kalyani",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.8 km del centro de Kalyani (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalyani-kalyani-mahavidyalaya",
-        name: "Kalyani Mahavidyalaya",
-        cityId: "india-kalyani",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Kalyani (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalyani-university-of-kalyani",
-        name: "University of Kalyani",
-        cityId: "india-kalyani",
-        website: "http://www.klyuniv.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Kalyani (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalyani-university-of-kalyani",
-        name: "University of Kalyani",
-        cityId: "india-kalyani",
-        website: "http://www.klyuniv.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Kalyani (Wikidata).
       }),
   ],
   "india-kalka": [
@@ -6526,38 +7030,38 @@ export default {
         // Situada a 7.8 km del centro de Kālka (Wikidata).
       }),
   ],
-  "india-junagadh": [
+  "india-jodhpur": [
       defineUniversity({
-        id: "india-junagadh-noble-university",
-        name: "Noble University",
-        cityId: "india-junagadh",
-        website: null,
+        id: "india-jodhpur-indian-institute-of-technology-jodhpur",
+        name: "Indian Institute of Technology Jodhpur",
+        cityId: "india-jodhpur",
+        website: "http://www.iitj.ac.in/",
         source: "open-dataset",
-        // Situada a 8.8 km del centro de Jūnāgadh (Wikidata).
+        // Situada a 2.7 km del centro de Jodhpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-junagadh-directorate-of-groundnut-research",
-        name: "Directorate of Groundnut Research",
-        cityId: "india-junagadh",
-        website: null,
+        id: "india-jodhpur-jai-narain-vyas-university",
+        name: "Jai Narain Vyas University",
+        cityId: "india-jodhpur",
+        website: "http://www.ptetjnvu.org/",
         source: "open-dataset",
-        // Situada a 4.4 km del centro de Jūnāgadh (Wikidata).
+        // Situada a 3.1 km del centro de Jodhpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-junagadh-bhakta-kavi-narsinh-mehta-university",
-        name: "Bhakta Kavi Narsinh Mehta University",
-        cityId: "india-junagadh",
+        id: "india-jodhpur-maulana-azad-university-jodhpur",
+        name: "Maulana Azad University Jodhpur",
+        cityId: "india-jodhpur",
         website: null,
         source: "open-dataset",
-        // Situada a 10.1 km del centro de Jūnāgadh (Wikidata).
+        // Situada a None km del centro de Jodhpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-junagadh-junagadh-agricultural-university",
-        name: "Junagadh Agricultural University",
-        cityId: "india-junagadh",
+        id: "india-jodhpur-m-b-m-university",
+        name: "M.B.M. University",
+        cityId: "india-jodhpur",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Jūnāgadh (Wikidata).
+        // Situada a None km del centro de Jodhpur (Wikidata).
       }),
   ],
   "india-jhargram": [
@@ -6594,40 +7098,6 @@ export default {
         // Situada a 16.5 km del centro de Jhārgrām (Wikidata).
       }),
   ],
-  "india-jammu": [
-      defineUniversity({
-        id: "india-jammu-indian-institute-of-technology-jammu",
-        name: "Indian Institute of Technology Jammu",
-        cityId: "india-jammu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Jammu (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jammu-indian-institute-of-technology-jammu",
-        name: "Indian Institute of Technology Jammu",
-        cityId: "india-jammu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.3 km del centro de Jammu (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jammu-cluster-university-of-jammu",
-        name: "Cluster University of Jammu",
-        cityId: "india-jammu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Jammu (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jammu-cluster-university-of-jammu",
-        name: "Cluster University of Jammu",
-        cityId: "india-jammu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Jammu (Wikidata).
-      }),
-  ],
   "india-jalpaiguri": [
       defineUniversity({
         id: "india-jalpaiguri-jalpaiguri-government-medical-college-and-hospital",
@@ -6662,15 +7132,41 @@ export default {
         // Situada a 16.8 km del centro de Jalpāiguri (Wikidata).
       }),
   ],
-  "india-haridwar": [
+  "india-hisar": [
       defineUniversity({
-        id: "india-haridwar-uttarakhand-sanskrit-university",
-        name: "Uttarakhand Sanskrit University",
-        cityId: "india-haridwar",
+        id: "india-hisar-chaudhary-charan-singh-haryana-agricultural-university",
+        name: "Chaudhary Charan Singh Haryana Agricultural University",
+        cityId: "india-hisar",
         website: null,
         source: "open-dataset",
-        // Situada a 11.0 km del centro de Haridwar (Wikidata).
+        // Situada a 1.7 km del centro de Hisar (Wikidata).
       }),
+      defineUniversity({
+        id: "india-hisar-lala-lajpat-rai-university-of-veterinary-and-animal-sciences",
+        name: "Lala Lajpat Rai University of Veterinary and Animal Sciences",
+        cityId: "india-hisar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.2 km del centro de Hisar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hisar-om-sterling-global-university",
+        name: "Om Sterling Global University",
+        cityId: "india-hisar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 11.6 km del centro de Hisar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hisar-guru-jambheshwar-university-of-science-and-technology",
+        name: "Guru Jambheshwar University of Science and Technology",
+        cityId: "india-hisar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hisar (Wikidata).
+      }),
+  ],
+  "india-haridwar": [
       defineUniversity({
         id: "india-haridwar-uttarakhand-sanskrit-university",
         name: "Uttarakhand Sanskrit University",
@@ -6695,277 +7191,217 @@ export default {
         source: "open-dataset",
         // Situada a 4.3 km del centro de Haridwar (Wikidata).
       }),
-  ],
-  "india-hamirpur": [
       defineUniversity({
-        id: "india-hamirpur-career-point-university",
-        name: "Career Point University",
-        cityId: "india-hamirpur",
+        id: "india-haridwar-haridwar-university",
+        name: "Haridwar University",
+        cityId: "india-haridwar",
         website: null,
         source: "open-dataset",
-        // Situada a 11.6 km del centro de Hamīrpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hamirpur-himachal-pradesh-technical-university",
-        name: "Himachal Pradesh Technical University",
-        cityId: "india-hamirpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Hamīrpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hamirpur-himachal-pradesh-technical-university",
-        name: "Himachal Pradesh Technical University",
-        cityId: "india-hamirpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Hamīrpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hamirpur-national-institute-of-technology-hamirpur",
-        name: "National Institute of Technology, Hamirpur",
-        cityId: "india-hamirpur",
-        website: "http://www.nith.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Hamīrpur (Wikidata).
+        // Situada a None km del centro de Haridwar (Wikidata).
       }),
   ],
-  "india-kalaburagi": [
+  "india-durg": [
       defineUniversity({
-        id: "india-kalaburagi-mahadevappa-rampure-medical-college",
-        name: "Mahadevappa Rampure Medical College",
-        cityId: "india-kalaburagi",
+        id: "india-durg-institute-of-engineering-and-science-ips-academy",
+        name: "Institute of Engineering and Science IPS Academy",
+        cityId: "india-durg",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Kalaburagi (Wikidata).
+        // Situada a 2.5 km del centro de Durg (Wikidata).
       }),
       defineUniversity({
-        id: "india-kalaburagi-gulbarga-university",
-        name: "Gulbarga University",
-        cityId: "india-kalaburagi",
-        website: "http://www.gulbargauniversity.kar.nic.in/",
-        source: "open-dataset",
-        // Situada a 4.7 km del centro de Kalaburagi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalaburagi-gulbarga-university",
-        name: "Gulbarga University",
-        cityId: "india-kalaburagi",
-        website: "http://www.gulbargauniversity.kar.nic.in/",
-        source: "open-dataset",
-        // Situada a 4.7 km del centro de Kalaburagi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kalaburagi-sharnbasva-university",
-        name: "Sharnbasva University",
-        cityId: "india-kalaburagi",
+        id: "india-durg-st-thomas-college-bhilai",
+        name: "St. Thomas College, Bhilai",
+        cityId: "india-durg",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Kalaburagi (Wikidata).
+        // Situada a 5.9 km del centro de Durg (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-durg-hemchand-yadav-vishwavidyalaya",
+        name: "Hemchand Yadav Vishwavidyalaya",
+        cityId: "india-durg",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Durg (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-durg-indian-institute-of-technology-bhilai",
+        name: "Indian Institute of Technology Bhilai",
+        cityId: "india-durg",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.3 km del centro de Durg (Wikidata).
       }),
   ],
-  "india-gorakhpur": [
+  "india-dibrugarh": [
       defineUniversity({
-        id: "india-gorakhpur-mahayogi-guru-gorakhnath-ayush-university",
-        name: "Mahayogi Guru Gorakhnath AYUSH University",
-        cityId: "india-gorakhpur",
+        id: "india-dibrugarh-dibrugarh-polytechnic",
+        name: "Dibrugarh Polytechnic",
+        cityId: "india-dibrugarh",
         website: null,
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Gorakhpur (Wikidata).
+        // Situada a 8.0 km del centro de Dibrugarh (Wikidata).
       }),
       defineUniversity({
-        id: "india-gorakhpur-mahayogi-gorakhnath-university",
-        name: "Mahayogi Gorakhnath University",
-        cityId: "india-gorakhpur",
+        id: "india-dibrugarh-dibrugarh-university",
+        name: "Dibrugarh University",
+        cityId: "india-dibrugarh",
+        website: "http://www.dibru.ernet.in/",
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Dibrugarh (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-dibrugarh-government-dental-college-dibrugarh",
+        name: "Government Dental College, Dibrugarh",
+        cityId: "india-dibrugarh",
         website: null,
         source: "open-dataset",
-        // Situada a 7.6 km del centro de Gorakhpur (Wikidata).
+        // Situada a 1.1 km del centro de Dibrugarh (Wikidata).
       }),
       defineUniversity({
-        id: "india-gorakhpur-deen-dayal-upadhyay-gorakhpur-university",
-        name: "Deen Dayal Upadhyay Gorakhpur University",
-        cityId: "india-gorakhpur",
-        website: "http://www.ddugu.edu.in/",
+        id: "india-dibrugarh-sri-sri-aniruddhadeva-sports-university",
+        name: "Sri Sri Aniruddhadeva Sports University",
+        cityId: "india-dibrugarh",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.3 km del centro de Gorakhpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-gorakhpur-deen-dayal-upadhyay-gorakhpur-university",
-        name: "Deen Dayal Upadhyay Gorakhpur University",
-        cityId: "india-gorakhpur",
-        website: "http://www.ddugu.edu.in/",
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Gorakhpur (Wikidata).
+        // Situada a None km del centro de Dibrugarh (Wikidata).
       }),
   ],
-  "india-diamond-harbour": [
+  "india-dharamsala": [
       defineUniversity({
-        id: "india-diamond-harbour-neotia-university",
-        name: "Neotia University",
-        cityId: "india-diamond-harbour",
+        id: "india-dharamsala-rajiv-gandhi-government-engineering-college-kangra",
+        name: "Rajiv Gandhi Government Engineering College Kangra",
+        cityId: "india-dharamsala",
         website: null,
         source: "open-dataset",
-        // Situada a 7.7 km del centro de Diamond Harbour (Wikidata).
+        // Situada a 16.7 km del centro de Dharamsala (Wikidata).
       }),
       defineUniversity({
-        id: "india-diamond-harbour-diamond-harbour-women-s-university",
-        name: "Diamond Harbour Women's University",
-        cityId: "india-diamond-harbour",
+        id: "india-dharamsala-central-university-of-himachal-pradesh",
+        name: "Central University of Himachal Pradesh",
+        cityId: "india-dharamsala",
         website: null,
         source: "open-dataset",
-        // Situada a 7.3 km del centro de Diamond Harbour (Wikidata).
+        // Situada a 15.4 km del centro de Dharamsala (Wikidata).
       }),
       defineUniversity({
-        id: "india-diamond-harbour-diamond-harbour-women-s-university",
-        name: "Diamond Harbour Women's University",
-        cityId: "india-diamond-harbour",
+        id: "india-dharamsala-chaudhary-sarwan-kumar-himachal-pradesh-krishi-vishvavidyalaya",
+        name: "Chaudhary Sarwan Kumar Himachal Pradesh Krishi Vishvavidyalaya",
+        cityId: "india-dharamsala",
         website: null,
         source: "open-dataset",
-        // Situada a 7.3 km del centro de Diamond Harbour (Wikidata).
+        // Situada a 25.1 km del centro de Dharamsala (Wikidata).
       }),
       defineUniversity({
-        id: "india-diamond-harbour-ramakrishna-mission-siksha-mandir-sarisha",
-        name: "Ramakrishna Mission Siksha Mandir, Sarisha",
-        cityId: "india-diamond-harbour",
+        id: "india-dharamsala-government-college-of-teacher-education-dharamsala",
+        name: "Government College of Teacher Education Dharamsala",
+        cityId: "india-dharamsala",
         website: null,
         source: "open-dataset",
-        // Situada a 5.7 km del centro de Diamond Harbour (Wikidata).
+        // Situada a 2.5 km del centro de Dharamsala (Wikidata).
       }),
   ],
-  "india-burla": [
+  "india-darbhanga": [
       defineUniversity({
-        id: "india-burla-veer-surendra-sai-institute-of-medical-sciences-and-research",
-        name: "Veer Surendra Sai Institute of Medical Sciences and Research",
-        cityId: "india-burla",
+        id: "india-darbhanga-kameshwar-singh-darbhanga-sanskrit-university",
+        name: "Kameshwar Singh Darbhanga Sanskrit University",
+        cityId: "india-darbhanga",
+        website: "http://www.ksdsu.edu.in/",
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Darbhanga (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-darbhanga-lalit-narayan-mithila-university",
+        name: "Lalit Narayan Mithila University",
+        cityId: "india-darbhanga",
+        website: "http://lnmu.bih.nic.in/",
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Darbhanga (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-darbhanga-darul-uloom-ahmadia-salafia",
+        name: "Darul Uloom Ahmadia Salafia",
+        cityId: "india-darbhanga",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Burla (Wikidata).
+        // Situada a 2.9 km del centro de Darbhanga (Wikidata).
       }),
       defineUniversity({
-        id: "india-burla-sambalpur-university",
-        name: "Sambalpur University",
-        cityId: "india-burla",
-        website: "http://www.sambalpuruniversitypgc.in/",
+        id: "india-darbhanga-marwari-college",
+        name: "Marwari College",
+        cityId: "india-darbhanga",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.5 km del centro de Burla (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-burla-sambalpur-university",
-        name: "Sambalpur University",
-        cityId: "india-burla",
-        website: "http://www.sambalpuruniversitypgc.in/",
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Burla (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-burla-veer-surendra-sai-university-of-technology",
-        name: "Veer Surendra Sai University of Technology",
-        cityId: "india-burla",
-        website: "http://www.vssut.ac.in/",
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Burla (Wikidata).
+        // Situada a 1.0 km del centro de Darbhanga (Wikidata).
       }),
   ],
-  "india-belagavi": [
+  "india-coimbatore": [
       defineUniversity({
-        id: "india-belagavi-anuvartik-mirji-bharatesh-institute-of-technology",
-        name: "Anuvartik Mirji Bharatesh Institute of Technology",
-        cityId: "india-belagavi",
+        id: "india-coimbatore-institute-of-forest-genetics-and-tree-breeding",
+        name: "Institute of Forest Genetics and Tree Breeding",
+        cityId: "india-coimbatore",
         website: null,
         source: "open-dataset",
-        // Situada a 7.9 km del centro de Belagavi (Wikidata).
+        // Situada a 2.1 km del centro de Coimbatore (Wikidata).
       }),
       defineUniversity({
-        id: "india-belagavi-rani-channamma-university-belgaum",
-        name: "Rani Channamma University, Belgaum",
-        cityId: "india-belagavi",
-        website: null,
+        id: "india-coimbatore-avinashilingam-institute-for-home-science-and-higher-education-for-women",
+        name: "Avinashilingam Institute for Home Science and Higher Education for Women",
+        cityId: "india-coimbatore",
+        website: "https://avinuty.ac.in/",
         source: "open-dataset",
-        // Situada a 17.0 km del centro de Belagavi (Wikidata).
+        // Situada a 2.2 km del centro de Coimbatore (Wikidata).
       }),
       defineUniversity({
-        id: "india-belagavi-rani-channamma-university-belgaum",
-        name: "Rani Channamma University, Belgaum",
-        cityId: "india-belagavi",
+        id: "india-coimbatore-sankara-college-of-science-and-commerce",
+        name: "Sankara College of Science and Commerce",
+        cityId: "india-coimbatore",
         website: null,
         source: "open-dataset",
-        // Situada a 17.0 km del centro de Belagavi (Wikidata).
+        // Situada a None km del centro de Coimbatore (Wikidata).
       }),
       defineUniversity({
-        id: "india-belagavi-kle-academy-of-higher-education-and-research",
-        name: "KLE Academy of Higher Education and Research",
-        cityId: "india-belagavi",
+        id: "india-coimbatore-psg-institute-of-management-coimbatore",
+        name: "PSG Institute of Management Coimbatore",
+        cityId: "india-coimbatore",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Belagavi (Wikidata).
+        // Situada a None km del centro de Coimbatore (Wikidata).
       }),
   ],
-  "india-barddhaman": [
+  "india-bhagalpur": [
       defineUniversity({
-        id: "india-barddhaman-dr-bhupendra-nath-dutta-smriti-mahavidyalaya",
-        name: "Dr. Bhupendra Nath Dutta Smriti Mahavidyalaya",
-        cityId: "india-barddhaman",
+        id: "india-bhagalpur-indian-institute-of-information-technology-bhagalpur",
+        name: "Indian Institute of Information Technology, Bhagalpur",
+        cityId: "india-bhagalpur",
         website: null,
         source: "open-dataset",
-        // Situada a 13.0 km del centro de Barddhamān (Wikidata).
+        // Situada a 7.2 km del centro de Bhāgalpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-barddhaman-maharajadhiraj-uday-chand-women-s-college",
-        name: "Maharajadhiraj Uday Chand Women's College",
-        cityId: "india-barddhaman",
+        id: "india-bhagalpur-bihar-agricultural-university",
+        name: "Bihar Agricultural University",
+        cityId: "india-bhagalpur",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Barddhamān (Wikidata).
+        // Situada a 8.0 km del centro de Bhāgalpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-barddhaman-university-of-burdwan",
-        name: "University of Burdwan",
-        cityId: "india-barddhaman",
-        website: "http://www.burdwanuniversity.ac.in/",
+        id: "india-bhagalpur-tilka-manjhi-bhagalpur-university",
+        name: "Tilka Manjhi Bhagalpur University",
+        cityId: "india-bhagalpur",
+        website: "http://www.tmbu.org/",
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Barddhamān (Wikidata).
+        // Situada a 1.5 km del centro de Bhāgalpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-barddhaman-university-of-burdwan",
-        name: "University of Burdwan",
-        cityId: "india-barddhaman",
-        website: "http://www.burdwanuniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Barddhamān (Wikidata).
-      }),
-  ],
-  "india-barasat": [
-      defineUniversity({
-        id: "india-barasat-west-bengal-state-university",
-        name: "West Bengal State University",
-        cityId: "india-barasat",
+        id: "india-bhagalpur-st-joseph-s-school-bhagalpur",
+        name: "St. Joseph's School, Bhagalpur",
+        cityId: "india-bhagalpur",
         website: null,
         source: "open-dataset",
-        // Situada a 5.2 km del centro de Bārāsat (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-barasat-west-bengal-state-university",
-        name: "West Bengal State University",
-        cityId: "india-barasat",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.2 km del centro de Bārāsat (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-barasat-adamas-university",
-        name: "Adamas University",
-        cityId: "india-barasat",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Bārāsat (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-barasat-brainware-university",
-        name: "Brainware University",
-        cityId: "india-barasat",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Bārāsat (Wikidata).
+        // Situada a None km del centro de Bhāgalpur (Wikidata).
       }),
   ],
   "india-bankura": [
@@ -7002,38 +7438,38 @@ export default {
         // Situada a 9.7 km del centro de Bānkura (Wikidata).
       }),
   ],
-  "india-asansol": [
+  "india-aizawl": [
       defineUniversity({
-        id: "india-asansol-banwarilal-bhalotia-college",
-        name: "Banwarilal Bhalotia College",
-        cityId: "india-asansol",
+        id: "india-aizawl-helen-lowry-higher-secondary-school",
+        name: "Helen Lowry Higher Secondary School",
+        cityId: "india-aizawl",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Āsansol (Wikidata).
+        // Situada a 1.3 km del centro de Aizawl (Wikidata).
       }),
       defineUniversity({
-        id: "india-asansol-kazi-nazrul-university",
-        name: "Kazi Nazrul University",
-        cityId: "india-asansol",
-        website: null,
+        id: "india-aizawl-icfai-university-mizoram",
+        name: "ICFAI University, Mizoram",
+        cityId: "india-aizawl",
+        website: "https://www.iumizoram.edu.in/",
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Āsansol (Wikidata).
+        // Situada a 8.0 km del centro de Aizawl (Wikidata).
       }),
       defineUniversity({
-        id: "india-asansol-kazi-nazrul-university",
-        name: "Kazi Nazrul University",
-        cityId: "india-asansol",
+        id: "india-aizawl-mizoram-university",
+        name: "Mizoram University",
+        cityId: "india-aizawl",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Āsansol (Wikidata).
+        // Situada a 5.5 km del centro de Aizawl (Wikidata).
       }),
       defineUniversity({
-        id: "india-asansol-saltora-netaji-centenary-college",
-        name: "Saltora Netaji Centenary College",
-        cityId: "india-asansol",
-        website: null,
+        id: "india-aizawl-national-institute-of-technology-mizoram",
+        name: "National Institute of Technology Mizoram",
+        cityId: "india-aizawl",
+        website: "http://www.nitmz.ac.in/",
         source: "open-dataset",
-        // Situada a 18.5 km del centro de Āsansol (Wikidata).
+        // Situada a 2.2 km del centro de Aizawl (Wikidata).
       }),
   ],
   "india-powai": [
@@ -7070,276 +7506,72 @@ export default {
         // Situada a 6.3 km del centro de Powai (Wikidata).
       }),
   ],
-  "india-shamshabad": [
+  "india-thodupuzha": [
       defineUniversity({
-        id: "india-shamshabad-professor-jayashankar-telangana-agricultural-university",
-        name: "Professor Jayashankar Telangana  Agricultural University",
-        cityId: "india-shamshabad",
+        id: "india-thodupuzha-al-azhar-polytechnic-college",
+        name: "Al-Azhar Polytechnic College",
+        cityId: "india-thodupuzha",
         website: null,
         source: "open-dataset",
-        // Situada a 7.9 km del centro de Shamshabad (Wikidata).
+        // Situada a 2.7 km del centro de Thodupuzha (Wikidata).
       }),
       defineUniversity({
-        id: "india-shamshabad-professor-jayashankar-telangana-agricultural-university",
-        name: "Professor Jayashankar Telangana  Agricultural University",
-        cityId: "india-shamshabad",
+        id: "india-thodupuzha-government-polytechnic-college-purappuzha",
+        name: "Government Polytechnic College Purappuzha",
+        cityId: "india-thodupuzha",
         website: null,
         source: "open-dataset",
-        // Situada a 7.9 km del centro de Shamshabad (Wikidata).
+        // Situada a 6.1 km del centro de Thodupuzha (Wikidata).
       }),
       defineUniversity({
-        id: "india-shamshabad-acharya-n-g-ranga-agricultural-university",
-        name: "Acharya N. G. Ranga Agricultural University",
-        cityId: "india-shamshabad",
+        id: "india-thodupuzha-government-polytechnic-college-muttom",
+        name: "Government Polytechnic College, Muttom",
+        cityId: "india-thodupuzha",
         website: null,
         source: "open-dataset",
-        // Situada a 7.8 km del centro de Shamshabad (Wikidata).
+        // Situada a 5.9 km del centro de Thodupuzha (Wikidata).
       }),
       defineUniversity({
-        id: "india-shamshabad-acharya-n-g-ranga-agricultural-university",
-        name: "Acharya N. G. Ranga Agricultural University",
-        cityId: "india-shamshabad",
+        id: "india-thodupuzha-model-polytechnic-college-painavu",
+        name: "Model Polytechnic College Painavu",
+        cityId: "india-thodupuzha",
         website: null,
         source: "open-dataset",
-        // Situada a 7.8 km del centro de Shamshabad (Wikidata).
+        // Situada a None km del centro de Thodupuzha (Wikidata).
       }),
   ],
-  "india-rudrapur": [
+  "india-hashtsal": [
       defineUniversity({
-        id: "india-rudrapur-aditya-nath-jha-government-inter-college-rudrapur",
-        name: "Aditya Nath Jha Government Inter College, Rudrapur",
-        cityId: "india-rudrapur",
+        id: "india-hashtsal-delhi-skill-and-entrepreneurship-university",
+        name: "Delhi Skill and Entrepreneurship University",
+        cityId: "india-hashtsal",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Rudrapur (Wikidata).
+        // Situada a 5.8 km del centro de Hashtsāl (Wikidata).
       }),
       defineUniversity({
-        id: "india-rudrapur-chandola-homoeopathic-medical-college",
-        name: "Chandola Homoeopathic Medical College",
-        cityId: "india-rudrapur",
+        id: "india-hashtsal-lal-bahadur-shastri-institute-of-management",
+        name: "Lal Bahadur Shastri Institute of Management",
+        cityId: "india-hashtsal",
         website: null,
         source: "open-dataset",
-        // Situada a 5.1 km del centro de Rudrapur (Wikidata).
+        // Situada a 5.1 km del centro de Hashtsāl (Wikidata).
       }),
       defineUniversity({
-        id: "india-rudrapur-g-b-pant-university-of-agriculture-and-technology",
-        name: "G. B. Pant University of Agriculture and Technology",
-        cityId: "india-rudrapur",
+        id: "india-hashtsal-bhaskraycharya-college-of-applied-sciences",
+        name: "Bhaskraycharya College of Applied Sciences",
+        cityId: "india-hashtsal",
         website: null,
         source: "open-dataset",
-        // Situada a 9.8 km del centro de Rudrapur (Wikidata).
+        // Situada a 3.9 km del centro de Hashtsāl (Wikidata).
       }),
       defineUniversity({
-        id: "india-rudrapur-g-b-pant-university-of-agriculture-and-technology",
-        name: "G. B. Pant University of Agriculture and Technology",
-        cityId: "india-rudrapur",
+        id: "india-hashtsal-maharaja-surajmal-institute-of-technology",
+        name: "Maharaja Surajmal Institute of Technology",
+        cityId: "india-hashtsal",
         website: null,
         source: "open-dataset",
-        // Situada a 9.8 km del centro de Rudrapur (Wikidata).
-      }),
-  ],
-  "india-sahibabad-daulotpur": [
-      defineUniversity({
-        id: "india-sahibabad-daulotpur-jims",
-        name: "JIMS",
-        cityId: "india-sahibabad-daulotpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Sāhibābād Daulotpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-sahibabad-daulotpur-delhi-technological-university",
-        name: "Delhi Technological University",
-        cityId: "india-sahibabad-daulotpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Sāhibābād Daulotpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-sahibabad-daulotpur-delhi-technological-university",
-        name: "Delhi Technological University",
-        cityId: "india-sahibabad-daulotpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Sāhibābād Daulotpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-sahibabad-daulotpur-delhi-school-of-professional-studies-and-research",
-        name: "Delhi School of Professional Studies and Research",
-        cityId: "india-sahibabad-daulotpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Sāhibābād Daulotpur (Wikidata).
-      }),
-  ],
-  "india-tighri": [
-      defineUniversity({
-        id: "india-tighri-indraprastha-institute-of-information-technology-delhi",
-        name: "Indraprastha Institute of Information Technology Delhi",
-        cityId: "india-tighri",
-        website: "http://www.iiitd.ac.in/",
-        source: "open-dataset",
-        // Situada a 4.7 km del centro de Tighri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-tighri-delhi-pharmaceutical-science-and-research-university",
-        name: "Delhi Pharmaceutical Science and Research University",
-        cityId: "india-tighri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Tighri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-tighri-deshbandhu-college",
-        name: "Deshbandhu College",
-        cityId: "india-tighri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.4 km del centro de Tighri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-tighri-jamia-hamdard",
-        name: "Jamia Hamdard",
-        cityId: "india-tighri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Tighri (Wikidata).
-      }),
-  ],
-  "india-jharoda-mazra-burari": [
-      defineUniversity({
-        id: "india-jharoda-mazra-burari-sri-venkateswara-college",
-        name: "Sri Venkateswara College",
-        cityId: "india-jharoda-mazra-burari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Jharoda Mazra Burāri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jharoda-mazra-burari-university-of-delhi",
-        name: "University of Delhi",
-        cityId: "india-jharoda-mazra-burari",
-        website: "http://www.du.ac.in/",
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Jharoda Mazra Burāri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jharoda-mazra-burari-university-of-delhi",
-        name: "University of Delhi",
-        cityId: "india-jharoda-mazra-burari",
-        website: "http://www.du.ac.in/",
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Jharoda Mazra Burāri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jharoda-mazra-burari-school-of-open-learning",
-        name: "School of Open Learning",
-        cityId: "india-jharoda-mazra-burari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Jharoda Mazra Burāri (Wikidata).
-      }),
-  ],
-  "india-kotekara": [
-      defineUniversity({
-        id: "india-kotekara-nitte-university",
-        name: "Nitte University",
-        cityId: "india-kotekara",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Kōtekāra (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kotekara-mangalore-university",
-        name: "Mangalore University",
-        cityId: "india-kotekara",
-        website: "http://www.mangaloreuniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Kōtekāra (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kotekara-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kotekara",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 8.3 km del centro de Kōtekāra (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kotekara-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kotekara",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 8.3 km del centro de Kōtekāra (Wikidata).
-      }),
-  ],
-  "india-kusum-pur": [
-      defineUniversity({
-        id: "india-kusum-pur-jawaharlal-nehru-university",
-        name: "Jawaharlal Nehru University",
-        cityId: "india-kusum-pur",
-        website: "http://www.jnu.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Kusum Pur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kusum-pur-shri-lal-bahadur-shastri-national-sanskrit-university",
-        name: "Shri Lal Bahadur Shastri National Sanskrit University",
-        cityId: "india-kusum-pur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Kusum Pur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kusum-pur-shri-lal-bahadur-shastri-national-sanskrit-university",
-        name: "Shri Lal Bahadur Shastri National Sanskrit University",
-        cityId: "india-kusum-pur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Kusum Pur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kusum-pur-teri-school-of-advanced-studies",
-        name: "TERI School of Advanced Studies",
-        cityId: "india-kusum-pur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Kusum Pur (Wikidata).
-      }),
-  ],
-  "india-jammu-cantonment": [
-      defineUniversity({
-        id: "india-jammu-cantonment-sher-e-kashmir-university-of-agricultural-sciences-and-technology-of-jammu",
-        name: "Sher-e-Kashmir University of Agricultural Sciences and Technology of Jammu",
-        cityId: "india-jammu-cantonment",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de Jammu Cantonment (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jammu-cantonment-sher-e-kashmir-university-of-agricultural-sciences-and-technology-of-jammu",
-        name: "Sher-e-Kashmir University of Agricultural Sciences and Technology of Jammu",
-        cityId: "india-jammu-cantonment",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de Jammu Cantonment (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jammu-cantonment-university-of-jammu",
-        name: "University of Jammu",
-        cityId: "india-jammu-cantonment",
-        website: "http://www.jammuvarsity.org/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Jammu Cantonment (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jammu-cantonment-university-of-jammu",
-        name: "University of Jammu",
-        cityId: "india-jammu-cantonment",
-        website: "http://www.jammuvarsity.org/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Jammu Cantonment (Wikidata).
+        // Situada a 3.5 km del centro de Hashtsāl (Wikidata).
       }),
   ],
   "india-kakkodi": [
@@ -7376,30 +7608,38 @@ export default {
         // Situada a 3.7 km del centro de Kakkodi (Wikidata).
       }),
   ],
-  "india-warangal": [
+  "india-nandri": [
       defineUniversity({
-        id: "india-warangal-kaloji-narayana-rao-university-of-health-sciences",
-        name: "Kaloji Narayana Rao University of Health Sciences",
-        cityId: "india-warangal",
-        website: "https://www.knruhs.telangana.gov.in/",
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Warangal (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-warangal-kakatiya-institute-of-technology-and-science",
-        name: "Kakatiya Institute of Technology and Science",
-        cityId: "india-warangal",
+        id: "india-nandri-agriculture-university-jodhpur",
+        name: "Agriculture University, Jodhpur",
+        cityId: "india-nandri",
         website: null,
         source: "open-dataset",
-        // Situada a 7.7 km del centro de Warangal (Wikidata).
+        // Situada a 7.1 km del centro de Nandri (Wikidata).
       }),
       defineUniversity({
-        id: "india-warangal-national-institute-of-technology-warangal",
-        name: "National Institute of Technology, Warangal",
-        cityId: "india-warangal",
-        website: "http://www.nitw.ernet.in/",
+        id: "india-nandri-sardar-patel-university-of-police-security-and-criminal-justice",
+        name: "Sardar Patel University of Police, Security and Criminal Justice",
+        cityId: "india-nandri",
+        website: null,
         source: "open-dataset",
-        // Situada a 5.8 km del centro de Warangal (Wikidata).
+        // Situada a 10.2 km del centro de Nandri (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nandri-dr-sarvepalli-radhakrishnan-rajasthan-ayurved-university",
+        name: "Dr. Sarvepalli Radhakrishnan Rajasthan Ayurved University",
+        cityId: "india-nandri",
+        website: null,
+        source: "open-dataset",
+        // Situada a 15.7 km del centro de Nandri (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nandri-national-law-university-jodhpur",
+        name: "National Law University, Jodhpur",
+        cityId: "india-nandri",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.2 km del centro de Nandri (Wikidata).
       }),
   ],
   "india-vallam": [
@@ -7480,6 +7720,32 @@ export default {
         // Situada a 12.6 km del centro de Uran (Wikidata).
       }),
   ],
+  "india-udhampur": [
+      defineUniversity({
+        id: "india-udhampur-government-medical-college-udhampur",
+        name: "Government Medical College, Udhampur",
+        cityId: "india-udhampur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Udhampur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-udhampur-government-degree-college-udhampur",
+        name: "Government Degree College, Udhampur",
+        cityId: "india-udhampur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Udhampur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-udhampur-shri-mata-vaishno-devi-university",
+        name: "Shri Mata Vaishno Devi University",
+        cityId: "india-udhampur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 17.1 km del centro de Udhampur (Wikidata).
+      }),
+  ],
   "india-tiruchirappalli": [
       defineUniversity({
         id: "india-tiruchirappalli-jamal-mohamed-college",
@@ -7498,12 +7764,12 @@ export default {
         // Situada a 13.0 km del centro de Tiruchirappalli (Wikidata).
       }),
       defineUniversity({
-        id: "india-tiruchirappalli-tamil-nadu-national-law-university",
-        name: "Tamil Nadu National Law University",
+        id: "india-tiruchirappalli-nehru-memorial-college-puthanampatti",
+        name: "Nehru Memorial College, Puthanampatti",
         cityId: "india-tiruchirappalli",
         website: null,
         source: "open-dataset",
-        // Situada a 13.0 km del centro de Tiruchirappalli (Wikidata).
+        // Situada a None km del centro de Tiruchirappalli (Wikidata).
       }),
   ],
   "india-tezpur": [
@@ -7532,41 +7798,7 @@ export default {
         // Situada a 8.1 km del centro de Tezpur (Wikidata).
       }),
   ],
-  "india-taleigao": [
-      defineUniversity({
-        id: "india-taleigao-national-institute-of-water-sports",
-        name: "National Institute of Water Sports",
-        cityId: "india-taleigao",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Taleigao (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-taleigao-goa-university",
-        name: "Goa University",
-        cityId: "india-taleigao",
-        website: "http://www.unigoa.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Taleigao (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-taleigao-goa-university",
-        name: "Goa University",
-        cityId: "india-taleigao",
-        website: "http://www.unigoa.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Taleigao (Wikidata).
-      }),
-  ],
   "india-sonipat": [
-      defineUniversity({
-        id: "india-sonipat-deenbandhu-chhotu-ram-university-of-science-and-technology",
-        name: "Deenbandhu Chhotu Ram University of Science and Technology",
-        cityId: "india-sonipat",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Sonīpat (Wikidata).
-      }),
       defineUniversity({
         id: "india-sonipat-deenbandhu-chhotu-ram-university-of-science-and-technology",
         name: "Deenbandhu Chhotu Ram University of Science and Technology",
@@ -7582,6 +7814,14 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 8.3 km del centro de Sonīpat (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-sonipat-rishihood-university",
+        name: "Rishihood University",
+        cityId: "india-sonipat",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sonīpat (Wikidata).
       }),
   ],
   "india-sohna": [
@@ -7610,32 +7850,6 @@ export default {
         // Situada a 1.9 km del centro de Sohna (Wikidata).
       }),
   ],
-  "india-silchar": [
-      defineUniversity({
-        id: "india-silchar-radhamadhab-college",
-        name: "Radhamadhab College",
-        cityId: "india-silchar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Silchar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-silchar-national-institute-of-technology-silchar",
-        name: "National Institute of Technology, Silchar",
-        cityId: "india-silchar",
-        website: "http://www.nits.ac.in/",
-        source: "open-dataset",
-        // Situada a 7.9 km del centro de Silchar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-silchar-government-dental-college-silchar",
-        name: "Government Dental College, Silchar",
-        cityId: "india-silchar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.1 km del centro de Silchar (Wikidata).
-      }),
-  ],
   "india-shoranur": [
       defineUniversity({
         id: "india-shoranur-kerala-kalamandalam",
@@ -7660,240 +7874,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.7 km del centro de Shōranūr (Wikidata).
-      }),
-  ],
-  "india-sholapur": [
-      defineUniversity({
-        id: "india-sholapur-government-polytechnic-solapur",
-        name: "Government Polytechnic Solapur",
-        cityId: "india-sholapur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Sholapur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-sholapur-punyashlok-ahilyadevi-holkar-solapur-university",
-        name: "Punyashlok Ahilyadevi Holkar Solapur University",
-        cityId: "india-sholapur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.3 km del centro de Sholapur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-sholapur-punyashlok-ahilyadevi-holkar-solapur-university",
-        name: "Punyashlok Ahilyadevi Holkar Solapur University",
-        cityId: "india-sholapur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.3 km del centro de Sholapur (Wikidata).
-      }),
-  ],
-  "india-sambalpur": [
-      defineUniversity({
-        id: "india-sambalpur-odisha-state-open-university",
-        name: "Odisha State Open University",
-        cityId: "india-sambalpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Sambalpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-sambalpur-gangadhar-meher-university",
-        name: "Gangadhar Meher University",
-        cityId: "india-sambalpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Sambalpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-sambalpur-gangadhar-meher-university",
-        name: "Gangadhar Meher University",
-        cityId: "india-sambalpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Sambalpur (Wikidata).
-      }),
-  ],
-  "india-samastipur": [
-      defineUniversity({
-        id: "india-samastipur-dr-rajendra-prasad-central-agriculture-university",
-        name: "Dr. Rajendra Prasad Central Agriculture University",
-        cityId: "india-samastipur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 17.2 km del centro de Samāstipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-samastipur-dr-rajendra-prasad-central-agriculture-university",
-        name: "Dr. Rajendra Prasad Central Agriculture University",
-        cityId: "india-samastipur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 17.2 km del centro de Samāstipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-samastipur-samastipur-law-college",
-        name: "Samastipur Law College",
-        cityId: "india-samastipur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Samāstipur (Wikidata).
-      }),
-  ],
-  "india-saharanpur": [
-      defineUniversity({
-        id: "india-saharanpur-maa-shakumbhari-university",
-        name: "Maa Shakumbhari University",
-        cityId: "india-saharanpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.0 km del centro de Sahāranpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-saharanpur-maa-shakumbhari-university",
-        name: "Maa Shakumbhari University",
-        cityId: "india-saharanpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.0 km del centro de Sahāranpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-saharanpur-mazahir-uloom",
-        name: "Mazahir Uloom",
-        cityId: "india-saharanpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Sahāranpur (Wikidata).
-      }),
-  ],
-  "india-rewa": [
-      defineUniversity({
-        id: "india-rewa-shyam-shah-medical-college",
-        name: "Shyam Shah Medical College",
-        cityId: "india-rewa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Rewa (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-rewa-awadhesh-pratap-singh-university",
-        name: "Awadhesh Pratap Singh University",
-        cityId: "india-rewa",
-        website: "http://www.apsurewa.nic.in/",
-        source: "open-dataset",
-        // Situada a 5.6 km del centro de Rewa (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-rewa-awadhesh-pratap-singh-university",
-        name: "Awadhesh Pratap Singh University",
-        cityId: "india-rewa",
-        website: "http://www.apsurewa.nic.in/",
-        source: "open-dataset",
-        // Situada a 5.6 km del centro de Rewa (Wikidata).
-      }),
-  ],
-  "india-rasapudipalem": [
-      defineUniversity({
-        id: "india-rasapudipalem-andhra-university",
-        name: "Andhra University",
-        cityId: "india-rasapudipalem",
-        website: "http://www.andhrauniversity.info/",
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Rasapūdipalem (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-rasapudipalem-andhra-university",
-        name: "Andhra University",
-        cityId: "india-rasapudipalem",
-        website: "http://www.andhrauniversity.info/",
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Rasapūdipalem (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-rasapudipalem-gandhi-institute-of-technology-and-management",
-        name: "Gandhi Institute of Technology and Management",
-        cityId: "india-rasapudipalem",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.4 km del centro de Rasapūdipalem (Wikidata).
-      }),
-  ],
-  "india-raipur-1258967": [
-      defineUniversity({
-        id: "india-raipur-1258967-swami-rama-himalayan-university",
-        name: "Swami Rama Himalayan University",
-        cityId: "india-raipur-1258967",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.0 km del centro de Rāipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raipur-1258967-uttarakhand-ayurved-university",
-        name: "Uttarakhand Ayurved University",
-        cityId: "india-raipur-1258967",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Rāipur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raipur-1258967-uttarakhand-ayurved-university",
-        name: "Uttarakhand Ayurved University",
-        cityId: "india-raipur-1258967",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Rāipur (Wikidata).
-      }),
-  ],
-  "india-raiganj": [
-      defineUniversity({
-        id: "india-raiganj-raiganj-polytechnic",
-        name: "Raiganj Polytechnic",
-        cityId: "india-raiganj",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Rāiganj (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raiganj-raiganj-university",
-        name: "Raiganj University",
-        cityId: "india-raiganj",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Rāiganj (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raiganj-raiganj-university",
-        name: "Raiganj University",
-        cityId: "india-raiganj",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Rāiganj (Wikidata).
-      }),
-  ],
-  "india-raichur": [
-      defineUniversity({
-        id: "india-raichur-raichur-university",
-        name: "Raichur University",
-        cityId: "india-raichur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 13.4 km del centro de Rāichūr (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raichur-university-of-agricultural-sciences-raichur",
-        name: "University of Agricultural Sciences, Raichur",
-        cityId: "india-raichur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Rāichūr (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-raichur-university-of-agricultural-sciences-raichur",
-        name: "University of Agricultural Sciences, Raichur",
-        cityId: "india-raichur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Rāichūr (Wikidata).
       }),
   ],
   "india-purnia": [
@@ -7922,32 +7902,6 @@ export default {
         // Situada a 1.5 km del centro de Purnia (Wikidata).
       }),
   ],
-  "india-puri": [
-      defineUniversity({
-        id: "india-puri-odia-university",
-        name: "Odia University",
-        cityId: "india-puri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 17.1 km del centro de Puri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-puri-shri-jagannath-sanskrit-university",
-        name: "Shri Jagannath Sanskrit University",
-        cityId: "india-puri",
-        website: "http://www.sjsv.nic.in/",
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Puri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-puri-shri-jagannath-sanskrit-university",
-        name: "Shri Jagannath Sanskrit University",
-        cityId: "india-puri",
-        website: "http://www.sjsv.nic.in/",
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Puri (Wikidata).
-      }),
-  ],
   "india-piravam": [
       defineUniversity({
         id: "india-piravam-ebenezer-bible-college",
@@ -7974,6 +7928,32 @@ export default {
         // Situada a 5.1 km del centro de Piravam (Wikidata).
       }),
   ],
+  "india-perintalmanna": [
+      defineUniversity({
+        id: "india-perintalmanna-government-polytechnic-college-perinthalmanna",
+        name: "Government Polytechnic College, Perinthalmanna",
+        cityId: "india-perintalmanna",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Perintalmanna (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-perintalmanna-mea-engineering-college-perinthalmanna",
+        name: "MEA Engineering College, Perinthalmanna",
+        cityId: "india-perintalmanna",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.9 km del centro de Perintalmanna (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-perintalmanna-amu-malappuram-campus",
+        name: "AMU Malappuram Campus",
+        cityId: "india-perintalmanna",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Perintalmanna (Wikidata).
+      }),
+  ],
   "india-panvel": [
       defineUniversity({
         id: "india-panvel-amity-university-mumbai",
@@ -7998,32 +7978,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 8.0 km del centro de Panvel (Wikidata).
-      }),
-  ],
-  "india-nagaon": [
-      defineUniversity({
-        id: "india-nagaon-nagaon-medical-college-and-hospital",
-        name: "Nagaon Medical College and Hospital",
-        cityId: "india-nagaon",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Nagaon (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nagaon-mahapurusha-srimanta-sankaradeva-viswavidyalaya",
-        name: "Mahapurusha Srimanta Sankaradeva Viswavidyalaya",
-        cityId: "india-nagaon",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Nagaon (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nagaon-nagaon-gndg-commerce-college",
-        name: "Nagaon GNDG Commerce College",
-        cityId: "india-nagaon",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Nagaon (Wikidata).
       }),
   ],
   "india-north-lakhimpur": [
@@ -8078,32 +8032,6 @@ export default {
         // Situada a 1.7 km del centro de Nedumangād (Wikidata).
       }),
   ],
-  "india-nalgonda": [
-      defineUniversity({
-        id: "india-nalgonda-mahatma-gandhi-university-nalgonda",
-        name: "Mahatma Gandhi University, Nalgonda",
-        cityId: "india-nalgonda",
-        website: "https://mguniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 11.2 km del centro de Nalgonda (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nalgonda-mahatma-gandhi-university-nalgonda",
-        name: "Mahatma Gandhi University, Nalgonda",
-        cityId: "india-nalgonda",
-        website: "https://mguniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 11.2 km del centro de Nalgonda (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nalgonda-society-of-the-missionaries-of-st-francis-xavier",
-        name: "Society of the Missionaries of St. Francis Xavier",
-        cityId: "india-nalgonda",
-        website: null,
-        source: "open-dataset",
-        // Situada a 17.0 km del centro de Nalgonda (Wikidata).
-      }),
-  ],
   "india-mussoorie": [
       defineUniversity({
         id: "india-mussoorie-ims-unison-university",
@@ -8130,6 +8058,32 @@ export default {
         // Situada a 6.3 km del centro de Mussoorie (Wikidata).
       }),
   ],
+  "india-mulki": [
+      defineUniversity({
+        id: "india-mulki-srinivas-university",
+        name: "Srinivas University",
+        cityId: "india-mulki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.8 km del centro de Mūlki (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mulki-national-institute-of-technology-karnataka",
+        name: "National Institute of Technology Karnataka",
+        cityId: "india-mulki",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.1 km del centro de Mūlki (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-mulki-pompei-college-aikala",
+        name: "Pompei College Aikala",
+        cityId: "india-mulki",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mūlki (Wikidata).
+      }),
+  ],
   "india-mhow": [
       defineUniversity({
         id: "india-mhow-military-college-of-telecommunication-engineering",
@@ -8154,6 +8108,32 @@ export default {
         website: "http://www.iiti.ac.in/",
         source: "open-dataset",
         // Situada a 16.5 km del centro de Mhow (Wikidata).
+      }),
+  ],
+  "india-medchal": [
+      defineUniversity({
+        id: "india-medchal-air-force-academy",
+        name: "Air Force Academy",
+        cityId: "india-medchal",
+        website: "http://www.hho.edu.tr/",
+        source: "open-dataset",
+        // Situada a 8.3 km del centro de Medchal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-medchal-institute-of-aeronautical-engineering",
+        name: "Institute of Aeronautical Engineering",
+        cityId: "india-medchal",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.7 km del centro de Medchal (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-medchal-nalsar-university-of-law",
+        name: "Nalsar University of Law",
+        cityId: "india-medchal",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.5 km del centro de Medchal (Wikidata).
       }),
   ],
   "india-manjeri": [
@@ -8208,160 +8188,82 @@ export default {
         // Situada a 1.5 km del centro de Madurai (Wikidata).
       }),
   ],
-  "india-ludhiana": [
+  "india-machilipatnam": [
       defineUniversity({
-        id: "india-ludhiana-guru-angad-dev-veterinary-and-animal-sciences-university",
-        name: "Guru Angad Dev Veterinary and Animal Sciences University",
-        cityId: "india-ludhiana",
-        website: null,
+        id: "india-machilipatnam-krishna-university",
+        name: "Krishna University",
+        cityId: "india-machilipatnam",
+        website: "http://www.krishnauniversity.ac.in/",
         source: "open-dataset",
-        // Situada a 4.6 km del centro de Ludhiana (Wikidata).
+        // Situada a 6.9 km del centro de Machilīpatnam (Wikidata).
       }),
       defineUniversity({
-        id: "india-ludhiana-guru-angad-dev-veterinary-and-animal-sciences-university",
-        name: "Guru Angad Dev Veterinary and Animal Sciences University",
-        cityId: "india-ludhiana",
+        id: "india-machilipatnam-sri-vasavi-institute-of-engineering-and-technology",
+        name: "Sri Vasavi Institute of Engineering and Technology",
+        cityId: "india-machilipatnam",
         website: null,
         source: "open-dataset",
-        // Situada a 4.6 km del centro de Ludhiana (Wikidata).
+        // Situada a None km del centro de Machilīpatnam (Wikidata).
       }),
       defineUniversity({
-        id: "india-ludhiana-punjab-agricultural-university",
-        name: "Punjab Agricultural University",
-        cityId: "india-ludhiana",
-        website: "http://www.pau.edu/",
+        id: "india-machilipatnam-prasad-v-potluri-siddhartha-institute-of-technology-vijayawada",
+        name: "Prasad V Potluri Siddhartha Institute of Technology, Vijayawada",
+        cityId: "india-machilipatnam",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.6 km del centro de Ludhiana (Wikidata).
+        // Situada a None km del centro de Machilīpatnam (Wikidata).
       }),
   ],
-  "india-lawar-khas": [
+  "india-krishnanagar": [
       defineUniversity({
-        id: "india-lawar-khas-sardar-vallabhbhai-patel-university-of-agriculture-and-technology",
-        name: "Sardar Vallabhbhai Patel University of Agriculture and Technology",
-        cityId: "india-lawar-khas",
+        id: "india-krishnanagar-chapra-bangaljhi-mahavidyalaya",
+        name: "Chapra Bangaljhi Mahavidyalaya",
+        cityId: "india-krishnanagar",
         website: null,
         source: "open-dataset",
-        // Situada a 8.3 km del centro de Lāwar Khās (Wikidata).
+        // Situada a 12.9 km del centro de Krishnanagar (Wikidata).
       }),
       defineUniversity({
-        id: "india-lawar-khas-sardar-vallabhbhai-patel-university-of-agriculture-and-technology",
-        name: "Sardar Vallabhbhai Patel University of Agriculture and Technology",
-        cityId: "india-lawar-khas",
+        id: "india-krishnanagar-dwijendralal-college",
+        name: "Dwijendralal College",
+        cityId: "india-krishnanagar",
         website: null,
         source: "open-dataset",
-        // Situada a 8.3 km del centro de Lāwar Khās (Wikidata).
+        // Situada a 0.3 km del centro de Krishnanagar (Wikidata).
       }),
       defineUniversity({
-        id: "india-lawar-khas-shobhit-institute-of-engineering-technology",
-        name: "Shobhit Institute of Engineering & Technology",
-        cityId: "india-lawar-khas",
+        id: "india-krishnanagar-kanyashree-university",
+        name: "Kanyashree University",
+        cityId: "india-krishnanagar",
         website: null,
         source: "open-dataset",
-        // Situada a 7.6 km del centro de Lāwar Khās (Wikidata).
+        // Situada a None km del centro de Krishnanagar (Wikidata).
       }),
   ],
-  "india-latur": [
+  "india-kottayam": [
       defineUniversity({
-        id: "india-latur-shri-keshavraj-vidyalaya",
-        name: "Shri Keshavraj Vidyalaya",
-        cityId: "india-latur",
+        id: "india-kottayam-mar-thoma-syrian-theological-seminary-kottayam",
+        name: "Mar Thoma Syrian Theological Seminary, Kottayam",
+        cityId: "india-kottayam",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Latur (Wikidata).
+        // Situada a 1.3 km del centro de Kottayam (Wikidata).
       }),
       defineUniversity({
-        id: "india-latur-college-of-agriculture-latur",
-        name: "College of Agriculture, Latur",
-        cityId: "india-latur",
+        id: "india-kottayam-model-polytechnic-college-poonjar",
+        name: "Model Polytechnic College, Poonjar",
+        cityId: "india-kottayam",
         website: null,
         source: "open-dataset",
-        // Situada a 5.7 km del centro de Latur (Wikidata).
+        // Situada a None km del centro de Kottayam (Wikidata).
       }),
       defineUniversity({
-        id: "india-latur-maharashtra-institute-of-medical-science-and-research-latur",
-        name: "Maharashtra Institute of Medical Science and Research, Latur",
-        cityId: "india-latur",
+        id: "india-kottayam-model-polytechnic-college-mattakkara",
+        name: "Model Polytechnic College,Mattakkara",
+        cityId: "india-kottayam",
         website: null,
         source: "open-dataset",
-        // Situada a 3.8 km del centro de Latur (Wikidata).
-      }),
-  ],
-  "india-kuppam": [
-      defineUniversity({
-        id: "india-kuppam-dravidian-university",
-        name: "Dravidian University",
-        cityId: "india-kuppam",
-        website: "http://www.dravidianuniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 6.7 km del centro de Kuppam (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kuppam-dravidian-university",
-        name: "Dravidian University",
-        cityId: "india-kuppam",
-        website: "http://www.dravidianuniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 6.7 km del centro de Kuppam (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kuppam-p-e-s-institute-of-medical-sciences-and-research",
-        name: "P.E.S. Institute of Medical Sciences and Research",
-        cityId: "india-kuppam",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.3 km del centro de Kuppam (Wikidata).
-      }),
-  ],
-  "india-kolar-1266305": [
-      defineUniversity({
-        id: "india-kolar-1266305-sri-devaraj-urs-academy-of-higher-education-and-research",
-        name: "Sri Devaraj Urs Academy of Higher Education and Research",
-        cityId: "india-kolar-1266305",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Kolār (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-1266305-bengaluru-north-university",
-        name: "Bengaluru North University",
-        cityId: "india-kolar-1266305",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Kolār (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kolar-1266305-bengaluru-north-university",
-        name: "Bengaluru North University",
-        cityId: "india-kolar-1266305",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Kolār (Wikidata).
-      }),
-  ],
-  "india-kokrajhar": [
-      defineUniversity({
-        id: "india-kokrajhar-kokrajhar-medical-college-and-hospital",
-        name: "Kokrajhar Medical College and Hospital",
-        cityId: "india-kokrajhar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.1 km del centro de Kokrajhar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kokrajhar-bodoland-university",
-        name: "Bodoland University",
-        cityId: "india-kokrajhar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.0 km del centro de Kokrajhar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kokrajhar-bodoland-university",
-        name: "Bodoland University",
-        cityId: "india-kokrajhar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.0 km del centro de Kokrajhar (Wikidata).
+        // Situada a None km del centro de Kottayam (Wikidata).
       }),
   ],
   "india-kohima": [
@@ -8388,6 +8290,58 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 8.0 km del centro de Kohima (Wikidata).
+      }),
+  ],
+  "india-koch-bihar": [
+      defineUniversity({
+        id: "india-koch-bihar-cooch-behar-polytechnic",
+        name: "Cooch Behar Polytechnic",
+        cityId: "india-koch-bihar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Koch Bihār (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-koch-bihar-cooch-behar-panchanan-barma-university",
+        name: "Cooch Behar Panchanan Barma University",
+        cityId: "india-koch-bihar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Koch Bihār (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-koch-bihar-uttar-banga-krishi-viswavidyalaya",
+        name: "Uttar Banga Krishi Viswavidyalaya",
+        cityId: "india-koch-bihar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 10.7 km del centro de Koch Bihār (Wikidata).
+      }),
+  ],
+  "india-khatra": [
+      defineUniversity({
+        id: "india-khatra-pandit-raghunath-murmu-smriti-mahavidyalaya",
+        name: "Pandit Raghunath Murmu Smriti Mahavidyalaya",
+        cityId: "india-khatra",
+        website: null,
+        source: "open-dataset",
+        // Situada a 19.8 km del centro de Khātra (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-khatra-saldiha-college",
+        name: "Saldiha College",
+        cityId: "india-khatra",
+        website: null,
+        source: "open-dataset",
+        // Situada a 22.1 km del centro de Khātra (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-khatra-west-bengal-national-university-of-juridical-sciences",
+        name: "West Bengal National University of Juridical Sciences",
+        cityId: "india-khatra",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Khātra (Wikidata).
       }),
   ],
   "india-kharagpur": [
@@ -8442,30 +8396,30 @@ export default {
         // Situada a 14.1 km del centro de Kātoya (Wikidata).
       }),
   ],
-  "india-chitrakoot-dham": [
+  "india-kasaragod": [
       defineUniversity({
-        id: "india-chitrakoot-dham-jagadguru-rambhadracharya-divyanga-university",
-        name: "Jagadguru Rambhadracharya Divyanga University",
-        cityId: "india-chitrakoot-dham",
-        website: null,
+        id: "india-kasaragod-kannur-university",
+        name: "Kannur University",
+        cityId: "india-kasaragod",
+        website: "http://www.kannuruniversity.ac.in/",
         source: "open-dataset",
-        // Situada a 4.9 km del centro de Chitrakoot Dham (Wikidata).
+        // Situada a 3.2 km del centro de Kāsaragod (Wikidata).
       }),
       defineUniversity({
-        id: "india-chitrakoot-dham-jagadguru-rambhadracharya-divyanga-university",
-        name: "Jagadguru Rambhadracharya Divyanga University",
-        cityId: "india-chitrakoot-dham",
+        id: "india-kasaragod-st-pius-x-college",
+        name: "St. Pius X College",
+        cityId: "india-kasaragod",
         website: null,
         source: "open-dataset",
-        // Situada a 4.9 km del centro de Chitrakoot Dham (Wikidata).
+        // Situada a None km del centro de Kāsaragod (Wikidata).
       }),
       defineUniversity({
-        id: "india-chitrakoot-dham-mahatma-gandhi-chitrakoot-gramoday-university",
-        name: "Mahatma Gandhi Chitrakoot Gramoday University",
-        cityId: "india-chitrakoot-dham",
+        id: "india-kasaragod-swami-nithyananda-polytechnic-college-kanhangad",
+        name: "Swami Nithyananda Polytechnic College, Kanhangad",
+        cityId: "india-kasaragod",
         website: null,
         source: "open-dataset",
-        // Situada a 9.7 km del centro de Chitrakoot Dham (Wikidata).
+        // Situada a None km del centro de Kāsaragod (Wikidata).
       }),
   ],
   "india-karol-bagh": [
@@ -8494,32 +8448,6 @@ export default {
         // Situada a 3.6 km del centro de Karol Bāgh (Wikidata).
       }),
   ],
-  "india-karhal": [
-      defineUniversity({
-        id: "india-karhal-major-dhyanchand-sports-college-saifai",
-        name: "Major Dhyanchand Sports College, Saifai",
-        cityId: "india-karhal",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Karhal (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-karhal-uttar-pradesh-university-of-medical-sciences",
-        name: "Uttar Pradesh University of Medical Sciences",
-        cityId: "india-karhal",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Karhal (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-karhal-uttar-pradesh-university-of-medical-sciences",
-        name: "Uttar Pradesh University of Medical Sciences",
-        cityId: "india-karhal",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.9 km del centro de Karhal (Wikidata).
-      }),
-  ],
   "india-kandi": [
       defineUniversity({
         id: "india-kandi-nagar-college",
@@ -8546,134 +8474,178 @@ export default {
         // Situada a 0.3 km del centro de Kāndi (Wikidata).
       }),
   ],
-  "india-jodhpur": [
+  "india-kalyani": [
       defineUniversity({
-        id: "india-jodhpur-indian-institute-of-technology-jodhpur",
-        name: "Indian Institute of Technology Jodhpur",
-        cityId: "india-jodhpur",
-        website: "http://www.iitj.ac.in/",
+        id: "india-kalyani-bidhan-chandra-krishi-viswavidyalaya",
+        name: "Bidhan Chandra Krishi Viswavidyalaya",
+        cityId: "india-kalyani",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Jodhpur (Wikidata).
+        // Situada a 10.8 km del centro de Kalyani (Wikidata).
       }),
       defineUniversity({
-        id: "india-jodhpur-jai-narain-vyas-university",
-        name: "Jai Narain Vyas University",
-        cityId: "india-jodhpur",
-        website: "http://www.ptetjnvu.org/",
+        id: "india-kalyani-kalyani-mahavidyalaya",
+        name: "Kalyani Mahavidyalaya",
+        cityId: "india-kalyani",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Jodhpur (Wikidata).
+        // Situada a 1.6 km del centro de Kalyani (Wikidata).
       }),
       defineUniversity({
-        id: "india-jodhpur-jai-narain-vyas-university",
-        name: "Jai Narain Vyas University",
-        cityId: "india-jodhpur",
-        website: "http://www.ptetjnvu.org/",
+        id: "india-kalyani-university-of-kalyani",
+        name: "University of Kalyani",
+        cityId: "india-kalyani",
+        website: "http://www.klyuniv.ac.in/",
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Jodhpur (Wikidata).
+        // Situada a 1.7 km del centro de Kalyani (Wikidata).
       }),
   ],
-  "india-hazaribagh": [
+  "india-jatani": [
       defineUniversity({
-        id: "india-hazaribagh-aisect-university-jharkhand",
-        name: "AISECT University, Jharkhand",
-        cityId: "india-hazaribagh",
+        id: "india-jatani-xim-university",
+        name: "XIM University",
+        cityId: "india-jatani",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Hazāribāgh (Wikidata).
+        // Situada a 5.7 km del centro de Jatani (Wikidata).
       }),
       defineUniversity({
-        id: "india-hazaribagh-vinoba-bhave-university",
-        name: "Vinoba Bhave University",
-        cityId: "india-hazaribagh",
-        website: "http://www.vbu.co.in/",
+        id: "india-jatani-c-v-raman-college-of-engineering-bhubaneshwar",
+        name: "C. V. Raman College of Engineering, Bhubaneshwar",
+        cityId: "india-jatani",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.4 km del centro de Hazāribāgh (Wikidata).
+        // Situada a 7.4 km del centro de Jatani (Wikidata).
       }),
       defineUniversity({
-        id: "india-hazaribagh-vinoba-bhave-university",
-        name: "Vinoba Bhave University",
-        cityId: "india-hazaribagh",
-        website: "http://www.vbu.co.in/",
+        id: "india-jatani-utkal-university-of-culture",
+        name: "Utkal University of Culture",
+        cityId: "india-jatani",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.4 km del centro de Hazāribāgh (Wikidata).
+        // Situada a 10.1 km del centro de Jatani (Wikidata).
       }),
   ],
-  "india-gurugram": [
+  "india-hadagalli": [
       defineUniversity({
-        id: "india-gurugram-shree-guru-gobind-singh-tricentenary-university",
-        name: "Shree Guru Gobind Singh Tricentenary University",
-        cityId: "india-gurugram",
+        id: "india-hadagalli-jamia-islamia-bhatkal",
+        name: "Jamia Islamia Bhatkal",
+        cityId: "india-hadagalli",
         website: null,
         source: "open-dataset",
-        // Situada a 12.1 km del centro de Gurugram (Wikidata).
+        // Situada a None km del centro de Hadagalli (Wikidata).
       }),
       defineUniversity({
-        id: "india-gurugram-gviet",
-        name: "GVIET",
-        cityId: "india-gurugram",
+        id: "india-hadagalli-central-college-of-bengaluru",
+        name: "Central College of Bengaluru",
+        cityId: "india-hadagalli",
         website: null,
         source: "open-dataset",
-        // Situada a 3.6 km del centro de Gurugram (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-gurugram-haryana-vishwakarma-skill-university",
-        name: "Haryana Vishwakarma Skill University",
-        cityId: "india-gurugram",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Gurugram (Wikidata).
+        // Situada a None km del centro de Hadagalli (Wikidata).
       }),
   ],
-  "india-gangtok": [
+  "india-hamirpur": [
       defineUniversity({
-        id: "india-gangtok-icfai-university-sikkim",
-        name: "ICFAI University, Sikkim",
-        cityId: "india-gangtok",
-        website: "https://www.iusikkim.edu.in/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Gangtok (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-gangtok-sikkim-professional-university",
-        name: "Sikkim Professional University",
-        cityId: "india-gangtok",
+        id: "india-hamirpur-career-point-university",
+        name: "Career Point University",
+        cityId: "india-hamirpur",
         website: null,
         source: "open-dataset",
-        // Situada a 2.4 km del centro de Gangtok (Wikidata).
+        // Situada a 11.6 km del centro de Hamīrpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-gangtok-sikkim-manipal-university",
-        name: "Sikkim Manipal University",
-        cityId: "india-gangtok",
+        id: "india-hamirpur-himachal-pradesh-technical-university",
+        name: "Himachal Pradesh Technical University",
+        cityId: "india-hamirpur",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Gangtok (Wikidata).
+        // Situada a 0.9 km del centro de Hamīrpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-hamirpur-national-institute-of-technology-hamirpur",
+        name: "National Institute of Technology, Hamirpur",
+        cityId: "india-hamirpur",
+        website: "http://www.nith.ac.in/",
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Hamīrpur (Wikidata).
       }),
   ],
-  "india-fyzabad": [
+  "india-guntur": [
       defineUniversity({
-        id: "india-fyzabad-sri-ram-chandra-singh-mahavidyalaya",
-        name: "Sri Ram Chandra Singh Mahavidyalaya",
-        cityId: "india-fyzabad",
+        id: "india-guntur-vasireddy-venkatadri-institute-of-technology",
+        name: "Vasireddy Venkatadri Institute of Technology",
+        cityId: "india-guntur",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Fyzābād (Wikidata).
+        // Situada a 8.6 km del centro de Guntur (Wikidata).
       }),
       defineUniversity({
-        id: "india-fyzabad-dr-ram-manohar-lohia-awadh-university",
-        name: "Dr. Ram Manohar Lohia Awadh University",
-        cityId: "india-fyzabad",
+        id: "india-guntur-andhra-christian-college",
+        name: "Andhra-Christian College",
+        cityId: "india-guntur",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Fyzābād (Wikidata).
+        // Situada a 1.6 km del centro de Guntur (Wikidata).
       }),
       defineUniversity({
-        id: "india-fyzabad-dr-ram-manohar-lohia-awadh-university",
-        name: "Dr. Ram Manohar Lohia Awadh University",
-        cityId: "india-fyzabad",
+        id: "india-guntur-bible-society-of-india-andhra-pradesh-auxiliary",
+        name: "Bible Society of India Andhra Pradesh Auxiliary",
+        cityId: "india-guntur",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Fyzābād (Wikidata).
+        // Situada a None km del centro de Guntur (Wikidata).
+      }),
+  ],
+  "india-kalaburagi": [
+      defineUniversity({
+        id: "india-kalaburagi-mahadevappa-rampure-medical-college",
+        name: "Mahadevappa Rampure Medical College",
+        cityId: "india-kalaburagi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Kalaburagi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kalaburagi-gulbarga-university",
+        name: "Gulbarga University",
+        cityId: "india-kalaburagi",
+        website: "http://www.gulbargauniversity.kar.nic.in/",
+        source: "open-dataset",
+        // Situada a 4.7 km del centro de Kalaburagi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kalaburagi-sharnbasva-university",
+        name: "Sharnbasva University",
+        cityId: "india-kalaburagi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Kalaburagi (Wikidata).
+      }),
+  ],
+  "india-ghaziabad": [
+      defineUniversity({
+        id: "india-ghaziabad-academy-of-scientific-and-innovative-research",
+        name: "Academy of Scientific and Innovative Research",
+        cityId: "india-ghaziabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Ghāziābād (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-ghaziabad-santosh-deemed-to-be-university",
+        name: "Santosh Deemed to be University",
+        cityId: "india-ghaziabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.5 km del centro de Ghāziābād (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-ghaziabad-abes-institute-of-technology",
+        name: "ABES Institute of Technology",
+        cityId: "india-ghaziabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ghāziābād (Wikidata).
       }),
   ],
   "india-erattupetta": [
@@ -8754,6 +8726,58 @@ export default {
         // Situada a 4.0 km del centro de Durgapur (Wikidata).
       }),
   ],
+  "india-doddaballapura": [
+      defineUniversity({
+        id: "india-doddaballapura-rai-technology-university",
+        name: "Rai Technology University",
+        cityId: "india-doddaballapura",
+        website: null,
+        source: "open-dataset",
+        // Situada a 10.4 km del centro de Doddaballapura (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-doddaballapura-amity-university-bengaluru",
+        name: "Amity University Bengaluru",
+        cityId: "india-doddaballapura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Doddaballapura (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-doddaballapura-vidyashilp-academy",
+        name: "Vidyashilp Academy",
+        cityId: "india-doddaballapura",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Doddaballapura (Wikidata).
+      }),
+  ],
+  "india-diamond-harbour": [
+      defineUniversity({
+        id: "india-diamond-harbour-neotia-university",
+        name: "Neotia University",
+        cityId: "india-diamond-harbour",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.7 km del centro de Diamond Harbour (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-diamond-harbour-diamond-harbour-women-s-university",
+        name: "Diamond Harbour Women's University",
+        cityId: "india-diamond-harbour",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.3 km del centro de Diamond Harbour (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-diamond-harbour-ramakrishna-mission-siksha-mandir-sarisha",
+        name: "Ramakrishna Mission Siksha Mandir, Sarisha",
+        cityId: "india-diamond-harbour",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.7 km del centro de Diamond Harbour (Wikidata).
+      }),
+  ],
   "india-dhanbad": [
       defineUniversity({
         id: "india-dhanbad-iit-ism-dhanbad",
@@ -8780,6 +8804,32 @@ export default {
         // Situada a 13.2 km del centro de Dhanbad (Wikidata).
       }),
   ],
+  "india-darjiling": [
+      defineUniversity({
+        id: "india-darjiling-darjeeling-hill-institute-of-technology-and-management",
+        name: "Darjeeling Hill Institute of Technology and Management",
+        cityId: "india-darjiling",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.3 km del centro de Dārjiling (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-darjiling-darjeeling-hills-university",
+        name: "Darjeeling Hills University",
+        cityId: "india-darjiling",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dārjiling (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-darjiling-khangchendzonga-state-university",
+        name: "Khangchendzonga State University",
+        cityId: "india-darjiling",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dārjiling (Wikidata).
+      }),
+  ],
   "india-medininagar": [
       defineUniversity({
         id: "india-medininagar-medini-rai-medical-college-and-hospital-palamu",
@@ -8790,12 +8840,12 @@ export default {
         // Situada a 4.5 km del centro de Medininagar (Wikidata).
       }),
       defineUniversity({
-        id: "india-medininagar-nilamber-pitamber-university",
-        name: "Nilamber Pitamber University",
+        id: "india-medininagar-government-engineering-college-palamu",
+        name: "Government Engineering College, Palamu",
         cityId: "india-medininagar",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Medininagar (Wikidata).
+        // Situada a 11.2 km del centro de Medininagar (Wikidata).
       }),
       defineUniversity({
         id: "india-medininagar-nilamber-pitamber-university",
@@ -8806,30 +8856,30 @@ export default {
         // Situada a 0.5 km del centro de Medininagar (Wikidata).
       }),
   ],
-  "india-chhatarpur": [
+  "india-clement-town": [
       defineUniversity({
-        id: "india-chhatarpur-maharaja-chhatrasal-bundelkhand-university",
-        name: "Maharaja Chhatrasal Bundelkhand University",
-        cityId: "india-chhatarpur",
+        id: "india-clement-town-graphic-era-hill-university",
+        name: "Graphic Era Hill University",
+        cityId: "india-clement-town",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Chhatarpur (Wikidata).
+        // Situada a 1.4 km del centro de Clement Town (Wikidata).
       }),
       defineUniversity({
-        id: "india-chhatarpur-maharaja-chhatrasal-bundelkhand-university",
-        name: "Maharaja Chhatrasal Bundelkhand University",
-        cityId: "india-chhatarpur",
+        id: "india-clement-town-doon-university",
+        name: "Doon University",
+        cityId: "india-clement-town",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Chhatarpur (Wikidata).
+        // Situada a 3.7 km del centro de Clement Town (Wikidata).
       }),
       defineUniversity({
-        id: "india-chhatarpur-shri-krishna-university",
-        name: "Shri Krishna University",
-        cityId: "india-chhatarpur",
+        id: "india-clement-town-graphic-era-deemed-to-be-university",
+        name: "Graphic Era (Deemed to be) University",
+        cityId: "india-clement-town",
         website: null,
         source: "open-dataset",
-        // Situada a 11.2 km del centro de Chhatarpur (Wikidata).
+        // Situada a 1.3 km del centro de Clement Town (Wikidata).
       }),
   ],
   "india-chapra": [
@@ -8856,6 +8906,32 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.1 km del centro de Chāpra (Wikidata).
+      }),
+  ],
+  "india-burla": [
+      defineUniversity({
+        id: "india-burla-veer-surendra-sai-institute-of-medical-sciences-and-research",
+        name: "Veer Surendra Sai Institute of Medical Sciences and Research",
+        cityId: "india-burla",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Burla (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-burla-sambalpur-university",
+        name: "Sambalpur University",
+        cityId: "india-burla",
+        website: "http://www.sambalpuruniversitypgc.in/",
+        source: "open-dataset",
+        // Situada a 3.5 km del centro de Burla (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-burla-veer-surendra-sai-university-of-technology",
+        name: "Veer Surendra Sai University of Technology",
+        cityId: "india-burla",
+        website: "http://www.vssut.ac.in/",
+        source: "open-dataset",
+        // Situada a 3.5 km del centro de Burla (Wikidata).
       }),
   ],
   "india-brahmapur": [
@@ -8910,56 +8986,56 @@ export default {
         // Situada a 1.1 km del centro de Bishnupur (Wikidata).
       }),
   ],
-  "india-vijayapura": [
+  "india-bihta": [
       defineUniversity({
-        id: "india-vijayapura-blde-university",
-        name: "BLDE University",
-        cityId: "india-vijayapura",
+        id: "india-bihta-netaji-subhas-medical-college-and-hospital",
+        name: "Netaji Subhas Medical College and Hospital",
+        cityId: "india-bihta",
         website: null,
         source: "open-dataset",
-        // Situada a 2.4 km del centro de Vijayapura (Wikidata).
+        // Situada a 2.4 km del centro de Bihtā (Wikidata).
       }),
       defineUniversity({
-        id: "india-vijayapura-karnataka-state-akkamahadevi-women-s-university-vijayapura",
-        name: "Karnataka State Akkamahadevi Women's University, Vijayapura",
-        cityId: "india-vijayapura",
+        id: "india-bihta-esic-medical-college-and-hospital-patna",
+        name: "ESIC Medical College and Hospital, Patna",
+        cityId: "india-bihta",
         website: null,
         source: "open-dataset",
-        // Situada a 8.0 km del centro de Vijayapura (Wikidata).
+        // Situada a 2.2 km del centro de Bihtā (Wikidata).
       }),
       defineUniversity({
-        id: "india-vijayapura-karnataka-state-akkamahadevi-women-s-university-vijayapura",
-        name: "Karnataka State Akkamahadevi Women's University, Vijayapura",
-        cityId: "india-vijayapura",
-        website: null,
+        id: "india-bihta-indian-institute-of-technology-patna",
+        name: "Indian Institute of Technology Patna",
+        cityId: "india-bihta",
+        website: "http://www.iitp.ac.in/",
         source: "open-dataset",
-        // Situada a 8.0 km del centro de Vijayapura (Wikidata).
+        // Situada a 3.3 km del centro de Bihtā (Wikidata).
       }),
   ],
-  "india-bhawanipatna": [
+  "india-belagavi": [
       defineUniversity({
-        id: "india-bhawanipatna-government-medical-college-and-hospital-bhawanipatna",
-        name: "Government Medical College and Hospital, Bhawanipatna",
-        cityId: "india-bhawanipatna",
+        id: "india-belagavi-anuvartik-mirji-bharatesh-institute-of-technology",
+        name: "Anuvartik Mirji Bharatesh Institute of Technology",
+        cityId: "india-belagavi",
         website: null,
         source: "open-dataset",
-        // Situada a 3.2 km del centro de Bhawānipatna (Wikidata).
+        // Situada a 7.9 km del centro de Belagavi (Wikidata).
       }),
       defineUniversity({
-        id: "india-bhawanipatna-maa-manikeswari-university",
-        name: "Maa Manikeswari University",
-        cityId: "india-bhawanipatna",
+        id: "india-belagavi-rani-channamma-university-belgaum",
+        name: "Rani Channamma University, Belgaum",
+        cityId: "india-belagavi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Bhawānipatna (Wikidata).
+        // Situada a 17.0 km del centro de Belagavi (Wikidata).
       }),
       defineUniversity({
-        id: "india-bhawanipatna-maa-manikeswari-university",
-        name: "Maa Manikeswari University",
-        cityId: "india-bhawanipatna",
+        id: "india-belagavi-kle-academy-of-higher-education-and-research",
+        name: "KLE Academy of Higher Education and Research",
+        cityId: "india-belagavi",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Bhawānipatna (Wikidata).
+        // Situada a 3.9 km del centro de Belagavi (Wikidata).
       }),
   ],
   "india-beldanga": [
@@ -8988,30 +9064,82 @@ export default {
         // Situada a 1.5 km del centro de Beldānga (Wikidata).
       }),
   ],
-  "india-amravati": [
+  "india-barddhaman": [
       defineUniversity({
-        id: "india-amravati-dr-punjabrao-deshmukh-polytechnic-college",
-        name: "Dr. Punjabrao Deshmukh Polytechnic College",
-        cityId: "india-amravati",
+        id: "india-barddhaman-dr-bhupendra-nath-dutta-smriti-mahavidyalaya",
+        name: "Dr. Bhupendra Nath Dutta Smriti Mahavidyalaya",
+        cityId: "india-barddhaman",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Amravati (Wikidata).
+        // Situada a 13.0 km del centro de Barddhamān (Wikidata).
       }),
       defineUniversity({
-        id: "india-amravati-sant-gadge-baba-amravati-university",
-        name: "Sant Gadge Baba Amravati University",
-        cityId: "india-amravati",
+        id: "india-barddhaman-maharajadhiraj-uday-chand-women-s-college",
+        name: "Maharajadhiraj Uday Chand Women's College",
+        cityId: "india-barddhaman",
         website: null,
         source: "open-dataset",
-        // Situada a 5.7 km del centro de Amravati (Wikidata).
+        // Situada a 1.9 km del centro de Barddhamān (Wikidata).
       }),
       defineUniversity({
-        id: "india-amravati-sant-gadge-baba-amravati-university",
-        name: "Sant Gadge Baba Amravati University",
-        cityId: "india-amravati",
+        id: "india-barddhaman-university-of-burdwan",
+        name: "University of Burdwan",
+        cityId: "india-barddhaman",
+        website: "http://www.burdwanuniversity.ac.in/",
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Barddhamān (Wikidata).
+      }),
+  ],
+  "india-barasat": [
+      defineUniversity({
+        id: "india-barasat-west-bengal-state-university",
+        name: "West Bengal State University",
+        cityId: "india-barasat",
         website: null,
         source: "open-dataset",
-        // Situada a 5.7 km del centro de Amravati (Wikidata).
+        // Situada a 5.2 km del centro de Bārāsat (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-barasat-adamas-university",
+        name: "Adamas University",
+        cityId: "india-barasat",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Bārāsat (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-barasat-brainware-university",
+        name: "Brainware University",
+        cityId: "india-barasat",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Bārāsat (Wikidata).
+      }),
+  ],
+  "india-asansol": [
+      defineUniversity({
+        id: "india-asansol-banwarilal-bhalotia-college",
+        name: "Banwarilal Bhalotia College",
+        cityId: "india-asansol",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Āsansol (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-asansol-kazi-nazrul-university",
+        name: "Kazi Nazrul University",
+        cityId: "india-asansol",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Āsansol (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-asansol-saltora-netaji-centenary-college",
+        name: "Saltora Netaji Centenary College",
+        cityId: "india-asansol",
+        website: null,
+        source: "open-dataset",
+        // Situada a 18.5 km del centro de Āsansol (Wikidata).
       }),
   ],
   "india-amli": [
@@ -9040,56 +9168,30 @@ export default {
         // Situada a 4.0 km del centro de Āmli (Wikidata).
       }),
   ],
-  "india-amlagora": [
+  "india-alwar": [
       defineUniversity({
-        id: "india-amlagora-gourav-guin-memorial-college",
-        name: "Gourav Guin Memorial College",
-        cityId: "india-amlagora",
+        id: "india-alwar-sunrise-university",
+        name: "Sunrise University",
+        cityId: "india-alwar",
         website: null,
         source: "open-dataset",
-        // Situada a 11.5 km del centro de Āmlāgora (Wikidata).
+        // Situada a 15.9 km del centro de Alwar (Wikidata).
       }),
       defineUniversity({
-        id: "india-amlagora-santal-bidroha-sardha-satabarsiki-mahavidyalaya",
-        name: "Santal Bidroha Sardha Satabarsiki Mahavidyalaya",
-        cityId: "india-amlagora",
+        id: "india-alwar-raj-rishi-bhartrihari-matsya-university-alwar",
+        name: "Raj Rishi Bhartrihari Matsya University, Alwar",
+        cityId: "india-alwar",
         website: null,
         source: "open-dataset",
-        // Situada a 22.7 km del centro de Āmlāgora (Wikidata).
+        // Situada a 2.2 km del centro de Alwar (Wikidata).
       }),
       defineUniversity({
-        id: "india-amlagora-santal-bidroha-sardha-satabarsiki-mahavidyalaya",
-        name: "Santal Bidroha Sardha Satabarsiki Mahavidyalaya",
-        cityId: "india-amlagora",
+        id: "india-alwar-lords-university",
+        name: "Lords University",
+        cityId: "india-alwar",
         website: null,
         source: "open-dataset",
-        // Situada a 22.6 km del centro de Āmlāgora (Wikidata).
-      }),
-  ],
-  "india-ajmer": [
-      defineUniversity({
-        id: "india-ajmer-bhagwant-university",
-        name: "Bhagwant University",
-        cityId: "india-ajmer",
-        website: "http://www.bhagwantuniversity.com/",
-        source: "open-dataset",
-        // Situada a 9.7 km del centro de Ajmer (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ajmer-maharshi-dayanand-saraswati-university",
-        name: "Maharshi Dayanand Saraswati University",
-        cityId: "india-ajmer",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.2 km del centro de Ajmer (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ajmer-maharshi-dayanand-saraswati-university",
-        name: "Maharshi Dayanand Saraswati University",
-        cityId: "india-ajmer",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.2 km del centro de Ajmer (Wikidata).
+        // Situada a None km del centro de Alwar (Wikidata).
       }),
   ],
   "india-agra": [
@@ -9170,32 +9272,6 @@ export default {
         // Situada a 0.6 km del centro de Chakapara (Wikidata).
       }),
   ],
-  "india-dindarpur": [
-      defineUniversity({
-        id: "india-dindarpur-guru-gobind-singh-indraprastha-university",
-        name: "Guru Gobind Singh Indraprastha University",
-        cityId: "india-dindarpur",
-        website: "http://www.ipu.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Dīndārpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-dindarpur-national-law-university-delhi",
-        name: "National Law University, Delhi",
-        cityId: "india-dindarpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Dīndārpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-dindarpur-national-law-university-delhi",
-        name: "National Law University, Delhi",
-        cityId: "india-dindarpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Dīndārpur (Wikidata).
-      }),
-  ],
   "india-kotivakkam": [
       defineUniversity({
         id: "india-kotivakkam-tamil-nadu-music-and-fine-arts-university",
@@ -9222,82 +9298,30 @@ export default {
         // Situada a 2.1 km del centro de Kotivakkam (Wikidata).
       }),
   ],
-  "india-malkajgiri": [
+  "india-rudrapur": [
       defineUniversity({
-        id: "india-malkajgiri-english-and-foreign-languages-university",
-        name: "English and Foreign Languages University",
-        cityId: "india-malkajgiri",
+        id: "india-rudrapur-aditya-nath-jha-government-inter-college-rudrapur",
+        name: "Aditya Nath Jha Government Inter College, Rudrapur",
+        cityId: "india-rudrapur",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Malkajgiri (Wikidata).
+        // Situada a 1.5 km del centro de Rudrapur (Wikidata).
       }),
       defineUniversity({
-        id: "india-malkajgiri-english-and-foreign-languages-university",
-        name: "English and Foreign Languages University",
-        cityId: "india-malkajgiri",
+        id: "india-rudrapur-chandola-homoeopathic-medical-college",
+        name: "Chandola Homoeopathic Medical College",
+        cityId: "india-rudrapur",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Malkajgiri (Wikidata).
+        // Situada a 5.1 km del centro de Rudrapur (Wikidata).
       }),
       defineUniversity({
-        id: "india-malkajgiri-eflu-malappuram-campus",
-        name: "EFLU Malappuram Campus",
-        cityId: "india-malkajgiri",
+        id: "india-rudrapur-g-b-pant-university-of-agriculture-and-technology",
+        name: "G. B. Pant University of Agriculture and Technology",
+        cityId: "india-rudrapur",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Malkajgiri (Wikidata).
-      }),
-  ],
-  "india-serilingampalle": [
-      defineUniversity({
-        id: "india-serilingampalle-university-of-hyderabad",
-        name: "University of Hyderabad",
-        cityId: "india-serilingampalle",
-        website: "http://www.uohyd.ernet.in/",
-        source: "open-dataset",
-        // Situada a 4.8 km del centro de Serilingampalle (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-serilingampalle-international-institute-of-information-technology-hyderabad",
-        name: "International Institute of Information Technology, Hyderabad",
-        cityId: "india-serilingampalle",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.3 km del centro de Serilingampalle (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-serilingampalle-international-institute-of-information-technology-hyderabad",
-        name: "International Institute of Information Technology, Hyderabad",
-        cityId: "india-serilingampalle",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.3 km del centro de Serilingampalle (Wikidata).
-      }),
-  ],
-  "india-thodupuzha": [
-      defineUniversity({
-        id: "india-thodupuzha-al-azhar-polytechnic-college",
-        name: "Al-Azhar Polytechnic College",
-        cityId: "india-thodupuzha",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Thodupuzha (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-thodupuzha-government-polytechnic-college-purappuzha",
-        name: "Government Polytechnic College Purappuzha",
-        cityId: "india-thodupuzha",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.1 km del centro de Thodupuzha (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-thodupuzha-government-polytechnic-college-muttom",
-        name: "Government Polytechnic College, Muttom",
-        cityId: "india-thodupuzha",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.9 km del centro de Thodupuzha (Wikidata).
+        // Situada a 9.8 km del centro de Rudrapur (Wikidata).
       }),
   ],
   "india-manesar": [
@@ -9326,6 +9350,58 @@ export default {
         // Situada a 2.3 km del centro de Mānesar (Wikidata).
       }),
   ],
+  "india-sahibabad-daulotpur": [
+      defineUniversity({
+        id: "india-sahibabad-daulotpur-jims",
+        name: "JIMS",
+        cityId: "india-sahibabad-daulotpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.0 km del centro de Sāhibābād Daulotpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-sahibabad-daulotpur-delhi-technological-university",
+        name: "Delhi Technological University",
+        cityId: "india-sahibabad-daulotpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Sāhibābād Daulotpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-sahibabad-daulotpur-delhi-school-of-professional-studies-and-research",
+        name: "Delhi School of Professional Studies and Research",
+        cityId: "india-sahibabad-daulotpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Sāhibābād Daulotpur (Wikidata).
+      }),
+  ],
+  "india-jharoda-mazra-burari": [
+      defineUniversity({
+        id: "india-jharoda-mazra-burari-sri-venkateswara-college",
+        name: "Sri Venkateswara College",
+        cityId: "india-jharoda-mazra-burari",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Jharoda Mazra Burāri (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-jharoda-mazra-burari-university-of-delhi",
+        name: "University of Delhi",
+        cityId: "india-jharoda-mazra-burari",
+        website: "http://www.du.ac.in/",
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Jharoda Mazra Burāri (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-jharoda-mazra-burari-school-of-open-learning",
+        name: "School of Open Learning",
+        cityId: "india-jharoda-mazra-burari",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.1 km del centro de Jharoda Mazra Burāri (Wikidata).
+      }),
+  ],
   "india-chilla-soroda-bangar": [
       defineUniversity({
         id: "india-chilla-soroda-bangar-jamia-millia-islamia",
@@ -9352,84 +9428,6 @@ export default {
         // Situada a 6.0 km del centro de Chilla Soroda Bāngar (Wikidata).
       }),
   ],
-  "india-ali": [
-      defineUniversity({
-        id: "india-ali-all-india-institute-of-ayurveda-delhi",
-        name: "All India Institute of Ayurveda, Delhi",
-        cityId: "india-ali",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Ali (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ali-all-india-institute-of-ayurveda-delhi",
-        name: "All India Institute of Ayurveda, Delhi",
-        cityId: "india-ali",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Ali (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ali-amity-university-noida",
-        name: "Amity University, Noida",
-        cityId: "india-ali",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de Ali (Wikidata).
-      }),
-  ],
-  "india-wari": [
-      defineUniversity({
-        id: "india-wari-indian-institute-of-fire-engineering-nagpur",
-        name: "Indian Institute of Fire Engineering, Nagpur",
-        cityId: "india-wari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Wāri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-wari-maharashtra-animal-and-fishery-sciences-university",
-        name: "Maharashtra Animal and Fishery Sciences University",
-        cityId: "india-wari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Wāri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-wari-maharashtra-animal-and-fishery-sciences-university",
-        name: "Maharashtra Animal and Fishery Sciences University",
-        cityId: "india-wari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Wāri (Wikidata).
-      }),
-  ],
-  "india-makronia": [
-      defineUniversity({
-        id: "india-makronia-swami-vivekanand-university-madhya-pradesh",
-        name: "Swami Vivekanand University, Madhya Pradesh",
-        cityId: "india-makronia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Makronia (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-makronia-dr-hari-singh-gour-university",
-        name: "Dr. Hari Singh Gour University",
-        cityId: "india-makronia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.4 km del centro de Makronia (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-makronia-dr-hari-singh-gour-university",
-        name: "Dr. Hari Singh Gour University",
-        cityId: "india-makronia",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.4 km del centro de Makronia (Wikidata).
-      }),
-  ],
   "india-bangarda": [
       defineUniversity({
         id: "india-bangarda-symbiosis-university-of-applied-sciences",
@@ -9451,7 +9449,7 @@ export default {
         id: "india-bangarda-renaissance-university",
         name: "Renaissance University",
         cityId: "india-bangarda",
-        website: null,
+        website: "http://www.rnu.edu.ng/",
         source: "open-dataset",
         // Situada a 6.2 km del centro de Bāngarda (Wikidata).
       }),
@@ -9469,7 +9467,7 @@ export default {
         id: "india-bangarda-chhota-oriental-university",
         name: "Oriental University",
         cityId: "india-bangarda-chhota",
-        website: null,
+        website: "http://www.orun.ru/",
         source: "open-dataset",
         // Situada a 7.8 km del centro de Bāngarda Chhota (Wikidata).
       }),
@@ -9506,58 +9504,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.3 km del centro de Pālda (Wikidata).
-      }),
-  ],
-  "india-ajanur": [
-      defineUniversity({
-        id: "india-ajanur-central-university-of-kerala",
-        name: "Central University of Kerala",
-        cityId: "india-ajanur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Ajānūr (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ajanur-central-university-of-kerala",
-        name: "Central University of Kerala",
-        cityId: "india-ajanur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Ajānūr (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ajanur-government-polytechnic-college-kasaragod",
-        name: "Government Polytechnic College, Kasaragod",
-        cityId: "india-ajanur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.1 km del centro de Ajānūr (Wikidata).
-      }),
-  ],
-  "india-puthur": [
-      defineUniversity({
-        id: "india-puthur-academy-of-climate-change-education-and-research",
-        name: "Academy of Climate Change Education and Research",
-        cityId: "india-puthur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.5 km del centro de Puthūr (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-puthur-kerala-agricultural-university",
-        name: "Kerala Agricultural University",
-        cityId: "india-puthur",
-        website: "http://www.kau.edu/",
-        source: "open-dataset",
-        // Situada a 6.7 km del centro de Puthūr (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-puthur-kerala-agricultural-university",
-        name: "Kerala Agricultural University",
-        cityId: "india-puthur",
-        website: "http://www.kau.edu/",
-        source: "open-dataset",
-        // Situada a 6.7 km del centro de Puthūr (Wikidata).
       }),
   ],
   "india-kottaikuppam": [
@@ -9612,6 +9558,32 @@ export default {
         // Situada a 2.3 km del centro de Chumukedima (Wikidata).
       }),
   ],
+  "india-kusum-pur": [
+      defineUniversity({
+        id: "india-kusum-pur-jawaharlal-nehru-university",
+        name: "Jawaharlal Nehru University",
+        cityId: "india-kusum-pur",
+        website: "http://www.jnu.ac.in/",
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Kusum Pur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kusum-pur-shri-lal-bahadur-shastri-national-sanskrit-university",
+        name: "Shri Lal Bahadur Shastri National Sanskrit University",
+        cityId: "india-kusum-pur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.9 km del centro de Kusum Pur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-kusum-pur-teri-school-of-advanced-studies",
+        name: "TERI School of Advanced Studies",
+        cityId: "india-kusum-pur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Kusum Pur (Wikidata).
+      }),
+  ],
   "india-bopal": [
       defineUniversity({
         id: "india-bopal-indus-university",
@@ -9638,100 +9610,30 @@ export default {
         // Situada a 4.3 km del centro de Bopal (Wikidata).
       }),
   ],
-  "india-sreekaryam": [
+  "india-jawaharnagar": [
       defineUniversity({
-        id: "india-sreekaryam-central-tuber-crops-research-institute",
-        name: "Central Tuber Crops Research Institute",
-        cityId: "india-sreekaryam",
+        id: "india-jawaharnagar-anurag-university",
+        name: "Anurag University",
+        cityId: "india-jawaharnagar",
+        website: "https://anurag.edu.in/",
+        source: "open-dataset",
+        // Situada a None km del centro de Jawaharnagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-jawaharnagar-malla-reddy-university",
+        name: "Malla Reddy University",
+        cityId: "india-jawaharnagar",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Sreekaryam (Wikidata).
+        // Situada a None km del centro de Jawaharnagar (Wikidata).
       }),
       defineUniversity({
-        id: "india-sreekaryam-apj-abdul-kalam-technological-university",
-        name: "APJ Abdul Kalam Technological University",
-        cityId: "india-sreekaryam",
+        id: "india-jawaharnagar-sreenidhi-university",
+        name: "Sreenidhi University",
+        cityId: "india-jawaharnagar",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Sreekaryam (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-sreekaryam-apj-abdul-kalam-technological-university",
-        name: "APJ Abdul Kalam Technological University",
-        cityId: "india-sreekaryam",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Sreekaryam (Wikidata).
-      }),
-  ],
-  "india-lochapada": [
-      defineUniversity({
-        id: "india-lochapada-vitam",
-        name: "VITAM",
-        cityId: "india-lochapada",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.3 km del centro de Lochapada (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-lochapada-berhampur-university",
-        name: "Berhampur University",
-        cityId: "india-lochapada",
-        website: "http://www.bamu.nic.in/",
-        source: "open-dataset",
-        // Situada a 8.8 km del centro de Lochapada (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-lochapada-berhampur-university",
-        name: "Berhampur University",
-        cityId: "india-lochapada",
-        website: "http://www.bamu.nic.in/",
-        source: "open-dataset",
-        // Situada a 8.8 km del centro de Lochapada (Wikidata).
-      }),
-  ],
-  "india-neelagiri": [
-      defineUniversity({
-        id: "india-neelagiri-rajah-serfoji-government-college",
-        name: "Rajah Serfoji Government College",
-        cityId: "india-neelagiri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Neelagiri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-neelagiri-tamil-university",
-        name: "Tamil University",
-        cityId: "india-neelagiri",
-        website: "http://www.tamiluniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Neelagiri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-neelagiri-tamil-university",
-        name: "Tamil University",
-        cityId: "india-neelagiri",
-        website: "http://www.tamiluniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Neelagiri (Wikidata).
-      }),
-  ],
-  "india-unchagao": [
-      defineUniversity({
-        id: "india-unchagao-shivaji-university",
-        name: "Shivaji University",
-        cityId: "india-unchagao",
-        website: "http://www.unishivaji.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Unchagao (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-unchagao-shivaji-university",
-        name: "Shivaji University",
-        cityId: "india-unchagao",
-        website: "http://www.unishivaji.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Unchagao (Wikidata).
+        // Situada a None km del centro de Jawaharnagar (Wikidata).
       }),
   ],
   "india-tumkur": [
@@ -9750,24 +9652,6 @@ export default {
         website: "http://www.tumkuruniversity.ac.in/",
         source: "open-dataset",
         // Situada a 2.0 km del centro de Tumkūr (Wikidata).
-      }),
-  ],
-  "india-tral": [
-      defineUniversity({
-        id: "india-tral-islamic-university-of-science-technology",
-        name: "Islamic University of Science & Technology",
-        cityId: "india-tral",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.0 km del centro de Trāl (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-tral-islamic-university-of-science-technology",
-        name: "Islamic University of Science & Technology",
-        cityId: "india-tral",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.0 km del centro de Trāl (Wikidata).
       }),
   ],
   "india-tindivanam": [
@@ -9796,24 +9680,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 15.9 km del centro de Tevāram (Wikidata).
-      }),
-  ],
-  "india-tekari": [
-      defineUniversity({
-        id: "india-tekari-central-university-of-south-bihar",
-        name: "Central University of South Bihar",
-        cityId: "india-tekari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.0 km del centro de Tekāri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-tekari-central-university-of-south-bihar",
-        name: "Central University of South Bihar",
-        cityId: "india-tekari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.0 km del centro de Tekāri (Wikidata).
       }),
   ],
   "india-tharangambadi": [
@@ -9852,22 +9718,22 @@ export default {
         // Situada a 23.1 km del centro de Tārānagar (Wikidata).
       }),
   ],
-  "india-tarakeswar": [
+  "india-tamluk": [
       defineUniversity({
-        id: "india-tarakeswar-netaji-subhas-open-university",
-        name: "Netaji Subhas Open University",
-        cityId: "india-tarakeswar",
+        id: "india-tamluk-tamralipto-government-medical-college-and-hospital",
+        name: "Tamralipto Government Medical College and Hospital",
+        cityId: "india-tamluk",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Tarakeswar (Wikidata).
+        // Situada a 1.7 km del centro de Tamlūk (Wikidata).
       }),
       defineUniversity({
-        id: "india-tarakeswar-netaji-subhas-open-university",
-        name: "Netaji Subhas Open University",
-        cityId: "india-tarakeswar",
+        id: "india-tamluk-mahatma-gandhi-university-west-bengal",
+        name: "Mahatma Gandhi University, West Bengal",
+        cityId: "india-tamluk",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Tarakeswar (Wikidata).
+        // Situada a None km del centro de Tamlūk (Wikidata).
       }),
   ],
   "india-talwandi-sabo": [
@@ -9888,22 +9754,40 @@ export default {
         // Situada a 1.5 km del centro de Talwandi Sābo (Wikidata).
       }),
   ],
-  "india-talakkad": [
+  "india-taleigao": [
       defineUniversity({
-        id: "india-talakkad-thunchath-ezhuthachan-malayalam-university",
-        name: "Thunchath Ezhuthachan Malayalam University",
-        cityId: "india-talakkad",
+        id: "india-taleigao-national-institute-of-water-sports",
+        name: "National Institute of Water Sports",
+        cityId: "india-taleigao",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Talakkād (Wikidata).
+        // Situada a 3.5 km del centro de Taleigao (Wikidata).
       }),
       defineUniversity({
-        id: "india-talakkad-thunchath-ezhuthachan-malayalam-university",
-        name: "Thunchath Ezhuthachan Malayalam University",
-        cityId: "india-talakkad",
+        id: "india-taleigao-goa-university",
+        name: "Goa University",
+        cityId: "india-taleigao",
+        website: "http://www.unigoa.ac.in/",
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Taleigao (Wikidata).
+      }),
+  ],
+  "india-surendranagar": [
+      defineUniversity({
+        id: "india-surendranagar-c-u-shah-university",
+        name: "C. U. Shah University",
+        cityId: "india-surendranagar",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Talakkād (Wikidata).
+        // Situada a 6.0 km del centro de Surendranagar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-surendranagar-surendranagar-university",
+        name: "Surendranagar University",
+        cityId: "india-surendranagar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Surendranagar (Wikidata).
       }),
   ],
   "india-sundarnagar": [
@@ -9960,22 +9844,22 @@ export default {
         // Situada a 11.6 km del centro de Srīrāmnagar (Wikidata).
       }),
   ],
-  "india-srikakulam": [
+  "india-srinagar-1255635": [
       defineUniversity({
-        id: "india-srikakulam-dr-b-r-ambedkar-university-srikakulam",
-        name: "Dr. B. R. Ambedkar University, Srikakulam",
-        cityId: "india-srikakulam",
-        website: null,
+        id: "india-srinagar-1255635-national-institute-of-technology-uttarakhand",
+        name: "National Institute of Technology Uttarakhand",
+        cityId: "india-srinagar-1255635",
+        website: "http://www.nituk.ac.in/",
         source: "open-dataset",
-        // Situada a 8.7 km del centro de Srikakulam (Wikidata).
+        // Situada a 1.6 km del centro de Srīnagar (Wikidata).
       }),
       defineUniversity({
-        id: "india-srikakulam-dr-b-r-ambedkar-university-srikakulam",
-        name: "Dr. B. R. Ambedkar University, Srikakulam",
-        cityId: "india-srikakulam",
+        id: "india-srinagar-1255635-hemwati-nandan-bahuguna-garhwal-university-a-central-university",
+        name: "Hemwati Nandan Bahuguna Garhwal University (A Central University)",
+        cityId: "india-srinagar-1255635",
         website: null,
         source: "open-dataset",
-        // Situada a 8.7 km del centro de Srikakulam (Wikidata).
+        // Situada a None km del centro de Srīnagar (Wikidata).
       }),
   ],
   "india-sonamukhi": [
@@ -9994,24 +9878,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 16.0 km del centro de Sonāmukhi (Wikidata).
-      }),
-  ],
-  "india-sirsa": [
-      defineUniversity({
-        id: "india-sirsa-chaudhary-devi-lal-university",
-        name: "Chaudhary Devi Lal University",
-        cityId: "india-sirsa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Sirsa (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-sirsa-chaudhary-devi-lal-university",
-        name: "Chaudhary Devi Lal University",
-        cityId: "india-sirsa",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Sirsa (Wikidata).
       }),
   ],
   "india-silao": [
@@ -10050,22 +9916,22 @@ export default {
         // Situada a 3.6 km del centro de Sibsāgar (Wikidata).
       }),
   ],
-  "india-shillong": [
+  "india-sholapur": [
       defineUniversity({
-        id: "india-shillong-william-carey-university-meghalaya",
-        name: "William Carey University, Meghalaya",
-        cityId: "india-shillong",
+        id: "india-sholapur-government-polytechnic-solapur",
+        name: "Government Polytechnic Solapur",
+        cityId: "india-sholapur",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Shillong (Wikidata).
+        // Situada a 1.3 km del centro de Sholapur (Wikidata).
       }),
       defineUniversity({
-        id: "india-shillong-martin-luther-christian-university",
-        name: "Martin Luther Christian University",
-        cityId: "india-shillong",
+        id: "india-sholapur-punyashlok-ahilyadevi-holkar-solapur-university",
+        name: "Punyashlok Ahilyadevi Holkar Solapur University",
+        cityId: "india-sholapur",
         website: null,
         source: "open-dataset",
-        // Situada a 0.0 km del centro de Shillong (Wikidata).
+        // Situada a 9.3 km del centro de Sholapur (Wikidata).
       }),
   ],
   "india-shikohabad": [
@@ -10104,6 +9970,24 @@ export default {
         // Situada a 0.7 km del centro de Shāntipur (Wikidata).
       }),
   ],
+  "india-shahdol": [
+      defineUniversity({
+        id: "india-shahdol-uit-shahdol",
+        name: "UIT Shahdol",
+        cityId: "india-shahdol",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.1 km del centro de Shahdol (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shahdol-pandit-shambhu-nath-shukla-vishwavidyalaya",
+        name: "Pandit Shambhu Nath Shukla Vishwavidyalaya",
+        cityId: "india-shahdol",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Shahdol (Wikidata).
+      }),
+  ],
   "india-sarkhej": [
       defineUniversity({
         id: "india-sarkhej-sardar-vallabhbhai-global-university",
@@ -10140,22 +10024,76 @@ export default {
         // Situada a 5.2 km del centro de Sangāreddi (Wikidata).
       }),
   ],
-  "india-sagar": [
+  "india-sambalpur": [
       defineUniversity({
-        id: "india-sagar-keladi-shivappa-nayaka-university-of-agricultural-and-horticultural-sciences",
-        name: "Keladi Shivappa Nayaka University of Agricultural and Horticultural Sciences",
-        cityId: "india-sagar",
+        id: "india-sambalpur-odisha-state-open-university",
+        name: "Odisha State Open University",
+        cityId: "india-sambalpur",
         website: null,
         source: "open-dataset",
-        // Situada a 22.6 km del centro de Sāgar (Wikidata).
+        // Situada a 1.2 km del centro de Sambalpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-sagar-keladi-shivappa-nayaka-university-of-agricultural-and-horticultural-sciences",
-        name: "Keladi Shivappa Nayaka University of Agricultural and Horticultural Sciences",
-        cityId: "india-sagar",
+        id: "india-sambalpur-gangadhar-meher-university",
+        name: "Gangadhar Meher University",
+        cityId: "india-sambalpur",
         website: null,
         source: "open-dataset",
-        // Situada a 22.6 km del centro de Sāgar (Wikidata).
+        // Situada a 1.3 km del centro de Sambalpur (Wikidata).
+      }),
+  ],
+  "india-samastipur": [
+      defineUniversity({
+        id: "india-samastipur-dr-rajendra-prasad-central-agriculture-university",
+        name: "Dr. Rajendra Prasad Central Agriculture University",
+        cityId: "india-samastipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 17.2 km del centro de Samāstipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-samastipur-samastipur-law-college",
+        name: "Samastipur Law College",
+        cityId: "india-samastipur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Samāstipur (Wikidata).
+      }),
+  ],
+  "india-saharanpur": [
+      defineUniversity({
+        id: "india-saharanpur-maa-shakumbhari-university",
+        name: "Maa Shakumbhari University",
+        cityId: "india-saharanpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 11.0 km del centro de Sahāranpur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-saharanpur-mazahir-uloom",
+        name: "Mazahir Uloom",
+        cityId: "india-saharanpur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.2 km del centro de Sahāranpur (Wikidata).
+      }),
+  ],
+  "india-ropar": [
+      defineUniversity({
+        id: "india-ropar-indian-institute-of-technology-ropar",
+        name: "Indian Institute of Technology Ropar",
+        cityId: "india-ropar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Ropar (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-ropar-lamrin-tech-skill-university-punjab",
+        name: "Lamrin Tech Skill University Punjab",
+        cityId: "india-ropar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ropar (Wikidata).
       }),
   ],
   "india-rewari": [
@@ -10176,37 +10114,55 @@ export default {
         // Situada a 6.0 km del centro de Rewāri (Wikidata).
       }),
   ],
-  "india-remuna": [
+  "india-rewa": [
       defineUniversity({
-        id: "india-remuna-fakir-mohan-university",
-        name: "Fakir Mohan University",
-        cityId: "india-remuna",
+        id: "india-rewa-shyam-shah-medical-college",
+        name: "Shyam Shah Medical College",
+        cityId: "india-rewa",
         website: null,
         source: "open-dataset",
-        // Situada a 6.0 km del centro de Remuna (Wikidata).
+        // Situada a 0.8 km del centro de Rewa (Wikidata).
       }),
       defineUniversity({
-        id: "india-remuna-fakir-mohan-university",
-        name: "Fakir Mohan University",
-        cityId: "india-remuna",
-        website: null,
+        id: "india-rewa-awadhesh-pratap-singh-university",
+        name: "Awadhesh Pratap Singh University",
+        cityId: "india-rewa",
+        website: "http://www.apsurewa.nic.in/",
         source: "open-dataset",
-        // Situada a 6.0 km del centro de Remuna (Wikidata).
+        // Situada a 5.6 km del centro de Rewa (Wikidata).
       }),
   ],
-  "india-raniganj": [
+  "india-rasapudipalem": [
       defineUniversity({
-        id: "india-raniganj-raniganj-girls-college",
+        id: "india-rasapudipalem-andhra-university",
+        name: "Andhra University",
+        cityId: "india-rasapudipalem",
+        website: "http://www.andhrauniversity.info/",
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Rasapūdipalem (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-rasapudipalem-gandhi-institute-of-technology-and-management",
+        name: "Gandhi Institute of Technology and Management",
+        cityId: "india-rasapudipalem",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.4 km del centro de Rasapūdipalem (Wikidata).
+      }),
+  ],
+  "india-raniganj-1258470": [
+      defineUniversity({
+        id: "india-raniganj-1258470-raniganj-girls-college",
         name: "Raniganj Girls' College",
-        cityId: "india-raniganj",
+        cityId: "india-raniganj-1258470",
         website: null,
         source: "open-dataset",
         // Situada a 2.6 km del centro de Rānīganj (Wikidata).
       }),
       defineUniversity({
-        id: "india-raniganj-trivenidevi-bhalotia-college",
+        id: "india-raniganj-1258470-trivenidevi-bhalotia-college",
         name: "Trivenidevi Bhalotia College",
-        cityId: "india-raniganj",
+        cityId: "india-raniganj-1258470",
         website: null,
         source: "open-dataset",
         // Situada a 1.3 km del centro de Rānīganj (Wikidata).
@@ -10230,22 +10186,40 @@ export default {
         // Situada a 7.7 km del centro de Rāmpur (Wikidata).
       }),
   ],
-  "india-rajaori": [
+  "india-rajgir": [
       defineUniversity({
-        id: "india-rajaori-baba-ghulam-shah-badshah-university",
-        name: "Baba Ghulam Shah Badshah University",
-        cityId: "india-rajaori",
+        id: "india-rajgir-nalanda-university",
+        name: "Nalanda University",
+        cityId: "india-rajgir",
         website: null,
         source: "open-dataset",
-        // Situada a 3.8 km del centro de Rajaori (Wikidata).
+        // Situada a 4.4 km del centro de Rājgīr (Wikidata).
       }),
       defineUniversity({
-        id: "india-rajaori-baba-ghulam-shah-badshah-university",
-        name: "Baba Ghulam Shah Badshah University",
-        cityId: "india-rajaori",
+        id: "india-rajgir-bihar-sports-university",
+        name: "Bihar Sports University",
+        cityId: "india-rajgir",
         website: null,
         source: "open-dataset",
-        // Situada a 3.8 km del centro de Rajaori (Wikidata).
+        // Situada a None km del centro de Rājgīr (Wikidata).
+      }),
+  ],
+  "india-raipur-1258967": [
+      defineUniversity({
+        id: "india-raipur-1258967-swami-rama-himalayan-university",
+        name: "Swami Rama Himalayan University",
+        cityId: "india-raipur-1258967",
+        website: null,
+        source: "open-dataset",
+        // Situada a 15.0 km del centro de Rāipur (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-raipur-1258967-uttarakhand-ayurved-university",
+        name: "Uttarakhand Ayurved University",
+        cityId: "india-raipur-1258967",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.8 km del centro de Rāipur (Wikidata).
       }),
   ],
   "india-raigarh": [
@@ -10266,22 +10240,40 @@ export default {
         // Situada a 18.9 km del centro de Raigarh (Wikidata).
       }),
   ],
-  "india-rahuri": [
+  "india-raiganj": [
       defineUniversity({
-        id: "india-rahuri-mahatma-phule-krishi-vidyapeeth",
-        name: "Mahatma Phule Krishi Vidyapeeth",
-        cityId: "india-rahuri",
+        id: "india-raiganj-raiganj-polytechnic",
+        name: "Raiganj Polytechnic",
+        cityId: "india-raiganj",
         website: null,
         source: "open-dataset",
-        // Situada a 4.6 km del centro de Rāhuri (Wikidata).
+        // Situada a 0.7 km del centro de Rāiganj (Wikidata).
       }),
       defineUniversity({
-        id: "india-rahuri-mahatma-phule-krishi-vidyapeeth",
-        name: "Mahatma Phule Krishi Vidyapeeth",
-        cityId: "india-rahuri",
+        id: "india-raiganj-raiganj-university",
+        name: "Raiganj University",
+        cityId: "india-raiganj",
         website: null,
         source: "open-dataset",
-        // Situada a 4.6 km del centro de Rāhuri (Wikidata).
+        // Situada a 1.0 km del centro de Rāiganj (Wikidata).
+      }),
+  ],
+  "india-raichur": [
+      defineUniversity({
+        id: "india-raichur-raichur-university",
+        name: "Raichur University",
+        cityId: "india-raichur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 13.4 km del centro de Rāichūr (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-raichur-university-of-agricultural-sciences-raichur",
+        name: "University of Agricultural Sciences, Raichur",
+        cityId: "india-raichur",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Rāichūr (Wikidata).
       }),
   ],
   "india-purwa": [
@@ -10302,6 +10294,24 @@ export default {
         // Situada a 19.5 km del centro de Purwā (Wikidata).
       }),
   ],
+  "india-puri": [
+      defineUniversity({
+        id: "india-puri-odia-university",
+        name: "Odia University",
+        cityId: "india-puri",
+        website: null,
+        source: "open-dataset",
+        // Situada a 17.1 km del centro de Puri (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-puri-shri-jagannath-sanskrit-university",
+        name: "Shri Jagannath Sanskrit University",
+        cityId: "india-puri",
+        website: "http://www.sjsv.nic.in/",
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de Puri (Wikidata).
+      }),
+  ],
   "india-phagwara": [
       defineUniversity({
         id: "india-phagwara-gna-university",
@@ -10318,60 +10328,6 @@ export default {
         website: "http://www.lpu.in/",
         source: "open-dataset",
         // Situada a 7.5 km del centro de Phagwāra (Wikidata).
-      }),
-  ],
-  "india-perintalmanna": [
-      defineUniversity({
-        id: "india-perintalmanna-government-polytechnic-college-perinthalmanna",
-        name: "Government Polytechnic College, Perinthalmanna",
-        cityId: "india-perintalmanna",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Perintalmanna (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-perintalmanna-mea-engineering-college-perinthalmanna",
-        name: "MEA Engineering College, Perinthalmanna",
-        cityId: "india-perintalmanna",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.9 km del centro de Perintalmanna (Wikidata).
-      }),
-  ],
-  "india-pauri": [
-      defineUniversity({
-        id: "india-pauri-uttarakhand-university-of-horticulture-and-forestry",
-        name: "Uttarakhand University of Horticulture and Forestry",
-        cityId: "india-pauri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 23.6 km del centro de Pauri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-pauri-uttarakhand-university-of-horticulture-and-forestry",
-        name: "Uttarakhand University of Horticulture and Forestry",
-        cityId: "india-pauri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 23.6 km del centro de Pauri (Wikidata).
-      }),
-  ],
-  "india-pathanamthitta": [
-      defineUniversity({
-        id: "india-pathanamthitta-sree-buddha-college-of-engineering-elavumthitta",
-        name: "Sree Buddha College of Engineering, Elavumthitta",
-        cityId: "india-pathanamthitta",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de Pathanāmthitta (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-pathanamthitta-government-polytechnic-college-vechoochira",
-        name: "Government Polytechnic College, Vechoochira",
-        cityId: "india-pathanamthitta",
-        website: null,
-        source: "open-dataset",
-        // Situada a 18.2 km del centro de Pathanāmthitta (Wikidata).
       }),
   ],
   "india-pataudi": [
@@ -10392,24 +10348,6 @@ export default {
         // Situada a 9.3 km del centro de Pataudi (Wikidata).
       }),
   ],
-  "india-parbhani": [
-      defineUniversity({
-        id: "india-parbhani-marathwada-agricultural-university",
-        name: "Marathwada Agricultural University",
-        cityId: "india-parbhani",
-        website: "http://mkv2.mah.nic.in/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Parbhani (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-parbhani-marathwada-agricultural-university",
-        name: "Marathwada Agricultural University",
-        cityId: "india-parbhani",
-        website: "http://mkv2.mah.nic.in/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Parbhani (Wikidata).
-      }),
-  ],
   "india-padmanabhapuram": [
       defineUniversity({
         id: "india-padmanabhapuram-noorul-islam-college-of-arts-and-science",
@@ -10428,58 +10366,22 @@ export default {
         // Situada a 2.9 km del centro de Padmanābhapuram (Wikidata).
       }),
   ],
-  "india-omalur": [
+  "india-ongole": [
       defineUniversity({
-        id: "india-omalur-periyar-university",
-        name: "Periyar University",
-        cityId: "india-omalur",
-        website: "http://www.spuniv.org/",
+        id: "india-ongole-rajiv-gandhi-institute-of-medical-sciences-ongole",
+        name: "Rajiv Gandhi Institute of Medical Sciences, Ongole",
+        cityId: "india-ongole",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.3 km del centro de Omalur (Wikidata).
+        // Situada a 1.9 km del centro de Ongole (Wikidata).
       }),
       defineUniversity({
-        id: "india-omalur-periyar-university",
-        name: "Periyar University",
-        cityId: "india-omalur",
-        website: "http://www.spuniv.org/",
+        id: "india-ongole-andhra-kesari-university",
+        name: "Andhra Kesari University",
+        cityId: "india-ongole",
+        website: null,
         source: "open-dataset",
-        // Situada a 4.3 km del centro de Omalur (Wikidata).
-      }),
-  ],
-  "india-nizamabad": [
-      defineUniversity({
-        id: "india-nizamabad-telangana-university",
-        name: "Telangana University",
-        cityId: "india-nizamabad",
-        website: "https://www.telanganauniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 13.3 km del centro de Nizāmābād (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nizamabad-telangana-university",
-        name: "Telangana University",
-        cityId: "india-nizamabad",
-        website: "https://www.telanganauniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 13.3 km del centro de Nizāmābād (Wikidata).
-      }),
-  ],
-  "india-nileshwar": [
-      defineUniversity({
-        id: "india-nileshwar-kannur-university",
-        name: "Kannur University",
-        cityId: "india-nileshwar",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de Nīlēshwar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nileshwar-kannur-university",
-        name: "Kannur University",
-        cityId: "india-nileshwar",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de Nīlēshwar (Wikidata).
+        // Situada a None km del centro de Ongole (Wikidata).
       }),
   ],
   "india-nilambur": [
@@ -10500,6 +10402,24 @@ export default {
         // Situada a 1.5 km del centro de Nilambūr (Wikidata).
       }),
   ],
+  "india-nellore": [
+      defineUniversity({
+        id: "india-nellore-vikrama-simhapuri-university",
+        name: "Vikrama Simhapuri University",
+        cityId: "india-nellore",
+        website: "http://www.simhapuriuniv.ac.in/",
+        source: "open-dataset",
+        // Situada a 12.7 km del centro de Nellore (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nellore-narayan-medical-college-and-hospital",
+        name: "Narayan Medical College and Hospital",
+        cityId: "india-nellore",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nellore (Wikidata).
+      }),
+  ],
   "india-nawapara": [
       defineUniversity({
         id: "india-nawapara-ayush-health-sciences-university-chhattisgarh",
@@ -10510,12 +10430,12 @@ export default {
         // Situada a 18.5 km del centro de Nawāpāra (Wikidata).
       }),
       defineUniversity({
-        id: "india-nawapara-ayush-health-sciences-university-chhattisgarh",
-        name: "Ayush & Health Sciences University Chhattisgarh",
+        id: "india-nawapara-hidayatullah-national-law-university",
+        name: "Hidayatullah National Law University",
         cityId: "india-nawapara",
         website: null,
         source: "open-dataset",
-        // Situada a 18.5 km del centro de Nawāpāra (Wikidata).
+        // Situada a None km del centro de Nawāpāra (Wikidata).
       }),
   ],
   "india-niwai": [
@@ -10546,30 +10466,12 @@ export default {
         // Situada a 28.4 km del centro de Nautanwa (Wikidata).
       }),
       defineUniversity({
-        id: "india-nautanwa-siddharth-university",
-        name: "Siddharth University",
+        id: "india-nautanwa-lumbini-buddha-university",
+        name: "Lumbini Buddha University",
         cityId: "india-nautanwa",
         website: null,
         source: "open-dataset",
-        // Situada a 28.4 km del centro de Nautanwa (Wikidata).
-      }),
-  ],
-  "india-nanded": [
-      defineUniversity({
-        id: "india-nanded-swami-ramanand-teerth-marathwada-university",
-        name: "Swami Ramanand Teerth Marathwada University",
-        cityId: "india-nanded",
-        website: "http://www.srtmun.org/",
-        source: "open-dataset",
-        // Situada a 7.2 km del centro de Nanded (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-nanded-swami-ramanand-teerth-marathwada-university",
-        name: "Swami Ramanand Teerth Marathwada University",
-        cityId: "india-nanded",
-        website: "http://www.srtmun.org/",
-        source: "open-dataset",
-        // Situada a 7.2 km del centro de Nanded (Wikidata).
+        // Situada a 15.3 km del centro de Nautanwa (Wikidata).
       }),
   ],
   "india-nalhati": [
@@ -10590,6 +10492,24 @@ export default {
         // Situada a 1.7 km del centro de Nalhāti (Wikidata).
       }),
   ],
+  "india-nalgonda": [
+      defineUniversity({
+        id: "india-nalgonda-mahatma-gandhi-university-nalgonda",
+        name: "Mahatma Gandhi University, Nalgonda",
+        cityId: "india-nalgonda",
+        website: "https://mguniversity.ac.in/",
+        source: "open-dataset",
+        // Situada a 11.2 km del centro de Nalgonda (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-nalgonda-society-of-the-missionaries-of-st-francis-xavier",
+        name: "Society of the Missionaries of St. Francis Xavier",
+        cityId: "india-nalgonda",
+        website: null,
+        source: "open-dataset",
+        // Situada a 17.0 km del centro de Nalgonda (Wikidata).
+      }),
+  ],
   "india-nalbari": [
       defineUniversity({
         id: "india-nalbari-kumar-bhaskar-varman-sanskrit-and-ancient-studies-university",
@@ -10600,120 +10520,48 @@ export default {
         // Situada a 5.4 km del centro de Nalbāri (Wikidata).
       }),
       defineUniversity({
-        id: "india-nalbari-kumar-bhaskar-varman-sanskrit-and-ancient-studies-university",
-        name: "Kumar Bhaskar Varman Sanskrit and Ancient Studies University",
+        id: "india-nalbari-girijananda-chowdhury-university",
+        name: "Girijananda Chowdhury University",
         cityId: "india-nalbari",
         website: null,
         source: "open-dataset",
-        // Situada a 5.4 km del centro de Nalbāri (Wikidata).
+        // Situada a None km del centro de Nalbāri (Wikidata).
       }),
   ],
-  "india-naini-tal": [
+  "india-muzaffarpur": [
       defineUniversity({
-        id: "india-naini-tal-kumaun-university",
-        name: "Kumaun University",
-        cityId: "india-naini-tal",
-        website: "http://www.kumaununiversity.org/",
+        id: "india-muzaffarpur-radha-devi-jageshwari-memorial-medical-college-and-hospital",
+        name: "Radha Devi Jageshwari Memorial Medical College and Hospital",
+        cityId: "india-muzaffarpur",
+        website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Naini Tāl (Wikidata).
+        // Situada a 11.5 km del centro de Muzaffarpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-naini-tal-kumaun-university",
-        name: "Kumaun University",
-        cityId: "india-naini-tal",
-        website: "http://www.kumaununiversity.org/",
+        id: "india-muzaffarpur-b-r-ambedkar-bihar-university",
+        name: "B. R. Ambedkar Bihar University",
+        cityId: "india-muzaffarpur",
+        website: "http://www.brabu.net/",
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Naini Tāl (Wikidata).
+        // Situada a None km del centro de Muzaffarpur (Wikidata).
       }),
   ],
-  "india-nagapattinam": [
+  "india-morar": [
       defineUniversity({
-        id: "india-nagapattinam-tamil-nadu-fisheries-university",
-        name: "Tamil Nadu Fisheries University",
-        cityId: "india-nagapattinam",
+        id: "india-morar-vikrant-university",
+        name: "Vikrant University",
+        cityId: "india-morar",
         website: null,
         source: "open-dataset",
-        // Situada a 6.6 km del centro de Nagapattinam (Wikidata).
+        // Situada a 9.0 km del centro de Morār (Wikidata).
       }),
       defineUniversity({
-        id: "india-nagapattinam-tamil-nadu-fisheries-university",
-        name: "Tamil Nadu Fisheries University",
-        cityId: "india-nagapattinam",
+        id: "india-morar-amity-university-gwalior",
+        name: "Amity University, Gwalior",
+        cityId: "india-morar",
         website: null,
         source: "open-dataset",
-        // Situada a 6.6 km del centro de Nagapattinam (Wikidata).
-      }),
-  ],
-  "india-mulki": [
-      defineUniversity({
-        id: "india-mulki-srinivas-university",
-        name: "Srinivas University",
-        cityId: "india-mulki",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.8 km del centro de Mūlki (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-mulki-national-institute-of-technology-karnataka",
-        name: "National Institute of Technology Karnataka",
-        cityId: "india-mulki",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.1 km del centro de Mūlki (Wikidata).
-      }),
-  ],
-  "india-mothihari": [
-      defineUniversity({
-        id: "india-mothihari-mahatma-gandhi-central-university",
-        name: "Mahatma Gandhi Central University",
-        cityId: "india-mothihari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Mothīhāri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-mothihari-mahatma-gandhi-central-university",
-        name: "Mahatma Gandhi Central University",
-        cityId: "india-mothihari",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Mothīhāri (Wikidata).
-      }),
-  ],
-  "india-moradabad": [
-      defineUniversity({
-        id: "india-moradabad-teerthanker-mahaveer-university",
-        name: "Teerthanker Mahaveer University",
-        cityId: "india-moradabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.7 km del centro de Morādābād (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-moradabad-iftm-university",
-        name: "IFTM University",
-        cityId: "india-moradabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 13.3 km del centro de Morādābād (Wikidata).
-      }),
-  ],
-  "india-mokokchung": [
-      defineUniversity({
-        id: "india-mokokchung-nagaland-university",
-        name: "Nagaland University",
-        cityId: "india-mokokchung",
-        website: "http://www.nagauniv.org.in/",
-        source: "open-dataset",
-        // Situada a 12.3 km del centro de Mokokchūng (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-mokokchung-nagaland-university",
-        name: "Nagaland University",
-        cityId: "india-mokokchung",
-        website: "http://www.nagauniv.org.in/",
-        source: "open-dataset",
-        // Situada a 12.3 km del centro de Mokokchūng (Wikidata).
+        // Situada a 5.2 km del centro de Morār (Wikidata).
       }),
   ],
   "india-memari": [
@@ -10752,94 +10600,58 @@ export default {
         // Situada a 2.0 km del centro de Māvelikara (Wikidata).
       }),
   ],
-  "india-mangaluru": [
+  "india-mathura": [
       defineUniversity({
-        id: "india-mangaluru-government-first-grade-college-carstreet",
-        name: "Government First Grade College, Carstreet",
-        cityId: "india-mangaluru",
+        id: "india-mathura-uttar-pradesh-pandit-deen-dayal-upadhyaya-pashu-chikitsa-vigyan-vishwavidyalaya-evam-go-anusandhan-sansthan-mathura",
+        name: "Uttar Pradesh Pandit Deen Dayal Upadhyaya Pashu Chikitsa Vigyan Vishwavidyalaya Evam Go-Anusandhan Sansthan, Mathura",
+        cityId: "india-mathura",
         website: null,
         source: "open-dataset",
-        // Situada a 5.5 km del centro de Mangaluru (Wikidata).
+        // Situada a 5.5 km del centro de Mathura (Wikidata).
       }),
       defineUniversity({
-        id: "india-mangaluru-st-aloysius-university",
-        name: "St. Aloysius University",
-        cityId: "india-mangaluru",
+        id: "india-mathura-krishna-mohan-medical-college-and-hospital-mathura",
+        name: "Krishna Mohan Medical College and Hospital, Mathura",
+        cityId: "india-mathura",
         website: null,
         source: "open-dataset",
-        // Situada a 5.0 km del centro de Mangaluru (Wikidata).
+        // Situada a None km del centro de Mathura (Wikidata).
       }),
   ],
-  "india-mangalagiri": [
+  "india-mandi": [
       defineUniversity({
-        id: "india-mangalagiri-acharya-nagarjuna-university",
-        name: "Acharya Nagarjuna University",
-        cityId: "india-mangalagiri",
-        website: "http://www.nagarjunauniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de Mangalagiri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-mangalagiri-acharya-nagarjuna-university",
-        name: "Acharya Nagarjuna University",
-        cityId: "india-mangalagiri",
-        website: "http://www.nagarjunauniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de Mangalagiri (Wikidata).
-      }),
-  ],
-  "india-mahendragarh": [
-      defineUniversity({
-        id: "india-mahendragarh-central-university-of-haryana",
-        name: "Central University of Haryana",
-        cityId: "india-mahendragarh",
+        id: "india-mandi-indian-institute-of-technology-mandi",
+        name: "Indian Institute of Technology Mandi",
+        cityId: "india-mandi",
         website: null,
         source: "open-dataset",
-        // Situada a 10.1 km del centro de Mahendragarh (Wikidata).
+        // Situada a 9.1 km del centro de Mandi (Wikidata).
       }),
       defineUniversity({
-        id: "india-mahendragarh-central-university-of-haryana",
-        name: "Central University of Haryana",
-        cityId: "india-mahendragarh",
+        id: "india-mandi-sardar-patel-university-mandi",
+        name: "Sardar Patel University Mandi",
+        cityId: "india-mandi",
         website: null,
         source: "open-dataset",
-        // Situada a 10.1 km del centro de Mahendragarh (Wikidata).
+        // Situada a None km del centro de Mandi (Wikidata).
       }),
   ],
-  "india-mahbubnagar": [
+  "india-madhubani": [
       defineUniversity({
-        id: "india-mahbubnagar-palamuru-university",
-        name: "Palamuru University",
-        cityId: "india-mahbubnagar",
-        website: "https://palamuruuniversity.ac.in/",
+        id: "india-madhubani-bisfi-vidyapati-dih",
+        name: "Bisfi Vidyapati Dih",
+        cityId: "india-madhubani",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Mahbūbnagar (Wikidata).
+        // Situada a 19.1 km del centro de Madhubani (Wikidata).
       }),
       defineUniversity({
-        id: "india-mahbubnagar-palamuru-university",
-        name: "Palamuru University",
-        cityId: "india-mahbubnagar",
-        website: "https://palamuruuniversity.ac.in/",
+        id: "india-madhubani-sandip-university-sijoul",
+        name: "Sandip University, Sijoul",
+        cityId: "india-madhubani",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Mahbūbnagar (Wikidata).
-      }),
-  ],
-  "india-mahad": [
-      defineUniversity({
-        id: "india-mahad-dr-babasaheb-ambedkar-technological-university",
-        name: "Dr. Babasaheb Ambedkar Technological University",
-        cityId: "india-mahad",
-        website: "http://www.dbatechuni.org/",
-        source: "open-dataset",
-        // Situada a 12.8 km del centro de Mahād (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-mahad-dr-babasaheb-ambedkar-technological-university",
-        name: "Dr. Babasaheb Ambedkar Technological University",
-        cityId: "india-mahad",
-        website: "http://www.dbatechuni.org/",
-        source: "open-dataset",
-        // Situada a 12.8 km del centro de Mahād (Wikidata).
+        // Situada a None km del centro de Madhubani (Wikidata).
       }),
   ],
   "india-madhepura": [
@@ -10860,22 +10672,40 @@ export default {
         // Situada a 1.7 km del centro de Madhepura (Wikidata).
       }),
   ],
-  "india-machilipatnam": [
+  "india-madgaon": [
       defineUniversity({
-        id: "india-machilipatnam-krishna-university",
-        name: "Krishna University",
-        cityId: "india-machilipatnam",
-        website: "http://www.krishnauniversity.ac.in/",
+        id: "india-madgaon-govind-ramnath-kare-college-of-law",
+        name: "Govind Ramnath Kare College of Law",
+        cityId: "india-madgaon",
+        website: null,
         source: "open-dataset",
-        // Situada a 6.9 km del centro de Machilīpatnam (Wikidata).
+        // Situada a 0.7 km del centro de Madgaon (Wikidata).
       }),
       defineUniversity({
-        id: "india-machilipatnam-krishna-university",
-        name: "Krishna University",
-        cityId: "india-machilipatnam",
-        website: "http://www.krishnauniversity.ac.in/",
+        id: "india-madgaon-india-international-university-of-legal-education-and-research-of-bar-council-of-india-trust",
+        name: "India International University of Legal Education and Research of Bar Council of India Trust",
+        cityId: "india-madgaon",
+        website: null,
         source: "open-dataset",
-        // Situada a 6.9 km del centro de Machilīpatnam (Wikidata).
+        // Situada a None km del centro de Madgaon (Wikidata).
+      }),
+  ],
+  "india-ludhiana": [
+      defineUniversity({
+        id: "india-ludhiana-guru-angad-dev-veterinary-and-animal-sciences-university",
+        name: "Guru Angad Dev Veterinary and Animal Sciences University",
+        cityId: "india-ludhiana",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.6 km del centro de Ludhiana (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-ludhiana-punjab-agricultural-university",
+        name: "Punjab Agricultural University",
+        cityId: "india-ludhiana",
+        website: "http://www.pau.edu/",
+        source: "open-dataset",
+        // Situada a 4.6 km del centro de Ludhiana (Wikidata).
       }),
   ],
   "india-leh": [
@@ -10896,40 +10726,40 @@ export default {
         // Situada a 16.0 km del centro de Leh (Wikidata).
       }),
   ],
-  "india-krishnanagar": [
+  "india-lawar-khas": [
       defineUniversity({
-        id: "india-krishnanagar-chapra-bangaljhi-mahavidyalaya",
-        name: "Chapra Bangaljhi Mahavidyalaya",
-        cityId: "india-krishnanagar",
+        id: "india-lawar-khas-sardar-vallabhbhai-patel-university-of-agriculture-and-technology",
+        name: "Sardar Vallabhbhai Patel University of Agriculture and Technology",
+        cityId: "india-lawar-khas",
         website: null,
         source: "open-dataset",
-        // Situada a 12.9 km del centro de Krishnanagar (Wikidata).
+        // Situada a 8.3 km del centro de Lāwar Khās (Wikidata).
       }),
       defineUniversity({
-        id: "india-krishnanagar-dwijendralal-college",
-        name: "Dwijendralal College",
-        cityId: "india-krishnanagar",
+        id: "india-lawar-khas-shobhit-institute-of-engineering-technology",
+        name: "Shobhit Institute of Engineering & Technology",
+        cityId: "india-lawar-khas",
         website: null,
         source: "open-dataset",
-        // Situada a 0.3 km del centro de Krishnanagar (Wikidata).
+        // Situada a 7.6 km del centro de Lāwar Khās (Wikidata).
       }),
   ],
-  "india-kozhikode": [
+  "india-kuppam": [
       defineUniversity({
-        id: "india-kozhikode-kerala-government-polytechnic-college-kozhikode",
-        name: "Kerala Government Polytechnic College, Kozhikode",
-        cityId: "india-kozhikode",
-        website: null,
+        id: "india-kuppam-dravidian-university",
+        name: "Dravidian University",
+        cityId: "india-kuppam",
+        website: "http://www.dravidianuniversity.ac.in/",
         source: "open-dataset",
-        // Situada a 4.5 km del centro de Kozhikode (Wikidata).
+        // Situada a 6.7 km del centro de Kuppam (Wikidata).
       }),
       defineUniversity({
-        id: "india-kozhikode-kerala-government-polytechnic-college-kozhikode",
-        name: "Kerala Government Polytechnic College, Kozhikode",
-        cityId: "india-kozhikode",
+        id: "india-kuppam-p-e-s-institute-of-medical-sciences-and-research",
+        name: "P.E.S. Institute of Medical Sciences and Research",
+        cityId: "india-kuppam",
         website: null,
         source: "open-dataset",
-        // Situada a 4.5 km del centro de Kozhikode (Wikidata).
+        // Situada a 5.3 km del centro de Kuppam (Wikidata).
       }),
   ],
   "india-korba": [
@@ -10950,40 +10780,22 @@ export default {
         // Situada a 25.0 km del centro de Korba (Wikidata).
       }),
   ],
-  "india-kodaikanal": [
+  "india-kolar-1266305": [
       defineUniversity({
-        id: "india-kodaikanal-mother-teresa-women-s-university",
-        name: "Mother Teresa Women's University",
-        cityId: "india-kodaikanal",
+        id: "india-kolar-1266305-sri-devaraj-urs-academy-of-higher-education-and-research",
+        name: "Sri Devaraj Urs Academy of Higher Education and Research",
+        cityId: "india-kolar-1266305",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Kodaikānāl (Wikidata).
+        // Situada a 4.9 km del centro de Kolār (Wikidata).
       }),
       defineUniversity({
-        id: "india-kodaikanal-mother-teresa-women-s-university",
-        name: "Mother Teresa Women's University",
-        cityId: "india-kodaikanal",
+        id: "india-kolar-1266305-bengaluru-north-university",
+        name: "Bengaluru North University",
+        cityId: "india-kolar-1266305",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Kodaikānāl (Wikidata).
-      }),
-  ],
-  "india-khatra": [
-      defineUniversity({
-        id: "india-khatra-pandit-raghunath-murmu-smriti-mahavidyalaya",
-        name: "Pandit Raghunath Murmu Smriti Mahavidyalaya",
-        cityId: "india-khatra",
-        website: null,
-        source: "open-dataset",
-        // Situada a 19.8 km del centro de Khātra (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-khatra-saldiha-college",
-        name: "Saldiha College",
-        cityId: "india-khatra",
-        website: null,
-        source: "open-dataset",
-        // Situada a 22.1 km del centro de Khātra (Wikidata).
+        // Situada a 4.2 km del centro de Kolār (Wikidata).
       }),
   ],
   "india-kharar": [
@@ -11004,58 +10816,58 @@ export default {
         // Situada a 4.7 km del centro de Kharar (Wikidata).
       }),
   ],
-  "india-khairagarh": [
+  "india-chitrakoot-dham": [
       defineUniversity({
-        id: "india-khairagarh-indira-kala-sangeet-university",
-        name: "Indira Kala Sangeet University",
-        cityId: "india-khairagarh",
+        id: "india-chitrakoot-dham-jagadguru-rambhadracharya-divyanga-university",
+        name: "Jagadguru Rambhadracharya Divyanga University",
+        cityId: "india-chitrakoot-dham",
         website: null,
         source: "open-dataset",
-        // Situada a 0.3 km del centro de Khairāgarh (Wikidata).
+        // Situada a 4.9 km del centro de Chitrakoot Dham (Wikidata).
       }),
       defineUniversity({
-        id: "india-khairagarh-indira-kala-sangeet-university",
-        name: "Indira Kala Sangeet University",
-        cityId: "india-khairagarh",
+        id: "india-chitrakoot-dham-mahatma-gandhi-chitrakoot-gramoday-university",
+        name: "Mahatma Gandhi Chitrakoot Gramoday University",
+        cityId: "india-chitrakoot-dham",
         website: null,
         source: "open-dataset",
-        // Situada a 0.3 km del centro de Khairāgarh (Wikidata).
+        // Situada a 9.7 km del centro de Chitrakoot Dham (Wikidata).
       }),
   ],
-  "india-kasaragod": [
+  "india-karnal": [
       defineUniversity({
-        id: "india-kasaragod-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kasaragod",
-        website: "http://www.kannuruniversity.ac.in/",
+        id: "india-karnal-national-dairy-research-institute-karnal",
+        name: "National Dairy Research Institute, Karnal",
+        cityId: "india-karnal",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.2 km del centro de Kāsaragod (Wikidata).
+        // Situada a 1.4 km del centro de Karnāl (Wikidata).
       }),
       defineUniversity({
-        id: "india-kasaragod-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kasaragod",
-        website: "http://www.kannuruniversity.ac.in/",
+        id: "india-karnal-central-soil-salinity-research-institute",
+        name: "Central Soil Salinity Research Institute",
+        cityId: "india-karnal",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.2 km del centro de Kāsaragod (Wikidata).
+        // Situada a None km del centro de Karnāl (Wikidata).
       }),
   ],
-  "india-karimnagar": [
+  "india-karhal": [
       defineUniversity({
-        id: "india-karimnagar-satavahana-university",
-        name: "Satavahana University",
-        cityId: "india-karimnagar",
-        website: "https://satavahana.ac.in/",
+        id: "india-karhal-major-dhyanchand-sports-college-saifai",
+        name: "Major Dhyanchand Sports College, Saifai",
+        cityId: "india-karhal",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.8 km del centro de Karīmnagar (Wikidata).
+        // Situada a 4.1 km del centro de Karhal (Wikidata).
       }),
       defineUniversity({
-        id: "india-karimnagar-satavahana-university",
-        name: "Satavahana University",
-        cityId: "india-karimnagar",
-        website: "https://satavahana.ac.in/",
+        id: "india-karhal-uttar-pradesh-university-of-medical-sciences",
+        name: "Uttar Pradesh University of Medical Sciences",
+        cityId: "india-karhal",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.8 km del centro de Karīmnagar (Wikidata).
+        // Situada a 4.9 km del centro de Karhal (Wikidata).
       }),
   ],
   "india-karamsad": [
@@ -11074,42 +10886,6 @@ export default {
         website: "http://www.spuvvn.edu/",
         source: "open-dataset",
         // Situada a 2.6 km del centro de Karamsad (Wikidata).
-      }),
-  ],
-  "india-karaikkudi": [
-      defineUniversity({
-        id: "india-karaikkudi-alagappa-university",
-        name: "Alagappa University",
-        cityId: "india-karaikkudi",
-        website: "http://www.alagappauniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Kāraikkudi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-karaikkudi-alagappa-university",
-        name: "Alagappa University",
-        cityId: "india-karaikkudi",
-        website: "http://www.alagappauniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Kāraikkudi (Wikidata).
-      }),
-  ],
-  "india-kapurthala-town": [
-      defineUniversity({
-        id: "india-kapurthala-town-i-k-gujral-punjab-technical-university",
-        name: "I. K. Gujral Punjab Technical University",
-        cityId: "india-kapurthala-town",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.0 km del centro de Kapurthala Town (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-kapurthala-town-i-k-gujral-punjab-technical-university",
-        name: "I. K. Gujral Punjab Technical University",
-        cityId: "india-kapurthala-town",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.0 km del centro de Kapurthala Town (Wikidata).
       }),
   ],
   "india-kamarhati": [
@@ -11148,40 +10924,22 @@ export default {
         // Situada a 5.0 km del centro de Kalol (Wikidata).
       }),
   ],
-  "india-kakori": [
+  "india-jalandhar": [
       defineUniversity({
-        id: "india-kakori-dr-shakuntala-misra-rehabilitation-university",
-        name: "Dr. Shakuntala Misra Rehabilitation University",
-        cityId: "india-kakori",
+        id: "india-jalandhar-punjab-institute-of-medical-sciences",
+        name: "Punjab Institute of Medical Sciences",
+        cityId: "india-jalandhar",
         website: null,
         source: "open-dataset",
-        // Situada a 6.4 km del centro de Kākori (Wikidata).
+        // Situada a 2.6 km del centro de Jalandhar (Wikidata).
       }),
       defineUniversity({
-        id: "india-kakori-dr-shakuntala-misra-rehabilitation-university",
-        name: "Dr. Shakuntala Misra Rehabilitation University",
-        cityId: "india-kakori",
-        website: null,
+        id: "india-jalandhar-dr-b-r-ambedkar-national-institute-of-technology-jalandhar",
+        name: "Dr. B. R. Ambedkar National Institute of Technology Jalandhar",
+        cityId: "india-jalandhar",
+        website: "http://www.nitj.ac.in/",
         source: "open-dataset",
-        // Situada a 6.4 km del centro de Kākori (Wikidata).
-      }),
-  ],
-  "india-jowai": [
-      defineUniversity({
-        id: "india-jowai-northeast-adventist-college",
-        name: "Northeast Adventist College",
-        cityId: "india-jowai",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Jowai (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jowai-northeast-adventist-college",
-        name: "Northeast Adventist College",
-        cityId: "india-jowai",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.5 km del centro de Jowai (Wikidata).
+        // Situada a None km del centro de Jalandhar (Wikidata).
       }),
   ],
   "india-jhunjhunun": [
@@ -11202,40 +10960,22 @@ export default {
         // Situada a 16.0 km del centro de Jhunjhunūn (Wikidata).
       }),
   ],
-  "india-jhansi": [
+  "india-jangaon": [
       defineUniversity({
-        id: "india-jhansi-bundelkhand-university",
-        name: "Bundelkhand University",
-        cityId: "india-jhansi",
-        website: "http://www.bundelkhanduniversity.org/",
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Jhānsi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jhansi-bundelkhand-university",
-        name: "Bundelkhand University",
-        cityId: "india-jhansi",
-        website: "http://www.bundelkhanduniversity.org/",
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Jhānsi (Wikidata).
-      }),
-  ],
-  "india-jaunpur": [
-      defineUniversity({
-        id: "india-jaunpur-veer-bahadur-singh-purvanchal-university",
-        name: "Veer Bahadur Singh Purvanchal University",
-        cityId: "india-jaunpur",
+        id: "india-jangaon-telangana-forest-university",
+        name: "Telangana Forest University",
+        cityId: "india-jangaon",
         website: null,
         source: "open-dataset",
-        // Situada a 8.7 km del centro de Jaunpur (Wikidata).
+        // Situada a None km del centro de Jangaon (Wikidata).
       }),
       defineUniversity({
-        id: "india-jaunpur-veer-bahadur-singh-purvanchal-university",
-        name: "Veer Bahadur Singh Purvanchal University",
-        cityId: "india-jaunpur",
+        id: "india-jangaon-malla-reddy-vishwavidyapeeth",
+        name: "Malla Reddy Vishwavidyapeeth",
+        cityId: "india-jangaon",
         website: null,
         source: "open-dataset",
-        // Situada a 8.7 km del centro de Jaunpur (Wikidata).
+        // Situada a None km del centro de Jangaon (Wikidata).
       }),
   ],
   "india-jamuria": [
@@ -11256,40 +10996,22 @@ export default {
         // Situada a 8.0 km del centro de Jāmuria (Wikidata).
       }),
   ],
-  "india-jalgaon": [
+  "india-jammu": [
       defineUniversity({
-        id: "india-jalgaon-kavayitri-bahinabai-chaudhari-north-maharashtra-university",
-        name: "Kavayitri Bahinabai Chaudhari North Maharashtra University",
-        cityId: "india-jalgaon",
+        id: "india-jammu-indian-institute-of-technology-jammu",
+        name: "Indian Institute of Technology Jammu",
+        cityId: "india-jammu",
         website: null,
         source: "open-dataset",
-        // Situada a 7.2 km del centro de Jalgaon (Wikidata).
+        // Situada a 4.3 km del centro de Jammu (Wikidata).
       }),
       defineUniversity({
-        id: "india-jalgaon-kavayitri-bahinabai-chaudhari-north-maharashtra-university",
-        name: "Kavayitri Bahinabai Chaudhari North Maharashtra University",
-        cityId: "india-jalgaon",
+        id: "india-jammu-cluster-university-of-jammu",
+        name: "Cluster University of Jammu",
+        cityId: "india-jammu",
         website: null,
         source: "open-dataset",
-        // Situada a 7.2 km del centro de Jalgaon (Wikidata).
-      }),
-  ],
-  "india-jagdalpur": [
-      defineUniversity({
-        id: "india-jagdalpur-shaheed-mahendra-karma-vishwavidyalaya",
-        name: "Shaheed Mahendra Karma Vishwavidyalaya",
-        cityId: "india-jagdalpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Jagdalpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-jagdalpur-shaheed-mahendra-karma-vishwavidyalaya",
-        name: "Shaheed Mahendra Karma Vishwavidyalaya",
-        cityId: "india-jagdalpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Jagdalpur (Wikidata).
+        // Situada a 1.5 km del centro de Jammu (Wikidata).
       }),
   ],
   "india-malda": [
@@ -11310,40 +11032,40 @@ export default {
         // Situada a 2.4 km del centro de Malda (Wikidata).
       }),
   ],
-  "india-indore": [
+  "india-hazaribagh": [
       defineUniversity({
-        id: "india-indore-devi-ahilya-vishwavidyalaya",
-        name: "Devi Ahilya Vishwavidyalaya",
-        cityId: "india-indore",
+        id: "india-hazaribagh-aisect-university-jharkhand",
+        name: "AISECT University, Jharkhand",
+        cityId: "india-hazaribagh",
         website: null,
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Indore (Wikidata).
+        // Situada a 1.5 km del centro de Hazāribāgh (Wikidata).
       }),
       defineUniversity({
-        id: "india-indore-devi-ahilya-vishwavidyalaya",
-        name: "Devi Ahilya Vishwavidyalaya",
-        cityId: "india-indore",
-        website: null,
+        id: "india-hazaribagh-vinoba-bhave-university",
+        name: "Vinoba Bhave University",
+        cityId: "india-hazaribagh",
+        website: "http://www.vbu.co.in/",
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Indore (Wikidata).
+        // Situada a 3.4 km del centro de Hazāribāgh (Wikidata).
       }),
   ],
-  "india-hoshiarpur": [
+  "india-haveri": [
       defineUniversity({
-        id: "india-hoshiarpur-guru-ravidas-ayurved-university",
-        name: "Guru Ravidas Ayurved University",
-        cityId: "india-hoshiarpur",
+        id: "india-haveri-haveri-university",
+        name: "Haveri University",
+        cityId: "india-haveri",
         website: null,
         source: "open-dataset",
-        // Situada a 11.0 km del centro de Hoshiārpur (Wikidata).
+        // Situada a None km del centro de Hāveri (Wikidata).
       }),
       defineUniversity({
-        id: "india-hoshiarpur-guru-ravidas-ayurved-university",
-        name: "Guru Ravidas Ayurved University",
-        cityId: "india-hoshiarpur",
+        id: "india-haveri-karnataka-folklore-university-haveri",
+        name: "Karnataka Folklore University, Haveri",
+        cityId: "india-haveri",
         website: null,
         source: "open-dataset",
-        // Situada a 11.0 km del centro de Hoshiārpur (Wikidata).
+        // Situada a None km del centro de Hāveri (Wikidata).
       }),
   ],
   "india-howrah": [
@@ -11382,24 +11104,6 @@ export default {
         // Situada a 4.4 km del centro de Haldwani (Wikidata).
       }),
   ],
-  "india-hajipur": [
-      defineUniversity({
-        id: "india-hajipur-d-c-college-hajipur",
-        name: "D.C. College, Hajipur",
-        cityId: "india-hajipur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Hājīpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-hajipur-jamuni-lal-college",
-        name: "Jamuni Lal College",
-        cityId: "india-hajipur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Hājīpur (Wikidata).
-      }),
-  ],
   "india-guskhara": [
       defineUniversity({
         id: "india-guskhara-galsi-mahavidyalaya",
@@ -11416,24 +11120,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 19.6 km del centro de Guskhara (Wikidata).
-      }),
-  ],
-  "india-guntur": [
-      defineUniversity({
-        id: "india-guntur-vasireddy-venkatadri-institute-of-technology",
-        name: "Vasireddy Venkatadri Institute of Technology",
-        cityId: "india-guntur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.6 km del centro de Guntur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-guntur-andhra-christian-college",
-        name: "Andhra-Christian College",
-        cityId: "india-guntur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Guntur (Wikidata).
       }),
   ],
   "india-guduvancheri": [
@@ -11472,94 +11158,40 @@ export default {
         // Situada a 17.6 km del centro de Gudalur (Wikidata).
       }),
   ],
-  "india-gohana": [
+  "india-golaghat": [
       defineUniversity({
-        id: "india-gohana-bhagat-phool-singh-mahila-vishwavidyalaya",
-        name: "Bhagat Phool Singh Mahila Vishwavidyalaya",
-        cityId: "india-gohana",
+        id: "india-golaghat-golaghat-engineering-college",
+        name: "Golaghat Engineering College",
+        cityId: "india-golaghat",
         website: null,
         source: "open-dataset",
-        // Situada a 10.1 km del centro de Gohāna (Wikidata).
+        // Situada a 5.0 km del centro de Golāghāt (Wikidata).
       }),
       defineUniversity({
-        id: "india-gohana-bhagat-phool-singh-mahila-vishwavidyalaya",
-        name: "Bhagat Phool Singh Mahila Vishwavidyalaya",
-        cityId: "india-gohana",
+        id: "india-golaghat-birangana-sati-sadhani-rajyik-vishwavidyalaya",
+        name: "Birangana Sati Sadhani Rajyik Vishwavidyalaya",
+        cityId: "india-golaghat",
         website: null,
         source: "open-dataset",
-        // Situada a 10.1 km del centro de Gohāna (Wikidata).
-      }),
-  ],
-  "india-ghaziabad": [
-      defineUniversity({
-        id: "india-ghaziabad-academy-of-scientific-and-innovative-research",
-        name: "Academy of Scientific and Innovative Research",
-        cityId: "india-ghaziabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Ghāziābād (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ghaziabad-santosh-deemed-to-be-university",
-        name: "Santosh Deemed to be University",
-        cityId: "india-ghaziabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Ghāziābād (Wikidata).
+        // Situada a None km del centro de Golāghāt (Wikidata).
       }),
   ],
-  "india-ghatal": [
+  "india-ghatsila": [
       defineUniversity({
-        id: "india-ghatal-ghatal-rabindra-satabarsiki-mahavidyalaya",
-        name: "Ghatal Rabindra Satabarsiki Mahavidyalaya",
-        cityId: "india-ghatal",
+        id: "india-ghatsila-ghatshila-college",
+        name: "Ghatshila College",
+        cityId: "india-ghatsila",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Ghātāl (Wikidata).
+        // Situada a 1.0 km del centro de Ghātsīla (Wikidata).
       }),
       defineUniversity({
-        id: "india-ghatal-ghatal-rabindra-satabarsiki-mahavidyalaya",
-        name: "Ghatal Rabindra Satabarsiki Mahavidyalaya",
-        cityId: "india-ghatal",
+        id: "india-ghatsila-sona-devi-university",
+        name: "Sona Devi University",
+        cityId: "india-ghatsila",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Ghātāl (Wikidata).
-      }),
-  ],
-  "india-gaurela": [
-      defineUniversity({
-        id: "india-gaurela-indira-gandhi-national-tribal-university",
-        name: "Indira Gandhi National Tribal University",
-        cityId: "india-gaurela",
-        website: null,
-        source: "open-dataset",
-        // Situada a 16.6 km del centro de Gaurela (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-gaurela-indira-gandhi-national-tribal-university",
-        name: "Indira Gandhi National Tribal University",
-        cityId: "india-gaurela",
-        website: null,
-        source: "open-dataset",
-        // Situada a 16.6 km del centro de Gaurela (Wikidata).
-      }),
-  ],
-  "india-garhchiroli": [
-      defineUniversity({
-        id: "india-garhchiroli-gondwana-university",
-        name: "Gondwana University",
-        cityId: "india-garhchiroli",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Garhchiroli (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-garhchiroli-gondwana-university",
-        name: "Gondwana University",
-        cityId: "india-garhchiroli",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Garhchiroli (Wikidata).
+        // Situada a None km del centro de Ghātsīla (Wikidata).
       }),
   ],
   "india-sri-ganganagar": [
@@ -11580,24 +11212,6 @@ export default {
         // Situada a 8.3 km del centro de Sri Ganganagar (Wikidata).
       }),
   ],
-  "india-ganderbal": [
-      defineUniversity({
-        id: "india-ganderbal-central-university-of-kashmir",
-        name: "Central University of Kashmir",
-        cityId: "india-ganderbal",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.6 km del centro de Ganderbal (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-ganderbal-central-university-of-kashmir",
-        name: "Central University of Kashmir",
-        cityId: "india-ganderbal",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.6 km del centro de Ganderbal (Wikidata).
-      }),
-  ],
   "india-faridabad": [
       defineUniversity({
         id: "india-faridabad-lingaya-s-vidyapeeth",
@@ -11616,22 +11230,22 @@ export default {
         // Situada a 4.9 km del centro de Faridabad (Wikidata).
       }),
   ],
-  "india-dumka": [
+  "india-fyzabad": [
       defineUniversity({
-        id: "india-dumka-sido-kanhu-murmu-university-dumka",
-        name: "Sido Kanhu Murmu University, Dumka",
-        cityId: "india-dumka",
+        id: "india-fyzabad-sri-ram-chandra-singh-mahavidyalaya",
+        name: "Sri Ram Chandra Singh Mahavidyalaya",
+        cityId: "india-fyzabad",
         website: null,
         source: "open-dataset",
-        // Situada a 4.1 km del centro de Dumka (Wikidata).
+        // Situada a 0.6 km del centro de Fyzābād (Wikidata).
       }),
       defineUniversity({
-        id: "india-dumka-sido-kanhu-murmu-university-dumka",
-        name: "Sido Kanhu Murmu University, Dumka",
-        cityId: "india-dumka",
+        id: "india-fyzabad-dr-ram-manohar-lohia-awadh-university",
+        name: "Dr. Ram Manohar Lohia Awadh University",
+        cityId: "india-fyzabad",
         website: null,
         source: "open-dataset",
-        // Situada a 4.1 km del centro de Dumka (Wikidata).
+        // Situada a 2.6 km del centro de Fyzābād (Wikidata).
       }),
   ],
   "india-doda": [
@@ -11652,68 +11266,14 @@ export default {
         // Situada a 0.8 km del centro de Doda (Wikidata).
       }),
   ],
-  "india-dibrugarh": [
-      defineUniversity({
-        id: "india-dibrugarh-dibrugarh-polytechnic",
-        name: "Dibrugarh Polytechnic",
-        cityId: "india-dibrugarh",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.0 km del centro de Dibrugarh (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-dibrugarh-dibrugarh-university",
-        name: "Dibrugarh University",
-        cityId: "india-dibrugarh",
-        website: "http://www.dibru.ernet.in/",
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Dibrugarh (Wikidata).
-      }),
-  ],
-  "india-dharmabad": [
-      defineUniversity({
-        id: "india-dharmabad-rajiv-gandhi-university-of-knowledge-technologies-basara",
-        name: "Rajiv Gandhi University of Knowledge Technologies, Basara",
-        cityId: "india-dharmabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.3 km del centro de Dharmābād (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-dharmabad-rajiv-gandhi-university-of-knowledge-technologies-basara",
-        name: "Rajiv Gandhi University of Knowledge Technologies, Basara",
-        cityId: "india-dharmabad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.3 km del centro de Dharmābād (Wikidata).
-      }),
-  ],
-  "india-davangere": [
-      defineUniversity({
-        id: "india-davangere-davangere-university",
-        name: "Davangere University",
-        cityId: "india-davangere",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.1 km del centro de Davangere (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-davangere-davangere-university",
-        name: "Davangere University",
-        cityId: "india-davangere",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.1 km del centro de Davangere (Wikidata).
-      }),
-  ],
   "india-dapoli": [
       defineUniversity({
-        id: "india-dapoli-konkan-krishi-vidyapeeth",
-        name: "Konkan Krishi Vidyapeeth",
+        id: "india-dapoli-college-of-forestry-dapoli",
+        name: "College of Forestry, Dapoli",
         cityId: "india-dapoli",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Dāpoli (Wikidata).
+        // Situada a 1.3 km del centro de Dāpoli (Wikidata).
       }),
       defineUniversity({
         id: "india-dapoli-konkan-krishi-vidyapeeth",
@@ -11724,22 +11284,22 @@ export default {
         // Situada a 1.5 km del centro de Dāpoli (Wikidata).
       }),
   ],
-  "india-coimbatore": [
+  "india-chhatarpur": [
       defineUniversity({
-        id: "india-coimbatore-institute-of-forest-genetics-and-tree-breeding",
-        name: "Institute of Forest Genetics and Tree Breeding",
-        cityId: "india-coimbatore",
+        id: "india-chhatarpur-maharaja-chhatrasal-bundelkhand-university",
+        name: "Maharaja Chhatrasal Bundelkhand University",
+        cityId: "india-chhatarpur",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Coimbatore (Wikidata).
+        // Situada a 1.6 km del centro de Chhatarpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-coimbatore-avinashilingam-institute-for-home-science-and-higher-education-for-women",
-        name: "Avinashilingam Institute for Home Science and Higher Education for Women",
-        cityId: "india-coimbatore",
-        website: "https://avinuty.ac.in/",
+        id: "india-chhatarpur-shri-krishna-university",
+        name: "Shri Krishna University",
+        cityId: "india-chhatarpur",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Coimbatore (Wikidata).
+        // Situada a 11.2 km del centro de Chhatarpur (Wikidata).
       }),
   ],
   "india-chakulia": [
@@ -11760,112 +11320,94 @@ export default {
         // Situada a 17.0 km del centro de Chākuliā (Wikidata).
       }),
   ],
-  "india-kannur": [
+  "india-bongaigaon": [
       defineUniversity({
-        id: "india-kannur-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kannur",
-        website: "http://www.kannuruniversity.ac.in/",
+        id: "india-bongaigaon-bengtol-college",
+        name: "Bengtol College",
+        cityId: "india-bongaigaon",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Kannur (Wikidata).
+        // Situada a 19.3 km del centro de Bongaigaon (Wikidata).
       }),
       defineUniversity({
-        id: "india-kannur-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kannur",
-        website: "http://www.kannuruniversity.ac.in/",
+        id: "india-bongaigaon-bongaigaon-university",
+        name: "Bongaigaon University",
+        cityId: "india-bongaigaon",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Kannur (Wikidata).
+        // Situada a 1.6 km del centro de Bongaigaon (Wikidata).
       }),
   ],
-  "india-bodh-gaya": [
+  "india-vijayapura": [
       defineUniversity({
-        id: "india-bodh-gaya-magadh-university",
-        name: "Magadh University",
-        cityId: "india-bodh-gaya",
-        website: "http://www.magadhuniversity.org/",
+        id: "india-vijayapura-blde-university",
+        name: "BLDE University",
+        cityId: "india-vijayapura",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Bodh Gaya (Wikidata).
+        // Situada a 2.4 km del centro de Vijayapura (Wikidata).
       }),
       defineUniversity({
-        id: "india-bodh-gaya-magadh-university",
-        name: "Magadh University",
-        cityId: "india-bodh-gaya",
-        website: "http://www.magadhuniversity.org/",
+        id: "india-vijayapura-karnataka-state-akkamahadevi-women-s-university-vijayapura",
+        name: "Karnataka State Akkamahadevi Women's University, Vijayapura",
+        cityId: "india-vijayapura",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Bodh Gaya (Wikidata).
+        // Situada a 8.0 km del centro de Vijayapura (Wikidata).
       }),
   ],
-  "india-bihta": [
+  "india-bhuj": [
       defineUniversity({
-        id: "india-bihta-esic-medical-college-and-hospital-patna",
-        name: "ESIC Medical College and Hospital, Patna",
-        cityId: "india-bihta",
+        id: "india-bhuj-krantiguru-shyamji-krishna-verma-kachchh-university",
+        name: "Krantiguru Shyamji Krishna Verma Kachchh University",
+        cityId: "india-bhuj",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Bihtā (Wikidata).
+        // Situada a 4.8 km del centro de Bhuj (Wikidata).
       }),
       defineUniversity({
-        id: "india-bihta-indian-institute-of-technology-patna",
-        name: "Indian Institute of Technology Patna",
-        cityId: "india-bihta",
-        website: "http://www.iitp.ac.in/",
+        id: "india-bhuj-bhavnagar-university",
+        name: "Bhavnagar University",
+        cityId: "india-bhuj",
+        website: "http://www.bhavuni.edu/",
         source: "open-dataset",
-        // Situada a 3.3 km del centro de Bihtā (Wikidata).
-      }),
-  ],
-  "india-bidar": [
-      defineUniversity({
-        id: "india-bidar-karnataka-veterinary-animal-and-fisheries-sciences-university",
-        name: "Karnataka Veterinary, Animal and Fisheries Sciences University",
-        cityId: "india-bidar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Bidar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bidar-karnataka-veterinary-animal-and-fisheries-sciences-university",
-        name: "Karnataka Veterinary, Animal and Fisheries Sciences University",
-        cityId: "india-bidar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Bidar (Wikidata).
+        // Situada a None km del centro de Bhuj (Wikidata).
       }),
   ],
-  "india-bhiwani": [
+  "india-bhimunipatnam": [
       defineUniversity({
-        id: "india-bhiwani-chaudhary-bansi-lal-university",
-        name: "Chaudhary Bansi Lal University",
-        cityId: "india-bhiwani",
+        id: "india-bhimunipatnam-church-on-the-rock-theological-seminary",
+        name: "Church on the Rock Theological Seminary",
+        cityId: "india-bhimunipatnam",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Bhiwāni (Wikidata).
+        // Situada a 5.1 km del centro de Bhīmunipatnam (Wikidata).
       }),
       defineUniversity({
-        id: "india-bhiwani-chaudhary-bansi-lal-university",
-        name: "Chaudhary Bansi Lal University",
-        cityId: "india-bhiwani",
+        id: "india-bhimunipatnam-anil-neerukonda-institute-of-technology-and-sciences",
+        name: "Anil Neerukonda Institute of Technology and Sciences",
+        cityId: "india-bhimunipatnam",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Bhiwāni (Wikidata).
+        // Situada a None km del centro de Bhīmunipatnam (Wikidata).
       }),
   ],
-  "india-ballari": [
+  "india-bhawanipatna": [
       defineUniversity({
-        id: "india-ballari-vijayanagara-sri-krishnadevaraya-university",
-        name: "Vijayanagara Sri Krishnadevaraya University",
-        cityId: "india-ballari",
+        id: "india-bhawanipatna-government-medical-college-and-hospital-bhawanipatna",
+        name: "Government Medical College and Hospital, Bhawanipatna",
+        cityId: "india-bhawanipatna",
         website: null,
         source: "open-dataset",
-        // Situada a 5.1 km del centro de Ballari (Wikidata).
+        // Situada a 3.2 km del centro de Bhawānipatna (Wikidata).
       }),
       defineUniversity({
-        id: "india-ballari-vijayanagara-sri-krishnadevaraya-university",
-        name: "Vijayanagara Sri Krishnadevaraya University",
-        cityId: "india-ballari",
+        id: "india-bhawanipatna-maa-manikeswari-university",
+        name: "Maa Manikeswari University",
+        cityId: "india-bhawanipatna",
         website: null,
         source: "open-dataset",
-        // Situada a 5.1 km del centro de Ballari (Wikidata).
+        // Situada a 1.5 km del centro de Bhawānipatna (Wikidata).
       }),
   ],
   "india-behror": [
@@ -11873,7 +11415,7 @@ export default {
         id: "india-behror-raffles-university",
         name: "Raffles University",
         cityId: "india-behror",
-        website: null,
+        website: "http://www.raffles-university.edu.my/",
         source: "open-dataset",
         // Situada a 13.8 km del centro de Behror (Wikidata).
       }),
@@ -11922,42 +11464,6 @@ export default {
         // Situada a 4.0 km del centro de Baranagar (Wikidata).
       }),
   ],
-  "india-banda": [
-      defineUniversity({
-        id: "india-banda-banda-university-of-agriculture-and-technology",
-        name: "Banda University of Agriculture and Technology",
-        cityId: "india-banda",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.4 km del centro de Bānda (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-banda-banda-university-of-agriculture-and-technology",
-        name: "Banda University of Agriculture and Technology",
-        cityId: "india-banda",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.4 km del centro de Bānda (Wikidata).
-      }),
-  ],
-  "india-balangir": [
-      defineUniversity({
-        id: "india-balangir-rajendra-university",
-        name: "Rajendra University",
-        cityId: "india-balangir",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Balāngīr (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-balangir-rajendra-university",
-        name: "Rajendra University",
-        cityId: "india-balangir",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Balāngīr (Wikidata).
-      }),
-  ],
   "india-bagula": [
       defineUniversity({
         id: "india-bagula-asannagar-madan-mohan-tarkalankar-college",
@@ -11974,42 +11480,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.8 km del centro de Bagulā (Wikidata).
-      }),
-  ],
-  "india-bagalkot": [
-      defineUniversity({
-        id: "india-bagalkot-university-of-horticultural-sciences-bagalkot",
-        name: "University of Horticultural Sciences, Bagalkot",
-        cityId: "india-bagalkot",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.8 km del centro de Bagalkot (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-bagalkot-university-of-horticultural-sciences-bagalkot",
-        name: "University of Horticultural Sciences, Bagalkot",
-        cityId: "india-bagalkot",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.8 km del centro de Bagalkot (Wikidata).
-      }),
-  ],
-  "india-badshahpur": [
-      defineUniversity({
-        id: "india-badshahpur-gurugram-university",
-        name: "Gurugram University",
-        cityId: "india-badshahpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Bādshāhpur (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-badshahpur-gurugram-university",
-        name: "Gurugram University",
-        cityId: "india-badshahpur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Bādshāhpur (Wikidata).
       }),
   ],
   "india-arang": [
@@ -12040,30 +11510,30 @@ export default {
         // Situada a 1.1 km del centro de Arrah (Wikidata).
       }),
       defineUniversity({
-        id: "india-arrah-veer-kunwar-singh-university",
-        name: "Veer Kunwar Singh University",
+        id: "india-arrah-dharmatma-inter-college-arrah",
+        name: "Dharmatma Inter College, Arrah",
         cityId: "india-arrah",
-        website: "http://www.vksu-ara.org/",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Arrah (Wikidata).
+        // Situada a None km del centro de Arrah (Wikidata).
       }),
   ],
-  "india-annamalainagar": [
+  "india-anand": [
       defineUniversity({
-        id: "india-annamalainagar-annamalai-university",
-        name: "Annamalai University",
-        cityId: "india-annamalainagar",
-        website: "http://www.annamalaiuniversity.ac.in/",
+        id: "india-anand-anand-agricultural-university",
+        name: "Anand Agricultural University",
+        cityId: "india-anand",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.3 km del centro de Annāmalainagar (Wikidata).
+        // Situada a 2.7 km del centro de Anand (Wikidata).
       }),
       defineUniversity({
-        id: "india-annamalainagar-annamalai-university",
-        name: "Annamalai University",
-        cityId: "india-annamalainagar",
-        website: "http://www.annamalaiuniversity.ac.in/",
+        id: "india-anand-bhailalbhai-bhikhabhai-institute-of-technology",
+        name: "Bhailalbhai & Bhikhabhai Institute of Technology",
+        cityId: "india-anand",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.3 km del centro de Annāmalainagar (Wikidata).
+        // Situada a None km del centro de Anand (Wikidata).
       }),
   ],
   "india-amritsar": [
@@ -12084,22 +11554,40 @@ export default {
         // Situada a 8.8 km del centro de Amritsar (Wikidata).
       }),
   ],
-  "india-ambikapur": [
+  "india-amravati": [
       defineUniversity({
-        id: "india-ambikapur-sarguja-university",
-        name: "Sarguja University",
-        cityId: "india-ambikapur",
+        id: "india-amravati-dr-punjabrao-deshmukh-polytechnic-college",
+        name: "Dr. Punjabrao Deshmukh Polytechnic College",
+        cityId: "india-amravati",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Ambikāpur (Wikidata).
+        // Situada a 2.0 km del centro de Amravati (Wikidata).
       }),
       defineUniversity({
-        id: "india-ambikapur-sarguja-university",
-        name: "Sarguja University",
-        cityId: "india-ambikapur",
+        id: "india-amravati-sant-gadge-baba-amravati-university",
+        name: "Sant Gadge Baba Amravati University",
+        cityId: "india-amravati",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Ambikāpur (Wikidata).
+        // Situada a 5.7 km del centro de Amravati (Wikidata).
+      }),
+  ],
+  "india-amlagora": [
+      defineUniversity({
+        id: "india-amlagora-gourav-guin-memorial-college",
+        name: "Gourav Guin Memorial College",
+        cityId: "india-amlagora",
+        website: null,
+        source: "open-dataset",
+        // Situada a 11.5 km del centro de Āmlāgora (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-amlagora-santal-bidroha-sardha-satabarsiki-mahavidyalaya",
+        name: "Santal Bidroha Sardha Satabarsiki Mahavidyalaya",
+        cityId: "india-amlagora",
+        website: null,
+        source: "open-dataset",
+        // Situada a 22.7 km del centro de Āmlāgora (Wikidata).
       }),
   ],
   "india-ambala": [
@@ -12120,40 +11608,22 @@ export default {
         // Situada a 1.8 km del centro de Ambāla (Wikidata).
       }),
   ],
-  "india-alwar": [
+  "india-ambad": [
       defineUniversity({
-        id: "india-alwar-sunrise-university",
-        name: "Sunrise University",
-        cityId: "india-alwar",
+        id: "india-ambad-saraswati-education-society",
+        name: "Saraswati Education Society",
+        cityId: "india-ambad",
         website: null,
         source: "open-dataset",
-        // Situada a 15.9 km del centro de Alwar (Wikidata).
+        // Situada a None km del centro de Ambad (Wikidata).
       }),
       defineUniversity({
-        id: "india-alwar-raj-rishi-bhartrihari-matsya-university-alwar",
-        name: "Raj Rishi Bhartrihari Matsya University, Alwar",
-        cityId: "india-alwar",
+        id: "india-ambad-sies-nerul-college-of-arts-science-and-commerce",
+        name: "SIES (Nerul) College of Arts, Science and Commerce",
+        cityId: "india-ambad",
         website: null,
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Alwar (Wikidata).
-      }),
-  ],
-  "india-alnavar": [
-      defineUniversity({
-        id: "india-alnavar-indian-institute-of-technology-dharwad",
-        name: "Indian Institute of Technology Dharwad",
-        cityId: "india-alnavar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 22.3 km del centro de Alnāvar (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-alnavar-indian-institute-of-technology-dharwad",
-        name: "Indian Institute of Technology Dharwad",
-        cityId: "india-alnavar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 21.7 km del centro de Alnāvar (Wikidata).
+        // Situada a None km del centro de Ambad (Wikidata).
       }),
   ],
   "india-almora": [
@@ -12192,22 +11662,22 @@ export default {
         // Situada a 3.6 km del centro de Alīgarh (Wikidata).
       }),
   ],
-  "india-aland": [
+  "india-ajmer": [
       defineUniversity({
-        id: "india-aland-central-university-of-karnataka",
-        name: "Central University of Karnataka",
-        cityId: "india-aland",
-        website: null,
+        id: "india-ajmer-bhagwant-university",
+        name: "Bhagwant University",
+        cityId: "india-ajmer",
+        website: "http://www.bhagwantuniversity.com/",
         source: "open-dataset",
-        // Situada a 18.2 km del centro de Aland (Wikidata).
+        // Situada a 9.7 km del centro de Ajmer (Wikidata).
       }),
       defineUniversity({
-        id: "india-aland-central-university-of-karnataka",
-        name: "Central University of Karnataka",
-        cityId: "india-aland",
+        id: "india-ajmer-maharshi-dayanand-saraswati-university",
+        name: "Maharshi Dayanand Saraswati University",
+        cityId: "india-ajmer",
         website: null,
         source: "open-dataset",
-        // Situada a 18.2 km del centro de Aland (Wikidata).
+        // Situada a 7.2 km del centro de Ajmer (Wikidata).
       }),
   ],
   "india-adur": [
@@ -12246,22 +11716,22 @@ export default {
         // Situada a 0.1 km del centro de Contai (Wikidata).
       }),
   ],
-  "india-badamibagh": [
+  "india-dindarpur": [
       defineUniversity({
-        id: "india-badamibagh-sher-e-kashmir-university-of-agricultural-sciences-and-technology-of-kashmir",
-        name: "Sher-e-Kashmir University of Agricultural Sciences and Technology of Kashmir",
-        cityId: "india-badamibagh",
-        website: null,
+        id: "india-dindarpur-guru-gobind-singh-indraprastha-university",
+        name: "Guru Gobind Singh Indraprastha University",
+        cityId: "india-dindarpur",
+        website: "http://www.ipu.ac.in/",
         source: "open-dataset",
-        // Situada a 8.3 km del centro de Badāmibāgh (Wikidata).
+        // Situada a 2.7 km del centro de Dīndārpur (Wikidata).
       }),
       defineUniversity({
-        id: "india-badamibagh-sher-e-kashmir-university-of-agricultural-sciences-and-technology-of-kashmir",
-        name: "Sher-e-Kashmir University of Agricultural Sciences and Technology of Kashmir",
-        cityId: "india-badamibagh",
+        id: "india-dindarpur-national-law-university-delhi",
+        name: "National Law University, Delhi",
+        cityId: "india-dindarpur",
         website: null,
         source: "open-dataset",
-        // Situada a 8.3 km del centro de Badāmibāgh (Wikidata).
+        // Situada a 3.1 km del centro de Dīndārpur (Wikidata).
       }),
   ],
   "india-kompalli": [
@@ -12300,24 +11770,6 @@ export default {
         // Situada a 9.0 km del centro de Adampur (Wikidata).
       }),
   ],
-  "india-unamaucheri": [
-      defineUniversity({
-        id: "india-unamaucheri-tamil-nadu-physical-education-and-sports-university",
-        name: "Tamil Nadu Physical Education and Sports University",
-        cityId: "india-unamaucheri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.7 km del centro de Unamaucheri (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-unamaucheri-tamil-nadu-physical-education-and-sports-university",
-        name: "Tamil Nadu Physical Education and Sports University",
-        cityId: "india-unamaucheri",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.7 km del centro de Unamaucheri (Wikidata).
-      }),
-  ],
   "india-tirumeshi": [
       defineUniversity({
         id: "india-tirumeshi-saveetha-institute-of-medical-and-technical-sciences",
@@ -12354,40 +11806,58 @@ export default {
         // Situada a 1.2 km del centro de koppana Agrahara (Wikidata).
       }),
   ],
-  "india-akkarampalle": [
+  "india-malkajgiri": [
       defineUniversity({
-        id: "india-akkarampalle-sri-venkateswara-vedic-university",
-        name: "Sri Venkateswara Vedic University",
-        cityId: "india-akkarampalle",
+        id: "india-malkajgiri-english-and-foreign-languages-university",
+        name: "English and Foreign Languages University",
+        cityId: "india-malkajgiri",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Akkarampalle (Wikidata).
+        // Situada a 2.7 km del centro de Malkajgiri (Wikidata).
       }),
       defineUniversity({
-        id: "india-akkarampalle-sri-venkateswara-vedic-university",
-        name: "Sri Venkateswara Vedic University",
-        cityId: "india-akkarampalle",
+        id: "india-malkajgiri-eflu-malappuram-campus",
+        name: "EFLU Malappuram Campus",
+        cityId: "india-malkajgiri",
         website: null,
         source: "open-dataset",
-        // Situada a 1.6 km del centro de Akkarampalle (Wikidata).
+        // Situada a 2.7 km del centro de Malkajgiri (Wikidata).
       }),
   ],
-  "india-chemmumiahpet": [
+  "india-barpeta-road": [
       defineUniversity({
-        id: "india-chemmumiahpet-yogi-vemana-university",
-        name: "Yogi Vemana University",
-        cityId: "india-chemmumiahpet",
+        id: "india-barpeta-road-harendra-chitra-college-bhaktardoba",
+        name: "Harendra Chitra College, Bhaktardoba",
+        cityId: "india-barpeta-road",
         website: null,
         source: "open-dataset",
-        // Situada a 10.9 km del centro de Chemmumiahpet (Wikidata).
+        // Situada a 29.5 km del centro de Barpeta Road (Wikidata).
       }),
       defineUniversity({
-        id: "india-chemmumiahpet-yogi-vemana-university",
-        name: "Yogi Vemana University",
-        cityId: "india-chemmumiahpet",
+        id: "india-barpeta-road-bhattadev-university",
+        name: "Bhattadev University",
+        cityId: "india-barpeta-road",
         website: null,
         source: "open-dataset",
-        // Situada a 10.9 km del centro de Chemmumiahpet (Wikidata).
+        // Situada a 21.5 km del centro de Barpeta Road (Wikidata).
+      }),
+  ],
+  "india-serilingampalle": [
+      defineUniversity({
+        id: "india-serilingampalle-university-of-hyderabad",
+        name: "University of Hyderabad",
+        cityId: "india-serilingampalle",
+        website: "http://www.uohyd.ernet.in/",
+        source: "open-dataset",
+        // Situada a 4.8 km del centro de Serilingampalle (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-serilingampalle-international-institute-of-information-technology-hyderabad",
+        name: "International Institute of Information Technology, Hyderabad",
+        cityId: "india-serilingampalle",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.3 km del centro de Serilingampalle (Wikidata).
       }),
   ],
   "india-bahula": [
@@ -12408,6 +11878,24 @@ export default {
         // Situada a 13.2 km del centro de Bahula (Wikidata).
       }),
   ],
+  "india-shamshabad": [
+      defineUniversity({
+        id: "india-shamshabad-professor-jayashankar-telangana-agricultural-university",
+        name: "Professor Jayashankar Telangana  Agricultural University",
+        cityId: "india-shamshabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.9 km del centro de Shamshabad (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-shamshabad-acharya-n-g-ranga-agricultural-university",
+        name: "Acharya N. G. Ranga Agricultural University",
+        cityId: "india-shamshabad",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.8 km del centro de Shamshabad (Wikidata).
+      }),
+  ],
   "india-laitumkhrah": [
       defineUniversity({
         id: "india-laitumkhrah-cmj-university",
@@ -12424,42 +11912,6 @@ export default {
         website: "http://www.nitm.ac.in/",
         source: "open-dataset",
         // Situada a 0.5 km del centro de Laitumkhrah (Wikidata).
-      }),
-  ],
-  "india-sunabeda": [
-      defineUniversity({
-        id: "india-sunabeda-central-university-of-orissa-koraput",
-        name: "Central University of Orissa, Koraput",
-        cityId: "india-sunabeda",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Sunabeda (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-sunabeda-central-university-of-orissa-koraput",
-        name: "Central University of Orissa, Koraput",
-        cityId: "india-sunabeda",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Sunabeda (Wikidata).
-      }),
-  ],
-  "india-injambakkam": [
-      defineUniversity({
-        id: "india-injambakkam-tamil-nadu-teachers-education-university",
-        name: "Tamil Nadu Teachers Education University",
-        cityId: "india-injambakkam",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Injambakkam (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-injambakkam-tamil-nadu-teachers-education-university",
-        name: "Tamil Nadu Teachers Education University",
-        cityId: "india-injambakkam",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Injambakkam (Wikidata).
       }),
   ],
   "india-barara": [
@@ -12480,58 +11932,94 @@ export default {
         // Situada a 4.1 km del centro de Barāra (Wikidata).
       }),
   ],
-  "india-sindi": [
+  "india-kapas-herd": [
       defineUniversity({
-        id: "india-sindi-mahatma-gandhi-antarrashtriya-hindi-vishwavidyalaya",
-        name: "Mahatma Gandhi Antarrashtriya Hindi Vishwavidyalaya",
-        cityId: "india-sindi",
+        id: "india-kapas-herd-masters-union",
+        name: "Masters' Union",
+        cityId: "india-kapas-herd",
         website: null,
         source: "open-dataset",
-        // Situada a 2.4 km del centro de Sindi (Wikidata).
+        // Situada a 2.4 km del centro de Kāpas Herd (Wikidata).
       }),
       defineUniversity({
-        id: "india-sindi-mahatma-gandhi-antarrashtriya-hindi-vishwavidyalaya",
-        name: "Mahatma Gandhi Antarrashtriya Hindi Vishwavidyalaya",
-        cityId: "india-sindi",
-        website: null,
+        id: "india-kapas-herd-the-northcap-university",
+        name: "The NorthCap University",
+        cityId: "india-kapas-herd",
+        website: "http://www.ncuindia.edu/",
         source: "open-dataset",
-        // Situada a 2.4 km del centro de Sindi (Wikidata).
+        // Situada a 4.2 km del centro de Kāpas Herd (Wikidata).
       }),
   ],
-  "india-umbri": [
+  "india-ali": [
       defineUniversity({
-        id: "india-umbri-dr-panjabrao-deshmukh-krishi-vidyapeeth",
-        name: "Dr. Panjabrao Deshmukh Krishi Vidyapeeth",
-        cityId: "india-umbri",
-        website: "http://www.pdkv.ac.in/",
+        id: "india-ali-all-india-institute-of-ayurveda-delhi",
+        name: "All India Institute of Ayurveda, Delhi",
+        cityId: "india-ali",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Umbri (Wikidata).
+        // Situada a 1.3 km del centro de Ali (Wikidata).
       }),
       defineUniversity({
-        id: "india-umbri-dr-panjabrao-deshmukh-krishi-vidyapeeth",
-        name: "Dr. Panjabrao Deshmukh Krishi Vidyapeeth",
-        cityId: "india-umbri",
-        website: "http://www.pdkv.ac.in/",
+        id: "india-ali-amity-university-noida",
+        name: "Amity University, Noida",
+        cityId: "india-ali",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Umbri (Wikidata).
+        // Situada a 3.8 km del centro de Ali (Wikidata).
       }),
   ],
-  "india-kumbalam": [
+  "india-wari": [
       defineUniversity({
-        id: "india-kumbalam-kerala-university-of-fisheries-and-ocean-studies",
-        name: "Kerala University of Fisheries and Ocean Studies",
-        cityId: "india-kumbalam",
+        id: "india-wari-indian-institute-of-fire-engineering-nagpur",
+        name: "Indian Institute of Fire Engineering, Nagpur",
+        cityId: "india-wari",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Kumbalam (Wikidata).
+        // Situada a 3.6 km del centro de Wāri (Wikidata).
       }),
       defineUniversity({
-        id: "india-kumbalam-kerala-university-of-fisheries-and-ocean-studies",
-        name: "Kerala University of Fisheries and Ocean Studies",
-        cityId: "india-kumbalam",
+        id: "india-wari-maharashtra-animal-and-fishery-sciences-university",
+        name: "Maharashtra Animal and Fishery Sciences University",
+        cityId: "india-wari",
         website: null,
         source: "open-dataset",
-        // Situada a 0.8 km del centro de Kumbalam (Wikidata).
+        // Situada a 4.1 km del centro de Wāri (Wikidata).
+      }),
+  ],
+  "india-raniganj-10524295": [
+      defineUniversity({
+        id: "india-raniganj-10524295-pendekanti-law-college",
+        name: "Pendekanti Law College",
+        cityId: "india-raniganj-10524295",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Rāniganj (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-raniganj-10524295-college-of-defence-management",
+        name: "College of Defence Management",
+        cityId: "india-raniganj-10524295",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Rāniganj (Wikidata).
+      }),
+  ],
+  "india-makronia": [
+      defineUniversity({
+        id: "india-makronia-swami-vivekanand-university-madhya-pradesh",
+        name: "Swami Vivekanand University, Madhya Pradesh",
+        cityId: "india-makronia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.2 km del centro de Makronia (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-makronia-dr-hari-singh-gour-university",
+        name: "Dr. Hari Singh Gour University",
+        cityId: "india-makronia",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.4 km del centro de Makronia (Wikidata).
       }),
   ],
   "india-kalamassery": [
@@ -12588,76 +12076,40 @@ export default {
         // Situada a 3.4 km del centro de Gobindgarh (Wikidata).
       }),
   ],
-  "india-ramavarappadu": [
+  "india-kotekara": [
       defineUniversity({
-        id: "india-ramavarappadu-dr-n-t-r-university-of-health-sciences",
-        name: "Dr. N.T.R University of Health Sciences",
-        cityId: "india-ramavarappadu",
+        id: "india-kotekara-nitte-university",
+        name: "Nitte University",
+        cityId: "india-kotekara",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Rāmavarappādu (Wikidata).
+        // Situada a 2.4 km del centro de Kōtekāra (Wikidata).
       }),
       defineUniversity({
-        id: "india-ramavarappadu-dr-n-t-r-university-of-health-sciences",
-        name: "Dr. N.T.R University of Health Sciences",
-        cityId: "india-ramavarappadu",
+        id: "india-kotekara-mangalore-university",
+        name: "Mangalore University",
+        cityId: "india-kotekara",
+        website: "http://www.mangaloreuniversity.ac.in/",
+        source: "open-dataset",
+        // Situada a 6.2 km del centro de Kōtekāra (Wikidata).
+      }),
+  ],
+  "india-ajanur": [
+      defineUniversity({
+        id: "india-ajanur-central-university-of-kerala",
+        name: "Central University of Kerala",
+        cityId: "india-ajanur",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Rāmavarappādu (Wikidata).
-      }),
-  ],
-  "india-kunnimangalam": [
-      defineUniversity({
-        id: "india-kunnimangalam-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kunnimangalam",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Kunnimangalam (Wikidata).
+        // Situada a 6.2 km del centro de Ajānūr (Wikidata).
       }),
       defineUniversity({
-        id: "india-kunnimangalam-kannur-university",
-        name: "Kannur University",
-        cityId: "india-kunnimangalam",
-        website: "http://www.kannuruniversity.ac.in/",
+        id: "india-ajanur-government-polytechnic-college-kasaragod",
+        name: "Government Polytechnic College, Kasaragod",
+        cityId: "india-ajanur",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.6 km del centro de Kunnimangalam (Wikidata).
-      }),
-  ],
-  "india-pinarayi": [
-      defineUniversity({
-        id: "india-pinarayi-kannur-university",
-        name: "Kannur University",
-        cityId: "india-pinarayi",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Pinarāyi (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-pinarayi-kannur-university",
-        name: "Kannur University",
-        cityId: "india-pinarayi",
-        website: "http://www.kannuruniversity.ac.in/",
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Pinarāyi (Wikidata).
-      }),
-  ],
-  "india-machai": [
-      defineUniversity({
-        id: "india-machai-visvesvaraya-technological-university",
-        name: "Visvesvaraya Technological University",
-        cityId: "india-machai",
-        website: "http://www.vtu.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Māchai (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-machai-visvesvaraya-technological-university",
-        name: "Visvesvaraya Technological University",
-        cityId: "india-machai",
-        website: "http://www.vtu.ac.in/",
-        source: "open-dataset",
-        // Situada a 2.8 km del centro de Māchai (Wikidata).
+        // Situada a 8.1 km del centro de Ajānūr (Wikidata).
       }),
   ],
   "india-vadavalli": [
@@ -12678,58 +12130,40 @@ export default {
         // Situada a 22.4 km del centro de Vadavalli (Wikidata).
       }),
   ],
-  "india-virakeralam": [
+  "india-puthur": [
       defineUniversity({
-        id: "india-virakeralam-tamil-nadu-agricultural-university",
-        name: "Tamil Nadu Agricultural University",
-        cityId: "india-virakeralam",
-        website: "https://tnau.ac.in/",
+        id: "india-puthur-academy-of-climate-change-education-and-research",
+        name: "Academy of Climate Change Education and Research",
+        cityId: "india-puthur",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Vīrakeralam (Wikidata).
+        // Situada a 6.5 km del centro de Puthūr (Wikidata).
       }),
       defineUniversity({
-        id: "india-virakeralam-tamil-nadu-agricultural-university",
-        name: "Tamil Nadu Agricultural University",
-        cityId: "india-virakeralam",
-        website: "https://tnau.ac.in/",
+        id: "india-puthur-kerala-agricultural-university",
+        name: "Kerala Agricultural University",
+        cityId: "india-puthur",
+        website: "http://www.kau.edu/",
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Vīrakeralam (Wikidata).
+        // Situada a 6.7 km del centro de Puthūr (Wikidata).
       }),
   ],
-  "india-edattala": [
+  "india-vengola-kizhakkumbagam": [
       defineUniversity({
-        id: "india-edattala-national-university-of-advanced-legal-studies",
-        name: "National University of Advanced Legal Studies",
-        cityId: "india-edattala",
+        id: "india-vengola-kizhakkumbagam-government-polytechnic-college-kalamassery",
+        name: "Government Polytechnic College, Kalamassery",
+        cityId: "india-vengola-kizhakkumbagam",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Edattala (Wikidata).
+        // Situada a None km del centro de Vengola Kizhakkumbāgam (Wikidata).
       }),
       defineUniversity({
-        id: "india-edattala-national-university-of-advanced-legal-studies",
-        name: "National University of Advanced Legal Studies",
-        cityId: "india-edattala",
+        id: "india-vengola-kizhakkumbagam-women-s-polytechnic-college-ernakulam",
+        name: "Women's Polytechnic College, Ernakulam",
+        cityId: "india-vengola-kizhakkumbagam",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Edattala (Wikidata).
-      }),
-  ],
-  "india-marturu": [
-      defineUniversity({
-        id: "india-marturu-sree-sankaracharya-sanskrit-university",
-        name: "Sree Sankaracharya Sanskrit University",
-        cityId: "india-marturu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Martūru (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-marturu-sree-sankaracharya-sanskrit-university",
-        name: "Sree Sankaracharya Sanskrit University",
-        cityId: "india-marturu",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Martūru (Wikidata).
+        // Situada a None km del centro de Vengola Kizhakkumbāgam (Wikidata).
       }),
   ],
   "india-vattiyurkavu": [
@@ -12768,24 +12202,6 @@ export default {
         // Situada a 6.2 km del centro de Pudusseri (Wikidata).
       }),
   ],
-  "india-tirkadavur": [
-      defineUniversity({
-        id: "india-tirkadavur-sreenarayanaguru-open-university",
-        name: "Sreenarayanaguru Open University",
-        cityId: "india-tirkadavur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Tirkadavūr (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-tirkadavur-sreenarayanaguru-open-university",
-        name: "Sreenarayanaguru Open University",
-        cityId: "india-tirkadavur",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Tirkadavūr (Wikidata).
-      }),
-  ],
   "india-tuvagudi": [
       defineUniversity({
         id: "india-tuvagudi-indian-institute-of-information-technology-tiruchirappalli",
@@ -12802,24 +12218,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.8 km del centro de Tuvāgudi (Wikidata).
-      }),
-  ],
-  "india-navalpattu": [
-      defineUniversity({
-        id: "india-navalpattu-bharathidasan-university",
-        name: "Bharathidasan University",
-        cityId: "india-navalpattu",
-        website: "http://www.bdu.ernet.in/",
-        source: "open-dataset",
-        // Situada a 9.1 km del centro de Navalpattu (Wikidata).
-      }),
-      defineUniversity({
-        id: "india-navalpattu-bharathidasan-university",
-        name: "Bharathidasan University",
-        cityId: "india-navalpattu",
-        website: "http://www.bdu.ernet.in/",
-        source: "open-dataset",
-        // Situada a 9.1 km del centro de Navalpattu (Wikidata).
       }),
   ],
   "india-melmadai": [
@@ -12876,40 +12274,58 @@ export default {
         // Situada a 2.5 km del centro de Mawlai-Mawïong (Wikidata).
       }),
   ],
-  "india-morampudi": [
+  "india-keirao-bitra": [
       defineUniversity({
-        id: "india-morampudi-adikavi-nannaya-university",
-        name: "Adikavi Nannaya University",
-        cityId: "india-morampudi",
+        id: "india-keirao-bitra-bir-tikendrajit-university",
+        name: "Bir Tikendrajit University",
+        cityId: "india-keirao-bitra",
         website: null,
         source: "open-dataset",
-        // Situada a 10.2 km del centro de Morampudi (Wikidata).
+        // Situada a 6.0 km del centro de Keirao Bitra (Wikidata).
       }),
       defineUniversity({
-        id: "india-morampudi-adikavi-nannaya-university",
-        name: "Adikavi Nannaya University",
-        cityId: "india-morampudi",
+        id: "india-keirao-bitra-asian-international-university",
+        name: "Asian International University",
+        cityId: "india-keirao-bitra",
         website: null,
         source: "open-dataset",
-        // Situada a 10.2 km del centro de Morampudi (Wikidata).
+        // Situada a 6.0 km del centro de Keirao Bitra (Wikidata).
       }),
   ],
-  "india-avilala": [
+  "india-lanka": [
       defineUniversity({
-        id: "india-avilala-sri-padmavati-mahila-visvavidyalayam",
-        name: "Sri Padmavati Mahila Visvavidyalayam",
-        cityId: "india-avilala",
+        id: "india-lanka-north-east-institute-of-management-science",
+        name: "North East Institute of Management Science",
+        cityId: "india-lanka",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Avilala (Wikidata).
+        // Situada a None km del centro de Lanka (Wikidata).
       }),
       defineUniversity({
-        id: "india-avilala-sri-padmavati-mahila-visvavidyalayam",
-        name: "Sri Padmavati Mahila Visvavidyalayam",
-        cityId: "india-avilala",
+        id: "india-lanka-rabindranath-tagore-university-hojai",
+        name: "Rabindranath Tagore University, Hojai",
+        cityId: "india-lanka",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Avilala (Wikidata).
+        // Situada a None km del centro de Lanka (Wikidata).
+      }),
+  ],
+  "india-morampudi": [
+      defineUniversity({
+        id: "india-morampudi-godavari-global-university",
+        name: "Godavari Global University",
+        cityId: "india-morampudi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 9.8 km del centro de Morampudi (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-morampudi-adikavi-nannaya-university",
+        name: "Adikavi Nannaya University",
+        cityId: "india-morampudi",
+        website: null,
+        source: "open-dataset",
+        // Situada a 10.2 km del centro de Morampudi (Wikidata).
       }),
   ],
   "india-tilda-newra": [
@@ -12984,6 +12400,24 @@ export default {
         // Situada a 4.1 km del centro de Undera (Wikidata).
       }),
   ],
+  "india-jammu-cantonment": [
+      defineUniversity({
+        id: "india-jammu-cantonment-sher-e-kashmir-university-of-agricultural-sciences-and-technology-of-jammu",
+        name: "Sher-e-Kashmir University of Agricultural Sciences and Technology of Jammu",
+        cityId: "india-jammu-cantonment",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.5 km del centro de Jammu Cantonment (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-jammu-cantonment-university-of-jammu",
+        name: "University of Jammu",
+        cityId: "india-jammu-cantonment",
+        website: "http://www.jammuvarsity.org/",
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Jammu Cantonment (Wikidata).
+      }),
+  ],
   "india-killannur": [
       defineUniversity({
         id: "india-killannur-kerala-institute-of-local-administration",
@@ -13020,6 +12454,24 @@ export default {
         // Situada a 2.0 km del centro de Palai (Wikidata).
       }),
   ],
+  "india-sreekaryam": [
+      defineUniversity({
+        id: "india-sreekaryam-central-tuber-crops-research-institute",
+        name: "Central Tuber Crops Research Institute",
+        cityId: "india-sreekaryam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Sreekaryam (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-sreekaryam-apj-abdul-kalam-technological-university",
+        name: "APJ Abdul Kalam Technological University",
+        cityId: "india-sreekaryam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.5 km del centro de Sreekaryam (Wikidata).
+      }),
+  ],
   "india-thenhippalam": [
       defineUniversity({
         id: "india-thenhippalam-government-polytechnic-college-tirurangadi",
@@ -13036,6 +12488,24 @@ export default {
         website: "http://unical.ac.in/",
         source: "open-dataset",
         // Situada a 1.3 km del centro de Thenhippalam (Wikidata).
+      }),
+  ],
+  "india-vazhakkala": [
+      defineUniversity({
+        id: "india-vazhakkala-jamia-al-maqar",
+        name: "Jamia Al Maqar",
+        cityId: "india-vazhakkala",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Vazhakkala (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-vazhakkala-indira-gandhi-polytechnic-ernakulam",
+        name: "Indira Gandhi Polytechnic, Ernakulam",
+        cityId: "india-vazhakkala",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Vazhakkala (Wikidata).
       }),
   ],
   "india-dehu-road": [
@@ -13056,6 +12526,24 @@ export default {
         // Situada a 5.0 km del centro de Dehu Road (Wikidata).
       }),
   ],
+  "india-lochapada": [
+      defineUniversity({
+        id: "india-lochapada-vitam",
+        name: "VITAM",
+        cityId: "india-lochapada",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.3 km del centro de Lochapada (Wikidata).
+      }),
+      defineUniversity({
+        id: "india-lochapada-berhampur-university",
+        name: "Berhampur University",
+        cityId: "india-lochapada",
+        website: "http://www.bamu.nic.in/",
+        source: "open-dataset",
+        // Situada a 8.8 km del centro de Lochapada (Wikidata).
+      }),
+  ],
   "india-vidyavihar": [
       defineUniversity({
         id: "india-vidyavihar-opjs-university",
@@ -13074,22 +12562,22 @@ export default {
         // Situada a 0.6 km del centro de Vidyavihar (Wikidata).
       }),
   ],
-  "india-mathur": [
+  "india-neelagiri": [
       defineUniversity({
-        id: "india-mathur-tamil-nadu-veterinary-and-animal-sciences-university",
-        name: "Tamil Nadu Veterinary and Animal Sciences University",
-        cityId: "india-mathur",
-        website: "http://www.tanuvas.com/",
+        id: "india-neelagiri-rajah-serfoji-government-college",
+        name: "Rajah Serfoji Government College",
+        cityId: "india-neelagiri",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Mathur (Wikidata).
+        // Situada a 2.2 km del centro de Neelagiri (Wikidata).
       }),
       defineUniversity({
-        id: "india-mathur-tamil-nadu-veterinary-and-animal-sciences-university",
-        name: "Tamil Nadu Veterinary and Animal Sciences University",
-        cityId: "india-mathur",
-        website: "http://www.tanuvas.com/",
+        id: "india-neelagiri-tamil-university",
+        name: "Tamil University",
+        cityId: "india-neelagiri",
+        website: "http://www.tamiluniversity.ac.in/",
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Mathur (Wikidata).
+        // Situada a 2.6 km del centro de Neelagiri (Wikidata).
       }),
   ],
 };

@@ -79,6 +79,14 @@ export default {
         source: "open-dataset",
         // Situada a 1.7 km del centro de Manama (Wikidata).
       }),
+      defineUniversity({
+        id: "barein-manama-delmon-university-for-science-technology",
+        name: "Delmon University for Science & Technology",
+        cityId: "barein-manama",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Manama (Wikidata).
+      }),
   ],
   "barein-madinat-isa": [
       defineUniversity({

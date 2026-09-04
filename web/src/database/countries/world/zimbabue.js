@@ -48,6 +48,16 @@ const cities = [
       countryId,
       countryName,
     }),
+    defineCity({
+      id: "zimbabue-bindura",
+      name: "Bindura",
+      coordinates: {"lat": -17.30192, "lng": 31.33056},
+      isCapital: false,
+      universityCount: 2,
+      statistics: { population: 50400 },
+      countryId,
+      countryName,
+    }),
 ];
 
 export default defineCountry({

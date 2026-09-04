@@ -96,6 +96,32 @@ export default {
         // Situada a 1.8 km del centro de Zugló (Wikidata).
       }),
   ],
+  "hungria-lagymanyos": [
+      defineUniversity({
+        id: "hungria-lagymanyos-budapest-university-of-technology-and-economics",
+        name: "Budapest University of Technology and Economics",
+        cityId: "hungria-lagymanyos",
+        website: "http://www.bme.hu/",
+        source: "open-dataset",
+        // Situada a 0.8 km del centro de Lágymányos (Wikidata).
+      }),
+      defineUniversity({
+        id: "hungria-lagymanyos-pazmany-peter-catholic-university-faculty-of-theology",
+        name: "Pázmány Péter Catholic University Faculty of Theology",
+        cityId: "hungria-lagymanyos",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lágymányos (Wikidata).
+      }),
+      defineUniversity({
+        id: "hungria-lagymanyos-university-of-buda",
+        name: "University of Buda",
+        cityId: "hungria-lagymanyos",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Lágymányos (Wikidata).
+      }),
+  ],
   "hungria-erzsebetvaros": [
       defineUniversity({
         id: "hungria-erzsebetvaros-university-of-veterinary-medicine-budapest",
@@ -122,6 +148,16 @@ export default {
         // Situada a 0.4 km del centro de Erzsébetváros (Wikidata).
       }),
   ],
+  "hungria-ujszeged": [
+      defineUniversity({
+        id: "hungria-ujszeged-gal-ferenc-university",
+        name: "Gál Ferenc University",
+        cityId: "hungria-ujszeged",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Újszeged (Wikidata).
+      }),
+  ],
   "hungria-szeged": [
       defineUniversity({
         id: "hungria-szeged-university-of-szeged",
@@ -138,6 +174,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.8 km del centro de Szeged (Wikidata).
+      }),
+  ],
+  "hungria-nyiregyhaza": [
+      defineUniversity({
+        id: "hungria-nyiregyhaza-st-athanasius-greek-orthodox-theological-college",
+        name: "St. Athanasius Greek Orthodox Theological College",
+        cityId: "hungria-nyiregyhaza",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.3 km del centro de Nyíregyháza (Wikidata).
+      }),
+      defineUniversity({
+        id: "hungria-nyiregyhaza-university-of-nyiregyhaza",
+        name: "University of Nyíregyháza",
+        cityId: "hungria-nyiregyhaza",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nyíregyháza (Wikidata).
       }),
   ],
   "hungria-eger": [
@@ -176,6 +230,24 @@ export default {
         // Situada a 2.5 km del centro de Debrecen (Wikidata).
       }),
   ],
+  "hungria-sopron": [
+      defineUniversity({
+        id: "hungria-sopron-joseph-haydn-konservatorium-eisenstadt",
+        name: "Joseph Haydn Konservatorium, Eisenstadt",
+        cityId: "hungria-sopron",
+        website: null,
+        source: "open-dataset",
+        // Situada a 19.2 km del centro de Sopron (Wikidata).
+      }),
+      defineUniversity({
+        id: "hungria-sopron-university-of-sopron",
+        name: "University of Sopron",
+        cityId: "hungria-sopron",
+        website: "http://www.efe.hu/",
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Sopron (Wikidata).
+      }),
+  ],
   "hungria-pest": [
       defineUniversity({
         id: "hungria-pest-zrinyi-miklos-national-defense-university",
@@ -212,6 +284,24 @@ export default {
         // Situada a 1.7 km del centro de Pécs (Wikidata).
       }),
   ],
+  "hungria-gyor": [
+      defineUniversity({
+        id: "hungria-gyor-szechenyi-istvan-university",
+        name: "Széchenyi István University",
+        cityId: "hungria-gyor",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Győr (Wikidata).
+      }),
+      defineUniversity({
+        id: "hungria-gyor-st-gerard-bible-college",
+        name: "St. Gerard Bible College",
+        cityId: "hungria-gyor",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Győr (Wikidata).
+      }),
+  ],
   "hungria-godollo": [
       defineUniversity({
         id: "hungria-godollo-godollo-university-of-agricultural-sciences",
@@ -246,6 +336,16 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.6 km del centro de Ferencváros (Wikidata).
+      }),
+  ],
+  "hungria-budapest": [
+      defineUniversity({
+        id: "hungria-budapest-university-of-construction-and-transportation-engineering",
+        name: "University of Construction and Transportation Engineering",
+        cityId: "hungria-budapest",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Budapest (Wikidata).
       }),
   ],
 };

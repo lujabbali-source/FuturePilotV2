@@ -8,15 +8,26 @@
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry } from "../schema.js";
+import { defineCity, defineCountry } from "../schema.js";
 
 const countryId = "guinea-bisau";
 const countryName = "Guinea-Bisáu";
 
-// Sin ciudades: la fuente no le conoce ninguna universidad
-// a este pais. No es que no las tenga; es que no constan.
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/guinea-bisau.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
-
+    defineCity({
+      id: "guinea-bisau-sintra-nema",
+      name: "Sintra-Nema",
+      coordinates: {"lat": 11.86236, "lng": -15.59736},
+      isCapital: false,
+      universityCount: 17,
+      statistics: { population: 21451 },
+      countryId,
+      countryName,
+    }),
 ];
 
 export default defineCountry({

@@ -22,14 +22,6 @@ export default {
         // Situada a 1.9 km del centro de Bandar Seri Begawan (Wikidata).
       }),
       defineUniversity({
-        id: "brunei-bandar-seri-begawan-brunei-polytechnic",
-        name: "Brunei Polytechnic",
-        cityId: "brunei-bandar-seri-begawan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Bandar Seri Begawan (Wikidata).
-      }),
-      defineUniversity({
         id: "brunei-bandar-seri-begawan-kemuda-institute",
         name: "KEMUDA Institute",
         cityId: "brunei-bandar-seri-begawan",

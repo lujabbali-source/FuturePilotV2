@@ -62,56 +62,6 @@ export default {
         // Situada a 0.8 km del centro de Singapore (Wikidata).
       }),
   ],
-  "singapur-clementi-housing-estate": [
-      defineUniversity({
-        id: "singapur-clementi-housing-estate-tum-asia",
-        name: "TUM Asia",
-        cityId: "singapur-clementi-housing-estate",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Clementi Housing Estate (Wikidata).
-      }),
-      defineUniversity({
-        id: "singapur-clementi-housing-estate-national-university-of-singapore",
-        name: "National University of Singapore",
-        cityId: "singapur-clementi-housing-estate",
-        website: "https://www.nus.edu/",
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Clementi Housing Estate (Wikidata).
-      }),
-      defineUniversity({
-        id: "singapur-clementi-housing-estate-national-university-of-singapore",
-        name: "National University of Singapore",
-        cityId: "singapur-clementi-housing-estate",
-        website: "https://www.nus.edu/",
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Clementi Housing Estate (Wikidata).
-      }),
-      defineUniversity({
-        id: "singapur-clementi-housing-estate-national-university-of-singapore",
-        name: "National University of Singapore",
-        cityId: "singapur-clementi-housing-estate",
-        website: "https://www.nus.edu/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Clementi Housing Estate (Wikidata).
-      }),
-      defineUniversity({
-        id: "singapur-clementi-housing-estate-national-university-of-singapore",
-        name: "National University of Singapore",
-        cityId: "singapur-clementi-housing-estate",
-        website: "https://www.nus.edu/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Clementi Housing Estate (Wikidata).
-      }),
-      defineUniversity({
-        id: "singapur-clementi-housing-estate-singapore-polytechnic",
-        name: "Singapore Polytechnic",
-        cityId: "singapur-clementi-housing-estate",
-        website: "https://www.sp.edu.sg/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Clementi Housing Estate (Wikidata).
-      }),
-  ],
   "singapur-boon-lay": [
       defineUniversity({
         id: "singapur-boon-lay-specialist-and-warrant-officer-institute",
@@ -146,30 +96,64 @@ export default {
         // Situada a 3.0 km del centro de Boon Lay (Wikidata).
       }),
   ],
-  "singapur-simei-new-town": [
+  "singapur-queenstown-estate": [
       defineUniversity({
-        id: "singapur-simei-new-town-singapore-university-of-technology-and-design",
-        name: "Singapore University of Technology and Design",
-        cityId: "singapur-simei-new-town",
-        website: "https://www.sutd.edu.sg/",
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Simei New Town (Wikidata).
-      }),
-      defineUniversity({
-        id: "singapur-simei-new-town-university-of-new-south-wales-asia",
-        name: "University of New South Wales Asia",
-        cityId: "singapur-simei-new-town",
+        id: "singapur-queenstown-estate-curtin-singapore",
+        name: "Curtin Singapore",
+        cityId: "singapur-queenstown-estate",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Simei New Town (Wikidata).
+        // Situada a 2.6 km del centro de Queenstown Estate (Wikidata).
       }),
       defineUniversity({
-        id: "singapur-simei-new-town-university-of-new-south-wales-asia",
-        name: "University of New South Wales Asia",
-        cityId: "singapur-simei-new-town",
+        id: "singapur-queenstown-estate-management-development-institute-of-singapore",
+        name: "Management Development Institute of Singapore",
+        cityId: "singapur-queenstown-estate",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Simei New Town (Wikidata).
+        // Situada a 0.4 km del centro de Queenstown Estate (Wikidata).
+      }),
+      defineUniversity({
+        id: "singapur-queenstown-estate-singapore-mit-alliance-for-research-and-technology",
+        name: "Singapore-MIT Alliance for Research and Technology",
+        cityId: "singapur-queenstown-estate",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Queenstown Estate (Wikidata).
+      }),
+      defineUniversity({
+        id: "singapur-queenstown-estate-university-of-wales-institute-cardiff-asia-campus",
+        name: "University of Wales Institute, Cardiff: Asia Campus",
+        cityId: "singapur-queenstown-estate",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Queenstown Estate (Wikidata).
+      }),
+  ],
+  "singapur-clementi-housing-estate": [
+      defineUniversity({
+        id: "singapur-clementi-housing-estate-tum-asia",
+        name: "TUM Asia",
+        cityId: "singapur-clementi-housing-estate",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Clementi Housing Estate (Wikidata).
+      }),
+      defineUniversity({
+        id: "singapur-clementi-housing-estate-national-university-of-singapore",
+        name: "National University of Singapore",
+        cityId: "singapur-clementi-housing-estate",
+        website: "https://www.nus.edu/",
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Clementi Housing Estate (Wikidata).
+      }),
+      defineUniversity({
+        id: "singapur-clementi-housing-estate-singapore-polytechnic",
+        name: "Singapore Polytechnic",
+        cityId: "singapur-clementi-housing-estate",
+        website: "https://www.sp.edu.sg/",
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Clementi Housing Estate (Wikidata).
       }),
   ],
   "singapur-anak-bukit": [
@@ -198,40 +182,22 @@ export default {
         // Situada a 1.3 km del centro de Anak Bukit (Wikidata).
       }),
   ],
-  "singapur-woodlands": [
+  "singapur-simei-new-town": [
       defineUniversity({
-        id: "singapur-woodlands-republic-polytechnic",
-        name: "Republic Polytechnic",
-        cityId: "singapur-woodlands",
-        website: "https://www.rp.edu.sg/",
+        id: "singapur-simei-new-town-singapore-university-of-technology-and-design",
+        name: "Singapore University of Technology and Design",
+        cityId: "singapur-simei-new-town",
+        website: "https://www.sutd.edu.sg/",
         source: "open-dataset",
-        // Situada a 0.9 km del centro de Woodlands (Wikidata).
+        // Situada a 0.8 km del centro de Simei New Town (Wikidata).
       }),
       defineUniversity({
-        id: "singapur-woodlands-republic-polytechnic",
-        name: "Republic Polytechnic",
-        cityId: "singapur-woodlands",
-        website: "https://www.rp.edu.sg/",
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Woodlands (Wikidata).
-      }),
-  ],
-  "singapur-queenstown-estate": [
-      defineUniversity({
-        id: "singapur-queenstown-estate-curtin-singapore",
-        name: "Curtin Singapore",
-        cityId: "singapur-queenstown-estate",
+        id: "singapur-simei-new-town-university-of-new-south-wales-asia",
+        name: "University of New South Wales Asia",
+        cityId: "singapur-simei-new-town",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Queenstown Estate (Wikidata).
-      }),
-      defineUniversity({
-        id: "singapur-queenstown-estate-management-development-institute-of-singapore",
-        name: "Management Development Institute of Singapore",
-        cityId: "singapur-queenstown-estate",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Queenstown Estate (Wikidata).
+        // Situada a 1.0 km del centro de Simei New Town (Wikidata).
       }),
   ],
   "singapur-novena": [

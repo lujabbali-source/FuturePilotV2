@@ -57,7 +57,7 @@ export default {
         id: "bielorrusia-minsk-academy-of-public-administration",
         name: "Academy of Public Administration",
         cityId: "bielorrusia-minsk",
-        website: null,
+        website: "http://www.dia.edu.az/",
         source: "open-dataset",
         // Situada a 2.4 km del centro de Minsk (Wikidata).
       }),
@@ -149,6 +149,88 @@ export default {
         source: "open-dataset",
         // Situada a 2.9 km del centro de Minsk (Wikidata).
       }),
+      defineUniversity({
+        id: "bielorrusia-minsk-maxim-tank-belarusian-state-pedagogical-university",
+        name: "Maxim Tank Belarusian State Pedagogical University",
+        cityId: "bielorrusia-minsk",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Minsk (Wikidata).
+      }),
+      defineUniversity({
+        id: "bielorrusia-minsk-belarusian-state-medical-university",
+        name: "Belarusian State Medical University",
+        cityId: "bielorrusia-minsk",
+        website: "https://bsmu.by/",
+        source: "open-dataset",
+        // Situada a None km del centro de Minsk (Wikidata).
+      }),
+      defineUniversity({
+        id: "bielorrusia-minsk-belarusian-state-economic-university",
+        name: "Belarusian State Economic University",
+        cityId: "bielorrusia-minsk",
+        website: "http://bseu.by/",
+        source: "open-dataset",
+        // Situada a None km del centro de Minsk (Wikidata).
+      }),
+      defineUniversity({
+        id: "bielorrusia-minsk-united-belarusian-military-school",
+        name: "United Belarusian Military School",
+        cityId: "bielorrusia-minsk",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Minsk (Wikidata).
+      }),
+      defineUniversity({
+        id: "bielorrusia-minsk-belarusian-state-university-of-informatics-and-radioelectronics",
+        name: "Belarusian State University of Informatics and Radioelectronics",
+        cityId: "bielorrusia-minsk",
+        website: "https://www.bsuir.by/",
+        source: "open-dataset",
+        // Situada a None km del centro de Minsk (Wikidata).
+      }),
+  ],
+  "bielorrusia-vitebsk": [
+      defineUniversity({
+        id: "bielorrusia-vitebsk-vitebsk-state-technological-university",
+        name: "Vitebsk State Technological University",
+        cityId: "bielorrusia-vitebsk",
+        website: "https://vstu.by/",
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Vitebsk (Wikidata).
+      }),
+      defineUniversity({
+        id: "bielorrusia-vitebsk-viciebsk-state-university",
+        name: "Viciebsk State University",
+        cityId: "bielorrusia-vitebsk",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Vitebsk (Wikidata).
+      }),
+      defineUniversity({
+        id: "bielorrusia-vitebsk-f-engels-communist-university",
+        name: "F. Engels Communist University",
+        cityId: "bielorrusia-vitebsk",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Vitebsk (Wikidata).
+      }),
+      defineUniversity({
+        id: "bielorrusia-vitebsk-viciebsk-state-medical-university",
+        name: "Viciebsk State Medical University",
+        cityId: "bielorrusia-vitebsk",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Vitebsk (Wikidata).
+      }),
+      defineUniversity({
+        id: "bielorrusia-vitebsk-vitebsk-state-academy-of-veterinary-medicine",
+        name: "Vitebsk State Academy of Veterinary Medicine",
+        cityId: "bielorrusia-vitebsk",
+        website: "https://www.vsavm.by/",
+        source: "open-dataset",
+        // Situada a None km del centro de Vitebsk (Wikidata).
+      }),
   ],
   "bielorrusia-homyel": [
       defineUniversity({
@@ -158,14 +240,6 @@ export default {
         website: "https://gsmu.by/",
         source: "open-dataset",
         // Situada a 2.8 km del centro de Homyel' (Wikidata).
-      }),
-      defineUniversity({
-        id: "bielorrusia-homyel-paval-sukhi-state-technical-university-of-homiel",
-        name: "Paval Sukhi State Technical University of Homiel",
-        cityId: "bielorrusia-homyel",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.0 km del centro de Homyel' (Wikidata).
       }),
       defineUniversity({
         id: "bielorrusia-homyel-paval-sukhi-state-technical-university-of-homiel",
@@ -191,39 +265,47 @@ export default {
         source: "open-dataset",
         // Situada a 3.3 km del centro de Homyel' (Wikidata).
       }),
+      defineUniversity({
+        id: "bielorrusia-homyel-belarusian-trade-economic-university-of-consumer-cooperation",
+        name: "Belarusian Trade-Economic University of Consumer Cooperation",
+        cityId: "bielorrusia-homyel",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Homyel' (Wikidata).
+      }),
   ],
-  "bielorrusia-brest": [
+  "bielorrusia-mahilyow": [
       defineUniversity({
-        id: "bielorrusia-brest-polish-people-s-university-in-brest",
-        name: "Polish People's University in Brest",
-        cityId: "bielorrusia-brest",
+        id: "bielorrusia-mahilyow-mahilyow-state-a-kulyashow-university",
+        name: "Mahilyow State A. Kulyashow University",
+        cityId: "bielorrusia-mahilyow",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Brest (Wikidata).
+        // Situada a 1.6 km del centro de Mahilyow (Wikidata).
       }),
       defineUniversity({
-        id: "bielorrusia-brest-polish-people-s-university-in-brest",
-        name: "Polish People's University in Brest",
-        cityId: "bielorrusia-brest",
+        id: "bielorrusia-mahilyow-belarusian-russian-university",
+        name: "Belarusian-Russian University",
+        cityId: "bielorrusia-mahilyow",
+        website: "http://en.bru.by/",
+        source: "open-dataset",
+        // Situada a 0.3 km del centro de Mahilyow (Wikidata).
+      }),
+      defineUniversity({
+        id: "bielorrusia-mahilyow-belarusian-state-university-of-food-and-chemical-technologies",
+        name: "Belarusian State University of Food and Chemical Technologies",
+        cityId: "bielorrusia-mahilyow",
         website: null,
         source: "open-dataset",
-        // Situada a 1.8 km del centro de Brest (Wikidata).
+        // Situada a 4.2 km del centro de Mahilyow (Wikidata).
       }),
       defineUniversity({
-        id: "bielorrusia-brest-brest-state-technical-university",
-        name: "Brest State Technical University",
-        cityId: "bielorrusia-brest",
-        website: "https://www.bstu.by/",
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Brest (Wikidata).
-      }),
-      defineUniversity({
-        id: "bielorrusia-brest-brest-state-a-s-pushkin-university",
-        name: "Brest State A.S. Pushkin University",
-        cityId: "bielorrusia-brest",
+        id: "bielorrusia-mahilyow-mogiliov-school-of-infantry",
+        name: "Mogiliov school of infantry",
+        cityId: "bielorrusia-mahilyow",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Brest (Wikidata).
+        // Situada a None km del centro de Mahilyow (Wikidata).
       }),
   ],
   "bielorrusia-polotsk": [
@@ -252,32 +334,6 @@ export default {
         // Situada a 1.8 km del centro de Polotsk (Wikidata).
       }),
   ],
-  "bielorrusia-mahilyow": [
-      defineUniversity({
-        id: "bielorrusia-mahilyow-mahilyow-state-a-kulyashow-university",
-        name: "Mahilyow State A. Kulyashow University",
-        cityId: "bielorrusia-mahilyow",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Mahilyow (Wikidata).
-      }),
-      defineUniversity({
-        id: "bielorrusia-mahilyow-belarusian-russian-university",
-        name: "Belarusian-Russian University",
-        cityId: "bielorrusia-mahilyow",
-        website: "http://en.bru.by/",
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Mahilyow (Wikidata).
-      }),
-      defineUniversity({
-        id: "bielorrusia-mahilyow-belarusian-state-university-of-food-and-chemical-technologies",
-        name: "Belarusian State University of Food and Chemical Technologies",
-        cityId: "bielorrusia-mahilyow",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Mahilyow (Wikidata).
-      }),
-  ],
   "bielorrusia-hrodna": [
       defineUniversity({
         id: "bielorrusia-hrodna-grodno-state-medical-university",
@@ -304,22 +360,30 @@ export default {
         // Situada a 2.6 km del centro de Hrodna (Wikidata).
       }),
   ],
-  "bielorrusia-vitebsk": [
+  "bielorrusia-brest": [
       defineUniversity({
-        id: "bielorrusia-vitebsk-vitebsk-state-technological-university",
-        name: "Vitebsk State Technological University",
-        cityId: "bielorrusia-vitebsk",
-        website: "https://vstu.by/",
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Vitebsk (Wikidata).
-      }),
-      defineUniversity({
-        id: "bielorrusia-vitebsk-viciebsk-state-university",
-        name: "Viciebsk State University",
-        cityId: "bielorrusia-vitebsk",
+        id: "bielorrusia-brest-polish-people-s-university-in-brest",
+        name: "Polish People's University in Brest",
+        cityId: "bielorrusia-brest",
         website: null,
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Vitebsk (Wikidata).
+        // Situada a 1.8 km del centro de Brest (Wikidata).
+      }),
+      defineUniversity({
+        id: "bielorrusia-brest-brest-state-technical-university",
+        name: "Brest State Technical University",
+        cityId: "bielorrusia-brest",
+        website: "https://www.bstu.by/",
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Brest (Wikidata).
+      }),
+      defineUniversity({
+        id: "bielorrusia-brest-brest-state-a-s-pushkin-university",
+        name: "Brest State A.S. Pushkin University",
+        cityId: "bielorrusia-brest",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.0 km del centro de Brest (Wikidata).
       }),
   ],
   "bielorrusia-pinsk": [

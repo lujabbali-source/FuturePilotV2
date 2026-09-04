@@ -33,7 +33,7 @@ const cities = [
       name: "Manama",
       coordinates: {"lat": 26.22787, "lng": 50.58565},
       isCapital: true,
-      universityCount: 3,
+      universityCount: 4,
       statistics: { population: 147074 },
       countryId,
       countryName,

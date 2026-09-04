@@ -37,5 +37,13 @@ export default {
         source: "open-dataset",
         // Situada a 0.8 km del centro de Podgorica (Wikidata).
       }),
+      defineUniversity({
+        id: "montenegro-podgorica-faculty-for-information-technology-podgorica",
+        name: "Faculty for Information technology, Podgorica",
+        cityId: "montenegro-podgorica",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Podgorica (Wikidata).
+      }),
   ],
 };

@@ -17,10 +17,19 @@ El enlace universidad -> ciudad es el problema que dejo abierto
 import_world.py ("Hipolabs NO trae tipo ni ciudad", y por eso ~180 paises
 quedaron con cities: [] y cityId: null). Aqui se resuelve sin adivinar:
 
-  - GeoNames da las ciudades con lat/lng y poblacion.
-  - Wikidata da las universidades con lat/lng: 18.330 en 207 paises.
-  - Cada universidad se asigna a la ciudad mas cercana MIDIENDO la distancia,
-    y esa distancia queda guardada en el informe.
+  - GeoNames da las ciudades con lat/lng y poblacion: 34.128.
+  - Wikidata da las universidades: 15.575 con coordenadas propias y 4.237 mas
+    que no las tienen pero declaran municipio (P131). Las segundas van
+    marcadas con origen "ciudad-declarada" y sin kilometros.
+  - Cada universidad se asigna a la ciudad mas cercana DEL MUNDO midiendo la
+    distancia, y esa distancia queda guardada en el informe.
+
+El emparejamiento es global, no pais por pais, y eso arregla dos cosas a la
+vez. La primera: el pais de una universidad lo da la ciudad donde cae, no lo
+que declare Wikidata, que en los territorios dependientes pone el estado
+soberano (las de Guam salian bajo Estados Unidos, las de Macao bajo China, y
+doce territorios aparecian sin ninguna universidad teniendolas). La segunda:
+entran las 162 que no tienen pais puesto.
 
 Una distancia es un dato verificable; un parecido entre "Universidad de
 Antioquia" y una lista de nombres de ciudad es una corazonada. La diferencia
@@ -118,6 +127,35 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?u ?nombre ?coord WHERE {{
   ?u wdt:P31/wdt:P279* wd:Q3918 .
   ?u wdt:P625 ?coord .
+  OPTIONAL {{ ?u rdfs:label ?nombre . FILTER(LANG(?nombre) = "en") }}
+}}
+ORDER BY ?u
+LIMIT {limite} OFFSET {salto}
+"""
+
+# Segunda pasada: las que NO tienen coordenadas propias pero SI dicen en que
+# municipio estan (P131), y ese municipio tiene coordenadas.
+#
+# Son 4.237, un 27% mas sobre las 15.575 de la primera pasada, y no son casos
+# raros: la Universidad de Tartu es una de ellas. Wikidata la tiene bien
+# clasificada y con su ciudad, pero nadie le ha puesto lat/lng, y por eso
+# Estonia salia con una sola universidad teniendo diez.
+#
+# La diferencia con la primera pasada importa y se guarda: aqui la ubicacion
+# es el centro del municipio que Wikidata DECLARA, no la del campus. Por eso
+# estas van con origen "ciudad-declarada" y sin kilometros - un "a 2,4 km del
+# centro" seria mentira, porque la distancia medida no es la del campus sino
+# la del centro del municipio contra el centro de la ciudad de GeoNames.
+CONSULTA_DECLARADA = """
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?u ?nombre ?coord ?municipio WHERE {{
+  ?u wdt:P31/wdt:P279* wd:Q3918 .
+  FILTER NOT EXISTS {{ ?u wdt:P625 ?propia }}
+  ?u wdt:P131 ?adm .
+  ?adm wdt:P625 ?coord .
+  OPTIONAL {{ ?adm rdfs:label ?municipio . FILTER(LANG(?municipio) = "en") }}
   OPTIONAL {{ ?u rdfs:label ?nombre . FILTER(LANG(?nombre) = "en") }}
 }}
 ORDER BY ?u
@@ -239,29 +277,43 @@ def cargar_universidades() -> list[dict]:
     cada una. Ver el comentario de CONSULTA sobre por que no se usa P17.
     """
     vistas: dict[str, dict] = {}
-    salto = 0
-    while True:
-        filas = sparql(CONSULTA.format(limite=PAGINA, salto=salto), f"univ-{salto}")
-        print(f"        offset {salto:6}: {len(filas):6} filas", flush=True)
-        for f in filas:
-            punto = f["coord"]["value"]  # "POINT(lng lat)"
-            try:
-                lng, lat = punto[punto.index("(") + 1:punto.rindex(")")].split()
-                lat, lng = float(lat), float(lng)
-            except (ValueError, IndexError):
-                continue
-            qid = f["u"]["value"].rsplit("/", 1)[-1]
-            # Una universidad con varias etiquetas sale repetida; la primera
-            # gana y las demas se descartan por qid.
-            vistas.setdefault(qid, {
-                "qid": qid,
-                "nombre": f.get("nombre", {}).get("value", ""),
-                "lat": lat,
-                "lng": lng,
-            })
-        if len(filas) < PAGINA:
-            break
-        salto += PAGINA
+
+    # Orden importante: primero las que tienen coordenadas propias. Si una
+    # aparece en las dos pasadas, se queda la medida y no la declarada.
+    for consulta, etiqueta, origen in (
+        (CONSULTA, "univ", "coordenadas"),
+        (CONSULTA_DECLARADA, "univ-declarada", "ciudad-declarada"),
+    ):
+        salto, recogidas = 0, 0
+        while True:
+            filas = sparql(consulta.format(limite=PAGINA, salto=salto),
+                           f"{etiqueta}-{salto}")
+            for f in filas:
+                punto = f["coord"]["value"]  # "POINT(lng lat)"
+                try:
+                    lng, lat = punto[punto.index("(") + 1:punto.rindex(")")].split()
+                    lat, lng = float(lat), float(lng)
+                except (ValueError, IndexError):
+                    continue
+                qid = f["u"]["value"].rsplit("/", 1)[-1]
+                # Una universidad con varias etiquetas sale repetida; la
+                # primera gana y las demas se descartan por qid.
+                if qid in vistas:
+                    continue
+                vistas[qid] = {
+                    "qid": qid,
+                    "nombre": f.get("nombre", {}).get("value", ""),
+                    "lat": lat,
+                    "lng": lng,
+                    "origen": origen,
+                    "municipio": f.get("municipio", {}).get("value"),
+                }
+                recogidas += 1
+            if len(filas) < PAGINA:
+                break
+            salto += PAGINA
+        print(f"        {origen:16}: {recogidas:6} universidades", flush=True)
+
     return list(vistas.values())
 
 
@@ -323,7 +375,14 @@ def asignar(ciudades_por_pais: dict[str, list[dict]], universidades: list[dict],
             mejor["universidades"].append({
                 "qid": u["qid"],
                 "nombre": u["nombre"],
-                "km": round(mejor_km, 1),
+                "origen": u["origen"],
+                # Los km solo valen si la ubicacion era la del campus. Cuando
+                # viene del municipio declarado, la distancia medida es entre
+                # dos centros administrativos y no dice nada del campus: se
+                # deja en null antes que publicar una cifra que parece precisa
+                # y no lo es.
+                "km": round(mejor_km, 1) if u["origen"] == "coordenadas" else None,
+                "municipioDeclarado": u.get("municipio"),
             })
     return sin_asignar
 

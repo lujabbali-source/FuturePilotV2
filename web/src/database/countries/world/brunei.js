@@ -23,7 +23,7 @@ const cities = [
       name: "Bandar Seri Begawan",
       coordinates: {"lat": 4.89035, "lng": 114.94006},
       isCapital: true,
-      universityCount: 7,
+      universityCount: 6,
       statistics: { population: 64409 },
       countryId,
       countryName,

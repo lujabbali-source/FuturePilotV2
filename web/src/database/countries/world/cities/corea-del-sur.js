@@ -86,22 +86,6 @@ export default {
         // Situada a 3.7 km del centro de Seoul (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-seoul-digital-seoul-culture-arts-university",
-        name: "Digital Seoul Culture Arts University",
-        cityId: "corea-del-sur-seoul",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Seoul (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-seoul-korea-soongsil-cyber-university",
-        name: "Korea Soongsil Cyber University",
-        cityId: "corea-del-sur-seoul",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Seoul (Wikidata).
-      }),
-      defineUniversity({
         id: "corea-del-sur-seoul-korea-soongsil-cyber-university",
         name: "Korea Soongsil Cyber University",
         cityId: "corea-del-sur-seoul",
@@ -123,23 +107,7 @@ export default {
         cityId: "corea-del-sur-seoul",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Seoul (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-seoul-seoul-graduate-school-of-counseling-psychology",
-        name: "Seoul Graduate School of Counseling Psychology",
-        cityId: "corea-del-sur-seoul",
-        website: null,
-        source: "open-dataset",
         // Situada a 1.9 km del centro de Seoul (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-seoul-korea-university-of-international-studies",
-        name: "Korea University of International Studies",
-        cityId: "corea-del-sur-seoul",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Seoul (Wikidata).
       }),
       defineUniversity({
         id: "corea-del-sur-seoul-korea-university-of-international-studies",
@@ -162,30 +130,6 @@ export default {
         name: "Sogang University",
         cityId: "corea-del-sur-seoul",
         website: "http://www.sogang.ac.kr/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Seoul (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-seoul-sogang-university",
-        name: "Sogang University",
-        cityId: "corea-del-sur-seoul",
-        website: "http://www.sogang.ac.kr/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Seoul (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-seoul-sogang-university",
-        name: "Sogang University",
-        cityId: "corea-del-sur-seoul",
-        website: "http://www.sogang.ac.kr/",
-        source: "open-dataset",
-        // Situada a 3.7 km del centro de Seoul (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-seoul-yonsei-university",
-        name: "Yonsei University",
-        cityId: "corea-del-sur-seoul",
-        website: "http://www.yonsei.ac.kr/",
         source: "open-dataset",
         // Situada a 3.7 km del centro de Seoul (Wikidata).
       }),
@@ -228,14 +172,6 @@ export default {
         website: "http://www.ewha.ac.kr/",
         source: "open-dataset",
         // Situada a 3.0 km del centro de Seoul (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-seoul-catholic-university-of-korea",
-        name: "Catholic University of Korea",
-        cityId: "corea-del-sur-seoul",
-        website: "http://www.cuk.ac.kr/",
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Seoul (Wikidata).
       }),
       defineUniversity({
         id: "corea-del-sur-seoul-catholic-university-of-korea",
@@ -405,6 +341,86 @@ export default {
         source: "open-dataset",
         // Situada a 4.8 km del centro de Seoul (Wikidata).
       }),
+      defineUniversity({
+        id: "corea-del-sur-seoul-university-of-north-korean-studies",
+        name: "University of North Korean Studies",
+        cityId: "corea-del-sur-seoul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Seoul (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-seoul-seoul-school-of-integrated-sciences-and-technologies",
+        name: "Seoul School of Integrated Sciences and Technologies",
+        cityId: "corea-del-sur-seoul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Seoul (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-seoul-global-cyber-university",
+        name: "Global Cyber University",
+        cityId: "corea-del-sur-seoul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Seoul (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-seoul-seoul-international-university",
+        name: "Seoul International University",
+        cityId: "corea-del-sur-seoul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Seoul (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-seoul-dongbang-culture-university",
+        name: "Dongbang Culture University",
+        cityId: "corea-del-sur-seoul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Seoul (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-seoul-inje-institute-of-adbanced-studies",
+        name: "Inje Institute of Adbanced Studies",
+        cityId: "corea-del-sur-seoul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Seoul (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-seoul-korea-national-defense-university",
+        name: "Korea National Defense University",
+        cityId: "corea-del-sur-seoul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Seoul (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-seoul-graduate-school-of-design-ewha-womans-university",
+        name: "Graduate School of Design, Ewha Womans University",
+        cityId: "corea-del-sur-seoul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Seoul (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-seoul-korea-university-law-school",
+        name: "Korea University Law School",
+        cityId: "corea-del-sur-seoul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Seoul (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-seoul-yemyung-graduate-university",
+        name: "Yemyung Graduate University",
+        cityId: "corea-del-sur-seoul",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Seoul (Wikidata).
+      }),
   ],
   "corea-del-sur-daejeon": [
       defineUniversity({
@@ -446,14 +462,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.7 km del centro de Daejeon (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-daejeon-kaist",
-        name: "KAIST",
-        cityId: "corea-del-sur-daejeon",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.2 km del centro de Daejeon (Wikidata).
       }),
       defineUniversity({
         id: "corea-del-sur-daejeon-kaist",
@@ -512,14 +520,6 @@ export default {
         // Situada a 5.0 km del centro de Daejeon (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-daejeon-daeduk-university",
-        name: "Daeduk University",
-        cityId: "corea-del-sur-daejeon",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Daejeon (Wikidata).
-      }),
-      defineUniversity({
         id: "corea-del-sur-daejeon-daejeon-health-institute-of-technology",
         name: "Daejeon Health Institute of Technology",
         cityId: "corea-del-sur-daejeon",
@@ -560,14 +560,6 @@ export default {
         // Situada a 3.3 km del centro de Daejeon (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-daejeon-hannam-university",
-        name: "Hannam University",
-        cityId: "corea-del-sur-daejeon",
-        website: "http://www.hannam.ac.kr/",
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Daejeon (Wikidata).
-      }),
-      defineUniversity({
         id: "corea-del-sur-daejeon-korea-baptist-theological-university-and-seminary",
         name: "Korea Baptist Theological University and Seminary",
         cityId: "corea-del-sur-daejeon",
@@ -576,12 +568,28 @@ export default {
         // Situada a 6.6 km del centro de Daejeon (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-daejeon-korea-baptist-theological-university-and-seminary",
-        name: "Korea Baptist Theological University and Seminary",
+        id: "corea-del-sur-daejeon-linton-school-of-global-business",
+        name: "Linton School of Global Business",
         cityId: "corea-del-sur-daejeon",
-        website: "http://www.kbtus.ac.kr/",
+        website: null,
         source: "open-dataset",
-        // Situada a 6.6 km del centro de Daejeon (Wikidata).
+        // Situada a None km del centro de Daejeon (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-daejeon-institute-of-information-technology-advancement",
+        name: "Institute of Information Technology Advancement",
+        cityId: "corea-del-sur-daejeon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Daejeon (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-daejeon-korea-university-of-science-and-technology",
+        name: "Korea University of Science and Technology",
+        cityId: "corea-del-sur-daejeon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Daejeon (Wikidata).
       }),
   ],
   "corea-del-sur-busan": [
@@ -594,36 +602,12 @@ export default {
         // Situada a 6.9 km del centro de Busan (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-busan-tongmyong-university",
-        name: "Tongmyong University",
-        cityId: "corea-del-sur-busan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.9 km del centro de Busan (Wikidata).
-      }),
-      defineUniversity({
         id: "corea-del-sur-busan-hwashin-cyber-university",
         name: "Hwashin Cyber University",
         cityId: "corea-del-sur-busan",
         website: null,
         source: "open-dataset",
         // Situada a 11.5 km del centro de Busan (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-busan-hwashin-cyber-university",
-        name: "Hwashin Cyber University",
-        cityId: "corea-del-sur-busan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.5 km del centro de Busan (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-busan-busan-digital-university",
-        name: "Busan Digital University",
-        cityId: "corea-del-sur-busan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Busan (Wikidata).
       }),
       defineUniversity({
         id: "corea-del-sur-busan-busan-digital-university",
@@ -650,22 +634,6 @@ export default {
         // Situada a 7.6 km del centro de Busan (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-busan-pukyong-national-university",
-        name: "Pukyong National University",
-        cityId: "corea-del-sur-busan",
-        website: "http://www.pknu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 7.6 km del centro de Busan (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-busan-kosin-university",
-        name: "Kosin University",
-        cityId: "corea-del-sur-busan",
-        website: "http://www.kosin.ac.kr/",
-        source: "open-dataset",
-        // Situada a 3.9 km del centro de Busan (Wikidata).
-      }),
-      defineUniversity({
         id: "corea-del-sur-busan-kosin-university",
         name: "Kosin University",
         cityId: "corea-del-sur-busan",
@@ -680,14 +648,6 @@ export default {
         website: "http://www.kyungsung.ac.kr/",
         source: "open-dataset",
         // Situada a 7.5 km del centro de Busan (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-busan-korea-maritime-and-ocean-university",
-        name: "Korea Maritime and Ocean University",
-        cityId: "corea-del-sur-busan",
-        website: "http://www.kmou.ac.kr/",
-        source: "open-dataset",
-        // Situada a 6.0 km del centro de Busan (Wikidata).
       }),
       defineUniversity({
         id: "corea-del-sur-busan-korea-maritime-and-ocean-university",
@@ -729,6 +689,46 @@ export default {
         source: "open-dataset",
         // Situada a 5.9 km del centro de Busan (Wikidata).
       }),
+      defineUniversity({
+        id: "corea-del-sur-busan-national-fisheries-university-of-pusan",
+        name: "National Fisheries University of Pusan",
+        cityId: "corea-del-sur-busan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Busan (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-busan-tongmyong-college",
+        name: "Tongmyong College",
+        cityId: "corea-del-sur-busan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Busan (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-busan-tongmyong-university-of-information-technology",
+        name: "Tongmyong University of Information Technology",
+        cityId: "corea-del-sur-busan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Busan (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-busan-yeungjin-university",
+        name: "Yeungjin University",
+        cityId: "corea-del-sur-busan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Busan (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-busan-ship-and-offshore-structural-mechanics-laboratory",
+        name: "Ship and Offshore Structural Mechanics Laboratory",
+        cityId: "corea-del-sur-busan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Busan (Wikidata).
+      }),
   ],
   "corea-del-sur-guri-si": [
       defineUniversity({
@@ -762,14 +762,6 @@ export default {
         website: "http://www.hufs.ac.kr/",
         source: "open-dataset",
         // Situada a 7.1 km del centro de Guri-si (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-guri-si-kwangwoon-university",
-        name: "Kwangwoon University",
-        cityId: "corea-del-sur-guri-si",
-        website: "http://www.kwangwoon.ac.kr/",
-        source: "open-dataset",
-        // Situada a 7.5 km del centro de Guri-si (Wikidata).
       }),
       defineUniversity({
         id: "corea-del-sur-guri-si-kwangwoon-university",
@@ -842,14 +834,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 6.5 km del centro de Guri-si (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-guri-si-sahmyook-university",
-        name: "Sahmyook University",
-        cityId: "corea-del-sur-guri-si",
-        website: "http://www.syu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 5.8 km del centro de Guri-si (Wikidata).
       }),
       defineUniversity({
         id: "corea-del-sur-guri-si-sahmyook-university",
@@ -960,22 +944,6 @@ export default {
         // Situada a 4.3 km del centro de Siheungdong (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-siheungdong-seoul-university-of-bible-and-theology",
-        name: "Seoul University of Bible and Theology",
-        cityId: "corea-del-sur-siheungdong",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Siheungdong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-siheungdong-seoul-national-university",
-        name: "Seoul National University",
-        cityId: "corea-del-sur-siheungdong",
-        website: "http://www.snu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de Siheungdong (Wikidata).
-      }),
-      defineUniversity({
         id: "corea-del-sur-siheungdong-seoul-national-university",
         name: "Seoul National University",
         cityId: "corea-del-sur-siheungdong",
@@ -1008,28 +976,86 @@ export default {
         // Situada a 8.2 km del centro de Siheungdong (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-siheungdong-baekseok-arts-university",
-        name: "Baekseok Arts University",
+        id: "corea-del-sur-siheungdong-soongsil-university",
+        name: "Soongsil University",
+        cityId: "corea-del-sur-siheungdong",
+        website: "http://www.soongsil.ac.kr/",
+        source: "open-dataset",
+        // Situada a 6.4 km del centro de Siheungdong (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-siheungdong-keijo-imperial-university",
+        name: "Keijō Imperial University",
         cityId: "corea-del-sur-siheungdong",
         website: null,
         source: "open-dataset",
-        // Situada a 8.2 km del centro de Siheungdong (Wikidata).
+        // Situada a 3.8 km del centro de Siheungdong (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-siheungdong-soongsil-university",
-        name: "Soongsil University",
+        id: "corea-del-sur-siheungdong-seoul-university-of-buddhism",
+        name: "Seoul University of Buddhism",
         cityId: "corea-del-sur-siheungdong",
-        website: "http://www.soongsil.ac.kr/",
+        website: null,
         source: "open-dataset",
-        // Situada a 6.4 km del centro de Siheungdong (Wikidata).
+        // Situada a None km del centro de Siheungdong (Wikidata).
+      }),
+  ],
+  "corea-del-sur-gyeongsan-si": [
+      defineUniversity({
+        id: "corea-del-sur-gyeongsan-si-daeshin-university",
+        name: "Daeshin University",
+        cityId: "corea-del-sur-gyeongsan-si",
+        website: "http://www.daeshin.ac.kr/",
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Gyeongsan-si (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-siheungdong-soongsil-university",
-        name: "Soongsil University",
-        cityId: "corea-del-sur-siheungdong",
-        website: "http://www.soongsil.ac.kr/",
+        id: "corea-del-sur-gyeongsan-si-daekyeung-university",
+        name: "Daekyeung University",
+        cityId: "corea-del-sur-gyeongsan-si",
+        website: null,
         source: "open-dataset",
-        // Situada a 6.4 km del centro de Siheungdong (Wikidata).
+        // Situada a 7.8 km del centro de Gyeongsan-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gyeongsan-si-daegu-haany-university",
+        name: "Daegu Haany University",
+        cityId: "corea-del-sur-gyeongsan-si",
+        website: "http://www.dhu.ac.kr/",
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Gyeongsan-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gyeongsan-si-daegu-university-of-foreign-studies",
+        name: "Daegu University of Foreign Studies",
+        cityId: "corea-del-sur-gyeongsan-si",
+        website: "http://www.dufs.ac.kr/",
+        source: "open-dataset",
+        // Situada a 4.4 km del centro de Gyeongsan-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gyeongsan-si-yeungnam-university",
+        name: "Yeungnam University",
+        cityId: "corea-del-sur-gyeongsan-si",
+        website: "http://www.yeungnam.ac.kr/",
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Gyeongsan-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gyeongsan-si-asia-university",
+        name: "Asia University",
+        cityId: "corea-del-sur-gyeongsan-si",
+        website: "http://www.asia-u.ac.jp/",
+        source: "open-dataset",
+        // Situada a None km del centro de Gyeongsan-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gyeongsan-si-corea-welfare-cyber-college",
+        name: "Corea Welfare Cyber College",
+        cityId: "corea-del-sur-gyeongsan-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gyeongsan-si (Wikidata).
       }),
   ],
   "corea-del-sur-gwangju": [
@@ -1040,14 +1066,6 @@ export default {
         website: "http://www.kwangshin.ac.kr/",
         source: "open-dataset",
         // Situada a 7.3 km del centro de Gwangju (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gwangju-nambu-university",
-        name: "Nambu University",
-        cityId: "corea-del-sur-gwangju",
-        website: "http://www.nambu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 8.9 km del centro de Gwangju (Wikidata).
       }),
       defineUniversity({
         id: "corea-del-sur-gwangju-nambu-university",
@@ -1098,72 +1116,6 @@ export default {
         // Situada a 5.7 km del centro de Gwangju (Wikidata).
       }),
   ],
-  "corea-del-sur-gwangmyeong": [
-      defineUniversity({
-        id: "corea-del-sur-gwangmyeong-seoul-social-welfare-graduate-university",
-        name: "Seoul Social Welfare Graduate University",
-        cityId: "corea-del-sur-gwangmyeong",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Gwangmyeong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gwangmyeong-seoul-social-welfare-graduate-university",
-        name: "Seoul Social Welfare Graduate University",
-        cityId: "corea-del-sur-gwangmyeong",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Gwangmyeong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gwangmyeong-seoul-hanyoung-university",
-        name: "Seoul Hanyoung University",
-        cityId: "corea-del-sur-gwangmyeong",
-        website: "http://www.hytu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Gwangmyeong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gwangmyeong-seoul-hanyoung-university",
-        name: "Seoul Hanyoung University",
-        cityId: "corea-del-sur-gwangmyeong",
-        website: "http://www.hytu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Gwangmyeong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gwangmyeong-gangseo-university",
-        name: "Gangseo University",
-        cityId: "corea-del-sur-gwangmyeong",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.0 km del centro de Gwangmyeong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gwangmyeong-sungkonghoe-university",
-        name: "Sungkonghoe University",
-        cityId: "corea-del-sur-gwangmyeong",
-        website: "http://www.skhu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de Gwangmyeong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gwangmyeong-sungkonghoe-university",
-        name: "Sungkonghoe University",
-        cityId: "corea-del-sur-gwangmyeong",
-        website: "http://www.skhu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 3.8 km del centro de Gwangmyeong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gwangmyeong-dongyang-mirae-university",
-        name: "Dongyang Mirae University",
-        cityId: "corea-del-sur-gwangmyeong",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.6 km del centro de Gwangmyeong (Wikidata).
-      }),
-  ],
   "corea-del-sur-cheonan": [
       defineUniversity({
         id: "corea-del-sur-cheonan-sangmyung-university",
@@ -1180,14 +1132,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.4 km del centro de Cheonan (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-cheonan-hoseo-university",
-        name: "Hoseo University",
-        cityId: "corea-del-sur-cheonan",
-        website: "http://www.hoseo.ac.kr/",
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Cheonan (Wikidata).
       }),
       defineUniversity({
         id: "corea-del-sur-cheonan-hoseo-university",
@@ -1221,6 +1165,72 @@ export default {
         source: "open-dataset",
         // Situada a 12.5 km del centro de Cheonan (Wikidata).
       }),
+      defineUniversity({
+        id: "corea-del-sur-cheonan-namseoul-university",
+        name: "Namseoul University",
+        cityId: "corea-del-sur-cheonan",
+        website: "http://www.nsu.ac.kr/",
+        source: "open-dataset",
+        // Situada a None km del centro de Cheonan (Wikidata).
+      }),
+  ],
+  "corea-del-sur-chinju": [
+      defineUniversity({
+        id: "corea-del-sur-chinju-gyeongnam-national-university-of-science-and-technology",
+        name: "Gyeongnam National University of Science and Technology",
+        cityId: "corea-del-sur-chinju",
+        website: "http://www.gntech.ac.kr/",
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Chinju (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-chinju-chinju-national-university-of-education",
+        name: "Chinju National University of Education",
+        cityId: "corea-del-sur-chinju",
+        website: "http://www.chinju-e.ac.kr/",
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Chinju (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-chinju-gyeongsang-national-university",
+        name: "Gyeongsang National University",
+        cityId: "corea-del-sur-chinju",
+        website: "http://www.gsnu.ac.kr/",
+        source: "open-dataset",
+        // Situada a 4.5 km del centro de Chinju (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-chinju-international-university-of-korea",
+        name: "International University of Korea",
+        cityId: "corea-del-sur-chinju",
+        website: "http://www.iuk.ac.kr/",
+        source: "open-dataset",
+        // Situada a 10.9 km del centro de Chinju (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-chinju-yonam-institute-of-technology",
+        name: "Yonam Institute of Technology",
+        cityId: "corea-del-sur-chinju",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Chinju (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-chinju-jinju-health-college",
+        name: "Jinju Health College",
+        cityId: "corea-del-sur-chinju",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chinju (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-chinju-gyeongnam-nursing-college",
+        name: "Gyeongnam Nursing College",
+        cityId: "corea-del-sur-chinju",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chinju (Wikidata).
+      }),
   ],
   "corea-del-sur-daegu": [
       defineUniversity({
@@ -1248,14 +1258,6 @@ export default {
         // Situada a 2.9 km del centro de Daegu (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-daegu-kyungpook-national-university",
-        name: "Kyungpook National University",
-        cityId: "corea-del-sur-daegu",
-        website: "http://www.kyungpook.ac.kr/",
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Daegu (Wikidata).
-      }),
-      defineUniversity({
         id: "corea-del-sur-daegu-daegu-health-college",
         name: "Daegu Health College",
         cityId: "corea-del-sur-daegu",
@@ -1271,105 +1273,13 @@ export default {
         source: "open-dataset",
         // Situada a 3.4 km del centro de Daegu (Wikidata).
       }),
-  ],
-  "corea-del-sur-gyeongsan-si": [
       defineUniversity({
-        id: "corea-del-sur-gyeongsan-si-daeshin-university",
-        name: "Daeshin University",
-        cityId: "corea-del-sur-gyeongsan-si",
-        website: "http://www.daeshin.ac.kr/",
+        id: "corea-del-sur-daegu-daegu-university",
+        name: "Daegu University",
+        cityId: "corea-del-sur-daegu",
+        website: "http://www.daegu.ac.kr/",
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Gyeongsan-si (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gyeongsan-si-daeshin-university",
-        name: "Daeshin University",
-        cityId: "corea-del-sur-gyeongsan-si",
-        website: "http://www.daeshin.ac.kr/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Gyeongsan-si (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gyeongsan-si-daekyeung-university",
-        name: "Daekyeung University",
-        cityId: "corea-del-sur-gyeongsan-si",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.8 km del centro de Gyeongsan-si (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gyeongsan-si-daegu-haany-university",
-        name: "Daegu Haany University",
-        cityId: "corea-del-sur-gyeongsan-si",
-        website: "http://www.dhu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Gyeongsan-si (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gyeongsan-si-daegu-university-of-foreign-studies",
-        name: "Daegu University of Foreign Studies",
-        cityId: "corea-del-sur-gyeongsan-si",
-        website: "http://www.dufs.ac.kr/",
-        source: "open-dataset",
-        // Situada a 4.4 km del centro de Gyeongsan-si (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gyeongsan-si-yeungnam-university",
-        name: "Yeungnam University",
-        cityId: "corea-del-sur-gyeongsan-si",
-        website: "http://www.yeungnam.ac.kr/",
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Gyeongsan-si (Wikidata).
-      }),
-  ],
-  "corea-del-sur-gangneung": [
-      defineUniversity({
-        id: "corea-del-sur-gangneung-gangneung-wonju-national-university",
-        name: "Gangneung–Wonju National University",
-        cityId: "corea-del-sur-gangneung",
-        website: "http://www.gwnu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Gangneung (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gangneung-gangneung-wonju-national-university",
-        name: "Gangneung–Wonju National University",
-        cityId: "corea-del-sur-gangneung",
-        website: "http://www.gwnu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Gangneung (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gangneung-gangneung-yeongdong-college",
-        name: "Gangneung Yeongdong College",
-        cityId: "corea-del-sur-gangneung",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Gangneung (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gangneung-catholic-kwandong-university",
-        name: "Catholic Kwandong University",
-        cityId: "corea-del-sur-gangneung",
-        website: "http://www.cku.ac.kr/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Gangneung (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gangneung-catholic-kwandong-university",
-        name: "Catholic Kwandong University",
-        cityId: "corea-del-sur-gangneung",
-        website: "http://www.cku.ac.kr/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Gangneung (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gangneung-catholic-kwandong-university",
-        name: "Catholic Kwandong University",
-        cityId: "corea-del-sur-gangneung",
-        website: "http://www.cku.ac.kr/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Gangneung (Wikidata).
+        // Situada a None km del centro de Daegu (Wikidata).
       }),
   ],
   "corea-del-sur-incheon": [
@@ -1380,14 +1290,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 5.3 km del centro de Incheon (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-incheon-juan-international-university",
-        name: "Juan International University",
-        cityId: "corea-del-sur-incheon",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Incheon (Wikidata).
       }),
       defineUniversity({
         id: "corea-del-sur-incheon-juan-international-university",
@@ -1421,55 +1323,113 @@ export default {
         source: "open-dataset",
         // Situada a 11.0 km del centro de Incheon (Wikidata).
       }),
-  ],
-  "corea-del-sur-chinju": [
       defineUniversity({
-        id: "corea-del-sur-chinju-gyeongnam-national-university-of-science-and-technology",
-        name: "Gyeongnam National University of Science and Technology",
-        cityId: "corea-del-sur-chinju",
-        website: "http://www.gntech.ac.kr/",
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Chinju (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-chinju-chinju-national-university-of-education",
-        name: "Chinju National University of Education",
-        cityId: "corea-del-sur-chinju",
-        website: "http://www.chinju-e.ac.kr/",
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Chinju (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-chinju-gyeongsang-national-university",
-        name: "Gyeongsang National University",
-        cityId: "corea-del-sur-chinju",
-        website: "http://www.gsnu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Chinju (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-chinju-gyeongsang-national-university",
-        name: "Gyeongsang National University",
-        cityId: "corea-del-sur-chinju",
-        website: "http://www.gsnu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 4.5 km del centro de Chinju (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-chinju-international-university-of-korea",
-        name: "International University of Korea",
-        cityId: "corea-del-sur-chinju",
-        website: "http://www.iuk.ac.kr/",
-        source: "open-dataset",
-        // Situada a 10.9 km del centro de Chinju (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-chinju-yonam-institute-of-technology",
-        name: "Yonam Institute of Technology",
-        cityId: "corea-del-sur-chinju",
+        id: "corea-del-sur-incheon-sungsan-hyo-university",
+        name: "Sungsan Hyo University",
+        cityId: "corea-del-sur-incheon",
         website: null,
         source: "open-dataset",
-        // Situada a 3.6 km del centro de Chinju (Wikidata).
+        // Situada a None km del centro de Incheon (Wikidata).
+      }),
+  ],
+  "corea-del-sur-chuncheon": [
+      defineUniversity({
+        id: "corea-del-sur-chuncheon-hallym-university",
+        name: "Hallym University",
+        cityId: "corea-del-sur-chuncheon",
+        website: "http://www.hallym.ac.kr/",
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Chuncheon (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-chuncheon-chuncheon-national-university-of-education",
+        name: "Chuncheon National University of Education",
+        cityId: "corea-del-sur-chuncheon",
+        website: "http://www.cnue.ac.kr/",
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Chuncheon (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-chuncheon-kangwon-national-university",
+        name: "Kangwon National University",
+        cityId: "corea-del-sur-chuncheon",
+        website: "http://www.kangwon.ac.kr/",
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Chuncheon (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-chuncheon-hallym-polytechnic-university",
+        name: "Hallym Polytechnic University",
+        cityId: "corea-del-sur-chuncheon",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.3 km del centro de Chuncheon (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-chuncheon-keisie-graduate-school-of-international-education",
+        name: "KEISIE Graduate School of International Education",
+        cityId: "corea-del-sur-chuncheon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chuncheon (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-chuncheon-kangwon-national-university-school-of-law",
+        name: "Kangwon National University School of Law",
+        cityId: "corea-del-sur-chuncheon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chuncheon (Wikidata).
+      }),
+  ],
+  "corea-del-sur-sejong": [
+      defineUniversity({
+        id: "corea-del-sur-sejong-catholic-kkottongnae-university",
+        name: "Catholic Kkottongnae University",
+        cityId: "corea-del-sur-sejong",
+        website: null,
+        source: "open-dataset",
+        // Situada a 12.4 km del centro de Sejong (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-sejong-daejeon-catholic-university",
+        name: "Daejeon Catholic University",
+        cityId: "corea-del-sur-sejong",
+        website: "http://www.dcatholic.ac.kr/",
+        source: "open-dataset",
+        // Situada a 10.9 km del centro de Sejong (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-sejong-korea-national-university-of-education",
+        name: "Korea National University of Education",
+        cityId: "corea-del-sur-sejong",
+        website: "http://www.knue.ac.kr/",
+        source: "open-dataset",
+        // Situada a 6.4 km del centro de Sejong (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-sejong-chung-cheong-university",
+        name: "Chung Cheong University",
+        cityId: "corea-del-sur-sejong",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.5 km del centro de Sejong (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-sejong-korea-university-sejong-campus",
+        name: "Korea University Sejong Campus",
+        cityId: "corea-del-sur-sejong",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Sejong (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-sejong-kdi-school-of-public-policy-and-management",
+        name: "KDI School of Public Policy and Management",
+        cityId: "corea-del-sur-sejong",
+        website: "http://www.kdischool.ac.kr/",
+        source: "open-dataset",
+        // Situada a None km del centro de Sejong (Wikidata).
       }),
   ],
   "corea-del-sur-wonju": [
@@ -1506,12 +1466,54 @@ export default {
         // Situada a 2.5 km del centro de Wŏnju (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-wonju-sangji-university",
-        name: "Sangji University",
+        id: "corea-del-sur-wonju-wonju-national-college",
+        name: "Wonju National College",
         cityId: "corea-del-sur-wonju",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Wŏnju (Wikidata).
+        // Situada a None km del centro de Wŏnju (Wikidata).
+      }),
+  ],
+  "corea-del-sur-goyang-si": [
+      defineUniversity({
+        id: "corea-del-sur-goyang-si-transnational-law-and-business-university",
+        name: "Transnational Law and Business University",
+        cityId: "corea-del-sur-goyang-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a 8.3 km del centro de Goyang-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-goyang-si-korea-aerospace-university",
+        name: "Korea Aerospace University",
+        cityId: "corea-del-sur-goyang-si",
+        website: "http://www.kau.ac.kr/",
+        source: "open-dataset",
+        // Situada a 6.9 km del centro de Goyang-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-goyang-si-defense-security-support-school",
+        name: "Defense Security Support School",
+        cityId: "corea-del-sur-goyang-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Goyang-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-goyang-si-national-cancer-center-graduate-school-of-cancer-science-and-policy",
+        name: "National Cancer Center Graduate School of Cancer Science and Policy",
+        cityId: "corea-del-sur-goyang-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Goyang-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-goyang-si-ezra-bible-institute-for-graduate-studies",
+        name: "Ezra Bible Institute for Graduate Studies",
+        cityId: "corea-del-sur-goyang-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Goyang-si (Wikidata).
       }),
   ],
   "corea-del-sur-hayang": [
@@ -1554,48 +1556,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 3.6 km del centro de Hayang (Wikidata).
-      }),
-  ],
-  "corea-del-sur-chuncheon": [
-      defineUniversity({
-        id: "corea-del-sur-chuncheon-hallym-university",
-        name: "Hallym University",
-        cityId: "corea-del-sur-chuncheon",
-        website: "http://www.hallym.ac.kr/",
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Chuncheon (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-chuncheon-chuncheon-national-university-of-education",
-        name: "Chuncheon National University of Education",
-        cityId: "corea-del-sur-chuncheon",
-        website: "http://www.cnue.ac.kr/",
-        source: "open-dataset",
-        // Situada a 2.1 km del centro de Chuncheon (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-chuncheon-kangwon-national-university",
-        name: "Kangwon National University",
-        cityId: "corea-del-sur-chuncheon",
-        website: "http://www.kangwon.ac.kr/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Chuncheon (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-chuncheon-kangwon-national-university",
-        name: "Kangwon National University",
-        cityId: "corea-del-sur-chuncheon",
-        website: "http://www.kangwon.ac.kr/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Chuncheon (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-chuncheon-hallym-polytechnic-university",
-        name: "Hallym Polytechnic University",
-        cityId: "corea-del-sur-chuncheon",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.3 km del centro de Chuncheon (Wikidata).
       }),
   ],
   "corea-del-sur-jeonju": [
@@ -1682,15 +1642,49 @@ export default {
         // Situada a 1.8 km del centro de Cheongju-si (Wikidata).
       }),
   ],
-  "corea-del-sur-seongnam-si": [
+  "corea-del-sur-anyang-si": [
       defineUniversity({
-        id: "corea-del-sur-seongnam-si-graduate-school-of-korean-studies",
-        name: "Graduate School of Korean Studies",
-        cityId: "corea-del-sur-seongnam-si",
+        id: "corea-del-sur-anyang-si-sungkyul-university",
+        name: "Sungkyul University",
+        cityId: "corea-del-sur-anyang-si",
+        website: "http://www.sungkyul.ac.kr/",
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Anyang-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-anyang-si-daelim-university-college",
+        name: "Daelim University College",
+        cityId: "corea-del-sur-anyang-si",
         website: null,
         source: "open-dataset",
-        // Situada a 9.0 km del centro de Seongnam-si (Wikidata).
+        // Situada a 1.3 km del centro de Anyang-si (Wikidata).
       }),
+      defineUniversity({
+        id: "corea-del-sur-anyang-si-anyang-university",
+        name: "Anyang University",
+        cityId: "corea-del-sur-anyang-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Anyang-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-anyang-si-daehan-theological-university",
+        name: "Daehan Theological University",
+        cityId: "corea-del-sur-anyang-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Anyang-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-anyang-si-yeonsung-university",
+        name: "Yeonsung University",
+        cityId: "corea-del-sur-anyang-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Anyang-si (Wikidata).
+      }),
+  ],
+  "corea-del-sur-seongnam-si": [
       defineUniversity({
         id: "corea-del-sur-seongnam-si-graduate-school-of-korean-studies",
         name: "Graduate School of Korean Studies",
@@ -1723,47 +1717,55 @@ export default {
         source: "open-dataset",
         // Situada a 10.2 km del centro de Seongnam-si (Wikidata).
       }),
+      defineUniversity({
+        id: "corea-del-sur-seongnam-si-shingu-college",
+        name: "Shingu College",
+        cityId: "corea-del-sur-seongnam-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Seongnam-si (Wikidata).
+      }),
   ],
-  "corea-del-sur-sejong": [
+  "corea-del-sur-gwangmyeong": [
       defineUniversity({
-        id: "corea-del-sur-sejong-catholic-kkottongnae-university",
-        name: "Catholic Kkottongnae University",
-        cityId: "corea-del-sur-sejong",
+        id: "corea-del-sur-gwangmyeong-seoul-social-welfare-graduate-university",
+        name: "Seoul Social Welfare Graduate University",
+        cityId: "corea-del-sur-gwangmyeong",
         website: null,
         source: "open-dataset",
-        // Situada a 12.4 km del centro de Sejong (Wikidata).
+        // Situada a 5.7 km del centro de Gwangmyeong (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-sejong-daejeon-catholic-university",
-        name: "Daejeon Catholic University",
-        cityId: "corea-del-sur-sejong",
-        website: "http://www.dcatholic.ac.kr/",
+        id: "corea-del-sur-gwangmyeong-seoul-hanyoung-university",
+        name: "Seoul Hanyoung University",
+        cityId: "corea-del-sur-gwangmyeong",
+        website: "http://www.hytu.ac.kr/",
         source: "open-dataset",
-        // Situada a 10.9 km del centro de Sejong (Wikidata).
+        // Situada a 2.5 km del centro de Gwangmyeong (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-sejong-korea-national-university-of-education",
-        name: "Korea National University of Education",
-        cityId: "corea-del-sur-sejong",
-        website: "http://www.knue.ac.kr/",
-        source: "open-dataset",
-        // Situada a 6.4 km del centro de Sejong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-sejong-chung-cheong-university",
-        name: "Chung Cheong University",
-        cityId: "corea-del-sur-sejong",
+        id: "corea-del-sur-gwangmyeong-gangseo-university",
+        name: "Gangseo University",
+        cityId: "corea-del-sur-gwangmyeong",
         website: null,
         source: "open-dataset",
-        // Situada a 7.5 km del centro de Sejong (Wikidata).
+        // Situada a 8.0 km del centro de Gwangmyeong (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-sejong-korea-university-sejong-campus",
-        name: "Korea University Sejong Campus",
-        cityId: "corea-del-sur-sejong",
+        id: "corea-del-sur-gwangmyeong-sungkonghoe-university",
+        name: "Sungkonghoe University",
+        cityId: "corea-del-sur-gwangmyeong",
+        website: "http://www.skhu.ac.kr/",
+        source: "open-dataset",
+        // Situada a 3.8 km del centro de Gwangmyeong (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gwangmyeong-dongyang-mirae-university",
+        name: "Dongyang Mirae University",
+        cityId: "corea-del-sur-gwangmyeong",
         website: null,
         source: "open-dataset",
-        // Situada a 2.1 km del centro de Sejong (Wikidata).
+        // Situada a 2.6 km del centro de Gwangmyeong (Wikidata).
       }),
   ],
   "corea-del-sur-yangju": [
@@ -1834,72 +1836,174 @@ export default {
         // Situada a 3.7 km del centro de Bucheon-si (Wikidata).
       }),
   ],
-  "corea-del-sur-kimhae": [
+  "corea-del-sur-mokpo": [
       defineUniversity({
-        id: "corea-del-sur-kimhae-kaya-university",
-        name: "Kaya University",
-        cityId: "corea-del-sur-kimhae",
-        website: "http://www.kaya.ac.kr/",
+        id: "corea-del-sur-mokpo-mokpo-national-maritime-university",
+        name: "Mokpo National Maritime University",
+        cityId: "corea-del-sur-mokpo",
+        website: "http://www.mmu.ac.kr/",
         source: "open-dataset",
-        // Situada a 4.0 km del centro de Kimhae (Wikidata).
+        // Situada a 3.4 km del centro de Mokpo (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-kimhae-kaya-university",
-        name: "Kaya University",
-        cityId: "corea-del-sur-kimhae",
-        website: "http://www.kaya.ac.kr/",
+        id: "corea-del-sur-mokpo-mokpo-catholic-university",
+        name: "Mokpo Catholic University",
+        cityId: "corea-del-sur-mokpo",
+        website: "https://www.mcu.ac.kr/",
         source: "open-dataset",
-        // Situada a 4.3 km del centro de Kimhae (Wikidata).
+        // Situada a 2.9 km del centro de Mokpo (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-kimhae-inje-university",
-        name: "Inje University",
-        cityId: "corea-del-sur-kimhae",
-        website: "http://www.inje.ac.kr/",
+        id: "corea-del-sur-mokpo-sehan-university",
+        name: "Sehan University",
+        cityId: "corea-del-sur-mokpo",
+        website: "http://www.sehan.ac.kr/",
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Kimhae (Wikidata).
+        // Situada a 11.1 km del centro de Mokpo (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-kimhae-busan-presbyterian-university",
-        name: "Busan Presbyterian University",
-        cityId: "corea-del-sur-kimhae",
-        website: "http://www.bpu.ac.kr/",
+        id: "corea-del-sur-mokpo-mokpo-science-university",
+        name: "Mokpo Science University",
+        cityId: "corea-del-sur-mokpo",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Kimhae (Wikidata).
+        // Situada a None km del centro de Mokpo (Wikidata).
       }),
   ],
-  "corea-del-sur-anyang-si": [
+  "corea-del-sur-gunsan": [
       defineUniversity({
-        id: "corea-del-sur-anyang-si-sungkyul-university",
-        name: "Sungkyul University",
-        cityId: "corea-del-sur-anyang-si",
-        website: "http://www.sungkyul.ac.kr/",
+        id: "corea-del-sur-gunsan-kunsan-national-university",
+        name: "Kunsan National University",
+        cityId: "corea-del-sur-gunsan",
+        website: "http://www.kunsan.ac.kr/",
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Anyang-si (Wikidata).
+        // Situada a 4.5 km del centro de Gunsan (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-anyang-si-sungkyul-university",
-        name: "Sungkyul University",
-        cityId: "corea-del-sur-anyang-si",
-        website: "http://www.sungkyul.ac.kr/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Anyang-si (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-anyang-si-daelim-university-college",
-        name: "Daelim University College",
-        cityId: "corea-del-sur-anyang-si",
+        id: "corea-del-sur-gunsan-korea-international-culture-university-of-graduate",
+        name: "Korea International Culture University of Graduate",
+        cityId: "corea-del-sur-gunsan",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Anyang-si (Wikidata).
+        // Situada a None km del centro de Gunsan (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-anyang-si-anyang-university",
-        name: "Anyang University",
-        cityId: "corea-del-sur-anyang-si",
+        id: "corea-del-sur-gunsan-sohae-college",
+        name: "Sohae College",
+        cityId: "corea-del-sur-gunsan",
         website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Anyang-si (Wikidata).
+        // Situada a None km del centro de Gunsan (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gunsan-kunjang-university-college",
+        name: "Kunjang University College",
+        cityId: "corea-del-sur-gunsan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gunsan (Wikidata).
+      }),
+  ],
+  "corea-del-sur-gijang": [
+      defineUniversity({
+        id: "corea-del-sur-gijang-catholic-university-of-pusan",
+        name: "Catholic University of Pusan",
+        cityId: "corea-del-sur-gijang",
+        website: "http://www.cup.ac.kr/",
+        source: "open-dataset",
+        // Situada a 10.6 km del centro de Gijang (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gijang-pusan-national-university",
+        name: "Pusan National University",
+        cityId: "corea-del-sur-gijang",
+        website: "http://www.pusan.ac.kr/",
+        source: "open-dataset",
+        // Situada a 12.3 km del centro de Gijang (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gijang-dong-pusan-college",
+        name: "Dong-Pusan College",
+        cityId: "corea-del-sur-gijang",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.1 km del centro de Gijang (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gijang-sungsim-college-of-foreign-languages",
+        name: "Sungsim College of Foreign Languages",
+        cityId: "corea-del-sur-gijang",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gijang (Wikidata).
+      }),
+  ],
+  "corea-del-sur-gangneung": [
+      defineUniversity({
+        id: "corea-del-sur-gangneung-gangneung-wonju-national-university",
+        name: "Gangneung–Wonju National University",
+        cityId: "corea-del-sur-gangneung",
+        website: "http://www.gwnu.ac.kr/",
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Gangneung (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gangneung-gangneung-yeongdong-college",
+        name: "Gangneung Yeongdong College",
+        cityId: "corea-del-sur-gangneung",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Gangneung (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gangneung-catholic-kwandong-university",
+        name: "Catholic Kwandong University",
+        cityId: "corea-del-sur-gangneung",
+        website: "http://www.cku.ac.kr/",
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Gangneung (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-gangneung-gangneung-wonju-national-university-graduate-school-of-management-and-policy-science",
+        name: "Gangneung–Wonju National University Graduate School of Management and Policy Science",
+        cityId: "corea-del-sur-gangneung",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Gangneung (Wikidata).
+      }),
+  ],
+  "corea-del-sur-changwon": [
+      defineUniversity({
+        id: "corea-del-sur-changwon-korea-naval-academy",
+        name: "Korea Naval Academy",
+        cityId: "corea-del-sur-changwon",
+        website: null,
+        source: "open-dataset",
+        // Situada a 11.1 km del centro de Changwon (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-changwon-changwon-national-university",
+        name: "Changwon National University",
+        cityId: "corea-del-sur-changwon",
+        website: "http://www.changwon.ac.kr/",
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Changwon (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-changwon-masan-university",
+        name: "Masan University",
+        cityId: "corea-del-sur-changwon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Changwon (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-changwon-changwon-moonsung-university",
+        name: "Changwon Moonsung University",
+        cityId: "corea-del-sur-changwon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Changwon (Wikidata).
       }),
   ],
   "corea-del-sur-ansan-si": [
@@ -1934,40 +2038,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.7 km del centro de Ansan-si (Wikidata).
-      }),
-  ],
-  "corea-del-sur-hwawon": [
-      defineUniversity({
-        id: "corea-del-sur-hwawon-daegu-gyeongbuk-institute-of-science-and-technology",
-        name: "Daegu Gyeongbuk Institute of Science and Technology",
-        cityId: "corea-del-sur-hwawon",
-        website: "http://www.dgist.ac.kr/",
-        source: "open-dataset",
-        // Situada a 11.4 km del centro de Hwawŏn (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-hwawon-daegu-gyeongbuk-institute-of-science-and-technology",
-        name: "Daegu Gyeongbuk Institute of Science and Technology",
-        cityId: "corea-del-sur-hwawon",
-        website: "http://www.dgist.ac.kr/",
-        source: "open-dataset",
-        // Situada a 11.4 km del centro de Hwawŏn (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-hwawon-daegu-technical-university",
-        name: "Daegu Technical University",
-        cityId: "corea-del-sur-hwawon",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.3 km del centro de Hwawŏn (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-hwawon-keimyung-university",
-        name: "Keimyung University",
-        cityId: "corea-del-sur-hwawon",
-        website: "http://www.keimyung.ac.kr/",
-        source: "open-dataset",
-        // Situada a 6.4 km del centro de Hwawŏn (Wikidata).
       }),
   ],
   "corea-del-sur-yeonil": [
@@ -2022,30 +2092,30 @@ export default {
         // Situada a 24.2 km del centro de Neietsu (Wikidata).
       }),
   ],
-  "corea-del-sur-ulsan": [
+  "corea-del-sur-eisen": [
       defineUniversity({
-        id: "corea-del-sur-ulsan-ulsan-national-institute-of-science-and-technology",
-        name: "Ulsan National Institute of Science and Technology",
-        cityId: "corea-del-sur-ulsan",
-        website: "http://www.unist.ac.kr/",
+        id: "corea-del-sur-eisen-korea-army-academy-at-yeongcheon",
+        name: "Korea Army Academy at Yeongcheon",
+        cityId: "corea-del-sur-eisen",
+        website: null,
         source: "open-dataset",
-        // Situada a 12.1 km del centro de Ulsan (Wikidata).
+        // Situada a 5.6 km del centro de Eisen (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-ulsan-ulsan-national-institute-of-science-and-technology",
-        name: "Ulsan National Institute of Science and Technology",
-        cityId: "corea-del-sur-ulsan",
-        website: "http://www.unist.ac.kr/",
+        id: "corea-del-sur-eisen-republic-of-korea-army-college",
+        name: "Republic of Korea Army College",
+        cityId: "corea-del-sur-eisen",
+        website: null,
         source: "open-dataset",
-        // Situada a 12.1 km del centro de Ulsan (Wikidata).
+        // Situada a 3.5 km del centro de Eisen (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-ulsan-university-of-ulsan",
-        name: "University of Ulsan",
-        cityId: "corea-del-sur-ulsan",
-        website: "http://www.ulsan.ac.kr/",
+        id: "corea-del-sur-eisen-sungwoon-university",
+        name: "Sungwoon University",
+        cityId: "corea-del-sur-eisen",
+        website: null,
         source: "open-dataset",
-        // Situada a 5.5 km del centro de Ulsan (Wikidata).
+        // Situada a None km del centro de Eisen (Wikidata).
       }),
   ],
   "corea-del-sur-pyeongtaek": [
@@ -2058,20 +2128,46 @@ export default {
         // Situada a 4.0 km del centro de Pyeongtaek (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-pyeongtaek-pyeongtaek-university",
-        name: "Pyeongtaek University",
-        cityId: "corea-del-sur-pyeongtaek",
-        website: "http://www.ptu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Pyeongtaek (Wikidata).
-      }),
-      defineUniversity({
         id: "corea-del-sur-pyeongtaek-korea-national-university-of-welfare",
         name: "Korea National University of Welfare",
         cityId: "corea-del-sur-pyeongtaek",
         website: null,
         source: "open-dataset",
         // Situada a 6.4 km del centro de Pyeongtaek (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-pyeongtaek-university-of-maryland-asian-division",
+        name: "University of Maryland (Asian Division)",
+        cityId: "corea-del-sur-pyeongtaek",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Pyeongtaek (Wikidata).
+      }),
+  ],
+  "corea-del-sur-osan": [
+      defineUniversity({
+        id: "corea-del-sur-osan-yong-in-university",
+        name: "Yong In University",
+        cityId: "corea-del-sur-osan",
+        website: "http://www.yongin.ac.kr/",
+        source: "open-dataset",
+        // Situada a 12.0 km del centro de Osan (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-osan-yong-in-arts-science-university",
+        name: "Yong-In Arts & Science University",
+        cityId: "corea-del-sur-osan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 15.6 km del centro de Osan (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-osan-osan-university",
+        name: "Osan University",
+        cityId: "corea-del-sur-osan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Osan (Wikidata).
       }),
   ],
   "corea-del-sur-asan": [
@@ -2126,6 +2222,314 @@ export default {
         // Situada a 15.0 km del centro de Nonsan (Wikidata).
       }),
   ],
+  "corea-del-sur-masan": [
+      defineUniversity({
+        id: "corea-del-sur-masan-gwangju-women-s-university",
+        name: "Gwangju Women's University",
+        cityId: "corea-del-sur-masan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.1 km del centro de Masan (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-masan-honam-university",
+        name: "Honam University",
+        cityId: "corea-del-sur-masan",
+        website: "http://www.honam.ac.kr/",
+        source: "open-dataset",
+        // Situada a None km del centro de Masan (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-masan-kwangju-arts-college",
+        name: "Kwangju Arts College",
+        cityId: "corea-del-sur-masan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Masan (Wikidata).
+      }),
+  ],
+  "corea-del-sur-kimhae": [
+      defineUniversity({
+        id: "corea-del-sur-kimhae-kaya-university",
+        name: "Kaya University",
+        cityId: "corea-del-sur-kimhae",
+        website: "http://www.kaya.ac.kr/",
+        source: "open-dataset",
+        // Situada a 4.0 km del centro de Kimhae (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-kimhae-inje-university",
+        name: "Inje University",
+        cityId: "corea-del-sur-kimhae",
+        website: "http://www.inje.ac.kr/",
+        source: "open-dataset",
+        // Situada a 2.5 km del centro de Kimhae (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-kimhae-busan-presbyterian-university",
+        name: "Busan Presbyterian University",
+        cityId: "corea-del-sur-kimhae",
+        website: "http://www.bpu.ac.kr/",
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Kimhae (Wikidata).
+      }),
+  ],
+  "corea-del-sur-icheon-si": [
+      defineUniversity({
+        id: "corea-del-sur-icheon-si-tongwon-college",
+        name: "Tongwon College",
+        cityId: "corea-del-sur-icheon-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.5 km del centro de Icheon-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-icheon-si-graduate-school-of-practical-theology",
+        name: "Graduate School of Practical Theology",
+        cityId: "corea-del-sur-icheon-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Icheon-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-icheon-si-korea-tourism-college",
+        name: "Korea Tourism College",
+        cityId: "corea-del-sur-icheon-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Icheon-si (Wikidata).
+      }),
+  ],
+  "corea-del-sur-hwaseong-si": [
+      defineUniversity({
+        id: "corea-del-sur-hwaseong-si-hwasung-medi-science-university",
+        name: "Hwasung Medi Science University",
+        cityId: "corea-del-sur-hwaseong-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Hwaseong-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-hwaseong-si-suwon-science-college",
+        name: "Suwon Science College",
+        cityId: "corea-del-sur-hwaseong-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hwaseong-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-hwaseong-si-nungin-university",
+        name: "Nungin University",
+        cityId: "corea-del-sur-hwaseong-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hwaseong-si (Wikidata).
+      }),
+  ],
+  "corea-del-sur-andong": [
+      defineUniversity({
+        id: "corea-del-sur-andong-andong-science-college",
+        name: "Andong Science College",
+        cityId: "corea-del-sur-andong",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.6 km del centro de Andong (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-andong-gyeongguk-national-university",
+        name: "Gyeongguk National University",
+        cityId: "corea-del-sur-andong",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.1 km del centro de Andong (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-andong-kundong-university",
+        name: "Kundong University",
+        cityId: "corea-del-sur-andong",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Andong (Wikidata).
+      }),
+  ],
+  "corea-del-sur-hanam": [
+      defineUniversity({
+        id: "corea-del-sur-hanam-korea-national-sport-university",
+        name: "Korea National Sport University",
+        cityId: "corea-del-sur-hanam",
+        website: "http://www.knsu.ac.kr/",
+        source: "open-dataset",
+        // Situada a 7.0 km del centro de Hanam (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-hanam-international-graduate-school-of-english",
+        name: "International Graduate School of English",
+        cityId: "corea-del-sur-hanam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 6.9 km del centro de Hanam (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-hanam-kookje-college",
+        name: "Kookje College",
+        cityId: "corea-del-sur-hanam",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Hanam (Wikidata).
+      }),
+  ],
+  "corea-del-sur-hwawon": [
+      defineUniversity({
+        id: "corea-del-sur-hwawon-daegu-gyeongbuk-institute-of-science-and-technology",
+        name: "Daegu Gyeongbuk Institute of Science and Technology",
+        cityId: "corea-del-sur-hwawon",
+        website: "http://www.dgist.ac.kr/",
+        source: "open-dataset",
+        // Situada a 11.4 km del centro de Hwawŏn (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-hwawon-daegu-technical-university",
+        name: "Daegu Technical University",
+        cityId: "corea-del-sur-hwawon",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.3 km del centro de Hwawŏn (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-hwawon-keimyung-university",
+        name: "Keimyung University",
+        cityId: "corea-del-sur-hwawon",
+        website: "http://www.keimyung.ac.kr/",
+        source: "open-dataset",
+        // Situada a 6.4 km del centro de Hwawŏn (Wikidata).
+      }),
+  ],
+  "corea-del-sur-yeongju": [
+      defineUniversity({
+        id: "corea-del-sur-yeongju-kyungbuk-college",
+        name: "Kyungbuk College",
+        cityId: "corea-del-sur-yeongju",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Yeongju (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-yeongju-dongyang-university",
+        name: "Dongyang University",
+        cityId: "corea-del-sur-yeongju",
+        website: "http://www.dyu.ac.kr/",
+        source: "open-dataset",
+        // Situada a 11.1 km del centro de Yeongju (Wikidata).
+      }),
+  ],
+  "corea-del-sur-yangsan": [
+      defineUniversity({
+        id: "corea-del-sur-yangsan-busan-university-of-foreign-studies",
+        name: "Busan University of Foreign Studies",
+        cityId: "corea-del-sur-yangsan",
+        website: "http://www.bufs.ac.kr/",
+        source: "open-dataset",
+        // Situada a 9.3 km del centro de Yangsan (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-yangsan-dongwon-institute-of-science-and-technology",
+        name: "Dongwon Institute of Science and Technology",
+        cityId: "corea-del-sur-yangsan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Yangsan (Wikidata).
+      }),
+  ],
+  "corea-del-sur-waegwan": [
+      defineUniversity({
+        id: "corea-del-sur-waegwan-daegu-arts-university",
+        name: "Daegu Arts University",
+        cityId: "corea-del-sur-waegwan",
+        website: "http://www.tau.ac.kr/",
+        source: "open-dataset",
+        // Situada a 11.1 km del centro de Waegwan (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-waegwan-kyongbuk-science-college",
+        name: "Kyongbuk Science College",
+        cityId: "corea-del-sur-waegwan",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Waegwan (Wikidata).
+      }),
+  ],
+  "corea-del-sur-ulsan": [
+      defineUniversity({
+        id: "corea-del-sur-ulsan-ulsan-national-institute-of-science-and-technology",
+        name: "Ulsan National Institute of Science and Technology",
+        cityId: "corea-del-sur-ulsan",
+        website: "http://www.unist.ac.kr/",
+        source: "open-dataset",
+        // Situada a 12.1 km del centro de Ulsan (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-ulsan-university-of-ulsan",
+        name: "University of Ulsan",
+        cityId: "corea-del-sur-ulsan",
+        website: "http://www.ulsan.ac.kr/",
+        source: "open-dataset",
+        // Situada a 5.5 km del centro de Ulsan (Wikidata).
+      }),
+  ],
+  "corea-del-sur-uijeongbu-si": [
+      defineUniversity({
+        id: "corea-del-sur-uijeongbu-si-kyungmin-university",
+        name: "Kyungmin University",
+        cityId: "corea-del-sur-uijeongbu-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.1 km del centro de Uijeongbu-si (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-uijeongbu-si-shinheung-college",
+        name: "Shinheung College",
+        cityId: "corea-del-sur-uijeongbu-si",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Uijeongbu-si (Wikidata).
+      }),
+  ],
+  "corea-del-sur-damyang": [
+      defineUniversity({
+        id: "corea-del-sur-damyang-jeonnam-state-university",
+        name: "Jeonnam State University",
+        cityId: "corea-del-sur-damyang",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Damyang (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-damyang-chunnam-techno-university",
+        name: "Chunnam Techno University",
+        cityId: "corea-del-sur-damyang",
+        website: null,
+        source: "open-dataset",
+        // Situada a 14.2 km del centro de Damyang (Wikidata).
+      }),
+  ],
+  "corea-del-sur-suncheon": [
+      defineUniversity({
+        id: "corea-del-sur-suncheon-sunchon-national-university",
+        name: "Sunchon National University",
+        cityId: "corea-del-sur-suncheon",
+        website: "http://www.sunchon.ac.kr/",
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Suncheon (Wikidata).
+      }),
+      defineUniversity({
+        id: "corea-del-sur-suncheon-myungshin-university",
+        name: "Myungshin University",
+        cityId: "corea-del-sur-suncheon",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Suncheon (Wikidata).
+      }),
+  ],
   "corea-del-sur-naju": [
       defineUniversity({
         id: "corea-del-sur-naju-dongshin-university",
@@ -2134,14 +2538,6 @@ export default {
         website: "http://www.dongshinu.ac.kr/",
         source: "open-dataset",
         // Situada a 2.3 km del centro de Naju (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-naju-korea-institute-of-energy-technology",
-        name: "Korea Institute of Energy Technology",
-        cityId: "corea-del-sur-naju",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.1 km del centro de Naju (Wikidata).
       }),
       defineUniversity({
         id: "corea-del-sur-naju-korea-institute-of-energy-technology",
@@ -2169,50 +2565,26 @@ export default {
         source: "open-dataset",
         // Situada a 9.7 km del centro de Muan (Wikidata).
       }),
-      defineUniversity({
-        id: "corea-del-sur-muan-mokpo-national-university",
-        name: "Mokpo National University",
-        cityId: "corea-del-sur-muan",
-        website: "http://www.mokpo.ac.kr/",
-        source: "open-dataset",
-        // Situada a 9.7 km del centro de Muan (Wikidata).
-      }),
   ],
-  "corea-del-sur-mokpo": [
+  "corea-del-sur-kwangyang": [
       defineUniversity({
-        id: "corea-del-sur-mokpo-mokpo-national-maritime-university",
-        name: "Mokpo National Maritime University",
-        cityId: "corea-del-sur-mokpo",
-        website: "http://www.mmu.ac.kr/",
+        id: "corea-del-sur-kwangyang-hanlyo-university",
+        name: "Hanlyo University",
+        cityId: "corea-del-sur-kwangyang",
+        website: "http://www.hanlyo.ac.kr/",
         source: "open-dataset",
-        // Situada a 3.4 km del centro de Mokpo (Wikidata).
+        // Situada a 3.0 km del centro de Kwangyang (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-mokpo-mokpo-catholic-university",
-        name: "Mokpo Catholic University",
-        cityId: "corea-del-sur-mokpo",
-        website: "https://www.mcu.ac.kr/",
+        id: "corea-del-sur-kwangyang-gwangyang-health-sciences-university",
+        name: "Gwangyang Health Sciences University",
+        cityId: "corea-del-sur-kwangyang",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Mokpo (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-mokpo-sehan-university",
-        name: "Sehan University",
-        cityId: "corea-del-sur-mokpo",
-        website: "http://www.sehan.ac.kr/",
-        source: "open-dataset",
-        // Situada a 11.1 km del centro de Mokpo (Wikidata).
+        // Situada a None km del centro de Kwangyang (Wikidata).
       }),
   ],
   "corea-del-sur-gongju": [
-      defineUniversity({
-        id: "corea-del-sur-gongju-kongju-national-university",
-        name: "Kongju National University",
-        cityId: "corea-del-sur-gongju",
-        website: "http://www.kyongju.ac.kr/",
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Gongju (Wikidata).
-      }),
       defineUniversity({
         id: "corea-del-sur-gongju-kongju-national-university",
         name: "Kongju National University",
@@ -2230,190 +2602,22 @@ export default {
         // Situada a 1.4 km del centro de Gongju (Wikidata).
       }),
   ],
-  "corea-del-sur-gijang": [
+  "corea-del-sur-koesan": [
       defineUniversity({
-        id: "corea-del-sur-gijang-catholic-university-of-pusan",
-        name: "Catholic University of Pusan",
-        cityId: "corea-del-sur-gijang",
-        website: "http://www.cup.ac.kr/",
+        id: "corea-del-sur-koesan-jungwon-university",
+        name: "Jungwon University",
+        cityId: "corea-del-sur-koesan",
+        website: "http://www.jwu.ac.kr/",
         source: "open-dataset",
-        // Situada a 10.6 km del centro de Gijang (Wikidata).
+        // Situada a 1.1 km del centro de Koesan (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-gijang-pusan-national-university",
-        name: "Pusan National University",
-        cityId: "corea-del-sur-gijang",
-        website: "http://www.pusan.ac.kr/",
-        source: "open-dataset",
-        // Situada a 12.3 km del centro de Gijang (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-gijang-dong-pusan-college",
-        name: "Dong-Pusan College",
-        cityId: "corea-del-sur-gijang",
+        id: "corea-del-sur-koesan-gangdong-university",
+        name: "Gangdong University",
+        cityId: "corea-del-sur-koesan",
         website: null,
         source: "open-dataset",
-        // Situada a 6.1 km del centro de Gijang (Wikidata).
-      }),
-  ],
-  "corea-del-sur-ara-dong": [
-      defineUniversity({
-        id: "corea-del-sur-ara-dong-jeju-international-university",
-        name: "Jeju International University",
-        cityId: "corea-del-sur-ara-dong",
-        website: "http://www.jeju.ac.kr/",
-        source: "open-dataset",
-        // Situada a 5.0 km del centro de Ara-dong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-ara-dong-jeju-national-university",
-        name: "Jeju National University",
-        cityId: "corea-del-sur-ara-dong",
-        website: "http://www.jejunu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Ara-dong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-ara-dong-jeju-national-university",
-        name: "Jeju National University",
-        cityId: "corea-del-sur-ara-dong",
-        website: "http://www.jejunu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Ara-dong (Wikidata).
-      }),
-  ],
-  "corea-del-sur-hanam": [
-      defineUniversity({
-        id: "corea-del-sur-hanam-korea-national-sport-university",
-        name: "Korea National Sport University",
-        cityId: "corea-del-sur-hanam",
-        website: "http://www.knsu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 7.0 km del centro de Hanam (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-hanam-international-graduate-school-of-english",
-        name: "International Graduate School of English",
-        cityId: "corea-del-sur-hanam",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.9 km del centro de Hanam (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-hanam-international-graduate-school-of-english",
-        name: "International Graduate School of English",
-        cityId: "corea-del-sur-hanam",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.9 km del centro de Hanam (Wikidata).
-      }),
-  ],
-  "corea-del-sur-yeongju": [
-      defineUniversity({
-        id: "corea-del-sur-yeongju-kyungbuk-college",
-        name: "Kyungbuk College",
-        cityId: "corea-del-sur-yeongju",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.3 km del centro de Yeongju (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-yeongju-dongyang-university",
-        name: "Dongyang University",
-        cityId: "corea-del-sur-yeongju",
-        website: "http://www.dyu.ac.kr/",
-        source: "open-dataset",
-        // Situada a 11.1 km del centro de Yeongju (Wikidata).
-      }),
-  ],
-  "corea-del-sur-eisen": [
-      defineUniversity({
-        id: "corea-del-sur-eisen-korea-army-academy-at-yeongcheon",
-        name: "Korea Army Academy at Yeongcheon",
-        cityId: "corea-del-sur-eisen",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.6 km del centro de Eisen (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-eisen-republic-of-korea-army-college",
-        name: "Republic of Korea Army College",
-        cityId: "corea-del-sur-eisen",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.5 km del centro de Eisen (Wikidata).
-      }),
-  ],
-  "corea-del-sur-yangsan": [
-      defineUniversity({
-        id: "corea-del-sur-yangsan-busan-university-of-foreign-studies",
-        name: "Busan University of Foreign Studies",
-        cityId: "corea-del-sur-yangsan",
-        website: "http://www.bufs.ac.kr/",
-        source: "open-dataset",
-        // Situada a 9.3 km del centro de Yangsan (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-yangsan-dongwon-institute-of-science-and-technology",
-        name: "Dongwon Institute of Science and Technology",
-        cityId: "corea-del-sur-yangsan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Yangsan (Wikidata).
-      }),
-  ],
-  "corea-del-sur-damyang": [
-      defineUniversity({
-        id: "corea-del-sur-damyang-jeonnam-state-university",
-        name: "Jeonnam State University",
-        cityId: "corea-del-sur-damyang",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Damyang (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-damyang-chunnam-techno-university",
-        name: "Chunnam Techno University",
-        cityId: "corea-del-sur-damyang",
-        website: null,
-        source: "open-dataset",
-        // Situada a 14.2 km del centro de Damyang (Wikidata).
-      }),
-  ],
-  "corea-del-sur-osan": [
-      defineUniversity({
-        id: "corea-del-sur-osan-yong-in-university",
-        name: "Yong In University",
-        cityId: "corea-del-sur-osan",
-        website: "http://www.yongin.ac.kr/",
-        source: "open-dataset",
-        // Situada a 12.0 km del centro de Osan (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-osan-yong-in-arts-science-university",
-        name: "Yong-In Arts & Science University",
-        cityId: "corea-del-sur-osan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 15.6 km del centro de Osan (Wikidata).
-      }),
-  ],
-  "corea-del-sur-goyang-si": [
-      defineUniversity({
-        id: "corea-del-sur-goyang-si-transnational-law-and-business-university",
-        name: "Transnational Law and Business University",
-        cityId: "corea-del-sur-goyang-si",
-        website: null,
-        source: "open-dataset",
-        // Situada a 8.3 km del centro de Goyang-si (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-goyang-si-korea-aerospace-university",
-        name: "Korea Aerospace University",
-        cityId: "corea-del-sur-goyang-si",
-        website: "http://www.kau.ac.kr/",
-        source: "open-dataset",
-        // Situada a 6.9 km del centro de Goyang-si (Wikidata).
+        // Situada a None km del centro de Koesan (Wikidata).
       }),
   ],
   "corea-del-sur-gimcheon": [
@@ -2452,40 +2656,22 @@ export default {
         // Situada a 12.3 km del centro de Hongseong (Wikidata).
       }),
   ],
-  "corea-del-sur-changwon": [
+  "corea-del-sur-ara-dong": [
       defineUniversity({
-        id: "corea-del-sur-changwon-korea-naval-academy",
-        name: "Korea Naval Academy",
-        cityId: "corea-del-sur-changwon",
-        website: null,
+        id: "corea-del-sur-ara-dong-jeju-international-university",
+        name: "Jeju International University",
+        cityId: "corea-del-sur-ara-dong",
+        website: "http://www.jeju.ac.kr/",
         source: "open-dataset",
-        // Situada a 11.1 km del centro de Changwon (Wikidata).
+        // Situada a 5.0 km del centro de Ara-dong (Wikidata).
       }),
       defineUniversity({
-        id: "corea-del-sur-changwon-changwon-national-university",
-        name: "Changwon National University",
-        cityId: "corea-del-sur-changwon",
-        website: "http://www.changwon.ac.kr/",
+        id: "corea-del-sur-ara-dong-jeju-national-university",
+        name: "Jeju National University",
+        cityId: "corea-del-sur-ara-dong",
+        website: "http://www.jejunu.ac.kr/",
         source: "open-dataset",
-        // Situada a 2.2 km del centro de Changwon (Wikidata).
-      }),
-  ],
-  "corea-del-sur-jangseong": [
-      defineUniversity({
-        id: "corea-del-sur-jangseong-gwangju-institute-of-science-and-technology",
-        name: "Gwangju Institute of Science and Technology",
-        cityId: "corea-del-sur-jangseong",
-        website: "http://www.gist.ac.kr/",
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Jangseong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-jangseong-gwangju-institute-of-science-and-technology",
-        name: "Gwangju Institute of Science and Technology",
-        cityId: "corea-del-sur-jangseong",
-        website: "http://www.gist.ac.kr/",
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Jangseong (Wikidata).
+        // Situada a 3.5 km del centro de Ara-dong (Wikidata).
       }),
   ],
   "corea-del-sur-anseong": [
@@ -2506,24 +2692,6 @@ export default {
         // Situada a 14.8 km del centro de Anseong (Wikidata).
       }),
   ],
-  "corea-del-sur-andong": [
-      defineUniversity({
-        id: "corea-del-sur-andong-andong-science-college",
-        name: "Andong Science College",
-        cityId: "corea-del-sur-andong",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.6 km del centro de Andong (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-andong-gyeongguk-national-university",
-        name: "Gyeongguk National University",
-        cityId: "corea-del-sur-andong",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.1 km del centro de Andong (Wikidata).
-      }),
-  ],
   "corea-del-sur-yeosu": [
       defineUniversity({
         id: "corea-del-sur-yeosu-hanyeong-university",
@@ -2540,24 +2708,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 7.9 km del centro de Yeosu (Wikidata).
-      }),
-  ],
-  "corea-del-sur-pubal": [
-      defineUniversity({
-        id: "corea-del-sur-pubal-bible-baptist-theological-seminary",
-        name: "Bible Baptist Theological Seminary",
-        cityId: "corea-del-sur-pubal",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Pubal (Wikidata).
-      }),
-      defineUniversity({
-        id: "corea-del-sur-pubal-bible-baptist-theological-seminary",
-        name: "Bible Baptist Theological Seminary",
-        cityId: "corea-del-sur-pubal",
-        website: null,
-        source: "open-dataset",
-        // Situada a 9.4 km del centro de Pubal (Wikidata).
       }),
   ],
   "corea-del-sur-naeso": [

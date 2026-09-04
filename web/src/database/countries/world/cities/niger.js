@@ -38,14 +38,6 @@ export default {
         // Situada a 4.3 km del centro de Niamey (Wikidata).
       }),
       defineUniversity({
-        id: "niger-niamey-elhadj-mahmoud-kaat-international-university",
-        name: "Elhadj Mahmoud Kaat International University",
-        cityId: "niger-niamey",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de Niamey (Wikidata).
-      }),
-      defineUniversity({
         id: "niger-niamey-tunisian-international-university",
         name: "Tunisian International University",
         cityId: "niger-niamey",
@@ -116,14 +108,6 @@ export default {
       defineUniversity({
         id: "niger-say-universite-populaire-de-niamey",
         name: "Université populaire de Niamey",
-        cityId: "niger-say",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Say (Wikidata).
-      }),
-      defineUniversity({
-        id: "niger-say-islamic-university-of-niger",
-        name: "Islamic University of Niger",
         cityId: "niger-say",
         website: null,
         source: "open-dataset",

@@ -62,6 +62,14 @@ export default {
         // Situada a 4.2 km del centro de Baku (Wikidata).
       }),
       defineUniversity({
+        id: "azerbaiyan-baku-baku-islam-university",
+        name: "Baku Islam University",
+        cityId: "azerbaiyan-baku",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.4 km del centro de Baku (Wikidata).
+      }),
+      defineUniversity({
         id: "azerbaiyan-baku-tafakkur-university",
         name: "Tafakkur University",
         cityId: "azerbaiyan-baku",
@@ -237,6 +245,89 @@ export default {
         source: "open-dataset",
         // Situada a 6.6 km del centro de Baku (Wikidata).
       }),
+      defineUniversity({
+        id: "azerbaiyan-baku-khazar-university",
+        name: "Khazar University",
+        cityId: "azerbaiyan-baku",
+        website: "http://www.khazar.org/",
+        source: "open-dataset",
+        // Situada a None km del centro de Baku (Wikidata).
+      }),
+      defineUniversity({
+        id: "azerbaiyan-baku-azerbaijan-social-political-university",
+        name: "Azerbaijan Social Political University",
+        cityId: "azerbaiyan-baku",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Baku (Wikidata).
+      }),
+      defineUniversity({
+        id: "azerbaiyan-baku-baku-business-university",
+        name: "Baku Business University",
+        cityId: "azerbaiyan-baku",
+        website: "http://www.bbu.edu.az/",
+        source: "open-dataset",
+        // Situada a None km del centro de Baku (Wikidata).
+      }),
+      defineUniversity({
+        id: "azerbaiyan-baku-baku-higher-oil-school",
+        name: "Baku Higher Oil School",
+        cityId: "azerbaiyan-baku",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Baku (Wikidata).
+      }),
+      defineUniversity({
+        id: "azerbaiyan-baku-academy-of-the-state-customs-committee",
+        name: "Academy of the State Customs Committee",
+        cityId: "azerbaiyan-baku",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Baku (Wikidata).
+      }),
+      defineUniversity({
+        id: "azerbaiyan-baku-must-qil-az-rbaycan-universiteti",
+        name: "Müstəqil Azərbaycan Universiteti",
+        cityId: "azerbaiyan-baku",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Baku (Wikidata).
+      }),
+      defineUniversity({
+        id: "azerbaiyan-baku-baku-higher-combined-arms-command-school",
+        name: "Baku Higher Combined Arms Command School",
+        cityId: "azerbaiyan-baku",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Baku (Wikidata).
+      }),
+      defineUniversity({
+        id: "azerbaiyan-baku-western-caspian-university",
+        name: "Western Caspian University",
+        cityId: "azerbaiyan-baku",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Baku (Wikidata).
+      }),
+      defineUniversity({
+        id: "azerbaiyan-baku-azerbaijan-institute-of-tourism",
+        name: "Azerbaijan Institute of Tourism",
+        cityId: "azerbaiyan-baku",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Baku (Wikidata).
+      }),
+      defineUniversity({
+        id: "azerbaiyan-baku-baku-polytechnicum",
+        name: "Baku Polytechnicum",
+        cityId: "azerbaiyan-baku",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Baku (Wikidata).
+      }),
+  ],
+  "azerbaiyan-lokbatan": [
+
   ],
   "azerbaiyan-bilajari": [
       defineUniversity({
@@ -270,6 +361,50 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.4 km del centro de Bilajari (Wikidata).
+      }),
+  ],
+  "azerbaiyan-naxc-van": [
+      defineUniversity({
+        id: "azerbaiyan-naxc-van-nakhchivan-state-university",
+        name: "Nakhchivan State University",
+        cityId: "azerbaiyan-naxc-van",
+        website: "http://www.ndu.edu.az/",
+        source: "open-dataset",
+        // Situada a None km del centro de Naxçıvan (Wikidata).
+      }),
+      defineUniversity({
+        id: "azerbaiyan-naxc-van-nakhchivan-university",
+        name: "Nakhchivan University",
+        cityId: "azerbaiyan-naxc-van",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Naxçıvan (Wikidata).
+      }),
+  ],
+  "azerbaiyan-ganja": [
+      defineUniversity({
+        id: "azerbaiyan-ganja-azerbaijan-university-of-technology",
+        name: "Azerbaijan University of Technology",
+        cityId: "azerbaiyan-ganja",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Ganja (Wikidata).
+      }),
+      defineUniversity({
+        id: "azerbaiyan-ganja-azerbaijan-state-agricultural-university",
+        name: "Azerbaijan State Agricultural University",
+        cityId: "azerbaiyan-ganja",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ganja (Wikidata).
+      }),
+      defineUniversity({
+        id: "azerbaiyan-ganja-ganja-state-university",
+        name: "Ganja State University",
+        cityId: "azerbaiyan-ganja",
+        website: "http://gdu.edu.az/",
+        source: "open-dataset",
+        // Situada a None km del centro de Ganja (Wikidata).
       }),
   ],
   "azerbaiyan-khirdalan": [

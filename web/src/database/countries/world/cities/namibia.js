@@ -37,5 +37,13 @@ export default {
         source: "open-dataset",
         // Situada a 1.1 km del centro de Windhoek (Wikidata).
       }),
+      defineUniversity({
+        id: "namibia-windhoek-international-university-of-management",
+        name: "International University of Management",
+        cityId: "namibia-windhoek",
+        website: "http://www.ium.edu.na/",
+        source: "open-dataset",
+        // Situada a None km del centro de Windhoek (Wikidata).
+      }),
   ],
 };

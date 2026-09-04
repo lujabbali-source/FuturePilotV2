@@ -23,7 +23,7 @@ const cities = [
       name: "Podgorica",
       coordinates: {"lat": 42.44124, "lng": 19.26309},
       isCapital: true,
-      universityCount: 3,
+      universityCount: 4,
       statistics: { population: 236852 },
       countryId,
       countryName,

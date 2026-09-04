@@ -85,6 +85,62 @@ export default {
         source: "open-dataset",
         // Situada a 1.7 km del centro de Kentron (Wikidata).
       }),
+      defineUniversity({
+        id: "armenia-kentron-anton-kochinyan-agricultural-college",
+        name: "Anton Kochinyan Agricultural College",
+        cityId: "armenia-kentron",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kentron (Wikidata).
+      }),
+      defineUniversity({
+        id: "armenia-kentron-russian-armenian-university",
+        name: "Russian-Armenian University",
+        cityId: "armenia-kentron",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kentron (Wikidata).
+      }),
+      defineUniversity({
+        id: "armenia-kentron-st-theresa-s-medical-university-of-yerevan",
+        name: "St. Theresa's Medical University of Yerevan",
+        cityId: "armenia-kentron",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kentron (Wikidata).
+      }),
+      defineUniversity({
+        id: "armenia-kentron-yerevan-state-medical-university",
+        name: "Yerevan State Medical University",
+        cityId: "armenia-kentron",
+        website: "http://www.ysmu.am/",
+        source: "open-dataset",
+        // Situada a None km del centro de Kentron (Wikidata).
+      }),
+      defineUniversity({
+        id: "armenia-kentron-armenian-state-institute-of-physical-culture-and-sport",
+        name: "Armenian State Institute of Physical Culture and Sport",
+        cityId: "armenia-kentron",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kentron (Wikidata).
+      }),
+      defineUniversity({
+        id: "armenia-kentron-business-school-of-russian-armenian-slavonic-university",
+        name: "Business School of Russian-Armenian Slavonic University",
+        cityId: "armenia-kentron",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kentron (Wikidata).
+      }),
+      defineUniversity({
+        id: "armenia-kentron-national-university-of-architecture-and-construction-of-armenia",
+        name: "National University of Architecture and Construction of Armenia",
+        cityId: "armenia-kentron",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kentron (Wikidata).
+      }),
   ],
   "armenia-kanaker-zeytun": [
       defineUniversity({
@@ -120,24 +176,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.3 km del centro de Gyumri (Wikidata).
-      }),
-  ],
-  "armenia-abovyan": [
-      defineUniversity({
-        id: "armenia-abovyan-armenak-khanperyants-military-aviation-university",
-        name: "Armenak Khanperyants Military Aviation University",
-        cityId: "armenia-abovyan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.4 km del centro de Abovyan (Wikidata).
-      }),
-      defineUniversity({
-        id: "armenia-abovyan-armenak-khanperyants-military-aviation-university",
-        name: "Armenak Khanperyants Military Aviation University",
-        cityId: "armenia-abovyan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.4 km del centro de Abovyan (Wikidata).
       }),
   ],
 };

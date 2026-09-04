@@ -8,17 +8,56 @@
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry } from "../schema.js";
+import { defineCity, defineCountry } from "../schema.js";
 
 const countryId = "macao";
 const countryName = "Macao";
 
-// Sin ciudades: Hipolabs le ve 4 universidades, pero
-// Wikidata solo situa 0 ciudad(es) que llegue(n) al minimo
-// de 2. Es un hueco de la fuente, NO que el pais no tenga
-// universidades. Se cura a mano o con otra fuente.
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/macao.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
-
+    defineCity({
+      id: "macao-taipa",
+      name: "Taipa",
+      coordinates: {"lat": 22.15583, "lng": 113.55694},
+      isCapital: false,
+      universityCount: 1,
+      statistics: { population: 112051 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "macao-lai-chi-van",
+      name: "Lai Chi Van",
+      coordinates: {"lat": 22.11972, "lng": 113.55111},
+      isCapital: false,
+      universityCount: 1,
+      statistics: { population: 22125 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "macao-zhuojiacun",
+      name: "Zhuojiacun",
+      coordinates: {"lat": 22.16139, "lng": 113.55639},
+      isCapital: false,
+      universityCount: 1,
+      statistics: { population: 24000 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "macao-se",
+      name: "Sé",
+      coordinates: {"lat": 22.19089, "lng": 113.54733},
+      isCapital: false,
+      universityCount: 1,
+      statistics: { population: 52200 },
+      countryId,
+      countryName,
+    }),
 ];
 
 export default defineCountry({

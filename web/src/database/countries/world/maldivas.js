@@ -23,7 +23,7 @@ const cities = [
       name: "Male",
       coordinates: {"lat": 4.17521, "lng": 73.50916},
       isCapital: true,
-      universityCount: 3,
+      universityCount: 4,
       statistics: { population: 103693 },
       countryId,
       countryName,

@@ -270,9 +270,33 @@ def cargar_censo() -> dict[str, dict]:
     return json.loads(CENSO.read_text(encoding="utf-8"))["paises"]
 
 
+def sitios_unicos_del_mundo(universidades: list[dict]) -> dict[str, str]:
+    """Nombre normalizado -> sitio web, solo si ese nombre es UNICO en el mundo.
+
+    Hace falta porque el censo asigna cada universidad a la ciudad donde cae,
+    sin mirar de que pais la crea Wikidata, mientras que Hipolabs viene
+    agrupado por pais. Una universidad de Hong Kong puede caer en una ciudad de
+    Hong Kong y tener su ficha de Hipolabs bajo otro codigo: buscar el sitio
+    solo en la lista del pais perdia 469 enlaces.
+
+    Los nombres repetidos en varios paises se descartan a proposito. Hay ocho
+    "American University" en el mundo y mandar al estudiante a la de otro
+    continente es peor que no darle enlace.
+    """
+    por_nombre: dict[str, set[str]] = {}
+    for u in universidades:
+        if not u.get("name"):
+            continue
+        sitio = (u.get("web_pages") or [None])[0]
+        if sitio:
+            por_nombre.setdefault(normalizar(u["name"]), set()).add(sitio)
+    return {n: next(iter(s)) for n, s in por_nombre.items() if len(s) == 1}
+
+
 def construir_ciudades(datos_pais: dict, id_pais: str, nombre_pais: str,
                        capital: str | None, sitios: dict[str, str],
-                       minimo: int) -> tuple[list[dict], int]:
+                       minimo: int, sitios_mundo: dict[str, str] | None = None
+                       ) -> tuple[list[dict], int]:
     """Las ciudades de un pais, con sus universidades ya situadas.
 
     Devuelve la lista y cuantas universidades quedaron enlazadas a una ciudad.
@@ -283,8 +307,17 @@ def construir_ciudades(datos_pais: dict, id_pais: str, nombre_pais: str,
     capital_normalizada = normalizar(capital or "")
     ciudades, enlazadas = [], 0
 
-    candidatas = [c for c in datos_pais.get("ciudades", [])
-                  if len(c["universidades"]) >= minimo]
+    todas = datos_pais.get("ciudades", [])
+    candidatas = [c for c in todas if len(c["universidades"]) >= minimo]
+
+    # Ningun pais se queda sin NINGUNA ciudad por culpa del minimo. El minimo
+    # existe solo para no meter en el bundle miles de ciudades de una sola
+    # universidad, y ese razonamiento vale en Alemania (321 ciudades) pero es
+    # absurdo en Andorra, donde borraba la unica que hay. Dejaba 20 paises
+    # -Estonia, Kuwait, Macao, Groenlandia, Surinam...- invisibles en el globo
+    # para ahorrar unos pocos kB, que es justo al reves de lo que se pretendia.
+    if not candidatas:
+        candidatas = [c for c in todas if c["universidades"]]
 
     # Dos ciudades distintas pueden dar el mismo slug: en Alemania, Münster y
     # Munster son sitios diferentes y ambos salen "alemania-munster". El
@@ -307,7 +340,10 @@ def construir_ciudades(datos_pais: dict, id_pais: str, nombre_pais: str,
                 "id": f"{id_ciudad}-{slug(u['nombre'])}"[:140],
                 "name": u["nombre"],
                 "cityId": id_ciudad,
-                "website": sitios.get(normalizar(u["nombre"])),
+                # Primero la lista del pais; si no esta, el indice mundial
+                # de nombres unicos. Nunca un parecido aproximado.
+                "website": (sitios.get(normalizar(u["nombre"]))
+                            or (sitios_mundo or {}).get(normalizar(u["nombre"]))),
                 "km": u["km"],
             })
         enlazadas += len(universidades)
@@ -366,6 +402,9 @@ def main() -> None:
     for viejo in (list(SALIDA.glob("*.js")) + list(SALIDA_U.glob("*.js"))
                   + list(SALIDA_C.glob("*.js"))):
         viejo.unlink()
+
+    sitios_mundo = sitios_unicos_del_mundo(universidades)
+    print(f"  {len(sitios_mundo):,} nombres de universidad unicos en el mundo\n")
 
     escritos, total_u, sin_universidades = [], 0, []
     total_ciudades, total_enlazadas, sin_ciudades = 0, 0, []
@@ -444,7 +483,7 @@ def main() -> None:
         }
         ciudades, enlazadas = construir_ciudades(
             censo.get(cca2, {}), identificador, nombre_es, capital, sitios,
-            args.min_universidades,
+            args.min_universidades, sitios_mundo,
         )
         total_ciudades += len(ciudades)
         total_enlazadas += enlazadas
@@ -471,11 +510,15 @@ def main() -> None:
             nota = ("// Sin ciudades: la fuente no le conoce ninguna universidad\n"
                     "// a este pais. No es que no las tenga; es que no constan.")
         else:
-            vistas = len(censo.get(cca2, {}).get("ciudades", []))
-            nota = (f"// Sin ciudades: Hipolabs le ve {len(lista)} universidades, pero\n"
-                    f"// Wikidata solo situa {vistas} ciudad(es) que llegue(n) al minimo\n"
-                    f"// de {minimo}. Es un hueco de la fuente, NO que el pais no tenga\n"
-                    "// universidades. Se cura a mano o con otra fuente.")
+            # Llegar aqui significa que NINGUNA ciudad del pais tiene una sola
+            # universidad situada; el minimo ya no pinta nada, porque cuando
+            # ninguna lo alcanza se cae a las de una (ver construir_ciudades).
+            # O sea: Wikidata no sabe donde esta ninguna de ellas.
+            plural_u = "universidad" if len(lista) == 1 else "universidades"
+            nota = (f"// Sin ciudades: Hipolabs le ve {len(lista)} {plural_u}, pero\n"
+                    "// Wikidata no situa ninguna - ni por coordenadas ni por el\n"
+                    "// municipio que declara. Es un hueco de la fuente, NO que el\n"
+                    "// pais no tenga universidades. Se cura a mano o con otra fuente.")
 
         resumen = "\n".join(
             "    defineCity({\n"

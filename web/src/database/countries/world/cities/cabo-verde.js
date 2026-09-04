@@ -38,4 +38,22 @@ export default {
         // Situada a 4.0 km del centro de Praia (Wikidata).
       }),
   ],
+  "cabo-verde-mindelo": [
+      defineUniversity({
+        id: "cabo-verde-mindelo-university-of-mindelo",
+        name: "University of Mindelo",
+        cityId: "cabo-verde-mindelo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Mindelo (Wikidata).
+      }),
+      defineUniversity({
+        id: "cabo-verde-mindelo-atlantic-technical-university",
+        name: "Atlantic Technical University",
+        cityId: "cabo-verde-mindelo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Mindelo (Wikidata).
+      }),
+  ],
 };

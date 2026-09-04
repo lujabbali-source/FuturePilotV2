@@ -94,14 +94,6 @@ export default {
         // Situada a 1.9 km del centro de Tirana (Wikidata).
       }),
       defineUniversity({
-        id: "albania-tirana-catholic-university-our-lady-of-good-counsel",
-        name: "Catholic University \"Our Lady of Good Counsel\"",
-        cityId: "albania-tirana",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Tirana (Wikidata).
-      }),
-      defineUniversity({
         id: "albania-tirana-university-of-tirana",
         name: "University of Tirana",
         cityId: "albania-tirana",
@@ -140,14 +132,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.2 km del centro de Tirana (Wikidata).
-      }),
-      defineUniversity({
-        id: "albania-tirana-marin-barleti-university",
-        name: "Marin Barleti University",
-        cityId: "albania-tirana",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Tirana (Wikidata).
       }),
       defineUniversity({
         id: "albania-tirana-marin-barleti-university",
@@ -197,39 +181,47 @@ export default {
         source: "open-dataset",
         // Situada a 1.2 km del centro de Tirana (Wikidata).
       }),
+      defineUniversity({
+        id: "albania-tirana-tirana-european-university-of-tourism",
+        name: "️Tirana European University of Tourism",
+        cityId: "albania-tirana",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tirana (Wikidata).
+      }),
+      defineUniversity({
+        id: "albania-tirana-albanian-university",
+        name: "Albanian University",
+        cityId: "albania-tirana",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tirana (Wikidata).
+      }),
+      defineUniversity({
+        id: "albania-tirana-skanderbeg-military-university",
+        name: "Skanderbeg Military University",
+        cityId: "albania-tirana",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tirana (Wikidata).
+      }),
   ],
-  "albania-shkoder": [
+  "albania-korce": [
       defineUniversity({
-        id: "albania-shkoder-university-of-shkodra",
-        name: "University of Shkodra",
-        cityId: "albania-shkoder",
+        id: "albania-korce-fan-s-noli-university",
+        name: "Fan S. Noli University",
+        cityId: "albania-korce",
         website: null,
         source: "open-dataset",
-        // Situada a 0.4 km del centro de Shkodër (Wikidata).
+        // Situada a 1.1 km del centro de Korçë (Wikidata).
       }),
       defineUniversity({
-        id: "albania-shkoder-university-of-shkodra",
-        name: "University of Shkodra",
-        cityId: "albania-shkoder",
+        id: "albania-korce-kristal-university",
+        name: "Kristal University",
+        cityId: "albania-korce",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Shkodër (Wikidata).
-      }),
-      defineUniversity({
-        id: "albania-shkoder-university-of-shkodra",
-        name: "University of Shkodra",
-        cityId: "albania-shkoder",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Shkodër (Wikidata).
-      }),
-      defineUniversity({
-        id: "albania-shkoder-pjeter-meshkalla-high-school",
-        name: "Pjeter Meshkalla High School",
-        cityId: "albania-shkoder",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Shkodër (Wikidata).
+        // Situada a None km del centro de Korçë (Wikidata).
       }),
   ],
   "albania-vlore": [
@@ -248,6 +240,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.9 km del centro de Vlorë (Wikidata).
+      }),
+  ],
+  "albania-shkoder": [
+      defineUniversity({
+        id: "albania-shkoder-university-of-shkodra",
+        name: "University of Shkodra",
+        cityId: "albania-shkoder",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Shkodër (Wikidata).
+      }),
+      defineUniversity({
+        id: "albania-shkoder-pjeter-meshkalla-high-school",
+        name: "Pjeter Meshkalla High School",
+        cityId: "albania-shkoder",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Shkodër (Wikidata).
       }),
   ],
 };

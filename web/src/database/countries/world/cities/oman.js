@@ -12,24 +12,6 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
-  "oman-ibra": [
-      defineUniversity({
-        id: "oman-ibra-a-sharqiyah-university",
-        name: "A'Sharqiyah University",
-        cityId: "oman-ibra",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.2 km del centro de Ibrā’ (Wikidata).
-      }),
-      defineUniversity({
-        id: "oman-ibra-a-sharqiyah-university",
-        name: "A'Sharqiyah University",
-        cityId: "oman-ibra",
-        website: null,
-        source: "open-dataset",
-        // Situada a 10.0 km del centro de Ibrā’ (Wikidata).
-      }),
-  ],
   "oman-seeb": [
       defineUniversity({
         id: "oman-seeb-german-university-of-technology-in-oman",
@@ -46,6 +28,14 @@ export default {
         website: "http://www.squ.edu.om/",
         source: "open-dataset",
         // Situada a 8.0 km del centro de Seeb (Wikidata).
+      }),
+      defineUniversity({
+        id: "oman-seeb-royal-guard-of-oman-technical-college",
+        name: "Royal Guard of Oman Technical College",
+        cityId: "oman-seeb",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Seeb (Wikidata).
       }),
   ],
 };

@@ -71,6 +71,32 @@ export default {
         source: "open-dataset",
         // Situada a 3.7 km del centro de Utrecht (Wikidata).
       }),
+      defineUniversity({
+        id: "paises-bajos-utrecht-protestant-theological-university",
+        name: "Protestant Theological University",
+        cityId: "paises-bajos-utrecht",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Utrecht (Wikidata).
+      }),
+  ],
+  "paises-bajos-nijmegen": [
+      defineUniversity({
+        id: "paises-bajos-nijmegen-radboud-university",
+        name: "Radboud University",
+        cityId: "paises-bajos-nijmegen",
+        website: "http://www.ru.nl/",
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Nijmegen (Wikidata).
+      }),
+      defineUniversity({
+        id: "paises-bajos-nijmegen-university-of-nijmegen",
+        name: "University of Nijmegen",
+        cityId: "paises-bajos-nijmegen",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Nijmegen (Wikidata).
+      }),
   ],
   "paises-bajos-maastricht": [
       defineUniversity({
@@ -82,20 +108,12 @@ export default {
         // Situada a 0.2 km del centro de Maastricht (Wikidata).
       }),
       defineUniversity({
-        id: "paises-bajos-maastricht-maastricht-university",
-        name: "Maastricht University",
+        id: "paises-bajos-maastricht-maastricht-school-of-translation-and-interpreting",
+        name: "Maastricht School of Translation and Interpreting",
         cityId: "paises-bajos-maastricht",
-        website: "http://www.unimaas.nl/",
+        website: null,
         source: "open-dataset",
-        // Situada a 0.2 km del centro de Maastricht (Wikidata).
-      }),
-      defineUniversity({
-        id: "paises-bajos-maastricht-maastricht-university",
-        name: "Maastricht University",
-        cityId: "paises-bajos-maastricht",
-        website: "http://www.unimaas.nl/",
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Maastricht (Wikidata).
+        // Situada a None km del centro de Maastricht (Wikidata).
       }),
   ],
   "paises-bajos-leiden": [
@@ -116,6 +134,16 @@ export default {
         // Situada a 0.6 km del centro de Leiden (Wikidata).
       }),
   ],
+  "paises-bajos-heerlen": [
+      defineUniversity({
+        id: "paises-bajos-heerlen-open-university-of-the-netherlands",
+        name: "Open University of the Netherlands",
+        cityId: "paises-bajos-heerlen",
+        website: "http://www.ou.nl/",
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Heerlen (Wikidata).
+      }),
+  ],
   "paises-bajos-enschede": [
       defineUniversity({
         id: "paises-bajos-enschede-university-of-twente",
@@ -124,24 +152,6 @@ export default {
         website: "http://www.utwente.nl/",
         source: "open-dataset",
         // Situada a 4.0 km del centro de Enschede (Wikidata).
-      }),
-  ],
-  "paises-bajos-delft": [
-      defineUniversity({
-        id: "paises-bajos-delft-delft-university-of-technology",
-        name: "Delft University of Technology",
-        cityId: "paises-bajos-delft",
-        website: "http://www.tudelft.nl/",
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Delft (Wikidata).
-      }),
-      defineUniversity({
-        id: "paises-bajos-delft-delft-university-of-technology",
-        name: "Delft University of Technology",
-        cityId: "paises-bajos-delft",
-        website: "http://www.tudelft.nl/",
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Delft (Wikidata).
       }),
   ],
 };

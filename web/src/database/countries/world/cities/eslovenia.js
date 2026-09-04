@@ -12,6 +12,60 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
+  "eslovenia-novo-mesto": [
+      defineUniversity({
+        id: "eslovenia-novo-mesto-university-and-research-centre-novo-mesto",
+        name: "University and Research Centre Novo Mesto",
+        cityId: "eslovenia-novo-mesto",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Novo Mesto (Wikidata).
+      }),
+      defineUniversity({
+        id: "eslovenia-novo-mesto-university-of-novo-mesto",
+        name: "University of Novo Mesto",
+        cityId: "eslovenia-novo-mesto",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Novo Mesto (Wikidata).
+      }),
+  ],
+  "eslovenia-maribor": [
+      defineUniversity({
+        id: "eslovenia-maribor-university-of-maribor",
+        name: "University of Maribor",
+        cityId: "eslovenia-maribor",
+        website: "http://www.um.si/",
+        source: "open-dataset",
+        // Situada a 0.4 km del centro de Maribor (Wikidata).
+      }),
+      defineUniversity({
+        id: "eslovenia-maribor-alma-mater-europaea",
+        name: "Alma Mater Europaea",
+        cityId: "eslovenia-maribor",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Maribor (Wikidata).
+      }),
+  ],
+  "eslovenia-ljubljana": [
+      defineUniversity({
+        id: "eslovenia-ljubljana-university-of-ljubljana",
+        name: "University of Ljubljana",
+        cityId: "eslovenia-ljubljana",
+        website: "http://www.uni-lj.si/",
+        source: "open-dataset",
+        // Situada a 0.3 km del centro de Ljubljana (Wikidata).
+      }),
+      defineUniversity({
+        id: "eslovenia-ljubljana-faculty-of-theology-university-of-ljubljana",
+        name: "Faculty of Theology – University of Ljubljana",
+        cityId: "eslovenia-ljubljana",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Ljubljana (Wikidata).
+      }),
+  ],
   "eslovenia-koper": [
       defineUniversity({
         id: "eslovenia-koper-university-of-primorska",

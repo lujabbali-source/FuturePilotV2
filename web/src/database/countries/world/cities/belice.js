@@ -12,6 +12,24 @@
 import { defineUniversity } from "../../schema.js";
 
 export default {
+  "belice-san-pedro": [
+      defineUniversity({
+        id: "belice-san-pedro-san-pedro-junior-college",
+        name: "San Pedro Junior College",
+        cityId: "belice-san-pedro",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de San Pedro (Wikidata).
+      }),
+      defineUniversity({
+        id: "belice-san-pedro-medical-university-of-the-americas-belize",
+        name: "Medical University of the Americas – Belize",
+        cityId: "belice-san-pedro",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de San Pedro (Wikidata).
+      }),
+  ],
   "belice-orange-walk": [
       defineUniversity({
         id: "belice-orange-walk-centro-escolar-mexico-junior-college",

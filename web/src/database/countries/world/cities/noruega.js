@@ -61,6 +61,22 @@ export default {
         source: "open-dataset",
         // Situada a 2.0 km del centro de Oslo (Wikidata).
       }),
+      defineUniversity({
+        id: "noruega-oslo-norwegian-military-college",
+        name: "Norwegian Military College",
+        cityId: "noruega-oslo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Oslo (Wikidata).
+      }),
+      defineUniversity({
+        id: "noruega-oslo-folkeuniversitet",
+        name: "Folkeuniversitet",
+        cityId: "noruega-oslo",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Oslo (Wikidata).
+      }),
   ],
   "noruega-trondheim": [
       defineUniversity({
@@ -104,6 +120,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 3.6 km del centro de Tromsø (Wikidata).
+      }),
+      defineUniversity({
+        id: "noruega-troms-centre-of-marine-resource-management",
+        name: "Centre of Marine Resource Management",
+        cityId: "noruega-troms",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tromsø (Wikidata).
+      }),
+  ],
+  "noruega-stavanger": [
+      defineUniversity({
+        id: "noruega-stavanger-university-of-stavanger",
+        name: "University of Stavanger",
+        cityId: "noruega-stavanger",
+        website: "http://www.uis.no/",
+        source: "open-dataset",
+        // Situada a 4.2 km del centro de Stavanger (Wikidata).
       }),
   ],
   "noruega-bod": [

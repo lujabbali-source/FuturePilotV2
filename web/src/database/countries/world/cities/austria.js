@@ -22,44 +22,12 @@ export default {
         // Situada a 0.9 km del centro de Vienna (Wikidata).
       }),
       defineUniversity({
-        id: "austria-vienna-academy-of-fine-arts-vienna",
-        name: "Academy of Fine Arts Vienna",
-        cityId: "austria-vienna",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Vienna (Wikidata).
-      }),
-      defineUniversity({
-        id: "austria-vienna-academy-of-fine-arts-vienna",
-        name: "Academy of Fine Arts Vienna",
-        cityId: "austria-vienna",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Vienna (Wikidata).
-      }),
-      defineUniversity({
-        id: "austria-vienna-academy-of-fine-arts-vienna",
-        name: "Academy of Fine Arts Vienna",
-        cityId: "austria-vienna",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Vienna (Wikidata).
-      }),
-      defineUniversity({
         id: "austria-vienna-higher-scientific-institute-for-diocesan-priests-at-st-augustine-s",
         name: "Higher Scientific Institute for Diocesan Priests at St. Augustine's",
         cityId: "austria-vienna",
         website: null,
         source: "open-dataset",
         // Situada a 0.5 km del centro de Vienna (Wikidata).
-      }),
-      defineUniversity({
-        id: "austria-vienna-tu-wien",
-        name: "TU Wien",
-        cityId: "austria-vienna",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Vienna (Wikidata).
       }),
       defineUniversity({
         id: "austria-vienna-tu-wien",
@@ -85,63 +53,13 @@ export default {
         source: "open-dataset",
         // Situada a 0.8 km del centro de Vienna (Wikidata).
       }),
-  ],
-  "austria-linz": [
       defineUniversity({
-        id: "austria-linz-itu-interdisciplinary-transformation-university-austria",
-        name: "ITU – Interdisciplinary Transformation University Austria",
-        cityId: "austria-linz",
+        id: "austria-vienna-caesareum-societatis-jesu-collegium-viennense",
+        name: "Caesareum Societatis Jesu Collegium Viennense",
+        cityId: "austria-vienna",
         website: null,
         source: "open-dataset",
-        // Situada a 4.2 km del centro de Linz (Wikidata).
-      }),
-      defineUniversity({
-        id: "austria-linz-itu-interdisciplinary-transformation-university-austria",
-        name: "ITU – Interdisciplinary Transformation University Austria",
-        cityId: "austria-linz",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Linz (Wikidata).
-      }),
-      defineUniversity({
-        id: "austria-linz-university-of-art-and-design-linz",
-        name: "University of Art and Design Linz",
-        cityId: "austria-linz",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.0 km del centro de Linz (Wikidata).
-      }),
-      defineUniversity({
-        id: "austria-linz-catholic-private-university-linz",
-        name: "Catholic Private University Linz",
-        cityId: "austria-linz",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Linz (Wikidata).
-      }),
-      defineUniversity({
-        id: "austria-linz-catholic-private-university-linz",
-        name: "Catholic Private University Linz",
-        cityId: "austria-linz",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Linz (Wikidata).
-      }),
-      defineUniversity({
-        id: "austria-linz-anton-bruckner-university",
-        name: "Anton Bruckner University",
-        cityId: "austria-linz",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Linz (Wikidata).
-      }),
-      defineUniversity({
-        id: "austria-linz-johannes-kepler-university-linz",
-        name: "Johannes Kepler University Linz",
-        cityId: "austria-linz",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Linz (Wikidata).
+        // Situada a None km del centro de Vienna (Wikidata).
       }),
   ],
   "austria-sankt-polten": [
@@ -194,46 +112,46 @@ export default {
         // Situada a 22.1 km del centro de Sankt Pölten (Wikidata).
       }),
   ],
-  "austria-baden": [
+  "austria-linz": [
       defineUniversity({
-        id: "austria-baden-philosophisch-theologische-hochschule-heiligenkreuz",
-        name: "Philosophisch-Theologische Hochschule Heiligenkreuz",
-        cityId: "austria-baden",
+        id: "austria-linz-itu-interdisciplinary-transformation-university-austria",
+        name: "ITU – Interdisciplinary Transformation University Austria",
+        cityId: "austria-linz",
         website: null,
         source: "open-dataset",
-        // Situada a 9.5 km del centro de Baden (Wikidata).
+        // Situada a 4.2 km del centro de Linz (Wikidata).
       }),
       defineUniversity({
-        id: "austria-baden-philosophisch-theologische-hochschule-heiligenkreuz",
-        name: "Philosophisch-Theologische Hochschule Heiligenkreuz",
-        cityId: "austria-baden",
+        id: "austria-linz-university-of-art-and-design-linz",
+        name: "University of Art and Design Linz",
+        cityId: "austria-linz",
         website: null,
         source: "open-dataset",
-        // Situada a 9.5 km del centro de Baden (Wikidata).
+        // Situada a 0.0 km del centro de Linz (Wikidata).
       }),
       defineUniversity({
-        id: "austria-baden-priesterseminar-leopoldinum",
-        name: "Priesterseminar Leopoldinum",
-        cityId: "austria-baden",
+        id: "austria-linz-catholic-private-university-linz",
+        name: "Catholic Private University Linz",
+        cityId: "austria-linz",
         website: null,
         source: "open-dataset",
-        // Situada a 9.5 km del centro de Baden (Wikidata).
+        // Situada a 0.5 km del centro de Linz (Wikidata).
       }),
       defineUniversity({
-        id: "austria-baden-heiligenkreuz-abbey",
-        name: "Heiligenkreuz Abbey",
-        cityId: "austria-baden",
+        id: "austria-linz-anton-bruckner-university",
+        name: "Anton Bruckner University",
+        cityId: "austria-linz",
         website: null,
         source: "open-dataset",
-        // Situada a 9.3 km del centro de Baden (Wikidata).
+        // Situada a 1.0 km del centro de Linz (Wikidata).
       }),
       defineUniversity({
-        id: "austria-baden-heiligenkreuz-abbey",
-        name: "Heiligenkreuz Abbey",
-        cityId: "austria-baden",
+        id: "austria-linz-johannes-kepler-university-linz",
+        name: "Johannes Kepler University Linz",
+        cityId: "austria-linz",
         website: null,
         source: "open-dataset",
-        // Situada a 9.3 km del centro de Baden (Wikidata).
+        // Situada a 4.2 km del centro de Linz (Wikidata).
       }),
   ],
   "austria-salzburg": [
@@ -296,30 +214,30 @@ export default {
         // Situada a 1.0 km del centro de Innere Stadt (Wikidata).
       }),
   ],
-  "austria-innsbruck": [
+  "austria-baden": [
       defineUniversity({
-        id: "austria-innsbruck-university-of-innsbruck-faculty-of-catholic-theology",
-        name: "University of Innsbruck. Faculty of Catholic Theology",
-        cityId: "austria-innsbruck",
+        id: "austria-baden-philosophisch-theologische-hochschule-heiligenkreuz",
+        name: "Philosophisch-Theologische Hochschule Heiligenkreuz",
+        cityId: "austria-baden",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Innsbruck (Wikidata).
+        // Situada a 9.5 km del centro de Baden (Wikidata).
       }),
       defineUniversity({
-        id: "austria-innsbruck-collegium-canisianum",
-        name: "Collegium Canisianum",
-        cityId: "austria-innsbruck",
+        id: "austria-baden-priesterseminar-leopoldinum",
+        name: "Priesterseminar Leopoldinum",
+        cityId: "austria-baden",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Innsbruck (Wikidata).
+        // Situada a 9.5 km del centro de Baden (Wikidata).
       }),
       defineUniversity({
-        id: "austria-innsbruck-collegium-canisianum",
-        name: "Collegium Canisianum",
-        cityId: "austria-innsbruck",
+        id: "austria-baden-heiligenkreuz-abbey",
+        name: "Heiligenkreuz Abbey",
+        cityId: "austria-baden",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Innsbruck (Wikidata).
+        // Situada a 9.3 km del centro de Baden (Wikidata).
       }),
   ],
   "austria-landstra-e": [
@@ -348,32 +266,6 @@ export default {
         // Situada a 0.2 km del centro de Landstraße (Wikidata).
       }),
   ],
-  "austria-alsergrund": [
-      defineUniversity({
-        id: "austria-alsergrund-seminary-of-vienna",
-        name: "Seminary of Vienna",
-        cityId: "austria-alsergrund",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de Alsergrund (Wikidata).
-      }),
-      defineUniversity({
-        id: "austria-alsergrund-pazmaneum",
-        name: "Pázmáneum",
-        cityId: "austria-alsergrund",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.2 km del centro de Alsergrund (Wikidata).
-      }),
-      defineUniversity({
-        id: "austria-alsergrund-medical-university-of-vienna",
-        name: "Medical University of Vienna",
-        cityId: "austria-alsergrund",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Alsergrund (Wikidata).
-      }),
-  ],
   "austria-wilten": [
       defineUniversity({
         id: "austria-wilten-medical-university-of-innsbruck",
@@ -392,24 +284,6 @@ export default {
         // Situada a 0.6 km del centro de Wilten (Wikidata).
       }),
   ],
-  "austria-wiener-neustadt": [
-      defineUniversity({
-        id: "austria-wiener-neustadt-joseph-haydn-konservatorium-eisenstadt",
-        name: "Joseph Haydn Konservatorium, Eisenstadt",
-        cityId: "austria-wiener-neustadt",
-        website: null,
-        source: "open-dataset",
-        // Situada a 21.7 km del centro de Wiener Neustadt (Wikidata).
-      }),
-      defineUniversity({
-        id: "austria-wiener-neustadt-theresian-military-academy",
-        name: "Theresian Military Academy",
-        cityId: "austria-wiener-neustadt",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Wiener Neustadt (Wikidata).
-      }),
-  ],
   "austria-pradl": [
       defineUniversity({
         id: "austria-pradl-umit-tirol-private-university-for-health-sciences-and-health-technology",
@@ -420,22 +294,32 @@ export default {
         // Situada a 8.0 km del centro de Pradl (Wikidata).
       }),
   ],
-  "austria-favoriten": [
+  "austria-innsbruck": [
       defineUniversity({
-        id: "austria-favoriten-central-european-university",
-        name: "Central European University",
-        cityId: "austria-favoriten",
+        id: "austria-innsbruck-university-of-innsbruck-faculty-of-catholic-theology",
+        name: "University of Innsbruck. Faculty of Catholic Theology",
+        cityId: "austria-innsbruck",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Favoriten (Wikidata).
+        // Situada a 0.7 km del centro de Innsbruck (Wikidata).
       }),
       defineUniversity({
-        id: "austria-favoriten-central-european-university",
-        name: "Central European University",
-        cityId: "austria-favoriten",
+        id: "austria-innsbruck-collegium-canisianum",
+        name: "Collegium Canisianum",
+        cityId: "austria-innsbruck",
         website: null,
         source: "open-dataset",
-        // Situada a 1.5 km del centro de Favoriten (Wikidata).
+        // Situada a 1.4 km del centro de Innsbruck (Wikidata).
+      }),
+  ],
+  "austria-graz": [
+      defineUniversity({
+        id: "austria-graz-faculty-of-law-of-the-university-of-graz",
+        name: "Faculty of Law of the University of Graz",
+        cityId: "austria-graz",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Graz (Wikidata).
       }),
   ],
   "austria-geidorf": [
@@ -472,6 +356,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.7 km del centro de Sankt Leonhard (Wikidata).
+      }),
+  ],
+  "austria-alsergrund": [
+      defineUniversity({
+        id: "austria-alsergrund-seminary-of-vienna",
+        name: "Seminary of Vienna",
+        cityId: "austria-alsergrund",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.1 km del centro de Alsergrund (Wikidata).
+      }),
+      defineUniversity({
+        id: "austria-alsergrund-pazmaneum",
+        name: "Pázmáneum",
+        cityId: "austria-alsergrund",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.2 km del centro de Alsergrund (Wikidata).
       }),
   ],
 };

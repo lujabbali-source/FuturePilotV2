@@ -53,6 +53,54 @@ export default {
         source: "open-dataset",
         // Situada a 5.5 km del centro de Tripoli (Wikidata).
       }),
+      defineUniversity({
+        id: "libia-tripoli-open-university-of-libya",
+        name: "Open University of Libya",
+        cityId: "libia-tripoli",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tripoli (Wikidata).
+      }),
+      defineUniversity({
+        id: "libia-tripoli-academic-university",
+        name: "Academic University",
+        cityId: "libia-tripoli",
+        website: "http://www.spbau.ru/",
+        source: "open-dataset",
+        // Situada a None km del centro de Tripoli (Wikidata).
+      }),
+      defineUniversity({
+        id: "libia-tripoli-attahadi-university",
+        name: "Attahadi University",
+        cityId: "libia-tripoli",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tripoli (Wikidata).
+      }),
+      defineUniversity({
+        id: "libia-tripoli-libya-international-medical-university",
+        name: "Libya International Medical University",
+        cityId: "libia-tripoli",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tripoli (Wikidata).
+      }),
+      defineUniversity({
+        id: "libia-tripoli-university-of-libya",
+        name: "University of Libya",
+        cityId: "libia-tripoli",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tripoli (Wikidata).
+      }),
+      defineUniversity({
+        id: "libia-tripoli-higher-institute-of-computer-technology",
+        name: "Higher Institute of Computer Technology",
+        cityId: "libia-tripoli",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tripoli (Wikidata).
+      }),
   ],
   "libia-benghazi": [
       defineUniversity({
@@ -78,6 +126,40 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 0.7 km del centro de Benghazi (Wikidata).
+      }),
+      defineUniversity({
+        id: "libia-benghazi-al-arab-medical-university",
+        name: "Al-Arab Medical University",
+        cityId: "libia-benghazi",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Benghazi (Wikidata).
+      }),
+  ],
+  "libia-bani-walid": [
+      defineUniversity({
+        id: "libia-bani-walid-bani-walid-university",
+        name: "Bani Walid University",
+        cityId: "libia-bani-walid",
+        website: null,
+        source: "open-dataset",
+        // Situada a 4.1 km del centro de Bani Walid (Wikidata).
+      }),
+      defineUniversity({
+        id: "libia-bani-walid-higher-institute-of-medical-sciences-and-technologies",
+        name: "Higher Institute of Medical Sciences and Technologies",
+        cityId: "libia-bani-walid",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bani Walid (Wikidata).
+      }),
+      defineUniversity({
+        id: "libia-bani-walid-azzaytuna-university",
+        name: "Azzaytuna University",
+        cityId: "libia-bani-walid",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Bani Walid (Wikidata).
       }),
   ],
   "libia-al-bayda": [

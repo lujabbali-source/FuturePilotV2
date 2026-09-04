@@ -19,22 +19,22 @@ const countryName = "Ruanda";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
-      id: "ruanda-ndera",
-      name: "Ndera",
-      coordinates: {"lat": -1.9495, "lng": 30.1697},
-      isCapital: false,
-      universityCount: 6,
-      statistics: { population: 41764 },
-      countryId,
-      countryName,
-    }),
-    defineCity({
       id: "ruanda-kigali",
       name: "Kigali",
       coordinates: {"lat": -1.94995, "lng": 30.05885},
       isCapital: true,
       universityCount: 5,
       statistics: { population: 1132686 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "ruanda-ndera",
+      name: "Ndera",
+      coordinates: {"lat": -1.9495, "lng": 30.1697},
+      isCapital: false,
+      universityCount: 5,
+      statistics: { population: 41764 },
       countryId,
       countryName,
     }),

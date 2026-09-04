@@ -85,6 +85,14 @@ export default {
         source: "open-dataset",
         // Situada a 4.8 km del centro de Rabat (Wikidata).
       }),
+      defineUniversity({
+        id: "marruecos-rabat-ecole-nationale-d-administration-de-rabat",
+        name: "Ecole Nationale d'Administration de Rabat",
+        cityId: "marruecos-rabat",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Rabat (Wikidata).
+      }),
   ],
   "marruecos-casablanca": [
       defineUniversity({
@@ -135,23 +143,13 @@ export default {
         source: "open-dataset",
         // Situada a 5.5 km del centro de Casablanca (Wikidata).
       }),
-  ],
-  "marruecos-tetouan": [
       defineUniversity({
-        id: "marruecos-tetouan-abdelmalek-essaadi-university",
-        name: "Abdelmalek Essaâdi University",
-        cityId: "marruecos-tetouan",
+        id: "marruecos-casablanca-higher-institute-of-commerce-and-business-administration",
+        name: "Higher Institute of Commerce and Business Administration",
+        cityId: "marruecos-casablanca",
         website: null,
         source: "open-dataset",
-        // Situada a 2.0 km del centro de Tétouan (Wikidata).
-      }),
-      defineUniversity({
-        id: "marruecos-tetouan-ecole-nationale-des-sciences-appliquees-de-tetouan",
-        name: "École nationale des sciences appliquées de Tétouan",
-        cityId: "marruecos-tetouan",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Tétouan (Wikidata).
+        // Situada a None km del centro de Casablanca (Wikidata).
       }),
   ],
   "marruecos-meknes": [
@@ -171,6 +169,32 @@ export default {
         source: "open-dataset",
         // Situada a 0.7 km del centro de Meknes (Wikidata).
       }),
+      defineUniversity({
+        id: "marruecos-meknes-faculty-of-letters-and-human-sciences-of-meknes",
+        name: "Faculty of Letters and Human Sciences of Meknes",
+        cityId: "marruecos-meknes",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Meknes (Wikidata).
+      }),
+  ],
+  "marruecos-tetouan": [
+      defineUniversity({
+        id: "marruecos-tetouan-abdelmalek-essaadi-university",
+        name: "Abdelmalek Essaâdi University",
+        cityId: "marruecos-tetouan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.0 km del centro de Tétouan (Wikidata).
+      }),
+      defineUniversity({
+        id: "marruecos-tetouan-ecole-nationale-des-sciences-appliquees-de-tetouan",
+        name: "École nationale des sciences appliquées de Tétouan",
+        cityId: "marruecos-tetouan",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Tétouan (Wikidata).
+      }),
   ],
   "marruecos-marrakesh": [
       defineUniversity({
@@ -188,24 +212,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 3.3 km del centro de Marrakesh (Wikidata).
-      }),
-  ],
-  "marruecos-ifrane": [
-      defineUniversity({
-        id: "marruecos-ifrane-al-akhawayn-university",
-        name: "Al Akhawayn University",
-        cityId: "marruecos-ifrane",
-        website: "http://www.aui.ma/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Ifrane (Wikidata).
-      }),
-      defineUniversity({
-        id: "marruecos-ifrane-al-akhawayn-university",
-        name: "Al Akhawayn University",
-        cityId: "marruecos-ifrane",
-        website: "http://www.aui.ma/",
-        source: "open-dataset",
-        // Situada a 1.5 km del centro de Ifrane (Wikidata).
       }),
   ],
   "marruecos-new-fes": [
@@ -260,24 +266,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.5 km del centro de Bouskoura (Wikidata).
-      }),
-  ],
-  "marruecos-ben-guerir": [
-      defineUniversity({
-        id: "marruecos-ben-guerir-university-mohammed-vi-polytechnic",
-        name: "University Mohammed VI Polytechnic",
-        cityId: "marruecos-ben-guerir",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Ben Guerir (Wikidata).
-      }),
-      defineUniversity({
-        id: "marruecos-ben-guerir-university-mohammed-vi-polytechnic",
-        name: "University Mohammed VI Polytechnic",
-        cityId: "marruecos-ben-guerir",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.0 km del centro de Ben Guerir (Wikidata).
       }),
   ],
   "marruecos-dakhla": [

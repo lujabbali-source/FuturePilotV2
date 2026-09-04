@@ -38,32 +38,6 @@ export default {
         // Situada a 1.3 km del centro de Vasastaden (Wikidata).
       }),
   ],
-  "suecia-malmo": [
-      defineUniversity({
-        id: "suecia-malmo-world-maritime-university",
-        name: "World Maritime University",
-        cityId: "suecia-malmo",
-        website: "http://www.wmu.se/",
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Malmö (Wikidata).
-      }),
-      defineUniversity({
-        id: "suecia-malmo-world-maritime-university",
-        name: "World Maritime University",
-        cityId: "suecia-malmo",
-        website: "http://www.wmu.se/",
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Malmö (Wikidata).
-      }),
-      defineUniversity({
-        id: "suecia-malmo-malmo-university",
-        name: "Malmö University",
-        cityId: "suecia-malmo",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.3 km del centro de Malmö (Wikidata).
-      }),
-  ],
   "suecia-vaxjo": [
       defineUniversity({
         id: "suecia-vaxjo-linnaeus-university",
@@ -116,6 +90,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.2 km del centro de Östermalm (Wikidata).
+      }),
+  ],
+  "suecia-malmo": [
+      defineUniversity({
+        id: "suecia-malmo-world-maritime-university",
+        name: "World Maritime University",
+        cityId: "suecia-malmo",
+        website: "http://www.wmu.se/",
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Malmö (Wikidata).
+      }),
+      defineUniversity({
+        id: "suecia-malmo-malmo-university",
+        name: "Malmö University",
+        cityId: "suecia-malmo",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.3 km del centro de Malmö (Wikidata).
       }),
   ],
   "suecia-gothenburg": [

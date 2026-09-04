@@ -45,5 +45,85 @@ export default {
         source: "open-dataset",
         // Situada a 19.9 km del centro de Asmara (Wikidata).
       }),
+      defineUniversity({
+        id: "eritrea-asmara-asmara-college-of-education",
+        name: "Asmara College of Education",
+        cityId: "eritrea-asmara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Asmara (Wikidata).
+      }),
+      defineUniversity({
+        id: "eritrea-asmara-college-of-arts-university-of-asmara",
+        name: "College of Arts, University of Asmara",
+        cityId: "eritrea-asmara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Asmara (Wikidata).
+      }),
+      defineUniversity({
+        id: "eritrea-asmara-college-of-business-university-of-asmara",
+        name: "College of Business, University of Asmara",
+        cityId: "eritrea-asmara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Asmara (Wikidata).
+      }),
+      defineUniversity({
+        id: "eritrea-asmara-college-of-education-university-of-asmara",
+        name: "College of Education, University of Asmara",
+        cityId: "eritrea-asmara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Asmara (Wikidata).
+      }),
+      defineUniversity({
+        id: "eritrea-asmara-college-of-health-sciences-asmara",
+        name: "College of Health Sciences, Asmara",
+        cityId: "eritrea-asmara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Asmara (Wikidata).
+      }),
+      defineUniversity({
+        id: "eritrea-asmara-college-of-medicine-university-of-asmara",
+        name: "College of Medicine, University of Asmara",
+        cityId: "eritrea-asmara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Asmara (Wikidata).
+      }),
+      defineUniversity({
+        id: "eritrea-asmara-college-of-social-sciences-university-of-asmara",
+        name: "College of Social Sciences, University of Asmara",
+        cityId: "eritrea-asmara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Asmara (Wikidata).
+      }),
+      defineUniversity({
+        id: "eritrea-asmara-orotta-college-of-medicine-and-health-sciences",
+        name: "Orotta College of Medicine and Health Sciences",
+        cityId: "eritrea-asmara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Asmara (Wikidata).
+      }),
+      defineUniversity({
+        id: "eritrea-asmara-orotta-school-of-medicine-and-dentistry",
+        name: "Orotta School of Medicine and Dentistry",
+        cityId: "eritrea-asmara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Asmara (Wikidata).
+      }),
+      defineUniversity({
+        id: "eritrea-asmara-school-of-law-university-of-asmara",
+        name: "School of Law, University of Asmara",
+        cityId: "eritrea-asmara",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Asmara (Wikidata).
+      }),
   ],
 };

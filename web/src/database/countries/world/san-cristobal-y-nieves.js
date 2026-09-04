@@ -23,7 +23,7 @@ const cities = [
       name: "Basseterre",
       coordinates: {"lat": 17.2955, "lng": -62.72499},
       isCapital: true,
-      universityCount: 2,
+      universityCount: 3,
       statistics: { population: 12920 },
       countryId,
       countryName,

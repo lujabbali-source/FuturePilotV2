@@ -23,7 +23,7 @@ const cities = [
       name: "Vaduz",
       coordinates: {"lat": 47.14151, "lng": 9.52154},
       isCapital: true,
-      universityCount: 3,
+      universityCount: 2,
       statistics: { population: 5197 },
       countryId,
       countryName,

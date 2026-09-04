@@ -30,14 +30,6 @@ export default {
         // Situada a 3.6 km del centro de Chisinau (Wikidata).
       }),
       defineUniversity({
-        id: "moldavia-chisinau-technical-university-of-moldova",
-        name: "Technical University of Moldova",
-        cityId: "moldavia-chisinau",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Chisinau (Wikidata).
-      }),
-      defineUniversity({
         id: "moldavia-chisinau-technikal-university-of-moldova",
         name: "Technikal University of Moldova",
         cityId: "moldavia-chisinau",
@@ -85,6 +77,62 @@ export default {
         source: "open-dataset",
         // Situada a 2.9 km del centro de Chisinau (Wikidata).
       }),
+      defineUniversity({
+        id: "moldavia-chisinau-free-international-university-from-moldova-ulim",
+        name: "Free International University from Moldova ULIM",
+        cityId: "moldavia-chisinau",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chisinau (Wikidata).
+      }),
+      defineUniversity({
+        id: "moldavia-chisinau-academy-of-public-administration-of-moldova",
+        name: "Academy of Public Administration of Moldova",
+        cityId: "moldavia-chisinau",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chisinau (Wikidata).
+      }),
+      defineUniversity({
+        id: "moldavia-chisinau-trade-co-operative-university-of-moldova",
+        name: "Trade Co-operative University of Moldova",
+        cityId: "moldavia-chisinau",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chisinau (Wikidata).
+      }),
+      defineUniversity({
+        id: "moldavia-chisinau-tiraspol-state-university",
+        name: "Tiraspol State University",
+        cityId: "moldavia-chisinau",
+        website: "http://www.ust.md/",
+        source: "open-dataset",
+        // Situada a None km del centro de Chisinau (Wikidata).
+      }),
+      defineUniversity({
+        id: "moldavia-chisinau-university-of-european-studies-of-moldova",
+        name: "University of European Studies of Moldova",
+        cityId: "moldavia-chisinau",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chisinau (Wikidata).
+      }),
+      defineUniversity({
+        id: "moldavia-chisinau-slavonic-university-of-moldova",
+        name: "Slavonic University of Moldova",
+        cityId: "moldavia-chisinau",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chisinau (Wikidata).
+      }),
+      defineUniversity({
+        id: "moldavia-chisinau-imi-nova-international-management-institute",
+        name: "Imi-Nova International Management Institute",
+        cityId: "moldavia-chisinau",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Chisinau (Wikidata).
+      }),
   ],
   "moldavia-tiraspol": [
       defineUniversity({
@@ -120,32 +168,6 @@ export default {
         // Situada a 0.6 km del centro de Tiraspol (Wikidata).
       }),
   ],
-  "moldavia-balti": [
-      defineUniversity({
-        id: "moldavia-balti-alecu-russo-state-university-of-balti",
-        name: "Alecu Russo State University of Bălți",
-        cityId: "moldavia-balti",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Bălţi (Wikidata).
-      }),
-      defineUniversity({
-        id: "moldavia-balti-alecu-russo-state-university-of-balti",
-        name: "Alecu Russo State University of Bălți",
-        cityId: "moldavia-balti",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.0 km del centro de Bălţi (Wikidata).
-      }),
-      defineUniversity({
-        id: "moldavia-balti-dniester-institute-of-economics-and-law",
-        name: "Dniester Institute of Economics and Law",
-        cityId: "moldavia-balti",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.9 km del centro de Bălţi (Wikidata).
-      }),
-  ],
   "moldavia-durlesti": [
       defineUniversity({
         id: "moldavia-durlesti-ion-creanga-pedagogical-state-university",
@@ -162,6 +184,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 5.7 km del centro de Durleşti (Wikidata).
+      }),
+  ],
+  "moldavia-balti": [
+      defineUniversity({
+        id: "moldavia-balti-alecu-russo-state-university-of-balti",
+        name: "Alecu Russo State University of Bălți",
+        cityId: "moldavia-balti",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.0 km del centro de Bălţi (Wikidata).
+      }),
+      defineUniversity({
+        id: "moldavia-balti-dniester-institute-of-economics-and-law",
+        name: "Dniester Institute of Economics and Law",
+        cityId: "moldavia-balti",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.9 km del centro de Bălţi (Wikidata).
       }),
   ],
 };

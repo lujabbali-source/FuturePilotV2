@@ -48,16 +48,6 @@ const cities = [
       countryId,
       countryName,
     }),
-    defineCity({
-      id: "macedonia-del-norte-struga",
-      name: "Struga",
-      coordinates: {"lat": 41.17787, "lng": 20.67894},
-      isCapital: false,
-      universityCount: 2,
-      statistics: { population: 37387 },
-      countryId,
-      countryName,
-    }),
 ];
 
 export default defineCountry({

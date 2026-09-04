@@ -8,17 +8,36 @@
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry } from "../schema.js";
+import { defineCity, defineCountry } from "../schema.js";
 
 const countryId = "santa-lucia";
 const countryName = "Santa Lucía";
 
-// Sin ciudades: Hipolabs le ve 1 universidades, pero
-// Wikidata solo situa 2 ciudad(es) que llegue(n) al minimo
-// de 2. Es un hueco de la fuente, NO que el pais no tenga
-// universidades. Se cura a mano o con otra fuente.
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/santa-lucia.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
-
+    defineCity({
+      id: "santa-lucia-gros-islet",
+      name: "Gros Islet",
+      coordinates: {"lat": 14.06667, "lng": -60.95},
+      isCapital: false,
+      universityCount: 1,
+      statistics: { population: 25210 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "santa-lucia-castries",
+      name: "Castries",
+      coordinates: {"lat": 13.9957, "lng": -61.00614},
+      isCapital: true,
+      universityCount: 1,
+      statistics: { population: 20000 },
+      countryId,
+      countryName,
+    }),
 ];
 
 export default defineCountry({

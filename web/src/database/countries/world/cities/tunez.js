@@ -165,6 +165,54 @@ export default {
         source: "open-dataset",
         // Situada a 2.7 km del centro de Tunis (Wikidata).
       }),
+      defineUniversity({
+        id: "tunez-tunis-institut-superieur-prive-mediterraneen-de-technologie",
+        name: "Institut Supérieur Privé Méditerranéen de Technologie",
+        cityId: "tunez-tunis",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tunis (Wikidata).
+      }),
+      defineUniversity({
+        id: "tunez-tunis-time-university",
+        name: "Time University",
+        cityId: "tunez-tunis",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tunis (Wikidata).
+      }),
+      defineUniversity({
+        id: "tunez-tunis-tunis-international-university",
+        name: "Tunis International University",
+        cityId: "tunez-tunis",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tunis (Wikidata).
+      }),
+      defineUniversity({
+        id: "tunez-tunis-universite-centrale",
+        name: "Université Centrale",
+        cityId: "tunez-tunis",
+        website: "http://www.ucaat.com/",
+        source: "open-dataset",
+        // Situada a None km del centro de Tunis (Wikidata).
+      }),
+      defineUniversity({
+        id: "tunez-tunis-universite-tunis-carthage",
+        name: "Université Tunis Carthage",
+        cityId: "tunez-tunis",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tunis (Wikidata).
+      }),
+      defineUniversity({
+        id: "tunez-tunis-health-international-private-university",
+        name: "Health International Private University",
+        cityId: "tunez-tunis",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tunis (Wikidata).
+      }),
   ],
   "tunez-sousse": [
       defineUniversity({
@@ -206,6 +254,64 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.3 km del centro de Sousse (Wikidata).
+      }),
+      defineUniversity({
+        id: "tunez-sousse-institut-superieur-prive-des-sciences-de-la-technologie-et-des-affaires-du-centre",
+        name: "Institut Supérieur Privé des Sciences, de la Technologie et des Affaires du Centre",
+        cityId: "tunez-sousse",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sousse (Wikidata).
+      }),
+      defineUniversity({
+        id: "tunez-sousse-ecole-centrale-superieure-privee-de-technologie",
+        name: "École Centrale Supérieure Privée de Technologie",
+        cityId: "tunez-sousse",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sousse (Wikidata).
+      }),
+  ],
+  "tunez-sfax": [
+      defineUniversity({
+        id: "tunez-sfax-international-school-of-business",
+        name: "International School of Business",
+        cityId: "tunez-sfax",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.4 km del centro de Sfax (Wikidata).
+      }),
+      defineUniversity({
+        id: "tunez-sfax-international-institute-of-technology",
+        name: "International Institute of Technology",
+        cityId: "tunez-sfax",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.2 km del centro de Sfax (Wikidata).
+      }),
+      defineUniversity({
+        id: "tunez-sfax-universite-privee-du-sud",
+        name: "Université Privée du Sud",
+        cityId: "tunez-sfax",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Sfax (Wikidata).
+      }),
+      defineUniversity({
+        id: "tunez-sfax-university-of-sfax",
+        name: "University of Sfax",
+        cityId: "tunez-sfax",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.6 km del centro de Sfax (Wikidata).
+      }),
+      defineUniversity({
+        id: "tunez-sfax-upsat",
+        name: "UPSAT",
+        cityId: "tunez-sfax",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sfax (Wikidata).
       }),
   ],
   "tunez-aryanah": [
@@ -282,40 +388,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 4.0 km del centro de Sukrah (Wikidata).
-      }),
-  ],
-  "tunez-sfax": [
-      defineUniversity({
-        id: "tunez-sfax-international-school-of-business",
-        name: "International School of Business",
-        cityId: "tunez-sfax",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.4 km del centro de Sfax (Wikidata).
-      }),
-      defineUniversity({
-        id: "tunez-sfax-international-institute-of-technology",
-        name: "International Institute of Technology",
-        cityId: "tunez-sfax",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.2 km del centro de Sfax (Wikidata).
-      }),
-      defineUniversity({
-        id: "tunez-sfax-universite-privee-du-sud",
-        name: "Université Privée du Sud",
-        cityId: "tunez-sfax",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.7 km del centro de Sfax (Wikidata).
-      }),
-      defineUniversity({
-        id: "tunez-sfax-university-of-sfax",
-        name: "University of Sfax",
-        cityId: "tunez-sfax",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Sfax (Wikidata).
       }),
   ],
   "tunez-hammam-sousse": [

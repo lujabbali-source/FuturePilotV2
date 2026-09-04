@@ -8,17 +8,26 @@
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry } from "../schema.js";
+import { defineCity, defineCountry } from "../schema.js";
 
 const countryId = "nueva-caledonia";
 const countryName = "Nueva Caledonia";
 
-// Sin ciudades: Hipolabs le ve 1 universidades, pero
-// Wikidata solo situa 0 ciudad(es) que llegue(n) al minimo
-// de 2. Es un hueco de la fuente, NO que el pais no tenga
-// universidades. Se cura a mano o con otra fuente.
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/nueva-caledonia.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
-
+    defineCity({
+      id: "nueva-caledonia-noumea",
+      name: "Nouméa",
+      coordinates: {"lat": -22.27407, "lng": 166.44884},
+      isCapital: true,
+      universityCount: 1,
+      statistics: { population: 93060 },
+      countryId,
+      countryName,
+    }),
 ];
 
 export default defineCountry({

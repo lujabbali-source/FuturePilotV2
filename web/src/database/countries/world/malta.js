@@ -23,7 +23,7 @@ const cities = [
       name: "Valletta",
       coordinates: {"lat": 35.89968, "lng": 14.5148},
       isCapital: true,
-      universityCount: 2,
+      universityCount: 5,
       statistics: { population: 6794 },
       countryId,
       countryName,

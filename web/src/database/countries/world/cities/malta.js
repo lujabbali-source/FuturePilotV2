@@ -29,5 +29,29 @@ export default {
         source: "open-dataset",
         // Situada a 0.2 km del centro de Valletta (Wikidata).
       }),
+      defineUniversity({
+        id: "malta-valletta-london-school-of-commerce-valletta",
+        name: "London School of Commerce, Valletta",
+        cityId: "malta-valletta",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Valletta (Wikidata).
+      }),
+      defineUniversity({
+        id: "malta-valletta-royal-university-of-malta",
+        name: "Royal University of Malta",
+        cityId: "malta-valletta",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Valletta (Wikidata).
+      }),
+      defineUniversity({
+        id: "malta-valletta-med-e-a-university",
+        name: "MED.E.A. University",
+        cityId: "malta-valletta",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Valletta (Wikidata).
+      }),
   ],
 };

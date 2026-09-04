@@ -8,15 +8,26 @@
 // Generado. No editar a mano: se sobrescribe. Para curar este pais, muevelo a
 // countries/americas/ o su continente y quitale el dataStatus de importado.
 
-import { defineCountry } from "../schema.js";
+import { defineCity, defineCountry } from "../schema.js";
 
 const countryId = "islas-marshall";
 const countryName = "Islas Marshall";
 
-// Sin ciudades: la fuente no le conoce ninguna universidad
-// a este pais. No es que no las tenga; es que no constan.
+// Ciudades con al menos 2 universidades situadas por coordenadas (GeoNames x
+// Wikidata, ver censo_ciudades.py). Solo el resumen: que
+// universidades tiene cada una vive en ./cities/islas-marshall.js
+// y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
-
+    defineCity({
+      id: "islas-marshall-dalap-uliga-dorrit",
+      name: "Dalap-Uliga-Dorrit",
+      coordinates: {"lat": 7.087, "lng": 171.377},
+      isCapital: false,
+      universityCount: 1,
+      statistics: { population: 20301 },
+      countryId,
+      countryName,
+    }),
 ];
 
 export default defineCountry({

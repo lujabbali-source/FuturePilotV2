@@ -23,7 +23,7 @@ const cities = [
       name: "Beau Bassin-Rose Hill",
       coordinates: {"lat": -20.23325, "lng": 57.46609},
       isCapital: false,
-      universityCount: 5,
+      universityCount: 4,
       statistics: { population: 111355 },
       countryId,
       countryName,

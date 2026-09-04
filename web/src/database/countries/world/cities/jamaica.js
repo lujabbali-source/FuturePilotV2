@@ -17,15 +17,7 @@ export default {
         id: "jamaica-new-kingston-university-of-technology",
         name: "University of Technology",
         cityId: "jamaica-new-kingston",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.3 km del centro de New Kingston (Wikidata).
-      }),
-      defineUniversity({
-        id: "jamaica-new-kingston-university-of-technology",
-        name: "University of Technology",
-        cityId: "jamaica-new-kingston",
-        website: null,
+        website: "http://www.utm.ac.mu/",
         source: "open-dataset",
         // Situada a 4.3 km del centro de New Kingston (Wikidata).
       }),
@@ -46,22 +38,22 @@ export default {
         // Situada a 0.2 km del centro de New Kingston (Wikidata).
       }),
   ],
-  "jamaica-mandeville": [
+  "jamaica-kingston": [
       defineUniversity({
-        id: "jamaica-mandeville-northern-caribbean-university",
-        name: "Northern Caribbean University",
-        cityId: "jamaica-mandeville",
-        website: "http://www.ncu.edu.jm/",
+        id: "jamaica-kingston-mico-university-college",
+        name: "Mico University College",
+        cityId: "jamaica-kingston",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Mandeville (Wikidata).
+        // Situada a 1.1 km del centro de Kingston (Wikidata).
       }),
       defineUniversity({
-        id: "jamaica-mandeville-northern-caribbean-university",
-        name: "Northern Caribbean University",
-        cityId: "jamaica-mandeville",
-        website: "http://www.ncu.edu.jm/",
+        id: "jamaica-kingston-international-university-of-the-caribbean",
+        name: "International University of the Caribbean",
+        cityId: "jamaica-kingston",
+        website: null,
         source: "open-dataset",
-        // Situada a 3.1 km del centro de Mandeville (Wikidata).
+        // Situada a None km del centro de Kingston (Wikidata).
       }),
   ],
 };

@@ -22,14 +22,6 @@ export default {
         // Situada a 0.8 km del centro de Beirut (Wikidata).
       }),
       defineUniversity({
-        id: "libano-beirut-saint-joseph-university-of-beirut",
-        name: "Saint Joseph University of Beirut",
-        cityId: "libano-beirut",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.8 km del centro de Beirut (Wikidata).
-      }),
-      defineUniversity({
         id: "libano-beirut-beirut-arab-university",
         name: "Beirut Arab University",
         cityId: "libano-beirut",
@@ -57,15 +49,7 @@ export default {
         id: "libano-beirut-middle-east-university",
         name: "Middle East University",
         cityId: "libano-beirut",
-        website: null,
-        source: "open-dataset",
-        // Situada a 6.4 km del centro de Beirut (Wikidata).
-      }),
-      defineUniversity({
-        id: "libano-beirut-middle-east-university",
-        name: "Middle East University",
-        cityId: "libano-beirut",
-        website: null,
+        website: "http://www.meu.edu.jo/",
         source: "open-dataset",
         // Situada a 6.4 km del centro de Beirut (Wikidata).
       }),
@@ -116,6 +100,62 @@ export default {
         website: "http://www.ul.edu.lb/",
         source: "open-dataset",
         // Situada a 7.5 km del centro de Beirut (Wikidata).
+      }),
+      defineUniversity({
+        id: "libano-beirut-universite-la-sagesse",
+        name: "Université La Sagesse",
+        cityId: "libano-beirut",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Beirut (Wikidata).
+      }),
+      defineUniversity({
+        id: "libano-beirut-lebanese-canadian-university",
+        name: "Lebanese Canadian University",
+        cityId: "libano-beirut",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Beirut (Wikidata).
+      }),
+      defineUniversity({
+        id: "libano-beirut-american-university-of-culture-and-education",
+        name: "American University of Culture and Education",
+        cityId: "libano-beirut",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Beirut (Wikidata).
+      }),
+      defineUniversity({
+        id: "libano-beirut-makassed-university",
+        name: "Makassed University",
+        cityId: "libano-beirut",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Beirut (Wikidata).
+      }),
+      defineUniversity({
+        id: "libano-beirut-al-kafaat-university",
+        name: "Al-Kafaàt University",
+        cityId: "libano-beirut",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Beirut (Wikidata).
+      }),
+      defineUniversity({
+        id: "libano-beirut-lebanese-german-university",
+        name: "Lebanese German University",
+        cityId: "libano-beirut",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Beirut (Wikidata).
+      }),
+      defineUniversity({
+        id: "libano-beirut-modern-university-for-business-and-science",
+        name: "Modern University for Business and Science",
+        cityId: "libano-beirut",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Beirut (Wikidata).
       }),
   ],
   "libano-tripoli": [
@@ -204,14 +244,6 @@ export default {
         // Situada a 11.9 km del centro de Aley (Wikidata).
       }),
       defineUniversity({
-        id: "libano-aley-islamic-university-of-lebanon",
-        name: "Islamic University of Lebanon",
-        cityId: "libano-aley",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.9 km del centro de Aley (Wikidata).
-      }),
-      defineUniversity({
         id: "libano-aley-rafik-hariri-university",
         name: "Rafik Hariri University",
         cityId: "libano-aley",
@@ -226,6 +258,14 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 8.0 km del centro de Aley (Wikidata).
+      }),
+      defineUniversity({
+        id: "libano-aley-antonine-university",
+        name: "Antonine University",
+        cityId: "libano-aley",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Aley (Wikidata).
       }),
   ],
   "libano-jounieh": [

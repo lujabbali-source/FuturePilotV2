@@ -142,18 +142,10 @@ export default {
         // Situada a 1.2 km del centro de Belgrade (Wikidata).
       }),
       defineUniversity({
-        id: "serbia-belgrade-university-of-belgrade-faculty-of-economics",
-        name: "University of Belgrade Faculty of Economics",
-        cityId: "serbia-belgrade",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.2 km del centro de Belgrade (Wikidata).
-      }),
-      defineUniversity({
         id: "serbia-belgrade-union-university",
         name: "Union University",
         cityId: "serbia-belgrade",
-        website: null,
+        website: "http://www.uu.edu/",
         source: "open-dataset",
         // Situada a 1.7 km del centro de Belgrade (Wikidata).
       }),
@@ -165,47 +157,21 @@ export default {
         source: "open-dataset",
         // Situada a 2.0 km del centro de Belgrade (Wikidata).
       }),
-  ],
-  "serbia-novi-sad": [
       defineUniversity({
-        id: "serbia-novi-sad-university-business-academy",
-        name: "University Business Academy",
-        cityId: "serbia-novi-sad",
+        id: "serbia-belgrade-higher-school-of-the-military-academy-in-belgrade",
+        name: "Higher School of the Military Academy in Belgrade",
+        cityId: "serbia-belgrade",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Novi Sad (Wikidata).
+        // Situada a None km del centro de Belgrade (Wikidata).
       }),
       defineUniversity({
-        id: "serbia-novi-sad-university-of-novi-sad",
-        name: "University of Novi Sad",
-        cityId: "serbia-novi-sad",
-        website: "http://www.uns.ac.rs/",
-        source: "open-dataset",
-        // Situada a 1.4 km del centro de Novi Sad (Wikidata).
-      }),
-      defineUniversity({
-        id: "serbia-novi-sad-educons-university",
-        name: "Educons University",
-        cityId: "serbia-novi-sad",
+        id: "serbia-belgrade-higher-military-academy-of-ypa",
+        name: "Higher Military Academy of YPA",
+        cityId: "serbia-belgrade",
         website: null,
         source: "open-dataset",
-        // Situada a 2.9 km del centro de Novi Sad (Wikidata).
-      }),
-      defineUniversity({
-        id: "serbia-novi-sad-educons-university",
-        name: "Educons University",
-        cityId: "serbia-novi-sad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.9 km del centro de Novi Sad (Wikidata).
-      }),
-      defineUniversity({
-        id: "serbia-novi-sad-faculty-of-sport-and-tourism",
-        name: "Faculty of Sport and Tourism",
-        cityId: "serbia-novi-sad",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.3 km del centro de Novi Sad (Wikidata).
+        // Situada a None km del centro de Belgrade (Wikidata).
       }),
   ],
   "serbia-zemun": [
@@ -268,30 +234,38 @@ export default {
         // Situada a 1.6 km del centro de Novi Beograd (Wikidata).
       }),
   ],
-  "serbia-novi-pazar": [
+  "serbia-novi-sad": [
       defineUniversity({
-        id: "serbia-novi-pazar-state-university-of-novi-pazar",
-        name: "State University of Novi Pazar",
-        cityId: "serbia-novi-pazar",
+        id: "serbia-novi-sad-university-business-academy",
+        name: "University Business Academy",
+        cityId: "serbia-novi-sad",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Novi Pazar (Wikidata).
+        // Situada a 1.7 km del centro de Novi Sad (Wikidata).
       }),
       defineUniversity({
-        id: "serbia-novi-pazar-international-university-of-novi-pazar",
-        name: "International University of Novi Pazar",
-        cityId: "serbia-novi-pazar",
-        website: "http://www.uninp.edu.rs/",
+        id: "serbia-novi-sad-university-of-novi-sad",
+        name: "University of Novi Sad",
+        cityId: "serbia-novi-sad",
+        website: "http://www.uns.ac.rs/",
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Novi Pazar (Wikidata).
+        // Situada a 1.4 km del centro de Novi Sad (Wikidata).
       }),
       defineUniversity({
-        id: "serbia-novi-pazar-international-university-of-novi-pazar",
-        name: "International University of Novi Pazar",
-        cityId: "serbia-novi-pazar",
-        website: "http://www.uninp.edu.rs/",
+        id: "serbia-novi-sad-educons-university",
+        name: "Educons University",
+        cityId: "serbia-novi-sad",
+        website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Novi Pazar (Wikidata).
+        // Situada a 2.9 km del centro de Novi Sad (Wikidata).
+      }),
+      defineUniversity({
+        id: "serbia-novi-sad-faculty-of-sport-and-tourism",
+        name: "Faculty of Sport and Tourism",
+        cityId: "serbia-novi-sad",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.3 km del centro de Novi Sad (Wikidata).
       }),
   ],
   "serbia-sabac": [
@@ -318,6 +292,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.3 km del centro de Šabac (Wikidata).
+      }),
+  ],
+  "serbia-novi-pazar": [
+      defineUniversity({
+        id: "serbia-novi-pazar-state-university-of-novi-pazar",
+        name: "State University of Novi Pazar",
+        cityId: "serbia-novi-pazar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Novi Pazar (Wikidata).
+      }),
+      defineUniversity({
+        id: "serbia-novi-pazar-international-university-of-novi-pazar",
+        name: "International University of Novi Pazar",
+        cityId: "serbia-novi-pazar",
+        website: "http://www.uninp.edu.rs/",
+        source: "open-dataset",
+        // Situada a 2.6 km del centro de Novi Pazar (Wikidata).
       }),
   ],
   "serbia-nis": [

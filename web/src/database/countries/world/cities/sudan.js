@@ -22,18 +22,10 @@ export default {
         // Situada a 3.9 km del centro de Khartoum (Wikidata).
       }),
       defineUniversity({
-        id: "sudan-khartoum-ministry-of-minerals",
-        name: "Ministry of Minerals",
-        cityId: "sudan-khartoum",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.9 km del centro de Khartoum (Wikidata).
-      }),
-      defineUniversity({
         id: "sudan-khartoum-ibn-sina-university",
         name: "Ibn Sina University",
         cityId: "sudan-khartoum",
-        website: null,
+        website: "http://www.ibnesina.edu.af/",
         source: "open-dataset",
         // Situada a 7.1 km del centro de Khartoum (Wikidata).
       }),
@@ -89,7 +81,7 @@ export default {
         id: "sudan-khartoum-the-future-university",
         name: "The Future University",
         cityId: "sudan-khartoum",
-        website: null,
+        website: "http://www.futureuniversity.edu.eg/",
         source: "open-dataset",
         // Situada a 2.3 km del centro de Khartoum (Wikidata).
       }),
@@ -135,14 +127,6 @@ export default {
       }),
   ],
   "sudan-omdurman": [
-      defineUniversity({
-        id: "sudan-omdurman-sudan-technological-university",
-        name: "Sudan Technological University",
-        cityId: "sudan-omdurman",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Omdurman (Wikidata).
-      }),
       defineUniversity({
         id: "sudan-omdurman-sudan-technological-university",
         name: "Sudan Technological University",
@@ -207,14 +191,6 @@ export default {
         source: "open-dataset",
         // Situada a 1.9 km del centro de Omdurman (Wikidata).
       }),
-      defineUniversity({
-        id: "sudan-omdurman-university-of-the-holy-quran-and-islamic-sciences",
-        name: "University of the Holy Quran and Islamic Sciences",
-        cityId: "sudan-omdurman",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Omdurman (Wikidata).
-      }),
   ],
   "sudan-khartoum-north": [
       defineUniversity({
@@ -258,14 +234,6 @@ export default {
         // Situada a 4.2 km del centro de Khartoum North (Wikidata).
       }),
       defineUniversity({
-        id: "sudan-khartoum-north-university-of-khartoum",
-        name: "University of Khartoum",
-        cityId: "sudan-khartoum-north",
-        website: "http://www.uofk.edu/",
-        source: "open-dataset",
-        // Situada a 4.2 km del centro de Khartoum North (Wikidata).
-      }),
-      defineUniversity({
         id: "sudan-khartoum-north-national-ribat-university",
         name: "National Ribat University",
         cityId: "sudan-khartoum-north",
@@ -273,16 +241,24 @@ export default {
         source: "open-dataset",
         // Situada a 4.8 km del centro de Khartoum North (Wikidata).
       }),
+      defineUniversity({
+        id: "sudan-khartoum-north-sudan-international-university",
+        name: "Sudan International University",
+        cityId: "sudan-khartoum-north",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Khartoum North (Wikidata).
+      }),
+      defineUniversity({
+        id: "sudan-khartoum-north-al-fajr-college-of-science-and-technology",
+        name: "Al Fajr College of Science and Technology",
+        cityId: "sudan-khartoum-north",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Khartoum North (Wikidata).
+      }),
   ],
   "sudan-wad-medani": [
-      defineUniversity({
-        id: "sudan-wad-medani-university-of-gezira",
-        name: "University of Gezira",
-        cityId: "sudan-wad-medani",
-        website: "http://www.uofg.edu.sd/",
-        source: "open-dataset",
-        // Situada a 2.0 km del centro de Wad Medani (Wikidata).
-      }),
       defineUniversity({
         id: "sudan-wad-medani-university-of-gezira",
         name: "University of Gezira",
@@ -300,112 +276,40 @@ export default {
         // Situada a 2.1 km del centro de Wad Medani (Wikidata).
       }),
   ],
-  "sudan-shendi": [
+  "sudan-port-sudan": [
       defineUniversity({
-        id: "sudan-shendi-shendi-university",
-        name: "Shendi University",
-        cityId: "sudan-shendi",
-        website: "http://www.ush.sd/",
+        id: "sudan-port-sudan-red-sea-university",
+        name: "Red Sea University",
+        cityId: "sudan-port-sudan",
+        website: "http://www.rsu.edu.sd/",
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Shendi (Wikidata).
+        // Situada a None km del centro de Port Sudan (Wikidata).
       }),
       defineUniversity({
-        id: "sudan-shendi-shendi-university",
-        name: "Shendi University",
-        cityId: "sudan-shendi",
-        website: "http://www.ush.sd/",
+        id: "sudan-port-sudan-port-sudan-university",
+        name: "Port Sudan University",
+        cityId: "sudan-port-sudan",
+        website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Shendi (Wikidata).
+        // Situada a None km del centro de Port Sudan (Wikidata).
       }),
   ],
-  "sudan-sennar": [
+  "sudan-el-obeid": [
       defineUniversity({
-        id: "sudan-sennar-sinnar-university",
-        name: "Sinnar University",
-        cityId: "sudan-sennar",
-        website: "http://www.sinnaruniv.edu.sd/",
+        id: "sudan-el-obeid-university-of-kordofan",
+        name: "University of Kordofan",
+        cityId: "sudan-el-obeid",
+        website: "http://www.kordofan.edu.sd/",
         source: "open-dataset",
-        // Situada a 4.7 km del centro de Sennar (Wikidata).
+        // Situada a 3.3 km del centro de El Obeid (Wikidata).
       }),
       defineUniversity({
-        id: "sudan-sennar-sinnar-university",
-        name: "Sinnar University",
-        cityId: "sudan-sennar",
-        website: "http://www.sinnaruniv.edu.sd/",
-        source: "open-dataset",
-        // Situada a 4.7 km del centro de Sennar (Wikidata).
-      }),
-  ],
-  "sudan-nyala": [
-      defineUniversity({
-        id: "sudan-nyala-nyala-university",
-        name: "Nyala University",
-        cityId: "sudan-nyala",
+        id: "sudan-el-obeid-university-of-el-obeid",
+        name: "University of El Obeid",
+        cityId: "sudan-el-obeid",
         website: null,
         source: "open-dataset",
-        // Situada a 1.7 km del centro de Nyala (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudan-nyala-nyala-university",
-        name: "Nyala University",
-        cityId: "sudan-nyala",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Nyala (Wikidata).
-      }),
-  ],
-  "sudan-kuraymah": [
-      defineUniversity({
-        id: "sudan-kuraymah-merowe-university-of-technology-abdulatif-alhamad",
-        name: "Merowe University of Technology - Abdulatif Alhamad",
-        cityId: "sudan-kuraymah",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.4 km del centro de Kuraymah (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudan-kuraymah-merowe-university-of-technology-abdulatif-alhamad",
-        name: "Merowe University of Technology - Abdulatif Alhamad",
-        cityId: "sudan-kuraymah",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.4 km del centro de Kuraymah (Wikidata).
-      }),
-  ],
-  "sudan-al-manaqil": [
-      defineUniversity({
-        id: "sudan-al-manaqil-managil-university-of-science-and-technology",
-        name: "Managil University of Science and Technology",
-        cityId: "sudan-al-manaqil",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Al Manāqil (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudan-al-manaqil-managil-university-of-science-and-technology",
-        name: "Managil University of Science and Technology",
-        cityId: "sudan-al-manaqil",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Al Manāqil (Wikidata).
-      }),
-  ],
-  "sudan-el-geneina-fort": [
-      defineUniversity({
-        id: "sudan-el-geneina-fort-university-of-el-geneina",
-        name: "University of El Geneina",
-        cityId: "sudan-el-geneina-fort",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de El Geneina Fort (Wikidata).
-      }),
-      defineUniversity({
-        id: "sudan-el-geneina-fort-university-of-el-geneina",
-        name: "University of El Geneina",
-        cityId: "sudan-el-geneina-fort",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.1 km del centro de El Geneina Fort (Wikidata).
+        // Situada a None km del centro de El Obeid (Wikidata).
       }),
   ],
 };

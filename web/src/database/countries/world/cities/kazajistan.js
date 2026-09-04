@@ -35,14 +35,6 @@ export default {
         cityId: "kazajistan-almaty",
         website: null,
         source: "open-dataset",
-        // Situada a 1.2 km del centro de Almaty (Wikidata).
-      }),
-      defineUniversity({
-        id: "kazajistan-almaty-sh-yessenov-caspian-university-of-technologies-and-engineering-yessenov-university",
-        name: "Sh. Yessenov Caspian University of Technologies and Engineering (Yessenov University)",
-        cityId: "kazajistan-almaty",
-        website: null,
-        source: "open-dataset",
         // Situada a 3.2 km del centro de Almaty (Wikidata).
       }),
       defineUniversity({
@@ -229,6 +221,46 @@ export default {
         source: "open-dataset",
         // Situada a 2.9 km del centro de Almaty (Wikidata).
       }),
+      defineUniversity({
+        id: "kazajistan-almaty-meta-university",
+        name: "META University",
+        cityId: "kazajistan-almaty",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Almaty (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-almaty-kajnar-university",
+        name: "Kajnar University",
+        cityId: "kazajistan-almaty",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Almaty (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-almaty-kazakh-academy-of-transport-and-communications-named-after-m-tynyshpaev",
+        name: "Kazakh Academy of Transport and Communications named after M.Tynyshpaev",
+        cityId: "kazajistan-almaty",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Almaty (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-almaty-al-farabi-kazakh-national-university",
+        name: "Al-Farabi Kazakh National University",
+        cityId: "kazajistan-almaty",
+        website: "http://www.kaznu.kz/",
+        source: "open-dataset",
+        // Situada a None km del centro de Almaty (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-almaty-central-asian-university",
+        name: "Central Asian University",
+        cityId: "kazajistan-almaty",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Almaty (Wikidata).
+      }),
   ],
   "kazajistan-astana": [
       defineUniversity({
@@ -259,7 +291,7 @@ export default {
         id: "kazajistan-astana-national-defense-university",
         name: "National Defense University",
         cityId: "kazajistan-astana",
-        website: null,
+        website: "http://www.ndu.edu/",
         source: "open-dataset",
         // Situada a 12.0 km del centro de Astana (Wikidata).
       }),
@@ -270,14 +302,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 23.5 km del centro de Astana (Wikidata).
-      }),
-      defineUniversity({
-        id: "kazajistan-astana-kazakh-agro-technical-university",
-        name: "Kazakh Agro Technical University",
-        cityId: "kazajistan-astana",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.7 km del centro de Astana (Wikidata).
       }),
       defineUniversity({
         id: "kazajistan-astana-kazakh-agro-technical-university",
@@ -302,6 +326,14 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 2.1 km del centro de Astana (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-astana-maqsut-narikbayev-university",
+        name: "Maqsut Narikbayev University",
+        cityId: "kazajistan-astana",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Astana (Wikidata).
       }),
   ],
   "kazajistan-oral": [
@@ -330,6 +362,110 @@ export default {
         // Situada a 6.8 km del centro de Oral (Wikidata).
       }),
   ],
+  "kazajistan-karagandy": [
+      defineUniversity({
+        id: "kazajistan-karagandy-karaganda-state-technical-university",
+        name: "Karaganda State Technical University",
+        cityId: "kazajistan-karagandy",
+        website: "http://www.kstu.kz/",
+        source: "open-dataset",
+        // Situada a 1.9 km del centro de Karagandy (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-karagandy-karaganda-state-university",
+        name: "Karaganda State University",
+        cityId: "kazajistan-karagandy",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.9 km del centro de Karagandy (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-karagandy-bolashaq-academy",
+        name: "Bolashaq Academy",
+        cityId: "kazajistan-karagandy",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Karagandy (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-karagandy-karaganda-economic-university",
+        name: "Karaganda Economic University",
+        cityId: "kazajistan-karagandy",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Karagandy (Wikidata).
+      }),
+  ],
+  "kazajistan-semey": [
+      defineUniversity({
+        id: "kazajistan-semey-semey-medical-university",
+        name: "Semey Medical University",
+        cityId: "kazajistan-semey",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.7 km del centro de Semey (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-semey-shakarim-university",
+        name: "Shakarim University",
+        cityId: "kazajistan-semey",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.6 km del centro de Semey (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-semey-alikhan-bokeikhan-university",
+        name: "Alikhan Bokeikhan University",
+        cityId: "kazajistan-semey",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Semey (Wikidata).
+      }),
+  ],
+  "kazajistan-shymkent": [
+      defineUniversity({
+        id: "kazajistan-shymkent-central-asian-innovation-university",
+        name: "Central Asian Innovation University",
+        cityId: "kazajistan-shymkent",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.1 km del centro de Shymkent (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-shymkent-zhanibekov-university",
+        name: "Zhanibekov University",
+        cityId: "kazajistan-shymkent",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.4 km del centro de Shymkent (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-shymkent-south-kazakhstan-state-pedagogical-university",
+        name: "South Kazakhstan State Pedagogical University",
+        cityId: "kazajistan-shymkent",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Shymkent (Wikidata).
+      }),
+  ],
+  "kazajistan-kyzylorda": [
+      defineUniversity({
+        id: "kazajistan-kyzylorda-kyzylorda-open-university",
+        name: "Kyzylorda Open University",
+        cityId: "kazajistan-kyzylorda",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kyzylorda (Wikidata).
+      }),
+      defineUniversity({
+        id: "kazajistan-kyzylorda-korkyt-ata-kyzylorda-university",
+        name: "Korkyt Ata Kyzylorda University",
+        cityId: "kazajistan-kyzylorda",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Kyzylorda (Wikidata).
+      }),
+  ],
   "kazajistan-pavlodar": [
       defineUniversity({
         id: "kazajistan-pavlodar-pavlodar-pedagogical-university",
@@ -356,22 +492,22 @@ export default {
         // Situada a 1.1 km del centro de Pavlodar (Wikidata).
       }),
   ],
-  "kazajistan-karagandy": [
+  "kazajistan-ust-kamenogorsk": [
       defineUniversity({
-        id: "kazajistan-karagandy-karaganda-state-technical-university",
-        name: "Karaganda State Technical University",
-        cityId: "kazajistan-karagandy",
-        website: "http://www.kstu.kz/",
+        id: "kazajistan-ust-kamenogorsk-east-kazakhstan-state-university",
+        name: "East Kazakhstan State University",
+        cityId: "kazajistan-ust-kamenogorsk",
+        website: "http://www.vkgu.kz/",
         source: "open-dataset",
-        // Situada a 1.9 km del centro de Karagandy (Wikidata).
+        // Situada a 1.6 km del centro de Ust-Kamenogorsk (Wikidata).
       }),
       defineUniversity({
-        id: "kazajistan-karagandy-karaganda-state-university",
-        name: "Karaganda State University",
-        cityId: "kazajistan-karagandy",
+        id: "kazajistan-ust-kamenogorsk-east-kazakhstan-technical-university",
+        name: "East Kazakhstan Technical University",
+        cityId: "kazajistan-ust-kamenogorsk",
         website: null,
         source: "open-dataset",
-        // Situada a 3.9 km del centro de Karagandy (Wikidata).
+        // Situada a 1.9 km del centro de Ust-Kamenogorsk (Wikidata).
       }),
   ],
   "kazajistan-atyrau": [
@@ -392,58 +528,22 @@ export default {
         // Situada a 3.0 km del centro de Atyrau (Wikidata).
       }),
   ],
-  "kazajistan-shymkent": [
+  "kazajistan-taraz": [
       defineUniversity({
-        id: "kazajistan-shymkent-central-asian-innovation-university",
-        name: "Central Asian Innovation University",
-        cityId: "kazajistan-shymkent",
+        id: "kazajistan-taraz-dulaty-university",
+        name: "Dulaty University",
+        cityId: "kazajistan-taraz",
         website: null,
         source: "open-dataset",
-        // Situada a 1.1 km del centro de Shymkent (Wikidata).
+        // Situada a 0.7 km del centro de Taraz (Wikidata).
       }),
       defineUniversity({
-        id: "kazajistan-shymkent-zhanibekov-university",
-        name: "Zhanibekov University",
-        cityId: "kazajistan-shymkent",
+        id: "kazajistan-taraz-taraz-state-pedagogical-university",
+        name: "Taraz State Pedagogical University",
+        cityId: "kazajistan-taraz",
         website: null,
         source: "open-dataset",
-        // Situada a 1.4 km del centro de Shymkent (Wikidata).
-      }),
-  ],
-  "kazajistan-semey": [
-      defineUniversity({
-        id: "kazajistan-semey-semey-medical-university",
-        name: "Semey Medical University",
-        cityId: "kazajistan-semey",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Semey (Wikidata).
-      }),
-      defineUniversity({
-        id: "kazajistan-semey-shakarim-university",
-        name: "Shakarim University",
-        cityId: "kazajistan-semey",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Semey (Wikidata).
-      }),
-  ],
-  "kazajistan-ust-kamenogorsk": [
-      defineUniversity({
-        id: "kazajistan-ust-kamenogorsk-east-kazakhstan-state-university",
-        name: "East Kazakhstan State University",
-        cityId: "kazajistan-ust-kamenogorsk",
-        website: "http://www.vkgu.kz/",
-        source: "open-dataset",
-        // Situada a 1.6 km del centro de Ust-Kamenogorsk (Wikidata).
-      }),
-      defineUniversity({
-        id: "kazajistan-ust-kamenogorsk-east-kazakhstan-technical-university",
-        name: "East Kazakhstan Technical University",
-        cityId: "kazajistan-ust-kamenogorsk",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.9 km del centro de Ust-Kamenogorsk (Wikidata).
+        // Situada a None km del centro de Taraz (Wikidata).
       }),
   ],
   "kazajistan-otegen-batyra": [

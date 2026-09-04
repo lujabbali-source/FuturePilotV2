@@ -19,12 +19,32 @@ const countryName = "Liberia";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
+      id: "liberia-kakata",
+      name: "Kakata",
+      coordinates: {"lat": 6.53104, "lng": -10.35368},
+      isCapital: false,
+      universityCount: 9,
+      statistics: { population: 52247 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
       id: "liberia-monrovia",
       name: "Monrovia",
       coordinates: {"lat": 6.30054, "lng": -10.7969},
       isCapital: true,
-      universityCount: 4,
+      universityCount: 5,
       statistics: { population: 1542549 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
+      id: "liberia-saclepea",
+      name: "Saclepea",
+      coordinates: {"lat": 6.9625, "lng": -8.84056},
+      isCapital: false,
+      universityCount: 3,
+      statistics: { population: 20818 },
       countryId,
       countryName,
     }),

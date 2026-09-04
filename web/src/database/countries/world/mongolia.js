@@ -23,7 +23,7 @@ const cities = [
       name: "Ulan Bator",
       coordinates: {"lat": 47.90771, "lng": 106.88324},
       isCapital: false,
-      universityCount: 17,
+      universityCount: 22,
       statistics: { population: 844818 },
       countryId,
       countryName,

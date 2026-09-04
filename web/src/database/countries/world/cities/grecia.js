@@ -46,14 +46,6 @@ export default {
         // Situada a 0.6 km del centro de Athens (Wikidata).
       }),
       defineUniversity({
-        id: "grecia-athens-national-and-kapodistrian-university-of-athens",
-        name: "National and Kapodistrian University of Athens",
-        cityId: "grecia-athens",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Athens (Wikidata).
-      }),
-      defineUniversity({
         id: "grecia-athens-vakalo-art-design-college",
         name: "Vakalo Art & Design College",
         cityId: "grecia-athens",
@@ -62,30 +54,30 @@ export default {
         // Situada a 2.0 km del centro de Athens (Wikidata).
       }),
   ],
-  "grecia-corfu": [
+  "grecia-thessaloniki": [
       defineUniversity({
-        id: "grecia-corfu-ionian-academy",
-        name: "Ionian Academy",
-        cityId: "grecia-corfu",
+        id: "grecia-thessaloniki-university-of-macedonia",
+        name: "University of Macedonia",
+        cityId: "grecia-thessaloniki",
+        website: "https://www.uom.gr/",
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Thessaloníki (Wikidata).
+      }),
+      defineUniversity({
+        id: "grecia-thessaloniki-salonica-law-school",
+        name: "Salonica Law School",
+        cityId: "grecia-thessaloniki",
         website: null,
         source: "open-dataset",
-        // Situada a 0.5 km del centro de Corfu (Wikidata).
+        // Situada a None km del centro de Thessaloníki (Wikidata).
       }),
       defineUniversity({
-        id: "grecia-corfu-ionian-university",
-        name: "Ionian University",
-        cityId: "grecia-corfu",
-        website: "https://ionio.gr/",
+        id: "grecia-thessaloniki-city-college-university-of-york-europe-campus",
+        name: "CITY College, University of York Europe Campus",
+        cityId: "grecia-thessaloniki",
+        website: null,
         source: "open-dataset",
-        // Situada a 0.6 km del centro de Corfu (Wikidata).
-      }),
-      defineUniversity({
-        id: "grecia-corfu-ionian-university",
-        name: "Ionian University",
-        cityId: "grecia-corfu",
-        website: "https://ionio.gr/",
-        source: "open-dataset",
-        // Situada a 0.6 km del centro de Corfu (Wikidata).
+        // Situada a None km del centro de Thessaloníki (Wikidata).
       }),
   ],
   "grecia-piraeus": [
@@ -160,22 +152,40 @@ export default {
         // Situada a 3.9 km del centro de Irákleion (Wikidata).
       }),
   ],
-  "grecia-zografos": [
+  "grecia-agrinio": [
       defineUniversity({
-        id: "grecia-zografos-national-and-kapodistrian-university-of-athens",
-        name: "National and Kapodistrian University of Athens",
-        cityId: "grecia-zografos",
+        id: "grecia-agrinio-university-of-western-greece",
+        name: "University of Western Greece",
+        cityId: "grecia-agrinio",
         website: null,
         source: "open-dataset",
-        // Situada a 1.0 km del centro de Zográfos (Wikidata).
+        // Situada a 1.2 km del centro de Agrínio (Wikidata).
       }),
       defineUniversity({
-        id: "grecia-zografos-national-and-kapodistrian-university-of-athens",
-        name: "National and Kapodistrian University of Athens",
-        cityId: "grecia-zografos",
+        id: "grecia-agrinio-technological-educational-institute-of-messolonghi",
+        name: "Technological Educational Institute of Messolonghi",
+        cityId: "grecia-agrinio",
         website: null,
         source: "open-dataset",
-        // Situada a 1.3 km del centro de Zográfos (Wikidata).
+        // Situada a None km del centro de Agrínio (Wikidata).
+      }),
+  ],
+  "grecia-corfu": [
+      defineUniversity({
+        id: "grecia-corfu-ionian-academy",
+        name: "Ionian Academy",
+        cityId: "grecia-corfu",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.5 km del centro de Corfu (Wikidata).
+      }),
+      defineUniversity({
+        id: "grecia-corfu-ionian-university",
+        name: "Ionian University",
+        cityId: "grecia-corfu",
+        website: "https://ionio.gr/",
+        source: "open-dataset",
+        // Situada a 0.6 km del centro de Corfu (Wikidata).
       }),
   ],
 };

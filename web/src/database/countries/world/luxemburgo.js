@@ -19,6 +19,16 @@ const countryName = "Luxemburgo";
 // y se pide al abrir la ciudad. Sin costo de vida ni cultura.
 const cities = [
     defineCity({
+      id: "luxemburgo-luxembourg",
+      name: "Luxembourg",
+      coordinates: {"lat": 49.60982, "lng": 6.13268},
+      isCapital: true,
+      universityCount: 2,
+      statistics: { population: 76684 },
+      countryId,
+      countryName,
+    }),
+    defineCity({
       id: "luxemburgo-esch-sur-alzette",
       name: "Esch-sur-Alzette",
       coordinates: {"lat": 49.49583, "lng": 5.98056},

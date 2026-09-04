@@ -38,14 +38,6 @@ export default {
         // Situada a 6.2 km del centro de Canberra (Wikidata).
       }),
       defineUniversity({
-        id: "australia-canberra-university-of-canberra",
-        name: "University of Canberra",
-        cityId: "australia-canberra",
-        website: "http://www.canberra.edu.au/",
-        source: "open-dataset",
-        // Situada a 6.2 km del centro de Canberra (Wikidata).
-      }),
-      defineUniversity({
         id: "australia-canberra-royal-military-college",
         name: "Royal Military College",
         cityId: "australia-canberra",
@@ -95,108 +87,6 @@ export default {
         source: "open-dataset",
         // Situada a 3.6 km del centro de Brisbane (Wikidata).
       }),
-      defineUniversity({
-        id: "australia-brisbane-university-of-queensland",
-        name: "University of Queensland",
-        cityId: "australia-brisbane",
-        website: "http://www.uq.edu.au/",
-        source: "open-dataset",
-        // Situada a 3.6 km del centro de Brisbane (Wikidata).
-      }),
-  ],
-  "australia-perth": [
-      defineUniversity({
-        id: "australia-perth-edith-cowan-university",
-        name: "Edith Cowan University",
-        cityId: "australia-perth",
-        website: "http://www.ecu.edu.au/",
-        source: "open-dataset",
-        // Situada a 0.4 km del centro de Perth (Wikidata).
-      }),
-      defineUniversity({
-        id: "australia-perth-edith-cowan-university",
-        name: "Edith Cowan University",
-        cityId: "australia-perth",
-        website: "http://www.ecu.edu.au/",
-        source: "open-dataset",
-        // Situada a 5.3 km del centro de Perth (Wikidata).
-      }),
-      defineUniversity({
-        id: "australia-perth-edith-cowan-university",
-        name: "Edith Cowan University",
-        cityId: "australia-perth",
-        website: "http://www.ecu.edu.au/",
-        source: "open-dataset",
-        // Situada a 7.9 km del centro de Perth (Wikidata).
-      }),
-      defineUniversity({
-        id: "australia-perth-university-of-western-australia",
-        name: "University of Western Australia",
-        cityId: "australia-perth",
-        website: "http://www.uwa.edu.au/",
-        source: "open-dataset",
-        // Situada a 5.1 km del centro de Perth (Wikidata).
-      }),
-  ],
-  "australia-ballarat": [
-      defineUniversity({
-        id: "australia-ballarat-federation-university-australia",
-        name: "Federation University Australia",
-        cityId: "australia-ballarat",
-        website: "http://federation.edu.au/",
-        source: "open-dataset",
-        // Situada a 1.1 km del centro de Ballarat (Wikidata).
-      }),
-      defineUniversity({
-        id: "australia-ballarat-federation-university-australia",
-        name: "Federation University Australia",
-        cityId: "australia-ballarat",
-        website: "http://federation.edu.au/",
-        source: "open-dataset",
-        // Situada a 7.6 km del centro de Ballarat (Wikidata).
-      }),
-      defineUniversity({
-        id: "australia-ballarat-university-of-ballarat",
-        name: "University of Ballarat",
-        cityId: "australia-ballarat",
-        website: null,
-        source: "open-dataset",
-        // Situada a 7.6 km del centro de Ballarat (Wikidata).
-      }),
-      defineUniversity({
-        id: "australia-ballarat-victorian-school-of-forestry",
-        name: "Victorian School of Forestry",
-        cityId: "australia-ballarat",
-        website: null,
-        source: "open-dataset",
-        // Situada a 16.6 km del centro de Ballarat (Wikidata).
-      }),
-  ],
-  "australia-darwin": [
-      defineUniversity({
-        id: "australia-darwin-charles-darwin-university",
-        name: "Charles Darwin University",
-        cityId: "australia-darwin",
-        website: "http://www.cdu.edu.au/",
-        source: "open-dataset",
-        // Situada a 10.8 km del centro de Darwin (Wikidata).
-      }),
-      defineUniversity({
-        id: "australia-darwin-northern-territory-university",
-        name: "Northern Territory University",
-        cityId: "australia-darwin",
-        website: null,
-        source: "open-dataset",
-        // Situada a 11.6 km del centro de Darwin (Wikidata).
-      }),
-      defineUniversity({
-        id: "australia-darwin-northern-territory-university",
-        name: "Northern Territory University",
-        cityId: "australia-darwin",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.7 km del centro de Darwin (Wikidata).
-      }),
   ],
   "australia-surry-hills": [
       defineUniversity({
@@ -222,6 +112,32 @@ export default {
         website: "http://sydney.edu.au/",
         source: "open-dataset",
         // Situada a 2.1 km del centro de Surry Hills (Wikidata).
+      }),
+  ],
+  "australia-ballarat": [
+      defineUniversity({
+        id: "australia-ballarat-federation-university-australia",
+        name: "Federation University Australia",
+        cityId: "australia-ballarat",
+        website: "http://federation.edu.au/",
+        source: "open-dataset",
+        // Situada a 7.6 km del centro de Ballarat (Wikidata).
+      }),
+      defineUniversity({
+        id: "australia-ballarat-university-of-ballarat",
+        name: "University of Ballarat",
+        cityId: "australia-ballarat",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.6 km del centro de Ballarat (Wikidata).
+      }),
+      defineUniversity({
+        id: "australia-ballarat-victorian-school-of-forestry",
+        name: "Victorian School of Forestry",
+        cityId: "australia-ballarat",
+        website: null,
+        source: "open-dataset",
+        // Situada a 16.6 km del centro de Ballarat (Wikidata).
       }),
   ],
   "australia-willetton": [
@@ -276,22 +192,22 @@ export default {
         // Situada a 0.2 km del centro de Adelaide city centre (Wikidata).
       }),
   ],
-  "australia-scarborough": [
+  "australia-darwin": [
       defineUniversity({
-        id: "australia-scarborough-edith-cowan-university",
-        name: "Edith Cowan University",
-        cityId: "australia-scarborough",
-        website: "http://www.ecu.edu.au/",
+        id: "australia-darwin-charles-darwin-university",
+        name: "Charles Darwin University",
+        cityId: "australia-darwin",
+        website: "http://www.cdu.edu.au/",
         source: "open-dataset",
-        // Situada a 4.2 km del centro de Scarborough (Wikidata).
+        // Situada a 10.8 km del centro de Darwin (Wikidata).
       }),
       defineUniversity({
-        id: "australia-scarborough-perth-bible-college",
-        name: "Perth Bible College",
-        cityId: "australia-scarborough",
+        id: "australia-darwin-northern-territory-university",
+        name: "Northern Territory University",
+        cityId: "australia-darwin",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Scarborough (Wikidata).
+        // Situada a 1.7 km del centro de Darwin (Wikidata).
       }),
   ],
   "australia-sydney": [
@@ -330,24 +246,6 @@ export default {
         // Situada a 2.9 km del centro de Epping (Wikidata).
       }),
   ],
-  "australia-cessnock": [
-      defineUniversity({
-        id: "australia-cessnock-avondale-university",
-        name: "Avondale University",
-        cityId: "australia-cessnock",
-        website: "http://www.avondale.edu.au/",
-        source: "open-dataset",
-        // Situada a 30.0 km del centro de Cessnock (Wikidata).
-      }),
-      defineUniversity({
-        id: "australia-cessnock-avondale-university",
-        name: "Avondale University",
-        cityId: "australia-cessnock",
-        website: "http://www.avondale.edu.au/",
-        source: "open-dataset",
-        // Situada a 30.0 km del centro de Cessnock (Wikidata).
-      }),
-  ],
   "australia-carlton": [
       defineUniversity({
         id: "australia-carlton-university-of-melbourne",
@@ -384,22 +282,22 @@ export default {
         // Situada a 2.9 km del centro de Buderim (Wikidata).
       }),
   ],
-  "australia-bracken-ridge": [
+  "australia-bendigo": [
       defineUniversity({
-        id: "australia-bracken-ridge-australian-catholic-university",
-        name: "Australian Catholic University",
-        cityId: "australia-bracken-ridge",
-        website: "http://www.acu.edu.au/",
+        id: "australia-bendigo-australian-college-of-christian-studies",
+        name: "Australian College of Christian Studies",
+        cityId: "australia-bendigo",
+        website: null,
         source: "open-dataset",
-        // Situada a 8.9 km del centro de Bracken Ridge (Wikidata).
+        // Situada a None km del centro de Bendigo (Wikidata).
       }),
       defineUniversity({
-        id: "australia-bracken-ridge-australian-catholic-university",
-        name: "Australian Catholic University",
-        cityId: "australia-bracken-ridge",
-        website: "http://www.acu.edu.au/",
+        id: "australia-bendigo-melbourne-university-private",
+        name: "Melbourne University Private",
+        cityId: "australia-bendigo",
+        website: null,
         source: "open-dataset",
-        // Situada a 8.9 km del centro de Bracken Ridge (Wikidata).
+        // Situada a None km del centro de Bendigo (Wikidata).
       }),
   ],
   "australia-cranebrook": [

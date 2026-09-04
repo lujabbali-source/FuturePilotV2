@@ -38,22 +38,6 @@ export default {
         // Situada a 2.5 km del centro de Cheraga (Wikidata).
       }),
       defineUniversity({
-        id: "argelia-cheraga-university-of-algiers-3",
-        name: "University of Algiers 3",
-        cityId: "argelia-cheraga",
-        website: null,
-        source: "open-dataset",
-        // Situada a 2.5 km del centro de Cheraga (Wikidata).
-      }),
-      defineUniversity({
-        id: "argelia-cheraga-algiers-2-university",
-        name: "Algiers 2 University",
-        cityId: "argelia-cheraga",
-        website: null,
-        source: "open-dataset",
-        // Situada a 4.1 km del centro de Cheraga (Wikidata).
-      }),
-      defineUniversity({
         id: "argelia-cheraga-algiers-2-university",
         name: "Algiers 2 University",
         cityId: "argelia-cheraga",
@@ -62,15 +46,33 @@ export default {
         // Situada a 4.1 km del centro de Cheraga (Wikidata).
       }),
   ],
-  "argelia-saida": [
+  "argelia-setif": [
       defineUniversity({
-        id: "argelia-saida-universite-tahar-moulay-de-saida",
-        name: "Université Tahar Moulay de Saida",
-        cityId: "argelia-saida",
+        id: "argelia-setif-university-mohamed-lamine-debaghine-setif-2",
+        name: "University Mohamed Lamine Debaghine Setif 2",
+        cityId: "argelia-setif",
         website: null,
         source: "open-dataset",
-        // Situada a 3.4 km del centro de Saïda (Wikidata).
+        // Situada a 4.0 km del centro de Sétif (Wikidata).
       }),
+      defineUniversity({
+        id: "argelia-setif-university-of-setif-1",
+        name: "University of Sétif 1",
+        cityId: "argelia-setif",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sétif (Wikidata).
+      }),
+      defineUniversity({
+        id: "argelia-setif-university-of-setif-2",
+        name: "University of Sétif 2",
+        cityId: "argelia-setif",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Sétif (Wikidata).
+      }),
+  ],
+  "argelia-saida": [
       defineUniversity({
         id: "argelia-saida-universite-tahar-moulay-de-saida",
         name: "Université Tahar Moulay de Saida",
@@ -86,6 +88,14 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 3.2 km del centro de Saïda (Wikidata).
+      }),
+      defineUniversity({
+        id: "argelia-saida-university-of-saida",
+        name: "University of Saïda",
+        cityId: "argelia-saida",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Saïda (Wikidata).
       }),
   ],
   "argelia-bir-el-djir": [
@@ -114,6 +124,24 @@ export default {
         // Situada a 2.0 km del centro de Bir el Djir (Wikidata).
       }),
   ],
+  "argelia-annaba": [
+      defineUniversity({
+        id: "argelia-annaba-badji-mokhtar-annaba-university",
+        name: "Badji Mokhtar-Annaba University",
+        cityId: "argelia-annaba",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.7 km del centro de Annaba (Wikidata).
+      }),
+      defineUniversity({
+        id: "argelia-annaba-university-of-annaba",
+        name: "University of Annaba",
+        cityId: "argelia-annaba",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Annaba (Wikidata).
+      }),
+  ],
   "argelia-ali-mendjeli": [
       defineUniversity({
         id: "argelia-ali-mendjeli-ecole-nationale-superieure-de-biotechnologie-taoufik-khaznadar",
@@ -140,24 +168,6 @@ export default {
         // Situada a 4.1 km del centro de Ali Mendjeli (Wikidata).
       }),
   ],
-  "argelia-boumerdas": [
-      defineUniversity({
-        id: "argelia-boumerdas-m-hamed-bougara-university-of-boumerdes",
-        name: "M'hamed Bougara University of Boumerdès",
-        cityId: "argelia-boumerdas",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Boumerdas (Wikidata).
-      }),
-      defineUniversity({
-        id: "argelia-boumerdas-m-hamed-bougara-university-of-boumerdes",
-        name: "M'hamed Bougara University of Boumerdès",
-        cityId: "argelia-boumerdas",
-        website: null,
-        source: "open-dataset",
-        // Situada a 0.5 km del centro de Boumerdas (Wikidata).
-      }),
-  ],
   "argelia-tipasa": [
       defineUniversity({
         id: "argelia-tipasa-centre-universitaire-morsli-abdellah-de-tipaza",
@@ -174,6 +184,24 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 1.7 km del centro de Tipasa (Wikidata).
+      }),
+  ],
+  "argelia-tiaret": [
+      defineUniversity({
+        id: "argelia-tiaret-universite-ibn-khaldoun-tiaret",
+        name: "Université Ibn Khaldoun Tiaret",
+        cityId: "argelia-tiaret",
+        website: null,
+        source: "open-dataset",
+        // Situada a 2.3 km del centro de Tiaret (Wikidata).
+      }),
+      defineUniversity({
+        id: "argelia-tiaret-university-of-tiaret",
+        name: "University of Tiaret",
+        cityId: "argelia-tiaret",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Tiaret (Wikidata).
       }),
   ],
   "argelia-ouargla": [
@@ -194,22 +222,22 @@ export default {
         // Situada a 2.2 km del centro de Ouargla (Wikidata).
       }),
   ],
-  "argelia-mansoura": [
+  "argelia-m-sila": [
       defineUniversity({
-        id: "argelia-mansoura-university-of-abou-bekr-belkaid",
-        name: "University of Abou Bekr Belkaïd",
-        cityId: "argelia-mansoura",
+        id: "argelia-m-sila-university-mohamed-boudiaf-of-m-sila",
+        name: "University Mohamed Boudiaf of M'sila",
+        cityId: "argelia-m-sila",
         website: null,
         source: "open-dataset",
-        // Situada a 3.8 km del centro de Mansoûra (Wikidata).
+        // Situada a 4.2 km del centro de M'Sila (Wikidata).
       }),
       defineUniversity({
-        id: "argelia-mansoura-university-of-abou-bekr-belkaid",
-        name: "University of Abou Bekr Belkaïd",
-        cityId: "argelia-mansoura",
+        id: "argelia-m-sila-university-of-m-sila",
+        name: "University of M'sila",
+        cityId: "argelia-m-sila",
         website: null,
         source: "open-dataset",
-        // Situada a 2.7 km del centro de Mansoûra (Wikidata).
+        // Situada a None km del centro de M'Sila (Wikidata).
       }),
   ],
   "argelia-constantine": [
@@ -230,22 +258,22 @@ export default {
         // Situada a 2.0 km del centro de Constantine (Wikidata).
       }),
   ],
-  "argelia-beni-mered": [
+  "argelia-cherchell": [
       defineUniversity({
-        id: "argelia-beni-mered-saad-dahlab-university-of-blida-1",
-        name: "Saad Dahlab University of Blida 1",
-        cityId: "argelia-beni-mered",
+        id: "argelia-cherchell-military-academy-of-cherchell-defunct-president-houari-boumediene",
+        name: "Military Academy of Cherchell Defunct President Houari Boumediene",
+        cityId: "argelia-cherchell",
         website: null,
         source: "open-dataset",
-        // Situada a 2.5 km del centro de Beni Mered (Wikidata).
+        // Situada a 0.3 km del centro de Cherchell (Wikidata).
       }),
       defineUniversity({
-        id: "argelia-beni-mered-saad-dahlab-university-of-blida-1",
-        name: "Saad Dahlab University of Blida 1",
-        cityId: "argelia-beni-mered",
+        id: "argelia-cherchell-ecole-militaire-d-infanterie-de-cherchell",
+        name: "École militaire d'infanterie de Cherchell",
+        cityId: "argelia-cherchell",
         website: null,
         source: "open-dataset",
-        // Situada a 2.6 km del centro de Beni Mered (Wikidata).
+        // Situada a 0.7 km del centro de Cherchell (Wikidata).
       }),
   ],
   "argelia-batna": [
@@ -286,8 +314,8 @@ export default {
   ],
   "argelia-algiers": [
       defineUniversity({
-        id: "argelia-algiers-university-of-algiers-1",
-        name: "University of Algiers 1",
+        id: "argelia-algiers-university-of-algiers",
+        name: "University of Algiers",
         cityId: "argelia-algiers",
         website: null,
         source: "open-dataset",

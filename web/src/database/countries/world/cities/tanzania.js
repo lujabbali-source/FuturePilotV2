@@ -94,6 +94,90 @@ export default {
         // Situada a 2.6 km del centro de Magomeni (Wikidata).
       }),
   ],
+  "tanzania-dar-es-salaam": [
+      defineUniversity({
+        id: "tanzania-dar-es-salaam-tanzania-commission-for-universities",
+        name: "Tanzania Commission for Universities",
+        cityId: "tanzania-dar-es-salaam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 3.1 km del centro de Dar es Salaam (Wikidata).
+      }),
+      defineUniversity({
+        id: "tanzania-dar-es-salaam-muhimbili-university-of-health-and-allied-sciences",
+        name: "Muhimbili University of Health and Allied Sciences",
+        cityId: "tanzania-dar-es-salaam",
+        website: null,
+        source: "open-dataset",
+        // Situada a 1.8 km del centro de Dar es Salaam (Wikidata).
+      }),
+      defineUniversity({
+        id: "tanzania-dar-es-salaam-eastern-africa-statistical-training-centre",
+        name: "Eastern Africa Statistical Training Centre",
+        cityId: "tanzania-dar-es-salaam",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dar es Salaam (Wikidata).
+      }),
+      defineUniversity({
+        id: "tanzania-dar-es-salaam-canada-education-support-network",
+        name: "Canada Education Support Network",
+        cityId: "tanzania-dar-es-salaam",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dar es Salaam (Wikidata).
+      }),
+      defineUniversity({
+        id: "tanzania-dar-es-salaam-al-maktoum-college-of-engineering-and-technology",
+        name: "Al-Maktoum College of Engineering and Technology",
+        cityId: "tanzania-dar-es-salaam",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dar es Salaam (Wikidata).
+      }),
+      defineUniversity({
+        id: "tanzania-dar-es-salaam-tanzania-international-university",
+        name: "Tanzania International University",
+        cityId: "tanzania-dar-es-salaam",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Dar es Salaam (Wikidata).
+      }),
+  ],
+  "tanzania-zanzibar": [
+      defineUniversity({
+        id: "tanzania-zanzibar-abdulrahman-al-sumait-university",
+        name: "Abdulrahman Al-Sumait University",
+        cityId: "tanzania-zanzibar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 7.5 km del centro de Zanzibar (Wikidata).
+      }),
+      defineUniversity({
+        id: "tanzania-zanzibar-state-university-of-zanzibar",
+        name: "State University of Zanzibar",
+        cityId: "tanzania-zanzibar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 0.7 km del centro de Zanzibar (Wikidata).
+      }),
+      defineUniversity({
+        id: "tanzania-zanzibar-zanzibar-university",
+        name: "Zanzibar University",
+        cityId: "tanzania-zanzibar",
+        website: null,
+        source: "open-dataset",
+        // Situada a 14.4 km del centro de Zanzibar (Wikidata).
+      }),
+      defineUniversity({
+        id: "tanzania-zanzibar-iit-madras-zanzibar",
+        name: "IIT Madras Zanzibar",
+        cityId: "tanzania-zanzibar",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Zanzibar (Wikidata).
+      }),
+  ],
   "tanzania-usa-river": [
       defineUniversity({
         id: "tanzania-usa-river-nelson-mandela-african-institution-of-science-and-technology",
@@ -127,47 +211,65 @@ export default {
         source: "open-dataset",
         // Situada a 5.9 km del centro de Usa River (Wikidata).
       }),
+  ],
+  "tanzania-arusha": [
       defineUniversity({
-        id: "tanzania-usa-river-university-of-arusha",
-        name: "University of Arusha",
-        cityId: "tanzania-usa-river",
+        id: "tanzania-arusha-tanzania-military-academy",
+        name: "Tanzania Military Academy",
+        cityId: "tanzania-arusha",
         website: null,
         source: "open-dataset",
-        // Situada a 5.9 km del centro de Usa River (Wikidata).
+        // Situada a 25.1 km del centro de Arusha (Wikidata).
+      }),
+      defineUniversity({
+        id: "tanzania-arusha-eastern-and-southern-african-management-institute",
+        name: "Eastern and Southern African Management Institute",
+        cityId: "tanzania-arusha",
+        website: null,
+        source: "open-dataset",
+        // Situada a 5.7 km del centro de Arusha (Wikidata).
+      }),
+      defineUniversity({
+        id: "tanzania-arusha-mount-meru-university",
+        name: "Mount Meru University",
+        cityId: "tanzania-arusha",
+        website: "http://www.mmu.ac.tz/",
+        source: "open-dataset",
+        // Situada a 9.3 km del centro de Arusha (Wikidata).
+      }),
+      defineUniversity({
+        id: "tanzania-arusha-cosecsa",
+        name: "COSECSA",
+        cityId: "tanzania-arusha",
+        website: null,
+        source: "open-dataset",
+        // Situada a None km del centro de Arusha (Wikidata).
       }),
   ],
-  "tanzania-zanzibar": [
+  "tanzania-moshi": [
       defineUniversity({
-        id: "tanzania-zanzibar-abdulrahman-al-sumait-university",
-        name: "Abdulrahman Al-Sumait University",
-        cityId: "tanzania-zanzibar",
+        id: "tanzania-moshi-moshi-co-operative-university-mocu",
+        name: "Moshi Co-operative University (MoCU)",
+        cityId: "tanzania-moshi",
         website: null,
         source: "open-dataset",
-        // Situada a 7.5 km del centro de Zanzibar (Wikidata).
+        // Situada a 1.6 km del centro de Moshi (Wikidata).
       }),
       defineUniversity({
-        id: "tanzania-zanzibar-abdulrahman-al-sumait-university",
-        name: "Abdulrahman Al-Sumait University",
-        cityId: "tanzania-zanzibar",
+        id: "tanzania-moshi-mwenge-university-college-of-education",
+        name: "Mwenge University College of Education",
+        cityId: "tanzania-moshi",
         website: null,
         source: "open-dataset",
-        // Situada a 7.6 km del centro de Zanzibar (Wikidata).
+        // Situada a None km del centro de Moshi (Wikidata).
       }),
       defineUniversity({
-        id: "tanzania-zanzibar-state-university-of-zanzibar",
-        name: "State University of Zanzibar",
-        cityId: "tanzania-zanzibar",
+        id: "tanzania-moshi-stefano-moshi-memorial-university-college",
+        name: "Stefano Moshi Memorial University College",
+        cityId: "tanzania-moshi",
         website: null,
         source: "open-dataset",
-        // Situada a 0.7 km del centro de Zanzibar (Wikidata).
-      }),
-      defineUniversity({
-        id: "tanzania-zanzibar-zanzibar-university",
-        name: "Zanzibar University",
-        cityId: "tanzania-zanzibar",
-        website: null,
-        source: "open-dataset",
-        // Situada a 14.4 km del centro de Zanzibar (Wikidata).
+        // Situada a None km del centro de Moshi (Wikidata).
       }),
   ],
   "tanzania-morogoro": [
@@ -178,14 +280,6 @@ export default {
         website: null,
         source: "open-dataset",
         // Situada a 21.5 km del centro de Morogoro (Wikidata).
-      }),
-      defineUniversity({
-        id: "tanzania-morogoro-mzumbe-university",
-        name: "Mzumbe University",
-        cityId: "tanzania-morogoro",
-        website: null,
-        source: "open-dataset",
-        // Situada a 13.6 km del centro de Morogoro (Wikidata).
       }),
       defineUniversity({
         id: "tanzania-morogoro-sokoine-university-of-agriculture",
@@ -256,32 +350,6 @@ export default {
         // Situada a 3.1 km del centro de Dodoma (Wikidata).
       }),
   ],
-  "tanzania-arusha": [
-      defineUniversity({
-        id: "tanzania-arusha-tanzania-military-academy",
-        name: "Tanzania Military Academy",
-        cityId: "tanzania-arusha",
-        website: null,
-        source: "open-dataset",
-        // Situada a 25.1 km del centro de Arusha (Wikidata).
-      }),
-      defineUniversity({
-        id: "tanzania-arusha-eastern-and-southern-african-management-institute",
-        name: "Eastern and Southern African Management Institute",
-        cityId: "tanzania-arusha",
-        website: null,
-        source: "open-dataset",
-        // Situada a 5.7 km del centro de Arusha (Wikidata).
-      }),
-      defineUniversity({
-        id: "tanzania-arusha-mount-meru-university",
-        name: "Mount Meru University",
-        cityId: "tanzania-arusha",
-        website: "http://www.mmu.ac.tz/",
-        source: "open-dataset",
-        // Situada a 9.3 km del centro de Arusha (Wikidata).
-      }),
-  ],
   "tanzania-mwanza": [
       defineUniversity({
         id: "tanzania-mwanza-catholic-university-of-health-and-allied-sciences",
@@ -298,24 +366,6 @@ export default {
         website: "http://www.saut.ac.tz/",
         source: "open-dataset",
         // Situada a 9.7 km del centro de Mwanza (Wikidata).
-      }),
-  ],
-  "tanzania-dar-es-salaam": [
-      defineUniversity({
-        id: "tanzania-dar-es-salaam-tanzania-commission-for-universities",
-        name: "Tanzania Commission for Universities",
-        cityId: "tanzania-dar-es-salaam",
-        website: null,
-        source: "open-dataset",
-        // Situada a 3.1 km del centro de Dar es Salaam (Wikidata).
-      }),
-      defineUniversity({
-        id: "tanzania-dar-es-salaam-muhimbili-university-of-health-and-allied-sciences",
-        name: "Muhimbili University of Health and Allied Sciences",
-        cityId: "tanzania-dar-es-salaam",
-        website: null,
-        source: "open-dataset",
-        // Situada a 1.8 km del centro de Dar es Salaam (Wikidata).
       }),
   ],
 };

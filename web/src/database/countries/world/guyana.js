@@ -23,7 +23,7 @@ const cities = [
       name: "Georgetown",
       coordinates: {"lat": 6.80448, "lng": -58.15527},
       isCapital: true,
-      universityCount: 4,
+      universityCount: 6,
       statistics: { population: 235017 },
       countryId,
       countryName,
